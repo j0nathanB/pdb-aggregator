@@ -1,0 +1,26 @@
+# Security: Never commit environment variables
+.env
+.env.local
+.env.*
+
+# AI & Editor Tools
+.claude/*
+.cursor/*
+.vscode/
+.idea/
+
+# Python: Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python: Virtual Environments
+venv/
+env/
+.venv/
+build/
+dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -60,15 +60,22 @@ class DossierBuilderAgent:
     ) -> LeaderDossier:
         """
         Build a dossier for a leader from their articles.
-        
+
+        Uses BOTTOM-UP approach - global_context is deprecated and ignored.
+        The narrative emerges from leader actions, not top-down framing.
+
         Args:
             leader: Leader configuration
             articles: Classified and filtered articles
-            global_context: Global pulse for context
-            
+            global_context: DEPRECATED - ignored in bottom-up architecture
+
         Returns:
             Completed LeaderDossier
         """
+        # Note: global_context is ignored in bottom-up architecture
+        if global_context is not None:
+            logger.debug("global_context provided but ignored (bottom-up architecture)")
+
         logger.info(f"Building dossier for {leader.name} from {len(articles)} articles")
         
         if not articles:
@@ -279,20 +286,14 @@ Write in analytical prose, not bullet points.
         global_context: Optional[GlobalPulse],
     ) -> str:
         """Generate analyst assessment paragraph."""
-        
-        article_summaries = self._format_articles_for_prompt(articles[:10])
-        
-        global_context_str = ""
-        if global_context and global_context.top_stories:
-            global_context_str = f"""
-GLOBAL CONTEXT (top stories this period):
-{chr(10).join(f'- {s}' for s in global_context.top_stories[:3])}
-"""
-        
-        prompt = f"""Based on these articles and global context, write a 2-3 sentence 
-ANALYST ASSESSMENT of {leader.name}'s trajectory.
 
-{global_context_str}
+        article_summaries = self._format_articles_for_prompt(articles[:10])
+
+        # Bottom-up: assessment is based on articles, not top-down global context
+        # global_context parameter kept for API compatibility but ignored
+
+        prompt = f"""Based on these articles, write a 2-3 sentence
+ANALYST ASSESSMENT of {leader.name}'s trajectory.
 
 ARTICLES:
 {article_summaries}
@@ -301,17 +302,19 @@ Your assessment should:
 - Identify the most important trend or development
 - Note any significant changes from recent patterns
 - Flag potential risks or opportunities ahead
+- Consider international implications of their actions
 
 Write as a senior analyst giving a bottom-line assessment.
+Focus on what the LEADER's actions reveal about their strategy and priorities.
 """
-        
+
         response = await complete(
             prompt=prompt,
             system=DOSSIER_SYSTEM,
             temperature=0.4,
             max_tokens=400,
         )
-        
+
         return response.strip()
     
     async def _extract_events(

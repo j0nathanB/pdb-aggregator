@@ -377,18 +377,167 @@ def list_briefs() -> list[dict]:
     """List all available briefs with metadata."""
     if not BRIEFS_DIR.exists():
         return []
-    
+
     briefs = []
-    
+
     for d in sorted(BRIEFS_DIR.iterdir(), reverse=True):
         if not d.is_dir():
             continue
-        
+
         meta_path = d / "meta.json"
         if meta_path.exists():
             with open(meta_path) as f:
                 meta = json.load(f)
             meta["path"] = str(d)
             briefs.append(meta)
-    
+
     return briefs
+
+
+# =============================================================================
+# INDIVIDUAL DOSSIER PERSISTENCE (for resume capability)
+# =============================================================================
+
+def save_dossier(dossier: LeaderDossier, output_dir: Path) -> Path:
+    """
+    Save an individual leader dossier for resume capability.
+
+    Args:
+        dossier: The LeaderDossier to save
+        output_dir: Directory to save in (typically briefs/YYYYMMDD)
+
+    Returns:
+        Path to the saved dossier file
+    """
+    dossier_dir = output_dir / "dossiers"
+    dossier_dir.mkdir(parents=True, exist_ok=True)
+
+    # Create safe filename from leader name
+    safe_name = dossier.leader.name.lower().replace(" ", "_")
+    dossier_path = dossier_dir / f"{safe_name}.json"
+
+    # Serialize dossier
+    dossier_data = asdict(dossier)
+
+    with open(dossier_path, "w") as f:
+        json.dump(dossier_data, f, default=_serialize, indent=2)
+
+    logger.info(f"Saved dossier for {dossier.leader.name} to {dossier_path}")
+
+    return dossier_path
+
+
+def load_dossier(path: Path, leader) -> Optional[LeaderDossier]:
+    """
+    Load an individual leader dossier from file.
+
+    Args:
+        path: Path to dossier JSON file
+        leader: LeaderConfig for this leader
+
+    Returns:
+        LeaderDossier or None if not found/invalid
+    """
+    if not path.exists():
+        return None
+
+    try:
+        with open(path) as f:
+            data = json.load(f)
+
+        return _deserialize_dossier(data, leader)
+
+    except Exception as e:
+        logger.warning(f"Failed to load dossier from {path}: {e}")
+        return None
+
+
+def _deserialize_dossier(data: dict, leader) -> LeaderDossier:
+    """Deserialize a dossier from JSON data."""
+    from .config import (
+        LeaderAction,
+        UnderlyingEvent,
+        EventType,
+    )
+
+    # Helper to parse datetime
+    def parse_datetime(val):
+        if val is None:
+            return None
+        if isinstance(val, datetime):
+            return val
+        return datetime.fromisoformat(val)
+
+    # Reconstruct key actions
+    key_actions = []
+    for action_data in data.get("key_actions", []):
+        try:
+            event_type = EventType(action_data.get("event_type", "other"))
+        except ValueError:
+            event_type = EventType.OTHER
+
+        key_actions.append(LeaderAction(
+            description=action_data.get("description", ""),
+            event_type=event_type,
+            date=parse_datetime(action_data.get("date")),
+            source_articles=action_data.get("source_articles", []),
+            significance=action_data.get("significance", ""),
+        ))
+
+    # Reconstruct underlying events
+    underlying_events = []
+    for event_data in data.get("underlying_events", []):
+        underlying_events.append(UnderlyingEvent(
+            id=event_data.get("id", ""),
+            description=event_data.get("description", ""),
+            event_date=parse_datetime(event_data.get("event_date")),
+            location=event_data.get("location"),
+            leaders_involved=event_data.get("leaders_involved", []),
+            article_ids=event_data.get("article_ids", []),
+        ))
+
+    return LeaderDossier(
+        leader=leader,
+        reporting_period=data.get("reporting_period", ""),
+        key_actions=key_actions,
+        domestic_context=data.get("domestic_context", ""),
+        international_posture=data.get("international_posture", ""),
+        assessment=data.get("assessment", ""),
+        articles=[],  # Don't reload articles for resume (saves memory)
+        underlying_events=underlying_events,
+        source_quality_notes=data.get("source_quality_notes", ""),
+        generated_at=parse_datetime(data.get("generated_at")),
+    )
+
+
+def get_existing_dossiers(output_dir: Path, leaders: list) -> dict:
+    """
+    Check for existing dossiers in output directory.
+
+    Used for resume capability - returns dossiers that are already complete.
+
+    Args:
+        output_dir: Directory to check (typically briefs/YYYYMMDD)
+        leaders: List of LeaderConfig objects
+
+    Returns:
+        Dict mapping leader name to LeaderDossier for completed dossiers
+    """
+    dossier_dir = output_dir / "dossiers"
+
+    if not dossier_dir.exists():
+        return {}
+
+    existing = {}
+
+    for leader in leaders:
+        safe_name = leader.name.lower().replace(" ", "_")
+        dossier_path = dossier_dir / f"{safe_name}.json"
+
+        if dossier_path.exists():
+            dossier = load_dossier(dossier_path, leader)
+            if dossier:
+                existing[leader.name] = dossier
+                logger.info(f"Found existing dossier for {leader.name}")
+
+    return existing

@@ -23,10 +23,18 @@ RELEVANCE_THRESHOLD = 0.4
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 DEFAULT_MODEL = "claude-sonnet-4-20250514"
 
+# News fetching settings
+MAX_ARTICLES_PER_LEADER = 5
+MAX_ARTICLE_CONTENT_LENGTH = 0  # 0 = full text, positive = truncate
+API_CALL_DELAY_SECONDS = 2.0
+
+# Singleton detection thresholds
+SINGLETON_THRESHOLD = 0.7
+
 # Arize AX Tracing
 ARIZE_SPACE_ID = os.getenv("ARIZE_SPACE_ID")
 ARIZE_API_KEY = os.getenv("ARIZE_API_KEY")
-ARIZE_PROJECT_NAME = os.getenv("ARIZE_PROJECT_NAME", "pdb-aggregator")
+ARIZE_PROJECT_NAME = os.getenv("ARIZE_PROJECT_NAME", "pdb")
 
 
 # =============================================================================
@@ -95,6 +103,16 @@ MAX_WEIGHT = (
     max(LEADER_ROLE_WEIGHTS.values()) +
     max(IMPACT_LEVEL_WEIGHTS.values())
 )  # 0.35 + 0.40 + 0.25 = 1.0
+
+
+# High-weight event types for singleton detection
+HIGH_WEIGHT_EVENT_TYPES: set[EventType] = {
+    EventType.POLICY_ANNOUNCEMENT,
+    EventType.CRISIS_RESPONSE,
+    EventType.INTERNATIONAL_VISIT,
+    EventType.MAJOR_SPEECH,
+    EventType.BILATERAL_AGREEMENT,
+}
 
 
 # =============================================================================
@@ -524,24 +542,30 @@ class LeaderDossier:
 class CrossCuttingThread:
     """
     A theme or event that connects multiple leaders.
-    
+
     Detected via semantic clustering of underlying events.
+    Also supports singleton threads for high-impact single-leader events.
     """
     id: str
     title: str  # e.g., "NATO Defense Spending Commitments"
     description: str
-    
+
     # Which leaders are involved and how
     leader_postures: dict[str, str] = field(default_factory=dict)  # leader_name -> their position
     leader_count: int = 0
-    
+
     # Underlying events in this cluster
     event_ids: list[str] = field(default_factory=list)
-    
+
     # Analysis
     tension_points: list[str] = field(default_factory=list)
     convergence_points: list[str] = field(default_factory=list)
     trajectory: str = ""  # Where this is heading
+
+    # Singleton support (single-leader high-impact events)
+    is_singleton: bool = False
+    significance_score: float = 0.0
+    event_type: str = ""  # Event type for singletons
 
 
 @dataclass
@@ -556,28 +580,28 @@ class GlobalPulse:
     date_range: str = ""
 
 
-@dataclass 
+@dataclass
 class WeeklyBrief:
     """
     The final compiled weekly intelligence brief.
     """
     date_range: str
     generated_at: datetime
-    
-    # Context
-    global_pulse: GlobalPulse
-    
+
+    # Context (optional in bottom-up architecture)
+    global_pulse: Optional[GlobalPulse] = None
+
     # Core content
-    executive_summary: str
-    cross_cutting_threads: list[CrossCuttingThread]
-    leader_dossiers: list[LeaderDossier]
-    
+    executive_summary: str = ""
+    cross_cutting_threads: list[CrossCuttingThread] = field(default_factory=list)
+    leader_dossiers: list[LeaderDossier] = field(default_factory=list)
+
     # Regional analysis
-    regional_context: dict[str, str]  # region -> analysis
-    
+    regional_context: dict[str, str] = field(default_factory=dict)  # region -> analysis
+
     # Methodology and quality
-    methodology_notes: str
-    source_quality_notes: str
+    methodology_notes: str = ""
+    source_quality_notes: str = ""
 
 
 # =============================================================================

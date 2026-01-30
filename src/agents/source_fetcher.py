@@ -2,9 +2,10 @@
 Source Fetcher Agent - Fetches articles from wire services and domestic sources.
 
 Multi-tier aggregation strategy:
-1. Wire services (Reuters, AP, AFP) for baseline English coverage
-2. Domestic sources for local perspective and depth
-3. Web search as fallback when RSS/direct fetch fails
+1. API-based fetching (SearchAPI + Diffbot) when keys available
+2. Wire services (Reuters, AP, AFP) for baseline English coverage via RSS
+3. Domestic sources for local perspective and depth
+4. LLM-generated placeholders as fallback for testing
 """
 
 import asyncio
@@ -22,6 +23,12 @@ from ..config import (
     LeaderConfig,
     SourceConfig,
     WIRE_SERVICES,
+    MAX_ARTICLES_PER_LEADER,
+)
+from ..fetcher import (
+    fetch_articles_for_leader as fetch_via_api,
+    SEARCHAPI_KEY,
+    DIFFBOT_TOKEN,
 )
 from .base import complete, with_retry, process_batch
 
@@ -73,19 +80,98 @@ class SourceFetcherAgent:
     ) -> list[Article]:
         """
         Fetch all articles mentioning a leader from all configured sources.
-        
+
+        Uses API-based fetching (SearchAPI + Diffbot) when keys are available,
+        otherwise falls back to RSS and placeholder methods.
+
         Args:
             leader: Leader configuration
             date_start: Start date (ISO format)
             date_end: End date (ISO format)
-            
+
         Returns:
             List of deduplicated articles
         """
         logger.info(f"Fetching articles for {leader.name}")
-        
+
+        # Check for API keys
+        if SEARCHAPI_KEY and DIFFBOT_TOKEN:
+            return await self._fetch_via_api(leader, date_start, date_end)
+        else:
+            return await self._fetch_via_rss(leader, date_start, date_end)
+
+    async def _fetch_via_api(
+        self,
+        leader: LeaderConfig,
+        date_start: str,
+        date_end: str,
+    ) -> list[Article]:
+        """Fetch articles using SearchAPI + Diffbot."""
+        logger.info(f"  Using API-based fetching for {leader.name}")
+
+        # Combine wire services and domestic sources
+        all_sources = []
+
+        for source in WIRE_SERVICES:
+            all_sources.append({
+                "name": source.name,
+                "url": source.url,
+                "language": source.language,
+                "source_type": source.source_type,
+            })
+
+        for source in leader.domestic_sources:
+            all_sources.append({
+                "name": source.name,
+                "url": source.url,
+                "language": source.language,
+                "source_type": source.source_type,
+            })
+
+        # Fetch via API
+        api_results = await fetch_via_api(
+            leader_name=leader.name,
+            sources=all_sources,
+            date_start=date_start,
+            date_end=date_end,
+            max_articles_per_source=MAX_ARTICLES_PER_LEADER,
+            skip_opinion=True,
+        )
+
+        # Convert to Article objects
+        articles = []
+        for result in api_results:
+            article = Article(
+                id=result.get("id", ""),
+                title=result.get("title", ""),
+                url=result.get("url", ""),
+                source_name=result.get("source_name", ""),
+                source_type=result.get("source_type", "domestic"),
+                content=result.get("content", ""),
+                summary=result.get("snippet", ""),
+                original_language=result.get("language", "en"),
+            )
+            articles.append(article)
+
+        logger.info(f"  API fetch: {len(articles)} articles")
+
+        # Deduplicate
+        unique_articles = self._deduplicate(articles)
+        logger.info(f"  After dedup: {len(unique_articles)} articles")
+
+        return unique_articles
+
+    async def _fetch_via_rss(
+        self,
+        leader: LeaderConfig,
+        date_start: str,
+        date_end: str,
+    ) -> list[Article]:
+        """Fallback: Fetch articles using RSS and placeholder methods."""
+        logger.info(f"  Using RSS-based fetching for {leader.name}")
+
         all_articles: list[Article] = []
-        
+
         # 1. Fetch from wire services
         wire_articles = await self._fetch_from_sources(
             sources=WIRE_SERVICES,
@@ -95,7 +181,7 @@ class SourceFetcherAgent:
         )
         all_articles.extend(wire_articles)
         logger.info(f"  Wire services: {len(wire_articles)} articles")
-        
+
         # 2. Fetch from domestic sources
         domestic_articles = await self._fetch_from_sources(
             sources=leader.domestic_sources,
@@ -105,11 +191,11 @@ class SourceFetcherAgent:
         )
         all_articles.extend(domestic_articles)
         logger.info(f"  Domestic sources: {len(domestic_articles)} articles")
-        
+
         # 3. Deduplicate
         unique_articles = self._deduplicate(all_articles)
         logger.info(f"  After dedup: {len(unique_articles)} articles")
-        
+
         return unique_articles
     
     async def _fetch_from_sources(

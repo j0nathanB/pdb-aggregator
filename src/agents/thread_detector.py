@@ -1,6 +1,10 @@
 """
 Thread Detector Agent - Detects cross-cutting themes across leaders.
 
+Two-phase detection:
+1. Multi-leader threads (events involving 2+ leaders)
+2. High-impact singletons (single-leader events meeting threshold criteria)
+
 Uses semantic clustering of underlying events to find:
 - Shared themes connecting multiple leaders
 - Divergent postures on common issues
@@ -17,6 +21,11 @@ from ..config import (
     CrossCuttingThread,
     GlobalPulse,
     UnderlyingEvent,
+    EventType,
+    LeaderRole,
+    ImpactLevel,
+    HIGH_WEIGHT_EVENT_TYPES,
+    SINGLETON_THRESHOLD,
 )
 from .base import complete, with_retry, extract_json_from_response, process_batch
 
@@ -58,52 +67,170 @@ class ThreadDetectorAgent:
         min_leaders: int = 2,
     ) -> list[CrossCuttingThread]:
         """
-        Detect cross-cutting threads from leader dossiers.
-        
+        Two-phase detection: multi-leader threads + high-impact singletons.
+
         Args:
             dossiers: Map of leader name to dossier
-            global_context: Global pulse for context
-            min_leaders: Minimum leaders required for a thread
-            
+            global_context: DEPRECATED - ignored in bottom-up architecture
+            min_leaders: Minimum leaders required for a multi-leader thread
+
         Returns:
-            List of detected cross-cutting threads
+            List of detected cross-cutting threads (multi-leader + singletons)
         """
         logger.info(f"Detecting threads from {len(dossiers)} dossiers")
-        
+
+        # Note: global_context is ignored in bottom-up architecture
+        if global_context is not None:
+            logger.debug("global_context provided but ignored (bottom-up architecture)")
+
+        # Phase 1: Multi-leader threads
+        multi_leader = await self.detect_multi_leader_threads(dossiers, min_leaders)
+
+        # Phase 2: High-impact singletons
+        singletons = await self.detect_singletons(dossiers, multi_leader)
+
+        # Merge and sort
+        return self._merge_and_sort(multi_leader, singletons)
+
+    async def detect_multi_leader_threads(
+        self,
+        dossiers: dict[str, LeaderDossier],
+        min_leaders: int = 2,
+    ) -> list[CrossCuttingThread]:
+        """
+        Phase 1: Detect threads involving multiple leaders.
+
+        Args:
+            dossiers: Map of leader name to dossier
+            min_leaders: Minimum leaders required for a thread
+
+        Returns:
+            List of multi-leader threads
+        """
         # 1. Collect all underlying events
         all_events: list[tuple[str, UnderlyingEvent]] = []
         for leader_name, dossier in dossiers.items():
             for event in dossier.underlying_events:
                 all_events.append((leader_name, event))
-        
+
         if len(all_events) < min_leaders:
-            logger.info("Not enough events for thread detection")
+            logger.info("Not enough events for multi-leader thread detection")
             return []
-        
-        logger.info(f"Analyzing {len(all_events)} underlying events")
-        
-        # 2. Use LLM to identify clusters (simpler than embedding-based clustering)
-        clusters = await self._identify_clusters(all_events, global_context)
-        
+
+        logger.info(f"Analyzing {len(all_events)} underlying events for multi-leader threads")
+
+        # 2. Use LLM to identify clusters
+        clusters = await self._identify_clusters(all_events, None)
+
         # 3. Filter to multi-leader clusters
         multi_leader_clusters = [
-            c for c in clusters 
+            c for c in clusters
             if len(set(c["leaders"])) >= min_leaders
         ]
-        
+
         logger.info(f"Found {len(multi_leader_clusters)} multi-leader clusters")
-        
+
         # 4. Synthesize each cluster into a thread
         threads = []
         for cluster in multi_leader_clusters:
             thread = await self._synthesize_thread(cluster, dossiers)
             if thread:
                 threads.append(thread)
-        
-        # Sort by number of leaders involved
-        threads.sort(key=lambda t: t.leader_count, reverse=True)
-        
+
         return threads
+
+    async def detect_singletons(
+        self,
+        dossiers: dict[str, LeaderDossier],
+        exclude_threads: list[CrossCuttingThread],
+    ) -> list[CrossCuttingThread]:
+        """
+        Phase 2: Identify high-impact single-leader events.
+
+        Singleton criteria:
+        - Priority score >= SINGLETON_THRESHOLD
+        - Event type in HIGH_WEIGHT_EVENT_TYPES
+        - Leader role is INITIATOR
+        - Impact level is INTERNATIONAL or NATIONAL
+        - Not already in a multi-leader thread
+
+        Args:
+            dossiers: Map of leader name to dossier
+            exclude_threads: Multi-leader threads to exclude events from
+
+        Returns:
+            List of singleton threads (max 3)
+        """
+        # Get events already in multi-leader threads
+        clustered_events: set[str] = set()
+        for thread in exclude_threads:
+            clustered_events.update(thread.event_ids)
+
+        singletons: list[CrossCuttingThread] = []
+
+        for leader_name, dossier in dossiers.items():
+            for article in dossier.articles:
+                if not article.classification:
+                    continue
+
+                c = article.classification
+
+                # Check singleton criteria
+                if c.priority_score < SINGLETON_THRESHOLD:
+                    continue
+                if c.event_type not in HIGH_WEIGHT_EVENT_TYPES:
+                    continue
+                if c.leader_role != LeaderRole.INITIATOR:
+                    continue
+                if c.impact_level not in [ImpactLevel.INTERNATIONAL, ImpactLevel.NATIONAL]:
+                    continue
+                if article.id in clustered_events:
+                    continue
+
+                # Create singleton thread
+                thread_id = hashlib.md5(
+                    f"singleton:{leader_name}:{article.id}".encode()
+                ).hexdigest()[:8]
+
+                singleton = CrossCuttingThread(
+                    id=thread_id,
+                    title=article.title[:100],
+                    description=article.summary or article.content[:200] + "...",
+                    leader_postures={leader_name: f"{c.event_type.value}: {c.reasoning[:100]}"},
+                    leader_count=1,
+                    event_ids=[article.id],
+                    tension_points=[],
+                    convergence_points=[],
+                    trajectory=f"Watch for international response to {leader_name}'s {c.event_type.value}",
+                    is_singleton=True,
+                    significance_score=c.priority_score,
+                    event_type=c.event_type.value,
+                )
+                singletons.append(singleton)
+
+        # Sort by significance and take top 3
+        singletons.sort(key=lambda t: t.significance_score, reverse=True)
+
+        logger.info(f"Found {len(singletons[:3])} singleton threads")
+
+        return singletons[:3]
+
+    def _merge_and_sort(
+        self,
+        multi_leader: list[CrossCuttingThread],
+        singletons: list[CrossCuttingThread],
+    ) -> list[CrossCuttingThread]:
+        """Merge and sort multi-leader threads and singletons."""
+        all_threads = []
+
+        # Multi-leader threads first, sorted by leader count
+        multi_sorted = sorted(multi_leader, key=lambda t: t.leader_count, reverse=True)
+        all_threads.extend(multi_sorted)
+
+        # Then singletons
+        all_threads.extend(singletons)
+
+        return all_threads
     
     async def _identify_clusters(
         self,

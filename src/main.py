@@ -40,12 +40,35 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python -m src.main                              # Full run, last 7 days
+  python -m src.main                              # Full run, last 7 days (simple pipeline)
   python -m src.main --leader "Mark Carney"       # Single leader
+  python -m src.main --langgraph                  # Use LangGraph with parallel processing
+  python -m src.main --langgraph --leader "Mark Carney"  # LangGraph, single leader
   python -m src.main --start 2026-01-13 --end 2026-01-21
   python -m src.main --simple --leader "Claudia Sheinbaum"
   python -m src.main --list-briefs
   python -m src.main --list-leaders
+
+Debug output (troubleshooting):
+  python -m src.main --debug --leader "Mark Carney"  # Save JSON at each step
+  # Outputs saved to briefs/YYYYMMDD/debug/:
+  #   00_pipeline_summary.json
+  #   01_fetch_mark_carney.json
+  #   02_translate_mark_carney.json
+  #   03_dedupe_mark_carney.json
+  #   04_classify_mark_carney.json
+  #   05_dossier_mark_carney.json
+  #   06_threads_multi_leader.json
+  #   06_threads_singletons.json
+  #   07_synthesis_executive_summary.json
+  #   07_synthesis_regional_contexts.json
+  #   07_synthesis_source_quality.json
+  #   08_final_brief.json
+
+Resume capability (LangGraph mode):
+  python -m src.main --langgraph                  # Start run
+  # Interrupt with Ctrl+C
+  python -m src.main --langgraph                  # Resumes, skips completed leaders
         """
     )
     
@@ -71,6 +94,12 @@ Examples:
         "--simple",
         action="store_true",
         help="Use simple pipeline without LangGraph (easier debugging)",
+    )
+
+    parser.add_argument(
+        "--langgraph",
+        action="store_true",
+        help="Use LangGraph pipeline with parallel processing and resume capability",
     )
     
     parser.add_argument(
@@ -99,7 +128,13 @@ Examples:
         choices=["DEBUG", "INFO", "WARNING", "ERROR"],
         help="Logging level (default: INFO)",
     )
-    
+
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Enable debug output (saves JSON at each pipeline step for troubleshooting)",
+    )
+
     return parser.parse_args()
 
 
@@ -181,7 +216,25 @@ def cmd_view_brief(path: str):
 
 async def cmd_run(args):
     """Run the workflow."""
-    workflow = PDBWorkflow(use_langgraph=not args.simple)
+    # Enable debug output if requested
+    if args.debug:
+        from .debug import enable_debug
+        enable_debug()
+        print("Debug output enabled - JSON files will be saved at each pipeline step")
+        print()
+
+    # Determine pipeline mode:
+    # --langgraph: explicitly use LangGraph
+    # --simple: explicitly use simple pipeline
+    # neither: default to simple for backward compatibility
+    if args.langgraph:
+        use_langgraph = True
+    elif args.simple:
+        use_langgraph = False
+    else:
+        use_langgraph = False  # Default to simple for backward compatibility
+
+    workflow = PDBWorkflow(use_langgraph=use_langgraph)
     
     # Determine leaders to process
     leaders = None
