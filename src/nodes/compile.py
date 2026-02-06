@@ -27,9 +27,10 @@ async def compile_brief(state: PDBState) -> dict[str, Any]:
     date_start = state.get("date_range_start", "")
     date_end = state.get("date_range_end", "")
     dossiers = state.get("dossiers", {})
-    threads = state.get("all_threads", [])
-    executive_summary = state.get("executive_summary", "")
-    regional_contexts = state.get("regional_contexts", {})
+    main_stories = state.get("aggregate_main_stories", [])
+    intl_stories = state.get("aggregate_intl_stories", [])
+    dom_stories = state.get("aggregate_dom_stories", [])
+    btl = state.get("aggregate_btl", [])
     source_quality_notes = state.get("source_quality_notes", "")
 
     logger.info("Compiling final brief")
@@ -41,11 +42,11 @@ async def compile_brief(state: PDBState) -> dict[str, Any]:
     brief = WeeklyBrief(
         date_range=f"{date_start} to {date_end}",
         generated_at=datetime.now(),
-        global_pulse=None,  # Bottom-up: no top-down context
-        executive_summary=executive_summary,
-        cross_cutting_threads=threads,
+        main_stories=main_stories,
+        international_stories=intl_stories,
+        domestic_stories=dom_stories,
+        between_the_lines=btl,
         leader_dossiers=list(dossiers.values()),
-        regional_context=regional_contexts,
         methodology_notes=methodology_notes,
         source_quality_notes=source_quality_notes,
     )
@@ -59,10 +60,8 @@ async def compile_brief(state: PDBState) -> dict[str, Any]:
 
     # Save debug outputs
     if is_debug_enabled():
-        # Save final brief
         save_final_brief(brief)
 
-        # Create pipeline summary
         leader_stats = {
             "total": len(dossiers),
             "by_region": {},
@@ -74,19 +73,21 @@ async def compile_brief(state: PDBState) -> dict[str, Any]:
             leader_stats["by_region"][region].append({
                 "name": name,
                 "article_count": len(dossier.articles),
-                "action_count": len(dossier.key_actions),
-                "event_count": len(dossier.underlying_events),
+                "story_count": len(dossier.main_stories)
+                    + len(dossier.international_stories)
+                    + len(dossier.domestic_stories),
             })
 
-        thread_stats = {
-            "total": len(threads),
-            "multi_leader": sum(1 for t in threads if not t.is_singleton),
-            "singletons": sum(1 for t in threads if t.is_singleton),
+        aggregate_stats = {
+            "main_stories": len(main_stories),
+            "international_stories": len(intl_stories),
+            "domestic_stories": len(dom_stories),
+            "between_the_lines": len(btl),
         }
 
         create_pipeline_summary(
             leader_stats=leader_stats,
-            thread_stats=thread_stats,
+            thread_stats=aggregate_stats,
         )
 
     return {"brief": brief}
@@ -104,19 +105,20 @@ def _generate_methodology_notes(dossiers: dict) -> str:
 **Methodology**
 
 This brief was generated using an automated multi-agent system that:
-1. Fetched {total_articles} articles from {len(sources)} sources
-2. Translated non-English content using LLM translation
-3. Deduplicated articles covering the same underlying events
-4. Classified articles using the Paragon taxonomy
-5. Filtered to priority score >= 0.4
-6. Built per-leader dossiers using bottom-up synthesis
-7. Detected cross-cutting threads (multi-leader + singletons)
-8. Synthesized findings into narrative sections
+1. Fetched snippets from {len(sources)} sources via SearchAPI
+2. Embedded snippets using sentence-transformers (English or multilingual model per leader)
+3. Clustered snippets into events using HDBSCAN
+4. Scored events by source diversity and wire coverage
+5. Fetched {total_articles} full articles for top events via Diffbot
+6. Extracted entities and summaries via Diffbot NLP
+7. Built per-leader story-centric dossiers from processed events
+8. Matched overlapping stories across leaders via entity overlap
+9. Synthesized aggregate briefing with shared multi-leader stories
 
-**Architecture**: Bottom-up approach where narrative emerges from leader
-actions rather than top-down global context framing.
+**Architecture**: Story-centric pipeline where events are synthesized into
+stories, then matched across leaders for aggregate briefing.
 
-**Limitations**: Automated classification may miss nuance. Non-English
-translation may lose political subtlety. Thread detection uses semantic
-similarity and may over- or under-cluster.
+**Limitations**: Embedding-based clustering may miss nuance in short
+snippets. Non-English content processed after extraction. Entity-based
+story matching may miss thematic connections without shared entities.
 """

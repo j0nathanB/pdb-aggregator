@@ -10,7 +10,7 @@ import hashlib
 import logging
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional
 from urllib.parse import urlparse
 
@@ -372,6 +372,214 @@ async def fetch_articles_for_leader(
         all_articles.extend(articles_from_source)
 
     return all_articles
+
+
+def _parse_result_date(date_str: str) -> Optional[datetime]:
+    """
+    Parse a date string from search results into a datetime.
+
+    Handles common formats from SearchAPI / Google News:
+    - "2 days ago", "3 hours ago", "1 week ago"
+    - "Jan 28, 2026", "January 28, 2026"
+    - "2026-01-28", "2026-01-28T..."
+    - "01/28/2026"
+    """
+    if not date_str or not date_str.strip():
+        return None
+
+    date_str = date_str.strip()
+
+    # Relative time: "X hours/days/weeks ago"
+    relative_match = re.match(
+        r"(\d+)\s+(second|minute|hour|day|week|month)s?\s+ago",
+        date_str,
+        re.IGNORECASE,
+    )
+    if relative_match:
+        amount = int(relative_match.group(1))
+        unit = relative_match.group(2).lower()
+        now = datetime.now()
+        if unit in ("second", "minute", "hour"):
+            return now  # same day
+        elif unit == "day":
+            return now - timedelta(days=amount)
+        elif unit == "week":
+            return now - timedelta(weeks=amount)
+        elif unit == "month":
+            return now - timedelta(days=amount * 30)
+
+    # ISO format: 2026-01-28 or 2026-01-28T...
+    iso_match = re.match(r"(\d{4}-\d{2}-\d{2})", date_str)
+    if iso_match:
+        try:
+            return datetime.strptime(iso_match.group(1), "%Y-%m-%d")
+        except ValueError:
+            pass
+
+    # US format: 01/28/2026
+    us_match = re.match(r"(\d{2}/\d{2}/\d{4})", date_str)
+    if us_match:
+        try:
+            return datetime.strptime(us_match.group(1), "%m/%d/%Y")
+        except ValueError:
+            pass
+
+    # Named month: "Jan 28, 2026" or "January 28, 2026"
+    for fmt in ("%b %d, %Y", "%B %d, %Y", "%d %b %Y", "%d %B %Y"):
+        try:
+            return datetime.strptime(date_str, fmt)
+        except ValueError:
+            continue
+
+    return None
+
+
+def _is_within_date_range(
+    date_str: str,
+    date_start: str,
+    date_end: str,
+    margin_days: int = 2,
+) -> bool:
+    """
+    Check if a result's date falls within the requested range (with margin).
+
+    Args:
+        date_str: Date string from search result
+        date_start: Range start (YYYY-MM-DD)
+        date_end: Range end (YYYY-MM-DD)
+        margin_days: Extra days of margin outside range (default 2)
+
+    Returns:
+        True if within range, or if date cannot be parsed (fail-open)
+    """
+    parsed = _parse_result_date(date_str)
+    if parsed is None:
+        # Can't parse -> let it through (fail-open)
+        return True
+
+    try:
+        range_start = datetime.strptime(date_start, "%Y-%m-%d") - timedelta(days=margin_days)
+        range_end = datetime.strptime(date_end, "%Y-%m-%d") + timedelta(days=margin_days)
+    except ValueError:
+        return True
+
+    return range_start <= parsed <= range_end
+
+
+async def fetch_snippets_for_leader(
+    leader_name: str,
+    sources: list[dict],
+    date_start: str,
+    date_end: str,
+    max_results_per_source: int = 10,
+) -> list[dict]:
+    """
+    Fetch search result snippets WITHOUT full article extraction.
+
+    This is the first phase - cheap SerpAPI calls only, no Diffbot.
+    Results are validated against the requested date range; stale
+    articles outside the range are discarded.
+
+    Args:
+        leader_name: Name of leader to search
+        sources: List of source configs
+        date_start: Start date (YYYY-MM-DD)
+        date_end: End date (YYYY-MM-DD)
+        max_results_per_source: Max snippets per source
+
+    Returns:
+        List of snippet dicts with source metadata
+    """
+    if not SEARCHAPI_KEY:
+        logger.warning("SEARCHAPI_KEY not set")
+        return []
+
+    all_snippets = []
+    stale_count = 0
+    date_range = (date_start, date_end)
+
+    for source in sources:
+        source_name = source.get("name", "Unknown")
+        source_url = source.get("url", "")
+        source_type = source.get("source_type", "domestic")
+
+        domain = urlparse(source_url).netloc if source_url else None
+
+        results = await search_news_searchapi(
+            query=leader_name,
+            num_results=max_results_per_source,
+            date_range=date_range,
+            site=domain,
+        )
+
+        for result in results:
+            date_val = result.get("date", "")
+
+            # Filter out stale articles
+            if not _is_within_date_range(date_val, date_start, date_end):
+                logger.debug(
+                    f"Filtering stale result: '{result.get('title', '')[:60]}' "
+                    f"(date={date_val}) outside {date_start}..{date_end}"
+                )
+                stale_count += 1
+                continue
+
+            all_snippets.append({
+                "title": result.get("title", ""),
+                "snippet": result.get("snippet", ""),
+                "url": result.get("link", ""),
+                "source_name": source_name,
+                "source_type": source_type,
+                "date": date_val,
+            })
+
+    if stale_count > 0:
+        logger.info(f"Filtered {stale_count} stale results outside date range {date_start}..{date_end}")
+
+    return all_snippets
+
+
+async def fetch_full_articles(
+    urls: list[str],
+    source_metadata: dict[str, dict],
+) -> list[dict]:
+    """
+    Fetch full article content for specific URLs via Diffbot.
+
+    This is the second phase - expensive Diffbot calls only for selected articles.
+
+    Args:
+        urls: List of article URLs to fetch
+        source_metadata: Map of URL to source info (name, type, language)
+
+    Returns:
+        List of article dicts with full content
+    """
+    if not DIFFBOT_TOKEN:
+        logger.warning("DIFFBOT_TOKEN not set")
+        return []
+
+    articles = []
+
+    for url in urls:
+        await asyncio.sleep(DIFFBOT_DELAY_SECONDS)
+
+        extracted = await extract_article_diffbot(url)
+
+        if extracted:
+            meta = source_metadata.get(url, {})
+            articles.append({
+                "id": hashlib.md5(url.encode()).hexdigest()[:12],
+                "title": extracted.get("title", ""),
+                "url": url,
+                "content": extracted.get("text", ""),
+                "source_name": meta.get("source_name", "Unknown"),
+                "source_type": meta.get("source_type", "domestic"),
+                "language": extracted.get("language", "en"),
+                "published_at": extracted.get("date"),
+            })
+
+    return articles
 
 
 async def fetch_articles_without_api(

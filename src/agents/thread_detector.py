@@ -340,13 +340,14 @@ Rules:
         for leader_name in leaders:
             if leader_name in dossiers:
                 dossier = dossiers[leader_name]
-                # Get relevant actions
-                actions = [
-                    a.description for a in dossier.key_actions
+                # Get relevant stories
+                stories = [
+                    s.title for s in dossier.main_stories
                 ][:3]
+                btl = "; ".join(dossier.between_the_lines[:2]) if dossier.between_the_lines else "N/A"
                 leader_content[leader_name] = {
-                    "actions": actions,
-                    "assessment": dossier.assessment,
+                    "actions": stories,
+                    "assessment": btl,
                 }
         
         # Generate thread synthesis

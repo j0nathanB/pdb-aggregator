@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from ..config import LeaderConfig, LeaderDossier
+from ..config import LeaderConfig, LeaderDossier, Story, StoryScope
 from ..state import PDBState
 
 logger = logging.getLogger(__name__)
@@ -62,52 +62,92 @@ async def initialize_workflow(state: PDBState) -> dict[str, Any]:
 
 
 def _load_dossier_from_file(path: Path, leader: LeaderConfig) -> LeaderDossier | None:
-    """Load a dossier from a JSON file."""
+    """Load a dossier from a JSON file, supporting both old and new formats."""
     try:
         with open(path) as f:
             data = json.load(f)
 
-        # Reconstruct dossier from JSON
-        from ..config import LeaderAction, EventType, UnderlyingEvent
+        # Detect old format
+        if "key_actions" in data:
+            return _load_old_format_dossier(data, leader)
 
-        key_actions = []
-        for action_data in data.get("key_actions", []):
-            try:
-                event_type = EventType(action_data.get("event_type", "other"))
-            except ValueError:
-                event_type = EventType.OTHER
-
-            key_actions.append(LeaderAction(
-                description=action_data.get("description", ""),
-                event_type=event_type,
-                source_articles=action_data.get("source_articles", []),
-                significance=action_data.get("significance", ""),
-            ))
-
-        underlying_events = []
-        for event_data in data.get("underlying_events", []):
-            underlying_events.append(UnderlyingEvent(
-                id=event_data.get("id", ""),
-                description=event_data.get("description", ""),
-                leaders_involved=event_data.get("leaders_involved", []),
-                article_ids=event_data.get("article_ids", []),
-            ))
-
+        # New format: story-centric
         return LeaderDossier(
             leader=leader,
             reporting_period=data.get("reporting_period", ""),
-            key_actions=key_actions,
-            domestic_context=data.get("domestic_context", ""),
-            international_posture=data.get("international_posture", ""),
-            assessment=data.get("assessment", ""),
+            main_stories=[_deserialize_story(s) for s in data.get("main_stories", [])],
+            international_stories=[_deserialize_story(s) for s in data.get("international_stories", [])],
+            domestic_stories=[_deserialize_story(s) for s in data.get("domestic_stories", [])],
+            between_the_lines=data.get("between_the_lines", []),
             articles=[],  # Don't reload articles for resume
-            underlying_events=underlying_events,
+            underlying_events=[],
             source_quality_notes=data.get("source_quality_notes", ""),
         )
 
     except Exception as e:
         logger.warning(f"Failed to load dossier from {path}: {e}")
         return None
+
+
+def _deserialize_story(data: dict) -> Story:
+    """Deserialize a Story from JSON data."""
+    scope_str = data.get("scope", "domestic")
+    try:
+        scope = StoryScope(scope_str)
+    except ValueError:
+        scope = StoryScope.DOMESTIC
+
+    return Story(
+        id=data.get("id", ""),
+        title=data.get("title", ""),
+        narrative=data.get("narrative", ""),
+        scope=scope,
+        source_count=data.get("source_count", 0),
+        has_wire=data.get("has_wire", False),
+        score=data.get("score", 0.0),
+        source_refs=data.get("source_refs", {}),
+        entities=data.get("entities", []),
+        cluster_id=data.get("cluster_id", ""),
+        contributing_leaders=data.get("contributing_leaders", []),
+    )
+
+
+def _load_old_format_dossier(data: dict, leader: LeaderConfig) -> LeaderDossier:
+    """Convert old-format dossier (key_actions) to new story-centric format."""
+    # Convert key_actions to main_stories
+    main_stories = []
+    for action_data in data.get("key_actions", []):
+        event_type_str = action_data.get("event_type", "other")
+        scope = StoryScope.INTERNATIONAL if event_type_str in (
+            "international_visit", "bilateral_agreement"
+        ) else StoryScope.DOMESTIC
+
+        main_stories.append(Story(
+            id=f"legacy-{len(main_stories)}",
+            title=action_data.get("description", "")[:80],
+            narrative=action_data.get("description", ""),
+            scope=scope,
+            source_count=len(action_data.get("source_articles", [])),
+            has_wire=False,
+            score=0.5,
+            source_refs=action_data.get("source_refs", {}),
+        ))
+
+    btl = []
+    if data.get("assessment"):
+        btl.append(data["assessment"])
+
+    return LeaderDossier(
+        leader=leader,
+        reporting_period=data.get("reporting_period", ""),
+        main_stories=main_stories,
+        international_stories=[],
+        domestic_stories=[],
+        between_the_lines=btl,
+        articles=[],
+        underlying_events=[],
+        source_quality_notes=data.get("source_quality_notes", ""),
+    )
 
 
 def should_process_leader(state: PDBState, leader_name: str) -> bool:

@@ -58,10 +58,7 @@ Debug output (troubleshooting):
   #   03_dedupe_mark_carney.json
   #   04_classify_mark_carney.json
   #   05_dossier_mark_carney.json
-  #   06_threads_multi_leader.json
-  #   06_threads_singletons.json
-  #   07_synthesis_executive_summary.json
-  #   07_synthesis_regional_contexts.json
+  #   07_synthesis_aggregate_briefing.json
   #   07_synthesis_source_quality.json
   #   08_final_brief.json
 
@@ -153,7 +150,7 @@ def cmd_list_briefs():
         print(f"    Period: {brief.get('date_range', 'Unknown')}")
         print(f"    Generated: {brief.get('generated_at', 'Unknown')}")
         print(f"    Leaders: {brief.get('leader_count', 0)}")
-        print(f"    Threads: {brief.get('thread_count', 0)}")
+        print(f"    Top Stories: {brief.get('main_story_count', 0)}")
         print()
 
 
@@ -208,8 +205,10 @@ def cmd_view_brief(path: str):
         if brief:
             print(f"Brief: {brief.date_range}")
             print(f"Generated: {brief.generated_at}")
+            print(f"Top Stories: {len(brief.main_stories)}")
             print()
-            print(brief.executive_summary)
+            for story in brief.main_stories:
+                print(f"  • {story.title}")
         else:
             print(f"Could not load brief from {path}")
 
@@ -280,18 +279,26 @@ async def cmd_run(args):
         print()
         print(f"Period: {brief.date_range}")
         print(f"Leaders: {len(brief.leader_dossiers)}")
-        print(f"Threads: {len(brief.cross_cutting_threads)}")
+        print(f"Top Stories: {len(brief.main_stories)}")
+        print(f"International: {len(brief.international_stories)}")
+        print(f"Domestic: {len(brief.domestic_stories)}")
         print()
-        print("Executive Summary (preview):")
-        print("-" * 40)
-        print(brief.executive_summary[:500] + "..." if len(brief.executive_summary) > 500 else brief.executive_summary)
-        print()
-        
-        if brief.cross_cutting_threads:
-            print("Cross-Cutting Threads:")
-            for thread in brief.cross_cutting_threads:
-                print(f"  • {thread.title} ({thread.leader_count} leaders)")
-        
+
+        if brief.main_stories:
+            print("Top Stories:")
+            print("-" * 40)
+            for story in brief.main_stories:
+                leaders_tag = ""
+                if story.contributing_leaders and len(story.contributing_leaders) > 1:
+                    leaders_tag = f" ({', '.join(story.contributing_leaders)})"
+                print(f"  • {story.title}{leaders_tag}")
+            print()
+
+        if brief.between_the_lines:
+            print("Between the Lines:")
+            for bullet in brief.between_the_lines[:5]:
+                print(f"  - {bullet}")
+
         print()
         print("Full brief saved to: briefs/")
         

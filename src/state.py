@@ -11,7 +11,7 @@ from .config import (
     Article,
     LeaderConfig,
     LeaderDossier,
-    CrossCuttingThread,
+    Story,
     WeeklyBrief,
 )
 
@@ -57,14 +57,13 @@ class PDBState(TypedDict):
     leader_results: Annotated[dict[str, LeaderProcessingResult], operator.or_]
     dossiers: Annotated[dict[str, LeaderDossier], operator.or_]
 
-    # Thread detection
-    multi_leader_threads: list[CrossCuttingThread]
-    singleton_threads: list[CrossCuttingThread]
-    all_threads: list[CrossCuttingThread]
+    # Aggregate briefing (story-centric)
+    aggregate_main_stories: list[Story]
+    aggregate_intl_stories: list[Story]
+    aggregate_dom_stories: list[Story]
+    aggregate_btl: list[str]
 
-    # Synthesis
-    executive_summary: str
-    regional_contexts: dict[str, str]
+    # Source quality
     source_quality_notes: str
 
     # Final output
@@ -92,14 +91,13 @@ def create_initial_state(
         "leader_results": {},
         "dossiers": {},
 
-        # Thread detection
-        "multi_leader_threads": [],
-        "singleton_threads": [],
-        "all_threads": [],
+        # Aggregate briefing
+        "aggregate_main_stories": [],
+        "aggregate_intl_stories": [],
+        "aggregate_dom_stories": [],
+        "aggregate_btl": [],
 
-        # Synthesis
-        "executive_summary": "",
-        "regional_contexts": {},
+        # Source quality
         "source_quality_notes": "",
 
         # Output

@@ -31,6 +31,16 @@ API_CALL_DELAY_SECONDS = 2.0
 # Singleton detection thresholds
 SINGLETON_THRESHOLD = 0.7
 
+# Event clustering settings
+MAX_SNIPPETS_PER_SOURCE = 10
+MAX_EVENTS_FOR_BRIEF = 5
+MAX_ARTICLES_PER_EVENT = 3
+MIN_EVENT_SCORE_RATIO = 0.5  # Include events with score >= top * ratio
+
+# Embedding models
+EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
+MULTILINGUAL_EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+
 # Arize AX Tracing
 ARIZE_SPACE_ID = os.getenv("ARIZE_SPACE_ID")
 ARIZE_API_KEY = os.getenv("ARIZE_API_KEY")
@@ -147,11 +157,6 @@ WIRE_SERVICES: list[SourceConfig] = [
         rss_url="https://apnews.com/feed",
         source_type="wire",
     ),
-    SourceConfig(
-        name="AFP",
-        url="https://www.afp.com",
-        source_type="wire",
-    ),
 ]
 
 
@@ -177,6 +182,11 @@ class LeaderConfig:
                 f"{self.title} {self.country}",
                 f"{self.name} {self.country}",
             ]
+
+
+def leader_needs_multilingual(leader: LeaderConfig) -> bool:
+    """Check if any domestic source for this leader is non-English."""
+    return any(s.language != "en" for s in leader.domestic_sources)
 
 
 def get_leader_configs() -> list[LeaderConfig]:
@@ -500,108 +510,134 @@ class UnderlyingEvent:
 
 
 # =============================================================================
-# DOSSIER AND BRIEF MODELS
+# STORY-CENTRIC OUTPUT MODELS
 # =============================================================================
 
-@dataclass
-class LeaderAction:
-    """A significant action taken by a leader during the reporting period."""
-    description: str
-    event_type: EventType
-    date: Optional[datetime] = None
-    source_articles: list[str] = field(default_factory=list)  # Article IDs
-    significance: str = ""  # Why this matters
+class StoryScope(str, Enum):
+    """Whether a story is international or domestic in scope."""
+    INTERNATIONAL = "international"
+    DOMESTIC = "domestic"
 
+
+@dataclass
+class Story:
+    """A single story in the briefing, used at both per-leader and aggregate levels."""
+    id: str
+    title: str
+    narrative: str                    # AP-style news report with dateline
+    scope: StoryScope
+    source_count: int
+    has_wire: bool
+    score: float
+    source_refs: dict[str, list[str]] = field(default_factory=dict)  # source_name -> [urls]
+    entities: list[dict] = field(default_factory=list)  # high-salience entities from NLP
+    cluster_id: str = ""              # originating EventCluster ID
+    contributing_leaders: list[str] = field(default_factory=list)  # for aggregate shared stories
+
+
+# =============================================================================
+# DOSSIER AND BRIEF MODELS
+# =============================================================================
 
 @dataclass
 class LeaderDossier:
     """
     Compiled intelligence on a single leader for the reporting period.
+
+    Story-centric structure: Main Stories / International / Domestic / Between the Lines.
     """
     leader: LeaderConfig
     reporting_period: str  # e.g., "2026-01-13 to 2026-01-21"
-    
-    # Key actions (3-5 most significant)
-    key_actions: list[LeaderAction] = field(default_factory=list)
-    
-    # Narrative analysis
-    domestic_context: str = ""  # What's happening domestically
-    international_posture: str = ""  # How they're engaging internationally
-    assessment: str = ""  # Analyst assessment of trajectory
-    
+
+    # Story-centric sections
+    main_stories: list[Story] = field(default_factory=list)
+    international_stories: list[Story] = field(default_factory=list)
+    domestic_stories: list[Story] = field(default_factory=list)
+    between_the_lines: list[str] = field(default_factory=list)
+
     # Source data
     articles: list[Article] = field(default_factory=list)
     underlying_events: list[UnderlyingEvent] = field(default_factory=list)
-    
+
     # Metadata
     source_quality_notes: str = ""
     generated_at: datetime = field(default_factory=datetime.now)
 
 
 @dataclass
-class CrossCuttingThread:
-    """
-    A theme or event that connects multiple leaders.
-
-    Detected via semantic clustering of underlying events.
-    Also supports singleton threads for high-impact single-leader events.
-    """
-    id: str
-    title: str  # e.g., "NATO Defense Spending Commitments"
-    description: str
-
-    # Which leaders are involved and how
-    leader_postures: dict[str, str] = field(default_factory=dict)  # leader_name -> their position
-    leader_count: int = 0
-
-    # Underlying events in this cluster
-    event_ids: list[str] = field(default_factory=list)
-
-    # Analysis
-    tension_points: list[str] = field(default_factory=list)
-    convergence_points: list[str] = field(default_factory=list)
-    trajectory: str = ""  # Where this is heading
-
-    # Singleton support (single-leader high-impact events)
-    is_singleton: bool = False
-    significance_score: float = 0.0
-    event_type: str = ""  # Event type for singletons
-
-
-@dataclass
-class GlobalPulse:
-    """
-    Top world stories providing context for the brief.
-    
-    Helps identify what events leaders might be responding to.
-    """
-    top_stories: list[str] = field(default_factory=list)
-    key_themes: list[str] = field(default_factory=list)
-    date_range: str = ""
-
-
-@dataclass
 class WeeklyBrief:
     """
     The final compiled weekly intelligence brief.
+
+    Story-centric structure at aggregate level.
     """
     date_range: str
     generated_at: datetime
 
-    # Context (optional in bottom-up architecture)
-    global_pulse: Optional[GlobalPulse] = None
+    # Story-centric aggregate sections
+    main_stories: list[Story] = field(default_factory=list)
+    international_stories: list[Story] = field(default_factory=list)
+    domestic_stories: list[Story] = field(default_factory=list)
+    between_the_lines: list[str] = field(default_factory=list)
 
-    # Core content
-    executive_summary: str = ""
-    cross_cutting_threads: list[CrossCuttingThread] = field(default_factory=list)
+    # Per-leader dossiers
     leader_dossiers: list[LeaderDossier] = field(default_factory=list)
-
-    # Regional analysis
-    regional_context: dict[str, str] = field(default_factory=dict)  # region -> analysis
 
     # Methodology and quality
     methodology_notes: str = ""
     source_quality_notes: str = ""
+
+
+# =============================================================================
+# DEPRECATED MODELS (kept for backward-compat deserialization only)
+# =============================================================================
+
+@dataclass
+class LeaderAction:
+    """DEPRECATED: Use Story instead. Kept for backward-compat deserialization."""
+    description: str
+    event_type: EventType
+    date: Optional[datetime] = None
+    source_articles: list[str] = field(default_factory=list)
+    significance: str = ""
+    source_refs: dict[str, list[str]] = field(default_factory=dict)
+
+
+@dataclass
+class EventSummary:
+    """DEPRECATED: Use Story instead. Kept for backward-compat deserialization."""
+    title: str
+    score: float
+    source_count: int
+    has_wire: bool
+    snippet_count: int
+    sources: list[str] = field(default_factory=list)
+    is_opinion: bool = False
+
+
+@dataclass
+class CrossCuttingThread:
+    """DEPRECATED: Use Story + AggregateBriefingBuilder instead. Kept for backward-compat."""
+    id: str
+    title: str
+    description: str
+    leader_postures: dict[str, str] = field(default_factory=dict)
+    leader_count: int = 0
+    event_ids: list[str] = field(default_factory=list)
+    tension_points: list[str] = field(default_factory=list)
+    convergence_points: list[str] = field(default_factory=list)
+    trajectory: str = ""
+    is_singleton: bool = False
+    significance_score: float = 0.0
+    event_type: str = ""
+
+
+@dataclass
+class GlobalPulse:
+    """DEPRECATED: Kept for backward-compat deserialization."""
+    top_stories: list[str] = field(default_factory=list)
+    key_themes: list[str] = field(default_factory=list)
+    date_range: str = ""
 
 
 # =============================================================================

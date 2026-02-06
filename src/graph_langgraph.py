@@ -25,11 +25,7 @@ from .nodes import (
     summarize_and_dedupe,
     classify_articles,
     build_dossier,
-    detect_multi_leader_threads,
-    detect_singletons,
-    merge_threads,
-    generate_executive_summary,
-    generate_regional_contexts,
+    build_aggregate_briefing,
     assess_source_quality,
     compile_brief,
 )
@@ -63,14 +59,14 @@ def route_to_leaders(state: PDBState) -> list[Send]:
     return sends
 
 
-def should_run_synthesis(state: PDBState) -> Literal["continue", "skip"]:
+def should_run_aggregate(state: PDBState) -> Literal["continue", "skip"]:
     """
-    Determine if we should run synthesis or skip (no dossiers).
+    Determine if we should run aggregate briefing or skip (no dossiers).
     """
     dossiers = state.get("dossiers", {})
 
     if not dossiers:
-        logger.warning("No dossiers generated, skipping synthesis")
+        logger.warning("No dossiers generated, skipping aggregate briefing")
         return "skip"
 
     return "continue"
@@ -195,9 +191,8 @@ def create_pdb_graph():
     1. init -> check for existing dossiers (resume)
     2. route_to_leaders -> parallel leader processing
     3. aggregate -> combine results
-    4. detect_multi_leader -> detect_singletons -> merge_threads
-    5. Parallel: exec_summary, regional, quality
-    6. compile -> final brief
+    4. Parallel: aggregate_briefing, quality assessment
+    5. compile -> final brief
     """
     graph = StateGraph(PDBState)
 
@@ -205,11 +200,7 @@ def create_pdb_graph():
     graph.add_node("init", initialize_workflow)
     graph.add_node("process_leader", process_leader)
     graph.add_node("aggregate", aggregate_leader_results)
-    graph.add_node("detect_multi_leader", detect_multi_leader_threads)
-    graph.add_node("detect_singletons", detect_singletons)
-    graph.add_node("merge_threads", merge_threads)
-    graph.add_node("exec_summary", generate_executive_summary)
-    graph.add_node("regional", generate_regional_contexts)
+    graph.add_node("aggregate_briefing", build_aggregate_briefing)
     graph.add_node("quality", assess_source_quality)
     graph.add_node("compile", compile_brief)
 
@@ -226,28 +217,19 @@ def create_pdb_graph():
     # Aggregate after all leader processing completes
     graph.add_edge("process_leader", "aggregate")
 
-    # Conditional: continue to synthesis or skip
+    # Conditional: continue to aggregate briefing or skip
     graph.add_conditional_edges(
         "aggregate",
-        should_run_synthesis,
+        should_run_aggregate,
         {
-            "continue": "detect_multi_leader",
+            "continue": "aggregate_briefing",
             "skip": END,
         },
     )
 
-    # Thread detection sequence
-    graph.add_edge("detect_multi_leader", "detect_singletons")
-    graph.add_edge("detect_singletons", "merge_threads")
-
-    # Parallel synthesis (exec_summary, regional, quality all depend on merge_threads)
-    graph.add_edge("merge_threads", "exec_summary")
-    graph.add_edge("merge_threads", "regional")
-    graph.add_edge("merge_threads", "quality")
-
-    # Compile waits for all synthesis to complete
-    graph.add_edge("exec_summary", "compile")
-    graph.add_edge("regional", "compile")
+    # Parallel: aggregate briefing + quality assessment
+    graph.add_edge("aggregate_briefing", "compile")
+    graph.add_edge("aggregate", "quality")
     graph.add_edge("quality", "compile")
 
     # Final output

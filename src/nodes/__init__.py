@@ -10,16 +10,8 @@ from .translate import translate_articles
 from .dedupe import summarize_and_dedupe
 from .classify import classify_articles
 from .dossier import build_dossier
-from .threads import (
-    detect_multi_leader_threads,
-    detect_singletons,
-    merge_threads,
-)
-from .synthesis import (
-    generate_executive_summary,
-    generate_regional_contexts,
-    assess_source_quality,
-)
+from .threads import build_aggregate_briefing
+from .synthesis import assess_source_quality
 from .compile import compile_brief
 
 __all__ = [
@@ -29,11 +21,7 @@ __all__ = [
     "summarize_and_dedupe",
     "classify_articles",
     "build_dossier",
-    "detect_multi_leader_threads",
-    "detect_singletons",
-    "merge_threads",
-    "generate_executive_summary",
-    "generate_regional_contexts",
+    "build_aggregate_briefing",
     "assess_source_quality",
     "compile_brief",
 ]
