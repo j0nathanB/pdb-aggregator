@@ -32,7 +32,7 @@ API_CALL_DELAY_SECONDS = 2.0
 SINGLETON_THRESHOLD = 0.7
 
 # Event clustering settings
-MAX_SNIPPETS_PER_SOURCE = 10
+MAX_SNIPPETS_PER_SOURCE = 20
 MAX_EVENTS_FOR_BRIEF = 5
 MAX_ARTICLES_PER_EVENT = 3
 MIN_EVENT_SCORE_RATIO = 0.5  # Include events with score >= top * ratio
@@ -170,10 +170,10 @@ class LeaderConfig:
     name: str
     title: str
     country: str
-    region: str  # "europe", "americas", "asia_pacific"
+    region: str  # "europe", "americas", "asia_pacific", "baltics"
     domestic_sources: list[SourceConfig] = field(default_factory=list)
     search_terms: list[str] = field(default_factory=list)
-    
+
     def __post_init__(self):
         # Auto-generate search terms if not provided
         if not self.search_terms:
@@ -189,229 +189,150 @@ def leader_needs_multilingual(leader: LeaderConfig) -> bool:
     return any(s.language != "en" for s in leader.domestic_sources)
 
 
+# Leader metadata not in CSV: title, region, primary language
+LEADER_METADATA: dict[str, dict] = {
+    # Americas
+    "Mark Carney": {"title": "Prime Minister", "region": "americas", "language": "en"},
+    "Claudia Sheinbaum": {"title": "President", "region": "americas", "language": "es"},
+    "Lula da Silva": {"title": "President", "region": "americas", "language": "pt"},
+    "Yamandú Orsi": {"title": "President", "region": "americas", "language": "es"},
+    # Western Europe
+    "Emmanuel Macron": {"title": "President", "region": "europe", "language": "fr"},
+    "Keir Starmer": {"title": "Prime Minister", "region": "europe", "language": "en"},
+    "Friedrich Merz": {"title": "Chancellor", "region": "europe", "language": "de"},
+    "Giorgia Meloni": {"title": "Prime Minister", "region": "europe", "language": "it"},
+    # Eastern Europe
+    "Volodymyr Zelenskyy": {"title": "President", "region": "europe", "language": "uk"},
+    "Alexander Stubb": {"title": "President", "region": "europe", "language": "fi"},
+    "Karol Nawrocki": {"title": "President", "region": "europe", "language": "pl"},
+    # Baltics
+    "Gitanas Nausėda": {"title": "President", "region": "baltics", "language": "lt"},
+    "Evika Siliņa": {"title": "Prime Minister", "region": "baltics", "language": "lv"},
+    "Kristen Michal": {"title": "Prime Minister", "region": "baltics", "language": "et"},
+    "Maia Sandu": {"title": "President", "region": "baltics", "language": "ro"},
+}
+
+# Map country to primary language (for sources without explicit language)
+COUNTRY_LANGUAGES: dict[str, str] = {
+    "Canada": "en",
+    "Mexico": "es",
+    "Brazil": "pt",
+    "Uruguay": "es",
+    "France": "fr",
+    "United Kingdom": "en",
+    "Germany": "de",
+    "Italy": "it",
+    "Ukraine": "uk",
+    "Finland": "fi",
+    "Poland": "pl",
+    "Lithuania": "lt",
+    "Latvia": "lv",
+    "Estonia": "et",
+    "Moldova": "ro",
+}
+
+COUNTRY_EMOJI: dict[str, str] = {
+    "Canada": "🇨🇦",
+    "Mexico": "🇲🇽",
+    "Brazil": "🇧🇷",
+    "Uruguay": "🇺🇾",
+    "France": "🇫🇷",
+    "United Kingdom": "🇬🇧",
+    "Germany": "🇩🇪",
+    "Italy": "🇮🇹",
+    "Ukraine": "🇺🇦",
+    "Finland": "🇫🇮",
+    "Poland": "🇵🇱",
+    "Lithuania": "🇱🇹",
+    "Latvia": "🇱🇻",
+    "Estonia": "🇪🇪",
+    "Moldova": "🇲🇩",
+}
+
+
+def _load_leaders_from_csv() -> list[LeaderConfig]:
+    """Load leader configurations from leaders_sources.csv."""
+    import csv
+    from pathlib import Path
+
+    csv_path = Path(__file__).parent.parent / "leaders_sources.csv"
+
+    if not csv_path.exists():
+        raise FileNotFoundError(f"Leaders CSV not found: {csv_path}")
+
+    # Group sources by leader
+    leader_sources: dict[str, list[dict]] = {}
+    leader_countries: dict[str, str] = {}
+
+    with open(csv_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            leader_name = row["leader"]
+            country = row["country"]
+
+            if leader_name not in leader_sources:
+                leader_sources[leader_name] = []
+                leader_countries[leader_name] = country
+
+            leader_sources[leader_name].append({
+                "name": row["source_name"],
+                "domain": row["domain"],
+                "source_type": row["source_type"],
+                "notes": row.get("notes", ""),
+            })
+
+    # Build LeaderConfig objects
+    configs = []
+    for leader_name, sources in leader_sources.items():
+        if leader_name not in LEADER_METADATA:
+            continue  # Skip leaders without metadata
+
+        meta = LEADER_METADATA[leader_name]
+        country = leader_countries[leader_name]
+        language = COUNTRY_LANGUAGES.get(country, "en")
+
+        # Build SourceConfig list
+        domestic_sources = []
+        for src in sources:
+            # Determine source type
+            src_type = src["source_type"]
+            if src_type == "official":
+                src_type = "official"
+            else:
+                src_type = "domestic"
+
+            # Build URL from domain
+            domain = src["domain"]
+            if not domain.startswith("http"):
+                url = f"https://{domain}"
+            else:
+                url = domain
+
+            domestic_sources.append(SourceConfig(
+                name=src["name"],
+                url=url,
+                language=language,
+                source_type=src_type,
+            ))
+
+        configs.append(LeaderConfig(
+            name=leader_name,
+            title=meta["title"],
+            country=country,
+            region=meta["region"],
+            domestic_sources=domestic_sources,
+        ))
+
+    return configs
+
+
 def get_leader_configs() -> list[LeaderConfig]:
     """
     Return configurations for all tracked leaders.
-    
-    Leaders are selected based on geopolitical significance and
-    availability of diverse source coverage.
+
+    Loads from leaders_sources.csv with metadata from LEADER_METADATA.
     """
-    return [
-        # AMERICAS
-        LeaderConfig(
-            name="Mark Carney",
-            title="Prime Minister",
-            country="Canada",
-            region="americas",
-            domestic_sources=[
-                SourceConfig(
-                    name="Globe and Mail",
-                    url="https://www.theglobeandmail.com",
-                    language="en",
-                ),
-                SourceConfig(
-                    name="CBC News",
-                    url="https://www.cbc.ca/news",
-                    language="en",
-                    rss_url="https://www.cbc.ca/webfeed/rss/rss-topstories",
-                ),
-                SourceConfig(
-                    name="National Post",
-                    url="https://nationalpost.com",
-                    language="en",
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Claudia Sheinbaum",
-            title="President",
-            country="Mexico",
-            region="americas",
-            domestic_sources=[
-                SourceConfig(
-                    name="El Universal",
-                    url="https://www.eluniversal.com.mx",
-                    language="es",
-                ),
-                SourceConfig(
-                    name="Reforma",
-                    url="https://www.reforma.com",
-                    language="es",
-                ),
-                SourceConfig(
-                    name="La Jornada",
-                    url="https://www.jornada.com.mx",
-                    language="es",
-                ),
-            ],
-        ),
-        
-        # EUROPE
-        LeaderConfig(
-            name="Volodymyr Zelenskyy",
-            title="President",
-            country="Ukraine",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="Ukrinform",
-                    url="https://www.ukrinform.net",
-                    language="en",  # English version available
-                ),
-                SourceConfig(
-                    name="Kyiv Independent",
-                    url="https://kyivindependent.com",
-                    language="en",
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Emmanuel Macron",
-            title="President",
-            country="France",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="Le Monde",
-                    url="https://www.lemonde.fr",
-                    language="fr",
-                ),
-                SourceConfig(
-                    name="Le Figaro",
-                    url="https://www.lefigaro.fr",
-                    language="fr",
-                ),
-                SourceConfig(
-                    name="Libération",
-                    url="https://www.liberation.fr",
-                    language="fr",
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Friedrich Merz",
-            title="Chancellor",
-            country="Germany",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="Frankfurter Allgemeine",
-                    url="https://www.faz.net",
-                    language="de",
-                ),
-                SourceConfig(
-                    name="Süddeutsche Zeitung",
-                    url="https://www.sueddeutsche.de",
-                    language="de",
-                ),
-                SourceConfig(
-                    name="Der Spiegel",
-                    url="https://www.spiegel.de",
-                    language="de",
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Keir Starmer",
-            title="Prime Minister",
-            country="United Kingdom",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="BBC News",
-                    url="https://www.bbc.com/news",
-                    language="en",
-                    rss_url="https://feeds.bbci.co.uk/news/rss.xml",
-                ),
-                SourceConfig(
-                    name="The Guardian",
-                    url="https://www.theguardian.com",
-                    language="en",
-                    rss_url="https://www.theguardian.com/world/rss",
-                ),
-                SourceConfig(
-                    name="The Telegraph",
-                    url="https://www.telegraph.co.uk",
-                    language="en",
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Karol Nawrocki",
-            title="President",
-            country="Poland",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="Gazeta Wyborcza",
-                    url="https://wyborcza.pl",
-                    language="pl",
-                ),
-                SourceConfig(
-                    name="Rzeczpospolita",
-                    url="https://www.rp.pl",
-                    language="pl",
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Alexander Stubb",
-            title="President",
-            country="Finland",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="Helsingin Sanomat",
-                    url="https://www.hs.fi",
-                    language="fi",
-                ),
-                SourceConfig(
-                    name="Yle News",
-                    url="https://yle.fi/news",
-                    language="en",  # English version
-                ),
-            ],
-        ),
-        LeaderConfig(
-            name="Mark Rutte",
-            title="NATO Secretary General",
-            country="NATO",
-            region="europe",
-            domestic_sources=[
-                SourceConfig(
-                    name="NATO Press",
-                    url="https://www.nato.int/cps/en/natohq/news.htm",
-                    language="en",
-                ),
-            ],
-        ),
-        
-        # ASIA-PACIFIC
-        LeaderConfig(
-            name="Xi Jinping",
-            title="President",
-            country="China",
-            region="asia_pacific",
-            domestic_sources=[
-                SourceConfig(
-                    name="Xinhua",
-                    url="https://www.xinhuanet.com",
-                    language="zh",
-                    source_type="state_media",
-                ),
-                SourceConfig(
-                    name="South China Morning Post",
-                    url="https://www.scmp.com",
-                    language="en",
-                ),
-                SourceConfig(
-                    name="Caixin",
-                    url="https://www.caixinglobal.com",
-                    language="en",
-                ),
-            ],
-        ),
-    ]
+    return _load_leaders_from_csv()
 
 
 def get_leaders_by_region() -> dict[str, list[LeaderConfig]]:
@@ -533,6 +454,7 @@ class Story:
     entities: list[dict] = field(default_factory=list)  # high-salience entities from NLP
     cluster_id: str = ""              # originating EventCluster ID
     contributing_leaders: list[str] = field(default_factory=list)  # for aggregate shared stories
+    classification: Optional[ArticleClassification] = None  # Paragon taxonomy for sorting overflow
 
 
 # =============================================================================

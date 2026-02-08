@@ -16,6 +16,10 @@ import hashlib
 
 from ..config import (
     Article,
+    ArticleClassification,
+    EventType,
+    LeaderRole,
+    ImpactLevel,
     LeaderConfig,
     LeaderDossier,
     Story,
@@ -182,7 +186,19 @@ ARTICLES:
 
 EXTRACTED ENTITIES: {entity_context}
 
-Articles may be in Spanish or other languages — analyze everything and respond in English.
+FIRST: Determine if this event is genuinely about {leader.name} and their political activities.
+SKIP if the content is:
+- Lottery results, sports scores, weather, entertainment gossip
+- Generic news that only tangentially mentions the leader (e.g., in a sidebar)
+- Not actually about the leader's actions, statements, or policies
+
+If you should skip, return: {{"skip": true, "reason": "brief explanation"}}
+
+OTHERWISE, write an AP-style news report:
+
+IMPORTANT: Articles may be in Spanish, Portuguese, French, or other languages.
+You MUST analyze all content and respond ONLY in English.
+All titles and narratives must be in English — never output Spanish, Portuguese, or other languages.
 
 Write an AP-style news report following inverted pyramid structure:
 - Lead paragraph answers Who/What/Where/When
@@ -191,11 +207,15 @@ Write an AP-style news report following inverted pyramid structure:
 - Neutral verbs throughout ("said", "stated", not "declared", "proclaimed")
 - Weave the leader's actions and any explicit positions into the narrative naturally
 - New developments first, context later
-- Internal audit: the headline should match the lead paragraph
+
+CRITICAL - Factual accuracy:
+- Names, species, places, numbers, and organizations must be copied EXACTLY from source text
+- Do NOT substitute similar-sounding words (e.g., "pirarucu" is NOT "piranha")
+- Before finalizing, verify that every specific noun in the headline appears verbatim in the narrative
 
 Return JSON:
 {{
-    "title": "AP-style headline in present tense, max 10 words. Must match the lead paragraph.",
+    "title": "AP-style headline in present tense, max 10 words. Every noun must appear in the narrative.",
     "narrative": "Concise AP-style summary, 3-4 sentences MAX. Start with dateline (CITY, Country —). Lead with who/what/when. Attribute key claims. Focus on the essential facts only.",
     "scope": "international or domestic — 'international' if the event involves other countries, foreign leaders, or cross-border issues; 'domestic' if it is internal to {leader.country}"
 }}
@@ -226,7 +246,13 @@ Return JSON:
 
         synthesis = await self._synthesize_event(event, leader)
 
-        if synthesis:
+        # Check if LLM determined this event should be skipped (not about leader)
+        if synthesis and synthesis.get("skip"):
+            reason = synthesis.get("reason", "not relevant")
+            logger.info(f"Skipping irrelevant event '{event.title[:50]}...': {reason}")
+            return None
+
+        if synthesis and synthesis.get("narrative"):
             title = synthesis.get("title", event.title)
             narrative = synthesis.get("narrative", event.title)
             scope_str = synthesis.get("scope", "domestic").lower()
@@ -235,6 +261,11 @@ Return JSON:
             title = event.title
             narrative = event.title
             scope_str = "domestic"
+
+        # Ensure English output - detect and translate if needed
+        if self._looks_non_english(title) or self._looks_non_english(narrative):
+            logger.warning(f"Non-English content detected for '{title[:50]}...', translating")
+            title, narrative = await self._ensure_english(title, narrative, leader)
 
         try:
             scope = StoryScope(scope_str)
@@ -253,7 +284,7 @@ Return JSON:
             f"{leader.name}:{event.id}".encode()
         ).hexdigest()[:12]
 
-        return Story(
+        story = Story(
             id=story_id,
             title=title,
             narrative=narrative,
@@ -265,6 +296,132 @@ Return JSON:
             entities=event.entities,
             cluster_id=event.id,
         )
+
+        # Classify story for sorting overflow (Paragon taxonomy)
+        story.classification = await self._classify_story(story, leader)
+
+        return story
+
+    async def _classify_story(
+        self,
+        story: Story,
+        leader: LeaderConfig,
+    ) -> ArticleClassification:
+        """
+        Classify a story using the Paragon taxonomy for sorting overflow stories.
+
+        Classifies by event type, leader role, and impact level to calculate
+        a priority score used when main stories are sorted by signal strength
+        but overflow stories need tie-breaking.
+        """
+        prompt = f"""Classify this news story about {leader.name} ({leader.title} of {leader.country}).
+
+HEADLINE: {story.title}
+
+NARRATIVE: {story.narrative}
+
+Classify by:
+
+1. EVENT_TYPE - What kind of event?
+   - POLICY_ANNOUNCEMENT: New policy, law, regulation, executive order
+   - INTERNATIONAL_VISIT: Foreign travel, hosting foreign leaders
+   - MAJOR_SPEECH: Significant public address, keynote
+   - CABINET_CHANGE: Government personnel changes, appointments
+   - LEGAL_DEVELOPMENT: Court rulings, investigations
+   - BILATERAL_AGREEMENT: Treaties, deals, MOUs
+   - CRISIS_RESPONSE: Emergency actions, disaster response
+   - ECONOMIC_ACTION: Tariffs, sanctions, fiscal policy
+   - OTHER: Doesn't fit above
+
+2. LEADER_ROLE - Leader's role in this event?
+   - INITIATOR: Leader is driving/announcing the action
+   - PARTICIPANT: Leader involved but not primary driver
+   - SUBJECT: Leader reported on passively
+
+3. IMPACT_LEVEL - Geographic scope?
+   - INTERNATIONAL: Affects multiple countries
+   - NATIONAL: Affects leader's country broadly
+   - REGIONAL: Sub-national region
+   - LOCAL: Limited local impact
+
+Return JSON:
+{{
+    "event_type": "EVENT_TYPE",
+    "leader_role": "LEADER_ROLE",
+    "impact_level": "IMPACT_LEVEL"
+}}
+"""
+        try:
+            response = await complete(
+                prompt=prompt,
+                system=DOSSIER_SYSTEM,
+                temperature=0.1,
+                max_tokens=200,
+            )
+            data = extract_json_from_response(response)
+
+            if data:
+                event_type = self._parse_event_type(data.get("event_type", "OTHER"))
+                leader_role = self._parse_leader_role(data.get("leader_role", "SUBJECT"))
+                impact_level = self._parse_impact_level(data.get("impact_level", "NATIONAL"))
+
+                priority_score = ArticleClassification.calculate_priority(
+                    event_type=event_type,
+                    leader_role=leader_role,
+                    impact_level=impact_level,
+                )
+
+                return ArticleClassification(
+                    event_type=event_type,
+                    leader_role=leader_role,
+                    impact_level=impact_level,
+                    priority_score=priority_score,
+                    reasoning="",
+                )
+        except Exception as e:
+            logger.warning(f"Story classification failed for '{story.title[:50]}': {e}")
+
+        # Default: low priority
+        return ArticleClassification(
+            event_type=EventType.OTHER,
+            leader_role=LeaderRole.SUBJECT,
+            impact_level=ImpactLevel.LOCAL,
+            priority_score=0.0,
+            reasoning="Default (classification failed)",
+        )
+
+    def _parse_event_type(self, value: str) -> EventType:
+        """Parse event type string to enum."""
+        value = value.upper().replace(" ", "_")
+        try:
+            return EventType(value.lower())
+        except ValueError:
+            for et in EventType:
+                if et.name == value:
+                    return et
+            return EventType.OTHER
+
+    def _parse_leader_role(self, value: str) -> LeaderRole:
+        """Parse leader role string to enum."""
+        value = value.upper()
+        try:
+            return LeaderRole(value.lower())
+        except ValueError:
+            for lr in LeaderRole:
+                if lr.name == value:
+                    return lr
+            return LeaderRole.SUBJECT
+
+    def _parse_impact_level(self, value: str) -> ImpactLevel:
+        """Parse impact level string to enum."""
+        value = value.upper()
+        try:
+            return ImpactLevel(value.lower())
+        except ValueError:
+            for il in ImpactLevel:
+                if il.name == value:
+                    return il
+            return ImpactLevel.NATIONAL
 
     async def _generate_between_the_lines(
         self,
@@ -424,3 +581,75 @@ Return JSON:
             underlying_events=[],
             source_quality_notes="No articles fetched for this leader.",
         )
+
+    def _looks_non_english(self, text: str) -> bool:
+        """
+        Quick heuristic check if text appears to be non-English.
+
+        Checks for common Spanish/Portuguese/French patterns.
+        """
+        if not text:
+            return False
+
+        text_lower = text.lower()
+
+        # Common non-English words that rarely appear in English news
+        non_english_markers = [
+            # Spanish
+            " y ", " el ", " la ", " de ", " en ", " que ", " con ", " una ",
+            " los ", " las ", " del ", " para ", " por ", " como ", " más ",
+            " política ", " gobierno ", " presidente ",
+            # Portuguese
+            " o ", " e ", " da ", " do ", " em ", " um ", " uma ", " para ",
+            " com ", " não ", " são ", " foi ", " sobre ",
+            # French
+            " le ", " les ", " et ", " une ", " des ", " dans ", " pour ",
+            " sur ", " avec ", " est ", " sont ", " qui ",
+        ]
+
+        # Check for non-English patterns
+        marker_count = sum(1 for marker in non_english_markers if marker in text_lower)
+        if marker_count >= 2:
+            return True
+
+        # Check for accented characters common in Spanish/Portuguese/French
+        accented_chars = sum(1 for c in text if c in "áéíóúñüàèìòùâêîôûçãõ")
+        if accented_chars >= 3:
+            return True
+
+        return False
+
+    async def _ensure_english(
+        self,
+        title: str,
+        narrative: str,
+        leader: LeaderConfig,
+    ) -> tuple[str, str]:
+        """Translate title and narrative to English if needed."""
+        prompt = f"""Translate the following news content to English.
+
+TITLE: {title}
+
+NARRATIVE: {narrative}
+
+Return JSON:
+{{
+    "title": "English headline, AP style, max 10 words",
+    "narrative": "English narrative, same facts, AP style"
+}}
+"""
+        try:
+            response = await complete(
+                prompt=prompt,
+                system=DOSSIER_SYSTEM,
+                temperature=0.1,
+                max_tokens=500,
+            )
+            data = extract_json_from_response(response)
+            if data and "title" in data and "narrative" in data:
+                return data["title"], data["narrative"]
+        except Exception as e:
+            logger.warning(f"English translation failed: {e}")
+
+        # Fallback: return originals with warning
+        return f"[Translation needed] {title}", narrative

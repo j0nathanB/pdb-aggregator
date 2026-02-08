@@ -10,7 +10,7 @@ Pipeline:
 """
 import logging
 from typing import Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 from ..config import (
     LeaderConfig, WIRE_SERVICES,
@@ -20,9 +20,11 @@ from ..config import (
 from ..fetcher.core import fetch_snippets_for_leader, fetch_full_articles
 from ..fetcher.diffbot_nlp import extract_nlp, extract_high_salience_entities, get_summary
 from ..clustering import (
-    SnippetEmbedder, EventClusterer, EventScorer,
+    SnippetEmbedder, EventClusterer, EventScorer, EventCluster,
     filter_relevant, separate_opinions, deduplicate_clusters,
+    detect_story_arcs, merge_story_arc_titles,
 )
+from ..debug import is_debug_enabled, save_debug_output
 
 logger = logging.getLogger(__name__)
 
@@ -90,6 +92,8 @@ class EventClusteringAgent:
         Returns:
             Tuple of (top_events, remaining_events, opinions)
         """
+        leader_slug = leader.name.lower().replace(" ", "_")
+
         # 1. Build source list (wire + domestic)
         sources = self._build_source_list(leader)
 
@@ -108,9 +112,30 @@ class EventClusteringAgent:
 
         logger.info(f"Found {len(snippets)} raw snippets for {leader.name}")
 
+        # Debug: save raw snippets
+        if is_debug_enabled():
+            save_debug_output(f"00_raw_snippets_{leader_slug}", {
+                "leader": leader.name,
+                "snippet_count": len(snippets),
+                "snippets": snippets,
+            })
+
         # 3. Pre-filter: relevance + opinion separation
+        raw_count = len(snippets)
         snippets = filter_relevant(snippets, leader.name)
         snippets, opinions = separate_opinions(snippets)
+
+        # Debug: save prefilter results
+        if is_debug_enabled():
+            save_debug_output(f"01_prefilter_{leader_slug}", {
+                "leader": leader.name,
+                "raw_count": raw_count,
+                "after_relevance": len(snippets) + len(opinions),
+                "news_count": len(snippets),
+                "opinion_count": len(opinions),
+                "news_snippets": snippets,
+                "opinion_snippets": opinions,
+            })
 
         if not snippets:
             logger.warning(f"No relevant news snippets for {leader.name}")
@@ -123,14 +148,65 @@ class EventClusteringAgent:
         # 5. Cluster into events
         clusters = self.clusterer.cluster(embedded)
 
+        # Debug: save initial clusters
+        if is_debug_enabled():
+            save_debug_output(f"02_clusters_{leader_slug}", {
+                "leader": leader.name,
+                "cluster_count": len(clusters),
+                "clusters": self._clusters_to_debug(clusters),
+            })
+
         # 5.5 LLM-based deduplication pass
         # Catches same-event clusters that HDBSCAN failed to merge
+        pre_dedup_count = len(clusters)
         if len(clusters) >= 2:
             clusters = await deduplicate_clusters(clusters, leader.name)
             logger.info(f"After dedup: {len(clusters)} clusters for {leader.name}")
 
+        # Debug: save after dedup
+        if is_debug_enabled() and pre_dedup_count != len(clusters):
+            save_debug_output(f"03_dedup_{leader_slug}", {
+                "leader": leader.name,
+                "before": pre_dedup_count,
+                "after": len(clusters),
+                "clusters": self._clusters_to_debug(clusters),
+            })
+
+        # 5.6 Story arc detection
+        # Merges multi-day developing stories (e.g., Orsi's week-long China visit)
+        pre_arc_count = len(clusters)
+        if len(clusters) >= 2:
+            clusters = await self._merge_story_arcs(clusters, leader.name)
+
+        # Debug: save after story arc merge
+        if is_debug_enabled() and pre_arc_count != len(clusters):
+            save_debug_output(f"04_story_arcs_{leader_slug}", {
+                "leader": leader.name,
+                "before": pre_arc_count,
+                "after": len(clusters),
+                "clusters": self._clusters_to_debug(clusters),
+            })
+
         # 6. Score events
         scored = self.scorer.score_events(clusters)
+
+        # Debug: save scored events
+        if is_debug_enabled():
+            save_debug_output(f"05_scored_{leader_slug}", {
+                "leader": leader.name,
+                "event_count": len(scored),
+                "events": [
+                    {
+                        "rank": s.rank,
+                        "score": s.score,
+                        "title": s.cluster.representative_title,
+                        "source_count": s.cluster.unique_source_count,
+                        "has_wire": s.cluster.has_wire_coverage,
+                        "snippet_count": len(s.cluster.snippets),
+                    }
+                    for s in scored
+                ],
+            })
 
         # 7. Split into top/rest
         top_scored, rest_scored = self.scorer.filter_top_events(
@@ -147,7 +223,38 @@ class EventClusteringAgent:
         rest_events = await self._process_events(rest_corroborated, max_articles_per_event)
         rest_events += await self._process_events(rest_thin, max_articles_per_event=1)
 
+        # Debug: save final processed events
+        if is_debug_enabled():
+            save_debug_output(f"06_processed_{leader_slug}", {
+                "leader": leader.name,
+                "top_event_count": len(top_events),
+                "rest_event_count": len(rest_events),
+                "top_events": [asdict(e) for e in top_events],
+                "rest_events": [asdict(e) for e in rest_events],
+            })
+
         return top_events, rest_events, opinions
+
+    def _clusters_to_debug(self, clusters: list[EventCluster]) -> list[dict]:
+        """Convert clusters to debug-friendly format (without embeddings)."""
+        return [
+            {
+                "id": c.id,
+                "title": c.representative_title,
+                "source_count": c.unique_source_count,
+                "has_wire": c.has_wire_coverage,
+                "snippets": [
+                    {
+                        "title": s.title,
+                        "source_name": s.source_name,
+                        "source_type": s.source_type,
+                        "url": s.url,
+                    }
+                    for s in c.snippets
+                ],
+            }
+            for c in clusters
+        ]
 
     def _build_source_list(self, leader: LeaderConfig) -> list[dict]:
         """Combine wire services with leader's domestic sources."""
@@ -262,3 +369,88 @@ class EventClusteringAgent:
             if uri not in by_uri or e["salience"] > by_uri[uri]["salience"]:
                 by_uri[uri] = e
         return list(by_uri.values())
+
+    async def _merge_story_arcs(
+        self,
+        clusters: list[EventCluster],
+        leader_name: str,
+    ) -> list[EventCluster]:
+        """
+        Detect and merge story arcs (multi-day developing stories).
+
+        E.g., "Orsi arrives in China", "Orsi meets Xi", "Orsi visits Shanghai"
+        all become one merged cluster about Orsi's China visit.
+        """
+        if len(clusters) < 2:
+            return clusters
+
+        # Get titles for arc detection
+        titles = [c.representative_title for c in clusters]
+
+        # Detect arcs
+        arcs = await detect_story_arcs(titles, leader_name)
+
+        if not arcs:
+            return clusters
+
+        # Track which clusters have been merged
+        merged_indices: set[int] = set()
+        result: list[EventCluster] = []
+
+        for arc_indices in arcs:
+            if not arc_indices:
+                continue
+
+            # Get clusters in this arc
+            arc_clusters = [clusters[i] for i in arc_indices if i < len(clusters)]
+            if len(arc_clusters) < 2:
+                continue
+
+            # Merge into one cluster
+            merged = await self._merge_clusters(arc_clusters, leader_name)
+            result.append(merged)
+            merged_indices.update(arc_indices)
+
+            logger.info(
+                f"Merged story arc for {leader_name}: "
+                f"{len(arc_clusters)} events -> '{merged.representative_title}'"
+            )
+
+        # Add clusters that weren't merged
+        for i, cluster in enumerate(clusters):
+            if i not in merged_indices:
+                result.append(cluster)
+
+        logger.info(
+            f"After story arc merge: {len(clusters)} -> {len(result)} clusters "
+            f"for {leader_name}"
+        )
+
+        return result
+
+    async def _merge_clusters(
+        self,
+        clusters: list[EventCluster],
+        leader_name: str,
+    ) -> EventCluster:
+        """Merge multiple clusters into one."""
+        import numpy as np
+
+        # Combine all snippets
+        all_snippets = []
+        for c in clusters:
+            all_snippets.extend(c.snippets)
+
+        # Compute new centroid as mean of all snippet embeddings
+        embeddings = np.array([s.embedding for s in all_snippets])
+        merged_centroid = np.mean(embeddings, axis=0)
+        merged_centroid = merged_centroid / np.linalg.norm(merged_centroid)
+
+        # Use first cluster's ID with suffix
+        merged_id = f"{clusters[0].id}_arc"
+
+        return EventCluster(
+            id=merged_id,
+            snippets=all_snippets,
+            centroid=merged_centroid,
+        )

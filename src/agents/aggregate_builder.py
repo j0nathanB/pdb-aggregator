@@ -16,6 +16,7 @@ from ..config import (
     Story,
     StoryScope,
 )
+from ..clustering import validate_cross_leader_match
 from .base import complete, with_retry, extract_json_from_response
 
 logger = logging.getLogger(__name__)
@@ -43,9 +44,10 @@ class AggregateBriefingBuilder:
     1. Collect all stories from all dossiers
     2. Match overlapping stories across leaders via entity URI overlap
     3. Synthesize shared stories into combined narratives
-    4. Select aggregate Top Stories (up to 5, 2+ sources required)
-    5. Distribute remaining to International/Domestic by scope
-    6. Generate Between the Lines (thematic + per-leader)
+    4. Select aggregate Top Stories (up to 5, 2+ sources required, sorted by score)
+    5. Sort overflow by classification priority (Paragon taxonomy), limit to 7
+    6. Distribute overflow to International/Domestic by scope
+    7. Generate Between the Lines (thematic + per-leader)
     """
 
     async def build(
@@ -68,16 +70,26 @@ class AggregateBriefingBuilder:
         if not all_stories:
             return [], [], [], []
 
-        # 2. Find overlapping stories across leaders
+        # 2. Find overlapping stories across leaders (entity-based matching)
         shared_groups, standalone = self._find_shared_stories(all_stories)
         logger.info(
-            f"Found {len(shared_groups)} shared story groups, "
+            f"Found {len(shared_groups)} candidate shared groups, "
             f"{len(standalone)} standalone stories"
         )
 
-        # 3. Synthesize shared stories
+        # 2.5 Validate shared groups are thematically related (LLM gate)
+        validated_groups, rejected_stories = await self._validate_shared_groups(
+            shared_groups
+        )
+        standalone.extend(rejected_stories)
+        logger.info(
+            f"After thematic validation: {len(validated_groups)} valid groups, "
+            f"{len(rejected_stories)} rejected (moved to standalone)"
+        )
+
+        # 3. Synthesize validated shared stories
         merged_stories: list[Story] = []
-        for group in shared_groups:
+        for group in validated_groups:
             merged = await self._synthesize_shared_story(group)
             if merged:
                 merged_stories.append(merged)
@@ -104,11 +116,21 @@ class AggregateBriefingBuilder:
             f"{len(singletons)} singletons moved to overflow"
         )
 
-        # 5. Distribute remaining by scope
+        # 5. Sort overflow by classification priority (Paragon taxonomy) and limit to 7
+        # Classification breaks ties when signal strength (score) is similar
+        def classification_priority(story: Story) -> float:
+            if story.classification:
+                return story.classification.priority_score
+            return 0.0
+
+        overflow.sort(key=lambda s: (classification_priority(s), s.score), reverse=True)
+        overflow = overflow[:7]  # Limit briefs section to 7 stories
+
+        # 6. Distribute remaining by scope
         intl_stories = [s for s in overflow if s.scope == StoryScope.INTERNATIONAL]
         dom_stories = [s for s in overflow if s.scope == StoryScope.DOMESTIC]
 
-        # 6. Generate Between the Lines
+        # 7. Generate Between the Lines
         between_the_lines = await self._generate_between_the_lines(
             all_candidates, dossiers
         )
@@ -193,16 +215,9 @@ class AggregateBriefingBuilder:
                 group_j = merged_into.get(j)
 
                 if group_i is not None and group_j is not None:
-                    if group_i != group_j:
-                        # Check if merged group would be too large
-                        combined_size = len(groups[group_i]) + len(groups[group_j])
-                        if combined_size <= max_group_size:
-                            # Merge group_j into group_i
-                            for idx in groups[group_j]:
-                                merged_into[idx] = group_i
-                            groups[group_i].extend(groups[group_j])
-                            del groups[group_j]
-                        # else: skip merge to prevent mega-cluster
+                    # No transitivity: don't merge existing groups together
+                    # This prevents A-B + B-C from chaining into A-B-C
+                    pass
                 elif group_i is not None:
                     if len(groups[group_i]) < max_group_size:
                         groups[group_i].append(j)
@@ -232,6 +247,51 @@ class AggregateBriefingBuilder:
         )
 
         return shared_groups, standalone
+
+    async def _validate_shared_groups(
+        self,
+        shared_groups: list[list[tuple[str, Story]]],
+    ) -> tuple[list[list[tuple[str, Story]]], list[Story]]:
+        """
+        Validate that entity-matched story groups are thematically related.
+
+        Uses LLM to confirm stories are about the same topic before merging.
+        Stories that fail validation are returned as rejected (standalone).
+
+        Returns:
+            (validated_groups, rejected_stories)
+        """
+        validated: list[list[tuple[str, Story]]] = []
+        rejected: list[Story] = []
+
+        for group in shared_groups:
+            if len(group) < 2:
+                # Single story, no validation needed
+                validated.append(group)
+                continue
+
+            # Build summaries for validation
+            summaries = [
+                (leader, story.title, story.narrative)
+                for leader, story in group
+            ]
+
+            # Validate thematic relationship
+            is_related = await validate_cross_leader_match(summaries)
+
+            if is_related:
+                validated.append(group)
+            else:
+                # Move all stories in this group to standalone
+                for leader, story in group:
+                    rejected.append(story)
+                leaders = [leader for leader, _ in group]
+                logger.info(
+                    f"Rejected cross-leader group (not thematically related): "
+                    f"{leaders}"
+                )
+
+        return validated, rejected
 
     @with_retry(max_attempts=2)
     async def _synthesize_shared_story(

@@ -16,6 +16,8 @@ from urllib.parse import urlparse
 
 import httpx
 
+from ..config import MAX_SNIPPETS_PER_SOURCE
+
 logger = logging.getLogger(__name__)
 
 # =============================================================================
@@ -107,22 +109,18 @@ def is_opinion_article(url: str, title: str = "", content: str = "") -> bool:
 
 async def search_news_searchapi(
     query: str,
-    num_results: int = 10,
-    date_range: Optional[tuple[str, str]] = None,
+    num_results: int = 20,
     site: Optional[str] = None,
-    page: int = 1,
-    time_period: Optional[str] = None,
 ) -> list[dict]:
     """
-    Search Google News via SearchAPI.
+    Search Google News via SearchAPI with pagination.
+
+    Query format: site:{{site}} "{{query}}" when:last_week
 
     Args:
-        query: Search query
-        num_results: Number of results to return
-        date_range: Optional (start_date, end_date) tuple in YYYY-MM-DD format
+        query: Search query (will be quoted if multi-word)
+        num_results: Total number of results to return (fetches multiple pages if needed)
         site: Optional site filter (e.g., "reuters.com")
-        page: Page number (1-indexed)
-        time_period: Optional time period filter (e.g., "last_hour", "last_day", "last_week", "last_month", "last_year")
 
     Returns:
         List of search result dicts with title, link, snippet, etc.
@@ -131,61 +129,71 @@ async def search_news_searchapi(
         logger.warning("SEARCHAPI_KEY not set, cannot search")
         return []
 
-    # Build query with site filter if provided
-    search_query = query
+    # Build query: site:{{site}} "{{leader}}" when:last_week
+    # Quote multi-word queries for exact phrase matching
+    if " " in query and not query.startswith('"'):
+        search_query = f'"{query}"'
+    else:
+        search_query = query
     if site:
-        search_query = f"site:{site} {query}"
+        search_query = f"site:{site} {search_query}"
+    # Add time filter to query string
+    search_query = f"{search_query} when:last_week"
 
-    params = {
-        "engine": "google_news",
-        "q": search_query,
-        "api_key": SEARCHAPI_KEY,
-        "num": num_results,
-        "page": page,
-    }
-
-    # Add time period if specified
-    if time_period:
-        params["time_period"] = time_period
-
-    # Add date range if specified
-    if date_range:
-        start_date, end_date = date_range
-        # SearchAPI uses tbs parameter for date filtering
-        params["tbs"] = f"cdr:1,cd_min:{start_date},cd_max:{end_date}"
+    all_results = []
+    results_per_page = 10  # Google News returns 10 per page
+    pages_needed = (num_results + results_per_page - 1) // results_per_page
 
     async with httpx.AsyncClient(timeout=TIMEOUT, headers=HEADERS) as client:
-        try:
-            response = await client.get(
-                "https://www.searchapi.io/api/v1/search",
-                params=params,
-            )
-            response.raise_for_status()
-            data = response.json()
+        for page in range(1, pages_needed + 1):
+            if len(all_results) >= num_results:
+                break
 
-            results = []
-            for item in data.get("news_results", []) or data.get("organic_results", []):
-                # Handle source as either string or dict
-                source = item.get("source", "")
-                if isinstance(source, dict):
-                    source = source.get("name", "")
+            params = {
+                "engine": "google_news",
+                "q": search_query,
+                "api_key": SEARCHAPI_KEY,
+                "num": results_per_page,
+                "page": page,
+            }
 
-                results.append({
-                    "title": item.get("title", ""),
-                    "link": item.get("link", ""),
-                    "snippet": item.get("snippet", ""),
-                    "source": source,
-                    "date": item.get("date", ""),
-                })
+            try:
+                response = await client.get(
+                    "https://www.searchapi.io/api/v1/search",
+                    params=params,
+                )
+                response.raise_for_status()
+                data = response.json()
 
-            return results
+                page_results = data.get("news_results", []) or data.get("organic_results", [])
+                if not page_results:
+                    break  # No more results
 
-        except httpx.HTTPError as e:
-            logger.error(f"SearchAPI request failed: {e}")
-            return []
-        except Exception as e:
-            logger.error(f"SearchAPI error: {e}")
-            return []
+                for item in page_results:
+                    if len(all_results) >= num_results:
+                        break
+
+                    # Handle source as either string or dict
+                    source = item.get("source", "")
+                    if isinstance(source, dict):
+                        source = source.get("name", "")
+
+                    all_results.append({
+                        "title": item.get("title", ""),
+                        "link": item.get("link", ""),
+                        "snippet": item.get("snippet", ""),
+                        "source": source,
+                        "date": item.get("date", ""),
+                    })
+
+            except httpx.HTTPError as e:
+                logger.error(f"SearchAPI request failed (page {page}): {e}")
+                break
+            except Exception as e:
+                logger.error(f"SearchAPI error (page {page}): {e}")
+                break
+
+    return all_results
 
 
 # =============================================================================
@@ -280,7 +288,6 @@ async def fetch_articles_for_leader(
         return []
 
     all_articles = []
-    date_range = (date_start, date_end)
 
     for source in sources:
         source_name = source.get("name", "Unknown")
@@ -291,11 +298,10 @@ async def fetch_articles_for_leader(
 
         logger.info(f"Searching {source_name} for {leader_name}")
 
-        # Search for articles
+        # Search for articles: site:{{domain}} "{{leader_name}}" when:last_week
         results = await search_news_searchapi(
             query=leader_name,
             num_results=max_articles_per_source * 2,  # Fetch extra to account for filtering
-            date_range=date_range,
             site=domain,
         )
 
@@ -304,7 +310,7 @@ async def fetch_articles_for_leader(
             save_search_results(
                 leader_name=leader_name,
                 source_name=source_name,
-                query=f"{leader_name} site:{domain}" if domain else leader_name,
+                query=f'site:{domain} "{leader_name}" when:last_week' if domain else f'"{leader_name}" when:last_week',
                 results=results,
             )
 
@@ -471,7 +477,7 @@ async def fetch_snippets_for_leader(
     sources: list[dict],
     date_start: str,
     date_end: str,
-    max_results_per_source: int = 10,
+    max_results_per_source: int = MAX_SNIPPETS_PER_SOURCE,
 ) -> list[dict]:
     """
     Fetch search result snippets WITHOUT full article extraction.
@@ -496,7 +502,6 @@ async def fetch_snippets_for_leader(
 
     all_snippets = []
     stale_count = 0
-    date_range = (date_start, date_end)
 
     for source in sources:
         source_name = source.get("name", "Unknown")
@@ -505,10 +510,10 @@ async def fetch_snippets_for_leader(
 
         domain = urlparse(source_url).netloc if source_url else None
 
+        # Query: site:{{domain}} "{{leader_name}}" when:last_week
         results = await search_news_searchapi(
             query=leader_name,
             num_results=max_results_per_source,
-            date_range=date_range,
             site=domain,
         )
 
