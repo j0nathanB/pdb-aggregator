@@ -188,6 +188,12 @@ class DossierBuilderAgent:
 - Calculates priority score for sorting briefs section
 - Used to break ties when signal strength is similar
 
+**`_generate_executive_summary()`** - 2-3 sentence overview of leader's week.
+- Distills key developments across all stories
+- Leads with most significant development
+- Uses neutral, factual language (AP style)
+- Rendered as blockquote at top of dossier markdown
+
 ---
 
 ### 6. Aggregate Briefing Builder: `src/agents/aggregate_builder.py` ✅
@@ -199,7 +205,8 @@ class AggregateBriefingBuilder:
     async def build(
         self,
         dossiers: dict[str, LeaderDossier],
-    ) -> tuple[list[Story], list[Story], list[Story], list[str]]
+    ) -> tuple[list[Story], list[Story], list[Story], list[str], str]
+    # Returns: (main_stories, intl_stories, dom_stories, btl, executive_summary)
 ```
 
 **Key features:**
@@ -223,6 +230,12 @@ class AggregateBriefingBuilder:
 - Classification scores: event type + leader role + impact level
 - Briefs section limited to 7 stories (top by classification priority)
 
+**Executive summary generation:**
+- 2-4 sentence overview of the week's key developments
+- Leads with dominant theme or most significant development
+- References specific leaders and their actions
+- Connects developments across regions where relevant
+
 ---
 
 ### 7. Workflow Integration: `src/graph.py` ✅
@@ -239,11 +252,13 @@ LangGraph-style workflow with nodes:
 ### 8. Output Format: `src/persistence.py` ✅
 
 **Brief structure:**
+- Executive Summary (2-4 sentences, rendered as blockquote)
 - Top Stories (full narratives)
 - Briefs (country-grouped headlines linking to dossiers)
 - Between the Lines
 
 **Dossier structure:**
+- Executive Summary (2-3 sentences, rendered as blockquote)
 - Top Stories
 - International Stories
 - Domestic Stories
@@ -268,6 +283,7 @@ LangGraph-style workflow with nodes:
 | **No transitivity** | Prevents chaining in cross-leader grouping |
 | **English enforcement** | Detects + translates non-English content |
 | **Country-grouped briefs** | Headlines grouped by country with emoji flags |
+| **Executive summaries** | 2-3 sentence overview at top of each dossier |
 
 ---
 

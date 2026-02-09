@@ -6,8 +6,12 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 import numpy as np
 import hdbscan
+from scipy.cluster.hierarchy import linkage, fcluster
 
 from .embedder import EmbeddedSnippet
+
+# Source types that are considered authoritative (no gap requirement for absorption)
+AUTHORITATIVE_SOURCE_TYPES = {"wire", "official"}
 
 logger = logging.getLogger(__name__)
 
@@ -71,10 +75,14 @@ class EventClusterer:
         # Relaxed absorption for clear winners
         absorb_threshold_relaxed: float = 0.80,
         absorb_min_gap_relaxed: float = 0.20,
+        # Authoritative sources (wire/official) get absorbed with no gap requirement
+        absorb_threshold_authoritative: float = 0.80,
         min_cluster_coherence: float = 0.55,
         max_cluster_size: int = 8,
         # Source overlap threshold for re-merging sub-clusters
         source_overlap_merge_threshold: int = 3,
+        # Micro-clustering threshold for singletons (cosine similarity)
+        singleton_micro_cluster_threshold: float = 0.90,
     ):
         self.min_cluster_size = min_cluster_size
         self.min_samples = min_samples
@@ -83,9 +91,11 @@ class EventClusterer:
         self.absorb_min_gap = absorb_min_gap
         self.absorb_threshold_relaxed = absorb_threshold_relaxed
         self.absorb_min_gap_relaxed = absorb_min_gap_relaxed
+        self.absorb_threshold_authoritative = absorb_threshold_authoritative
         self.min_cluster_coherence = min_cluster_coherence
         self.max_cluster_size = max_cluster_size
         self.source_overlap_merge_threshold = source_overlap_merge_threshold
+        self.singleton_micro_cluster_threshold = singleton_micro_cluster_threshold
 
     def cluster(
         self,
@@ -137,11 +147,18 @@ class EventClusterer:
         # Phase 2: absorb singletons into nearby clusters
         remaining_singletons = self._absorb_singletons(result, noise_snippets)
 
-        # Remaining singletons become their own clusters
-        for i, snippet in enumerate(remaining_singletons):
-            result.append(self._make_cluster([snippet], cluster_id=f"noise_{i}"))
-
         absorbed = len(noise_snippets) - len(remaining_singletons)
+
+        # Phase 2.5: micro-cluster remaining singletons to catch same-event duplicates
+        # (e.g., Reuters and AFP covering the same event)
+        micro_clusters, true_singletons = self._micro_cluster_singletons(
+            remaining_singletons
+        )
+        result.extend(micro_clusters)
+
+        # Remaining true singletons become their own clusters
+        for i, snippet in enumerate(true_singletons):
+            result.append(self._make_cluster([snippet], cluster_id=f"noise_{i}"))
 
         # Phase 3: coherence validation — dissolve incoherent clusters
         result, dissolved = self._validate_coherence(result)
@@ -152,7 +169,7 @@ class EventClusterer:
         logger.info(
             f"Clustered {len(snippets)} snippets into {len(result)} events "
             f"({len(clusters)} core clusters, {absorbed} absorbed, "
-            f"{len(remaining_singletons)} singletons, "
+            f"{len(micro_clusters)} micro-clustered, {len(true_singletons)} singletons, "
             f"{dissolved} dissolved for low coherence, "
             f"{splits} megaclusters split)"
         )
@@ -167,6 +184,9 @@ class EventClusterer:
         """
         Absorb singletons into nearest cluster when similarity is high
         and the match is clearly better than alternatives.
+
+        Authoritative sources (wire/official) get absorbed with no gap
+        requirement - if similarity exceeds threshold, absorb regardless.
 
         Returns remaining unabsorbed singletons.
         """
@@ -183,6 +203,14 @@ class EventClusterer:
             second_sim = sims[ranked[1]] if len(ranked) > 1 else 0
             gap = best_sim - second_sim
 
+            # Check if this is an authoritative source (wire/official)
+            is_authoritative = snippet.source_type in AUTHORITATIVE_SOURCE_TYPES
+
+            # Authoritative absorption: similarity only, no gap requirement
+            authoritative_absorb = (
+                is_authoritative and
+                best_sim >= self.absorb_threshold_authoritative
+            )
             # Standard absorption: high similarity + small gap
             standard_absorb = (
                 best_sim >= self.absorb_threshold and
@@ -194,11 +222,16 @@ class EventClusterer:
                 gap >= self.absorb_min_gap_relaxed
             )
 
-            if standard_absorb or relaxed_absorb:
+            if authoritative_absorb or standard_absorb or relaxed_absorb:
                 # Absorb into best cluster
                 target = clusters[ranked[0]]
                 target.snippets.append(snippet)
-                absorb_type = "standard" if standard_absorb else "relaxed"
+                if authoritative_absorb:
+                    absorb_type = "authoritative"
+                elif standard_absorb:
+                    absorb_type = "standard"
+                else:
+                    absorb_type = "relaxed"
                 logger.debug(
                     f"Absorbed ({absorb_type}) '{snippet.title[:50]}' into "
                     f"'{target.representative_title[:50]}' "
@@ -216,6 +249,73 @@ class EventClusterer:
             c.source_types = {s.source_type for s in c.snippets}
 
         return remaining
+
+    def _micro_cluster_singletons(
+        self,
+        singletons: list[EmbeddedSnippet],
+    ) -> tuple[list[EventCluster], list[EmbeddedSnippet]]:
+        """
+        Run hierarchical agglomerative clustering on singletons with a tight
+        threshold to catch same-event duplicates (e.g., Reuters + AFP).
+
+        Uses cosine distance with complete linkage to ensure all pairs in a
+        micro-cluster are highly similar.
+
+        Returns (micro_clusters, remaining_singletons).
+        """
+        if len(singletons) < 2:
+            return [], singletons
+
+        embeddings = np.vstack([s.embedding for s in singletons])
+
+        # Compute cosine distance matrix (1 - cosine similarity)
+        # For normalized embeddings: cosine_sim = dot product
+        sim_matrix = embeddings @ embeddings.T
+        dist_matrix = 1 - sim_matrix
+
+        # Use complete linkage (max distance in cluster must be below threshold)
+        # This ensures all pairs in a micro-cluster are highly similar
+        # Convert threshold from similarity to distance
+        distance_threshold = 1 - self.singleton_micro_cluster_threshold
+
+        try:
+            # Hierarchical clustering with complete linkage
+            Z = linkage(dist_matrix[np.triu_indices(len(singletons), k=1)], method='complete')
+            labels = fcluster(Z, t=distance_threshold, criterion='distance')
+        except Exception as e:
+            logger.warning(f"Micro-clustering failed: {e}, returning all as singletons")
+            return [], singletons
+
+        # Group by cluster label
+        groups: dict[int, list[EmbeddedSnippet]] = {}
+        for snippet, label in zip(singletons, labels):
+            groups.setdefault(label, []).append(snippet)
+
+        micro_clusters = []
+        remaining = []
+
+        for label, members in groups.items():
+            if len(members) >= 2:
+                # This is a micro-cluster (2+ singletons that are same event)
+                cluster = self._make_cluster(members, cluster_id=f"micro_{label}")
+                micro_clusters.append(cluster)
+                logger.debug(
+                    f"Micro-clustered {len(members)} singletons: "
+                    f"'{cluster.representative_title[:50]}' "
+                    f"(sources: {cluster.sources})"
+                )
+            else:
+                # Still a singleton
+                remaining.extend(members)
+
+        if micro_clusters:
+            logger.info(
+                f"Micro-clustering: {len(micro_clusters)} clusters formed from "
+                f"{sum(len(c.snippets) for c in micro_clusters)} singletons, "
+                f"{len(remaining)} remain as true singletons"
+            )
+
+        return micro_clusters, remaining
 
     def _split_megaclusters(
         self,

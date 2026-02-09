@@ -21,7 +21,7 @@ from ..fetcher.core import fetch_snippets_for_leader, fetch_full_articles
 from ..fetcher.diffbot_nlp import extract_nlp, extract_high_salience_entities, get_summary
 from ..clustering import (
     SnippetEmbedder, EventClusterer, EventScorer, EventCluster,
-    filter_relevant, separate_opinions, deduplicate_clusters,
+    filter_relevant, deduplicate_clusters,
     detect_story_arcs, merge_story_arc_titles,
 )
 from ..debug import is_debug_enabled, save_debug_output
@@ -97,33 +97,34 @@ class EventClusteringAgent:
         # 1. Build source list (wire + domestic)
         sources = self._build_source_list(leader)
 
-        # 2. Fetch snippets (cheap - SerpAPI only)
+        # 2. Fetch snippets (cheap - SerpAPI only, with opinion filtering)
         logger.info(f"Fetching snippets for {leader.name}")
-        snippets = await fetch_snippets_for_leader(
+        snippets, opinions = await fetch_snippets_for_leader(
             leader_name=leader.name,
             sources=sources,
             date_start=date_start,
             date_end=date_end,
         )
 
-        if not snippets:
+        if not snippets and not opinions:
             logger.warning(f"No snippets found for {leader.name}")
             return [], [], []
 
-        logger.info(f"Found {len(snippets)} raw snippets for {leader.name}")
+        logger.info(f"Found {len(snippets)} news + {len(opinions)} opinion snippets for {leader.name}")
 
-        # Debug: save raw snippets
+        # Debug: save raw snippets (after opinion filtering)
         if is_debug_enabled():
             save_debug_output(f"00_raw_snippets_{leader_slug}", {
                 "leader": leader.name,
-                "snippet_count": len(snippets),
-                "snippets": snippets,
+                "news_count": len(snippets),
+                "opinion_count": len(opinions),
+                "news_snippets": snippets,
+                "opinion_snippets": opinions,
             })
 
-        # 3. Pre-filter: relevance + opinion separation
-        raw_count = len(snippets)
+        # 3. Pre-filter: relevance check (opinions already filtered at fetch)
+        raw_count = len(snippets) + len(opinions)
         snippets = filter_relevant(snippets, leader.name)
-        snippets, opinions = separate_opinions(snippets)
 
         # Debug: save prefilter results
         if is_debug_enabled():

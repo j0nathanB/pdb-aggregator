@@ -12,6 +12,10 @@ from .core import (
     DIFFBOT_TOKEN,
     DIFFBOT_DELAY_SECONDS,
 )
+from .opinion_filter import (
+    is_opinion_url,
+    filter_opinion_snippets,
+)
 
 __all__ = [
     "fetch_articles_for_leader",
@@ -20,4 +24,6 @@ __all__ = [
     "SEARCHAPI_KEY",
     "DIFFBOT_TOKEN",
     "DIFFBOT_DELAY_SECONDS",
+    "is_opinion_url",
+    "filter_opinion_snippets",
 ]

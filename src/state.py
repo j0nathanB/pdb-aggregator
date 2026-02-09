@@ -62,6 +62,7 @@ class PDBState(TypedDict):
     aggregate_intl_stories: list[Story]
     aggregate_dom_stories: list[Story]
     aggregate_btl: list[str]
+    aggregate_executive_summary: str
 
     # Source quality
     source_quality_notes: str
@@ -96,6 +97,7 @@ def create_initial_state(
         "aggregate_intl_stories": [],
         "aggregate_dom_stories": [],
         "aggregate_btl": [],
+        "aggregate_executive_summary": "",
 
         # Source quality
         "source_quality_notes": "",

@@ -204,7 +204,7 @@ LEADER_METADATA: dict[str, dict] = {
     # Eastern Europe
     "Volodymyr Zelenskyy": {"title": "President", "region": "europe", "language": "uk"},
     "Alexander Stubb": {"title": "President", "region": "europe", "language": "fi"},
-    "Karol Nawrocki": {"title": "President", "region": "europe", "language": "pl"},
+    "Donald Tusk": {"title": "Prime Minister", "region": "europe", "language": "pl"},
     # Baltics
     "Gitanas Nausėda": {"title": "President", "region": "baltics", "language": "lt"},
     "Evika Siliņa": {"title": "Prime Minister", "region": "baltics", "language": "lv"},
@@ -294,6 +294,10 @@ def _load_leaders_from_csv() -> list[LeaderConfig]:
         # Build SourceConfig list
         domestic_sources = []
         for src in sources:
+            # Skip quarantined sources (e.g., paywalled sites)
+            if "quarantine" in src.get("notes", "").lower():
+                continue
+
             # Determine source type
             src_type = src["source_type"]
             if src_type == "official":
@@ -482,6 +486,7 @@ class LeaderDossier:
     underlying_events: list[UnderlyingEvent] = field(default_factory=list)
 
     # Metadata
+    executive_summary: str = ""  # 2-3 sentence summary of leader's week
     source_quality_notes: str = ""
     generated_at: datetime = field(default_factory=datetime.now)
 
@@ -501,6 +506,9 @@ class WeeklyBrief:
     international_stories: list[Story] = field(default_factory=list)
     domestic_stories: list[Story] = field(default_factory=list)
     between_the_lines: list[str] = field(default_factory=list)
+
+    # Executive summary (2-4 sentences distilling the week's key developments)
+    executive_summary: str = ""
 
     # Per-leader dossiers
     leader_dossiers: list[LeaderDossier] = field(default_factory=list)
@@ -568,8 +576,30 @@ class GlobalPulse:
 
 REGION_DISPLAY_NAMES: dict[str, str] = {
     "europe": "Europe",
-    "americas": "Americas", 
+    "baltics": "Baltic States",
+    "north_america": "North America",
+    "south_america": "South America",
+    "americas": "Americas",
     "asia_pacific": "Asia-Pacific",
 }
 
-REGION_ORDER: list[str] = ["europe", "americas", "asia_pacific"]
+# Country to sub-region mapping for finer grouping
+COUNTRY_SUBREGION: dict[str, str] = {
+    "Canada": "north_america",
+    "Mexico": "north_america",
+    "Brazil": "south_america",
+    "Uruguay": "south_america",
+    "France": "europe",
+    "United Kingdom": "europe",
+    "Germany": "europe",
+    "Italy": "europe",
+    "Ukraine": "europe",
+    "Finland": "europe",
+    "Poland": "europe",
+    "Lithuania": "baltics",
+    "Latvia": "baltics",
+    "Estonia": "baltics",
+    "Moldova": "europe",
+}
+
+REGION_ORDER: list[str] = ["north_america", "south_america", "europe", "baltics", "asia_pacific"]

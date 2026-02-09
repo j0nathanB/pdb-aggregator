@@ -31,6 +31,7 @@ async def compile_brief(state: PDBState) -> dict[str, Any]:
     intl_stories = state.get("aggregate_intl_stories", [])
     dom_stories = state.get("aggregate_dom_stories", [])
     btl = state.get("aggregate_btl", [])
+    executive_summary = state.get("aggregate_executive_summary", "")
     source_quality_notes = state.get("source_quality_notes", "")
 
     logger.info("Compiling final brief")
@@ -46,6 +47,7 @@ async def compile_brief(state: PDBState) -> dict[str, Any]:
         international_stories=intl_stories,
         domestic_stories=dom_stories,
         between_the_lines=btl,
+        executive_summary=executive_summary,
         leader_dossiers=list(dossiers.values()),
         methodology_notes=methodology_notes,
         source_quality_notes=source_quality_notes,

@@ -17,6 +17,7 @@ from urllib.parse import urlparse
 import httpx
 
 from ..config import MAX_SNIPPETS_PER_SOURCE
+from .opinion_filter import filter_opinion_snippets
 
 logger = logging.getLogger(__name__)
 
@@ -111,16 +112,19 @@ async def search_news_searchapi(
     query: str,
     num_results: int = 20,
     site: Optional[str] = None,
+    time_period: str = "last_week",
 ) -> list[dict]:
     """
     Search Google News via SearchAPI with pagination.
 
-    Query format: site:{{site}} "{{query}}" when:last_week
+    Query format: site:{{site}} "{{query}}"
+    Time filtering via time_period parameter (not in query string).
 
     Args:
         query: Search query (will be quoted if multi-word)
         num_results: Total number of results to return (fetches multiple pages if needed)
         site: Optional site filter (e.g., "reuters.com")
+        time_period: Time filter (default "last_week")
 
     Returns:
         List of search result dicts with title, link, snippet, etc.
@@ -129,7 +133,7 @@ async def search_news_searchapi(
         logger.warning("SEARCHAPI_KEY not set, cannot search")
         return []
 
-    # Build query: site:{{site}} "{{leader}}" when:last_week
+    # Build query: site:{{site}} "{{leader}}"
     # Quote multi-word queries for exact phrase matching
     if " " in query and not query.startswith('"'):
         search_query = f'"{query}"'
@@ -137,8 +141,6 @@ async def search_news_searchapi(
         search_query = query
     if site:
         search_query = f"site:{site} {search_query}"
-    # Add time filter to query string
-    search_query = f"{search_query} when:last_week"
 
     all_results = []
     results_per_page = 10  # Google News returns 10 per page
@@ -155,6 +157,7 @@ async def search_news_searchapi(
                 "api_key": SEARCHAPI_KEY,
                 "num": results_per_page,
                 "page": page,
+                "time_period": time_period,
             }
 
             try:
@@ -200,12 +203,16 @@ async def search_news_searchapi(
 # DIFFBOT FUNCTIONS
 # =============================================================================
 
-async def extract_article_diffbot(url: str) -> Optional[dict]:
+DIFFBOT_RETRY_DELAY_SECONDS = 3  # Delay before retry on empty result
+
+
+async def extract_article_diffbot(url: str, retry: bool = True) -> Optional[dict]:
     """
     Extract article content using Diffbot Article API.
 
     Args:
         url: URL of the article to extract
+        retry: Whether to retry once if no content is extracted (default True)
 
     Returns:
         Dict with title, text, author, date, etc. or None on failure
@@ -229,6 +236,11 @@ async def extract_article_diffbot(url: str) -> Optional[dict]:
             data = response.json()
 
             if "objects" not in data or not data["objects"]:
+                # Retry once after delay (article may not be indexed yet)
+                if retry:
+                    logger.info(f"No content from {url}, retrying in {DIFFBOT_RETRY_DELAY_SECONDS}s...")
+                    await asyncio.sleep(DIFFBOT_RETRY_DELAY_SECONDS)
+                    return await extract_article_diffbot(url, retry=False)
                 logger.warning(f"No content extracted from {url}")
                 return None
 
@@ -478,13 +490,15 @@ async def fetch_snippets_for_leader(
     date_start: str,
     date_end: str,
     max_results_per_source: int = MAX_SNIPPETS_PER_SOURCE,
-) -> list[dict]:
+    filter_opinions: bool = True,
+) -> tuple[list[dict], list[dict]]:
     """
     Fetch search result snippets WITHOUT full article extraction.
 
     This is the first phase - cheap SerpAPI calls only, no Diffbot.
     Results are validated against the requested date range; stale
-    articles outside the range are discarded.
+    articles outside the range are discarded. Opinion pieces are
+    filtered based on URL patterns from opinion_filters.csv.
 
     Args:
         leader_name: Name of leader to search
@@ -492,9 +506,10 @@ async def fetch_snippets_for_leader(
         date_start: Start date (YYYY-MM-DD)
         date_end: End date (YYYY-MM-DD)
         max_results_per_source: Max snippets per source
+        filter_opinions: Whether to filter opinion pieces (default True)
 
     Returns:
-        List of snippet dicts with source metadata
+        Tuple of (news_snippets, opinion_snippets)
     """
     if not SEARCHAPI_KEY:
         logger.warning("SEARCHAPI_KEY not set")
@@ -541,7 +556,12 @@ async def fetch_snippets_for_leader(
     if stale_count > 0:
         logger.info(f"Filtered {stale_count} stale results outside date range {date_start}..{date_end}")
 
-    return all_snippets
+    # Filter opinion pieces based on URL patterns
+    if filter_opinions:
+        news_snippets, opinion_snippets = filter_opinion_snippets(all_snippets)
+        return news_snippets, opinion_snippets
+
+    return all_snippets, []
 
 
 async def fetch_full_articles(

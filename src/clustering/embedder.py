@@ -30,6 +30,46 @@ class EmbeddedSnippet:
     embedding: np.ndarray
 
 
+def _parse_name_parts(leader_name: str) -> list[str]:
+    """
+    Parse a leader name into searchable parts, keeping compound surnames together.
+
+    Examples:
+        "Lula da Silva" -> ["lula", "da silva"]
+        "Ursula von der Leyen" -> ["ursula", "von der leyen"]
+        "Mark Carney" -> ["mark", "carney"]
+    """
+    # Particles that indicate compound surnames (Portuguese, German, Dutch, etc.)
+    COMPOUND_PARTICLES = {"da", "de", "do", "dos", "das", "von", "van", "der", "la", "le", "del", "di"}
+
+    words = leader_name.lower().split()
+    parts = []
+    i = 0
+
+    while i < len(words):
+        word = words[i]
+
+        # Check if this starts a compound surname (particle + following words)
+        if word in COMPOUND_PARTICLES and i + 1 < len(words):
+            # Collect all consecutive particles and the final surname
+            compound = [word]
+            j = i + 1
+            while j < len(words):
+                if words[j] in COMPOUND_PARTICLES:
+                    compound.append(words[j])
+                    j += 1
+                else:
+                    compound.append(words[j])
+                    break
+            parts.append(" ".join(compound))
+            i = j + 1
+        else:
+            parts.append(word)
+            i += 1
+
+    return parts
+
+
 def filter_relevant(snippets: list[dict], leader_name: str) -> list[dict]:
     """
     Filter snippets to those mentioning the leader by name.
@@ -41,7 +81,7 @@ def filter_relevant(snippets: list[dict], leader_name: str) -> list[dict]:
     Returns:
         Snippets that mention any part of the leader's name
     """
-    name_parts = leader_name.lower().split()
+    name_parts = _parse_name_parts(leader_name)
     relevant = []
 
     for s in snippets:

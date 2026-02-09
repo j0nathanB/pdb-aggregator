@@ -189,7 +189,7 @@ class PDBWorkflow:
         # Step 2: Aggregate briefing (replaces thread detection + synthesis)
         logger.info("Step 2: Building aggregate briefing")
         aggregate_builder = AggregateBriefingBuilder()
-        main_stories, intl_stories, dom_stories, btl = await aggregate_builder.build(
+        main_stories, intl_stories, dom_stories, btl, executive_summary = await aggregate_builder.build(
             dossiers
         )
         logger.info(
@@ -204,6 +204,7 @@ class PDBWorkflow:
                 "international_stories": len(intl_stories),
                 "domestic_stories": len(dom_stories),
                 "between_the_lines": btl,
+                "executive_summary": executive_summary[:100] + "..." if len(executive_summary) > 100 else executive_summary,
             })
 
         # Step 3: Source quality assessment
@@ -223,6 +224,7 @@ class PDBWorkflow:
             international_stories=intl_stories,
             domestic_stories=dom_stories,
             between_the_lines=btl,
+            executive_summary=executive_summary,
             leader_dossiers=list(dossiers.values()),
             methodology_notes=self._generate_methodology_notes(dossiers),
             source_quality_notes=source_quality,

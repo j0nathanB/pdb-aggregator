@@ -53,7 +53,7 @@ class AggregateBriefingBuilder:
     async def build(
         self,
         dossiers: dict[str, LeaderDossier],
-    ) -> tuple[list[Story], list[Story], list[Story], list[str]]:
+    ) -> tuple[list[Story], list[Story], list[Story], list[str], str]:
         """
         Build aggregate briefing from leader dossiers.
 
@@ -61,14 +61,14 @@ class AggregateBriefingBuilder:
             dossiers: Map of leader name to LeaderDossier
 
         Returns:
-            Tuple of (main_stories, intl_stories, dom_stories, between_the_lines)
+            Tuple of (main_stories, intl_stories, dom_stories, between_the_lines, executive_summary)
         """
         logger.info(f"Building aggregate briefing from {len(dossiers)} dossiers")
 
         # 1. Collect all stories from all dossiers
         all_stories = self._collect_all_stories(dossiers)
         if not all_stories:
-            return [], [], [], []
+            return [], [], [], [], ""
 
         # 2. Find overlapping stories across leaders (entity-based matching)
         shared_groups, standalone = self._find_shared_stories(all_stories)
@@ -135,13 +135,18 @@ class AggregateBriefingBuilder:
             all_candidates, dossiers
         )
 
+        # 8. Generate Executive Summary
+        executive_summary = await self._generate_executive_summary(
+            main_stories, dossiers
+        )
+
         logger.info(
             f"Aggregate: {len(main_stories)} main, "
             f"{len(intl_stories)} intl, {len(dom_stories)} dom, "
             f"{len(between_the_lines)} BTL bullets"
         )
 
-        return main_stories, intl_stories, dom_stories, between_the_lines
+        return main_stories, intl_stories, dom_stories, between_the_lines, executive_summary
 
     def _collect_all_stories(
         self,
@@ -456,3 +461,66 @@ Return JSON:
             logger.warning(f"Thematic BTL generation failed: {e}")
 
         return []
+
+    async def _generate_executive_summary(
+        self,
+        main_stories: list[Story],
+        dossiers: dict[str, LeaderDossier],
+    ) -> str:
+        """
+        Generate a 2-4 sentence executive summary of the week's key developments.
+
+        Distills the main stories and cross-cutting themes into a brief
+        overview suitable for quick scanning at the top of the aggregate brief.
+        """
+        if not main_stories:
+            return ""
+
+        # Build story context from main stories
+        story_bullets = "\n".join(
+            f"- {s.title} ({', '.join(s.contributing_leaders) if s.contributing_leaders else 'N/A'})"
+            for s in main_stories[:7]
+        )
+
+        # Get leader summaries if available
+        leader_context = ""
+        summaries = [
+            f"- {name}: {d.executive_summary}"
+            for name, d in dossiers.items()
+            if d.executive_summary
+        ]
+        if summaries:
+            leader_context = "\n\nLEADER SUMMARIES:\n" + "\n".join(summaries[:5])
+
+        prompt = f"""Write a brief executive summary for this week's global leadership briefing.
+
+TOP STORIES:
+{story_bullets}
+{leader_context}
+
+Write 2-4 sentences that:
+- Lead with the dominant theme or most significant development
+- Capture key tensions, diplomatic moves, or policy shifts
+- Reference specific leaders and their actions
+- Use neutral, factual language (AP style)
+- Connect developments across regions where relevant
+
+Return JSON:
+{{
+    "summary": "2-4 sentence executive summary"
+}}
+"""
+        try:
+            response = await complete(
+                prompt=prompt,
+                system=AGGREGATE_SYSTEM,
+                temperature=0.3,
+                max_tokens=400,
+            )
+            data = extract_json_from_response(response)
+            if data and "summary" in data:
+                return data["summary"]
+        except Exception as e:
+            logger.warning(f"Aggregate executive summary generation failed: {e}")
+
+        return ""

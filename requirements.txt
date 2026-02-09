@@ -18,6 +18,9 @@ black>=24.0.0
 ruff>=0.6.0
 mypy>=1.11.0
 
-# Optional: for embedding-based thread detection
-# sentence-transformers>=3.0.0
-# scikit-learn>=1.5.0
+# Event clustering
+sentence-transformers>=2.2.0
+hdbscan>=0.8.33
+numpy>=1.24.0
+scipy>=1.10.0
+python-dateutil>=2.8.0

@@ -118,6 +118,11 @@ class DossierBuilderAgent:
         # 4. Generate Between the Lines
         between_the_lines = await self._generate_between_the_lines(leader, all_stories)
 
+        # 5. Generate Executive Summary
+        executive_summary = await self._generate_executive_summary(
+            leader, main_stories, international_stories, domestic_stories, between_the_lines
+        )
+
         # Build underlying events for aggregate matching
         underlying_events = self._extract_events_from_processed(leader, top_events)
 
@@ -132,6 +137,7 @@ class DossierBuilderAgent:
         dossier = LeaderDossier(
             leader=leader,
             reporting_period=reporting_period,
+            executive_summary=executive_summary,
             main_stories=main_stories,
             international_stories=international_stories,
             domestic_stories=domestic_stories,
@@ -262,10 +268,10 @@ Return JSON:
             narrative = event.title
             scope_str = "domestic"
 
-        # Ensure English output - detect and translate if needed
-        if self._looks_non_english(title) or self._looks_non_english(narrative):
-            logger.warning(f"Non-English content detected for '{title[:50]}...', translating")
-            title, narrative = await self._ensure_english(title, narrative, leader)
+            # If source articles are non-English, translate the fallback title
+            if any(a.get("language", "en") != "en" for a in event.articles):
+                logger.warning(f"Non-English source for '{title[:50]}...', translating")
+                title, narrative = await self._ensure_english(title, narrative, leader)
 
         try:
             scope = StoryScope(scope_str)
@@ -473,6 +479,67 @@ Return JSON:
 
         return []
 
+    async def _generate_executive_summary(
+        self,
+        leader: LeaderConfig,
+        main_stories: list[Story],
+        international_stories: list[Story],
+        domestic_stories: list[Story],
+        between_the_lines: list[str],
+    ) -> str:
+        """
+        Generate a 2-3 sentence executive summary of the leader's week.
+
+        Distills the key developments across all stories into a brief
+        overview suitable for quick scanning.
+        """
+        all_stories = main_stories + international_stories + domestic_stories
+        if not all_stories:
+            return ""
+
+        # Build story context
+        story_bullets = "\n".join(
+            f"- {s.title}" for s in all_stories[:10]
+        )
+
+        btl_context = ""
+        if between_the_lines:
+            btl_context = "\n\nKEY THEMES:\n" + "\n".join(
+                f"- {b}" for b in between_the_lines[:3]
+            )
+
+        prompt = f"""Write a brief executive summary for {leader.name} ({leader.title} of {leader.country}) this week.
+
+TOP STORIES:
+{story_bullets}
+{btl_context}
+
+Write 2-3 sentences that:
+- Lead with the most significant development
+- Capture the overall narrative of the week
+- Use neutral, factual language (AP style)
+- Focus on actions taken, not speculation
+
+Return JSON:
+{{
+    "summary": "2-3 sentence executive summary"
+}}
+"""
+        try:
+            response = await complete(
+                prompt=prompt,
+                system=DOSSIER_SYSTEM,
+                temperature=0.3,
+                max_tokens=300,
+            )
+            data = extract_json_from_response(response)
+            if data and "summary" in data:
+                return data["summary"]
+        except Exception as e:
+            logger.warning(f"Executive summary generation failed for {leader.name}: {e}")
+
+        return ""
+
     def _events_to_articles(self, events: list[ProcessedEvent]) -> list[Article]:
         """Convert ProcessedEvents to Article objects for compatibility."""
         articles = []
@@ -581,43 +648,6 @@ Return JSON:
             underlying_events=[],
             source_quality_notes="No articles fetched for this leader.",
         )
-
-    def _looks_non_english(self, text: str) -> bool:
-        """
-        Quick heuristic check if text appears to be non-English.
-
-        Checks for common Spanish/Portuguese/French patterns.
-        """
-        if not text:
-            return False
-
-        text_lower = text.lower()
-
-        # Common non-English words that rarely appear in English news
-        non_english_markers = [
-            # Spanish
-            " y ", " el ", " la ", " de ", " en ", " que ", " con ", " una ",
-            " los ", " las ", " del ", " para ", " por ", " como ", " más ",
-            " política ", " gobierno ", " presidente ",
-            # Portuguese
-            " o ", " e ", " da ", " do ", " em ", " um ", " uma ", " para ",
-            " com ", " não ", " são ", " foi ", " sobre ",
-            # French
-            " le ", " les ", " et ", " une ", " des ", " dans ", " pour ",
-            " sur ", " avec ", " est ", " sont ", " qui ",
-        ]
-
-        # Check for non-English patterns
-        marker_count = sum(1 for marker in non_english_markers if marker in text_lower)
-        if marker_count >= 2:
-            return True
-
-        # Check for accented characters common in Spanish/Portuguese/French
-        accented_chars = sum(1 for c in text if c in "áéíóúñüàèìòùâêîôûçãõ")
-        if accented_chars >= 3:
-            return True
-
-        return False
 
     async def _ensure_english(
         self,

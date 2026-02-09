@@ -13,11 +13,11 @@ import asyncio
 import logging
 import sys
 from datetime import datetime, timedelta
+from pathlib import Path
 
 from .config import get_leader_configs
 from .graph import PDBWorkflow
 from .persistence import list_briefs, load_brief
-from pathlib import Path
 
 
 def setup_logging(level: str = "INFO"):
@@ -171,9 +171,10 @@ def cmd_list_leaders():
         "europe": "Europe",
         "americas": "Americas",
         "asia_pacific": "Asia-Pacific",
+        "baltics": "Baltics & Moldova",
     }
-    
-    for region in ["europe", "americas", "asia_pacific"]:
+
+    for region in ["europe", "americas", "asia_pacific", "baltics"]:
         if region not in by_region:
             continue
         

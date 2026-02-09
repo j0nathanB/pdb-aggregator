@@ -8,6 +8,12 @@ Architecture: Bottom-up approach where narrative emerges from
 leader actions rather than top-down global context framing.
 """
 
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env before any other imports that read environment variables
+load_dotenv(Path(__file__).parent.parent / ".env")
+
 from .config import (
     LeaderConfig,
     LeaderDossier,
