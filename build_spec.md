@@ -12,9 +12,11 @@ The news ingestion pipeline uses **event clustering** before full article fetchi
 ```
 Leader → SerpAPI (all sources) → Pre-filter (relevance + opinions) →
 Embed snippets → HDBSCAN cluster → LLM dedup → Story arc detection →
-Score events → Fetch top articles via Diffbot → Extract NLP entities →
-LLM synthesize narratives → Build dossier
+Score events → Fetch top articles via Diffbot → LLM synthesize narratives → Build dossier
 ```
+
+> **Note**: Diffbot NLP entity extraction was removed (2026-02-09) due to 500 calls/month API limit.
+> Summarization is now handled implicitly by the dossier builder's LLM synthesis step.
 
 **Benefits:**
 - Cluster before fetching reduces Diffbot calls by 60-80%
@@ -101,7 +103,7 @@ async def fetch_full_articles(
 
 ---
 
-### 3. Diffbot NLP Integration: `src/fetcher/diffbot_nlp.py` ✅
+### 3. Diffbot NLP Integration: `src/fetcher/diffbot_nlp.py` ⏸️ DISABLED
 
 ```python
 async def extract_nlp(text: str) -> Optional[dict]
@@ -109,9 +111,21 @@ def extract_high_salience_entities(nlp_result: dict, threshold: float = 0.5) -> 
 def get_summary(nlp_result: dict) -> str
 ```
 
-- Extracts entities with salience scores
-- Entities used for cross-leader story matching
-- Summaries passed to dossier builder for LLM synthesis
+**Status: DISABLED** (2026-02-09)
+
+**Why disabled:**
+- Diffbot NLP API (`nl.diffbot.com`) has a 500 calls/month limit
+- With 15 leaders × 10-20 articles each, we'd burn through quota in 1-2 runs
+- The Article API (`api.diffbot.com/v3/article`) has much higher limits and is sufficient
+
+**What we lose:**
+- Entity extraction with salience scores (used for cross-leader story matching)
+- Pre-computed summaries
+
+**Mitigation:**
+- Dossier builder synthesizes summaries implicitly during LLM narrative generation
+- Cross-leader matching in aggregate_builder is degraded but still works via LLM thematic validation
+- Full article content is passed to Claude, which handles summarization as part of synthesis
 
 ---
 
@@ -141,8 +155,8 @@ class EventClusteringAgent:
 7. Story arc detection and merging
 8. Score events
 9. Split into top/rest
-10. Fetch full articles for top events
-11. Extract NLP entities from articles
+10. Fetch full articles for top events (Diffbot Article API)
+11. ~~Extract NLP entities from articles~~ (disabled - NLP API rate limit)
 
 **Returns:** `(top_events, remaining_events, opinions)`
 

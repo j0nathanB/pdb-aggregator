@@ -307,26 +307,18 @@ class EventClusteringAgent:
             # Fetch full articles
             articles = await fetch_full_articles(urls_to_fetch, source_meta)
 
-            # Extract NLP from each article
-            all_entities = []
-            summaries = []
-
-            for article in articles:
-                nlp = await extract_nlp(article.get("content", ""))
-                if nlp:
-                    entities = extract_high_salience_entities(nlp)
-                    all_entities.extend(entities)
-                    summaries.append(get_summary(nlp))
-
-            # Dedupe entities by URI
-            unique_entities = self._dedupe_entities(all_entities)
+            # NOTE: Diffbot NLP API disabled (500 calls/month limit is too restrictive)
+            # Entity extraction and summaries skipped - dossier builder handles
+            # summarization implicitly during LLM synthesis. Cross-leader entity
+            # matching in aggregate_builder will be degraded without entities.
+            unique_entities = []
 
             processed.append(ProcessedEvent(
                 id=cluster.id,
                 title=cluster.representative_title,
                 articles=articles,
                 entities=unique_entities,
-                summary=" | ".join(summaries),
+                summary="",  # NLP summaries disabled; dossier builder synthesizes from full content
                 score=scored.score,
                 rank=scored.rank,
                 source_count=cluster.unique_source_count,

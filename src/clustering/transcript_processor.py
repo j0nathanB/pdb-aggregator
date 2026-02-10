@@ -20,7 +20,7 @@ import re
 from typing import Optional
 
 from ..agents.base import complete, extract_json_from_response
-from ..fetcher.core import extract_article_diffbot, DIFFBOT_DELAY_SECONDS
+from ..fetcher.core import extract_article_diffbot
 
 logger = logging.getLogger(__name__)
 
@@ -301,9 +301,7 @@ async def preprocess_transcripts(
         title = snippet.get("title", "")
         logger.info(f"[transcript] Processing: {title[:80]}")
 
-        # Fetch full text
-        if transcript_count > 1:
-            await asyncio.sleep(DIFFBOT_DELAY_SECONDS)
+        # Fetch full text (rate limiting handled by extract_article_diffbot)
         text = await fetch_transcript_text(url)
 
         if not text:

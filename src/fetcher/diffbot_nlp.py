@@ -5,7 +5,7 @@ import logging
 import httpx
 from typing import Optional
 
-from .core import DIFFBOT_TOKEN, TIMEOUT, HEADERS
+from .core import DIFFBOT_TOKEN, TIMEOUT, HEADERS, DiffbotRateLimiter
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +31,9 @@ async def extract_nlp(text: str, lang: str = "auto") -> Optional[dict]:
 
     if not text or not text.strip():
         return None
+
+    # Global rate limiter for all Diffbot API calls
+    await DiffbotRateLimiter.wait()
 
     async with httpx.AsyncClient(timeout=TIMEOUT, headers=HEADERS) as client:
         try:

@@ -27,7 +27,50 @@ logger = logging.getLogger(__name__)
 
 SEARCHAPI_KEY = os.environ.get("SEARCHAPI_KEY")
 DIFFBOT_TOKEN = os.environ.get("DIFFBOT_TOKEN")
-DIFFBOT_DELAY_SECONDS = 12  # Rate limit: 5 calls/minute
+DIFFBOT_DELAY_SECONDS = 20  # Rate limit: 5 calls/minute (with buffer for retries)
+
+# =============================================================================
+# GLOBAL RATE LIMITER
+# =============================================================================
+
+
+class DiffbotRateLimiter:
+    """
+    Global rate limiter for all Diffbot API calls.
+
+    Diffbot rate limit is 5 calls/minute across ALL endpoints (article, NLP, etc).
+    This ensures we wait at least DIFFBOT_DELAY_SECONDS between any Diffbot API call.
+
+    Key insight: retries count as separate API calls toward the limit, so we must
+    ALWAYS wait the full delay before each call, not just the remaining time.
+    """
+
+    _lock: asyncio.Lock | None = None
+    _last_call_time: float = 0
+
+    @classmethod
+    def _get_lock(cls) -> asyncio.Lock:
+        """Lazily create the lock to avoid event loop issues."""
+        if cls._lock is None:
+            cls._lock = asyncio.Lock()
+        return cls._lock
+
+    @classmethod
+    async def wait(cls):
+        """Wait until it's safe to make a Diffbot API call."""
+        import time
+
+        lock = cls._get_lock()
+        async with lock:
+            now = time.monotonic()
+            elapsed = now - cls._last_call_time
+            if elapsed < DIFFBOT_DELAY_SECONDS:
+                wait_time = DIFFBOT_DELAY_SECONDS - elapsed
+                logger.info(f"Rate limiting: waiting {wait_time:.1f}s before Diffbot call")
+                await asyncio.sleep(wait_time)
+            # Update last_call_time AFTER waiting, marking when this call starts
+            cls._last_call_time = time.monotonic()
+
 
 # HTTP settings
 TIMEOUT = httpx.Timeout(30.0, connect=10.0)
@@ -74,6 +117,61 @@ OPINION_CONTENT_PATTERNS = [
 # Compiled regex patterns
 _opinion_url_regex = re.compile("|".join(OPINION_URL_PATTERNS), re.IGNORECASE)
 _opinion_content_regex = re.compile("|".join(OPINION_CONTENT_PATTERNS), re.IGNORECASE)
+
+
+# =============================================================================
+# NON-ARTICLE URL FILTERING (audio, video, photos, etc.)
+# =============================================================================
+
+# URL patterns for content Diffbot cannot extract
+NON_ARTICLE_URL_PATTERNS = [
+    # Audio/podcast URLs
+    r"/player/play/audio/",       # CBC audio player
+    r"/audio/play/",              # BBC audio
+    # Video URLs
+    r"/player/play/video/",       # CBC video player
+    r"/video/watch/",             # Reuters video
+    r"video\.corriere\.it/",      # Corriere della Sera video
+    r"/video/\w{8}-",             # National Post video (UUID pattern)
+    # Photo galleries
+    r"ladiaria\.com\.uy/fotos/",  # La Diaria photos (all)
+    r"/fotos/photo/",             # La Diaria photos (specific)
+    r"/photo-gallery/",           # AP photo galleries
+    r"/photos/all\?",             # Ukraine president photos (paginated)
+    r"/photos/zustrich",          # Ukraine president photo pages
+    r"/pictures/",                # Reuters pictures
+    r"/pictures-day",             # Reuters pictures of the day
+    r"\.lv/photo/",               # LETA photos
+    # Sitemaps and index pages
+    r"/sitemap/\d{4}-\d{2}/",     # Reuters sitemap
+    # Tag/topic archive pages
+    r"/tags?/[^/]+/?$",           # Tag pages (no article after)
+    r"/topic/\d+/news/",          # BNS topic pages
+    r"/tema/[^/]+\?offset=",      # 15min topic with pagination
+    r"\?offset=\d{4}-\d{2}",      # 15min date offset pagination
+    # Live coverage (not extractable)
+    r"/news/live/",               # BBC live coverage
+    r"/live/\d{4}/",              # Guardian live coverage
+    # Search pages
+    r"/search$",                  # Search result pages
+    # Index/list pages (allow specific articles)
+    r"gov\.br/planalto/.*/speeches-statements/\d{4}/?$",  # Brazil gov speeches list (but not specific speeches)
+]
+
+_non_article_url_regex = re.compile("|".join(NON_ARTICLE_URL_PATTERNS), re.IGNORECASE)
+
+
+def is_non_article_url(url: str) -> bool:
+    """
+    Check if URL points to non-article content (audio, video, photos, etc.).
+
+    Args:
+        url: URL to check
+
+    Returns:
+        True if URL appears to be non-article content
+    """
+    return bool(_non_article_url_regex.search(url))
 
 
 def is_opinion_article(url: str, title: str = "", content: str = "") -> bool:
@@ -221,6 +319,9 @@ async def extract_article_diffbot(url: str, retry: bool = True) -> Optional[dict
         logger.warning("DIFFBOT_TOKEN not set, cannot extract")
         return None
 
+    # Global rate limiter for all Diffbot API calls
+    await DiffbotRateLimiter.wait()
+
     params = {
         "token": DIFFBOT_TOKEN,
         "url": url,
@@ -229,7 +330,7 @@ async def extract_article_diffbot(url: str, retry: bool = True) -> Optional[dict
     async with httpx.AsyncClient(timeout=TIMEOUT, headers=HEADERS) as client:
         try:
             response = await client.get(
-                "https://api.diffbot.com/v3/article",
+                "https://api.diffbot.com/v3/analyze",
                 params=params,
             )
             response.raise_for_status()
@@ -342,9 +443,6 @@ async def fetch_articles_for_leader(
 
             # Extract full content via Diffbot
             if DIFFBOT_TOKEN:
-                # Rate limit Diffbot calls
-                await asyncio.sleep(DIFFBOT_DELAY_SECONDS)
-
                 extracted = await extract_article_diffbot(url)
 
                 if extracted:
@@ -556,6 +654,13 @@ async def fetch_snippets_for_leader(
     if stale_count > 0:
         logger.info(f"Filtered {stale_count} stale results outside date range {date_start}..{date_end}")
 
+    # Filter non-article URLs (audio, video, photos, etc.)
+    pre_filter_count = len(all_snippets)
+    all_snippets = [s for s in all_snippets if not is_non_article_url(s.get("url", ""))]
+    non_article_filtered = pre_filter_count - len(all_snippets)
+    if non_article_filtered > 0:
+        logger.info(f"Filtered {non_article_filtered} non-article URLs (audio/video/photos)")
+
     # Filter opinion pieces based on URL patterns
     if filter_opinions:
         news_snippets, opinion_snippets = filter_opinion_snippets(all_snippets)
@@ -587,7 +692,10 @@ async def fetch_full_articles(
     articles = []
 
     for url in urls:
-        await asyncio.sleep(DIFFBOT_DELAY_SECONDS)
+        # Skip non-article URLs (audio, video, photos, etc.)
+        if is_non_article_url(url):
+            logger.debug(f"Skipping non-article URL: {url}")
+            continue
 
         extracted = await extract_article_diffbot(url)
 
