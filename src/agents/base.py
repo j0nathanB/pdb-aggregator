@@ -21,6 +21,46 @@ from ..config import (
 
 logger = logging.getLogger(__name__)
 
+# =============================================================================
+# RATE LIMITING
+# =============================================================================
+
+ANTHROPIC_DELAY_SECONDS = 2  # Rate limit: 50 requests/minute
+
+
+class AnthropicRateLimiter:
+    """
+    Global rate limiter for Anthropic API calls.
+
+    Rate limit is 50 requests/minute. With 2s between calls, we stay at 30/min max.
+    """
+
+    _lock: asyncio.Lock | None = None
+    _last_call_time: float = 0
+
+    @classmethod
+    def _get_lock(cls) -> asyncio.Lock:
+        """Lazily create the lock to avoid event loop issues."""
+        if cls._lock is None:
+            cls._lock = asyncio.Lock()
+        return cls._lock
+
+    @classmethod
+    async def wait(cls):
+        """Wait until it's safe to make an Anthropic API call."""
+        import time
+
+        lock = cls._get_lock()
+        async with lock:
+            now = time.monotonic()
+            elapsed = now - cls._last_call_time
+            if elapsed < ANTHROPIC_DELAY_SECONDS:
+                wait_time = ANTHROPIC_DELAY_SECONDS - elapsed
+                logger.debug(f"Anthropic rate limiting: waiting {wait_time:.1f}s")
+                await asyncio.sleep(wait_time)
+            cls._last_call_time = time.monotonic()
+
+
 # Tracing state
 _tracer_provider = None
 _tracing_initialized = False
@@ -100,17 +140,20 @@ async def complete(
 ) -> str:
     """
     Simple completion helper.
-    
+
     Args:
         prompt: The user message
         system: Optional system prompt
         model: Model to use
         max_tokens: Maximum response tokens
         temperature: Sampling temperature
-        
+
     Returns:
         The assistant's response text
     """
+    # Rate limit before making the call
+    await AnthropicRateLimiter.wait()
+
     client = get_client()
     
     messages = [{"role": "user", "content": prompt}]
@@ -145,10 +188,13 @@ async def complete_with_tools(
 ) -> tuple[str, list[dict]]:
     """
     Completion with tool use.
-    
+
     Returns:
         Tuple of (text_response, tool_calls)
     """
+    # Rate limit before making the call
+    await AnthropicRateLimiter.wait()
+
     client = get_client()
     
     messages = [{"role": "user", "content": prompt}]
