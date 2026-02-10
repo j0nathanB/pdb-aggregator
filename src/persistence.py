@@ -49,6 +49,31 @@ def _serialize(obj):
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
 
+def _format_date_range(date_range: str) -> str:
+    """
+    Format date range for display.
+
+    Converts "2026-02-02 to 2026-02-09" to "_February 2, 2026 through February 9, 2026_"
+    """
+    import re
+
+    # Try to parse "YYYY-MM-DD to YYYY-MM-DD" format
+    match = re.match(r"(\d{4}-\d{2}-\d{2})\s+to\s+(\d{4}-\d{2}-\d{2})", date_range)
+    if match:
+        try:
+            start = datetime.strptime(match.group(1), "%Y-%m-%d")
+            end = datetime.strptime(match.group(2), "%Y-%m-%d")
+            # Format: "February 2, 2026"
+            start_str = start.strftime("%B %-d, %Y")
+            end_str = end.strftime("%B %-d, %Y")
+            return f"_{start_str} through {end_str}_"
+        except ValueError:
+            pass
+
+    # Fallback: return as-is with italics
+    return f"_{date_range}_"
+
+
 def save_brief(
     brief: WeeklyBrief,
     output_dir: Optional[Path] = None,
@@ -116,10 +141,11 @@ def _generate_dossier_markdown(dossier: LeaderDossier) -> str:
     """Generate standalone markdown for an individual leader dossier."""
     sections = []
 
-    # Header: 🇬🇧 Country / Name, Title
+    # Header
     emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
-    sections.append(f"# {emoji} {dossier.leader.country} / {dossier.leader.name}, {dossier.leader.title}")
-    sections.append(f"**Period:** {dossier.reporting_period}")
+    sections.append(f"# {emoji} {dossier.leader.country}")
+    sections.append(f"## {dossier.leader.name}, {dossier.leader.title}")
+    sections.append(_format_date_range(dossier.reporting_period))
     sections.append("")
 
     # Executive Summary
