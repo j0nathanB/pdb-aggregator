@@ -70,9 +70,54 @@ def _parse_name_parts(leader_name: str) -> list[str]:
     return parts
 
 
+def _build_name_pattern(name_part: str) -> re.Pattern:
+    """
+    Build a regex pattern that matches a name part with grammatical variations.
+
+    Handles:
+    - Slavic declensions (Tusk -> Tuska, Tuskiem, Tusku, Tuskowi)
+    - Ukrainian/Russian variations (Zelenskyy -> Zelenskya, Zelenskyego)
+    - Transliteration variants (Zelenskyy/Zelensky/Zelenskiy)
+
+    Args:
+        name_part: A single name part (e.g., "tusk", "zelenskyy")
+
+    Returns:
+        Compiled regex pattern
+    """
+    # For very short names (<=4 chars), require near-exact match to avoid false positives
+    if len(name_part) <= 4:
+        # Allow only 1-2 char suffix for short names
+        return re.compile(rf"\b{re.escape(name_part)}[a-ząćęłńóśźżа-яіїєґ]{{0,2}}\b", re.IGNORECASE)
+
+    # For names ending in consonant + y/i variations (Slavic names)
+    # e.g., Zelenskyy, Zelensky, Zelenskiy -> stem is "zelensk"
+    if name_part.endswith(("yy", "ky", "iy", "yi", "ii")):
+        stem = re.sub(r"[yi]+$", "", name_part)
+        if len(stem) >= 4:
+            # Match stem + various endings (y, yy, iy, yi, ya, yego, etc.)
+            return re.compile(rf"\b{re.escape(stem)}[yiї]{{0,3}}[a-ząćęłńóśźżа-яіїєґ]{{0,4}}\b", re.IGNORECASE)
+
+    # For names ending in vowels, the stem is usually name minus the vowel
+    if name_part.endswith(("a", "e", "i", "o", "u", "y")):
+        stem = name_part[:-1]
+        if len(stem) >= 4:
+            # Match stem + up to 4 chars (covers most declensions)
+            return re.compile(rf"\b{re.escape(stem)}[a-ząćęłńóśźżа-яіїєґ]{{0,5}}\b", re.IGNORECASE)
+
+    # Default: match name + optional suffix for grammatical endings
+    # Covers Polish: Tusk -> Tuska, Tuskiem, Tusku, Tuskowi
+    return re.compile(rf"\b{re.escape(name_part)}[a-ząćęłńóśźżа-яіїєґ]{{0,5}}\b", re.IGNORECASE)
+
+
 def filter_relevant(snippets: list[dict], leader_name: str) -> list[dict]:
     """
     Filter snippets to those mentioning the leader by name.
+
+    Handles grammatical variations common in Slavic and other languages:
+    - Polish declensions (Tusk -> Tuska, Tuskiem)
+    - Ukrainian variations (Zelenskyy -> Zelenskya)
+    - Transliteration variants
 
     Args:
         snippets: Raw search result dicts
@@ -82,11 +127,14 @@ def filter_relevant(snippets: list[dict], leader_name: str) -> list[dict]:
         Snippets that mention any part of the leader's name
     """
     name_parts = _parse_name_parts(leader_name)
+    # Build regex patterns for each name part
+    patterns = [_build_name_pattern(part) for part in name_parts]
     relevant = []
 
     for s in snippets:
         text = f"{s['title']} {s.get('snippet', '')}".lower()
-        if any(part in text for part in name_parts):
+        # Match if any name pattern matches
+        if any(pattern.search(text) for pattern in patterns):
             relevant.append(s)
 
     removed = len(snippets) - len(relevant)
