@@ -14,8 +14,7 @@ from dataclasses import dataclass, asdict
 
 from ..config import (
     LeaderConfig, WIRE_SERVICES,
-    EMBEDDING_MODEL, MULTILINGUAL_EMBEDDING_MODEL,
-    leader_needs_multilingual,
+    EMBEDDING_MODEL,
 )
 from ..fetcher.core import fetch_snippets_for_leader, fetch_full_articles
 from ..fetcher.diffbot_nlp import extract_nlp, extract_high_salience_entities, get_summary
@@ -41,6 +40,8 @@ class ProcessedEvent:
     rank: int
     source_count: int
     has_wire: bool
+    # Cluster centroid for cross-leader semantic matching in aggregate builder
+    embedding: list[float] | None = None
 
 
 class EventClusteringAgent:
@@ -59,17 +60,14 @@ class EventClusteringAgent:
         self.scorer = scorer or EventScorer()
 
     def _get_embedder(self, leader: LeaderConfig) -> SnippetEmbedder:
-        """Get the appropriate embedder for this leader's language mix."""
+        """Get the embedder for this leader.
+
+        All leaders use the same unified multilingual model (E5-multilingual-small)
+        to ensure embeddings exist in the same latent space for cross-leader comparison.
+        """
         if self._default_embedder is not None:
             return self._default_embedder
-
-        if leader_needs_multilingual(leader):
-            model_name = MULTILINGUAL_EMBEDDING_MODEL
-            logger.info(f"Using multilingual model for {leader.name}")
-        else:
-            model_name = EMBEDDING_MODEL
-
-        return SnippetEmbedder(model_name=model_name)
+        return SnippetEmbedder(model_name=EMBEDDING_MODEL)
 
     async def process_leader(
         self,
@@ -323,6 +321,7 @@ class EventClusteringAgent:
                 rank=scored.rank,
                 source_count=cluster.unique_source_count,
                 has_wire=cluster.has_wire_coverage,
+                embedding=cluster.centroid.tolist(),  # For cross-leader semantic matching
             ))
 
         return processed

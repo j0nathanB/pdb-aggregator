@@ -1,20 +1,26 @@
 """
 Aggregate Briefing Builder - Synthesizes per-leader dossiers into aggregate briefing.
 
-Replaces ThreadDetectorAgent. Identifies overlapping stories across leaders
-via entity URI overlap and builds aggregate Top Stories, International,
-Domestic, and Between the Lines.
+Replaces ThreadDetectorAgent. Identifies overlapping stories across leaders via:
+1. Entity URI overlap (hard link - precise)
+2. Semantic similarity with bi-encoder (soft link - cross-lingual)
+3. Cross-encoder re-ranking (validation gate - catches semantic inversions)
+
+Builds aggregate Top Stories, International, Domestic, and Between the Lines.
 """
 
 import logging
 import hashlib
 from collections import defaultdict
 from typing import Optional
+import numpy as np
 
 from ..config import (
     LeaderDossier,
     Story,
     StoryScope,
+    CROSS_ENCODER_MODEL,
+    CROSS_ENCODER_THRESHOLD,
 )
 from ..clustering import validate_cross_leader_match
 from .base import complete, with_retry, extract_json_from_response
@@ -42,13 +48,106 @@ class AggregateBriefingBuilder:
 
     Steps:
     1. Collect all stories from all dossiers
-    2. Match overlapping stories across leaders via entity URI overlap
+    2. Match overlapping stories across leaders via:
+       a. Entity URI overlap (hard link - precise, low recall)
+       b. Semantic similarity fallback (soft link - catches "Panzer" ↔ "tanks")
+       c. Cross-encoder validation (catches semantic inversions like "denies" vs "indicted")
     3. Synthesize shared stories into combined narratives
     4. Select aggregate Top Stories (up to 5, 2+ sources required, sorted by score)
     5. Sort overflow by classification priority (Paragon taxonomy), limit to 7
     6. Distribute overflow to International/Domestic by scope
     7. Generate Between the Lines (thematic + per-leader)
     """
+
+    # Semantic similarity threshold for cross-leader matching (bi-encoder)
+    # In E5-small space: 0.90+ = near duplicates, 0.80-0.90 = same topic different details
+    # 0.82 is conservative enough to prevent false positives while catching translations
+    SEMANTIC_MATCH_THRESHOLD = 0.82
+
+    # Cross-encoder model cache (loaded lazily on first use)
+    _cross_encoder = None
+
+    @classmethod
+    def _get_cross_encoder(cls):
+        """Lazily load cross-encoder model for re-ranking."""
+        if cls._cross_encoder is None:
+            try:
+                from sentence_transformers import CrossEncoder
+                logger.info(f"Loading cross-encoder: {CROSS_ENCODER_MODEL}")
+                cls._cross_encoder = CrossEncoder(CROSS_ENCODER_MODEL)
+            except ImportError:
+                logger.warning("CrossEncoder not available, skipping re-ranking validation")
+                cls._cross_encoder = False  # Sentinel to avoid repeated attempts
+        return cls._cross_encoder if cls._cross_encoder else None
+
+    def _validate_with_cross_encoder(
+        self,
+        story_a: Story,
+        story_b: Story,
+    ) -> tuple[bool, float]:
+        """
+        Validate a candidate story pair using cross-encoder.
+
+        Cross-encoder reads both texts together, catching semantic inversions
+        that bi-encoder misses (e.g., "Leader denies charges" vs "Leader indicted").
+
+        Args:
+            story_a: First story
+            story_b: Second story
+
+        Returns:
+            Tuple of (is_valid, score). is_valid is True if score >= threshold.
+        """
+        cross_encoder = self._get_cross_encoder()
+        if cross_encoder is None:
+            # Cross-encoder not available, trust bi-encoder
+            return True, 1.0
+
+        # Combine title and narrative for comparison
+        text_a = f"{story_a.title}. {story_a.narrative}"
+        text_b = f"{story_b.title}. {story_b.narrative}"
+
+        # Cross-encoder expects list of (text1, text2) pairs
+        score = float(cross_encoder.predict([(text_a, text_b)])[0])
+
+        # Convert logit to probability if needed (ms-marco outputs logits)
+        # Most cross-encoders output in [-inf, +inf], we want [0, 1]
+        if score < 0 or score > 1:
+            import math
+            score = 1 / (1 + math.exp(-score))  # Sigmoid
+
+        is_valid = score >= CROSS_ENCODER_THRESHOLD
+
+        if not is_valid:
+            logger.info(
+                f"[Cross-Encoder Rejected] '{story_a.title[:30]}...' ↔ "
+                f"'{story_b.title[:30]}...' (score={score:.3f} < {CROSS_ENCODER_THRESHOLD})"
+            )
+
+        return is_valid, score
+
+    def _calculate_semantic_similarity(self, story_a: Story, story_b: Story) -> float:
+        """
+        Compute cosine similarity between two stories using their cluster centroids.
+
+        This enables cross-lingual matching when entity URI overlap fails
+        (e.g., German "Panzer" vs English "tanks" in unified E5 embedding space).
+
+        Returns 0.0 if embeddings are missing.
+        """
+        if not story_a.embedding or not story_b.embedding:
+            return 0.0
+
+        vec_a = np.array(story_a.embedding)
+        vec_b = np.array(story_b.embedding)
+
+        norm_a = np.linalg.norm(vec_a)
+        norm_b = np.linalg.norm(vec_b)
+
+        if norm_a == 0 or norm_b == 0:
+            return 0.0
+
+        return float(np.dot(vec_a, vec_b) / (norm_a * norm_b))
 
     async def build(
         self,
@@ -173,10 +272,16 @@ class AggregateBriefingBuilder:
         max_group_size: int = 4,
     ) -> tuple[list[list[tuple[str, Story]]], list[Story]]:
         """
-        Find stories that overlap across leaders using entity URI overlap.
+        Find stories that overlap across leaders using entity URI overlap
+        AND semantic similarity as a fallback.
 
-        Two stories are candidates for merging if they share min_entity_overlap+
-        high-salience entity URIs and come from different leaders.
+        Matching strategy:
+        1. HARD LINK: Entity URI overlap (precise, low recall)
+        2. SOFT LINK: Semantic similarity > threshold (catches "Panzer" ↔ "tanks")
+
+        Two stories are candidates for merging if they:
+        - Come from different leaders AND
+        - Share min_entity_overlap+ entity URIs OR have cosine similarity > threshold
 
         Groups are limited to max_group_size to prevent mega-clusters from
         transitive chaining.
@@ -184,6 +289,8 @@ class AggregateBriefingBuilder:
         Returns:
             (shared_groups, standalone_stories)
         """
+        n = len(tagged_stories)
+
         # Build entity URI index
         story_entities: dict[int, set[str]] = {}
         for idx, (leader, story) in enumerate(tagged_stories):
@@ -194,12 +301,12 @@ class AggregateBriefingBuilder:
                     uris.add(uri)
             story_entities[idx] = uris
 
-        # Find pairs with sufficient shared entities from different leaders
-        n = len(tagged_stories)
-        merged_into: dict[int, int] = {}  # idx -> group_id
+        # Build adjacency matrix for matching
+        # True = stories should be merged
+        adj_matrix = [[False] * n for _ in range(n)]
 
-        groups: dict[int, list[int]] = {}
-        next_group = 0
+        entity_matches = 0
+        semantic_matches = 0
 
         for i in range(n):
             for j in range(i + 1, n):
@@ -210,9 +317,43 @@ class AggregateBriefingBuilder:
                 if leader_i == leader_j:
                     continue
 
-                # Check entity overlap (raised threshold to prevent weak matches)
+                story_i = tagged_stories[i][1]
+                story_j = tagged_stories[j][1]
+
+                # 1. HARD LINK: Entity URI overlap (precise)
                 overlap = story_entities[i] & story_entities[j]
-                if len(overlap) < min_entity_overlap:
+                if len(overlap) >= min_entity_overlap:
+                    adj_matrix[i][j] = True
+                    adj_matrix[j][i] = True
+                    entity_matches += 1
+                    continue  # Found hard link, skip semantic check
+
+                # 2. SOFT LINK: Semantic similarity (fallback for cross-lingual)
+                sim_score = self._calculate_semantic_similarity(story_i, story_j)
+                if sim_score > self.SEMANTIC_MATCH_THRESHOLD:
+                    # 3. VALIDATION GATE: Cross-encoder re-ranking
+                    # Bi-encoder can miss semantic inversions ("denies" vs "indicted")
+                    # Cross-encoder reads both texts together for accurate validation
+                    is_valid, ce_score = self._validate_with_cross_encoder(story_i, story_j)
+
+                    if is_valid:
+                        adj_matrix[i][j] = True
+                        adj_matrix[j][i] = True
+                        semantic_matches += 1
+                        logger.info(
+                            f"[Semantic Match] '{story_i.title[:40]}...' ({leader_i}) "
+                            f"↔ '{story_j.title[:40]}...' ({leader_j}) "
+                            f"(bi={sim_score:.3f}, ce={ce_score:.3f})"
+                        )
+
+        # Build groups using connected components with size limit
+        merged_into: dict[int, int] = {}  # idx -> group_id
+        groups: dict[int, list[int]] = {}
+        next_group = 0
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                if not adj_matrix[i][j]:
                     continue
 
                 # Found a match - merge groups (with size limit)
@@ -247,8 +388,9 @@ class AggregateBriefingBuilder:
         standalone = [tagged_stories[idx][1] for idx in standalone_indices]
 
         logger.info(
-            f"Entity matching: {len(shared_groups)} groups (max {max_group_size}), "
-            f"{len(standalone)} standalone (threshold: {min_entity_overlap}+ entities)"
+            f"Cross-leader matching: {len(shared_groups)} groups "
+            f"({entity_matches} entity matches, {semantic_matches} semantic matches), "
+            f"{len(standalone)} standalone"
         )
 
         return shared_groups, standalone
@@ -376,6 +518,15 @@ Return JSON:
         max_score = max(s.score for s in stories)
         has_wire = any(s.has_wire for s in stories)
 
+        # Merge embeddings: average of all story centroids
+        embeddings_with_values = [s.embedding for s in stories if s.embedding]
+        if embeddings_with_values:
+            merged_embedding = np.mean(
+                [np.array(e) for e in embeddings_with_values], axis=0
+            ).tolist()
+        else:
+            merged_embedding = None
+
         story_id = hashlib.md5(
             f"shared:{'|'.join(sorted(leaders))}:{base.cluster_id}".encode()
         ).hexdigest()[:12]
@@ -392,6 +543,7 @@ Return JSON:
             entities=merged_entities,
             cluster_id=base.cluster_id,
             contributing_leaders=leaders,
+            embedding=merged_embedding,
         )
 
     async def _generate_between_the_lines(

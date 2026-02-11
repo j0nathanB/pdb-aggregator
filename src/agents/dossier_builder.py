@@ -236,6 +236,18 @@ Return JSON:
             data = extract_json_from_response(response)
             if data and "narrative" in data:
                 return data
+            else:
+                # Debug: log why extraction failed
+                if data is None:
+                    logger.warning(
+                        f"JSON extraction failed for '{event.title[:50]}...'. "
+                        f"Response preview: {response[:200]}..."
+                    )
+                elif "narrative" not in data:
+                    logger.warning(
+                        f"No 'narrative' in response for '{event.title[:50]}...'. "
+                        f"Got keys: {list(data.keys())}"
+                    )
         except Exception as e:
             logger.warning(f"Event synthesis failed for '{event.title}': {e}")
 
@@ -263,15 +275,11 @@ Return JSON:
             narrative = synthesis.get("narrative", event.title)
             scope_str = synthesis.get("scope", "domestic").lower()
         else:
-            # Fallback: minimal story from event metadata
-            title = event.title
-            narrative = event.title
-            scope_str = "domestic"
-
-            # If source articles are non-English, translate the fallback title
-            if any(a.get("language", "en") != "en" for a in event.articles):
-                logger.warning(f"Non-English source for '{title[:50]}...', translating")
-                title, narrative = await self._ensure_english(title, narrative, leader)
+            # Synthesis failed - skip this event rather than using title=narrative fallback
+            logger.warning(
+                f"Skipping event '{event.title[:50]}...' - synthesis failed (no narrative)"
+            )
+            return None
 
         try:
             scope = StoryScope(scope_str)
@@ -301,6 +309,7 @@ Return JSON:
             source_refs=source_refs,
             entities=event.entities,
             cluster_id=event.id,
+            embedding=event.embedding,  # Carry centroid for cross-leader semantic matching
         )
 
         # Classify story for sorting overflow (Paragon taxonomy)

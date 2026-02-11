@@ -37,9 +37,24 @@ MAX_EVENTS_FOR_BRIEF = 5
 MAX_ARTICLES_PER_EVENT = 3
 MIN_EVENT_SCORE_RATIO = 0.5  # Include events with score >= top * ratio
 
-# Embedding models
-EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
-MULTILINGUAL_EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+# Embedding model: unified multilingual for all leaders
+# Using a single model ensures all vectors exist in the same latent space,
+# enabling cross-lingual semantic comparison (e.g., German "Panzer" ↔ English "tanks").
+# This replaces the previous split approach (bge-small-en + paraphrase-multilingual)
+# which created incomparable vector spaces and blocked cross-leader semantic matching.
+#
+# E5-multilingual-small: 118M params, strong cross-lingual retrieval, same latent space
+# for 100+ languages. Query prefix "query: " recommended for best performance.
+EMBEDDING_MODEL = "intfloat/multilingual-e5-small"
+MULTILINGUAL_EMBEDDING_MODEL = EMBEDDING_MODEL  # Unified - no separate model needed
+
+# Cross-encoder for re-ranking candidate story matches
+# Bi-encoder (cosine similarity) is fast but shallow - it embeds texts independently
+# and can miss semantic inversions ("Leader denies charges" vs "Leader indicted").
+# Cross-encoder reads both texts together, catching subtle differences.
+# Used as validation gate after bi-encoder candidate selection.
+CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+CROSS_ENCODER_THRESHOLD = 0.7  # Minimum score to confirm merge (0-1 scale)
 
 # Arize AX Tracing
 ARIZE_SPACE_ID = os.getenv("ARIZE_SPACE_ID")
@@ -90,6 +105,17 @@ LEADER_ROLE_WEIGHTS: dict[LeaderRole, float] = {
     LeaderRole.SUBJECT: 0.10,
 }
 
+# Context-dependent role modifiers: being a SUBJECT in high-stakes events is newsworthy
+# Example: "Leader investigated for corruption" (SUBJECT + LEGAL_DEVELOPMENT) should
+# rank higher than "Leader cuts ribbon" (INITIATOR + OTHER)
+#
+# These event types elevate the SUBJECT role because being targeted/affected is the news
+SUBJECT_ELEVATING_EVENTS: set["EventType"] = set()  # Populated after EventType is defined
+
+# Modifier applied to SUBJECT role weight when event type is in SUBJECT_ELEVATING_EVENTS
+# 3.0x brings SUBJECT (0.10 * 3.0 = 0.30) close to INITIATOR (0.40)
+SUBJECT_ELEVATION_MODIFIER: float = 3.0
+
 
 class ImpactLevel(str, Enum):
     """Geographic scope of impact."""
@@ -123,6 +149,17 @@ HIGH_WEIGHT_EVENT_TYPES: set[EventType] = {
     EventType.MAJOR_SPEECH,
     EventType.BILATERAL_AGREEMENT,
 }
+
+# Now that EventType is defined, populate SUBJECT_ELEVATING_EVENTS
+# These are event types where being the SUBJECT is newsworthy:
+# - LEGAL_DEVELOPMENT: investigations, indictments, court rulings against leader
+# - CRISIS_RESPONSE: leader being affected by crisis, not just responding
+# - CABINET_CHANGE: leader being replaced/ousted (not doing the replacing)
+SUBJECT_ELEVATING_EVENTS.update({
+    EventType.LEGAL_DEVELOPMENT,
+    EventType.CRISIS_RESPONSE,
+    EventType.CABINET_CHANGE,
+})
 
 
 # =============================================================================
@@ -372,12 +409,29 @@ class ArticleClassification:
         leader_role: LeaderRole,
         impact_level: ImpactLevel,
     ) -> float:
-        """Calculate normalized priority score from taxonomy values."""
+        """
+        Calculate normalized priority score from taxonomy values.
+
+        Applies context-dependent modifiers:
+        - SUBJECT role is elevated in high-stakes event types (LEGAL_DEVELOPMENT,
+          CRISIS_RESPONSE, CABINET_CHANGE) because being investigated/targeted IS the news
+        - Example: "Leader indicted for corruption" (SUBJECT + LEGAL_DEVELOPMENT)
+          now ranks appropriately vs "Leader cuts ribbon" (INITIATOR + OTHER)
+        """
+        # Base role weight
+        role_weight = LEADER_ROLE_WEIGHTS[leader_role]
+
+        # Context-dependent elevation: SUBJECT in high-stakes events
+        if leader_role == LeaderRole.SUBJECT and event_type in SUBJECT_ELEVATING_EVENTS:
+            role_weight *= SUBJECT_ELEVATION_MODIFIER
+
         raw_score = (
             EVENT_TYPE_WEIGHTS[event_type] +
-            LEADER_ROLE_WEIGHTS[leader_role] +
+            role_weight +
             IMPACT_LEVEL_WEIGHTS[impact_level]
         )
+
+        # Normalize (may exceed 1.0 with modifiers, which is fine for ranking)
         return round(raw_score / MAX_WEIGHT, 3)
 
 
@@ -459,6 +513,9 @@ class Story:
     cluster_id: str = ""              # originating EventCluster ID
     contributing_leaders: list[str] = field(default_factory=list)  # for aggregate shared stories
     classification: Optional[ArticleClassification] = None  # Paragon taxonomy for sorting overflow
+    # Cluster centroid embedding for cross-leader semantic matching
+    # Enables "Panzer" <-> "tanks" matching when entity URIs fail
+    embedding: Optional[list[float]] = None
 
 
 # =============================================================================

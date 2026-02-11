@@ -9,8 +9,12 @@ import numpy as np
 
 logger = logging.getLogger(__name__)
 
-# Model choice: bge-small-en-v1.5 is fast and good on short text
-DEFAULT_MODEL = "BAAI/bge-small-en-v1.5"
+# Unified multilingual model - all leaders use the same model for cross-lingual comparability
+# E5 models use instruction prefixes: "query: " for queries, "passage: " for documents
+DEFAULT_MODEL = "intfloat/multilingual-e5-small"
+
+# Models that require instruction prefixes for optimal performance
+E5_MODELS = {"intfloat/multilingual-e5-small", "intfloat/multilingual-e5-base", "intfloat/multilingual-e5-large"}
 
 OPINION_MARKERS = [
     "opinion:", "opinion |", "editorial:", "analysis:",
@@ -124,17 +128,23 @@ def filter_relevant(snippets: list[dict], leader_name: str) -> list[dict]:
         leader_name: Full name (e.g. "Mark Carney")
 
     Returns:
-        Snippets that mention any part of the leader's name
+        Snippets that mention the leader's surname (required) or full name
     """
     name_parts = _parse_name_parts(leader_name)
     # Build regex patterns for each name part
     patterns = [_build_name_pattern(part) for part in name_parts]
+
+    # The surname is the last name part (e.g., "carney" for "Mark Carney",
+    # "da silva" for "Lula da Silva"). Surname match is required to avoid
+    # false positives from common first names like "Mark" matching "Mark Kelly".
+    surname_pattern = patterns[-1] if patterns else None
+
     relevant = []
 
     for s in snippets:
         text = f"{s['title']} {s.get('snippet', '')}".lower()
-        # Match if any name pattern matches
-        if any(pattern.search(text) for pattern in patterns):
+        # Require surname match (avoids "Mark Kelly" matching "Mark Carney")
+        if surname_pattern and surname_pattern.search(text):
             relevant.append(s)
 
     removed = len(snippets) - len(relevant)
@@ -154,6 +164,13 @@ def separate_opinions(snippets: list[dict]) -> tuple[list[dict], list[dict]]:
     Returns:
         Tuple of (news, opinions)
     """
+    # Subjective phrases that indicate opinion/commentary
+    OPINION_PHRASES = [
+        "sadly,", "unfortunately,", "should be", "must be", "needs to",
+        "here's why", "here is why", "what we know", "what you need to know",
+        "my take", "i think", "i believe", "in my view",
+    ]
+
     news, opinions = [], []
 
     for s in snippets:
@@ -174,6 +191,13 @@ def separate_opinions(snippets: list[dict]) -> tuple[list[dict], list[dict]]:
             words = before_colon.split()
             if 2 <= len(words) <= 3 and all(w[0].isupper() for w in words if w):
                 is_opinion = True
+
+        # Check for opinion phrases (subjective language)
+        if not is_opinion:
+            for phrase in OPINION_PHRASES:
+                if phrase in title_lower:
+                    is_opinion = True
+                    break
 
         (opinions if is_opinion else news).append(s)
 
@@ -210,6 +234,7 @@ class SnippetEmbedder:
 
     def __init__(self, model_name: str = DEFAULT_MODEL):
         self.model_name = model_name
+        self.uses_e5_prefix = model_name in E5_MODELS
         if model_name not in SnippetEmbedder._model_cache:
             logger.info(f"Loading embedding model: {model_name}")
             SnippetEmbedder._model_cache[model_name] = SentenceTransformer(model_name)
@@ -236,6 +261,11 @@ class SnippetEmbedder:
 
         if leader_name:
             texts = [_strip_leader_name(t, leader_name) for t in texts]
+
+        # E5 models perform better with instruction prefixes
+        # Using "passage: " for documents being indexed/compared
+        if self.uses_e5_prefix:
+            texts = [f"passage: {t}" for t in texts]
 
         embeddings = self.model.encode(texts, normalize_embeddings=True)
 
