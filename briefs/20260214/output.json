@@ -1,0 +1,12 @@
+{
+  "date_range": "2026-02-07 to 2026-02-14",
+  "generated_at": "2026-02-14T05:03:47.275034",
+  "main_stories": [],
+  "international_stories": [],
+  "domestic_stories": [],
+  "between_the_lines": [],
+  "executive_summary": "",
+  "leader_dossiers": [],
+  "methodology_notes": "\n**Methodology**\n\nThis brief was generated using an automated multi-agent system that:\n1. Fetched snippets from 0 sources via SearchAPI\n2. Embedded snippets using sentence-transformers (English or multilingual model per leader)\n3. Clustered snippets into events using HDBSCAN\n4. Scored events by source diversity and wire coverage\n5. Fetched 0 full articles for top events via Diffbot\n6. Extracted entities and summaries via Diffbot NLP\n7. Built per-leader story-centric dossiers from processed events\n8. Matched overlapping stories across leaders via entity overlap\n9. Synthesized aggregate briefing with shared multi-leader stories\n\n**Architecture**: Story-centric pipeline where events are synthesized into\nstories, then matched across leaders for aggregate briefing.\n\n**Limitations**: Embedding-based clustering may miss nuance in short\nsnippets. Non-English content processed after extraction. Entity-based\nstory matching may miss thematic connections without shared entities.\n",
+  "source_quality_notes": "Source coverage was adequate across all leaders with no significant gaps or reliability concerns."
+}
