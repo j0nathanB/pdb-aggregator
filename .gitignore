@@ -24,3 +24,11 @@ dist/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Jekyll build output
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Local pipeline output (committed via PR as _briefs/)
+briefs/

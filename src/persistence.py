@@ -53,7 +53,7 @@ def _format_date_range(date_range: str) -> str:
     """
     Format date range for display.
 
-    Converts "2026-02-02 to 2026-02-09" to "_February 2, 2026 through February 9, 2026_"
+    Converts "2026-02-02 to 2026-02-09" to "_Week of February 2, 2026_"
     """
     import re
 
@@ -62,11 +62,8 @@ def _format_date_range(date_range: str) -> str:
     if match:
         try:
             start = datetime.strptime(match.group(1), "%Y-%m-%d")
-            end = datetime.strptime(match.group(2), "%Y-%m-%d")
-            # Format: "February 2, 2026"
             start_str = start.strftime("%B %-d, %Y")
-            end_str = end.strftime("%B %-d, %Y")
-            return f"_{start_str} through {end_str}_"
+            return f"_Week of {start_str}_"
         except ValueError:
             pass
 
@@ -122,7 +119,7 @@ def save_brief(
     with open(meta_path, "w") as f:
         json.dump(meta, f, indent=2)
 
-    # 4. Generate and save Markdown brief
+    # 4. Generate and save brief page
     markdown_path = output_dir / "brief.md"
     markdown_content = _generate_markdown(brief)
     with open(markdown_path, "w") as f:
@@ -137,9 +134,35 @@ def save_brief(
     return output_dir
 
 
-def _generate_dossier_markdown(dossier: LeaderDossier) -> str:
+def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> str:
     """Generate standalone markdown for an individual leader dossier."""
+    import re as _re
+
     sections = []
+
+    # Derive date from reporting_period end date
+    date_match = _re.search(r"(\d{4}-\d{2}-\d{2})$", dossier.reporting_period)
+    dossier_date = date_match.group(1) if date_match else (
+        dossier.generated_at.strftime("%Y-%m-%d") if dossier.generated_at else brief_date or "1970-01-01"
+    )
+
+    # Escape YAML special characters in strings
+    leader_name = dossier.leader.name.replace('"', '\\"')
+    country = dossier.leader.country.replace('"', '\\"')
+    title_text = f"{dossier.leader.country} — {dossier.leader.name}, {dossier.leader.title}"
+    title_escaped = title_text.replace('"', '\\"')
+
+    # YAML frontmatter for Jekyll
+    sections.append("---")
+    sections.append("layout: dossier")
+    sections.append("doc_type: dossier")
+    sections.append(f"title: \"{title_escaped}\"")
+    sections.append(f"leader_name: \"{leader_name}\"")
+    sections.append(f"country: \"{country}\"")
+    sections.append(f"date: {dossier_date}")
+    sections.append(f"brief_url: \"../../brief/\"")
+    sections.append("---")
+    sections.append("")
 
     # Header
     emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
@@ -214,15 +237,122 @@ def _format_story_refs(story: Story) -> str:
     return f" ({'; '.join(refs_parts)})" if refs_parts else ""
 
 
+def _dossier_url(filename: str, anchor: str = "") -> str:
+    """Convert a dossier filename to a Jekyll-compatible relative URL.
+
+    Converts 'name.md' to '../dossiers/name' (drops .md extension, adds ../ prefix).
+    Optionally appends an anchor fragment.
+    """
+    base = filename.removesuffix(".md")
+    url = f"../dossiers/{base}"
+    if anchor:
+        url = f"{url}#{anchor}"
+    return url
+
+
 def _slugify(text: str) -> str:
-    """Convert text to URL-friendly slug for anchor links."""
+    """Convert text to a URL slug matching Jekyll's default slugify filter."""
     import re
-    # Lowercase, replace spaces with hyphens, remove non-alphanumeric (except hyphens)
-    slug = text.lower().strip()
-    slug = re.sub(r'[^\w\s-]', '', slug)
-    slug = re.sub(r'[\s_]+', '-', slug)
-    slug = re.sub(r'-+', '-', slug)
+    slug = text.lower()
+    slug = re.sub(r'[^a-z0-9]+', '-', slug)
     return slug.strip('-')
+
+
+def _yaml_escape(s: str) -> str:
+    """Escape a string for use in a YAML double-quoted value."""
+    return s.replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ')
+
+
+def _format_nav_tree(nav_tree: list[dict]) -> str:
+    """Format nav_tree as YAML for Jekyll frontmatter."""
+    lines = ["nav_tree:"]
+    for item in nav_tree:
+        lines.append(f'  - label: "{_yaml_escape(item["label"])}"')
+        lines.append(f'    anchor: "{item["anchor"]}"')
+        if item.get("children"):
+            lines.append("    children:")
+            for child in item["children"]:
+                lines.append(f'      - label: "{_yaml_escape(child["label"])}"')
+                lines.append(f'        anchor: "{child["anchor"]}"')
+                if child.get("children"):
+                    lines.append("        children:")
+                    for gc in child["children"]:
+                        lines.append(f'          - label: "{_yaml_escape(gc["label"])}"')
+                        lines.append(f'            anchor: "{gc["anchor"]}"')
+    return "\n".join(lines)
+
+
+def _build_nav_tree(brief: WeeklyBrief) -> list[dict]:
+    """Build the sidebar navigation tree structure for the brief layout."""
+    from .config import COUNTRY_SUBREGION, REGION_DISPLAY_NAMES, REGION_ORDER
+
+    nav_tree = []
+
+    # Top Stories
+    top_stories = {
+        "label": "Top Stories",
+        "anchor": "top-stories",
+        "children": [
+            {"label": story.title, "anchor": _slugify(story.title)}
+            for story in brief.main_stories
+        ],
+    }
+    nav_tree.append(top_stories)
+
+    # Regional Briefs
+    region_dossiers: dict[str, list] = {}
+    for dossier in brief.leader_dossiers:
+        country = dossier.leader.country
+        region = COUNTRY_SUBREGION.get(country, dossier.leader.region)
+        if region not in region_dossiers:
+            region_dossiers[region] = []
+        region_dossiers[region].append(dossier)
+
+    regional = {
+        "label": "Regional Briefs",
+        "anchor": "regional-briefs",
+        "children": [],
+    }
+
+    for region in REGION_ORDER:
+        if region not in region_dossiers:
+            continue
+        region_name = REGION_DISPLAY_NAMES.get(region, region.replace("_", " ").title())
+        dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
+        region_nav = {
+            "label": region_name,
+            "anchor": _slugify(region_name),
+            "children": [
+                {
+                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {d.leader.name}",
+                    "anchor": _slugify(f"{d.leader.country} {d.leader.name}"),
+                }
+                for d in dossiers
+            ],
+        }
+        regional["children"].append(region_nav)
+
+    for region in sorted(region_dossiers.keys()):
+        if region in REGION_ORDER:
+            continue
+        region_name = REGION_DISPLAY_NAMES.get(region, region.replace("_", " ").title())
+        dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
+        region_nav = {
+            "label": region_name,
+            "anchor": _slugify(region_name),
+            "children": [
+                {
+                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {d.leader.name}",
+                    "anchor": _slugify(f"{d.leader.country} {d.leader.name}"),
+                }
+                for d in dossiers
+            ],
+        }
+        regional["children"].append(region_nav)
+
+    nav_tree.append(regional)
+
+    return nav_tree
 
 
 def _get_first_sentence(text: str) -> str:
@@ -265,7 +395,7 @@ def _get_first_sentence(text: str) -> str:
     return text
 
 
-def _render_story(story: Story, sections: list[str]):
+def _render_story(story: Story, sections: list[str], anchor_id: str = ""):
     """Render a single story into markdown sections."""
     leaders_tag = ""
     if story.contributing_leaders and len(story.contributing_leaders) > 1:
@@ -273,6 +403,8 @@ def _render_story(story: Story, sections: list[str]):
 
     refs = _format_story_refs(story)
     sections.append(f"### {story.title}{leaders_tag}")
+    if anchor_id:
+        sections.append(f"{{: #{anchor_id}}}")
     sections.append("")
     sections.append(story.narrative)
     if refs:
@@ -290,15 +422,57 @@ def _render_story_list(title: str, stories: list[Story], sections: list[str]):
         _render_story(story, sections)
 
 
+def _brief_title(brief: WeeklyBrief) -> str:
+    """Generate the brief's page title."""
+    import re as _re
+    match = _re.match(r"(\d{4}-\d{2}-\d{2})", brief.date_range)
+    if match:
+        try:
+            start = datetime.strptime(match.group(1), "%Y-%m-%d")
+            return f"Week of {start.strftime('%B %-d, %Y')}"
+        except ValueError:
+            pass
+    return f"Week of {brief.date_range}"
+
+
+def _brief_date(brief: WeeklyBrief) -> str:
+    """Extract end date from brief for frontmatter."""
+    import re as _re
+    date_match = _re.search(r"(\d{4}-\d{2}-\d{2})$", brief.date_range)
+    return date_match.group(1) if date_match else (
+        brief.generated_at.strftime("%Y-%m-%d") if brief.generated_at else "1970-01-01"
+    )
+
+
 def _generate_markdown(brief: WeeklyBrief) -> str:
-    """Generate a human-readable Markdown brief."""
+    """Generate the full brief page with custom sidebar navigation."""
     from .config import COUNTRY_SUBREGION, REGION_DISPLAY_NAMES, REGION_ORDER
 
     sections = []
 
+    title = _brief_title(brief)
+    date = _brief_date(brief)
+
+    # Build nav_tree for sidebar
+    nav_tree = _build_nav_tree(brief)
+    nav_tree_yaml = _format_nav_tree(nav_tree)
+
+    # YAML frontmatter
+    sections.append("---")
+    sections.append("layout: brief")
+    sections.append("doc_type: brief")
+    sections.append(f"title: \"{title}\"")
+    sections.append(f"date: {date}")
+    sections.append(f"date_range: \"{brief.date_range}\"")
+    sections.append(f"leader_count: {len(brief.leader_dossiers)}")
+    sections.append(f"story_count: {len(brief.main_stories)}")
+    sections.append("nav_exclude: true")
+    sections.append(nav_tree_yaml)
+    sections.append("---")
+    sections.append("")
+
     # Header
-    sections.append("# Weekly Brief")
-    sections.append(f"**Period:** {brief.date_range}")
+    sections.append(f"# {title}")
     sections.append("")
 
     # Executive Summary
@@ -306,11 +480,20 @@ def _generate_markdown(brief: WeeklyBrief) -> str:
         sections.append(f"> {brief.executive_summary}")
         sections.append("")
 
-    # Top Stories (full content)
-    _render_story_list("Top Stories", brief.main_stories, sections)
+    # Top Stories
+    if brief.main_stories:
+        sections.append("## Top Stories")
+        sections.append("{: #top-stories}")
+        sections.append("")
+        for story in brief.main_stories:
+            slug = _slugify(story.title)
+            _render_story(story, sections, anchor_id=slug)
 
-    # Per-leader briefs grouped by region
-    _render_regional_briefs(brief, sections, COUNTRY_SUBREGION, REGION_DISPLAY_NAMES, REGION_ORDER)
+    # Regional Briefs
+    _render_regional_briefs(
+        brief, sections,
+        COUNTRY_SUBREGION, REGION_DISPLAY_NAMES, REGION_ORDER,
+    )
 
     # Footer with generation timestamp
     sections.append("---")
@@ -321,6 +504,7 @@ def _generate_markdown(brief: WeeklyBrief) -> str:
     )
 
     return "\n".join(sections)
+
 
 
 def _render_briefs_section(brief: WeeklyBrief, sections: list[str]):
@@ -370,7 +554,7 @@ def _render_briefs_section(brief: WeeklyBrief, sections: list[str]):
         emoji = COUNTRY_EMOJI.get(country, "🌍")
         primary_dossier = country_primary_dossier.get(country, "")
         # Country header links to the primary leader's dossier
-        sections.append(f"### [{emoji} {country}](dossiers/{primary_dossier})")
+        sections.append(f"### [{emoji} {country}]({_dossier_url(primary_dossier)})")
         sections.append("")
 
         # Sort stories by score
@@ -381,7 +565,7 @@ def _render_briefs_section(brief: WeeklyBrief, sections: list[str]):
             summary = _get_first_sentence(story.narrative)
             # Format: - [Headline](dossier_link#anchor) — Summary
             sections.append(
-                f"- [{story.title}](dossiers/{dossier_file}#{anchor}) — {summary}"
+                f"- [{story.title}]({_dossier_url(dossier_file, anchor)}) — {summary}"
             )
 
         sections.append("")
@@ -415,6 +599,7 @@ def _render_regional_briefs(
         return
 
     sections.append("## Regional Briefs")
+    sections.append("{: #regional-briefs}")
     sections.append("")
 
     # Render regions in order
@@ -424,13 +609,15 @@ def _render_regional_briefs(
 
         region_name = region_display_names.get(region, region.replace("_", " ").title())
         sections.append(f"### {region_name}")
+        sections.append(f"{{: #{_slugify(region_name)}}}")
         sections.append("")
 
         # Sort dossiers by country name
         dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
 
         for dossier in dossiers:
-            _render_leader_brief(dossier, sections)
+            leader_slug = _slugify(f"{dossier.leader.country} {dossier.leader.name}")
+            _render_leader_brief(dossier, sections, anchor_id=leader_slug)
 
     # Render any regions not in the order list
     for region in sorted(region_dossiers.keys()):
@@ -438,21 +625,25 @@ def _render_regional_briefs(
             continue
         region_name = region_display_names.get(region, region.replace("_", " ").title())
         sections.append(f"### {region_name}")
+        sections.append(f"{{: #{_slugify(region_name)}}}")
         sections.append("")
         for dossier in region_dossiers[region]:
-            _render_leader_brief(dossier, sections)
+            leader_slug = _slugify(f"{dossier.leader.country} {dossier.leader.name}")
+            _render_leader_brief(dossier, sections, anchor_id=leader_slug)
 
 
-def _render_leader_brief(dossier: LeaderDossier, sections: list[str]):
-    """Render a single leader's brief within the regional grouping."""
+def _render_leader_brief(dossier: LeaderDossier, sections: list[str], anchor_id: str = ""):
+    """Render a single leader's brief within a regional section."""
     emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
     safe_name = dossier.leader.name.lower().replace(" ", "_")
     dossier_file = f"{safe_name}.md"
 
     # Leader header with link to full dossier
     sections.append(
-        f"#### [{emoji} {dossier.leader.country} / {dossier.leader.name}](dossiers/{dossier_file})"
+        f"#### [{emoji} {dossier.leader.country} / {dossier.leader.name}]({_dossier_url(dossier_file)})"
     )
+    if anchor_id:
+        sections.append(f"{{: #{anchor_id}}}")
     sections.append("")
 
     # Executive summary (if available)
@@ -484,7 +675,7 @@ def _render_leader_brief(dossier: LeaderDossier, sections: list[str]):
         anchor = _slugify(story.title)
         summary = _get_first_sentence(story.narrative)
         sections.append(
-            f"- [{story.title}](dossiers/{dossier_file}#{anchor}) — {summary}"
+            f"- [{story.title}]({_dossier_url(dossier_file, anchor)}) — {summary}"
         )
 
     if filtered_stories:
@@ -561,8 +752,8 @@ def _deserialize_brief(data: dict) -> WeeklyBrief:
             return val
         return datetime.fromisoformat(val)
 
-    # Detect format: old format has "executive_summary" or "key_actions" in dossiers
-    is_old_format = "executive_summary" in data or "cross_cutting_threads" in data
+    # Detect format: old format has "cross_cutting_threads" (unique to old format)
+    is_old_format = "cross_cutting_threads" in data
 
     # Deserialize leader dossiers
     dossiers = []

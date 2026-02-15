@@ -1,0 +1,51 @@
+---
+layout: dossier
+doc_type: dossier
+title: "Finland — Alexander Stubb, President"
+leader_name: "Alexander Stubb"
+country: "Finland"
+date: 2026-02-08
+brief_url: "../../brief/"
+---
+
+# 🇫🇮 Finland
+## Alexander Stubb, President
+_Week of February 1, 2026_
+
+> Finnish President Alexander Stubb said this week that U.S. ideology conflicts with Finnish values, marking a departure from Finland's typically measured diplomatic language toward major allies. Stubb maintained an active domestic schedule with visits to schools and businesses in Vantaa and a planned trip to Kouvola, while also confirming his attendance at the 2026 Milan Winter Olympics opening ceremony. The president's statements and travel schedule reflect both a more assertive communication style on foreign policy and continued emphasis on domestic engagement and European partnerships.
+
+## Top Stories
+
+### Finland's Stubb says US ideology conflicts with Finnish values
+
+HELSINKI, Finland — Finnish President Alexander Stubb said Wednesday that the current U.S. administration's foreign policy is guided by an ideology that conflicts with Finnish values, citing America's undermining of international institutions and diminished focus on Europe. Speaking at the opening of Parliament, Stubb said Finland must acknowledge that the United States is changing in its approach to allies and foreign policy, though he called the U.S. an important ally. Stubb said the administration's 'Make America Great Again' ideology downplays the international rules-based order and the European Union, areas where Finland disagrees with Washington. Finland will update its foreign and security policy doctrine to reflect changes in the international situation, Stubb told lawmakers.
+
+*Sources: (Reuters [1](https://archive.ph/https://www.reuters.com/world/europe/finlands-stubb-we-must-admit-us-is-changing-2026-02-04/); Helsingin Sanomat [1](https://archive.ph/https://www.hs.fi/politiikka/art-2000011793928.html); Office of the President [1](https://archive.ph/https://www.presidentti.fi/en/speech-by-president-of-the-republic-of-finland-alexander-stubb-at-the-opening-of-parliament-on-4-february-2026/))*
+
+### President Stubb to visit Kouvola
+
+President Stubb to visit Kouvola
+
+*Sources: (Office of the President [1](https://archive.ph/https://www.presidentti.fi/en/presidential-couple-to-attend-the-opening-of-the-milano-cortina-2026-winter-olympics/))*
+
+### Finnish President to Attend Milan Winter Olympics Opening Ceremony
+
+HELSINKI, Finland — Finnish President Alexander Stubb will attend the opening ceremony of the 2026 Winter Olympics in Milan on Feb. 6, the president's office said Sunday. Stubb and his wife Suzanne Innes-Stubb will participate in a reception at Palazzo Reale hosted by Italian President Sergio Mattarella and the official opening ceremony at San Siro stadium in Milan, according to a press release. The 2026 Winter Olympics will be held in Milan and Cortina d'Ampezzo, Italy, from Feb. 6-22.
+
+*Sources: (STT [1](https://archive.ph/https://www.sttinfo.fi/tiedote/71780085/presidentparet-deltar-i-invigningen-av-vinter-os-milano-cortina-2026?publisherId=3981&lang=sv))*
+
+### Finnish President Stubb visits schools, businesses in Vantaa
+
+VANTAA, Finland — President Alexander Stubb and his spouse Suzanne Innes-Stubb visited the city of Vantaa on Tuesday, touring educational institutions and local businesses. The presidential couple began at Lehtikuusen koulu comprehensive school, where first-grade pupils welcomed them and conducted interviews about language learning, according to the Office of the President. They later visited Vantaa Vocational College Varia's aircraft maintenance programs and Sensofusion, a drone-detection technology company that received the President's Internationalisation Award in 2025. "Vantaa is Finland's most international and multicultural city," Stubb said during a public event at Jumbo shopping centre.
+
+*Sources: (Office of the President [1](https://archive.ph/https://www.presidentti.fi/en/president-stubb-visits-vantaa/))*
+
+## Between the Lines
+
+- Stubb's criticism of U.S. foreign policy ideology represents a notable departure from Finland's traditionally careful diplomatic language regarding major allies, suggesting a more assertive presidential communication style.
+- The president's domestic travel schedule to Kouvola and Vantaa indicates a focus on regional engagement and visibility outside the capital, potentially building political capital through direct citizen contact.
+- Stubb's planned attendance at the 2026 Milan Olympics opening ceremony demonstrates Finland's continued emphasis on international sporting diplomacy and maintaining strong European ties amid broader geopolitical tensions.
+
+---
+
+*Generated: 2026-02-08 12:45*

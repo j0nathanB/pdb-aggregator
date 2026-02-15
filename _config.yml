@@ -1,0 +1,47 @@
+title: The Middle Powers Monitor
+description: Weekly intelligence briefs on world leaders
+theme: just-the-docs
+
+url: "https://j0nathanb.github.io"
+baseurl: "/pdb-aggregator"
+
+collections:
+  briefs:
+    output: true
+    sort_by: date
+    permalink: /briefs/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "briefs"
+    values:
+      layout: default
+      nav_exclude: true
+
+exclude:
+  - src/
+  - infra/
+  - scripts/
+  - debug/
+  - briefs/
+  - docs/
+  - tests/
+  - Dockerfile
+  - .dockerignore
+  - "*.py"
+  - "*.pyc"
+  - __pycache__/
+  - .venv/
+  - .env
+  - .env.*
+  - node_modules/
+  - vendor/
+  - README.md
+  - adaptive_clustering_notes.md
+  - build_spec.md
+  - requirements.txt
+  - leaders_sources.csv
+  - opinion_filters.csv
+  - readme.md
+  - "*.log"

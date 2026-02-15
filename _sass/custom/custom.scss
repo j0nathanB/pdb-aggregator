@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+// Show nested nav lists when their expander is expanded
+.nav-list .nav-list-item > .nav-list-expander[aria-expanded="true"] ~ .nav-list {
+  display: block;
+}
+
+// Sidebar nav font sizing: smallest is 1rem, scaled up proportionally
+#site-nav > .nav-list > .nav-list-item {
+  font-size: 1.3rem !important;
+  font-weight: 700;
+
+  > .nav-list > .nav-list-item {
+    font-size: 1.15rem !important;
+    font-weight: 400;
+
+    > .nav-list > .nav-list-item {
+      font-size: 1rem !important;
+    }
+  }
+}
+
+// Main content sizing
+.main-content-wrap {
+  font-size: 115%;
+}
+
+.main-content {
+  line-height: 130%;
+}
+
+// Widen sidebar content to fill 2/3 of the sidebar
+@media (min-width: 50rem) {
+  .site-nav,
+  .site-header,
+  .site-footer {
+    width: 83.33%;
+  }
+}

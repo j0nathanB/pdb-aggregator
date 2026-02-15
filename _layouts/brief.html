@@ -1,0 +1,109 @@
+---
+layout: table_wrappers
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+{% include head.html %}
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  {% include icons/icons.html %}
+
+  <header class="side-bar">
+    <div class="site-header">
+      <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
+      <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+      </button>
+    </div>
+
+    <nav aria-label="Brief navigation" id="site-nav" class="site-nav">
+      {% if page.nav_tree %}
+      <ul class="nav-list">
+        {% for section in page.nav_tree %}
+        <li class="nav-list-item">
+          {% if section.children %}
+          <button class="nav-list-expander btn-reset" aria-label="{{ section.label }}" aria-expanded="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button>
+          {% endif %}
+          <a href="#{{ section.anchor }}" class="nav-list-link">{{ section.label }}</a>
+          {% if section.children %}
+          <ul class="nav-list">
+            {% for child in section.children %}
+            <li class="nav-list-item">
+              {% if child.children %}
+              <button class="nav-list-expander btn-reset" aria-label="{{ child.label }}" aria-expanded="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+              </button>
+              {% endif %}
+              <a href="#{{ child.anchor }}" class="nav-list-link">{{ child.label }}</a>
+              {% if child.children %}
+              <ul class="nav-list">
+                {% for grandchild in child.children %}
+                <li class="nav-list-item">
+                  <a href="#{{ grandchild.anchor }}" class="nav-list-link">{{ grandchild.label }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+
+        {%- comment -%} Archives section {%- endcomment -%}
+        {% assign other_briefs = site.briefs | where: "doc_type", "brief" | sort: "date" | reverse %}
+        <li class="nav-list-item">
+          <button class="nav-list-expander btn-reset" aria-label="Archives" aria-expanded="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button>
+          <a href="{{ '/' | relative_url }}" class="nav-list-link">Archives</a>
+          <ul class="nav-list">
+            {% for b in other_briefs %}
+            {% unless b.url == page.url %}
+            <li class="nav-list-item">
+              <a href="{{ b.url | relative_url }}" class="nav-list-link">{{ b.date | date: "%b %-d, %Y" }}</a>
+            </li>
+            {% endunless %}
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+      {% endif %}
+    </nav>
+  </header>
+
+  <div class="main" id="top">
+    <div class="main-content-wrap">
+      <div id="main-content" class="main-content">
+        <main>
+          {% if site.heading_anchors != false %}
+            {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
+          {% else %}
+            {{ content }}
+          {% endif %}
+        </main>
+        {% include components/footer.html %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#site-nav .nav-list-link').forEach(function(link) {
+      var li = link.closest('.nav-list-item');
+      var expander = li ? li.querySelector(':scope > .nav-list-expander') : null;
+      if (!expander) return;
+      link.addEventListener('click', function() {
+        var expanded = expander.getAttribute('aria-expanded') === 'true';
+        expander.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      });
+    });
+  });
+  </script>
+</body>
+</html>
