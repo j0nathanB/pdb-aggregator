@@ -6,6 +6,28 @@ leader_name: "Gitanas Nausėda"
 country: "Lithuania"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Lithuania president vows to push for Belarus sanctions extension"
+        anchor: "lithuania-president-vows-to-push-for-belarus-sanctions-extension"
+      - label: "Lithuanian authorities to inspect president's property over land complaint"
+        anchor: "lithuanian-authorities-to-inspect-president-s-property-over-land-complaint"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Lithuanian President Calls for Investigation into Epstein Files"
+        anchor: "lithuanian-president-calls-for-investigation-into-epstein-files"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Lithuanian President warns about Remigijus Žemaitaitis ties"
+        anchor: "lithuanian-president-warns-about-remigijus-emaitaitis-ties"
+      - label: "Poll shows majority of Lithuanians view president negatively"
+        anchor: "poll-shows-majority-of-lithuanians-view-president-negatively"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇱🇹 Lithuania

@@ -6,6 +6,34 @@ leader_name: "Keir Starmer"
 country: "United Kingdom"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Starmer's chief of staff quits over Mandelson appointment"
+        anchor: "starmer-s-chief-of-staff-quits-over-mandelson-appointment"
+      - label: "UK minister commissioned probe targeting journalists investigating Labour thinktank"
+        anchor: "uk-minister-commissioned-probe-targeting-journalists-investigating-labour-thinktank"
+      - label: "Starmer accused of hypocrisy over World Food Programme cuts"
+        anchor: "starmer-accused-of-hypocrisy-over-world-food-programme-cuts"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Author criticizes Starmer's China visit as diplomatic humiliation"
+        anchor: "author-criticizes-starmer-s-china-visit-as-diplomatic-humiliation"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Starmer fires ambassador Mandelson over Epstein ties"
+        anchor: "starmer-fires-ambassador-mandelson-over-epstein-ties"
+      - label: "Britain can’t ignore Europe and China at the same time"
+        anchor: "britain-can-t-ignore-europe-and-china-at-the-same-time"
+      - label: "A crunchy week for chipmakers"
+        anchor: "a-crunchy-week-for-chipmakers"
+      - label: "Starmer urged to protect trans-inclusive spaces from legal challenges"
+        anchor: "starmer-urged-to-protect-trans-inclusive-spaces-from-legal-challenges"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇬🇧 United Kingdom

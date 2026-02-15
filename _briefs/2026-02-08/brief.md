@@ -34,7 +34,7 @@ nav_tree:
       - label: "South America"
         anchor: "south-america"
         children:
-          - label: "🇧🇷 Brazil / Lula da Silva"
+          - label: "🇧🇷 Brazil / Luiz Inácio Lula da Silva"
             anchor: "brazil-lula-da-silva"
           - label: "🇺🇾 Uruguay / Yamandú Orsi"
             anchor: "uruguay-yamand-orsi"
@@ -131,6 +131,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Carney is navigating significant pressure from both domestic industry groups and international trade partners, as evidenced by scrapping the EV mandate under auto industry pressure while simultaneously facing Trump's tariff threats over China trade deals.
 - The Prime Minister appears to be making deliberate outreach to former Conservative leadership, praising Harper's fiscal record at the portrait ceremony, potentially signaling efforts to build cross-party consensus or neutralize opposition criticism.
 
+* * *
+{: .leader-sep}
+
 #### [🇲🇽 Mexico / Claudia Sheinbaum](../dossiers/claudia_sheinbaum)
 {: #mexico-claudia-sheinbaum}
 
@@ -146,10 +149,12 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Sheinbaum is simultaneously managing both high-stakes geopolitical positioning and domestic populist messaging, from defending sovereignty against foreign interference while signing critical mineral agreements with the U.S., to addressing BTS concert ticketing issues alongside major infrastructure launches.
 - The president appears to be navigating internal party tensions within Morena, as evidenced by the Campeche dispute affecting her presidency and her defensive stance on electoral reform critics, suggesting potential fractures in the ruling coalition's unity.
 
+---
+
 ### South America
 {: #south-america}
 
-#### [🇧🇷 Brazil / Lula da Silva](../dossiers/lula_da_silva)
+#### [🇧🇷 Brazil / Luiz Inácio Lula da Silva](../dossiers/lula_da_silva)
 {: #brazil-lula-da-silva}
 
 > Brazilian President Luiz Inácio Lula da Silva launched a national pact against femicide this week while addressing multiple governance challenges, including promising a thorough investigation of the Master Bank case and considering appointments to the Central Bank directorship. Lula made public appearances across the country, delivering health equipment in Salvador and speaking at the opening of the 2026 judicial year, while calling for ideological flexibility in Brazilian politics. The president also criticized U.S. pressure on Cuba, describing it as a 'massacre of speculation.'
@@ -163,6 +168,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 **Between the Lines:**
 - Lula's week shows a president actively managing both symbolic governance (femicide pact, judicial ceremony speeches) and practical political challenges (Central Bank appointments, corruption investigations), suggesting a dual focus on public messaging and behind-the-scenes maneuvering.
 - The Master Bank investigation and Lula's emphasis on 'no political interference' comes as he simultaneously makes key financial appointments, indicating potential tension between maintaining judicial independence and exercising executive influence over economic policy.
+
+* * *
+{: .leader-sep}
 
 #### [🇺🇾 Uruguay / Yamandú Orsi](../dossiers/yamandú_orsi)
 {: #uruguay-yamand-orsi}
@@ -178,6 +186,8 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 **Between the Lines:**
 - Orsi's China visit appears strategically timed early in his presidency, with multiple cooperation agreements and trade seminars suggesting Uruguay is prioritizing economic ties with Beijing amid broader geopolitical shifts in Latin America.
 - The inclusion of a businessman charged with human trafficking in Orsi's official China delegation raises questions about vetting procedures for high-profile diplomatic missions and could create diplomatic complications.
+
+---
 
 ### Europe
 {: #europe}
@@ -195,6 +205,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Stubb's criticism of U.S. foreign policy ideology represents a notable departure from Finland's traditionally careful diplomatic language regarding major allies, suggesting a more assertive presidential communication style.
 - The president's domestic travel schedule to Kouvola and Vantaa indicates a focus on regional engagement and visibility outside the capital, potentially building political capital through direct citizen contact.
 
+* * *
+{: .leader-sep}
+
 #### [🇫🇷 France / Emmanuel Macron](../dossiers/emmanuel_macron)
 {: #france-emmanuel-macron}
 
@@ -209,6 +222,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Macron faces coordinated pressure on multiple domestic fronts this week, from fertility concerns to farmer unrest, while simultaneously managing external security threats from Russia.
 - The timing of Russia's disinformation campaign targeting Macron coincides with France's increased military budget allocation specifically aimed at countering Russian threats, suggesting escalating information warfare alongside conventional deterrence.
 
+* * *
+{: .leader-sep}
+
 #### [🇩🇪 Germany / Friedrich Merz](../dossiers/friedrich_merz)
 {: #germany-friedrich-merz}
 
@@ -217,6 +233,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 **Between the Lines:**
 - Merz is actively pursuing diplomatic engagement with both Middle Eastern allies and adversaries, suggesting Germany is recalibrating its foreign policy approach under his leadership to balance regional partnerships with dialogue on contentious issues like Iran.
 - The juxtaposition of Merz receiving carnival visitors at the chancellery while simultaneously managing serious diplomatic initiatives indicates he is working to project both gravitas and accessibility as the new chancellor.
+
+* * *
+{: .leader-sep}
 
 #### [🇮🇹 Italy / Giorgia Meloni](../dossiers/giorgia_meloni)
 {: #italy-giorgia-meloni}
@@ -233,6 +252,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Meloni is simultaneously engaging in high-level international diplomacy while facing domestic security challenges, as evidenced by her meetings with foreign leaders occurring alongside protests, vandalism of party offices, and the need for new security legislation.
 - The Vatican's intervention to remove Meloni's face from a church fresco suggests potential tensions between Italy's conservative government and Catholic Church leadership over appropriate boundaries between religious and political imagery.
 
+* * *
+{: .leader-sep}
+
 #### [🇲🇩 Moldova / Maia Sandu](../dossiers/maia_sandu)
 {: #moldova-maia-sandu}
 
@@ -248,6 +270,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Sandu is actively managing Moldova's international image through strategic messaging, deflecting Nobel Prize attention to Ukraine while simultaneously defending against U.S. criticism of social media policies.
 - The president appears to be restructuring her advisory network with unpaid special envoys handling sensitive security issues, suggesting either budget constraints or a desire for more flexible, less formal arrangements.
 
+* * *
+{: .leader-sep}
+
 #### [🇵🇱 Poland / Donald Tusk](../dossiers/donald_tusk)
 {: #poland-donald-tusk}
 
@@ -260,6 +285,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 **Between the Lines:**
 - Tusk appears to be managing a delicate balancing act between maintaining Poland's NATO commitments and defending domestic political positions that risk friction with the Trump administration, as evidenced by his defense of the parliament speaker despite U.S. diplomatic tensions.
 - The Polish government is signaling continued military support for Ukraine through potential MiG-29 transfers while simultaneously facing pressure to appease Trump, suggesting Poland may prioritize its Eastern European security concerns over transatlantic diplomatic harmony.
+
+* * *
+{: .leader-sep}
 
 #### [🇺🇦 Ukraine / Volodymyr Zelenskyy](../dossiers/volodymyr_zelenskyy)
 {: #ukraine-volodymyr-zelenskyy}
@@ -276,6 +304,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Zelenskyy's public statements this week reveal a strategic shift toward framing Ukraine's military position in specific, quantifiable terms—citing exact casualty projections and timeline estimates—suggesting an effort to influence international perceptions of the conflict's sustainability.
 - The Ukrainian president's emphasis on distinguishing between Trump's influence over Putin versus European leaders' lack thereof indicates Ukraine is recalibrating its diplomatic messaging to align with the new U.S. administration's approach to Russia.
 
+* * *
+{: .leader-sep}
+
 #### [🇬🇧 United Kingdom / Keir Starmer](../dossiers/keir_starmer)
 {: #united-kingdom-keir-starmer}
 
@@ -290,6 +321,8 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 **Between the Lines:**
 - Starmer's inner circle appears increasingly unstable, with his chief of staff resigning over the Mandelson appointment that was subsequently reversed, suggesting either poor vetting processes or significant internal disagreements over key decisions.
 - The Prime Minister faces mounting accusations of inconsistency between his stated principles and government actions, from the World Food Programme funding cuts contradicting hunger pledges to potential hypocrisy over transparency given the journalist investigation story.
+
+---
 
 ### Baltic States
 {: #baltic-states}
@@ -306,6 +339,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 - Michal's public statements this week focus heavily on pressuring neighboring countries and reassuring voters about opposition threats, suggesting a more assertive communication strategy as Estonia approaches elections.
 - The Prime Minister's emphasis on both infrastructure deadlines with Latvia and domestic pension system stability indicates Estonia is simultaneously managing regional coordination challenges and internal political pressures.
 
+* * *
+{: .leader-sep}
+
 #### [🇱🇻 Latvia / Evika Siliņa](../dossiers/evika_siliņa)
 {: #latvia-evika-sili-a}
 
@@ -320,6 +356,9 @@ BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President 
 **Between the Lines:**
 - Siliņa faces domestic political pressure with opposition parties attempting a sixth no-confidence vote, yet the opposition's decision to break their own quorum suggests internal divisions or strategic miscalculation that may actually strengthen her position.
 - The Prime Minister is actively pursuing international engagement through UAE economic visits and diplomatic positions on Russia-EU dialogue, potentially using foreign policy initiatives to bolster domestic standing amid political challenges.
+
+* * *
+{: .leader-sep}
 
 #### [🇱🇹 Lithuania / Gitanas Nausėda](../dossiers/gitanas_nausėda)
 {: #lithuania-gitanas-naus-da}

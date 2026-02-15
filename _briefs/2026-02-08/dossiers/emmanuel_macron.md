@@ -6,6 +6,26 @@ leader_name: "Emmanuel Macron"
 country: "France"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "France accuses Russia of Epstein smear campaign against Macron"
+        anchor: "france-accuses-russia-of-epstein-smear-campaign-against-macron"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "France adopts 2026 budget boosting military spending"
+        anchor: "france-adopts-2026-budget-boosting-military-spending"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "France to send fertility letters to all 29-year-olds"
+        anchor: "france-to-send-fertility-letters-to-all-29-year-olds"
+      - label: "Macron meets farmers ahead of agriculture fair visit"
+        anchor: "macron-meets-farmers-ahead-of-agriculture-fair-visit"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇫🇷 France

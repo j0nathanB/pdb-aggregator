@@ -6,6 +6,32 @@ leader_name: "Yamandú Orsi"
 country: "Uruguay"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Uruguay's Orsi meets Xi, signs cooperation deals in Beijing"
+        anchor: "uruguay-s-orsi-meets-xi-signs-cooperation-deals-in-beijing"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Uruguay's Orsi faces key challenges in 2026 roadmap"
+        anchor: "uruguay-s-orsi-faces-key-challenges-in-2026-roadmap"
+      - label: "Uruguay President Orsi to attend China trade seminar"
+        anchor: "uruguay-president-orsi-to-attend-china-trade-seminar"
+      - label: "Businessman charged with human trafficking joins Orsi China delegation"
+        anchor: "businessman-charged-with-human-trafficking-joins-orsi-china-delegation"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Uruguay's Orsi says police warned him of tunnel robbery plot"
+        anchor: "uruguay-s-orsi-says-police-warned-him-of-tunnel-robbery-plot"
+      - label: "Opposition leader criticizes Orsi administration for dismantling predecessor's projects"
+        anchor: "opposition-leader-criticizes-orsi-administration-for-dismantling-predecessor-s-projects"
+      - label: "Uruguay's Orsi says 'things to resolve' before new port terminal"
+        anchor: "uruguay-s-orsi-says-things-to-resolve-before-new-port-terminal"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇺🇾 Uruguay

@@ -6,6 +6,37 @@ leader_name: "Donald Tusk"
 country: "Poland"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Tusk defends parliament speaker after US cuts diplomatic contact"
+        anchor: "tusk-defends-parliament-speaker-after-us-cuts-diplomatic-contact"
+      - label: "Poland Ready to Transfer MiG-29 Jets to Ukraine"
+        anchor: "poland-ready-to-transfer-mig-29-jets-to-ukraine"
+      - label: "Amerykański politolog: Nie ma już NATO. Próby udobruchania Trumpa to czysta polityka appeasementu"
+        anchor: "ameryka-ski-politolog-nie-ma-ju-nato-pr-by-udobruchania-trumpa-to-czysta-polityka-appeasementu"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Czarzasty: Nie poprę wniosku o Nobla dla Trumpa, bo na niego nie zasługuje"
+        anchor: "czarzasty-nie-popr-wniosku-o-nobla-dla-trumpa-bo-na-niego-nie-zas-uguje"
+      - label: "Polish PM Tusk fulfills pizza promise to young footballers"
+        anchor: "polish-pm-tusk-fulfills-pizza-promise-to-young-footballers"
+      - label: "Czy kolejną pisowską recydywę przeżyjemy jako kraj, jako społeczeństwo? [Wiszniewski do Tuska]"
+        anchor: "czy-kolejn-pisowsk-recydyw-prze-yjemy-jako-kraj-jako-spo-ecze-stwo-wiszniewski-do-tuska"
+      - label: "Leaders Who Traded Insults to Meet at White House"
+        anchor: "leaders-who-traded-insults-to-meet-at-white-house"
+      - label: "Polish PM Tusk's charity auction raises over $60,000"
+        anchor: "polish-pm-tusk-s-charity-auction-raises-over-60-000"
+      - label: "Polish TV Host Appeals to PM Tusk on Animal Welfare"
+        anchor: "polish-tv-host-appeals-to-pm-tusk-on-animal-welfare"
+      - label: "Trump writes about Pacific island, US presence rights"
+        anchor: "trump-writes-about-pacific-island-us-presence-rights"
+      - label: "Polish Singer Requests Meeting With Prime Minister Tusk"
+        anchor: "polish-singer-requests-meeting-with-prime-minister-tusk"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇵🇱 Poland

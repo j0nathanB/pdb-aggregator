@@ -6,6 +6,27 @@ leader_name: "Friedrich Merz"
 country: "Germany"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Germany's Merz heads to Saudi, Gulf in quest for new partners"
+        anchor: "germany-s-merz-heads-to-saudi-gulf-in-quest-for-new-partners"
+      - label: "Iran: Friedrich Merz kontert Provokation und fordert Dialog mit den USA"
+        anchor: "iran-friedrich-merz-kontert-provokation-und-fordert-dialog-mit-den-usa"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Der Bundeskanzler der Bundesrepublik Deutschland | Startseite"
+        anchor: "der-bundeskanzler-der-bundesrepublik-deutschland-startseite"
+      - label: "Meinung: Sozialstaat: Da haben die Sozis Friedrich Merz so richtig geleimt"
+        anchor: "meinung-sozialstaat-da-haben-die-sozis-friedrich-merz-so-richtig-geleimt"
+      - label: "(S+) Wie Gregor Gysi die Demokratie retten würde - und was er Merz im Umgang mit Trump rät"
+        anchor: "s-wie-gregor-gysi-die-demokratie-retten-w-rde-und-was-er-merz-im-umgang-mit-trump-r-t"
+      - label: "Friedrich Merz empfängt Karnevalisten im Kanzleramt: D'r Merz kütt"
+        anchor: "friedrich-merz-empf-ngt-karnevalisten-im-kanzleramt-d-r-merz-k-tt"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇩🇪 Germany

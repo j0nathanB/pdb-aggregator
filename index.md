@@ -6,7 +6,7 @@ nav_order: 1
 
 # The Middle Powers Monitor
 
-Weekly intelligence briefs covering world leaders.
+Weekly intelligence briefs covering Middle Power leadership.
 {: .fs-6 .fw-300 }
 
 {% assign briefs = site.briefs | where: "doc_type", "brief" | sort: "date" | reverse %}

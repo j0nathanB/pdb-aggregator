@@ -6,6 +6,36 @@ leader_name: "Maia Sandu"
 country: "Moldova"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Moldova's Sandu nominated for Nobel Peace Prize"
+        anchor: "moldova-s-sandu-nominated-for-nobel-peace-prize"
+      - label: "Moldova President Meets Baltic Parliament Leaders on EU Integration"
+        anchor: "moldova-president-meets-baltic-parliament-leaders-on-eu-integration"
+      - label: "Maia Sandu proposes consultations for protecting children in the online environment"
+        anchor: "maia-sandu-proposes-consultations-for-protecting-children-in-the-online-environment"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Moldova Foreign Minister Open to Creative EU Membership Ideas"
+        anchor: "moldova-foreign-minister-open-to-creative-eu-membership-ideas"
+      - label: "Moldova's Sandu says incomes higher despite Ukraine war impact"
+        anchor: "moldova-s-sandu-says-incomes-higher-despite-ukraine-war-impact"
+      - label: "Moldova's Sandu defends social media regulation against US report"
+        anchor: "moldova-s-sandu-defends-social-media-regulation-against-us-report"
+      - label: "Moldovan Socialist Deputy Explains Why He Didn't Applaud Sandu Speech"
+        anchor: "moldovan-socialist-deputy-explains-why-he-didn-t-applaud-sandu-speech"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Moldova President Says Special Envoys Work Without Pay"
+        anchor: "moldova-president-says-special-envoys-work-without-pay"
+      - label: "Sandu says former health minister chose to leave government"
+        anchor: "sandu-says-former-health-minister-chose-to-leave-government"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇲🇩 Moldova

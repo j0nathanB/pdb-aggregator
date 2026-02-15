@@ -24,13 +24,42 @@ body {
   }
 }
 
-// Main content sizing
-.main-content-wrap {
-  font-size: 115%;
+// Main content: 1.200 minor third type scale
+.main-content {
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+  h1 { font-size: 2.986rem !important; }
+  h2 { font-size: 2.488rem !important; }
+  h3 { font-size: 2.074rem !important; }
+  h4 { font-size: 1.728rem !important; }
+  h5 { font-size: 1.44rem !important; }
+  h6 { font-size: 1.2rem !important; }
 }
 
-.main-content {
-  line-height: 130%;
+// Section separators
+// Full-width hr between regions, short centered ornament between leaders
+.main-content hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid $border-color;
+}
+
+.main-content hr.leader-sep {
+  border-top: none;
+  text-align: center;
+  margin: 1.5rem 0;
+
+  &::after {
+    content: "* * *";
+    position: relative;
+    top: -0.75em;
+    padding: 0 1em;
+    background: $body-background-color;
+    color: $grey-dk-000;
+    font-size: 0.875rem;
+    letter-spacing: 0.25em;
+  }
 }
 
 // Widen sidebar content to fill 2/3 of the sidebar

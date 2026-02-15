@@ -35,6 +35,16 @@ logger = logging.getLogger(__name__)
 # Default briefs directory
 BRIEFS_DIR = Path("briefs")
 
+# Display name overrides (canonical name -> full display name)
+DISPLAY_NAMES = {
+    "Lula da Silva": "Luiz In\u00e1cio Lula da Silva",
+}
+
+
+def _display_name(name: str) -> str:
+    """Return the display name for a leader, falling back to the canonical name."""
+    return DISPLAY_NAMES.get(name, name)
+
 
 def _serialize(obj):
     """Custom JSON serializer for dataclasses and datetime."""
@@ -147,10 +157,37 @@ def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> 
     )
 
     # Escape YAML special characters in strings
-    leader_name = dossier.leader.name.replace('"', '\\"')
+    leader_name = _display_name(dossier.leader.name).replace('"', '\\"')
     country = dossier.leader.country.replace('"', '\\"')
-    title_text = f"{dossier.leader.country} — {dossier.leader.name}, {dossier.leader.title}"
+    title_text = f"{dossier.leader.country} — {_display_name(dossier.leader.name)}, {dossier.leader.title}"
     title_escaped = title_text.replace('"', '\\"')
+
+    # Build nav_tree for dossier sidebar
+    nav_tree = []
+    story_sections = [
+        ("Top Stories", dossier.main_stories),
+        ("International", dossier.international_stories),
+        ("Domestic", dossier.domestic_stories),
+    ]
+    for section_title, stories in story_sections:
+        if not stories:
+            continue
+        children = []
+        for story in stories:
+            children.append({
+                "label": story.title,
+                "anchor": _slugify(story.title),
+            })
+        nav_tree.append({
+            "label": section_title,
+            "anchor": _slugify(section_title),
+            "children": children,
+        })
+    if dossier.between_the_lines:
+        nav_tree.append({
+            "label": "Between the Lines",
+            "anchor": "between-the-lines",
+        })
 
     # YAML frontmatter for Jekyll
     sections.append("---")
@@ -161,13 +198,14 @@ def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> 
     sections.append(f"country: \"{country}\"")
     sections.append(f"date: {dossier_date}")
     sections.append(f"brief_url: \"../../brief/\"")
+    sections.append(_format_nav_tree(nav_tree))
     sections.append("---")
     sections.append("")
 
     # Header
     emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
     sections.append(f"# {emoji} {dossier.leader.country}")
-    sections.append(f"## {dossier.leader.name}, {dossier.leader.title}")
+    sections.append(f"## {_display_name(dossier.leader.name)}, {dossier.leader.title}")
     sections.append(_format_date_range(dossier.reporting_period))
     sections.append("")
 
@@ -324,7 +362,7 @@ def _build_nav_tree(brief: WeeklyBrief) -> list[dict]:
             "anchor": _slugify(region_name),
             "children": [
                 {
-                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {d.leader.name}",
+                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {_display_name(d.leader.name)}",
                     "anchor": _slugify(f"{d.leader.country} {d.leader.name}"),
                 }
                 for d in dossiers
@@ -342,7 +380,7 @@ def _build_nav_tree(brief: WeeklyBrief) -> list[dict]:
             "anchor": _slugify(region_name),
             "children": [
                 {
-                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {d.leader.name}",
+                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {_display_name(d.leader.name)}",
                     "anchor": _slugify(f"{d.leader.country} {d.leader.name}"),
                 }
                 for d in dossiers
@@ -603,9 +641,15 @@ def _render_regional_briefs(
     sections.append("")
 
     # Render regions in order
+    first_region = True
     for region in region_order:
         if region not in region_dossiers:
             continue
+
+        if not first_region:
+            sections.append("---")
+            sections.append("")
+        first_region = False
 
         region_name = region_display_names.get(region, region.replace("_", " ").title())
         sections.append(f"### {region_name}")
@@ -615,7 +659,11 @@ def _render_regional_briefs(
         # Sort dossiers by country name
         dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
 
-        for dossier in dossiers:
+        for i, dossier in enumerate(dossiers):
+            if i > 0:
+                sections.append("* * *")
+                sections.append("{: .leader-sep}")
+                sections.append("")
             leader_slug = _slugify(f"{dossier.leader.country} {dossier.leader.name}")
             _render_leader_brief(dossier, sections, anchor_id=leader_slug)
 
@@ -623,11 +671,22 @@ def _render_regional_briefs(
     for region in sorted(region_dossiers.keys()):
         if region in region_order:
             continue
+
+        if not first_region:
+            sections.append("---")
+            sections.append("")
+        first_region = False
+
         region_name = region_display_names.get(region, region.replace("_", " ").title())
         sections.append(f"### {region_name}")
         sections.append(f"{{: #{_slugify(region_name)}}}")
         sections.append("")
-        for dossier in region_dossiers[region]:
+        dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
+        for i, dossier in enumerate(dossiers):
+            if i > 0:
+                sections.append("* * *")
+                sections.append("{: .leader-sep}")
+                sections.append("")
             leader_slug = _slugify(f"{dossier.leader.country} {dossier.leader.name}")
             _render_leader_brief(dossier, sections, anchor_id=leader_slug)
 
@@ -640,7 +699,7 @@ def _render_leader_brief(dossier: LeaderDossier, sections: list[str], anchor_id:
 
     # Leader header with link to full dossier
     sections.append(
-        f"#### [{emoji} {dossier.leader.country} / {dossier.leader.name}]({_dossier_url(dossier_file)})"
+        f"#### [{emoji} {dossier.leader.country} / {_display_name(dossier.leader.name)}]({_dossier_url(dossier_file)})"
     )
     if anchor_id:
         sections.append(f"{{: #{anchor_id}}}")

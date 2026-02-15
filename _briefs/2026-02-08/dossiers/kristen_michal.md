@@ -6,6 +6,23 @@ leader_name: "Kristen Michal"
 country: "Estonia"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Estonia pressures Latvia to maintain Rail Baltica construction schedule"
+        anchor: "estonia-pressures-latvia-to-maintain-rail-baltica-construction-schedule"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Estonian PM warns against pension system changes by opposition"
+        anchor: "estonian-pm-warns-against-pension-system-changes-by-opposition"
+      - label: "Märksõna : peaminister kristen michal"
+        anchor: "m-rks-na-peaminister-kristen-michal"
+      - label: "Kristen Michal elukaaslasest lahus?"
+        anchor: "kristen-michal-elukaaslasest-lahus"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇪🇪 Estonia

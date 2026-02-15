@@ -6,6 +6,31 @@ leader_name: "Mark Carney"
 country: "Canada"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Canada drops EV sales quota amid auto industry pressure"
+        anchor: "canada-drops-ev-sales-quota-amid-auto-industry-pressure"
+      - label: "Carney praises Harper at portrait unveiling ceremony"
+        anchor: "carney-praises-harper-at-portrait-unveiling-ceremony"
+      - label: "Carney announces Luxembourg visit, diplomatic appointments"
+        anchor: "carney-announces-luxembourg-visit-diplomatic-appointments"
+      - label: "Trump threatens tariffs over Carney's China trade deal"
+        anchor: "trump-threatens-tariffs-over-carney-s-china-trade-deal"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Carney names Olszewski as Ministerial Lead for Jasper recovery"
+        anchor: "carney-names-olszewski-as-ministerial-lead-for-jasper-recovery"
+      - label: "Canadian snowboarder Mark McMorris will miss Olympic big air competition after training crash"
+        anchor: "canadian-snowboarder-mark-mcmorris-will-miss-olympic-big-air-competition-after-training-crash"
+      - label: "Barrick moves ahead with IPO of North American gold assets, names Hill as permanent CEO"
+        anchor: "barrick-moves-ahead-with-ipo-of-north-american-gold-assets-names-hill-as-permanent-ceo"
+      - label: "Quebec City might be Canada’s most successful city"
+        anchor: "quebec-city-might-be-canada-s-most-successful-city"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇨🇦 Canada

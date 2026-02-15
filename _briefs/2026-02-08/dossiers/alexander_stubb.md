@@ -6,6 +6,20 @@ leader_name: "Alexander Stubb"
 country: "Finland"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Finland's Stubb says US ideology conflicts with Finnish values"
+        anchor: "finland-s-stubb-says-us-ideology-conflicts-with-finnish-values"
+      - label: "President Stubb to visit Kouvola"
+        anchor: "president-stubb-to-visit-kouvola"
+      - label: "Finnish President to Attend Milan Winter Olympics Opening Ceremony"
+        anchor: "finnish-president-to-attend-milan-winter-olympics-opening-ceremony"
+      - label: "Finnish President Stubb visits schools, businesses in Vantaa"
+        anchor: "finnish-president-stubb-visits-schools-businesses-in-vantaa"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇫🇮 Finland

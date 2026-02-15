@@ -6,6 +6,25 @@ leader_name: "Evika Siliņa"
 country: "Latvia"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Latvia PM Orders Investigation Into Epstein Case References"
+        anchor: "latvia-pm-orders-investigation-into-epstein-case-references"
+      - label: "Latvia PM Supports Direct EU Talks with Russia on Ukraine"
+        anchor: "latvia-pm-supports-direct-eu-talks-with-russia-on-ukraine"
+      - label: "Latvia Opposition Breaks Quorum on Own No-Confidence Vote"
+        anchor: "latvia-opposition-breaks-quorum-on-own-no-confidence-vote"
+      - label: "Latvian PM visits UAE to boost economic ties"
+        anchor: "latvian-pm-visits-uae-to-boost-economic-ties"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Latvia PM to attend Milan Winter Olympics opening ceremonies"
+        anchor: "latvia-pm-to-attend-milan-winter-olympics-opening-ceremonies"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇱🇻 Latvia

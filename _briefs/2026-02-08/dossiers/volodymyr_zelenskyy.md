@@ -6,6 +6,36 @@ leader_name: "Volodymyr Zelenskyy"
 country: "Ukraine"
 date: 2026-02-08
 brief_url: "../../brief/"
+nav_tree:
+  - label: "Top Stories"
+    anchor: "top-stories"
+    children:
+      - label: "Zelenskyy says Russia broke energy strike pause promise"
+        anchor: "zelenskyy-says-russia-broke-energy-strike-pause-promise"
+      - label: "Russia breaks energy strike pause, Ukraine president says"
+        anchor: "russia-breaks-energy-strike-pause-ukraine-president-says"
+      - label: "Ukraine brings home 157 from Russian captivity in swap"
+        anchor: "ukraine-brings-home-157-from-russian-captivity-in-swap"
+      - label: "Zelenskyy says full Donbas occupation would cost Russia 800,000 soldiers"
+        anchor: "zelenskyy-says-full-donbas-occupation-would-cost-russia-800-000-soldiers"
+  - label: "International"
+    anchor: "international"
+    children:
+      - label: "Zelenskyy, NATO Chief Honor Fallen Ukrainian Warriors in Kyiv"
+        anchor: "zelenskyy-nato-chief-honor-fallen-ukrainian-warriors-in-kyiv"
+      - label: "Zelenskyy says Russia offered US $12 trillion cooperation package"
+        anchor: "zelenskyy-says-russia-offered-us-12-trillion-cooperation-package"
+      - label: "Zelenskyy says Putin fears Trump but not Europeans"
+        anchor: "zelenskyy-says-putin-fears-trump-but-not-europeans"
+  - label: "Domestic"
+    anchor: "domestic"
+    children:
+      - label: "Zelenskyy Honors State Special Transport Service Members with Awards"
+        anchor: "zelenskyy-honors-state-special-transport-service-members-with-awards"
+      - label: "All galleries"
+        anchor: "all-galleries"
+  - label: "Between the Lines"
+    anchor: "between-the-lines"
 ---
 
 # 🇺🇦 Ukraine
