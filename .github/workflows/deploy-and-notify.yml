@@ -7,7 +7,7 @@ on:
       - '_briefs/**'
       - '_layouts/**'
       - '_config.yml'
-      - 'index.md'
+      - 'index.html'
       - 'assets/**'
       - 'Gemfile'
   workflow_dispatch:
@@ -91,11 +91,25 @@ jobs:
             exit 0
           fi
 
+          # Extract brief date from changed _briefs/YYYY-MM-DD/ paths (if present)
+          BRIEF_DATE=$(git diff --name-only HEAD~1 HEAD -- '_briefs/' 2>/dev/null \
+            | grep -oP '(?<=_briefs/)\d{4}-\d{2}-\d{2}' \
+            | head -1)
+
+          # Build payload — brief_date is optional, Lambda auto-discovers if omitted
+          if [ -n "$BRIEF_DATE" ]; then
+            PAYLOAD="{\"brief_date\": \"${BRIEF_DATE}\"}"
+            echo "Triggering email for brief: $BRIEF_DATE"
+          else
+            PAYLOAD="{}"
+            echo "Triggering email (Lambda will auto-discover latest brief)"
+          fi
+
           RESPONSE=$(curl -s -w "\n%{http_code}" \
             -X POST "$WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -H "x-api-key: ${API_KEY}" \
-            -d "{\"source\": \"github-actions\", \"ref\": \"${{ github.sha }}\", \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}")
+            -d "$PAYLOAD")
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | head -n -1)
