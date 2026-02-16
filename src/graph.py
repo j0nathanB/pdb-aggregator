@@ -133,7 +133,7 @@ class PDBWorkflow:
         from .agents.dossier_builder import DossierBuilderAgent
         from .agents.aggregate_builder import AggregateBriefingBuilder
         from .agents.synthesizer import SynthesizerAgent
-        from .persistence import save_brief
+        from .persistence import save_brief, generate_email
         from .debug import (
             is_debug_enabled,
             save_dossier_results,
@@ -233,6 +233,13 @@ class PDBWorkflow:
         # Step 5: Save
         brief_path = save_brief(brief)
         logger.info(f"Brief saved to {brief_path}")
+
+        # Step 6: Generate email digest
+        try:
+            email_path = await generate_email(brief, brief_path)
+            logger.info(f"Email digest saved to {email_path}")
+        except Exception as e:
+            logger.error(f"Email digest generation failed (non-fatal): {e}")
 
         if is_debug_enabled():
             save_final_brief(brief)

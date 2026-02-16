@@ -22,6 +22,7 @@ from .event_clustering import EventClusteringAgent
 from .thread_detector import ThreadDetectorAgent
 from .synthesizer import SynthesizerAgent
 from .aggregate_builder import AggregateBriefingBuilder
+from .email_digest import EmailDigestAgent
 
 __all__ = [
     "SourceFetcherAgent",
@@ -32,4 +33,5 @@ __all__ = [
     "ThreadDetectorAgent",
     "SynthesizerAgent",
     "AggregateBriefingBuilder",
+    "EmailDigestAgent",
 ]

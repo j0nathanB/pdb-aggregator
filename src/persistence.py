@@ -259,18 +259,11 @@ def save_dossier_markdown(dossier: LeaderDossier, output_dir: Path) -> Path:
     return md_path
 
 
-def _archive_url(url: str) -> str:
-    """Wrap URL with archive.ph for archival access."""
-    if url.startswith("https://archive.ph/"):
-        return url
-    return f"https://archive.ph/{url}"
-
-
 def _format_story_refs(story: Story) -> str:
     """Format source references for a story."""
     refs_parts = []
     for src_name, urls in story.source_refs.items():
-        links = ",".join(f"[{i+1}]({_archive_url(u)})" for i, u in enumerate(urls))
+        links = ",".join(f"[{i+1}]({u})" for i, u in enumerate(urls))
         refs_parts.append(f"{src_name} {links}")
     return f" ({'; '.join(refs_parts)})" if refs_parts else ""
 
@@ -1060,6 +1053,46 @@ def _deserialize_dossier(data: dict, leader) -> LeaderDossier:
         source_quality_notes=data.get("source_quality_notes", ""),
         generated_at=parse_datetime(data.get("generated_at")),
     )
+
+
+async def generate_email(brief: WeeklyBrief, brief_dir: Path) -> Path:
+    """
+    Generate an HTML email digest from a brief and write it to brief_dir.
+
+    Calls the EmailDigestAgent to condense the brief, then renders the
+    result into an HTML email template.
+
+    Args:
+        brief: The WeeklyBrief to condense
+        brief_dir: Directory to write email.html into
+
+    Returns:
+        Path to the saved email.html file
+    """
+    from .agents.email_digest import EmailDigestAgent
+    from .email_template import render_email_html
+
+    logger.info("Generating email digest")
+
+    agent = EmailDigestAgent()
+    digest = await agent.generate_digest(brief)
+
+    brief_date = _brief_title(brief)  # e.g., "Week of February 8, 2026"
+
+    # Build the canonical brief URL
+    date = _brief_date(brief)  # e.g., "2026-02-08"
+    brief_url = f"https://idealbrief.org/briefs/{date}/brief/"
+
+    html = render_email_html(digest, brief_date, brief_url)
+
+    email_path = brief_dir / "email.html"
+    with open(email_path, "w") as f:
+        f.write(html)
+
+    size_kb = len(html.encode("utf-8")) / 1024
+    logger.info(f"Email HTML saved to {email_path} ({size_kb:.1f} KB)")
+
+    return email_path
 
 
 def get_existing_dossiers(output_dir: Path, leaders: list) -> dict:
