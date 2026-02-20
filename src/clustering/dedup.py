@@ -11,23 +11,27 @@ import numpy as np
 
 from .clusterer import EventCluster
 from ..agents.base import complete, extract_json_from_response, with_retry
+from ..config import MODEL_ANALYTICAL, THINKING_ANALYTICAL
 
 logger = logging.getLogger(__name__)
 
 
-DEDUP_SYSTEM = """You are a news editor identifying duplicate story clusters.
+DEDUP_SYSTEM = """You are a strict journalistic fact-checker. Your job is to identify \
+if two or more news clusters refer to the EXACT SAME physical occurrence or announcement.
 
-Given a list of news story clusters (each with a title and snippet), identify
-which clusters are about THE SAME EVENT and should be merged.
+WARNING: These clusters have already been grouped by semantic similarity (HDBSCAN). \
+They may share the same entities, topics, and keywords, but describe DIFFERENT events. \
+Your job is to catch cross-lingual duplicates and prevent false merges.
 
-Two clusters are the same event if they describe the same specific occurrence:
-- Same person doing the same thing at the same time/place
-- Different sources covering the same announcement, speech, or incident
+DO MERGE:
+- The exact same event reported in different languages (e.g., English and French)
+- The exact same announcement covered by different publishers on the same day
 
-Two clusters are NOT the same event if:
-- They're about the same general topic but different specific occurrences
-- They're about the same person but different events on different days
-- One is a reaction/follow-up to the other (those are related but distinct)
+DO NOT MERGE:
+- Follow-up reactions or consequences of an earlier event
+- Subsequent days of a multi-day event (those are story arcs, handled separately)
+- Similar policies or actions happening at different times
+- A news roundup that merely mentions an event vs. dedicated coverage of that event
 
 Return your answer as JSON."""
 
@@ -36,16 +40,14 @@ Return your answer as JSON."""
 async def deduplicate_clusters(
     clusters: list[EventCluster],
     leader_name: str,
+    model: str = MODEL_ANALYTICAL,
+    thinking_budget: int = THINKING_ANALYTICAL,
 ) -> list[EventCluster]:
     """
     Use LLM to identify and merge duplicate clusters.
 
-    Args:
-        clusters: List of EventClusters from HDBSCAN
-        leader_name: Name of the leader (for context)
-
-    Returns:
-        Deduplicated list of EventClusters
+    Deprecated: Use cluster_reasoning.reason_about_clusters() instead, which combines
+    dedup + arc detection in a single LLM call. Kept for fallback/standalone use.
     """
     if len(clusters) < 2:
         return clusters
@@ -53,13 +55,14 @@ async def deduplicate_clusters(
     # Build cluster summary for LLM
     cluster_summaries = []
     for i, cluster in enumerate(clusters):
-        # Get representative title and first snippet
         title = cluster.representative_title
         snippet = cluster.snippets[0].snippet if cluster.snippets else ""
+        date = cluster.snippets[0].date if cluster.snippets else ""
         sources = ", ".join(list(cluster.sources)[:3])
+        date_tag = f" [{date}]" if date else ""
 
         cluster_summaries.append(
-            f"{i}. [{sources}] {title}\n   {snippet[:150]}..."
+            f"{i}.{date_tag} [{sources}] {title}\n   {snippet[:200]}"
         )
 
     summaries_text = "\n\n".join(cluster_summaries)
@@ -69,25 +72,26 @@ async def deduplicate_clusters(
 CLUSTERS:
 {summaries_text}
 
-Which clusters are about THE SAME EVENT and should be merged?
+For every potential merge, compare the Primary Actor, Specific Action, and Timing \
+to confirm they describe the EXACT SAME occurrence.
 
 Return JSON:
 {{
+    "reasoning": "Cluster 0 and 5 describe the exact same EV rollback announced on Wednesday, in English and French respectively. Cluster 1 is about a new strategy launch, which is a different action.",
     "merge_groups": [
-        [0, 3, 5],  // cluster indices that are the same event
-        [1, 7]      // another group of duplicates
-    ],
-    "reasoning": "Brief explanation of why these are duplicates"
+        [0, 5]
+    ]
 }}
 
-If no clusters should be merged, return: {{"merge_groups": [], "reasoning": "All clusters are distinct events"}}
+If no clusters should be merged, return: {{"reasoning": "All clusters are distinct events.", "merge_groups": []}}
 """
 
     response = await complete(
         prompt=prompt,
         system=DEDUP_SYSTEM,
         temperature=0.1,  # Low temp for consistent judgment
-        max_tokens=500,
+        model=model,
+        thinking_budget=thinking_budget,
     )
 
     data = extract_json_from_response(response)
@@ -187,137 +191,3 @@ def _merge_clusters(clusters: list[EventCluster]) -> EventCluster:
 
     return merged
 
-
-# =============================================================================
-# OPTIONAL: Hybrid approach - algorithmic pre-filter + LLM
-# =============================================================================
-
-async def deduplicate_clusters_hybrid(
-    clusters: list[EventCluster],
-    leader_name: str,
-    similarity_threshold: float = 0.75,
-) -> list[EventCluster]:
-    """
-    Hybrid dedup: algorithmic centroid check + LLM for edge cases.
-
-    1. Compute pairwise centroid similarities
-    2. Auto-merge pairs with similarity > 0.85 (confident)
-    3. Send pairs with similarity 0.6-0.85 to LLM for judgment
-    4. Return merged clusters
-
-    This minimizes LLM calls while catching semantic duplicates.
-    """
-    if len(clusters) < 2:
-        return clusters
-
-    # Compute pairwise similarities
-    centroids = np.vstack([c.centroid for c in clusters])
-    similarities = centroids @ centroids.T
-
-    # Find candidate pairs
-    confident_merges: list[tuple[int, int]] = []
-    uncertain_pairs: list[tuple[int, int, float]] = []
-
-    n = len(clusters)
-    for i in range(n):
-        for j in range(i + 1, n):
-            sim = similarities[i, j]
-            if sim >= 0.85:
-                confident_merges.append((i, j))
-            elif sim >= 0.6:
-                uncertain_pairs.append((i, j, sim))
-
-    logger.info(
-        f"Hybrid dedup: {len(confident_merges)} confident merges, "
-        f"{len(uncertain_pairs)} uncertain pairs to review"
-    )
-
-    # Build merge groups from confident pairs using union-find
-    merge_groups = _pairs_to_groups(confident_merges, n)
-
-    # If uncertain pairs exist, ask LLM
-    if uncertain_pairs:
-        llm_merges = await _check_uncertain_pairs(clusters, uncertain_pairs, leader_name)
-        # Add LLM-confirmed merges to groups
-        additional_groups = _pairs_to_groups(llm_merges, n)
-        merge_groups.extend(additional_groups)
-
-    if not merge_groups:
-        return clusters
-
-    return _merge_cluster_groups(clusters, merge_groups)
-
-
-def _pairs_to_groups(pairs: list[tuple[int, int]], n: int) -> list[list[int]]:
-    """Convert pairwise merges to groups using union-find."""
-    parent = list(range(n))
-
-    def find(x):
-        if parent[x] != x:
-            parent[x] = find(parent[x])
-        return parent[x]
-
-    def union(x, y):
-        px, py = find(x), find(y)
-        if px != py:
-            parent[px] = py
-
-    for i, j in pairs:
-        union(i, j)
-
-    # Group by root
-    groups: dict[int, list[int]] = {}
-    for i in range(n):
-        root = find(i)
-        if root not in groups:
-            groups[root] = []
-        groups[root].append(i)
-
-    # Only return groups with 2+ members
-    return [g for g in groups.values() if len(g) >= 2]
-
-
-@with_retry(max_attempts=2)
-async def _check_uncertain_pairs(
-    clusters: list[EventCluster],
-    pairs: list[tuple[int, int, float]],
-    leader_name: str,
-) -> list[tuple[int, int]]:
-    """Ask LLM to judge uncertain pairs."""
-
-    pair_descriptions = []
-    for i, j, sim in pairs:
-        pair_descriptions.append(
-            f"Pair ({i}, {j}) similarity={sim:.2f}:\n"
-            f"  A: {clusters[i].representative_title}\n"
-            f"  B: {clusters[j].representative_title}"
-        )
-
-    pairs_text = "\n\n".join(pair_descriptions)
-
-    prompt = f"""These cluster pairs about {leader_name} have moderate similarity and might be duplicates.
-
-{pairs_text}
-
-For each pair, are A and B about THE SAME EVENT (should merge) or different events (keep separate)?
-
-Return JSON:
-{{
-    "same_event": [[0, 3], [1, 7]],  // pairs that ARE the same event
-    "different": [[2, 5]]            // pairs that are different events
-}}
-"""
-
-    response = await complete(
-        prompt=prompt,
-        system=DEDUP_SYSTEM,
-        temperature=0.1,
-        max_tokens=300,
-    )
-
-    data = extract_json_from_response(response)
-
-    if not data or "same_event" not in data:
-        return []
-
-    return [tuple(p) for p in data.get("same_event", [])]

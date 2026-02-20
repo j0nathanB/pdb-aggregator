@@ -27,13 +27,18 @@ class EventCluster:
     sources: set[str] = field(default_factory=set)
     source_types: set[str] = field(default_factory=set)
 
+    # Optional title override (e.g., from arc detection merged title)
+    _title_override: str = ""
+
     def __post_init__(self):
         self.sources = {s.source_name for s in self.snippets}
         self.source_types = {s.source_type for s in self.snippets}
 
     @property
     def representative_title(self) -> str:
-        """Return title closest to centroid."""
+        """Return override title if set, otherwise title closest to centroid."""
+        if self._title_override:
+            return self._title_override
         if not self.snippets:
             return ""
         # Find snippet with embedding closest to centroid

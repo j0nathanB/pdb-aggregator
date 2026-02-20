@@ -208,7 +208,6 @@ async def extract_press_conference_topics(
         response = await complete(
             prompt=prompt,
             system=PRESS_CONFERENCE_SYSTEM,
-            max_tokens=4096,
             temperature=0.2,
         )
         parsed = _extract_json_array_or_object(response)
@@ -254,7 +253,6 @@ async def extract_event_speech_topic(
         response = await complete(
             prompt=prompt,
             system=EVENT_SPEECH_SYSTEM,
-            max_tokens=1024,
             temperature=0.2,
         )
         parsed = extract_json_from_response(response)

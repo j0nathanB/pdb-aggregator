@@ -10,33 +10,47 @@ import logging
 from typing import Optional
 
 from ..agents.base import complete, extract_json_from_response
+from ..config import MODEL_ANALYTICAL, THINKING_ANALYTICAL
 
 logger = logging.getLogger(__name__)
 
 
-GROUPER_SYSTEM = """You are an experienced news editor analyzing story relationships.
-Your job is to identify when separate news items are actually part of the same story.
+GROUPER_SYSTEM = """You are a senior news editor building a developing story timeline. \
+Your job is to group distinct events into a single causal "Story Arc."
 
-Be precise:
-- Same story = same situation, event, or developing narrative
-- Different story = different topics, even if same actors are involved
-- A leader meeting with different people about different topics = different stories
-- A leader's multi-day trip covering the same visit = same story
-"""
+A Story Arc requires a causal or direct narrative link:
+- "Event A happens" → "Actor reacts to Event A" → "Consequences of Event A"
+- A multi-day state visit: arrival → meetings → departure
+- An ongoing negotiation: proposal → counter-proposal → deal
+
+DO NOT group events just because they share a broad theme:
+- Do not group all "diplomatic visits" together unless part of the same trip
+- Do not group all "military/defense" stories unless causally linked
+- A leader meeting with different people about different topics = different arcs
+- A news roundup that mentions an event is NOT part of that event's arc
+
+Return your answer as JSON."""
 
 
 async def detect_story_arcs(
     event_titles: list[str],
     leader_name: str,
+    dates: list[str] | None = None,
+    snippets: list[str] | None = None,
+    model: str = MODEL_ANALYTICAL,
+    thinking_budget: int = THINKING_ANALYTICAL,
 ) -> list[list[int]]:
     """
     Detect story arcs: groups of events that are part of the same developing story.
 
-    Used during per-leader processing to merge multi-day coverage of the same situation.
+    Deprecated: Use cluster_reasoning.reason_about_clusters() instead, which combines
+    dedup + arc detection in a single LLM call. Kept for fallback/standalone use.
 
     Args:
         event_titles: List of event titles/descriptions
         leader_name: Name of the leader
+        dates: Optional list of date strings (e.g., "5 days ago") per event
+        snippets: Optional list of snippet text per event
 
     Returns:
         List of index groups that should be merged. Each group is a list of indices
@@ -49,28 +63,37 @@ async def detect_story_arcs(
     if len(event_titles) < 2:
         return []
 
-    # Format events for prompt
-    events_text = "\n".join(f"{i}. {title}" for i, title in enumerate(event_titles))
+    # Format events with optional dates and snippets
+    event_lines = []
+    for i, title in enumerate(event_titles):
+        date_tag = f" [{dates[i]}]" if dates and i < len(dates) and dates[i] else ""
+        line = f"{i}.{date_tag} {title}"
+        if snippets and i < len(snippets) and snippets[i]:
+            line += f"\n   {snippets[i][:200]}"
+        event_lines.append(line)
 
-    prompt = f"""Analyze these news events about {leader_name} from the past week.
+    events_text = "\n\n".join(event_lines)
 
+    date_instruction = ""
+    if dates and any(dates):
+        date_instruction = "\nIMPORTANT: Pay close attention to the publication dates to determine causal flow.\n"
+
+    prompt = f"""Analyze these distinct news events about {leader_name} from the past week.
+{date_instruction}
 EVENTS:
 {events_text}
 
-Identify which events are part of the SAME developing story (e.g., a multi-day trip, an ongoing negotiation, a crisis with multiple updates).
-
-Rules:
-- Only group events that are clearly the same ongoing situation
-- A leader's activities on different topics are DIFFERENT stories, even if on the same day
-- A multi-day state visit to one country = same story
-- Trade negotiations with country A vs. meetings about country B = different stories
+Identify which events are part of the SAME developing story arc. \
+A story arc requires a causal or direct narrative link between events, \
+not just a shared theme.
 
 Return JSON:
 {{
     "story_arcs": [
         {{
             "indices": [0, 2, 5],
-            "theme": "Brief description of what ties these together"
+            "theme": "Brief description of the arc",
+            "causal_link": "Event 0 is the initial announcement, Event 2 is the reaction, Event 5 is the policy consequence."
         }}
     ]
 }}
@@ -83,7 +106,8 @@ If no events should be grouped, return: {{"story_arcs": []}}
             prompt=prompt,
             system=GROUPER_SYSTEM,
             temperature=0.2,
-            max_tokens=800,
+            model=model,
+            thinking_budget=thinking_budget,
         )
         data = extract_json_from_response(response)
 
@@ -110,11 +134,14 @@ If no events should be grouped, return: {{"story_arcs": []}}
 
 async def validate_cross_leader_match(
     story_summaries: list[tuple[str, str, str]],
+    model: str = MODEL_ANALYTICAL,
+    thinking_budget: int = THINKING_ANALYTICAL,
 ) -> bool:
     """
     Validate that stories from different leaders are thematically related.
 
-    Used during aggregate processing to confirm entity-matched stories should be merged.
+    Deprecated for aggregate flow: _validate_and_synthesize_group() in aggregate_builder
+    now combines validation + synthesis in a single call. Kept for standalone use.
 
     Args:
         story_summaries: List of (leader_name, title, narrative_excerpt) tuples
@@ -154,7 +181,8 @@ Return JSON:
             prompt=prompt,
             system=GROUPER_SYSTEM,
             temperature=0.1,
-            max_tokens=300,
+            model=model,
+            thinking_budget=thinking_budget,
         )
         data = extract_json_from_response(response)
 
@@ -173,51 +201,3 @@ Return JSON:
     return True
 
 
-async def merge_story_arc_titles(
-    titles: list[str],
-    leader_name: str,
-) -> str:
-    """
-    Generate a merged title for a story arc.
-
-    Args:
-        titles: List of event titles in the arc
-        leader_name: Name of the leader
-
-    Returns:
-        A single title that encompasses the full arc
-    """
-    if len(titles) == 1:
-        return titles[0]
-
-    titles_text = "\n".join(f"- {t}" for t in titles)
-
-    prompt = f"""These events about {leader_name} are part of the same developing story.
-Write a single headline that encompasses the full story arc.
-
-EVENTS:
-{titles_text}
-
-Return JSON:
-{{
-    "merged_title": "Single headline covering the full arc, max 12 words"
-}}
-"""
-
-    try:
-        response = await complete(
-            prompt=prompt,
-            system=GROUPER_SYSTEM,
-            temperature=0.2,
-            max_tokens=200,
-        )
-        data = extract_json_from_response(response)
-
-        if data and "merged_title" in data:
-            return data["merged_title"]
-
-    except Exception as e:
-        logger.warning(f"Title merge failed: {e}")
-
-    # Fallback: use the first title
-    return titles[0]

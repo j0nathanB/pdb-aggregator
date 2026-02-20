@@ -6,6 +6,7 @@ Provides shared LLM client, retry logic, and common patterns.
 
 import asyncio
 import logging
+from dataclasses import dataclass, field
 from typing import Optional, Any
 from functools import wraps
 
@@ -14,9 +15,13 @@ import anthropic
 from ..config import (
     ANTHROPIC_API_KEY,
     DEFAULT_MODEL,
+    THINKING_BUDGET_TOKENS,
     ARIZE_SPACE_ID,
     ARIZE_API_KEY,
     ARIZE_PROJECT_NAME,
+    CACHE_TTL,
+    BATCH_POLL_INTERVAL_SECONDS,
+    BATCH_MAX_WAIT_SECONDS,
 )
 
 logger = logging.getLogger(__name__)
@@ -135,47 +140,66 @@ async def complete(
     prompt: str,
     system: Optional[str] = None,
     model: str = DEFAULT_MODEL,
-    max_tokens: int = 4096,
+    max_tokens: int = 20000,
     temperature: float = 0.3,
+    thinking_budget: int = THINKING_BUDGET_TOKENS,
 ) -> str:
     """
-    Simple completion helper.
+    Simple completion helper with extended thinking enabled.
 
     Args:
         prompt: The user message
         system: Optional system prompt
         model: Model to use
-        max_tokens: Maximum response tokens
-        temperature: Sampling temperature
+        max_tokens: Maximum response tokens (must exceed thinking budget)
+        temperature: Ignored when thinking is enabled (API requires temp=1)
 
     Returns:
-        The assistant's response text
+        The assistant's response text (thinking blocks are filtered out)
     """
     # Rate limit before making the call
     await AnthropicRateLimiter.wait()
 
     client = get_client()
-    
+
     messages = [{"role": "user", "content": prompt}]
-    
+
     kwargs: dict[str, Any] = {
         "model": model,
         "max_tokens": max_tokens,
         "messages": messages,
-        "temperature": temperature,
+        "thinking": {
+            "type": "enabled",
+            "budget_tokens": thinking_budget,
+        },
     }
-    
+
     if system:
-        kwargs["system"] = system
-    
+        kwargs["system"] = [
+            {
+                "type": "text",
+                "text": system,
+                "cache_control": {"type": "ephemeral", "ttl": CACHE_TTL},
+            }
+        ]
+
     response = await client.messages.create(**kwargs)
-    
-    # Extract text from response
+
+    # Log cache usage
+    usage = response.usage
+    cache_created = getattr(usage, "cache_creation_input_tokens", 0) or 0
+    cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    if cache_created or cache_read:
+        logger.debug(
+            f"Prompt cache: created={cache_created}, read={cache_read} tokens"
+        )
+
+    # Extract text from response, filtering out thinking blocks
     text_blocks = [
-        block.text for block in response.content 
-        if hasattr(block, "text")
+        block.text for block in response.content
+        if hasattr(block, "text") and block.type == "text"
     ]
-    
+
     return "\n".join(text_blocks)
 
 
@@ -184,10 +208,11 @@ async def complete_with_tools(
     tools: list[dict],
     system: Optional[str] = None,
     model: str = DEFAULT_MODEL,
-    max_tokens: int = 4096,
+    max_tokens: int = 20000,
+    thinking_budget: int = THINKING_BUDGET_TOKENS,
 ) -> tuple[str, list[dict]]:
     """
-    Completion with tool use.
+    Completion with tool use and extended thinking.
 
     Returns:
         Tuple of (text_response, tool_calls)
@@ -196,26 +221,45 @@ async def complete_with_tools(
     await AnthropicRateLimiter.wait()
 
     client = get_client()
-    
+
     messages = [{"role": "user", "content": prompt}]
-    
+
     kwargs: dict[str, Any] = {
         "model": model,
         "max_tokens": max_tokens,
         "messages": messages,
         "tools": tools,
+        "thinking": {
+            "type": "enabled",
+            "budget_tokens": thinking_budget,
+        },
     }
-    
+
     if system:
-        kwargs["system"] = system
-    
+        kwargs["system"] = [
+            {
+                "type": "text",
+                "text": system,
+                "cache_control": {"type": "ephemeral", "ttl": CACHE_TTL},
+            }
+        ]
+
     response = await client.messages.create(**kwargs)
-    
+
+    # Log cache usage
+    usage = response.usage
+    cache_created = getattr(usage, "cache_creation_input_tokens", 0) or 0
+    cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    if cache_created or cache_read:
+        logger.debug(
+            f"Prompt cache (tools): created={cache_created}, read={cache_read} tokens"
+        )
+
     text_parts = []
     tool_calls = []
-    
+
     for block in response.content:
-        if hasattr(block, "text"):
+        if block.type == "text" and hasattr(block, "text"):
             text_parts.append(block.text)
         elif block.type == "tool_use":
             tool_calls.append({
@@ -223,7 +267,7 @@ async def complete_with_tools(
                 "name": block.name,
                 "input": block.input,
             })
-    
+
     return "\n".join(text_parts), tool_calls
 
 
@@ -270,7 +314,141 @@ def with_retry(max_attempts: int = 3, delay: float = 1.0):
 
 
 # =============================================================================
-# BATCH PROCESSING
+# MESSAGE BATCHES API
+# =============================================================================
+
+
+@dataclass
+class BatchRequest:
+    """A single request within an Anthropic Message Batch."""
+    custom_id: str
+    prompt: str
+    system: str = ""
+    model: str = DEFAULT_MODEL
+    max_tokens: int = 20000
+    thinking_budget: int = THINKING_BUDGET_TOKENS
+
+
+@dataclass
+class BatchResult:
+    """Result of a single request within a completed batch."""
+    custom_id: str
+    text: str = ""
+    success: bool = True
+    error: str = ""
+
+
+async def batch_complete(requests: list[BatchRequest]) -> dict[str, BatchResult]:
+    """
+    Submit requests via the Anthropic Message Batches API and poll until done.
+
+    Returns a dict mapping custom_id -> BatchResult.
+    Raises TimeoutError if the batch doesn't complete within BATCH_MAX_WAIT_SECONDS.
+    """
+    if not requests:
+        return {}
+
+    client = get_client()
+
+    # Build batch request objects
+    batch_requests = []
+    for req in requests:
+        params: dict[str, Any] = {
+            "model": req.model,
+            "max_tokens": req.max_tokens,
+            "messages": [{"role": "user", "content": req.prompt}],
+            "thinking": {
+                "type": "enabled",
+                "budget_tokens": req.thinking_budget,
+            },
+        }
+        if req.system:
+            params["system"] = [
+                {
+                    "type": "text",
+                    "text": req.system,
+                    "cache_control": {"type": "ephemeral", "ttl": CACHE_TTL},
+                }
+            ]
+
+        batch_requests.append({
+            "custom_id": req.custom_id,
+            "params": params,
+        })
+
+    logger.info(f"Submitting message batch with {len(batch_requests)} requests")
+
+    # Submit batch
+    batch = await client.messages.batches.create(requests=batch_requests)
+    batch_id = batch.id
+    logger.info(f"Batch {batch_id} submitted, polling for completion")
+
+    # Poll until complete or timeout
+    import time
+    start_time = time.monotonic()
+
+    while True:
+        elapsed = time.monotonic() - start_time
+        if elapsed > BATCH_MAX_WAIT_SECONDS:
+            logger.error(f"Batch {batch_id} timed out after {elapsed:.0f}s, canceling")
+            try:
+                await client.messages.batches.cancel(batch_id)
+            except Exception as e:
+                logger.warning(f"Failed to cancel batch {batch_id}: {e}")
+            raise TimeoutError(
+                f"Batch {batch_id} did not complete within {BATCH_MAX_WAIT_SECONDS}s"
+            )
+
+        batch = await client.messages.batches.retrieve(batch_id)
+        status = batch.processing_status
+
+        if status == "ended":
+            logger.info(
+                f"Batch {batch_id} ended: "
+                f"{batch.request_counts.succeeded} succeeded, "
+                f"{batch.request_counts.errored} errored, "
+                f"{batch.request_counts.expired} expired"
+            )
+            break
+
+        logger.debug(
+            f"Batch {batch_id} status: {status} "
+            f"(elapsed {elapsed:.0f}s)"
+        )
+        await asyncio.sleep(BATCH_POLL_INTERVAL_SECONDS)
+
+    # Collect results
+    results: dict[str, BatchResult] = {}
+
+    result_stream = await client.messages.batches.results(batch_id)
+    async for entry in result_stream:
+        custom_id = entry.custom_id
+
+        if entry.result.type == "succeeded":
+            message = entry.result.message
+            text_blocks = [
+                block.text for block in message.content
+                if hasattr(block, "text") and block.type == "text"
+            ]
+            results[custom_id] = BatchResult(
+                custom_id=custom_id,
+                text="\n".join(text_blocks),
+                success=True,
+            )
+        else:
+            error_msg = str(getattr(entry.result, "error", "unknown error"))
+            logger.warning(f"Batch request {custom_id} failed: {error_msg}")
+            results[custom_id] = BatchResult(
+                custom_id=custom_id,
+                success=False,
+                error=error_msg,
+            )
+
+    return results
+
+
+# =============================================================================
+# CONCURRENT BATCH PROCESSING
 # =============================================================================
 
 async def process_batch(

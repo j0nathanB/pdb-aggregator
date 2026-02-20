@@ -62,6 +62,11 @@ body {
   }
 }
 
+// Extra top spacing for nav section dividers (Regional Briefs, Archives)
+.nav-list-item.nav-section-spacer {
+  margin-top: 1rem;
+}
+
 // Widen sidebar content to fill 2/3 of the sidebar
 @media (min-width: 50rem) {
   .site-nav,

@@ -21,12 +21,25 @@ import os
 
 RELEVANCE_THRESHOLD = 0.4
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-DEFAULT_MODEL = "claude-sonnet-4-20250514"
+DEFAULT_MODEL = "claude-opus-4-6"
+THINKING_BUDGET_TOKENS = 16000  # Extended thinking budget for all agents
+
+# Model tiering: editorial tasks need Opus prose quality, analytical tasks don't
+MODEL_EDITORIAL = DEFAULT_MODEL  # Synthesis, BTL, exec summary
+MODEL_ANALYTICAL = "claude-sonnet-4-5-20250929"  # Dedup, story arcs, validation
+THINKING_EDITORIAL = THINKING_BUDGET_TOKENS  # 16000
+THINKING_ANALYTICAL = 4000
 
 # News fetching settings
 MAX_ARTICLES_PER_LEADER = 5
 MAX_ARTICLE_CONTENT_LENGTH = 0  # 0 = full text, positive = truncate
 API_CALL_DELAY_SECONDS = 2.0
+
+# Batch API settings
+BATCH_POLL_INTERVAL_SECONDS = 30.0
+BATCH_MAX_WAIT_SECONDS = 3600.0
+BATCH_ENABLED = True
+CACHE_TTL = "1h"
 
 # Singleton detection thresholds
 SINGLETON_THRESHOLD = 0.7

@@ -2,12 +2,14 @@ from .embedder import SnippetEmbedder, filter_relevant
 from .clusterer import EventClusterer, EventCluster
 from .scorer import EventScorer
 from .transcript_processor import preprocess_transcripts
-from .dedup import deduplicate_clusters, deduplicate_clusters_hybrid
+from .dedup import deduplicate_clusters
 from .story_grouper import (
     detect_story_arcs,
     validate_cross_leader_match,
-    merge_story_arc_titles,
 )
+
+# reason_about_clusters is imported directly from .cluster_reasoning
+# where needed to avoid circular imports through agents/__init__.py
 
 __all__ = [
     "SnippetEmbedder",
@@ -17,8 +19,6 @@ __all__ = [
     "filter_relevant",
     "preprocess_transcripts",
     "deduplicate_clusters",
-    "deduplicate_clusters_hybrid",
     "detect_story_arcs",
     "validate_cross_leader_match",
-    "merge_story_arc_titles",
 ]

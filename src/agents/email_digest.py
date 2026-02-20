@@ -164,7 +164,6 @@ class EmailDigestAgent:
             prompt=prompt,
             system=SYSTEM_PROMPT,
             temperature=0.3,
-            max_tokens=2000,
         )
 
         data = extract_json_from_response(response)

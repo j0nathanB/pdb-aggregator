@@ -182,7 +182,6 @@ Output ONLY the translated headline, nothing else.
             response = await complete(
                 prompt=prompt,
                 temperature=0.1,
-                max_tokens=200,
             )
             return response.strip()
         except Exception as e:

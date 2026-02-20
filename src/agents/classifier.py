@@ -272,7 +272,6 @@ Be specific and factual. If this is commentary/opinion without a clear event, re
         response = await complete(
             prompt=prompt,
             temperature=0.1,
-            max_tokens=200,
         )
 
         response = response.strip()

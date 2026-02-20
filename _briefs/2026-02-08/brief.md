@@ -80,35 +80,35 @@ nav_tree:
 
 MILAN, Italy — Vice President JD Vance met Friday with Italian Prime Minister Giorgia Meloni during his weeklong visit to Italy for the Winter Olympics, according to the vice president's office. The hour-long meeting at the Prefettura di Milano was followed by a closed-door lunch, with only brief remarks open to the press. Vance's office said the leaders discussed bilateral relations, the Olympics and efforts to improve business and investment climate between the nations. Vance also attended the Olympics opening ceremony at San Siro Stadium with Secretary of State Marco Rubio.
 
-*Sources: (AP News [1](https://archive.ph/https://apnews.com/article/vance-italy-meloni-olympics-0f6bb47f31b010212087683e9eaf9c5c); ANSA [1](https://archive.ph/https://www.ansa.it/english/news/2026/02/05/meloni-to-meet-vance-in-milan-on-friday_72d86c78-f130-4936-b3c3-57f862bdb1b4.html))*
+*Sources: (AP News [1](https://apnews.com/article/vance-italy-meloni-olympics-0f6bb47f31b010212087683e9eaf9c5c); ANSA [1](https://www.ansa.it/english/news/2026/02/05/meloni-to-meet-vance-in-milan-on-friday_72d86c78-f130-4936-b3c3-57f862bdb1b4.html))*
 
 ### Starmer's chief of staff quits over Mandelson appointment
 {: #starmer-s-chief-of-staff-quits-over-mandelson-appointment}
 
 LONDON, Britain — Prime Minister Keir Starmer's chief of staff Morgan McSweeney resigned Sunday, saying he took "full responsibility" for advising Starmer to appoint Peter Mandelson as U.S. ambassador despite Mandelson's known ties to Jeffrey Epstein. The departure comes amid mounting pressure on Starmer over the scandal, with some Labour lawmakers openly questioning his judgment and calling for his resignation. Conservative leader Kemi Badenoch said Starmer "has to take responsibility for his own terrible decisions," while Reform UK leader Nigel Farage said he believed Starmer's time would "soon be up." Starmer appointed deputy chiefs of staff Jill Cuthbertson and Vidhya Alakeson as acting replacements.
 
-*Sources: (Reuters [1](https://archive.ph/https://www.reuters.com/world/uk/uk-pm-starmers-chief-staff-morgan-mcsweeney-quits-sky-news-reports-2026-02-08/); The Guardian [1](https://archive.ph/https://www.theguardian.com/politics/live/2026/feb/08/peter-mandelson-payoff-keir-starmer-jeffrey-epstein-ambassadoruk-politics-live-news-updates),[2](https://archive.ph/https://www.theguardian.com/politics/2026/feb/08/morgan-mcsweeney-resigns-as-keir-starmer-chief-of-staff))*
+*Sources: (Reuters [1](https://www.reuters.com/world/uk/uk-pm-starmers-chief-staff-morgan-mcsweeney-quits-sky-news-reports-2026-02-08/); The Guardian [1](https://www.theguardian.com/politics/live/2026/feb/08/peter-mandelson-payoff-keir-starmer-jeffrey-epstein-ambassadoruk-politics-live-news-updates),[2](https://www.theguardian.com/politics/2026/feb/08/morgan-mcsweeney-resigns-as-keir-starmer-chief-of-staff))*
 
 ### Vatican Orders Removal of Meloni Face from Church Fresco
 {: #vatican-orders-removal-of-meloni-face-from-church-fresco}
 
 ROME, Italy — The Vatican ordered the removal of Italian Prime Minister Giorgia Meloni's face from a church fresco after it sparked controversy, according to the restorer who painted it. Bruno Valentinetti, 83, said he covered the face in the San Lorenzo in Lucina basilica "because the Vatican asked me to." The fresco had drawn crowds and criticism after Valentinetti painted what appeared to be Meloni's likeness on an angel figure during restoration work. Rome's vicariate said sacred art "cannot be subject to improper use or exploitation."
 
-*Sources: (Corriere della Sera [1](https://archive.ph/https://roma.corriere.it/notizie/cronaca/26_febbraio_04/angelo-volto-meloni-cancellato-foto-originale-prima-restauro-d8622ddb-d102-4981-abb1-c15e738bexlk.shtml))*
+*Sources: (Corriere della Sera [1](https://roma.corriere.it/notizie/cronaca/26_febbraio_04/angelo-volto-meloni-cancellato-foto-originale-prima-restauro-d8622ddb-d102-4981-abb1-c15e738bexlk.shtml))*
 
 ### Meloni calls Olympics protesters 'enemies of Italy'
 {: #meloni-calls-olympics-protesters-enemies-of-italy}
 
 ROME, Italy — Prime Minister Giorgia Meloni called protesters who demonstrated against the Milan-Cortina 2026 Olympics "enemies of Italy and Italians" following clashes with police in Milan. "Thousands and thousands of Italians are working so that everything functions during the Olympics," Meloni said in a social media post Sunday. The prime minister condemned what she called "gangs of delinquents" after about 5,000 protesters marched through Milan, with some throwing stones at police near the Olympic Village area. Defense Minister Guido Crosetto and other government officials also condemned the violence, expressing solidarity with law enforcement.
 
-*Sources: (Corriere della Sera [1](https://archive.ph/https://milano.corriere.it/notizie/cronaca/26_febbraio_08/olimpiadi-meloni-sugli-scontri-a-milano-chi-manifesta-contro-i-giochi-e-nemico-dell-italia-solidarieta-alla-citta-03518eec-2f57-494b-a67f-d8b0d3a51xlk.shtml); La Repubblica [1](https://archive.ph/https://www.repubblica.it/politica/2026/02/08/news/meloni_chi_manifesta_contro_le_olimpiadi_e_nemico_dell_italia-425146558/))*
+*Sources: (Corriere della Sera [1](https://milano.corriere.it/notizie/cronaca/26_febbraio_08/olimpiadi-meloni-sugli-scontri-a-milano-chi-manifesta-contro-i-giochi-e-nemico-dell-italia-solidarieta-alla-citta-03518eec-2f57-494b-a67f-d8b0d3a51xlk.shtml); La Repubblica [1](https://www.repubblica.it/politica/2026/02/08/news/meloni_chi_manifesta_contro_le_olimpiadi_e_nemico_dell_italia-425146558/))*
 
 ### Uruguay's Orsi meets Xi, signs cooperation deals in Beijing
 {: #uruguay-s-orsi-meets-xi-signs-cooperation-deals-in-beijing}
 
 BEIJING, China — Uruguayan President Yamandú Orsi met with Chinese President Xi Jinping on Tuesday, signing 12 cooperation documents covering areas from trade to the environment, according to China's official Xinhua news agency. Xi said China and Uruguay should work together to advance an "equal and orderly multipolar world," while Orsi called the strategic partnership between the nations at its "best moment." Both leaders committed to starting negotiations on a free trade deal between China and the South American trade bloc Mercosur, according to a joint statement. Orsi is leading a 150-member delegation including business leaders on a visit through February 7.
 
-*Sources: (Reuters [1](https://archive.ph/https://www.reuters.com/markets/europe/chinas-xi-calls-equal-multipolar-world-he-meets-uruguay-leader-2026-02-03/))*
+*Sources: (Reuters [1](https://www.reuters.com/markets/europe/chinas-xi-calls-equal-multipolar-world-he-meets-uruguay-leader-2026-02-03/))*
 
 ## Regional Briefs
 {: #regional-briefs}

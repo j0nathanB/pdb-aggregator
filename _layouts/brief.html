@@ -22,9 +22,9 @@ layout: table_wrappers
       {% if page.nav_tree %}
       <ul class="nav-list">
         {% for section in page.nav_tree %}
-        <li class="nav-list-item">
+        <li class="nav-list-item{% if section.label == 'Regional Briefs' %} nav-section-spacer{% endif %}">
           {% if section.children %}
-          <button class="nav-list-expander btn-reset" aria-label="{{ section.label }}" aria-expanded="true">
+          <button class="nav-list-expander btn-reset" aria-label="{{ section.label }}" aria-expanded="{% if section.label == 'Regional Briefs' %}true{% else %}false{% endif %}">
             <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
           </button>
           {% endif %}
@@ -34,7 +34,7 @@ layout: table_wrappers
             {% for child in section.children %}
             <li class="nav-list-item">
               {% if child.children %}
-              <button class="nav-list-expander btn-reset" aria-label="{{ child.label }}" aria-expanded="true">
+              <button class="nav-list-expander btn-reset" aria-label="{{ child.label }}" aria-expanded="false">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
               </button>
               {% endif %}
@@ -57,11 +57,11 @@ layout: table_wrappers
 
         {%- comment -%} Archives section {%- endcomment -%}
         {% assign other_briefs = site.briefs | where: "doc_type", "brief" | sort: "date" | reverse %}
-        <li class="nav-list-item">
-          <button class="nav-list-expander btn-reset" aria-label="Archives" aria-expanded="true">
+        <li class="nav-list-item nav-section-spacer">
+          <button class="nav-list-expander btn-reset" aria-label="Archives" aria-expanded="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
           </button>
-          <a href="{{ '/' | relative_url }}" class="nav-list-link">Archives</a>
+          <a href="{{ '/archives/' | relative_url }}" class="nav-list-link">Archives</a>
           <ul class="nav-list">
             {% for b in other_briefs %}
             {% unless b.url == page.url %}
@@ -94,11 +94,8 @@ layout: table_wrappers
 
   <script>
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('#site-nav .nav-list-link').forEach(function(link) {
-      var li = link.closest('.nav-list-item');
-      var expander = li ? li.querySelector(':scope > .nav-list-expander') : null;
-      if (!expander) return;
-      link.addEventListener('click', function() {
+    document.querySelectorAll('#site-nav .nav-list-expander').forEach(function(expander) {
+      expander.addEventListener('click', function() {
         var expanded = expander.getAttribute('aria-expanded') === 'true';
         expander.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       });

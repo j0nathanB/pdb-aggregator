@@ -35,7 +35,7 @@ layout: table_wrappers
 
         {% if page.nav_tree %}
         {% for section in page.nav_tree %}
-        <li class="nav-list-item">
+        <li class="nav-list-item{% if section.label == 'Domestic' or section.label == 'International' %} nav-section-spacer{% endif %}">
           {% if section.children %}
           <button class="nav-list-expander btn-reset" aria-label="{{ section.label }}" aria-expanded="true">
             <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
@@ -75,11 +75,8 @@ layout: table_wrappers
 
   <script>
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('#site-nav .nav-list-link').forEach(function(link) {
-      var li = link.closest('.nav-list-item');
-      var expander = li ? li.querySelector(':scope > .nav-list-expander') : null;
-      if (!expander) return;
-      link.addEventListener('click', function() {
+    document.querySelectorAll('#site-nav .nav-list-expander').forEach(function(expander) {
+      expander.addEventListener('click', function() {
         var expanded = expander.getAttribute('aria-expanded') === 'true';
         expander.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       });

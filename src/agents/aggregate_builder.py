@@ -22,15 +22,15 @@ from ..config import (
     CROSS_ENCODER_MODEL,
     CROSS_ENCODER_THRESHOLD,
 )
-from ..clustering import validate_cross_leader_match
+from ..clustering.story_grouper import validate_cross_leader_match
 from .base import complete, with_retry, extract_json_from_response
 
 logger = logging.getLogger(__name__)
 
 
-AGGREGATE_SYSTEM = """You are a Senior Editor for the Associated Press. Your writing is objective,
-detached, and authoritative. You prioritize factual accuracy, source attribution,
-and clarity. You follow AP style guidelines.
+AGGREGATE_SYSTEM = """You are a Senior Editor for the Associated Press compiling a global leadership
+intelligence briefing. Your writing is objective, detached, and authoritative. You prioritize
+factual accuracy, source attribution, and clarity. You follow AP style guidelines.
 
 Your output must:
 - Use INVERTED PYRAMID structure: most critical facts (Who, What, Where, When, Why) first
@@ -39,6 +39,50 @@ Your output must:
 - Start each story with a DATELINE: "CITY, Country —"
 - Prioritize NEW DEVELOPMENTS over historical context
 - Never editorialize, speculate about motivations, or use phrases like "appears to", "reveals", "demonstrates"
+
+## AP Style Reference
+
+DATELINES: Use the city name alone for major cities (LONDON, PARIS, TOKYO, BEIJING, MOSCOW,
+WASHINGTON, JERUSALEM, CAIRO). For other cities use "CITY, Country" format: "KYIV, Ukraine",
+"OTTAWA, Canada", "BRASILIA, Brazil". Use an em dash (—) after the dateline, not a hyphen.
+
+ATTRIBUTION VERBS: Use "said" as the default. Acceptable alternatives: "stated", "told",
+"announced", "reported", "noted", "added", "acknowledged", "confirmed", "denied". Never use:
+"declared", "proclaimed", "revealed", "admitted", "confessed", "opined", "asserted", "claimed"
+(implies doubt). Use "according to" for documents or unnamed sources.
+
+NUMBERS: Spell out one through nine; use figures for 10 and above. Exceptions: ages, dates,
+percentages, monetary amounts, and votes always use figures. Use "percent" not "%". Spell out
+"million", "billion", "trillion" — write "$3.2 billion" not "$3,200,000,000".
+
+TITLES: Capitalize formal titles before names: "President Macron", "Prime Minister Starmer".
+Lowercase after names or standing alone: "Emmanuel Macron, the French president". Use first and
+last name on first reference, last name only on subsequent references.
+
+TIME REFERENCES: Use "Monday" not "last Monday" for days within the past week. Use specific
+dates for older references: "Feb. 5" not "last Wednesday". Use "a.m." and "p.m." with periods.
+
+## Aggregate Briefing Guidelines
+
+When synthesizing stories from multiple leaders:
+- Identify the dominant narrative thread connecting leaders' actions
+- Present each leader's perspective fairly and proportionally
+- Highlight convergence and divergence in leader positions
+- Order leaders by relevance to the story, not alphabetically
+- Cross-cutting themes should connect at least 2 leaders or 2 regions
+- Executive summaries should distill the week's key shifts in 2-4 sentences
+
+Between the Lines observations should surface:
+- Patterns across regions (e.g., multiple leaders pursuing similar policies)
+- Diplomatic alignments or fractures not explicit in individual stories
+- Policy trends with implications beyond the reporting period
+- Tension between stated positions and observed actions
+
+## Output Format Specification
+
+All responses must be valid JSON. String values must use proper escaping for quotes and
+special characters. Narrative text must not exceed 500 words. Headlines must not exceed
+15 words. Contributing leaders lists must include all leaders referenced in the narrative.
 """
 
 
@@ -176,22 +220,22 @@ class AggregateBriefingBuilder:
             f"{len(standalone)} standalone stories"
         )
 
-        # 2.5 Validate shared groups are thematically related (LLM gate)
-        validated_groups, rejected_stories = await self._validate_shared_groups(
-            shared_groups
-        )
-        standalone.extend(rejected_stories)
-        logger.info(
-            f"After thematic validation: {len(validated_groups)} valid groups, "
-            f"{len(rejected_stories)} rejected (moved to standalone)"
-        )
-
-        # 3. Synthesize validated shared stories
+        # 2.5-3. Validate + synthesize shared groups in a single call per group
         merged_stories: list[Story] = []
-        for group in validated_groups:
-            merged = await self._synthesize_shared_story(group)
-            if merged:
-                merged_stories.append(merged)
+        rejected_count = 0
+        for group in shared_groups:
+            result = await self._validate_and_synthesize_group(group)
+            if result is None:
+                # Rejected — move stories to standalone
+                for _, story in group:
+                    standalone.append(story)
+                rejected_count += 1
+            else:
+                merged_stories.append(result)
+        logger.info(
+            f"After validate+synthesize: {len(merged_stories)} merged groups, "
+            f"{rejected_count} rejected (moved to standalone)"
+        )
 
         # 4. Combine merged + standalone, select Main Stories
         all_candidates = merged_stories + standalone
@@ -229,14 +273,9 @@ class AggregateBriefingBuilder:
         intl_stories = [s for s in overflow if s.scope == StoryScope.INTERNATIONAL]
         dom_stories = [s for s in overflow if s.scope == StoryScope.DOMESTIC]
 
-        # 7. Generate Between the Lines
-        between_the_lines = await self._generate_between_the_lines(
-            all_candidates, dossiers
-        )
-
-        # 8. Generate Executive Summary
-        executive_summary = await self._generate_executive_summary(
-            main_stories, dossiers
+        # 7-8. Generate BTL + Executive Summary (single collapsed call)
+        between_the_lines, executive_summary = await self._generate_aggregate_btl_and_summary(
+            all_candidates, main_stories, dossiers
         )
 
         logger.info(
@@ -395,6 +434,130 @@ class AggregateBriefingBuilder:
 
         return shared_groups, standalone
 
+    @with_retry(max_attempts=2)
+    async def _validate_and_synthesize_group(
+        self,
+        group: list[tuple[str, Story]],
+    ) -> Optional[Story]:
+        """
+        Validate and synthesize a shared story group in a single LLM call.
+
+        Uses conditional output: if same topic, also synthesizes. If not, returns None.
+        Returns the merged Story, or None if the group is rejected.
+        """
+        if not group:
+            return None
+
+        if len(group) < 2:
+            # Single story, no validation needed — return as-is
+            _, story = group[0]
+            return story
+
+        leaders = list(set(leader for leader, _ in group))
+        stories = [story for _, story in group]
+
+        # Use highest-scoring story as base
+        stories.sort(key=lambda s: s.score, reverse=True)
+        base = stories[0]
+
+        # Build context
+        perspectives = []
+        for leader, story in group:
+            perspectives.append(
+                f"**{leader}**: {story.title}\n{story.narrative[:250]}"
+            )
+        perspectives_text = "\n\n".join(perspectives)
+
+        prompt = f"""Review these news stories from different leaders and determine if they cover the SAME topic.
+
+STORIES:
+{perspectives_text}
+
+STEP 1: Determine if these stories are about the same topic or situation.
+- Same topic = same event, negotiation, crisis, or policy area
+- Different topic = stories that happen to mention the same country/person but cover different issues
+
+STEP 2: If same topic, ALSO write a combined AP-style summary covering all leaders' involvement.
+
+Return JSON:
+{{
+    "same_topic": true or false,
+    "reason": "Brief explanation of why same or different topic",
+    "title": "Combined story title, max 12 words (null if different topic)",
+    "narrative": "Concise AP-style summary, 3-4 sentences MAX. Start with dateline. Cover each leader's role briefly. (null if different topic)"
+}}
+"""
+        try:
+            response = await complete(
+                prompt=prompt,
+                system=AGGREGATE_SYSTEM,
+                temperature=0.3,
+            )
+            data = extract_json_from_response(response)
+        except Exception as e:
+            logger.warning(f"Validate+synthesize failed for group: {e}")
+            data = None
+
+        if not data:
+            # On failure, default to valid + use base story
+            base.contributing_leaders = leaders
+            return base
+
+        same_topic = data.get("same_topic", True)
+        if not same_topic:
+            reason = data.get("reason", "no reason")
+            group_leaders = [leader for leader, _ in group]
+            logger.info(
+                f"Rejected cross-leader group (not thematically related): "
+                f"{group_leaders} — {reason}"
+            )
+            return None
+
+        # Build merged story from synthesis
+        merged_refs: dict[str, list[str]] = {}
+        merged_entities: list[dict] = []
+        seen_uris: set[str] = set()
+
+        for story in stories:
+            for src_name, urls in story.source_refs.items():
+                merged_refs.setdefault(src_name, []).extend(urls)
+            for entity in story.entities:
+                uri = entity.get("uri", entity.get("name", ""))
+                if uri not in seen_uris:
+                    seen_uris.add(uri)
+                    merged_entities.append(entity)
+
+        total_sources = sum(s.source_count for s in stories)
+        max_score = max(s.score for s in stories)
+        has_wire = any(s.has_wire for s in stories)
+
+        embeddings_with_values = [s.embedding for s in stories if s.embedding]
+        if embeddings_with_values:
+            merged_embedding = np.mean(
+                [np.array(e) for e in embeddings_with_values], axis=0
+            ).tolist()
+        else:
+            merged_embedding = None
+
+        story_id = hashlib.md5(
+            f"shared:{'|'.join(sorted(leaders))}:{base.cluster_id}".encode()
+        ).hexdigest()[:12]
+
+        return Story(
+            id=story_id,
+            title=data.get("title") or base.title,
+            narrative=data.get("narrative") or base.narrative,
+            scope=base.scope,
+            source_count=total_sources,
+            has_wire=has_wire,
+            score=max_score,
+            source_refs=merged_refs,
+            entities=merged_entities,
+            cluster_id=base.cluster_id,
+            contributing_leaders=leaders,
+            embedding=merged_embedding,
+        )
+
     async def _validate_shared_groups(
         self,
         shared_groups: list[list[tuple[str, Story]]],
@@ -402,8 +565,7 @@ class AggregateBriefingBuilder:
         """
         Validate that entity-matched story groups are thematically related.
 
-        Uses LLM to confirm stories are about the same topic before merging.
-        Stories that fail validation are returned as rejected (standalone).
+        Deprecated: Use _validate_and_synthesize_group() instead. Kept for fallback.
 
         Returns:
             (validated_groups, rejected_stories)
@@ -448,7 +610,7 @@ class AggregateBriefingBuilder:
         """
         Synthesize a shared story from multiple leaders' versions.
 
-        Merges narratives into a combined Story with contributing_leaders set.
+        Deprecated: Use _validate_and_synthesize_group() instead. Kept for fallback.
         """
         if not group:
             return None
@@ -487,7 +649,6 @@ Return JSON:
                 prompt=prompt,
                 system=AGGREGATE_SYSTEM,
                 temperature=0.3,
-                max_tokens=600,
             )
             data = extract_json_from_response(response)
         except Exception as e:
@@ -546,6 +707,111 @@ Return JSON:
             embedding=merged_embedding,
         )
 
+    async def _generate_aggregate_btl_and_summary(
+        self,
+        all_candidates: list[Story],
+        main_stories: list[Story],
+        dossiers: dict[str, LeaderDossier],
+    ) -> tuple[list[str], str]:
+        """
+        Generate aggregate thematic BTL + executive summary in a single CoT call.
+
+        Per-leader BTL bullet formatting (pure Python) is appended outside this call.
+        Returns (thematic_observations, executive_summary). Falls back to ([], "") on failure.
+        """
+        btl_bullets: list[str] = []
+
+        # Part 1: Combined thematic BTL + exec summary via single LLM call
+        if all_candidates and main_stories:
+            thematic, summary = await self._generate_thematic_btl_and_summary(
+                all_candidates, main_stories, dossiers
+            )
+            btl_bullets.extend(thematic)
+        else:
+            summary = ""
+
+        # Part 2: Pull per-leader BTL bullets (pure Python, no LLM)
+        for leader_name, dossier in dossiers.items():
+            for bullet in dossier.between_the_lines[:2]:  # max 2 per leader
+                btl_bullets.append(f"{leader_name}: {bullet}")
+
+        return btl_bullets, summary
+
+    async def _generate_thematic_btl_and_summary(
+        self,
+        all_stories: list[Story],
+        main_stories: list[Story],
+        dossiers: dict[str, LeaderDossier],
+    ) -> tuple[list[str], str]:
+        """Generate thematic BTL and executive summary in one call."""
+        story_summaries = "\n".join(
+            f"- {s.title} (leaders: {', '.join(s.contributing_leaders) if s.contributing_leaders else 'N/A'}): "
+            f"{s.narrative[:150]}"
+            for s in all_stories[:15]
+        )
+
+        story_bullets = "\n".join(
+            f"- {s.title} ({', '.join(s.contributing_leaders) if s.contributing_leaders else 'N/A'})"
+            for s in main_stories[:7]
+        )
+
+        leader_context = ""
+        summaries = [
+            f"- {name}: {d.executive_summary}"
+            for name, d in dossiers.items()
+            if d.executive_summary
+        ]
+        if summaries:
+            leader_context = "\n\nLEADER SUMMARIES:\n" + "\n".join(summaries[:5])
+
+        prompt = f"""Analyze this week's global leadership briefing.
+
+ALL STORIES:
+{story_summaries}
+
+TOP STORIES:
+{story_bullets}
+{leader_context}
+
+Complete TWO tasks in order:
+
+TASK 1 — "Between the Lines" observations (2-3 cross-cutting themes):
+- Themes or connections across different leaders/regions
+- Patterns not immediately obvious from individual stories
+- Things to watch as events develop
+- Each observation should be 1-2 sentences
+
+TASK 2 — Executive Summary:
+Using the observations above as context, write 2-4 sentences that:
+- Lead with the dominant theme or most significant development
+- Capture key tensions, diplomatic moves, or policy shifts
+- Reference specific leaders and their actions
+- Use neutral, factual language (AP style)
+- Connect developments across regions where relevant
+
+Return JSON:
+{{
+    "observations": ["observation 1", "observation 2"],
+    "summary": "2-4 sentence executive summary"
+}}
+"""
+        try:
+            response = await complete(
+                prompt=prompt,
+                system=AGGREGATE_SYSTEM,
+                temperature=0.4,
+            )
+            data = extract_json_from_response(response)
+            if data:
+                observations = data.get("observations", [])[:3]
+                summary = data.get("summary", "")
+                if observations or summary:
+                    return observations, summary
+        except Exception as e:
+            logger.warning(f"Aggregate BTL+summary generation failed: {e}")
+
+        return [], ""
+
     async def _generate_between_the_lines(
         self,
         all_stories: list[Story],
@@ -554,9 +820,7 @@ Return JSON:
         """
         Generate aggregate Between the Lines.
 
-        Two parts:
-        1. Thematic analysis across all stories
-        2. Per-leader BTL bullets prefixed with leader name
+        Deprecated: Use _generate_aggregate_btl_and_summary() instead. Kept for fallback.
         """
         btl_bullets: list[str] = []
 
@@ -576,7 +840,11 @@ Return JSON:
         self,
         stories: list[Story],
     ) -> list[str]:
-        """Generate thematic Between the Lines from aggregate stories."""
+        """
+        Generate thematic Between the Lines from aggregate stories.
+
+        Deprecated: Use _generate_thematic_btl_and_summary() instead. Kept for fallback.
+        """
         story_summaries = "\n".join(
             f"- {s.title} (leaders: {', '.join(s.contributing_leaders) if s.contributing_leaders else 'N/A'}): "
             f"{s.narrative[:150]}"
@@ -604,7 +872,6 @@ Return JSON:
                 prompt=prompt,
                 system=AGGREGATE_SYSTEM,
                 temperature=0.4,
-                max_tokens=500,
             )
             data = extract_json_from_response(response)
             if data and "observations" in data:
@@ -622,8 +889,7 @@ Return JSON:
         """
         Generate a 2-4 sentence executive summary of the week's key developments.
 
-        Distills the main stories and cross-cutting themes into a brief
-        overview suitable for quick scanning at the top of the aggregate brief.
+        Deprecated: Use _generate_aggregate_btl_and_summary() instead. Kept for fallback.
         """
         if not main_stories:
             return ""
@@ -667,7 +933,6 @@ Return JSON:
                 prompt=prompt,
                 system=AGGREGATE_SYSTEM,
                 temperature=0.3,
-                max_tokens=400,
             )
             data = extract_json_from_response(response)
             if data and "summary" in data:

@@ -376,7 +376,6 @@ SUMMARY: [summary]
             response = await complete(
                 prompt=prompt,
                 temperature=0.7,
-                max_tokens=1000,
             )
             
             return self._parse_placeholder_response(response, source, leader)

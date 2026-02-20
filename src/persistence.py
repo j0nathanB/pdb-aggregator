@@ -426,7 +426,7 @@ def _get_first_sentence(text: str) -> str:
     return text
 
 
-def _render_story(story: Story, sections: list[str], anchor_id: str = ""):
+def _render_story(story: Story, sections: list[str]):
     """Render a single story into markdown sections."""
     leaders_tag = ""
     if story.contributing_leaders and len(story.contributing_leaders) > 1:
@@ -434,8 +434,6 @@ def _render_story(story: Story, sections: list[str], anchor_id: str = ""):
 
     refs = _format_story_refs(story)
     sections.append(f"### {story.title}{leaders_tag}")
-    if anchor_id:
-        sections.append(f"{{: #{anchor_id}}}")
     sections.append("")
     sections.append(story.narrative)
     if refs:
@@ -514,11 +512,9 @@ def _generate_markdown(brief: WeeklyBrief) -> str:
     # Top Stories
     if brief.main_stories:
         sections.append("## Top Stories")
-        sections.append("{: #top-stories}")
         sections.append("")
         for story in brief.main_stories:
-            slug = _slugify(story.title)
-            _render_story(story, sections, anchor_id=slug)
+            _render_story(story, sections)
 
     # Regional Briefs
     _render_regional_briefs(
@@ -630,7 +626,6 @@ def _render_regional_briefs(
         return
 
     sections.append("## Regional Briefs")
-    sections.append("{: #regional-briefs}")
     sections.append("")
 
     # Render regions in order
@@ -646,7 +641,6 @@ def _render_regional_briefs(
 
         region_name = region_display_names.get(region, region.replace("_", " ").title())
         sections.append(f"### {region_name}")
-        sections.append(f"{{: #{_slugify(region_name)}}}")
         sections.append("")
 
         # Sort dossiers by country name
@@ -655,10 +649,8 @@ def _render_regional_briefs(
         for i, dossier in enumerate(dossiers):
             if i > 0:
                 sections.append("* * *")
-                sections.append("{: .leader-sep}")
                 sections.append("")
-            leader_slug = _slugify(f"{dossier.leader.country} {dossier.leader.name}")
-            _render_leader_brief(dossier, sections, anchor_id=leader_slug)
+            _render_leader_brief(dossier, sections)
 
     # Render any regions not in the order list
     for region in sorted(region_dossiers.keys()):
@@ -672,19 +664,16 @@ def _render_regional_briefs(
 
         region_name = region_display_names.get(region, region.replace("_", " ").title())
         sections.append(f"### {region_name}")
-        sections.append(f"{{: #{_slugify(region_name)}}}")
         sections.append("")
         dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
         for i, dossier in enumerate(dossiers):
             if i > 0:
                 sections.append("* * *")
-                sections.append("{: .leader-sep}")
                 sections.append("")
-            leader_slug = _slugify(f"{dossier.leader.country} {dossier.leader.name}")
-            _render_leader_brief(dossier, sections, anchor_id=leader_slug)
+            _render_leader_brief(dossier, sections)
 
 
-def _render_leader_brief(dossier: LeaderDossier, sections: list[str], anchor_id: str = ""):
+def _render_leader_brief(dossier: LeaderDossier, sections: list[str]):
     """Render a single leader's brief within a regional section."""
     emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
     safe_name = dossier.leader.name.lower().replace(" ", "_")
@@ -694,8 +683,6 @@ def _render_leader_brief(dossier: LeaderDossier, sections: list[str], anchor_id:
     sections.append(
         f"#### [{emoji} {dossier.leader.country} / {_display_name(dossier.leader.name)}]({_dossier_url(dossier_file)})"
     )
-    if anchor_id:
-        sections.append(f"{{: #{anchor_id}}}")
     sections.append("")
 
     # Executive summary (if available)

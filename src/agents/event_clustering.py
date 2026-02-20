@@ -20,9 +20,9 @@ from ..fetcher.core import fetch_snippets_for_leader, fetch_full_articles
 from ..fetcher.diffbot_nlp import extract_nlp, extract_high_salience_entities, get_summary
 from ..clustering import (
     SnippetEmbedder, EventClusterer, EventScorer, EventCluster,
-    filter_relevant, deduplicate_clusters,
-    detect_story_arcs, merge_story_arc_titles,
+    filter_relevant,
 )
+from ..clustering.cluster_reasoning import reason_about_clusters
 from ..debug import is_debug_enabled, save_debug_output
 
 logger = logging.getLogger(__name__)
@@ -155,33 +155,17 @@ class EventClusteringAgent:
                 "clusters": self._clusters_to_debug(clusters),
             })
 
-        # 5.5 LLM-based deduplication pass
-        # Catches same-event clusters that HDBSCAN failed to merge
-        pre_dedup_count = len(clusters)
+        # 5.5-5.6 Combined dedup + story arc detection (single LLM call)
+        pre_reasoning_count = len(clusters)
         if len(clusters) >= 2:
-            clusters = await deduplicate_clusters(clusters, leader.name)
-            logger.info(f"After dedup: {len(clusters)} clusters for {leader.name}")
+            clusters = await reason_about_clusters(clusters, leader.name)
+            logger.info(f"After cluster reasoning: {len(clusters)} clusters for {leader.name}")
 
-        # Debug: save after dedup
-        if is_debug_enabled() and pre_dedup_count != len(clusters):
-            save_debug_output(f"03_dedup_{leader_slug}", {
+        # Debug: save after cluster reasoning (dedup + arcs)
+        if is_debug_enabled() and pre_reasoning_count != len(clusters):
+            save_debug_output(f"03_cluster_reasoning_{leader_slug}", {
                 "leader": leader.name,
-                "before": pre_dedup_count,
-                "after": len(clusters),
-                "clusters": self._clusters_to_debug(clusters),
-            })
-
-        # 5.6 Story arc detection
-        # Merges multi-day developing stories (e.g., Orsi's week-long China visit)
-        pre_arc_count = len(clusters)
-        if len(clusters) >= 2:
-            clusters = await self._merge_story_arcs(clusters, leader.name)
-
-        # Debug: save after story arc merge
-        if is_debug_enabled() and pre_arc_count != len(clusters):
-            save_debug_output(f"04_story_arcs_{leader_slug}", {
-                "leader": leader.name,
-                "before": pre_arc_count,
+                "before": pre_reasoning_count,
                 "after": len(clusters),
                 "clusters": self._clusters_to_debug(clusters),
             })
@@ -362,87 +346,3 @@ class EventClusteringAgent:
                 by_uri[uri] = e
         return list(by_uri.values())
 
-    async def _merge_story_arcs(
-        self,
-        clusters: list[EventCluster],
-        leader_name: str,
-    ) -> list[EventCluster]:
-        """
-        Detect and merge story arcs (multi-day developing stories).
-
-        E.g., "Orsi arrives in China", "Orsi meets Xi", "Orsi visits Shanghai"
-        all become one merged cluster about Orsi's China visit.
-        """
-        if len(clusters) < 2:
-            return clusters
-
-        # Get titles for arc detection
-        titles = [c.representative_title for c in clusters]
-
-        # Detect arcs
-        arcs = await detect_story_arcs(titles, leader_name)
-
-        if not arcs:
-            return clusters
-
-        # Track which clusters have been merged
-        merged_indices: set[int] = set()
-        result: list[EventCluster] = []
-
-        for arc_indices in arcs:
-            if not arc_indices:
-                continue
-
-            # Get clusters in this arc
-            arc_clusters = [clusters[i] for i in arc_indices if i < len(clusters)]
-            if len(arc_clusters) < 2:
-                continue
-
-            # Merge into one cluster
-            merged = await self._merge_clusters(arc_clusters, leader_name)
-            result.append(merged)
-            merged_indices.update(arc_indices)
-
-            logger.info(
-                f"Merged story arc for {leader_name}: "
-                f"{len(arc_clusters)} events -> '{merged.representative_title}'"
-            )
-
-        # Add clusters that weren't merged
-        for i, cluster in enumerate(clusters):
-            if i not in merged_indices:
-                result.append(cluster)
-
-        logger.info(
-            f"After story arc merge: {len(clusters)} -> {len(result)} clusters "
-            f"for {leader_name}"
-        )
-
-        return result
-
-    async def _merge_clusters(
-        self,
-        clusters: list[EventCluster],
-        leader_name: str,
-    ) -> EventCluster:
-        """Merge multiple clusters into one."""
-        import numpy as np
-
-        # Combine all snippets
-        all_snippets = []
-        for c in clusters:
-            all_snippets.extend(c.snippets)
-
-        # Compute new centroid as mean of all snippet embeddings
-        embeddings = np.array([s.embedding for s in all_snippets])
-        merged_centroid = np.mean(embeddings, axis=0)
-        merged_centroid = merged_centroid / np.linalg.norm(merged_centroid)
-
-        # Use first cluster's ID with suffix
-        merged_id = f"{clusters[0].id}_arc"
-
-        return EventCluster(
-            id=merged_id,
-            snippets=all_snippets,
-            centroid=merged_centroid,
-        )

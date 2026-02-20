@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 import logging
 
 from .config import (
+    BATCH_ENABLED,
     LeaderConfig,
     LeaderDossier,
     WeeklyBrief,
@@ -169,14 +170,24 @@ class PDBWorkflow:
                     f"{articles_processed} articles fetched"
                 )
 
-                dossier = await builder.build_from_events(
-                    leader=leader,
-                    top_events=top_events,
-                    remaining_events=rest_events,
-                    opinions=opinions,
-                    date_start=date_range_start,
-                    date_end=date_range_end,
-                )
+                if BATCH_ENABLED:
+                    dossier = await builder.build_from_events_batched(
+                        leader=leader,
+                        top_events=top_events,
+                        remaining_events=rest_events,
+                        opinions=opinions,
+                        date_start=date_range_start,
+                        date_end=date_range_end,
+                    )
+                else:
+                    dossier = await builder.build_from_events(
+                        leader=leader,
+                        top_events=top_events,
+                        remaining_events=rest_events,
+                        opinions=opinions,
+                        date_start=date_range_start,
+                        date_end=date_range_end,
+                    )
 
                 if is_debug_enabled():
                     save_dossier_results(leader.name, dossier)

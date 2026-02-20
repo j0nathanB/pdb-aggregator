@@ -41,13 +41,13 @@ _Week of February 1, 2026_
 
 Germany's Merz heads to Saudi, Gulf in quest for new partners
 
-*Sources: (Der Spiegel [1](https://archive.ph/https://www.spiegel.de/politik/deutschland/news-friedrich-merz-in-der-golfregion-iran-und-usa-sprechen-markus-soeder-verkleidet-sich-a-265e8ff4-cd12-48e0-928c-19eb26a15aef),[2](https://archive.ph/https://www.spiegel.de/politik/deutschland/friedrich-merz-in-saudi-arabien-bei-mohammed-bin-salman-will-der-kanzler-mal-nicht-so-streng-sein-a-fa2a1e95-3642-4897-baac-557fc2db29fb))*
+*Sources: (Der Spiegel [1](https://www.spiegel.de/politik/deutschland/news-friedrich-merz-in-der-golfregion-iran-und-usa-sprechen-markus-soeder-verkleidet-sich-a-265e8ff4-cd12-48e0-928c-19eb26a15aef),[2](https://www.spiegel.de/politik/deutschland/friedrich-merz-in-saudi-arabien-bei-mohammed-bin-salman-will-der-kanzler-mal-nicht-so-streng-sein-a-fa2a1e95-3642-4897-baac-557fc2db29fb))*
 
 ### Iran: Friedrich Merz kontert Provokation und fordert Dialog mit den USA
 
 Iran: Friedrich Merz kontert Provokation und fordert Dialog mit den USA
 
-*Sources: (Der Spiegel [1](https://archive.ph/https://www.spiegel.de/politik/deutschland/bundeskanzler-friedrich-merz-kontert-iranische-provokation-und-fordert-dialog-mit-den-usa-a-d37ca09b-b12d-4c3c-b9dc-921c6e4a9c00); Handelsblatt [1](https://archive.ph/https://www.handelsblatt.com/politik/international/nahost-gespraeche-mit-usa-laut-iran-vorerst-beendet/100136895.html))*
+*Sources: (Der Spiegel [1](https://www.spiegel.de/politik/deutschland/bundeskanzler-friedrich-merz-kontert-iranische-provokation-und-fordert-dialog-mit-den-usa-a-d37ca09b-b12d-4c3c-b9dc-921c6e4a9c00); Handelsblatt [1](https://www.handelsblatt.com/politik/international/nahost-gespraeche-mit-usa-laut-iran-vorerst-beendet/100136895.html))*
 
 ## Domestic
 
@@ -55,25 +55,25 @@ Iran: Friedrich Merz kontert Provokation und fordert Dialog mit den USA
 
 Der Bundeskanzler der Bundesrepublik Deutschland | Startseite
 
-*Sources: (Bundeskanzleramt [1](https://archive.ph/https://www.bundeskanzler.de/bk-de))*
+*Sources: (Bundeskanzleramt [1](https://www.bundeskanzler.de/bk-de))*
 
 ### Meinung: Sozialstaat: Da haben die Sozis Friedrich Merz so richtig geleimt
 
 Meinung: Sozialstaat: Da haben die Sozis Friedrich Merz so richtig geleimt
 
-*Sources: (Der Spiegel [1](https://archive.ph/https://www.spiegel.de/politik/deutschland/sozialstaat-da-haben-die-sozis-friedrich-merz-so-richtig-geleimt-a-e96d4bbb-b9ad-4158-9805-814c1d88d4c3))*
+*Sources: (Der Spiegel [1](https://www.spiegel.de/politik/deutschland/sozialstaat-da-haben-die-sozis-friedrich-merz-so-richtig-geleimt-a-e96d4bbb-b9ad-4158-9805-814c1d88d4c3))*
 
 ### (S+) Wie Gregor Gysi die Demokratie retten würde - und was er Merz im Umgang mit Trump rät
 
 (S+) Wie Gregor Gysi die Demokratie retten würde - und was er Merz im Umgang mit Trump rät
 
-*Sources: (Der Spiegel [1](https://archive.ph/https://www.spiegel.de/politik/gregor-gysi-donald-trump-ist-etwas-kindisch-tipps-fuer-friedrich-merz-a-77ff4c5c-9738-40f5-9140-3c2c0bdf8d76))*
+*Sources: (Der Spiegel [1](https://www.spiegel.de/politik/gregor-gysi-donald-trump-ist-etwas-kindisch-tipps-fuer-friedrich-merz-a-77ff4c5c-9738-40f5-9140-3c2c0bdf8d76))*
 
 ### Friedrich Merz empfängt Karnevalisten im Kanzleramt: D'r Merz kütt
 
 Friedrich Merz empfängt Karnevalisten im Kanzleramt: D'r Merz kütt
 
-*Sources: (Der Spiegel [1](https://archive.ph/https://www.spiegel.de/kultur/friedrich-merz-empfaengt-karnevalisten-im-kanzleramt-dr-merz-kuett-a-303fc0a2-9b15-4541-b7f9-ed94ad8c152d))*
+*Sources: (Der Spiegel [1](https://www.spiegel.de/kultur/friedrich-merz-empfaengt-karnevalisten-im-kanzleramt-dr-merz-kuett-a-303fc0a2-9b15-4541-b7f9-ed94ad8c152d))*
 
 ## Between the Lines
 
