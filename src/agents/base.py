@@ -326,7 +326,8 @@ class BatchRequest:
     system: str = ""
     model: str = DEFAULT_MODEL
     max_tokens: int = 20000
-    thinking_budget: int = THINKING_BUDGET_TOKENS
+    thinking_budget: int = 0  # 0 = thinking disabled
+    temperature: float = 0.3  # Only used when thinking is disabled
 
 
 @dataclass
@@ -357,11 +358,15 @@ async def batch_complete(requests: list[BatchRequest]) -> dict[str, BatchResult]
             "model": req.model,
             "max_tokens": req.max_tokens,
             "messages": [{"role": "user", "content": req.prompt}],
-            "thinking": {
+        }
+        if req.thinking_budget > 0:
+            params["thinking"] = {
                 "type": "enabled",
                 "budget_tokens": req.thinking_budget,
-            },
-        }
+            }
+        else:
+            params["thinking"] = {"type": "disabled"}
+            params["temperature"] = req.temperature
         if req.system:
             params["system"] = [
                 {

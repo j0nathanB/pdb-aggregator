@@ -22,6 +22,8 @@ from ..config import (
     ImpactLevel,
     LeaderConfig,
     LeaderDossier,
+    MODEL_SYNTHESIS,
+    THINKING_SYNTHESIS,
     Story,
     StoryScope,
     UnderlyingEvent,
@@ -549,6 +551,9 @@ Return JSON:
                 custom_id=custom_id,
                 prompt=prompt,
                 system=DOSSIER_SYSTEM,
+                model=MODEL_SYNTHESIS,
+                thinking_budget=THINKING_SYNTHESIS,
+                temperature=0.2,
             ))
 
         if not requests:

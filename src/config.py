@@ -24,11 +24,13 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 DEFAULT_MODEL = "claude-opus-4-6"
 THINKING_BUDGET_TOKENS = 16000  # Extended thinking budget for all agents
 
-# Model tiering: editorial tasks need Opus prose quality, analytical tasks don't
-MODEL_EDITORIAL = DEFAULT_MODEL  # Synthesis, BTL, exec summary
+# Model tiering: reserve Opus for high-value editorial prose, use Sonnet elsewhere
+MODEL_EDITORIAL = DEFAULT_MODEL  # BTL, exec summary (few calls, quality matters)
 MODEL_ANALYTICAL = "claude-sonnet-4-5-20250929"  # Dedup, story arcs, validation
+MODEL_SYNTHESIS = MODEL_ANALYTICAL  # Event synthesis (bulk calls, structured extraction)
 THINKING_EDITORIAL = THINKING_BUDGET_TOKENS  # 16000
 THINKING_ANALYTICAL = 4000
+THINKING_SYNTHESIS = 0  # Disabled — synthesis is structured extraction, not deep reasoning
 
 # News fetching settings
 MAX_ARTICLES_PER_LEADER = 5
