@@ -1,0 +1,12 @@
+# Copy to terraform.tfvars and customize
+
+aws_region    = "us-east-1"
+environment   = "prod"
+
+# S3 bucket names must be globally unique
+artifacts_bucket_name = "ideal-brief-artifacts-YOURNAME"
+
+# VPC settings (defaults are fine for most cases)
+# vpc_cidr           = "10.0.0.0/24"
+# public_subnet_cidr = "10.0.0.0/26"
+# availability_zone  = "us-east-1a"

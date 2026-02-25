@@ -4,10 +4,12 @@ Persistence layer for saving and loading briefs.
 Briefs are stored in a structured directory format:
     briefs/
         YYYYMMDD/
-            brief.md          # Human-readable Markdown
+            overview.mdx      # Human-readable Mintlify page
             dossiers.json     # Structured leader data
             meta.json         # Brief metadata
             output.json       # Full serialized output
+            dossiers/
+                leader_name.mdx  # Individual leader dossier pages
 """
 
 import json
@@ -129,13 +131,13 @@ def save_brief(
     with open(meta_path, "w") as f:
         json.dump(meta, f, indent=2)
 
-    # 4. Generate and save brief page
-    markdown_path = output_dir / "brief.md"
-    markdown_content = _generate_markdown(brief)
-    with open(markdown_path, "w") as f:
-        f.write(markdown_content)
+    # 4. Generate and save Mintlify overview page
+    overview_path = output_dir / "overview.mdx"
+    overview_content = _generate_markdown(brief)
+    with open(overview_path, "w") as f:
+        f.write(overview_content)
 
-    # 5. Save individual leader dossier markdown files
+    # 5. Save individual leader dossier Mintlify pages
     for dossier in brief.leader_dossiers:
         save_dossier_markdown(dossier, output_dir)
 
@@ -144,66 +146,340 @@ def save_brief(
     return output_dir
 
 
-def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> str:
-    """Generate standalone markdown for an individual leader dossier."""
-    import re as _re
+def update_mint_json(brief: WeeklyBrief, brief_dir_name: str, mint_json_path: Path) -> None:
+    """
+    Update mint.json navigation when a new brief is published.
 
+    Adds the new brief as the "Latest Brief" and moves the previous latest
+    to the Archives section.
+
+    Args:
+        brief: The new WeeklyBrief
+        brief_dir_name: Directory name for this brief (e.g., "20260215" or "2026-02-15")
+        mint_json_path: Path to mint.json
+    """
+    if not mint_json_path.exists():
+        logger.warning(f"mint.json not found at {mint_json_path}, skipping nav update")
+        return
+
+    with open(mint_json_path) as f:
+        config = json.load(f)
+
+    title = _brief_title(brief)
+
+    # Determine the brief date path segment (YYYY-MM-DD format)
+    if len(brief_dir_name) == 8 and brief_dir_name.isdigit():
+        date_path = f"{brief_dir_name[:4]}-{brief_dir_name[4:6]}-{brief_dir_name[6:]}"
+    else:
+        date_path = brief_dir_name
+
+    overview_path = f"briefs/{date_path}/overview"
+
+    # Build dossier page paths
+    dossier_pages = []
+    for dossier in brief.leader_dossiers:
+        safe_name = dossier.leader.name.lower().replace(" ", "_")
+        dossier_pages.append(f"briefs/{date_path}/dossiers/{safe_name}")
+
+    # Find current "Latest Brief" and "Dossiers" groups to archive them
+    nav = config.get("navigation", [])
+    old_latest_pages = []
+    old_dossier_pages = []
+    old_latest_title = None
+
+    remaining_nav = []
+    for group in nav:
+        group_name = group.get("group", "")
+        if group_name == "Latest Brief":
+            old_latest_pages = group.get("pages", [])
+            # Try to find the title from the path (e.g., briefs/2026-02-08/overview)
+            if old_latest_pages:
+                # Extract date from path to build archive title
+                import re
+                m = re.search(r"briefs/(\d{4}-\d{2}-\d{2})/", old_latest_pages[0])
+                if m:
+                    try:
+                        dt = datetime.strptime(m.group(1), "%Y-%m-%d")
+                        old_latest_title = f"Week of {dt.strftime('%B %-d, %Y')}"
+                    except ValueError:
+                        old_latest_title = f"Week of {m.group(1)}"
+        elif group_name == "Dossiers":
+            old_dossier_pages = group.get("pages", [])
+        else:
+            remaining_nav.append(group)
+
+    # Build new navigation
+    new_nav = []
+
+    # Latest Brief group
+    new_nav.append({
+        "group": "Latest Brief",
+        "pages": [overview_path],
+    })
+
+    # Dossiers group
+    new_nav.append({
+        "group": "Dossiers",
+        "pages": dossier_pages,
+    })
+
+    # Re-add Archives and existing archive groups
+    for group in remaining_nav:
+        new_nav.append(group)
+
+    # If there was a previous latest brief, add it as an archive group
+    if old_latest_pages and old_latest_title and old_latest_pages[0] != overview_path:
+        archive_group = {
+            "group": old_latest_title,
+            "pages": old_latest_pages + old_dossier_pages,
+        }
+        new_nav.append(archive_group)
+
+    config["navigation"] = new_nav
+
+    # Update root redirect to point to new latest brief
+    config["redirects"] = [
+        {"source": "/", "destination": f"/{overview_path}"},
+    ]
+
+    with open(mint_json_path, "w") as f:
+        json.dump(config, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    logger.info(f"Updated mint.json navigation with brief: {title}")
+
+
+def update_docs_json(brief: WeeklyBrief, brief_dir_name: str, docs_json_path: Path) -> None:
+    """
+    Update docs.json navigation when a new brief is published.
+
+    Navigates the tab-based structure: tabs[0] ("Middle Powers") contains
+    groups for Latest Brief, Dossiers, Archives, and archived week groups.
+
+    Args:
+        brief: The new WeeklyBrief
+        brief_dir_name: Directory name for this brief (e.g., "2026-02-15")
+        docs_json_path: Path to docs.json
+    """
+    if not docs_json_path.exists():
+        logger.warning(f"docs.json not found at {docs_json_path}, skipping nav update")
+        return
+
+    with open(docs_json_path) as f:
+        config = json.load(f)
+
+    title = _brief_title(brief)
+
+    # Determine the brief date path segment (YYYY-MM-DD format)
+    if len(brief_dir_name) == 8 and brief_dir_name.isdigit():
+        date_path = f"{brief_dir_name[:4]}-{brief_dir_name[4:6]}-{brief_dir_name[6:]}"
+    else:
+        date_path = brief_dir_name
+
+    overview_path = f"briefs/{date_path}/overview"
+
+    # Build dossier page paths
+    dossier_pages = []
+    for dossier in brief.leader_dossiers:
+        safe_name = dossier.leader.name.lower().replace(" ", "_")
+        dossier_pages.append(f"briefs/{date_path}/dossiers/{safe_name}")
+
+    # Find the Middle Powers tab
+    tabs = config.get("navigation", {}).get("tabs", [])
+    mp_tab = None
+    for tab in tabs:
+        if tab.get("tab") == "Middle Powers":
+            mp_tab = tab
+            break
+
+    if mp_tab is None:
+        logger.warning("Middle Powers tab not found in docs.json, skipping nav update")
+        return
+
+    groups = mp_tab.get("groups", [])
+
+    # Extract current Latest Brief and Dossiers groups to archive them
+    old_latest_pages = []
+    old_dossier_pages = []
+    old_latest_title = None
+    remaining_groups = []
+
+    for group in groups:
+        group_name = group.get("group", "")
+        if group_name == "Latest Brief":
+            old_latest_pages = group.get("pages", [])
+            if old_latest_pages:
+                import re
+                m = re.search(r"briefs/(\d{4}-\d{2}-\d{2})/", old_latest_pages[0])
+                if m:
+                    try:
+                        dt = datetime.strptime(m.group(1), "%Y-%m-%d")
+                        old_latest_title = f"Week of {dt.strftime('%B %-d, %Y')}"
+                    except ValueError:
+                        old_latest_title = f"Week of {m.group(1)}"
+        elif group_name == "Dossiers":
+            old_dossier_pages = group.get("pages", [])
+        else:
+            remaining_groups.append(group)
+
+    # Build new groups list
+    new_groups = []
+
+    # Latest Brief
+    new_groups.append({
+        "group": "Latest Brief",
+        "pages": [overview_path],
+    })
+
+    # Dossiers
+    if dossier_pages:
+        new_groups.append({
+            "group": "Dossiers",
+            "pages": dossier_pages,
+        })
+
+    # Re-add Archives and existing archive groups
+    for group in remaining_groups:
+        new_groups.append(group)
+
+    # If there was a previous latest brief, insert it as an archive group
+    # (right after Archives, before older archive groups)
+    if old_latest_pages and old_latest_title and old_latest_pages[0] != overview_path:
+        archive_group = {
+            "group": old_latest_title,
+            "pages": old_latest_pages + old_dossier_pages,
+        }
+        # Find Archives group index and insert after it
+        archives_idx = None
+        for i, g in enumerate(new_groups):
+            if g.get("group") == "Archives":
+                archives_idx = i
+                break
+        if archives_idx is not None:
+            new_groups.insert(archives_idx + 1, archive_group)
+        else:
+            new_groups.append(archive_group)
+
+    mp_tab["groups"] = new_groups
+
+    # Update root redirect to point to new latest brief
+    config["redirects"] = [
+        {"source": "/", "destination": f"/{overview_path}"},
+    ]
+
+    with open(docs_json_path, "w") as f:
+        json.dump(config, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    logger.info(f"Updated docs.json navigation with brief: {title}")
+
+
+def update_archives_page(docs_json_path: Path) -> None:
+    """
+    Regenerate archives/index.mdx from the docs.json navigation groups.
+
+    Reads the Middle Powers tab groups and builds a list of all briefs
+    (latest + archived weeks).
+
+    Args:
+        docs_json_path: Path to docs.json (archives dir is resolved relative to it)
+    """
+    if not docs_json_path.exists():
+        logger.warning(f"docs.json not found at {docs_json_path}, skipping archives update")
+        return
+
+    with open(docs_json_path) as f:
+        config = json.load(f)
+
+    # Find the Middle Powers tab
+    tabs = config.get("navigation", {}).get("tabs", [])
+    mp_tab = None
+    for tab in tabs:
+        if tab.get("tab") == "Middle Powers":
+            mp_tab = tab
+            break
+
+    if mp_tab is None:
+        return
+
+    groups = mp_tab.get("groups", [])
+
+    # Collect all brief entries (Latest Brief + archive week groups)
+    brief_entries = []
+    for group in groups:
+        group_name = group.get("group", "")
+        pages = group.get("pages", [])
+        if not pages:
+            continue
+
+        if group_name == "Latest Brief":
+            # Extract title from the overview path date
+            overview = pages[0]
+            import re
+            m = re.search(r"briefs/(\d{4}-\d{2}-\d{2})/", overview)
+            if m:
+                try:
+                    dt = datetime.strptime(m.group(1), "%Y-%m-%d")
+                    entry_title = f"Week of {dt.strftime('%B %-d, %Y')}"
+                except ValueError:
+                    entry_title = f"Week of {m.group(1)}"
+                brief_entries.append((m.group(1), entry_title, overview))
+        elif group_name.startswith("Week of"):
+            overview = pages[0]
+            import re
+            m = re.search(r"briefs/(\d{4}-\d{2}-\d{2})/", overview)
+            date_key = m.group(1) if m else "0000-00-00"
+            brief_entries.append((date_key, group_name, overview))
+
+    # Sort by date descending
+    brief_entries.sort(key=lambda e: e[0], reverse=True)
+
+    # Build the archives page
     sections = []
+    sections.append("---")
+    sections.append('title: "Archives"')
+    sections.append('description: "Past weekly intelligence briefs"')
+    sections.append("---")
+    sections.append("")
+    sections.append("# Archives")
+    sections.append("")
+    sections.append("Past editions of The Middle Powers Monitor.")
+    sections.append("")
 
-    # Derive date from reporting_period end date
-    date_match = _re.search(r"(\d{4}-\d{2}-\d{2})$", dossier.reporting_period)
-    dossier_date = date_match.group(1) if date_match else (
-        dossier.generated_at.strftime("%Y-%m-%d") if dossier.generated_at else brief_date or "1970-01-01"
-    )
+    for _, entry_title, overview_path in brief_entries:
+        sections.append(f"- [{entry_title}](/{overview_path})")
+
+    sections.append("")
+
+    # Write archives page
+    archives_dir = docs_json_path.parent / "archives"
+    archives_dir.mkdir(parents=True, exist_ok=True)
+    index_path = archives_dir / "index.mdx"
+    with open(index_path, "w") as f:
+        f.write("\n".join(sections))
+
+    logger.info(f"Updated archives page with {len(brief_entries)} briefs")
+
+
+def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> str:
+    """Generate standalone Mintlify .mdx for an individual leader dossier."""
+    sections = []
 
     # Escape YAML special characters in strings
     leader_name = _display_name(dossier.leader.name).replace('"', '\\"')
-    country = dossier.leader.country.replace('"', '\\"')
     title_text = f"{dossier.leader.country} — {_display_name(dossier.leader.name)}, {dossier.leader.title}"
     title_escaped = title_text.replace('"', '\\"')
 
-    # Build nav_tree for dossier sidebar
-    nav_tree = []
-    story_sections = [
-        ("Top Stories", dossier.main_stories),
-        ("International", dossier.international_stories),
-        ("Domestic", dossier.domestic_stories),
-    ]
-    for section_title, stories in story_sections:
-        if not stories:
-            continue
-        children = []
-        for story in stories:
-            children.append({
-                "label": story.title,
-                "anchor": _slugify(story.title),
-            })
-        nav_tree.append({
-            "label": section_title,
-            "anchor": _slugify(section_title),
-            "children": children,
-        })
-    if dossier.between_the_lines:
-        nav_tree.append({
-            "label": "Between the Lines",
-            "anchor": "between-the-lines",
-        })
+    emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
 
-    # YAML frontmatter for Jekyll
+    # Mintlify frontmatter
     sections.append("---")
-    sections.append("layout: dossier")
-    sections.append("doc_type: dossier")
     sections.append(f"title: \"{title_escaped}\"")
-    sections.append(f"leader_name: \"{leader_name}\"")
-    sections.append(f"country: \"{country}\"")
-    sections.append(f"date: {dossier_date}")
-    sections.append(f"brief_url: \"../../brief/\"")
-    sections.append(_format_nav_tree(nav_tree))
+    sections.append(f"sidebarTitle: \"{emoji} {dossier.leader.country} — {leader_name}\"")
     sections.append("---")
     sections.append("")
 
     # Header
-    emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
     sections.append(f"# {emoji} {dossier.leader.country}")
     sections.append(f"## {_display_name(dossier.leader.name)}, {dossier.leader.title}")
     sections.append(_format_date_range(dossier.reporting_period))
@@ -225,7 +501,7 @@ def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> 
             sections.append(f"- {bullet}")
         sections.append("")
 
-    # Generated timestamp at the bottom (consistent with main brief)
+    # Generated timestamp at the bottom
     sections.append("---")
     sections.append("")
     if dossier.generated_at:
@@ -236,27 +512,27 @@ def _generate_dossier_markdown(dossier: LeaderDossier, brief_date: str = "") -> 
 
 def save_dossier_markdown(dossier: LeaderDossier, output_dir: Path) -> Path:
     """
-    Save an individual leader dossier as a standalone markdown file.
+    Save an individual leader dossier as a Mintlify .mdx page.
 
     Args:
         dossier: The LeaderDossier to save
         output_dir: Brief output directory (typically briefs/YYYYMMDD)
 
     Returns:
-        Path to the saved markdown file
+        Path to the saved .mdx file
     """
     dossier_dir = output_dir / "dossiers"
     dossier_dir.mkdir(parents=True, exist_ok=True)
 
     safe_name = dossier.leader.name.lower().replace(" ", "_")
-    md_path = dossier_dir / f"{safe_name}.md"
+    mdx_path = dossier_dir / f"{safe_name}.mdx"
 
     markdown = _generate_dossier_markdown(dossier)
-    with open(md_path, "w") as f:
+    with open(mdx_path, "w") as f:
         f.write(markdown)
 
-    logger.info(f"Saved dossier markdown for {dossier.leader.name} to {md_path}")
-    return md_path
+    logger.info(f"Saved dossier markdown for {dossier.leader.name} to {mdx_path}")
+    return mdx_path
 
 
 def _format_story_refs(story: Story) -> str:
@@ -269,13 +545,13 @@ def _format_story_refs(story: Story) -> str:
 
 
 def _dossier_url(filename: str, anchor: str = "") -> str:
-    """Convert a dossier filename to a Jekyll-compatible relative URL.
+    """Convert a dossier filename to a Mintlify-compatible relative URL.
 
-    Converts 'name.md' to '../dossiers/name' (drops .md extension, adds ../ prefix).
+    Converts 'name.mdx' to 'dossiers/name' (drops extension, relative from overview).
     Optionally appends an anchor fragment.
     """
-    base = filename.removesuffix(".md")
-    url = f"../dossiers/{base}"
+    base = filename.removesuffix(".mdx").removesuffix(".md")
+    url = f"dossiers/{base}"
     if anchor:
         url = f"{url}#{anchor}"
     return url
@@ -289,101 +565,6 @@ def _slugify(text: str) -> str:
     return slug.strip('-')
 
 
-def _yaml_escape(s: str) -> str:
-    """Escape a string for use in a YAML double-quoted value."""
-    return s.replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ')
-
-
-def _format_nav_tree(nav_tree: list[dict]) -> str:
-    """Format nav_tree as YAML for Jekyll frontmatter."""
-    lines = ["nav_tree:"]
-    for item in nav_tree:
-        lines.append(f'  - label: "{_yaml_escape(item["label"])}"')
-        lines.append(f'    anchor: "{item["anchor"]}"')
-        if item.get("children"):
-            lines.append("    children:")
-            for child in item["children"]:
-                lines.append(f'      - label: "{_yaml_escape(child["label"])}"')
-                lines.append(f'        anchor: "{child["anchor"]}"')
-                if child.get("children"):
-                    lines.append("        children:")
-                    for gc in child["children"]:
-                        lines.append(f'          - label: "{_yaml_escape(gc["label"])}"')
-                        lines.append(f'            anchor: "{gc["anchor"]}"')
-    return "\n".join(lines)
-
-
-def _build_nav_tree(brief: WeeklyBrief) -> list[dict]:
-    """Build the sidebar navigation tree structure for the brief layout."""
-    from .config import COUNTRY_SUBREGION, REGION_DISPLAY_NAMES, REGION_ORDER
-
-    nav_tree = []
-
-    # Top Stories
-    top_stories = {
-        "label": "Top Stories",
-        "anchor": "top-stories",
-        "children": [
-            {"label": story.title, "anchor": _slugify(story.title)}
-            for story in brief.main_stories
-        ],
-    }
-    nav_tree.append(top_stories)
-
-    # Regional Briefs
-    region_dossiers: dict[str, list] = {}
-    for dossier in brief.leader_dossiers:
-        country = dossier.leader.country
-        region = COUNTRY_SUBREGION.get(country, dossier.leader.region)
-        if region not in region_dossiers:
-            region_dossiers[region] = []
-        region_dossiers[region].append(dossier)
-
-    regional = {
-        "label": "Regional Briefs",
-        "anchor": "regional-briefs",
-        "children": [],
-    }
-
-    for region in REGION_ORDER:
-        if region not in region_dossiers:
-            continue
-        region_name = REGION_DISPLAY_NAMES.get(region, region.replace("_", " ").title())
-        dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
-        region_nav = {
-            "label": region_name,
-            "anchor": _slugify(region_name),
-            "children": [
-                {
-                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {_display_name(d.leader.name)}",
-                    "anchor": _slugify(f"{d.leader.country} {d.leader.name}"),
-                }
-                for d in dossiers
-            ],
-        }
-        regional["children"].append(region_nav)
-
-    for region in sorted(region_dossiers.keys()):
-        if region in REGION_ORDER:
-            continue
-        region_name = REGION_DISPLAY_NAMES.get(region, region.replace("_", " ").title())
-        dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
-        region_nav = {
-            "label": region_name,
-            "anchor": _slugify(region_name),
-            "children": [
-                {
-                    "label": f"{COUNTRY_EMOJI.get(d.leader.country, '🌍')} {d.leader.country} / {_display_name(d.leader.name)}",
-                    "anchor": _slugify(f"{d.leader.country} {d.leader.name}"),
-                }
-                for d in dossiers
-            ],
-        }
-        regional["children"].append(region_nav)
-
-    nav_tree.append(regional)
-
-    return nav_tree
 
 
 def _get_first_sentence(text: str) -> str:
@@ -428,12 +609,8 @@ def _get_first_sentence(text: str) -> str:
 
 def _render_story(story: Story, sections: list[str]):
     """Render a single story into markdown sections."""
-    leaders_tag = ""
-    if story.contributing_leaders and len(story.contributing_leaders) > 1:
-        leaders_tag = f" *({', '.join(story.contributing_leaders)})*"
-
     refs = _format_story_refs(story)
-    sections.append(f"### {story.title}{leaders_tag}")
+    sections.append(f"### {story.title}")
     sections.append("")
     sections.append(story.narrative)
     if refs:
@@ -474,34 +651,19 @@ def _brief_date(brief: WeeklyBrief) -> str:
 
 
 def _generate_markdown(brief: WeeklyBrief) -> str:
-    """Generate the full brief page with custom sidebar navigation."""
+    """Generate the full brief overview page as Mintlify .mdx."""
     from .config import COUNTRY_SUBREGION, REGION_DISPLAY_NAMES, REGION_ORDER
 
     sections = []
 
     title = _brief_title(brief)
-    date = _brief_date(brief)
 
-    # Build nav_tree for sidebar
-    nav_tree = _build_nav_tree(brief)
-    nav_tree_yaml = _format_nav_tree(nav_tree)
-
-    # YAML frontmatter
+    # Mintlify frontmatter
     sections.append("---")
-    sections.append("layout: brief")
-    sections.append("doc_type: brief")
     sections.append(f"title: \"{title}\"")
-    sections.append(f"date: {date}")
-    sections.append(f"date_range: \"{brief.date_range}\"")
-    sections.append(f"leader_count: {len(brief.leader_dossiers)}")
-    sections.append(f"story_count: {len(brief.main_stories)}")
-    sections.append("nav_exclude: true")
-    sections.append(nav_tree_yaml)
+    sections.append(f"description: \"Weekly intelligence brief covering Middle Power leadership\"")
+    sections.append(f"sidebarTitle: \"Overview\"")
     sections.append("---")
-    sections.append("")
-
-    # Header
-    sections.append(f"# {title}")
     sections.append("")
 
     # Executive Summary
@@ -533,69 +695,6 @@ def _generate_markdown(brief: WeeklyBrief) -> str:
     return "\n".join(sections)
 
 
-
-def _render_briefs_section(brief: WeeklyBrief, sections: list[str]):
-    """
-    Render the Briefs section: headlines grouped by country with emoji flags.
-
-    Each headline links to the full story in the dossier with a one-sentence summary.
-    Country headers link to the primary leader's dossier for that country.
-    Stories come from per-leader dossiers (not aggregate), ensuring links work.
-    """
-    # Build country -> leader -> stories mapping from dossiers
-    # Also track primary dossier file per country (first leader encountered)
-    country_stories: dict[str, list[tuple[str, str, Story]]] = {}  # country -> [(leader_name, dossier_file, story)]
-    country_primary_dossier: dict[str, str] = {}  # country -> primary dossier file
-
-    for dossier in brief.leader_dossiers:
-        country = dossier.leader.country
-        leader_name = dossier.leader.name
-        safe_name = leader_name.lower().replace(" ", "_")
-        dossier_file = f"{safe_name}.md"
-
-        # Set primary dossier for country (first leader encountered)
-        if country not in country_primary_dossier:
-            country_primary_dossier[country] = dossier_file
-
-        # Collect stories from this dossier that appear in international/domestic
-        dossier_stories = dossier.international_stories + dossier.domestic_stories
-
-        for story in dossier_stories:
-            if country not in country_stories:
-                country_stories[country] = []
-            country_stories[country].append((leader_name, dossier_file, story))
-
-    if not country_stories:
-        return
-
-    sections.append("## Briefs")
-    sections.append("")
-
-    # Sort countries by number of stories (descending), then alphabetically
-    sorted_countries = sorted(
-        country_stories.keys(),
-        key=lambda c: (-len(country_stories[c]), c)
-    )
-
-    for country in sorted_countries:
-        emoji = COUNTRY_EMOJI.get(country, "🌍")
-        primary_dossier = country_primary_dossier.get(country, "")
-        # Country header links to the primary leader's dossier
-        sections.append(f"### [{emoji} {country}]({_dossier_url(primary_dossier)})")
-        sections.append("")
-
-        # Sort stories by score
-        stories = sorted(country_stories[country], key=lambda x: x[2].score, reverse=True)
-
-        for leader_name, dossier_file, story in stories:
-            anchor = _slugify(story.title)
-            summary = _get_first_sentence(story.narrative)
-            # Format: - [Headline](dossier_link#anchor) — Summary
-            sections.append(
-                f"- [{story.title}]({_dossier_url(dossier_file, anchor)}) — {summary}"
-            )
-
-        sections.append("")
 
 
 def _render_regional_briefs(
@@ -648,7 +747,7 @@ def _render_regional_briefs(
 
         for i, dossier in enumerate(dossiers):
             if i > 0:
-                sections.append("* * *")
+                sections.append("---")
                 sections.append("")
             _render_leader_brief(dossier, sections)
 
@@ -668,7 +767,7 @@ def _render_regional_briefs(
         dossiers = sorted(region_dossiers[region], key=lambda d: d.leader.country)
         for i, dossier in enumerate(dossiers):
             if i > 0:
-                sections.append("* * *")
+                sections.append("---")
                 sections.append("")
             _render_leader_brief(dossier, sections)
 
@@ -677,7 +776,7 @@ def _render_leader_brief(dossier: LeaderDossier, sections: list[str]):
     """Render a single leader's brief within a regional section."""
     emoji = COUNTRY_EMOJI.get(dossier.leader.country, "🌍")
     safe_name = dossier.leader.name.lower().replace(" ", "_")
-    dossier_file = f"{safe_name}.md"
+    dossier_file = f"{safe_name}.mdx"
 
     # Leader header with link to full dossier
     sections.append(
@@ -1066,9 +1165,9 @@ async def generate_email(brief: WeeklyBrief, brief_dir: Path) -> Path:
 
     brief_date = _brief_title(brief)  # e.g., "Week of February 8, 2026"
 
-    # Build the canonical brief URL
+    # Build the canonical brief URL (Mintlify routes)
     date = _brief_date(brief)  # e.g., "2026-02-08"
-    brief_url = f"https://idealbrief.org/briefs/{date}/brief/"
+    brief_url = f"https://idealbrief.org/briefs/{date}/overview"
 
     html = render_email_html(digest, brief_date, brief_url)
 
