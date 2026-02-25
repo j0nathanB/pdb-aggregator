@@ -3,10 +3,6 @@ Graph module - exports the PDB workflow.
 
 This module provides a cleaner import path for the workflow:
     from src.graph import PDBWorkflow
-
-Supports two execution modes:
-- Simple pipeline (default): Sequential async/await, easier debugging
-- LangGraph pipeline: Full StateGraph with parallel routing
 """
 
 from typing import Optional
@@ -25,22 +21,7 @@ logger = logging.getLogger(__name__)
 
 
 class PDBWorkflow:
-    """
-    High-level interface for running the PDB generation workflow.
-
-    This is a simplified version that runs the pipeline without LangGraph
-    for easier debugging and testing. The full LangGraph version is in
-    workflow.py (to be moved to this package).
-    """
-
-    def __init__(self, use_langgraph: bool = False):
-        """
-        Initialize the workflow.
-
-        Args:
-            use_langgraph: Whether to use full LangGraph orchestration
-        """
-        self.use_langgraph = use_langgraph
+    """High-level interface for running the PDB generation workflow."""
 
     async def run(
         self,
@@ -72,49 +53,14 @@ class PDBWorkflow:
 
         logger.info(f"Starting PDB workflow: {date_range_start} to {date_range_end}")
         logger.info(f"Tracking {len(leaders)} leaders")
-        logger.info(f"Mode: {'LangGraph' if self.use_langgraph else 'Simple'}")
 
-        # Choose pipeline based on mode
-        if self.use_langgraph:
-            return await self._run_langgraph_pipeline(
-                date_range_start=date_range_start,
-                date_range_end=date_range_end,
-                leaders=leaders,
-            )
-        else:
-            return await self._run_simple_pipeline(
-                date_range_start=date_range_start,
-                date_range_end=date_range_end,
-                leaders=leaders,
-            )
-
-    async def _run_langgraph_pipeline(
-        self,
-        date_range_start: str,
-        date_range_end: str,
-        leaders: list[LeaderConfig],
-    ) -> WeeklyBrief:
-        """
-        Run the pipeline using LangGraph orchestration.
-
-        Full StateGraph with parallel leader processing and proper routing.
-        """
-        from .graph_langgraph import run_pdb_langgraph
-
-        result = await run_pdb_langgraph(
+        return await self._run_pipeline(
             date_range_start=date_range_start,
             date_range_end=date_range_end,
             leaders=leaders,
         )
 
-        brief = result.get("brief")
-
-        if brief:
-            return brief
-        else:
-            raise RuntimeError("LangGraph pipeline did not produce a brief")
-
-    async def _run_simple_pipeline(
+    async def _run_pipeline(
         self,
         date_range_start: str,
         date_range_end: str,

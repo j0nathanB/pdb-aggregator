@@ -85,40 +85,6 @@ HEADERS = {
 # =============================================================================
 
 # URL patterns that indicate opinion/editorial content
-OPINION_URL_PATTERNS = [
-    r"/opinion/",
-    r"/editorial/",
-    r"/op-ed/",
-    r"/oped/",
-    r"/commentary/",
-    r"/views/",
-    r"/perspective/",
-    r"/viewpoint/",
-    r"/analysis/",  # Often opinion-adjacent
-    r"/blog/",
-    r"/column/",
-    r"/columnist/",
-]
-
-# Content patterns that indicate opinion (case-insensitive)
-OPINION_CONTENT_PATTERNS = [
-    r"\bI think\b",
-    r"\bI believe\b",
-    r"\bwe should\b",
-    r"\bwe must\b",
-    r"\bin my opinion\b",
-    r"\bin my view\b",
-    r"\bopinion:\b",
-    r"\beditorial:\b",
-    r"\bmy take\b",
-    r"\bhere's why\b",
-]
-
-# Compiled regex patterns
-_opinion_url_regex = re.compile("|".join(OPINION_URL_PATTERNS), re.IGNORECASE)
-_opinion_content_regex = re.compile("|".join(OPINION_CONTENT_PATTERNS), re.IGNORECASE)
-
-
 # =============================================================================
 # NON-ARTICLE URL FILTERING (audio, video, photos, etc.)
 # =============================================================================
@@ -172,34 +138,6 @@ def is_non_article_url(url: str) -> bool:
         True if URL appears to be non-article content
     """
     return bool(_non_article_url_regex.search(url))
-
-
-def is_opinion_article(url: str, title: str = "", content: str = "") -> bool:
-    """
-    Determine if an article is opinion/editorial content.
-
-    Args:
-        url: Article URL
-        title: Article title (optional)
-        content: Article content (optional)
-
-    Returns:
-        True if article appears to be opinion content
-    """
-    # Check URL patterns
-    if _opinion_url_regex.search(url):
-        return True
-
-    # Check title for opinion indicators
-    title_lower = title.lower()
-    if any(word in title_lower for word in ["opinion:", "editorial:", "op-ed:", "commentary:"]):
-        return True
-
-    # Check content for opinion patterns (only first 1000 chars for efficiency)
-    if content and _opinion_content_regex.search(content[:1000]):
-        return True
-
-    return False
 
 
 # =============================================================================
@@ -362,132 +300,6 @@ async def extract_article_diffbot(url: str, retry: bool = True) -> Optional[dict
         except Exception as e:
             logger.error(f"Diffbot error for {url}: {e}")
             return None
-
-
-# =============================================================================
-# MAIN FETCH FUNCTION
-# =============================================================================
-
-async def fetch_articles_for_leader(
-    leader_name: str,
-    sources: list[dict],
-    date_start: str,
-    date_end: str,
-    max_articles_per_source: int = 5,
-    skip_opinion: bool = True,
-) -> list[dict]:
-    """
-    Fetch news articles for a leader using SearchAPI + Diffbot.
-
-    1. Search via SearchAPI Google News engine with domain filter
-    2. Filter out opinion pieces (URL + content analysis)
-    3. Extract full text via Diffbot
-
-    Args:
-        leader_name: Name of the leader to search for
-        sources: List of source configs with 'name' and 'url' keys
-        date_start: Start date (YYYY-MM-DD)
-        date_end: End date (YYYY-MM-DD)
-        max_articles_per_source: Max articles to fetch per source
-        skip_opinion: Whether to filter out opinion articles
-
-    Returns:
-        List of article dicts with full text extracted
-    """
-    from ..debug import save_search_results, is_debug_enabled
-
-    if not SEARCHAPI_KEY:
-        logger.warning("SEARCHAPI_KEY not set, returning empty results")
-        return []
-
-    all_articles = []
-
-    for source in sources:
-        source_name = source.get("name", "Unknown")
-        source_url = source.get("url", "")
-
-        # Extract domain from URL
-        domain = urlparse(source_url).netloc if source_url else None
-
-        logger.info(f"Searching {source_name} for {leader_name}")
-
-        # Search for articles: site:{{domain}} "{{leader_name}}" when:last_week
-        results = await search_news_searchapi(
-            query=leader_name,
-            num_results=max_articles_per_source * 2,  # Fetch extra to account for filtering
-            site=domain,
-        )
-
-        # Save search results for debugging
-        if is_debug_enabled():
-            save_search_results(
-                leader_name=leader_name,
-                source_name=source_name,
-                query=f'site:{domain} "{leader_name}" when:last_week' if domain else f'"{leader_name}" when:last_week',
-                results=results,
-            )
-
-        # Process each result
-        articles_from_source = []
-        for result in results:
-            url = result.get("link", "")
-            title = result.get("title", "")
-
-            if not url:
-                continue
-
-            # Skip opinion articles based on URL
-            if skip_opinion and is_opinion_article(url, title):
-                logger.debug(f"Skipping opinion article: {title[:50]}")
-                continue
-
-            # Extract full content via Diffbot
-            if DIFFBOT_TOKEN:
-                extracted = await extract_article_diffbot(url)
-
-                if extracted:
-                    content = extracted.get("text", "")
-
-                    # Skip opinion based on content
-                    if skip_opinion and is_opinion_article(url, title, content):
-                        logger.debug(f"Skipping opinion article (content): {title[:50]}")
-                        continue
-
-                    article = {
-                        "id": hashlib.md5(f"{source_name}:{url}".encode()).hexdigest()[:12],
-                        "title": extracted.get("title") or title,
-                        "url": url,
-                        "content": content,
-                        "source_name": source_name,
-                        "source_type": source.get("source_type", "domestic"),
-                        "language": extracted.get("language", source.get("language", "en")),
-                        "published_at": extracted.get("date"),
-                        "snippet": result.get("snippet", ""),
-                    }
-                    articles_from_source.append(article)
-            else:
-                # Without Diffbot, use snippet only
-                article = {
-                    "id": hashlib.md5(f"{source_name}:{url}".encode()).hexdigest()[:12],
-                    "title": title,
-                    "url": url,
-                    "content": result.get("snippet", ""),
-                    "source_name": source_name,
-                    "source_type": source.get("source_type", "domestic"),
-                    "language": source.get("language", "en"),
-                    "published_at": result.get("date"),
-                    "snippet": result.get("snippet", ""),
-                }
-                articles_from_source.append(article)
-
-            # Stop if we have enough
-            if len(articles_from_source) >= max_articles_per_source:
-                break
-
-        logger.info(f"  Found {len(articles_from_source)} articles from {source_name}")
-        all_articles.extend(articles_from_source)
-
-    return all_articles
 
 
 def _parse_result_date(date_str: str) -> Optional[datetime]:

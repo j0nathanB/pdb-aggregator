@@ -62,7 +62,7 @@ def upload_artifacts(brief_dir: Path, brief_id: str):
     s3 = boto3.client("s3")
     prefix = f"briefs/{brief_id}"
 
-    artifact_files = ["meta.json", "dossiers.json", "output.json", "brief.md"]
+    artifact_files = ["meta.json", "dossiers.json", "output.json", "overview.mdx"]
 
     for filename in artifact_files:
         filepath = brief_dir / filename
@@ -77,14 +77,13 @@ def upload_artifacts(brief_dir: Path, brief_id: str):
         s3.upload_file(str(email_path), ARTIFACTS_BUCKET, f"{prefix}/email.html")
         logger.info(f"Uploaded {prefix}/email.html")
     else:
-        # Use brief.md as fallback artifact
-        logger.info("No email.html found, email sender will need to render from brief.md")
+        logger.info("No email.html found, email sender will need to render from overview.mdx")
 
     logger.info(f"Artifacts uploaded to s3://{ARTIFACTS_BUCKET}/{prefix}/")
 
 
 def push_brief_to_repo(brief_dir: Path, brief_id: str) -> bool:
-    """Clone content repo, add brief files, and push directly to main."""
+    """Clone docs repo, add brief files, and push directly to main."""
     if not CONTENT_REPO:
         logger.warning("CONTENT_REPO not set, skipping push")
         return False
@@ -101,7 +100,7 @@ def push_brief_to_repo(brief_dir: Path, brief_id: str) -> bool:
     }
 
     try:
-        # Clone the repo (single-repo setup: code + content in same repo)
+        # Clone the docs repo
         subprocess.run(
             ["git", "clone", "--depth", "1",
              f"https://x-access-token:{GITHUB_TOKEN}@github.com/{CONTENT_REPO}.git",
@@ -118,27 +117,39 @@ def push_brief_to_repo(brief_dir: Path, brief_id: str) -> bool:
             cwd=work_dir, check=True, capture_output=True,
         )
 
-        # Copy brief output into _briefs/YYYY-MM-DD/ (Jekyll collection directory)
-        target_dir = work_dir / "_briefs" / brief_id
+        # Copy brief output into briefs/YYYY-MM-DD/ (only .mdx files)
+        target_dir = work_dir / "briefs" / brief_id
         target_dir.mkdir(parents=True, exist_ok=True)
 
-        # Copy markdown files only (exclude large JSON files not needed for rendering)
-        skip_files = {"output.json", "dossiers.json"}
+        # Skip JSON artifacts and email.html — only copy .mdx pages
+        skip_files = {"output.json", "dossiers.json", "meta.json", "email.html"}
         for f in brief_dir.iterdir():
             if f.is_file() and f.name not in skip_files:
                 subprocess.run(["cp", str(f), str(target_dir / f.name)], check=True)
 
-        # Copy dossier markdown files
+        # Copy dossier .mdx files
         dossier_src = brief_dir / "dossiers"
         if dossier_src.exists():
             dossier_dst = target_dir / "dossiers"
             dossier_dst.mkdir(exist_ok=True)
-            for f in dossier_src.glob("*.md"):
+            for f in dossier_src.glob("*.mdx"):
                 subprocess.run(["cp", str(f), str(dossier_dst / f.name)], check=True)
+
+        # Update docs.json navigation with new brief
+        from src.persistence import update_docs_json, update_archives_page, _deserialize_brief
+        docs_json_path = work_dir / "docs.json"
+        if docs_json_path.exists():
+            output_json = brief_dir / "output.json"
+            if output_json.exists():
+                with open(output_json) as fj:
+                    brief_data = json.load(fj)
+                brief_obj = _deserialize_brief(brief_data)
+                update_docs_json(brief_obj, brief_id, docs_json_path)
+                update_archives_page(docs_json_path)
 
         # Stage, commit, push directly to main
         subprocess.run(
-            ["git", "add", "_briefs/"],
+            ["git", "add", "briefs/", "docs.json", "archives/"],
             cwd=work_dir, check=True, capture_output=True,
         )
         subprocess.run(
@@ -226,7 +237,7 @@ async def run():
     logger.info("Step 1: Running brief generation pipeline")
     from src.graph import PDBWorkflow
 
-    workflow = PDBWorkflow(use_langgraph=False)
+    workflow = PDBWorkflow()
 
     end_date = datetime.utcnow().strftime("%Y-%m-%d")
     start_date = (datetime.utcnow() - timedelta(days=7)).strftime("%Y-%m-%d")

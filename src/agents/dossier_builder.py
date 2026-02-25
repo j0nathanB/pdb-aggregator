@@ -183,51 +183,6 @@ Return JSON:
 }}
 """
 
-    def _build_classify_prompt(
-        self,
-        story_title: str,
-        story_narrative: str,
-        leader: LeaderConfig,
-    ) -> str:
-        """Build the classification prompt for a synthesized story."""
-        return f"""Classify this news story about {leader.name} ({leader.title} of {leader.country}).
-
-HEADLINE: {story_title}
-
-NARRATIVE: {story_narrative}
-
-Classify by:
-
-1. EVENT_TYPE - What kind of event?
-   - POLICY_ANNOUNCEMENT: New policy, law, regulation, executive order
-   - INTERNATIONAL_VISIT: Foreign travel, hosting foreign leaders
-   - MAJOR_SPEECH: Significant public address, keynote
-   - CABINET_CHANGE: Government personnel changes, appointments
-   - LEGAL_DEVELOPMENT: Court rulings, investigations
-   - BILATERAL_AGREEMENT: Treaties, deals, MOUs
-   - CRISIS_RESPONSE: Emergency actions, disaster response
-   - ECONOMIC_ACTION: Tariffs, sanctions, fiscal policy
-   - OTHER: Doesn't fit above
-
-2. LEADER_ROLE - Leader's role in this event?
-   - INITIATOR: Leader is driving/announcing the action
-   - PARTICIPANT: Leader involved but not primary driver
-   - SUBJECT: Leader reported on passively
-
-3. IMPACT_LEVEL - Geographic scope?
-   - INTERNATIONAL: Affects multiple countries
-   - NATIONAL: Affects leader's country broadly
-   - REGIONAL: Sub-national region
-   - LOCAL: Limited local impact
-
-Return JSON:
-{{
-    "event_type": "EVENT_TYPE",
-    "leader_role": "LEADER_ROLE",
-    "impact_level": "IMPACT_LEVEL"
-}}
-"""
-
     @with_retry(max_attempts=2)
     async def build_from_events(
         self,
@@ -424,57 +379,6 @@ Return JSON:
 
         return story
 
-    async def _classify_story(
-        self,
-        story: Story,
-        leader: LeaderConfig,
-    ) -> ArticleClassification:
-        """
-        Classify a story using the Paragon taxonomy for sorting overflow stories.
-
-        Classifies by event type, leader role, and impact level to calculate
-        a priority score used when main stories are sorted by signal strength
-        but overflow stories need tie-breaking.
-        """
-        prompt = self._build_classify_prompt(story.title, story.narrative, leader)
-        try:
-            response = await complete(
-                prompt=prompt,
-                system=DOSSIER_SYSTEM,
-                temperature=0.1,
-            )
-            data = extract_json_from_response(response)
-
-            if data:
-                event_type = self._parse_event_type(data.get("event_type", "OTHER"))
-                leader_role = self._parse_leader_role(data.get("leader_role", "SUBJECT"))
-                impact_level = self._parse_impact_level(data.get("impact_level", "NATIONAL"))
-
-                priority_score = ArticleClassification.calculate_priority(
-                    event_type=event_type,
-                    leader_role=leader_role,
-                    impact_level=impact_level,
-                )
-
-                return ArticleClassification(
-                    event_type=event_type,
-                    leader_role=leader_role,
-                    impact_level=impact_level,
-                    priority_score=priority_score,
-                    reasoning="",
-                )
-        except Exception as e:
-            logger.warning(f"Story classification failed for '{story.title[:50]}': {e}")
-
-        # Default: low priority
-        return ArticleClassification(
-            event_type=EventType.OTHER,
-            leader_role=LeaderRole.SUBJECT,
-            impact_level=ImpactLevel.LOCAL,
-            priority_score=0.0,
-            reasoning="Default (classification failed)",
-        )
-
     def _parse_event_type(self, value: str) -> EventType:
         """Parse event type string to enum."""
         value = value.upper().replace(" ", "_")
@@ -581,64 +485,6 @@ Return JSON:
                 )
 
         return syntheses
-
-    async def _batch_classify_stories(
-        self,
-        stories_by_idx: dict[int, Story],
-        leader: LeaderConfig,
-    ) -> dict[int, ArticleClassification]:
-        """
-        Batch-classify all stories via the Message Batches API.
-
-        Returns a dict mapping event index to ArticleClassification.
-        """
-        requests: list[BatchRequest] = []
-        index_map: dict[str, int] = {}
-
-        for idx, story in stories_by_idx.items():
-            custom_id = f"class-{idx}"
-            index_map[custom_id] = idx
-            requests.append(BatchRequest(
-                custom_id=custom_id,
-                prompt=self._build_classify_prompt(story.title, story.narrative, leader),
-                system=DOSSIER_SYSTEM,
-            ))
-
-        if not requests:
-            return {}
-
-        logger.info(
-            f"Batch classifying {len(requests)} stories for {leader.name}"
-        )
-        results = await batch_complete(requests)
-
-        classifications: dict[int, ArticleClassification] = {}
-        for custom_id, result in results.items():
-            idx = index_map[custom_id]
-            if not result.success:
-                logger.warning(
-                    f"Batch classification failed for story {idx} ({leader.name}): {result.error}"
-                )
-                continue
-            data = extract_json_from_response(result.text)
-            if data:
-                event_type = self._parse_event_type(data.get("event_type", "OTHER"))
-                leader_role = self._parse_leader_role(data.get("leader_role", "SUBJECT"))
-                impact_level = self._parse_impact_level(data.get("impact_level", "NATIONAL"))
-                priority_score = ArticleClassification.calculate_priority(
-                    event_type=event_type,
-                    leader_role=leader_role,
-                    impact_level=impact_level,
-                )
-                classifications[idx] = ArticleClassification(
-                    event_type=event_type,
-                    leader_role=leader_role,
-                    impact_level=impact_level,
-                    priority_score=priority_score,
-                    reasoning="",
-                )
-
-        return classifications
 
     async def build_from_events_batched(
         self,
@@ -854,113 +700,6 @@ Return JSON:
 
         return [], ""
 
-    async def _generate_between_the_lines(
-        self,
-        leader: LeaderConfig,
-        stories: list[Story],
-    ) -> list[str]:
-        """
-        Generate Between the Lines bullets from all stories.
-
-        Deprecated: Use _generate_btl_and_summary() instead. Kept for fallback.
-        """
-        if not stories:
-            return []
-
-        story_summaries = "\n".join(
-            f"- {s.title}: {s.narrative[:200]}"
-            for s in stories[:10]
-        )
-
-        prompt = f"""Based on this week's stories about {leader.name} ({leader.title} of {leader.country}), identify 2-4 "Between the Lines" observations.
-
-STORIES:
-{story_summaries}
-
-"Between the Lines" observations should be:
-- Themes or patterns that may not be immediately evident from individual stories
-- Things to watch as events develop
-- Grounded in the week's content, not general trajectory speculation
-- Each observation should be 1-2 sentences
-
-Return JSON:
-{{
-    "observations": ["observation 1", "observation 2", "observation 3"]
-}}
-"""
-        try:
-            response = await complete(
-                prompt=prompt,
-                system=DOSSIER_SYSTEM,
-                temperature=0.4,
-            )
-            data = extract_json_from_response(response)
-            if data and "observations" in data:
-                return data["observations"][:4]
-        except Exception as e:
-            logger.warning(f"Between the lines generation failed for {leader.name}: {e}")
-
-        return []
-
-    async def _generate_executive_summary(
-        self,
-        leader: LeaderConfig,
-        main_stories: list[Story],
-        international_stories: list[Story],
-        domestic_stories: list[Story],
-        between_the_lines: list[str],
-    ) -> str:
-        """
-        Generate a 2-3 sentence executive summary of the leader's week.
-
-        Deprecated: Use _generate_btl_and_summary() instead. Kept for fallback.
-        """
-        all_stories = main_stories + international_stories + domestic_stories
-        if not all_stories:
-            return ""
-
-        # Build story context
-        story_bullets = "\n".join(
-            f"- {s.title}" for s in all_stories[:10]
-        )
-
-        btl_context = ""
-        if between_the_lines:
-            btl_context = "\n\nKEY THEMES:\n" + "\n".join(
-                f"- {b}" for b in between_the_lines[:3]
-            )
-
-        prompt = f"""Write a brief executive summary for {leader.name} ({leader.title} of {leader.country}) this week.
-
-TOP STORIES:
-{story_bullets}
-{btl_context}
-
-Write 2-3 sentences that:
-- Lead with the most significant development
-- Capture the overall narrative of the week
-- Use neutral, factual language (AP style)
-- Focus on actions taken, not speculation
-
-Return JSON:
-{{
-    "summary": "2-3 sentence executive summary"
-}}
-"""
-        try:
-            response = await complete(
-                prompt=prompt,
-                system=DOSSIER_SYSTEM,
-                temperature=0.3,
-            )
-            data = extract_json_from_response(response)
-            if data and "summary" in data:
-                return data["summary"]
-        except Exception as e:
-            logger.warning(f"Executive summary generation failed for {leader.name}: {e}")
-
-        return ""
-
     def _events_to_articles(self, events: list[ProcessedEvent]) -> list[Article]:
         """Convert ProcessedEvents to Article objects for compatibility."""
         articles = []
@@ -993,26 +732,6 @@ Return JSON:
                 article_ids=article_ids,
             ))
         return underlying
-
-    def _format_articles_for_prompt(self, articles: list[Article]) -> str:
-        """Format articles for inclusion in prompt."""
-        formatted = []
-        for i, article in enumerate(articles):
-            content = article.display_content
-            if len(content) > 2000:
-                content = content[:2000] + "..."
-
-            priority = ""
-            if article.classification:
-                priority = f" [Priority: {article.classification.priority_score:.2f}]"
-
-            formatted.append(
-                f"[{i}] {article.title}{priority}\n"
-                f"    Source: {article.source_name}\n"
-                f"    {content}"
-            )
-
-        return "\n\n".join(formatted)
 
     def _get_reporting_period(self, articles: list[Article]) -> str:
         """Determine reporting period from article dates."""
@@ -1070,36 +789,3 @@ Return JSON:
             source_quality_notes="No articles fetched for this leader.",
         )
 
-    async def _ensure_english(
-        self,
-        title: str,
-        narrative: str,
-        leader: LeaderConfig,
-    ) -> tuple[str, str]:
-        """Translate title and narrative to English if needed."""
-        prompt = f"""Translate the following news content to English.
-
-TITLE: {title}
-
-NARRATIVE: {narrative}
-
-Return JSON:
-{{
-    "title": "English headline, AP style, max 10 words",
-    "narrative": "English narrative, same facts, AP style"
-}}
-"""
-        try:
-            response = await complete(
-                prompt=prompt,
-                system=DOSSIER_SYSTEM,
-                temperature=0.1,
-            )
-            data = extract_json_from_response(response)
-            if data and "title" in data and "narrative" in data:
-                return data["title"], data["narrative"]
-        except Exception as e:
-            logger.warning(f"English translation failed: {e}")
-
-        # Fallback: return originals with warning
-        return f"[Translation needed] {title}", narrative

@@ -40,32 +40,14 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python -m src.main                              # Full run, last 7 days (simple pipeline)
+  python -m src.main                              # Full run, last 7 days
   python -m src.main --leader "Mark Carney"       # Single leader
-  python -m src.main --langgraph                  # Use LangGraph with parallel processing
-  python -m src.main --langgraph --leader "Mark Carney"  # LangGraph, single leader
   python -m src.main --start 2026-01-13 --end 2026-01-21
-  python -m src.main --simple --leader "Claudia Sheinbaum"
   python -m src.main --list-briefs
   python -m src.main --list-leaders
 
 Debug output (troubleshooting):
   python -m src.main --debug --leader "Mark Carney"  # Save JSON at each step
-  # Outputs saved to briefs/YYYYMMDD/debug/:
-  #   00_pipeline_summary.json
-  #   01_fetch_mark_carney.json
-  #   02_translate_mark_carney.json
-  #   03_dedupe_mark_carney.json
-  #   04_classify_mark_carney.json
-  #   05_dossier_mark_carney.json
-  #   07_synthesis_aggregate_briefing.json
-  #   07_synthesis_source_quality.json
-  #   08_final_brief.json
-
-Resume capability (LangGraph mode):
-  python -m src.main --langgraph                  # Start run
-  # Interrupt with Ctrl+C
-  python -m src.main --langgraph                  # Resumes, skips completed leaders
         """
     )
     
@@ -87,17 +69,6 @@ Resume capability (LangGraph mode):
         help="End date (YYYY-MM-DD), defaults to today",
     )
     
-    parser.add_argument(
-        "--simple",
-        action="store_true",
-        help="Use simple pipeline without LangGraph (easier debugging)",
-    )
-
-    parser.add_argument(
-        "--langgraph",
-        action="store_true",
-        help="Use LangGraph pipeline with parallel processing and resume capability",
-    )
     
     parser.add_argument(
         "--list-briefs",
@@ -223,18 +194,7 @@ async def cmd_run(args):
         print("Debug output enabled - JSON files will be saved at each pipeline step")
         print()
 
-    # Determine pipeline mode:
-    # --langgraph: explicitly use LangGraph
-    # --simple: explicitly use simple pipeline
-    # neither: default to simple for backward compatibility
-    if args.langgraph:
-        use_langgraph = True
-    elif args.simple:
-        use_langgraph = False
-    else:
-        use_langgraph = False  # Default to simple for backward compatibility
-
-    workflow = PDBWorkflow(use_langgraph=use_langgraph)
+    workflow = PDBWorkflow()
     
     # Determine leaders to process
     leaders = None
@@ -289,10 +249,7 @@ async def cmd_run(args):
             print("Top Stories:")
             print("-" * 40)
             for story in brief.main_stories:
-                leaders_tag = ""
-                if story.contributing_leaders and len(story.contributing_leaders) > 1:
-                    leaders_tag = f" ({', '.join(story.contributing_leaders)})"
-                print(f"  • {story.title}{leaders_tag}")
+                print(f"  • {story.title}")
             print()
 
         if brief.between_the_lines:
