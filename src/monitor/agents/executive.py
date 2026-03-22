@@ -556,7 +556,11 @@ async def run_executive_agent(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    logger.info("Running executive synthesis")
+    logger.info(
+        "Executive synthesis: %d regional reports, %d active dynamics in ledger",
+        len(regional_reports), len(global_ledger.active_dynamics),
+    )
+    logger.debug("Executive: prompt=%d chars", len(prompt))
 
     response = await client.messages.create(
         model=MODEL,
@@ -577,9 +581,16 @@ async def run_executive_agent(
     response_text = "\n".join(text_parts)
 
     logger.info(
-        f"Executive synthesis: input={response.usage.input_tokens}, "
-        f"output={response.usage.output_tokens}"
+        "Executive synthesis: API complete — input=%d, output=%d tokens",
+        response.usage.input_tokens, response.usage.output_tokens,
     )
 
     data = parse_executive_response(response_text)
+    logger.info(
+        "Executive: %d briefing items, %d dynamics created, %d updated, %d archived",
+        len(data.get("weekly_entry", {}).get("executive_briefing_items", [])),
+        len(data.get("weekly_entry", {}).get("dynamics_created", [])),
+        len(data.get("weekly_entry", {}).get("dynamics_updated", [])),
+        len(data.get("weekly_entry", {}).get("dynamics_archived", [])),
+    )
     return apply_executive_output(global_ledger, data, week)

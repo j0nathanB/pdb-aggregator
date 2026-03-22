@@ -3,11 +3,14 @@ Ledger persistence: read/write country and global ledgers as JSON.
 """
 
 import json
+import logging
 from datetime import date
 from pathlib import Path
 
 from ..config import COUNTRY_LEDGERS_DIR, GLOBAL_LEDGER_PATH, LEDGER_ARCHIVE_DIR
 from ..models import CountryLedger, GlobalLedger
+
+logger = logging.getLogger(__name__)
 
 
 def _json_serializer(obj: object) -> str:
@@ -35,6 +38,7 @@ def _read_json(path: Path) -> dict:
 def save_country_ledger(ledger: CountryLedger) -> Path:
     path = COUNTRY_LEDGERS_DIR / f"{ledger.code}.json"
     _write_json(path, ledger.model_dump(mode="json"))
+    logger.debug("Saved country ledger: %s (%d weekly entries)", ledger.code, len(ledger.weekly_entries))
     return path
 
 
@@ -42,7 +46,9 @@ def load_country_ledger(code: str) -> CountryLedger:
     path = COUNTRY_LEDGERS_DIR / f"{code}.json"
     if not path.exists():
         raise FileNotFoundError(f"No ledger for country code '{code}': {path}")
-    return CountryLedger.model_validate(_read_json(path))
+    ledger = CountryLedger.model_validate(_read_json(path))
+    logger.debug("Loaded country ledger: %s (%d weekly entries)", code, len(ledger.weekly_entries))
+    return ledger
 
 
 def country_ledger_exists(code: str) -> bool:
@@ -57,13 +63,22 @@ def list_country_ledgers() -> list[str]:
 
 def save_global_ledger(ledger: GlobalLedger) -> Path:
     _write_json(GLOBAL_LEDGER_PATH, ledger.model_dump(mode="json"))
+    logger.debug(
+        "Saved global ledger: %d active dynamics, %d weekly entries",
+        len(ledger.active_dynamics), len(ledger.weekly_entries),
+    )
     return GLOBAL_LEDGER_PATH
 
 
 def load_global_ledger() -> GlobalLedger:
     if not GLOBAL_LEDGER_PATH.exists():
         raise FileNotFoundError(f"Global ledger not found: {GLOBAL_LEDGER_PATH}")
-    return GlobalLedger.model_validate(_read_json(GLOBAL_LEDGER_PATH))
+    ledger = GlobalLedger.model_validate(_read_json(GLOBAL_LEDGER_PATH))
+    logger.debug(
+        "Loaded global ledger: %d active dynamics, %d weekly entries",
+        len(ledger.active_dynamics), len(ledger.weekly_entries),
+    )
+    return ledger
 
 
 def global_ledger_exists() -> bool:
@@ -84,6 +99,7 @@ def init_global_ledger() -> GlobalLedger:
         ),
     )
     save_global_ledger(ledger)
+    logger.info("Initialized new global ledger (cold start)")
     return ledger
 
 
@@ -103,6 +119,10 @@ def archive_weekly_entries(ledger: CountryLedger, keep: int = 8) -> CountryLedge
         archive_path = LEDGER_ARCHIVE_DIR / f"{ledger.code}_weeks_{first_week}_{last_week}.json"
         archive_data = [e.model_dump(mode="json") for e in to_archive]
         _write_json(archive_path, archive_data)
+        logger.info(
+            "Archived %d weekly entries for %s (%s to %s)",
+            len(to_archive), ledger.code, first_week, last_week,
+        )
 
     ledger.weekly_entries = kept
     return ledger

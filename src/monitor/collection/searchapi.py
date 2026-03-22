@@ -124,7 +124,7 @@ class SearchAPIClient:
         if time_period:
             params["time_period"] = time_period
 
-        logger.debug("SearchAPI request: q=%r", query)
+        logger.debug("SearchAPI request: q=%r, num=%s, time_period=%s", query, num, time_period)
 
         response = await self._client.get(SEARCHAPI_URL, params=params)
         response.raise_for_status()
@@ -148,11 +148,13 @@ class SearchAPIClient:
                 date=item.get("date"),
             ))
 
-        return SearchAPIResponse(
+        resp = SearchAPIResponse(
             query=query,
             results=results,
             total_results=data.get("search_information", {}).get("total_results", len(results)),
         )
+        logger.debug("SearchAPI results: q=%r → %d results", query, len(results))
+        return resp
 
     async def search_government(
         self,
@@ -203,6 +205,7 @@ class SearchAPIClient:
         Returns:
             List of SearchAPIResponse, one per domain+query combination.
         """
+        logger.info("SearchAPI: searching %d government domains", len(domains))
         responses = []
         for domain_config in domains:
             domain = domain_config["domain"]
@@ -215,5 +218,11 @@ class SearchAPIClient:
                     time_period=time_period,
                 )
                 responses.append(resp)
+                logger.debug(
+                    "SearchAPI gov: domain=%s query=%r → %d results",
+                    domain, query, len(resp.results),
+                )
 
+        total = sum(len(r.results) for r in responses)
+        logger.info("SearchAPI: %d domains → %d total results", len(domains), total)
         return responses

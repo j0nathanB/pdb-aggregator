@@ -281,6 +281,8 @@ class BraveNewsClient:
             BraveNewsResult.from_api(item) for item in data.get("results", [])
         ]
 
+        logger.debug("Brave News: q=%r → %d results", query, len(results))
+
         return BraveSearchResponse(
             query=query,
             results=results,
@@ -320,6 +322,7 @@ class BraveNewsClient:
             if goggles:
                 logger.debug("Using goggle for %s: %s", country_code, goggles)
 
+        logger.info("Brave: searching %s with %d query terms", country_code, len(query_terms))
         responses = []
         for term in query_terms:
             resp = await self.search_news(
@@ -330,6 +333,8 @@ class BraveNewsClient:
             )
             responses.append(resp)
 
+        total = sum(r.total_count for r in responses)
+        logger.info("Brave: %s → %d queries, %d total results", country_code, len(responses), total)
         return responses
 
     def get_indexed_sources(self, country_code: str) -> list[IndexedSource]:

@@ -5,10 +5,13 @@ No LLM calls — mechanical formatting only. Converts structured outputs from
 the executive agent, regional reports, and country analyses into the publication template.
 """
 
+import logging
 from datetime import date, timedelta
 from typing import Optional
 
 from ..agents.regional import RegionalReport, REGION_COUNTRIES
+
+logger = logging.getLogger(__name__)
 from ..config import Depth, Movement, Region, SignalCategory
 from ..models import (
     CountryLedger,
@@ -328,6 +331,10 @@ def assemble_newsletter(
     maintenance_count = sum(
         1 for e in country_entries.values()
         if e is not None and e.depth == Depth.MAINTENANCE
+    )
+    logger.info(
+        "Newsletter assembly: %d deep dives, %d maintenance, %d regional reports, end_date=%s",
+        deep_dive_count, maintenance_count, len(regional_reports), end_date.isoformat(),
     )
 
     # Header

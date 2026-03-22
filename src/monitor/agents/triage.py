@@ -443,20 +443,36 @@ async def run_triage(
 
     This is the main entry point for the triage step.
     """
-    logger.info(f"Starting triage for {len(configs)} countries")
+    logger.info("Triage: starting for %d countries", len(configs))
 
     # Phase 1: parallel scans
     scan_results = await scan_all_countries(configs, end_date, max_concurrent)
 
+    scan_ok = [s for s in scan_results if not s.error]
     scan_errors = [s for s in scan_results if s.error]
+    logger.info(
+        "Triage scan phase: %d succeeded, %d failed",
+        len(scan_ok), len(scan_errors),
+    )
     if scan_errors:
-        logger.warning(f"{len(scan_errors)} scan errors: {[s.code for s in scan_errors]}")
+        logger.warning("Triage scan errors: %s", [s.code for s in scan_errors])
+    for s in scan_ok:
+        logger.debug(
+            "Triage scan %s: %d wire headlines, %d domestic headlines",
+            s.code, len(s.wire_headlines), len(s.domestic_headlines),
+        )
 
     # Phase 2: triage decision
     output = await triage_decide(scan_results, ledgers, global_ledger)
 
     logger.info(
-        f"Triage complete: {len(output.deep_dive_countries)} deep dives, "
-        f"{len(output.maintenance_countries)} maintenance"
+        "Triage complete: %d deep dives %s, %d maintenance %s",
+        len(output.deep_dive_countries), output.deep_dive_countries,
+        len(output.maintenance_countries), output.maintenance_countries,
     )
+    for d in output.decisions:
+        logger.debug(
+            "Triage decision %s (%s): %s — triggers=%s",
+            d.code, d.country, d.depth.value, d.triggered_by,
+        )
     return output

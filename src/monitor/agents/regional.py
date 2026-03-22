@@ -321,7 +321,13 @@ async def run_regional_synthesis(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    logger.info(f"Regional synthesis: {region.value}")
+    countries_in = sorted(ledgers.keys())
+    entries_with_data = [k for k, v in entries.items() if v is not None]
+    logger.info(
+        "Regional synthesis %s: %d country ledgers, %d entries with data",
+        region.value, len(ledgers), len(entries_with_data),
+    )
+    logger.debug("Regional %s: countries=%s, prompt=%d chars", region.value, countries_in, len(prompt))
 
     response = await client.messages.create(
         model=MODEL,
@@ -342,12 +348,16 @@ async def run_regional_synthesis(
     response_text = "\n".join(text_parts)
 
     logger.info(
-        f"Regional synthesis {region.value}: "
-        f"input={response.usage.input_tokens}, "
-        f"output={response.usage.output_tokens}"
+        "Regional synthesis %s: API complete — input=%d, output=%d tokens",
+        region.value, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    return parse_regional_response(response_text, region, week)
+    result = parse_regional_response(response_text, region, week)
+    logger.info(
+        "Regional %s: %d cross-cutting dynamics, %d country highlights",
+        region.value, len(result.cross_cutting_dynamics), len(result.country_highlights),
+    )
+    return result
 
 
 async def run_all_regional_syntheses(

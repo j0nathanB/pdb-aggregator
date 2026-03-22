@@ -201,7 +201,13 @@ async def run_devils_advocate(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    logger.info(f"Running devil's advocate for {country}")
+    logger.info("Devil's advocate: starting for %s", country)
+    logger.debug(
+        "Devil's advocate %s: entry week=%s, %d category movements, prompt=%d chars",
+        country, entry.week.isoformat(),
+        sum(1 for m in (entry.category_movements or {}).values() if m.movement != Movement.NONE),
+        len(prompt),
+    )
 
     response = await client.messages.create(
         model=MODEL,
@@ -222,9 +228,13 @@ async def run_devils_advocate(
     response_text = "\n".join(text_parts)
 
     logger.info(
-        f"Devil's advocate {country}: "
-        f"input={response.usage.input_tokens}, "
-        f"output={response.usage.output_tokens}"
+        "Devil's advocate %s: API complete — input=%d, output=%d tokens",
+        country, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    return parse_devils_advocate_response(response_text)
+    result = parse_devils_advocate_response(response_text)
+    logger.info(
+        "Devil's advocate %s: %d challenges, %d adjustments",
+        country, len(result.challenges), len(result.recommended_adjustments),
+    )
+    return result

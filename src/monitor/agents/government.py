@@ -318,6 +318,7 @@ async def run_government_agent(
 
     # If no content, no gaps, and no failures, return empty output
     if not extracted_content and not discovery_gaps and not extraction_failures:
+        logger.debug("Gov agent %s: no content, gaps, or failures — returning empty", country_config.code)
         return GovernmentAgentOutput.empty(
             country_config.code, date_str, information_culture
         )
@@ -338,6 +339,14 @@ async def run_government_agent(
     # Render system prompt with country name
     system_prompt = _render_system_prompt(country_config.country)
 
+    logger.info(
+        "Gov agent %s: %d items, %d gaps, %d extraction failures, culture=%s",
+        country_config.code, len(extracted_content),
+        len(discovery_gaps or []), len(extraction_failures or []),
+        information_culture,
+    )
+    logger.debug("Gov agent %s: user message length=%d chars", country_config.code, len(user_message))
+
     # Call the LLM
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -351,6 +360,11 @@ async def run_government_agent(
             },
             system=system_prompt,
             messages=[{"role": "user", "content": user_message}],
+        )
+
+        logger.debug(
+            "Gov agent %s: API response — input=%d, output=%d tokens",
+            country_config.code, response.usage.input_tokens, response.usage.output_tokens,
         )
 
         # Extract text from response
@@ -401,7 +415,7 @@ async def run_government_agent(
                 note=f.get("note", ""),
             ))
 
-        return GovernmentAgentOutput(
+        output = GovernmentAgentOutput(
             country=country_config.code,
             processing_date=date_str,
             information_culture=parsed.get("information_culture", information_culture),
@@ -411,6 +425,12 @@ async def run_government_agent(
             discovery_gaps=gaps,
             extraction_failures=failures,
         )
+        logger.info(
+            "Gov agent %s: %d findings (%d significant), %d gaps, %d failures",
+            country_config.code, len(findings), sum(1 for f in findings if f.content_type in ("ground_truth", "both")),
+            len(gaps), len(failures),
+        )
+        return output
 
     except Exception as e:
         logger.error(

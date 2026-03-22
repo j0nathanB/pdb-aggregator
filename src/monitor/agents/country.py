@@ -427,7 +427,16 @@ async def run_country_agent(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    logger.info(f"Running country agent for {config.code} ({config.country})")
+    logger.info("Country agent %s: starting deep dive, date_range=%s", config.code, date_range)
+    logger.debug(
+        "Country agent %s: %d allowed_domains, dossier=%d chars, prompt=%d chars",
+        config.code, len(allowed_domains or []), len(dossier_text), len(prompt),
+    )
+    logger.debug(
+        "Country agent %s: ledger has %d weekly entries, posture as_of=%s",
+        config.code, len(ledger.weekly_entries),
+        ledger.posture_summary.as_of.isoformat(),
+    )
 
     response = await client.messages.create(
         model=MODEL,
@@ -459,9 +468,21 @@ async def run_country_agent(
     response_text = "\n".join(text_parts)
 
     logger.info(
-        f"Country agent {config.code}: "
-        f"input={response.usage.input_tokens}, "
-        f"output={response.usage.output_tokens}"
+        "Country agent %s: API complete — input=%d, output=%d tokens",
+        config.code, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    return parse_country_response(response_text, end_date, date_range, ledger)
+    result = parse_country_response(response_text, end_date, date_range, ledger)
+    active_cats = [
+        c.value for c, m in result.weekly_entry.category_movements.items()
+        if m.movement != Movement.NONE
+    ]
+    logger.info(
+        "Country agent %s: parsed — activity=%s, active_categories=%s, %d developments, %d claim_checks",
+        config.code,
+        result.weekly_entry.activity_level.get("rating", "?") if result.weekly_entry.activity_level else "?",
+        active_cats or "none",
+        sum(len(m.developments) for m in result.weekly_entry.category_movements.values()),
+        len(result.weekly_entry.structural_claim_checks),
+    )
+    return result
