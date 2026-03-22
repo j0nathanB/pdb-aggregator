@@ -155,31 +155,20 @@ class TestAllBraveSources:
 # Dossiers
 # =============================================================================
 
-# Romania dossier has not been written yet
-CODES_MISSING_DOSSIER = {"ro"}
-CODES_WITH_DOSSIER = [c for c in ALL_CODES if c not in CODES_MISSING_DOSSIER]
-
-
 class TestAllDossiers:
-    """Every country (except known gaps) has a parseable dossier."""
+    """Every country has a parseable dossier."""
 
-    @pytest.mark.parametrize("code", CODES_WITH_DOSSIER)
+    @pytest.mark.parametrize("code", ALL_CODES)
     def test_dossier_exists(self, code):
         cfg = load_country_config(code)
         path = cfg.dossier_path
         assert path.exists(), f"Missing dossier for {code}: {path}"
 
-    @pytest.mark.parametrize("code", CODES_WITH_DOSSIER)
+    @pytest.mark.parametrize("code", ALL_CODES)
     def test_dossier_has_content(self, code):
         cfg = load_country_config(code)
         content = cfg.dossier_path.read_text()
         assert len(content) > 1000, f"{code} dossier too short ({len(content)} chars)"
-
-    @pytest.mark.parametrize("code", sorted(CODES_MISSING_DOSSIER))
-    def test_missing_dossier_raises(self, code):
-        cfg = load_country_config(code)
-        with pytest.raises(FileNotFoundError):
-            _ = cfg.dossier_path
 
 
 # =============================================================================
@@ -190,7 +179,7 @@ class TestAllDossiers:
 class TestAllMechanicalExtract:
     """mechanical_extract succeeds for all countries with dossiers."""
 
-    @pytest.mark.parametrize("code", CODES_WITH_DOSSIER)
+    @pytest.mark.parametrize("code", ALL_CODES)
     def test_mechanical_extract(self, code):
         cfg = load_country_config(code)
         skeleton = mechanical_extract(cfg)
@@ -399,25 +388,21 @@ class TestPipelineAll28:
 
             mock_init.side_effect = mock_init_ledger
 
-            # Exclude countries without dossiers (can't initialize ledger)
-            pipeline_codes = [c for c in ALL_CODES if c not in CODES_MISSING_DOSSIER]
             result = await run_desk_pipeline(
-                country_codes=pipeline_codes,
                 end_date=end_date,
                 skip_layer2=True,
             )
 
-        expected = len(pipeline_codes)
-        assert len(result.country_results) == expected, (
-            f"Expected {expected} results, got {len(result.country_results)}. "
+        assert len(result.country_results) == 28, (
+            f"Expected 28 results, got {len(result.country_results)}. "
             f"Errors: {result.errors}"
         )
         assert len(result.errors) == 0, f"Pipeline errors: {result.errors}"
 
         # All should be successful deep dives
-        assert len(result.deep_dive_results) == expected
+        assert len(result.deep_dive_results) == 28
         assert len(result.failed_results) == 0
 
         # Verify each country code appears exactly once
         result_codes = sorted(cr.code for cr in result.country_results)
-        assert result_codes == pipeline_codes
+        assert result_codes == ALL_CODES
