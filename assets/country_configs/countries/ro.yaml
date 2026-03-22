@@ -1,0 +1,94 @@
+country: Romania
+code: ro
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Marcel Ciolacu
+  role: Prime Minister (PSD)
+  primary: true
+  search_terms:
+  - Ciolacu
+  - Marcel Ciolacu
+- name: Klaus Iohannis
+  role: President
+  primary: false
+  search_terms:
+  - Iohannis
+  - Klaus Iohannis
+- name: PSD
+  role: Governing party (Social Democrats)
+  primary: false
+  search_terms:
+  - PSD
+  - Social Democratic Party
+- name: PNL
+  role: Junior coalition partner (Liberals)
+  primary: false
+  search_terms:
+  - PNL
+  - National Liberal Party
+- name: AUR
+  role: Far-right opposition
+  primary: false
+  search_terms:
+  - AUR
+  - Alliance for the Union of Romanians
+- name: George Simion
+  role: AUR leader
+  primary: false
+  search_terms:
+  - Simion
+  - George Simion
+- name: Romanian Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Romanian Armed Forces
+  - Forțele Armate Române
+- name: National Bank of Romania
+  role: Central Bank
+  primary: false
+  search_terms:
+  - BNR
+  - National Bank of Romania
+  - Banca Națională a României
+- name: SRI
+  role: Romanian Intelligence Service
+  primary: false
+  search_terms:
+  - SRI
+  - Serviciul Român de Informații
+- name: SIE
+  role: Foreign Intelligence Service
+  primary: false
+  search_terms:
+  - SIE
+  - Serviciul de Informații Externe
+languages:
+  primary: ro
+  additional:
+  - hu
+  metadata: en
+blind_spots:
+- domain: Black Sea military posture
+  reason: NATO eastern flank deployments and Mihail Kogălniceanu Air Base expansion
+    details are classified
+  where_signal_lives: NATO communiqués, US European Command releases, Romanian MoD
+    statements
+- domain: Russian information operations targeting Moldova
+  reason: Cross-border influence campaigns via Romanian-speaking channels poorly tracked
+  where_signal_lives: SRI reports, EU East StratCom Task Force, Moldovan intelligence
+    assessments
+news_discovery:
+  goggle_file: assets/country_goggles/ro.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: RO
+    search_lang: ro
+    freshness: pw
+government_discovery:
+  config_file: assets/government/ro.yaml
+interpretive_context_file: assets/context/ro_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

@@ -1,0 +1,95 @@
+country: Australia
+code: au
+tier: next_test
+region: asia_pacific
+actors:
+- name: Anthony Albanese
+  role: Prime Minister (Labor)
+  primary: true
+  search_terms:
+  - Albanese
+  - Anthony Albanese
+- name: Angus Taylor
+  role: Opposition Leader (Liberal Party)
+  primary: false
+  search_terms:
+  - Angus Taylor
+  - Taylor
+  - Liberal Party
+- name: Richard Marles
+  role: Deputy PM / Defense Minister
+  primary: false
+  search_terms:
+  - Marles
+  - Richard Marles
+- name: Penny Wong
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Penny Wong
+- name: Australian Labor Party
+  role: Governing party
+  primary: false
+  search_terms:
+  - Labor
+  - ALP
+  - Australian Labor Party
+- name: Australian Defence Force
+  role: Military
+  primary: false
+  search_terms:
+  - ADF
+  - Australian Defence Force
+- name: ASIO
+  role: Australian Security Intelligence Organisation
+  primary: false
+  search_terms:
+  - ASIO
+  - Australian Security Intelligence Organisation
+- name: Reserve Bank of Australia
+  role: Central Bank
+  primary: false
+  search_terms:
+  - RBA
+  - Reserve Bank of Australia
+  - Michele Bullock
+- name: ASIS
+  role: Australian Secret Intelligence Service
+  primary: false
+  search_terms:
+  - ASIS
+  - Australian Secret Intelligence Service
+- name: The Greens
+  role: Third party (balance of power in Senate)
+  primary: false
+  search_terms:
+  - Greens
+  - Australian Greens
+  - Larissa Waters
+languages:
+  primary: en
+  additional: []
+  metadata: en
+blind_spots:
+- domain: AUKUS submarine program
+  reason: Nuclear submarine acquisition timeline, technology transfer details, and
+    cost overruns are sensitive
+  where_signal_lives: Defence Strategic Review updates, US Congressional Research
+    Service reports, ASPI analyses
+- domain: Pine Gap and Five Eyes intelligence
+  reason: Joint intelligence facilities and signals intelligence cooperation are classified
+  where_signal_lives: ASIO annual threat assessments, parliamentary Joint Committee
+    on Intelligence reports
+news_discovery:
+  goggle_file: assets/country_goggles/au.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: AU
+    search_lang: en
+    freshness: pw
+government_discovery:
+  config_file: assets/government/au.yaml
+interpretive_context_file: assets/context/au_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

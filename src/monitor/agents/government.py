@@ -24,6 +24,7 @@ from ..config import (
     MODEL,
     THINKING_BUDGET_TOKENS,
     CountryConfig,
+    GovernmentDomainConfig,
     SignalCategory,
 )
 
@@ -417,6 +418,7 @@ def _build_user_message(
     extracted_content: list[dict],
     processing_date: str,
     information_culture: str = "managed",
+    gov_domain_config: GovernmentDomainConfig | None = None,
     dossier_excerpt: str = "",
     source_intel_map: str = "",
     discovery_gaps: list[dict] | None = None,
@@ -442,8 +444,10 @@ def _build_user_message(
 
     # Government sources being monitored
     parts.append("## Monitored Government Sources")
-    for src in country_config.sources.government:
-        parts.append(f"- {src.name} ({src.domain}) — Tier {src.tier}")
+    if gov_domain_config:
+        for dom in gov_domain_config.domains:
+            institutions = ", ".join(dom.institutions)
+            parts.append(f"- {institutions} ({dom.domain}) — {dom.priority}")
     parts.append("")
 
     # Source intelligence map
@@ -514,6 +518,7 @@ async def run_government_agent(
     extracted_content: list[dict],
     processing_date: date,
     information_culture: str = "managed",
+    gov_domain_config: GovernmentDomainConfig | None = None,
     dossier_excerpt: str = "",
     source_intel_map: str = "",
     discovery_gaps: list[dict] | None = None,
@@ -553,6 +558,7 @@ async def run_government_agent(
         extracted_content=extracted_content,
         processing_date=date_str,
         information_culture=information_culture,
+        gov_domain_config=gov_domain_config,
         dossier_excerpt=dossier_excerpt,
         source_intel_map=source_intel_map,
         discovery_gaps=discovery_gaps,

@@ -1,0 +1,108 @@
+country: Taiwan
+code: tw
+tier: next_test
+region: asia_pacific
+actors:
+- name: Lai Ching-te
+  role: President
+  primary: true
+  search_terms:
+  - Lai Ching-te
+  - William Lai
+  - 賴清德
+- name: DPP
+  role: Governing party (Democratic Progressive Party)
+  primary: false
+  search_terms:
+  - DPP
+  - Democratic Progressive Party
+  - 民主進步黨
+- name: KMT
+  role: Main opposition (Kuomintang)
+  primary: false
+  search_terms:
+  - KMT
+  - Kuomintang
+  - 國民黨
+- name: Cho Jung-tai
+  role: Premier
+  primary: false
+  search_terms:
+  - Cho Jung-tai
+  - 卓榮泰
+- name: Wellington Koo
+  role: Minister of National Defense
+  primary: false
+  search_terms:
+  - Wellington Koo
+  - 顧立雄
+- name: TSMC
+  role: Semiconductor industry leader
+  primary: false
+  search_terms:
+  - TSMC
+  - Taiwan Semiconductor
+  - 台積電
+- name: Central Bank of the Republic of China
+  role: Central Bank
+  primary: false
+  search_terms:
+  - CBC
+  - Central Bank
+  - Yang Chin-long
+  - 楊金龍
+- name: Republic of China Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - ROC Armed Forces
+  - 國軍
+  - Taiwan military
+- name: Taiwan People's Party
+  role: Third party
+  primary: false
+  search_terms:
+  - TPP
+  - Taiwan People's Party
+  - Ko Wen-je
+  - 民眾黨
+- name: Joseph Wu
+  role: National Security Council Secretary-General
+  primary: false
+  search_terms:
+  - Joseph Wu
+  - 吳釗燮
+- name: National Security Bureau
+  role: Intelligence agency
+  primary: false
+  search_terms:
+  - NSB
+  - National Security Bureau
+  - 國家安全局
+languages:
+  primary: zh
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Cross-strait military readiness
+  reason: PLA activity in Taiwan Strait and ROC defense preparations are highly classified
+  where_signal_lives: MND press releases, CSIS/IISS satellite analyses, Japanese MoD
+    China reports
+- domain: Semiconductor supply chain dependencies
+  reason: TSMC advanced node capacity and US CHIPS Act conditions involve sensitive
+    commercial and strategic data
+  where_signal_lives: TSMC quarterly earnings calls, US Commerce Dept filings, industry
+    analyst reports (TrendForce)
+news_discovery:
+  goggle_file: assets/country_goggles/tw.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: TW
+    search_lang: zh
+    freshness: pw
+government_discovery:
+  config_file: assets/government/tw.yaml
+interpretive_context_file: assets/context/tw_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

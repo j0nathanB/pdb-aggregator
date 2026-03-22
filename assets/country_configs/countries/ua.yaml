@@ -1,0 +1,105 @@
+country: Ukraine
+code: ua
+tier: crucible
+region: frontline_eastern_europe
+actors:
+- name: Volodymyr Zelensky
+  role: President
+  primary: true
+  search_terms:
+  - Zelensky
+  - Zelenskyy
+  - Volodymyr Zelensky
+- name: Oleksandr Syrskyi
+  role: Commander-in-Chief of the Armed Forces
+  primary: false
+  search_terms:
+  - Syrskyi
+  - Oleksandr Syrskyi
+- name: Kyrylo Budanov
+  role: Head of the Office of the President
+  primary: false
+  search_terms:
+  - Budanov
+  - Kyrylo Budanov
+- name: Yuliia Svyrydenko
+  role: Prime Minister
+  primary: false
+  search_terms:
+  - Svyrydenko
+  - Yuliia Svyrydenko
+- name: Andrii Sybiha
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Sybiha
+  - Andrii Sybiha
+- name: Armed Forces of Ukraine
+  role: Military
+  primary: false
+  search_terms:
+  - AFU
+  - ZSU
+  - Armed Forces of Ukraine
+  - Збройні сили України
+- name: National Bank of Ukraine
+  role: Central Bank
+  primary: false
+  search_terms:
+  - NBU
+  - National Bank of Ukraine
+  - Andriy Pyshnyy
+- name: SBU
+  role: Security Service of Ukraine
+  primary: false
+  search_terms:
+  - SBU
+  - Security Service of Ukraine
+  - Служба безпеки України
+- name: Servant of the People
+  role: Presidential party
+  primary: false
+  search_terms:
+  - Servant of the People
+  - Слуга народу
+- name: Mykhailo Fedorov
+  role: Defense Minister
+  primary: false
+  search_terms:
+  - Fedorov
+  - Mykhailo Fedorov
+- name: HUR
+  role: Main Intelligence Directorate
+  primary: false
+  search_terms:
+  - HUR
+  - GUR
+  - Oleh Ivashchenko
+languages:
+  primary: uk
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Frontline military operations
+  reason: Operational security restrictions limit real-time reporting on force dispositions,
+    casualties, and equipment losses
+  where_signal_lives: General Staff daily briefings, DeepState/Militarnyy maps, OSINT
+    analysts, ISW assessments
+- domain: Reconstruction and aid diversion
+  reason: Wartime governance constraints limit oversight of international aid flows
+    and reconstruction contracts
+  where_signal_lives: NABU investigations, EU audit reports, RISE/Slidstvo.info investigative
+    coverage
+news_discovery:
+  goggle_file: assets/country_goggles/ua.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: UA
+    search_lang: uk
+    freshness: pw
+government_discovery:
+  config_file: assets/government/ua.yaml
+interpretive_context_file: assets/context/ua_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

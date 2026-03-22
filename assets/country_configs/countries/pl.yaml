@@ -1,0 +1,97 @@
+country: Poland
+code: pl
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Donald Tusk
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Tusk
+  - Donald Tusk
+- name: Karol Nawrocki
+  role: President
+  primary: false
+  search_terms:
+  - Nawrocki
+  - Karol Nawrocki
+- name: Jarosław Kaczyński
+  role: PiS leader
+  primary: false
+  search_terms:
+  - Kaczyński
+  - Jarosław Kaczyński
+  - PiS
+- name: Civic Coalition
+  role: Governing coalition lead party
+  primary: false
+  search_terms:
+  - KO
+  - Civic Coalition
+  - Koalicja Obywatelska
+- name: Sławomir Mentzen
+  role: Confederation leader
+  primary: false
+  search_terms:
+  - Mentzen
+  - Sławomir Mentzen
+  - Confederation
+- name: Adam Glapiński
+  role: NBP Governor (Central Bank)
+  primary: false
+  search_terms:
+  - Glapiński
+  - Adam Glapiński
+  - NBP
+- name: Polish Armed Forces
+  role: Military (NATO's 6th largest spender)
+  primary: false
+  search_terms:
+  - Wojsko Polskie
+  - Polish Armed Forces
+- name: PKN Orlen
+  role: State oil company
+  primary: false
+  search_terms:
+  - Orlen
+  - PKN Orlen
+- name: ABW
+  role: Internal Security Agency
+  primary: false
+  search_terms:
+  - ABW
+  - Agencja Bezpieczeństwa Wewnętrznego
+- name: Constitutional Tribunal
+  role: Constitutional court (de facto non-functional)
+  primary: false
+  search_terms:
+  - Trybunał Konstytucyjny
+  - Constitutional Tribunal
+languages:
+  primary: pl
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Defense procurement pipeline
+  reason: Poland's massive acquisition program ($48B+) has complex delivery schedules
+    poorly tracked in media
+  where_signal_lives: MON.gov.pl announcements, Jane's Defence, Polish defense industry
+    press
+- domain: Judicial reform implementation
+  reason: Complex legal maneuvering around Constitutional Tribunal and KRS largely
+    invisible to non-specialist press
+  where_signal_lives: Rule of Law Poland (Helsinki Foundation), Venice Commission
+    opinions, EU Commission reports
+news_discovery:
+  goggle_file: assets/country_goggles/pl.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: PL
+    search_lang: pl
+    freshness: pw
+government_discovery:
+  config_file: assets/government/pl.yaml
+interpretive_context_file: assets/context/pl_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

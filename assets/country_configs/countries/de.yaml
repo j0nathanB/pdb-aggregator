@@ -1,0 +1,92 @@
+country: Germany
+code: de
+tier: shield
+region: western_europe
+actors:
+- name: Friedrich Merz
+  role: Chancellor
+  primary: true
+  search_terms:
+  - Merz
+  - Friedrich Merz
+- name: Frank-Walter Steinmeier
+  role: Federal President
+  primary: false
+  search_terms:
+  - Steinmeier
+  - Frank-Walter Steinmeier
+- name: Boris Pistorius
+  role: Defense Minister
+  primary: false
+  search_terms:
+  - Pistorius
+  - Boris Pistorius
+- name: Johann Wadephul
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Wadephul
+  - Johann Wadephul
+- name: Lars Klingbeil
+  role: Finance Minister and Vice Chancellor (SPD)
+  primary: false
+  search_terms:
+  - Klingbeil
+  - Lars Klingbeil
+- name: AfD
+  role: Main opposition party (far-right)
+  primary: false
+  search_terms:
+  - AfD
+  - Alternative für Deutschland
+- name: CDU/CSU
+  role: Governing party
+  primary: false
+  search_terms:
+  - CDU
+  - CSU
+  - CDU/CSU
+- name: Bundeswehr
+  role: Armed Forces
+  primary: false
+  search_terms:
+  - Bundeswehr
+- name: Bundesbank
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Bundesbank
+  - Joachim Nagel
+- name: BND
+  role: Foreign intelligence service
+  primary: false
+  search_terms:
+  - BND
+  - Bundesnachrichtendienst
+languages:
+  primary: de
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Defense procurement execution
+  reason: Gap between announced spending and actual delivery timelines; Bundeswehr
+    readiness reports are classified
+  where_signal_lives: Kiel Institute analyses, Bundesrechnungshof audit reports, defense
+    industry press
+- domain: AfD internal dynamics in eastern states
+  reason: State-level party politics in Thuringia, Saxony, Brandenburg poorly covered
+    by national media
+  where_signal_lives: Regional outlets (MDR, Freie Presse), BfV reports
+news_discovery:
+  goggle_file: assets/country_goggles/de.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: DE
+    search_lang: de
+    freshness: pw
+government_discovery:
+  config_file: assets/government/de.yaml
+interpretive_context_file: assets/context/de_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

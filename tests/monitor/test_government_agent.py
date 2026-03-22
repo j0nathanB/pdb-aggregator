@@ -22,12 +22,15 @@ from src.monitor.agents.government import (
 from src.monitor.config import (
     Actor,
     BlindSpot,
+    BraveParams,
     CountryConfig,
-    GovernmentSource,
+    GovernmentDiscovery,
+    GovernmentDomain,
+    GovernmentDomainConfig,
+    Languages,
+    NewsDiscovery,
     Region,
-    Sources,
     Tier,
-    WireSource,
 )
 
 
@@ -51,13 +54,28 @@ def mx_config():
             Actor(name="SEDENA", role="National Defense Secretariat", primary=False,
                   search_terms=["SEDENA"]),
         ],
-        sources=Sources(
-            government=[
-                GovernmentSource(domain="gob.mx", name="Government portal", tier=1),
-                GovernmentSource(domain="sre.gob.mx", name="SRE", tier=1),
-            ],
-            wire=[WireSource(domain="reuters.com")],
+        languages=Languages(primary="es"),
+        news_discovery=NewsDiscovery(
+            goggle_file="assets/country_goggles/mx.goggle",
+            brave_params=BraveParams(country="MX", search_lang="es"),
         ),
+        government_discovery=GovernmentDiscovery(
+            config_file="assets/government/mx.yaml",
+        ),
+    )
+
+
+@pytest.fixture
+def mx_gov_config():
+    return GovernmentDomainConfig(
+        country="Mexico",
+        code="mx",
+        information_culture="managed",
+        domains=[
+            GovernmentDomain(domain="gob.mx", institutions=["Presidency", "SEDENA", "SRE"], priority="P1"),
+            GovernmentDomain(domain="sre.gob.mx", institutions=["Foreign Ministry"], priority="P1"),
+        ],
+        query_terms=["comunicado"],
     )
 
 
@@ -278,11 +296,12 @@ class TestRenderSystemPrompt:
 
 
 class TestBuildUserMessage:
-    def test_with_content(self, mx_config, sample_extracted_content):
+    def test_with_content(self, mx_config, mx_gov_config, sample_extracted_content):
         msg = _build_user_message(
             country_config=mx_config,
             extracted_content=sample_extracted_content,
             processing_date="2026-03-14",
+            gov_domain_config=mx_gov_config,
         )
 
         assert "Mexico (mx)" in msg

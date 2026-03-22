@@ -1,0 +1,99 @@
+country: Italy
+code: it
+tier: shield
+region: western_europe
+actors:
+- name: Giorgia Meloni
+  role: Prime Minister (FdI leader)
+  primary: true
+  search_terms:
+  - Meloni
+  - Giorgia Meloni
+- name: Sergio Mattarella
+  role: President
+  primary: false
+  search_terms:
+  - Mattarella
+  - Sergio Mattarella
+- name: Antonio Tajani
+  role: Foreign Minister (Forza Italia leader)
+  primary: false
+  search_terms:
+  - Tajani
+  - Antonio Tajani
+  - Forza Italia
+- name: Matteo Salvini
+  role: Deputy PM / Infrastructure Minister (Lega leader)
+  primary: false
+  search_terms:
+  - Salvini
+  - Matteo Salvini
+  - Lega
+- name: Guido Crosetto
+  role: Defense Minister
+  primary: false
+  search_terms:
+  - Crosetto
+  - Guido Crosetto
+- name: Fratelli d'Italia
+  role: Governing party
+  primary: false
+  search_terms:
+  - Fratelli d'Italia
+  - FdI
+  - Brothers of Italy
+- name: PD
+  role: Main opposition (Democratic Party)
+  primary: false
+  search_terms:
+  - PD
+  - Partito Democratico
+  - Elly Schlein
+- name: Movimento 5 Stelle
+  role: Opposition party
+  primary: false
+  search_terms:
+  - M5S
+  - Movimento 5 Stelle
+  - Giuseppe Conte
+- name: Banca d'Italia
+  role: Central Bank (Eurosystem member)
+  primary: false
+  search_terms:
+  - Banca d'Italia
+  - Fabio Panetta
+  - Bank of Italy
+- name: Italian Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Forze Armate Italiane
+  - Italian Armed Forces
+languages:
+  primary: it
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Libya migration management
+  reason: Italian security operations and deals with Libyan factions are opaque and
+    politically sensitive
+  where_signal_lives: UNHCR Mediterranean updates, Italian parliamentary inquiries,
+    investigative outlets (Domani, IrpiMedia)
+- domain: Defence industry exports
+  reason: Arms export authorizations and dual-use technology transfers rarely receive
+    sustained scrutiny
+  where_signal_lives: UAMA annual reports, Rete Italiana Pace e Disarmo analyses,
+    EU arms export data
+news_discovery:
+  goggle_file: assets/country_goggles/it.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: IT
+    search_lang: it
+    freshness: pw
+government_discovery:
+  config_file: assets/government/it.yaml
+interpretive_context_file: assets/context/it_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

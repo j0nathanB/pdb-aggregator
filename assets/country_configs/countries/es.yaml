@@ -1,0 +1,101 @@
+country: Spain
+code: es
+tier: shield
+region: western_europe
+actors:
+- name: Pedro Sánchez
+  role: Prime Minister (PSOE leader)
+  primary: true
+  search_terms:
+  - Sánchez
+  - Pedro Sánchez
+- name: King Felipe VI
+  role: Head of State
+  primary: false
+  search_terms:
+  - Felipe VI
+  - King Felipe
+- name: Alberto Núñez Feijóo
+  role: PP leader (main opposition)
+  primary: false
+  search_terms:
+  - Feijóo
+  - Núñez Feijóo
+  - PP
+  - Partido Popular
+- name: Santiago Abascal
+  role: Vox leader (far-right opposition)
+  primary: false
+  search_terms:
+  - Abascal
+  - Santiago Abascal
+  - Vox
+- name: Yolanda Díaz
+  role: Second Deputy PM / Labor Minister (Sumar)
+  primary: false
+  search_terms:
+  - Yolanda Díaz
+  - Sumar
+- name: PSOE
+  role: Governing party (Socialists)
+  primary: false
+  search_terms:
+  - PSOE
+  - Partido Socialista
+- name: Banco de España
+  role: Central Bank (Eurosystem member)
+  primary: false
+  search_terms:
+  - Banco de España
+  - Bank of Spain
+- name: CNI
+  role: National Intelligence Centre
+  primary: false
+  search_terms:
+  - CNI
+  - Centro Nacional de Inteligencia
+- name: Spanish Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Fuerzas Armadas
+  - Spanish Armed Forces
+- name: Catalan parties
+  role: Regional political actors
+  primary: false
+  search_terms:
+  - ERC
+  - Junts
+  - Puigdemont
+  - Illa
+languages:
+  primary: es
+  additional:
+  - ca
+  - eu
+  - gl
+  metadata: en
+blind_spots:
+- domain: Catalonia post-amnesty dynamics
+  reason: Complex negotiations between Madrid and pro-independence parties receive
+    polarized domestic coverage
+  where_signal_lives: Catalan media (VilaWeb, Ara), Spanish parliamentary records,
+    EU rule-of-law reports
+- domain: Morocco-Spain migration and security cooperation
+  reason: Sensitive bilateral relationship on migration, Ceuta/Melilla, and Western
+    Sahara is under-reported
+  where_signal_lives: Interior Ministry statistics, Frontex reports, Moroccan francophone
+    press
+news_discovery:
+  goggle_file: assets/country_goggles/es.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: ES
+    search_lang: es
+    freshness: pw
+government_discovery:
+  config_file: assets/government/es.yaml
+interpretive_context_file: assets/context/es_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

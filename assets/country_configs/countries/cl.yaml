@@ -1,0 +1,94 @@
+country: Chile
+code: cl
+tier: periphery
+region: americas
+actors:
+- name: José Antonio Kast
+  role: President (Partido Republicano)
+  primary: true
+  search_terms:
+  - Kast
+  - José Antonio Kast
+- name: Partido Republicano
+  role: Governing party
+  primary: false
+  search_terms:
+  - Partido Republicano
+  - Republican Party
+- name: Chile Vamos
+  role: Center-right coalition
+  primary: false
+  search_terms:
+  - Chile Vamos
+  - RN
+  - UDI
+- name: Frente Amplio
+  role: Left opposition coalition
+  primary: false
+  search_terms:
+  - Frente Amplio
+  - Broad Front
+- name: Gabriel Boric
+  role: Former President (opposition figure)
+  primary: false
+  search_terms:
+  - Boric
+  - Gabriel Boric
+- name: Banco Central de Chile
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Banco Central
+  - Rosanna Costa
+  - Central Bank of Chile
+- name: CODELCO
+  role: State copper company
+  primary: false
+  search_terms:
+  - CODELCO
+  - Codelco
+- name: Chilean Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Fuerzas Armadas de Chile
+  - Chilean Armed Forces
+- name: ANI
+  role: National Intelligence Agency
+  primary: false
+  search_terms:
+  - ANI
+  - Agencia Nacional de Inteligencia
+- name: Carabineros
+  role: National police force
+  primary: false
+  search_terms:
+  - Carabineros
+  - Carabineros de Chile
+languages:
+  primary: es
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Lithium nationalization and mining governance
+  reason: Strategic mineral policy under new governance framework involves complex
+    state-private negotiations
+  where_signal_lives: CORFO reports, SQM/Albemarle filings, COCHILCO statistics
+- domain: Mapuche conflict in Araucanía
+  reason: Security operations and land disputes in southern regions receive polarized
+    domestic coverage
+  where_signal_lives: INDH reports, Mapuche media (Mapuexpress), Carabineros/military
+    communiqués
+news_discovery:
+  goggle_file: assets/country_goggles/cl.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: CL
+    search_lang: es
+    freshness: pw
+government_discovery:
+  config_file: assets/government/cl.yaml
+interpretive_context_file: assets/context/cl_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

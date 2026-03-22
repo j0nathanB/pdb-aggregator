@@ -353,8 +353,7 @@ No commentary outside the JSON. The JSON is the deliverable."""
 
 def _build_system_prompt(config: CountryConfig) -> str:
     """Fill template variables in the system prompt."""
-    langs = config.languages
-    primary_lang = langs.get("primary", "en") if langs else "en"
+    primary_lang = config.languages.primary
 
     # Map language codes to readable names for the prompt
     lang_names = {
@@ -458,6 +457,7 @@ def _build_country_prompt(
     ledger: CountryLedger,
     dossier_text: str,
     end_date: date,
+    allowed_domains: list[str] | None = None,
 ) -> str:
     start_date = end_date - timedelta(days=7)
 
@@ -468,17 +468,9 @@ def _build_country_prompt(
         actor_lines.append(f"- {a.name} ({a.role}){marker}: search terms: {terms}")
     actors_block = "\n".join(actor_lines)
 
-    domestic_lines = []
-    for s in config.sources.domestic:
-        domestic_lines.append(f"- {s.name} ({s.domain}) — Tier {s.tier}")
-    domestic_block = "\n".join(domestic_lines)
-
-    gov_lines = []
-    for s in config.sources.government:
-        gov_lines.append(f"- {s.name} ({s.domain}) — Tier {s.tier}")
-    gov_block = "\n".join(gov_lines)
-
-    wire_block = "\n".join(f"- {s.domain}" for s in config.sources.wire)
+    # Build source display from allowed_domains list
+    domains = allowed_domains or []
+    sources_block = "\n".join(f"- {d}" for d in domains) if domains else "- No sources configured"
 
     blind_spots_block = ""
     if config.blind_spots:
@@ -490,11 +482,11 @@ def _build_country_prompt(
     ledger_context = _build_ledger_context(ledger)
 
     language_note = ""
-    langs = config.languages
-    if langs.get("primary") and langs["primary"] != "en":
+    lang = config.languages.primary
+    if lang and lang != "en":
         language_note = (
-            f"\nIMPORTANT: This country's primary language is {langs['primary']}. "
-            f"Search domestic sources in {langs['primary']} for better coverage. "
+            f"\nIMPORTANT: This country's primary language is {lang}. "
+            f"Search domestic sources in {lang} for better coverage. "
             f"Translate findings to English in your output."
         )
 
@@ -510,14 +502,7 @@ Date range: {start_date.isoformat()} to {end_date.isoformat()}
 
 ## WHITELISTED SOURCES
 
-Domestic outlets:
-{domestic_block}
-
-Government sources:
-{gov_block}
-
-Wire services:
-{wire_block}
+{sources_block}
 {blind_spots_block}
 {language_note}
 
@@ -695,12 +680,20 @@ async def run_country_agent(
     config: CountryConfig,
     ledger: CountryLedger,
     end_date: date | None = None,
+    allowed_domains: list[str] | None = None,
 ) -> CountryAgentOutput:
     """
     Run the country desk deep-dive analysis.
 
     Uses web_search to find recent developments, then produces structured
     analysis across all five signal categories.
+
+    Args:
+        config: Country configuration.
+        ledger: Current country ledger state.
+        end_date: End of the analysis window.
+        allowed_domains: Domains for web_search tool. Assembled by the
+            orchestrator from brave_sources + government domain config.
     """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
@@ -710,15 +703,11 @@ async def run_country_agent(
     date_range = f"{start_date.isoformat()} to {end_date.isoformat()}"
 
     dossier_text = config.dossier_path.read_text()
-    prompt = _build_country_prompt(config, ledger, dossier_text, end_date)
-    system_prompt = _build_system_prompt(config)
-
-    # Build allowed domains for web_search
-    allowed_domains = (
-        [s.domain for s in config.sources.domestic]
-        + [s.domain for s in config.sources.government]
-        + [s.domain for s in config.sources.wire]
+    prompt = _build_country_prompt(
+        config, ledger, dossier_text, end_date,
+        allowed_domains=allowed_domains,
     )
+    system_prompt = _build_system_prompt(config)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -741,8 +730,8 @@ async def run_country_agent(
         tools=[{
             "type": "web_search_20250305",
             "name": "web_search",
-            "max_uses": config.search.deep_dive_max,
-            "allowed_domains": allowed_domains,
+            "max_uses": config.search.deep_dive_queries_max,
+            "allowed_domains": allowed_domains or [],
         }],
     )
 

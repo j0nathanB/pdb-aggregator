@@ -1,0 +1,94 @@
+country: Czech Republic
+code: cz
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Andrej Babiš
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Babiš
+  - Andrej Babiš
+  - ANO
+- name: Petr Pavel
+  role: President
+  primary: false
+  search_terms:
+  - Pavel
+  - Petr Pavel
+- name: ANO
+  role: Governing party
+  primary: false
+  search_terms:
+  - ANO
+  - Action of Dissatisfied Citizens
+- name: SPOLU
+  role: Pro-Western opposition coalition
+  primary: false
+  search_terms:
+  - SPOLU
+  - ODS
+- name: Tomio Okamura
+  role: SPD leader and Speaker
+  primary: false
+  search_terms:
+  - Okamura
+  - Tomio Okamura
+  - SPD
+- name: Aleš Michl
+  role: CNB Governor (Central Bank)
+  primary: false
+  search_terms:
+  - Michl
+  - Aleš Michl
+  - CNB
+  - Czech National Bank
+- name: BIS
+  role: Security Information Service (domestic intelligence)
+  primary: false
+  search_terms:
+  - BIS
+  - Security Information Service
+- name: Czech Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Czech Armed Forces
+  - Armáda České republiky
+- name: ČEZ
+  role: State energy utility
+  primary: false
+  search_terms:
+  - ČEZ
+  - CEZ
+- name: Petr Fiala
+  role: Former PM, SPOLU/ODS leader
+  primary: false
+  search_terms:
+  - Fiala
+  - Petr Fiala
+languages:
+  primary: cs
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Agrofert-government nexus
+  reason: Babiš's media ownership (MAFRA) creates structural conflict of interest
+    in domestic coverage
+  where_signal_lives: Deník N, Seznam Zprávy, EU OLAF reports
+- domain: Russian hybrid operations
+  reason: BIS findings on espionage and sabotage recruitment often classified
+  where_signal_lives: BIS annual reports, Vrbětice investigation updates, ÚZSI briefings
+news_discovery:
+  goggle_file: assets/country_goggles/cz.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: CZ
+    search_lang: cs
+    freshness: pw
+government_discovery:
+  config_file: assets/government/cz.yaml
+interpretive_context_file: assets/context/cz_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

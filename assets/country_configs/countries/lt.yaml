@@ -1,0 +1,93 @@
+country: Lithuania
+code: lt
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Inga Ruginienė
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Ruginienė
+  - Inga Ruginienė
+- name: Gitanas Nausėda
+  role: President
+  primary: false
+  search_terms:
+  - Nausėda
+  - Gitanas Nausėda
+- name: LSDP
+  role: Governing party (Social Democrats)
+  primary: false
+  search_terms:
+  - LSDP
+  - Lithuanian Social Democratic Party
+- name: TS-LKD
+  role: Conservative opposition
+  primary: false
+  search_terms:
+  - TS-LKD
+  - Homeland Union
+- name: Gabrielius Landsbergis
+  role: TS-LKD chairman
+  primary: false
+  search_terms:
+  - Landsbergis
+  - Gabrielius Landsbergis
+- name: Lithuanian Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Lithuanian Armed Forces
+  - Lietuvos kariuomenė
+- name: VSD
+  role: State Security Department
+  primary: false
+  search_terms:
+  - VSD
+  - State Security Department
+- name: Bank of Lithuania
+  role: Central Bank (Eurosystem member)
+  primary: false
+  search_terms:
+  - Lietuvos bankas
+  - Bank of Lithuania
+- name: Ignitis Group
+  role: State energy company
+  primary: false
+  search_terms:
+  - Ignitis
+  - Ignitis Group
+- name: Dawn of Nemunas
+  role: Junior coalition partner (right-wing populist)
+  primary: false
+  search_terms:
+  - PPNA
+  - Nemuno Aušra
+  - Dawn of Nemunas
+languages:
+  primary: lt
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Suwałki Gap military preparations
+  reason: NATO operational details and German brigade deployment specifics are classified
+  where_signal_lives: NATO communiqués, Bundeswehr press releases, Lithuanian Defence
+    Ministry statements
+- domain: Belarusian hybrid warfare operations
+  reason: Real-time border incidents and intelligence operations rarely surface in
+    mainstream media
+  where_signal_lives: VSD/AOTD joint threat assessments, FRONTEX reports, border guard
+    communiqués
+news_discovery:
+  goggle_file: assets/country_goggles/lt.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: LT
+    search_lang: lt
+    freshness: pw
+government_discovery:
+  config_file: assets/government/lt.yaml
+interpretive_context_file: assets/context/lt_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

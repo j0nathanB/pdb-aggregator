@@ -1,0 +1,100 @@
+country: Canada
+code: ca
+tier: periphery
+region: americas
+actors:
+- name: Mark Carney
+  role: Prime Minister (Liberal Party)
+  primary: true
+  search_terms:
+  - Carney
+  - Mark Carney
+- name: Pierre Poilievre
+  role: Conservative Party leader (opposition)
+  primary: false
+  search_terms:
+  - Poilievre
+  - Pierre Poilievre
+  - CPC
+- name: Liberal Party
+  role: Governing party
+  primary: false
+  search_terms:
+  - Liberal Party
+  - Liberals
+  - LPC
+- name: Conservative Party
+  role: Official opposition
+  primary: false
+  search_terms:
+  - Conservative Party
+  - Conservatives
+  - CPC
+- name: Bank of Canada
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Bank of Canada
+  - Tiff Macklem
+- name: Canadian Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - CAF
+  - Canadian Armed Forces
+  - Canadian Forces
+- name: CSIS
+  role: Canadian Security Intelligence Service
+  primary: false
+  search_terms:
+  - CSIS
+  - Canadian Security Intelligence Service
+- name: NDP
+  role: New Democratic Party
+  primary: false
+  search_terms:
+  - NDP
+  - New Democratic Party
+  - Jagmeet Singh
+- name: Bloc Québécois
+  role: Quebec sovereigntist party
+  primary: false
+  search_terms:
+  - Bloc Québécois
+  - BQ
+  - Yves-François Blanchet
+- name: Mélanie Joly
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Joly
+  - Mélanie Joly
+languages:
+  primary: en
+  additional:
+  - fr
+  metadata: en
+blind_spots:
+- domain: Foreign interference in elections
+  reason: CSIS intelligence on Chinese and Indian interference is classified; public
+    inquiry findings are delayed
+  where_signal_lives: Hogue Commission reports, NSICOP annual reports, CSIS public
+    threat assessments
+- domain: Arctic sovereignty and NORAD modernization
+  reason: Continental defense investments and Northwest Passage disputes involve sensitive
+    US-Canada negotiations
+  where_signal_lives: DND defence policy updates, NORAD modernization releases, US
+    Northern Command statements
+news_discovery:
+  goggle_file: assets/country_goggles/ca.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: CA
+    search_lang: en
+    freshness: pw
+government_discovery:
+  config_file: assets/government/ca.yaml
+interpretive_context_file: assets/context/ca_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

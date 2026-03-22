@@ -1,0 +1,105 @@
+country: Saudi Arabia
+code: sa
+tier: pivot
+region: middle_east_turkey_south_asia
+actors:
+- name: Mohammed bin Salman
+  role: Crown Prince and Prime Minister
+  primary: true
+  search_terms:
+  - MBS
+  - Mohammed bin Salman
+  - Crown Prince
+- name: King Salman
+  role: King
+  primary: false
+  search_terms:
+  - King Salman
+  - Salman bin Abdulaziz
+- name: Saudi Aramco
+  role: State oil company
+  primary: false
+  search_terms:
+  - Aramco
+  - Saudi Aramco
+- name: Public Investment Fund
+  role: Sovereign wealth fund
+  primary: false
+  search_terms:
+  - PIF
+  - Public Investment Fund
+  - Yasir Al-Rumayyan
+- name: SAMA
+  role: Saudi Central Bank
+  primary: false
+  search_terms:
+  - SAMA
+  - Saudi Central Bank
+  - Saudi Arabian Monetary Authority
+- name: Prince Faisal bin Farhan
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Faisal bin Farhan
+  - Saudi Foreign Minister
+- name: Ministry of Defense
+  role: Defense establishment
+  primary: false
+  search_terms:
+  - Saudi Ministry of Defense
+  - Khalid bin Salman
+- name: GIP
+  role: General Intelligence Presidency
+  primary: false
+  search_terms:
+  - GIP
+  - Saudi intelligence
+- name: NEOM
+  role: Flagship Vision 2030 megaproject
+  primary: false
+  search_terms:
+  - NEOM
+  - The Line
+- name: Khalid bin Salman
+  role: Defense Minister
+  primary: false
+  search_terms:
+  - Khalid bin Salman
+  - KBS
+- name: Presidency of State Security
+  role: Internal security apparatus
+  primary: false
+  search_terms:
+  - PSS
+  - Presidency of State Security
+languages:
+  primary: ar
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Royal succession dynamics
+  reason: Internal Al Saud family politics and power consolidation are opaque by design
+  where_signal_lives: Chatham House/Brookings analyses, leaked diplomatic cables,
+    Gulf-based opposition media
+- domain: Yemen conflict and regional proxies
+  reason: Saudi military operations and Iran-aligned Houthi engagement details are
+    tightly controlled
+  where_signal_lives: UN Panel of Experts reports, ACLED data, Houthi media channels
+- domain: Vision 2030 implementation gaps
+  reason: Mega-project delays, FDI shortfalls, and fiscal pressures are underreported
+    in state-aligned media
+  where_signal_lives: IMF Article IV reports, PIF disclosure documents, Financial
+    Times/Bloomberg Gulf coverage
+news_discovery:
+  goggle_file: assets/country_goggles/sa.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: SA
+    search_lang: ar
+    freshness: pw
+government_discovery:
+  config_file: assets/government/sa.yaml
+interpretive_context_file: assets/context/sa_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

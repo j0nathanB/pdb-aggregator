@@ -95,7 +95,12 @@ Rules:
 - Respond with valid JSON only. No markdown fencing."""
 
 
-def _build_scan_prompt(config: CountryConfig, end_date: date) -> str:
+def _build_scan_prompt(
+    config: CountryConfig,
+    end_date: date,
+    wire_domains: list[str] | None = None,
+    triage_domains: list[str] | None = None,
+) -> str:
     start_date = end_date - timedelta(days=7)
 
     actor_terms = []
@@ -104,14 +109,15 @@ def _build_scan_prompt(config: CountryConfig, end_date: date) -> str:
         actor_terms.append(f"- {a.name} ({a.role}): {terms}")
     actors_block = "\n".join(actor_terms)
 
-    triage_sources = config.triage_sources
-    domestic_block = "\n".join(
-        f"- {s.name} ({s.domain})" for s in triage_sources
-    ) if triage_sources else "- No triage sources configured"
-
+    wire_list = wire_domains or []
     wire_block = "\n".join(
-        f"- {s.domain}" for s in config.sources.wire
-    )
+        f"- {d}" for d in wire_list
+    ) if wire_list else "- reuters.com\n- apnews.com"
+
+    triage_list = triage_domains or []
+    domestic_block = "\n".join(
+        f"- {d}" for d in triage_list
+    ) if triage_list else "- No triage sources configured"
 
     return f"""\
 Scan for recent news about {config.country} ({config.code.upper()}).
@@ -170,11 +176,23 @@ async def scan_country(
     config: CountryConfig,
     end_date: date | None = None,
     semaphore: asyncio.Semaphore | None = None,
+    allowed_domains: list[str] | None = None,
+    wire_domains: list[str] | None = None,
+    triage_domains: list[str] | None = None,
 ) -> ScanResult:
     """
     Run wire + domestic headline scan for a single country.
 
     Uses Claude with web_search tool to find recent headlines.
+
+    Args:
+        config: Country configuration.
+        end_date: End of the analysis window.
+        semaphore: Concurrency limiter.
+        allowed_domains: Domains for web_search tool. If None, uses
+            wire_domains + triage_domains.
+        wire_domains: Wire service domains (e.g., reuters.com).
+        triage_domains: Domestic triage source domains.
     """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
@@ -182,9 +200,8 @@ async def scan_country(
     end_date = end_date or date.today()
 
     # Build allowed domains for focused searching
-    allowed_domains = [s.domain for s in config.sources.wire]
-    for s in config.triage_sources:
-        allowed_domains.append(s.domain)
+    if allowed_domains is None:
+        allowed_domains = list(wire_domains or []) + list(triage_domains or [])
 
     async def _do_scan() -> ScanResult:
         client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
@@ -195,12 +212,16 @@ async def scan_country(
                 system=[{"type": "text", "text": SCAN_SYSTEM_PROMPT}],
                 messages=[{
                     "role": "user",
-                    "content": _build_scan_prompt(config, end_date),
+                    "content": _build_scan_prompt(
+                        config, end_date,
+                        wire_domains=wire_domains,
+                        triage_domains=triage_domains,
+                    ),
                 }],
                 tools=[{
                     "type": "web_search_20250305",
                     "name": "web_search",
-                    "max_uses": config.search.triage_domestic_max + 2,  # wire + domestic
+                    "max_uses": config.search.triage_queries_max + 2,
                     "allowed_domains": allowed_domains,
                 }],
             )

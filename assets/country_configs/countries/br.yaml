@@ -1,0 +1,96 @@
+country: Brazil
+code: br
+tier: periphery
+region: americas
+actors:
+- name: Luiz Inácio Lula da Silva
+  role: President
+  primary: true
+  search_terms:
+  - Lula
+  - Lula da Silva
+- name: PT
+  role: Governing party (Workers' Party)
+  primary: false
+  search_terms:
+  - PT
+  - Partido dos Trabalhadores
+  - Workers' Party
+- name: Jair Bolsonaro
+  role: Former President (PL leader, barred from office)
+  primary: false
+  search_terms:
+  - Bolsonaro
+  - Jair Bolsonaro
+  - PL
+- name: Arthur Lira
+  role: Chamber of Deputies President
+  primary: false
+  search_terms:
+  - Lira
+  - Arthur Lira
+- name: STF
+  role: Supreme Federal Tribunal
+  primary: false
+  search_terms:
+  - STF
+  - Supremo Tribunal Federal
+  - Alexandre de Moraes
+- name: Banco Central do Brasil
+  role: Central Bank
+  primary: false
+  search_terms:
+  - BCB
+  - Banco Central
+  - Gabriel Galípolo
+- name: Petrobras
+  role: State oil company
+  primary: false
+  search_terms:
+  - Petrobras
+- name: Brazilian Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Forças Armadas
+  - Brazilian Armed Forces
+- name: Fernando Haddad
+  role: Finance Minister
+  primary: false
+  search_terms:
+  - Haddad
+  - Fernando Haddad
+- name: ABIN
+  role: Brazilian Intelligence Agency
+  primary: false
+  search_terms:
+  - ABIN
+  - Agência Brasileira de Inteligência
+languages:
+  primary: pt
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Amazon deforestation enforcement
+  reason: Real-time satellite monitoring vs ground enforcement gap; illegal mining
+    networks involve local power structures
+  where_signal_lives: INPE/DETER satellite data, IBAMA enforcement reports, Greenpeace/ISA
+    analyses
+- domain: January 8 investigation aftermath
+  reason: Military institutional complicity and intelligence failures around 2023
+    insurrection attempt remain under judicial seal
+  where_signal_lives: STF proceedings, CPI reports, Intercept Brasil investigative
+    coverage
+news_discovery:
+  goggle_file: assets/country_goggles/br.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: BR
+    search_lang: pt
+    freshness: pw
+government_discovery:
+  config_file: assets/government/br.yaml
+interpretive_context_file: assets/context/br_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

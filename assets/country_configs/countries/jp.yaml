@@ -1,0 +1,97 @@
+country: Japan
+code: jp
+tier: next_test
+region: asia_pacific
+actors:
+- name: Sanae Takaichi
+  role: Prime Minister (LDP)
+  primary: true
+  search_terms:
+  - Takaichi
+  - Sanae Takaichi
+- name: Emperor Naruhito
+  role: Head of State
+  primary: false
+  search_terms:
+  - Naruhito
+  - Emperor Naruhito
+- name: LDP
+  role: Governing party (Liberal Democratic Party)
+  primary: false
+  search_terms:
+  - LDP
+  - Liberal Democratic Party
+  - Jimintō
+- name: Nippon Ishin no Kai
+  role: Opposition party (Japan Innovation Party)
+  primary: false
+  search_terms:
+  - Nippon Ishin
+  - Japan Innovation Party
+- name: Constitutional Democratic Party
+  role: Main opposition
+  primary: false
+  search_terms:
+  - CDP
+  - Constitutional Democratic Party
+  - Rikken Minshutō
+- name: Kazuo Ueda
+  role: Bank of Japan Governor
+  primary: false
+  search_terms:
+  - Ueda
+  - Kazuo Ueda
+  - BOJ
+  - Bank of Japan
+- name: Japan Self-Defense Forces
+  role: Military
+  primary: false
+  search_terms:
+  - JSDF
+  - Self-Defense Forces
+  - Jieitai
+- name: Ministry of Defense
+  role: Defense establishment
+  primary: false
+  search_terms:
+  - Ministry of Defense
+  - Bōeishō
+- name: Keidanren
+  role: Business federation
+  primary: false
+  search_terms:
+  - Keidanren
+  - Japan Business Federation
+- name: Ministry of Foreign Affairs
+  role: Foreign policy establishment
+  primary: false
+  search_terms:
+  - MOFA
+  - Gaimushō
+languages:
+  primary: ja
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Okinawa base realignment
+  reason: US military footprint restructuring and local opposition are sensitive for
+    the US-Japan alliance
+  where_signal_lives: Okinawa Times, Ryukyu Shimpo, US Indo-Pacific Command releases
+- domain: Nuclear latency debate
+  reason: Discussions on extended deterrence and potential nuclear sharing are politically
+    taboo
+  where_signal_lives: Diet committee transcripts, CSIS/RAND Japan analyses, Yomiuri
+    Shimbun defense reporting
+news_discovery:
+  goggle_file: assets/country_goggles/jp.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: JP
+    search_lang: ja
+    freshness: pw
+government_discovery:
+  config_file: assets/government/jp.yaml
+interpretive_context_file: assets/context/jp_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20
