@@ -30,6 +30,13 @@ BRAVE_NEWS_URL = "https://api.search.brave.com/res/v1/news/search"
 BRAVE_SOURCES_PATH = PROJECT_ROOT / "assets" / "country_configs" / "brave_sources.yaml"
 GOGGLES_DIR = PROJECT_ROOT / "assets" / "country_goggles"
 
+# Goggle files must be served via URL for the Brave API.
+# Default: GitHub raw content URL for this repo.
+GOGGLES_BASE_URL = os.environ.get(
+    "MPM_GOGGLES_BASE_URL",
+    "https://raw.githubusercontent.com/j0nathanB/pdb-aggregator/main/assets/country_goggles",
+)
+
 
 # =============================================================================
 # Data classes
@@ -100,6 +107,12 @@ class CountrySearchConfig:
         """Return path to this country's goggle file, if it exists."""
         path = GOGGLES_DIR / f"{self.code}.goggle"
         return path if path.exists() else None
+
+    def goggle_url(self) -> str | None:
+        """Return the URL to this country's goggle file, if it exists locally."""
+        if self.goggle_path() is None:
+            return None
+        return f"{GOGGLES_BASE_URL}/{self.code}.goggle"
 
 
 # =============================================================================
@@ -303,11 +316,9 @@ class BraveNewsClient:
 
         # Use country goggle if available and no explicit goggle provided
         if goggles is None:
-            goggle_path = cc.goggle_path()
-            if goggle_path:
-                logger.debug("Found local goggle for %s: %s", country_code, goggle_path)
-                # Goggles must be served via URL — local path logged for reference
-                # TODO: implement goggle serving (GitHub raw URL or local server)
+            goggles = cc.goggle_url()
+            if goggles:
+                logger.debug("Using goggle for %s: %s", country_code, goggles)
 
         responses = []
         for term in query_terms:

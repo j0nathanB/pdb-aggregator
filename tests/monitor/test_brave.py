@@ -148,8 +148,50 @@ class TestCountrySearchConfig:
         params = sample_en_country_config.search_params
         assert params == {}
 
-    def test_goggle_path_not_exists(self, sample_country_config):
-        assert sample_country_config.goggle_path() is None
+    def test_goggle_path_exists_for_mx(self, sample_country_config):
+        """mx.goggle exists in assets/country_goggles/."""
+        assert sample_country_config.goggle_path() is not None
+
+    def test_goggle_url_exists_for_mx(self, sample_country_config):
+        """goggle_url returns a URL for mx since the file exists."""
+        url = sample_country_config.goggle_url()
+        assert url is not None
+        assert url.endswith("/mx.goggle")
+
+    def test_goggle_path_not_exists(self):
+        """goggle_path returns None for a country with no goggle file."""
+        cc = CountrySearchConfig(code="zz", use_local_params=False, local_params=None, sources=[])
+        assert cc.goggle_path() is None
+
+    def test_goggle_url_not_exists(self):
+        """goggle_url returns None for a country with no goggle file."""
+        cc = CountrySearchConfig(code="zz", use_local_params=False, local_params=None, sources=[])
+        assert cc.goggle_url() is None
+
+    def test_goggle_path_exists(self, sample_country_config, tmp_path):
+        """goggle_path returns path when file exists."""
+        import src.monitor.collection.brave as brave_mod
+        original = brave_mod.GOGGLES_DIR
+        brave_mod.GOGGLES_DIR = tmp_path
+        try:
+            (tmp_path / f"{sample_country_config.code}.goggle").write_text("! test")
+            assert sample_country_config.goggle_path() is not None
+        finally:
+            brave_mod.GOGGLES_DIR = original
+
+    def test_goggle_url_exists(self, sample_country_config, tmp_path):
+        """goggle_url returns GitHub raw URL when file exists locally."""
+        import src.monitor.collection.brave as brave_mod
+        original = brave_mod.GOGGLES_DIR
+        brave_mod.GOGGLES_DIR = tmp_path
+        try:
+            (tmp_path / f"{sample_country_config.code}.goggle").write_text("! test")
+            url = sample_country_config.goggle_url()
+            assert url is not None
+            assert url.endswith(f"/{sample_country_config.code}.goggle")
+            assert "raw.githubusercontent.com" in url
+        finally:
+            brave_mod.GOGGLES_DIR = original
 
 
 # =============================================================================
@@ -375,6 +417,39 @@ class TestBraveNewsClient:
 
         assert len(responses) == 2
         assert mock_client._client.get.call_count == 2
+
+        await mock_client.close()
+
+    @pytest.mark.asyncio
+    async def test_search_country_sources_auto_goggle(self, mock_client, tmp_path):
+        """search_country_sources auto-resolves goggle URL when file exists."""
+        import src.monitor.collection.brave as brave_mod
+        original = brave_mod.GOGGLES_DIR
+        brave_mod.GOGGLES_DIR = tmp_path
+        try:
+            (tmp_path / "mx.goggle").write_text("! test goggle")
+
+            mock_response = MagicMock()
+            mock_response.json.return_value = SAMPLE_API_RESPONSE
+            mock_response.raise_for_status = MagicMock()
+            mock_client._client.get = AsyncMock(return_value=mock_response)
+
+            mock_client._country_configs = {
+                "mx": CountrySearchConfig(
+                    code="mx",
+                    use_local_params=True,
+                    local_params={"search_lang": "es", "country": "MX"},
+                    sources=[],
+                )
+            }
+
+            await mock_client.search_country_sources("mx", ["test query"])
+
+            params = mock_client._client.get.call_args[1]["params"]
+            assert "goggles" in params
+            assert params["goggles"].endswith("/mx.goggle")
+        finally:
+            brave_mod.GOGGLES_DIR = original
 
         await mock_client.close()
 
