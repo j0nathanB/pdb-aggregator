@@ -1,0 +1,33 @@
+! name: MPM Saudi Arabia
+! description: MPM pipeline source prioritization for Saudi Arabia -- boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=arabnews.com
+$boost=3,site=aawsat.com
+$boost=3,site=aleqt.com
+$boost=3,site=al-monitor.com
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=spa.gov.sa
+$boost=2,site=mfa.gov.sa
+$boost=2,site=alriyadh.com
+$boost=2,site=okaz.com.sa
+$boost=2,site=saudigazette.com.sa
+$boost=2,site=sabq.org
+$boost=2,site=alarabiya.net
+$boost=2,site=argaam.com
+$boost=2,site=grc.net
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=chathamhouse.org
+$boost=1,site=csis.org
+$boost=1,site=alwatan.com.sa
+$boost=1,site=maaal.com
+$boost=1,site=middleeasteye.net
+
+! --- Discard: Noise ---
+$discard,site=middleeastmonitor.com
+$discard,site=raialyoum.com
+$discard,site=saudi-leaks.com

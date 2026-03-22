@@ -1,0 +1,37 @@
+! name: MPM Ukraine
+! description: MPM pipeline source prioritization for Ukraine — boosts high-signal sources, discards noise and adversarial state media
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=pravda.com.ua
+$boost=3,site=zn.ua
+$boost=3,site=kyivindependent.com
+$boost=3,site=defence-ua.com
+$boost=3,site=eurointegration.com.ua
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=epravda.com.ua
+$boost=2,site=nv.ua
+$boost=2,site=liga.net
+$boost=2,site=ukrinform.net
+$boost=2,site=interfax.com.ua
+$boost=2,site=president.gov.ua
+$boost=2,site=mfa.gov.ua
+$boost=2,site=rada.gov.ua
+$boost=2,site=kmu.gov.ua
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=texty.org.ua
+$boost=1,site=razumkov.org.ua
+$boost=1,site=ces.org.ua
+$boost=1,site=militarnyi.com
+$boost=1,site=unian.ua
+
+! --- Discard: Noise and adversarial ---
+$discard,site=strana.ua
+$discard,site=112.ua
+$discard,site=newsone.ua
+$discard,site=rt.com
+$discard,site=tass.com
+$discard,site=ria.ru

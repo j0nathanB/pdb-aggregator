@@ -1,0 +1,35 @@
+! name: MPM Mexico
+! description: MPM pipeline source prioritization for Mexico — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=reforma.com
+$boost=3,site=eluniversal.com.mx
+$boost=3,site=elfinanciero.com.mx
+$boost=3,site=proceso.com.mx
+$boost=3,site=jornada.com.mx
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=milenio.com
+$boost=2,site=animalpolitico.com
+$boost=2,site=aristeguinoticias.com
+$boost=2,site=insightcrime.org
+$boost=2,site=nexos.com.mx
+$boost=2,site=excelsior.com.mx
+$boost=2,site=gob.mx
+$boost=2,site=latinus.us
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=zetatijuana.com
+$boost=1,site=piedepagina.mx
+$boost=1,site=quintoelab.org
+$boost=1,site=mexiconewsdaily.com
+$boost=1,site=mexicotoday.com
+$boost=1,site=americasquarterly.org
+
+! --- Discard: Noise ---
+$discard,site=elchapucero.com
+$discard,site=sincensura.com.mx
+$discard,site=eldeforma.com
+$discard,site=laopinion.com

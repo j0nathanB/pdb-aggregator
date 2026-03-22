@@ -1,0 +1,33 @@
+! name: MPM Czech Republic
+! description: MPM pipeline source prioritization for Czech Republic — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=ctk.eu
+$boost=3,site=irozhlas.cz
+$boost=3,site=denikn.cz
+$boost=3,site=seznamzpravy.cz
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=ct24.ceskatelevize.cz
+$boost=2,site=english.radio.cz
+$boost=2,site=hn.cz
+$boost=2,site=respekt.cz
+$boost=2,site=vlada.gov.cz
+$boost=2,site=mzv.gov.cz
+$boost=2,site=mo.gov.cz
+$boost=2,site=hrad.cz
+$boost=2,site=vlada.cz
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=aktualne.cz
+$boost=1,site=hlidacipes.org
+$boost=1,site=czdefence.com
+$boost=1,site=amo.cz
+$boost=1,site=europeum.org
+
+! --- Discard: Noise ---
+$discard,site=parlamentnilisty.cz
+$discard,site=ac24.cz
+$discard,site=cz24.news

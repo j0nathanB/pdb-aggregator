@@ -1,0 +1,34 @@
+! name: MPM Brazil
+! description: MPM pipeline source prioritization for Brazil — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=folha.uol.com.br
+$boost=3,site=oglobo.globo.com
+$boost=3,site=valor.globo.com
+$boost=3,site=poder360.com.br
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=metropoles.com
+$boost=2,site=jota.info
+$boost=2,site=defesanet.com.br
+$boost=2,site=agenciabrasil.ebc.com.br
+$boost=2,site=gov.br
+$boost=2,site=planalto.gov.br
+$boost=2,site=senado.leg.br
+$boost=2,site=camara.leg.br
+$boost=2,site=brazilian.report
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=congressoemfoco.com.br
+$boost=1,site=defesaemfoco.com.br
+$boost=1,site=cebri.org
+$boost=1,site=igarape.org.br
+$boost=1,site=americasquarterly.org
+$boost=1,site=dialogo-americas.com
+
+! --- Discard: Noise ---
+$discard,site=brasil247.com
+$discard,site=tercalivre.com.br
+$discard,site=jornaldacidadeonline.com.br

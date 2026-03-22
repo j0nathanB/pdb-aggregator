@@ -1,0 +1,34 @@
+! name: MPM France
+! description: MPM pipeline source prioritization for France — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=france24.com
+$boost=3,site=lemonde.fr
+$boost=3,site=lefigaro.fr
+$boost=3,site=lesechos.fr
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=mediapart.fr
+$boost=2,site=liberation.fr
+$boost=2,site=ifri.org
+$boost=2,site=intelligenceonline.com
+$boost=2,site=elysee.fr
+$boost=2,site=gouvernement.fr
+$boost=2,site=diplomatie.gouv.fr
+$boost=2,site=publicsenat.fr
+$boost=2,site=lcp.fr
+$boost=2,site=frstrategie.org
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=defnat.com
+$boost=1,site=contexte.com
+$boost=1,site=lopinion.fr
+$boost=1,site=africaintelligence.com
+$boost=1,site=monde-diplomatique.fr
+
+! --- Discard: Noise ---
+$discard,site=cnews.fr
+$discard,site=valeursactuelles.com
+$discard,site=francais.rt.com

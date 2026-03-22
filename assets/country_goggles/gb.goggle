@@ -1,0 +1,34 @@
+! name: MPM United Kingdom
+! description: MPM pipeline source prioritization for United Kingdom — boosts extractable high-signal sources, accounts for severe crawler-blocking across major broadsheets
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=rusi.org
+$boost=3,site=chathamhouse.org
+$boost=3,site=ukdefencejournal.org.uk
+$boost=3,site=iiss.org
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=theguardian.com
+$boost=2,site=bbc.co.uk
+$boost=2,site=bbc.com
+$boost=2,site=gov.uk
+$boost=2,site=parliament.uk
+$boost=2,site=newstatesman.com
+$boost=2,site=spectator.co.uk
+$boost=2,site=declassifieduk.org
+$boost=2,site=private-eye.co.uk
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=janes.com
+$boost=1,site=politico.eu
+$boost=1,site=opendemocracy.net
+$boost=1,site=bellingcat.com
+$boost=1,site=apnews.com
+
+! --- Discard: Noise ---
+$discard,site=dailymail.co.uk
+$discard,site=thesun.co.uk
+$discard,site=mirror.co.uk
+$discard,site=gbnews.com

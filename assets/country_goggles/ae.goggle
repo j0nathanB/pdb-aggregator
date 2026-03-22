@@ -1,0 +1,33 @@
+! name: MPM UAE
+! description: MPM pipeline source prioritization for UAE — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=thenationalnews.com
+$boost=3,site=aletihad.ae
+$boost=3,site=gulfnews.com
+$boost=3,site=alkhaleej.ae
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=khaleejtimes.com
+$boost=2,site=wam.ae
+$boost=2,site=uaelegislation.gov.ae
+$boost=2,site=mofaic.gov.ae
+$boost=2,site=epc.ae
+$boost=2,site=ecssr.ae
+$boost=2,site=al-monitor.com
+$boost=2,site=middleeasteye.net
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=albayan.ae
+$boost=1,site=english.alarabiya.net
+$boost=1,site=arabianbusiness.com
+$boost=1,site=agbi.com
+$boost=1,site=chathamhouse.org
+$boost=1,site=iiss.org
+
+! --- Discard: Noise ---
+$discard,site=aljazeera.com
+$discard,site=lovindubai.com
+$discard,site=dubaiofw.com

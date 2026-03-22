@@ -1,0 +1,32 @@
+! name: MPM Australia
+! description: MPM pipeline source prioritization for Australia — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=lowyinstitute.org
+$boost=3,site=aspistrategist.org.au
+$boost=3,site=afr.com
+$boost=3,site=sbs.com.au
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=ussc.edu.au
+$boost=2,site=eastasiaforum.org
+$boost=2,site=internationalaffairs.org.au
+$boost=2,site=defenceconnect.com.au
+$boost=2,site=dfat.gov.au
+$boost=2,site=defence.gov.au
+$boost=2,site=aph.gov.au
+$boost=2,site=theconversation.com
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=australiandefence.com.au
+$boost=1,site=australianforeignaffairs.com
+$boost=1,site=fulcrum.sg
+$boost=1,site=thediplomat.com
+$boost=1,site=devpolicy.org
+
+! --- Discard: Noise ---
+$discard,site=michaelwest.com.au
+$discard,site=crikey.com.au
+$discard,site=themonthly.com.au

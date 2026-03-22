@@ -1,0 +1,35 @@
+! name: MPM India
+! description: MPM pipeline source prioritization for India — boosts high-signal sources, discards noise. Note: 7 boosted sources are blocked by Anthropic crawler (thehindu.com, indianexpress.com, hindustantimes.com, economictimes.indiatimes.com, livemint.com, jagran.com, bhaskar.com) — boost affects Brave ranking only, extraction requires alternative methods.
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=3) ---
+$boost=3,site=theprint.in
+$boost=3,site=thehindu.com
+$boost=3,site=indianexpress.com
+$boost=3,site=orfonline.org
+$boost=3,site=jagran.com
+
+! --- Tier 2: Important (boost=2) ---
+$boost=2,site=hindustantimes.com
+$boost=2,site=bhaskar.com
+$boost=2,site=thewire.in
+$boost=2,site=idsa.in
+$boost=2,site=mea.gov.in
+$boost=2,site=pib.gov.in
+$boost=2,site=pmindia.gov.in
+$boost=2,site=sansadtv.nic.in
+
+! --- Tier 3: Supplementary (boost=1) ---
+$boost=1,site=carnegieindia.org
+$boost=1,site=gatewayhouse.in
+$boost=1,site=takshashila.org.in
+$boost=1,site=forceindia.net
+$boost=1,site=epw.in
+$boost=1,site=southasianvoices.org
+
+! --- Discard: Noise ---
+$discard,site=republicworld.com
+$discard,site=timesnownews.com
+$discard,site=opindia.com
+$discard,site=swarajya.in

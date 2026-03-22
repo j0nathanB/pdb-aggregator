@@ -30,6 +30,28 @@ GOGGLES_DIR = ASSETS_DIR / "country_goggles"
 CONTEXT_DIR = ASSETS_DIR / "context"
 FRAMEWORKS_DIR = ASSETS_DIR / "frameworks"
 EXTRACTION_ROUTING_PATH = ASSETS_DIR / "country_configs" / "extraction_routing.yaml"
+PROMPTS_DIR = ASSETS_DIR / "prompts"
+
+# Prompt cache — loaded once per process
+_prompt_cache: dict[str, str] = {}
+
+
+def load_prompt(name: str, **kwargs: str) -> str:
+    """Load a prompt template from assets/prompts/{name}.md.
+
+    Template variables like {{COUNTRY}} are substituted from kwargs.
+    Results are cached (before substitution) for repeated loads.
+    """
+    if name not in _prompt_cache:
+        path = PROMPTS_DIR / f"{name}.md"
+        if not path.exists():
+            raise FileNotFoundError(f"Prompt not found: {path}")
+        _prompt_cache[name] = path.read_text()
+
+    text = _prompt_cache[name]
+    for key, value in kwargs.items():
+        text = text.replace(f"{{{{{key}}}}}", value)
+    return text
 
 
 def load_settings() -> dict:
