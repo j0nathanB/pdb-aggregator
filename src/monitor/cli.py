@@ -44,12 +44,33 @@ from .ledger.initialize import initialize_country_ledger
 logger = logging.getLogger("monitor")
 
 
-def setup_logging(level: str = "INFO") -> None:
-    logging.basicConfig(
-        level=getattr(logging, level.upper()),
-        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-        datefmt="%H:%M:%S",
-    )
+LOGS_DIR = PROJECT_ROOT / "logs"
+
+
+def setup_logging(level: str = "INFO", log_file: str | None = None) -> None:
+    log_level = getattr(logging, level.upper())
+    fmt = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    datefmt = "%Y-%m-%d %H:%M:%S"
+
+    # Console handler (respects --log-level)
+    console = logging.StreamHandler()
+    console.setLevel(log_level)
+    console.setFormatter(logging.Formatter(fmt, datefmt="%H:%M:%S"))
+
+    handlers: list[logging.Handler] = [console]
+
+    # File handler — always writes at DEBUG level for full trace
+    if log_file is None:
+        LOGS_DIR.mkdir(exist_ok=True)
+        log_file = str(LOGS_DIR / f"pipeline_{date.today().isoformat()}.log")
+
+    file_handler = logging.FileHandler(log_file, encoding="utf-8")
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(logging.Formatter(fmt, datefmt=datefmt))
+    handlers.append(file_handler)
+
+    logging.basicConfig(level=logging.DEBUG, handlers=handlers)
+    logging.getLogger("monitor").info("Logging to %s", log_file)
 
 
 # =============================================================================
@@ -281,6 +302,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--log-level", default="INFO",
         choices=["DEBUG", "INFO", "WARNING", "ERROR"],
+        help="Console log level (file always logs at DEBUG)",
+    )
+    parser.add_argument(
+        "--log-file",
+        help="Log file path (default: logs/pipeline_YYYY-MM-DD.log)",
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
@@ -324,7 +350,7 @@ def main() -> None:
         parser.print_help()
         sys.exit(0)
 
-    setup_logging(args.log_level)
+    setup_logging(args.log_level, log_file=args.log_file)
 
     if args.command == "status":
         cmd_status(args)
