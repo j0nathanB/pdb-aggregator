@@ -236,10 +236,24 @@ class CountryConfig(BaseModel):
     def primary_actors(self) -> list[Actor]:
         return [a for a in self.actors if a.primary]
 
+    # Map country codes to common abbreviations used in dossier filenames
+    _DOSSIER_ALIASES: dict[str, str] = {"ae": "uae", "gb": "united_kingdom"}
+
     @property
     def dossier_path(self) -> Path:
-        matches = list(DOSSIERS_DIR.glob(f"*_{self.code}_dossier_*.md")) + \
-                  list(DOSSIERS_DIR.glob(f"{self._dossier_name_stem}*.md"))
+        patterns = [
+            f"*_{self.code}_dossier_*.md",
+            f"{self._dossier_name_stem}*.md",
+            f"{self.code}_dossier_*.md",
+        ]
+        # Check aliases (e.g. ae → uae)
+        alias = self._DOSSIER_ALIASES.get(self.code)
+        if alias:
+            patterns.append(f"{alias}_dossier_*.md")
+
+        matches = []
+        for pat in patterns:
+            matches.extend(DOSSIERS_DIR.glob(pat))
         if matches:
             return sorted(matches, key=lambda p: p.stat().st_mtime, reverse=True)[0]
         raise FileNotFoundError(f"No dossier found for {self.code}")
