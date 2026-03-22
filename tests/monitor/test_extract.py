@@ -422,6 +422,46 @@ class TestExtractionOrchestrator:
         assert results[2].url == urls[2]
 
     @pytest.mark.asyncio
+    async def test_extract_batch_two_phase_fallback(self, mock_orchestrator):
+        """Primary failures should be retried via fallback in Phase 2."""
+        # Claude fails, curl succeeds
+        mock_orchestrator._extractors["claude"].extract = AsyncMock(
+            return_value=ExtractionResult(
+                url="", method="claude", success=False, error="Blocked",
+            )
+        )
+
+        urls = [
+            "https://www.eluniversal.com.mx/nacion/test1",  # primary=claude → fails → fallback curl
+            "https://reuters.com/article/test2",              # primary=curl → succeeds
+        ]
+
+        results = await mock_orchestrator.extract_batch(urls)
+
+        assert len(results) == 2
+        # First URL: claude failed, fell back to curl
+        assert results[0].success is True
+        assert results[0].method == "curl"
+        # Second URL: curl succeeded as primary
+        assert results[1].success is True
+        assert results[1].method == "curl"
+
+    @pytest.mark.asyncio
+    async def test_extract_batch_all_fail_snippet_only(self, mock_orchestrator):
+        """When all methods fail in both phases, result is snippet_only."""
+        for ext in mock_orchestrator._extractors.values():
+            ext.extract = AsyncMock(return_value=ExtractionResult(
+                url="", method="test", success=False, error="Failed",
+            ))
+
+        urls = ["https://www.eluniversal.com.mx/nacion/test1"]
+        results = await mock_orchestrator.extract_batch(urls)
+
+        assert len(results) == 1
+        assert results[0].method == "snippet_only"
+        assert results[0].success is True
+
+    @pytest.mark.asyncio
     async def test_extract_batch_per_domain_limit(self, mock_orchestrator):
         mock_orchestrator._max_urls_per_domain = 2
 
@@ -463,6 +503,16 @@ class TestRoutingConfigIntegration:
         config = load_routing_config()
         assert config.routes["theguardian.com"].primary == "publisher_api"
         assert config.routes["theguardian.com"].publisher_api == "guardian"
+
+    def test_ft_publisher_api(self):
+        config = load_routing_config()
+        assert config.routes["ft.com"].primary == "publisher_api"
+        assert config.routes["ft.com"].publisher_api == "ft"
+
+    def test_publisher_api_count(self):
+        config = load_routing_config()
+        api_count = sum(1 for r in config.routes.values() if r.primary == "publisher_api")
+        assert api_count == 2  # Guardian + FT
 
     def test_claude_domain_count(self):
         config = load_routing_config()

@@ -483,8 +483,14 @@ class ClaudeExtractor(Extractor):
 # =============================================================================
 
 
-class PublisherAPI(ABC):
-    """Base class for publisher-specific APIs."""
+class PublisherAPIExtractor(ABC):
+    """Base class for publisher-specific API extractors.
+
+    Wraps a Publisher API client to conform to the extraction pipeline's
+    interface (url in → ExtractionResult out). The full Publisher API
+    clients live in their own modules (e.g., guardian.py) and provide
+    richer interfaces for search, triage, etc.
+    """
 
     method_name = "publisher_api"
     publisher_name: str = "base"
@@ -493,61 +499,43 @@ class PublisherAPI(ABC):
     async def extract(self, url: str) -> ExtractionResult:
         ...
 
+    @abstractmethod
+    async def close(self) -> None:
+        ...
 
-class GuardianAPI(PublisherAPI):
-    """The Guardian Open Platform API.
 
-    Docs: https://open-platform.theguardian.com/documentation/
-    Requires GUARDIAN_API_KEY in environment.
+class GuardianExtractor(PublisherAPIExtractor):
+    """Extraction adapter for the Guardian Open Platform API.
+
+    Uses the full GuardianAPI client from guardian.py to fetch articles
+    by URL. For search/triage, use GuardianAPI directly.
     """
 
     publisher_name = "guardian"
-    API_URL = "https://content.guardianapis.com/search"
 
     def __init__(self, api_key: str | None = None):
-        self._api_key = api_key or os.getenv("GUARDIAN_API_KEY")
-        if not self._api_key:
-            raise ValueError("GUARDIAN_API_KEY not found in environment or constructor")
-        self._client = httpx.AsyncClient(timeout=30.0)
+        from src.monitor.collection.guardian import GuardianAPI as _GuardianAPI
+
+        self._api = _GuardianAPI(api_key=api_key)
 
     async def extract(self, url: str) -> ExtractionResult:
         start = time.monotonic()
         try:
-            # Extract Guardian content path from URL
-            path = urlparse(url).path.strip("/")
+            article = await self._api.get_article(url)
 
-            response = await self._client.get(
-                f"https://content.guardianapis.com/{path}",
-                params={
-                    "api-key": self._api_key,
-                    "show-fields": "body,headline,byline,firstPublicationDate",
-                },
-            )
-            response.raise_for_status()
-            data = response.json()
-
-            content = data.get("response", {}).get("content", {})
-            fields = content.get("fields", {})
-
-            body_html = fields.get("body", "")
-            # Strip HTML tags for plain text
-            import re
-            text = re.sub(r"<[^>]+>", "", body_html)
-            text = re.sub(r"\s+", " ", text).strip()
-
-            if not text:
+            if not article or not article.text:
                 return ExtractionResult(
                     url=url, method=self.method_name, success=False,
-                    error="Guardian API returned no body",
+                    error="Guardian API returned no content",
                     latency_ms=int((time.monotonic() - start) * 1000),
                 )
 
             return ExtractionResult(
                 url=url, method=self.method_name, success=True,
-                title=fields.get("headline", content.get("webTitle", "")),
-                text=text,
-                author=fields.get("byline", ""),
-                published_date=fields.get("firstPublicationDate", ""),
+                title=article.title,
+                text=article.text,
+                author=article.byline or "",
+                published_date=article.publication_date,
                 latency_ms=int((time.monotonic() - start) * 1000),
             )
 
@@ -559,12 +547,12 @@ class GuardianAPI(PublisherAPI):
             )
 
     async def close(self) -> None:
-        await self._client.aclose()
+        await self._api.close()
 
 
-# Publisher API registry
-PUBLISHER_APIS: dict[str, type[PublisherAPI]] = {
-    "guardian": GuardianAPI,
+# Publisher API extractor registry
+PUBLISHER_APIS: dict[str, type[PublisherAPIExtractor]] = {
+    "guardian": GuardianExtractor,
 }
 
 
@@ -593,7 +581,7 @@ class ExtractionOrchestrator:
     ):
         self._config = routing_config or load_routing_config()
         self._extractors: dict[str, Extractor] = {}
-        self._publisher_apis: dict[str, PublisherAPI] = {}
+        self._publisher_apis: dict[str, PublisherAPIExtractor] = {}
         self._semaphores: dict[str, asyncio.Semaphore] = {}
         self._domain_locks: dict[str, asyncio.Lock] = {}
         self._domain_last_request: dict[str, float] = {}
@@ -645,8 +633,8 @@ class ExtractionOrchestrator:
     async def __aexit__(self, *args) -> None:
         await self.close()
 
-    def _get_publisher_api(self, api_name: str) -> PublisherAPI | None:
-        """Get or create a publisher API instance."""
+    def _get_publisher_api(self, api_name: str) -> PublisherAPIExtractor | None:
+        """Get or create a publisher API extractor instance."""
         if api_name in self._publisher_apis:
             return self._publisher_apis[api_name]
 
@@ -715,8 +703,17 @@ class ExtractionOrchestrator:
             result.url = url  # Ensure URL is always set
             return result
 
+    async def _extract_primary(self, url: str) -> ExtractionResult:
+        """Extract a single URL using only its primary method (no fallbacks)."""
+        route = self._config.route_for_url(url)
+        return await self._extract_with_method(url, route.primary, route)
+
     async def extract_url(self, url: str) -> ExtractionResult:
-        """Extract a single URL using its routed method with fallbacks."""
+        """Extract a single URL using its routed method with fallbacks.
+
+        For single-URL extraction outside of batch context. Uses sequential
+        fallback (not two-phase). For batch extraction, use extract_batch().
+        """
         route = self._config.route_for_url(url)
 
         # Try primary method
@@ -753,10 +750,17 @@ class ExtractionOrchestrator:
         urls: list[str],
         max_per_domain: int | None = None,
     ) -> list[ExtractionResult]:
-        """Extract a batch of URLs with parallel dispatch.
+        """Extract a batch of URLs with two-phase parallel dispatch.
 
-        Groups URLs by primary method, dispatches to per-method pools
-        with concurrency limits, then runs fallback batch for failures.
+        Phase 1: Dispatch all URLs to primary extraction pools in parallel.
+                 All pools (Claude, curl, Diffbot, Playwright, Publisher API)
+                 run simultaneously, with per-method concurrency limits.
+
+        Phase 2: Collect primary failures, dispatch to fallback methods
+                 as a single batch pass. Fallback chain per the routing table.
+
+        Any remaining failures after Phase 2 → snippet_only with confidence
+        cap at 2.
 
         Args:
             urls: List of article URLs to extract.
@@ -783,21 +787,98 @@ class ExtractionOrchestrator:
             domain_counts[domain] = count + 1
             filtered_urls.append(url)
 
-        # Dispatch all URLs concurrently (semaphores handle per-method limits)
-        tasks = [self.extract_url(url) for url in filtered_urls]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
+        # ── Phase 1: Primary dispatch ──────────────────────────────────
+        # All URLs dispatched to their primary method concurrently.
+        # Semaphores enforce per-method concurrency limits.
+        primary_tasks = [self._extract_primary(url) for url in filtered_urls]
+        primary_results = await asyncio.gather(*primary_tasks, return_exceptions=True)
 
-        # Build ordered result list
         result_map: dict[str, ExtractionResult] = {}
-        for url, result in zip(filtered_urls, results):
+        failed_urls: list[str] = []
+
+        for url, result in zip(filtered_urls, primary_results):
             if isinstance(result, Exception):
                 result_map[url] = ExtractionResult(
                     url=url, method="error", success=False,
                     error=str(result),
                 )
+                failed_urls.append(url)
+            elif result.success:
+                result_map[url] = result
             else:
                 result_map[url] = result
+                failed_urls.append(url)
+                logger.debug(
+                    "Primary extraction failed for %s (%s): %s",
+                    url, result.method, result.error,
+                )
 
+        # ── Phase 2: Fallback batch ────────────────────────────────────
+        # Collect all primary failures. For each, try fallback methods
+        # from its routing table in order. All fallback attempts for all
+        # URLs run as a single concurrent pass per fallback level.
+        if failed_urls:
+            # Group by fallback level — process first fallback for all URLs,
+            # then second fallback for remaining failures, etc.
+            remaining = list(failed_urls)
+            max_fallback_depth = max(
+                (len(self._config.route_for_url(url).fallbacks) for url in remaining),
+                default=0,
+            )
+
+            for depth in range(max_fallback_depth):
+                if not remaining:
+                    break
+
+                # Build tasks for this fallback level
+                fallback_tasks = []
+                fallback_urls = []
+                for url in remaining:
+                    route = self._config.route_for_url(url)
+                    if depth < len(route.fallbacks):
+                        method = route.fallbacks[depth]
+                        fallback_tasks.append(
+                            self._extract_with_method(url, method, route)
+                        )
+                        fallback_urls.append(url)
+
+                if not fallback_tasks:
+                    break
+
+                fallback_results = await asyncio.gather(
+                    *fallback_tasks, return_exceptions=True
+                )
+
+                still_failing = []
+                for url, result in zip(fallback_urls, fallback_results):
+                    if isinstance(result, Exception):
+                        logger.debug("Fallback exception for %s: %s", url, result)
+                        still_failing.append(url)
+                    elif result.success:
+                        result_map[url] = result
+                        logger.debug(
+                            "Fallback %s succeeded for %s", result.method, url,
+                        )
+                    else:
+                        logger.debug(
+                            "Fallback %s failed for %s: %s",
+                            result.method, url, result.error,
+                        )
+                        still_failing.append(url)
+
+                # URLs not attempted at this depth stay in remaining
+                not_attempted = [u for u in remaining if u not in fallback_urls]
+                remaining = still_failing + not_attempted
+
+            # Any still-remaining failures → snippet_only
+            for url in remaining:
+                if not result_map.get(url, ExtractionResult(url="", method="", success=False)).success:
+                    result_map[url] = ExtractionResult(
+                        url=url, method="snippet_only", success=True,
+                        text="",
+                    )
+
+        # ── Build ordered result list ──────────────────────────────────
         ordered = []
         for i, url in enumerate(urls):
             if i in skipped_indices:

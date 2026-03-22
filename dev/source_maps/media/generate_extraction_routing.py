@@ -28,7 +28,7 @@ OUTPUT_PATH = BASE_DIR.parent.parent.parent / "assets" / "country_configs" / "ex
 # Publisher API mappings
 PUBLISHER_APIS = {
     "theguardian.com": "guardian",
-    # "ft.com": "ft",  # curl works 3/3; Publisher API deferred
+    "ft.com": "ft",
 }
 
 

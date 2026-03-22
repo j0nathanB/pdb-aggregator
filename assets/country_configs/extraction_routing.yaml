@@ -850,11 +850,12 @@ routes:
     - diffbot
     - playwright
   ft.com:
-    primary: curl
+    primary: publisher_api
     confidence: high
     fallbacks:
+    - curl
     - diffbot
-    - playwright
+    publisher_api: ft
   fulcrum.sg:
     primary: claude
     confidence: high
