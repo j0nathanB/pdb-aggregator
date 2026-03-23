@@ -37,7 +37,7 @@ def _read_json(path: Path) -> dict:
 
 def save_country_ledger(ledger: CountryLedger) -> Path:
     path = COUNTRY_LEDGERS_DIR / f"{ledger.code}.json"
-    _write_json(path, ledger.model_dump(mode="json"))
+    _write_json(path, ledger.model_dump(mode="json", by_alias=True))
     logger.debug("Saved country ledger: %s (%d weekly entries)", ledger.code, len(ledger.weekly_entries))
     return path
 
@@ -62,7 +62,7 @@ def list_country_ledgers() -> list[str]:
 # ---- Global Ledger ----
 
 def save_global_ledger(ledger: GlobalLedger) -> Path:
-    _write_json(GLOBAL_LEDGER_PATH, ledger.model_dump(mode="json"))
+    _write_json(GLOBAL_LEDGER_PATH, ledger.model_dump(mode="json", by_alias=True))
     logger.debug(
         "Saved global ledger: %d active dynamics, %d weekly entries",
         len(ledger.active_dynamics), len(ledger.weekly_entries),

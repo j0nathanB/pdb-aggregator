@@ -63,7 +63,7 @@ def load_settings() -> dict:
 
 _SETTINGS = load_settings()
 
-MODEL = _SETTINGS.get("model", "claude-sonnet-4-20250514")
+MODEL = _SETTINGS.get("model", "claude-sonnet-4-6-20250626")
 THINKING_BUDGET_TOKENS = _SETTINGS.get("thinking_budget_tokens", 16000)
 
 LEDGERS_DIR = PROJECT_ROOT / "ledgers"

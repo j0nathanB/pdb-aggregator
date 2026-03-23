@@ -420,11 +420,12 @@ class TestParseCountryResponse:
         with pytest.raises(json.JSONDecodeError):
             parse_country_response("not json", date(2026, 3, 14), "w1", _test_ledger())
 
-    def test_missing_category_raises(self):
+    def test_missing_category_defaults_to_none(self):
         data = _valid_agent_response()
         del data["weekly_entry"]["category_movements"]["domestic_regime"]
-        with pytest.raises(KeyError):
-            parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        from src.monitor.config import Movement, SignalCategory
+        assert output.weekly_entry.category_movements[SignalCategory.DOMESTIC_REGIME].movement == Movement.NONE
 
     def test_last_updated_parsed_from_response(self):
         response = json.dumps(_valid_agent_response())

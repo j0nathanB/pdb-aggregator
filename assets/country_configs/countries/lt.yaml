@@ -85,6 +85,37 @@ news_discovery:
     country: LT
     search_lang: lt
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "dvišaliai santykiai"
+      - "diplomatinis susitarimas"
+      - "užsienio politika"
+      - "dvišalis aukščiausiojo lygio susitikimas"
+      - "ambasadorius"
+    security_defense:
+      - "Lietuvos kariuomenė"
+      - "karinis įsigijimas"
+      - "saugumo bendradarbiavimas"
+      - "VSD"
+      - "NATO priešakinės pajėgos"
+    economic_tech:
+      - "užsienio investicijos"
+      - "prekybos susitarimas"
+      - "Lietuvos bankas"
+      - "Ignitis"
+      - "energetinis saugumas"
+    institutional:
+      - "NATO"
+      - "Europos Sąjunga"
+      - "JT"
+      - "Baltijos bendradarbiavimas"
+      - "sutarties ratifikavimas"
+    domestic_constraints:
+      - "Seimas"
+      - "LSDP"
+      - "TS-LKD"
+      - "koalicija"
+      - "Nemuno Aušra"
 government_discovery:
   config_file: assets/government/lt.yaml
 interpretive_context_file: assets/context/lt_sources.md

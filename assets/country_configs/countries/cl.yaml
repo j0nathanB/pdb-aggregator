@@ -86,6 +86,38 @@ news_discovery:
     country: CL
     search_lang: es
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "relaciones bilaterales"
+      - "acuerdo diplomático"
+      - "cancillería"
+      - "cumbre bilateral"
+      - "embajador"
+    security_defense:
+      - "Fuerzas Armadas"
+      - "adquisición militar"
+      - "cooperación en seguridad"
+      - "Carabineros"
+      - "ANI"
+    economic_tech:
+      - "inversión extranjera"
+      - "tratado comercial"
+      - "Banco Central de Chile"
+      - "CODELCO"
+      - "litio"
+      - "minerales críticos"
+    institutional:
+      - "OEA"
+      - "Naciones Unidas"
+      - "Alianza del Pacífico"
+      - "APEC"
+      - "ratificación tratado"
+    domestic_constraints:
+      - "reforma constitucional"
+      - "coalición legislativa"
+      - "Partido Republicano"
+      - "Frente Amplio"
+      - "Congreso Nacional"
 government_discovery:
   config_file: assets/government/cl.yaml
 interpretive_context_file: assets/context/cl_sources.md

@@ -117,7 +117,7 @@ async def consolidate_entries(
 
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=2048,
+        max_tokens=6048,
         temperature=1,
         thinking={
             "type": "enabled",

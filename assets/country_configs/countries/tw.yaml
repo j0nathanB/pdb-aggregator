@@ -100,6 +100,38 @@ news_discovery:
     country: TW
     search_lang: zh
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "bilateral relations Taiwan"
+      - "diplomatic agreement"
+      - "Taiwan foreign policy"
+      - "cross-strait relations"
+      - "ambassador Taiwan"
+    security_defense:
+      - "ROC Armed Forces"
+      - "defense procurement Taiwan"
+      - "security cooperation"
+      - "Taiwan Strait"
+      - "military deployment Taiwan"
+      - "MND Taiwan"
+    economic_tech:
+      - "foreign investment Taiwan"
+      - "trade agreement"
+      - "TSMC"
+      - "semiconductor Taiwan"
+      - "CBC Taiwan"
+    institutional:
+      - "United Nations Taiwan"
+      - "APEC"
+      - "WTO Taiwan"
+      - "WHO Taiwan"
+      - "treaty ratification"
+    domestic_constraints:
+      - "Legislative Yuan"
+      - "DPP"
+      - "KMT"
+      - "TPP Taiwan"
+      - "Judicial Yuan"
 government_discovery:
   config_file: assets/government/tw.yaml
 interpretive_context_file: assets/context/tw_sources.md

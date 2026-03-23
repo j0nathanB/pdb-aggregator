@@ -89,6 +89,39 @@ news_discovery:
     country: JP
     search_lang: ja
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "bilateral relations Japan"
+      - "diplomatic agreement"
+      - "MOFA Japan"
+      - "Gaimusho"
+      - "bilateral summit"
+    security_defense:
+      - "JSDF"
+      - "defense procurement Japan"
+      - "security cooperation"
+      - "Boeicho"
+      - "US-Japan alliance"
+      - "counterstrike capability"
+    economic_tech:
+      - "foreign investment Japan"
+      - "trade agreement"
+      - "Bank of Japan"
+      - "Keidanren"
+      - "semiconductor"
+      - "BOJ"
+    institutional:
+      - "Quad"
+      - "United Nations"
+      - "G7"
+      - "ASEAN"
+      - "treaty ratification"
+    domestic_constraints:
+      - "Diet Japan"
+      - "LDP"
+      - "CDP"
+      - "Nippon Ishin"
+      - "House of Representatives Japan"
 government_discovery:
   config_file: assets/government/jp.yaml
 interpretive_context_file: assets/context/jp_sources.md

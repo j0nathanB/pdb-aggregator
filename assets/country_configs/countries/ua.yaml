@@ -97,6 +97,38 @@ news_discovery:
     country: UA
     search_lang: uk
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "двосторонні відносини"
+      - "дипломатична угода"
+      - "зовнішня політика"
+      - "двосторонній саміт"
+      - "посол"
+    security_defense:
+      - "Збройні сили України"
+      - "військові закупівлі"
+      - "безпекове співробітництво"
+      - "СБУ"
+      - "ГУР"
+      - "військова допомога"
+    economic_tech:
+      - "іноземні інвестиції"
+      - "торговельна угода"
+      - "НБУ"
+      - "енергетична безпека"
+      - "відбудова"
+    institutional:
+      - "НАТО"
+      - "Європейський Союз"
+      - "ООН"
+      - "Рамштайн"
+      - "ратифікація угоди"
+    domestic_constraints:
+      - "Верховна Рада"
+      - "Слуга народу"
+      - "мобілізація"
+      - "воєнний стан"
+      - "конституційна реформа"
 government_discovery:
   config_file: assets/government/ua.yaml
 interpretive_context_file: assets/context/ua_sources.md

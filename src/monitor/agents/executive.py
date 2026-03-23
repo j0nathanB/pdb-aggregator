@@ -286,18 +286,24 @@ def apply_executive_output(
         except (ValueError, TypeError):
             as_of = week
 
+    def _safe_categories(names: list[str]) -> list[SignalCategory]:
+        cats = []
+        for c in names:
+            try:
+                cats.append(SignalCategory(c))
+            except ValueError:
+                logger.warning("Ignoring unknown signal category from LLM: %r", c)
+        return cats
+
+    se = gps.get("signal_environment", {})
     global_ledger.global_posture_summary = GlobalPostureSummary(
         as_of=as_of,
         text=gps["text"],
         signal_environment=SignalEnvironment(
-            most_active_categories=[
-                SignalCategory(c) for c in gps.get("signal_environment", {}).get("most_active_categories", [])
-            ],
-            quietest_categories=[
-                SignalCategory(c) for c in gps.get("signal_environment", {}).get("quietest_categories", [])
-            ],
-            geographic_hotspots=gps.get("signal_environment", {}).get("geographic_hotspots", []),
-            geographic_quiet_zones=gps.get("signal_environment", {}).get("geographic_quiet_zones", []),
+            most_active_categories=_safe_categories(se.get("most_active_categories", [])),
+            quietest_categories=_safe_categories(se.get("quietest_categories", [])),
+            geographic_hotspots=se.get("geographic_hotspots", []),
+            geographic_quiet_zones=se.get("geographic_quiet_zones", []),
         ),
     )
 
@@ -503,24 +509,25 @@ def _build_and_append_weekly_entry(
         for b in we_data.get("executive_briefing_items", [])
     ]
 
-    rejected = [
-        RejectedItem(
-            candidate=r["candidate"],
-            reason_rejected=r["reason_rejected"],
-        )
-        for r in we_data.get("items_considered_rejected",
-                             [{"candidate": "None", "reason_rejected": "N/A"}])
-    ]
+    rejected = []
+    for r in we_data.get("items_considered_rejected",
+                         [{"candidate": "None", "reason_rejected": "N/A"}]):
+        rejected.append(RejectedItem(
+            candidate=r.get("candidate", "Unknown"),
+            reason_rejected=r.get("reason_rejected", r.get("reason", "N/A")),
+        ))
 
-    corrections = [
-        GlobalSelfCorrection(
-            dynamic_id=s["dynamic_id"],
-            prior_assessment=s["prior_assessment"],
-            correction=s["correction"],
-            root_cause=s["root_cause"],
-        )
-        for s in we_data.get("self_corrections", [])
-    ]
+    corrections = []
+    for s in we_data.get("self_corrections", []):
+        try:
+            corrections.append(GlobalSelfCorrection(
+                dynamic_id=s.get("dynamic_id", "unknown"),
+                prior_assessment=s.get("prior_assessment", ""),
+                correction=s.get("correction", ""),
+                root_cause=s.get("root_cause", ""),
+            ))
+        except Exception as e:
+            logger.warning("Skipping malformed self-correction: %s", e)
 
     weekly_entry = GlobalWeeklyEntry(
         week=week,
@@ -564,7 +571,7 @@ async def run_executive_agent(
 
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=12288,
+        max_tokens=THINKING_BUDGET_TOKENS + 12288,
         temperature=1,
         thinking={
             "type": "enabled",
@@ -572,6 +579,7 @@ async def run_executive_agent(
         },
         system=[{"type": "text", "text": load_prompt("executive")}],
         messages=[{"role": "user", "content": prompt}],
+        timeout=600.0,
     )
 
     text_parts = [

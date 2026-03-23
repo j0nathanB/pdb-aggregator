@@ -353,7 +353,7 @@ async def run_government_agent(
     try:
         response = await client.messages.create(
             model=model or MODEL,
-            max_tokens=4096,
+            max_tokens=THINKING_BUDGET_TOKENS + 4096,
             thinking={
                 "type": "enabled",
                 "budget_tokens": THINKING_BUDGET_TOKENS,

@@ -136,7 +136,23 @@ def _parse_scan_response(response: anthropic.types.Message, code: str, country: 
             cleaned = re.sub(r"^```(?:json)?\s*\n?", "", cleaned)
             cleaned = re.sub(r"\n?```\s*$", "", cleaned)
 
-        data = json.loads(cleaned)
+        try:
+            data = json.loads(cleaned)
+        except json.JSONDecodeError:
+            # Extract JSON object from prose
+            match = re.search(r"\{", cleaned)
+            if match:
+                depth = 0
+                start = match.start()
+                for i, ch in enumerate(cleaned[start:], start):
+                    if ch == "{":
+                        depth += 1
+                    elif ch == "}":
+                        depth -= 1
+                        if depth == 0:
+                            cleaned = cleaned[start:i + 1]
+                            break
+            data = json.loads(cleaned)
         return ScanResult(
             code=code,
             country=country,
@@ -204,7 +220,7 @@ async def scan_country(
                     "type": "web_search_20250305",
                     "name": "web_search",
                     "max_uses": config.search.triage_queries_max + 2,
-                    "allowed_domains": allowed_domains,
+                    # Don't restrict at API level — some domains block Claude's crawler.
                 }],
             )
             logger.debug(
@@ -363,7 +379,7 @@ async def triage_decide(
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=8192,
+        max_tokens=12096,
         temperature=1,  # required for extended thinking
         thinking={
             "type": "enabled",

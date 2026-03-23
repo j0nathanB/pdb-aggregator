@@ -106,21 +106,41 @@ class TestSearchAPIClient:
         params = call_args[1]["params"]
         assert params["q"] == "site:sre.gob.mx comunicado"
         assert params["engine"] == "google"
-        assert params["time_period"] == "w"
+        assert "time_period" not in params  # no longer uses time_period
 
         await mock_client.close()
 
     @pytest.mark.asyncio
-    async def test_search_no_time_period(self, mock_client):
+    async def test_search_with_date_range(self, mock_client):
         mock_response = MagicMock()
         mock_response.raise_for_status = MagicMock()
         mock_response.json.return_value = {"organic_results": []}
         mock_client._client.get = AsyncMock(return_value=mock_response)
 
-        await mock_client.search("test query", time_period=None)
+        await mock_client.search(
+            "test query",
+            time_period_min="03/15/2026",
+            time_period_max="03/22/2026",
+        )
 
         params = mock_client._client.get.call_args[1]["params"]
-        assert "time_period" not in params
+        assert params["time_period_min"] == "03/15/2026"
+        assert params["time_period_max"] == "03/22/2026"
+
+        await mock_client.close()
+
+    @pytest.mark.asyncio
+    async def test_search_no_date_range(self, mock_client):
+        mock_response = MagicMock()
+        mock_response.raise_for_status = MagicMock()
+        mock_response.json.return_value = {"organic_results": []}
+        mock_client._client.get = AsyncMock(return_value=mock_response)
+
+        await mock_client.search("test query")
+
+        params = mock_client._client.get.call_args[1]["params"]
+        assert "time_period_min" not in params
+        assert "time_period_max" not in params
 
         await mock_client.close()
 
@@ -238,9 +258,9 @@ class TestSearchAPIClient:
     def test_missing_api_key(self):
         with patch.dict(os.environ, {}, clear=True):
             env = dict(os.environ)
-            env.pop("SEARCHAPI_API_KEY", None)
+            env.pop("SEARCHAPI_KEY", None)
             with patch.dict(os.environ, env, clear=True):
-                with pytest.raises(ValueError, match="SEARCHAPI_API_KEY"):
+                with pytest.raises(ValueError, match="SEARCHAPI_KEY"):
                     SearchAPIClient(api_key=None)
 
     @pytest.mark.asyncio

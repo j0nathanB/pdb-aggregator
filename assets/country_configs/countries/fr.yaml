@@ -84,6 +84,38 @@ news_discovery:
     country: FR
     search_lang: fr
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "relations bilatérales"
+      - "accord diplomatique"
+      - "Quai d'Orsay"
+      - "sommet bilatéral"
+      - "ambassadeur"
+    security_defense:
+      - "Ministère des Armées"
+      - "acquisition militaire"
+      - "coopération sécuritaire"
+      - "DGSE"
+      - "déploiement militaire"
+      - "dissuasion nucléaire"
+    economic_tech:
+      - "investissement étranger"
+      - "accord commercial"
+      - "Banque de France"
+      - "politique industrielle"
+      - "transition énergétique"
+    institutional:
+      - "OTAN"
+      - "Union européenne"
+      - "Nations Unies"
+      - "G7"
+      - "ratification traité"
+    domestic_constraints:
+      - "Assemblée nationale"
+      - "Rassemblement National"
+      - "motion de censure"
+      - "Sénat"
+      - "cohabitation"
 government_discovery:
   config_file: assets/government/fr.yaml
 interpretive_context_file: assets/context/fr_sources.md

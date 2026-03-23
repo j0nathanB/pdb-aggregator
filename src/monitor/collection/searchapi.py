@@ -58,7 +58,8 @@ class SearchAPIClient:
             response = await client.search_government(
                 domain="sre.gob.mx",
                 query="comunicado",
-                time_period="w",
+                time_period_min="03/15/2026",
+                time_period_max="03/22/2026",
             )
     """
 
@@ -67,9 +68,9 @@ class SearchAPIClient:
         api_key: str | None = None,
         rate_limit_delay: float = 1.0,
     ):
-        self.api_key = api_key or os.getenv("SEARCHAPI_API_KEY")
+        self.api_key = api_key or os.getenv("SEARCHAPI_KEY")
         if not self.api_key:
-            raise ValueError("SEARCHAPI_API_KEY not found in environment or constructor")
+            raise ValueError("SEARCHAPI_KEY not found in environment or constructor")
         self._rate_limit_delay = rate_limit_delay
         self._last_request_time = 0.0
         self._lock = asyncio.Lock()
@@ -99,15 +100,16 @@ class SearchAPIClient:
         query: str,
         *,
         num: int = 10,
-        time_period: str | None = "w",
+        time_period_min: str | None = None,
+        time_period_max: str | None = None,
     ) -> SearchAPIResponse:
         """Execute a search query via SearchAPI.
 
         Args:
             query: Search query (may include site: operators).
             num: Number of results (1-100, default 10).
-            time_period: Time filter. "w" (past week), "d" (past day),
-                "m" (past month), None for no filter.
+            time_period_min: Start date in MM/DD/YYYY format.
+            time_period_max: End date in MM/DD/YYYY format.
 
         Returns:
             SearchAPIResponse with parsed results.
@@ -121,10 +123,12 @@ class SearchAPIClient:
             "num": num,
         }
 
-        if time_period:
-            params["time_period"] = time_period
+        if time_period_min:
+            params["time_period_min"] = time_period_min
+        if time_period_max:
+            params["time_period_max"] = time_period_max
 
-        logger.debug("SearchAPI request: q=%r, num=%s, time_period=%s", query, num, time_period)
+        logger.debug("SearchAPI request: q=%r, num=%s, range=%s to %s", query, num, time_period_min, time_period_max)
 
         response = await self._client.get(SEARCHAPI_URL, params=params)
         response.raise_for_status()
@@ -161,7 +165,8 @@ class SearchAPIClient:
         domain: str,
         query: str = "",
         *,
-        time_period: str = "w",
+        time_period_min: str | None = None,
+        time_period_max: str | None = None,
         num: int = 10,
     ) -> SearchAPIResponse:
         """Search a government domain using site: scoping.
@@ -169,7 +174,8 @@ class SearchAPIClient:
         Args:
             domain: Government domain to scope search (e.g., "sre.gob.mx").
             query: Additional search terms (e.g., "comunicado").
-            time_period: Time filter (default "w" for past week).
+            time_period_min: Start date in MM/DD/YYYY format.
+            time_period_max: End date in MM/DD/YYYY format.
             num: Number of results.
 
         Returns:
@@ -182,14 +188,16 @@ class SearchAPIClient:
         return await self.search(
             full_query,
             num=num,
-            time_period=time_period,
+            time_period_min=time_period_min,
+            time_period_max=time_period_max,
         )
 
     async def search_country_government(
         self,
         domains: list[dict],
         *,
-        time_period: str = "w",
+        time_period_min: str | None = None,
+        time_period_max: str | None = None,
     ) -> list[SearchAPIResponse]:
         """Search multiple government domains for a country.
 
@@ -200,7 +208,8 @@ class SearchAPIClient:
                     {"domain": "sre.gob.mx", "queries": ["comunicado", "tratado"]},
                     {"domain": "gob.mx/sedena", "queries": ["adquisición"]},
                 ]
-            time_period: Time filter for all queries.
+            time_period_min: Start date in MM/DD/YYYY format.
+            time_period_max: End date in MM/DD/YYYY format.
 
         Returns:
             List of SearchAPIResponse, one per domain+query combination.
@@ -215,7 +224,8 @@ class SearchAPIClient:
                 resp = await self.search_government(
                     domain=domain,
                     query=query,
-                    time_period=time_period,
+                    time_period_min=time_period_min,
+                    time_period_max=time_period_max,
                 )
                 responses.append(resp)
                 logger.debug(

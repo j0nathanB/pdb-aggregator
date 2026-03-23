@@ -91,6 +91,37 @@ news_discovery:
     country: IT
     search_lang: it
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "relazioni bilaterali"
+      - "accordo diplomatico"
+      - "Farnesina"
+      - "vertice bilaterale"
+      - "ambasciatore"
+    security_defense:
+      - "Forze Armate Italiane"
+      - "approvvigionamento militare"
+      - "cooperazione sicurezza"
+      - "Leonardo difesa"
+      - "dispiegamento militare"
+    economic_tech:
+      - "investimento estero"
+      - "accordo commerciale"
+      - "Banca d'Italia"
+      - "politica industriale"
+      - "transizione energetica"
+    institutional:
+      - "NATO"
+      - "Unione Europea"
+      - "Nazioni Unite"
+      - "G7"
+      - "ratifica trattato"
+    domestic_constraints:
+      - "Camera dei Deputati"
+      - "Fratelli d'Italia"
+      - "PD"
+      - "Lega"
+      - "Senato"
 government_discovery:
   config_file: assets/government/it.yaml
 interpretive_context_file: assets/context/it_sources.md

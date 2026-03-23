@@ -187,7 +187,8 @@ def _render_deep_dive_entry(
                         conf = mov.confidence_change.to
                     preliminary = conf is not None and conf <= 2
 
-                    source_attr = f"{dev.source}"
+                    source_name = f"[{dev.source}]({dev.source_url})" if dev.source_url else dev.source
+                    source_attr = source_name
                     if dev.date:
                         source_attr += f", {dev.date.isoformat()}"
                     if preliminary:
@@ -231,7 +232,10 @@ def _render_deep_dive_entry(
     # Between the Lines (blockquote)
     if entry.devils_advocate and entry.devils_advocate.challenges:
         top_challenge = entry.devils_advocate.challenges[0]
-        lines.append(f"> **Between the Lines:** {top_challenge}")
+        # Replace raw enum names with display names
+        for cat, display in SIGNAL_CATEGORY_DISPLAY.items():
+            top_challenge = top_challenge.replace(cat.value, display.lower())
+        lines.append(f"> **Caveat Lector:** {top_challenge}")
         lines.append("")
 
     return "\n".join(lines)

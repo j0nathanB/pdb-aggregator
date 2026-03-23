@@ -86,6 +86,37 @@ news_discovery:
     country: RO
     search_lang: ro
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "relații bilaterale"
+      - "acord diplomatic"
+      - "politică externă"
+      - "summit bilateral"
+      - "ambasador"
+    security_defense:
+      - "Forțele Armate Române"
+      - "achiziție militară"
+      - "cooperare în securitate"
+      - "SRI"
+      - "desfășurare militară"
+    economic_tech:
+      - "investiție străină"
+      - "acord comercial"
+      - "BNR"
+      - "politică industrială"
+      - "tranziție energetică"
+    institutional:
+      - "NATO"
+      - "Uniunea Europeană"
+      - "ONU"
+      - "Marea Neagră"
+      - "ratificarea tratatului"
+    domestic_constraints:
+      - "Parlamentul României"
+      - "PSD"
+      - "PNL"
+      - "AUR"
+      - "Camera Deputaților"
 government_discovery:
   config_file: assets/government/ro.yaml
 interpretive_context_file: assets/context/ro_sources.md

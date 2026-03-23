@@ -254,7 +254,7 @@ async def llm_initialize(config: CountryConfig) -> dict:
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=4096,
+        max_tokens=THINKING_BUDGET_TOKENS + 4096,
         temperature=1,  # required for extended thinking
         thinking={
             "type": "enabled",

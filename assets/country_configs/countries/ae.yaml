@@ -88,6 +88,38 @@ news_discovery:
     country: AE
     search_lang: ar
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "علاقات ثنائية"
+      - "اتفاقية دبلوماسية"
+      - "قمة ثنائية"
+      - "عبدالله بن زايد"
+      - "سفير الإمارات"
+    security_defense:
+      - "القوات المسلحة الإماراتية"
+      - "صفقة أسلحة"
+      - "تعاون أمني"
+      - "الحرس الرئاسي"
+      - "صناعة دفاعية"
+    economic_tech:
+      - "ADNOC"
+      - "استثمار أجنبي"
+      - "G42"
+      - "المصرف المركزي"
+      - "Mubadala"
+      - "ذكاء اصطناعي"
+    institutional:
+      - "أوبك"
+      - "الأمم المتحدة"
+      - "مجلس التعاون الخليجي"
+      - "COP"
+      - "جامعة الدول العربية"
+    domestic_constraints:
+      - "المجلس الوطني الاتحادي"
+      - "رؤية أبوظبي"
+      - "ADIA"
+      - "إصلاح اقتصادي"
+      - "PIF"
 government_discovery:
   config_file: assets/government/ae.yaml
 interpretive_context_file: assets/context/ae_sources.md

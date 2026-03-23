@@ -349,14 +349,14 @@ class TestRenderDeepDiveEntry:
 
     def test_between_the_lines_blockquote(self):
         result = _render_deep_dive_entry("mx", _test_ledger(), _deep_dive_entry())
-        assert "> **Between the Lines:**" in result
+        assert "> **Caveat Lector:**" in result
         assert "routine rather than a policy shift" in result
 
     def test_no_da_omits_blockquote(self):
         entry = _deep_dive_entry()
         entry.devils_advocate = None
         result = _render_deep_dive_entry("mx", _test_ledger(), entry)
-        assert "Between the Lines" not in result
+        assert "Caveat Lector" not in result
 
     def test_no_movements_shows_fallback(self):
         entry = WeeklyEntry(
@@ -436,7 +436,7 @@ class TestRenderMaintenanceEntry:
 
     def test_no_between_the_lines(self):
         result = _render_maintenance_entry("mx", _test_ledger(), _maintenance_entry())
-        assert "Between the Lines" not in result
+        assert "Caveat Lector" not in result
 
 
 # ---- Watchlist ----

@@ -96,6 +96,38 @@ news_discovery:
     country: ID
     search_lang: id
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "hubungan bilateral"
+      - "perjanjian diplomatik"
+      - "kebijakan luar negeri"
+      - "KTT bilateral"
+      - "duta besar"
+    security_defense:
+      - "TNI"
+      - "pengadaan militer"
+      - "kerja sama keamanan"
+      - "BIN"
+      - "pengerahan militer"
+    economic_tech:
+      - "investasi asing"
+      - "perjanjian dagang"
+      - "Bank Indonesia"
+      - "Pertamina"
+      - "Danantara"
+      - "mineral kritis"
+    institutional:
+      - "ASEAN"
+      - "PBB"
+      - "G20"
+      - "Gerakan Non-Blok"
+      - "ratifikasi perjanjian"
+    domestic_constraints:
+      - "DPR"
+      - "Gerindra"
+      - "PDI-P"
+      - "Golkar"
+      - "Mahkamah Konstitusi"
 government_discovery:
   config_file: assets/government/id.yaml
 interpretive_context_file: assets/context/id_sources.md

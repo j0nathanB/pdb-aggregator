@@ -165,11 +165,15 @@ async def collect_layer2_country(
             queries = gov_config.query_terms if gov_config.query_terms else [""]
             domains.append({"domain": dom.domain, "queries": queries})
 
-        # SearchAPI: query government domains
+        # SearchAPI: query government domains (past week)
+        start_date = processing_date - timedelta(days=7)
+        time_min = start_date.strftime("%m/%d/%Y")
+        time_max = processing_date.strftime("%m/%d/%Y")
         logger.info(f"Layer 2 search: {code} ({len(domains)} domains)")
         result.search_responses = await searchapi_client.search_country_government(
             domains=domains,
-            time_period="w",
+            time_period_min=time_min,
+            time_period_max=time_max,
         )
 
         # Collect all discovered URLs

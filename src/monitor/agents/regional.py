@@ -331,7 +331,7 @@ async def run_regional_synthesis(
 
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=8192,
+        max_tokens=18192,
         temperature=1,
         thinking={
             "type": "enabled",
@@ -354,8 +354,8 @@ async def run_regional_synthesis(
 
     result = parse_regional_response(response_text, region, week)
     logger.info(
-        "Regional %s: %d cross-cutting dynamics, %d country highlights",
-        region.value, len(result.cross_cutting_dynamics), len(result.country_highlights),
+        "Regional %s: %d cross-cutting dynamics, %d gaps",
+        region.value, len(result.cross_cutting_dynamics), len(result.gaps),
     )
     return result
 

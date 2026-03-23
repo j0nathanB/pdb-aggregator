@@ -92,6 +92,38 @@ news_discovery:
     country: CA
     search_lang: en
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "bilateral relations"
+      - "diplomatic agreement"
+      - "Global Affairs Canada"
+      - "bilateral summit"
+      - "ambassador"
+    security_defense:
+      - "Canadian Armed Forces"
+      - "defence procurement"
+      - "NORAD"
+      - "CSIS"
+      - "military deployment"
+    economic_tech:
+      - "foreign investment"
+      - "trade agreement"
+      - "Bank of Canada"
+      - "critical minerals"
+      - "CUSMA"
+      - "tariffs"
+    institutional:
+      - "NATO"
+      - "United Nations"
+      - "G7"
+      - "Five Eyes"
+      - "Arctic Council"
+    domestic_constraints:
+      - "House of Commons"
+      - "Liberal Party"
+      - "Conservative Party"
+      - "NDP"
+      - "Bloc Québécois"
 government_discovery:
   config_file: assets/government/ca.yaml
 interpretive_context_file: assets/context/ca_sources.md

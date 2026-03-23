@@ -89,6 +89,37 @@ news_discovery:
     country: LV
     search_lang: lv
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "divpusējās attiecības"
+      - "diplomātiskā vienošanās"
+      - "ārpolitika"
+      - "divpusēja samits"
+      - "vēstnieks"
+    security_defense:
+      - "Nacionālie bruņotie spēki"
+      - "militārais iepirkums"
+      - "drošības sadarbība"
+      - "SAB"
+      - "NATO kaujas grupa"
+    economic_tech:
+      - "ārvalstu investīcijas"
+      - "tirdzniecības nolīgums"
+      - "Latvijas Banka"
+      - "enerģētiskā drošība"
+      - "digitālā ekonomika"
+    institutional:
+      - "NATO"
+      - "Eiropas Savienība"
+      - "ANO"
+      - "Baltijas sadarbība"
+      - "līguma ratifikācija"
+    domestic_constraints:
+      - "Saeima"
+      - "Jaunā Vienotība"
+      - "Nacionālā apvienība"
+      - "koalīcija"
+      - "Progresīvie"
 government_discovery:
   config_file: assets/government/lv.yaml
 interpretive_context_file: assets/context/lv_sources.md

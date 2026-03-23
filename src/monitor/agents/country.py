@@ -195,6 +195,21 @@ def _build_country_prompt(
             for b in config.blind_spots
         )
 
+    # Build per-category search vocabulary
+    qv = config.news_discovery.query_vocabulary
+    vocab_sections = {
+        "Diplomatic alignment": qv.diplomatic_alignment,
+        "Security & defense": qv.security_defense,
+        "Economic & tech": qv.economic_tech,
+        "Institutional": qv.institutional,
+        "Domestic constraints": qv.domestic_constraints,
+    }
+    vocab_lines = []
+    for label, terms in vocab_sections.items():
+        if terms:
+            vocab_lines.append(f"- **{label}**: {', '.join(terms)}")
+    query_vocab_block = "\n".join(vocab_lines) if vocab_lines else ""
+
     ledger_context = _build_ledger_context(ledger)
 
     language_note = ""
@@ -222,6 +237,13 @@ Date range: {start_date.isoformat()} to {end_date.isoformat()}
 {blind_spots_block}
 {language_note}
 
+## SEARCH VOCABULARY BY CATEGORY
+
+Use these terms to ensure systematic coverage across all five signal categories. \
+Run at least one search per category — do not rely on a single topic dominating your results.
+
+{query_vocab_block}
+
 ## CURRENT LEDGER STATE
 
 {ledger_context}
@@ -232,14 +254,26 @@ Date range: {start_date.isoformat()} to {end_date.isoformat()}
 
 --- END COUNTRY DOSSIER ---
 
-Search the whitelisted sources for developments involving the key actors and institutions \
-during {start_date.isoformat()} to {end_date.isoformat()}. Analyze across all five signal \
+Search for developments during {start_date.isoformat()} to {end_date.isoformat()}. \
+Use the search vocabulary above to ensure you cover ALL five signal categories systematically — \
+do not stop after finding results for one or two categories. Analyze across all five signal \
 categories and produce the JSON output as specified in your instructions."""
 
 
 # =============================================================================
 # Response parsing
 # =============================================================================
+
+def _parse_source_tier(val: object) -> int:
+    """Coerce LLM source_tier to int. Handles 'tier_2', 'Tier 1', 2, etc."""
+    if isinstance(val, int):
+        return max(1, min(val, 4))
+    s = str(val).lower().replace("tier_", "").replace("tier ", "").strip()
+    try:
+        return max(1, min(int(s), 4))
+    except (ValueError, TypeError):
+        return 2
+
 
 def parse_country_response(
     response_text: str,
@@ -253,90 +287,151 @@ def parse_country_response(
         text = re.sub(r"^```(?:json)?\s*\n?", "", text)
         text = re.sub(r"\n?```\s*$", "", text)
 
-    data = json.loads(text)
+    # Try direct parse first; if it fails, extract JSON object from response
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        # Response may contain prose before/after JSON — extract the JSON object
+        match = re.search(r"\{", text)
+        if match:
+            # Find the matching closing brace by tracking depth
+            depth = 0
+            start = match.start()
+            for i, ch in enumerate(text[start:], start):
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        text = text[start:i + 1]
+                        break
+        data = json.loads(text)
 
     # Support both wrapped and unwrapped formats
     entry_data = data.get("weekly_entry", data)
 
-    # Parse category movements
+    # Parse category movements (resilient to LLM field name variations)
+    raw_movements = entry_data.get("category_movements", {})
     category_movements = {}
     for cat in SignalCategory:
-        cat_data = entry_data["category_movements"][cat.value]
-        developments = [
-            Development(
-                headline=d["headline"],
-                date=date.fromisoformat(d["date"]) if isinstance(d["date"], str) else d["date"],
-                source=d["source"],
-                source_tier=d["source_tier"],
-                source_url=d.get("source_url", ""),
-                summary=d.get("summary", ""),
-                actors_involved=d.get("actors_involved", []),
-                signal_category_relevance=d.get("signal_category_relevance", ""),
+        cat_data = raw_movements.get(cat.value, {})
+        if not cat_data:
+            # Default to no movement if LLM omitted this category
+            category_movements[cat] = CategoryMovement(
+                movement=Movement.NONE, developments=[],
+                prior_assessment="", updated_assessment="",
             )
-            for d in cat_data.get("developments", [])
-        ]
+            continue
+
+        developments = []
+        for d in cat_data.get("developments", []):
+            try:
+                headline = d.get("headline") or d.get("title") or d.get("summary", "Unknown")
+                raw_date = d.get("date")
+                parsed_date = date.fromisoformat(raw_date) if isinstance(raw_date, str) else (raw_date or week_date)
+                developments.append(Development(
+                    headline=headline,
+                    date=parsed_date,
+                    source=d.get("source", "unknown"),
+                    source_tier=_parse_source_tier(d.get("source_tier", 2)),
+                    source_url=d.get("source_url", ""),
+                    summary=d.get("summary", ""),
+                    actors_involved=d.get("actors_involved", []),
+                    signal_category_relevance=d.get("signal_category_relevance", ""),
+                ))
+            except Exception as e:
+                logger.warning("Skipping malformed development in %s: %s", cat.value, e)
+
         conf_change = None
         if cat_data.get("confidence_change"):
-            cc = cat_data["confidence_change"]
-            conf_change = ConfidenceChange(**cc)
+            try:
+                conf_change = ConfidenceChange(**cat_data["confidence_change"])
+            except Exception:
+                pass
+
+        try:
+            movement = Movement(cat_data.get("movement", "none"))
+        except ValueError:
+            movement = Movement.NONE
 
         category_movements[cat] = CategoryMovement(
-            movement=Movement(cat_data["movement"]),
+            movement=movement,
             developments=developments,
             prior_assessment=cat_data.get("prior_assessment", ""),
             updated_assessment=cat_data.get("updated_assessment", ""),
             confidence_change=conf_change,
         )
 
-    # Parse unexpected developments
-    unexpected = [
-        UnexpectedDevelopment(
-            headline=u["headline"],
-            date=date.fromisoformat(u["date"]) if isinstance(u["date"], str) else u["date"],
-            source=u["source"],
-            source_tier=u["source_tier"],
-            signal_category=SignalCategory(u["signal_category"]),
-            assessment=u.get("assessment", ""),
-            disposition=u.get("disposition", "logged"),
-        )
-        for u in entry_data.get("unexpected_developments", [])
-    ]
+    # Parse unexpected developments (resilient to LLM field name variations)
+    unexpected = []
+    for u in entry_data.get("unexpected_developments", []):
+        try:
+            headline = u.get("headline") or u.get("title") or u.get("summary", "Unknown")
+            raw_date = u.get("date")
+            parsed_date = date.fromisoformat(raw_date) if isinstance(raw_date, str) else (raw_date or week_date)
+            try:
+                sig_cat = SignalCategory(u.get("signal_category", "alignment_diplomatic"))
+            except ValueError:
+                sig_cat = SignalCategory.ALIGNMENT_DIPLOMATIC
+            unexpected.append(UnexpectedDevelopment(
+                headline=headline,
+                date=parsed_date,
+                source=u.get("source", "unknown"),
+                source_tier=_parse_source_tier(u.get("source_tier", 2)),
+                signal_category=sig_cat,
+                assessment=u.get("assessment", ""),
+                disposition=u.get("disposition", "logged"),
+            ))
+        except Exception as e:
+            logger.warning("Skipping malformed unexpected development: %s", e)
 
     # Parse absence checks
-    absence_checks = [
-        AbsenceCheck(
-            expected=a["expected"],
-            signal_category=SignalCategory(a["signal_category"]),
-            occurred=a["occurred"],
+    absence_checks = []
+    for a in entry_data.get("absence_check", []):
+        try:
+            sig_cat = SignalCategory(a.get("signal_category", "alignment_diplomatic"))
+        except ValueError:
+            sig_cat = SignalCategory.ALIGNMENT_DIPLOMATIC
+        absence_checks.append(AbsenceCheck(
+            expected=a.get("expected", ""),
+            signal_category=sig_cat,
+            occurred=a.get("occurred", False),
             significance=a.get("significance", ""),
             confidence=a.get("confidence", 2),
-        )
-        for a in entry_data.get("absence_check", [])
-    ]
+        ))
 
     # Parse self-corrections
-    self_corrections = [
-        SelfCorrection(
-            category=SignalCategory(s["category"]),
-            prior_week=date.fromisoformat(s["prior_week"]) if isinstance(s["prior_week"], str) else s["prior_week"],
-            original_claim=s["original_claim"],
-            correction=s["correction"],
-            root_cause=s["root_cause"],
-        )
-        for s in entry_data.get("self_corrections", [])
-    ]
+    self_corrections = []
+    for s in entry_data.get("self_corrections", []):
+        try:
+            cat = SignalCategory(s.get("category", "alignment_diplomatic"))
+        except ValueError:
+            cat = SignalCategory.ALIGNMENT_DIPLOMATIC
+        try:
+            pw = date.fromisoformat(s["prior_week"]) if isinstance(s.get("prior_week"), str) else (s.get("prior_week") or week_date)
+        except (ValueError, TypeError):
+            pw = week_date
+        self_corrections.append(SelfCorrection(
+            category=cat,
+            prior_week=pw,
+            original_claim=s.get("original_claim", ""),
+            correction=s.get("correction", ""),
+            root_cause=s.get("root_cause", ""),
+        ))
 
     # Parse structural claim checks
-    claim_checks = [
-        StructuralClaimCheck(
-            claim_ref=c["claim_ref"],
-            claim_text=c["claim_text"],
-            status=c["status"],
-            evidence=c.get("evidence", ""),
-            confidence_in_claim=c.get("confidence_in_claim", 3),
-        )
-        for c in entry_data.get("structural_claim_checks", [])
-    ]
+    claim_checks = []
+    for c in entry_data.get("structural_claim_checks", []):
+        try:
+            claim_checks.append(StructuralClaimCheck(
+                claim_ref=c.get("claim_ref", c.get("ref", c.get("id", "unknown"))),
+                claim_text=c.get("claim_text", c.get("claim", c.get("text", ""))),
+                status=c.get("status", "unchanged"),
+                evidence=c.get("evidence", ""),
+                confidence_in_claim=c.get("confidence_in_claim", c.get("confidence", 3)),
+            ))
+        except Exception as e:
+            logger.warning("Skipping malformed claim check: %s", e)
 
     # Build weekly entry (without devils_advocate — added by separate agent)
     weekly_entry = WeeklyEntry(
@@ -440,7 +535,7 @@ async def run_country_agent(
 
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=16384,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
         temperature=1,  # required for extended thinking
         thinking={
             "type": "enabled",
@@ -456,11 +551,14 @@ async def run_country_agent(
             "type": "web_search_20250305",
             "name": "web_search",
             "max_uses": config.search.deep_dive_queries_max,
-            "allowed_domains": allowed_domains or [],
+            # Don't restrict at API level — some domains block Claude's crawler.
+            # Source domains are listed in the prompt for guidance instead.
         }],
+        timeout=600.0,
     )
 
     # Extract text blocks
+    block_types = [block.type for block in response.content]
     text_parts = [
         block.text for block in response.content
         if block.type == "text"
@@ -468,9 +566,16 @@ async def run_country_agent(
     response_text = "\n".join(text_parts)
 
     logger.info(
-        "Country agent %s: API complete — input=%d, output=%d tokens",
+        "Country agent %s: API complete — input=%d, output=%d tokens, stop=%s",
         config.code, response.usage.input_tokens, response.usage.output_tokens,
+        response.stop_reason,
     )
+    logger.debug(
+        "Country agent %s: block_types=%s, text_length=%d",
+        config.code, block_types, len(response_text),
+    )
+    if len(response_text) < 100:
+        logger.warning("Country agent %s: response text very short: %r", config.code, response_text[:500])
 
     result = parse_country_response(response_text, end_date, date_range, ledger)
     active_cats = [

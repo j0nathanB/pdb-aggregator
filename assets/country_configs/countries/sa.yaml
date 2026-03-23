@@ -97,6 +97,38 @@ news_discovery:
     country: SA
     search_lang: ar
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "علاقات ثنائية"
+      - "اتفاق دبلوماسي"
+      - "قمة ثنائية"
+      - "فيصل بن فرحان"
+      - "سفير"
+    security_defense:
+      - "وزارة الدفاع السعودية"
+      - "صفقة أسلحة"
+      - "تعاون أمني"
+      - "خالد بن سلمان"
+      - "الحرس الوطني"
+    economic_tech:
+      - "استثمار أجنبي"
+      - "صندوق الاستثمارات العامة"
+      - "أرامكو"
+      - "SAMA"
+      - "رؤية 2030"
+      - "NEOM"
+    institutional:
+      - "أوبك"
+      - "الأمم المتحدة"
+      - "مجلس التعاون الخليجي"
+      - "G20"
+      - "جامعة الدول العربية"
+    domestic_constraints:
+      - "مجلس الشورى"
+      - "ولي العهد"
+      - "إصلاح اقتصادي"
+      - "خصخصة"
+      - "هيئة الترفيه"
 government_discovery:
   config_file: assets/government/sa.yaml
 interpretive_context_file: assets/context/sa_sources.md

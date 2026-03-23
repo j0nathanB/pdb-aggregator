@@ -1,0 +1,142 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "The Middle Powers Monitor",
+  "logo": {
+    "light": "/assets/logo-light.svg",
+    "dark": "/assets/logo-dark.svg"
+  },
+  "favicon": "/assets/favicon.svg",
+  "colors": {
+    "primary": "#4a90d9",
+    "light": "#4a90d9",
+    "dark": "#1a1a2e"
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Atkinson Hyperlegible Next",
+      "weight": 700
+    },
+    "body": {
+      "family": "Atkinson Hyperlegible Next",
+      "weight": 400
+    }
+  },
+  "background": {
+    "decoration": "gradient"
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/briefs/2026-03-22/overview"
+    }
+  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Latest Brief",
+        "pages": [
+          "briefs/2026-03-22/overview"
+        ]
+      },
+      {
+        "tab": "Archives",
+        "groups": [
+          {
+            "group": "Week of February 10, 2026",
+            "pages": [
+              "briefs/2026-02-17/overview",
+              "briefs/2026-02-17/dossiers/mark_carney"
+            ]
+          },
+          {
+            "group": "Week of February 3, 2026",
+            "pages": [
+              "briefs/2026-02-10/overview",
+              "briefs/2026-02-10/dossiers/lula_da_silva"
+            ]
+          },
+          {
+            "group": "Week of February 2, 2026",
+            "pages": [
+              "briefs/2026-02-09/overview",
+              "briefs/2026-02-09/dossiers/mark_carney",
+              "briefs/2026-02-09/dossiers/claudia_sheinbaum",
+              "briefs/2026-02-09/dossiers/lula_da_silva",
+              "briefs/2026-02-09/dossiers/yamandú_orsi",
+              "briefs/2026-02-09/dossiers/emmanuel_macron",
+              "briefs/2026-02-09/dossiers/keir_starmer"
+            ]
+          },
+          {
+            "group": "Week of February 1, 2026",
+            "pages": [
+              "briefs/2026-02-08/overview",
+              "briefs/2026-02-08/dossiers/emmanuel_macron",
+              "briefs/2026-02-08/dossiers/claudia_sheinbaum",
+              "briefs/2026-02-08/dossiers/volodymyr_zelenskyy",
+              "briefs/2026-02-08/dossiers/giorgia_meloni",
+              "briefs/2026-02-08/dossiers/alexander_stubb",
+              "briefs/2026-02-08/dossiers/gitanas_nausėda",
+              "briefs/2026-02-08/dossiers/maia_sandu",
+              "briefs/2026-02-08/dossiers/lula_da_silva",
+              "briefs/2026-02-08/dossiers/kristen_michal",
+              "briefs/2026-02-08/dossiers/yamandú_orsi",
+              "briefs/2026-02-08/dossiers/evika_siliņa",
+              "briefs/2026-02-08/dossiers/friedrich_merz",
+              "briefs/2026-02-08/dossiers/mark_carney",
+              "briefs/2026-02-08/dossiers/donald_tusk",
+              "briefs/2026-02-08/dossiers/keir_starmer"
+            ]
+          },
+          {
+            "group": "Week of January 30, 2026",
+            "pages": [
+              "briefs/2026-02-06/overview",
+              "briefs/2026-02-06/dossiers/mark_carney",
+              "briefs/2026-02-06/dossiers/claudia_sheinbaum",
+              "briefs/2026-02-06/dossiers/lula_da_silva",
+              "briefs/2026-02-06/dossiers/yamandú_orsi"
+            ]
+          },
+          {
+            "group": "Week of January 28, 2026",
+            "pages": [
+              "briefs/2026-02-04/overview",
+              "briefs/2026-02-04/dossiers/mark_carney",
+              "briefs/2026-02-04/dossiers/claudia_sheinbaum",
+              "briefs/2026-02-04/dossiers/volodymyr_zelenskyy",
+              "briefs/2026-02-04/dossiers/emmanuel_macron",
+              "briefs/2026-02-04/dossiers/friedrich_merz",
+              "briefs/2026-02-04/dossiers/keir_starmer",
+              "briefs/2026-02-04/dossiers/karol_nawrocki",
+              "briefs/2026-02-04/dossiers/alexander_stubb",
+              "briefs/2026-02-04/dossiers/mark_rutte",
+              "briefs/2026-02-04/dossiers/xi_jinping"
+            ]
+          },
+          {
+            "group": "Week of January 27, 2026",
+            "pages": [
+              "briefs/2026-02-03/overview",
+              "briefs/2026-02-03/dossiers/volodymyr_zelenskyy"
+            ]
+          },
+          {
+            "group": "Week of January 16, 2026",
+            "pages": [
+              "briefs/2026-01-23/overview",
+              "briefs/2026-01-23/dossiers/claudia_sheinbaum"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {}
+  }
+}

@@ -211,7 +211,7 @@ async def run_devils_advocate(
 
     response = await client.messages.create(
         model=MODEL,
-        max_tokens=4096,
+        max_tokens=12096,
         temperature=1,
         thinking={
             "type": "enabled",

@@ -87,6 +87,38 @@ news_discovery:
     country: AU
     search_lang: en
     freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+      - "bilateral relations"
+      - "diplomatic agreement"
+      - "AUKUS"
+      - "Quad summit"
+      - "Penny Wong"
+    security_defense:
+      - "ADF"
+      - "defence procurement"
+      - "AUKUS submarine"
+      - "ASIO"
+      - "military deployment"
+      - "Pine Gap"
+    economic_tech:
+      - "foreign investment"
+      - "trade agreement"
+      - "RBA"
+      - "critical minerals"
+      - "FIRB"
+    institutional:
+      - "Five Eyes"
+      - "United Nations"
+      - "Pacific Islands Forum"
+      - "ASEAN"
+      - "G20"
+    domestic_constraints:
+      - "Senate crossbench"
+      - "Labor"
+      - "Liberal Party"
+      - "Greens"
+      - "House of Representatives"
 government_discovery:
   config_file: assets/government/au.yaml
 interpretive_context_file: assets/context/au_sources.md

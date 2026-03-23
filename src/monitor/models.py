@@ -84,7 +84,8 @@ class Development(BaseModel):
 
 
 class ConfidenceChange(BaseModel):
-    from_: int = Field(alias="from", ge=CONFIDENCE_MIN, le=CONFIDENCE_MAX)
+    model_config = {"populate_by_name": True}
+    from_: int = Field(alias="from", ge=CONFIDENCE_MIN, le=CONFIDENCE_MAX, serialization_alias="from")
     to: int = Field(ge=CONFIDENCE_MIN, le=CONFIDENCE_MAX)
     reason: str = ""
 
