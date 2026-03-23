@@ -59,6 +59,15 @@ CONFIDENCE_LABELS: dict[int, str] = {
     1: "Very low confidence",
 }
 
+# URL-safe slugs for region page filenames
+REGION_SLUGS: dict[Region, str] = {
+    Region.FRONTLINE_EASTERN_EUROPE: "frontline-eastern-europe",
+    Region.WESTERN_EUROPE: "western-europe",
+    Region.ASIA_PACIFIC: "asia-pacific",
+    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "middle-east-turkey-south-asia",
+    Region.AMERICAS: "the-americas",
+}
+
 # Activity level sort order (highest activity first)
 _ACTIVITY_SORT = {"high": 0, "moderate": 1, "low": 2}
 
@@ -162,26 +171,14 @@ def _render_regional_lead(
     return "\n\n".join(paragraphs)
 
 
-def _render_deep_dive_entry(
-    code: str,
-    ledger: CountryLedger,
-    entry: WeeklyEntry,
-) -> str:
-    """Render a deep-dive country entry."""
-    lines = [f"### {ledger.country}", ""]
-
-    # Posture summary
-    lines.append(ledger.posture_summary.text)
-    lines.append("")
-
-    # Collect developments from category movements
+def _collect_developments(entry: WeeklyEntry) -> list[dict]:
+    """Collect and sort developments from a weekly entry's category movements."""
     developments = []
     if entry.category_movements:
         for cat, mov in entry.category_movements.items():
             if mov.movement in (Movement.SIGNIFICANT, Movement.MINOR) and mov.developments:
                 cat_display = SIGNAL_CATEGORY_DISPLAY.get(cat, cat.value)
                 for dev in mov.developments:
-                    # Determine confidence for preliminary tag
                     conf = None
                     if mov.confidence_change:
                         conf = mov.confidence_change.to
@@ -201,12 +198,33 @@ def _render_deep_dive_entry(
                         "text": f"- **{cat_display}:** {summary} *({source_attr})*",
                     })
 
-    # Sort: significant first, then minor; within same level by confidence desc
     movement_order = {Movement.SIGNIFICANT: 0, Movement.MINOR: 1}
     developments.sort(key=lambda d: (movement_order.get(d["movement"], 2), -d["confidence"]))
+    return developments[:5]
 
-    # Cap at 5 developments
-    developments = developments[:5]
+
+def _render_deep_dive_entry(
+    code: str,
+    ledger: CountryLedger,
+    entry: WeeklyEntry,
+    summary_only: bool = False,
+) -> str:
+    """Render a deep-dive country entry.
+
+    If summary_only=True, renders just the posture summary (for the overview page).
+    If summary_only=False, renders full details with key developments and caveats.
+    """
+    lines = [f"### {ledger.country}", ""]
+
+    # Posture summary
+    lines.append(ledger.posture_summary.text)
+    lines.append("")
+
+    if summary_only:
+        return "\n".join(lines)
+
+    # Full rendering: developments, unexpected, absences, caveat lector
+    developments = _collect_developments(entry)
 
     if developments:
         lines.append("**Key developments:**")
@@ -229,7 +247,7 @@ def _render_deep_dive_entry(
 
     lines.append("")
 
-    # Between the Lines (blockquote)
+    # Caveat Lector (Note callout for MDX, blockquote for plain MD)
     if entry.devils_advocate and entry.devils_advocate.challenges:
         top_challenge = entry.devils_advocate.challenges[0]
         # Replace raw enum names with display names
@@ -395,3 +413,226 @@ def assemble_newsletter(
     sections.append(_render_footer(end_date))
 
     return "\n\n".join(sections)
+
+
+# =============================================================================
+# Multi-page assembly (Mintlify site output)
+# =============================================================================
+
+def _mdx_frontmatter(title: str, description: str, sidebar_title: str) -> str:
+    """Generate YAML frontmatter for an MDX page."""
+    return (
+        f"---\n"
+        f"title: \"{title}\"\n"
+        f"description: \"{description}\"\n"
+        f"sidebarTitle: \"{sidebar_title}\"\n"
+        f"---\n"
+    )
+
+
+def _render_overview_page(
+    global_ledger: GlobalLedger,
+    regional_reports: dict[Region, RegionalReport],
+    country_ledgers: dict[str, CountryLedger],
+    country_entries: dict[str, Optional[WeeklyEntry]],
+    end_date: date,
+    brief_path: str,
+) -> str:
+    """Render the overview page: header, executive brief, region summaries."""
+    date_range = _format_date_range(end_date)
+    deep_dive_count = sum(
+        1 for e in country_entries.values()
+        if e is not None and e.depth == Depth.DEEP_DIVE
+    )
+    maintenance_count = sum(
+        1 for e in country_entries.values()
+        if e is not None and e.depth == Depth.MAINTENANCE
+    )
+
+    week_start = end_date - timedelta(days=6)
+    title = f"Week of {week_start.strftime('%B %d')}, {end_date.year}"
+
+    sections = [
+        _mdx_frontmatter("The Middle Powers Monitor", "Weekly intelligence brief covering 28 middle powers across five regions", "Overview"),
+        "",
+        f"## {title}",
+        "",
+        f"*Covering 28 countries across five regions. "
+        f"{deep_dive_count} countries received full analytical treatment this week; "
+        f"{maintenance_count} were held at maintenance.*",
+    ]
+
+    # Executive Brief
+    latest = global_ledger.latest_entry()
+    briefing_items = latest.executive_briefing_items if latest else []
+    sections.append("")
+    sections.append(_render_executive_brief(briefing_items))
+
+    # Region summaries — just the regional lead + country posture summaries
+    for region in REGION_ORDER:
+        display_name = REGION_DISPLAY_NAMES[region]
+        slug = REGION_SLUGS[region]
+
+        sections.append("---")
+        sections.append("")
+        sections.append(f"## [{display_name}]({brief_path}/{slug})")
+        sections.append("")
+
+        report = regional_reports.get(region)
+        sections.append(_render_regional_lead(region, report))
+
+        # Brief country summaries (posture only)
+        region_codes = REGION_COUNTRIES.get(region, [])
+        for code in region_codes:
+            if code not in country_ledgers:
+                continue
+            entry = country_entries.get(code)
+            if entry is not None and entry.depth == Depth.DEEP_DIVE:
+                sections.append(
+                    _render_deep_dive_entry(code, country_ledgers[code], entry, summary_only=True)
+                )
+
+    sections.append("")
+    return "\n".join(sections)
+
+
+def _render_region_page(
+    region: Region,
+    regional_reports: dict[Region, RegionalReport],
+    country_ledgers: dict[str, CountryLedger],
+    country_entries: dict[str, Optional[WeeklyEntry]],
+    end_date: date,
+) -> str:
+    """Render a single region page with full country details."""
+    display_name = REGION_DISPLAY_NAMES[region]
+    date_range = _format_date_range(end_date)
+
+    sections = [
+        _mdx_frontmatter(display_name, f"{display_name} — Week of {date_range}", display_name),
+        "",
+    ]
+
+    # Regional lead
+    report = regional_reports.get(region)
+    sections.append(_render_regional_lead(region, report))
+
+    # Full country entries
+    region_codes = REGION_COUNTRIES.get(region, [])
+    deep_dives = []
+    maintenances = []
+    for code in region_codes:
+        if code not in country_ledgers:
+            continue
+        entry = country_entries.get(code)
+        if entry is not None and entry.depth == Depth.DEEP_DIVE:
+            deep_dives.append(code)
+        else:
+            maintenances.append(code)
+
+    deep_dives.sort(key=lambda c: _activity_sort_key(country_entries.get(c)))
+    maintenances.sort(key=lambda c: country_ledgers[c].country)
+
+    for code in deep_dives:
+        entry = country_entries[code]
+        sections.append("")
+        sections.append("---")
+        sections.append("")
+        sections.append(_render_deep_dive_entry(code, country_ledgers[code], entry))
+
+    for code in maintenances:
+        entry = country_entries.get(code)
+        sections.append("")
+        sections.append("---")
+        sections.append("")
+        sections.append(_render_maintenance_entry(code, country_ledgers[code], entry))
+
+    return "\n".join(sections)
+
+
+def _render_watchlist_page(
+    global_ledger: GlobalLedger,
+    end_date: date,
+) -> str:
+    """Render the watchlist as its own page."""
+    date_range = _format_date_range(end_date)
+
+    sections = [
+        _mdx_frontmatter("Watchlist", f"Watchlist — Week of {date_range}", "Watchlist"),
+        "",
+        "*Items worth monitoring that didn't make the executive briefing.*",
+        "",
+    ]
+
+    watchlist = global_ledger.watchlist
+    if watchlist:
+        sorted_items = sorted(watchlist, key=lambda w: w.added_week, reverse=True)[:10]
+        for item in sorted_items:
+            countries = ", ".join(c.upper() for c in item.countries) if item.countries else ""
+            country_part = f" ({countries})" if countries else ""
+            trigger_part = f" *Trigger: {item.trigger}.*" if item.trigger else ""
+            sections.append(
+                f"- **{item.item}**{country_part}: "
+                f"{item.why_it_matters}{trigger_part}"
+            )
+    else:
+        sections.append("*No items on the watchlist this week.*")
+
+    sections.append("")
+    sections.append("---")
+    sections.append("")
+    sections.append(
+        "*The Middle Powers Monitor tracks 28 countries across five regions, "
+        "analyzing state positioning through five analytical dimensions: "
+        "diplomatic alignment, security posture, economic statecraft, "
+        "institutional engagement, and domestic constraints. Published weekly.*"
+    )
+    sections.append("")
+    sections.append(f"*This edition: {end_date.isoformat()}*")
+
+    return "\n".join(sections)
+
+
+def assemble_newsletter_pages(
+    global_ledger: GlobalLedger,
+    regional_reports: dict[Region, RegionalReport],
+    country_ledgers: dict[str, CountryLedger],
+    country_entries: dict[str, Optional[WeeklyEntry]],
+    end_date: date,
+) -> dict[str, str]:
+    """
+    Assemble multi-page newsletter output for Mintlify.
+
+    Returns a dict mapping filename (without extension) to MDX content:
+        "overview" -> overview page
+        "frontline-eastern-europe" -> region page
+        "western-europe" -> region page
+        ...
+        "watchlist" -> watchlist page
+    """
+    brief_path = f"/briefs/{end_date.isoformat()}"
+
+    pages = {}
+
+    # Overview
+    pages["overview"] = _render_overview_page(
+        global_ledger, regional_reports, country_ledgers,
+        country_entries, end_date, brief_path,
+    )
+
+    # Region pages
+    for region in REGION_ORDER:
+        slug = REGION_SLUGS[region]
+        pages[slug] = _render_region_page(
+            region, regional_reports, country_ledgers,
+            country_entries, end_date,
+        )
+
+    # Watchlist
+    pages["watchlist"] = _render_watchlist_page(global_ledger, end_date)
+
+    logger.info(
+        "Newsletter multi-page assembly: %d pages, end_date=%s",
+        len(pages), end_date.isoformat(),
+    )
+
+    return pages
