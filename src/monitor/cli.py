@@ -47,6 +47,16 @@ logger = logging.getLogger("monitor")
 LOGS_DIR = PROJECT_ROOT / "logs"
 
 
+def _add_log_handler(log_path: str) -> None:
+    """Add an additional DEBUG-level file handler to the root logger."""
+    fmt = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(logging.Formatter(fmt, datefmt="%Y-%m-%d %H:%M:%S"))
+    logging.getLogger().addHandler(handler)
+    logging.getLogger("monitor").info("Also logging to %s", log_path)
+
+
 def setup_logging(level: str = "INFO", log_file: str | None = None) -> None:
     log_level = getattr(logging, level.upper())
     fmt = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
@@ -111,9 +121,14 @@ async def cmd_run(args: argparse.Namespace) -> None:
     from .agents.regional import run_all_regional_syntheses, REGION_COUNTRIES
     from .agents.executive import run_executive_agent
     from .newsletter.assembly import assemble_newsletter
+    from .run_recorder import RunRecorder
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
     country_codes = [args.country] if args.country else None
+
+    # Initialize run recorder and redirect log file into the run folder
+    recorder = RunRecorder()
+    _add_log_handler(recorder.log_path)
 
     # Step 1-4: Desk pipeline (triage → country agents → devil's advocate → ledger write)
     print(f"Running desk pipeline (end_date={end_date})...")
@@ -123,6 +138,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
         max_concurrent=args.concurrency,
         skip_triage=args.skip_triage,
         force_deep_dive=args.force_deep_dive,
+        recorder=recorder,
     )
 
     print(
@@ -178,6 +194,11 @@ async def cmd_run(args: argparse.Namespace) -> None:
         newsletter = assemble_newsletter(
             global_ledger, regional_reports, country_ledgers, country_entries, end_date
         )
+
+        # Step 8: Copyeditor
+        from .agents.copyeditor import copyedit_newsletter
+        print("Copy-editing country sections...")
+        newsletter = await copyedit_newsletter(newsletter, max_concurrent=args.concurrency)
 
         output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d")
         output_dir.mkdir(parents=True, exist_ok=True)

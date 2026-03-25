@@ -1,7 +1,8 @@
 """
-Country agent (deep dive): search, extract, analyze across five signal categories.
+Country agent (deep dive): analyze across five signal categories.
 
-Input: Country dossier + country ledger + whitelisted sources (via web_search).
+Input: Story map + extracted articles + country dossier + country ledger.
+       Falls back to web_search if no story map is provided.
 Output: WeeklyEntry (without devils_advocate) + updated signal categories + posture summary.
 """
 
@@ -9,7 +10,7 @@ import json
 import logging
 import re
 from datetime import date, timedelta
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
 
 import anthropic
 
@@ -37,6 +38,10 @@ from ..models import (
     UnexpectedDevelopment,
     WeeklyEntry,
 )
+
+if TYPE_CHECKING:
+    from ..collection.extract import ExtractionResult
+    from .story_map import StoryMapOutput
 
 logger = logging.getLogger(__name__)
 
@@ -260,6 +265,166 @@ do not stop after finding results for one or two categories. Analyze across all 
 categories and produce the JSON output as specified in your instructions."""
 
 
+def _build_story_map_country_prompt(
+    config: CountryConfig,
+    ledger: CountryLedger,
+    dossier_text: str,
+    end_date: date,
+    story_map: "StoryMapOutput",
+    extracted_articles: list["ExtractionResult"],
+    gov_findings: str = "",
+) -> str:
+    """Build country agent prompt with pre-built story map + extracted articles.
+
+    This replaces the web_search-based prompt. The country agent reads the
+    story map first (breadth), then extracted articles (depth), then produces
+    its analysis.
+    """
+    start_date = end_date - timedelta(days=7)
+
+    actor_lines = []
+    for a in config.actors:
+        terms = ", ".join(f'"{t}"' for t in a.search_terms)
+        marker = " (PRIMARY)" if a.primary else ""
+        actor_lines.append(f"- {a.name} ({a.role}){marker}: search terms: {terms}")
+    actors_block = "\n".join(actor_lines)
+
+    blind_spots_block = ""
+    if config.blind_spots:
+        blind_spots_block = "\nKnown blind spots:\n" + "\n".join(
+            f"- {b.domain}: {b.reason} (signal lives in: {b.where_signal_lives})"
+            for b in config.blind_spots
+        )
+
+    ledger_context = _build_ledger_context(ledger)
+
+    language_note = ""
+    lang = config.languages.primary
+    if lang and lang != "en":
+        language_note = (
+            f"\nNote: This country's primary language is {lang}. "
+            f"Sources may be in {lang}; translate findings to English in your output."
+        )
+
+    # Format story map
+    story_map_block = _format_story_map(story_map)
+
+    # Format extracted articles
+    articles_block = _format_extracted_articles(extracted_articles)
+
+    # Government findings
+    gov_block = ""
+    if gov_findings:
+        gov_block = f"\n## GOVERNMENT SOURCE FINDINGS (Layer 2)\n\n{gov_findings}\n"
+
+    return f"""\
+Deep-dive analysis for {config.country} ({config.code.upper()}).
+
+Tier: {config.tier.value}
+Region: {config.region.value}
+Date range: {start_date.isoformat()} to {end_date.isoformat()}
+
+## KEY ACTORS AND INSTITUTIONS
+{actors_block}
+{blind_spots_block}
+{language_note}
+
+## CURRENT LEDGER STATE
+
+{ledger_context}
+
+## THIS WEEK'S MEDIA LANDSCAPE (Story Map)
+
+The following story map was produced by clustering {story_map.search_results_total} search \
+results from this week's news coverage. It shows {story_map.stories_identified} distinct \
+stories ordered by media prominence (source count). {story_map.off_topic_filtered} off-topic \
+results were filtered.
+
+Read the story map first to understand the shape of the week, then consult the extracted \
+articles below for depth on specific stories.
+
+{story_map_block}
+
+## EXTRACTED ARTICLES
+
+Full text for representative articles from each story cluster. Use these for depth — the \
+story map above gives you breadth.
+
+{articles_block}
+{gov_block}
+--- BEGIN COUNTRY DOSSIER ---
+
+{dossier_text}
+
+--- END COUNTRY DOSSIER ---
+
+Analyze all five signal categories using the story map and extracted articles above. \
+The story map is your primary organizing structure — work through the stories and assess \
+which signal categories they touch. After completing your assessment, review the story map \
+for high-prominence stories (5+ sources) that you did not flag as significant. If the media \
+is heavily covering something you assessed as not posture-relevant, note this in your \
+activity level rationale — coverage distribution itself can be a domestic_regime signal.
+
+Produce the JSON output as specified in your instructions."""
+
+
+def _format_story_map(story_map: "StoryMapOutput") -> str:
+    """Format story map for inclusion in the country agent prompt."""
+    lines = []
+    for s in story_map.stories:
+        actors = ", ".join(s.actors_involved) if s.actors_involved else "none listed"
+        sources = ", ".join(s.sources) if s.sources else "unknown"
+        lines.append(
+            f"### Story #{s.story_id}: {s.headline}\n"
+            f"**Summary:** {s.summary}\n"
+            f"**Actors:** {actors}\n"
+            f"**Signal category hint:** {s.signal_category_hint}\n"
+            f"**Sources ({s.source_count}):** {sources}\n"
+            f"**Date range:** {s.date_range}"
+        )
+
+    if story_map.single_source_items:
+        lines.append("\n### Single-Source Items")
+        for item in story_map.single_source_items:
+            lines.append(
+                f"- {item.headline} ({item.source}) — {item.signal_category_hint}"
+            )
+
+    if story_map.noise_summary:
+        lines.append(f"\n**Noise summary:** {story_map.noise_summary}")
+
+    return "\n\n".join(lines)
+
+
+def _format_extracted_articles(articles: list["ExtractionResult"]) -> str:
+    """Format extracted articles for the country agent prompt."""
+    if not articles:
+        return "No articles were successfully extracted."
+
+    successful = [a for a in articles if a.success and a.text]
+    failed = [a for a in articles if not a.success or not a.text]
+
+    lines = []
+    for i, article in enumerate(successful, 1):
+        title = article.title or "Untitled"
+        # Cap article text to avoid overwhelming the context
+        text = article.text[:4000]
+        if len(article.text) > 4000:
+            text += "\n[... truncated]"
+        lines.append(
+            f"### Article {i}: {title}\n"
+            f"**URL:** {article.url}\n"
+            f"**Method:** {article.method}\n\n"
+            f"{text}"
+        )
+
+    if failed:
+        lines.append(f"\n*{len(failed)} articles failed extraction (URLs logged).*")
+
+    summary = f"**{len(successful)} articles extracted, {len(failed)} failed.**\n\n"
+    return summary + "\n\n---\n\n".join(lines)
+
+
 # =============================================================================
 # Response parsing
 # =============================================================================
@@ -388,17 +553,23 @@ def parse_country_response(
     # Parse absence checks
     absence_checks = []
     for a in entry_data.get("absence_check", []):
+        if isinstance(a, str):
+            logger.warning("Skipping string absence_check entry: %s", a[:100])
+            continue
         try:
-            sig_cat = SignalCategory(a.get("signal_category", "alignment_diplomatic"))
-        except ValueError:
-            sig_cat = SignalCategory.ALIGNMENT_DIPLOMATIC
-        absence_checks.append(AbsenceCheck(
-            expected=a.get("expected", ""),
-            signal_category=sig_cat,
-            occurred=a.get("occurred", False),
-            significance=a.get("significance", ""),
-            confidence=a.get("confidence", 2),
-        ))
+            try:
+                sig_cat = SignalCategory(a.get("signal_category", "alignment_diplomatic"))
+            except ValueError:
+                sig_cat = SignalCategory.ALIGNMENT_DIPLOMATIC
+            absence_checks.append(AbsenceCheck(
+                expected=a.get("expected", ""),
+                signal_category=sig_cat,
+                occurred=a.get("occurred", False),
+                significance=a.get("significance", ""),
+                confidence=a.get("confidence", 2),
+            ))
+        except Exception as e:
+            logger.warning("Skipping malformed absence check: %s", e)
 
     # Parse self-corrections
     self_corrections = []
@@ -492,19 +663,24 @@ async def run_country_agent(
     ledger: CountryLedger,
     end_date: date | None = None,
     allowed_domains: list[str] | None = None,
+    story_map: Optional["StoryMapOutput"] = None,
+    extracted_articles: Optional[list["ExtractionResult"]] = None,
+    gov_findings: str = "",
 ) -> CountryAgentOutput:
     """
     Run the country desk deep-dive analysis.
 
-    Uses web_search to find recent developments, then produces structured
-    analysis across all five signal categories.
+    When story_map and extracted_articles are provided, the agent works from
+    pre-built content (no web_search). Otherwise falls back to web_search mode.
 
     Args:
         config: Country configuration.
         ledger: Current country ledger state.
         end_date: End of the analysis window.
-        allowed_domains: Domains for web_search tool. Assembled by the
-            orchestrator from brave_sources + government domain config.
+        allowed_domains: Domains for web_search tool (fallback mode only).
+        story_map: Pre-built story map from the story map agent.
+        extracted_articles: Extracted full-text articles for representative URLs.
+        gov_findings: Formatted government source findings (Layer 2).
     """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
@@ -514,18 +690,37 @@ async def run_country_agent(
     date_range = f"{start_date.isoformat()} to {end_date.isoformat()}"
 
     dossier_text = config.dossier_path.read_text()
-    prompt = _build_country_prompt(
-        config, ledger, dossier_text, end_date,
-        allowed_domains=allowed_domains,
-    )
     system_prompt = _build_system_prompt(config)
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    use_story_map = story_map is not None and story_map.stories_identified > 0
 
-    logger.info("Country agent %s: starting deep dive, date_range=%s", config.code, date_range)
+    if use_story_map:
+        prompt = _build_story_map_country_prompt(
+            config, ledger, dossier_text, end_date,
+            story_map=story_map,
+            extracted_articles=extracted_articles or [],
+            gov_findings=gov_findings,
+        )
+        logger.info(
+            "Country agent %s: starting deep dive (story map mode), "
+            "date_range=%s, %d stories, %d extracted articles",
+            config.code, date_range,
+            story_map.stories_identified,
+            len(extracted_articles or []),
+        )
+    else:
+        prompt = _build_country_prompt(
+            config, ledger, dossier_text, end_date,
+            allowed_domains=allowed_domains,
+        )
+        logger.info(
+            "Country agent %s: starting deep dive (web_search fallback), date_range=%s",
+            config.code, date_range,
+        )
+
     logger.debug(
-        "Country agent %s: %d allowed_domains, dossier=%d chars, prompt=%d chars",
-        config.code, len(allowed_domains or []), len(dossier_text), len(prompt),
+        "Country agent %s: dossier=%d chars, prompt=%d chars",
+        config.code, len(dossier_text), len(prompt),
     )
     logger.debug(
         "Country agent %s: ledger has %d weekly entries, posture as_of=%s",
@@ -533,36 +728,73 @@ async def run_country_agent(
         ledger.posture_summary.as_of.isoformat(),
     )
 
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 8192,
-        temperature=1,  # required for extended thinking
-        thinking={
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+
+    # Build API call — with or without web_search tool
+    api_kwargs: dict = {
+        "model": MODEL,
+        "max_tokens": THINKING_BUDGET_TOKENS + 8192,
+        "temperature": 1,  # required for extended thinking
+        "thinking": {
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{
+        "system": [{
             "type": "text",
             "text": system_prompt,
             "cache_control": {"type": "ephemeral"},
         }],
-        messages=[{"role": "user", "content": prompt}],
-        tools=[{
+        "messages": [{"role": "user", "content": prompt}],
+        "timeout": 600.0,
+    }
+
+    if not use_story_map:
+        # Fallback: let the agent search the web itself
+        api_kwargs["tools"] = [{
             "type": "web_search_20250305",
             "name": "web_search",
             "max_uses": config.search.deep_dive_queries_max,
-            # Don't restrict at API level — some domains block Claude's crawler.
-            # Source domains are listed in the prompt for guidance instead.
-        }],
-        timeout=600.0,
-    )
+        }]
 
-    # Extract text blocks
+    response = await client.messages.create(**api_kwargs)
+
+    # Extract text blocks and log web searches
     block_types = [block.type for block in response.content]
-    text_parts = [
-        block.text for block in response.content
-        if block.type == "text"
-    ]
+    text_parts = []
+    search_log: list[dict] = []
+    current_query: str | None = None
+
+    for block in response.content:
+        if block.type == "text":
+            text_parts.append(block.text)
+        elif block.type == "server_tool_use":
+            current_query = getattr(block, "input", {}).get("query", "?")
+        elif block.type == "web_search_tool_result":
+            result_urls = []
+            content = getattr(block, "content", [])
+            if not isinstance(content, list):
+                # WebSearchToolResultError — no results
+                search_log.append({
+                    "query": current_query,
+                    "results_count": 0,
+                    "results": [],
+                    "error": str(content),
+                })
+                current_query = None
+                continue
+            for item in content:
+                if getattr(item, "type", None) == "web_search_result":
+                    result_urls.append({
+                        "title": getattr(item, "title", ""),
+                        "url": getattr(item, "url", ""),
+                    })
+            search_log.append({
+                "query": current_query,
+                "results_count": len(result_urls),
+                "results": result_urls,
+            })
+            current_query = None
+
     response_text = "\n".join(text_parts)
 
     logger.info(
@@ -574,6 +806,17 @@ async def run_country_agent(
         "Country agent %s: block_types=%s, text_length=%d",
         config.code, block_types, len(response_text),
     )
+    # Log each web search query and what it returned
+    for i, sl in enumerate(search_log, 1):
+        logger.info(
+            "Country agent %s: search %d/%d — q=%r, %d results",
+            config.code, i, len(search_log), sl["query"], sl["results_count"],
+        )
+        for r in sl["results"]:
+            logger.debug(
+                "Country agent %s: search %d result — %s (%s)",
+                config.code, i, r["title"][:120], r["url"],
+            )
     if len(response_text) < 100:
         logger.warning("Country agent %s: response text very short: %r", config.code, response_text[:500])
 

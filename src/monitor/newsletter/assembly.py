@@ -234,9 +234,11 @@ def _render_deep_dive_entry(
     else:
         lines.append("Full analysis conducted; no significant posture changes identified despite initial indicators.")
 
-    # Unexpected developments
+    # Unexpected developments (skip placeholder/empty entries)
     if entry.unexpected_developments:
         for ud in entry.unexpected_developments:
+            if not ud.headline or ud.headline.lower() in ("unknown", ""):
+                continue
             assessment = f" {ud.assessment}" if ud.assessment else ""
             lines.append(f"- **Unexpected:** {ud.headline}.{assessment}")
 
@@ -247,14 +249,37 @@ def _render_deep_dive_entry(
 
     lines.append("")
 
-    # Caveat Lector (Note callout for MDX, blockquote for plain MD)
-    if entry.devils_advocate and entry.devils_advocate.challenges:
-        top_challenge = entry.devils_advocate.challenges[0]
-        # Replace raw enum names with display names
-        for cat, display in SIGNAL_CATEGORY_DISPLAY.items():
-            top_challenge = top_challenge.replace(cat.value, display.lower())
-        lines.append(f"> **Caveat Lector:** {top_challenge}")
-        lines.append("")
+    # Other Stories accordion — story map clusters not in key developments
+    if entry.story_clusters:
+        # Collect source URLs already shown in key developments
+        dev_urls = set()
+        if entry.category_movements:
+            for mov in entry.category_movements.values():
+                for dev in mov.developments:
+                    if dev.source_url:
+                        dev_urls.add(dev.source_url)
+
+        other_stories = []
+        for cluster in entry.story_clusters:
+            # Skip if this cluster's representative URL was used in key developments
+            if cluster.source_url and cluster.source_url in dev_urls:
+                continue
+            other_stories.append(cluster)
+
+        if other_stories:
+            lines.append("<Accordion title=\"Other Stories\">")
+            for cluster in other_stories:
+                source_link = (
+                    f"[{cluster.source_name}]({cluster.source_url})"
+                    if cluster.source_url and cluster.source_name
+                    else cluster.source_name or ""
+                )
+                lines.append(
+                    f"- **{cluster.headline}** — {cluster.summary}"
+                    + (f" *({source_link})*" if source_link else "")
+                )
+            lines.append("</Accordion>")
+            lines.append("")
 
     return "\n".join(lines)
 

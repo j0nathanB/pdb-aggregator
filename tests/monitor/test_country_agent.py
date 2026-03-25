@@ -458,7 +458,7 @@ class TestBuildSystemPrompt:
         config = load_country_config("mx")
         prompt = _build_system_prompt(config)
         assert "Phase 1: Orient" in prompt
-        assert "Phase 2: Collect" in prompt
+        assert "Phase 2: Read the Evidence" in prompt
         assert "Phase 3: Assess" in prompt
         assert "Phase 4: Self-Correct" in prompt
         assert "Phase 5: Structural Claim Check" in prompt

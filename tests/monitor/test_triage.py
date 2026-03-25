@@ -18,9 +18,9 @@ from src.monitor.agents.triage import (
     ScanResult,
     TriageDecision,
     TriageOutput,
-    _build_scan_prompt,
     _build_triage_prompt,
-    _parse_scan_response,
+    _is_wire_domain,
+    _primary_actor_term,
     parse_triage_response,
 )
 from src.monitor.models import (
@@ -106,40 +106,48 @@ def _test_global_ledger(flagged_countries=None) -> GlobalLedger:
     )
 
 
-# ---- Scan Prompt ----
+# ---- Wire Domain Filter ----
 
-class TestBuildScanPrompt:
-    def test_includes_country_name(self):
+class TestWireDomainFilter:
+    def test_matches_wire_domain(self):
+        assert _is_wire_domain("reuters.com") is True
+        assert _is_wire_domain("apnews.com") is True
+        assert _is_wire_domain("bbc.co.uk") is True
+
+    def test_rejects_non_wire(self):
+        assert _is_wire_domain("reforma.com") is False
+        assert _is_wire_domain("eluniversal.com.mx") is False
+
+    def test_case_insensitive(self):
+        assert _is_wire_domain("Reuters.com") is True
+        assert _is_wire_domain("BBC.COM") is True
+
+    def test_subdomain_match(self):
+        assert _is_wire_domain("www.reuters.com") is True
+        assert _is_wire_domain("news.bbc.co.uk") is True
+
+    def test_none_and_empty(self):
+        assert _is_wire_domain(None) is False
+        assert _is_wire_domain("") is False
+
+
+# ---- Primary Actor Term ----
+
+class TestPrimaryActorTerm:
+    def test_returns_first_search_term(self):
         config = _mexico_config()
-        prompt = _build_scan_prompt(config, date(2026, 3, 14))
-        assert "Mexico" in prompt
-        assert "MX" in prompt
+        term = _primary_actor_term(config)
+        assert "Sheinbaum" in term
 
-    def test_includes_date_range(self):
-        prompt = _build_scan_prompt(_mexico_config(), date(2026, 3, 14))
-        assert "2026-03-07" in prompt
-        assert "2026-03-14" in prompt
-
-    def test_includes_actor_search_terms(self):
-        prompt = _build_scan_prompt(_mexico_config(), date(2026, 3, 14))
-        assert "Sheinbaum" in prompt
-        assert "SEDENA" in prompt
-
-    def test_includes_triage_sources(self):
-        prompt = _build_scan_prompt(
-            _mexico_config(), date(2026, 3, 14),
-            triage_domains=["eluniversal.com.mx", "reforma.com"],
-        )
-        assert "eluniversal.com.mx" in prompt
-        assert "reforma.com" in prompt
-
-    def test_includes_wire_sources(self):
-        prompt = _build_scan_prompt(
-            _mexico_config(), date(2026, 3, 14),
-            wire_domains=["reuters.com", "apnews.com"],
-        )
-        assert "reuters.com" in prompt
-        assert "apnews.com" in prompt
+    def test_fallback_to_country_name(self):
+        """If no primary actor has search terms, fall back to country name."""
+        from src.monitor.config import Actor, CountryConfig
+        config = _mexico_config()
+        # Strip search_terms from all actors
+        for a in config.actors:
+            a.search_terms = []
+        term = _primary_actor_term(config)
+        assert term == "Mexico"
 
 
 # ---- Triage Prompt ----
@@ -289,6 +297,25 @@ class TestTriageOutput:
         )
         assert set(output.deep_dive_countries) == {"mx", "fr"}
         assert output.maintenance_countries == ["ee"]
+
+    def test_scan_map_property(self):
+        scans = [
+            ScanResult(code="mx", country="Mexico", wire_headlines=["Reuters: Sheinbaum"]),
+            ScanResult(code="ee", country="Estonia"),
+        ]
+        output = TriageOutput(
+            triage_date=date(2026, 3, 14),
+            decisions=[],
+            scan_results=scans,
+        )
+        assert "mx" in output.scan_map
+        assert "ee" in output.scan_map
+        assert output.scan_map["mx"].wire_headlines == ["Reuters: Sheinbaum"]
+
+    def test_scan_results_default_empty(self):
+        output = TriageOutput(triage_date=date(2026, 3, 14), decisions=[])
+        assert output.scan_results == []
+        assert output.scan_map == {}
 
 
 # ---- System Prompt ----

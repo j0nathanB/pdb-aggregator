@@ -27,6 +27,7 @@ from src.monitor.models import (
     RejectedItem,
     SignalCategoryAssessment,
     SignalEnvironment,
+    StoryClusterSummary,
     UnexpectedDevelopment,
     WatchlistItem,
     WeeklyEntry,
@@ -347,16 +348,67 @@ class TestRenderDeepDiveEntry:
         result = _render_deep_dive_entry("mx", _test_ledger(), _deep_dive_entry())
         assert "**Diplomatic:**" in result
 
-    def test_between_the_lines_blockquote(self):
+    def test_no_caveat_lector_in_brief(self):
         result = _render_deep_dive_entry("mx", _test_ledger(), _deep_dive_entry())
-        assert "> **Caveat Lector:**" in result
-        assert "routine rather than a policy shift" in result
-
-    def test_no_da_omits_blockquote(self):
-        entry = _deep_dive_entry()
-        entry.devils_advocate = None
-        result = _render_deep_dive_entry("mx", _test_ledger(), entry)
         assert "Caveat Lector" not in result
+
+    def test_other_stories_accordion(self):
+        entry = _deep_dive_entry()
+        entry.story_clusters = [
+            StoryClusterSummary(
+                headline="Leader meets US envoy",
+                summary="Discussed bilateral trade.",
+                source_url="https://reuters.com/1",
+                source_name="reuters.com",
+            ),
+            StoryClusterSummary(
+                headline="Central bank holds rate steady",
+                summary="Rate held at 9.5%.",
+                source_url="https://elfinanciero.com/1",
+                source_name="elfinanciero.com",
+            ),
+            StoryClusterSummary(
+                headline="Oil spill affects Gulf coast",
+                summary="Massive spill hit 39 communities.",
+                source_url="https://jornada.com.mx/1",
+                source_name="jornada.com.mx",
+            ),
+        ]
+        # The first cluster's source_url isn't in key developments (dev has no source_url),
+        # so all three should appear
+        result = _render_deep_dive_entry("mx", _test_ledger(), entry)
+        assert "<Accordion title=\"Other Stories\">" in result
+        assert "**Central bank holds rate steady**" in result
+        assert "**Oil spill affects Gulf coast**" in result
+        assert "elfinanciero.com" in result
+        assert "</Accordion>" in result
+
+    def test_other_stories_excludes_key_developments(self):
+        entry = _deep_dive_entry()
+        # Add source_url to the development so it matches a cluster
+        entry.category_movements[SignalCategory.ALIGNMENT_DIPLOMATIC].developments[0].source_url = "https://reuters.com/1"
+        entry.story_clusters = [
+            StoryClusterSummary(
+                headline="Leader meets US envoy",
+                summary="Discussed bilateral trade.",
+                source_url="https://reuters.com/1",
+                source_name="reuters.com",
+            ),
+            StoryClusterSummary(
+                headline="Central bank holds rate steady",
+                summary="Rate held at 9.5%.",
+                source_url="https://elfinanciero.com/1",
+                source_name="elfinanciero.com",
+            ),
+        ]
+        result = _render_deep_dive_entry("mx", _test_ledger(), entry)
+        assert "Leader meets US envoy" not in result.split("Other Stories")[1]
+        assert "Central bank holds rate steady" in result
+
+    def test_no_other_stories_when_empty(self):
+        entry = _deep_dive_entry()
+        result = _render_deep_dive_entry("mx", _test_ledger(), entry)
+        assert "Other Stories" not in result
 
     def test_no_movements_shows_fallback(self):
         entry = WeeklyEntry(

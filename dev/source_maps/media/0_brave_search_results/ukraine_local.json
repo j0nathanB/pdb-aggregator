@@ -1,0 +1,210 @@
+{
+  "country": "ukraine",
+  "leader": "Volodymyr Zelenskyy",
+  "search_type": "local",
+  "local_params": {
+    "search_lang": "uk",
+    "ui_lang": "uk-UA",
+    "country": "ALL"
+  },
+  "sources": {
+    "Ukrainska Pravda": {
+      "query": "site:pravda.com.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"ea8a499b-d48c-4000-9e21-0e9fe07a0f52\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Ekonomichna Pravda": {
+      "query": "site:epravda.com.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"4c8cef2d-d214-4f3c-afeb-df5f24960eb6\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Yevropeiska Pravda (European Pravda)": {
+      "query": "site:eurointegration.com.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"7532e563-3876-465a-b2d4-b0485b9902e6\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Kyiv Independent": {
+      "query": "site:kyivindependent.com Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"11a7dc55-e145-41b5-8075-6e0ca48ceff9\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Dzerkalo Tyzhnia (Mirror Weekly / ZN.UA)": {
+      "query": "site:zn.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"4e604c9c-2635-4df6-8fcf-51842bbae1a2\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Ukrinform": {
+      "query": "site:ukrinform.net Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"0fc1a59e-e81f-425f-a4ed-532ec9e87dfc\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Interfax-Ukraine": {
+      "query": "site:interfax.com.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"d084aa56-407a-49b6-b78b-b122b0bc29cf\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "NV (Novoe Vremya / New Voice of Ukraine)": {
+      "query": "site:nv.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"08227ca0-8afd-446d-b357-6b173fa18e6d\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Liga.net": {
+      "query": "site:Liga.net Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"88ae995b-5ed7-424f-b183-bf84c116a412\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Defense Express": {
+      "query": "site:defence-ua.com Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"e08c2388-315b-4337-a654-fd08a4ebeedc\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Militarnyi": {
+      "query": "site:militarnyi.com Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"8e468166-5607-43e0-bb1d-f2786b57b799\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "UNIAN": {
+      "query": "site:unian.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"a5e11796-047b-4f87-97b8-c5738844e081\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "President of Ukraine Official Website": {
+      "query": "site:president.gov.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"c0c8bbcb-71c1-4caf-910a-f3c1dfd97de2\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Ministry of Foreign Affairs of Ukraine": {
+      "query": "site:mfa.gov.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"594df766-7730-49ec-9826-62d8e9d07a4a\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Verkhovna Rada Official Site": {
+      "query": "site:rada.gov.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"579520ee-73d0-4277-895f-8fd85ad6a526\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Razumkov Centre": {
+      "query": "site:razumkov.org.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"6bd4f663-7697-4870-8508-2ef8efc69654\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Centre for Economic Strategy (CES)": {
+      "query": "site:ces.org.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"b38bb5ba-0271-4223-ba81-a89efa3bd731\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    },
+    "Texty.org.ua": {
+      "query": "site:Texty.org.ua Volodymyr Zelenskyy",
+      "params": {
+        "search_lang": "uk",
+        "ui_lang": "uk-UA",
+        "country": "ALL"
+      },
+      "num_results": 0,
+      "results": [],
+      "error": "HTTP 422: {\"type\":\"ErrorResponse\",\"error\":{\"id\":\"3256eaca-6689-4e08-836d-89ba7ee11b81\",\"status\":422,\"detail\":\"Unable to validate request parameter(s)\",\"meta\":{\"errors\":[{\"type\":\"enum\",\"loc\":[\"query\",\"ui_lang\"],"
+    }
+  }
+}

@@ -1,8 +1,9 @@
 """
-Triage agent: wire scan + domestic headline check → depth decisions.
+Triage agent: Brave News wire + domestic sweep → depth decisions.
 
-Phase 1: Per-country scan (parallel) — Claude with web_search tool collects headlines.
-Phase 2: Triage decision (single call) — LLM decides deep_dive or maintenance for each country.
+Phase 1: Per-country Brave News scan (parallel) — wire sweep (no goggles)
+         + domestic sweep (with goggles) collect headlines.
+Phase 2: Triage decision (single LLM call) — decides deep_dive or maintenance.
 """
 
 import asyncio
@@ -18,11 +19,13 @@ from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
     STALENESS_THRESHOLD_WEEKS,
+    WIRE_DOMAINS,
     CountryConfig,
     Depth,
     SignalCategory,
     load_prompt,
 )
+from ..collection.brave import BraveNewsClient
 from ..models import CountryLedger, GlobalLedger
 
 logger = logging.getLogger(__name__)
@@ -41,6 +44,9 @@ class ScanResult:
     domestic_headlines: list[str] = field(default_factory=list)
     scan_summary: str = ""
     error: str = ""
+    # Raw Brave results preserved for downstream story map
+    wire_results: list = field(default_factory=list)  # list[BraveNewsResult]
+    domestic_results: list = field(default_factory=list)  # list[BraveNewsResult]
 
 
 @dataclass
@@ -59,6 +65,7 @@ class TriageOutput:
     """Full triage output for all countries."""
     triage_date: date
     decisions: list[TriageDecision]
+    scan_results: list[ScanResult] = field(default_factory=list)
     summary: str = ""
 
     @property
@@ -69,172 +76,126 @@ class TriageOutput:
     def maintenance_countries(self) -> list[str]:
         return [d.code for d in self.decisions if d.depth == Depth.MAINTENANCE]
 
+    @property
+    def scan_map(self) -> dict[str, ScanResult]:
+        """Scan results keyed by country code for easy lookup."""
+        return {s.code: s for s in self.scan_results}
+
 
 # =============================================================================
-# Phase 1: Per-country scan
+# Phase 1: Brave News scan
 # =============================================================================
 
-SCAN_SYSTEM_PROMPT = load_prompt("triage_scan")
+def _is_wire_domain(source_domain: str | None) -> bool:
+    """Check if a domain matches a known wire service."""
+    if not source_domain:
+        return False
+    source = source_domain.lower()
+    return any(wd in source for wd in WIRE_DOMAINS)
 
 
-def _build_scan_prompt(
-    config: CountryConfig,
-    end_date: date,
-    wire_domains: list[str] | None = None,
-    triage_domains: list[str] | None = None,
-) -> str:
-    start_date = end_date - timedelta(days=7)
-
-    actor_terms = []
-    for a in config.actors:
-        terms = ", ".join(f'"{t}"' for t in a.search_terms)
-        actor_terms.append(f"- {a.name} ({a.role}): {terms}")
-    actors_block = "\n".join(actor_terms)
-
-    wire_list = wire_domains or []
-    wire_block = "\n".join(
-        f"- {d}" for d in wire_list
-    ) if wire_list else "- reuters.com\n- apnews.com"
-
-    triage_list = triage_domains or []
-    domestic_block = "\n".join(
-        f"- {d}" for d in triage_list
-    ) if triage_list else "- No triage sources configured"
-
-    return f"""\
-Scan for recent news about {config.country} ({config.code.upper()}).
-
-Date range: {start_date.isoformat()} to {end_date.isoformat()}
-
-Key actors and search terms:
-{actors_block}
-
-Wire services to check:
-{wire_block}
-
-Domestic outlets to check (headlines only):
-{domestic_block}
-
-Search for these actors and institutions in the wire services and domestic outlets. \
-Report what you find as structured JSON."""
-
-
-def _parse_scan_response(response: anthropic.types.Message, code: str, country: str) -> ScanResult:
-    """Extract structured scan result from Claude's response."""
-    text_parts = []
-    for block in response.content:
-        if block.type == "text":
-            text_parts.append(block.text)
-
-    full_text = "\n".join(text_parts)
-
-    # Try to parse JSON from the response
-    try:
-        # Strip markdown fencing if present
-        cleaned = full_text.strip()
-        if cleaned.startswith("```"):
-            cleaned = re.sub(r"^```(?:json)?\s*\n?", "", cleaned)
-            cleaned = re.sub(r"\n?```\s*$", "", cleaned)
-
-        try:
-            data = json.loads(cleaned)
-        except json.JSONDecodeError:
-            # Extract JSON object from prose
-            match = re.search(r"\{", cleaned)
-            if match:
-                depth = 0
-                start = match.start()
-                for i, ch in enumerate(cleaned[start:], start):
-                    if ch == "{":
-                        depth += 1
-                    elif ch == "}":
-                        depth -= 1
-                        if depth == 0:
-                            cleaned = cleaned[start:i + 1]
-                            break
-            data = json.loads(cleaned)
-        return ScanResult(
-            code=code,
-            country=country,
-            wire_headlines=data.get("wire_headlines", []),
-            domestic_headlines=data.get("domestic_headlines", []),
-            scan_summary=data.get("scan_summary", ""),
-        )
-    except (json.JSONDecodeError, KeyError) as e:
-        logger.warning(f"Failed to parse scan response for {code}: {e}")
-        return ScanResult(
-            code=code,
-            country=country,
-            scan_summary=full_text[:500],
-            error=f"Parse error: {e}",
-        )
+def _primary_actor_term(config: CountryConfig) -> str:
+    """Return the first search term of the primary actor, or the country name."""
+    for actor in config.actors:
+        if actor.primary and actor.search_terms:
+            return actor.search_terms[0]
+    return config.country
 
 
 async def scan_country(
     config: CountryConfig,
+    brave_client: BraveNewsClient,
     end_date: date | None = None,
     semaphore: asyncio.Semaphore | None = None,
-    allowed_domains: list[str] | None = None,
-    wire_domains: list[str] | None = None,
-    triage_domains: list[str] | None = None,
 ) -> ScanResult:
     """
-    Run wire + domestic headline scan for a single country.
+    Run wire + domestic headline scan for a single country using Brave News API.
 
-    Uses Claude with web_search tool to find recent headlines.
-
-    Args:
-        config: Country configuration.
-        end_date: End of the analysis window.
-        semaphore: Concurrency limiter.
-        allowed_domains: Domains for web_search tool. If None, uses
-            wire_domains + triage_domains.
-        wire_domains: Wire service domains (e.g., reuters.com).
-        triage_domains: Domestic triage source domains.
+    Wire sweep: ungoggled search for country name → filter to wire domains.
+    Domestic sweep: goggled search for primary actor → all results.
     """
-    if not ANTHROPIC_API_KEY:
-        raise ValueError("ANTHROPIC_API_KEY not set")
-
     end_date = end_date or date.today()
-
-    # Build allowed domains for focused searching
-    if allowed_domains is None:
-        allowed_domains = list(wire_domains or []) + list(triage_domains or [])
+    start_date = end_date - timedelta(days=7)
+    freshness = f"{start_date.isoformat()}to{end_date.isoformat()}"
+    primary_term = _primary_actor_term(config)
 
     async def _do_scan() -> ScanResult:
-        client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+        wire_headlines: list[str] = []
+        domestic_headlines: list[str] = []
+        wire_results = []
+        domestic_results = []
+        errors: list[str] = []
+
+        # --- Wire sweep: no goggles, no country params ---
         try:
-            response = await client.messages.create(
-                model=MODEL,
-                max_tokens=2048,
-                system=[{"type": "text", "text": load_prompt("triage_scan")}],
-                messages=[{
-                    "role": "user",
-                    "content": _build_scan_prompt(
-                        config, end_date,
-                        wire_domains=wire_domains,
-                        triage_domains=triage_domains,
-                    ),
-                }],
-                tools=[{
-                    "type": "web_search_20250305",
-                    "name": "web_search",
-                    "max_uses": config.search.triage_queries_max + 2,
-                    # Don't restrict at API level — some domains block Claude's crawler.
-                }],
+            wire_resp = await brave_client.search_news(
+                f'"{config.country}"',
+                freshness=freshness,
+                count=20,
             )
-            logger.debug(
-                f"Scan {config.code}: input={response.usage.input_tokens}, "
-                f"output={response.usage.output_tokens}"
+            for r in wire_resp.results:
+                if _is_wire_domain(r.source_domain):
+                    wire_headlines.append(f"{r.title}, {r.source_domain}")
+                    wire_results.append(r)
+            logger.info(
+                "Triage scan %s: wire sweep — %d raw results, %d wire matches",
+                config.code, wire_resp.total_count, len(wire_headlines),
             )
-            return _parse_scan_response(response, config.code, config.country)
+            for h in wire_headlines:
+                logger.debug("Triage scan %s: wire — %s", config.code, h)
         except Exception as e:
-            logger.error(f"Scan failed for {config.code}: {e}")
+            logger.warning("Triage scan %s: wire sweep failed: %s", config.code, e)
+            errors.append(f"wire: {e}")
+
+        # --- Domestic sweep: with goggles + country params ---
+        try:
+            goggle_url = brave_client.country_configs.get(config.code)
+            if goggle_url:
+                goggle_url = goggle_url.goggle_url()
+
+            domestic_resp = await brave_client.search_news(
+                primary_term,
+                country_code=config.code,
+                freshness=freshness,
+                count=50,
+                goggles=goggle_url,
+            )
+            for r in domestic_resp.results:
+                domestic_headlines.append(f"{r.title}, {r.source_domain or '?'}")
+                domestic_results.append(r)
+            logger.info(
+                "Triage scan %s: domestic sweep — q=%r, %d results",
+                config.code, primary_term, domestic_resp.total_count,
+            )
+            for h in domestic_headlines[:10]:
+                logger.debug("Triage scan %s: domestic — %s", config.code, h)
+            if len(domestic_headlines) > 10:
+                logger.debug(
+                    "Triage scan %s: ... and %d more domestic headlines",
+                    config.code, len(domestic_headlines) - 10,
+                )
+        except Exception as e:
+            logger.warning("Triage scan %s: domestic sweep failed: %s", config.code, e)
+            errors.append(f"domestic: {e}")
+
+        error_str = "; ".join(errors) if errors else ""
+        # Only mark as error if both sweeps failed
+        if len(errors) == 2:
             return ScanResult(
                 code=config.code,
                 country=config.country,
-                error=str(e),
+                error=error_str,
             )
+
+        return ScanResult(
+            code=config.code,
+            country=config.country,
+            wire_headlines=wire_headlines,
+            domestic_headlines=domestic_headlines,
+            wire_results=wire_results,
+            domestic_results=domestic_results,
+            scan_summary=f"Wire: {len(wire_headlines)} headlines. Domestic: {len(domestic_headlines)} headlines.",
+        )
 
     if semaphore:
         async with semaphore:
@@ -244,12 +205,16 @@ async def scan_country(
 
 async def scan_all_countries(
     configs: list[CountryConfig],
+    brave_client: BraveNewsClient,
     end_date: date | None = None,
     max_concurrent: int = 10,
 ) -> list[ScanResult]:
-    """Run scans for all countries in parallel with concurrency limit."""
+    """Run Brave News scans for all countries with concurrency limit."""
     semaphore = asyncio.Semaphore(max_concurrent)
-    tasks = [scan_country(c, end_date, semaphore) for c in configs]
+    tasks = [
+        scan_country(c, brave_client, end_date, semaphore)
+        for c in configs
+    ]
     return await asyncio.gather(*tasks)
 
 
@@ -302,8 +267,8 @@ def _build_triage_prompt(
                 block += "Wire headlines: None found\n"
 
             if scan.domestic_headlines:
-                block += "Domestic headlines:\n"
-                for h in scan.domestic_headlines:
+                block += f"Domestic headlines ({len(scan.domestic_headlines)} total, showing top 15):\n"
+                for h in scan.domestic_headlines[:15]:
                     block += f"- {h}\n"
             else:
                 block += "Domestic headlines: None found\n"
@@ -453,16 +418,20 @@ async def run_triage(
     global_ledger: GlobalLedger | None = None,
     end_date: date | None = None,
     max_concurrent: int = 10,
+    brave_client: BraveNewsClient | None = None,
 ) -> TriageOutput:
     """
-    Full triage: scan all countries, then decide depth for each.
+    Full triage: scan all countries via Brave News, then decide depth for each.
 
     This is the main entry point for the triage step.
     """
+    if brave_client is None:
+        raise ValueError("BraveNewsClient required for triage scan")
+
     logger.info("Triage: starting for %d countries", len(configs))
 
-    # Phase 1: parallel scans
-    scan_results = await scan_all_countries(configs, end_date, max_concurrent)
+    # Phase 1: parallel Brave News scans
+    scan_results = await scan_all_countries(configs, brave_client, end_date, max_concurrent)
 
     scan_ok = [s for s in scan_results if not s.error]
     scan_errors = [s for s in scan_results if s.error]
@@ -480,6 +449,7 @@ async def run_triage(
 
     # Phase 2: triage decision
     output = await triage_decide(scan_results, ledgers, global_ledger)
+    output.scan_results = scan_results
 
     logger.info(
         "Triage complete: %d deep dives %s, %d maintenance %s",

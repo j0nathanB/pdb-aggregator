@@ -18,12 +18,15 @@ from typing import Optional
 
 from .agents.country import CountryAgentOutput, run_country_agent
 from .agents.devils_advocate import run_devils_advocate
+from .agents.expansion import ExpansionResult, expand_all_countries
 from .agents.government import GovernmentAgentOutput, run_government_agent
+from .agents.story_map import StoryMapOutput, run_story_map_agent
 from .agents.triage import TriageOutput, run_triage, ScanResult
 from .collection.brave import BraveNewsClient
 from .collection.extract import ExtractionOrchestrator, ExtractionResult
 from .collection.searchapi import SearchAPIClient, SearchAPIResponse
 from .retry import RetryExhausted, with_retry
+from .run_recorder import RunRecorder
 from .config import (
     CountryConfig,
     Depth,
@@ -49,6 +52,7 @@ from .models import (
     CountryLedger,
     Depth as DepthEnum,
     GlobalLedger,
+    StoryClusterSummary,
     WeeklyEntry,
 )
 
@@ -332,6 +336,10 @@ async def process_deep_dive(
     ledger: CountryLedger,
     end_date: date,
     allowed_domains: list[str] | None = None,
+    story_map: Optional[StoryMapOutput] = None,
+    extracted_articles: Optional[list[ExtractionResult]] = None,
+    gov_findings: str = "",
+    recorder: RunRecorder | None = None,
 ) -> CountryResult:
     """Run country agent + devil's advocate for a single deep-dive country."""
     try:
@@ -339,8 +347,31 @@ async def process_deep_dive(
         logger.info(f"Deep dive: {config.code} ({config.country})")
         output = await with_retry(
             run_country_agent, config, ledger, end_date, allowed_domains,
+            story_map=story_map,
+            extracted_articles=extracted_articles,
+            gov_findings=gov_findings,
             context=f"country_agent_{config.code}",
         )
+
+        # Attach story map clusters to the weekly entry for newsletter rendering
+        if story_map and story_map.stories:
+            output.weekly_entry.story_clusters = [
+                StoryClusterSummary(
+                    headline=sc.headline,
+                    summary=sc.summary,
+                    source_url=sc.representative_urls[0] if sc.representative_urls else "",
+                    source_name=sc.sources[0] if sc.sources else "",
+                )
+                for sc in story_map.stories
+            ]
+
+        if recorder:
+            recorder.write("07a_country_agent", {
+                "code": config.code,
+                "weekly_entry": output.weekly_entry,
+                "signal_categories": output.signal_categories,
+                "posture_summary": output.posture_summary,
+            }, suffix=f"_{config.code}")
 
         # Devil's advocate (with retry, non-blocking on failure)
         logger.info(f"Devil's advocate: {config.code}")
@@ -350,6 +381,8 @@ async def process_deep_dive(
                 context=f"devils_advocate_{config.code}",
             )
             output.weekly_entry.devils_advocate = devils_advocate
+            if recorder:
+                recorder.write("07b_devils_advocate", devils_advocate, suffix=f"_{config.code}")
         except (RetryExhausted, Exception) as da_err:
             logger.warning(
                 f"Devil's advocate failed for {config.code}, proceeding without: {da_err}"
@@ -385,16 +418,60 @@ async def process_maintenance(
     ledger: CountryLedger,
     scan: Optional[ScanResult],
     end_date: date,
+    gov_findings: str = "",
 ) -> CountryResult:
-    """Log maintenance entry for a country (no full analysis)."""
+    """Log maintenance entry for a country (no full analysis).
+
+    Records triage scan results (wire headlines, domestic headline count)
+    and government source findings for the historical record.
+    """
     start_date = end_date - timedelta(days=7)
     date_range = f"{start_date.isoformat()} to {end_date.isoformat()}"
 
     try:
+        # Build maintenance rationale from scan + gov findings
+        rationale_parts = []
+        if scan and not scan.error:
+            if scan.wire_headlines:
+                rationale_parts.append(
+                    f"Wire coverage ({len(scan.wire_headlines)}): "
+                    + "; ".join(scan.wire_headlines[:5])
+                )
+                if len(scan.wire_headlines) > 5:
+                    rationale_parts.append(
+                        f"  ... and {len(scan.wire_headlines) - 5} more wire headlines"
+                    )
+            else:
+                rationale_parts.append("No wire coverage this week.")
+            rationale_parts.append(
+                f"Domestic headlines: {len(scan.domestic_headlines)} found."
+            )
+        elif scan and scan.error:
+            rationale_parts.append(f"Triage scan error: {scan.error}")
+        else:
+            rationale_parts.append("No triage scan data.")
+
+        if gov_findings:
+            rationale_parts.append(f"Government sources: {gov_findings}")
+
+        rationale = "\n".join(rationale_parts)
+
         entry = WeeklyEntry(
             week=end_date,
             date_range=date_range,
             depth=Depth.MAINTENANCE,
+            activity_level={
+                "rating": "quiet" if not (scan and scan.wire_headlines) else "low",
+                "rationale": rationale,
+            },
+        )
+
+        logger.info(
+            "Maintenance %s: wire=%d, domestic=%d, gov_findings=%s",
+            config.code,
+            len(scan.wire_headlines) if scan else 0,
+            len(scan.domestic_headlines) if scan else 0,
+            "yes" if gov_findings else "no",
         )
 
         return CountryResult(
@@ -479,6 +556,7 @@ async def run_desk_pipeline(
     skip_triage: bool = False,
     force_deep_dive: bool = False,
     skip_layer2: bool = False,
+    recorder: RunRecorder | None = None,
 ) -> DeskPipelineResult:
     """
     Run the full desk pipeline:
@@ -534,6 +612,16 @@ async def run_desk_pipeline(
         l2_ok = sum(1 for lr in layer2_results.values() if lr.gov_output and not lr.error)
         l2_err = sum(1 for lr in layer2_results.values() if lr.error)
         logger.info(f"Layer 2 complete: {l2_ok} successful, {l2_err} errors")
+        if recorder:
+            for code, lr in layer2_results.items():
+                recorder.write("01_layer2", {
+                    "code": code,
+                    "search_result_count": sum(len(r.results) for r in lr.search_responses),
+                    "extraction_count": len(lr.extraction_results),
+                    "extraction_successes": sum(1 for r in lr.extraction_results if r.success),
+                    "gov_findings": lr.gov_output.to_dict() if lr.gov_output else None,
+                    "error": lr.error,
+                }, suffix=f"_{code}")
 
     # --- Step 2: Assemble domain lists ---
     # Load government configs for domain assembly
@@ -558,11 +646,19 @@ async def run_desk_pipeline(
             gov_config=gov_configs.get(code),
             brave_client=brave_client,
         )
+    if recorder:
+        recorder.write("02_domains", {
+            code: {k: len(v) for k, v in dm.items()} for code, dm in domain_maps.items()
+        })
 
     # --- Step 3: Triage ---
     if skip_triage or force_deep_dive:
         depth_map = {code: Depth.DEEP_DIVE for code in configs}
         scan_map: dict[str, ScanResult] = {}
+    elif brave_client is None:
+        logger.warning("Brave client unavailable — skipping triage, all deep dives")
+        depth_map = {code: Depth.DEEP_DIVE for code in configs}
+        scan_map = {}
     else:
         triage = await run_triage(
             list(configs.values()),
@@ -570,12 +666,152 @@ async def run_desk_pipeline(
             global_ledger,
             end_date,
             max_concurrent,
+            brave_client=brave_client,
         )
         result.triage = triage
         depth_map = {d.code: d.depth for d in triage.decisions}
-        scan_map = {}  # scans are internal to triage
+        scan_map = triage.scan_map
+        if recorder:
+            recorder.write("03a_triage_decisions", {
+                d.code: {"depth": d.depth.value, "rationale": d.rationale, "triggered_by": d.triggered_by}
+                for d in triage.decisions
+            })
+            recorder.write("03b_triage_scans", {
+                s.code: {
+                    "wire_headlines": s.wire_headlines,
+                    "domestic_headlines": s.domestic_headlines,
+                    "wire_result_count": len(s.wire_results),
+                    "domestic_result_count": len(s.domestic_results),
+                    "error": s.error,
+                }
+                for s in triage.scan_results
+            })
 
-    # --- Step 4: Process countries ---
+    # --- Step 4: Deep-dive search expansion ---
+    deep_dive_codes = [code for code, depth in depth_map.items() if depth == Depth.DEEP_DIVE]
+    expansion_map: dict[str, ExpansionResult] = {}
+
+    if deep_dive_codes and brave_client is not None:
+        deep_dive_configs = [configs[code] for code in deep_dive_codes if code in configs]
+        logger.info("Expansion: running for %d deep-dive countries", len(deep_dive_configs))
+        expansion_map = await expand_all_countries(
+            deep_dive_configs,
+            brave_client,
+            scan_map,
+            end_date,
+            max_concurrent,
+        )
+        for code, exp in expansion_map.items():
+            logger.info(
+                "Expansion %s: %d total results (wire=%d, domestic=%d, actor=%d, vocab=%d)",
+                code, exp.total_count, *exp.source_counts.values(),
+            )
+        if recorder:
+            for code, exp in expansion_map.items():
+                recorder.write("04_expansion", {
+                    "code": exp.code,
+                    "country": exp.country,
+                    "source_counts": exp.source_counts,
+                    "total_count": exp.total_count,
+                    "queries_run": exp.queries_run,
+                    "dedup_record": exp.dedup_record,
+                    "results": [
+                        {"title": r.title, "url": r.url, "source_domain": r.source_domain, "age": r.age}
+                        for r in exp.all_results
+                    ],
+                }, suffix=f"_{code}")
+    elif deep_dive_codes:
+        logger.warning("Brave client unavailable — skipping expansion")
+
+    # --- Step 5: Story map ---
+    story_maps: dict[str, StoryMapOutput] = {}
+
+    if expansion_map:
+        story_map_semaphore = asyncio.Semaphore(max_concurrent)
+
+        async def _run_story_map(code: str) -> tuple[str, StoryMapOutput | None]:
+            async with story_map_semaphore:
+                try:
+                    output = await run_story_map_agent(
+                        configs[code],
+                        expansion_map[code],
+                        end_date,
+                    )
+                    return code, output
+                except Exception as e:
+                    logger.error("Story map failed for %s: %s", code, e, exc_info=True)
+                    return code, None
+
+        logger.info("Story map: running for %d deep-dive countries", len(expansion_map))
+        sm_tasks = [_run_story_map(code) for code in expansion_map]
+        sm_results = await asyncio.gather(*sm_tasks)
+        for code, sm_output in sm_results:
+            if sm_output is not None:
+                story_maps[code] = sm_output
+                logger.info(
+                    "Story map %s: %d stories, %d single-source, %d URLs for extraction",
+                    code, sm_output.stories_identified,
+                    len(sm_output.single_source_items),
+                    sm_output.extraction_url_count,
+                )
+        if recorder:
+            for code, sm in story_maps.items():
+                recorder.write("05_story_map", sm, suffix=f"_{code}")
+
+    # --- Step 6: Selective extraction (story map representative URLs) ---
+    extraction_map: dict[str, list[ExtractionResult]] = {}
+
+    if story_maps:
+        try:
+            async with ExtractionOrchestrator() as extractor:
+                for code, sm in story_maps.items():
+                    urls = sm.all_representative_urls
+                    if urls:
+                        logger.info("Extraction %s: %d representative URLs", code, len(urls))
+                        try:
+                            extraction_map[code] = await extractor.extract_batch(urls)
+                            success = sum(1 for r in extraction_map[code] if r.success)
+                            logger.info(
+                                "Extraction %s: %d/%d succeeded",
+                                code, success, len(extraction_map[code]),
+                            )
+                        except Exception as e:
+                            logger.error("Extraction failed for %s: %s", code, e, exc_info=True)
+        except Exception as e:
+            logger.warning("Extractor unavailable — skipping article extraction: %s", e)
+
+    if recorder and extraction_map:
+        for code, extractions in extraction_map.items():
+            recorder.write("06_extraction", {
+                "code": code,
+                "total": len(extractions),
+                "succeeded": sum(1 for r in extractions if r.success),
+                "articles": [
+                    {
+                        "url": r.url,
+                        "method": r.method,
+                        "success": r.success,
+                        "title": r.title,
+                        "text_length": len(r.text) if r.text else 0,
+                    }
+                    for r in extractions
+                ],
+            }, suffix=f"_{code}")
+
+    # --- Step 7: Process countries ---
+    # Format government findings per country
+    gov_findings_map: dict[str, str] = {}
+    for code, l2 in layer2_results.items():
+        if l2.gov_output and l2.gov_output.findings:
+            findings_text = []
+            for f in l2.gov_output.findings:
+                findings_text.append(
+                    f"- [{f.source_institution}] {f.what_happened} "
+                    f"(type: {f.content_type}, categories: {', '.join(f.signal_categories)})"
+                )
+            if findings_text:
+                gov_findings_map[code] = "\n".join(findings_text)
+
     semaphore = asyncio.Semaphore(max_concurrent)
 
     async def _process(code: str) -> CountryResult:
@@ -589,10 +825,17 @@ async def run_desk_pipeline(
                 return await process_deep_dive(
                     config, ledger, end_date,
                     allowed_domains=domains.get("allowed_domains"),
+                    story_map=story_maps.get(code),
+                    extracted_articles=extraction_map.get(code),
+                    gov_findings=gov_findings_map.get(code, ""),
+                    recorder=recorder,
                 )
             else:
                 scan = scan_map.get(code)
-                return await process_maintenance(config, ledger, scan, end_date)
+                return await process_maintenance(
+                    config, ledger, scan, end_date,
+                    gov_findings=gov_findings_map.get(code, ""),
+                )
 
     # Run all countries in parallel (bounded by semaphore)
     tasks = [_process(code) for code in configs]
@@ -620,5 +863,15 @@ async def run_desk_pipeline(
         f"{len(result.maintenance_results)} maintenance, "
         f"{len(result.failed_results)} failed"
     )
+
+    if recorder:
+        recorder.write_summary({
+            "end_date": end_date.isoformat(),
+            "countries": list(configs.keys()),
+            "deep_dives": [r.code for r in result.deep_dive_results],
+            "maintenance": [r.code for r in result.maintenance_results],
+            "failed": [{"code": r.code, "error": r.error} for r in result.failed_results],
+            "errors": result.errors,
+        })
 
     return result

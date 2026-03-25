@@ -137,6 +137,15 @@ class StructuralClaimCheck(BaseModel):
     confidence_in_claim: int = _confidence_field()
 
 
+class StoryClusterSummary(BaseModel):
+    """Lightweight story cluster record for newsletter rendering."""
+
+    headline: str
+    summary: str
+    source_url: str = ""
+    source_name: str = ""
+
+
 class WeeklyEntry(BaseModel):
     week: date
     date_range: str
@@ -148,6 +157,7 @@ class WeeklyEntry(BaseModel):
     devils_advocate: Optional[DevilsAdvocate] = None
     self_corrections: list[SelfCorrection] = Field(default_factory=list)
     structural_claim_checks: list[StructuralClaimCheck] = Field(default_factory=list)
+    story_clusters: list[StoryClusterSummary] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def deep_dive_requires_category_movements(self):

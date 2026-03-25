@@ -1,0 +1,35 @@
+# Middle Powers Monitor — Global Settings
+
+# LLM
+model: claude-sonnet-4-20250514
+thinking_budget_tokens: 16000
+
+# Ledger retention
+weekly_entry_retention: 8
+staleness_threshold_weeks: 4
+
+# Confidence and source tier bounds
+confidence_min: 1
+confidence_max: 5
+source_tier_min: 1
+source_tier_max: 4
+
+# Pipeline concurrency
+max_concurrent_country_agents: 5
+max_concurrent_triage_scans: 10
+
+# Dynamic lifecycle thresholds
+dynamic_unchanged_weeks_to_monitoring: 3
+dynamic_monitoring_weeks_to_archive: 4
+
+# Wire services for triage sweep (filter ungoggled results to these domains)
+wire_domains:
+  - reuters.com
+  - apnews.com
+  - france24.com
+  - bbc.com
+  - bbc.co.uk
+  - aljazeera.com
+  - dw.com
+  - theguardian.com
+  - pbs.org

@@ -82,6 +82,12 @@ CONFIDENCE_MAX = 5
 SOURCE_TIER_MIN = 1
 SOURCE_TIER_MAX = 4
 
+# Wire services for triage sweep
+WIRE_DOMAINS: list[str] = _SETTINGS.get("wire_domains", [
+    "reuters.com", "apnews.com", "france24.com", "bbc.com",
+    "bbc.co.uk", "aljazeera.com", "dw.com", "theguardian.com", "pbs.org",
+])
+
 
 # =============================================================================
 # Enums
