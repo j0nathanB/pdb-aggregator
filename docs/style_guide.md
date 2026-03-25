@@ -1,4 +1,4 @@
-he aim of this style sheet is to give some general advice on writing, to point out some common errors and to set some arbitrary rules
+The aim of this style sheet is to give some general advice on writing, to point out some common errors and to set some arbitrary rules
 
 The first requirement is that copy should be readily understandable. Clarity of writing usually follows clarity of thought. So think what you want to say, then say it as simply as possible. Keep in mind George Orwell's six elementary rules:
 

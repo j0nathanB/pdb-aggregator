@@ -608,7 +608,7 @@ class TestAssembleNewsletter:
     def test_region_order_in_output(self):
         gl = _test_global_ledger()
         newsletter = assemble_newsletter(gl, {}, {}, {}, date(2026, 3, 14))
-        frontline_pos = newsletter.find("Frontline & Eastern Europe")
+        frontline_pos = newsletter.find("Frontline and Eastern Europe")
         americas_pos = newsletter.find("The Americas")
         assert frontline_pos < americas_pos
 
@@ -650,5 +650,5 @@ class TestAssembleNewsletter:
     def test_h2_for_regions(self):
         gl = _test_global_ledger()
         newsletter = assemble_newsletter(gl, {}, {}, {}, date(2026, 3, 14))
-        assert "## Frontline & Eastern Europe" in newsletter
+        assert "## Frontline and Eastern Europe" in newsletter
         assert "## The Americas" in newsletter

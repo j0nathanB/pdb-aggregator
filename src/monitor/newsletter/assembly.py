@@ -27,10 +27,10 @@ from ..models import (
 # =============================================================================
 
 REGION_DISPLAY_NAMES: dict[Region, str] = {
-    Region.FRONTLINE_EASTERN_EUROPE: "Frontline & Eastern Europe",
+    Region.FRONTLINE_EASTERN_EUROPE: "Frontline and Eastern Europe",
     Region.WESTERN_EUROPE: "Western Europe",
     Region.ASIA_PACIFIC: "Asia-Pacific",
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "Middle East, Turkey & South Asia",
+    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "Near East and South Asia",
     Region.AMERICAS: "The Americas",
 }
 
@@ -444,15 +444,27 @@ def assemble_newsletter(
 # Multi-page assembly (Mintlify site output)
 # =============================================================================
 
-def _mdx_frontmatter(title: str, description: str, sidebar_title: str) -> str:
+def _mdx_frontmatter(title: str, description: str, sidebar_title: str, **extra: str) -> str:
     """Generate YAML frontmatter for an MDX page."""
-    return (
-        f"---\n"
-        f"title: \"{title}\"\n"
-        f"description: \"{description}\"\n"
-        f"sidebarTitle: \"{sidebar_title}\"\n"
-        f"---\n"
-    )
+    lines = [
+        "---",
+        f'title: "{title}"',
+        f'description: "{description}"',
+        f'sidebarTitle: "{sidebar_title}"',
+    ]
+    for key, value in extra.items():
+        lines.append(f'{key}: "{value}"')
+    lines.append("---")
+    return "\n".join(lines) + "\n"
+
+
+REGION_ICONS: dict[Region, str] = {
+    Region.FRONTLINE_EASTERN_EUROPE: "shield",
+    Region.WESTERN_EUROPE: "landmark",
+    Region.ASIA_PACIFIC: "ship",
+    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "compass",
+    Region.AMERICAS: "scroll-text",
+}
 
 
 def _render_overview_page(
@@ -463,8 +475,7 @@ def _render_overview_page(
     end_date: date,
     brief_path: str,
 ) -> str:
-    """Render the overview page: header, executive brief, region summaries."""
-    date_range = _format_date_range(end_date)
+    """Render the overview page: header, executive brief, region Cards."""
     deep_dive_count = sum(
         1 for e in country_entries.values()
         if e is not None and e.depth == Depth.DEEP_DIVE
@@ -478,7 +489,12 @@ def _render_overview_page(
     title = f"Week of {week_start.strftime('%B %d')}, {end_date.year}"
 
     sections = [
-        _mdx_frontmatter("The Middle Powers Monitor", "Weekly intelligence brief covering 28 middle powers across five regions", "Overview"),
+        _mdx_frontmatter(
+            "The Middle Powers Monitor",
+            "Weekly intelligence brief covering 28 middle powers across five regions",
+            "Overview",
+            mode="wide",
+        ),
         "",
         f"## {title}",
         "",
@@ -493,30 +509,54 @@ def _render_overview_page(
     sections.append("")
     sections.append(_render_executive_brief(briefing_items))
 
-    # Region summaries — just the regional lead + country posture summaries
+    # Region Cards
+    sections.append("---")
+    sections.append("")
+    sections.append("## Regions")
+    sections.append("")
+    sections.append('<Columns cols={2}>')
+
     for region in REGION_ORDER:
         display_name = REGION_DISPLAY_NAMES[region]
         slug = REGION_SLUGS[region]
+        icon = REGION_ICONS[region]
 
-        sections.append("---")
-        sections.append("")
-        sections.append(f"## [{display_name}]({brief_path}/{slug})")
-        sections.append("")
-
+        # Build a one-line summary from the regional lead or deep-dive countries
         report = regional_reports.get(region)
-        sections.append(_render_regional_lead(region, report))
+        if report and report.cross_cutting_dynamics:
+            summary = report.cross_cutting_dynamics[0].description
+            # Truncate to ~120 chars for card body
+            if len(summary) > 120:
+                summary = summary[:117].rsplit(" ", 1)[0] + "..."
+        else:
+            # Summarize from deep-dive country names if available
+            region_codes = REGION_COUNTRIES.get(region, [])
+            deep_dive_names = []
+            for code in region_codes:
+                entry = country_entries.get(code)
+                if entry is not None and entry.depth == Depth.DEEP_DIVE and code in country_ledgers:
+                    deep_dive_names.append(country_ledgers[code].country)
+            if deep_dive_names:
+                summary = f"{', '.join(deep_dive_names)} received full analytical treatment this week."
+            else:
+                summary = "No significant cross-country dynamics this week."
 
-        # Brief country summaries (posture only)
-        region_codes = REGION_COUNTRIES.get(region, [])
-        for code in region_codes:
-            if code not in country_ledgers:
-                continue
-            entry = country_entries.get(code)
-            if entry is not None and entry.depth == Depth.DEEP_DIVE:
-                sections.append(
-                    _render_deep_dive_entry(code, country_ledgers[code], entry, summary_only=True)
-                )
+        sections.append(f'  <Card title="{display_name}" icon="{icon}" href="{brief_path}/{slug}">')
+        sections.append(f"    {summary}")
+        sections.append("  </Card>")
 
+    # Watchlist card
+    watchlist = global_ledger.watchlist
+    watchlist_count = len(watchlist)
+    if watchlist_count:
+        watchlist_summary = f"{watchlist_count} item{'s' if watchlist_count != 1 else ''}: {watchlist[0].item[:80]}."
+    else:
+        watchlist_summary = "No items this week."
+    sections.append(f'  <Card title="Watchlist" icon="binoculars" href="{brief_path}/watchlist">')
+    sections.append(f"    {watchlist_summary}")
+    sections.append("  </Card>")
+
+    sections.append("</Columns>")
     sections.append("")
     return "\n".join(sections)
 
