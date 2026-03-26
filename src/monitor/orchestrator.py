@@ -27,6 +27,7 @@ from .collection.extract import ExtractionOrchestrator, ExtractionResult
 from .collection.searchapi import SearchAPIClient, SearchAPIResponse
 from .retry import RetryExhausted, with_retry
 from .run_recorder import RunRecorder
+from .validation import validate_source_attribution
 from .config import (
     CountryConfig,
     Depth,
@@ -392,6 +393,27 @@ async def process_deep_dive(
         errors = output.weekly_entry.validate_complete()
         if errors:
             logger.warning(f"Validation warnings for {config.code}: {errors}")
+
+        # Source attribution check
+        attribution = validate_source_attribution(
+            config.code, output.weekly_entry, extracted_articles,
+        )
+        if recorder and not attribution.clean:
+            recorder.write("07c_attribution_flags", {
+                "code": config.code,
+                "developments_checked": attribution.developments_checked,
+                "developments_flagged": attribution.developments_flagged,
+                "flags": [
+                    {
+                        "category": f.category,
+                        "headline": f.headline,
+                        "unattributed_entities": f.unattributed_entities,
+                        "cited_source_urls": f.cited_source_urls,
+                        "severity": f.severity,
+                    }
+                    for f in attribution.flags
+                ],
+            }, suffix=f"_{config.code}")
 
         return CountryResult(
             code=config.code,
