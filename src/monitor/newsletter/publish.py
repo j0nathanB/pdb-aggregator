@@ -29,6 +29,25 @@ PAGE_ORDER = [
 ]
 
 
+def _escape_mdx(content: str) -> str:
+    """Escape characters that have special meaning in MDX.
+
+    Escapes $ signs (LaTeX math trigger) in body text while preserving
+    frontmatter and JSX expressions.
+    """
+    # Split frontmatter from body
+    parts = content.split("---", 2)
+    if len(parts) >= 3:
+        # parts[0] is before first ---, parts[1] is frontmatter, parts[2] is body
+        body = parts[2]
+        # Escape bare $ (not already escaped) outside JSX expressions
+        body = re.sub(r'(?<!\\)\$', r'\\$', body)
+        return f"{parts[0]}---{parts[1]}---{body}"
+
+    # No frontmatter — escape the whole thing
+    return re.sub(r'(?<!\\)\$', r'\\$', content)
+
+
 def publish_brief(pages: dict[str, str], end_date: date) -> Path:
     """
     Write MDX pages to site/briefs/{date}/ and update docs.json.
@@ -47,7 +66,7 @@ def publish_brief(pages: dict[str, str], end_date: date) -> Path:
     # Write MDX files
     for slug, content in pages.items():
         page_path = brief_dir / f"{slug}.mdx"
-        page_path.write_text(content)
+        page_path.write_text(_escape_mdx(content))
         logger.debug("Wrote %s", page_path)
 
     logger.info("Published %d pages to %s", len(pages), brief_dir)

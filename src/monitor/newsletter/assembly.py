@@ -100,9 +100,6 @@ def _render_header(
         "# The Middle Powers Monitor",
         f"## Week of {date_range}",
         "",
-        f"*Covering 28 countries across five regions. "
-        f"{deep_dive_count} countries received full analytical treatment this week; "
-        f"{maintenance_count} were held at maintenance.*",
     ]
     return "\n".join(lines)
 
@@ -127,9 +124,6 @@ def _render_executive_brief(
         lines.append(item.what)
         lines.append("")
         lines.append(item.why_it_matters)
-        lines.append("")
-        conf_note = f"*{conf_label}. {item.confidence_note}*" if item.confidence_note else f"*{conf_label}.*"
-        lines.append(conf_note)
         lines.append("")
         if item.what_to_watch:
             lines.append(f"*What to watch: {item.what_to_watch}*")
@@ -507,9 +501,6 @@ def _render_overview_page(
         "",
         f"## {title}",
         "",
-        f"*Covering 28 countries across five regions. "
-        f"{deep_dive_count} countries received full analytical treatment this week; "
-        f"{maintenance_count} were held at maintenance.*",
     ]
 
     # Executive Brief
@@ -519,6 +510,7 @@ def _render_overview_page(
     sections.append(_render_executive_brief(briefing_items))
 
     # Region Cards
+    sections.append("")
     sections.append("---")
     sections.append("")
     sections.append("## Regions")
