@@ -494,16 +494,21 @@ def parse_country_response(
                 headline = d.get("headline") or d.get("title") or d.get("summary", "Unknown")
                 raw_date = d.get("date")
                 parsed_date = date.fromisoformat(raw_date) if isinstance(raw_date, str) else (raw_date or week_date)
-                developments.append(Development(
-                    headline=headline,
-                    date=parsed_date,
-                    source=d.get("source", "unknown"),
-                    source_tier=_parse_source_tier(d.get("source_tier", 2)),
-                    source_url=d.get("source_url", ""),
-                    summary=d.get("summary", ""),
-                    actors_involved=d.get("actors_involved", []),
-                    signal_category_relevance=d.get("signal_category_relevance", ""),
-                ))
+                # Build dev dict — model validator handles single→multi source migration
+                dev_data = {
+                    "headline": headline,
+                    "date": parsed_date,
+                    "summary": d.get("summary", ""),
+                    "actors_involved": d.get("actors_involved", []),
+                    "signal_category_relevance": d.get("signal_category_relevance", ""),
+                }
+                if "sources" in d:
+                    dev_data["sources"] = d["sources"]
+                else:
+                    dev_data["source"] = d.get("source", "unknown")
+                    dev_data["source_tier"] = _parse_source_tier(d.get("source_tier", 2))
+                    dev_data["source_url"] = d.get("source_url", "")
+                developments.append(Development(**dev_data))
             except Exception as e:
                 logger.warning("Skipping malformed development in %s: %s", cat.value, e)
 

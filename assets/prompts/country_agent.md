@@ -102,7 +102,7 @@ For each signal category, determine the movement level:
 - **None**: No relevant developments. This is a valid and common outcome — do not manufacture significance.
 
 For each development you report:
-- Provide the source, date, source tier, and URL.
+- List up to 3 sources that contributed to the development, with name, URL, and tier for each. If a story map cluster provided multiple sources, include the most relevant ones. Only include facts in the summary that are supported by at least one of the listed sources — do not synthesize details from other clusters or prior knowledge.
 - Write a summary that captures the analytically relevant facts, not a full article recap.
 - Explain the signal category relevance: why does this development matter for this dimension of the country's posture? Connect it to the dossier's structural analysis where relevant.
 - Identify which actors were involved.
@@ -165,9 +165,10 @@ Return valid JSON conforming to the schema below. All metadata and assessments i
           {
             "headline": "What happened",
             "date": "YYYY-MM-DD",
-            "source": "Outlet name",
-            "source_tier": 2,
-            "source_url": "https://...",
+            "sources": [
+              {"name": "Outlet name", "url": "https://...", "tier": 2},
+              {"name": "Second outlet", "url": "https://...", "tier": 3}
+            ],
             "summary": "Key details and context",
             "actors_involved": ["Actor Name"],
             "signal_category_relevance": "Why this matters for this category"

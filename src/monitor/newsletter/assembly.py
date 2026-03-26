@@ -187,8 +187,17 @@ def _collect_developments(entry: WeeklyEntry) -> list[dict]:
                         conf = mov.confidence_change.to
                     preliminary = conf is not None and conf <= 2
 
-                    source_name = f"[{dev.source}]({dev.source_url})" if dev.source_url else dev.source
-                    source_attr = source_name
+                    # Build source attribution from up to 3 sources
+                    if dev.sources:
+                        source_parts = []
+                        for s in dev.sources[:3]:
+                            if s.url:
+                                source_parts.append(f"[{s.name}]({s.url})")
+                            else:
+                                source_parts.append(s.name)
+                        source_attr = "; ".join(source_parts)
+                    else:
+                        source_attr = "unknown"
                     if dev.date:
                         source_attr += f", {dev.date.isoformat()}"
                     if preliminary:

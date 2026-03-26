@@ -77,15 +77,51 @@ class SignalCategoryAssessment(BaseModel):
     last_updated: date
 
 
+class SourceAttribution(BaseModel):
+    name: str
+    url: str = ""
+    tier: int = _source_tier_field()
+
+
 class Development(BaseModel):
     headline: str
     date: date
-    source: str
-    source_tier: int = _source_tier_field()
-    source_url: str = ""
+    sources: list[SourceAttribution] = Field(default_factory=list)
     summary: str = ""
     actors_involved: list[str] = Field(default_factory=list)
     signal_category_relevance: str = ""
+
+    # Backward-compat: old ledgers have single source/source_url/source_tier
+    @model_validator(mode="before")
+    @classmethod
+    def _migrate_single_source(cls, data: dict) -> dict:
+        if isinstance(data, dict) and "source" in data and "sources" not in data:
+            data["sources"] = [{
+                "name": data.pop("source", "unknown"),
+                "url": data.pop("source_url", ""),
+                "tier": data.pop("source_tier", 2),
+            }]
+        elif isinstance(data, dict) and "source" in data and "sources" in data:
+            # Both present — drop the old fields
+            data.pop("source", None)
+            data.pop("source_url", None)
+            data.pop("source_tier", None)
+        return data
+
+    @property
+    def source(self) -> str:
+        """Primary source name (backward compat)."""
+        return self.sources[0].name if self.sources else "unknown"
+
+    @property
+    def source_url(self) -> str:
+        """Primary source URL (backward compat)."""
+        return self.sources[0].url if self.sources else ""
+
+    @property
+    def source_tier(self) -> int:
+        """Best (lowest) source tier."""
+        return min((s.tier for s in self.sources), default=2)
 
 
 class ConfidenceChange(BaseModel):

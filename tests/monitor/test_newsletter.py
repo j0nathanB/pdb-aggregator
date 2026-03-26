@@ -385,8 +385,8 @@ class TestRenderDeepDiveEntry:
 
     def test_other_stories_excludes_key_developments(self):
         entry = _deep_dive_entry()
-        # Add source_url to the development so it matches a cluster
-        entry.category_movements[SignalCategory.ALIGNMENT_DIPLOMATIC].developments[0].source_url = "https://reuters.com/1"
+        # Add source URL to the development so it matches a cluster
+        entry.category_movements[SignalCategory.ALIGNMENT_DIPLOMATIC].developments[0].sources[0].url = "https://reuters.com/1"
         entry.story_clusters = [
             StoryClusterSummary(
                 headline="Leader meets US envoy",

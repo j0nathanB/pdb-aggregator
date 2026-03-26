@@ -155,7 +155,7 @@ Be especially wary of borrowing the empty phrases of politicians who constantly 
 
 **For country and regional sections:**
 - Keep the Markdown structure intact: `###` heading, `**Key developments:**`, bullet format, `<Accordion>` tags
-- Keep source attributions `*(Source, date)*` unchanged — do not edit source names or URLs
+- Keep source attributions `*(Source; Source2, date)*` unchanged — do not edit source names or URLs. Developments may have one to three sources separated by semicolons.
 - Keep category labels (`**Diplomatic:**`, `**Security:**`, etc.) unchanged
 - Do not add or remove bullet points
 - Do not merge or split items
