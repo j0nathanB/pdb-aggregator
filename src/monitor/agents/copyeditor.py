@@ -14,7 +14,10 @@ from dataclasses import dataclass
 
 import anthropic
 
-from ..config import ANTHROPIC_API_KEY, MODEL, load_prompt
+from ..config import ANTHROPIC_API_KEY, THINKING_BUDGET_TOKENS, load_prompt
+
+# Copyeditor always uses Opus for highest editorial quality
+COPYEDITOR_MODEL = "claude-opus-4-6-20250826"
 
 logger = logging.getLogger(__name__)
 
@@ -38,9 +41,22 @@ class EditableSection:
 
 def build_copyeditor_prompt(section: str, section_type: str) -> str:
     """Build the user message for the copyeditor agent."""
+    if section_type == "executive":
+        return (
+            "Below is the executive brief section of a geopolitical newsletter. "
+            "It contains several analytical items separated by ### headings. "
+            "Rewrite them into a single cohesive briefing — flowing prose paragraphs "
+            "that a senior reader can absorb in one sitting. Weave the items together: "
+            "find the connections, eliminate redundancy across items, and add transitions. "
+            "Drop the ### item headings entirely. You may restructure freely. "
+            "The output should read as one unified analytical essay, not a list of "
+            "separate observations. Return only the edited Markdown.\n\n"
+            "---\n\n"
+            f"{section}"
+        )
+
     type_hint = {
         "country": "This is a country section.",
-        "executive": "This is the executive brief.",
         "regional": "This is a regional analysis.",
     }.get(section_type, "")
 
@@ -87,9 +103,12 @@ async def run_copyeditor(
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
     response = await client.messages.create(
-        model=model or MODEL,
-        max_tokens=8192,
-        temperature=0,
+        model=model or COPYEDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
     )
@@ -156,19 +175,17 @@ def _split_newsletter_sections(
 
         if not region_match:
             # This is the preamble (header + executive brief)
-            # Look for ### executive brief items
+            # Send the entire executive brief as one unit so the copyeditor
+            # can weave items into a cohesive narrative
             exec_parts = re.split(r"(?=\n\n### )", part)
-            result.append((exec_parts[0], None))  # Header/metadata
-            for ep in exec_parts[1:]:
-                title_match = re.match(r"\n\n### (.+?)(?:\n|$)", ep)
-                if title_match:
-                    title = title_match.group(1).strip()
-                    result.append((
-                        ep,
-                        EditableSection(text=ep, label=f"Executive: {title}", section_type="executive"),
-                    ))
-                else:
-                    result.append((ep, None))
+            header = exec_parts[0]
+            exec_body = "".join(exec_parts[1:])
+            result.append((header, None))  # Header/metadata
+            if exec_body.strip():
+                result.append((
+                    exec_body,
+                    EditableSection(text=exec_body, label="Executive Brief", section_type="executive"),
+                ))
             continue
 
         region_name = region_match.group(1).strip()

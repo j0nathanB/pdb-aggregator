@@ -22,7 +22,8 @@ class TestBuildCopyeditorPrompt:
 
     def test_includes_type_hint_executive(self):
         prompt = build_copyeditor_prompt("test", "executive")
-        assert "executive brief" in prompt
+        assert "executive brief" in prompt.lower()
+        assert "cohesive" in prompt
 
     def test_includes_type_hint_regional(self):
         prompt = build_copyeditor_prompt("test", "regional")
@@ -112,7 +113,9 @@ class TestSplitNewsletterSections:
         segments = _split_newsletter_sections(SAMPLE_NEWSLETTER)
         executive = [s for _, s in segments if s and s.section_type == "executive"]
         assert len(executive) == 1
-        assert "Americas pushback" in executive[0].label
+        assert executive[0].label == "Executive Brief"
+        # All items are combined into one section
+        assert "Americas pushback" in executive[0].text
 
     def test_finds_regional_analysis(self):
         segments = _split_newsletter_sections(SAMPLE_NEWSLETTER)

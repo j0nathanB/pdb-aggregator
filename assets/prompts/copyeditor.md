@@ -153,11 +153,20 @@ Be especially wary of borrowing the empty phrases of politicians who constantly 
 
 ### 5. Preserve Structure and Formatting
 
+**For country and regional sections:**
 - Keep the Markdown structure intact: `###` heading, `**Key developments:**`, bullet format, `<Accordion>` tags
 - Keep source attributions `*(Source, date)*` unchanged — do not edit source names or URLs
 - Keep category labels (`**Diplomatic:**`, `**Security:**`, etc.) unchanged
 - Do not add or remove bullet points
 - Do not merge or split items
+
+**For the executive brief:**
+- You have full freedom to restructure. Drop `###` item headings, merge items, reorder, and weave into cohesive prose paragraphs.
+- Eliminate redundancy across items — if two items make related points, combine them.
+- Add transitions so the brief reads as a unified analytical essay, not a list of disconnected observations.
+- The brief should flow naturally and tell the reader a story about what happened this week and why it matters.
+
+**For all sections:**
 - Do not change analytical judgments or factual claims. If a factual claim is found in a non-English language, it's acceptable to translate it.
 
 ---
