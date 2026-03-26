@@ -612,4 +612,16 @@ async def run_executive_agent(
         len(data.get("weekly_entry", {}).get("dynamics_updated", [])),
         len(data.get("weekly_entry", {}).get("dynamics_archived", [])),
     )
+
+    from ..trace import save_trace, extract_thinking, extract_usage
+    save_trace(
+        "executive", "global", week,
+        system_prompt=load_prompt("executive"),
+        user_message=prompt,
+        response_text=response_text,
+        parsed_output=data,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     return apply_executive_output(global_ledger, data, week)

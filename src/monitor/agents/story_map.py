@@ -371,4 +371,15 @@ async def run_story_map_agent(
         accounted, unique_in_prompt, gap, gap_pct,
     )
 
+    from ..trace import save_trace, extract_thinking, extract_usage
+    save_trace(
+        "story_map", config.code, analysis_date,
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=text_content,
+        parsed_output=output,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     return output

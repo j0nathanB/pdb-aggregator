@@ -11,6 +11,7 @@ import asyncio
 import logging
 import re
 from dataclasses import dataclass
+from datetime import date
 
 import anthropic
 
@@ -135,6 +136,16 @@ async def run_copyeditor(
     logger.info(
         "Copyeditor [%s]: done — input=%d, output=%d tokens",
         label, response.usage.input_tokens, response.usage.output_tokens,
+    )
+
+    from ..trace import save_trace, extract_thinking, extract_usage
+    save_trace(
+        "copyeditor", label.lower().replace(" ", "_").replace(":", "_"), date.today(),
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=result,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
     )
 
     return result

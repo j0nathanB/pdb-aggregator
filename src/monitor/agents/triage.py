@@ -405,6 +405,17 @@ async def triage_decide(
                     if "first_cycle" not in d.triggered_by:
                         d.triggered_by.append("first_cycle")
 
+    from ..trace import save_trace, extract_thinking, extract_usage
+    save_trace(
+        "triage", "decisions", date.today(),
+        system_prompt=load_prompt("triage_decision"),
+        user_message=prompt,
+        response_text=response_text,
+        parsed_output={"decisions": [d.__dict__ for d in decisions], "summary": summary},
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     return TriageOutput(
         triage_date=date.today(),
         decisions=decisions,

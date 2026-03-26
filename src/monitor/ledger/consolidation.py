@@ -132,12 +132,25 @@ async def consolidate_entries(
         if block.type == "text"
     ]
 
+    result = "\n".join(text_parts).strip()
+
     logger.info(
         f"Consolidation {country}: {len(entries)} entries → summary, "
         f"input={response.usage.input_tokens}, output={response.usage.output_tokens}"
     )
 
-    return "\n".join(text_parts).strip()
+    from ..trace import save_trace, extract_thinking, extract_usage
+    run_date = entries[0].week if entries else date.today()
+    save_trace(
+        "consolidation", country.lower().replace(" ", "_"), run_date,
+        system_prompt=CONSOLIDATION_SYSTEM_PROMPT,
+        user_message=prompt,
+        response_text=result,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
+    return result
 
 
 def _mechanical_consolidation(entries: list[WeeklyEntry], country: str) -> str:

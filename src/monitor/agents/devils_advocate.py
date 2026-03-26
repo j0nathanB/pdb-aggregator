@@ -237,4 +237,16 @@ async def run_devils_advocate(
         "Devil's advocate %s: %d challenges, %d adjustments",
         country, len(result.challenges), len(result.recommended_adjustments),
     )
+
+    from ..trace import save_trace, extract_thinking, extract_usage
+    save_trace(
+        "devils_advocate", country.lower().replace(" ", "_"), entry.week,
+        system_prompt=system_prompt,
+        user_message=prompt,
+        response_text=response_text,
+        parsed_output=result,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     return result

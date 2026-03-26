@@ -430,6 +430,18 @@ async def run_government_agent(
             country_config.code, len(findings), sum(1 for f in findings if f.content_type in ("ground_truth", "both")),
             len(gaps), len(failures),
         )
+
+        from ..trace import save_trace, extract_thinking, extract_usage
+        save_trace(
+            "government", country_config.code, processing_date,
+            system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
+            user_message=user_message,
+            response_text=text_content,
+            parsed_output=parsed,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+
         return output
 
     except Exception as e:
