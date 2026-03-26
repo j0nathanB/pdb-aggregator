@@ -75,7 +75,7 @@ class DiffbotRateLimiter:
 # HTTP settings
 TIMEOUT = httpx.Timeout(30.0, connect=10.0)
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; PDB-Aggregator/1.0)",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:149.0) Gecko/20100101 Firefox/149.0",
     "Accept": "application/json",
 }
 

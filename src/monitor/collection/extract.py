@@ -31,6 +31,8 @@ import httpx
 import yaml
 from dotenv import load_dotenv
 
+from ..config import HTTP_USER_AGENT as _HTTP_USER_AGENT
+
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
@@ -230,7 +232,7 @@ class CurlTrafilaturaExtractor(Extractor):
         """Fetch HTML using curl subprocess."""
         proc = await asyncio.create_subprocess_exec(
             "curl", "-sL", "-m", str(self._timeout),
-            "-A", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+            "-A", _HTTP_USER_AGENT,
             "--compressed",
             url,
             stdout=asyncio.subprocess.PIPE,

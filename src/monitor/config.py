@@ -20,6 +20,9 @@ from pydantic import BaseModel, Field, field_validator
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
+# HTTP user agent — Firefox UA gets past government site bot-blocking
+HTTP_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:149.0) Gecko/20100101 Firefox/149.0"
+
 # Paths (relative to project root)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 ASSETS_DIR = PROJECT_ROOT / "assets"
