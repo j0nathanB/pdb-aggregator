@@ -28,8 +28,9 @@ def _load_style_guide() -> str:
         _style_guide = (PROJECT_ROOT / "docs" / "style_guide.md").read_text()
     return _style_guide
 
-# Copyeditor always uses Opus for highest editorial quality
-COPYEDITOR_MODEL = "claude-opus-4-6-20250826"
+# Copyeditor uses Sonnet — the editor handles heavy prose rewriting,
+# so the copyeditor only needs to handle mechanical polish (names, abbreviations)
+COPYEDITOR_MODEL = "claude-sonnet-4-6-20250626"
 
 logger = logging.getLogger(__name__)
 

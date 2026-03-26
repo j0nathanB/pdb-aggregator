@@ -144,21 +144,12 @@ Be especially wary of borrowing the empty phrases of politicians who constantly 
 
 **Do not be didactic.** If too many sentences begin with *Consider*, *Note*, *Remember*, *Expect*, readers will think they are reading a textbook.
 
-### 4. Clarity, Concision, and Structure
-
-- Prefer concrete detail over abstraction: "inflation rose to 4.02%" is better than "inflation increased" only if the concrete detail is available. Otherwise, omit.
-- Simple sentences help. Keep complicated constructions to a minimum. Long sentences should have no folds, no vaguenesses, no parenthetical interruptions. "At times he may indulge himself with a long one, but he will make sure there are no folds in it, no vaguenesses, no parenthetical interruptions of its view as a whole" (Mark Twain).
-- **Short paragraphs.** A paragraph is a unit of thought, not of length. One-sentence paragraphs are fine occasionally. A paragraph that runs past five or six sentences is almost certainly trying to say too many things at once — split it.
-- **The posture summary must be tight.** Two to four sentences that seize the reader and draw them into the country's story. Lead with the single most important development or tension. Do not try to summarise all five analytical dimensions — pick what matters this week and let the key developments carry the rest. If the summary reads like a list of clauses joined by commas, it is too long.
-
-### 5. Preserve Structure and Formatting
+### 4. Preserve Structure and Attributions
 
 **For country and regional sections:**
-- Keep the Markdown structure intact: `###` heading, `**Key developments:**`, bullet format, `<Accordion>` tags
-- Keep source attributions `*(Source; Source2, date)*` unchanged — do not edit source names or URLs. Developments may have one to three sources separated by semicolons.
-- Keep category labels (`**Diplomatic:**`, `**Security:**`, etc.) unchanged
-- Do not add or remove bullet points
-- Do not merge or split items
+- The editor has already rewritten these into narrative prose. Your job is mechanical polish only — do not restructure, reorder paragraphs, or rewrite sentences.
+- Keep source attributions `(Source, date)` or `([Source](URL), date)` unchanged — do not edit source names, URLs, or dates.
+- Keep `###` headings, `<Accordion>` tags, and `<Icon>` components unchanged.
 
 **For the executive brief:**
 - You have full freedom to restructure. Drop `###` item headings, merge items, reorder, and weave into cohesive prose paragraphs.
@@ -181,37 +172,36 @@ If the input is already clean, return it unchanged. Do not edit for the sake of 
 
 ## Example
 
-**Bad — before copyediting:**
+The copyeditor now receives narrative prose from the editor. Your job is mechanical polish.
+
+**Before copyediting:**
 
 ```
-MexicoMexico
-Mexico faces increased coalition management challenges as President Claudia Sheinbaum's first major legislative defeat on electoral reform shows that formal supermajorities do not guarantee coalition discipline on sovereignty-sensitive issues. The immediate Plan B pivot shows institutional learning capacity but reveals genuine stress within the 4T coalition. The established dual-track approach of sovereignty rhetoric with practical American cooperation continues, as Mr Trump's military assistance criticism triggered predictable sovereignty assertions while Security Secretary Omar García Harfuch maintains operational DEA coordination. Economic pressures from the USMCA review process are materialising through inflation above target and trade policy uncertainty, while PEMEX operational challenges persist. The military-security complex continues institutional consolidation through Mr García Harfuch's expanded international profile and SEMAR capacity building. Coalition stress is manageable through adaptation but represents a more challenging environment than previously assessed.
-Key developments:
- Domestic: Ms Sheinbaum's electoral reform failed to achieve qualified majority when PT and PVEM allies voted against it alongside opposition parties (259 in favour, 234 against, requiring 333 for two-thirds majority). Morena immediately announced 'Plan B' negotiations with modified proposals. (La Jornada, 2026-03-11)
- Domestic: Viral footage of expensive XV años celebration exposed Juan Carlos Guerrero, PEMEX contractor with billions in contracts, highlighting corruption concerns. Government published list of millionaire pension recipients from state companies including PEMEX. (El Financiero, 2026-03-08)
- Diplomatic: Mr Trump stated 'los cárteles están controlando México' and criticised Ms Sheinbaum for rejecting American military cooperation proposals. The president defended sovereignty saying cooperation would continue 'sin subordinación.' (Infobae, 2026-03-14)
- Diplomatic: Mr García Harfuch met with DEA director Terrance Cole to discuss strengthening bilateral cooperation on counter-narcotics and stopping arms trafficking to Mexico, following presidential instructions. (El Universal, 2026-03-10)
- Security: Mr García Harfuch detailed the El Mencho operation in American media interviews, emphasising zero impunity policy. His profile generated merchandise sales and positioned him as a key figure in American-Mexican security cooperation. (Infobae, 2026-03-13)
+### Mexico
+
+President Claudia Sheinbaum's first major legislative defeat — on electoral reform — laid bare the limits of her supermajority.
+
+Ms Sheinbaum's reform bill failed when PT and PVEM allies broke ranks and voted against it alongside the opposition (259 in favour, 234 against, requiring 333 for a two-thirds majority). Morena pivoted immediately to a Plan B with modified proposals. ([La Jornada](https://www.jornada.com.mx/...), 2026-03-11) The 4T coalition can adapt, but the stress is real.
+
+The dual track of sovereignty rhetoric and practical American cooperation continues. Trump stated 'los cárteles están controlando México' and criticised Ms Sheinbaum for rejecting American military help. The president said cooperation would continue 'sin subordinación.' ([Infobae](https://www.infobae.com/...), 2026-03-14) Meanwhile, Security Secretary Omar García Harfuch met DEA director Terrance Cole to discuss counter-narcotics and arms trafficking. ([El Universal](https://www.eluniversal.com.mx/...), 2026-03-10) Mr García Harfuch also detailed the El Mencho operation in American media interviews, emphasising zero impunity. ([Infobae](https://www.infobae.com/...), 2026-03-13)
+
+Viral footage of an expensive XV años celebration exposed Juan Carlos Guerrero, a PEMEX contractor with billions in government contracts. The government published a list of millionaire pension recipients from state companies including PEMEX. ([El Financiero](https://www.elfinanciero.com.mx/...), 2026-03-08)
 ```
 
-Problems: posture summary is one bloated paragraph trying to cover all five dimensions; "Mr Trump" on first mention (should be full name with office); bare abbreviations (4T, PT, PVEM, DEA, USMCA, PEMEX, SEMAR) never spelled out; Spanish quotes left untranslated; "increased coalition management challenges" is throat-clearing; passive and wordy constructions throughout.
+Problems: "Trump" on first mention (needs office + forename + surname); bare abbreviations (4T, PT, PVEM, DEA, PEMEX) never spelled out; Spanish quotes left untranslated; pronounceable abbreviation Pemex should be upper-and-lower case.
 
-**Good — after copyediting:**
+**After copyediting:**
 
 ```
-### ![Mexico](https://flagcdn.com/h24/mx.png)Mexico
+### Mexico
 
-President Claudia Sheinbaum's first major legislative defeat—on electoral reform—has shown that a formal supermajority is no guarantee of coalition discipline on sovereignty-sensitive votes. The swift pivot to a Plan B bill showed the coalition can adapt, but laid bare genuine stress within the Fourth Transformation movement (4T).
+President Claudia Sheinbaum's first major legislative defeat — on electoral reform — laid bare the limits of her supermajority.
 
-The dual-track approach of sovereignty rhetoric and practical American co-operation continues. Donald Trump's criticism of Mexico's acceptance of American military assistance triggered the expected sovereignty assertions from Ms Sheinbaum, while Security Secretary Omar García Harfuch maintained operational co-ordination with the Drug Enforcement Administration (DEA). Economic pressure from the review of the United States-Mexico-Canada Agreement is materialising through above-target inflation and trade uncertainty, while Petroleros Mexicanos (Pemex) faces persistent operational problems. Mr García Harfuch's growing international profile and the Naval Secretariat's expanding capacity further consolidate the security apparatus. The coalition can manage the strain, but the environment is harder than it was.
+Ms Sheinbaum's reform bill failed when Labour Party (PT) and Ecologist Green Party of Mexico (PVEM) allies broke ranks and voted against it alongside the opposition (259 in favour, 234 against, requiring 333 for a two-thirds majority). The National Regeneration Movement (Morena) pivoted immediately to a Plan B with modified proposals. ([La Jornada](https://www.jornada.com.mx/...), 2026-03-11) The Fourth Transformation (4T) coalition can adapt, but the stress is real.
 
-**Key developments:**
+The dual track of sovereignty rhetoric and practical American cooperation continues. President Donald Trump stated that "the cartels are controlling Mexico" and criticised Ms Sheinbaum for rejecting American military help. The president said cooperation would continue "without subordination." ([Infobae](https://www.infobae.com/...), 2026-03-14) Meanwhile, Security Secretary Omar García Harfuch met Drug Enforcement Administration (DEA) director Terrance Cole to discuss counter-narcotics and arms trafficking. ([El Universal](https://www.eluniversal.com.mx/...), 2026-03-10) Mr García Harfuch also detailed the El Mencho operation in American media interviews, emphasising zero impunity. ([Infobae](https://www.infobae.com/...), 2026-03-13)
 
--  **Domestic:** Ms Sheinbaum's electoral reform failed to achieve qualified majority when Labor Party and Ecologist Green Party of Mexico allies voted against it alongside opposition parties (259 in favour, 234 against, requiring 333 for two-thirds majority). Morena immediately announced 'Plan B' negotiations with modified proposals. *([La Jornada](https://www.jornada.com.mx/noticia/2026/03/11/politica/rechaza-san-lazaro-la-reforma-electoral-de-sheinbaum), 2026-03-11)*
--  **Domestic:** Viral footage of an expensive XV años celebration exposed PEMEX contractor Juan Carlos Guerrero with billions in contracts, highlighting corruption concerns. Government published list of millionaire pension recipients from state companies including Pemex. *([El Financiero](https://www.elfinanciero.com.mx/opinion/atzayaelh-torres/2026/03/08/belinda-en-tus-xv-anos-solo-un-proveedor-de-pemex-puede-lograrlo/), 2026-03-08)*
--  **Diplomatic:** Mr Trump stated the cartels are controlling Mexico and criticised Ms Sheinbaum for rejecting American military cooperation proposals. The president defended sovereignty saying cooperation would continue without subordination. *([Infobae](https://www.infobae.com/mexico/2026/03/14/nos-guste-o-no-los-carteles-controlan-mexico-trump-lamenta-que-sheinbaum-rechace-ayuda-de-eeuu/), 2026-03-14)*
--  **Diplomatic:** Mr García Harfuch met with DEA director Terrance Cole to discuss strengthening bilateral cooperation on counter-narcotics and stopping arms trafficking to Mexico, following presidential instructions. *([El Universal](https://www.eluniversal.com.mx/nacion/harfuch-se-reune-en-washington-dc-con-director-de-la-dea-hablan-sobre-combate-al-narco-y-trafico-de-armas/), 2026-03-10)*
--  **Security:** Mr García Harfuch detailed the El Mencho operation in American media interviews, emphasising zero impunity policy. His profile generated merchandise sales and positioned him as a key figure in American-Mexican security cooperation. *([Infobae](https://www.infobae.com/mexico/2026/03/13/muerte-de-el-mencho-proyecta-a-harfuch-en-television-de-eeuu-asi-fue-la-presentacion-del-secretario/), 2026-03-13)*
+Viral footage of an expensive XV años celebration exposed Juan Carlos Guerrero, a Pemex contractor with billions in government contracts. The government published a list of millionaire pension recipients from state companies including Pemex. ([El Financiero](https://www.elfinanciero.com.mx/...), 2026-03-08)
 ```
 
-Note what changed: posture tightened to two focused paragraphs; all abbreviations expanded on first use (4T, DEA, USMCA, Pemex, SEMAR); party names translated (PT → Labor Party, PVEM → Ecologist Green Party of Mexico); Spanish quotes rendered in English; Donald Trump given full name on first mention; "increased coalition management challenges" replaced with direct statement; pronounceable abbreviation Pemex used in upper-and-lower case.
+Note what changed: all abbreviations expanded on first use (4T, PT, PVEM, DEA, Morena); party names translated; Spanish quotes rendered in English; President Donald Trump given office + forename + surname on first mention; pronounceable abbreviation Pemex in upper-and-lower case. The prose structure was left untouched — the editor already handled that.

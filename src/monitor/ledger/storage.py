@@ -1,13 +1,20 @@
 """
-Ledger persistence: read/write country and global ledgers as JSON.
+Ledger persistence: read/write country, global, and regional ledgers as JSON.
 """
 
 import json
 import logging
+from dataclasses import asdict
 from datetime import date
 from pathlib import Path
 
-from ..config import COUNTRY_LEDGERS_DIR, GLOBAL_LEDGER_PATH, LEDGER_ARCHIVE_DIR
+from ..config import (
+    COUNTRY_LEDGERS_DIR,
+    GLOBAL_LEDGER_PATH,
+    LEDGER_ARCHIVE_DIR,
+    REGIONAL_REPORTS_DIR,
+    Region,
+)
 from ..models import CountryLedger, GlobalLedger
 
 logger = logging.getLogger(__name__)
@@ -101,6 +108,49 @@ def init_global_ledger() -> GlobalLedger:
     save_global_ledger(ledger)
     logger.info("Initialized new global ledger (cold start)")
     return ledger
+
+
+# ---- Regional Reports ----
+
+def save_regional_report(report: "RegionalReport") -> Path:
+    from ..agents.regional import RegionalReport  # noqa: F811
+    path = REGIONAL_REPORTS_DIR / f"{report.region.value}.json"
+    _write_json(path, asdict(report))
+    logger.debug("Saved regional report: %s", report.region.value)
+    return path
+
+
+def load_regional_report(region: Region) -> "RegionalReport":
+    from ..agents.regional import (
+        CrossCuttingDynamic,
+        Gap,
+        LowConfidenceItem,
+        RegionalReport,
+        RejectedDynamic,
+    )
+    path = REGIONAL_REPORTS_DIR / f"{region.value}.json"
+    if not path.exists():
+        raise FileNotFoundError(f"No regional report for '{region.value}': {path}")
+    raw = _read_json(path)
+    return RegionalReport(
+        region=Region(raw["region"]),
+        week=date.fromisoformat(raw["week"]),
+        cross_cutting_dynamics=[CrossCuttingDynamic(**d) for d in raw.get("cross_cutting_dynamics", [])],
+        dynamics_considered_and_rejected=[RejectedDynamic(**d) for d in raw.get("dynamics_considered_and_rejected", [])],
+        gaps=[Gap(**g) for g in raw.get("gaps", [])],
+        low_confidence_items=[LowConfidenceItem(**i) for i in raw.get("low_confidence_items", [])],
+    )
+
+
+def load_all_regional_reports() -> dict[Region, "RegionalReport"]:
+    reports = {}
+    for path in REGIONAL_REPORTS_DIR.glob("*.json"):
+        try:
+            region = Region(path.stem)
+            reports[region] = load_regional_report(region)
+        except (ValueError, FileNotFoundError):
+            logger.warning("Skipping invalid regional report: %s", path.name)
+    return reports
 
 
 # ---- Archival ----

@@ -174,7 +174,9 @@ async def cmd_run(args: argparse.Namespace) -> None:
         regional_reports = await run_all_regional_syntheses(
             country_ledgers, country_entries, end_date, args.concurrency
         )
+        from .ledger.storage import save_regional_report
         for region, report in regional_reports.items():
+            save_regional_report(report)
             n_dynamics = len(report.cross_cutting_dynamics)
             print(f"  {region.value}: {n_dynamics} cross-cutting dynamics")
 
@@ -196,9 +198,16 @@ async def cmd_run(args: argparse.Namespace) -> None:
             global_ledger, regional_reports, country_ledgers, country_entries, end_date
         )
 
-        # Step 8: Copyeditor
+        # Step 8: Editor — rewrite country sections into style-guide prose
+        from .agents.editor import edit_newsletter
+        print("Editing country sections...")
+        newsletter = await edit_newsletter(
+            newsletter, country_ledgers, country_entries, max_concurrent=args.concurrency
+        )
+
+        # Step 9: Copyeditor — mechanical polish (names, abbreviations)
         from .agents.copyeditor import copyedit_newsletter
-        print("Copy-editing country sections...")
+        print("Copy-editing...")
         newsletter = await copyedit_newsletter(newsletter, max_concurrent=args.concurrency)
 
         output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d")
@@ -207,16 +216,20 @@ async def cmd_run(args: argparse.Namespace) -> None:
         output_path.write_text(newsletter)
         print(f"  Newsletter written to {output_path}")
 
-        # Step 9: Publish to Mintlify site
+        # Step 10: Publish to Mintlify site
         print("Publishing to site...")
         pages = assemble_newsletter_pages(
             global_ledger, regional_reports, country_ledgers, country_entries, end_date
         )
 
-        # Copyedit multi-page output
+        # Edit + copyedit multi-page output
+        from .agents.editor import edit_newsletter as edit_pages
         from .agents.copyeditor import copyedit_newsletter as copyedit
         for slug in list(pages.keys()):
             if slug != "overview" and slug != "watchlist":
+                pages[slug] = await edit_pages(
+                    pages[slug], country_ledgers, country_entries, max_concurrent=args.concurrency
+                )
                 pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency)
 
         brief_dir = publish_brief(pages, end_date)
@@ -261,7 +274,7 @@ async def cmd_triage(args: argparse.Namespace) -> None:
 async def cmd_assemble(args: argparse.Namespace) -> None:
     """Assemble newsletter from existing ledger data."""
     from .newsletter.assembly import assemble_newsletter
-    from .agents.regional import RegionalReport
+    from .ledger.storage import load_all_regional_reports
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
 
@@ -278,8 +291,7 @@ async def cmd_assemble(args: argparse.Namespace) -> None:
         entry = ledger.latest_entry()
         country_entries[code] = entry
 
-    # No regional reports available without running synthesis
-    regional_reports: dict[Region, RegionalReport] = {}
+    regional_reports = load_all_regional_reports()
 
     newsletter = assemble_newsletter(
         global_ledger, regional_reports, country_ledgers, country_entries, end_date
@@ -296,7 +308,7 @@ def cmd_publish(args: argparse.Namespace) -> None:
     """Publish existing ledger data to the Mintlify site (no LLM calls)."""
     from .newsletter.assembly import assemble_newsletter_pages
     from .newsletter.publish import publish_brief
-    from .agents.regional import RegionalReport
+    from .ledger.storage import load_all_regional_reports
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
 
@@ -313,7 +325,7 @@ def cmd_publish(args: argparse.Namespace) -> None:
         entry = ledger.latest_entry()
         country_entries[code] = entry
 
-    regional_reports: dict[Region, RegionalReport] = {}
+    regional_reports = load_all_regional_reports()
 
     pages = assemble_newsletter_pages(
         global_ledger, regional_reports, country_ledgers, country_entries, end_date

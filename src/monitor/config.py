@@ -73,6 +73,7 @@ LEDGERS_DIR = PROJECT_ROOT / "ledgers"
 COUNTRY_LEDGERS_DIR = LEDGERS_DIR / "countries"
 GLOBAL_LEDGER_PATH = LEDGERS_DIR / "global.json"
 LEDGER_ARCHIVE_DIR = LEDGERS_DIR / "archive"
+REGIONAL_REPORTS_DIR = LEDGERS_DIR / "regional"
 DOSSIERS_DIR = ASSETS_DIR / "country_dossiers"
 
 # Ledger retention
