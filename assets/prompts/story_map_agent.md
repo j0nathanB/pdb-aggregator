@@ -54,7 +54,7 @@ Order the story list by media prominence — not by analytical importance (that'
 
 At the bottom of the story list, note:
 - **Single-source stories:** Stories covered by only one outlet. These may be exclusive reporting, minor local news, or noise. List them briefly (headline + source) without full cluster treatment. The country agent can decide whether any are worth investigating.
-- **Off-topic results:** Search results that clearly don't relate to the country's political, economic, security, or institutional dynamics (sports, entertainment, lifestyle, obituaries of non-political figures). Note how many were filtered and from which queries. This tells the country agent how noisy the search results were.
+- **Off-topic results:** Search results that don't relate to the country's political, economic, security, or institutional dynamics. Filter aggressively — the country agent has limited attention. Off-topic includes: sports results, league standings, match reports, transfer news, player injuries, tournament qualifications, TV broadcast deals for sports, entertainment, celebrity news, lifestyle, weather, obituaries of non-political figures, and human-interest stories. A football story is off-topic even if it involves a national team — unless a head of state or government institution is materially involved (e.g. a stadium corruption scandal, government sports funding policy). Note how many were filtered and from which queries.
 
 ### 5. Verify Completeness
 
