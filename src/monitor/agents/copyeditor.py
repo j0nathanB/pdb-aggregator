@@ -14,7 +14,18 @@ from dataclasses import dataclass
 
 import anthropic
 
-from ..config import ANTHROPIC_API_KEY, THINKING_BUDGET_TOKENS, load_prompt
+from ..config import ANTHROPIC_API_KEY, PROJECT_ROOT, THINKING_BUDGET_TOKENS, load_prompt
+
+# Style guide loaded once per process
+_style_guide: str | None = None
+
+
+def _load_style_guide() -> str:
+    """Load the style guide from docs/style_guide.md."""
+    global _style_guide
+    if _style_guide is None:
+        _style_guide = (PROJECT_ROOT / "docs" / "style_guide.md").read_text()
+    return _style_guide
 
 # Copyeditor always uses Opus for highest editorial quality
 COPYEDITOR_MODEL = "claude-opus-4-6-20250826"
@@ -95,7 +106,9 @@ async def run_copyeditor(
     if not section_text.strip():
         return section_text
 
-    system_prompt = load_prompt("copyeditor", COUNTRY=label)
+    task_prompt = load_prompt("copyeditor", COUNTRY=label)
+    style_guide = _load_style_guide()
+    system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
     user_message = build_copyeditor_prompt(section_text, section_type)
 
     logger.info("Copyeditor [%s]: starting, input=%d chars", label, len(section_text))
