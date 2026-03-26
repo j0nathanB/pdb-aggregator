@@ -120,7 +120,8 @@ async def cmd_run(args: argparse.Namespace) -> None:
     from .orchestrator import run_desk_pipeline
     from .agents.regional import run_all_regional_syntheses, REGION_COUNTRIES
     from .agents.executive import run_executive_agent
-    from .newsletter.assembly import assemble_newsletter
+    from .newsletter.assembly import assemble_newsletter, assemble_newsletter_pages
+    from .newsletter.publish import publish_brief
     from .run_recorder import RunRecorder
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
@@ -205,6 +206,21 @@ async def cmd_run(args: argparse.Namespace) -> None:
         output_path = output_dir / "newsletter.md"
         output_path.write_text(newsletter)
         print(f"  Newsletter written to {output_path}")
+
+        # Step 9: Publish to Mintlify site
+        print("Publishing to site...")
+        pages = assemble_newsletter_pages(
+            global_ledger, regional_reports, country_ledgers, country_entries, end_date
+        )
+
+        # Copyedit multi-page output
+        from .agents.copyeditor import copyedit_newsletter as copyedit
+        for slug in list(pages.keys()):
+            if slug != "overview" and slug != "watchlist":
+                pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency)
+
+        brief_dir = publish_brief(pages, end_date)
+        print(f"  Site published to {brief_dir}")
     else:
         print("Skipping synthesis and assembly (--skip-synthesis)")
 
@@ -274,6 +290,36 @@ async def cmd_assemble(args: argparse.Namespace) -> None:
         print(f"Newsletter written to {args.output}")
     else:
         print(newsletter)
+
+
+def cmd_publish(args: argparse.Namespace) -> None:
+    """Publish existing ledger data to the Mintlify site (no LLM calls)."""
+    from .newsletter.assembly import assemble_newsletter_pages
+    from .newsletter.publish import publish_brief
+    from .agents.regional import RegionalReport
+
+    end_date = date.fromisoformat(args.date) if args.date else date.today()
+
+    if not global_ledger_exists():
+        print("No global ledger found. Run the pipeline first.")
+        return
+
+    global_ledger = load_global_ledger()
+    country_ledgers = {}
+    country_entries: dict = {}
+    for code in list_country_ledgers():
+        ledger = load_country_ledger(code)
+        country_ledgers[code] = ledger
+        entry = ledger.latest_entry()
+        country_entries[code] = entry
+
+    regional_reports: dict[Region, RegionalReport] = {}
+
+    pages = assemble_newsletter_pages(
+        global_ledger, regional_reports, country_ledgers, country_entries, end_date
+    )
+    brief_dir = publish_brief(pages, end_date)
+    print(f"Published {len(pages)} pages to {brief_dir}")
 
 
 def cmd_status(args: argparse.Namespace) -> None:
@@ -357,6 +403,10 @@ def build_parser() -> argparse.ArgumentParser:
     p_assemble.add_argument("--date", help="End date (YYYY-MM-DD)")
     p_assemble.add_argument("--output", "-o", help="Output file path")
 
+    # publish
+    p_publish = subparsers.add_parser("publish", help="Publish brief to Mintlify site")
+    p_publish.add_argument("--date", help="End date (YYYY-MM-DD)")
+
     # status
     subparsers.add_parser("status", help="Show pipeline status")
 
@@ -383,6 +433,8 @@ def main() -> None:
         asyncio.run(cmd_triage(args))
     elif args.command == "assemble":
         asyncio.run(cmd_assemble(args))
+    elif args.command == "publish":
+        cmd_publish(args)
 
 
 if __name__ == "__main__":

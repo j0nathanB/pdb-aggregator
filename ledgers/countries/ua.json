@@ -1,0 +1,799 @@
+{
+  "country": "Ukraine",
+  "code": "ua",
+  "tier": "crucible",
+  "actors": [
+    {
+      "name": "Volodymyr Zelensky",
+      "role": "President",
+      "primary": true
+    },
+    {
+      "name": "Oleksandr Syrskyi",
+      "role": "Commander-in-Chief of the Armed Forces",
+      "primary": false
+    },
+    {
+      "name": "Kyrylo Budanov",
+      "role": "Head of the Office of the President",
+      "primary": false
+    },
+    {
+      "name": "Yuliia Svyrydenko",
+      "role": "Prime Minister",
+      "primary": false
+    },
+    {
+      "name": "Andrii Sybiha",
+      "role": "Foreign Minister",
+      "primary": false
+    },
+    {
+      "name": "Armed Forces of Ukraine",
+      "role": "Military",
+      "primary": false
+    },
+    {
+      "name": "National Bank of Ukraine",
+      "role": "Central Bank",
+      "primary": false
+    },
+    {
+      "name": "SBU",
+      "role": "Security Service of Ukraine",
+      "primary": false
+    },
+    {
+      "name": "Servant of the People",
+      "role": "Presidential party",
+      "primary": false
+    },
+    {
+      "name": "Mykhailo Fedorov",
+      "role": "Defense Minister",
+      "primary": false
+    },
+    {
+      "name": "HUR",
+      "role": "Main Intelligence Directorate",
+      "primary": false
+    }
+  ],
+  "last_updated": "2026-01-25",
+  "created": "2026-03-25",
+  "posture_summary": {
+    "as_of": "2026-01-25",
+    "text": "Ukraine operates as a wartime state undergoing tactical recalibration of its Western alignment strategy while transitioning to more aggressive military posture and potentially preparing for post-war leadership transitions. The country maintains unprecedented Western integration through EU accession negotiations and bilateral security agreements, but is openly criticizing European strategic paralysis while pursuing transactional commitments with the Trump administration through new trilateral negotiation formats. Military doctrine has shifted toward offensive operations with escalated casualty objectives and AI-integrated drone warfare capabilities. Major domestic leadership changes bring intelligence professionals into civilian roles, potentially signaling succession planning. Despite severe demographic decline and infrastructure destruction, the state demonstrates continued capacity for strategic adaptation while fighting an existential conflict.",
+    "category_status": {
+      "alignment_diplomatic": "active",
+      "security_defense": "active",
+      "economic_tech": "routine",
+      "institutional": "quiet",
+      "domestic_regime": "active"
+    },
+    "last_deep_dive": "2026-01-25",
+    "consecutive_maintenance_weeks": 0
+  },
+  "signal_categories": {
+    "alignment_diplomatic": {
+      "current_assessment": "Ukraine is recalibrating its alignment strategy through public criticism of European paralysis while pursuing transactional security commitments with the Trump administration. The trilateral talks format suggests potential shift toward US-mediated rather than EU-led conflict resolution, marking tactical adaptation to changed geopolitical dynamics while maintaining core Western orientation.",
+      "confidence": 4,
+      "confidence_rationale": "Multiple independent tier-2 sources confirm both unprecedented European criticism and Trump security guarantees breakthrough, with new trilateral negotiation format providing structural evidence of diplomatic recalibration.",
+      "key_actors": [
+        "Volodymyr Zelensky",
+        "Donald Trump",
+        "Steve Witkoff",
+        "Kyrylo Budanov"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a714"
+      ],
+      "last_updated": "2026-01-25"
+    },
+    "security_defense": {
+      "current_assessment": "Ukraine's military posture has evolved from primarily defensive operations to offensive doctrine seeking operational initiative, with escalated casualty objectives and integration of AI-driven drone warfare capabilities. Leadership expresses confidence in current force capacity despite persistent mobilization challenges, signaling more aggressive approach to achieving military objectives.",
+      "confidence": 4,
+      "confidence_rationale": "Direct doctrinal statements from both Commander-in-Chief and Defense Minister supported by specific tactical capability announcements and force structure changes.",
+      "key_actors": [
+        "Oleksandr Syrskyi",
+        "Mykhailo Fedorov",
+        "Armed Forces of Ukraine"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a720"
+      ],
+      "last_updated": "2026-01-25"
+    },
+    "economic_tech": {
+      "current_assessment": "Economy maintains structural transformation toward IT/agriculture/defense sectors with continued 43% fiscal dependency on Western support. Emergency energy aid demonstrates sustained international commitment but reflects reactive assistance rather than strategic economic repositioning. Defense industry growth trajectory continues as potential major export sector.",
+      "confidence": 3,
+      "confidence_rationale": "Single strong source on energy aid package, consistent with established dependency patterns but no fundamental structural change evident.",
+      "key_actors": [
+        "Yuliia Svyrydenko",
+        "G7+ partners"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a76"
+      ],
+      "last_updated": "2026-01-25"
+    },
+    "institutional": {
+      "current_assessment": "EU accession negotiations continue as primary institutional transformation vehicle with all 35 chapters screened despite Hungarian obstruction. Anti-corruption institutions maintain operational capacity and independence. Wartime power concentration coexists with resilient constitutional constraints and decentralized governance structures.",
+      "confidence": 3,
+      "confidence_rationale": "No significant institutional developments this week; assessment remains baseline from prior analysis.",
+      "key_actors": [
+        "NABU",
+        "SAPO",
+        "European Commission"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a74"
+      ],
+      "last_updated": "2026-01-18"
+    },
+    "domestic_regime": {
+      "current_assessment": "Major leadership transition brings intelligence chief Budanov into key civilian role as head of President's Office, potentially signaling succession planning or post-war transition preparation. Simultaneous Defense Ministry reorganization suggests broader security sector personnel realignment while maintaining wartime power concentration under martial law.",
+      "confidence": 4,
+      "confidence_rationale": "Multiple sources confirm major appointments and their political significance, with clear documentation of personnel changes across security institutions.",
+      "key_actors": [
+        "Kyrylo Budanov",
+        "Mykhailo Fedorov",
+        "Volodymyr Zelensky"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a715",
+        "\u00a720"
+      ],
+      "last_updated": "2026-01-25"
+    }
+  },
+  "weekly_entries": [
+    {
+      "week": "2026-01-25",
+      "date_range": "2026-01-18 to 2026-01-25",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "Three signal categories show significant movement: alignment_diplomatic (Zelensky's harsh Davos critique of Europe, Trump security guarantees agreement, trilateral talks initiation), security_defense (shift to offensive operations doctrine, escalated casualty targets, new tactical approaches), and domestic_regime (major leadership change with Budanov appointment). The 35-source Davos story represents the most prominent diplomatic messaging shift since the invasion. Note: Sybiha's diplomatic outreach (15 sources) was heavily covered but represents routine rather than posture-shifting activity."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Zelensky delivers scathing critique of Europe at Davos, announces security guarantees with Trump",
+              "date": "2026-01-21",
+              "source": "Multiple outlets",
+              "source_tier": 2,
+              "source_url": "https://www.bbc.com/news/live/cjrzjqg8dlwt",
+              "summary": "Zelensky gave an unusually harsh speech at WEF criticizing Europe as 'fragmented' and 'lost,' comparing the situation to 'Groundhog Day.' He stated Europe looks 'lost trying to convince the US president to change' and that Trump 'will not listen to this kind of Europe.' Following his meeting with Trump, Zelensky announced they reached agreement on post-war US security guarantees for Ukraine, though territorial issues remain unresolved.",
+              "actors_involved": [
+                "Volodymyr Zelensky",
+                "Donald Trump"
+              ],
+              "signal_category_relevance": "Represents a fundamental shift from Zelensky's typically warm pro-European rhetoric to open criticism, while simultaneously announcing breakthrough with Trump on security guarantees - signals potential pivot in alliance approach."
+            },
+            {
+              "headline": "Ukraine-Russia-US trilateral peace talks begin in UAE after Davos meetings",
+              "date": "2026-01-22",
+              "source": "ABC Australia",
+              "source_tier": 2,
+              "source_url": "https://abc.net.au/news/2026-01-23/zelenskyy-announces-ukraine-talks-with-russia-us/106260134",
+              "summary": "Following Zelensky's Davos meetings, trilateral negotiations between Ukrainian, Russian, and American delegations began in Abu Dhabi. Ukraine sent high-level delegation including Budanov and Umerov. Trump's envoy Steve Witkoff and son-in-law Jared Kushner held three-hour talks with Putin. Kremlin confirmed the three-way format while stating Russia would continue battlefield operations until diplomatic settlement.",
+              "actors_involved": [
+                "Kyrylo Budanov",
+                "Steve Witkoff",
+                "Jared Kushner"
+              ],
+              "signal_category_relevance": "Establishes new trilateral diplomatic format that could represent the primary peace negotiation mechanism, marking escalation from bilateral approaches."
+            }
+          ],
+          "prior_assessment": "Ukraine has achieved unprecedented Western integration through EU accession negotiations and bilateral security agreements, but faces fundamentally transactional relationship with US under Trump while European partnerships remain primary institutional anchor.",
+          "updated_assessment": "Ukraine is recalibrating its alignment strategy, openly criticizing European paralysis while securing Trump administration security commitments through transactional diplomacy. The trilateral talks format suggests potential shift toward US-mediated rather than EU-led conflict resolution, even as Zelensky questions European strategic coherence.",
+          "confidence_change": {
+            "from": 3,
+            "to": 4,
+            "reason": "Multiple independent sources confirm both the unprecedented criticism of Europe and the Trump security guarantees breakthrough, supported by establishment of new trilateral negotiation format."
+          }
+        },
+        "security_defense": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Commander-in-Chief Syrskyi announces Ukraine will shift to offensive operations",
+              "date": "2026-01-18",
+              "source": "RBC Ukraine",
+              "source_tier": 2,
+              "source_url": "https://newsukraine.rbc.ua/news/ukraine-to-shift-to-offensive-operations-1768757707.html",
+              "summary": "Syrskyi announced Ukraine will conduct offensive operations in 2026, stating 'victory cannot be achieved through defense alone.' He emphasized Ukraine will maintain strategic defense while conducting offensive operations to keep operational initiative. He reported Russian drone production at 404 Shaheds daily with plans to reach 1,000 per day, while Ukrainian forces disrupted Russian formations and liberated 430 sq km near Pokrovsk in recent counteroffensive.",
+              "actors_involved": [
+                "Oleksandr Syrskyi"
+              ],
+              "signal_category_relevance": "Represents doctrinal shift from primarily defensive posture to offensive operations seeking to regain initiative, indicating confidence in capabilities and rejection of static defense."
+            },
+            {
+              "headline": "New Defense Minister Fedorov sets ambitious goal of 50,000 Russian casualties per month",
+              "date": "2026-01-19",
+              "source": "Kyiv Post",
+              "source_tier": 2,
+              "source_url": "https://www.kyivpost.com/post/68426",
+              "summary": "Defense Minister Fedorov outlined goal of inflicting 50,000 Russian battlefield deaths monthly, up from current 35,000. He announced plans for drone-assault units with new staffing structures, AI integration of combat data through Mission Control project, and 40,000 interceptor drones expected this month. Stated Ukraine would target Russian drone operators directly and scale up specialized hunter units.",
+              "actors_involved": [
+                "Mykhailo Fedorov"
+              ],
+              "signal_category_relevance": "Signals major escalation in military objectives and introduction of new tactical approaches (drone-assault units, AI integration, direct targeting of operators), representing more aggressive posture."
+            }
+          ],
+          "prior_assessment": "Armed Forces comprise Europe's largest fighting force with pioneering drone warfare capabilities, but face existential mobilization crisis with 2 million draft evaders threatening long-term sustainability despite tactical innovations.",
+          "updated_assessment": "Ukraine's military posture has shifted toward offensive operations with escalated casualty objectives and new tactical approaches including AI-integrated drone warfare and specialized assault units. The mobilization crisis persists but leadership is signaling confidence in current force capacity to achieve higher operational tempo.",
+          "confidence_change": {
+            "from": 3,
+            "to": 4,
+            "reason": "Direct statements from both Commander-in-Chief and Defense Minister confirm coordinated shift in military doctrine, supported by specific capability announcements."
+          }
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "International partners pledge over 6,000 units of energy equipment as Ukraine faces winter crisis",
+              "date": "2026-01-20",
+              "source": "Ukrinform",
+              "source_tier": 2,
+              "source_url": "https://ukrinform.net/rubric-economy/4083643-partners-to-provide-ukraine-with-over-6000-units-of-energy-equipment-svyrydenko.html",
+              "summary": "PM Svyrydenko announced G7+ partners committed over 6,000 units of large energy equipment and hundreds of millions in funding after emergency coordination meetings. EU providing 447 generators, Germany \u20ac60 million plus equipment, UK nearly \u20ac23 million, US $400 million for humanitarian projects. Comes as Russian strikes left millions without heat and power during freezing conditions.",
+              "actors_involved": [
+                "Yuliia Svyrydenko"
+              ],
+              "signal_category_relevance": "Demonstrates continued Western economic support through emergency energy aid but represents reactive assistance rather than shift in economic statecraft approach."
+            }
+          ],
+          "prior_assessment": "Economy transformed from oligarch-dominated to diversified IT/agriculture/defense sectors, with 43% fiscal dependency on Western support creating both stability and vulnerability. Defense industry emerging as major new sector.",
+          "updated_assessment": "Ukraine continues to rely on Western partners for emergency economic support, particularly for critical infrastructure. The G7+ energy equipment pledge demonstrates sustained international commitment to maintaining Ukrainian economic functionality through winter crisis, but does not alter the fundamental dependency structure.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "EU accession negotiations serve as primary transformation driver with all 35 chapters screened despite Hungarian obstruction. Anti-corruption institutions achieved escape velocity, surviving executive subordination attempts through EU conditionality.",
+          "updated_assessment": "No significant institutional developments this week. EU accession process continues at technical level, anti-corruption institutions remain active, wartime power concentration coexists with constitutional constraints.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Budanov appointed as new head of President's Office amid leadership changes",
+              "date": "2026-01-18",
+              "source": "The Week",
+              "source_tier": 2,
+              "source_url": "https://theweek.com/world-news/the-rise-of-the-spymaster-a-tectonic-shift-in-ukraines-politics",
+              "summary": "Former military intelligence chief Kyrylo Budanov was appointed head of the President's Office, replacing Andriy Yermak. Analysis describes this as a 'tectonic shift' in Ukrainian politics. Budanov is highly trusted (some polls show more than Zelensky), known for surviving 10 assassination attempts and directing major operations against Russia. Move seen as potentially launching 'Operation Successor' though Zelensky has cut Budanov off from his intelligence base by choosing a Yermak ally as HUR successor.",
+              "actors_involved": [
+                "Kyrylo Budanov",
+                "Andriy Yermak"
+              ],
+              "signal_category_relevance": "Major power reshuffle potentially signaling succession planning, brings highly popular security professional into top civilian role, represents shift from political fixer (Yermak) to operational commander (Budanov)."
+            },
+            {
+              "headline": "Government dismisses five deputy defense ministers including Hanna Gvozdiar",
+              "date": "2026-01-21",
+              "source": "Defense Express",
+              "source_tier": 2,
+              "source_url": "https://oboronka.mezha.ua/en/kabmin-zvilniv-p-yatoh-zastupnikiv-ministra-oboroni-307945/",
+              "summary": "Cabinet dismissed five deputy defense ministers including Hanna Gvozdiar (focused on defense-industrial complex development), plus Volodymyr Zaverukha, Anatoly Klochko, Oleksandr Kozenko, and Mykola Shevtsov. New Defense Minister Fedorov thanked each for their contribution, stated some will continue as advisors or project heads, and announced new team members arriving in coming weeks.",
+              "actors_involved": [
+                "Mykhailo Fedorov",
+                "Hanna Gvozdiar"
+              ],
+              "signal_category_relevance": "Large-scale personnel changes at Defense Ministry indicate major reorganization under new minister, suggesting shift in defense management approach and priorities."
+            }
+          ],
+          "prior_assessment": "Martial law concentrates executive authority yet democratic institutions retain functional capacity. Civil society mobilized 630+ organizations, presidential term expired May 2024 but martial law provides de facto legitimacy amid growing strain.",
+          "updated_assessment": "Major leadership transition with intelligence chief Budanov taking key civilian role as head of President's Office, potentially signaling succession planning or preparation for post-war transition. Simultaneous Defense Ministry reorganization suggests broader personnel realignment in security sector.",
+          "confidence_change": {
+            "from": 3,
+            "to": 4,
+            "reason": "Multiple sources confirm the Budanov appointment and its significance, while government documents confirm the Defense Ministry dismissals, providing clear evidence of major domestic power shifts."
+          }
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "Unknown",
+          "date": "2026-01-25",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [],
+      "devils_advocate": {
+        "challenges": [
+          "The alignment_diplomatic confidence increase to 4 rests on vague sourcing: 'Multiple outlets, tier 2' provides no way to assess source independence, while the trilateral talks development relies on a single Australian outlet. Confidence 4 requires robust independent verification that isn't demonstrated here.",
+          "The security_defense assessment treats official military statements as factual strategic shifts rather than potential messaging. Both Syrskyi's offensive operations announcement and Fedorov's casualty targets could be morale/deterrence signaling rather than operational reality, yet confidence increased to 4 based primarily on government sources.",
+          "The domestic_regime assessment of Budanov's appointment as a 'tectonic shift' appears to derive from one outlet's characterization rather than multiple independent confirmations of the actual appointment and its significance. The confidence jump to 4 may be anchoring on the dramatic framing rather than source strength.",
+          "All structural claims show identical future dates (2026-03-25) and zero pressure weeks, suggesting they were carried forward without genuine reassessment rather than actively checked against this week's developments."
+        ],
+        "recommended_adjustments": [
+          "Specify which outlets provided independent Zelensky Davos coverage and require second-source confirmation of trilateral talks format before maintaining confidence 4, or downgrade to 3 until source independence is established.",
+          "Reframe security_defense assessment to acknowledge that official military statements may be strategic messaging rather than operational fact, and reduce confidence to 3 until non-government sources can verify the claimed doctrine shifts.",
+          "Seek independent confirmation of Budanov appointment beyond single outlet's analysis, particularly from government sources or multiple media confirmations, before scoring confidence 4 on domestic power shifts.",
+          "Conduct actual structural claim checks against this week's evidence rather than carrying forward prior confirmations, and correct the date formatting error that shows future dates for completed checks."
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [
+        {
+          "claim_ref": "unknown",
+          "claim_text": "",
+          "status": "confirmed",
+          "evidence": "Budanov's appointment to head President's Office while Yermak ally takes HUR demonstrates regime-specific power arrangements - OPU influence transferred through personal loyalty rather than institutional design",
+          "confidence_in_claim": 3
+        }
+      ],
+      "story_clusters": [
+        {
+          "headline": "Zelensky delivers scathing critique of Europe at Davos, announces security guarantees with Trump",
+          "summary": "Ukrainian President Zelensky gave a harsh speech at the World Economic Forum criticizing Europe as 'fragmented' and 'lost,' comparing the situation to 'Groundhog Day.' He met with Trump and announced they reached agreement on post-war US security guarantees for Ukraine, though territorial issues remain unresolved.",
+          "source_url": "https://www.nytimes.com/2026/01/22/world/europe/davos-zelensky.html",
+          "source_name": "nytimes.com"
+        },
+        {
+          "headline": "Commander-in-Chief Syrskyi announces new offensive operations, warns of Russian drone production surge",
+          "summary": "Armed Forces Commander Syrskyi announced Ukraine will shift to offensive operations in 2026, stating 'victory cannot be achieved through defense alone.' He reported Russia is producing 404 Shahed drones daily and plans to reach 1,000 per day, while Ukraine conducted successful operations around Pokrovsk.",
+          "source_url": "https://www.businessinsider.com/ukraine-oleksandr-syrskyi-russia-1000-shahed-per-day-2026-1",
+          "source_name": "businessinsider.com"
+        },
+        {
+          "headline": "International partners pledge massive energy aid as Ukraine faces winter crisis",
+          "summary": "Prime Minister Svyrydenko announced G7+ partners committed to providing over 6,000 units of energy equipment and hundreds of millions in funding after emergency coordination meetings. The aid comes as Russian strikes have left millions without heat and power across multiple regions.",
+          "source_url": "https://euromaidanpress.com/2026/01/23/g7-pledges-generators-and-funding/",
+          "source_name": "euromaidanpress.com"
+        },
+        {
+          "headline": "Foreign Minister Sybiha conducts extensive diplomatic outreach amid war pressures",
+          "summary": "Foreign Minister Sybiha engaged in multiple diplomatic activities including sharp exchanges with Hungary's Orban over EU membership, coordination with EU officials on energy needs, and outreach to ASEAN countries. He warned Russia is planning strikes on nuclear plant substations.",
+          "source_url": "https://ukrinform.net/rubric-polytics/4083569-sybiha-to-orban-when-ukraine-joins-eu-we-will-frame-your-lies-in-verkhovna-rada.html",
+          "source_name": "ukrinform.net"
+        },
+        {
+          "headline": "New Defense Minister Fedorov sets ambitious goal of 50,000 Russian casualties per month",
+          "summary": "Defense Minister Mykhailo Fedorov outlined aggressive new military objectives including inflicting 50,000 Russian battlefield deaths monthly, up from current 35,000. He announced plans for drone-assault units, AI integration of combat data, and comprehensive military reforms.",
+          "source_url": "https://www.kyivpost.com/post/68426",
+          "source_name": "kyivpost.com"
+        },
+        {
+          "headline": "Ukraine-Russia-US trilateral peace talks begin in UAE after Davos meetings",
+          "summary": "Following Zelensky's meetings in Davos, trilateral negotiations between Ukrainian, Russian, and American delegations began in Abu Dhabi. The talks focused on territorial issues in eastern Ukraine, with Ukraine sending a high-level delegation including Budanov, Umerov, and other officials.",
+          "source_url": "https://abc.net.au/news/2026-01-23/zelenskyy-announces-ukraine-talks-with-russia-us/106260134",
+          "source_name": "abc.net.au"
+        },
+        {
+          "headline": "Russian strikes leave Ukrainian cities without power and heat in harsh winter",
+          "summary": "Massive Russian missile and drone attacks targeted Ukraine's energy infrastructure, leaving over one million people in Kyiv without power and heating. Strikes hit regions including Kyiv, Kharkiv, Chernihiv, Sumy, Dnipro, and Zaporizhzhia during freezing winter conditions.",
+          "source_url": "https://www.bbc.com/news/articles/cwy1lpgqenxo",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "Budanov appointed as new head of President's Office amid leadership changes",
+          "summary": "Former military intelligence chief Kyrylo Budanov was appointed head of the President's Office, replacing Andriy Yermak. Polls show Budanov leads in public trust ratings alongside former Commander Zaluzhnyi. He is participating in peace negotiations and seen as a potential successor to Zelensky.",
+          "source_url": "https://theweek.com/world-news/the-rise-of-the-spymaster-a-tectonic-shift-in-ukraines-politics",
+          "source_name": "theweek.com"
+        },
+        {
+          "headline": "SBU elite units destroy $4 billion worth of Russian air defense systems",
+          "summary": "The Security Service of Ukraine's special forces conducted successful long-range strikes throughout 2025, destroying Russian air defense systems worth $4 billion including S-400, Buk, Tor, and Pantsir systems, as well as various radar installations.",
+          "source_url": "https://euromaidanpress.com/2026/01/19/sbu-shows-unseen-footage-of-4b-russian-air-defenses-destroyed-in-2025-video",
+          "source_name": "euromaidanpress.com"
+        }
+      ]
+    }
+  ],
+  "structural_claim_status": [
+    {
+      "claim_ref": "STRUC-01",
+      "claim_text": "The OPU's power concentration is regime-specific, not institutionally embedded; a post-Zelensky president could reconstitute different power arrangements without constitutional change.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-02",
+      "claim_text": "The AFU's corps-level reorganization will survive any political transition and represents irreversible institutional modernization.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-03",
+      "claim_text": "EU accession conditionality \u2014 not domestic parliamentary opposition \u2014 is the binding constraint on executive overreach under martial law.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-04",
+      "claim_text": "The oligarchic system as a structural feature of Ukrainian governance is effectively dead; new rent-seeking networks (defense procurement, reconstruction) will emerge but lack the political-media-industrial integration of the old model.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-05",
+      "claim_text": "The anti-corruption architecture (NABU/SAPO/HACC) has achieved institutional escape velocity \u2014 it can investigate the president's inner circle and survive attempts at subordination.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-06",
+      "claim_text": "The 2022 invasion has produced a durable identity consolidation that will survive the war's end; the pre-2014 east-west political cleavage will not reconstitute in its former configuration.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-07",
+      "claim_text": "Euromaidan's institutional legacy (anti-corruption bodies, EU association) is more structurally consequential than its narrative legacy; the \"European choice\" is embedded in institutions, not just sentiment.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-08",
+      "claim_text": "The Holodomor will remain the primary formation trauma in Ukrainian national memory regardless of the 2022 war's outcome; the war adds a layer but does not displace earlier traumas.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-09",
+      "claim_text": "The WWII historical memory question (OUN-UPA rehabilitation) will become a liability in EU accession negotiations, particularly with Poland, and will require revisiting the 2015 decommunization laws' most contentious provisions.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-10",
+      "claim_text": "The language shift from Russian to Ukrainian is behaviorally irreversible for the Euromaidan and war generations but will not fully resolve bilingualism in the Soviet-era generation.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-11",
+      "claim_text": "NATO membership is the only institutional mechanism that can resolve Ukraine's permanent geographic vulnerability on the eastern and northern borders; no amount of fortification substitutes for collective defense guarantees.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-12",
+      "claim_text": "Ukraine's asymmetric naval success has permanently altered Black Sea strategic geography; even without Crimea, Ukraine can deny Russia maritime dominance through drone warfare and coastal missile defense.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-13",
+      "claim_text": "The loss of Donbas industrial capacity is economically irreversible regardless of territorial outcome; Ukraine's post-war economy will be structurally different from its pre-war configuration.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-14",
+      "claim_text": "Agricultural export geography will drive Ukraine toward permanent diversification away from exclusive Black Sea port dependence \u2014 Solidarity Lanes and Danube alternatives will persist as complementary routes.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-15",
+      "claim_text": "The Zaporizhzhia NPP will remain a strategic leverage point in any peace negotiation; its disposition will be one of the most consequential infrastructure decisions in any settlement.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-16",
+      "claim_text": "The Habsburg-Russian imperial divide in western vs. eastern Ukraine produced institutional differences that persisted through the Soviet period and remain visible in post-independence political behavior; this cleavage is being narrowed but not eliminated by the war.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-17",
+      "claim_text": "EU accession is functioning as the most comprehensive institutional transformation vehicle in Ukraine's history \u2014 more thorough than independence itself, which preserved most Soviet institutional structures.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-18",
+      "claim_text": "The railway gauge conversion is a reliable leading indicator of institutional reorientation; the pace of 1,435mm gauge expansion will track EU integration momentum.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-19",
+      "claim_text": "The SBU's institutional DNA as a KGB successor creates a permanent tension between its security mission and rule-of-law requirements; this tension will intensify during EU accession negotiations.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-20",
+      "claim_text": "The oligarchic system's destruction has created a window for institutional reform that will close as reconstruction creates new rent-seeking opportunities; the 2026-2028 period is the critical reform window.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-21",
+      "claim_text": "The wartime linguistic shift from Russian to Ukrainian is behaviorally durable for younger cohorts but will not fully eliminate bilingualism; post-war language politics will center on the degree of accommodation, not the direction of change.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-22",
+      "claim_text": "The Hungarian minority issue in Transcarpathia is the most likely internal cleavage to generate external diplomatic friction during EU accession negotiations; resolution requires Ukrainian concessions on education law that the current wartime nationalist consensus resists.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-23",
+      "claim_text": "The UOC-MP's legal dissolution will take 5-10 years to complete through individual parish proceedings; during this period, the religious cleavage will function as a domestic security concern and international diplomatic vulnerability.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-24",
+      "claim_text": "IDP-driven demographic mixing is producing a durable compression of regional cleavages that will persist even if displaced populations eventually return; Kyiv and Dnipro are permanently more nationally diverse.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-25",
+      "claim_text": "New post-war cleavages \u2014 military vs. civilian, veterans vs. those who fled, occupied territory returnees vs. free-Ukraine residents \u2014 will partially replace the old east-west divide as the primary axis of political competition.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-26",
+      "claim_text": "Ukraine's population will not return to 40 million in any plausible scenario; state planning must assume a long-term population of 28-35 million.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-27",
+      "claim_text": "Refugee return rates will be the single most consequential variable for post-war reconstruction capacity; policies in host countries (particularly Germany, Poland, and Czech Republic) will matter more than Ukrainian government inducements.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-28",
+      "claim_text": "The gender imbalance from martial law-era male travel restrictions will produce measurable social consequences (marriage rates, fertility, workforce composition) lasting at least a generation.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-29",
+      "claim_text": "The diaspora's political significance will shift from wartime advocacy to post-war reconstruction financing and talent circulation; institutionalizing this relationship (dual citizenship frameworks, diaspora bonds, remote work arrangements) is a critical near-term policy priority.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-30",
+      "claim_text": "The demographic constraint will force Ukraine toward immigration-friendly policies unprecedented in the post-Soviet space \u2014 a structural requirement for reconstruction that will generate political tension with nationalist sentiment.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-31",
+      "claim_text": "Ukraine's budget dependency on Western financing (~43% of expenditure) will persist for at least 5-7 years post-war; this creates a structural conditionality relationship that will constrain sovereignty but anchor reform.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-32",
+      "claim_text": "The defense industry is emerging as a permanent economic sector, not a temporary wartime phenomenon; Ukraine will become a significant arms exporter within 5 years of any ceasefire.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-33",
+      "claim_text": "The oligarchic economy's replacement by a diversified IT/agriculture/defense structure is irreversible; the question is whether reconstruction creates new concentrated economic power or distributed growth.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-34",
+      "claim_text": "Energy infrastructure destruction has forced a decentralization of Ukraine's energy system (distributed solar, battery storage, small gas turbines) that will prove more resilient and EU-compatible than the pre-war centralized model.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-35",
+      "claim_text": "EU trade reorientation will deepen regardless of the war's outcome; the DCFTA 2.0 and Solidarity Lanes have created permanent commercial pathways that will not be reversed even under diplomatic pressure.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-36",
+      "claim_text": "The ENTSO-E synchronization is the single most irreversible infrastructure decision of the war; Ukraine's electricity grid is permanently European, regardless of political outcomes.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-37",
+      "claim_text": "The gas transit termination (January 2025) marks the end of energy interdependence with Russia; this dependency \u2014 which constrained Ukrainian foreign policy for three decades \u2014 will not reconstitute.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-38",
+      "claim_text": "Rail gauge conversion progress is the most reliable measurable indicator of EU integration momentum; if the Lviv standard-gauge connection is completed by 2027 as planned, accession negotiations are on track; delays will signal institutional friction.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-39",
+      "claim_text": "Starlink dependency is an acute strategic vulnerability that will not be resolved before 2028 (IRIS2 launch); during this period, SpaceX decisions on pricing, coverage, and feature availability function as de facto infrastructure policy for a sovereign nation at war.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    },
+    {
+      "claim_ref": "STRUC-40",
+      "claim_text": "Reconstruction costs ($588 billion) exceed plausible financing commitments; the gap will be managed through phased implementation over 15-20 years, with infrastructure prioritization serving as the de facto mechanism for selecting Ukraine's post-war economic geography \u2014 Western-funded reconstruction will concentrate in government-controlled western and central regions, reinforcing the westward institutional pivot.",
+      "dossier_section": 0,
+      "status": "confirmed",
+      "last_checked": "2026-03-25",
+      "evidence_summary": "Baseline \u2014 not yet tested against weekly evidence.",
+      "weeks_under_pressure": 0,
+      "recommendation": ""
+    }
+  ],
+  "corrections_log": [],
+  "consolidated_history": ""
+}

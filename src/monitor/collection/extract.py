@@ -595,15 +595,10 @@ class ExtractionOrchestrator:
         self._extractors["curl"] = CurlTrafilaturaExtractor()
         self._extractors["playwright"] = PlaywrightExtractor()
 
+        # Claude web_fetch extractor disabled — curl/trafilatura covers all domains
+        # and has higher success rates (81% vs 51%).
         if claude_extractor:
             self._extractors["claude"] = claude_extractor
-        else:
-            try:
-                ext = ClaudeExtractor()
-                self._extractors["claude"] = ext
-                self._owned_resources.append(ext)
-            except ValueError:
-                logger.warning("ANTHROPIC_API_KEY not set — Claude extractor unavailable")
 
         if diffbot_extractor:
             self._extractors["diffbot"] = diffbot_extractor

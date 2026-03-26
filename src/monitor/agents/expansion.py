@@ -211,7 +211,7 @@ async def expand_country(
                     query,
                     country_code=config.code,
                     freshness=freshness,
-                    count=20,
+                    count=50,
                     goggles=goggle_url,
                 )
                 result.actor_results.extend(resp.results)
@@ -232,7 +232,7 @@ async def expand_country(
                     query,
                     country_code=config.code,
                     freshness=freshness,
-                    count=20,
+                    count=50,
                     goggles=goggle_url,
                 )
                 result.vocab_results.extend(resp.results)

@@ -609,7 +609,7 @@ def parse_country_response(
         week=week_date,
         date_range=date_range,
         depth=Depth.DEEP_DIVE,
-        activity_level=entry_data["activity_level"],
+        activity_level=entry_data.get("activity_level", {"rating": "unknown", "rationale": "Not provided by agent."}),
         category_movements=category_movements,
         unexpected_developments=unexpected,
         absence_check=absence_checks,

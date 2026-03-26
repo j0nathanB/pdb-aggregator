@@ -1,68 +1,275 @@
 {
-  "last_updated": "2026-03-22",
-  "created": "2026-03-22",
+  "last_updated": "2026-01-25",
+  "created": "2026-03-25",
   "global_posture_summary": {
-    "as_of": "2026-03-29",
-    "text": "Third consecutive week of complete analytical pipeline breakdown. All regional synthesis desks report inability to conduct cross-country analysis due to continued absence of country-level weekly intelligence inputs. This represents a systematic failure of the intelligence collection infrastructure rather than a geopolitically quiet period. No assessment of global strategic developments, cross-regional dynamics, or structural shifts is possible without foundational country desk reporting. The analytical blind period now spans three weeks.",
+    "as_of": "2026-04-01",
+    "text": "The Trump administration's systematic coercive diplomacy campaign across allied regions has triggered the most significant stress test of Western alliance architecture since the Iraq War, producing coordinated institutional resistance in Europe while catalyzing parallel sovereignty assertions across the Americas. Simultaneously, Asia-Pacific states are mobilizing unprecedented economic sovereignty investments while European frontline states encounter fiscal constraints from defense commitments, revealing a global tension between security spending ambitions and fiscal reality. Domestic political fragmentation under external pressure emerges as a structural pattern across Western democracies, challenging assumptions about external threats producing rally-around-the-flag effects.",
     "signal_environment": {
-      "most_active_categories": [],
-      "quietest_categories": [],
-      "geographic_hotspots": [],
-      "geographic_quiet_zones": []
+      "most_active_categories": [
+        "alignment_diplomatic",
+        "economic_tech",
+        "domestic_regime"
+      ],
+      "quietest_categories": [
+        "security_defense"
+      ],
+      "geographic_hotspots": [
+        "Western Europe",
+        "Americas",
+        "Asia-Pacific"
+      ],
+      "geographic_quiet_zones": [
+        "Africa",
+        "Central Asia"
+      ]
     }
   },
-  "active_dynamics": [],
+  "active_dynamics": [
+    {
+      "dynamic_id": 1,
+      "title": "Global Resistance to US Coercive Diplomacy Campaign",
+      "created_week": "2026-04-01",
+      "last_updated": "2026-04-01",
+      "status": "emerging",
+      "current_assessment": "The Trump administration's systematic coercive diplomacy across allied regions has triggered coordinated institutional resistance in Europe (EU/NATO coordination mechanisms) and parallel sovereignty assertions across the Americas (operational boundaries, institutional challenges, public diplomacy), representing the most significant alliance stress test since Iraq War opposition. European response succeeded in forcing suspension of threatened tariffs, demonstrating collective leverage.",
+      "countries_involved": [
+        "ca",
+        "mx",
+        "br",
+        "fr",
+        "de",
+        "gb",
+        "it",
+        "no",
+        "se",
+        "fi",
+        "ee",
+        "lt",
+        "pl",
+        "ro"
+      ],
+      "signal_categories_touched": [
+        "alignment_diplomatic"
+      ],
+      "evidence_strength": {
+        "confidence": 4,
+        "supporting_country_confidences": {
+          "ca": 4,
+          "mx": 4,
+          "br": 4,
+          "fr": 4,
+          "de": 4,
+          "gb": 4,
+          "it": 4,
+          "no": 4,
+          "se": 4,
+          "fi": 4,
+          "ee": 4,
+          "lt": 4,
+          "pl": 4,
+          "ro": 3
+        },
+        "weakest_link": "Romania's assessment based on single-source EU-NATO coordination announcement",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Different mechanisms (institutional vs operational vs diplomatic) but synchronized timing and similar sovereignty objectives across regions indicate response to shared structural pressure from US coercive diplomacy rather than coincidental alignment"
+      },
+      "competing_interpretation": "These could represent unrelated domestic political calculations or tactical adjustments coincidentally occurring simultaneously, with apparent coordination reflecting parallel decision-making rather than strategic planning",
+      "what_to_watch": "US response to collective resistance, escalation or de-escalation of coercive tactics, durability of European coordination mechanisms under sustained pressure, Americas countries' ability to maintain sovereignty positions without bilateral retaliation",
+      "triage_implications": {
+        "countries_to_flag": [
+          "dk",
+          "nl",
+          "be"
+        ],
+        "reason": "Major European allies not yet showing clear positioning in coordinated resistance pattern - need assessment of their participation in institutional responses or bilateral accommodation strategies"
+      },
+      "weeks_active": 1,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 2,
+      "title": "Economic Sovereignty Mobilization Constrained by Fiscal Reality",
+      "created_week": "2026-04-01",
+      "last_updated": "2026-04-01",
+      "status": "emerging",
+      "current_assessment": "Asia-Pacific states are mobilizing unprecedented economic sovereignty investments ($250-500B Taiwan semiconductors, \u00a539B Japan rare earths, massive South Korea AI, $14B Indonesia infrastructure) while European frontline states experience defense spending-fiscal constraint materialization (Finland EU deficit procedures, Latvia/Estonia 4.9%/5% GDP spending under economic pressure). Reveals global tension between security/sovereignty spending ambitions and fiscal sustainability.",
+      "countries_involved": [
+        "tw",
+        "jp",
+        "kr",
+        "id",
+        "fi",
+        "lv",
+        "ee"
+      ],
+      "signal_categories_touched": [
+        "economic_tech",
+        "security_defense"
+      ],
+      "evidence_strength": {
+        "confidence": 3,
+        "supporting_country_confidences": {
+          "tw": 4,
+          "jp": 4,
+          "kr": 3,
+          "id": 4,
+          "fi": 4,
+          "lv": 3,
+          "ee": 4
+        },
+        "weakest_link": "South Korea and Latvia assessments maintain confidence 3",
+        "linkage_type": "interaction_effect",
+        "linkage_assessment": "Asia-Pacific mobilization represents potential model for European responses, while European fiscal constraints reveal sustainability limits that Asia-Pacific investments may eventually encounter"
+      },
+      "competing_interpretation": "Different regions responding to distinct threats (China in Asia-Pacific, Russia in Europe) through separate policy tools, with apparent contrast reflecting different threat environments rather than global economic sovereignty dynamic",
+      "what_to_watch": "Fiscal sustainability indicators in Asia-Pacific sovereignty investment programs, European responses to Asia-Pacific mobilization models, debt-to-GDP trajectories in high-spending states",
+      "triage_implications": {
+        "countries_to_flag": [
+          "sg",
+          "th",
+          "vn"
+        ],
+        "reason": "Major Asia-Pacific economies not showing economic sovereignty mobilization pattern - need assessment of whether they're following alternative strategies or facing different constraints"
+      },
+      "weeks_active": 1,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 3,
+      "title": "Domestic Political Fragmentation Under External Pressure",
+      "created_week": "2026-04-01",
+      "last_updated": "2026-04-01",
+      "status": "emerging",
+      "current_assessment": "External pressure from hegemons is producing domestic political fragmentation rather than rally-around-the-flag unification across Western democracies. Americas show contradictory patterns (Canadian bipartisan cooperation alongside Quebec mobilization, Mexican coalition challenges, Brazilian polarized mobilization). Western Europe shows simultaneous acute instability (French Article 49.3 governance, British two-party breakdown, Italian coalition tensions, Spanish crisis management).",
+      "countries_involved": [
+        "ca",
+        "mx",
+        "br",
+        "fr",
+        "gb",
+        "it",
+        "es"
+      ],
+      "signal_categories_touched": [
+        "domestic_regime"
+      ],
+      "evidence_strength": {
+        "confidence": 4,
+        "supporting_country_confidences": {
+          "ca": 4,
+          "mx": 3,
+          "br": 4,
+          "fr": 4,
+          "gb": 4,
+          "it": 4,
+          "es": 4
+        },
+        "weakest_link": "Mexico maintains confidence 3 based on single-source electoral reform reporting",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Similar timing of domestic political stress across different institutional frameworks and party systems suggests structural pattern in how democracies respond to external challenges"
+      },
+      "competing_interpretation": "These developments reflect country-specific electoral cycles and institutional dynamics rather than external pressure effects, with timing overlap purely coincidental",
+      "what_to_watch": "Domestic political stability trajectories as external pressure continues, capacity for international coordination under internal constraints, electoral outcomes in fragmented systems",
+      "triage_implications": {
+        "countries_to_flag": [
+          "au",
+          "nz"
+        ],
+        "reason": "Major Western democracies experiencing different domestic political trajectories - need assessment of whether they're avoiding fragmentation pattern or experiencing it through different mechanisms"
+      },
+      "weeks_active": 1,
+      "consecutive_unchanged_weeks": 0
+    }
+  ],
   "watchlist": [
     {
-      "item": "Restoration of country desk analytical pipeline",
-      "signal_category": "institutional",
+      "item": "US alliance burden-shifting systematic implementation",
+      "signal_category": "security_defense",
       "countries": [
-        "all_pipeline_countries"
+        "jp",
+        "kr",
+        "au"
       ],
-      "why_it_matters": "Third consecutive week of system-wide analytical failure. Extended blind period creates strategic vulnerability and prevents identification of emerging global patterns.",
-      "trigger": "Receipt of country desk reports enabling regional synthesis",
-      "added_week": "2026-03-15"
+      "why_it_matters": "Pentagon signals across Asia-Pacific could represent systematic policy shift affecting global alliance architecture",
+      "trigger": "Concrete policy implementation beyond strategic documents",
+      "added_week": "2026-04-01"
+    },
+    {
+      "item": "China responses to regional economic sovereignty surge",
+      "signal_category": "alignment_diplomatic",
+      "countries": [
+        "cn",
+        "tw",
+        "jp",
+        "kr",
+        "id"
+      ],
+      "why_it_matters": "Massive Asia-Pacific economic sovereignty investments should trigger Chinese diplomatic or economic responses",
+      "trigger": "Chinese policy adjustments or retaliation measures",
+      "added_week": "2026-04-01"
     }
   ],
   "weekly_entries": [
     {
-      "week": "2026-03-22",
-      "executive_briefing_items": [],
-      "dynamics_created": [],
-      "dynamics_updated": [],
-      "dynamics_archived": [],
-      "items_considered_rejected": [
+      "week": "2026-01-25",
+      "executive_briefing_items": [
         {
-          "candidate": "Any potential global themes",
-          "reason_rejected": "Complete absence of country desk inputs across all five regions prevents identification of cross-regional patterns, structural shifts, or interaction effects. Cannot conduct global-level analysis without regional synthesis inputs, which cannot be produced without country-level intelligence. This is a collection failure, not a strategic development."
+          "title": "Global Alliance Architecture Under Systematic Stress Test",
+          "regions_involved": [
+            "Americas",
+            "Western Europe",
+            "Frontline Eastern Europe"
+          ],
+          "what": "The Trump administration's systematic coercive diplomacy campaign has triggered the most significant Western alliance stress test since the Iraq War, producing coordinated institutional resistance across European countries while catalyzing parallel sovereignty assertions throughout the Americas. European coordination succeeded in forcing suspension of threatened tariffs, demonstrating collective leverage against US pressure.",
+          "why_it_matters": "This represents a fundamental test of alliance architecture limits and reveals that institutional coordination mechanisms remain functional under extreme pressure from the hegemon. The success of collective resistance establishes precedent for allied constraint on US unilateral action, potentially reshaping transatlantic power dynamics and creating template for future coordination against coercive ally behavior.",
+          "what_to_watch": "US escalation or de-escalation responses, durability of European institutional coordination under sustained pressure, Americas countries' capacity to maintain sovereignty positions without bilateral retaliation, participation of major European allies not yet clearly positioned",
+          "confidence": 4,
+          "confidence_note": "Strong evidence across three regions with confidence 4 assessments for most countries. Weakest link is Romania's single-source EU-NATO coordination reporting, but pattern holds across 14 other countries with robust confidence."
+        },
+        {
+          "title": "Economic Sovereignty Investment Surge Confronts Fiscal Constraints",
+          "regions_involved": [
+            "Asia-Pacific",
+            "Frontline Eastern Europe"
+          ],
+          "what": "Asia-Pacific states are mobilizing unprecedented economic sovereignty investments totaling hundreds of billions (Taiwan semiconductors, Japan rare earths, Korea AI systems, Indonesia infrastructure) while European frontline states encounter fiscal constraint materialization from defense commitments, with Finland entering EU deficit procedures partly due to F-35 costs.",
+          "why_it_matters": "This reveals a global tension between security spending ambitions and fiscal sustainability that will constrain middle power strategic autonomy. Asia-Pacific mobilization represents potential model for European responses, while European fiscal constraints preview sustainability limits that Asia-Pacific programs may encounter, creating system-wide resource allocation pressures.",
+          "what_to_watch": "Debt-to-GDP trajectories in Asia-Pacific high-investment states, European responses to Asia-Pacific mobilization models, fiscal sustainability indicators for sovereignty investment programs, credit rating impacts",
+          "confidence": 3,
+          "confidence_note": "Based on strong country-level evidence (mostly confidence 4) but linkage assessment limited by different mechanisms and regional contexts. South Korea and Latvia assessments at confidence 3 represent weakest elements."
+        },
+        {
+          "title": "External Pressure Fragmenting Democratic Politics Globally",
+          "regions_involved": [
+            "Americas",
+            "Western Europe"
+          ],
+          "what": "External pressure from hegemons is producing domestic political fragmentation rather than rally-around-the-flag unification across Western democracies. Seven major democracies simultaneously show acute political instability through different mechanisms - coalition tensions, minority governance, constitutional workarounds, and party system breakdown.",
+          "why_it_matters": "This challenges fundamental assumptions about external threats producing domestic unity and suggests that democratic institutional complexity makes Western allies more vulnerable to foreign pressure rather than more resilient. Internal fragmentation constrains capacity for international coordination and bold strategic positioning at precisely the moment when alliance architecture faces systematic stress.",
+          "what_to_watch": "Electoral outcomes in fragmented systems, capacity for international coordination under domestic constraints, potential for external actors to exploit internal divisions, cascade effects to other Western democracies",
+          "confidence": 4,
+          "confidence_note": "Strong country-level assessments (mostly confidence 4) across seven democracies showing similar patterns through different institutional mechanisms. Mexico's confidence 3 assessment is weakest link but pattern holds robustly."
         }
       ],
-      "self_corrections": []
-    },
-    {
-      "week": "2026-03-22",
-      "executive_briefing_items": [],
-      "dynamics_created": [],
-      "dynamics_updated": [],
-      "dynamics_archived": [],
-      "items_considered_rejected": [
-        {
-          "candidate": "Any potential global dynamics",
-          "reason_rejected": "Cannot identify cross-regional patterns without regional desk inputs. All five regional reports indicate inability to conduct analysis due to missing country-level weekly assessments. Executive briefing requires cross-regional evidence that does not exist this week."
-        }
+      "dynamics_created": [
+        1,
+        2,
+        3
       ],
-      "self_corrections": []
-    },
-    {
-      "week": "2026-03-22",
-      "executive_briefing_items": [],
-      "dynamics_created": [],
       "dynamics_updated": [],
       "dynamics_archived": [],
       "items_considered_rejected": [
         {
-          "candidate": "Any global strategic themes",
-          "reason_rejected": "No underlying analytical data available. All regional syntheses report inability to identify cross-cutting dynamics due to absence of country desk inputs. Creating executive briefing items without foundational intelligence would constitute fabrication rather than analysis."
+          "candidate": "Trump Middle East institutional framework emergence",
+          "reason_rejected": "Regional pattern limited to Middle East/Turkey/South Asia rather than global dynamic. Turkey-Saudi-UAE convergence represents significant regional development but doesn't constitute cross-regional or global structural shift visible only at system level"
+        },
+        {
+          "candidate": "Institutional vs bilateral alliance response patterns",
+          "reason_rejected": "While European institutional coordination contrasts with Asia-Pacific bilateral responses, this reflects existing alliance architecture differences rather than new structural shift. Pattern is visible at regional level rather than representing emergent global dynamic"
+        },
+        {
+          "candidate": "China strategic absence from major global developments",
+          "reason_rejected": "Absence patterns require more evidence to constitute briefing-level dynamic. Added to watchlist for monitoring but insufficient for executive assessment at this stage"
         }
       ],
       "self_corrections": []

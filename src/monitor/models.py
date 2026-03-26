@@ -69,6 +69,11 @@ class SignalCategoryAssessment(BaseModel):
     confidence_rationale: str = ""
     key_actors: list[str] = Field(default_factory=list)
     dossier_sections_referenced: list[str] = Field(default_factory=list)
+
+    @field_validator("dossier_sections_referenced", mode="before")
+    @classmethod
+    def _coerce_sections_to_str(cls, v: list) -> list[str]:
+        return [str(x) for x in v] if v else []
     last_updated: date
 
 

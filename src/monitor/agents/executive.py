@@ -40,6 +40,19 @@ from ..models import (
 
 logger = logging.getLogger(__name__)
 
+_VALID_CATEGORIES = {c.value for c in SignalCategory}
+
+
+def _safe_categories(raw: list) -> list[SignalCategory]:
+    """Parse signal categories, skipping invalid values from LLM output."""
+    result = []
+    for c in raw:
+        if c in _VALID_CATEGORIES:
+            result.append(SignalCategory(c))
+        else:
+            logger.warning("Skipping invalid SignalCategory from LLM: %r", c)
+    return result
+
 
 # =============================================================================
 # System prompt
@@ -226,9 +239,7 @@ def _parse_active_dynamic(d: dict, week: date) -> ActiveDynamic:
         status=DynamicStatus(d.get("status", "emerging")),
         current_assessment=d["current_assessment"],
         countries_involved=d.get("countries_involved", []),
-        signal_categories_touched=[
-            SignalCategory(c) for c in d.get("signal_categories_touched", [])
-        ],
+        signal_categories_touched=_safe_categories(d.get("signal_categories_touched", [])),
         evidence_strength=EvidenceStrength(
             confidence=es.get("confidence", 3),
             supporting_country_confidences=es.get("supporting_country_confidences", {}),

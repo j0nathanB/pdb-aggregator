@@ -131,7 +131,7 @@ async def scan_country(
             wire_resp = await brave_client.search_news(
                 f'"{config.country}"',
                 freshness=freshness,
-                count=20,
+                count=50,
             )
             for r in wire_resp.results:
                 if _is_wire_domain(r.source_domain):

@@ -76,6 +76,15 @@ _ACTIVITY_SORT = {"high": 0, "moderate": 1, "low": 2}
 # Rendering helpers
 # =============================================================================
 
+def _country_heading(code: str, country: str) -> str:
+    """Render a country heading with an inline flag image."""
+    return (
+        f'### <img src="https://flagcdn.com/h24/{code}.png" alt="{country}" '
+        f"style={{{{display: 'inline', verticalAlign: 'middle', marginRight: '8px'}}}} />"
+        f"{country}"
+    )
+
+
 def _format_date_range(end_date: date) -> str:
     start = end_date - timedelta(days=6)
     return f"{start.strftime('%B %d')} to {end_date.strftime('%B %d, %Y')}"
@@ -214,7 +223,7 @@ def _render_deep_dive_entry(
     If summary_only=True, renders just the posture summary (for the overview page).
     If summary_only=False, renders full details with key developments and caveats.
     """
-    lines = [f"### {ledger.country}", ""]
+    lines = [_country_heading(ledger.code, ledger.country), ""]
 
     # Posture summary
     lines.append(ledger.posture_summary.text)
@@ -290,7 +299,7 @@ def _render_maintenance_entry(
     entry: Optional[WeeklyEntry],
 ) -> str:
     """Render a maintenance country entry."""
-    lines = [f"### {ledger.country}", ""]
+    lines = [_country_heading(ledger.code, ledger.country), ""]
     lines.append(f"{ledger.posture_summary.text} No significant developments this week.")
     lines.append("")
     return "\n".join(lines)
@@ -573,7 +582,7 @@ def _render_region_page(
     date_range = _format_date_range(end_date)
 
     sections = [
-        _mdx_frontmatter(display_name, f"{display_name} — Week of {date_range}", display_name),
+        _mdx_frontmatter(display_name, f"Week of {date_range}", display_name),
         "",
     ]
 
@@ -622,7 +631,7 @@ def _render_watchlist_page(
     date_range = _format_date_range(end_date)
 
     sections = [
-        _mdx_frontmatter("Watchlist", f"Watchlist — Week of {date_range}", "Watchlist"),
+        _mdx_frontmatter("Watchlist", f"Week of {date_range}", "Watchlist"),
         "",
         "*Items worth monitoring that didn't make the executive briefing.*",
         "",
