@@ -13,6 +13,7 @@ from src.monitor.models import (
     WeeklyEntry,
 )
 from src.monitor.validation import (
+    extract_figures,
     extract_proper_nouns,
     validate_source_attribution,
 )
@@ -65,6 +66,68 @@ class TestExtractProperNouns:
         text = "Officials from South Korea attended the summit."
         entities = extract_proper_nouns(text)
         assert "south korea" in entities
+
+
+# =============================================================================
+# extract_figures
+# =============================================================================
+
+
+class TestExtractFigures:
+    def test_plain_integers(self):
+        text = "Ukraine deployed 404 Shaheds and plans to reach 1,000 per day."
+        figures = extract_figures(text)
+        assert "404" in figures
+        assert "1000" in figures
+
+    def test_large_numbers_with_commas(self):
+        text = "The goal is 50,000 deaths monthly, up from 35,000."
+        figures = extract_figures(text)
+        assert "50000" in figures
+        assert "35000" in figures
+
+    def test_decimals(self):
+        text = "Inflation rose to 4.02% in March."
+        figures = extract_figures(text)
+        assert "4.02" in figures
+
+    def test_currency_amounts(self):
+        text = "The deal was worth $2.3 billion."
+        figures = extract_figures(text)
+        assert "2.3" in figures
+
+    def test_skips_years(self):
+        text = "In 2026, the country signed the deal from 1991."
+        figures = extract_figures(text)
+        assert "2026" not in figures
+        assert "1991" not in figures
+
+    def test_skips_trivial_numbers(self):
+        text = "There were 3 meetings and 5 sessions."
+        figures = extract_figures(text)
+        assert "3" not in figures
+        assert "5" not in figures
+
+    def test_keeps_non_trivial_small_numbers(self):
+        text = "Production dropped to 40 units from 87."
+        figures = extract_figures(text)
+        assert "40" in figures
+        assert "87" in figures
+
+    def test_area_measurements(self):
+        text = "Ukrainian forces liberated 430 sq km near Pokrovsk."
+        figures = extract_figures(text)
+        assert "430" in figures
+
+    def test_empty_text(self):
+        assert extract_figures("") == set()
+        assert extract_figures(None) == set()
+
+    def test_mixed(self):
+        text = "Fedorov announced 40,000 interceptor drones and 50,000 deaths monthly."
+        figures = extract_figures(text)
+        assert "40000" in figures
+        assert "50000" in figures
 
 
 # =============================================================================
@@ -215,3 +278,58 @@ class TestValidateSourceAttribution:
         result = validate_source_attribution("ua", entry, articles)
         # No URLs to check against, so no flags
         assert result.clean
+
+    def test_flags_unattributed_figures(self):
+        articles = [
+            _make_article(
+                "https://kyivpost.com/1",
+                "Defense Minister outlined plans for drone-assault units.",
+            ),
+        ]
+        dev = Development(
+            headline="Ukraine drone warfare",
+            date=date(2026, 3, 12),
+            sources=[SourceAttribution(name="Kyiv Post", url="https://kyivpost.com/1", tier=2)],
+            summary="Fedorov set a goal of 50,000 Russian deaths monthly, up from 35,000. "
+                    "He announced 40,000 interceptor drones this month.",
+        )
+        entry = _make_entry([dev])
+        result = validate_source_attribution("ua", entry, articles)
+        assert not result.clean
+        assert result.flags[0].unattributed_figures
+        assert "50000" in result.flags[0].unattributed_figures
+        assert "35000" in result.flags[0].unattributed_figures
+        assert "40000" in result.flags[0].unattributed_figures
+
+    def test_clean_when_figures_in_source(self):
+        articles = [
+            _make_article(
+                "https://rbc.ua/1",
+                "Syrskyi reported Ukrainian forces liberated 430 sq km near Pokrovsk.",
+            ),
+        ]
+        dev = Development(
+            headline="Ukraine counteroffensive",
+            date=date(2026, 3, 12),
+            sources=[SourceAttribution(name="RBC Ukraine", url="https://rbc.ua/1", tier=2)],
+            summary="Ukrainian forces retook 430 sq km near Pokrovsk.",
+        )
+        entry = _make_entry([dev])
+        result = validate_source_attribution("ua", entry, articles)
+        assert result.clean
+
+    def test_severity_escalates_with_figures_and_entities(self):
+        articles = [
+            _make_article("https://reuters.com/1", "The meeting concluded."),
+        ]
+        dev = Development(
+            headline="Defense developments",
+            date=date(2026, 3, 12),
+            sources=[SourceAttribution(name="Reuters", url="https://reuters.com/1", tier=2)],
+            summary="Kyrylo Budanov announced 404 Shaheds daily.",
+        )
+        entry = _make_entry([dev])
+        result = validate_source_attribution("ua", entry, articles)
+        assert not result.clean
+        # 1 entity + 1 figure = 2 total → warning severity
+        assert result.flags[0].severity == "warning"

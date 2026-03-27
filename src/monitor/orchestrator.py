@@ -408,6 +408,7 @@ async def process_deep_dive(
                         "category": f.category,
                         "headline": f.headline,
                         "unattributed_entities": f.unattributed_entities,
+                        "unattributed_figures": f.unattributed_figures,
                         "cited_source_urls": f.cited_source_urls,
                         "severity": f.severity,
                     }

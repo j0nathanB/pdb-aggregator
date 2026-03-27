@@ -49,13 +49,14 @@ _MIN_ENTITY_LEN = 2
 
 @dataclass
 class AttributionFlag:
-    """A development where summary entities don't appear in cited sources."""
+    """A development where summary entities or figures don't appear in cited sources."""
 
     category: str
     headline: str
     unattributed_entities: list[str]
     cited_source_urls: list[str]
     severity: str = "warning"  # "warning" or "info"
+    unattributed_figures: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -117,17 +118,66 @@ def extract_proper_nouns(text: str) -> set[str]:
     return entities
 
 
-def _build_source_entity_index(
+# Patterns that look like numbers but aren't meaningful figures
+_TRIVIAL_NUMBERS = frozenset({"0", "1", "2", "3", "4", "5", "10", "100"})
+
+
+def extract_figures(text: str) -> set[str]:
+    """Extract numeric figures from text for attribution checking.
+
+    Captures quantities, percentages, monetary amounts, and other
+    specific numbers that represent factual claims. Returns normalised
+    string forms for matching.
+
+    Returns a set of canonical number strings (e.g. "404", "50000",
+    "4.02", "2.3").
+    """
+    if not text:
+        return set()
+
+    figures: set[str] = set()
+
+    # Match numbers with optional comma separators and decimals
+    # Covers: 404, 1,000, 50,000, 4.02, $2.3, 2.3%
+    raw_numbers = re.findall(
+        r"(?<![.\w])"           # not preceded by word char or dot
+        r"[$€£¥]?"             # optional currency symbol
+        r"(\d[\d,]*\.?\d*)"    # the number itself (capture group)
+        r"(?:\s?%|(?:bn|mn|m|k|tr))?"  # optional suffix
+        r"(?![.\w])",          # not followed by word char or dot
+        text,
+    )
+
+    for raw in raw_numbers:
+        # Strip commas to normalise: "50,000" → "50000"
+        normalised = raw.replace(",", "")
+        # Strip trailing dot if any: "50." → "50"
+        normalised = normalised.rstrip(".")
+        if not normalised:
+            continue
+        # Skip trivially common numbers (years handled separately below)
+        if normalised in _TRIVIAL_NUMBERS:
+            continue
+        # Skip 4-digit numbers in the 1900–2099 range (likely years)
+        if re.fullmatch(r"(19|20)\d{2}", normalised):
+            continue
+        figures.add(normalised)
+
+    return figures
+
+
+def _build_source_indexes(
     articles: list[ExtractionResult],
-) -> dict[str, set[str]]:
-    """Build URL → entity set mapping from extracted articles."""
-    index: dict[str, set[str]] = {}
+) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+    """Build URL → entity set and URL → figure set mappings from extracted articles."""
+    entity_index: dict[str, set[str]] = {}
+    figure_index: dict[str, set[str]] = {}
     for article in articles:
         if article.success and article.text:
-            # Extract from both title and body
             combined = f"{article.title or ''} {article.text}"
-            index[article.url] = extract_proper_nouns(combined)
-    return index
+            entity_index[article.url] = extract_proper_nouns(combined)
+            figure_index[article.url] = extract_figures(combined)
+    return entity_index, figure_index
 
 
 def validate_source_attribution(
@@ -155,7 +205,7 @@ def validate_source_attribution(
     if not weekly_entry.category_movements or not extracted_articles:
         return result
 
-    source_entities = _build_source_entity_index(extracted_articles)
+    source_entities, source_figures = _build_source_indexes(extracted_articles)
 
     for cat, movement in weekly_entry.category_movements.items():
         for dev in movement.developments:
@@ -167,10 +217,12 @@ def validate_source_attribution(
                 continue
 
             cited_entities: set[str] = set()
+            cited_figures: set[str] = set()
             matched_urls = 0
             for url in cited_urls:
                 if url in source_entities:
                     cited_entities.update(source_entities[url])
+                    cited_figures.update(source_figures.get(url, set()))
                     matched_urls += 1
 
             # If none of the cited URLs were in our extraction set, skip
@@ -195,21 +247,32 @@ def validate_source_attribution(
                 if any(ce in entity for ce in cited_entities):
                     continue
                 unattributed.add(entity)
-            if unattributed:
+
+            # Flag figures in summary not found in any cited source
+            summary_figures = extract_figures(summary_text)
+            unattributed_figs = summary_figures - cited_figures
+
+            if unattributed or unattributed_figs:
                 cat_name = cat.value if isinstance(cat, SignalCategory) else str(cat)
+                total_unattributed = len(unattributed) + len(unattributed_figs)
                 flag = AttributionFlag(
                     category=cat_name,
                     headline=dev.headline,
                     unattributed_entities=sorted(unattributed),
                     cited_source_urls=cited_urls,
-                    severity="warning" if len(unattributed) >= 2 else "info",
+                    severity="warning" if total_unattributed >= 2 else "info",
+                    unattributed_figures=sorted(unattributed_figs),
                 )
                 result.flags.append(flag)
                 result.developments_flagged += 1
+                parts = []
+                if unattributed:
+                    parts.append(f"{len(unattributed)} entities: {', '.join(sorted(unattributed))}")
+                if unattributed_figs:
+                    parts.append(f"{len(unattributed_figs)} figures: {', '.join(sorted(unattributed_figs))}")
                 logger.info(
-                    "Attribution flag [%s] %s: %d unattributed entities: %s",
-                    code, dev.headline, len(unattributed),
-                    ", ".join(sorted(unattributed)),
+                    "Attribution flag [%s] %s: %s",
+                    code, dev.headline, "; ".join(parts),
                 )
 
     if result.clean:
