@@ -15,7 +15,7 @@ from datetime import date
 
 import anthropic
 
-from ..config import ANTHROPIC_API_KEY, PROJECT_ROOT, THINKING_BUDGET_TOKENS, load_prompt
+from ..config import ANTHROPIC_API_KEY, MODEL, PROJECT_ROOT, THINKING_BUDGET_TOKENS, load_prompt
 
 # Style guide loaded once per process
 _style_guide: str | None = None
@@ -28,9 +28,9 @@ def _load_style_guide() -> str:
         _style_guide = (PROJECT_ROOT / "docs" / "style_guide.md").read_text()
     return _style_guide
 
-# Copyeditor uses Sonnet — the editor handles heavy prose rewriting,
+# Copyeditor uses the configured model — the editor handles heavy prose rewriting,
 # so the copyeditor only needs to handle mechanical polish (names, abbreviations)
-COPYEDITOR_MODEL = "claude-sonnet-4-6-20250626"
+COPYEDITOR_MODEL = MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -117,7 +117,7 @@ async def run_copyeditor(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    response = await client.messages.create(
+    async with client.messages.stream(
         model=model or COPYEDITOR_MODEL,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
         thinking={
@@ -126,7 +126,8 @@ async def run_copyeditor(
         },
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
-    )
+    ) as stream:
+        response = await stream.get_final_message()
 
     text_parts = [
         block.text for block in response.content
@@ -175,6 +176,9 @@ def _is_boilerplate(text: str) -> bool:
     return False
 
 
+_FLAG_PATTERN = re.compile(r'flagcdn\.com/h24/(\w{2})\.png')
+
+
 def _split_newsletter_sections(
     newsletter: str,
 ) -> list[tuple[str, EditableSection | None]]:
@@ -183,10 +187,22 @@ def _split_newsletter_sections(
     Returns a list of (raw_text, editable_section_or_none) tuples.
     Segments without an EditableSection are passed through unchanged.
 
-    Strategy: split by region boundaries (``---\\n\\n## ``), then within
-    each region split by ``### `` country headers.
+    Handles two formats:
+    - Full newsletter: ``---\\n\\n## `` region boundaries with ``### `` country sections
+    - Region page: MDX frontmatter + regional lead + ``### `` country sections
     """
-    # Split by --- ## Region boundaries (keeping the delimiter)
+    has_region_boundaries = bool(re.search(r"---\n\n## ", newsletter))
+
+    if has_region_boundaries:
+        return _split_full_newsletter(newsletter)
+    else:
+        return _split_region_page(newsletter)
+
+
+def _split_full_newsletter(
+    newsletter: str,
+) -> list[tuple[str, EditableSection | None]]:
+    """Split a full newsletter with --- ## Region boundaries."""
     top_parts = re.split(r"(?=---\n\n## )", newsletter)
 
     result: list[tuple[str, EditableSection | None]] = []
@@ -195,17 +211,14 @@ def _split_newsletter_sections(
         if not part:
             continue
 
-        # Check if this is a region section (starts with ---)
         region_match = re.match(r"^---\n\n## (.+?)(?:\n|$)", part)
 
         if not region_match:
-            # This is the preamble (header + executive brief)
-            # Send the entire executive brief as one unit so the copyeditor
-            # can weave items into a cohesive narrative
+            # Preamble (header + executive brief)
             exec_parts = re.split(r"(?=\n\n### )", part)
             header = exec_parts[0]
             exec_body = "".join(exec_parts[1:])
-            result.append((header, None))  # Header/metadata
+            result.append((header, None))
             if exec_body.strip():
                 result.append((
                     exec_body,
@@ -215,40 +228,83 @@ def _split_newsletter_sections(
 
         region_name = region_match.group(1).strip()
 
-        # Watchlist and footer pass through
         if region_name == "Watchlist":
             result.append((part, None))
             continue
 
-        # Split this region into: regional lead + country sections
-        inner_parts = re.split(r"(?=\n\n### )", part)
-        regional_lead = inner_parts[0]
-
-        # Check if regional lead has substantive content (not boilerplate)
-        # The lead is everything after the "---\n\n## Region\n\n" header
-        lead_lines = regional_lead.split("\n", 4)
-        lead_body = lead_lines[-1] if len(lead_lines) > 3 else ""
-        if not _is_boilerplate(lead_body):
-            result.append((
-                regional_lead,
-                EditableSection(text=regional_lead, label=region_name, section_type="regional"),
-            ))
-        else:
-            result.append((regional_lead, None))
-
-        # Process ### country sections
-        for cp in inner_parts[1:]:
-            name_match = re.match(r"\n\n### (.+?)(?:\n|$)", cp)
-            if name_match:
-                country_name = name_match.group(1).strip()
-                result.append((
-                    cp,
-                    EditableSection(text=cp, label=country_name, section_type="country"),
-                ))
-            else:
-                result.append((cp, None))
+        _split_region_content(part, region_name, result)
 
     return result
+
+
+def _split_region_page(
+    newsletter: str,
+) -> list[tuple[str, EditableSection | None]]:
+    """Split a standalone region page (MDX frontmatter + lead + countries)."""
+    result: list[tuple[str, EditableSection | None]] = []
+
+    # Split into lead (before first ### country heading) and country sections
+    parts = re.split(r'(?=\n\n### )', newsletter)
+    lead = parts[0]
+
+    # The lead includes frontmatter + regional overview — treat as regional
+    if not _is_boilerplate(lead):
+        result.append((
+            lead,
+            EditableSection(text=lead, label="Regional Lead", section_type="regional"),
+        ))
+    else:
+        result.append((lead, None))
+
+    # Each remaining part is a ### country section
+    for cp in parts[1:]:
+        # Extract country name from flag URL or heading text
+        flag_match = _FLAG_PATTERN.search(cp)
+        name_match = re.match(r"\n\n### (.+?)(?:\n|$)", cp)
+        if flag_match:
+            label = flag_match.group(1).upper()
+        elif name_match:
+            label = name_match.group(1).strip()
+        else:
+            result.append((cp, None))
+            continue
+
+        result.append((
+            cp,
+            EditableSection(text=cp, label=label, section_type="country"),
+        ))
+
+    return result
+
+
+def _split_region_content(
+    part: str, region_name: str,
+    result: list[tuple[str, EditableSection | None]],
+) -> None:
+    """Split a region section into lead + country sections."""
+    inner_parts = re.split(r"(?=\n\n### )", part)
+    regional_lead = inner_parts[0]
+
+    lead_lines = regional_lead.split("\n", 4)
+    lead_body = lead_lines[-1] if len(lead_lines) > 3 else ""
+    if not _is_boilerplate(lead_body):
+        result.append((
+            regional_lead,
+            EditableSection(text=regional_lead, label=region_name, section_type="regional"),
+        ))
+    else:
+        result.append((regional_lead, None))
+
+    for cp in inner_parts[1:]:
+        name_match = re.match(r"\n\n### (.+?)(?:\n|$)", cp)
+        if name_match:
+            country_name = name_match.group(1).strip()
+            result.append((
+                cp,
+                EditableSection(text=cp, label=country_name, section_type="country"),
+            ))
+        else:
+            result.append((cp, None))
 
 
 # =============================================================================
@@ -307,4 +363,5 @@ async def copyedit_newsletter(
     for idx, edited_text in results:
         assembled[idx] = edited_text
 
-    return "".join(assembled)
+    from .editor import _sanitize_mdx
+    return _sanitize_mdx("".join(assembled))

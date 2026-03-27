@@ -152,10 +152,8 @@ Be especially wary of borrowing the empty phrases of politicians who constantly 
 - Keep `###` headings, `<Accordion>` tags, and `<Icon>` components unchanged.
 
 **For the executive brief:**
-- You have full freedom to restructure. Drop `###` item headings, merge items, reorder, and weave into cohesive prose paragraphs.
-- Eliminate redundancy across items — if two items make related points, combine them.
-- Add transitions so the brief reads as a unified analytical essay, not a list of disconnected observations.
-- The brief should flow naturally and tell the reader a story about what happened this week and why it matters.
+- The editor has already restructured items into a unified analytical essay. Your job is mechanical polish only — names, abbreviations, prose tightening.
+- Do not restructure, reorder paragraphs, or break the narrative flow the editor established.
 
 **For all sections:**
 - Do not change analytical judgments or factual claims. If a factual claim is found in a non-English language, it's acceptable to translate it.

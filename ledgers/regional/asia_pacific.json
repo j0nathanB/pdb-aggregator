@@ -1,0 +1,114 @@
+{
+  "region": "asia_pacific",
+  "week": "2026-01-25",
+  "regional_overview": "Asia-Pacific countries are pursuing parallel economic sovereignty strategies while managing intensified US alliance pressures. The Pentagon's 'America First' defense strategy is forcing allies to accelerate autonomous capabilities, with Japan and South Korea resisting burden-shifting while maintaining alliance centrality. Meanwhile, countries are independently deploying economic statecraft tools - Taiwan securing favorable US trade terms, Japan diversifying rare earth supplies, and Indonesia promoting state-directed investment models - suggesting shared responses to economic coercion rather than coordinated regional strategy.",
+  "cross_cutting_dynamics": [
+    {
+      "title": "Parallel Economic Sovereignty Responses",
+      "countries_involved": [
+        "tw",
+        "jp",
+        "id",
+        "kr"
+      ],
+      "signal_categories": [
+        "economic_tech",
+        "alignment_diplomatic"
+      ],
+      "pattern_type": "parallel",
+      "assessment": "Multiple Asia-Pacific countries are simultaneously deploying economic statecraft tools to reduce vulnerabilities and assert sovereignty, but through different mechanisms: Taiwan's semiconductor investment leverage with the US, Japan's rare earth supply chain diversification away from China, Indonesia's state-directed investment promotion, and South Korea's central bank AI sovereignty initiative. These represent parallel responses to shared structural pressures rather than coordinated strategy.",
+      "significance": "Demonstrates regional trend toward economic sovereignty and resilience-building, but reveals absence of coordinated regional approach. Each country is pursuing bilateral solutions to multilateral challenges, potentially missing opportunities for collective leverage while remaining vulnerable to divide-and-conquer strategies.",
+      "trend": "emerging",
+      "confidence": 3,
+      "confidence_inherited_from": {
+        "tw_economic_tech": 4,
+        "jp_economic_tech": 4,
+        "id_economic_tech": 4,
+        "kr_economic_tech": 3
+      },
+      "weakest_link": "South Korea's economic assessment rests on limited evidence for technological sovereignty implications of the BOK AI system",
+      "evidence_against_linkage": "The mechanisms are entirely different (investment commitments, supply chain diversification, state investment, central bank AI), timing appears coincidental rather than coordinated, and countries have different stated motivations with no evidence of communication or shared planning",
+      "linkage_strength": "moderate",
+      "linkage_justification": "All countries face similar structural pressures from economic coercion, US trade policy uncertainty, and technological dependency, creating independent but parallel responses to the same geopolitical conditions",
+      "competing_interpretation": "These may be unrelated domestic policy decisions that happen to involve economic tools, with the pattern being analyst-imposed rather than reflecting genuine strategic coordination or shared causation"
+    },
+    {
+      "title": "US Alliance Burden-Shifting Pressure",
+      "countries_involved": [
+        "jp",
+        "kr",
+        "au"
+      ],
+      "signal_categories": [
+        "alignment_diplomatic",
+        "security_defense"
+      ],
+      "pattern_type": "interaction",
+      "assessment": "The Pentagon's 'America First' defense strategy is creating direct pressure on Asia-Pacific allies to assume greater security responsibilities, with Japan facing reduced China focus demands, South Korea confronting signals of decreased North Korea deterrence commitment, and Australia managing AUKUS capacity warnings. All three are responding by reaffirming alliance centrality while accelerating autonomous capabilities.",
+      "significance": "Represents the most significant test of the US alliance system in Asia-Pacific since its creation, forcing allies to balance burden-sharing demands with deterrence maintenance. The uniform resistance pattern suggests allies view current US proposals as premature or destabilizing, potentially creating alliance friction if pushed too aggressively.",
+      "trend": "emerging",
+      "confidence": 3,
+      "confidence_inherited_from": {
+        "jp_alignment_diplomatic": 3,
+        "kr_alignment_diplomatic": 3,
+        "au_alignment_diplomatic": 3
+      },
+      "weakest_link": "All three country assessments rely on limited sourcing for the Pentagon strategy claims, with Japan and South Korea sharing the same single Guardian report",
+      "evidence_against_linkage": "The Pentagon strategy documents may represent aspirational language rather than concrete policy shifts, and ally responses may be routine diplomatic messaging rather than genuine strategic recalibration",
+      "linkage_strength": "strong",
+      "linkage_justification": "Clear causal mechanism with US policy change directly generating allied responses, supported by documented Pentagon strategy shifts and consistent allied pushback across multiple countries",
+      "competing_interpretation": "The burden-shifting signals may be negotiating positions for upcoming alliance consultations rather than fundamental policy shifts, making the allied reactions tactical rather than strategic"
+    }
+  ],
+  "dynamics_considered_and_rejected": [
+    {
+      "candidate_dynamic": "Regional Democratic Stress Pattern",
+      "countries": [
+        "au",
+        "id"
+      ],
+      "reason_rejected": "Australia's political crisis stems from specific terror attack response while Indonesia's institutional erosion follows different mechanisms (nepotism, state control). No shared causation or timing beyond surface-level 'democracy under pressure' framing that applies to many regions globally."
+    },
+    {
+      "candidate_dynamic": "China Economic Pressure Response Coordination",
+      "countries": [
+        "jp",
+        "tw",
+        "kr"
+      ],
+      "reason_rejected": "While all three mention Chinese economic factors, their responses are directed at different sectors (rare earths vs semiconductors vs technological sovereignty) through different mechanisms with no evidence of coordination or shared timing beyond coincidence."
+    }
+  ],
+  "gaps": [
+    {
+      "expected_dynamic": "ASEAN institutional leadership from Indonesia",
+      "observed": "Indonesia focused on bilateral partnerships and domestic state control with no significant multilateral ASEAN initiatives despite being a key member",
+      "assessment": "Indonesia's turn toward bilateral economic partnerships rather than multilateral institution-building may signal weakening ASEAN centrality in regional economic governance, or reflect Prabowo's preference for personalized diplomacy over institutional channels"
+    },
+    {
+      "expected_dynamic": "Intra-regional economic integration response to external pressure",
+      "observed": "Countries pursuing individual economic sovereignty strategies rather than regional coordination mechanisms",
+      "assessment": "Despite shared pressures, Asia-Pacific countries are not coordinating regional responses, potentially missing opportunities for collective leverage while remaining vulnerable to bilateral coercion. May reflect institutional weakness or competing national priorities."
+    }
+  ],
+  "low_confidence_items": [
+    {
+      "item": "Australia's AUKUS program facing capacity constraints that could undermine submarine delivery",
+      "origin": "AU security_defense",
+      "confidence": 2,
+      "note": "Based on single former UK admiral opinion piece - included for awareness but not robust enough for regional synthesis"
+    },
+    {
+      "item": "Australia's potential to be first central bank globally to raise rates post-pandemic",
+      "origin": "AU economic_tech",
+      "confidence": 2,
+      "note": "Forward-looking monetary policy speculation - included for awareness but lacks sufficient evidence for regional dynamics"
+    },
+    {
+      "item": "Taiwan's domestic political gridlock continuation",
+      "origin": "TW domestic_regime",
+      "confidence": 2,
+      "note": "Assessment based on limited sourcing for domestic political dynamics - quarantined from cross-country analysis"
+    }
+  ]
+}

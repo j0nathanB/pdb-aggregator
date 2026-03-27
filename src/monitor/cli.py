@@ -223,12 +223,24 @@ async def cmd_run(args: argparse.Namespace) -> None:
         )
 
         # Edit + copyedit multi-page output
-        from .agents.editor import edit_newsletter as edit_pages
+        from .agents.editor import edit_region_page, edit_overview_page
         from .agents.copyeditor import copyedit_newsletter as copyedit
+
+        # Edit overview page (executive brief)
+        if "overview" in pages:
+            latest = global_ledger.latest_entry()
+            items = latest.executive_briefing_items if latest else []
+            if items:
+                print("Editing executive brief...")
+                pages["overview"] = await edit_overview_page(pages["overview"], items)
+            pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency)
+
+        # Edit region pages (regional lead + country sections)
         for slug in list(pages.keys()):
             if slug != "overview" and slug != "watchlist":
-                pages[slug] = await edit_pages(
-                    pages[slug], country_ledgers, country_entries, max_concurrent=args.concurrency
+                pages[slug] = await edit_region_page(
+                    pages[slug], regional_reports, country_ledgers, country_entries,
+                    max_concurrent=args.concurrency,
                 )
                 pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency)
 
