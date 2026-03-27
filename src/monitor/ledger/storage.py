@@ -135,6 +135,7 @@ def load_regional_report(region: Region) -> "RegionalReport":
     return RegionalReport(
         region=Region(raw["region"]),
         week=date.fromisoformat(raw["week"]),
+        regional_overview=raw.get("regional_overview", ""),
         cross_cutting_dynamics=[CrossCuttingDynamic(**d) for d in raw.get("cross_cutting_dynamics", [])],
         dynamics_considered_and_rejected=[RejectedDynamic(**d) for d in raw.get("dynamics_considered_and_rejected", [])],
         gaps=[Gap(**g) for g in raw.get("gaps", [])],

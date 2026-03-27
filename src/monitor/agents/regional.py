@@ -82,6 +82,7 @@ class RegionalReport:
     """Output of a regional synthesis call."""
     region: Region
     week: date
+    regional_overview: str = ""
     cross_cutting_dynamics: list[CrossCuttingDynamic] = field(default_factory=list)
     dynamics_considered_and_rejected: list[RejectedDynamic] = field(default_factory=list)
     gaps: list[Gap] = field(default_factory=list)
@@ -292,6 +293,7 @@ def parse_regional_response(response_text: str, region: Region, week: date) -> R
     return RegionalReport(
         region=region,
         week=week,
+        regional_overview=data.get("regional_overview", ""),
         cross_cutting_dynamics=dynamics,
         dynamics_considered_and_rejected=rejected,
         gaps=gaps,

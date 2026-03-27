@@ -139,7 +139,16 @@ def _render_regional_lead(
     """Render the regional lead paragraph from cross-cutting dynamics."""
     display_name = REGION_DISPLAY_NAMES.get(region, region.value)
 
-    if not report or not report.cross_cutting_dynamics:
+    if not report:
+        return (
+            f"No significant cross-country dynamics emerged in {display_name} this week. "
+            "Country-level developments are covered below."
+        )
+
+    # Use regional overview if available (always produced by the regional agent)
+    if not report.cross_cutting_dynamics:
+        if report.regional_overview:
+            return report.regional_overview
         return (
             f"No significant cross-country dynamics emerged in {display_name} this week. "
             "Country-level developments are covered below."
@@ -531,11 +540,15 @@ def _render_overview_page(
         slug = REGION_SLUGS[region]
         icon = REGION_ICONS[region]
 
-        # Build a one-line summary from the regional lead or deep-dive countries
+        # Build a one-line summary from the regional overview or deep-dive countries
         report = regional_reports.get(region)
-        if report and report.cross_cutting_dynamics:
-            summary = report.cross_cutting_dynamics[0].description
+        if report and report.regional_overview:
+            summary = report.regional_overview
             # Truncate to ~120 chars for card body
+            if len(summary) > 120:
+                summary = summary[:117].rsplit(" ", 1)[0] + "..."
+        elif report and report.cross_cutting_dynamics:
+            summary = report.cross_cutting_dynamics[0].assessment
             if len(summary) > 120:
                 summary = summary[:117].rsplit(" ", 1)[0] + "..."
         else:
@@ -549,7 +562,7 @@ def _render_overview_page(
             if deep_dive_names:
                 summary = f"{', '.join(deep_dive_names)} received full analytical treatment this week."
             else:
-                summary = "No significant cross-country dynamics this week."
+                summary = "Country-level developments are covered in the regional page."
 
         sections.append(f'  <Card title="{display_name}" icon="{icon}" href="{brief_path}/{slug}">')
         sections.append(f"    {summary}")

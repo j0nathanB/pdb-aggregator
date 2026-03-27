@@ -85,6 +85,8 @@ For each rejected candidate, explain specifically why you rejected it. "Insuffic
   "analysis_date": "{{ANALYSIS_DATE}}",
   "source_reports": ["mx_{{ANALYSIS_DATE}}", "ca_{{ANALYSIS_DATE}}", ...],
 
+  "regional_overview": "A 2-4 sentence narrative summary of what is happening across this region this week. This is always produced, whether or not cross-cutting dynamics exist. When cross-cutting dynamics are found, the overview should foreground them. When they are not, synthesize the most significant country-level developments into a regional picture — what is the dominant mood, where is the most activity, what stands out? Do not use the phrase 'no significant cross-country dynamics' — there is always something worth saying about what is happening across the region's countries. Write in plain, direct prose.",
+
   "cross_cutting_dynamics": [
     {
       "title": "Descriptive title of the dynamic",
