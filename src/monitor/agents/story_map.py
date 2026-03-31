@@ -35,6 +35,16 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 
 @dataclass
+class ArticleRef:
+    """A single article reference within a story cluster."""
+
+    title: str
+    source: str
+    url: str
+    date: str = ""
+
+
+@dataclass
 class StoryCluster:
     """A single story identified from search results."""
 
@@ -46,6 +56,7 @@ class StoryCluster:
     source_count: int = 0
     sources: list[str] = field(default_factory=list)
     date_range: str = ""
+    articles: list[ArticleRef] = field(default_factory=list)
     representative_urls: list[str] = field(default_factory=list)
 
 
@@ -220,6 +231,15 @@ def parse_story_map_response(response_text: str) -> StoryMapOutput:
 
     stories = []
     for s in data.get("stories", []):
+        articles = [
+            ArticleRef(
+                title=a.get("title", ""),
+                source=a.get("source", ""),
+                url=a.get("url", ""),
+                date=a.get("date", ""),
+            )
+            for a in s.get("articles", [])
+        ]
         stories.append(StoryCluster(
             story_id=s.get("story_id", 0),
             headline=s.get("headline", ""),
@@ -229,6 +249,7 @@ def parse_story_map_response(response_text: str) -> StoryMapOutput:
             source_count=s.get("source_count", 0),
             sources=s.get("sources", []),
             date_range=s.get("date_range", ""),
+            articles=articles,
             representative_urls=s.get("representative_urls", []),
         ))
 

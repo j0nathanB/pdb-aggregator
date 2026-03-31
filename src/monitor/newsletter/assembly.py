@@ -207,8 +207,6 @@ def _collect_developments(entry: WeeklyEntry) -> list[dict]:
                         source_attr = "; ".join(source_parts)
                     else:
                         source_attr = "unknown"
-                    if dev.date:
-                        source_attr += f", {dev.date.isoformat()}"
                     if preliminary:
                         source_attr += " *(preliminary)*"
 
@@ -224,11 +222,81 @@ def _collect_developments(entry: WeeklyEntry) -> list[dict]:
     return developments[:5]
 
 
+def _format_date_range_display(dates: list[str]) -> str:
+    """Format a list of ISO date strings into a readable range.
+
+    e.g. ["2026-01-18", "2026-01-20", "2026-01-18"] -> "January 18-20, 2026"
+    """
+    parsed = []
+    for d in dates:
+        if d:
+            try:
+                parsed.append(date.fromisoformat(d))
+            except ValueError:
+                continue
+    if not parsed:
+        return ""
+    parsed.sort()
+    earliest = min(parsed)
+    latest = max(parsed)
+    if earliest == latest:
+        return earliest.strftime("%B %d, %Y")
+    if earliest.month == latest.month and earliest.year == latest.year:
+        return f"{earliest.strftime('%B %d')}-{latest.day}, {latest.year}"
+    if earliest.year == latest.year:
+        return f"{earliest.strftime('%B %d')} - {latest.strftime('%B %d')}, {latest.year}"
+    return f"{earliest.strftime('%B %d, %Y')} - {latest.strftime('%B %d, %Y')}"
+
+
+def _render_sources_section(story_map_data: dict) -> str:
+    """Render a Sources section using ResponseField components from story map sidecar."""
+    lines = ['<Accordion title="Sources">']
+
+    for story in story_map_data.get("stories", []):
+        articles = story.get("articles", [])
+        if not articles:
+            continue
+
+        headline = story.get("headline", "Untitled")
+        date_range = _format_date_range_display([a.get("date", "") for a in articles])
+
+        lines.append(f'<ResponseField name="{headline}" type="{date_range}">')
+        for a in articles:
+            title = a.get("title", "Untitled")
+            source = a.get("source", "")
+            url = a.get("url", "")
+            if url:
+                lines.append(f"  - [{title} — {source}]({url})")
+            else:
+                lines.append(f"  - {title} — {source}")
+        lines.append("</ResponseField>")
+        lines.append("")
+
+    # Single-source items
+    singles = story_map_data.get("single_source_items", [])
+    if singles:
+        lines.append('<ResponseField name="Other" type="">')
+        for item in singles:
+            title = item.get("headline", "Untitled")
+            source = item.get("source", "")
+            url = item.get("url", "")
+            if url:
+                lines.append(f"  - [{title} — {source}]({url})")
+            else:
+                lines.append(f"  - {title} — {source}")
+        lines.append("</ResponseField>")
+        lines.append("")
+
+    lines.append("</Accordion>")
+    return "\n".join(lines)
+
+
 def _render_deep_dive_entry(
     code: str,
     ledger: CountryLedger,
     entry: WeeklyEntry,
     summary_only: bool = False,
+    story_map_data: dict | None = None,
 ) -> str:
     """Render a deep-dive country entry.
 
@@ -301,6 +369,11 @@ def _render_deep_dive_entry(
                 )
             lines.append("</Accordion>")
             lines.append("")
+
+    # Sources accordion — full article references from story map sidecar
+    if story_map_data and story_map_data.get("stories"):
+        lines.append(_render_sources_section(story_map_data))
+        lines.append("")
 
     return "\n".join(lines)
 
@@ -590,6 +663,7 @@ def _render_region_page(
     country_ledgers: dict[str, CountryLedger],
     country_entries: dict[str, Optional[WeeklyEntry]],
     end_date: date,
+    story_maps: dict[str, dict] | None = None,
 ) -> str:
     """Render a single region page with full country details."""
     display_name = REGION_DISPLAY_NAMES[region]
@@ -622,10 +696,11 @@ def _render_region_page(
 
     for code in deep_dives:
         entry = country_entries[code]
+        sm_data = story_maps.get(code) if story_maps else None
         sections.append("")
         sections.append("---")
         sections.append("")
-        sections.append(_render_deep_dive_entry(code, country_ledgers[code], entry))
+        sections.append(_render_deep_dive_entry(code, country_ledgers[code], entry, story_map_data=sm_data))
 
     for code in maintenances:
         entry = country_entries.get(code)
@@ -686,6 +761,7 @@ def assemble_newsletter_pages(
     country_ledgers: dict[str, CountryLedger],
     country_entries: dict[str, Optional[WeeklyEntry]],
     end_date: date,
+    story_maps: dict[str, dict] | None = None,
 ) -> dict[str, str]:
     """
     Assemble multi-page newsletter output for Mintlify.
@@ -696,6 +772,11 @@ def assemble_newsletter_pages(
         "western-europe" -> region page
         ...
         "watchlist" -> watchlist page
+
+    Args:
+        story_maps: Optional dict mapping country code to story map sidecar
+            data (from ledgers/story_maps/). When provided, a Sources accordion
+            is rendered below each country's Other Stories section.
     """
     brief_path = f"/briefs/{end_date.isoformat()}"
 
@@ -713,6 +794,7 @@ def assemble_newsletter_pages(
         pages[slug] = _render_region_page(
             region, regional_reports, country_ledgers,
             country_entries, end_date,
+            story_maps=story_maps,
         )
 
     # Watchlist

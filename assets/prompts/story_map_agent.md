@@ -40,6 +40,7 @@ For each story cluster, produce:
 - **Source count:** How many input results (URLs) belong to this cluster. This counts individual articles, not unique domains — if El Universal published 3 articles about the same story, that's 3 toward the source count. This number is used for accounting: the sum of all story source_counts + single_source_items + off_topic_filtered must equal the total input.
 - **Sources:** List of unique source domains that covered this story.
 - **Date range:** The span of dates across the articles in this cluster.
+- **Articles:** A list of every search result assigned to this cluster. For each, include the article title (as it appeared in the search results), the source domain, the URL, and the publication date (YYYY-MM-DD, derived from the age field relative to the analysis date). This is the full roster — every input result that belongs to this story.
 - **Representative URLs:** The 1-2 best articles for full extraction. Prefer: highest Goggle boost tier source, longest/most detailed article (by snippet length), earliest coverage (original reporting rather than follow-up).
 - **Signal category hint:** Which of the five signal categories this story most likely touches. This is a hint for the extraction step, not an analytical judgment. If unclear, mark as "unclear."
 
@@ -88,6 +89,15 @@ If after your best effort the numbers still don't balance, list any remaining un
       "source_count": 7,
       "sources": ["eluniversal.com.mx", "reforma.com", "reuters.com", "apnews.com", "proceso.com.mx", "jornada.com.mx", "france24.com"],
       "date_range": "2026-03-18 to 2026-03-20",
+      "articles": [
+        {"title": "Sheinbaum rechaza intervención militar de EU", "source": "eluniversal.com.mx", "url": "https://www.eluniversal.com.mx/...", "date": "2026-03-18"},
+        {"title": "Mexico rejects US military proposal", "source": "reuters.com", "url": "https://www.reuters.com/...", "date": "2026-03-18"},
+        {"title": "Sheinbaum: cooperación sin subordinación", "source": "reforma.com", "url": "https://www.reforma.com/...", "date": "2026-03-18"},
+        {"title": "Mexico pushes back on cartel operations plan", "source": "apnews.com", "url": "https://apnews.com/...", "date": "2026-03-19"},
+        {"title": "Sheinbaum dice no a operativo conjunto antinarco", "source": "proceso.com.mx", "url": "https://www.proceso.com.mx/...", "date": "2026-03-19"},
+        {"title": "México rechaza propuesta militar estadounidense", "source": "jornada.com.mx", "url": "https://www.jornada.com.mx/...", "date": "2026-03-20"},
+        {"title": "Le Mexique rejette la proposition militaire américaine", "source": "france24.com", "url": "https://www.france24.com/...", "date": "2026-03-20"}
+      ],
       "representative_urls": [
         "https://www.eluniversal.com.mx/...",
         "https://www.reuters.com/..."
@@ -102,6 +112,11 @@ If after your best effort the numbers still don't balance, list any remaining un
       "source_count": 3,
       "sources": ["eluniversal.com.mx", "elfinanciero.com.mx", "jornada.com.mx"],
       "date_range": "2026-03-17 to 2026-03-18",
+      "articles": [
+        {"title": "Cumbre nórdica concluye con acuerdos marco", "source": "eluniversal.com.mx", "url": "https://www.eluniversal.com.mx/...", "date": "2026-03-17"},
+        {"title": "México firma acuerdos de energía verde con Noruega y Suecia", "source": "elfinanciero.com.mx", "url": "https://www.elfinanciero.com.mx/...", "date": "2026-03-17"},
+        {"title": "SRE anuncia cooperación con países nórdicos", "source": "jornada.com.mx", "url": "https://www.jornada.com.mx/...", "date": "2026-03-18"}
+      ],
       "representative_urls": [
         "https://www.eluniversal.com.mx/...",
         "https://www.elfinanciero.com.mx/..."

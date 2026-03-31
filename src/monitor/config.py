@@ -66,7 +66,7 @@ def load_settings() -> dict:
 
 _SETTINGS = load_settings()
 
-MODEL = _SETTINGS.get("model", "claude-sonnet-4-6-20250626")
+MODEL = _SETTINGS.get("model", "claude-opus-4-6-20250626")
 THINKING_BUDGET_TOKENS = _SETTINGS.get("thinking_budget_tokens", 16000)
 
 LEDGERS_DIR = PROJECT_ROOT / "ledgers"
@@ -74,6 +74,7 @@ COUNTRY_LEDGERS_DIR = LEDGERS_DIR / "countries"
 GLOBAL_LEDGER_PATH = LEDGERS_DIR / "global.json"
 LEDGER_ARCHIVE_DIR = LEDGERS_DIR / "archive"
 REGIONAL_REPORTS_DIR = LEDGERS_DIR / "regional"
+STORY_MAPS_DIR = LEDGERS_DIR / "story_maps"
 DOSSIERS_DIR = ASSETS_DIR / "country_dossiers"
 
 # Ledger retention

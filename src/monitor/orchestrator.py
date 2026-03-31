@@ -47,6 +47,7 @@ from .ledger.storage import (
     load_global_ledger,
     save_country_ledger,
     save_global_ledger,
+    save_story_map,
 )
 from .models import (
     CorrectionLogEntry,
@@ -365,6 +366,13 @@ async def process_deep_dive(
                 )
                 for sc in story_map.stories
             ]
+
+        # Persist full story map as sidecar (all sources per cluster)
+        if story_map and story_map.stories:
+            try:
+                save_story_map(config.code, end_date, story_map)
+            except Exception as e:
+                logger.warning("Failed to save story map for %s: %s", config.code, e)
 
         if recorder:
             recorder.write("07a_country_agent", {

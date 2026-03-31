@@ -13,6 +13,7 @@ from ..config import (
     GLOBAL_LEDGER_PATH,
     LEDGER_ARCHIVE_DIR,
     REGIONAL_REPORTS_DIR,
+    STORY_MAPS_DIR,
     Region,
 )
 from ..models import CountryLedger, GlobalLedger
@@ -152,6 +153,68 @@ def load_all_regional_reports() -> dict[Region, "RegionalReport"]:
         except (ValueError, FileNotFoundError):
             logger.warning("Skipping invalid regional report: %s", path.name)
     return reports
+
+
+# ---- Story Maps ----
+
+def save_story_map(code: str, week: date, story_map: "StoryMapOutput") -> Path:
+    """Persist a full StoryMapOutput as a sidecar JSON alongside the ledger."""
+    from ..agents.story_map import StoryCluster, SingleSourceItem, UnassignedItem
+    path = STORY_MAPS_DIR / f"{code}_{week.isoformat()}.json"
+    data = {
+        "country": story_map.country,
+        "code": code,
+        "week": week.isoformat(),
+        "analysis_date": story_map.analysis_date,
+        "search_results_total": story_map.search_results_total,
+        "stories_identified": story_map.stories_identified,
+        "off_topic_filtered": story_map.off_topic_filtered,
+        "noise_summary": story_map.noise_summary,
+        "stories": [
+            {
+                "story_id": s.story_id,
+                "headline": s.headline,
+                "summary": s.summary,
+                "actors_involved": s.actors_involved,
+                "signal_category_hint": s.signal_category_hint,
+                "source_count": s.source_count,
+                "sources": s.sources,
+                "date_range": s.date_range,
+                "articles": [
+                    {"title": a.title, "source": a.source, "url": a.url, "date": a.date}
+                    for a in s.articles
+                ],
+                "representative_urls": s.representative_urls,
+            }
+            for s in story_map.stories
+        ],
+        "single_source_items": [
+            {
+                "headline": item.headline,
+                "source": item.source,
+                "url": item.url,
+                "signal_category_hint": item.signal_category_hint,
+            }
+            for item in story_map.single_source_items
+        ],
+    }
+    _write_json(path, data)
+    logger.info("Saved story map: %s %s (%d stories)", code, week, len(story_map.stories))
+    return path
+
+
+def load_story_map(code: str, week: date) -> dict:
+    """Load a story map sidecar JSON. Returns raw dict."""
+    path = STORY_MAPS_DIR / f"{code}_{week.isoformat()}.json"
+    if not path.exists():
+        raise FileNotFoundError(f"No story map for {code} week {week}: {path}")
+    return _read_json(path)
+
+
+def list_story_maps(code: str | None = None) -> list[Path]:
+    """List story map files, optionally filtered by country code."""
+    pattern = f"{code}_*.json" if code else "*.json"
+    return sorted(STORY_MAPS_DIR.glob(pattern))
 
 
 # ---- Archival ----

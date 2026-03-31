@@ -218,8 +218,16 @@ async def cmd_run(args: argparse.Namespace) -> None:
 
         # Step 10: Publish to Mintlify site
         print("Publishing to site...")
+        from .ledger.storage import load_story_map, list_story_maps
+        story_maps_data: dict[str, dict] = {}
+        for code in country_ledgers:
+            try:
+                story_maps_data[code] = load_story_map(code, end_date)
+            except FileNotFoundError:
+                pass
         pages = assemble_newsletter_pages(
-            global_ledger, regional_reports, country_ledgers, country_entries, end_date
+            global_ledger, regional_reports, country_ledgers, country_entries, end_date,
+            story_maps=story_maps_data or None,
         )
 
         # Edit + copyedit multi-page output
@@ -339,8 +347,17 @@ def cmd_publish(args: argparse.Namespace) -> None:
 
     regional_reports = load_all_regional_reports()
 
+    from .ledger.storage import load_story_map
+    story_maps_data: dict[str, dict] = {}
+    for code in country_ledgers:
+        try:
+            story_maps_data[code] = load_story_map(code, end_date)
+        except FileNotFoundError:
+            pass
+
     pages = assemble_newsletter_pages(
-        global_ledger, regional_reports, country_ledgers, country_entries, end_date
+        global_ledger, regional_reports, country_ledgers, country_entries, end_date,
+        story_maps=story_maps_data or None,
     )
     brief_dir = publish_brief(pages, end_date)
     print(f"Published {len(pages)} pages to {brief_dir}")
