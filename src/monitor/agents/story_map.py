@@ -216,6 +216,131 @@ def build_story_map_prompt(
 # Response parsing
 # =============================================================================
 
+def _repair_json(text: str) -> str:
+    """Best-effort repair of common LLM JSON errors.
+
+    Handles: missing commas between values, trailing commas before } or ],
+    and truncated output (closes open braces/brackets).
+    """
+    # Walk character by character to safely identify positions outside strings
+    # where commas are missing or trailing.
+    chars = list(text)
+    length = len(chars)
+    in_string = False
+    escape = False
+    # Track brace/bracket depth for truncation repair
+    brace_depth = 0
+    bracket_depth = 0
+    # Collect insertion points for missing commas
+    insertions: list[tuple[int, str]] = []
+
+    i = 0
+    while i < length:
+        ch = chars[i]
+        if escape:
+            escape = False
+            i += 1
+            continue
+        if ch == "\\":
+            if in_string:
+                escape = True
+            i += 1
+            continue
+        if ch == '"':
+            in_string = not in_string
+            i += 1
+            continue
+        if in_string:
+            i += 1
+            continue
+
+        # Outside strings
+        if ch == "{":
+            brace_depth += 1
+        elif ch == "}":
+            brace_depth -= 1
+        elif ch == "[":
+            bracket_depth += 1
+        elif ch == "]":
+            bracket_depth -= 1
+
+        # Detect missing comma: a value-ending token followed by whitespace
+        # then a value-starting token, with no comma between them.
+        if ch in ("}", "]", '"') or (ch.isdigit()):
+            # Look ahead past whitespace for the next non-whitespace char
+            if ch == '"':
+                # This " could be opening or closing. We need closing quotes.
+                # Skip — handled by the regex below instead.
+                pass
+            j = i + 1
+            while j < length and chars[j] in (" ", "\t", "\n", "\r"):
+                j += 1
+            if j < length and chars[j] in ('"', "{", "["):
+                # Check there's no comma already
+                between = "".join(chars[i + 1 : j])
+                if "," not in between and ":" not in between:
+                    if ch in ("}", "]") or ch.isdigit():
+                        insertions.append((i + 1, ","))
+
+        i += 1
+
+    # Apply insertions in reverse order to preserve positions
+    for pos, comma in reversed(insertions):
+        chars.insert(pos, comma)
+
+    text = "".join(chars)
+
+    # Missing comma after string values: "value" \n "key" (no comma)
+    # Use regex for the string-ending case since the walker above skips it.
+    text = re.sub(
+        r'"\s*\n(\s*")',
+        lambda m: _maybe_insert_comma(text, m),
+        text,
+    )
+
+    # Trailing commas: ,} or ,]
+    text = re.sub(r",\s*([}\]])", r"\1", text)
+
+    # Truncated output — close open brackets/braces in correct (LIFO) order
+    stack: list[str] = []  # tracks expected closing chars
+    in_string = False
+    escape = False
+    for ch in text:
+        if escape:
+            escape = False
+            continue
+        if ch == "\\":
+            if in_string:
+                escape = True
+            continue
+        if ch == '"':
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if ch == "{":
+            stack.append("}")
+        elif ch == "[":
+            stack.append("]")
+        elif ch in ("}", "]") and stack and stack[-1] == ch:
+            stack.pop()
+
+    text = text.rstrip()
+    text = re.sub(r",\s*$", "", text)
+    text += "".join(reversed(stack))
+
+    return text
+
+
+def _maybe_insert_comma(full_text: str, match: re.Match) -> str:
+    """Insert comma between adjacent string values if one is missing."""
+    # Look back further to see if this " is a value-end or key-start
+    prefix = full_text[: match.start()].rstrip()
+    if prefix and prefix[-1] in ("{", "[", ",", ":"):
+        return match.group(0)  # Already has separator or is after a key
+    return '",\n' + match.group(1)
+
+
 def parse_story_map_response(response_text: str) -> StoryMapOutput:
     """Parse the story map LLM response into StoryMapOutput.
 
@@ -227,7 +352,11 @@ def parse_story_map_response(response_text: str) -> StoryMapOutput:
         text = re.sub(r"^```(?:json)?\s*\n?", "", text)
         text = re.sub(r"\n?```\s*$", "", text)
 
-    data = json.loads(text)
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as e:
+        logger.warning("Story map JSON repair attempt: %s", e)
+        data = json.loads(_repair_json(text))
 
     stories = []
     for s in data.get("stories", []):
