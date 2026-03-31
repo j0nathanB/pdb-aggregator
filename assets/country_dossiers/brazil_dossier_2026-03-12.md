@@ -331,6 +331,15 @@ The deforestation picture shows divergent trends. Amazon deforestation fell to *
 
 At least 8 million Brazilians have been displaced by climate events over the past two decades. In 2023 alone, ~745,000 were displaced by extreme events. Over 2,000 municipalities are rated "extremely vulnerable" yet only 14 of 26 states have climate emergency plans. The Northeast's recurring droughts continue to drive migration southward, fueling favela growth in São Paulo and Rio de Janeiro. Rio Grande do Sul's 2024 floods displaced 422,000+ people, with multiple towns reporting permanent out-migration. Urban favela populations face compounding vulnerability from hillside landslides, flooding, heat islands, and disease.
 
+**STRUCTURAL CLAIMS — SECTION 8:**
+
+1. Brazil's emissions profile is structurally anomalous: land-use change and agriculture account for ~70% of total GHG emissions, meaning clean-energy achievements in the power sector are nearly irrelevant to the country's actual climate trajectory. [HIGH CONFIDENCE]
+2. The 2024 convergence of Amazon megadrought, Rio Grande do Sul floods, and record fire season demonstrates that Brazil's climate risk is not a future scenario but an already-realized stress compounding simultaneously across multiple geographic zones. [HIGH CONFIDENCE]
+3. Cerrado deforestation structurally exceeds Amazon deforestation and is accelerating, yet the regulatory framework (80% preservation requirement for Amazon vs. 20–35% for Cerrado) creates a legal loophole that sustains the agricultural frontier's expansion. [HIGH CONFIDENCE]
+4. Environmental governance capacity remains structurally fragile: the Lula restoration roughly doubled IBAMA's budget but field agent counts remain far below pre-Bolsonaro peaks, making enforcement dependent on funding continuity rather than institutional embedding. [MODERATE CONFIDENCE]
+5. Brazil's oil expansion (Petrobras $79B investment through 2029, Equatorial Margin potential) is structurally incompatible with the NDC targets Brazil submitted at COP30, creating a sovereign credibility gap between environmental diplomacy and extractive strategy. [HIGH CONFIDENCE]
+6. Climate migration is already underway at scale (~8 million displaced over two decades) but lacks a national institutional framework, meaning future displacement events will overwhelm ad hoc municipal and state responses. [MODERATE CONFIDENCE]
+
 ---
 
 ## Section 9: Illicit Networks & Shadow Governance
@@ -373,6 +382,15 @@ An estimated 91% of Brazil's garimpo activity is in the Amazon, with **77% of mi
 
 Operation Car Wash, launched March 2014, produced ~280 convictions and recovered ~$800 million. The Odebrecht plea deal implicated 98 politicians across 15 parties. But the June 2019 Vaza Jato leaks (Intercept Brasil) revealed Judge Sergio Moro coordinated strategy with prosecutor Deltan Dallagnol, suggested prosecution sequences, and provided advance knowledge of judicial decisions. Prosecutors internally doubted the triplex evidence against Lula and plotted to prevent his pre-election interview. Lula was imprisoned April 2018 while leading presidential polls; Moro was immediately appointed Bolsonaro's Justice Minister. The STF annulled Lula's convictions in March 2021 on jurisdictional grounds and ruled Moro exhibited bias. The Lava Jato task force was officially disbanded February 2021, and a congressional "backlash coalition" rolled back key anti-corruption components including restrictions on plea bargains and pretrial detention.
 
+**STRUCTURAL CLAIMS — SECTION 9:**
+
+1. The PCC has evolved from a prison gang into a transnational corporate criminal enterprise generating R$4.9 billion annually, with presence in 22 of 27 Brazilian states and active operations in Europe, West Africa, and Latin America. [HIGH CONFIDENCE]
+2. Milícias now exercise territorial control over more than 20% of Rio de Janeiro — a 387% expansion since 2006 — and constitute a parallel state providing essential services through extortion monopolies rather than merely criminal enterprise. [HIGH CONFIDENCE]
+3. Brazil is the primary Atlantic transit corridor for cocaine reaching Europe, with an estimated 85–90% of shipments evading interception, and the PCC controls more than half of Brazil's drug exports to Europe. [HIGH CONFIDENCE]
+4. Illegal gold laundering operates at industrial scale and is deeply integrated into legal supply chains: the 67% gap between Swiss gold imports from Brazil and Brazil's reported gold exports confirms systemic laundering that state monitoring cannot currently detect. [HIGH CONFIDENCE]
+5. The Lava Jato prosecution both was and was not what it claimed: it produced genuine anti-corruption outcomes (280 convictions, $800M recovered) while being demonstrably weaponized by a biased judge who was immediately rewarded with a cabinet post, making its legacy structurally irresolvable as a question of legitimacy. [HIGH CONFIDENCE]
+6. Criminal organizations (PCC, CV, milícias) provide parallel governance across millions of residents where the state is absent or co-opted — this is a structural governance condition, not a security externality. [HIGH CONFIDENCE]
+
 ---
 
 ## Section 10: Information Ecosystem & Media Structure
@@ -406,6 +424,14 @@ The **Gabinete do Ódio** (Office of Hate) operated from inside the presidential
 Legislative responses have failed. **PL 2630/2020** (the "Fake News bill") was shelved in June 2024 after aggressive Big Tech lobbying—Google hired former President Michel Temer and ran anti-bill messages on its homepage; Meta published full-page newspaper ads. In June 2025, the STF struck down Article 19 of the Marco Civil (internet safe harbor), requiring platforms to actively remove certain third-party content without court orders. As of early 2026, comprehensive platform regulation remains stalled.
 
 Press freedom has improved markedly: Brazil climbed from **110th (2022) to 63rd (2025)** on the RSF index. But structural challenges persist—44 journalists have been killed since 1992 (CPJ data), media ownership is concentrated among 10 family conglomerates, and **2,504 municipalities** remain news deserts (Atlas da Notícia, 2025 data), with the Northeast worst affected (73.5% of municipalities).
+
+**STRUCTURAL CLAIMS — SECTION 10:**
+
+1. WhatsApp's 93.7% penetration and zero-rating on mobile plans make it the structurally dominant political communication channel for lower-income Brazilians, creating an encryption-protected disinformation vector that no regulatory framework can effectively monitor. [HIGH CONFIDENCE]
+2. Grupo Globo's concentration (~60% of TV advertising, 99.6% household reach) means that a single family-controlled institution has disproportionate power over narrative framing for the majority of the population, even as its influence among periphery and evangelical populations has structurally declined. [HIGH CONFIDENCE]
+3. The X/Twitter suspension demonstrated that Brazilian judicial authority over platform operations is enforceable against even the world's wealthiest platform owner, but it also confirmed that no legislative framework governs this authority — enforcement rests entirely on monocratic judicial discretion. [HIGH CONFIDENCE]
+4. The failure of PL 2630 (Fake News bill) following aggressive Big Tech lobbying — including Google running anti-bill messages on its homepage — confirms that comprehensive platform regulation is structurally blocked by a well-resourced commercial coalition. [HIGH CONFIDENCE]
+5. With 2,504 municipalities as news deserts, concentrated in the Northeast, the information infrastructure for civic deliberation is absent across large portions of the country, creating a structural vacuum that WhatsApp disinformation and evangelical media systematically fill. [MODERATE CONFIDENCE]
 
 ---
 
@@ -451,6 +477,15 @@ Abandoning Western frameworks would cost Brazil EU market access (the Mercosur-E
 
 Key bilateral defense partnerships reinforce this balance: the **PROSUB submarine program with France** (4 Scorpène-class plus 1 nuclear submarine, ~US$8–10 billion), the **Gripen fighter program with Sweden** (36 aircraft, US$5.4 billion), and deepening trade with China (Brazil's largest single-country trade partner)—while maintaining military-to-military ties with the US and pursuing OECD accession.
 
+**STRUCTURAL CLAIMS — SECTION 11:**
+
+1. Brazil's multi-alignment strategy is not a free choice but a structural condition: domestic political economy constraints (agribusiness-China dependency, industry-US relationship, evangelical-Israel alignment) operate simultaneously and in contradiction, preventing any government from pivoting to either pole. [HIGH CONFIDENCE]
+2. The ICC arrest warrant for Putin represents the most concrete tension in Brazil's multi-alignment: honoring Rome Statute obligations has already excluded Russia's president from two consecutive Brazil-hosted summits, demonstrating that legal commitments impose real costs on strategic autonomy. [HIGH CONFIDENCE]
+3. The Mercosur-EU Free Trade Agreement creates a structural trade diversification opportunity that could partially offset China dependency, but its 15-year tariff phase-in and ECJ ratification risk mean that near-term geopolitical balancing benefits are limited. [MODERATE CONFIDENCE]
+4. BRICS institutional depth remains shallow relative to its rhetorical weight: the NDB ceased Russian business to preserve dollar access, no dedollarization language appeared in the 2025 Rio Declaration, and member state disagreements blocked a joint statement at the April 2025 foreign ministers' meeting. [HIGH CONFIDENCE]
+5. Brazil's OECD accession, if completed by 2026–2028, would anchor Western institutional integration more durably than any bilateral US relationship and create a structural incentive for policy convergence on environmental, anti-corruption, and market standards. [MODERATE CONFIDENCE]
+6. The defection cost calculus from Western frameworks — EU market access, OECD FDI credibility, dollar-denominated debt stability — substantially exceeds the benefits of full BRICS alignment, locking Brazil's optimal strategy as bridge-builder between blocs regardless of presidential ideology. [HIGH CONFIDENCE]
+
 ---
 
 ## Section 12: Military & Security Sector DNA
@@ -492,6 +527,15 @@ A **R$30 billion defense modernization package** approved by the Senate in 2025 
 The Bolsonaro-era ABIN scandal involved Director **Alexandre Ramagem** orchestrating illegal surveillance using Israeli **FirstMile software** (from Cognyte) to geolocate Justice Moraes, Governor Dória, Speaker Lira, and tax auditors investigating Flávio Bolsonaro—all without judicial authorization. Carlos Bolsonaro was identified as heading the political espionage group. Ramagem was convicted by the STF in September 2025, receiving 16 years. Lula appointed Luiz Fernando Corrêa as director, but reform is deeply complicated—Corrêa himself was later indicted for obstruction-related charges, and 17+ agents publicly demanded his dismissal in June 2025. The revelation that ABIN conducted espionage on Paraguayan officials during the Bolsonaro presidency further damaged institutional credibility.
 
 **GLO (Garantia da Lei e da Ordem) operations**—military deployments in internal security—peaked during the Bolsonaro era with 67 operations decreed between 2008–2017 and a full **federal military intervention in Rio de Janeiro** in February 2018 under General Braga Netto. Human Rights Watch documented 116 deaths across 64 cases showing "routine disregard for international standards." Military involvement in internal security has been scaled back under Lula III, though the separate **military justice system**—15 ministers (10 military, 5 civilian) at the Superior Military Court—continues to shield accountability. The 1979 Amnesty Law remains in effect despite Inter-American Court of Human Rights condemnation, and no military perpetrator of dictatorship-era crimes has been convicted. The STF's consolidation of January 8 coup cases outside military jurisdiction was unprecedented and represents the most significant civilian assertion of judicial authority over military criminality in democratic Brazil's history.
+
+**STRUCTURAL CLAIMS — SECTION 12:**
+
+1. The Brazilian military's structural problem is fiscal, not doctrinal: 74–76% of the defense budget goes to personnel and pensions, leaving only ~5% for investment and making the force large on paper but hollowed in operational readiness. [HIGH CONFIDENCE]
+2. The January 8 coup plot trial produced convictions of four-star generals and former service commanders — unprecedented in democratic Brazil — representing the most significant civilian assertion of judicial authority over military criminality since redemocratization. [HIGH CONFIDENCE]
+3. Civil-military relations remain structurally unreformed despite the coup prosecutions: civilian authorities still exhibit dependence on the military for public administration execution, and the 1979 Amnesty Law continues to shield accountability for dictatorship-era crimes. [MODERATE CONFIDENCE]
+4. Brazil's two flagship defense programs (PROSUB nuclear submarine, Gripen fighters) are designed to maximize technology transfer and strategic autonomy simultaneously — neither the US nor China is the primary partner — reflecting a deliberate hedging strategy in defense procurement. [HIGH CONFIDENCE]
+5. The R$30 billion defense modernization package (R$5B/year for six years) was explicitly carved out of the fiscal framework, confirming that the military retains privileged access to budgetary resources unavailable to civilian ministries. [HIGH CONFIDENCE]
+6. The ABIN espionage scandal — targeting STF justices, governors, and tax auditors using Israeli spyware — demonstrates that Brazil's intelligence apparatus was weaponized for partisan political surveillance, and institutional contamination has not been fully resolved under Lula. [MODERATE CONFIDENCE]
 
 ---
 
@@ -552,6 +596,16 @@ Lula III reversed course: rebuilding participatory councils, creating the Minist
 ## Transnational connections and foreign funding dynamics
 
 Brazilian civil society maintains dense international networks: MST through Via Campesina (182 global organizations), APIB through the Global Alliance of Territorial Communities and COP climate finance mechanisms, CUT through the International Trade Union Confederation and TUFBRICS. The right is equally connected: MBL to the Atlas Network and Students for Liberty, evangelical movements to U.S. missionary networks (Assemblies of God arrived in Belém in 1910), and transnational circulation of theologies and resources through publishing houses, seminaries, and religious think tanks. Bolsonaro-era restrictions on foreign NGO operations were largely reversed under Lula III, though the agribusiness lobby in Congress continues to resist international environmental oversight. At COP30, indigenous and Afro-descendant organizations demanded direct access to climate funds, criticizing "green colonization" and carbon credit contracts that bypass communities.
+
+**STRUCTURAL CLAIMS — SECTION 13:**
+
+1. Brazilian civil society's organizational DNA — PT, CUT, MST — was forged in resistance to the 1964–1985 military dictatorship, producing institutions whose internal culture and alliance patterns remain shaped by that founding confrontation even as the political context has changed. [HIGH CONFIDENCE]
+2. The 2017 labor reform's elimination of mandatory union dues structurally devastated CUT's finances and organizational capacity, shifting Brazilian labor politics from institutionalized collective bargaining toward more fragmented and movement-based mobilization. [HIGH CONFIDENCE]
+3. The MST's own 2025 assessment acknowledges that agrarian reform remains stalled under a nominally allied PT government, demonstrating that the structural constraint (agribusiness-dominated Congress) overrides presidential ideology on land distribution. [HIGH CONFIDENCE]
+4. Evangelical churches are performing parallel governance functions in urban peripheries — providing social services, dispute resolution, economic networks, and community belonging — making them functionally equivalent to state institutions in areas of state absence. [HIGH CONFIDENCE]
+5. Bolsonarismo's institutional infrastructure (evangelical churches, agribusiness lobby, PL congressional bloc, right-wing digital media) operates independently of Bolsonaro personally, as confirmed by Flávio Bolsonaro's competitive polling from a prison endorsement. [HIGH CONFIDENCE]
+6. The Lula III government's restoration of participatory councils and indigenous land demarcation represents a genuine policy reversal from Bolsonaro, but PT's historical co-optation of social movements through patronage creates structural dependency that constrains autonomous civil society pressure. [MODERATE CONFIDENCE]
+7. Criminal organizations (PCC, CV, milícias) function as parallel governance in urban peripheries, providing or extorting essential services in territories where the formal state is absent — evangelical churches and MST settlements perform analogous functions in their respective spheres. [HIGH CONFIDENCE]
 
 ---
 
@@ -618,6 +672,15 @@ Lula attended Putin's **Victory Day parade in Moscow** (May 9, 2025) alongside 2
 
 The agribusiness parliamentary front (~300 MPs, two-thirds of Congress) enforces China trade protection regardless of presidential ideology—even Bolsonaro was forced to moderate anti-China rhetoric because China buys one-third of all Brazilian exports. Conversely, the **"Beef, Bible, and Bullets" coalition** constrains Lula: the agribusiness lobby blocked full embassy relocation to Jerusalem under Bolsonaro (protecting the $3.9B surplus with Arab League countries), and the evangelical bloc's Israel alignment creates diplomatic friction with Lula's pro-Palestinian positioning. The **structural constraint operates symmetrically**: neither left nor right presidents can fully implement their stated alignment preferences.
 
+**STRUCTURAL CLAIMS — SECTION 14:**
+
+1. Brazil's "strategic autonomy" foreign policy doctrine is a structural constant — not an ideological choice — maintained across every administration since independence because binding alliance commitments carry costs that always exceed their benefits given Brazil's geographic position and trade diversification. [HIGH CONFIDENCE]
+2. China's trade relationship ($171B in 2025, 27.2% of total flow) is structurally more consequential than the US relationship ($83B), and no Brazilian president can implement meaningfully anti-China policies because the agribusiness lobby's survival depends on Chinese demand. [HIGH CONFIDENCE]
+3. Brazil's defense modernization partnerships (France/PROSUB, Sweden/Gripen) are deliberately chosen to maximize technology transfer and avoid single-power dependency, reflecting a consistent strategic logic of hedging that predates any individual government. [HIGH CONFIDENCE]
+4. The ICC arrest warrant for Putin imposes a concrete structural constraint on Brazil's BRICS strategy: Russia's president has been excluded from two consecutive Brazil-hosted summits, and honoring the warrant would represent a real alignment cost with a partner Brazil otherwise cultivates. [HIGH CONFIDENCE]
+5. Brazil's 2025 diplomatic calendar (BRICS presidency, COP30 host, Mercosur presidency, G20 handoff) represents an exceptional concentration of multilateral influence that will not recur in the same form, making 2025 a high-leverage but non-reproducible year in Brazil's international positioning. [HIGH CONFIDENCE]
+6. The structural constraint on alignment is symmetric across ideological lines: neither Bolsonaro (blocked from Jerusalem embassy move by agribusiness) nor Lula (constrained from full pro-Palestinian pivot by evangelical-Israel alignment) can implement stated preferences — domestic political economy overrides presidential ideology on external alignment. [HIGH CONFIDENCE]
+
 ---
 
 # Section 15: Constitutional Crises and Regime Transition Patterns
@@ -675,6 +738,15 @@ The Supreme Federal Tribunal has emerged as Brazil's most powerful—and most co
 
 In June 2025, the STF **struck down the internet safe harbor clause** (Article 19 of Marco Civil da Internet), making platforms liable for user content—one of the world's strictest digital regulatory regimes. Critics argue Moraes has issued secretive orders blocking 200+ profiles without due process; defenders note the Court's proactive stance was essential to preserving democracy against an active coup. The tension is real: the STF's "militant democracy" approach succeeded where similar institutions failed in Hungary, Poland, and Turkey, but risks eroding long-term legitimacy. The Dosimetry Bill and Shielding PEC represented congressional pushback against perceived judicial overreach. Public trust in the armed forces (30%) still exceeds trust in the judiciary—a structural vulnerability for democratic consolidation.
 
+**STRUCTURAL CLAIMS — SECTION 15:**
+
+1. Brazil's recurring regime transition pattern — institutional frameworks accumulating contradictions until an external shock triggers rapid reorganization, resolved through extra- or quasi-constitutional means — has repeated itself across seven transitions since independence, suggesting it is a structural feature of the political system rather than a series of contingent failures. [MODERATE CONFIDENCE]
+2. Half of Brazil's elected post-1989 presidents were impeached (Collor 1992, Rousseff 2016), indicating that the constitutional removal mechanism has been systematically available for weaponization by congressional coalitions against presidents who lose their Centrão support. [HIGH CONFIDENCE]
+3. The September 2025 conviction of Bolsonaro and 28 of 31 co-defendants, including four-star generals, represents the most extensive accountability for a coup attempt in democratic Brazil's history and is structurally irreversible absent a Congressional amnesty override. [HIGH CONFIDENCE]
+4. Lula's approval recovery from 24% (February 2025) to ~48% (October 2025) was driven primarily by nationalist sentiment around US tariff aggression rather than domestic policy performance, making the recovery structurally fragile and dependent on continued external threat perception. [MODERATE CONFIDENCE]
+5. The 2026 presidential race is structurally competitive at a dead heat (Lula 41% vs. Flávio Bolsonaro 41% in March 2026 Quaest polling) despite the incumbent candidate having 27 criminal convictions and the opposition's standard-bearer being a convicted prisoner's son — confirming that neither coalition has a structural electoral majority. [HIGH CONFIDENCE]
+6. The STF's "militant democracy" approach — successfully defending democratic institutions through expanded judicial intervention — creates a legitimacy paradox: the methods used to contain an anti-democratic threat themselves erode the rule-of-law norms they purport to defend, and public trust in the judiciary (below armed forces at 30%) represents a structural vulnerability. [ASSESSED]
+
 ---
 
 # Section 16: Collective Memory of Humiliation and Grievance
@@ -707,6 +779,15 @@ Stefan Zweig's 1941 *Brazil: Land of the Future* produced what has become a **na
 
 **Bolsonarismo as grievance movement** channels multiple frustrations: economic anxiety among middle-class voters, cultural conservatism weaponized through evangelical identity politics, anti-establishment rage fueled by corruption scandals, and military nostalgia. Academic analysis of PL floor speeches (2019–2024) identified an overarching conspiracy narrative—"The Grand Collusion"—alleging collaboration between the STF, the left, and mainstream media. Scholar Fernando Brancoli describes it as "a political constellation that will not vanish with the electoral defeat of its leader," comprising neo-evangelical pastors, military personnel, and meritocratic ideologues. The movement's persistence despite Bolsonaro's imprisonment and ineligibility is confirmed by the March 2026 polls showing Flávio Bolsonaro in a dead heat with Lula.
 
+**STRUCTURAL CLAIMS — SECTION 16:**
+
+1. The 1979 Amnesty Law's "reciprocal" design — freeing political prisoners while pardoning all security agents — institutionalized impunity as a founding norm of Brazilian democracy; no military perpetrator of dictatorship-era crimes has ever been convicted, and the STF's 2010 upholding of the law directly contradicted an Inter-American Court ruling. [HIGH CONFIDENCE]
+2. The Lava Jato memory is structurally dual-use: the identical facts (corruption prosecutions, imprisoned leading politician, judge-turned-cabinet-minister) support irreconcilable narratives of anti-corruption triumph and political persecution, and these narratives map directly onto the 2026 election's legitimacy contest. [HIGH CONFIDENCE]
+3. The displacement of May 13 by November 20 as the primary Afro-Brazilian commemorative date represents a completed reframing of slavery's political memory — from white benevolence to Black resistance — with the first national holiday observance in 2024 and a formal state apology for slavery the following day. [HIGH CONFIDENCE]
+4. Amazon sovereignty is the most geopolitically consequential grievance narrative in Brazil: 71% of Amazonia residents fear internationalization, and this anxiety has been deliberately activated by every government — including Lula's — to justify both extractive development and resistance to international environmental oversight. [HIGH CONFIDENCE]
+5. Bolsonarismo's persistence as a political movement despite its founder's imprisonment confirms that it is grounded in a structural coalition (evangelical churches, agribusiness, military-adjacent networks) rather than personal loyalty, and will remain a competitive force in 2026 and beyond. [HIGH CONFIDENCE]
+6. The "país do futuro" narrative functions as a legitimacy management device across the political spectrum: the left deploys it to justify present inequality as a transitional problem, the right deploys it to promise liberalization will finally unlock potential, and both uses defer accountability for the 19 consecutive years Brazil has remained upper-middle-income. [ASSESSED]
+
 ---
 
 # Section 17: Cross-Facet Intersection Analysis
@@ -727,6 +808,14 @@ China's purchase of one-third of all Brazilian exports—including 76.6% of soyb
 
 **Intersection 5: Military dictatorship amnesty × defense partnerships × regime transition patterns (Sections 16 ↔ 14 ↔ 15, spanning 4+ sections)**
 The unprecedented conviction and potential rank-stripping of four-star generals (Braga Netto, Heleno, Nogueira, Garnier) for the coup plot directly intersects with Brazil's defense modernization partnerships. The **R$30 billion defense package**, PROSUB nuclear submarine program, and Gripen expansion all require institutional military buy-in and professional officer corps cooperation. The mechanism: if the Superior Military Court strips ranks of convicted generals (request filed February 3, 2026), it would represent the first definitive break with the 1979 Amnesty Law's logic of military impunity—potentially transforming civil-military relations from the "moderating power" myth toward genuine civilian supremacy. However, this same process creates institutional resistance within the military that could slow defense modernization procurement. The February 2026 rank-stripping request connects dictatorship memory (Section 16) to defense partnerships (Section 14) to regime transition patterns (Section 15) across a span of four sections.
+
+**STRUCTURAL CLAIMS — SECTION 17:**
+
+1. The evangelical-Israel alignment and agribusiness-Arab trade dependency operate as countervailing structural forces within the same congressional coalition, explaining why Brazilian Middle East policy is static in substance regardless of presidential rhetoric — neither evangelical pressure nor agribusiness protection can win outright. [HIGH CONFIDENCE]
+2. Brazil's sovereignty assertion over the Amazon coexists with criminal organization control of Amazon resource extraction (illegal gold, drug transit), demonstrating that sovereignty rhetoric is directed at external actors while internal governance failure persists — a contradiction that structurally undermines the state's actual territorial control. [HIGH CONFIDENCE]
+3. The Bolsonaro conviction and the Lava Jato unraveling create a mirror-image legitimacy crisis: both prosecutions targeted leading politicians, both involved judicially controversial methods, and both are now used symmetrically as evidence of either judicial activism or anti-corruption necessity — making the legitimacy contest structurally unresolvable before the 2026 election. [HIGH CONFIDENCE]
+4. China's purchase of 76.6% of Brazilian soybean exports structurally empowers the agribusiness lobby that blocks MST agrarian reform demands, connecting China trade dependency to domestic land distribution paralysis through a specific institutional mechanism (agribusiness congressional veto power). [HIGH CONFIDENCE]
+5. The Superior Military Court's pending rank-stripping decision is the single most consequential near-term indicator for whether the January 8 accountability framework breaks the Amnesty Law's impunity logic or reproduces it, with direct implications for the R$30 billion defense modernization program's institutional feasibility. [ASSESSED]
 
 ---
 
