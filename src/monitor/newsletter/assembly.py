@@ -194,27 +194,12 @@ def _collect_developments(entry: WeeklyEntry) -> list[dict]:
                     conf = None
                     if mov.confidence_change:
                         conf = mov.confidence_change.to
-                    preliminary = conf is not None and conf <= 2
-
-                    # Build source attribution from up to 3 sources
-                    if dev.sources:
-                        source_parts = []
-                        for s in dev.sources[:3]:
-                            if s.url:
-                                source_parts.append(f"[{s.name}]({s.url})")
-                            else:
-                                source_parts.append(s.name)
-                        source_attr = "; ".join(source_parts)
-                    else:
-                        source_attr = "unknown"
-                    if preliminary:
-                        source_attr += " *(preliminary)*"
 
                     summary = dev.summary or dev.headline
                     developments.append({
                         "movement": mov.movement,
                         "confidence": conf or 3,
-                        "text": f"- **{cat_display}:** {summary} *({source_attr})*",
+                        "text": f"- **{cat_display}:** {summary}",
                     })
 
     movement_order = {Movement.SIGNIFICANT: 0, Movement.MINOR: 1}
