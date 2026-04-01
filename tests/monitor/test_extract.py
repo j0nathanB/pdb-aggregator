@@ -97,8 +97,9 @@ class TestRoutingConfig:
     def test_load_routing_config(self):
         config = load_routing_config()
         assert len(config.routes) == 377
-        assert "claude" in config.default_fallback_chain
-        assert config.concurrency["claude"] == 10
+        assert "curl" in config.default_fallback_chain
+        assert "browserbase" in config.default_fallback_chain
+        assert config.concurrency["curl"] == 20
 
     def test_route_for_known_domain(self, sample_routing_config):
         route = sample_routing_config.route_for_url("https://www.reuters.com/world/test-article")
@@ -239,9 +240,9 @@ class TestDiffbotExtractor:
         import os
         with patch.dict(os.environ, {}, clear=True):
             env = dict(os.environ)
-            env.pop("DIFFBOT_API_KEY", None)
+            env.pop("DIFFBOT_TOKEN", None)
             with patch.dict(os.environ, env, clear=True):
-                with pytest.raises(ValueError, match="DIFFBOT_API_KEY"):
+                with pytest.raises(ValueError, match="DIFFBOT_TOKEN"):
                     DiffbotExtractor(api_key=None)
 
 
@@ -488,7 +489,7 @@ class TestExtractionOrchestrator:
 
     @pytest.mark.asyncio
     async def test_context_manager(self, sample_routing_config):
-        with patch.dict("os.environ", {"ANTHROPIC_API_KEY": "test", "DIFFBOT_API_KEY": "test"}):
+        with patch.dict("os.environ", {"ANTHROPIC_API_KEY": "test", "DIFFBOT_TOKEN": "test"}):
             async with ExtractionOrchestrator(routing_config=sample_routing_config) as orch:
                 assert "curl" in orch._extractors
 
@@ -517,7 +518,7 @@ class TestRoutingConfigIntegration:
     def test_claude_domain_count(self):
         config = load_routing_config()
         claude_count = sum(1 for r in config.routes.values() if r.primary == "claude")
-        assert claude_count == 195
+        assert claude_count == 0  # Claude extractor disabled — all domains migrated to curl
 
     def test_snippet_only_count(self):
         config = load_routing_config()

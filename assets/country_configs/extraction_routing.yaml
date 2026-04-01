@@ -8,11 +8,13 @@ default_fallback_chain:
 - curl
 - diffbot
 - playwright
+- browserbase
 - snippet_only
 concurrency:
   curl: 20
   diffbot: 5
   playwright: 3
+  browserbase: 3
   publisher_api: 5
 rate_limits:
   per_domain_delay_seconds: 1.0

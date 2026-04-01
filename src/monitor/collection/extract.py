@@ -10,6 +10,7 @@ Extraction tiers:
     Tier 1: curl + trafilatura (145 domains, ~38%)
     Tier 2: Diffbot Article API (12 domains, ~3%)
     Tier 3: Playwright (18 domains, ~4%)
+    Tier 3b: Browserbase (cloud browser — bypasses Cloudflare JS challenges)
     Tier 4: Publisher APIs (Guardian, etc.)
     Fallback: snippet_only (6 unretrievable domains)
 """
@@ -51,7 +52,7 @@ class ExtractionResult:
     """Result of extracting an article's full text."""
 
     url: str
-    method: str  # claude, curl, diffbot, playwright, publisher_api, snippet_only
+    method: str  # claude, curl, diffbot, playwright, browserbase, publisher_api, snippet_only
     success: bool
     title: str = ""
     text: str = ""
@@ -254,16 +255,16 @@ class DiffbotExtractor(Extractor):
     """Extract articles using the Diffbot Article API.
 
     Best for JavaScript-heavy sites and paywalled content that Diffbot
-    has cached. Requires DIFFBOT_API_KEY in environment.
+    has cached. Requires DIFFBOT_TOKEN in environment.
     """
 
     method_name = "diffbot"
     API_URL = "https://api.diffbot.com/v3/article"
 
     def __init__(self, api_key: str | None = None, timeout: int = 30):
-        self._api_key = api_key or os.getenv("DIFFBOT_API_KEY")
+        self._api_key = api_key or os.getenv("DIFFBOT_TOKEN")
         if not self._api_key:
-            raise ValueError("DIFFBOT_API_KEY not found in environment or constructor")
+            raise ValueError("DIFFBOT_TOKEN not found in environment or constructor")
         self._client = httpx.AsyncClient(timeout=timeout)
 
     async def extract(self, url: str) -> ExtractionResult:
@@ -341,6 +342,96 @@ class PlaywrightExtractor(Extractor):
                 return ExtractionResult(
                     url=url, method=self.method_name, success=False,
                     error="Playwright returned empty page",
+                    latency_ms=int((time.monotonic() - start) * 1000),
+                )
+
+            import trafilatura
+
+            text = trafilatura.extract(
+                html,
+                include_comments=False,
+                include_tables=False,
+                favor_precision=True,
+                output_format="txt",
+            )
+
+            if not text:
+                return ExtractionResult(
+                    url=url, method=self.method_name, success=False,
+                    error="trafilatura returned no content from rendered page",
+                    latency_ms=int((time.monotonic() - start) * 1000),
+                )
+
+            return ExtractionResult(
+                url=url, method=self.method_name, success=True,
+                text=text,
+                latency_ms=int((time.monotonic() - start) * 1000),
+            )
+
+        except Exception as e:
+            return ExtractionResult(
+                url=url, method=self.method_name, success=False,
+                error=str(e),
+                latency_ms=int((time.monotonic() - start) * 1000),
+            )
+
+
+# =============================================================================
+# Tier 3b: Browserbase (cloud browser — bypasses Cloudflare JS challenges)
+# =============================================================================
+
+
+class BrowserbaseExtractor(Extractor):
+    """Extract articles using Browserbase cloud browser + trafilatura.
+
+    Uses Browserbase's managed browser infrastructure via CDP to bypass
+    bot-protection (Cloudflare JS challenges, etc.) that blocks both
+    curl and local Playwright. Requires BROWSERBASE_API_KEY and
+    BROWSERBASE_PROJECT_ID in environment.
+    """
+
+    method_name = "browserbase"
+
+    def __init__(
+        self,
+        api_key: str | None = None,
+        project_id: str | None = None,
+        timeout: int = 30000,
+        challenge_wait: int = 8000,
+    ):
+        self._api_key = api_key or os.getenv("BROWSERBASE_API_KEY")
+        self._project_id = project_id or os.getenv("BROWSERBASE_PROJECT_ID")
+        if not self._api_key:
+            raise ValueError("BROWSERBASE_API_KEY not found in environment or constructor")
+        if not self._project_id:
+            raise ValueError("BROWSERBASE_PROJECT_ID not found in environment or constructor")
+        self._timeout = timeout
+        self._challenge_wait = challenge_wait
+
+    async def extract(self, url: str) -> ExtractionResult:
+        start = time.monotonic()
+        try:
+            from browserbase import Browserbase
+            from playwright.async_api import async_playwright
+
+            bb = Browserbase(api_key=self._api_key)
+            session = bb.sessions.create(project_id=self._project_id)
+
+            async with async_playwright() as p:
+                browser = await p.chromium.connect_over_cdp(session.connect_url)
+                context = browser.contexts[0]
+                page = context.pages[0]
+                await page.goto(url, timeout=self._timeout, wait_until="domcontentloaded")
+
+                # Wait for Cloudflare JS challenge to resolve
+                await page.wait_for_timeout(self._challenge_wait)
+                html = await page.content()
+                await browser.close()
+
+            if not html:
+                return ExtractionResult(
+                    url=url, method=self.method_name, success=False,
+                    error="Browserbase returned empty page",
                     latency_ms=int((time.monotonic() - start) * 1000),
                 )
 
@@ -610,7 +701,13 @@ class ExtractionOrchestrator:
                 self._extractors["diffbot"] = ext
                 self._owned_resources.append(ext)
             except ValueError:
-                logger.warning("DIFFBOT_API_KEY not set — Diffbot extractor unavailable")
+                logger.warning("DIFFBOT_TOKEN not set — Diffbot extractor unavailable")
+
+        try:
+            ext = BrowserbaseExtractor()
+            self._extractors["browserbase"] = ext
+        except ValueError:
+            logger.warning("BROWSERBASE_API_KEY/PROJECT_ID not set — Browserbase extractor unavailable")
 
         # Initialize semaphores from concurrency config
         for method, limit in self._config.concurrency.items():
