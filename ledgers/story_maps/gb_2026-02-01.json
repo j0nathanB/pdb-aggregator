@@ -3,32 +3,31 @@
   "code": "gb",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 217,
-  "stories_identified": 11,
-  "off_topic_filtered": 67,
-  "noise_summary": "67 off-topic results filtered: 25 stories about Massachusetts Governor Maura Healey vs ICE (US state politics), 4 Austin Reaves basketball injury stories (US sports), 8 tech product launches (Apple M6 chip, Samsung laptops), 10 other sports/entertainment stories, 15 international business and trade stories unrelated to UK politics, 5 miscellaneous unrelated items.",
+  "search_results_total": 211,
+  "stories_identified": 16,
+  "off_topic_filtered": 45,
+  "noise_summary": "45 off-topic results filtered: 12 US sports/entertainment (Austin Reaves basketball injury stories, Will Reeve wedding), 8 international tech stories not UK-focused (Google Project Genie gaming tool, Chinese AI chips), 10 Massachusetts Governor Healey stories (US domestic politics), 7 international trade stories not involving UK (India-EU FTA, Swiss bilateral relations), 8 general entertainment/lifestyle stories",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Starmer makes first UK-China leadership visit in eight years, announces visa-free travel deal",
-      "summary": "Prime Minister Keir Starmer visited China January 27-30, the first UK leader to do so since 2018, announcing visa-free travel agreements and pushing for stronger trade ties. The visit drew criticism from Trump, who called UK-China business 'very dangerous', and from domestic opponents who accused Starmer of prioritizing economics over security.",
+      "headline": "Starmer visits China in first UK PM trip since 2018, announces trade deals amid Trump criticism",
+      "summary": "PM Keir Starmer conducted a three-day visit to China, meeting Xi Jinping and announcing visa-free travel for UK citizens and various trade agreements. Trump criticized the visit as 'very dangerous' while Conservative opposition called it kowtowing to Beijing.",
       "actors_involved": [
-        "Keir Starmer",
-        "David Lammy"
+        "Starmer"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 18,
+      "source_count": 19,
       "sources": [
         "abcnews.go.com",
         "reuters.com",
         "bbc.com",
+        "bloomberg.com",
+        "telegraph.co.uk",
         "theguardian.com",
         "aljazeera.com",
-        "telegraph.co.uk",
-        "politico.eu",
-        "dailymail.co.uk"
+        "politico.eu"
       ],
-      "date_range": "2026-01-27 to 2026-01-30",
+      "date_range": "2026-01-27 to 2026-02-01",
       "articles": [
         {
           "title": "UK's Starmer heads to China seeking a thaw in relations but risking a rift with Trump",
@@ -50,27 +49,9 @@
         },
         {
           "title": "UK citizens to be able to travel to China visa-free, Starmer announces in Beijing",
-          "source": "bbc.co.uk",
-          "url": "https://www.bbc.co.uk/news/live/cly9p5kr2q7t",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/news/live/cly9p5kr2q7t",
           "date": "2026-01-28"
-        },
-        {
-          "title": "Starmer vows to remain 'clear-eyed' over national security as he flies to China",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/politics/2026/jan/27/starmer-vows-to-remain-clear-eyed-over-national-security-as-he-flies-to-china",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Why is the UK's Keir Starmer in China and what does he want to achieve?",
-          "source": "aljazeera.com",
-          "url": "https://aljazeera.com/news/2026/1/29/why-is-the-uks-keir-starmer-in-china-and-what-does-he-want-to-achieve",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Keir Starmer walks tightrope over myriad issues in quest to bolster China ties",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/world/2026/jan/27/keir-starmer-walks-tightrope-over-myriad-issues-in-quest-to-bolster-china-ties",
-          "date": "2026-01-27"
         },
         {
           "title": "UK's Starmer arrives in China, encourages firms to seize opportunities",
@@ -85,102 +66,65 @@
           "date": "2026-01-30"
         },
         {
+          "title": "Why is the UK's Keir Starmer in China and what does he want to achieve?",
+          "source": "aljazeera.com",
+          "url": "https://aljazeera.com/news/2026/1/29/why-is-the-uks-keir-starmer-in-china-and-what-does-he-want-to-achieve",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Starmer vows to remain 'clear-eyed' over national security as he flies to China",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/politics/2026/jan/27/starmer-vows-to-remain-clear-eyed-over-national-security-as-he-flies-to-china",
+          "date": "2026-01-27"
+        },
+        {
           "title": "UK politics: Starmer shrugs off Trump's criticism of 'very dangerous' deal with China",
           "source": "theguardian.com",
           "url": "https://theguardian.com/politics/live/2026/jan/30/donald-trump-keir-starmer-china-uk-us-trade-deals-tariffs-latest-news",
           "date": "2026-01-30"
         },
         {
-          "title": "From the Burnham row to the China visit, avoiding hard choices is the Starmer doctrine",
+          "title": "Keir Starmer walks tightrope over myriad issues in quest to bolster China ties",
           "source": "theguardian.com",
-          "url": "https://theguardian.com/commentisfree/2026/jan/28/andy-burnham-china-visit-keir-starmer",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Starmer is putting his political survival ahead of the national interest",
-          "source": "telegraph.co.uk",
-          "url": "https://telegraph.co.uk/news/2026/02/01/starmer-is-putting-his-political-survival-ahead-of-the-nati",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Starmer's oikophobia is erasing so much that is great about Britain",
-          "source": "telegraph.co.uk",
-          "url": "https://telegraph.co.uk/news/2026/01/28/starmer-oikophobia-erasing-britain",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Mystery over Reeves' absence from big China trip amid rumours of tensions with Starmer",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15505325/Mystery-Rache-Reeves-Chancellor-absence-China-trip-tensions-Starmer.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Starmer speaks to Burnham after by-election row",
-          "source": "bbc.com",
-          "url": "https://bbc.com/news/articles/cp3zp2p8qwzo",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Starmer has sealed his own fate",
-          "source": "telegraph.co.uk",
-          "url": "https://telegraph.co.uk/news/2026/01/25/starmer-has-sealed-his-own-fate",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Starmer needs to 'explain himself' over legal pursuit of soldiers for war crimes",
-          "source": "gbnews.com",
-          "url": "https://gbnews.com/politics/keir-starmer-british-soldiers-explain-himself",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Keir Starmer's Labour Government Is Much Better Than the Media Admits",
-          "source": "bylinetimes.com",
-          "url": "https://bylinetimes.com/2026/01/29/keir-starmers-labour-government-is-much-better-than-the-media-admits",
-          "date": "2026-01-29"
+          "url": "https://theguardian.com/world/2026/jan/27/keir-starmer-walks-tightrope-over-myriad-issues-in-quest-to-bolster-china-ties",
+          "date": "2026-01-27"
         }
       ],
       "representative_urls": [
-        "https://abcnews.go.com/International/wireStory/uks-starmer-heads-china-seeking-thaw-relations-risking-129587744",
-        "https://reuters.com/world/china/uks-starmer-heads-china-repair-ties-he-navigates-tensions-with-us-2026-01-27"
+        "https://reuters.com/world/china/uks-starmer-heads-china-repair-ties-he-navigates-tensions-with-us-2026-01-27",
+        "https://www.bbc.com/news/articles/c0keyyeyr41o"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Labour blocks Andy Burnham from by-election as Starmer accused of blocking potential rival",
-      "summary": "Labour's National Executive Committee voted to block Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election on February 26. Critics accused Prime Minister Starmer of preventing a potential leadership challenger from returning to Westminster, triggering internal party turmoil.",
+      "headline": "Labour blocks Andy Burnham from by-election candidacy, sparking internal party tensions",
+      "summary": "Labour's National Executive Committee voted to prevent Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election, with Starmer personally voting to block his potential leadership rival. The decision triggered widespread criticism within the party.",
       "actors_involved": [
-        "Keir Starmer"
+        "Starmer"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 19,
+      "source_count": 18,
       "sources": [
         "bloomberg.com",
         "reuters.com",
-        "theguardian.com",
         "bbc.com",
+        "theguardian.com",
         "telegraph.co.uk",
         "dailymail.co.uk",
-        "theconversation.com",
-        "independent.co.uk"
+        "theconversation.com"
       ],
-      "date_range": "2026-01-25 to 2026-01-31",
+      "date_range": "2026-01-25 to 2026-02-01",
       "articles": [
         {
-          "title": "Starmer Attack on Reform's Pick Shows His Future on the Line",
+          "title": "Starmer Rival Barred From Contesting Seat, Widening Labour Rift",
           "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-01-28/starmer-attack-on-reform-candidate-shows-his-future-on-ballot",
-          "date": "2026-01-28"
+          "url": "https://bloomberg.com/news/articles/2026-01-25/starmer-rival-barred-from-contesting-seat-widening-labour-rift",
+          "date": "2026-01-25"
         },
         {
           "title": "Starmer leadership rival Burnham blocked from seeking return to UK parliament",
           "source": "reuters.com",
           "url": "https://reuters.com/world/uk/starmer-leadership-rival-burnham-blocked-seeking-uk-parliamentary-return-2026-01-25",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Starmer Rival Barred From Contesting Seat, Widening Labour Rift",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-01-25/starmer-rival-barred-from-contesting-seat-widening-labour-rift",
           "date": "2026-01-25"
         },
         {
@@ -202,93 +146,21 @@
           "date": "2026-01-25"
         },
         {
-          "title": "Starmer defends blocking Andy Burnham from by-election run after backlash",
-          "source": "bbc.co.uk",
-          "url": "https://bbc.co.uk/news/articles/cjdj8jg4gnyo",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Newspaper headlines: 'Starmer triggers Labour civil war' and 'Republicans break ranks'",
-          "source": "bbc.com",
-          "url": "https://bbc.com/news/articles/c07x0d8283no",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Was Labour right to block Andy Burnham's return as an MP?",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/politics/2026/jan/27/was-labour-right-to-block-andy-burnham-return-as-an-mp",
-          "date": "2026-01-27"
-        },
-        {
           "title": "'Huge mistake': Labour in turmoil as Burnham blocked from byelection race",
           "source": "theguardian.com",
           "url": "https://theguardian.com/politics/2026/jan/25/andy-burnham-blocked-from-byelection-race-by-labour-ruling-committee",
           "date": "2026-01-25"
-        },
-        {
-          "title": "On Labour's soft left, the question isn't whether to challenge Starmer, but when",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/politics/2026/jan/26/labour-soft-left-starmer-andy-burnham-rebel-mps",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "The Burnham fiasco shows that the right of the Labour party would rather see it burn than lose control",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/commentisfree/2026/jan/27/burnham-fiasco-right-labour-party-starmer",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Here's the lesson of the Andy Burnham saga: Labour needs a new leader \u2013 fast",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/commentisfree/2026/jan/26/andy-burnham-labour-new-leader",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Starmer defends Labour decision to bar Burnham from byelection",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/politics/2026/jan/26/andy-burnham-barred-from-byelection-to-help-labour-focus-says-scotland-secretary-douglas-alexander",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Tuesday briefing: Why Labour banned Burnham \u2013 and what the 'King of the North' might do next",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/world/2026/jan/27/tuesday-briefing-andy-burnham-byelection-greater-manchester-labour-first-edition",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Labour blocks Andy Burnham from standing for parliament: how it happened and why",
-          "source": "theconversation.com",
-          "url": "https://theconversation.com/labour-blocks-andy-burnham-from-standing-for-parliament-how-it-happened-and-why-274309",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Labour can reverse its decision to block Andy Burnham. Here is why it must",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/commentisfree/2026/jan/25/labour-reverse-decision-block-andy-burnham",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Labour announce candidate for crucial by-election after Keir Starmer blocked Andy Burnham from standing",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15515387/Labour-candidate-election-Keir-Starmer-blocked-Andy-Burnham.html",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "First by-election poll shows Reform narrowly ahead... but Labour would romp to victory if Andy Burnham had not been blocked",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15506329/Byelection-poll-Reform-ahead-Labour-victory-Andy-Burnham.html",
-          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
         "https://theguardian.com/politics/2026/jan/25/andy-burnham-blocked-from-byelection-race-by-labour-ruling-committee",
-        "https://reuters.com/world/uk/starmer-leadership-rival-burnham-blocked-seeking-uk-parliamentary-return-2026-01-25"
+        "https://bloomberg.com/news/articles/2026-01-25/starmer-rival-barred-from-contesting-seat-widening-labour-rift"
       ]
     },
     {
       "story_id": 3,
-      "headline": "King Charles releases environmental documentary breaking royal tradition",
-      "summary": "King Charles III's documentary 'Finding Harmony: A King's Vision' premiered at Windsor Castle and releases on Amazon Prime February 6. The film charts five decades of his environmental activism and breaks royal tradition by taking a political stance on climate change, with Charles saying he 'wasn't going to be diverted' despite past criticism.",
+      "headline": "King Charles releases environmental documentary 'Finding Harmony' breaking royal political conventions",
+      "summary": "King Charles premiered his Amazon Prime documentary 'Finding Harmony: A King's Vision' at Windsor Castle, focusing on his decades of environmental campaigning. The film breaks royal tradition by addressing the politicized issue of climate change.",
       "actors_involved": [
         "King Charles III"
       ],
@@ -300,12 +172,9 @@
         "cnn.com",
         "theguardian.com",
         "news.sky.com",
-        "people.com",
-        "dailymail.co.uk",
         "mirror.co.uk",
-        "express.co.uk",
-        "cosmopolitan.com",
-        "radaronline.com"
+        "dailymail.co.uk",
+        "cosmopolitan.com"
       ],
       "date_range": "2026-01-28 to 2026-02-01",
       "articles": [
@@ -338,156 +207,51 @@
           "source": "news.sky.com",
           "url": "https://news.sky.com/story/king-charles-speaks-of-backlash-he-suffered-due-to-his-environmental-campaigning-in-new-documentary-13500274",
           "date": "2026-01-28"
-        },
-        {
-          "title": "Prince Harry Makes Surprise Appearance in King Charles' New Documentary",
-          "source": "people.com",
-          "url": "https://people.com/prince-harry-makes-surprise-appearance-king-charles-new-documentary-11894528",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "King Charles III nature documentary released",
-          "source": "bbc.co.uk",
-          "url": "https://www.bbc.co.uk/newsround/articles/ce8rj6rl71po",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "King Charles says he wants to improve the planet before he 'shuffles off this mortal coil'",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15506533/King-Charles-change-planet-dies-documentary-criticism-talked-plants.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "King Charles reacts to 'upsetting' criticism he's faced for decades on pressing issue",
-          "source": "mirror.co.uk",
-          "url": "https://mirror.co.uk/news/royals/king-charles-reacts-upsetting-criticism-36631839",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "I watched King Charles's new documentary and one thing was odd",
-          "source": "express.co.uk",
-          "url": "https://express.co.uk/news/royal/2164737/king-charles-film-harmony-latest",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Intimate new King Charles documentary breaks one of the biggest royal rules and raises eyebrows",
-          "source": "cosmopolitan.com",
-          "url": "https://cosmopolitan.com/uk/reports/a69026129/new-king-charles-documentary",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "EXCLUSIVE: Why King Charles' New Documentary Has Broken One of the Monarchy's Most Sacred Rules Ever",
-          "source": "radaronline.com",
-          "url": "https://radaronline.com/p/king-charles-finding-harmony-documentary-broken-sacred-royal-rule",
-          "date": "2026-01-31"
         }
       ],
       "representative_urls": [
-        "https://theguardian.com/uk-news/2026/jan/28/i-wasnt-going-to-be-diverted-says-king-charles-about-campaign-on-the-environment",
-        "https://apnews.com/article/britain-king-charles-documentary-38cc5fef32a704175c76e862698e4515"
+        "https://apnews.com/article/britain-king-charles-documentary-38cc5fef32a704175c76e862698e4515",
+        "https://theguardian.com/uk-news/2026/jan/28/i-wasnt-going-to-be-diverted-says-king-charles-about-campaign-on-the-environment"
       ]
     },
     {
       "story_id": 4,
-      "headline": "Kemi Badenoch tells Conservative centrists to 'get out of the way' as party moves right",
-      "summary": "Conservative Party leader Kemi Badenoch declared centrist ideas are 'no longer wanted' in the party and told one-nation Tories who disagree with her rightward direction to 'get out of the way.' The comments came amid ongoing defections to Reform UK and calls for a new centrist Conservative movement.",
+      "headline": "Conservative MPs defect to Reform UK as Badenoch shifts party rightward",
+      "summary": "Former Home Secretary Suella Braverman and Robert Jenrick defected from the Conservative Party to Nigel Farage's Reform UK. Conservative leader Kemi Badenoch responded by saying centrist ideas are no longer wanted in the party.",
       "actors_involved": [
-        "Kemi Badenoch"
+        "Kemi Badenoch",
+        "Nigel Farage"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 8,
+      "source_count": 11,
       "sources": [
         "theguardian.com",
-        "bbc.com",
+        "reuters.com",
         "news.sky.com",
-        "dailymail.co.uk",
-        "newstatesman.com"
+        "bloomberg.com",
+        "newstatesman.com",
+        "independent.co.uk",
+        "bbc.com",
+        "dailymail.co.uk"
       ],
-      "date_range": "2026-01-25 to 2026-01-29",
+      "date_range": "2026-01-26 to 2026-01-29",
       "articles": [
         {
           "title": "Centrist ideas no longer wanted in Conservative party, says Kemi Badenoch",
           "source": "theguardian.com",
-          "url": "https://www.theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
+          "url": "https://theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
           "date": "2026-01-28"
         },
-        {
-          "title": "Badenoch shoots herself in the foot on the Tories' long march to the right",
-          "source": "theguardian.com",
-          "url": "https://www.theguardian.com/politics/2026/jan/28/badenoch-tories-mp-defections-march-to-the-right",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kemi Badenoch apologises for Suella Braverman mental health claim",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/c62vrjyzyxlo",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "I joined the Conservatives for the partying, says Kemi Badenoch",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/crkrrknxe08o",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Kemi Badenoch demands the Right focuses fire on Keir Starmer",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15505155/Kemi-Badenoch-Right-focuses-fire-Keir-Starmer.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "PM will probably give Isle of Wight away, says Badenoch",
-          "source": "bbc.co.uk",
-          "url": "https://bbc.co.uk/news/articles/cx2y17nvpvqo",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Tories 'on the right but appeal to the majority', says Kemi Badenoch",
-          "source": "news.sky.com",
-          "url": "https://news.sky.com/story/tories-on-the-right-but-appeal-to-the-majority-says-kemi-badenoch-13500081",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kemi Badenoch needs centrists to win",
-          "source": "newstatesman.com",
-          "url": "https://newstatesman.com/politics/conservatives/2026/01/kemi-badenoch-needs-centrists-to-win",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://www.theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
-        "https://www.bbc.com/news/articles/c62vrjyzyxlo"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Suella Braverman defects from Conservatives to Reform UK",
-      "summary": "Former Home Secretary Suella Braverman joined Nigel Farage's Reform UK party, becoming the latest Conservative MP to defect. Braverman accused her former party of lying to voters over immigration and delivered a scathing critique of Conservative leadership at a Reform rally.",
-      "actors_involved": [
-        "Nigel Farage",
-        "Kemi Badenoch"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 6,
-      "sources": [
-        "reuters.com",
-        "theguardian.com",
-        "news.sky.com",
-        "independent.co.uk",
-        "gbnews.com"
-      ],
-      "date_range": "2026-01-26 to 2026-01-26",
-      "articles": [
         {
           "title": "UK right-wing Reform attracts another Conservative defector, Suella Braverman",
           "source": "reuters.com",
-          "url": "https://www.reuters.com/world/uk/british-lawmaker-braverman-defects-farages-reform-uk-2026-01-26/",
+          "url": "https://reuters.com/world/uk/british-lawmaker-braverman-defects-farages-reform-uk-2026-01-26",
           "date": "2026-01-26"
         },
         {
           "title": "Braverman's predictable defection is Farage's biggest political gamble yet",
           "source": "theguardian.com",
-          "url": "https://www.theguardian.com/politics/2026/jan/26/bravermans-predictable-defection-is-farages-biggest-political-gamble-yet",
+          "url": "https://theguardian.com/politics/2026/jan/26/bravermans-predictable-defection-is-farages-biggest-political-gamble-yet",
           "date": "2026-01-26"
         },
         {
@@ -497,201 +261,63 @@
           "date": "2026-01-26"
         },
         {
-          "title": "Nigel Farage admits Suella Braverman was 'useless' as home secretary \u2013 here's why",
-          "source": "independent.co.uk",
-          "url": "https://www.independent.co.uk/bulletin/news/nigel-farage-suella-braverman-home-secretary-b2907753.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Chris Mason: Both Tories and Labour feel the Reform heebie-jeebies",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/c5yv97e7j5lo",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "POLL OF THE DAY: Do you support Suella Braverman's defection to Reform? VOTE NOW",
-          "source": "gbnews.com",
-          "url": "https://www.gbnews.com/membership/polls/suella-braverman-mp-reform-uk",
-          "date": "2026-01-26"
+          "title": "Kemi Badenoch needs centrists to win",
+          "source": "newstatesman.com",
+          "url": "https://newstatesman.com/politics/conservatives/2026/01/kemi-badenoch-needs-centrists-to-win",
+          "date": "2026-01-29"
         }
       ],
       "representative_urls": [
-        "https://www.reuters.com/world/uk/british-lawmaker-braverman-defects-farages-reform-uk-2026-01-26/",
-        "https://www.theguardian.com/politics/2026/jan/26/bravermans-predictable-defection-is-farages-biggest-political-gamble-yet"
+        "https://theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
+        "https://reuters.com/world/uk/british-lawmaker-braverman-defects-farages-reform-uk-2026-01-26"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Starmer calls for Prince Andrew to testify in US over Jeffrey Epstein links",
+      "summary": "PM Keir Starmer said Andrew Mountbatten-Windsor should testify before US Congress about his links to Jeffrey Epstein, following the release of new Epstein files that feature the former prince heavily.",
+      "actors_involved": [
+        "Starmer"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
+      "sources": [
+        "theguardian.com"
+      ],
+      "date_range": "2026-01-31 to 2026-01-31",
+      "articles": [
+        {
+          "title": "Keir Starmer calls on Andrew to testify in US over Jeffrey Epstein links",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/uk-news/2026/jan/31/keir-starmer-andrew-mountbatten-windsor-testify-us-jeffrey-epstein-links",
+          "date": "2026-01-31"
+        }
+      ],
+      "representative_urls": [
+        "https://www.theguardian.com/uk-news/2026/jan/31/keir-starmer-andrew-mountbatten-windsor-testify-us-jeffrey-epstein-links"
       ]
     },
     {
       "story_id": 6,
-      "headline": "Bank of England expected to hold interest rates amid inflation concerns",
-      "summary": "The Bank of England is widely expected to keep interest rates at 3.75% at its February 5 meeting as policymakers grapple with inflation that rose to 3.4% in December. Economists say the central bank faces pressure to curb above-target inflation while monitoring economic growth.",
-      "actors_involved": [
-        "Bank of England"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 8,
-      "sources": [
-        "reuters.com",
-        "cityam.com",
-        "independent.co.uk",
-        "gbnews.com",
-        "ft.com",
-        "bloomberg.com",
-        "thebanker.com"
-      ],
-      "date_range": "2026-01-26 to 2026-02-01",
-      "articles": [
-        {
-          "title": "Bank of England to hold rates on Feb 5, slim majority expect March cut - Reuters poll",
-          "source": "reuters.com",
-          "url": "https://reuters.com/world/uk/bank-england-hold-rates-feb-5-slim-majority-expect-march-cut-2026-01-26",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Bank of England set to hold interest rates",
-          "source": "cityam.com",
-          "url": "https://www.cityam.com/bank-of-england-set-to-hold-interest-rates/",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "How inflation rebound is set to affect UK interest rates",
-          "source": "independent.co.uk",
-          "url": "https://independent.co.uk/news/business/interest-rates-inflation-bank-of-england-b2911651.html",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Bank of England interest rate predictions: UK inflation cools hopes for significant cuts",
-          "source": "gbnews.com",
-          "url": "https://www.gbnews.com/money/interest-rates-bank-of-england-inflation-cuts",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Will the Bank of England give any clues to the path of interest rates?",
-          "source": "ft.com",
-          "url": "https://ft.com/content/40b04ff2-9a46-42f6-9c3e-4ec503a5b797",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Even the Bank of England Is Struggling to Make Ends Meet",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/news/articles/2026-01-30/even-the-bank-of-england-is-struggling-to-make-ends-meet",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Kevin Warsh: The one-time Bank of England contender Trump wants to run the Fed",
-          "source": "telegraph.co.uk",
-          "url": "https://www.telegraph.co.uk/business/2026/01/30/the-bank-of-england-reject-chosen-by-trump-to-run-the-us-fe/",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Farage wants to end BoE reserve payments. Here's how much banks make",
-          "source": "thebanker.com",
-          "url": "https://www.thebanker.com/content/0504a3ab-52da-4eb9-81f5-8cb857202bf2",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://reuters.com/world/uk/bank-england-hold-rates-feb-5-slim-majority-expect-march-cut-2026-01-26",
-        "https://www.cityam.com/bank-of-england-set-to-hold-interest-rates/"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Rachel Reeves faces criticism over student loan freeze and business rate policies",
-      "summary": "Chancellor Rachel Reeves defended her decision to freeze student loan repayment thresholds amid criticism from Martin Lewis who called it 'immoral.' She also faced backlash over business rate changes affecting pubs and construction industry concerns about tax hikes.",
-      "actors_involved": [
-        "Rachel Reeves"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 8,
-      "sources": [
-        "bbc.com",
-        "express.co.uk",
-        "moneyweek.com",
-        "gbnews.com"
-      ],
-      "date_range": "2026-01-25 to 2026-01-31",
-      "articles": [
-        {
-          "title": "Rachel Reeves defends 'fair and reasonable' student loans system",
-          "source": "bbc.com",
-          "url": "https://bbc.com/news/articles/ce3k4xdqyp1o",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Rachel Reeves savaged as construction firms face administration over tax hikes",
-          "source": "express.co.uk",
-          "url": "https://express.co.uk/news/politics/2161979/rachel-reeves-warned-labour-housebuilding-construction-firms",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Rachel Reeves is rediscovering the Laffer curve",
-          "source": "moneyweek.com",
-          "url": "https://moneyweek.com/economy/uk-economy/rachel-reeves-tax-rises-laffer-curve",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Martin Lewis slams Rachel Reeves over 'immoral' student loan decision",
-          "source": "gbnews.com",
-          "url": "https://gbnews.com/money/martin-lewis-challenges-reeves-over-student-loans",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Rachel Reeves skewered in PMQs row over pubs - 'too little too late'",
-          "source": "express.co.uk",
-          "url": "https://www.express.co.uk/news/politics/2163453/pmqs-live-kemi-badenoch-david-lammy",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Rachel Reeves delivers killer blow to UK's most-loved place tomorrow",
-          "source": "express.co.uk",
-          "url": "https://express.co.uk/finance/personalfinance/2164970/rachel-reeves-delivers-killer-blow-uks-most-loved-place-tomorrow-gone-too-far",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "David Lammy has lost his mind \u2013 even more deluded than Keir Starmer",
-          "source": "express.co.uk",
-          "url": "https://express.co.uk/finance/personalfinance/2162493/david-lammy-has-finally-lost",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "PMQs: Andrew Griffith presses David Lammy on business rates",
-          "source": "bbc.co.uk",
-          "url": "https://www.bbc.co.uk/news/live/c4gw427eenpt",
-          "date": "2026-01-28"
-        }
-      ],
-      "representative_urls": [
-        "https://bbc.com/news/articles/ce3k4xdqyp1o",
-        "https://gbnews.com/money/martin-lewis-challenges-reeves-over-student-loans"
-      ]
-    },
-    {
-      "story_id": 8,
       "headline": "David Lammy stands in for Starmer at PMQs while PM visits China",
-      "summary": "Foreign Secretary David Lammy deputized for Prime Minister Starmer at Prime Minister's Questions while Starmer was on his China visit. Lammy faced criticism from Conservative MPs over Labour's economic record and pub business rates, with opponents dubbing him 'Left-behind Lammy.'",
+      "summary": "Deputy PM David Lammy faced questions in Parliament while Starmer was in China, defending Labour's record on business rates affecting pubs and facing criticism from Conservative and Reform MPs.",
       "actors_involved": [
         "David Lammy"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 5,
+      "source_count": 6,
       "sources": [
-        "bbc.co.uk",
+        "bbc.com",
+        "standard.co.uk",
         "express.co.uk",
-        "gbnews.com",
-        "standard.co.uk"
+        "gbnews.com"
       ],
-      "date_range": "2026-01-28 to 2026-01-30",
+      "date_range": "2026-01-26 to 2026-01-30",
       "articles": [
         {
           "title": "PMQs: Andrew Griffith presses David Lammy on business rates",
-          "source": "bbc.co.uk",
+          "source": "bbc.com",
           "url": "https://www.bbc.co.uk/news/live/c4gw427eenpt",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Rachel Reeves skewered in PMQs row over pubs - 'too little too late'",
-          "source": "express.co.uk",
-          "url": "https://www.express.co.uk/news/politics/2163453/pmqs-live-kemi-badenoch-david-lammy",
           "date": "2026-01-28"
         },
         {
@@ -719,131 +345,140 @@
       ]
     },
     {
-      "story_id": 9,
-      "headline": "Nigel Farage faces Reform UK candidate vetting issues and Turkish barber controversy",
-      "summary": "Reform UK leader Nigel Farage opened investigation into party candidate over 'racist' social media posts, acknowledging party vetting had been 'piss poor.' He also faced criticism from government minister who called his comments about Turkish barber shops 'dog-whistle racism.'",
+      "story_id": 7,
+      "headline": "Rachel Reeves faces criticism over student loans freeze and business rate policies",
+      "summary": "Chancellor Rachel Reeves defended freezing student loan repayment thresholds amid criticism from Martin Lewis, while also facing pressure over business rates affecting pubs and construction firms.",
       "actors_involved": [
-        "Nigel Farage"
+        "Rachel Reeves"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 10,
+      "signal_category_hint": "economic_tech",
+      "source_count": 6,
       "sources": [
-        "lbc.co.uk",
-        "theguardian.com",
-        "dailymail.co.uk",
-        "chroniclelive.co.uk",
+        "bbc.com",
+        "express.co.uk",
+        "moneyweek.com",
         "gbnews.com",
-        "heraldscotland.com",
-        "bloomberg.com",
-        "politico.eu"
+        "dailymail.co.uk"
       ],
-      "date_range": "2026-01-26 to 2026-01-30",
+      "date_range": "2026-01-25 to 2026-01-31",
       "articles": [
         {
-          "title": "Nigel Farage opens investigation into Reform candidate over 'racist' and 'sickening' social media posts",
-          "source": "lbc.co.uk",
-          "url": "https://lbc.co.uk/article/nigel-farage-urged-suspend-reform-mike-manning-5HjdRYx_2",
-          "date": "2026-01-29"
+          "title": "Rachel Reeves defends 'fair and reasonable' student loans system",
+          "source": "bbc.com",
+          "url": "https://bbc.com/news/articles/ce3k4xdqyp1o",
+          "date": "2026-01-31"
         },
         {
-          "title": "Farage attack on high street Turkish barber shops is dog-whistle racism, minister says",
-          "source": "theguardian.com",
-          "url": "https://theguardian.com/society/2026/jan/29/farages-attack-on-turkish-barber-shops-is-dog-whistle-racism-minister-says",
-          "date": "2026-01-29"
+          "title": "Rachel Reeves delivers killer blow to UK's most-loved place tomorrow",
+          "source": "express.co.uk",
+          "url": "https://express.co.uk/finance/personalfinance/2164970/rachel-reeves-delivers-killer-blow-uks-most-loved-place-tomorrow-gone-too-far",
+          "date": "2026-01-31"
         },
         {
-          "title": "Labour minister says Nigel Farage is RACIST to voice concerns about surge in Turkish barbers",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15512745/Labour-minister-says-Nigel-Farage-RACIST-voice-concerns-surge-Turkish-barbers.html",
-          "date": "2026-01-30"
+          "title": "Rachel Reeves savaged as construction firms face administration over tax hikes",
+          "source": "express.co.uk",
+          "url": "https://express.co.uk/news/politics/2161979/rachel-reeves-warned-labour-housebuilding-construction-firms",
+          "date": "2026-01-25"
         },
         {
-          "title": "Nigel Farage in Newcastle as Reform UK leader spotted entering popular city centre bar",
-          "source": "chroniclelive.co.uk",
-          "url": "https://chroniclelive.co.uk/news/north-east-news/nigel-farage-newcastle-reform-uk-33333336",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Farage pledges amnesty for convicted Troubles veterans under Reform government",
-          "source": "forcesnews.com",
-          "url": "https://forcesnews.com/military-life/northern-ireland/farage-pledges-amnesty-convicted-troubles-veterans-under-reform",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Muslim Brotherhood: UAE cabinet minister explains to Nigel Farage how country has stopped 'rotten' Islamist radical extremism",
+          "title": "Martin Lewis slams Rachel Reeves over 'immoral' student loan decision",
           "source": "gbnews.com",
-          "url": "https://www.gbnews.com/news/world/muslim-brotherhood-islamist-extremism-nigel-farage-muslim-brotherhood",
+          "url": "https://gbnews.com/money/martin-lewis-challenges-reeves-over-student-loans",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Mystery over Reeves' absence from big China trip amid rumours of tensions with Starmer",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/news/article-15505325/Mystery-Rache-Reeves-Chancellor-absence-China-trip-tensions-Starmer.html",
           "date": "2026-01-28"
-        },
-        {
-          "title": "Unless Farage finds the guts to stand up to Trump his dream is over",
-          "source": "heraldscotland.com",
-          "url": "https://heraldscotland.com/politics/viewpoint/25798297.unless-farage-finds-guts-stand-trump-dream",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Trump Spells Serious Trouble for Nigel Farage and Reform UK",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/opinion/articles/2026-01-26/trump-spells-serious-trouble-for-nigel-farage-and-reform-uk",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Farage's lobbying of Trump on Chagos deal riles UK government",
-          "source": "politico.eu",
-          "url": "https://politico.eu/article/nigel-farage-donald-trump-chagos-deal-british-government",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Reform Holyrood candidate list a secret until eve of campaign - what are they trying to hide?",
-          "source": "dailyrecord.co.uk",
-          "url": "https://www.dailyrecord.co.uk/news/scottish-news/reform-holyrood-candidate-list-secret-36613023",
-          "date": "2026-01-26"
         }
       ],
       "representative_urls": [
-        "https://lbc.co.uk/article/nigel-farage-urged-suspend-reform-mike-manning-5HjdRYx_2",
-        "https://theguardian.com/society/2026/jan/29/farages-attack-on-turkish-barber-shops-is-dog-whistle-racism-minister-says"
+        "https://bbc.com/news/articles/ce3k4xdqyp1o",
+        "https://gbnews.com/money/martin-lewis-challenges-reeves-over-student-loans"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Calls for King Charles to formally apologize for slavery after new research",
+      "summary": "MPs and campaigners called on King Charles to make a formal apology for transatlantic slavery after research detailed how the British crown profited from and protected the slave trade for centuries.",
+      "actors_involved": [
+        "King Charles III"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
+      "sources": [
+        "theguardian.com"
+      ],
+      "date_range": "2026-01-30 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Calls for King Charles to formally apologise for slavery after research shows crown's role",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/news/2026/jan/30/calls-for-king-charles-to-formally-apologise-for-slavery-after-research-shows-crowns-role",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://theguardian.com/news/2026/jan/30/calls-for-king-charles-to-formally-apologise-for-slavery-after-research-shows-crowns-role"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Bank of England expected to hold interest rates amid inflation concerns",
+      "summary": "The Bank of England is widely expected to keep interest rates at 3.75% as policymakers balance above-target inflation at 3.4% against economic growth concerns. The central bank also faces organizational restructuring.",
+      "actors_involved": [
+        "Bank of England"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 8,
+      "sources": [
+        "independent.co.uk",
+        "gbnews.com",
+        "reuters.com",
+        "cityam.com",
+        "bloomberg.com",
+        "thebanker.com",
+        "bankofengland.co.uk"
+      ],
+      "date_range": "2026-01-26 to 2026-02-01",
+      "articles": [
+        {
+          "title": "How inflation rebound is set to affect UK interest rates",
+          "source": "independent.co.uk",
+          "url": "https://independent.co.uk/news/business/interest-rates-inflation-bank-of-england-b2911651.html",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Bank of England interest rate predictions: UK inflation cools hopes for significant cuts",
+          "source": "gbnews.com",
+          "url": "https://www.gbnews.com/money/interest-rates-bank-of-england-inflation-cuts",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Bank of England to hold rates on Feb 5, slim majority expect March cut",
+          "source": "reuters.com",
+          "url": "https://reuters.com/world/uk/bank-england-hold-rates-feb-5-slim-majority-expect-march-cut-2026-01-26",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Even the Bank of England Is Struggling to Make Ends Meet",
+          "source": "bloomberg.com",
+          "url": "https://www.bloomberg.com/news/articles/2026-01-30/even-the-bank-of-england-is-struggling-to-make-ends-meet",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://reuters.com/world/uk/bank-england-hold-rates-feb-5-slim-majority-expect-march-cut-2026-01-26",
+        "https://www.bloomberg.com/news/articles/2026-01-30/even-the-bank-of-england-is-struggling-to-make-ends-meet"
       ]
     },
     {
       "story_id": 10,
-      "headline": "Starmer renews UK bid to join EU defense fund after previous rejection",
-      "summary": "Prime Minister Starmer said he still wants the UK to join the EU's \u20ac150 billion defense fund after last year's negotiations ended in failure. Speaking from China, he expressed desire to 'get closer' to the EU on defense, security, energy and trade cooperation.",
+      "headline": "Protesters chant 'Keir Starmer is a traitor' at anti-migration demonstrations in Crowborough",
+      "summary": "Thousands of protesters demonstrated in Crowborough against asylum seekers being housed at a former army camp, with crowds chanting slogans against the Prime Minister.",
       "actors_involved": [
-        "Keir Starmer"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 2,
-      "sources": [
-        "bloomberg.com",
-        "politico.eu"
-      ],
-      "date_range": "2026-02-01 to 2026-02-01",
-      "articles": [
-        {
-          "title": "Starmer Renews UK Bid to Join EU Defense Fund After Rejection",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-02-01/starmer-renews-uk-bid-to-join-eu-defense-fund-after-rejection",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Starmer aims to revive defense talks with EU",
-          "source": "politico.eu",
-          "url": "https://politico.eu/article/uk-keir-starmer-aims-to-revive-defense-talks-with-eu",
-          "date": "2026-02-01"
-        }
-      ],
-      "representative_urls": [
-        "https://bloomberg.com/news/articles/2026-02-01/starmer-renews-uk-bid-to-join-eu-defense-fund-after-rejection",
-        "https://politico.eu/article/uk-keir-starmer-aims-to-revive-defense-talks-with-eu"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "Protesters in Crowborough chant 'Keir Starmer's a traitor' over migrant housing at army camp",
-      "summary": "Hundreds of demonstrators gathered in Crowborough, East Sussex, to protest against 27 asylum seekers being housed at a former army barracks. Protesters chanted 'Keir Starmer's a traitor' and marched through the town in the largest demonstration since migrants were moved to the facility.",
-      "actors_involved": [
-        "Keir Starmer"
+        "Starmer"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 2,
@@ -868,32 +503,245 @@
       "representative_urls": [
         "https://dailymail.co.uk/news/article-15496219/Thousands-chant-Starmers-traitor-march-Crowborough-protesting-migrants.html"
       ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Starmer renews UK bid to join EU defense fund after previous rejection",
+      "summary": "PM Starmer said he still wants the UK to join the European Union's defense fund after negotiations failed last year, signaling desire for closer EU defense and security cooperation.",
+      "actors_involved": [
+        "Starmer"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 2,
+      "sources": [
+        "bloomberg.com",
+        "politico.eu"
+      ],
+      "date_range": "2026-02-01 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Starmer Renews UK Bid to Join EU Defense Fund After Rejection",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-02-01/starmer-renews-uk-bid-to-join-eu-defense-fund-after-rejection",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Starmer aims to revive defense talks with EU",
+          "source": "politico.eu",
+          "url": "https://politico.eu/article/uk-keir-starmer-aims-to-revive-defense-talks-with-eu",
+          "date": "2026-02-01"
+        }
+      ],
+      "representative_urls": [
+        "https://bloomberg.com/news/articles/2026-02-01/starmer-renews-uk-bid-to-join-eu-defense-fund-after-rejection"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "King Charles makes surprise appearance at cancer charity parkrun",
+      "summary": "King Charles, who has been receiving cancer treatment, surprised joggers by appearing at the Sandringham parkrun organized in partnership with Move Against Cancer charity.",
+      "actors_involved": [
+        "King Charles III"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "news.sky.com",
+        "dailymail.co.uk",
+        "marieclaire.com"
+      ],
+      "date_range": "2026-01-25 to 2026-02-01",
+      "articles": [
+        {
+          "title": "The King greets joggers in surprise appearance at cancer charity parkrun",
+          "source": "news.sky.com",
+          "url": "https://news.sky.com/story/the-king-greets-joggers-in-surprise-appearance-at-cancer-charity-parkrun-13501390",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "King's secret cancer scare: Why Charles kept previous brush with disease secret",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/news/royals/article-15502693/Kings-secret-cancer-scare-Charles-kept-previous-brush-disease-secret-years-2024-diagnosis.html",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "King Charles Refused to 'Change' One Breakfast Habit, as Royal Chef Reveals",
+          "source": "marieclaire.com",
+          "url": "https://marieclaire.com/celebrity/royals/royal-chef-king-charles-chef-breakfast-instruction-refused-to-change-habit",
+          "date": "2026-01-25"
+        }
+      ],
+      "representative_urls": [
+        "https://news.sky.com/story/the-king-greets-joggers-in-surprise-appearance-at-cancer-charity-parkrun-13501390"
+      ]
+    },
+    {
+      "story_id": 13,
+      "headline": "Nigel Farage faces controversy over Turkish barber shop comments and candidate vetting",
+      "summary": "Reform UK leader Nigel Farage was accused of racism by Labour minister over comments about Turkish barber shops, while also launching investigation into Reform candidate over social media posts.",
+      "actors_involved": [
+        "Nigel Farage"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 9,
+      "sources": [
+        "theguardian.com",
+        "lbc.co.uk",
+        "dailymail.co.uk",
+        "gbnews.com",
+        "chroniclelive.co.uk",
+        "forcesnews.com",
+        "heraldscotland.com"
+      ],
+      "date_range": "2026-01-26 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Farage attack on high street Turkish barber shops is dog-whistle racism, minister says",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/society/2026/jan/29/farages-attack-on-turkish-barber-shops-is-dog-whistle-racism-minister-says",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Nigel Farage opens investigation into Reform candidate over 'racist' and 'sickening' social media posts",
+          "source": "lbc.co.uk",
+          "url": "https://lbc.co.uk/article/nigel-farage-urged-suspend-reform-mike-manning-5HjdRYx_2",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Farage pledges amnesty for convicted Troubles veterans under Reform government",
+          "source": "forcesnews.com",
+          "url": "https://forcesnews.com/military-life/northern-ireland/farage-pledges-amnesty-convicted-troubles-veterans-under-reform",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Nigel Farage in Newcastle as Reform UK leader spotted entering popular city centre bar",
+          "source": "chroniclelive.co.uk",
+          "url": "https://chroniclelive.co.uk/news/north-east-news/nigel-farage-newcastle-reform-uk-33333336",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://theguardian.com/society/2026/jan/29/farages-attack-on-turkish-barber-shops-is-dog-whistle-racism-minister-says",
+        "https://lbc.co.uk/article/nigel-farage-urged-suspend-reform-mike-manning-5HjdRYx_2"
+      ]
+    },
+    {
+      "story_id": 14,
+      "headline": "Labour announces candidate for Gorton and Denton by-election after blocking Burnham",
+      "summary": "Labour selected Manchester city councillor Angeliki Stogia as their candidate for the crucial by-election, amid polling showing Labour in third place nationally behind Conservatives and Reform UK.",
+      "actors_involved": [
+        "Starmer"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 7,
+      "sources": [
+        "dailymail.co.uk",
+        "theguardian.com",
+        "betting.betfair.com",
+        "independent.co.uk",
+        "survation.com"
+      ],
+      "date_range": "2026-01-26 to 2026-01-31",
+      "articles": [
+        {
+          "title": "Labour announce candidate for crucial by-election after Keir Starmer blocked Andy Burnham",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/news/article-15515387/Labour-candidate-election-Keir-Starmer-blocked-Andy-Burnham.html",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "Labour attacks Green party drugs policy in Gorton and Denton byelection",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/politics/2026/jan/28/labour-attacks-green-party-drugs-policy-gorton-and-denton-byelection",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Gorton and Denton By-Election: Green and Reform lead Labour after Burnham blocked",
+          "source": "betting.betfair.com",
+          "url": "https://betting.betfair.com/politics/uk-politics/gorton-and-denton-by-election-betting-tips-green-reform-lead-labour-burnham-blocked-260126-204.html",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Labour polling at their lowest point since the General Election, as Conservatives overtake and Greens catch up",
+          "source": "survation.com",
+          "url": "https://www.survation.com/labour-polling-at-their-lowest-point-since-the-general-election-as-conservatives-overtake-and-greens-catch-up/",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://dailymail.co.uk/news/article-15515387/Labour-candidate-election-Keir-Starmer-blocked-Andy-Burnham.html",
+        "https://www.survation.com/labour-polling-at-their-lowest-point-since-the-general-election-as-conservatives-overtake-and-greens-catch-up/"
+      ]
+    },
+    {
+      "story_id": 15,
+      "headline": "Ministry of Defence awards major contract to Palantir for data analytics",
+      "summary": "The UK's Ministry of Defence directly awarded a \u00a3240.6 million contract to US technology company Palantir to continue licensing and supporting its data analytics work.",
+      "actors_involved": [
+        "John Healey"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 1,
+      "sources": [
+        "theregister.com"
+      ],
+      "date_range": "2026-01-28 to 2026-01-28",
+      "articles": [
+        {
+          "title": "Britain's Ministry of Defence agrees deal with Palantir",
+          "source": "theregister.com",
+          "url": "https://theregister.com/2026/01/28/mod_palantir_deal",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://theregister.com/2026/01/28/mod_palantir_deal"
+      ]
+    },
+    {
+      "story_id": 16,
+      "headline": "Kemi Badenoch says she joined Conservatives for 'partying' in Desert Island Discs interview",
+      "summary": "Conservative Party leader Kemi Badenoch revealed on BBC Radio 4's Desert Island Discs that she initially joined the party for socializing and drinks rather than political reasons.",
+      "actors_involved": [
+        "Kemi Badenoch"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
+      "sources": [
+        "bbc.com"
+      ],
+      "date_range": "2026-01-25 to 2026-01-25",
+      "articles": [
+        {
+          "title": "I joined the Conservatives for the partying, says Kemi Badenoch",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/news/articles/crkrrknxe08o",
+          "date": "2026-01-25"
+        }
+      ],
+      "representative_urls": [
+        "https://www.bbc.com/news/articles/crkrrknxe08o"
+      ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Keir Starmer calls on Andrew to testify in US over Jeffrey Epstein links",
-      "source": "theguardian.com",
-      "url": "https://www.theguardian.com/uk-news/2026/jan/31/keir-starmer-andrew-mountbatten-windsor-testify-us-jeffrey-epstein-links",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Britain's Ministry of Defence agrees deal with Palantir worth \u00a3240.6 million",
-      "source": "theregister.com",
-      "url": "https://theregister.com/2026/01/28/mod_palantir_deal",
+      "headline": "Former MI6 chief discusses intelligence operations in interview",
+      "source": "samf.substack.com",
+      "url": "https://samf.substack.com/p/how-mi6-works",
       "signal_category_hint": "security_defense"
     },
     {
-      "headline": "King greets joggers in surprise appearance at cancer charity parkrun at Sandringham",
-      "source": "news.sky.com",
-      "url": "https://news.sky.com/story/the-king-greets-joggers-in-surprise-appearance-at-cancer-charity-parkrun-13501390",
-      "signal_category_hint": "unclear"
+      "headline": "GCHQ director profile in mathematical sciences academy",
+      "source": "acadmathsci.org.uk",
+      "url": "https://www.acadmathsci.org.uk/team/member/anne-keast-butler/",
+      "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Calls for King Charles to formally apologise for slavery after research shows crown's role",
-      "source": "theguardian.com",
-      "url": "https://theguardian.com/news/2026/jan/30/calls-for-king-charles-to-formally-apologise-for-slavery-after-research-shows-crowns-role",
-      "signal_category_hint": "domestic_regime"
+      "headline": "UK's 'Silicon Valley' development near GCHQ moves forward",
+      "source": "hellorayo.co.uk",
+      "url": "https://www.hellorayo.co.uk/greatest-hits/gloucestershire/news/uks-silicon-valley-near-gchq-in-cheltenham-a-step-closer",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }

@@ -3,145 +3,175 @@
   "code": "fi",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 388,
-  "stories_identified": 8,
-  "off_topic_filtered": 45,
-  "noise_summary": "45 off-topic results filtered: 18 sports stories (cross-country skiing competitions, SM-liiga hockey, football/soccer results), 12 entertainment/celebrity news, 8 human interest stories, 4 weather reports, 3 obituaries/death notices.",
+  "search_results_total": 375,
+  "stories_identified": 12,
+  "off_topic_filtered": 47,
+  "noise_summary": "47 off-topic results filtered: 18 sports (basketball games, hockey league standings, player transfers), 12 entertainment/celebrity content, 8 lifestyle and health articles, 5 pure business/financial sector news not involving government policy, 4 weather/seasonal reports.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Coalition split as PM Orpo rejects inheritance tax removal, Finance Minister Purra blocks proposal",
-      "summary": "Prime Minister Orpo announced Tuesday that the government will not proceed with inheritance tax removal in the spring budget framework, following Finance Minister Purra's firm rejection of the proposal. The disagreement exposed tensions between coalition partners on tax policy.",
+      "headline": "Government coalition splits over inheritance tax abolition as Purra blocks Kokoomus proposal",
+      "summary": "Finance Minister Riikka Purra (Finns Party) decisively rejected the National Coalition Party's proposal to abolish inheritance and gift taxes in the spring budget negotiations. Prime Minister Orpo confirmed the proposal would not proceed, creating a public rift between coalition partners.",
       "actors_involved": [
-        "Orpo",
         "Purra",
-        "Kokoomus"
+        "Orpo",
+        "Kokoomus",
+        "Finns Party"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 18,
+      "source_count": 23,
       "sources": [
         "hs.fi",
-        "suomenmaa.fi",
-        "verkkouutiset.fi",
         "iltalehti.fi",
-        "yle.fi",
         "is.fi",
-        "uusisuomi.fi",
-        "ess.fi",
-        "ts.fi",
-        "mtvuutiset.fi",
+        "yle.fi",
+        "verkkouutiset.fi",
+        "sss.fi",
         "kauppalehti.fi",
-        "demokraatti.fi"
+        "demokraatti.fi",
+        "uusisuomi.fi",
+        "suomenmaa.fi",
+        "maaseuduntulevaisuus.fi"
       ],
-      "date_range": "2026-03-17 to 2026-03-20",
+      "date_range": "2026-03-15 to 2026-03-19",
       "articles": [
+        {
+          "title": "Mediat: Orpo torjuu perint\u00f6veron poistamisen kehysriihess\u00e4",
+          "source": "suomenmaa.fi",
+          "url": "https://www.suomenmaa.fi/uutiset/hs-ja-yle-orpo-torjuu-perintoveron-poistamisen-kehysriihessa/",
+          "date": "2026-03-05"
+        },
         {
           "title": "Verotus | Orpo: Perint\u00f6veroa ei nyt poisteta",
           "source": "hs.fi",
           "url": "https://www.hs.fi/politiikka/art-2000011885649.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Mediat: Orpo torjuu perint\u00f6veron poistamisen kehysriihess\u00e4",
-          "source": "suomenmaa.fi",
-          "url": "https://www.suomenmaa.fi/uutiset/hs-ja-yle-orpo-torjuu-perintoveron-poistamisen-kehysriihess\u00e4/",
-          "date": "2026-03-18"
+          "date": "2026-03-05"
         },
         {
           "title": "Petteri Orpo niittaa kokoomuksen toiveet perint\u00f6veron poistosta kehysriihess\u00e4",
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20215783",
-          "date": "2026-03-18"
+          "date": "2026-03-05"
         },
         {
           "title": "Hallitus | Purra: Perint\u00f6veroa ei poisteta",
           "source": "hs.fi",
           "url": "https://www.hs.fi/politiikka/art-2000011882041.html",
-          "date": "2026-03-17"
+          "date": "2026-03-04"
         },
         {
           "title": "Riikka Purra tyrm\u00e4si perint\u00f6veron poistamisen \u2013 kokoomuksesta heti tiukka vastaus",
           "source": "is.fi",
           "url": "https://www.is.fi/politiikka/art-2000011882484.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Valtiovarainministeri Purra tyrm\u00e4\u00e4 perint\u00f6veron poistamisen",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20215483",
-          "date": "2026-03-17"
+          "date": "2026-03-04"
         },
         {
           "title": "HS-analyysi | Purran yksiselitteinen lausunto perint\u00f6verosta pakotti Orpon luovuttamaan",
           "source": "hs.fi",
-          "url": "https://www.hs.fi/politiikka/art-2000011886042.html",
-          "date": "2026-03-18"
+          "url": "https://hs.fi/politiikka/art-2000011886042.html",
+          "date": "2026-03-05"
         },
         {
-          "title": "Orpo ampui alas kokoomuksen pitk\u00e4aikaisen haaveen",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011885847.html",
-          "date": "2026-03-18"
+          "title": "Kokoomuksen Kaumalta yll\u00e4tt\u00e4v\u00e4 veroavaus \u2013 perussuomalaisten Bergbom \u00e4llistyi Kauman puheenvuorosta",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215823?origin=rss",
+          "date": "2026-03-05"
         },
         {
-          "title": "Viimeinen niitti: Petteri Orpo sanoo, ett\u00e4 perint\u00f6veroa ei poisteta nyt",
+          "title": "Hallituksen sis\u00e4ll\u00e4 sukset ristiss\u00e4 \u2013 Kokoomus aloitti operaation",
           "source": "iltalehti.fi",
-          "url": "https://www.iltalehti.fi/politiikka/a/8d1c8c6f-febc-4e3d-bbb5-325010233d8c",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Elinkeinoel\u00e4m\u00e4 painaa p\u00e4\u00e4lle perint\u00f6verossa \u2013 Orpo jo luovutti",
-          "source": "iltalehti.fi",
-          "url": "https://www.iltalehti.fi/politiikka/a/912376a5-9b36-4d25-a598-252a198ee089",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Avoin riita repesi \u2013 Petteri Orpo pelk\u00e4\u00e4 jo Riikka Purraa?",
-          "source": "uusisuomi.fi",
-          "url": "https://www.uusisuomi.fi/uutiset/a/8fd055a9-7c95-42cf-b656-af9d834c4580",
-          "date": "2026-03-18"
+          "url": "https://www.iltalehti.fi/politiikka/a/a6c2e8c5-6d0b-4c1e-883f-d24f86863659",
+          "date": "2026-03-05"
         },
         {
           "title": "Riikka Purra ampuu alas kokoomuksen aloitteen perint\u00f6veron poistosta",
           "source": "sss.fi",
           "url": "https://www.sss.fi/2026/03/riikka-purra-ampuu-alas-kokoomuksen-aloitteen-perintoveron-poistosta/",
-          "date": "2026-03-17"
+          "date": "2026-03-04"
         },
         {
-          "title": "Minister Riikka Purra shoots down calls to abolish inheritance tax",
+          "title": "Purra: Perint\u00f6veron poisto merkitsisi 1,4 miljardin s\u00e4\u00e4st\u00f6jen etsimist\u00e4",
+          "source": "verkkouutiset.fi",
+          "url": "https://www.verkkouutiset.fi/a/riikka-purra-perintoveron-poisto-vaatisi-14-miljardin-saastot/",
+          "date": "2026-03-04"
+        },
+        {
+          "title": "Kokoomuksen varapuheenjohtajan pesti kiinnostaa useita \u2013 Ikonen on ilmoittanut luopuvansa",
           "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20215502",
-          "date": "2026-03-17"
+          "url": "https://yle.fi/a/74-20216410?origin=rss",
+          "date": "2026-03-19"
         },
         {
-          "title": "P\u00e4\u00e4kirjoitus | Vaihtokauppa veroilla ei johda mihink\u00e4\u00e4n",
-          "source": "hs.fi",
-          "url": "https://www.hs.fi/paakirjoitukset/art-2000011882578.html",
-          "date": "2026-03-17"
+          "title": "Valtiovarainministeri Purra tyrm\u00e4\u00e4 perint\u00f6veron poistamisen",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215483",
+          "date": "2026-03-04"
         },
         {
-          "title": "Kommentti: Petteri Orpon kokoomus l\u00e4hti perint\u00f6rikkaiden kanssa veromarjaan",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011882828.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Purra lytt\u00e4\u00e4 perint\u00f6veron poistamisen HS:ss\u00e4 \u2013 Asiantuntija: 'Kokoomus tavoittelee vuosisadan puhallusta'",
-          "source": "demokraatti.fi",
-          "url": "https://demokraatti.fi/purra-lyttaa-perintoveron-poistamisen-hsssa-asiantuntija-kokoomus-tavoittelee-vuosisadan-puhallusta",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Purralta t\u00e4ystyrm\u00e4ys perint\u00f6veron poistolle",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011882063.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Purra iski p\u00f6yt\u00e4\u00e4n 8 perustetta verolinjalleen \u2013 'Perint\u00f6veroa ei poisteta'",
+          "title": "Purra iski p\u00f6yt\u00e4\u00e4n 8 perustetta verolinjalleen \u2013 \"Perint\u00f6veroa ei poisteta\"",
           "source": "kauppalehti.fi",
           "url": "https://www.kauppalehti.fi/uutiset/a/402ba748-17bb-4134-a10d-8fa8cdf1cf8b",
-          "date": "2026-03-17"
+          "date": "2026-03-04"
+        },
+        {
+          "title": "Kommentti: Petteri Orpon kokoomus l\u00e4hti perint\u00f6rikkaiden kanssa veromarjaan \u2013 j\u00e4i vain huutokauppakeisarin maine",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011882828.html",
+          "date": "2026-03-04"
+        },
+        {
+          "title": "SDP:st\u00e4 tyrm\u00e4ys perint\u00f6veron poistolle \u2013 Kokoomuksesta uusi leikkausehdotus",
+          "source": "iltalehti.fi",
+          "url": "https://www.iltalehti.fi/politiikka/a/349ec3b4-fe6c-4e08-a30d-3e3322eee84c",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Perint\u00f6veron poistaminen ennen vaaleja olisi poukkoilua, sanoo professori",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/perintoveron-poistaminen-ennen-vaaleja-olisi-poukkoilua-sanoo-professori/",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Veroasiantuntija tyrm\u00e4\u00e4 kokoomuksen ehdotuksen perint\u00f6veron poistosta",
+          "source": "ku.fi",
+          "url": "https://www.ku.fi/artikkeli/5445992-veroasiantuntija-tyrmaa-kokoomuksen-ehdotuksen-perintoveron-poistosta-hyotyjia-olisivat-harvat-varakkaat-suvut",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Kokoomuksen salaiset kaavailut julki \u2013 T\u00e4m\u00e4 muuttuisi ty\u00f6el\u00e4m\u00e4ss\u00e4",
+          "source": "iltalehti.fi",
+          "url": "https://www.iltalehti.fi/politiikka/a/e5d1cde3-9ae3-435d-ba01-c4a9c0301cea",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Hallituksen sis\u00e4ll\u00e4 sukset ristiss\u00e4 \u2013 Kokoomus aloitti operaation",
+          "source": "iltalehti.fi",
+          "url": "https://www.iltalehti.fi/politiikka/a/a6c2e8c5-6d0b-4c1e-883f-d24f86863659",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Purra lytt\u00e4\u00e4 perint\u00f6veron poistamisen HS:ss\u00e4 \u2013 Asiantuntija",
+          "source": "demokraatti.fi",
+          "url": "https://demokraatti.fi/purra-lyttaa-perintoveron-poistamisen-hsssa-asiantuntija-kokoomus-tavoittelee-vuosisadan-puhallusta",
+          "date": "2026-03-04"
+        },
+        {
+          "title": "Kokoomuksen Satonen: M\u00e4\u00e4r\u00e4aikainen ty\u00f6 on parempi kuin ei ty\u00f6t\u00e4 ollenkaan",
+          "source": "sttinfo.fi",
+          "url": "https://www.sttinfo.fi/tiedote/71897982/kokoomuksen-satonen-maaraaikainen-tyo-on-parempi-kuin-ei-tyota-ollenkaan?publisherId=69819275&lang=fi",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Hallitus | Perint\u00f6veron poistosta tuli julkinen kiista",
+          "source": "hs.fi",
+          "url": "https://www.hs.fi/politiikka/art-2000011882958.html",
+          "date": "2026-03-04"
+        },
+        {
+          "title": "Kokoomuksen varapuheenjohtajakisaan uusia nimia",
+          "source": "mtvuutiset.fi",
+          "url": "https://www.mtvuutiset.fi/artikkeli/kokoomuksen-varapuheenjohtajakisaan-uusia-nimia/9313060",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -151,26 +181,26 @@
     },
     {
       "story_id": 2,
-      "headline": "President Stubb visits London, meets King Charles and criticizes Brexit as 'colossal mistake'",
-      "summary": "President Alexander Stubb conducted a two-day working visit to London March 16-17, meeting King Charles III and attending Finnish forestry innovation exhibition. Stubb called Brexit a 'colossal mistake' and suggested Europe could help Trump on Iran in exchange for Ukraine support.",
+      "headline": "President Stubb's diplomatic visit to London includes King Charles meeting and Brexit criticism",
+      "summary": "President Alexander Stubb conducted a two-day working visit to London, meeting King Charles III, criticizing Brexit as a 'colossal mistake,' and discussing Iran war and Ukraine support. He also proposed European assistance to Trump in Iran in exchange for Ukraine aid.",
       "actors_involved": [
         "Stubb"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 18,
       "sources": [
         "is.fi",
-        "hs.fi",
-        "presidentti.fi",
-        "politico.eu",
         "yle.fi",
-        "verkkouutiset.fi",
+        "politico.eu",
+        "bbc.com",
+        "bloomberg.com",
+        "hbl.fi",
         "iltalehti.fi",
-        "paivanlehti.fi",
         "sss.fi",
-        "hbl.fi"
+        "verkkouutiset.fi",
+        "valtioneuvosto.fi"
       ],
-      "date_range": "2026-03-16 to 2026-03-18",
+      "date_range": "2026-03-16 to 2026-03-19",
       "articles": [
         {
           "title": "Stubbit tapasivat kuningas Charlesin \u2013 t\u00e4llaisessa asussa Suzanne Innes-Stubb edusti",
@@ -179,51 +209,33 @@
           "date": "2026-03-17"
         },
         {
-          "title": "Stubbit tapasivat kuningas Charlesin \u2013 tutustuivat Suomi-n\u00e4yttelyyn",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011886252.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Finland's Stubb: Brexit was like sawing off your leg for no reason",
-          "source": "politico.eu",
-          "url": "https://www.politico.eu/article/finland-alexander-stubb-brexit-uk-eu/",
-          "date": "2026-03-17"
+          "title": "Britanniasta kajahti rajua teksti\u00e4 Alexander Stubbille \u2013 \"Ylimielinen\"",
+          "source": "iltalehti.fi",
+          "url": "https://iltalehti.fi/ulkomaat/a/45dff296-186b-4ad6-827d-1e2c71dd862b",
+          "date": "2026-03-18"
         },
         {
           "title": "Europe could offer to help Trump on Iran \u2014 if he backs Ukraine, Finland's Stubb suggests",
           "source": "politico.eu",
           "url": "https://www.politico.eu/article/europe-help-donald-trump-iran-war-ukraine-finland-alexander-stubb/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Finland's Stubb: Brexit was like sawing off your leg for no reason",
+          "source": "politico.eu",
+          "url": "https://politico.eu/article/finland-alexander-stubb-brexit-uk-eu",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Stubb BBC:ll\u00e4: Trumpin hy\u00f6kk\u00e4ys Iraniin oli yll\u00e4tys",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011889074.html",
           "date": "2026-03-17"
         },
         {
           "title": "Stubb ehdotti yht\u00e4 maata v\u00e4litt\u00e4j\u00e4ksi Iranin sotaan",
           "source": "is.fi",
           "url": "https://www.is.fi/politiikka/art-2000011886758.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Stubbille esitettiin vaihtokauppaa Trumpin kanssa Ukrainan rauhan edist\u00e4miseksi",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20215757",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Trump-ehdotus sai Stubbin pasmat sekaisin \u2013 Pyysi toimittajan puhelinnumeroa",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/ulkomaat/a/6aee68ed-27de-4c5a-91b0-403bd9e83cca",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Alexander Stubb ja kuningas Charles tapasivat Lontoossa \u2013 vierailu jatkui Buckinghamin palatsissa",
-          "source": "paivanlehti.fi",
-          "url": "https://www.paivanlehti.fi/alexander-stubb-ja-kuningas-charles-tapasivat-lontoossa-vierailu-jatkui-buckinghamin-palatsissa/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Presidentti Stubb ja kuningas Charles tapasivat Lontoossa",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/03/presidentti-stubb-ja-kuningas-charles-tapasivat-lontoossa",
           "date": "2026-03-17"
         },
         {
@@ -236,24 +248,158 @@
           "title": "Alexander Stubb brittimedialle: Keir Starmeria ei kannata aliarvioida",
           "source": "verkkouutiset.fi",
           "url": "https://www.verkkouutiset.fi/a/alexander-stubb-brittimedialle-kukaan-muu-ei-tiennyt-iskusta-iraniin-etukateen/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Stubbille esitettiin vaihtokauppaa Trumpin kanssa Ukrainan rauhan edist\u00e4miseksi",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215757",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Presidentti Stubb ja kuningas Charles tapasivat Lontoossa",
+          "source": "sss.fi",
+          "url": "https://sss.fi/2026/03/presidentti-stubb-ja-kuningas-charles-tapasivat-lontoossa",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Stubb Lontoossa: Eurooppa ei auta Trumpia, koska h\u00e4n ei konsultoinut meit\u00e4",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215611?origin=rss",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "NATO Faces Pressure Over Hormuz as Stubb Highlights Trump's Demands",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-03-16/finland-s-stubb-cautions-nato-allies-to-heed-trump-s-hormuz-call",
           "date": "2026-03-16"
+        },
+        {
+          "title": "Finland's Stubb: Europe could help US in Iran in exchange for Ukraine aid",
+          "source": "tvpworld.com",
+          "url": "https://tvpworld.com/92152001/finlands-stubb-im-for-europe-helping-us-secure-strait-of-hormuz-for-ukraine-aid",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Stubb tells BBC Trump has no grounds to call on Nato",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20216003",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Presidentti Stubb matkaa t\u00e4n\u00e4\u00e4n ty\u00f6vierailulle Lontooseen",
+          "source": "yle.fi",
+          "url": "https://yle.fi/uutiset/lyhyesti/74-20215407",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Historiallinen tapaaminen: Presidentti Stubb kohtasi kuningas Charlesin Lontoossa",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215793",
+          "date": "2026-03-17"
         },
         {
           "title": "Stubbs krav p\u00e5 Trump: D\u00e5 kan vi hj\u00e4lpa USA",
           "source": "hbl.fi",
           "url": "https://hbl.fi/2026-03-18/stubb-europa-kan-bista-usa-om-ukraina-far-hjalp-mot-ryssland",
           "date": "2026-03-18"
+        },
+        {
+          "title": "Ministeri Essayah vierailulle Lontooseen ja vaikuttamismatkalle Brysseliin",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/-/1410837/ministeri-essayah-vierailulle-lontooseen-ja-vaikuttamismatkalle-brysseliin",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://www.politico.eu/article/finland-alexander-stubb-brexit-uk-eu/",
-        "https://is.fi/politiikka/art-2000011886252.html"
+        "https://www.politico.eu/article/europe-help-donald-trump-iran-war-ukraine-finland-alexander-stubb/",
+        "https://yle.fi/a/74-20215757"
       ]
     },
     {
       "story_id": 3,
-      "headline": "Finance Minister Purra under scrutiny for accepting 800-euro champagne bottle against ministry guidelines",
-      "summary": "Media investigation revealed Finance Minister Riikka Purra accepted a nearly 800-euro champagne bottle at Helsinki restaurant Pata\u00e4ss\u00e4 in October, violating government guidelines that prohibit ministers from accepting gifts over 200 euros. Purra defended her actions citing the bottle was already opened.",
+      "headline": "Prime Minister Orpo criticizes Viktor Orb\u00e1n's obstruction of Ukraine aid at EU summit",
+      "summary": "Prime Minister Petteri Orpo harshly criticized Hungarian PM Viktor Orb\u00e1n for blocking the EU's 90 billion euro loan package to Ukraine, calling Orb\u00e1n's actions 'intolerable' and accusing him of using Ukraine's crisis for electoral purposes ahead of Hungary's April elections.",
+      "actors_involved": [
+        "Orpo"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 9,
+      "sources": [
+        "mtvuutiset.fi",
+        "sss.fi",
+        "verkkouutiset.fi",
+        "uusisuomi.fi",
+        "aljazeera.com",
+        "helsinkitimes.fi",
+        "ess.fi"
+      ],
+      "date_range": "2026-03-19 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Orpon mukaan EU-maiden johtajien on toimittava syntyneess\u00e4 tilanteessa nyt viisaasti",
+          "source": "mtvuutiset.fi",
+          "url": "https://www.mtvuutiset.fi/artikkeli/orpo-orbanin-toiminta-on-sietamatonta-meilla-oli-sopimus/9312576",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Orpo: Viktor Orbanin toiminta on siet\u00e4m\u00e4t\u00f6nt\u00e4 \u2013 \"k\u00e4ytt\u00e4\u00e4 Ukrainan h\u00e4t\u00e4\u00e4 hyv\u00e4ksi vaality\u00f6ss\u00e4\u00e4n\"",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/orpo-viktor-orbanin-toiminta-on-sietamatonta-kayttaa-ukrainan-hataa-hyvaksi-vaalityossaan/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Viktor Orban sai roppakaupalla huutia EU-huippukokouksessa \u2013 Petteri Orpo luonnehti Orbanin toimintaa siet\u00e4m\u00e4tt\u00f6m\u00e4ksi",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/viktor-orban-sai-roppakaupalla-huutia-eu-huippukokouksessa-petteri-orpo-luonnehti-orbanin-toimintaa-sietamattomaksi/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Viktor Orb\u00e1nilta tuli tiukka linja \u2013 Petteri Orpo: \"Petti lupauksensa\"",
+          "source": "uusisuomi.fi",
+          "url": "https://www.uusisuomi.fi/uutiset/a/06012ca2-690b-4d0b-8e67-1f636231d6f7",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Hungary's Orban continues to block Ukraine loan at EU summit",
+          "source": "aljazeera.com",
+          "url": "https://aljazeera.com/news/2026/3/19/hungarys-orban-continues-to-block-ukraine-loan-at-eu-summit",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Orb\u00e1n blocks EU Ukraine loan over oil dispute",
+          "source": "helsinkitimes.fi",
+          "url": "https://helsinkitimes.fi/world-int/28643-orban-blocks-eu-ukraine-loan-over-oil-dispute.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Viktor Orbanin puolueessa paniikkitunnelma gallupeista - vaalitappio uhkaa",
+          "source": "verkkouutiset.fi",
+          "url": "https://verkkouutiset.fi/a/viktor-orbanin-puolueessa-paniikkitunnelma-gallupeista-vaalitappio-uhkaa",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "P\u00e4\u00e4kirjoitus | Orban pelaa h\u00e4rski\u00e4 vaalipeli\u00e4 EU:n ja Ukrainan kustannuksella",
+          "source": "ess.fi",
+          "url": "https://ess.fi/paakirjoitus-mielipide/9317893",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Orpo: Viktor Orbanin toiminta on siet\u00e4m\u00e4t\u00f6nt\u00e4",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/orpo-viktor-orbanin-toiminta-on-sietamatonta/",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://www.mtvuutiset.fi/artikkeli/orpo-orbanin-toiminta-on-sietamatonta-meilla-oli-sopimus/9312576",
+        "https://aljazeera.com/news/2026/3/19/hungarys-orban-continues-to-block-ukraine-loan-at-eu-summit"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Finance Minister Purra accepts 800-euro champagne bottle despite ministry guidelines",
+      "summary": "Finance Minister Riikka Purra accepted a nearly 800-euro bottle of champagne at a Helsinki restaurant despite government guidelines prohibiting ministers from accepting gifts over 200 euros. Purra justified the acceptance saying the bottle was already opened and registered it at 400 euros in the gift registry.",
       "actors_involved": [
         "Purra"
       ],
@@ -262,12 +408,11 @@
       "sources": [
         "is.fi",
         "hs.fi",
-        "voice.fi",
         "yle.fi",
-        "satakunnankansa.fi",
-        "puheenvuoro.uusisuomi.fi"
+        "voice.fi",
+        "uusisuomi.fi"
       ],
-      "date_range": "2026-03-18 to 2026-03-20",
+      "date_range": "2026-03-18 to 2026-03-19",
       "articles": [
         {
           "title": "Riikka Purra kertoo, miksi lahjapullon arvoksi ilmoitettiin puolet todellisesta hinnasta",
@@ -288,7 +433,7 @@
           "date": "2026-03-18"
         },
         {
-          "title": "HS: 'Se oli jo avatty' \u2013 Riikka Purra toimi vastoin ministeriohjetta ja otti \u00f6kylahjan vastaan",
+          "title": "HS: \"Se oli jo avattu\" \u2013 Riikka Purra toimi vastoin ministeriohjetta ja otti \u00f6kylahjan vastaan",
           "source": "voice.fi",
           "url": "https://www.voice.fi/ilmiot/hs-se-oli-jo-avattu-riikka-purra-toimi-vastoin-ministeriohjetta-ja-otti-okylahjan-vastaan-erikoinen-perustelu",
           "date": "2026-03-18"
@@ -297,13 +442,13 @@
           "title": "HS: Purra otti vastaan satojen eurojen samppanjapullon ministeriohjeen kiellosta huolimatta",
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20216159",
-          "date": "2026-03-18"
+          "date": "2026-03-19"
         },
         {
           "title": "HS: Riikka Purra accepted gift of champagne worth nearly \u20ac800",
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20216227",
-          "date": "2026-03-18"
+          "date": "2026-03-19"
         },
         {
           "title": "Ministereiden lahjat | Purra otti vastaan 800 euron samppanjapullon",
@@ -315,192 +460,18 @@
           "title": "Saako Riikka Purra potkut?",
           "source": "puheenvuoro.uusisuomi.fi",
           "url": "https://puheenvuoro.uusisuomi.fi/jarmonahkamaki/saako-riikka-purra-potkut/",
-          "date": "2026-03-18"
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://www.hs.fi/tutkiva/art-2000011792482.html",
-        "https://www.is.fi/politiikka/art-2000011891164.html"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Finland ranked world's happiest country for ninth consecutive year",
-      "summary": "The UN World Happiness Report 2026 ranked Finland as the world's happiest country for the ninth year in a row. President Stubb attributed the success to freedom, equality, justice and strong social systems. Other Nordic countries also ranked highly in the top positions.",
-      "actors_involved": [
-        "Stubb"
-      ],
-      "signal_category_hint": "unclear",
-      "source_count": 11,
-      "sources": [
-        "uuno.fi",
-        "verkkouutiset.fi",
-        "como.fi",
-        "yle.fi",
-        "dailyfinland.fi",
-        "cntraveler.com",
-        "abc11.com",
-        "nationalgeographic.com",
-        "travelandtourworld.com",
-        "kurier.at"
-      ],
-      "date_range": "2026-03-19 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Alexander Stubb: t\u00e4m\u00e4n takia Suomi on maailman onnellisin maa",
-          "source": "uuno.fi",
-          "url": "https://www.uuno.fi/alexander-stubb-taman-takia-suomi-on-maailman-onnellisin-maa/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Alexander Stubb nostaa esiin nelj\u00e4 syyt\u00e4 Suomen onnellisuuteen",
-          "source": "verkkouutiset.fi",
-          "url": "https://www.verkkouutiset.fi/a/alexander-stubb-nostaa-esiin-nelja-syyta-suomen-onnellisuuteen/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Suomi on j\u00e4lleen maailman onnellisin maa - Alexander Stubb kertoo miksi",
-          "source": "como.fi",
-          "url": "https://como.fi/uutiset/suomi-on-jalleen-maailman-onnellisin-maa-alexander-stubb-kertoo-miksi",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Finland ranks as 'world's happiest country' for 9th year in a row",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20216141",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Finland ranks world's happiest country for 9th year in a row",
-          "source": "dailyfinland.fi",
-          "url": "https://dailyfinland.fi/national/48378/Finland-ranks-worlds-happiest-country-for-9th-year-in-a-row",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "The Happiest Country in the World Is Giving Away Free Trips to Visit This Summer",
-          "source": "cntraveler.com",
-          "url": "https://cntraveler.com/story/the-happiest-country-in-the-world-is-giving-away-free-trips-to-visit-this-summer",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "World Happiness Report highlights social media's negative impact, ranks Finland as happiest country",
-          "source": "abc11.com",
-          "url": "https://abc11.com/post/world-happiness-report-highlights-social-medias-negative-impact-ranks-finland-happiest-country/18734752",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Is this Michigan city the most Finnish place in the U.S.?",
-          "source": "nationalgeographic.com",
-          "url": "https://nationalgeographic.com/travel/article/finnish-culture-michigan",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Finland Reigns as the World's Happiest Country in 2026",
-          "source": "travelandtourworld.com",
-          "url": "https://travelandtourworld.com/news/article/finland-reigns-as-the-worlds-happiest-country-in-2026-uncover-the-magical-places-that-make-life-here-pure-bliss",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "9th time in a row: What makes Finland world's happiest country",
-          "source": "firstpost.com",
-          "url": "https://www.firstpost.com/world/9th-time-in-a-row-what-makes-finland-worlds-happiest-country-president-stubb-shares-the-secret-watch-13991462.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Gl\u00fccksstudie 2026: Finnland ist gl\u00fccklichstes Land",
-          "source": "kurier.at",
-          "url": "https://kurier.at/wissen/gesundheit/gluecklichstes-land-finnland-studie-2026/403142270",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://yle.fi/a/74-20216141",
-        "https://dailyfinland.fi/national/48378/Finland-ranks-worlds-happiest-country-for-9th-year-in-a-row"
+        "https://yle.fi/a/74-20216227"
       ]
     },
     {
       "story_id": 5,
-      "headline": "Defense Minister H\u00e4kk\u00e4nen participates in NATO Cold Response exercise, discusses Finland's defense cooperation",
-      "summary": "Defense Minister Antti H\u00e4kk\u00e4nen participated in NATO's Cold Response 26 exercise in Rovaj\u00e4rvi with Swedish and Norwegian counterparts. Over 30,000 personnel from 14 countries trained in arctic conditions. H\u00e4kk\u00e4nen also commented skeptically on Finland's potential participation in Strait of Hormuz operations.",
-      "actors_involved": [
-        "H\u00e4kk\u00e4nen",
-        "Finnish Defence Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 9,
-      "sources": [
-        "is.fi",
-        "yle.fi",
-        "valtioneuvosto.fi",
-        "verkkouutiset.fi",
-        "sss.fi"
-      ],
-      "date_range": "2026-03-16 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Puolustusministeri Antti H\u00e4kk\u00e4nen puhuu Cold Response -harjoituksessa",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011881991.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "H\u00e4kk\u00e4nen Trumpin vaatimuksista Hormuzinsalmella",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20214981",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "H\u00e4kk\u00e4nen: Trumpin vaatimukset Hormuzinsalmen puolustamisesta ihmetytt\u00e4v\u00e4t Nato-maita",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20215832",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Suomen, Ruotsin ja Norjan puolustusministerit Cold Response 26 -harjoituksessa",
-          "source": "valtioneuvosto.fi",
-          "url": "https://valtioneuvosto.fi/-/236553176/suomen-ruotsin-ja-norjan-puolustusministerit-cold-response-26-harjoituksessa-flf-finlandin-toimeenpano-etenee-ripeasti",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Suomessa harjoiteltiin joukkojen siirt\u00e4mist\u00e4 Ruotsista - Nato-esikunta Rovaniemelle etenee",
-          "source": "verkkouutiset.fi",
-          "url": "https://www.verkkouutiset.fi/a/suomessa-harjoiteltiin-joukkojen-siirtamista-ruotsista-nato-esikunta-rovaniemelle-etenee/",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Puolustusministeri H\u00e4kk\u00e4nen Hormuzinsalmen tilanteesta",
-          "source": "sss.fi",
-          "url": "https://www.sss.fi/2026/03/puolustusministeri-hakkanen-hormuzinsalmen-tilanteesta-suomi-katsoo-ihan-rauhassa-miten-euroopan-maat-toimivat/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "H\u00e4kk\u00e4sen varoitus \u2013 sota iskee pian kunnolla lompakkoon",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011888571.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Defence Ministers of Finland, Sweden and Norway at Cold Response 26",
-          "source": "valtioneuvosto.fi",
-          "url": "https://valtioneuvosto.fi/en/-/236553176/defence-ministers-of-finland-sweden-and-norway-at-cold-response-26-implementation-of-flf-finland-progressing-rapidly",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Unlikely that Finland will help secure Strait of Hormuz, minister says",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20215701",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://valtioneuvosto.fi/-/236553176/suomen-ruotsin-ja-norjan-puolustusministerit-cold-response-26-harjoituksessa-flf-finlandin-toimeenpano-etenee-ripeasti",
-        "https://yle.fi/a/74-20214981"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "SDP harassment investigation concludes with no sanctions, party leadership defends handling",
-      "summary": "SDP's external harassment investigation by Finnish Institute of Occupational Health concluded with no sanctions for those involved in harassment cases. Party leadership said there were no widespread problems and defended their response to individual incidents that had been handled previously.",
+      "headline": "SDP harassment investigation concludes with no disciplinary actions despite findings",
+      "summary": "The Social Democratic Party's external harassment investigation by the Occupational Health Institute concluded without imposing disciplinary measures on any party members, despite finding some incidents of inappropriate behavior. The party leadership faced criticism for the lack of accountability.",
       "actors_involved": [
         "SDP"
       ],
@@ -510,17 +481,12 @@
         "is.fi",
         "yle.fi",
         "verkkouutiset.fi",
-        "puheenvuoro.uusisuomi.fi",
-        "hbl.fi"
+        "sttinfo.fi",
+        "demokraatti.fi",
+        "puheenvuoro.uusisuomi.fi"
       ],
-      "date_range": "2026-03-19 to 2026-03-21",
+      "date_range": "2026-03-19 to 2026-03-20",
       "articles": [
-        {
-          "title": "Sdp:n h\u00e4irint\u00e4selvitys valmistui \u2013 ryhm\u00e4 ei jaa rangaistuksia",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011890055.html",
-          "date": "2026-03-19"
-        },
         {
           "title": "Sdp:n h\u00e4irint\u00e4selvitys valmistui \u2013 n\u00e4in kohuun kytketty kansanedustaja kommentoi",
           "source": "is.fi",
@@ -528,7 +494,13 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Kommentti: Sdp ei anna rangaistuksia h\u00e4irint\u00e4\u00e4n syyllistyneille",
+          "title": "Sdp:n h\u00e4irint\u00e4selvitys valmistui \u2013 ryhm\u00e4 ei jaa rangaistuksia",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011890055.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Kommentti: Sdp ei anna rangaistuksia h\u00e4irint\u00e4\u00e4n syyllistyneille ja se on surullinen viesti tasa-arvon p\u00e4iv\u00e4n\u00e4",
           "source": "is.fi",
           "url": "https://www.is.fi/politiikka/art-2000011890845.html",
           "date": "2026-03-19"
@@ -540,7 +512,7 @@
           "date": "2026-03-19"
         },
         {
-          "title": "SDP kertoi h\u00e4irint\u00e4selvityksens\u00e4 tulokset",
+          "title": "SDP kertoi h\u00e4irint\u00e4selvityksens\u00e4 tulokset \u2013 Tuppurainen: \"Ei laajempaa ongelmaa, ei v\u00e4kivaltaa tai kiusaamista\"",
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20216130",
           "date": "2026-03-19"
@@ -554,8 +526,8 @@
         {
           "title": "Finlandssvenska sossar st\u00f6der partiledningen i trakasserih\u00e4rvan",
           "source": "yle.fi",
-          "url": "https://yle.fi/a/7-10095426",
-          "date": "2026-03-21"
+          "url": "https://yle.fi/a/7-10095367?origin=rss",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -564,123 +536,379 @@
       ]
     },
     {
-      "story_id": 7,
-      "headline": "European Central Bank keeps interest rates unchanged as inflation concerns mount due to Iran war",
-      "summary": "The European Central Bank maintained its key interest rates unchanged at its March meeting, but rising oil prices from the Iran conflict are increasing inflation pressures. Finnish analysts warned the war could force earlier rate increases than expected.",
+      "story_id": 6,
+      "headline": "Nuclear weapons policy reform sparks parliamentary debate over consultation procedures",
+      "summary": "The government's proposal to remove nuclear weapon restrictions from Finnish law triggered opposition demands for a parliamentary working group before proceeding. Prime Minister Orpo rejected SDP calls to freeze the proposal, insisting the foreign and security policy report provides adequate parliamentary consultation.",
       "actors_involved": [
-        "Bank of Finland"
+        "Orpo",
+        "SDP",
+        "H\u00e4kk\u00e4nen"
       ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 4,
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
       "sources": [
-        "sttinfo.fi",
-        "mtvuutiset.fi",
         "iltalehti.fi",
-        "talouselama.fi"
+        "verkkouutiset.fi",
+        "yle.fi",
+        "ksml.fi",
+        "puheenvuoro.uusisuomi.fi",
+        "hbl.fi"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-16 to 2026-03-18",
       "articles": [
         {
-          "title": "EKP:n rahapoliittisia p\u00e4\u00e4t\u00f6ksi\u00e4",
-          "source": "sttinfo.fi",
-          "url": "https://www.sttinfo.fi/tiedote/71895740/ekpn-rahapoliittisia-paatoksia?publisherId=1865&lang=fi",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Euroopan keskuspankki pit\u00e4nyt ohjauskorkonsa ennallaan",
-          "source": "mtvuutiset.fi",
-          "url": "https://mtvuutiset.fi/artikkeli/euroopan-keskuspankki-pitanyt-ohjauskorkonsa-ennallaan/9312686",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Nyt t\u00e4r\u00e4hti 12 kuukauden euribor yl\u00f6s ja kunnolla",
+          "title": "Petteri Orpo pamauttaa oven kiinni Antti Lindtmanilta",
           "source": "iltalehti.fi",
-          "url": "https://www.iltalehti.fi/talous/a/15373005-b707-46dd-a7ff-ecad3e6e4997",
-          "date": "2026-03-19"
+          "url": "https://www.iltalehti.fi/politiikka/a/83c747bb-1692-40fc-8a11-7b36a14cecda",
+          "date": "2026-03-05"
         },
         {
-          "title": "Markkinoilla levi\u00e4\u00e4 nyt kauhistuttava pelko, joka voi lopulta auttaa Suomen asuntovelallisia",
-          "source": "talouselama.fi",
-          "url": "https://talouselama.fi/uutiset/a/27fafbe6-7edf-4dc1-93a6-0fb62e338fb4",
-          "date": "2026-03-20"
+          "title": "Petteri Orpo: Suomesta ei tule ydinasemaata",
+          "source": "verkkouutiset.fi",
+          "url": "https://verkkouutiset.fi/a/petteri-orpo-suomesta-ei-tule-ydinasemaata",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "SDP aikoo \u00e4\u00e4nest\u00e4\u00e4 ydinaseiden kaikkien rajoitusten poistoa vastaan \u2013 Hallitus torppasi ehdotukset kiistan j\u00e4\u00e4dytyksest\u00e4",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215717?origin=rss",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "P\u00e4\u00e4ministeri Orpo kommentoi Jyv\u00e4skyl\u00e4ss\u00e4 SDP:n vaatimuksia ydinasety\u00f6ryhm\u00e4st\u00e4",
+          "source": "ksml.fi",
+          "url": "https://ksml.fi/paikalliset/9299794",
+          "date": "2026-03-02"
+        },
+        {
+          "title": "Luuleeko Lindtman olevansa Orb\u00e1n, de Gaulle vai per\u00e4ti Kekkonen?",
+          "source": "puheenvuoro.uusisuomi.fi",
+          "url": "https://puheenvuoro.uusisuomi.fi/seppo-makinen/luuleeko-lindtman-olevansa-orban-de-gaulle-vai-perati-kekkonen",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "PODD: F\u00f6rsvarsministern fick en uppl\u00e4xning \u2013 igen!",
+          "source": "hbl.fi",
+          "url": "https://www.hbl.fi/2026-03-19/forsvarsministern-fick-en-upplaxning-igen/",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.sttinfo.fi/tiedote/71895740/ekpn-rahapoliittisia-paatoksia?publisherId=1865&lang=fi",
-        "https://www.iltalehti.fi/talous/a/15373005-b707-46dd-a7ff-ecad3e6e4997"
+        "https://yle.fi/a/74-20215717?origin=rss",
+        "https://www.iltalehti.fi/politiikka/a/83c747bb-1692-40fc-8a11-7b36a14cecda"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Iran war and Strait of Hormuz debate divides Finland on NATO involvement",
+      "summary": "Finnish leaders responded cautiously to US President Trump's calls for NATO assistance in the Strait of Hormuz, with various officials stating Finland lacks resources for such operations and that NATO is primarily a defense alliance, not designed for offensive operations in the Middle East.",
+      "actors_involved": [
+        "Stubb",
+        "Orpo",
+        "H\u00e4kk\u00e4nen"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 6,
+      "sources": [
+        "is.fi",
+        "yle.fi",
+        "sss.fi",
+        "verkkouutiset.fi"
+      ],
+      "date_range": "2026-03-16 to 2026-03-20",
+      "articles": [
+        {
+          "title": "N\u00e4in Orpo vastaa Trumpille",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011886085.html",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Orpo: Suomen pit\u00e4\u00e4 olla mukana keskusteluissa kauppaliikenteen turvaamisesta Hormuzinsalmella",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215993?origin=rss",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Orpo: EU:ssa ei valmistella Aspides-operaation laajentamista",
+          "source": "sss.fi",
+          "url": "https://sss.fi/2026/03/orpo-eussa-ei-valmistella-aspides-operaation-laajentamista",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "H\u00e4kk\u00e4nen Trumpin vaatimuksista Hormuzinsalmella",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20214981",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "H\u00e4kk\u00e4nen: Trumpin vaatimukset Hormuzinsalmen puolustamisesta ihmetytt\u00e4v\u00e4t Nato-maita",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215832?origin=rss",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Alexander Stubb: Ensisijainen vastuumme on t\u00e4m\u00e4n maanosan puolustamisesta",
+          "source": "verkkouutiset.fi",
+          "url": "https://verkkouutiset.fi/a/alexander-stubb-ensisijainen-vastuumme-on-taman-maanosan-puolustamisesta",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://yle.fi/a/74-20215993?origin=rss",
+        "https://yle.fi/a/74-20214981"
       ]
     },
     {
       "story_id": 8,
-      "headline": "Prime Minister Orpo's government reaches 1000 days in office amid various domestic challenges",
-      "summary": "Prime Minister Petteri Orpo's government reached its 1000th day in office on March 15. The milestone was noted officially while the government continues to face various policy challenges including the inheritance tax debate and international pressures.",
+      "headline": "Nordic and Canadian Prime Ministers meet in Oslo for security cooperation talks",
+      "summary": "Prime Minister Orpo participated in a summit with Nordic and Canadian leaders in Oslo, focusing on Arctic security cooperation and Ukraine support. The meeting emphasized strengthening defense industry collaboration and maintaining unity in supporting Ukraine against Russian aggression.",
+      "actors_involved": [
+        "Orpo"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 5,
+      "sources": [
+        "is.fi",
+        "yle.fi",
+        "satakunnankansa.fi",
+        "ksml.fi",
+        "ess.fi"
+      ],
+      "date_range": "2026-03-15 to 2026-03-16",
+      "articles": [
+        {
+          "title": "Suora l\u00e4hetys: Orpo tapaa Kanadan ja Pohjoismaiden p\u00e4\u00e4ministerit",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011868957.html",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Orpo Oslossa: Suomi kiinnostunut kuulemaan lis\u00e4\u00e4 Ranskan ydinasesuojasta",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215375",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Orpo: \"Nato ei suunnittele ydinaseiden sijoittamista Suomeen\"",
+          "source": "satakunnankansa.fi",
+          "url": "https://satakunnankansa.fi/kotimaa/art-2000011881303.html",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Petteri Orpo osallistuu p\u00e4\u00e4ministerien kokoukseen Norjassa",
+          "source": "ksml.fi",
+          "url": "https://ksml.fi/uutissuomalainen/9288573",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Norjan p\u00e4\u00e4ministeri: Yhdysvaltain uhkauksia ei voi hyv\u00e4ksy\u00e4 \u2013 Orpo: Ukrainan tukemista jatkettava",
+          "source": "ess.fi",
+          "url": "https://ess.fi/uutissuomalainen/9300567",
+          "date": "2026-03-02"
+        }
+      ],
+      "representative_urls": [
+        "https://www.is.fi/politiikka/art-2000011868957.html",
+        "https://yle.fi/a/74-20215375"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Defense Minister H\u00e4kk\u00e4nen hosts Cold Response NATO exercise in Finnish Lapland",
+      "summary": "Defense Minister Antti H\u00e4kk\u00e4nen hosted Nordic defense ministers at the Cold Response 26 NATO exercise in Rovaj\u00e4rvi, Lapland. The exercise involved over 30,000 troops from 14 countries and demonstrated progress in implementing Forward Land Forces Finland cooperation, particularly with Swedish and Norwegian forces.",
+      "actors_involved": [
+        "H\u00e4kk\u00e4nen",
+        "Finnish Defence Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "valtioneuvosto.fi",
+        "sss.fi",
+        "verkkouutiset.fi",
+        "yle.fi"
+      ],
+      "date_range": "2026-03-16 to 2026-03-17",
+      "articles": [
+        {
+          "title": "Suomen, Ruotsin ja Norjan puolustusministerit Cold Response 26 -harjoituksessa",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/-/236553176/suomen-ruotsin-ja-norjan-puolustusministerit-cold-response-26-harjoituksessa-flf-finlandin-toimeenpano-etenee-ripeasti",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Pohjois-Suomen puolustamiseen osallistuminen on my\u00f6s Ruotsin puolustusta",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/pohjois-suomen-puolustamiseen-osallistuminen-on-myos-ruotsin-puolustusta-sanoo-puolustusministeri-pal-jonson/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Suomessa harjoiteltiin joukkojen siirt\u00e4mist\u00e4 Ruotsista - Nato-esikunta Rovaniemelle etenee",
+          "source": "verkkouutiset.fi",
+          "url": "https://www.verkkouutiset.fi/a/suomessa-harjoiteltiin-joukkojen-siirtamista-ruotsista-nato-esikunta-rovaniemelle-etenee/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Suomen ja Ruotsin puolustusministerit vierailevat Nato-harjoituksessa Rovaj\u00e4rvell\u00e4",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/suomen-ja-ruotsin-puolustusministerit-vierailevat-nato-harjoituksessa-rovajarvella/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Defence Ministers of Finland, Sweden and Norway at Cold Response 26",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/en/-/236553176/defence-ministers-of-finland-sweden-and-norway-at-cold-response-26-implementation-of-flf-finland-progressing-rapidly",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://valtioneuvosto.fi/-/236553176/suomen-ruotsin-ja-norjan-puolustusministerit-cold-response-26-harjoituksessa-flf-finlandin-toimeenpano-etenee-ripeasti",
+        "https://www.sss.fi/2026/03/pohjois-suomen-puolustamiseen-osallistuminen-on-myos-ruotsin-puolustusta-sanoo-puolustusministeri-pal-jonson/"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Finland ranks as world's happiest country for ninth consecutive year",
+      "summary": "Finland retained its position as the world's happiest country in the UN World Happiness Report for the ninth year running, with citizens rating their life satisfaction at 7.8 out of 10. President Stubb attributed this to Finland's open welfare society, education system, security, and connection to nature.",
+      "actors_involved": [
+        "Stubb"
+      ],
+      "signal_category_hint": "unclear",
+      "source_count": 4,
+      "sources": [
+        "dailyfinland.fi",
+        "yle.fi",
+        "como.fi",
+        "verkkouutiset.fi"
+      ],
+      "date_range": "2026-03-19 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Finland ranks world's happiest country for 9th year in a row",
+          "source": "dailyfinland.fi",
+          "url": "https://dailyfinland.fi/national/48378/Finland-ranks-worlds-happiest-country-for-9th-year-in-a-row",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Finland ranks as \"world's happiest country\" for 9th year in a row",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20216141?origin=rss",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Suomi on j\u00e4lleen maailman onnellisin maa - Alexander Stubb kertoo miksi",
+          "source": "como.fi",
+          "url": "https://como.fi/uutiset/suomi-on-jalleen-maailman-onnellisin-maa-alexander-stubb-kertoo-miksi",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Alexander Stubb nostaa esiin nelj\u00e4 syyt\u00e4 Suomen onnellisuuteen",
+          "source": "verkkouutiset.fi",
+          "url": "https://www.verkkouutiset.fi/a/alexander-stubb-nostaa-esiin-nelja-syyta-suomen-onnellisuuteen/",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://yle.fi/a/74-20216141?origin=rss",
+        "https://como.fi/uutiset/suomi-on-jalleen-maailman-onnellisin-maa-alexander-stubb-kertoo-miksi"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Orpo government reaches 1,000 days milestone amid economic challenges",
+      "summary": "Prime Minister Petteri Orpo's government reached its 1,000-day milestone on March 15, 2026. The government's key goals include putting Finland's economy on a sustainable growth path and controlling concerning public debt growth, though progress has been challenged by various economic and political obstacles.",
       "actors_involved": [
         "Orpo"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 3,
+      "source_count": 1,
       "sources": [
-        "valtioneuvosto.fi",
-        "iltalehti.fi",
-        "ksml.fi"
+        "valtioneuvosto.fi"
       ],
-      "date_range": "2026-03-15 to 2026-03-17",
+      "date_range": "2026-03-01",
       "articles": [
         {
           "title": "P\u00e4\u00e4ministeri Orpon hallitukselle tuhat p\u00e4iv\u00e4\u00e4 t\u00e4yteen",
           "source": "valtioneuvosto.fi",
           "url": "https://valtioneuvosto.fi/-/paaministeri-orpon-hallitukselle-tuhat-paivaa-tayteen",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "MT: Petteri Orpo avautuu sairaudestaan",
-          "source": "iltalehti.fi",
-          "url": "https://www.iltalehti.fi/politiikka/a/0ae9552f-d1f2-40a3-9b64-51cc03385fa4",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Petteri Orpoa vaivanneen v\u00e4symyksen syy paljastui tutkimuksissa",
-          "source": "maaseuduntulevaisuus.fi",
-          "url": "https://www.maaseuduntulevaisuus.fi/koti/4c394b0f-2723-4571-954b-4c93ae5114f8",
-          "date": "2026-03-17"
+          "date": "2026-03-01"
         }
       ],
       "representative_urls": [
-        "https://valtioneuvosto.fi/-/paaministeri-orpon-hallitukselle-tuhat-paivaa-tayteen",
-        "https://www.iltalehti.fi/politiikka/a/0ae9552f-d1f2-40a3-9b64-51cc03385fa4"
+        "https://valtioneuvosto.fi/-/paaministeri-orpon-hallitukselle-tuhat-paivaa-tayteen"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "Stubb hosts JEF countries summit in Helsinki focusing on defense cooperation",
+      "summary": "President Alexander Stubb will host a Joint Expeditionary Force (JEF) countries summit at Presidential Palace on March 26, with participants including UK PM Keir Starmer and other Nordic and Baltic leaders. The summit will focus on JEF countries' support for Ukraine and European security situation.",
+      "actors_involved": [
+        "Stubb"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
+      "sources": [
+        "verkkouutiset.fi",
+        "yle.fi"
+      ],
+      "date_range": "2026-03-18",
+      "articles": [
+        {
+          "title": "Alexander Stubb is\u00e4nn\u00f6i huippukokousta Helsingiss\u00e4",
+          "source": "verkkouutiset.fi",
+          "url": "https://verkkouutiset.fi/a/alexander-stubb-isannoi-huippukokousta-helsingissa",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Stubb is\u00e4nn\u00f6i JEF-maiden kokousta Presidentinlinnassa ensi viikolla",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20215736?origin=rss",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://verkkouutiset.fi/a/alexander-stubb-isannoi-huippukokousta-helsingissa",
+        "https://yle.fi/a/74-20215736?origin=rss"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Finnish defence contractor Summa Defence subsidiary receives order from German armed forces",
-      "source": "kauppalehti.fi",
-      "url": "https://www.kauppalehti.fi/uutiset/a/8c852dca-566e-46fa-b9fe-0acadb80cc40",
-      "signal_category_hint": "security_defense"
-    },
-    {
-      "headline": "Bank of Finland publishes interim economic forecast for March 24",
-      "source": "sttinfo.fi",
-      "url": "https://www.sttinfo.fi/tiedote/71894875/medialle-suomen-pankki-julkaisee-suomen-talouden-valiennusteen-ti-243-klo-700",
+      "headline": "Housing purchase law reforms sent for consultation round",
+      "source": "valtioneuvosto.fi",
+      "url": "https://valtioneuvosto.fi/-/1410853/asuntokauppalakiin-ehdotetut-muutokset-lausuntokierrokselle",
       "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "Parliament approves law requiring digital delivery of government communications starting April 14",
+      "headline": "Sami Truth and Reconciliation Commission coordination group begins work",
+      "source": "valtioneuvosto.fi",
+      "url": "https://valtioneuvosto.fi/-/saamelaisten-totuus-ja-sovintokomission-suositusten-arviointia-tukeva-koordinaatio-ja-seurantaryhma-aloittaa-tyonsa-",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "SUPO recruits human intelligence officers including from public transport",
+      "source": "yle.fi",
+      "url": "https://yle.fi/a/74-20213809",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Orpo and EU Council President Costa discuss EU funding framework",
+      "source": "valtioneuvosto.fi",
+      "url": "https://valtioneuvosto.fi/en/-/prime-minister-orpo-and-european-council-president-costa-discuss-eu-funding",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Finland considers participation in new defense funding mechanism with UK and Netherlands",
+      "source": "hs.fi",
+      "url": "https://hs.fi/politiikka/art-2000011885201.html",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Parliament approves digital-first government communications law affecting 1.8 million Finns",
       "source": "uusisuomi.fi",
       "url": "https://www.uusisuomi.fi/uutiset/a/46ddd740-751b-4e12-9c48-5850d8b3310c",
       "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "National Coalition Party vice-chairmanship race heats up as Anna-Kaisa Ikonen steps down",
-      "source": "yle.fi",
-      "url": "https://yle.fi/a/74-20216410",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "SUPO releases national security assessment highlighting concerns about informal homeschooling",
-      "source": "is.fi",
-      "url": "https://www.is.fi/kotimaa/art-2000011876551.html",
-      "signal_category_hint": "security_defense"
     }
   ]
 }

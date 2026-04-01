@@ -3,345 +3,71 @@
   "code": "fr",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 440,
-  "stories_identified": 12,
-  "off_topic_filtered": 87,
-  "noise_summary": "87 off-topic results filtered: 31 sports/sailing (Banque Populaire sailing team, Route du Rhum, various sailing competitions), 23 cultural/entertainment (museum exhibitions, entertainment news, local festivals), 18 local community news (small town municipal results, local events), 15 lifestyle/human interest stories.",
+  "search_results_total": 434,
+  "stories_identified": 8,
+  "off_topic_filtered": 27,
+  "noise_summary": "27 off-topic results filtered: 8 sports results (football, sailing, cycling), 7 entertainment/celebrity news, 5 local crime/incidents, 4 general cultural events, 3 weather/travel advisories.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Macron announces new aircraft carrier will be named 'France Libre'",
-      "summary": "President Macron announced on March 18 at Naval Group's Nantes facility that France's next nuclear-powered aircraft carrier, set to replace Charles de Gaulle in 2038, will be named 'France Libre' in honor of the WWII resistance movement. The announcement sparked some linguistic debate about the proper French grammar.",
+      "headline": "Municipal elections 2026: RN and LFI surge in first round, second round set for March 22",
+      "summary": "France's municipal elections saw a strong first-round performance by both the far-right RN and far-left LFI on March 15, with second-round battles shaping up in major cities including Paris, Marseille, and Toulouse. Multiple PS-LFI alliance agreements were reached for the runoffs.",
       "actors_involved": [
-        "Emmanuel Macron"
+        "Le Pen",
+        "Bardella",
+        "M\u00e9lenchon",
+        "Macron",
+        "Lecornu"
       ],
-      "signal_category_hint": "security_defense",
-      "source_count": 19,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 287,
       "sources": [
+        "lemonde.fr",
+        "lefigaro.fr",
+        "bfmtv.com",
+        "franceinfo.fr",
         "20minutes.fr",
         "ouest-france.fr",
-        "lemonde.fr",
         "huffingtonpost.fr",
-        "rfi.fr",
-        "reuters.com",
-        "washingtonpost.com",
-        "apnews.com",
-        "ledauphine.com",
-        "tf1.fr"
-      ],
-      "date_range": "2026-03-18 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Alors, c'est quoi ? Emmanuel Macron a d\u00e9voil\u00e9 le nom du futur porte-avions fran\u00e7ais",
-          "source": "20minutes.fr",
-          "url": "https://www.20minutes.fr/societe/4212526-20260318-emmanuel-macron-devoile-nom-futur-porte-francais",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Revivez l'annonce du nom du futur porte-avions, baptis\u00e9 \u00ab France Libre \u00bb par Emmanuel Macron pr\u00e8s de Nantes",
-          "source": "ouest-france.fr",
-          "url": "https://www.ouest-france.fr/politique/emmanuel-macron/direct-porte-avions-nouvelle-generation-suivez-la-visite-demmanuel-macron-chez-naval-group-pres-de-nantes-a996b26c-9583-4ba3-b332-034aef0ed50a",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Le \u00ab France-Libre \u00bb : Emmanuel Macron a d\u00e9voil\u00e9 le nom du futur porte-avions fran\u00e7ais",
-          "source": "lemonde.fr",
-          "url": "https://www.lemonde.fr/international/article/2026/03/18/le-futur-porte-avions-francais-s-appellera-le-france-libre-annonce-emmanuel-macron-du-site-de-naval-group-a-nantes-indret_6672078_3211.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Macron a fait une erreur de langue en nommant son nouveau porte-avions, confirme l'Acad\u00e9mie fran\u00e7aise",
-          "source": "huffingtonpost.fr",
-          "url": "https://www.huffingtonpost.fr/france/article/macron-a-fait-une-erreur-de-langue-en-nommant-son-nouveau-porte-avions-confirme-l-academie-francaise_261677.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Macron unveils 'France Libre' as France's next aircraft carrier",
-          "source": "rfi.fr",
-          "url": "https://www.rfi.fr/en/france/20260318-macron-unveils-france-libre-as-france-s-next-aircraft-carrier",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "'Free France': Macron reveals name of Europe's largest warship",
-          "source": "rfi.fr",
-          "url": "https://www.rfi.fr/en/international-news/20260318-france-is-wild-macron-to-unveil-name-of-europe-s-largest-warship",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Macron names new French aircraft carrier 'Free France' in nod to resistance",
-          "source": "reuters.com",
-          "url": "https://reuters.com/business/aerospace-defense/macron-names-new-french-aircraft-carrier-free-france-nod-resistance-2026-03-18",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Macron names next nuclear-powered aircraft carrier 'France Libre' as a symbol of independence",
-          "source": "washingtonpost.com",
-          "url": "https://washingtonpost.com/world/2026/03/18/france-new-nuclear-aircraft-carrier-macron/478c4dec-22f0-11f1-954a-6300919c9854_story.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Macron names next nuclear-powered aircraft carrier 'France Libre' as a symbol of independence",
-          "source": "apnews.com",
-          "url": "https://apnews.com/article/france-new-nuclear-aircraft-carrier-macron-5e1155555bafe97eb8cba8ffca0e1ceb",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "D\u00e9fense. Le nom du futur porte-avions d\u00e9voil\u00e9 ? Emmanuel Macron attendu sur le chantier ce mercredi",
-          "source": "ledauphine.com",
-          "url": "https://www.ledauphine.com/defense-guerre-conflit/2026/03/18/le-nom-du-futur-porte-avions-devoile-emmanuel-macron-attendu-sur-le-chantier-ce-mercredi",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Emmanuel Macron : cette voiture fran\u00e7aise au design tr\u00e8s muscl\u00e9 lui sert d'\"arme\" face \u00e0 Donald Trump",
-          "source": "gala.fr",
-          "url": "https://www.gala.fr/l_actu/news_de_stars/emmanuel-macron-cette-voiture-francaise-au-design-tres-muscle-lui-sert-d-arme-face-a-donald-trump-20260321",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.lemonde.fr/international/article/2026/03/18/le-futur-porte-avions-francais-s-appellera-le-france-libre-annonce-emmanuel-macron-du-site-de-naval-group-a-nantes-indret_6672078_3211.html",
-        "https://reuters.com/business/aerospace-defense/macron-names-new-french-aircraft-carrier-free-france-nod-resistance-2026-03-18"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "Paris mayoral candidate accuses Macron of interfering to help right-wing candidate",
-      "summary": "Socialist candidate Emmanuel Gr\u00e9goire accused President Macron of personally intervening to convince Sarah Knafo (far-right) to withdraw from the Paris mayoral race in favor of Rachida Dati (center-right). Macron strongly denied these accusations from Brussels, calling them 'undignified lies.'",
-      "actors_involved": [
-        "Emmanuel Macron"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 15,
-      "sources": [
-        "franceinfo.fr",
-        "lemonde.fr",
-        "bfmtv.com",
         "rtl.fr",
-        "huffingtonpost.fr",
-        "nouvelobs.com",
-        "politico.eu"
-      ],
-      "date_range": "2026-03-19 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Municipales \u00e0 Paris : Emmanuel Gr\u00e9goire accuse Emmanuel Macron \"d'\u00eatre intervenu pour aider au retrait de Sarah Knafo\", Emmanuel Macron d\u00e9ment",
-          "source": "franceinfo.fr",
-          "url": "https://www.franceinfo.fr/elections/municipales/emmanuel-gregoire-accuse-emmanuel-macron-d-etre-intervenu-pour-aider-au-retrait-de-sarah-knafo-a-paris_7879247.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Macron's role in Paris mayor election comes under scrutiny",
-          "source": "lemonde.fr",
-          "url": "https://lemonde.fr/en/politics/article/2026/03/20/macron-s-role-in-paris-mayor-election-comes-under-scrutiny_6751649_5.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Le r\u00f4le d'Emmanuel Macron dans la campagne municipale parisienne en question",
-          "source": "lemonde.fr",
-          "url": "https://www.lemonde.fr/politique/article/2026/03/20/le-role-d-emmanuel-macron-dans-la-campagne-municipale-parisienne-en-question_6672691_823448.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Municipales \u00e0 Paris: Emmanuel Gr\u00e9goire accuse Emmanuel Macron d'\u00eatre \"intervenu\" pour \"aider au retrait de Sarah Knafo\", le pr\u00e9sident fustige \"un mensonge indigne\"",
-          "source": "bfmtv.com",
-          "url": "https://www.bfmtv.com/politique/elections/municipales/municipales-a-paris-emmanuel-gregoire-accuse-emmanuel-macron-d-etre-intervenu-pour-aider-au-retrait-de-sarah-knafo-le-president-fustige-un-mensonge-indigne_AV-202603190341.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "\"Un faisceau d'indices tr\u00e8s convergents\" : pourquoi Emmanuel Gr\u00e9goire accuse Emmanuel Macron d'\u00eatre intervenu dans les municipales \u00e0 Paris",
-          "source": "rtl.fr",
-          "url": "https://www.rtl.fr/actu/politique/un-faisceau-d-indices-tres-convergents-pourquoi-emmanuel-gregoire-accuse-emmanuel-macron-d-etre-intervenu-dans-les-municipales-a-paris-7900614272",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Pourquoi les rumeurs sur l'implication de Macron dans les municipales \u00e0 Paris agacent tant l'\u00c9lys\u00e9e",
-          "source": "huffingtonpost.fr",
-          "url": "https://www.huffingtonpost.fr/politique/article/pourquoi-les-rumeurs-sur-l-implication-de-macron-dans-les-municipales-a-paris-agacent-tant-l-elysee_261704.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "\"Il faudra qu'il s'explique\" : l'ing\u00e9rence de Macron dans la bataille parisienne crispe son camp",
-          "source": "nouvelobs.com",
-          "url": "https://www.nouvelobs.com/politique/20260320.OBS113366/il-faudra-qu-il-s-explique-l-ingerence-de-macron-dans-la-bataille-parisienne-crispe-son-camp.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Macron: I'm too busy to interfere in the Paris mayor race",
-          "source": "politico.eu",
-          "url": "https://politico.eu/article/france-emmanuel-macron-says-more-important-things-than-interfering-paris-mayoral-race",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.lemonde.fr/politique/article/2026/03/20/le-role-d-emmanuel-macron-dans-la-campagne-municipale-parisienne-en-question_6672691_823448.html",
-        "https://politico.eu/article/france-emmanuel-macron-says-more-important-things-than-interfering-paris-mayoral-race"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Trump rates Macron '8/10' while pressuring France to help secure Strait of Hormuz",
-      "summary": "President Trump publicly rated Macron '8/10' for cooperation while expressing frustration that France won't help militarily secure the Strait of Hormuz. Macron refused to participate in military operations to reopen the strait, maintaining France's 'purely defensive' posture in the Middle East conflict.",
-      "actors_involved": [
-        "Emmanuel Macron"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
-      "sources": [
-        "rmc.bfmtv.com",
-        "rtl.fr",
-        "bfmtv.com",
-        "tf1info.fr",
-        "thelocal.fr",
-        "foxnews.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-18",
-      "articles": [
-        {
-          "title": "En pleine guerre, Trump note Macron 8/10: \"Il est pi\u00e9g\u00e9 par Netanyahu donc il flatte ses alli\u00e9s\"",
-          "source": "rmc.bfmtv.com",
-          "url": "https://rmc.bfmtv.com/actualites/international/en-pleine-guerre-trump-note-macron-8-10-il-est-piege-par-netanyahu-donc-il-flatte-ses-allies_AV-202603170565.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "\"Je lui donne 8/10, pas parfait mais c'est la France\" : Donald Trump ironise sur la r\u00e9ponse d'Emmanuel Macron \u00e0 son appel pour rouvrir le d\u00e9troit d'Ormuz",
-          "source": "rtl.fr",
-          "url": "https://www.rtl.fr/actu/international/je-lui-donne-8-10-pas-parfait-mais-c-est-la-france-donald-trump-fait-pression-sur-emmanuel-macron-pour-rouvrir-le-detroit-d-ormuz-7900613029",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "\"Pas parfait mais c'est la France\": Donald Trump r\u00e9agit \u00e0 la r\u00e9ponse d'Emmanuel Macron sur la s\u00e9curisation du d\u00e9troit d'Ormuz",
-          "source": "bfmtv.com",
-          "url": "https://www.bfmtv.com/international/amerique-nord/etats-unis/pas-parfait-mais-c-est-la-france-donald-trump-reagit-a-la-reponse-d-emmanuel-macron-sur-la-securisation-du-detroit-d-ormuz_AV-202603160929.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "D\u00e9troit d'Ormuz : \"Je pense que le pr\u00e9sident Macron va nous aider\", assure Donald Trump \u00e0 LCI",
-          "source": "tf1info.fr",
-          "url": "https://www.tf1info.fr/international/video-moyen-orient-detroit-d-ormuz-je-pense-que-le-president-macron-va-nous-aider-assure-donald-trump-a-lci-2430548.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "OPINION: Macron is having a 'good war', but there is no good end to the Iran disaster",
-          "source": "thelocal.fr",
-          "url": "https://thelocal.fr/20260318/opinion-macron-is-having-a-good-war-but-there-is-no-good-end-to-the-iran-disaster",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Macron pushes de-escalation as U.S. and Israel back force against Iran",
-          "source": "foxnews.com",
-          "url": "https://foxnews.com/world/trump-rates-macron-an-8-france-us-split-over-middle-east-strategy",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.bfmtv.com/international/amerique-nord/etats-unis/pas-parfait-mais-c-est-la-france-donald-trump-reagit-a-la-reponse-d-emmanuel-macron-sur-la-securisation-du-detroit-d-ormuz_AV-202603160929.html",
-        "https://thelocal.fr/20260318/opinion-macron-is-having-a-good-war-but-there-is-no-good-end-to-the-iran-disaster"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Prime Minister Lecornu wins municipal election in Vernon, becomes deputy mayor",
-      "summary": "Prime Minister S\u00e9bastien Lecornu was elected to Vernon municipal council on March 15 as third on the winning list. He announced he would serve as deputy mayor while renouncing his municipal salary to avoid any appearance of conflict while serving as PM.",
-      "actors_involved": [
-        "S\u00e9bastien Lecornu"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 23,
-      "sources": [
-        "sudouest.fr",
-        "20minutes.fr",
-        "france3-regions.franceinfo.fr",
-        "linternaute.com",
-        "lopinion.fr",
         "leparisien.fr",
-        "france24.com",
-        "ouest-france.fr"
+        "tf1info.fr",
+        "europe1.fr",
+        "nouvelobs.com",
+        "liberation.fr",
+        "lcp.fr",
+        "humanite.fr",
+        "challenges.fr",
+        "marianne.net",
+        "linternaute.com",
+        "actu.fr",
+        "cnews.fr",
+        "publicsenat.fr",
+        "lavoixdunord.fr",
+        "midilibre.fr",
+        "ladepeche.fr",
+        "ledauphine.com",
+        "leprogres.fr",
+        "letelegramme.fr",
+        "nicematin.com",
+        "laprovence.com",
+        "marsactu.fr",
+        "rfi.fr",
+        "euronews.com",
+        "politico.eu",
+        "washingtonpost.com",
+        "reuters.com",
+        "apnews.com",
+        "mediapart.fr",
+        "courrierinternational.com"
       ],
       "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
         {
-          "title": "Municipales 2026 : S\u00e9bastien Lecornu devient premier adjoint et renonce \u00e0 ses indemnit\u00e9s",
-          "source": "sudouest.fr",
-          "url": "https://www.sudouest.fr/politique/sebastien-lecornu/municipales-2026-sebastien-lecornu-devient-premier-adjoint-et-renonce-a-ses-indemnites-28374141.php",
+          "title": "Municipales 2026 : revivez la campagne de l'entre-deux-tours",
+          "source": "lemonde.fr",
+          "url": "https://www.lemonde.fr/politique/live/2026/03/19/en-direct-municipales-2026-emmanuel-gregoire-accuse-emmanuel-macron-d-etre-intervenu-pour-aider-au-retrait-de-sarah-knafo-a-paris-l-entourage-du-chef-de-l-etat-dement-et-denonce-un-mensonge-indigne_6671274_823448.html",
           "date": "2026-03-19"
-        },
-        {
-          "title": "Municipales 2026 : S\u00e9bastien Lecornu, G\u00e9rald Darmanin\u2026 Quels r\u00e9sultats pour les ministres candidats ?",
-          "source": "20minutes.fr",
-          "url": "https://www.20minutes.fr/politique/4212060-20260316-municipales-2026-sebastien-lecornu-gerald-darmanin-resultats-ministres-candidats",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "EXCLUSIVIT\u00c9 FRANCE 3 : \"Je n'ai jamais con\u00e7u mon engagement national comme d\u00e9connect\u00e9 de la vie locale\" : S\u00e9bastien Lecornu, \u00e9lu \u00e0 Vernon, tient toujours \u00e0 son ancrage local",
-          "source": "france3-regions.franceinfo.fr",
-          "url": "https://france3-regions.franceinfo.fr/normandie/eure/exclusivite-france-3-je-n-ai-jamais-concu-mon-engagement-national-comme-deconnecte-de-la-vie-locale-sebastien-lecornu-elu-a-vernon-tient-toujours-a-son-ancrage-local-3316887.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "R\u00e9sultat de S\u00e9bastien Lecornu \u00e0 la municipale 2026 \u00e0 Vernon : sa liste en t\u00eate, le Premier ministre r\u00e9\u00e9lu au conseil municipal ?",
-          "source": "linternaute.com",
-          "url": "https://www.linternaute.com/actualite/politique/10042271-resultat-de-sebastien-lecornu-a-la-municipale-2026-a-vernon-le-premier-ministre-reelu-au-conseil-municipal/",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Municipales : S\u00e9bastien Lecornu de nouveau menac\u00e9 par une censure",
-          "source": "lopinion.fr",
-          "url": "https://www.lopinion.fr/politique/les-municipales-replacent-sebastien-lecornu-sous-la-menace-de-la-censure",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Municipales 2026 : Lecornu renonce (provisoirement) \u00e0 ses indemnit\u00e9s d'adjoint, Beaune votera Gr\u00e9goire et pas Dati",
-          "source": "20minutes.fr",
-          "url": "https://www.20minutes.fr/politique/4212736-20260320-direct-municipales-2026-dernier-jour-campagne-gregoire-legerement-tete-dati-paris",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "\u00ab Ce n'est pas un agenda politique, mais un agenda d'action \u00bb : S\u00e9bastien Lecornu pr\u00e9pare l'apr\u00e8s municipales",
-          "source": "leparisien.fr",
-          "url": "https://www.leparisien.fr/politique/ce-nest-pas-un-agenda-politique-mais-un-agenda-daction-sebastien-lecornu-prepare-lapres-municipales-21-03-2026-IAVEXGJSJZBDFHNCROAGH33VVA.php",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Municipales: Lecornu annonce la victoire de sa liste \u00e0 Vernon dans l'Eure",
-          "source": "france24.com",
-          "url": "https://www.france24.com/fr/info-en-continu/20260315-municipales-lecornu-annonce-la-victoire-de-sa-liste-%C3%A0-vernon-dans-l-eure",
-          "date": "2026-03-15"
-        }
-      ],
-      "representative_urls": [
-        "https://www.sudouest.fr/politique/sebastien-lecornu/municipales-2026-sebastien-lecornu-devient-premier-adjoint-et-renonce-a-ses-indemnites-28374141.php",
-        "https://www.lopinion.fr/politique/les-municipales-replacent-sebastien-lecornu-sous-la-menace-de-la-censure"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Rassemblement National achieves mixed results in municipal elections first round",
-      "summary": "The RN achieved mixed results in the March 15 municipal first round, winning outright in 24 communes including strongholds like Perpignan and H\u00e9nin-Beaumont, but struggling in major cities outside the Mediterranean region. Jordan Bardella declared victory and extended offers to right-wing parties for second-round alliances.",
-      "actors_involved": [
-        "Rassemblement National",
-        "Marine Le Pen",
-        "Jordan Bardella"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 42,
-      "sources": [
-        "huffingtonpost.fr",
-        "lemonde.fr",
-        "liberation.fr",
-        "lcp.fr",
-        "charentelibre.fr",
-        "mediapart.fr",
-        "publicsenat.fr",
-        "nouvelobs.com",
-        "cnews.fr"
-      ],
-      "date_range": "2026-03-15 to 2026-03-17",
-      "articles": [
-        {
-          "title": "Aux \u00e9lections municipales, l'arbre des succ\u00e8s du RN cache (mal) la for\u00eat de ses \u00e9checs",
-          "source": "huffingtonpost.fr",
-          "url": "https://www.huffingtonpost.fr/politique/article/aux-municipales-l-arbre-de-ses-succes-du-rn-cache-mal-la-foret-de-ses-echecs_261523.html",
-          "date": "2026-03-16"
         },
         {
           "title": "Le RN \u00e9choue \u00e0 exister, hors pourtour m\u00e9diterran\u00e9en, dans les grandes villes aux municipales",
@@ -350,266 +76,347 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Loin du raz de mar\u00e9e, le RN tend la main \u00e0 la droite",
-          "source": "liberation.fr",
-          "url": "https://www.liberation.fr/politique/loin-du-raz-de-maree-le-rn-tend-la-main-a-la-droite-20260316_ZDS6RUTVFBBHDG4H6OGNWKTCU4/",
+          "title": "Jordan Bardella appelle les candidats RN qualifi\u00e9s au second tour \u00e0 se maintenir",
+          "source": "publicsenat.fr",
+          "url": "https://www.publicsenat.fr/actualites/politique/jordan-bardella-appelle-les-candidats-rn-qualifies-au-second-tour-a-se-maintenir",
           "date": "2026-03-16"
         },
         {
-          "title": "Municipales: pourquoi le score du RN chute dans les grandes villes malgr\u00e9 ses succ\u00e8s ailleurs",
-          "source": "lcp.fr",
-          "url": "https://lcp.fr/actualites/municipales-pourquoi-le-score-du-rn-chute-dans-les-grandes-villes-malgre-ses-succes",
-          "date": "2026-03-16"
+          "title": "Municipales 2026 : \u00e0 Paris, Marine Le Pen appelle \u00e0 \"faire barrage\" contre Emmanuel Gr\u00e9goire",
+          "source": "rtl.fr",
+          "url": "https://www.rtl.fr/actu/politique/en-direct-elections-municipales-2026-rachida-dati-et-sophia-chikirou-invitees-de-rtl-a-3-jours-du-second-tour-7900613863",
+          "date": "2026-03-19"
         },
         {
-          "title": "Pour le RN, une \u00abmain tendue\u00bb dans le vide",
-          "source": "charentelibre.fr",
-          "url": "https://www.charentelibre.fr/politique/partis-politiques/pour-le-rn-une-main-tendue-a-la-droite-dans-le-vide-28329275.php",
-          "date": "2026-03-17"
+          "title": "Municipales 2026 : Jordan Bardella \"tend la main aux listes de droite sinc\u00e8res\" pour le second tour",
+          "source": "tf1info.fr",
+          "url": "https://www.tf1info.fr/elections/municipales-2026-jordan-bardella-tend-la-main-aux-listes-de-droite-sinceres-dans-certaines-villes-au-second-tour-2430340.html",
+          "date": "2026-03-15"
         }
       ],
       "representative_urls": [
-        "https://www.lemonde.fr/politique/article/2026/03/16/le-rn-echoue-a-reprendre-pied-dans-les-metropoles-aux-municipales_6671363_823448.html",
-        "https://www.liberation.fr/politique/loin-du-raz-de-maree-le-rn-tend-la-main-a-la-droite-20260316_ZDS6RUTVFBBHDG4H6OGNWKTCU4/"
+        "https://www.lemonde.fr/politique/live/2026/03/19/en-direct-municipales-2026-emmanuel-gregoire-accuse-emmanuel-macron-d-etre-intervenu-pour-aider-au-retrait-de-sarah-knafo-a-paris-l-entourage-du-chef-de-l-etat-dement-et-denonce-un-mensonge-indigne_6671274_823448.html",
+        "https://www.lemonde.fr/politique/article/2026/03/16/le-rn-echoue-a-reprendre-pied-dans-les-metropoles-aux-municipales_6671363_823448.html"
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Marine Le Pen and Jordan Bardella campaign together between municipal election rounds",
-      "summary": "Marine Le Pen and Jordan Bardella held joint campaign events between the municipal election rounds, including a major rally in Ch\u00e2lons-en-Champagne on March 18. Their appearances revealed some strategic differences, with Bardella reaching out to the traditional right while Le Pen maintained her 'neither left nor right' positioning.",
+      "story_id": 2,
+      "headline": "Macron names new French aircraft carrier 'France Libre' in homage to WWII resistance",
+      "summary": "President Macron announced on March 18 at Naval Group's Nantes facility that France's next nuclear-powered aircraft carrier will be named 'France Libre' in honor of the French Resistance movement. The vessel will replace the Charles de Gaulle by 2038 at a cost of 10 billion euros.",
       "actors_involved": [
-        "Marine Le Pen",
-        "Jordan Bardella",
-        "Rassemblement National"
+        "Macron"
       ],
-      "signal_category_hint": "domestic_regime",
+      "signal_category_hint": "security_defense",
       "source_count": 18,
       "sources": [
-        "lunion.fr",
-        "francebleu.fr",
-        "france3-regions.franceinfo.fr",
-        "liberation.fr",
-        "lexpress.fr",
-        "planet.fr",
-        "lejdd.fr",
-        "leparisien.fr"
+        "lemonde.fr",
+        "20minutes.fr",
+        "ouest-france.fr",
+        "huffingtonpost.fr",
+        "rfi.fr",
+        "reuters.com",
+        "washingtonpost.com",
+        "apnews.com",
+        "ledauphine.com",
+        "tf1.fr"
       ],
       "date_range": "2026-03-18 to 2026-03-19",
       "articles": [
         {
-          "title": "Municipales 2026 : Jordan Bardella et Marine Le Pen ont tenu un meeting \u00e0 Ch\u00e2lons, une manifestation contre le RN organis\u00e9e ailleurs dans la ville",
-          "source": "lunion.fr",
-          "url": "https://www.lunion.fr/id794503/article/2026-03-18/municipales-2026-jordan-bardella-et-marine-le-pen-en-meeting-chalons-une",
+          "title": "Le \u00ab France-Libre \u00bb : Emmanuel Macron a d\u00e9voil\u00e9 le nom du futur porte-avions fran\u00e7ais",
+          "source": "lemonde.fr",
+          "url": "https://www.lemonde.fr/international/article/2026/03/18/le-futur-porte-avions-francais-s-appellera-le-france-libre-annonce-emmanuel-macron-du-site-de-naval-group-a-nantes-indret_6672078_3211.html",
           "date": "2026-03-18"
         },
         {
-          "title": "Municipales 2026 : Marine Le Pen venue soutenir les candidats RN du bassin minier en ballotage au second tour",
-          "source": "francebleu.fr",
-          "url": "https://www.francebleu.fr/hauts-de-france/pas-de-calais-62/billy-montigny/municipales-2026-marine-le-pen-venue-soutenir-les-candidats-rn-du-bassin-minier-en-ballotage-au-second-tour-2194761",
+          "title": "Alors, c'est quoi ? Emmanuel Macron a d\u00e9voil\u00e9 le nom du futur porte-avions fran\u00e7ais",
+          "source": "20minutes.fr",
+          "url": "https://www.20minutes.fr/societe/4212526-20260318-emmanuel-macron-devoile-nom-futur-porte-francais",
           "date": "2026-03-18"
         },
         {
-          "title": "Meeting du RN dans la Marne : le dissident de droite \u00e0 Reims St\u00e9phane Lang aux c\u00f4t\u00e9s de Marine Le Pen, Jordan Bardella promet \"les fondations d'une victoire plus grande\"",
-          "source": "france3-regions.franceinfo.fr",
-          "url": "https://france3-regions.franceinfo.fr/grand-est/marne/chalons-en-champagne/meeting-rn-a-chalons-le-dissident-de-droite-stephane-lang-aux-cotes-de-marine-le-pen-et-de-la-candidate-rn-a-reims-3319419.html",
+          "title": "Macron unveils 'France Libre' as France's next aircraft carrier",
+          "source": "rfi.fr",
+          "url": "https://www.rfi.fr/en/france/20260318-macron-unveils-france-libre-as-france-s-next-aircraft-carrier",
           "date": "2026-03-18"
         },
         {
-          "title": "Marine Le Pen fait une crise d'anti-jeunisme",
-          "source": "liberation.fr",
-          "url": "https://www.liberation.fr/politique/marine-le-pen-fait-une-crise-danti-jeunisme-20260319_CA2TAY5NHJBHFB3OSQHY6YA2F4/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Le RN et la droite : Jordan Bardella a pris ses distances avec la ligne de Marine Le Pen",
-          "source": "lexpress.fr",
-          "url": "https://www.lexpress.fr/politique/rn/le-rn-et-la-droite-comment-jordan-bardella-a-pris-ses-distances-avec-la-ligne-de-marine-le-pen-NIVO5QSS3NCMLAAY7GFWAF5ZKE/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Prise \u00e0 partie par une \u00e9lectrice, Marine Le Pen s'en prend \u00e0 Jordan Bardella",
-          "source": "planet.fr",
-          "url": "https://www.planet.fr/politique-prise-a-partie-par-une-electrice-marine-le-pen-sen-prend-a-jordan-bardella.2995630.29334.html",
+          "title": "Macron names new French aircraft carrier 'France Libre' as a symbol of independence",
+          "source": "washingtonpost.com",
+          "url": "https://washingtonpost.com/world/2026/03/18/france-new-nuclear-aircraft-carrier-macron/478c4dec-22f0-11f1-954a-6300919c9854_story.html",
           "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://www.lunion.fr/id794503/article/2026-03-18/municipales-2026-jordan-bardella-et-marine-le-pen-en-meeting-chalons-une",
-        "https://www.lexpress.fr/politique/rn/le-rn-et-la-droite-comment-jordan-bardella-a-pris-ses-distances-avec-la-ligne-de-marine-le-pen-NIVO5QSS3NCMLAAY7GFWAF5ZKE/"
+        "https://www.lemonde.fr/international/article/2026/03/18/le-futur-porte-avions-francais-s-appellera-le-france-libre-annonce-emmanuel-macron-du-site-de-naval-group-a-nantes-indret_6672078_3211.html",
+        "https://www.rfi.fr/en/france/20260318-macron-unveils-france-libre-as-france-s-next-aircraft-carrier"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "France maintains defensive stance in Middle East conflict, rejects Trump's Strait of Hormuz assistance requests",
+      "summary": "France has maintained a 'purely defensive' position in the Middle East war while rejecting US requests for assistance in securing the Strait of Hormuz. Macron spoke with Iranian President Pezeshkian calling attacks on French interests 'inadmissible' and has deployed naval forces defensively.",
+      "actors_involved": [
+        "Macron"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 31,
+      "sources": [
+        "ouest-france.fr",
+        "bfmtv.com",
+        "rtl.fr",
+        "tf1info.fr",
+        "euronews.com",
+        "thelocal.fr",
+        "rudaw.net",
+        "thehindu.com",
+        "ohmymag.com",
+        "boursorama.com",
+        "foxnews.com",
+        "france24.com",
+        "ledauphine.com",
+        "politico.eu"
+      ],
+      "date_range": "2026-03-15 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Guerre au Moyen-Orient : Macron dit au pr\u00e9sident iranien qu'il est \u00ab inadmissible \u00bb que la France soit \u00ab cibl\u00e9e \u00bb",
+          "source": "ouest-france.fr",
+          "url": "https://www.ouest-france.fr/monde/iran/guerre-au-moyen-orient-macron-dit-au-president-iranien-quil-est-inadmissible-que-la-france-soit-ciblee-ec7e6b54-20bc-11f1-a6e8-58f5162ee52a",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Macron presses Iranian president to stop 'unacceptable' attacks",
+          "source": "euronews.com",
+          "url": "https://euronews.com/2026/03/16/macron-presses-iranian-president-to-stop-unacceptable-attacks",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "D\u00e9troit d'Ormuz : Macron rejette la demande d'aide de Trump",
+          "source": "tf1info.fr",
+          "url": "https://www.tf1info.fr/international/detroit-d-ormuz-macron-rejette-la-demande-d-aide-de-trump-qui-s-en-prend-aux-pays-de-l-otan-2430768.html",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.ouest-france.fr/monde/iran/guerre-au-moyen-orient-macron-dit-au-president-iranien-quil-est-inadmissible-que-la-france-soit-ciblee-ec7e6b54-20bc-11f1-a6e8-58f5162ee52a",
+        "https://euronews.com/2026/03/16/macron-presses-iranian-president-to-stop-unacceptable-attacks"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Trump criticizes NATO allies including France, calls them 'cowards' over Strait of Hormuz refusal",
+      "summary": "President Trump escalated criticism of NATO allies, including France, calling them 'cowards' for refusing to help secure the Strait of Hormuz. He rated Macron '8/10' for cooperation but expressed frustration at European reluctance to join US Middle East operations.",
+      "actors_involved": [
+        "Macron"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 42,
+      "sources": [
+        "rmc.bfmtv.com",
+        "rtl.fr",
+        "bfmtv.com",
+        "tf1info.fr",
+        "lefigaro.fr",
+        "leparisien.fr",
+        "huffingtonpost.fr",
+        "humanite.fr",
+        "lopinion.fr",
+        "politico.eu",
+        "euronews.com",
+        "euractiv.fr",
+        "rtbf.be",
+        "actu.orange.fr",
+        "challenges.fr",
+        "20minutes.fr",
+        "ledevoir.com",
+        "jeanmarcmorandini.com",
+        "boursorama.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-20",
+      "articles": [
+        {
+          "title": "En pleine guerre, Trump note Macron 8/10: \"Il est pi\u00e9g\u00e9 par Netanyahu donc il flatte ses alli\u00e9s\"",
+          "source": "rmc.bfmtv.com",
+          "url": "https://rmc.bfmtv.com/actualites/international/en-pleine-guerre-trump-note-macron-8-10-il-est-piege-par-netanyahu-donc-il-flatte-ses-allies_AV-202603170565.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Guerre au Moyen-Orient: Donald Trump accuse les pays de l'Otan d'\u00eatre des \"l\u00e2ches\"",
+          "source": "bfmtv.com",
+          "url": "https://www.bfmtv.com/international/amerique-nord/etats-unis/donald-trump/guerre-au-moyen-orient-donald-trump-accuse-les-pays-de-l-otan-d-etre-des-laches-apres-leur-refus-d-aider-les-etats-unis-a-debloquer-le-detroit-d-ormuz_AD-202603200614.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "\u00ab Nous nous en souviendrons \u00bb : Donald Trump traite les pays de l'Otan de \u00ab l\u00e2ches \u00bb",
+          "source": "leparisien.fr",
+          "url": "https://www.leparisien.fr/international/etats-unis/guerre-au-moyen-orient-donald-trump-accuse-les-pays-de-lotan-detre-des-laches-20-03-2026-D3VN4QLQPZG7FM74RQG7TIACPE.php",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://rmc.bfmtv.com/actualites/international/en-pleine-guerre-trump-note-macron-8-10-il-est-piege-par-netanyahu-donc-il-flatte-ses-allies_AV-202603170565.html",
+        "https://www.bfmtv.com/international/amerique-nord/etats-unis/donald-trump/guerre-au-moyen-orient-donald-trump-accuse-les-pays-de-l-otan-d-etre-des-laches-apres-leur-refus-d-aider-les-etats-unis-a-debloquer-le-detroit-d-ormuz_AD-202603200614.html"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Macron announces mediation to salvage Franco-German FCAS fighter jet project",
+      "summary": "President Macron announced on March 19 a mediation mission to save the troubled FCAS next-generation fighter aircraft program with Germany, after disagreements between France's Dassault Aviation and Airbus threatened the project.",
+      "actors_involved": [
+        "Macron"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
+      "sources": [
+        "lemonde.fr",
+        "avion-chasse.fr"
+      ],
+      "date_range": "2026-03-19",
+      "articles": [
+        {
+          "title": "Macron announces mediation to salvage European fighter jet project",
+          "source": "lemonde.fr",
+          "url": "https://www.lemonde.fr/en/economy/article/2026/03/19/macron-announces-mediation-to-salvage-european-fighter-jet-project_6751611_19.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Le SCAF vacille, la France regarde d\u00e9j\u00e0 au-del\u00e0 du pacte",
+          "source": "avion-chasse.fr",
+          "url": "https://avion-chasse.fr/le-scaf-vacille-la-france-regarde-deja-au-dela-du-pacte",
+          "date": "2026-03-14"
+        }
+      ],
+      "representative_urls": [
+        "https://www.lemonde.fr/en/economy/article/2026/03/19/macron-announces-mediation-to-salvage-european-fighter-jet-project_6751611_19.html"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Mus\u00e9e d'Orsay opens dual Renoir exhibitions celebrating love and drawing",
+      "summary": "The Mus\u00e9e d'Orsay launched two major exhibitions on March 17 dedicated to Auguste Renoir: 'Renoir and Love' focusing on his depictions of modern happiness, and 'Renoir as Draftsman' showcasing his lesser-known works on paper. The exhibitions run through July 2026.",
+      "actors_involved": [],
+      "signal_category_hint": "unclear",
+      "source_count": 19,
+      "sources": [
+        "franceinfo.fr",
+        "radiofrance.fr",
+        "connaissancedesarts.com",
+        "euronews.com",
+        "sortiraparis.com",
+        "tf1info.fr",
+        "telerama.fr",
+        "beauxarts.com",
+        "expo.paris",
+        "mesinfos.fr",
+        "paris.fr"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Renoir et l'amour : six tableaux pour red\u00e9couvrir le talent inou\u00ef du peintre",
+          "source": "franceinfo.fr",
+          "url": "https://franceinfo.fr/culture/arts-expos/renoir-et-l-amour-six-tableaux-pour-redecouvrir-le-talent-inoui-du-peintre-du-bonheur-au-musee-d-orsay_7829474.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Le Mus\u00e9e d'Orsay ouvre deux expositions Renoir : peintures et dessins \u00e0 l'honneur",
+          "source": "euronews.com",
+          "url": "https://fr.euronews.com/culture/2026/03/16/le-musee-dorsay-ouvre-deux-expositions-renoir-peintures-et-dessins-a-lhonneur",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Un c\u00e9l\u00e8bre chef-d'\u0153uvre de Renoir expos\u00e9 au Mus\u00e9e d'Orsay",
+          "source": "tf1info.fr",
+          "url": "https://tf1info.fr/culture/idees-sortie-paris-exposition-pierre-auguste-renoir-et-l-amour-la-modernite-heureuse-un-celebre-chef-d-oeuvre-les-canotiers-expose-au-musee-d-orsay-2430485.html",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://franceinfo.fr/culture/arts-expos/renoir-et-l-amour-six-tableaux-pour-redecouvrir-le-talent-inoui-du-peintre-du-bonheur-au-musee-d-orsay_7829474.html",
+        "https://fr.euronews.com/culture/2026/03/16/le-musee-dorsay-ouvre-deux-expositions-renoir-peintures-et-dessins-a-lhonneur"
       ]
     },
     {
       "story_id": 7,
-      "headline": "Jean-Luc M\u00e9lenchon makes controversial comments while celebrating LFI municipal gains",
-      "summary": "Jean-Luc M\u00e9lenchon sparked controversy with comments referring to critics as 'all white, all ugly' during a March 18 event celebrating LFI's municipal election gains, including victory in Saint-Denis. His remarks were widely condemned as racist by RN politicians and others, while LFI achieved significant progress in several major cities.",
+      "headline": "ECB holds rates steady amid Middle East war inflation concerns",
+      "summary": "The European Central Bank maintained its deposit rate at 2% on March 19 as officials weighed inflation risks from the Middle East conflict against economic uncertainty. The Banque de France has been active in various policy initiatives including financial education week.",
       "actors_involved": [
-        "Jean-Luc M\u00e9lenchon"
+        "Banque de France"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 35,
+      "signal_category_hint": "economic_tech",
+      "source_count": 14,
       "sources": [
-        "lefigaro.fr",
-        "midilibre.fr",
-        "leparisien.fr",
-        "lepoint.fr",
-        "liberation.fr",
-        "marianne.net",
-        "humanite.fr",
-        "valeursactuelles.com",
-        "epochtimes.fr",
-        "planet.fr",
-        "bvoltaire.fr"
+        "latribune.fr",
+        "ouest-france.fr",
+        "agefi.fr",
+        "boursedirect.fr",
+        "radiofrance.fr",
+        "boursorama.com",
+        "lemonde.fr",
+        "ymanci.fr"
       ],
-      "date_range": "2026-03-18 to 2026-03-20",
+      "date_range": "2026-03-15 to 2026-03-19",
       "articles": [
         {
-          "title": "\u00abTout blancs, tout moches que vous \u00eates\u00bb : Jean-Luc M\u00e9lenchon accus\u00e9 de \u00abracisme\u00bb par le RN apr\u00e8s de nouveaux propos controvers\u00e9s",
-          "source": "lefigaro.fr",
-          "url": "https://www.lefigaro.fr/politique/tout-blancs-tout-moches-que-vous-etes-jean-luc-melenchon-accuse-de-racisme-par-le-rn-apres-de-nouveaux-propos-controverses-20260319",
+          "title": "BCE : le choc \u00ab d\u00e9pendra de la dur\u00e9e, de l'intensit\u00e9 et de la propagation \u00bb du conflit au Moyen-Orient",
+          "source": "latribune.fr",
+          "url": "https://latribune.fr/article/banques-finance/industrie-financiere/79440145432556/bce-le-choc-dependra-de-la-duree-de-lintensite-et-de-la-propagation-du-conflit-au-moyen-orient",
           "date": "2026-03-19"
         },
         {
-          "title": "\"Tout blanc, tout moche que vous \u00eates\" : Jean-Luc M\u00e9lenchon accus\u00e9 de \"racisme\" par le RN apr\u00e8s un meeting de l'entre-deux-tours des municipales",
-          "source": "midilibre.fr",
-          "url": "https://www.midilibre.fr/2026/03/19/tout-blanc-tout-moche-que-vous-etes-jean-luc-melenchon-accuse-de-racisme-par-le-rn-apres-un-meeting-de-lentre-deux-tours-des-municipales-13281251.php",
+          "title": "Face aux craintes d'un retour de l'inflation, la Banque centrale europ\u00e9enne opte pour le statu quo",
+          "source": "ouest-france.fr",
+          "url": "https://www.ouest-france.fr/economie/banques-finance/face-aux-craintes-dun-retour-de-linflation-la-banque-centrale-europeenne-opte-pour-le-statu-quo-4fad59a6-2374-11f1-8171-c156e9f33f15",
           "date": "2026-03-19"
         },
         {
-          "title": "\u00ab Faire les malins, tout blancs, tout moches que vous \u00eates \u00bb : Jean-Luc M\u00e9lenchon accus\u00e9 de \u00ab racisme \u00bb par le RN",
-          "source": "leparisien.fr",
-          "url": "https://www.leparisien.fr/politique/faire-les-malins-tout-blancs-tout-moches-que-vous-etes-jean-luc-melenchon-accuse-de-racisme-par-le-rn-19-03-2026-BP35QOIMENHDTGZGVR5M3GYACA.php",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Jean-Luc M\u00e9lenchon et LFI : enqu\u00eate sur une d\u00e9rive identitaire",
-          "source": "lepoint.fr",
-          "url": "https://www.lepoint.fr/politique/jean-luc-melenchon-et-lfi-enquete-sur-une-derive-identitaire-32LQWCOA3ZEI3BB7YIZ5UTHXHI/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "La le\u00e7on du socialiste M\u00e9lenchon \u00e0 l'insoumis M\u00e9lenchon sur l'union de la gauche",
-          "source": "liberation.fr",
-          "url": "https://www.liberation.fr/politique/la-lecon-du-socialiste-melenchon-a-linsoumis-melenchon-sur-lunion-de-la-gauche-20260320_5HM2BJNRUNFZVCC2KKNE7KJTCE/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Natacha Polony : \"M\u00e9lenchon se r\u00e9gale, il savait qu'il tiendrait les socialistes \u00e0 la jugulaire\"",
-          "source": "marianne.net",
-          "url": "https://www.marianne.net/agora/les-signatures-de-marianne/natacha-polony-melenchon-se-regale-il-savait-qu-il-tiendrait-les-socialistes-a-la-jugulaire",
-          "date": "2026-03-19"
+          "title": "Guerre en Iran : les taux d'int\u00e9r\u00eat de la France au plus haut depuis 2011",
+          "source": "lemonde.fr",
+          "url": "https://www.lemonde.fr/economie/article/2026/03/15/guerre-en-iran-les-taux-d-interet-de-la-france-au-plus-haut-depuis-2011_6671315_3234.html",
+          "date": "2026-03-15"
         }
       ],
       "representative_urls": [
-        "https://www.lefigaro.fr/politique/tout-blancs-tout-moches-que-vous-etes-jean-luc-melenchon-accuse-de-racisme-par-le-rn-apres-de-nouveaux-propos-controverses-20260319",
-        "https://www.lepoint.fr/politique/jean-luc-melenchon-et-lfi-enquete-sur-une-derive-identitaire-32LQWCOA3ZEI3BB7YIZ5UTHXHI/"
+        "https://latribune.fr/article/banques-finance/industrie-financiere/79440145432556/bce-le-choc-dependra-de-la-duree-de-lintensite-et-de-la-propagation-du-conflit-au-moyen-orient",
+        "https://www.ouest-france.fr/economie/banques-finance/face-aux-craintes-dun-retour-de-linflation-la-banque-centrale-europeenne-opte-pour-le-statu-quo-4fad59a6-2374-11f1-8171-c156e9f33f15"
       ]
     },
     {
       "story_id": 8,
-      "headline": "DGSE conducts intelligence operations in Iran amid Middle East conflict",
-      "summary": "French external intelligence service DGSE maintains active operations in Iran to gather intelligence on nuclear programs and regional developments. Former DGSE agents disclosed operational methods and confirmed France's intelligence-gathering capabilities in the region despite the ongoing conflict.",
-      "actors_involved": [
-        "DGSE"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 7,
-      "sources": [
-        "franceinfo.fr",
-        "i24news.tv",
-        "rfi.fr",
-        "breizh-info.com",
-        "au-service-de-la-france.fandom.com",
-        "20minutes.fr",
-        "bfmtv.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-18",
-      "articles": [
-        {
-          "title": "DGSE : que font les agents fran\u00e7ais en Iran ?",
-          "source": "franceinfo.fr",
-          "url": "https://www.franceinfo.fr/monde/iran/guerre-entre-les-etats-unis-israel-et-l-iran/dgse-que-font-les-agents-francais-en-iran_7868177.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Un ancien espion raconte comment la DGSE travaille en Iran",
-          "source": "franceinfo.fr",
-          "url": "https://www.franceinfo.fr/monde/un-ancien-espion-raconte-comment-la-dgse-travaille-en-iran_7880000.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Alain Chouet : les op\u00e9rations du Mossad en Iran illustrent une ma\u00eetrise avanc\u00e9e du renseignement humain et technologique",
-          "source": "i24news.tv",
-          "url": "https://www.i24news.tv/fr/actu/vu-sur-i24news/artc-alain-chouet-les-operations-du-mossad-en-iran-illustrent-une-maitrise-avancee-du-renseignement-humain-et-technologique",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Azerba\u00efdjan: le Fran\u00e7ais Martin Ryan condamn\u00e9 \u00e0 dix ans de prison pour \u00abespionnage\u00bb",
-          "source": "rfi.fr",
-          "url": "https://www.rfi.fr/fr/europe/20260316-azerba%C3%AFdjan-le-fran%C3%A7ais-martin-ryan-condamn%C3%A9-%C3%A0-dix-ans-de-prison-pour-espionnage",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Guerre au Moyen-Orient : \"Dans une crise de ce genre, les renseignements peuvent parfois \u00eatre surpris\" selon un ancien membre de la DGSE",
-          "source": "franceinfo.fr",
-          "url": "https://www.franceinfo.fr/monde/iran/guerre-entre-les-etats-unis-israel-et-l-iran/guerre-au-moyen-orient-dans-une-crise-de-ce-genre-les-renseignements-peuvent-parfois-etre-surpris-selon-un-ancien-membre-de-la-dgse_7879295.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "D\u00e9fense. Orange transforme ses 20 000 antennes en bouclier anti-drones : une solution souveraine avec un centre de supervision \u00e0 Rennes",
-          "source": "breizh-info.com",
-          "url": "https://breizh-info.com/2026/03/20/257907/defense-orange-transforme-ses-20-000-antennes-en-bouclier-anti-drones-une-solution-souveraine-avec-un-centre-de-supervision-a-rennes",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.franceinfo.fr/monde/iran/guerre-entre-les-etats-unis-israel-et-l-iran/dgse-que-font-les-agents-francais-en-iran_7868177.html",
-        "https://www.franceinfo.fr/monde/un-ancien-espion-raconte-comment-la-dgse-travaille-en-iran_7880000.html"
-      ]
-    },
-    {
-      "story_id": 9,
-      "headline": "Ministry of Armed Forces launches major civilian recruitment campaign",
-      "summary": "The Ministry of Armed Forces announced plans to recruit up to 4,000 civilian personnel in 2026, offering competitive salaries to compete with private defense contractors like Dassault. The ministry is seeking engineers, cybersecurity experts, and technical specialists to support France's military modernization efforts.",
+      "headline": "Ministry of Armed Forces launches major civilian recruitment drive with competitive salaries",
+      "summary": "The Ministry of Armed Forces is recruiting up to 4,000 civilian personnel in 2026, offering competitive salaries to compete with private sector companies like Dassault for technical talent. The recruitment covers cybersecurity, engineering, and advanced technology roles.",
       "actors_involved": [
         "Minist\u00e8re des Arm\u00e9es"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 12,
+      "source_count": 13,
       "sources": [
         "challenges.fr",
         "lardennais.fr",
         "parismatch.com",
         "forum-militaire.fr",
         "ladepeche.fr",
+        "ouest-france.fr",
+        "opex360.com",
+        "lopinion.fr",
+        "meretmarine.com",
         "bfmtv.com",
-        "avion-chasse.fr",
-        "meretmarine.com"
+        "usinenouvelle.com"
       ],
-      "date_range": "2026-03-14 to 2026-03-20",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
-          "title": "\u00ab On est en concurrence directe avec Dassault \u00bb : le minist\u00e8re des Arm\u00e9es recrute massivement des civils\u2026 avec de g\u00e9n\u00e9reux salaires \u00e0 la cl\u00e9",
+          "title": "\u00ab On est en concurrence directe avec Dassault \u00bb : le minist\u00e8re des Arm\u00e9es recrute massivement des civils",
           "source": "challenges.fr",
           "url": "https://www.challenges.fr/economie/on-est-en-concurrence-directe-avec-dassault-le-ministere-des-armees-recrute-massivement-des-civils-avec-de-genereux-salaires-a-la-cle_641797",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "R\u00e9mi Grandemange, directeur de cabinet de Boris Ravignon, rejoint Catherine Vautrin au minist\u00e8re des Arm\u00e9es",
-          "source": "lardennais.fr",
-          "url": "https://www.lardennais.fr/id794891/article/2026-03-20/remi-grandemange-directeur-de-cabinet-de-boris-ravignon-rejoint-catherine",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "\u00ab On est en avance par rapport \u00e0 nos partenaires europ\u00e9ens \u00bb : drones, robots de combat\u2026 D\u00e9couvrez l'arm\u00e9e fran\u00e7aise du futur",
-          "source": "parismatch.com",
-          "url": "https://www.parismatch.com/actu/societe/drones-robots-de-combat-mortier-nouvelle-generation-decouvrez-larmee-francaise-du-futur-266094",
           "date": "2026-03-18"
         },
         {
-          "title": "Le gouvernement fran\u00e7ais veut proposer de meilleurs salaires pour attirer les cerveaux dans l'arm\u00e9e : 4000 postes \u00e0 pourvoir en 2026",
+          "title": "Le gouvernement fran\u00e7ais veut proposer de meilleurs salaires pour attirer les cerveaux dans l'arm\u00e9e",
           "source": "forum-militaire.fr",
           "url": "https://www.forum-militaire.fr/le-gouvernement-francais-veut-proposer-de-meilleurs-salaires-pour-attirer-les-cerveaux-dans-larmee-4000-postes-a-pourvoir-en-2026/",
-          "date": "2026-03-17"
+          "date": "2026-03-18"
         },
         {
           "title": "Face aux guerres, les entreprises toulousaines de d\u00e9fense veulent acc\u00e9l\u00e9rer la cadence",
@@ -622,208 +429,26 @@
         "https://www.challenges.fr/economie/on-est-en-concurrence-directe-avec-dassault-le-ministere-des-armees-recrute-massivement-des-civils-avec-de-genereux-salaires-a-la-cle_641797",
         "https://www.forum-militaire.fr/le-gouvernement-francais-veut-proposer-de-meilleurs-salaires-pour-attirer-les-cerveaux-dans-larmee-4000-postes-a-pourvoir-en-2026/"
       ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Banque de France activities and French banking sector developments",
-      "summary": "Various Banque de France activities including financial education campaigns, gold reserve management, regional appointments, and banking sector developments. The central bank completed repatriating 129 tons of gold from New York and launched financial education initiatives.",
-      "actors_involved": [
-        "Banque de France"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 31,
-      "sources": [
-        "bdor.fr",
-        "lemonde.fr",
-        "ouest-france.fr",
-        "agefi.fr",
-        "francebleu.fr",
-        "moneyvox.fr",
-        "latribune.fr",
-        "acteurspublics.fr"
-      ],
-      "date_range": "2026-03-15 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Livret A en baisse en 2026 : malgr\u00e9 un taux sup\u00e9rieur, le LEP reste boud\u00e9 par 62 % des Fran\u00e7ais \u00e9ligibles selon la Banque de France",
-          "source": "bdor.fr",
-          "url": "https://www.bdor.fr/actualites-or/livret-a-en-baisse-en-2026-malgre-un-taux-superieur-le-lep-reste-boude-par-62-des-francais-eligibles-selon-la-banque-de-france",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Quatri\u00e8me stock du monde, entrepos\u00e9 dans 'La Souterraine'\u2026 Ce qu'il faut savoir sur l'or fran\u00e7ais",
-          "source": "bdor.fr",
-          "url": "https://www.bdor.fr/actualites-or/quatrieme-stock-du-monde-entrepose-dans-la-souterraine-ce-qu-il-faut-savoir-sur-l-or-francais",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Guerre en Iran : les taux d'int\u00e9r\u00eat de la France au plus haut depuis 2011",
-          "source": "lemonde.fr",
-          "url": "https://www.lemonde.fr/economie/article/2026/03/15/guerre-en-iran-les-taux-d-interet-de-la-france-au-plus-haut-depuis-2011_6671315_3234.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "\u00c0 Nantes, le directeur d'une banque plac\u00e9 en garde \u00e0 vue pour s'\u00eatre servi sur les comptes d'un client vuln\u00e9rable",
-          "source": "ouest-france.fr",
-          "url": "https://www.ouest-france.fr/societe/faits-divers/a-nantes-le-directeur-dune-banque-place-en-garde-a-vue-pour-setre-servi-sur-les-comptes-dun-client-vulnerable-f50abbb8-237a-11f1-8171-c156e9f33f15",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "La Banque de France dresse la feuille de route des banques dans la tokenisation",
-          "source": "agefi.fr",
-          "url": "https://www.agefi.fr/news/tech-finance/la-banque-de-france-dresse-la-feuille-de-route-des-banques-dans-la-tokenisation",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.bdor.fr/actualites-or/quatrieme-stock-du-monde-entrepose-dans-la-souterraine-ce-qu-il-faut-savoir-sur-l-or-francais",
-        "https://www.agefi.fr/news/tech-finance/la-banque-de-france-dresse-la-feuille-de-route-des-banques-dans-la-tokenisation"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "Quai d'Orsay diplomatic activities amid Middle East tensions",
-      "summary": "France's Foreign Ministry handled various diplomatic matters including consular protection for French nationals arrested in Dubai, travel advisories for Middle East countries, and statements on regional conflicts. The ministry denied having a specific 'French plan' for Lebanon-Israel peace.",
-      "actors_involved": [
-        "Quai d'Orsay"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 15,
-      "sources": [
-        "tf1info.fr",
-        "lechotouristique.com",
-        "nicematin.com",
-        "intelligenceonline.fr",
-        "rtl.fr",
-        "lalettre.fr",
-        "europe1.fr",
-        "bfmtv.com",
-        "valeursactuelles.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Un \"plan fran\u00e7ais\" pour arr\u00eater la guerre entre Isra\u00ebl et le Hezbollah au Liban ? Non, r\u00e9pond le quai d'Orsay",
-          "source": "tf1info.fr",
-          "url": "https://www.tf1info.fr/international/moyen-orient-un-plan-francais-pour-arreter-la-guerre-entre-israel-et-le-hezbollah-au-liban-non-repond-le-quai-d-orsay-2430233.html",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Qatar, Bahre\u00efn : le Quai d'Orsay met \u00e0 jour ses recommandations",
-          "source": "lechotouristique.com",
-          "url": "https://www.lechotouristique.com/article/qatar-bahrein-le-quai-dorsay-met-a-jour-ses-recommandations",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "\u00ab La quasi-totalit\u00e9 \u00bb des Fran\u00e7ais qui voulaient rentrer du Moyen-Orient a pu le faire, selon le Quai d'Orsay",
-          "source": "nicematin.com",
-          "url": "https://www.nicematin.com/societe/conflits/la-quasi-totalite-des-francais-qui-voulaient-rentrer-du-moyen-orient-ont-pu-le-faire-selon-le-quai-d-orsay-10673429",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "France \u2022 Faute d'habilitation \"Tr\u00e8s secret\", un d\u00e9part pr\u00e9cipit\u00e9 au Quai d'Orsay",
-          "source": "intelligenceonline.fr",
-          "url": "https://www.intelligenceonline.fr/europe-russie/2026/03/17/faute-d-habilitation-tres-secret-un-depart-precipite-au-quai-d-orsay,110680209-art",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Concert de BTS : 260.000 personnes attendues, mesures de s\u00e9curit\u00e9 exceptionnelles... La mise en garde du quai d'Orsay aux Fran\u00e7ais \u00e0 S\u00e9oul",
-          "source": "rtl.fr",
-          "url": "https://www.rtl.fr/actu/international/concert-de-bts-260-000-personnes-attendues-mesures-de-securite-exceptionnelles-la-mise-en-garde-du-quai-d-orsay-aux-francais-a-seoul-7900614941",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.tf1info.fr/international/moyen-orient-un-plan-francais-pour-arreter-la-guerre-entre-israel-et-le-hezbollah-au-liban-non-repond-le-quai-d-orsay-2430233.html",
-        "https://www.lechotouristique.com/article/qatar-bahrein-le-quai-dorsay-met-a-jour-ses-recommandations"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Mus\u00e9e d'Orsay opens major Renoir exhibitions for 40th anniversary",
-      "summary": "The Mus\u00e9e d'Orsay opened two major complementary exhibitions dedicated to Auguste Renoir on March 17: 'Renoir and Love' focusing on his paintings from 1865-1885, and 'Renoir as Draftsman' showcasing his rarely displayed works on paper. The exhibitions run through July 2026.",
-      "actors_involved": [],
-      "signal_category_hint": "unclear",
-      "source_count": 19,
-      "sources": [
-        "connaissancedesarts.com",
-        "franceinter.fr",
-        "telerama.fr",
-        "euronews.com",
-        "sortiraparis.com",
-        "expo.paris",
-        "tf1info.fr",
-        "beauxarts.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Trois raisons de se ruer aux expositions Renoir au Mus\u00e9e d'Orsay",
-          "source": "franceinter.fr",
-          "url": "https://radiofrance.fr/franceinter/trois-raisons-de-se-ruer-aux-expositions-renoir-au-musee-d-orsay-5099431",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Renoir et l'amour : six tableaux pour red\u00e9couvrir le talent inou\u00ef du peintre du bonheur au mus\u00e9e d'Orsay",
-          "source": "franceinfo.fr",
-          "url": "https://franceinfo.fr/culture/arts-expos/renoir-et-l-amour-six-tableaux-pour-redecouvrir-le-talent-inoui-du-peintre-du-bonheur-au-musee-d-orsay_7829474.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "\"Renoir Dessinateur\", une facette m\u00e9connue du peintre impressionniste mise en lumi\u00e8re au mus\u00e9e d'Orsay",
-          "source": "franceinfo.fr",
-          "url": "https://franceinfo.fr/culture/arts-expos/peinture/renoir-dessinateur-une-facette-meconnue-du-peintre-impressionniste-mise-en-lumiere-au-musee-d-orsay_7877330.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Le Mus\u00e9e d'Orsay ouvre deux expositions Renoir : peintures et dessins \u00e0 l'honneur",
-          "source": "euronews.com",
-          "url": "https://fr.euronews.com/culture/2026/03/16/le-musee-dorsay-ouvre-deux-expositions-renoir-peintures-et-dessins-a-lhonneur",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Un c\u00e9l\u00e8bre chef-d'\u0153uvre de Renoir expos\u00e9 au Mus\u00e9e d'Orsay pour une double exposition d\u00e9di\u00e9e au peintre",
-          "source": "tf1info.fr",
-          "url": "https://tf1info.fr/culture/idees-sortie-paris-exposition-pierre-auguste-renoir-et-l-amour-la-modernite-heureuse-un-celebre-chef-d-oeuvre-les-canotiers-expose-au-musee-d-orsay-2430485.html",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://franceinfo.fr/culture/arts-expos/renoir-et-l-amour-six-tableaux-pour-redecouvrir-le-talent-inoui-du-peintre-du-bonheur-au-musee-d-orsay_7829474.html",
-        "https://fr.euronews.com/culture/2026/03/16/le-musee-dorsay-ouvre-deux-expositions-renoir-peintures-et-dessins-a-lhonneur"
-      ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Emmanuel Macron choisit un conseiller culture aux antipodes de Catherine P\u00e9gard",
-      "source": "lalettre.fr",
-      "url": "https://www.lalettre.fr/fr/politique_elysee-matignon/2026/03/17/emmanuel-macron-choisit-un-conseiller-culture-aux-antipodes-de-catherine-pegard,110682796-art",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Avant le 2d tour des municipales, Emmanuel Macron met en garde contre les \"arrangements\" avec les extr\u00eames",
-      "source": "franceinfo.fr",
-      "url": "https://franceinfo.fr/elections/emmanuel-macron-met-en-garde-contre-les-arrangements-avec-les-extremes-avant-le-2d-tour-des-municipales_7877396.html",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Macron s'immisce dans les municipales et distribue les mauvais points",
+      "headline": "Acad\u00e9mie fran\u00e7aise confirms Macron's grammatical error in aircraft carrier naming",
       "source": "huffingtonpost.fr",
-      "url": "https://www.huffingtonpost.fr/politique/article/macron-s-immisce-dans-les-municipales-et-distribue-les-mauvais-points_261615.html",
-      "signal_category_hint": "domestic_regime"
+      "url": "https://www.huffingtonpost.fr/france/article/macron-a-fait-une-erreur-de-langue-en-nommant-son-nouveau-porte-avions-confirme-l-academie-francaise_261677.html",
+      "signal_category_hint": "unclear"
     },
     {
-      "headline": "Guerre au Moyen-Orient : Macron dit au pr\u00e9sident iranien qu'il est \u00ab inadmissible \u00bb que la France soit \u00ab cibl\u00e9e \u00bb",
-      "source": "ouest-france.fr",
-      "url": "https://www.ouest-france.fr/monde/iran/guerre-au-moyen-orient-macron-dit-au-president-iranien-quil-est-inadmissible-que-la-france-soit-ciblee-ec7e6b54-20bc-11f1-a6e8-58f5162ee52a",
+      "headline": "French citizen Martin Ryan sentenced to 10 years in Azerbaijan for espionage",
+      "source": "rfi.fr",
+      "url": "https://www.rfi.fr/fr/europe/20260316-azerba%C3%AFdjan-le-fran%C3%A7ais-martin-ryan-condamn%C3%A9-%C3%A0-dix-ans-de-prison-pour-espionnage",
       "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "INFO PARIS MATCH. S\u00e9bastien Lecornu bient\u00f4t d\u00e9cor\u00e9 par Emmanuel Macron",
-      "source": "fr.news.yahoo.com",
-      "url": "https://fr.news.yahoo.com/info-paris-match-s%C3%A9bastien-lecornu-165042674.html",
-      "signal_category_hint": "domestic_regime"
+      "headline": "Orange launches 'Drone Guardian' anti-drone detection service using 20,000 mobile sites",
+      "source": "universfreebox.com",
+      "url": "https://universfreebox.com/article/592532/orange-arme-pres-de-20-000-sites-mobiles-pour-traquer-les-drones-avec-une-offre-inedite",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }

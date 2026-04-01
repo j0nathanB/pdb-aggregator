@@ -79,8 +79,9 @@ _ACTIVITY_SORT = {"high": 0, "moderate": 1, "low": 2}
 def _country_heading(code: str, country: str) -> str:
     """Render a country heading with an inline flag image."""
     return (
-        f'### <img src="https://flagcdn.com/h24/{code}.png" alt="{country}" '
-        f"style={{{{display: 'inline', verticalAlign: 'middle', marginRight: '8px'}}}} />"
+        f'### <img src="https://flagcdn.com/{code}.svg" width="32" alt="{country}" '
+        f"style={{{{display: 'inline', verticalAlign: 'middle', position: 'relative', "
+        f"top: '-2px', marginRight: '8px', border: '1px solid #d1d5db', borderRadius: '2px'}}}} />"
         f"{country}"
     )
 
@@ -660,6 +661,7 @@ def _render_region_page(
 
     sections = [
         _mdx_frontmatter(display_name, f"Week of {date_range}", display_name),
+        "## Regional Summary",
         "",
     ]
 
