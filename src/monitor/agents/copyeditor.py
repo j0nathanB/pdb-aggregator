@@ -16,6 +16,7 @@ from datetime import date
 import anthropic
 
 from ..config import ANTHROPIC_API_KEY, MODEL, PROJECT_ROOT, THINKING_BUDGET_TOKENS, load_prompt
+from .editor import _strip_sources_accordion
 
 # Style guide loaded once per process
 _style_guide: str | None = None
@@ -108,10 +109,13 @@ async def run_copyeditor(
     if not section_text.strip():
         return section_text
 
+    # Strip Sources accordion — mechanical reference data, not prose to copyedit.
+    section_to_edit, sources_suffix = _strip_sources_accordion(section_text)
+
     task_prompt = load_prompt("copyeditor", COUNTRY=label)
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
-    user_message = build_copyeditor_prompt(section_text, section_type)
+    user_message = build_copyeditor_prompt(section_to_edit, section_type)
 
     logger.info("Copyeditor [%s]: starting, input=%d chars", label, len(section_text))
 
@@ -150,6 +154,8 @@ async def run_copyeditor(
         usage=extract_usage(response),
     )
 
+    if sources_suffix:
+        result = result.rstrip() + "\n\n" + sources_suffix + "\n"
     return result
 
 

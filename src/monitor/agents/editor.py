@@ -49,6 +49,27 @@ def _sanitize_mdx(text: str) -> str:
     return text
 
 
+_NOTES_ACCORDION_RE = re.compile(
+    r'\n*<Accordion title="Notes">.*?</Accordion>\s*',
+    re.DOTALL,
+)
+
+
+def _strip_sources_accordion(text: str) -> tuple[str, str]:
+    """Remove Notes accordion from text, returning (text_without, notes_block).
+
+    The Notes accordion contains mechanical reference data that should not
+    be sent to the editor LLM (which tends to drop it). It is re-appended
+    after editing.
+    """
+    match = _NOTES_ACCORDION_RE.search(text)
+    if not match:
+        return text, ""
+    sources_block = match.group(0).strip()
+    text_without = text[:match.start()] + text[match.end():]
+    return text_without, sources_block
+
+
 def _load_style_guide() -> str:
     global _style_guide
     if _style_guide is None:
@@ -142,6 +163,10 @@ async def run_editor(
     if not assembled_section.strip():
         return assembled_section
 
+    # Strip Sources accordion — it's mechanical reference data, not prose.
+    # Re-append after editing so the editor doesn't drop it.
+    section_to_edit, sources_suffix = _strip_sources_accordion(assembled_section)
+
     task_prompt = load_prompt("editor")
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
@@ -149,7 +174,7 @@ async def run_editor(
     raw_analysis = _build_raw_analysis_block(ledger, entry)
     user_message = (
         "## ASSEMBLED SECTION\n\n"
-        f"{assembled_section}\n\n"
+        f"{section_to_edit}\n\n"
         "---\n\n"
         "## RAW ANALYSIS\n\n"
         f"```json\n{raw_analysis}\n```"
@@ -193,7 +218,10 @@ async def run_editor(
         usage=extract_usage(response),
     )
 
-    return _sanitize_mdx(result)
+    edited = _sanitize_mdx(result)
+    if sources_suffix:
+        edited = edited.rstrip() + "\n\n" + sources_suffix + "\n"
+    return edited
 
 
 def _build_regional_analysis_block(report: "RegionalReport") -> str:

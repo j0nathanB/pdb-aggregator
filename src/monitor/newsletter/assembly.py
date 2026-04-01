@@ -249,8 +249,8 @@ def _format_date_range_display(dates: list[str]) -> str:
 
 
 def _render_sources_section(story_map_data: dict) -> str:
-    """Render a Sources section using ResponseField components from story map sidecar."""
-    lines = ['<Accordion title="Sources">']
+    """Render a Notes section with ResponseField headers and Expandable source lists."""
+    lines = ['<Accordion title="Notes">']
 
     for story in story_map_data.get("stories", []):
         articles = story.get("articles", [])
@@ -261,14 +261,16 @@ def _render_sources_section(story_map_data: dict) -> str:
         date_range = _format_date_range_display([a.get("date", "") for a in articles])
 
         lines.append(f'<ResponseField name="{headline}" type="{date_range}">')
+        lines.append(f'<Expandable title="Sources ({len(articles)})">')
         for a in articles:
             title = a.get("title", "Untitled")
             source = a.get("source", "")
             url = a.get("url", "")
             if url:
-                lines.append(f"  - [{title} — {source}]({url})")
+                lines.append(f"- [{title} — {source}]({url})")
             else:
-                lines.append(f"  - {title} — {source}")
+                lines.append(f"- {title} — {source}")
+        lines.append("</Expandable>")
         lines.append("</ResponseField>")
         lines.append("")
 
@@ -276,14 +278,16 @@ def _render_sources_section(story_map_data: dict) -> str:
     singles = story_map_data.get("single_source_items", [])
     if singles:
         lines.append('<ResponseField name="Other" type="">')
+        lines.append(f'<Expandable title="Sources ({len(singles)})">')
         for item in singles:
             title = item.get("headline", "Untitled")
             source = item.get("source", "")
             url = item.get("url", "")
             if url:
-                lines.append(f"  - [{title} — {source}]({url})")
+                lines.append(f"- [{title} — {source}]({url})")
             else:
-                lines.append(f"  - {title} — {source}")
+                lines.append(f"- {title} — {source}")
+        lines.append("</Expandable>")
         lines.append("</ResponseField>")
         lines.append("")
 
