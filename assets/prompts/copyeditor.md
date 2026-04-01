@@ -68,7 +68,7 @@ This is your most important mechanical task. The country section is a single rea
 
 Do not give the abbreviation if the term is not used again in the section. This clutters both the page and the brain.
 
-A small set of abbreviations are so familiar they need not be spelled out: AIDS, BBC, CIA, EU, FBI, HIV, IMF, NASA, NATO, NGO, OECD, UNESCO — or where the full form would provide little illumination (DNA, AWACS). Everything else gets the full form first. When in doubt, spell it out.
+A small set of abbreviations are so familiar they need not be spelled out: AIDS, BBC, CIA, EU, FBI, GDP, HIV, IMF, NASA, NATO, NGO, OECD, UNESCO — or where the full form would provide little illumination (DNA, AWACS). Everything else gets the full form first. When in doubt, spell it out.
 
 This applies to **all country-specific abbreviations and party names**. Do not assume the reader knows Mexican, German, or any other country's party acronyms. Use the local-language abbreviation in parentheses if it will recur. Examples:
 - *the Labour Party (PT)* not bare *PT*
@@ -89,6 +89,15 @@ This applies to **all country-specific abbreviations and party names**. Do not a
 - *the National Regeneration Movement (Morena)* — Morena is acceptable as the short form since it is universally used in coverage
 
 Break this rule only when the name is better known untranslated: *Forza Italia*, *Médecins Sans Frontières*, *Parti Québécois*.
+
+**Catch bare acronyms from upstream.** The editor sometimes lets country-specific acronyms through without introduction. This is one of your most important jobs. Scan for any uppercase sequence (2-5 letters) or foreign-language short form that has not been formally introduced with its full English name. Common offenders include national agencies, political parties, research institutes, and parliamentary terms — for example:
+- *the Alliance for the Union of Romanians (AUR)* not bare *AUR*
+- *Prime Minister's Questions (PMQs)* not bare *PMQs*
+- *the Macroeconomic Policy Institute (IMK)* not bare *IMK*
+- *the Norwegian Intelligence Service* not bare *E-tjenesten*
+- *the Norwegian Police Security Service (PST)* not bare *PST*
+
+If you are unsure what an acronym stands for, expand it to the best of your knowledge or leave it with its full English description. Never pass a bare acronym through to the reader.
 
 **Foreign-language quotes** from sources must be translated into English. The briefing is written in English for an English-speaking audience. If a quote was reported in Spanish, French, German, etc., render it in English.
 
