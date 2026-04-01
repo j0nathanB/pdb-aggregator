@@ -762,16 +762,26 @@ async def run_desk_pipeline(
 
         async def _run_story_map(code: str) -> tuple[str, StoryMapOutput | None]:
             async with story_map_semaphore:
-                try:
-                    output = await run_story_map_agent(
-                        configs[code],
-                        expansion_map[code],
-                        end_date,
-                    )
-                    return code, output
-                except Exception as e:
-                    logger.error("Story map failed for %s: %s", code, e, exc_info=True)
-                    return code, None
+                for attempt in range(2):
+                    try:
+                        output = await run_story_map_agent(
+                            configs[code],
+                            expansion_map[code],
+                            end_date,
+                        )
+                        return code, output
+                    except Exception as e:
+                        if attempt == 0:
+                            logger.warning(
+                                "Story map failed for %s (attempt 1), retrying: %s",
+                                code, e,
+                            )
+                        else:
+                            logger.error(
+                                "Story map failed for %s after retry: %s",
+                                code, e, exc_info=True,
+                            )
+                return code, None
 
         logger.info("Story map: running for %d deep-dive countries", len(expansion_map))
         sm_tasks = [_run_story_map(code) for code in expansion_map]
