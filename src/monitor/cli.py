@@ -138,7 +138,6 @@ async def cmd_run(args: argparse.Namespace) -> None:
         end_date=end_date,
         max_concurrent=args.concurrency,
         skip_triage=args.skip_triage,
-        force_deep_dive=args.force_deep_dive,
         recorder=recorder,
     )
 
@@ -428,8 +427,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_run.add_argument("--country", help="Single country code to process")
     p_run.add_argument("--date", help="End date (YYYY-MM-DD), default today")
     p_run.add_argument("--concurrency", type=int, default=5, help="Max concurrent API calls")
-    p_run.add_argument("--skip-triage", action="store_true", help="Skip triage, deep dive all")
-    p_run.add_argument("--force-deep-dive", action="store_true", help="Force all to deep dive")
+    p_run.add_argument("--skip-triage", action="store_true", help="Skip triage scan entirely")
     p_run.add_argument("--triage-only", action="store_true", help="Run triage only, no agents")
     p_run.add_argument("--skip-synthesis", action="store_true",
                         help="Skip regional/executive synthesis and newsletter assembly")

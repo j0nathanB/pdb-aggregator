@@ -35,7 +35,6 @@ class TestParser:
         assert args.date is None
         assert args.concurrency == 5
         assert not args.skip_triage
-        assert not args.force_deep_dive
         assert not args.triage_only
 
     def test_run_single_country(self):
@@ -51,11 +50,10 @@ class TestParser:
     def test_run_flags(self):
         parser = build_parser()
         args = parser.parse_args([
-            "run", "--skip-triage", "--force-deep-dive", "--triage-only",
+            "run", "--skip-triage", "--triage-only",
             "--concurrency", "10",
         ])
         assert args.skip_triage
-        assert args.force_deep_dive
         assert args.triage_only
         assert args.concurrency == 10
 

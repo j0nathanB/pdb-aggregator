@@ -585,7 +585,7 @@ async def run_desk_pipeline(
     end_date: date | None = None,
     max_concurrent: int = 5,
     skip_triage: bool = False,
-    force_deep_dive: bool = False,
+    force_deep_dive: bool = True,
     skip_layer2: bool = False,
     recorder: RunRecorder | None = None,
 ) -> DeskPipelineResult:
