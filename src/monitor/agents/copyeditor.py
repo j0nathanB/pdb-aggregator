@@ -182,7 +182,7 @@ def _is_boilerplate(text: str) -> bool:
     return False
 
 
-_FLAG_PATTERN = re.compile(r'flagcdn\.com/h24/(\w{2})\.png')
+_FLAG_PATTERN = re.compile(r'flagcdn\.com/(?:h24/)?(\w{2})\.(?:png|svg)')
 
 
 def _split_newsletter_sections(

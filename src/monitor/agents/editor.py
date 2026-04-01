@@ -367,7 +367,7 @@ async def edit_newsletter(
 
 
 # Country code extraction from flag image URLs
-_FLAG_PATTERN = re.compile(r'flagcdn\.com/h24/(\w{2})\.png')
+_FLAG_PATTERN = re.compile(r'flagcdn\.com/(?:h24/)?(\w{2})\.(?:png|svg)')
 
 
 def _split_country_sections(newsletter: str) -> list[tuple[str, str | None]]:
