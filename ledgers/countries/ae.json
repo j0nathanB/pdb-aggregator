@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "The UAE continues executing its calculated multi-alignment strategy with notable deepening of strategic relationships. MBZ's India visit produced defense partnership frameworks and $200B trade targets, positioning India as a key partner alongside existing US, French, and Korean relationships. The $3B ADNOC-India LNG deal establishes India as the UAE's largest LNG customer, demonstrating energy statecraft diversification. UAE's hosting of trilateral Russia-Ukraine-US peace talks reinforces its trusted mediator positioning across major power divides. Sovereign wealth deployment accelerates into AI and longevity sectors while G42's digital sovereignty framework addresses previous China partnership constraints. The regime maintains performance-based legitimacy through continued security provision, with Abu Dhabi retaining its decade-long 'world's safest city' ranking.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "routine"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -150,9 +150,13 @@
             {
               "headline": "MBZ conducts strategic visit to India, signs defense partnership and $200B trade target",
               "date": "2026-01-19",
-              "source": "UAE Ministry of Foreign Affairs",
-              "source_tier": 2,
-              "source_url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/19/uae-india",
+              "sources": [
+                {
+                  "name": "UAE Ministry of Foreign Affairs",
+                  "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/19/uae-india",
+                  "tier": 2
+                }
+              ],
               "summary": "Three-hour official visit produced Strategic Defense Partnership Letter of Intent covering defense industrial collaboration, counter-terrorism, and special operations, plus commitment to double bilateral trade from current $100B to $200B by 2032. Fifth MBZ visit to India in decade, third as president.",
               "actors_involved": [
                 "Mohammed bin Zayed Al Nahyan",
@@ -163,9 +167,13 @@
             {
               "headline": "UAE hosts first trilateral Russia-Ukraine-US peace talks in Abu Dhabi",
               "date": "2026-01-23",
-              "source": "UAE Ministry of Foreign Affairs",
-              "source_tier": 2,
-              "source_url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/23/UAE-Russia-Ukraine-United-States",
+              "sources": [
+                {
+                  "name": "UAE Ministry of Foreign Affairs",
+                  "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/23/UAE-Russia-Ukraine-United-States",
+                  "tier": 2
+                }
+              ],
               "summary": "Two-day trilateral negotiations in Abu Dhabi, building on UAE's role as trusted mediator having facilitated 17 prisoner exchange operations releasing 4,641 detainees. Foreign Minister Abdullah bin Zayed emphasized UAE's balanced partnerships with all parties enable trusted mediation role.",
               "actors_involved": [
                 "Mohammed bin Zayed Al Nahyan",
@@ -176,9 +184,13 @@
             {
               "headline": "UAE President accepts US invitation to join Board of Peace for Gaza",
               "date": "2026-01-20",
-              "source": "UAE Ministry of Foreign Affairs",
-              "source_tier": 2,
-              "source_url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/20/UAE-US",
+              "sources": [
+                {
+                  "name": "UAE Ministry of Foreign Affairs",
+                  "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/20/UAE-US",
+                  "tier": 2
+                }
+              ],
               "summary": "MBZ accepted US invitation to Board of Peace, with Foreign Minister emphasizing importance of fully implementing Trump's 20-point peace plan for Gaza and UAE's confidence in Trump's leadership exemplified by Abraham Accords.",
               "actors_involved": [
                 "Mohammed bin Zayed Al Nahyan",
@@ -201,9 +213,13 @@
             {
               "headline": "UAE-India Strategic Defense Partnership covers counter-terrorism and special operations",
               "date": "2026-01-19",
-              "source": "UAE Ministry of Foreign Affairs",
-              "source_tier": 2,
-              "source_url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/19/uae-india",
+              "sources": [
+                {
+                  "name": "UAE Ministry of Foreign Affairs",
+                  "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/19/uae-india",
+                  "tier": 2
+                }
+              ],
               "summary": "Defense partnership Letter of Intent encompasses defense industrial collaboration, cyber cooperation, counter-terrorism, and special operations. Part of broader strategic relationship deepening during MBZ visit to New Delhi.",
               "actors_involved": [
                 "UAE Armed Forces"
@@ -225,9 +241,13 @@
             {
               "headline": "ADNOC Gas signs $3 billion LNG supply deal with India's HPCL",
               "date": "2026-01-19",
-              "source": "World Oil",
-              "source_tier": 2,
-              "source_url": "https://worldoil.com/news/2026/1/19/adnoc-gas-inks-10-year-3-billion-lng-supply-agreement-with-hindustan-petroleum/",
+              "sources": [
+                {
+                  "name": "World Oil",
+                  "url": "https://worldoil.com/news/2026/1/19/adnoc-gas-inks-10-year-3-billion-lng-supply-agreement-with-hindustan-petroleum/",
+                  "tier": 2
+                }
+              ],
               "summary": "Ten-year agreement valued $2.5-3 billion for 0.5 million tonnes annually from Das Island facility, making India the UAE's largest LNG customer. Converts previous heads of agreement into binding supply deal, part of ADNOC Gas strategy targeting 15.6 MMtpa capacity by 2029.",
               "actors_involved": [
                 "ADNOC"
@@ -237,9 +257,13 @@
             {
               "headline": "G42 unveils digital sovereignty framework targeting one billion AI agents",
               "date": "2026-01-20",
-              "source": "The National",
-              "source_tier": 2,
-              "source_url": "https://thenationalnews.com/future/technology/2026/01/20/abu-dhabis-g42-unveils-new-operating-model-to-deploy-ai-sovereignty",
+              "sources": [
+                {
+                  "name": "The National",
+                  "url": "https://thenationalnews.com/future/technology/2026/01/20/abu-dhabis-g42-unveils-new-operating-model-to-deploy-ai-sovereignty",
+                  "tier": 2
+                }
+              ],
               "summary": "Digital Embassies framework and Greenshield sovereign operating model enable governments to deploy AI with full data sovereignty control. CEO targets building one billion AI agents in 2026, supported by Microsoft partnership and positioning for 5-gigawatt Stargate AI campus in Abu Dhabi.",
               "actors_involved": [
                 "G42"
@@ -249,9 +273,13 @@
             {
               "headline": "Mubadala leads $36.5 million investment in longevity medicine",
               "date": "2026-01-21",
-              "source": "PR Newswire",
-              "source_tier": 2,
-              "source_url": "https://prnewswire.com/news-releases/l-nutra-secures-36-5m-investment-from-mubadala-raising-series-d-proceeds-to-83-5m-and-accelerating-global-expansion-of-its-longevity-and-medical-nutrition-therapies-302666171.html",
+              "sources": [
+                {
+                  "name": "PR Newswire",
+                  "url": "https://prnewswire.com/news-releases/l-nutra-secures-36-5m-investment-from-mubadala-raising-series-d-proceeds-to-83-5m-and-accelerating-global-expansion-of-its-longevity-and-medical-nutrition-therapies-302666171.html",
+                  "tier": 2
+                }
+              ],
               "summary": "Investment raises L-Nutra Series D to $83.5 million total, establishing Abu Dhabi joint venture for MENA market longevity nutrition therapies. Mubadala also announced AI investment deployment including Maya bot challenging investment committee decisions.",
               "actors_involved": [
                 "Mubadala"
@@ -273,9 +301,13 @@
             {
               "headline": "Zayed Award recognizes Armenia-Azerbaijan peace agreement",
               "date": "2026-01-19",
-              "source": "Vatican News",
-              "source_tier": 2,
-              "source_url": "https://vaticannews.va/en/world/news/2026-01/zayed-award-for-human-fraternity-names-2026-honourees.html",
+              "sources": [
+                {
+                  "name": "Vatican News",
+                  "url": "https://vaticannews.va/en/world/news/2026-01/zayed-award-for-human-fraternity-names-2026-honourees.html",
+                  "tier": 2
+                }
+              ],
               "summary": "2026 Zayed Award for Human Fraternity honors Armenia-Azerbaijan peace agreement and Afghan education advocate Zarqa Yaftali. Ceremony scheduled February 4 in Abu Dhabi, marking first recognition of winners from Caucasus and Afghanistan.",
               "actors_involved": [
                 "none listed"
@@ -297,9 +329,13 @@
             {
               "headline": "Abu Dhabi retains world's safest city ranking for tenth consecutive year",
               "date": "2026-01-18",
-              "source": "Free Malaysia Today",
-              "source_tier": 2,
-              "source_url": "https://freemalaysiatoday.com/category/world/2026/01/18/abu-dhabi-named-worlds-safest-city-for-10th-consecutive-year",
+              "sources": [
+                {
+                  "name": "Free Malaysia Today",
+                  "url": "https://freemalaysiatoday.com/category/world/2026/01/18/abu-dhabi-named-worlds-safest-city-for-10th-consecutive-year",
+                  "tier": 2
+                }
+              ],
               "summary": "Numbeo international report confirms Abu Dhabi's top safety ranking since 2017. Abu Dhabi Police attributed achievement to leadership vision, integrated institutional approach, advanced technologies including AI, and strong community partnership.",
               "actors_involved": [
                 "UAE Armed Forces"
@@ -404,6 +440,22 @@
           "source_name": "mediaoffice.abudhabi"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "quiet",
+        "rationale": "No wire coverage this week.\nDomestic headlines: 1 found.\nGovernment sources: - [Ministry of Foreign Affairs] UAE and Cyprus signed Energy Partnership Agreement and endorsed Joint Action Plan during official visit of Cypriot Foreign Minister Dr. Constantinos Kombos (January 23-25). Agreement establishes framework for energy security, infrastructure development, and sustainable solutions. (type: both, categories: alignment_diplomatic, economic_tech)\n- [Ministry of Foreign Affairs] UAE issued solidarity statement to Italy following powerful storms affecting Sicily and southern regions that caused substantial damage. (type: intent_signal, categories: alignment_diplomatic)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Japan is navigating unprecedented alliance uncertainty while maintaining domestic political strength. PM Takaichi's snap election call demonstrates confidence in her ~70% approval ratings and represents strategic political positioning to strengthen governing authority. The Trump administration's 'America First' National Defense Strategy creates the most significant alliance stress since 1951 by explicitly reducing China focus and demanding allied self-reliance, forcing Japan to accelerate autonomous capabilities while managing alliance assurance through early summit diplomacy. Japan is deploying active economic statecraft through \u00a539 billion rare earths diversification to counter Chinese economic coercion while coordinating fiscal expansion with monetary normalization to sustain escape from deflation. The opposition's CDP-Komeito merger into the Centrist Reform Alliance represents the largest realignment attempt in years but reflects weakness rather than strength.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -157,9 +157,13 @@
             {
               "headline": "Pentagon releases 'America First' National Defense Strategy reducing China focus",
               "date": "2026-01-23",
-              "source": "NPR",
-              "source_tier": 2,
-              "source_url": "https://npr.org/2026/01/24/nx-s1-5687168/trump-administration-defense-strategy",
+              "sources": [
+                {
+                  "name": "NPR",
+                  "url": "https://npr.org/2026/01/24/nx-s1-5687168/trump-administration-defense-strategy",
+                  "tier": 2
+                }
+              ],
               "summary": "The Pentagon released a new National Defense Strategy that chastised U.S. allies to take control of their own security and reasserted focus on dominance in the Western Hemisphere above countering China. The document states allies will take on more burden countering nations from Russia to North Korea and warns that 'where they do not' cooperate, the U.S. will take 'focused, decisive action'.",
               "actors_involved": [
                 "Ministry of Defense"
@@ -169,9 +173,13 @@
             {
               "headline": "Takaichi planning first U.S. visit as PM for March Trump summit",
               "date": "2026-01-18",
-              "source": "Kyodo News",
-              "source_tier": 1,
-              "source_url": "https://english.kyodonews.net/articles/-/68744",
+              "sources": [
+                {
+                  "name": "Kyodo News",
+                  "url": "https://english.kyodonews.net/articles/-/68744",
+                  "tier": 1
+                }
+              ],
               "summary": "Japanese PM Takaichi may visit the United States around March 20 for talks with President Trump, aimed at reaffirming the bilateral alliance ahead of Trump's planned trip to China. This would be her first visit since becoming premier.",
               "actors_involved": [
                 "Sanae Takaichi",
@@ -190,9 +198,13 @@
             {
               "headline": "LDP manifesto pledges National Intelligence Bureau and security document revision",
               "date": "2026-01-22",
-              "source": "Asahi Shimbun",
-              "source_tier": 2,
-              "source_url": "https://asahi.com/ajw/articles/16301713",
+              "sources": [
+                {
+                  "name": "Asahi Shimbun",
+                  "url": "https://asahi.com/ajw/articles/16301713",
+                  "tier": 2
+                }
+              ],
               "summary": "The LDP manifesto promises to create a National Intelligence Bureau reporting directly to the PM's office, establish an external intelligence agency, and revise the three key national security documents within the year. It also pledges to abolish provisions restricting defense equipment exports to five categories.",
               "actors_involved": [
                 "LDP",
@@ -211,9 +223,13 @@
             {
               "headline": "Japan allocates \u00a539 billion for rare earths diversification amid China dual-use ban",
               "date": "2026-01-21",
-              "source": "Japan Times",
-              "source_tier": 2,
-              "source_url": "https://japantimes.co.jp/news/2026/01/21/japan/politics/ldp-election-manifesto",
+              "sources": [
+                {
+                  "name": "Japan Times",
+                  "url": "https://japantimes.co.jp/news/2026/01/21/japan/politics/ldp-election-manifesto",
+                  "tier": 2
+                }
+              ],
               "summary": "The LDP manifesto pledges to secure stable rare earths supply through \u00a539 billion in funding for mine development and refining projects, explicitly countering China's ban on dual-use exports including critical minerals. The government will fund the Japan Organization for Metals and Energy Security to jointly invest in overseas rare earth projects.",
               "actors_involved": [
                 "LDP"
@@ -223,9 +239,13 @@
             {
               "headline": "BOJ signals continued rate hikes amid Takaichi fiscal policy volatility",
               "date": "2026-01-25",
-              "source": "Reuters",
-              "source_tier": 2,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
               "summary": "BOJ Governor Ueda indicated the central bank would continue raising interest rates, emphasizing timely decisions as wage hikes drive inflation. Comments came as Japanese bond markets experienced volatility due to concerns over PM Takaichi's expansionary fiscal policies and consumption tax cut proposals.",
               "actors_involved": [
                 "Kazuo Ueda"
@@ -235,9 +255,13 @@
             {
               "headline": "Keidanren pledges wage hike leadership in meeting with PM",
               "date": "2026-01-19",
-              "source": "Prime Minister's Office",
-              "source_tier": 2,
-              "source_url": "https://japan.kantei.go.jp/104/actions/202601/19kondankai.html",
+              "sources": [
+                {
+                  "name": "Prime Minister's Office",
+                  "url": "https://japan.kantei.go.jp/104/actions/202601/19kondankai.html",
+                  "tier": 2
+                }
+              ],
               "summary": "Japan Business Federation announced it will lead efforts to deepen wage increase momentum, proposing larger hikes for younger workers and performance-based allocation. PM Takaichi emphasized business community's role in achieving public-private investment goals of \u00a5200 trillion by FY2040.",
               "actors_involved": [
                 "Keidanren",
@@ -260,9 +284,13 @@
             {
               "headline": "Emperor Naruhito plans Netherlands and Belgium visits in June",
               "date": "2026-01-23",
-              "source": "NTV",
-              "source_tier": 2,
-              "source_url": "https://www.ntv.co.jp/englishnews/articles/20219u6j0s71h8lnqvwc.html",
+              "sources": [
+                {
+                  "name": "NTV",
+                  "url": "https://www.ntv.co.jp/englishnews/articles/20219u6j0s71h8lnqvwc.html",
+                  "tier": 2
+                }
+              ],
               "summary": "Discussions are underway for Emperor Naruhito and Empress Masako to make official visits to the Netherlands and Belgium in June 2026. The visit marks the 160th anniversary of Japan-Belgium diplomatic relations and maintains long-standing Imperial family relationships with both royal couples.",
               "actors_involved": [
                 "Emperor Naruhito"
@@ -280,9 +308,13 @@
             {
               "headline": "Takaichi calls snap election for February 8 after dissolving parliament",
               "date": "2026-01-23",
-              "source": "NHK",
-              "source_tier": 2,
-              "source_url": "https://www3.nhk.or.jp/nhkworld/en/news/20260123_500/",
+              "sources": [
+                {
+                  "name": "NHK",
+                  "url": "https://www3.nhk.or.jp/nhkworld/en/news/20260123_500/",
+                  "tier": 2
+                }
+              ],
               "summary": "PM Takaichi dissolved the Lower House on January 23 for a February 8 election, seeking to capitalize on high approval ratings to strengthen her coalition government. This represents Japan's second election in less than 16 months and Takaichi's first as PM.",
               "actors_involved": [
                 "Sanae Takaichi",
@@ -293,9 +325,13 @@
             {
               "headline": "Opposition forms Centrist Reform Alliance as largest opposition party",
               "date": "2026-01-23",
-              "source": "Yomiuri Shimbun",
-              "source_tier": 2,
-              "source_url": "https://japannews.yomiuri.co.jp/politics/election/20260123-306091",
+              "sources": [
+                {
+                  "name": "Yomiuri Shimbun",
+                  "url": "https://japannews.yomiuri.co.jp/politics/election/20260123-306091",
+                  "tier": 2
+                }
+              ],
               "summary": "The Constitutional Democratic Party and Komeito officially launched the Centrist Reform Alliance with 172 Lower House members, led by joint leadership of Yoshihiko Noda and Tetsuo Saito. The merger represents the largest opposition consolidation attempt in years ahead of the snap election.",
               "actors_involved": [
                 "Constitutional Democratic Party",
@@ -379,6 +415,22 @@
           "source_name": "english.kyodonews.net"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (1): Five reasons why Japan's election is the most unpredictable in years | Reuters, reuters.com\nDomestic headlines: 37 found.\nGovernment sources: - [Prime Minister's Office] Chief Cabinet Secretary issued official statement announcing House of Representatives general election for February 8, calling for fair conduct and voter participation while reminding public servants to remain politically neutral. (type: both, categories: domestic_regime)\n- [Prime Minister's Office] PM Takaichi and Italian PM Meloni published joint op-ed in Nikkei emphasizing Japan-Italy strategic partnership, defense cooperation including GCAP program, and shared commitment to defending 'free, fair and open international order.' (type: intent_signal, categories: alignment_diplomatic, security_defense)\n- [Ministry of Foreign Affairs] State Minister HORII met with UN Special Representative on Sexual Violence in Conflict, reaffirming Japan's commitment to Women, Peace and Security agenda amid global conflicts and regression of women's rights. (type: both, categories: alignment_diplomatic)\n- [Ministry of Foreign Affairs] MOFA conducted domestic counter-terrorism training for approximately 80 Japanese company representatives, covering response to explosions, shootings, kidnapping, and first aid as part of overseas business security support. (type: ground_truth, categories: security_defense)\n- [Ministry of Foreign Affairs] Japan, US, and ROK deputy officials held trilateral coordinating meeting in Seoul, reviewing cooperation progress and agreeing to accelerate coordination on North Korea and security cooperation including economic security. (type: ground_truth, categories: alignment_diplomatic, security_defense)\n- [Ministry of Foreign Affairs] Japan and MERCOSUR held first meeting under Strategic Partnership Framework in Asunci\u00f3n, discussing trade and economic relations to deepen bilateral economic cooperation. (type: ground_truth, categories: alignment_diplomatic, economic_tech)\n- [Ministry of Foreign Affairs] Foreign Ministry updated Senegal travel advisory, maintaining existing danger levels while noting 2025 peace agreement with some MFDC factions but continued uncertainty with others, plus terrorism threats from Mali-based groups. (type: ground_truth, categories: alignment_diplomatic)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

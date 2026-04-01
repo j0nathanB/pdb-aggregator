@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Brazil operates as a continental-scale middle power practicing strategic multi-alignment between Western institutions and Global South platforms, now with more assertive sovereignty positioning against US interventionism. Under Lula III, the country confronts persistent fiscal rigidity and deepening China dependency while the political system remains structured around Lula-Bolsonaro polarization despite the former president's imprisonment. Both sides demonstrate continued mobilization capacity heading into a highly competitive 2026 election. Institutional legitimacy faces pressure through STF internal crisis over Master Bank case handling while coalition presidentialism requires constant Centr\u00e3o bargaining.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -161,9 +161,13 @@
             {
               "headline": "Lula publishes NYT op-ed condemning US military intervention in Venezuela",
               "date": "2026-01-18",
-              "source": "G1",
-              "source_tier": 2,
-              "source_url": "https://g1.globo.com/economia/noticia/2026/01/18/lula-artigo-eua-venezuela-nyt.ghtml",
+              "sources": [
+                {
+                  "name": "G1",
+                  "url": "https://g1.globo.com/economia/noticia/2026/01/18/lula-artigo-eua-venezuela-nyt.ghtml",
+                  "tier": 2
+                }
+              ],
               "summary": "Lula called the US capture of Maduro 'another lamentable chapter in the continuous erosion of international law,' stating this is the first time in 200+ years that South America suffered direct US military attack. Declared Brazil will not submit to hegemonic projects while maintaining dialogue with Washington.",
               "actors_involved": [
                 "Lula"
@@ -173,9 +177,13 @@
             {
               "headline": "Lula-Xi Jinping phone call coordinates Global South response to Trump initiatives",
               "date": "2026-01-23",
-              "source": "G1",
-              "source_tier": 2,
-              "source_url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+              "sources": [
+                {
+                  "name": "G1",
+                  "url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+                  "tier": 2
+                }
+              ],
               "summary": "45-minute call where Xi emphasized protecting Global South interests and strengthening UN role. Occurred same day as Trump's Gaza Peace Council launch. Lula announced visa exemptions for Chinese citizens in reciprocity for China's 2025 measure.",
               "actors_involved": [
                 "Lula"
@@ -185,9 +193,13 @@
             {
               "headline": "Trump invites Lula to Gaza Peace Council creating diplomatic pressure",
               "date": "2026-01-19",
-              "source": "Gazeta do Povo",
-              "source_tier": 2,
-              "source_url": "https://www.gazetadopovo.com.br/republica/trump-pressiona-lula-com-armadilha-diplomatica-em-convite-para-conselho-de-paz-para-gaza/",
+              "sources": [
+                {
+                  "name": "Gazeta do Povo",
+                  "url": "https://www.gazetadopovo.com.br/republica/trump-pressiona-lula-com-armadilha-diplomatica-em-convite-para-conselho-de-paz-para-gaza/",
+                  "tier": 2
+                }
+              ],
               "summary": "Invitation described as 'diplomatic trap' forcing choice between accepting and subordinating to US-controlled framework or declining and assuming public misalignment. Analysis notes this exposes Lula to 'difficult choice' that constrains multi-alignment strategy.",
               "actors_involved": [
                 "Lula"
@@ -209,9 +221,13 @@
             {
               "headline": "Army selects European EMADS air defense system",
               "date": "2026-01-18",
-              "source": "Defesa A\u00e9rea Naval",
-              "source_tier": 2,
-              "source_url": "https://defesaaereanaval.com.br/exercito/exercito-brasileiro-avanca-na-defesa-antiaerea-com-a-escolha-do-sistema-emads-da-mbda",
+              "sources": [
+                {
+                  "name": "Defesa A\u00e9rea Naval",
+                  "url": "https://defesaaereanaval.com.br/exercito/exercito-brasileiro-avanca-na-defesa-antiaerea-com-a-escolha-do-sistema-emads-da-mbda",
+                  "tier": 2
+                }
+              ],
               "summary": "Brazilian Army officially chose European MBDA EMADS system for medium-altitude air defense capability up to 20km altitude. Uses same CAMM-ER missiles as Navy's new frigates for logistics integration. Part of R$30 billion modernization package.",
               "actors_involved": [
                 "Brazilian Armed Forces"
@@ -229,9 +245,13 @@
             {
               "headline": "Petrobras announces R$6 billion biorefinery investment plus R$2.8 billion in new vessels",
               "date": "2026-01-20",
-              "source": "O Globo",
-              "source_tier": 2,
-              "source_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/01/20/petrobras-vai-investir-r-6-bilhoes-para-ter-sua-primeira-biorrefinaria.ghtml",
+              "sources": [
+                {
+                  "name": "O Globo",
+                  "url": "https://oglobo.globo.com/economia/negocios/noticia/2026/01/20/petrobras-vai-investir-r-6-bilhoes-para-ter-sua-primeira-biorrefinaria.ghtml",
+                  "tier": 2
+                }
+              ],
               "summary": "Petrobras will convert Riograndense Refinery into Brazil's first 100% bio-products refinery for R$6 billion, plus R$2.8 billion for five gaseiro ships, 18 barges, and 18 pushers across three shipyards. Projects aim to reduce import dependence and increase logistics efficiency.",
               "actors_involved": [
                 "Petrobras"
@@ -241,9 +261,13 @@
             {
               "headline": "Central Bank orders R$2.6 billion provision from BRB over Master Bank exposure",
               "date": "2026-01-23",
-              "source": "Valor Econ\u00f4mico",
-              "source_tier": 2,
-              "source_url": "https://valor.globo.com/impresso/noticia/2026/01/23/bc-determina-ao-brb-provisao-de-r-26-bilhoes.ghtml",
+              "sources": [
+                {
+                  "name": "Valor Econ\u00f4mico",
+                  "url": "https://valor.globo.com/impresso/noticia/2026/01/23/bc-determina-ao-brb-provisao-de-r-26-bilhoes.ghtml",
+                  "tier": 2
+                }
+              ],
               "summary": "Central Bank required Banco de Bras\u00edlia to establish R$2.6 billion provision for potential losses related to Master Bank portfolio acquisition. BRB says it has capital recomposition plan through various instruments if losses are confirmed.",
               "actors_involved": [
                 "Banco Central do Brasil"
@@ -261,9 +285,13 @@
             {
               "headline": "STF faces internal crisis over Toffoli's Master Bank case handling",
               "date": "2026-01-22",
-              "source": "Folha de S.Paulo",
-              "source_tier": 2,
-              "source_url": "https://www1.folha.uol.com.br/mercado/2026/01/ministros-do-stf-defendem-envio-do-caso-master-a-1a-instancia-como-saida-honrosa-para-toffoli.shtml",
+              "sources": [
+                {
+                  "name": "Folha de S.Paulo",
+                  "url": "https://www1.folha.uol.com.br/mercado/2026/01/ministros-do-stf-defendem-envio-do-caso-master-a-1a-instancia-como-saida-honrosa-para-toffoli.shtml",
+                  "tier": 2
+                }
+              ],
               "summary": "Internal STF pressure on Justice Toffoli over his conduct in Master Bank investigation, including jet travel with defense lawyer and family business connections to Master-linked funds. Other justices advocate 'honorable exit' by sending case to first instance, but Toffoli resists.",
               "actors_involved": [
                 "STF"
@@ -281,9 +309,13 @@
             {
               "headline": "Lula signals 2026 reelection candidacy maintaining Alckmin ticket",
               "date": "2026-01-18",
-              "source": "Veja",
-              "source_tier": 2,
-              "source_url": "https://veja.abril.com.br/politica/a-reuniao-em-que-lula-sinalizou-que-repetira-chapa-com-alckmin-em-2026/",
+              "sources": [
+                {
+                  "name": "Veja",
+                  "url": "https://veja.abril.com.br/politica/a-reuniao-em-que-lula-sinalizou-que-repetira-chapa-com-alckmin-em-2026/",
+                  "tier": 2
+                }
+              ],
               "summary": "In private meeting, Lula indicated plans to repeat winning ticket with VP Alckmin, saying 'in a winning team, you don't change players.' Also discussed S\u00e3o Paulo electoral scenarios with different roles for Haddad depending on Tarc\u00edsio's presidential intentions.",
               "actors_involved": [
                 "Lula"
@@ -293,9 +325,13 @@
             {
               "headline": "Pro-Bolsonaro rally draws 18,000 supporters in Bras\u00edlia demanding freedom",
               "date": "2026-01-25",
-              "source": "G1",
-              "source_tier": 2,
-              "source_url": "https://g1.globo.com/df/distrito-federal/noticia/2026/01/25/manifestacao-pela-liberdade-de-bolsonaro-reune-18-mil-pessoas-em-brasilia-diz-ong.ghtml",
+              "sources": [
+                {
+                  "name": "G1",
+                  "url": "https://g1.globo.com/df/distrito-federal/noticia/2026/01/25/manifestacao-pela-liberdade-de-bolsonaro-reune-18-mil-pessoas-em-brasilia-diz-ong.ghtml",
+                  "tier": 2
+                }
+              ],
               "summary": "Rally organized by Deputy Nikolas Ferreira drew ~18,000 people calling for Bolsonaro's release and other January 8 convictions. Demonstrates continued mobilization capacity despite former president's imprisonment and ineligibility.",
               "actors_involved": [
                 "Bolsonaro"
@@ -305,9 +341,13 @@
             {
               "headline": "PT activates electoral machinery across multiple states for 2026",
               "date": "2026-01-23",
-              "source": "G1",
-              "source_tier": 2,
-              "source_url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+              "sources": [
+                {
+                  "name": "G1",
+                  "url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+                  "tier": 2
+                }
+              ],
               "summary": "Workers' Party organizing electoral strategies including pressuring Haddad for Senate run in S\u00e3o Paulo, negotiating Marina Silva's potential return, defining candidates across states. Shows systematic preparation for competitive 2026 cycle.",
               "actors_involved": [
                 "PT",
@@ -318,9 +358,13 @@
             {
               "headline": "Polling shows Lula leading but competitive 2026 scenarios with Bolsonaro family",
               "date": "2026-01-22",
-              "source": "Poder360",
-              "source_tier": 2,
-              "source_url": "https://www.poder360.com.br/poder-pesquisas/flavio-bolsonaro-vence-em-2o-turno-contra-lula-diz-pesquisa/",
+              "sources": [
+                {
+                  "name": "Poder360",
+                  "url": "https://www.poder360.com.br/poder-pesquisas/flavio-bolsonaro-vence-em-2o-turno-contra-lula-diz-pesquisa/",
+                  "tier": 2
+                }
+              ],
               "summary": "Futura/Apex polling shows Fl\u00e1vio Bolsonaro defeating Lula 48.1%-41.9% in hypothetical runoff, while Lula leads most first-round scenarios. Confirms competitive dynamics with Bolsonaro political legacy transferring to family members.",
               "actors_involved": [
                 "Lula",
@@ -476,6 +520,22 @@
           "source_name": "valor.globo.com"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (1): Why a T-shirt in a hit movie is trending with Brazilian progressives: \u2018Almost every day they sell out\u2019 | Brazil | The Guardian, theguardian.com\nDomestic headlines: 25 found.\nGovernment sources: - [Presidential Palace] President Lula signed decree D12828 expropriating Fazenda Santa F\u00e9 (404 hectares) in S\u00e3o Paulo municipalities of G\u00e1lia and Ubirajara for land reform settlement. (type: ground_truth, categories: domestic_regime)\n- [Presidential Palace] President Lula signed decree D12832 expropriating Fazenda Santa Cec\u00edlia I and II (2,392 hectares registered area) in Nova Ol\u00edmpia, Mato Grosso for land reform settlement. (type: ground_truth, categories: domestic_regime)\n- [Presidential Palace] President Lula signed decree D12831 expropriating Horto Florestal CESA Vit\u00f3ria das Miss\u00f5es (121 hectares) in Rio Grande do Sul for land reform settlement. (type: ground_truth, categories: domestic_regime)\n- [Presidential Palace] President Lula signed decree D12829 expropriating Fazenda Nova Alegria (1,505 hectares measured area) in Felisburgo, Minas Gerais for land reform settlement. (type: ground_truth, categories: domestic_regime)\n- [Presidential Palace] President Lula signed decree D12827 expropriating Fazenda Tr\u00eas Irm\u00e3os (504 hectares) in Palmeira d'Oeste, S\u00e3o Paulo for land reform settlement. (type: ground_truth, categories: domestic_regime)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [

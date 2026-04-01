@@ -59,10 +59,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Ukraine operates as a wartime state undergoing tactical recalibration of its Western alignment strategy while transitioning to more aggressive military posture and potentially preparing for post-war leadership transitions. The country maintains unprecedented Western integration through EU accession negotiations and bilateral security agreements, but is openly criticizing European strategic paralysis while pursuing transactional commitments with the Trump administration through new trilateral negotiation formats. Military doctrine has shifted toward offensive operations with escalated casualty objectives and AI-integrated drone warfare capabilities. Major domestic leadership changes bring intelligence professionals into civilian roles, potentially signaling succession planning. Despite severe demographic decline and infrastructure destruction, the state demonstrates continued capacity for strategic adaptation while fighting an existential conflict.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -72,7 +72,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -163,9 +163,13 @@
             {
               "headline": "Zelensky delivers scathing critique of Europe at Davos, announces security guarantees with Trump",
               "date": "2026-01-21",
-              "source": "Multiple outlets",
-              "source_tier": 2,
-              "source_url": "https://www.bbc.com/news/live/cjrzjqg8dlwt",
+              "sources": [
+                {
+                  "name": "Multiple outlets",
+                  "url": "https://www.bbc.com/news/live/cjrzjqg8dlwt",
+                  "tier": 2
+                }
+              ],
               "summary": "Zelensky gave an unusually harsh speech at WEF criticizing Europe as 'fragmented' and 'lost,' comparing the situation to 'Groundhog Day.' He stated Europe looks 'lost trying to convince the US president to change' and that Trump 'will not listen to this kind of Europe.' Following his meeting with Trump, Zelensky announced they reached agreement on post-war US security guarantees for Ukraine, though territorial issues remain unresolved.",
               "actors_involved": [
                 "Volodymyr Zelensky",
@@ -176,9 +180,13 @@
             {
               "headline": "Ukraine-Russia-US trilateral peace talks begin in UAE after Davos meetings",
               "date": "2026-01-22",
-              "source": "ABC Australia",
-              "source_tier": 2,
-              "source_url": "https://abc.net.au/news/2026-01-23/zelenskyy-announces-ukraine-talks-with-russia-us/106260134",
+              "sources": [
+                {
+                  "name": "ABC Australia",
+                  "url": "https://abc.net.au/news/2026-01-23/zelenskyy-announces-ukraine-talks-with-russia-us/106260134",
+                  "tier": 2
+                }
+              ],
               "summary": "Following Zelensky's Davos meetings, trilateral negotiations between Ukrainian, Russian, and American delegations began in Abu Dhabi. Ukraine sent high-level delegation including Budanov and Umerov. Trump's envoy Steve Witkoff and son-in-law Jared Kushner held three-hour talks with Putin. Kremlin confirmed the three-way format while stating Russia would continue battlefield operations until diplomatic settlement.",
               "actors_involved": [
                 "Kyrylo Budanov",
@@ -202,9 +210,13 @@
             {
               "headline": "Commander-in-Chief Syrskyi announces Ukraine will shift to offensive operations",
               "date": "2026-01-18",
-              "source": "RBC Ukraine",
-              "source_tier": 2,
-              "source_url": "https://newsukraine.rbc.ua/news/ukraine-to-shift-to-offensive-operations-1768757707.html",
+              "sources": [
+                {
+                  "name": "RBC Ukraine",
+                  "url": "https://newsukraine.rbc.ua/news/ukraine-to-shift-to-offensive-operations-1768757707.html",
+                  "tier": 2
+                }
+              ],
               "summary": "Syrskyi announced Ukraine will conduct offensive operations in 2026, stating 'victory cannot be achieved through defense alone.' He emphasized Ukraine will maintain strategic defense while conducting offensive operations to keep operational initiative. He reported Russian drone production at 404 Shaheds daily with plans to reach 1,000 per day, while Ukrainian forces disrupted Russian formations and liberated 430 sq km near Pokrovsk in recent counteroffensive.",
               "actors_involved": [
                 "Oleksandr Syrskyi"
@@ -214,9 +226,13 @@
             {
               "headline": "New Defense Minister Fedorov sets ambitious goal of 50,000 Russian casualties per month",
               "date": "2026-01-19",
-              "source": "Kyiv Post",
-              "source_tier": 2,
-              "source_url": "https://www.kyivpost.com/post/68426",
+              "sources": [
+                {
+                  "name": "Kyiv Post",
+                  "url": "https://www.kyivpost.com/post/68426",
+                  "tier": 2
+                }
+              ],
               "summary": "Defense Minister Fedorov outlined goal of inflicting 50,000 Russian battlefield deaths monthly, up from current 35,000. He announced plans for drone-assault units with new staffing structures, AI integration of combat data through Mission Control project, and 40,000 interceptor drones expected this month. Stated Ukraine would target Russian drone operators directly and scale up specialized hunter units.",
               "actors_involved": [
                 "Mykhailo Fedorov"
@@ -238,9 +254,13 @@
             {
               "headline": "International partners pledge over 6,000 units of energy equipment as Ukraine faces winter crisis",
               "date": "2026-01-20",
-              "source": "Ukrinform",
-              "source_tier": 2,
-              "source_url": "https://ukrinform.net/rubric-economy/4083643-partners-to-provide-ukraine-with-over-6000-units-of-energy-equipment-svyrydenko.html",
+              "sources": [
+                {
+                  "name": "Ukrinform",
+                  "url": "https://ukrinform.net/rubric-economy/4083643-partners-to-provide-ukraine-with-over-6000-units-of-energy-equipment-svyrydenko.html",
+                  "tier": 2
+                }
+              ],
               "summary": "PM Svyrydenko announced G7+ partners committed over 6,000 units of large energy equipment and hundreds of millions in funding after emergency coordination meetings. EU providing 447 generators, Germany \u20ac60 million plus equipment, UK nearly \u20ac23 million, US $400 million for humanitarian projects. Comes as Russian strikes left millions without heat and power during freezing conditions.",
               "actors_involved": [
                 "Yuliia Svyrydenko"
@@ -265,9 +285,13 @@
             {
               "headline": "Budanov appointed as new head of President's Office amid leadership changes",
               "date": "2026-01-18",
-              "source": "The Week",
-              "source_tier": 2,
-              "source_url": "https://theweek.com/world-news/the-rise-of-the-spymaster-a-tectonic-shift-in-ukraines-politics",
+              "sources": [
+                {
+                  "name": "The Week",
+                  "url": "https://theweek.com/world-news/the-rise-of-the-spymaster-a-tectonic-shift-in-ukraines-politics",
+                  "tier": 2
+                }
+              ],
               "summary": "Former military intelligence chief Kyrylo Budanov was appointed head of the President's Office, replacing Andriy Yermak. Analysis describes this as a 'tectonic shift' in Ukrainian politics. Budanov is highly trusted (some polls show more than Zelensky), known for surviving 10 assassination attempts and directing major operations against Russia. Move seen as potentially launching 'Operation Successor' though Zelensky has cut Budanov off from his intelligence base by choosing a Yermak ally as HUR successor.",
               "actors_involved": [
                 "Kyrylo Budanov",
@@ -278,9 +302,13 @@
             {
               "headline": "Government dismisses five deputy defense ministers including Hanna Gvozdiar",
               "date": "2026-01-21",
-              "source": "Defense Express",
-              "source_tier": 2,
-              "source_url": "https://oboronka.mezha.ua/en/kabmin-zvilniv-p-yatoh-zastupnikiv-ministra-oboroni-307945/",
+              "sources": [
+                {
+                  "name": "Defense Express",
+                  "url": "https://oboronka.mezha.ua/en/kabmin-zvilniv-p-yatoh-zastupnikiv-ministra-oboroni-307945/",
+                  "tier": 2
+                }
+              ],
               "summary": "Cabinet dismissed five deputy defense ministers including Hanna Gvozdiar (focused on defense-industrial complex development), plus Volodymyr Zaverukha, Anatoly Klochko, Oleksandr Kozenko, and Mykola Shevtsov. New Defense Minister Fedorov thanked each for their contribution, stated some will continue as advisors or project heads, and announced new team members arriving in coming weeks.",
               "actors_involved": [
                 "Mykhailo Fedorov",
@@ -390,6 +418,22 @@
           "source_name": "euromaidanpress.com"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (4): Ukraine: Trump says Putin agreed not to hit Kyiv for 1 week, dw.com; Ukraine war briefing: Russia pounds cities across country ahead of fresh round of peace talks | Ukraine | The Guardian, theguardian.com; Ukraine receives bodies of 1,000 soldiers from Russia | Russia-Ukraine war News | Al Jazeera, aljazeera.com; \u2018It\u2019s not just about surviving\u2019: the Ukrainian frontline city where life goes on under cover | Ukraine | The Guardian, theguardian.com\nDomestic headlines: 8 found."
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [

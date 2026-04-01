@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Canada is undergoing its most significant strategic reorientation since the 1940s establishment of the postwar liberal order. The Carney government has explicitly challenged Western institutional effectiveness while maintaining membership, pursuing middle power coalitions and trade diversification through China engagement and international partnerships. Domestically, external US pressure is producing contradictory responses - both unusual bipartisan cooperation on foreign policy and continued Quebec sovereigntist mobilization. The country's institutional density remains high but fragmented along persistent cleavage lines, while democratic stability continues through established constitutional processes despite recurring stress tests along federal-provincial and linguistic divisions.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -159,9 +159,13 @@
             {
               "headline": "Carney declares 'old order is dead' in landmark Davos speech, announces China and Qatar deals",
               "date": "2026-01-20",
-              "source": "The Globe and Mail",
-              "source_tier": 2,
-              "source_url": "https://www.theglobeandmail.com/world/article-eu-trump-greenland-tariff-threat/",
+              "sources": [
+                {
+                  "name": "The Globe and Mail",
+                  "url": "https://www.theglobeandmail.com/world/article-eu-trump-greenland-tariff-threat/",
+                  "tier": 2
+                }
+              ],
               "summary": "PM Carney delivered a widely acclaimed speech at WEF declaring the rules-based international order dead and calling for middle powers to band together. He urged countries to condemn economic coercion even by allies, received standing ovation. Also announced trade agreements with China and investment deals with Qatar during the trip.",
               "actors_involved": [
                 "Mark Carney",
@@ -172,9 +176,13 @@
             {
               "headline": "Trump threatens 100% tariffs over Canada-China trade deal as Carney clarifies no free trade agreement planned",
               "date": "2026-01-24",
-              "source": "CBC News",
-              "source_tier": 2,
-              "source_url": "https://cbc.ca/news/politics/carney-canada-trump-tariff-threat-china-trade-9.7060150",
+              "sources": [
+                {
+                  "name": "CBC News",
+                  "url": "https://cbc.ca/news/politics/carney-canada-trump-tariff-threat-china-trade-9.7060150",
+                  "tier": 2
+                }
+              ],
               "summary": "Trump threatened 100% tariffs on Canadian goods if Canada pursues trade deal with China. Carney clarified that while limited agreements were made on EVs and agriculture, no comprehensive free trade agreement is planned. Includes 49,000 Chinese EV quota at reduced 6.1% tariff rate.",
               "actors_involved": [
                 "Mark Carney"
@@ -184,9 +192,13 @@
             {
               "headline": "Carney plans extensive international travel throughout 2026 to secure trade partnerships",
               "date": "2026-01-25",
-              "source": "CTV News",
-              "source_tier": 2,
-              "source_url": "https://ctvnews.ca/politics/article/carney-set-to-spend-much-of-2026-travelling-the-world-in-search-of-trade",
+              "sources": [
+                {
+                  "name": "CTV News",
+                  "url": "https://ctvnews.ca/politics/article/carney-set-to-spend-much-of-2026-travelling-the-world-in-search-of-trade",
+                  "tier": 2
+                }
+              ],
               "summary": "PM Carney expected to spend much of 2026 traveling internationally to secure new trade links and investment, with goal of doubling non-US exports within decade. Potential destinations include Australia, India, and various multilateral summits.",
               "actors_involved": [
                 "Mark Carney"
@@ -208,9 +220,13 @@
             {
               "headline": "Canadian Armed Forces sees recruitment surge as applications jump 13%",
               "date": "2026-01-23",
-              "source": "CTV News",
-              "source_tier": 2,
-              "source_url": "https://ctvnews.ca/canada/article/canadian-armed-forces-applications-jump-nearly-13",
+              "sources": [
+                {
+                  "name": "CTV News",
+                  "url": "https://ctvnews.ca/canada/article/canadian-armed-forces-applications-jump-nearly-13",
+                  "tier": 2
+                }
+              ],
               "summary": "CAF reports significant increase in applications after years of missed recruitment targets, with officials stating no link to US-Greenland tensions. Military has struggled with staffing shortages and lengthy hiring processes.",
               "actors_involved": [
                 "Canadian Armed Forces"
@@ -228,9 +244,13 @@
             {
               "headline": "Bank of Canada expected to hold interest rates steady amid mixed economic signals",
               "date": "2026-01-19",
-              "source": "BNN Bloomberg",
-              "source_tier": 2,
-              "source_url": "https://bnnbloomberg.ca/business/economics/2026/01/19/inflation-rises-to-24-in-december-in-tax-holiday-rebound-statcan",
+              "sources": [
+                {
+                  "name": "BNN Bloomberg",
+                  "url": "https://bnnbloomberg.ca/business/economics/2026/01/19/inflation-rises-to-24-in-december-in-tax-holiday-rebound-statcan",
+                  "tier": 2
+                }
+              ],
               "summary": "Economists predict BoC will keep overnight rate at 2.25% through 2026 despite December inflation rising to 2.4%. Mixed economic data and trade uncertainties with US cited as reasons for maintaining current pause in rate adjustments.",
               "actors_involved": [
                 "Bank of Canada"
@@ -255,9 +275,13 @@
             {
               "headline": "Carney faces Quebec sovereigntist backlash over Plains of Abraham remarks at cabinet retreat",
               "date": "2026-01-22",
-              "source": "Radio-Canada",
-              "source_tier": 2,
-              "source_url": "https://ici.radio-canada.ca/nouvelle/2222775/quebec-abraham-pspp-discours-roberge",
+              "sources": [
+                {
+                  "name": "Radio-Canada",
+                  "url": "https://ici.radio-canada.ca/nouvelle/2222775/quebec-abraham-pspp-discours-roberge",
+                  "tier": 2
+                }
+              ],
               "summary": "PM Carney sparked controversy by describing Battle of Plains of Abraham as beginning of Canadian 'partnership' rather than conquest. PQ leader Paul St-Pierre Plamondon accused him of 'rewriting history' and demanded apologies. Carney cancelled planned news conference.",
               "actors_involved": [
                 "Mark Carney",
@@ -269,9 +293,13 @@
             {
               "headline": "Poilievre offers cooperation with Liberals as Parliament returns, praises Carney's Davos speech",
               "date": "2026-01-22",
-              "source": "CBC News",
-              "source_tier": 2,
-              "source_url": "https://cbc.ca/news/politics/poilievre-carney-davos-speech-9.7057086",
+              "sources": [
+                {
+                  "name": "CBC News",
+                  "url": "https://cbc.ca/news/politics/poilievre-carney-davos-speech-9.7057086",
+                  "tier": 2
+                }
+              ],
               "summary": "Conservative Leader Poilievre offered to help fast-track Liberal legislation on trade and affordability measures when Parliament resumes. Called Carney's Davos speech 'well-crafted' but criticized lack of action to match rhetoric. Represents unusual bipartisan cooperation offer.",
               "actors_involved": [
                 "Pierre Poilievre",
@@ -284,9 +312,13 @@
             {
               "headline": "Bloc Qu\u00e9b\u00e9cois and PQ unite at sovereigntist convention, demand Carney apology",
               "date": "2026-01-24",
-              "source": "La Presse",
-              "source_tier": 2,
-              "source_url": "https://lapresse.ca/actualites/politique/2026-01-24/congres-d-orientation-du-pq/paul-est-mon-chef-lance-yves-francois-blanchet.php",
+              "sources": [
+                {
+                  "name": "La Presse",
+                  "url": "https://lapresse.ca/actualites/politique/2026-01-24/congres-d-orientation-du-pq/paul-est-mon-chef-lance-yves-francois-blanchet.php",
+                  "tier": 2
+                }
+              ],
               "summary": "Bloc leader Blanchet appeared at PQ convention declaring 'Paul is my chief' and calling for unity between sovereigntist parties. Both leaders demanded PM Carney apologize for Plains of Abraham comments. First time Bloc leader invited to speak at PQ event since 2023.",
               "actors_involved": [
                 "Yves-Fran\u00e7ois Blanchet",
@@ -417,6 +449,22 @@
           "source_name": "ctvnews.ca"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "quiet",
+        "rationale": "No wire coverage this week.\nDomestic headlines: 50 found.\nGovernment sources: - [Prime Minister's Office] First Ministers met in Ottawa, agreed to accelerate Arctic investments for sovereignty protection, launched Team Canada Trade Hub to coordinate trade diversification efforts, and committed to monthly federal-provincial meetings during the CUSMA review process. (type: both, categories: alignment_diplomatic, economic_tech, domestic_regime)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [

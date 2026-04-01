@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Romania occupies a strategically vital but precarious position as NATO's southeastern anchor, hosting critical alliance infrastructure while navigating severe internal pressures. The country demonstrates unwavering Western alignment through continued NATO integration and fierce cross-party rejection of pro-Russian or pro-Trump gestures. Romania continues its $20+ billion military modernization program and maintains monetary-fiscal coordination amid a 9.3% GDP deficit crisis. The far-right AUR party may be consolidating support around 35% according to early 2026 polling, though the pro-European elite consensus remains capable of mobilization when challenged directly.",
     "category_status": {
       "alignment_diplomatic": "quiet",
@@ -67,7 +67,7 @@
       "domestic_regime": "routine"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -149,9 +149,13 @@
             {
               "headline": "AUR leader George Simion faces fierce criticism for cutting Greenland-shaped cake with US flag at Washington event",
               "date": "2026-01-21",
-              "source": "adevarul.ro",
-              "source_tier": 2,
-              "source_url": "https://adevarul.ro/politica/nicu-stefanuta-il-critica-aspru-pe-simion-dupa-2502798.html",
+              "sources": [
+                {
+                  "name": "adevarul.ro",
+                  "url": "https://adevarul.ro/politica/nicu-stefanuta-il-critica-aspru-pe-simion-dupa-2502798.html",
+                  "tier": 2
+                }
+              ],
               "summary": "George Simion received award from Republicans for National Renewal (a fringe conservative group, not official US institution) and was filmed cutting Greenland-shaped cake decorated with US flag. Triggered widespread condemnation across political spectrum, with critics calling it treasonous and comparing it to someone cutting cake of Romanian territory like Dobrogea.",
               "actors_involved": [
                 "George Simion",
@@ -162,9 +166,13 @@
             {
               "headline": "President Dan announces EU-NATO coordination on Arctic defense following Trump Greenland rhetoric",
               "date": "2026-01-23",
-              "source": "digi24.ro",
-              "source_tier": 2,
-              "source_url": "https://digi24.ro/stiri/externe/ue/nicusor-dan-anunta-decizii-strategice-cu-impact-major-dupa-consiliul-european-ue-si-nato-vor-investi-in-zona-arctica-3597919",
+              "sources": [
+                {
+                  "name": "digi24.ro",
+                  "url": "https://digi24.ro/stiri/externe/ue/nicusor-dan-anunta-decizii-strategice-cu-impact-major-dupa-consiliul-european-ue-si-nato-vor-investi-in-zona-arctica-3597919",
+                  "tier": 2
+                }
+              ],
               "summary": "After extraordinary European Council, President Dan announced unanimous EU solidarity with Denmark and Greenland, plus joint EU-NATO investments in Arctic defense. Six-month extension of suspended EU tariffs on US also decided.",
               "actors_involved": [
                 "Klaus Iohannis"
@@ -182,9 +190,13 @@
             {
               "headline": "Romanian Armed Forces inducting Merops anti-drone system proven effective in Ukraine",
               "date": "2026-01-23",
-              "source": "thedefensepost.com",
-              "source_tier": 2,
-              "source_url": "https://thedefensepost.com/2026/01/23/romania-counter-drone-system/",
+              "sources": [
+                {
+                  "name": "thedefensepost.com",
+                  "url": "https://thedefensepost.com/2026/01/23/romania-counter-drone-system/",
+                  "tier": 2
+                }
+              ],
               "summary": "Romania deploying US-made Merops counter-drone system after successful testing in Ukraine with over 1,000 Shahed drone interceptions. System costs $15,000 per interceptor versus $35,000 for Shahed drone. Romania follows Poland as second NATO member to procure the system.",
               "actors_involved": [
                 "Romanian Armed Forces"
@@ -202,9 +214,13 @@
             {
               "headline": "BNR maintains key interest rate at 6.5%, coordinates with PM on budget preparation",
               "date": "2026-01-18",
-              "source": "zf.ro",
-              "source_tier": 2,
-              "source_url": "https://zf.ro/banci-si-asigurari/cum-justifica-boardul-bnr-condus-de-guvernatorul-mugur-isarescu-23020280",
+              "sources": [
+                {
+                  "name": "zf.ro",
+                  "url": "https://zf.ro/banci-si-asigurari/cum-justifica-boardul-bnr-condus-de-guvernatorul-mugur-isarescu-23020280",
+                  "tier": 2
+                }
+              ],
               "summary": "National Bank maintained policy rate at 6.5% citing uncertainties. Governor Mugur Is\u0103rescu met with PM Ilie Bolojan to discuss budget preparations and macroeconomic stability coordination. BNR officials suggested rate cuts possible in second half of 2026 if inflation falls as projected.",
               "actors_involved": [
                 "National Bank of Romania"
@@ -229,9 +245,13 @@
             {
               "headline": "January 2026 poll shows AUR leading with 35% voter support",
               "date": "2026-01-25",
-              "source": "ezs.ro",
-              "source_tier": 3,
-              "source_url": "https://ezs.ro/aur-domina-preferintele-romanilor-in-2026-ce-spun-ultimele-sondaje-despre-viitorul-politic-al-tarii/",
+              "sources": [
+                {
+                  "name": "ezs.ro",
+                  "url": "https://ezs.ro/aur-domina-preferintele-romanilor-in-2026-ce-spun-ultimele-sondaje-despre-viitorul-politic-al-tarii/",
+                  "tier": 3
+                }
+              ],
               "summary": "CURS poll shows AUR with 35% voter support, followed by PSD (23%), PNL (18%), and USR (10%). In political figure trust, C\u0103lin Georgescu leads with 36%. Poll reflects general distrust in political institutions with 76% believing Romania is heading in wrong direction.",
               "actors_involved": [
                 "AUR",
@@ -301,6 +321,22 @@
           "source_name": "ezs.ro"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "quiet",
+        "rationale": "No wire coverage this week.\nDomestic headlines: 1 found.\nGovernment sources: - [National Authority for Research] National Authority for Research approved the competitive calendar for 2026-2027 research programs under the National Research-Development-Innovation Plan (PNCDI IV). Decision signed by ANC president Andrei Alexandru. (type: ground_truth, categories: institutional)\n- [Ministry of Energy] Ministry of Energy announced internal transfer procedure for vacant position in External Relations Directorate, with selection process scheduled through March 2026. (type: ground_truth, categories: institutional)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

@@ -59,10 +59,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Saudi Arabia operates as a hyper-centralized petrostate under Crown Prince Mohammed bin Salman, who has consolidated unprecedented personal authority while attempting ambitious socioeconomic transformation. The kingdom continues multi-vector hedging but demonstrated stronger US alignment this week through Major Non-NATO Ally designation and diplomatic coordination. Realistic adjustment of Vision 2030 ambitions through NEOM scaling reflects fiscal constraints from oil dependency, while technological modernization efforts continue. Critical vulnerabilities include geographic concentration of oil infrastructure, dependence on desalinated water, and social contract renegotiation dependent on continuous job creation for massive youth demographic.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -72,7 +72,7 @@
       "domestic_regime": "quiet"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -160,9 +160,13 @@
             {
               "headline": "US designates Saudi Arabia as Major Non-NATO Ally",
               "date": "2026-01-23",
-              "source": "Federal Register",
-              "source_tier": 2,
-              "source_url": "https://federalregister.gov/documents/2026/01/23/2026-01421/presidential-determination-on-designation-of-the-kingdom-of-saudi-arabia-as-a-major-non-nato-ally",
+              "sources": [
+                {
+                  "name": "Federal Register",
+                  "url": "https://federalregister.gov/documents/2026/01/23/2026-01421/presidential-determination-on-designation-of-the-kingdom-of-saudi-arabia-as-a-major-non-nato-ally",
+                  "tier": 2
+                }
+              ],
               "summary": "President Trump signed presidential determination formally designating Saudi Arabia as Major Non-NATO Ally under Foreign Assistance Act. Only 20 countries globally hold this status.",
               "actors_involved": [
                 "King Salman",
@@ -173,9 +177,13 @@
             {
               "headline": "Prince Faisal signs Trump's Board of Peace charter at Davos",
               "date": "2026-01-25",
-              "source": "US State Department",
-              "source_tier": 2,
-              "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/01/secretary-rubios-call-with-saudi-foreign-minister-prince-faisal-bin-farhan-al-saud-9",
+              "sources": [
+                {
+                  "name": "US State Department",
+                  "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/01/secretary-rubios-call-with-saudi-foreign-minister-prince-faisal-bin-farhan-al-saud-9",
+                  "tier": 2
+                }
+              ],
               "summary": "Foreign Minister held multiple diplomatic meetings at WEF including signing founding charter of Trump's Board of Peace initiative for Gaza, conducted calls with US Secretary Rubio on Iran and regional security",
               "actors_involved": [
                 "Prince Faisal bin Farhan"
@@ -197,9 +205,13 @@
             {
               "headline": "Turkey in advanced talks to join Saudi-Pakistan mutual defense pact",
               "date": "2026-01-18",
-              "source": "Jerusalem Post",
-              "source_tier": 3,
-              "source_url": "https://jpost.com/middle-east/article-883716",
+              "sources": [
+                {
+                  "name": "Jerusalem Post",
+                  "url": "https://jpost.com/middle-east/article-883716",
+                  "tier": 3
+                }
+              ],
               "summary": "Turkey reportedly in advanced discussions to join Strategic Mutual Defence Agreement between Saudi Arabia and Pakistan signed September 2025, potentially creating 'Muslim NATO' framework among three countries",
               "actors_involved": [
                 "Mohammed bin Salman"
@@ -209,9 +221,13 @@
             {
               "headline": "Saudi Arabia reportedly countering UAE influence in Red Sea region",
               "date": "2026-01-20",
-              "source": "Washington Post",
-              "source_tier": 2,
-              "source_url": "https://washingtonpost.com",
+              "sources": [
+                {
+                  "name": "Washington Post",
+                  "url": "https://washingtonpost.com",
+                  "tier": 2
+                }
+              ],
               "summary": "Kingdom working to offset UAE growing influence around Red Sea and Horn of Africa, reportedly in talks with Somalia, Egypt and Turkey about new defense pacts to expand regional influence",
               "actors_involved": [
                 "Mohammed bin Salman"
@@ -233,9 +249,13 @@
             {
               "headline": "Saudi Arabia scales back flagship NEOM megaproject amid delays and cost overruns",
               "date": "2026-01-25",
-              "source": "Financial Times",
-              "source_tier": 2,
-              "source_url": "https://ft.com/content/036b158f-ea34-46d1-ad0a-093eba031501",
+              "sources": [
+                {
+                  "name": "Financial Times",
+                  "url": "https://ft.com/content/036b158f-ea34-46d1-ad0a-093eba031501",
+                  "tier": 2
+                }
+              ],
               "summary": "Kingdom conducting major review of NEOM megaproject with plans to significantly scale back and redesign development. The Line component may be reduced from original 110-mile scope, 2029 Asian Winter Games postponed",
               "actors_involved": [
                 "Mohammed bin Salman",
@@ -246,9 +266,13 @@
             {
               "headline": "Aramco CEO dismisses oil glut predictions, highlights AI gains at Davos",
               "date": "2026-01-23",
-              "source": "Reuters",
-              "source_tier": 2,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
               "summary": "Saudi Aramco CEO Amin Nasser spoke at World Economic Forum dismissing forecasts of oil oversupply as 'seriously exaggerated' and announcing company expects $3-5 billion in AI-driven savings for 2025",
               "actors_involved": [
                 "Saudi Aramco"
@@ -277,9 +301,13 @@
             {
               "headline": "King Salman chairs cabinet meeting after hospital discharge",
               "date": "2026-01-20",
-              "source": "Reuters",
-              "source_tier": 2,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
               "summary": "90-year-old King Salman chaired in-person cabinet meeting days after leaving hospital where he was undergoing medical tests",
               "actors_involved": [
                 "King Salman"
@@ -388,6 +416,22 @@
           "source_name": "washingtonpost.com"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (1): Saudi Arabia's UAE 'mudslinging' threatens new Gulf crisis, france24.com\nDomestic headlines: 5 found.\nGovernment sources: - [Saudi Press Agency] Saudi Arabia is hosting a trade exhibition in Baghdad, Iraq from February 1-7, 2026, positioned as a platform to strengthen bilateral commercial relations and showcase Saudi products. (type: both, categories: alignment_diplomatic, economic_tech)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "India demonstrates continued multi-alignment strategy with assertive diplomatic pushback against partner pressure while actively developing alternative economic architecture. The UAE President's visit with concrete trade targets and India's blunt warnings to Poland about Pakistan engagement show sustained Gulf ties and active resistance to European approaches that undermine Indian security interests. The BRICS CBDC proposal represents significant institutional positioning for reduced dollar dependency, while domestic organizational changes maintain regime continuity through younger leadership appointments and routine political mobilization.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "routine"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -158,9 +158,13 @@
             {
               "headline": "UAE President conducts three-hour Delhi visit with concrete partnership outcomes",
               "date": "2026-01-19",
-              "source": "Prime Minister's Office",
-              "source_tier": 2,
-              "source_url": "https://pmindia.gov.in",
+              "sources": [
+                {
+                  "name": "Prime Minister's Office",
+                  "url": "https://pmindia.gov.in",
+                  "tier": 2
+                }
+              ],
               "summary": "UAE President Sheikh Mohamed bin Zayed Al Nahyan's fifth visit to India in ten years resulted in joint commitment to double bilateral trade to $200 billion by 2032, up from current $100 billion. Leaders issued joint condemnation of cross-border terrorism and reviewed comprehensive strategic partnership.",
               "actors_involved": [
                 "Modi",
@@ -171,9 +175,13 @@
             {
               "headline": "Jaishankar delivers unusually blunt warnings to Poland on Pakistan engagement and US tariffs",
               "date": "2026-01-19",
-              "source": "Indian Express",
-              "source_tier": 2,
-              "source_url": "https://indianexpress.com/article/india/selective-targeting-on-tariffs-says-jaishankar-flags-poland-ministers-outreach-to-pakistan-10483095",
+              "sources": [
+                {
+                  "name": "Indian Express",
+                  "url": "https://indianexpress.com/article/india/selective-targeting-on-tariffs-says-jaishankar-flags-poland-ministers-outreach-to-pakistan-10483095",
+                  "tier": 2
+                }
+              ],
               "summary": "External Affairs Minister criticized selective US tariffs and warned Poland against 'fueling terrorism in our neighbourhood' during Polish Deputy PM's visit. Remarks were described as unusually blunt diplomatic signaling regarding Pakistan engagement.",
               "actors_involved": [
                 "S. Jaishankar"
@@ -195,9 +203,13 @@
             {
               "headline": "Major anti-Naxal operation kills 16 including top Central Committee leader",
               "date": "2026-01-22",
-              "source": "Siasat",
-              "source_tier": 2,
-              "source_url": "https://siasat.com/top-maoist-leader-anal-da-among-16-killed-in-jharkhand-amit-shah-3329975",
+              "sources": [
+                {
+                  "name": "Siasat",
+                  "url": "https://siasat.com/top-maoist-leader-anal-da-among-16-killed-in-jharkhand-amit-shah-3329975",
+                  "tier": 2
+                }
+              ],
               "summary": "Security forces killed 16 Maoists including Central Committee member Patiram Manjhi carrying Rs 1 crore bounty in West Singhbhum. Home Minister Shah praised operation and urged remaining Naxals to join mainstream, part of campaign to eliminate Naxalism by March 2026.",
               "actors_involved": [
                 "Amit Shah",
@@ -208,9 +220,13 @@
             {
               "headline": "Armed Forces showcase new technologies including MAPSS solar UAV for Republic Day",
               "date": "2026-01-25",
-              "source": "Indian Defence Research Wing",
-              "source_tier": 2,
-              "source_url": "https://idrw.org/indian-army-showcases-mapss-solar-uav-at-army-day-parade-confirms-induction-of-nrts-persistent-surveillance-system",
+              "sources": [
+                {
+                  "name": "Indian Defence Research Wing",
+                  "url": "https://idrw.org/indian-army-showcases-mapss-solar-uav-at-army-day-parade-confirms-induction-of-nrts-persistent-surveillance-system",
+                  "tier": 2
+                }
+              ],
               "summary": "Military displayed AI-driven systems, MAPSS solar UAV with confirmed Rs 168 crore iDEX order, and battle formation demonstrations. Represents military modernization showcase following Operation Sindoor.",
               "actors_involved": [
                 "Indian Armed Forces"
@@ -228,9 +244,13 @@
             {
               "headline": "RBI proposes linking BRICS digital currencies for cross-border payments",
               "date": "2026-01-19",
-              "source": "Times of India",
-              "source_tier": 2,
-              "source_url": "https://timesofindia.indiatimes.com/business/india-business/rbi-proposes-linking-brics-digital-currencies-says-report-heres-why-it-would-be-an-important-move/articleshow/126673026.cms",
+              "sources": [
+                {
+                  "name": "Times of India",
+                  "url": "https://timesofindia.indiatimes.com/business/india-business/rbi-proposes-linking-brics-digital-currencies-says-report-heres-why-it-would-be-an-important-move/articleshow/126673026.cms",
+                  "tier": 2
+                }
+              ],
               "summary": "India's central bank recommended including proposal to connect BRICS countries' CBDCs on 2026 summit agenda to facilitate cross-border trade and tourism payments while potentially reducing US dollar reliance. India's e-rupee has 7 million retail users since December 2022 launch.",
               "actors_involved": [
                 "Reserve Bank of India"
@@ -240,9 +260,13 @@
             {
               "headline": "US SEC seeks court permission to serve Adani summons via email as stocks plunge",
               "date": "2026-01-22",
-              "source": "Reuters",
-              "source_tier": 2,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
               "summary": "Securities and Exchange Commission asked federal court for email service permission after failed attempts through Indian government channels. Adani Group stocks fell $12.5 billion in market cap, highlighting ongoing US legal pressure on major Indian conglomerate.",
               "actors_involved": [
                 "Gautam Adani"
@@ -252,9 +276,13 @@
             {
               "headline": "Adani Group completes full IANS takeover while announcing Embraer partnership",
               "date": "2026-01-23",
-              "source": "The Hindu",
-              "source_tier": 2,
-              "source_url": "https://www.thehindu.com/business/markets/adani-group-completes-full-takeover-of-ians-news-agency/article70541841.ece",
+              "sources": [
+                {
+                  "name": "The Hindu",
+                  "url": "https://www.thehindu.com/business/markets/adani-group-completes-full-takeover-of-ians-news-agency/article70541841.ece",
+                  "tier": 2
+                }
+              ],
               "summary": "AMG Media Networks acquired remaining 24% stake in IANS news agency for undisclosed sum, making it wholly-owned subsidiary. Separately announced upcoming partnership with Brazil's Embraer to assemble commercial aircraft in India.",
               "actors_involved": [
                 "Gautam Adani"
@@ -276,9 +304,13 @@
             {
               "headline": "India proposes BRICS digital currency linkage for 2026 summit agenda",
               "date": "2026-01-19",
-              "source": "Reuters",
-              "source_tier": 2,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
               "summary": "RBI recommendation to include CBDC connectivity proposal on 2026 BRICS summit agenda represents institutional engagement with alternative multilateral payment frameworks, though requiring consensus on technology and regulation.",
               "actors_involved": [
                 "Reserve Bank of India"
@@ -296,9 +328,13 @@
             {
               "headline": "Nitin Nabin becomes youngest-ever BJP national president at 45",
               "date": "2026-01-20",
-              "source": "Hindustan Times",
-              "source_tier": 2,
-              "source_url": "https://hindustantimes.com/india-news/bjp-president-election-2026-live-updates-nitin-nabin-bjp-jp-nadda-pm-modi-delhi-latest-news-101768873101292.html",
+              "sources": [
+                {
+                  "name": "Hindustan Times",
+                  "url": "https://hindustantimes.com/india-news/bjp-president-election-2026-live-updates-nitin-nabin-bjp-jp-nadda-pm-modi-delhi-latest-news-101768873101292.html",
+                  "tier": 2
+                }
+              ],
               "summary": "Five-term Bihar MLA appointed unopposed as BJP national president, with Modi calling him 'millennial boss'. Appointment signals party strategy of promoting younger leadership ahead of electoral challenges.",
               "actors_involved": [
                 "BJP",
@@ -310,9 +346,13 @@
             {
               "headline": "Amit Shah conducts extensive multi-state tour covering election preparations",
               "date": "2026-01-21",
-              "source": "New Kerala",
-              "source_tier": 2,
-              "source_url": "https://newkerala.com/news/a/amit-shah-visit-assam-west-bengal-review-election-313.htm",
+              "sources": [
+                {
+                  "name": "New Kerala",
+                  "url": "https://newkerala.com/news/a/amit-shah-visit-assam-west-bengal-review-election-313.htm",
+                  "tier": 2
+                }
+              ],
               "summary": "Home Minister's tour of UP, Uttarakhand, Gujarat included UP Diwas chief guest role and 'One District One Cuisine' scheme launch. Activities focused on election preparation and party organization strengthening.",
               "actors_involved": [
                 "Amit Shah"
@@ -430,6 +470,22 @@
           "source_name": "thehindu.com"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (1): India ser\u00eda cuarta econom\u00eda mundial con crecimiento de 7,4%, dw.com\nDomestic headlines: 13 found.\nGovernment sources: - [Prime Minister's Office] PM Modi welcomed the designation of Patna Bird Sanctuary in Uttar Pradesh and Chhari-Dhand in Gujarat as new Ramsar wetland sites. (type: both, categories: institutional)\n- [Prime Minister's Office] PM Modi characterized the Economic Survey as presenting a comprehensive picture of India's 'Reform Express' showing steady progress despite challenging global environment. (type: intent_signal, categories: economic_tech)\n- [Prime Minister's Office] PM Modi addressed the annual NCC PM Rally in Delhi, announcing the tragic death of Maharashtra Deputy CM Ajit Pawar in a plane crash and highlighting youth opportunities including recent trade agreements. (type: both, categories: domestic_regime, alignment_diplomatic)\n- [Prime Minister's Office] PM Modi delivered opening address at India Energy Week 2026 in Goa via video conference, emphasizing India's role in global energy markets and highlighting the India-EU FTA as the 'mother of all deals'. (type: intent_signal, categories: economic_tech, alignment_diplomatic)\n- [Prime Minister's Office] PM Modi announced conclusion of historic India-EU Free Trade Agreement alongside European Council President Ant\u00f3nio Costa and Commission President Ursula von der Leyen, describing it as India's largest FTA in history. (type: both, categories: alignment_diplomatic, economic_tech)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

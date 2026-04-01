@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Mexico operates as a periphery middle power locked into asymmetric structural integration with the United States through overwhelming economic dependency (83% export concentration) while pursuing calibrated sovereignty boundary-setting. Sheinbaum is actively managing the bilateral relationship through explicit operational red lines (restricting US military aircraft access) while deepening tactical cooperation (record extraditions, FBI director meetings). The Fourth Transformation government maintains genuine popular support (69.5% approval) but faces emerging coalition management challenges as allied parties resist key institutional reforms. The military has consolidated unprecedented commercial and civilian governance roles that transcend electoral cycles.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -158,9 +158,13 @@
             {
               "headline": "Sheinbaum announces restrictions on US military aircraft landing at civilian airports",
               "date": "2026-01-21",
-              "source": "El Financiero",
-              "source_tier": 2,
-              "source_url": "https://elfinanciero.com.mx/nacional/2026/01/21/claudia-sheinbaum-mananera-temas-hoy-21-de-enero-de-2026-en-vivo",
+              "sources": [
+                {
+                  "name": "El Financiero",
+                  "url": "https://elfinanciero.com.mx/nacional/2026/01/21/claudia-sheinbaum-mananera-temas-hoy-21-de-enero-de-2026-en-vivo",
+                  "tier": 2
+                }
+              ],
               "summary": "Following controversy over US Hercules aircraft landing at Toluca airport, Sheinbaum announced that US military aircraft will no longer be permitted to land at civilian airports. She stated Mexican aircraft will travel to pick up officials for training rather than allowing US military aircraft to enter.",
               "actors_involved": [
                 "Sheinbaum"
@@ -170,9 +174,13 @@
             {
               "headline": "Garc\u00eda Harfuch meets with FBI Director Kash Patel to increase cooperation",
               "date": "2026-01-22",
-              "source": "Tiempo.com.mx",
-              "source_tier": 2,
-              "source_url": "https://www.tiempo.com.mx/nacional/reunion-omar-garcia-harfuch-kash-patel-director-fbi/",
+              "sources": [
+                {
+                  "name": "Tiempo.com.mx",
+                  "url": "https://www.tiempo.com.mx/nacional/reunion-omar-garcia-harfuch-kash-patel-director-fbi/",
+                  "tier": 2
+                }
+              ],
               "summary": "Security Secretary Garc\u00eda Harfuch met with new FBI Director Kash Patel to discuss increased operational coordination. Meeting covered joint operations, extraditions, and two high-value targets were transferred to US custody following the meeting.",
               "actors_involved": [
                 "Garc\u00eda Harfuch"
@@ -194,9 +202,13 @@
             {
               "headline": "Garc\u00eda Harfuch delivers 37 criminals to US in third major handover",
               "date": "2026-01-20",
-              "source": "El Financiero",
-              "source_tier": 2,
-              "source_url": "https://elfinanciero.com.mx/nacional/2026/01/20/tercera-entrega-de-narcos-a-eu-harfuch-confirma-traslado-de-37-criminales-no-tendran-pena-de-muerte",
+              "sources": [
+                {
+                  "name": "El Financiero",
+                  "url": "https://elfinanciero.com.mx/nacional/2026/01/20/tercera-entrega-de-narcos-a-eu-harfuch-confirma-traslado-de-37-criminales-no-tendran-pena-de-muerte",
+                  "tier": 2
+                }
+              ],
               "summary": "Third major extradition bringing total transferred to US to 92 criminals. Garc\u00eda Harfuch emphasized none would face death penalty and all represented genuine security threats to Mexico. Included high-value targets like Pedro Inzunza Noriega and Ricardo Gonz\u00e1lez Sauceda.",
               "actors_involved": [
                 "Garc\u00eda Harfuch"
@@ -228,9 +240,13 @@
             {
               "headline": "Electoral reform negotiations stall amid tensions between Morena and allied parties",
               "date": "2026-01-21",
-              "source": "Pol\u00edtica Expansi\u00f3n",
-              "source_tier": 2,
-              "source_url": "https://politica.expansion.mx/presidencia/2026/01/21/sheinbaum-reforma-electoral-se-construye-con-opinion-ciudadana-no-a-partir-del-pt-y-verde",
+              "sources": [
+                {
+                  "name": "Pol\u00edtica Expansi\u00f3n",
+                  "url": "https://politica.expansion.mx/presidencia/2026/01/21/sheinbaum-reforma-electoral-se-construye-con-opinion-ciudadana-no-a-partir-del-pt-y-verde",
+                  "tier": 2
+                }
+              ],
               "summary": "PT and Verde parties express concerns about lack of dialogue on electoral reform. Ricardo Monreal acknowledged Morena lacks sufficient votes for constitutional reform without allied support. Opposition parties demand meaningful negotiations.",
               "actors_involved": [
                 "Morena",
@@ -340,6 +356,22 @@
           "source_name": "politica.expansion.mx"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (2): Gunmen in central Mexico kill 11, wound 12 after soccer match, authorities say | PBS News, pbs.org; Mexico president asks Korean counterpart for more BTS concerts | Reuters, reuters.com\nDomestic headlines: 8 found.\nGovernment sources: - [Supreme Court (SCJN)] Supreme Court ruled that Congress has no constitutional obligation to enact specific legislation phasing out coal in electricity generation, though it must adapt legal framework to incorporate energy efficiency and carbon reduction criteria. Court also ordered resolution of complaint regarding gender identity rights for minors. (type: ground_truth, categories: institutional)\n- [Supreme Court (SCJN)] Supreme Court invalidated Article 293 bis of Sinaloa Penal Code that criminalized obtaining information about security operations using technological means, ruling it violated freedom of expression and right to information by potentially affecting journalists and citizens documenting public security matters. (type: ground_truth, categories: institutional)\n- [Social Security Institute (IMSS)] IMSS announced expansion of Rural Medical Units to Family Medicine Units, introduction of 16-vaccine scheme for 2026, rapid diagnostic tests, and extended newborn metabolic screening from 6 to 47 conditions. Also reported hospital capacity increases and 24-hour medical services expansion. (type: intent_signal, categories: domestic_regime)\n- [Presidency] President Sheinbaum announced Mexico will send humanitarian aid to Cuba this week (partial extraction - full details not available). (type: both, categories: alignment_diplomatic)\n- [Senate - Morena] Senator Ad\u00e1n Augusto L\u00f3pez Hern\u00e1ndez resigned as Morena Senate coordinator to focus on territorial work for 2027 elections. Ignacio Mier Velazco was unanimously chosen as new coordinator and will become president of Political Coordination Board. (type: both, categories: domestic_regime)\n- [Senate - PAN] PAN leadership announced opposition strategy for upcoming electoral reform, proposing second-round voting, primary elections, electronic ballots, and ending over-representation. Party president Jorge Romero challenged Sheinbaum to include nullification of elections with organized crime involvement. (type: intent_signal, categories: domestic_regime)\n- [Senate - PAN] PAN Senator Marko Cort\u00e9s addressed Council of Europe Parliamentary Assembly in Strasbourg calling for observation of democratic regression in Mexico, citing judicial system control, eliminated autonomous bodies, and security crisis with 10 mayors killed in two years. (type: intent_signal, categories: alignment_diplomatic)\n- [Chamber of Deputies] Morena deputies submitted initiative to reform Federal Penal Code Articles 12 and 325 to classify acid attacks as femicide when targeting women, citing that 94% of acid attack victims are women and 87% of perpetrators are men. (type: ground_truth, categories: domestic_regime)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [

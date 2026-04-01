@@ -59,10 +59,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Indonesia under Prabowo is actively implementing multi-alignment foreign policy through intensive presidential diplomacy while deepening state control over the economy through expanded Danantara deployment and potential central bank independence erosion. The \u00a34 billion UK partnership and Davos 'Prabowonomics' promotion demonstrate continued Western engagement alongside existing Chinese dependencies, while the $14 billion sovereign wealth fund expansion and nepotistic BI appointment signal intensifying political control over economic institutions. This week confirms the dossier's assessment of strategic hedging combined with domestic institutional capture, but shows the regime is operating with confidence and international acceptance rather than facing immediate constraints.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -72,7 +72,7 @@
       "domestic_regime": "routine"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -161,9 +161,13 @@
             {
               "headline": "Prabowo secures \u00a34 billion UK investment commitments and strategic partnership",
               "date": "2026-01-22",
-              "source": "Detik.com",
-              "source_tier": 2,
-              "source_url": "https://news.detik.com/berita/d-8318978/prabowo-bawa-pulang-investasi-rp-90-t-proyek-ribuan-kapal-nelayan-dari-inggris",
+              "sources": [
+                {
+                  "name": "Detik.com",
+                  "url": "https://news.detik.com/berita/d-8318978/prabowo-bawa-pulang-investasi-rp-90-t-proyek-ribuan-kapal-nelayan-dari-inggris",
+                  "tier": 2
+                }
+              ],
               "summary": "President Prabowo concluded UK working visit with \u00a34 billion investment commitments covering maritime sector, including 1,582 fishing vessels to be produced in Indonesia employing ~600,000 workers, plus education cooperation establishing 10 new campuses in medicine and STEM fields",
               "actors_involved": [
                 "Prabowo Subianto"
@@ -173,9 +177,13 @@
             {
               "headline": "Prabowo introduces 'Prabowonomics' at Davos World Economic Forum",
               "date": "2026-01-23",
-              "source": "Kompas",
-              "source_tier": 2,
-              "source_url": "https://nasional.kompas.com/read/2026/01/23/12310741/isi-prabowonomics-yang-dibicarakan-prabowo-di-wef-2026-apa-saja?page=all",
+              "sources": [
+                {
+                  "name": "Kompas",
+                  "url": "https://nasional.kompas.com/read/2026/01/23/12310741/isi-prabowonomics-yang-dibicarakan-prabowo-di-wef-2026-apa-saja?page=all",
+                  "tier": 2
+                }
+              ],
               "summary": "President Prabowo addressed WEF 2026 promoting his economic philosophy 'Prabowonomics', emphasizing Indonesia's economic resilience (5%+ growth, 2% inflation), Danantara sovereign wealth fund as enabling equal partnership globally, and plans to rationalize 1,044 SOEs to ~300 while recruiting foreign executives for better management",
               "actors_involved": [
                 "Prabowo Subianto",
@@ -205,9 +213,13 @@
             {
               "headline": "Danantara unveils $14 billion investment deployment plan using BUMN dividends",
               "date": "2026-01-19",
-              "source": "Reuters",
-              "source_tier": 1,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 1
+                }
+              ],
               "summary": "Indonesia's sovereign wealth fund Danantara announced plans to deploy up to $14 billion in 2026 funded by state-owned enterprise dividends, while launching waste-to-energy projects, new Patriot Bond issuances, and making debut at World Economic Forum in Davos",
               "actors_involved": [
                 "Danantara"
@@ -217,9 +229,13 @@
             {
               "headline": "Prabowo nominates nephew Thomas Djiwandono as Bank Indonesia deputy governor",
               "date": "2026-01-19",
-              "source": "Reuters",
-              "source_tier": 1,
-              "source_url": "https://reuters.com",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 1
+                }
+              ],
               "summary": "President Prabowo nominated Thomas Djiwandono (currently deputy finance minister and his nephew) as one of three candidates for BI deputy governor, sparking investor concerns about central bank independence and contributing to rupiah hitting record lows",
               "actors_involved": [
                 "Prabowo Subianto",
@@ -230,9 +246,13 @@
             {
               "headline": "Banking sector experiences significant foreign selling pressure",
               "date": "2026-01-23",
-              "source": "CNBC Indonesia",
-              "source_tier": 2,
-              "source_url": "https://cnbcindonesia.com/market/20260123180238-17-704888/sepekan-bbca-dihajar-asing-saham-turun-526",
+              "sources": [
+                {
+                  "name": "CNBC Indonesia",
+                  "url": "https://cnbcindonesia.com/market/20260123180238-17-704888/sepekan-bbca-dihajar-asing-saham-turun-526",
+                  "tier": 2
+                }
+              ],
               "summary": "Major Indonesian bank stocks including BCA fell over 5% in one week amid foreign selling pressure totaling Rp 3.27 trillion, with BCA alone seeing Rp 3.97 trillion in net foreign sales, reflecting broader market weakness and rupiah concerns",
               "actors_involved": [
                 "Bank Indonesia"
@@ -254,9 +274,13 @@
             {
               "headline": "Indonesia participates in Global Forum for Food and Agriculture",
               "date": "2026-01-20",
-              "source": "Foreign Ministry",
-              "source_tier": 2,
-              "source_url": "Government source findings",
+              "sources": [
+                {
+                  "name": "Foreign Ministry",
+                  "url": "Government source findings",
+                  "tier": 2
+                }
+              ],
               "summary": "Indonesia participated in GFFA to strengthen strategic role in global food diplomacy",
               "actors_involved": [
                 "Foreign Ministry"
@@ -274,9 +298,13 @@
             {
               "headline": "PDI-P rotates 15 DPR members across parliamentary commissions",
               "date": "2026-01-20",
-              "source": "Detik.com",
-              "source_tier": 2,
-              "source_url": "https://news.detik.com/berita/d-8316369/daftar-lengkap-rotasi-anggota-dpr-pdip-ada-rieke-hingga-adian-napitupulu",
+              "sources": [
+                {
+                  "name": "Detik.com",
+                  "url": "https://news.detik.com/berita/d-8316369/daftar-lengkap-rotasi-anggota-dpr-pdip-ada-rieke-hingga-adian-napitupulu",
+                  "tier": 2
+                }
+              ],
               "summary": "PDI-P rotated 15 parliament members including prominent figures like Rieke Diah Pitaloka and Adian Napitupulu across different commissions as performance optimization, with party leadership characterizing as routine personnel management rather than disciplinary action",
               "actors_involved": [
                 "PDI-P"
@@ -286,9 +314,13 @@
             {
               "headline": "President Prabowo revokes permits for 28 companies for forest enforcement",
               "date": "2026-01-18",
-              "source": "Presidential Office",
-              "source_tier": 2,
-              "source_url": "Government source findings",
+              "sources": [
+                {
+                  "name": "Presidential Office",
+                  "url": "Government source findings",
+                  "tier": 2
+                }
+              ],
               "summary": "President Prabowo revoked permits for 28 companies as part of national forest area enforcement measures",
               "actors_involved": [
                 "Prabowo Subianto"
@@ -371,6 +403,22 @@
           "source_name": "bisnisnusa.com"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "low",
+        "rationale": "Wire coverage (5): Indonesian authorities attempt to soothe worries after $80 billion market rout | Reuters, reuters.com; Explainer: What is MSCI and what has it done to Indonesia's stock market? | Reuters, reuters.com; Death toll from Indonesia landslide exceeds 20, dozens remain missing | Climate Crisis News | Al Jazeera, aljazeera.com; More bodies recovered from landslide in Indonesia, with many still missing | PBS News, pbs.org; Indonesia resumes search for about 80 missing after landslide kills 10 | Climate Crisis News | Al Jazeera, aljazeera.com\nDomestic headlines: 5 found."
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

@@ -54,40 +54,39 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
-    "text": "The United Kingdom faces its most serious US alliance crisis since Suez, with open diplomatic confrontation replacing managed accommodation as Trump employs economic coercion and attacks British military service. The bilateral web strategy through European partnerships appears increasingly necessary as constitutional actors including the Crown intervene in unprecedented ways. Domestic political fragmentation accelerates with continued Conservative defections to Reform UK and internal Labour tensions, while defensive economic measures attempt to navigate Trump's tariff regime.",
+    "as_of": "2026-02-01",
+    "text": "The United Kingdom actively implements its bilateral web strategy through the first China leadership visit in 8 years and renewed EU defense engagement, confirming diversification away from US alliance dependence amid continued Trump friction. Domestic regime fragmentation accelerates with high-profile Conservative defections to Reform UK (now 8 MPs), explicit Conservative abandonment of centrism, and escalating Labour factional warfare including blocking potential leadership rivals. King Charles's unprecedented political documentary breaks constitutional neutrality convention, adding monarchical intervention to regime stability pressures.",
     "category_status": {
-      "alignment_diplomatic": "escalating",
+      "alignment_diplomatic": "active",
       "security_defense": "quiet",
       "economic_tech": "routine",
       "institutional": "quiet",
-      "domestic_regime": "active"
+      "domestic_regime": "escalating"
     },
-    "last_deep_dive": "2026-01-25",
+    "last_deep_dive": "2026-02-01",
     "consecutive_maintenance_weeks": 0
   },
   "signal_categories": {
     "alignment_diplomatic": {
-      "current_assessment": "The US-UK relationship has deteriorated into open diplomatic confrontation with economic threats, public rebukes over military service, and constitutional intervention by the Crown. The bilateral web strategy through European partnerships appears increasingly necessary as the transatlantic pillar becomes unreliable under Trump's coercive approach.",
+      "current_assessment": "The bilateral web strategy is being actively implemented through major diplomatic initiatives: the first UK-China leadership visit in 8 years with visa-free travel agreements and renewed EU defense fund participation attempts. Trump's criticism of UK-China business as 'very dangerous' confirms continued US-UK friction, validating the necessity of diversifying partnerships beyond the transatlantic relationship.",
       "confidence": 4,
-      "confidence_rationale": "Multiple tier-2 sources documenting unprecedented public confrontation between UK PM and US President, including tariff threats, military service disputes, and royal intervention",
+      "confidence_rationale": "Multiple independent developments (China visit, EU defense fund renewal) from tier-2 sources confirm the bilateral web approach. Trump's direct criticism provides clear evidence of US-UK friction over third-country relationships.",
       "key_actors": [
         "Keir Starmer",
-        "David Lammy",
-        "King Charles III"
+        "David Lammy"
       ],
       "dossier_sections_referenced": [
         "\u00a714"
       ],
-      "last_updated": "2026-01-25"
+      "last_updated": "2026-02-01"
     },
     "security_defense": {
       "current_assessment": "Major defense spending increases are committed following the 2025 Strategic Defence Review, but armed forces are at smallest size since Napoleonic era. The defense-industrial base demonstrates global competitiveness yet procurement system is acknowledged as 'broken.' China threat management continues through established assessment procedures.",
       "confidence": 3,
-      "confidence_rationale": "Baseline from dossier with minor confirmation through Chinese embassy security assessment",
+      "confidence_rationale": "Minor procurement activity (Palantir contract) maintains baseline assessment. No new evidence affecting strategic posture evaluation.",
       "key_actors": [
         "John Healey",
         "MI6",
@@ -96,12 +95,12 @@
       "dossier_sections_referenced": [
         "\u00a712"
       ],
-      "last_updated": "2026-01-25"
+      "last_updated": "2026-02-01"
     },
     "economic_tech": {
       "current_assessment": "The UK operates a services-dominated, financialised economy with persistent current account deficits. Defensive economic measures show adaptation to Trump trade pressure through investment attraction policies, while central bank credibility faces challenges from forecasting failures during the inflation crisis.",
       "confidence": 3,
-      "confidence_rationale": "Minor developments in defensive economic policy with adequate sourcing",
+      "confidence_rationale": "Bank of England rate hold and Chancellor criticism represent routine policy friction rather than fundamental strategic shifts. Assessment maintained on existing evidence base.",
       "key_actors": [
         "Rachel Reeves",
         "Bank of England"
@@ -109,36 +108,37 @@
       "dossier_sections_referenced": [
         "\u00a76"
       ],
-      "last_updated": "2026-01-25"
+      "last_updated": "2026-02-01"
     },
     "institutional": {
       "current_assessment": "The parliamentary system is under unprecedented strain with governing party holding 63.2% of seats on just 33.7% of popular vote. Constitutional pressures mounting from Scottish independence, Northern Ireland dynamics, asymmetric devolution, and electoral reform pressure.",
       "confidence": 3,
-      "confidence_rationale": "Baseline from dossier, not yet tested by this week's events",
+      "confidence_rationale": "No relevant developments this week affecting institutional engagement posture.",
       "key_actors": [
         "Parliament",
         "Supreme Court",
         "Devolved Governments"
       ],
       "dossier_sections_referenced": [
-        "\u00a70"
+        "\u00a715"
       ],
       "last_updated": "2026-01-25"
     },
     "domestic_regime": {
-      "current_assessment": "Two-party system breakdown accelerating with Conservative defections to Reform UK and internal Labour tensions over leadership. While Badenoch's approval ratings suggest some Conservative stabilization, fundamental electoral dynamics remain unstable with Reform UK gaining institutional presence and continued decline in traditional party support.",
+      "current_assessment": "Two-party system breakdown continues with Braverman's defection bringing Reform UK to 8 MPs while Badenoch explicitly abandons centrist Conservative positioning. Internal Labour factional warfare escalates with Burnham blocking, demonstrating governing party legitimacy problems. King Charles's unprecedented political documentary adds constitutional dimension to regime stability concerns.",
       "confidence": 4,
-      "confidence_rationale": "Multiple documented party crises and defections supported by tier-2 sources with polling confirmation",
+      "confidence_rationale": "Multiple tier-2 sources documenting party system fragmentation (Braverman defection, Badenoch rightward shift, Burnham blocking) and constitutional development (King Charles documentary). Pattern of institutional stress confirmed across multiple actors.",
       "key_actors": [
         "Keir Starmer",
         "Kemi Badenoch",
-        "Nigel Farage"
+        "Nigel Farage",
+        "King Charles III"
       ],
       "dossier_sections_referenced": [
         "\u00a74",
-        "\u00a75"
+        "\u00a715"
       ],
-      "last_updated": "2026-01-25"
+      "last_updated": "2026-02-01"
     }
   },
   "weekly_entries": [
@@ -157,9 +157,13 @@
             {
               "headline": "Trump threatens 10% tariffs on UK over Greenland opposition, Starmer condemns as 'completely wrong'",
               "date": "2026-01-18",
-              "source": "The Guardian",
-              "source_tier": 2,
-              "source_url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+                  "tier": 2
+                }
+              ],
               "summary": "Trump threatened 10% baseline tariffs rising to 25% in June on UK and European allies over opposition to US control of Greenland. Starmer rejected the demands and condemned threats as 'completely wrong.' This represents escalation of Trump's economic coercion strategy targeting allies.",
               "actors_involved": [
                 "Keir Starmer",
@@ -170,9 +174,13 @@
             {
               "headline": "Starmer calls Trump's Afghanistan comments 'insulting and frankly appalling,' demands apology",
               "date": "2026-01-23",
-              "source": "The Guardian",
-              "source_tier": 2,
-              "source_url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+                  "tier": 2
+                }
+              ],
               "summary": "Trump claimed NATO troops 'stayed a little back, a little off the frontlines' in Afghanistan. Starmer responded that the remarks were 'insulting and frankly appalling' and suggested Trump should apologize for comments about 457 fallen British soldiers. This is unusually direct criticism of a US president by a UK PM.",
               "actors_involved": [
                 "Keir Starmer"
@@ -182,9 +190,13 @@
             {
               "headline": "King Charles reportedly intervened with White House over Trump's Afghanistan comments",
               "date": "2026-01-24",
-              "source": "Daily Mail",
-              "source_tier": 2,
-              "source_url": "https://dailymail.co.uk/news/article-15495331/Concerns-raised-King-Charles-prompted-Donald-Trump-Afghanistan.html",
+              "sources": [
+                {
+                  "name": "Daily Mail",
+                  "url": "https://dailymail.co.uk/news/article-15495331/Concerns-raised-King-Charles-prompted-Donald-Trump-Afghanistan.html",
+                  "tier": 2
+                }
+              ],
               "summary": "King Charles allegedly raised concerns through private channels about Trump's claims regarding NATO troops in Afghanistan, reportedly contributing to Trump's subsequent backtrack. The monarch's intervention shows even constitutional actors being drawn into the diplomatic crisis.",
               "actors_involved": [
                 "King Charles III"
@@ -206,9 +218,13 @@
             {
               "headline": "MI5 and GCHQ assess Chinese embassy security risks as manageable with mitigations",
               "date": "2026-01-24",
-              "source": "Express",
-              "source_tier": 2,
-              "source_url": "https://express.co.uk/news/politics/2160188/mi5-gchq-China-embassy-Labour-Starmer",
+              "sources": [
+                {
+                  "name": "Express",
+                  "url": "https://express.co.uk/news/politics/2160188/mi5-gchq-China-embassy-Labour-Starmer",
+                  "tier": 2
+                }
+              ],
               "summary": "MI5 Director General Sir Ken McCallum and GCHQ Director Anne Keast-Butler provided security assessment on approved Chinese 'super-embassy' in London. Security chiefs said risks cannot be eliminated but mitigations are 'professional and proportionate' and consolidating Chinese diplomats has 'clear security advantages.'",
               "actors_involved": [
                 "MI6",
@@ -227,9 +243,13 @@
             {
               "headline": "Rachel Reeves announces visa fee refunds to attract investment amid Trump trade threats",
               "date": "2026-01-20",
-              "source": "The Guardian",
-              "source_tier": 2,
-              "source_url": "https://theguardian.com/politics/2026/jan/20/rachel-reeves-plans-refund-visa-fees-investment-uk-davos",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/20/rachel-reeves-plans-refund-visa-fees-investment-uk-davos",
+                  "tier": 2
+                }
+              ],
               "summary": "Chancellor pledged to refund visa fees for global businesses bringing highly skilled staff to Britain, positioning UK as haven of stability despite Trump's tariff threats. She canceled London Stock Exchange speech to support Starmer over Greenland crisis and announced spending measures including winter energy bill support.",
               "actors_involved": [
                 "Rachel Reeves"
@@ -239,9 +259,13 @@
             {
               "headline": "Bank of England admits years of inflation forecasting failures in first-ever forecast evaluation report",
               "date": "2026-01-24",
-              "source": "Bloomberg",
-              "source_tier": 2,
-              "source_url": "https://bloomberg.com/news/articles/2026-01-23/bank-of-england-admits-it-underestimated-extent-of-inflation-crisis",
+              "sources": [
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com/news/articles/2026-01-23/bank-of-england-admits-it-underestimated-extent-of-inflation-crisis",
+                  "tier": 2
+                }
+              ],
               "summary": "Bank of England published first-ever forecast evaluation report acknowledging systematic failures, admitting inflation predictions were 'repeatedly too low' since 2022. Inflation averaged nearly two percentage points higher than predicted since mid-2021.",
               "actors_involved": [
                 "Bank of England"
@@ -266,9 +290,13 @@
             {
               "headline": "Starmer blocks Andy Burnham from Labour by-election amid leadership speculation",
               "date": "2026-01-25",
-              "source": "The Guardian",
-              "source_tier": 2,
-              "source_url": "https://theguardian.com/politics/2026/jan/25/blocking-andy-burnham-keir-starmer-ruthlessness-weakness-labour",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/25/blocking-andy-burnham-keir-starmer-ruthlessness-weakness-labour",
+                  "tier": 2
+                }
+              ],
               "summary": "Labour's NEC voted 8-1 to block Greater Manchester Mayor Andy Burnham from standing in Gorton and Denton by-election. Decision fuels speculation about Burnham's leadership ambitions and deepens internal Labour tensions, with unions and MPs criticizing move as undemocratic.",
               "actors_involved": [
                 "Keir Starmer"
@@ -278,9 +306,13 @@
             {
               "headline": "Conservative MPs Robert Jenrick and Andrew Rosindell defect to Reform UK as Badenoch faces party crisis",
               "date": "2026-01-25",
-              "source": "The Guardian",
-              "source_tier": 2,
-              "source_url": "https://theguardian.com/politics/2026/jan/19/kemi-badenoch-writes-tory-mps-party-on-right-despite-defections",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/19/kemi-badenoch-writes-tory-mps-party-on-right-despite-defections",
+                  "tier": 2
+                }
+              ],
               "summary": "Shadow Justice Secretary Robert Jenrick and MP Andrew Rosindell defected to Reform UK within days. Badenoch sacked Jenrick before defection and warned against 'psychodrama.' Despite defections, polls show Badenoch's approval rating rising, suggesting some stabilization of Conservative position.",
               "actors_involved": [
                 "Kemi Badenoch",
@@ -291,9 +323,13 @@
             {
               "headline": "Nigel Farage attends Davos and faces financial disclosure breaches ruling",
               "date": "2026-01-25",
-              "source": "The Guardian",
-              "source_tier": 2,
-              "source_url": "https://theguardian.com/politics/2026/jan/21/nigel-farage-apologises-breaches-mp-code-conduct",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/21/nigel-farage-apologises-breaches-mp-code-conduct",
+                  "tier": 2
+                }
+              ],
               "summary": "Reform UK leader attended World Economic Forum despite past criticism, meeting US Treasury Secretary Scott Bessent. Parliamentary standards commissioner found Farage breached MPs' rules 17 times by failing to declare \u00a3384,000 in income on time, though ruled breaches inadvertent.",
               "actors_involved": [
                 "Nigel Farage"
@@ -398,6 +434,374 @@
           "summary": "Bank of England published first-ever forecast evaluation report acknowledging systematic failures in economic forecasting, admitting inflation predictions were 'repeatedly too low' since 2022. Central bank revealed inflation averaged nearly two percentage points higher than predicted since mid-2021, prompting renewed scrutiny of economic modeling amid cost-of-living crisis.",
           "source_url": "https://bloomberg.com/news/articles/2026-01-23/bank-of-england-admits-it-underestimated-extent-of-inflation-crisis",
           "source_name": "bloomberg.com"
+        }
+      ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "Two significant signal category movements across alignment_diplomatic and domestic_regime. Starmer's first UK-China leadership visit in 8 years combined with continued EU defense engagement confirms the bilateral web strategy amid Trump friction. Domestic regime fragmentation accelerates with high-profile Labour factional warfare (Burnham blocking), Conservative defections to Reform (Braverman), and unprecedented royal political positioning (King Charles documentary). The 12-source King Charles story and 19-source Burnham story represent substantial media attention matching analytical significance."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Starmer conducts first UK-China leadership visit in eight years, announces visa-free travel deal amid Trump criticism",
+              "date": "2026-01-30",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Prime Minister Starmer visited China January 27-30, the first UK leader to do so since 2018, announcing visa-free travel agreements and pushing for stronger trade ties. Trump criticized the engagement, calling UK-China business 'very dangerous', demonstrating continued US-UK friction over third-country relationships.",
+              "actors_involved": [
+                "Keir Starmer",
+                "David Lammy"
+              ],
+              "signal_category_relevance": "Confirms the bilateral web strategy - diversifying diplomatic relationships while managing US alliance tensions. The first PM visit to China in 8 years represents a significant diplomatic initiative that extends UK hedging beyond European partnerships to include major power engagement despite US opposition."
+            },
+            {
+              "headline": "Starmer renews UK bid to join EU defense fund after previous rejection",
+              "date": "2026-02-01",
+              "sources": [
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com/news/articles/2026-02-01/starmer-renews-uk-bid-to-join-eu-defense-fund-after-rejection",
+                  "tier": 2
+                },
+                {
+                  "name": "POLITICO",
+                  "url": "https://politico.eu/article/uk-keir-starmer-aims-to-revive-defense-talks-with-eu",
+                  "tier": 2
+                }
+              ],
+              "summary": "Speaking from China, Starmer expressed desire to join the EU's \u20ac150 billion SAFE defense fund after previous negotiations failed, seeking to 'get closer' to the EU on defense, security, energy and trade cooperation.",
+              "actors_involved": [
+                "Keir Starmer"
+              ],
+              "signal_category_relevance": "Demonstrates persistent European engagement despite previous failures, confirming the bilateral web approach includes continued attempts at EU defense integration alongside other partnerships. The timing from China shows simultaneous multi-directional diplomatic outreach."
+            }
+          ],
+          "prior_assessment": "The US-UK relationship has deteriorated into open diplomatic confrontation with economic threats, public rebukes over military service, and constitutional intervention by the Crown. The bilateral web strategy through European partnerships appears increasingly necessary as the transatlantic pillar becomes unreliable under Trump's coercive approach.",
+          "updated_assessment": "The bilateral web strategy is being actively implemented through major diplomatic initiatives: the first UK-China leadership visit in 8 years with visa-free travel agreements and renewed EU defense fund participation attempts. Trump's criticism of UK-China business as 'very dangerous' confirms continued US-UK friction, validating the necessity of diversifying partnerships beyond the transatlantic relationship.",
+          "confidence_change": null
+        },
+        "security_defense": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Britain's Ministry of Defence agrees \u00a3240.6 million deal with Palantir",
+              "date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "The Register",
+                  "url": "https://theregister.com/2026/01/28/mod_palantir_deal",
+                  "tier": 3
+                }
+              ],
+              "summary": "Three-year follow-on enterprise agreement for data analytics capabilities supporting strategic, tactical and operational decision making across defense classifications, with interoperability with NATO and allied nations' Palantir systems.",
+              "actors_involved": [
+                "Ministry of Defence"
+              ],
+              "signal_category_relevance": "Represents routine defense procurement and technology modernization rather than strategic posture shift. The NATO interoperability component aligns with existing alliance commitments."
+            }
+          ],
+          "prior_assessment": "Major defense spending increases are committed following the 2025 Strategic Defence Review, but armed forces are at smallest size since Napoleonic era. The defense-industrial base demonstrates global competitiveness yet procurement system is acknowledged as 'broken.' China threat management continues through established assessment procedures.",
+          "updated_assessment": "No change from prior assessment. The Palantir contract represents routine procurement within existing frameworks rather than strategic reorientation. Defense spending commitments and force structure challenges remain as previously assessed.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Bank of England expected to hold interest rates amid inflation concerns",
+              "date": "2026-02-01",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "City AM",
+                  "url": "https://cityam.com/bank-of-england-set-to-hold-interest-rates/",
+                  "tier": 3
+                }
+              ],
+              "summary": "Bank widely expected to keep rates at 3.75% at February 5 meeting as policymakers face inflation at 3.4% in December while monitoring economic growth. Economists say central bank faces pressure to curb above-target inflation while supporting growth.",
+              "actors_involved": [
+                "Bank of England"
+              ],
+              "signal_category_relevance": "Shows continued monetary policy caution amid persistent inflation pressures. No fundamental strategy shift from established anti-inflation stance."
+            },
+            {
+              "headline": "Rachel Reeves faces criticism over student loan freeze and business rate policies",
+              "date": "2026-01-31",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/news/articles/ce3k4xdqyp1o",
+                  "tier": 2
+                },
+                {
+                  "name": "GB News",
+                  "url": "https://gbnews.com/money/martin-lewis-challenges-reeves-over-student-loans",
+                  "tier": 3
+                }
+              ],
+              "summary": "Chancellor defended student loan repayment threshold freeze as 'fair and reasonable' against criticism from Martin Lewis calling it 'immoral.' Also faced backlash over business rate changes affecting pubs and construction industry tax concerns.",
+              "actors_involved": [
+                "Rachel Reeves"
+              ],
+              "signal_category_relevance": "Reflects political pressure on fiscal policy but represents defense of existing positions rather than strategic economic reorientation. The criticism demonstrates domestic constraints on Chancellor's room for maneuver."
+            }
+          ],
+          "prior_assessment": "The UK operates a services-dominated, financialised economy with persistent current account deficits. Defensive economic measures show adaptation to Trump trade pressure through investment attraction policies, while central bank credibility faces challenges from forecasting failures during the inflation crisis.",
+          "updated_assessment": "No fundamental change from prior assessment. Bank of England maintains anti-inflation stance with rates expected to hold at 3.75%. Chancellor faces political pressure on fiscal policy but defends existing positions rather than initiating strategic shifts. Defensive economic posture continues.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "The parliamentary system is under unprecedented strain with governing party holding 63.2% of seats on just 33.7% of popular vote. Constitutional pressures mounting from Scottish independence, Northern Ireland dynamics, asymmetric devolution, and electoral reform pressure.",
+          "updated_assessment": "No significant developments affecting institutional engagement posture this week.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Labour blocks Andy Burnham from by-election as Starmer accused of preventing potential leadership rival",
+              "date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/25/andy-burnham-blocked-from-byelection-race-by-labour-ruling-committee",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Labour's National Executive Committee voted to block Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election. Critics accused Starmer of preventing a potential leadership challenger, triggering internal party turmoil with union criticism and widespread MP anger.",
+              "actors_involved": [
+                "Keir Starmer"
+              ],
+              "signal_category_relevance": "Demonstrates escalating internal Labour factional warfare as Starmer moves to eliminate potential rivals. The union criticism and MP anger signal deeper governance legitimacy problems within the governing party beyond routine political management."
+            },
+            {
+              "headline": "Suella Braverman defects from Conservatives to Reform UK",
+              "date": "2026-01-26",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/26/bravermans-predictable-defection-is-farages-biggest-political-gamble-yet",
+                  "tier": 2
+                },
+                {
+                  "name": "Sky News",
+                  "url": "https://news.sky.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Former Home Secretary Suella Braverman joined Reform UK, becoming the latest Conservative MP to defect. Braverman accused her former party of lying to voters over immigration and delivered scathing critique at Reform rally, bringing Reform to 8 MPs.",
+              "actors_involved": [
+                "Nigel Farage",
+                "Kemi Badenoch"
+              ],
+              "signal_category_relevance": "Continues Conservative institutional collapse with high-profile cabinet-level defection to Reform UK. Represents third Conservative MP defection in two weeks, accelerating two-party system breakdown and Reform's parliamentary legitimacy."
+            },
+            {
+              "headline": "Kemi Badenoch tells Conservative centrists to 'get out of the way' as party moves right",
+              "date": "2026-01-29",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://www.theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/c62vrjyzyxlo",
+                  "tier": 2
+                }
+              ],
+              "summary": "Conservative leader declared centrist ideas are 'no longer wanted' in the party and told one-nation Tories who disagree with her rightward direction to 'get out of the way.' Explicitly rejected approach of Andy Street and Ruth Davidson's new centrist Conservative movement.",
+              "actors_involved": [
+                "Kemi Badenoch"
+              ],
+              "signal_category_relevance": "Represents explicit strategic abandonment of centrist Conservative positioning in favor of Reform-adjacent policies. The explicit rejection of one-nation conservatism signals fundamental ideological realignment of the Conservative Party as an institution."
+            },
+            {
+              "headline": "King Charles releases environmental documentary breaking royal tradition",
+              "date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/uk-news/2026/jan/28/i-wasnt-going-to-be-diverted-says-king-charles-about-campaign-on-the-environment",
+                  "tier": 2
+                },
+                {
+                  "name": "AP News",
+                  "url": "https://apnews.com/article/britain-king-charles-documentary-38cc5fef32a704175c76e862698e4515",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "King Charles's documentary 'Finding Harmony: A King's Vision' breaks royal tradition by taking explicit political stance on climate change, saying he 'wasn't going to be diverted' despite past criticism. Represents unprecedented project for a British sovereign.",
+              "actors_involved": [
+                "King Charles III"
+              ],
+              "signal_category_relevance": "Represents unprecedented royal political positioning that breaks constitutional neutrality convention. While not capital-P political, this explicit stance on a contested policy issue challenges the monarchy's institutional role and could establish precedent for future royal political intervention."
+            }
+          ],
+          "prior_assessment": "Two-party system breakdown accelerating with Conservative defections to Reform UK and internal Labour tensions over leadership. While Badenoch's approval ratings suggest some Conservative stabilization, fundamental electoral dynamics remain unstable with Reform UK gaining institutional presence and continued decline in traditional party support.",
+          "updated_assessment": "Two-party system breakdown continues with Braverman's defection bringing Reform UK to 8 MPs while Badenoch explicitly abandons centrist Conservative positioning. Internal Labour factional warfare escalates with Burnham blocking, demonstrating governing party legitimacy problems. King Charles's unprecedented political documentary adds constitutional dimension to regime stability concerns.",
+          "confidence_change": null
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "Unknown",
+          "date": "2026-02-01",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [
+        {
+          "expected": "",
+          "signal_category": "alignment_diplomatic",
+          "occurred": false,
+          "significance": "",
+          "confidence": 2
+        }
+      ],
+      "devils_advocate": {
+        "challenges": [
+          "The 'bilateral web strategy being actively implemented' language treats an analytical interpretation as established policy when the evidence only shows discrete diplomatic engagements. Starmer's China visit and EU defense fund renewal could equally represent opportunistic diplomacy or domestic legitimacy-seeking rather than strategic implementation of a coherent alternative to US reliance.",
+          "The institutional category receives 'movement=none' assessment while King Charles's unprecedented political documentary is relegated to domestic_regime, despite constitutional implications. A British sovereign taking explicit political stances represents institutional boundary-crossing that affects the constitutional order, not just domestic political dynamics.",
+          "The security_defense assessment dismisses the \u00a3240.6 million Palantir contract as 'routine procurement' based on a single tier 3 source (The Register), when a quarter-billion pound deal with a controversial US data analytics company warrants deeper scrutiny for strategic dependencies and alliance implications.",
+          "Multiple confidence scores are missing from category movements (security_defense, economic_tech), preventing evaluation of analytical certainty against evidence quality. This is particularly problematic when the analyst claims 'no fundamental change' in economic_tech based on thin evidence."
+        ],
+        "recommended_adjustments": [
+          "Reframe alignment_diplomatic language to reflect evidence: 'UK pursues multiple diplomatic engagements with China and EU' rather than assuming these constitute implementation of a strategic framework. Require evidence of coordinated strategy rather than interpreting separate initiatives as strategic coherence.",
+          "Reassess whether King Charles's political documentary belongs in institutional category given constitutional implications of sovereign political positioning, or explicitly address why constitutional boundary-crossing doesn't affect institutional engagement posture.",
+          "Either strengthen sourcing on Palantir contract with tier 1/2 sources or acknowledge collection limitation. If the \u00a3240.6 million figure and strategic implications can't be independently verified, downgrade assessment confidence accordingly.",
+          "Provide confidence scores for all category movements and ensure economic_tech confidence reflects the thin evidence base supporting 'no fundamental change' assessment - routine monetary policy stance and political criticism don't strongly support strategic continuity claims."
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [
+        {
+          "claim_ref": "unknown",
+          "claim_text": "The UK's commitment to 5% of GDP on national security by 2035 is fiscally incompatible with maintaining current levels of social spending without either significant tax rises or cuts to unprotected departments",
+          "status": "confirmed",
+          "evidence": "Reeves faces criticism over student loan freezes and business rates while defending fiscal orthodoxy, demonstrating the political constraints on tax/spend trade-offs that the 5% commitment will require",
+          "confidence_in_claim": 3
+        }
+      ],
+      "story_clusters": [
+        {
+          "headline": "Starmer makes first UK-China leadership visit in eight years, announces visa-free travel deal",
+          "summary": "Prime Minister Keir Starmer visited China January 27-30, the first UK leader to do so since 2018, announcing visa-free travel agreements and pushing for stronger trade ties. The visit drew criticism from Trump, who called UK-China business 'very dangerous', and from domestic opponents who accused Starmer of prioritizing economics over security.",
+          "source_url": "https://abcnews.go.com/International/wireStory/uks-starmer-heads-china-seeking-thaw-relations-risking-129587744",
+          "source_name": "abcnews.go.com"
+        },
+        {
+          "headline": "Labour blocks Andy Burnham from by-election as Starmer accused of blocking potential rival",
+          "summary": "Labour's National Executive Committee voted to block Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election on February 26. Critics accused Prime Minister Starmer of preventing a potential leadership challenger from returning to Westminster, triggering internal party turmoil.",
+          "source_url": "https://theguardian.com/politics/2026/jan/25/andy-burnham-blocked-from-byelection-race-by-labour-ruling-committee",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "King Charles releases environmental documentary breaking royal tradition",
+          "summary": "King Charles III's documentary 'Finding Harmony: A King's Vision' premiered at Windsor Castle and releases on Amazon Prime February 6. The film charts five decades of his environmental activism and breaks royal tradition by taking a political stance on climate change, with Charles saying he 'wasn't going to be diverted' despite past criticism.",
+          "source_url": "https://theguardian.com/uk-news/2026/jan/28/i-wasnt-going-to-be-diverted-says-king-charles-about-campaign-on-the-environment",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "Kemi Badenoch tells Conservative centrists to 'get out of the way' as party moves right",
+          "summary": "Conservative Party leader Kemi Badenoch declared centrist ideas are 'no longer wanted' in the party and told one-nation Tories who disagree with her rightward direction to 'get out of the way.' The comments came amid ongoing defections to Reform UK and calls for a new centrist Conservative movement.",
+          "source_url": "https://www.theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Suella Braverman defects from Conservatives to Reform UK",
+          "summary": "Former Home Secretary Suella Braverman joined Nigel Farage's Reform UK party, becoming the latest Conservative MP to defect. Braverman accused her former party of lying to voters over immigration and delivered a scathing critique of Conservative leadership at a Reform rally.",
+          "source_url": "https://www.reuters.com/world/uk/british-lawmaker-braverman-defects-farages-reform-uk-2026-01-26/",
+          "source_name": "reuters.com"
+        },
+        {
+          "headline": "Bank of England expected to hold interest rates amid inflation concerns",
+          "summary": "The Bank of England is widely expected to keep interest rates at 3.75% at its February 5 meeting as policymakers grapple with inflation that rose to 3.4% in December. Economists say the central bank faces pressure to curb above-target inflation while monitoring economic growth.",
+          "source_url": "https://reuters.com/world/uk/bank-england-hold-rates-feb-5-slim-majority-expect-march-cut-2026-01-26",
+          "source_name": "reuters.com"
+        },
+        {
+          "headline": "Rachel Reeves faces criticism over student loan freeze and business rate policies",
+          "summary": "Chancellor Rachel Reeves defended her decision to freeze student loan repayment thresholds amid criticism from Martin Lewis who called it 'immoral.' She also faced backlash over business rate changes affecting pubs and construction industry concerns about tax hikes.",
+          "source_url": "https://bbc.com/news/articles/ce3k4xdqyp1o",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "David Lammy stands in for Starmer at PMQs while PM visits China",
+          "summary": "Foreign Secretary David Lammy deputized for Prime Minister Starmer at Prime Minister's Questions while Starmer was on his China visit. Lammy faced criticism from Conservative MPs over Labour's economic record and pub business rates, with opponents dubbing him 'Left-behind Lammy.'",
+          "source_url": "https://www.bbc.co.uk/news/live/c4gw427eenpt",
+          "source_name": "bbc.co.uk"
+        },
+        {
+          "headline": "Nigel Farage faces Reform UK candidate vetting issues and Turkish barber controversy",
+          "summary": "Reform UK leader Nigel Farage opened investigation into party candidate over 'racist' social media posts, acknowledging party vetting had been 'piss poor.' He also faced criticism from government minister who called his comments about Turkish barber shops 'dog-whistle racism.'",
+          "source_url": "https://lbc.co.uk/article/nigel-farage-urged-suspend-reform-mike-manning-5HjdRYx_2",
+          "source_name": "lbc.co.uk"
+        },
+        {
+          "headline": "Starmer renews UK bid to join EU defense fund after previous rejection",
+          "summary": "Prime Minister Starmer said he still wants the UK to join the EU's \u20ac150 billion defense fund after last year's negotiations ended in failure. Speaking from China, he expressed desire to 'get closer' to the EU on defense, security, energy and trade cooperation.",
+          "source_url": "https://bloomberg.com/news/articles/2026-02-01/starmer-renews-uk-bid-to-join-eu-defense-fund-after-rejection",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "Protesters in Crowborough chant 'Keir Starmer's a traitor' over migrant housing at army camp",
+          "summary": "Hundreds of demonstrators gathered in Crowborough, East Sussex, to protest against 27 asylum seekers being housed at a former army barracks. Protesters chanted 'Keir Starmer's a traitor' and marched through the town in the largest demonstration since migrants were moved to the facility.",
+          "source_url": "https://dailymail.co.uk/news/article-15496219/Thousands-chant-Starmers-traitor-march-Crowborough-protesting-migrants.html",
+          "source_name": "dailymail.co.uk"
         }
       ]
     }

@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Chile enters the final weeks of transition under an institutional framework that continues to constrain executive power despite Kast's strong electoral mandate. The incoming administration's technocratic cabinet structure (67% independents) represents adaptation to congressional weakness rather than choice, while early foreign policy signaling suggests alignment-building with restrictive immigration models. State capacity remains functional as demonstrated by forest fire emergency response, but judicial proceedings against the outgoing president and ongoing estallido accountability issues highlight persistent institutional tensions. The multi-vector trade architecture remains unchanged, preserving Chile's structural economic dependencies while new diplomatic alignment patterns emerge around security and migration issues.",
     "category_status": {
       "alignment_diplomatic": "routine",
@@ -67,7 +67,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -155,9 +155,13 @@
             {
               "headline": "Kast visits Dominican Republic to study border security and migration control models",
               "date": "2026-01-25",
-              "source": "La Tercera",
-              "source_tier": 2,
-              "source_url": "https://latercera.com/politica/noticia/kast-profundiza-agenda-de-seguridad-y-control-migratorio-en-republica-dominicana-tras-reunion-con-abinader",
+              "sources": [
+                {
+                  "name": "La Tercera",
+                  "url": "https://latercera.com/politica/noticia/kast-profundiza-agenda-de-seguridad-y-control-migratorio-en-republica-dominicana-tras-reunion-con-abinader",
+                  "tier": 2
+                }
+              ],
               "summary": "President-elect Kast met with Dominican President Abinader to study migration control policies and border security measures, specifically the border fence model. Kast indicated the Dominican experience would inform Chile's 'Plan Escudo Fronterizo' starting in March, emphasizing biometric controls and systematic identification of border crossers.",
               "actors_involved": [
                 "Jos\u00e9 Antonio Kast",
@@ -176,9 +180,13 @@
             {
               "headline": "Chilean military conducts Antarctic Operation Sovereignty and various training exercises",
               "date": "2026-01-18",
-              "source": "Zona Militar",
-              "source_tier": 2,
-              "source_url": "https://zona-militar.com/2026/01/18/operacion-soberania-chile-refuerza-su-proyeccion-estrategica-en-la-antartica-con-el-despliegue-del-buque-multiproposito-sargento-aldea",
+              "sources": [
+                {
+                  "name": "Zona Militar",
+                  "url": "https://zona-militar.com/2026/01/18/operacion-soberania-chile-refuerza-su-proyeccion-estrategica-en-la-antartica-con-el-despliegue-del-buque-multiproposito-sargento-aldea",
+                  "tier": 2
+                }
+              ],
               "summary": "Chilean Armed Forces conducted Operation Sovereignty with deployment of multipurpose vessel Sargento Aldea to Antarctica, alongside completion of paratrooper training and various international military exchanges. The Antarctic operation reinforces Chile's territorial claims and logistical presence in the region.",
               "actors_involved": [
                 "Chilean Armed Forces"
@@ -210,9 +218,13 @@
             {
               "headline": "Kast announces cabinet with 16 independents and only 8 party members, drawing criticism over limited coalition representation",
               "date": "2026-01-20",
-              "source": "La Tercera",
-              "source_tier": 2,
-              "source_url": "https://latercera.com/politica/noticia/kast-anuncia-su-gabinete-con-mas-de-la-mitad-de-independientes-y-en-medio-de-incomodidad-de-partidos",
+              "sources": [
+                {
+                  "name": "La Tercera",
+                  "url": "https://latercera.com/politica/noticia/kast-anuncia-su-gabinete-con-mas-de-la-mitad-de-independientes-y-en-medio-de-incomodidad-de-partidos",
+                  "tier": 2
+                }
+              ],
               "summary": "President-elect Kast presented his 24-minister cabinet featuring 16 independents and only 8 party militants, described as a 'government of emergency.' The technocratic composition drew criticism from coalition parties over minimal representation, with Kast stating the cabinet 'does not arise from quotas or calculations.' The appointment process was notably closed, with parties having little input on final selections.",
               "actors_involved": [
                 "Jos\u00e9 Antonio Kast",
@@ -224,9 +236,13 @@
             {
               "headline": "Devastating forest fires kill 20+ people, prompting state of catastrophe and massive emergency response",
               "date": "2026-01-18",
-              "source": "BBC",
-              "source_tier": 1,
-              "source_url": "https://bbc.com/mundo/articles/ceqz0dj829vo",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/mundo/articles/ceqz0dj829vo",
+                  "tier": 1
+                }
+              ],
               "summary": "Major forest fires in \u00d1uble and Biob\u00edo regions caused over 20 deaths and destroyed hundreds of homes, prompting President Boric to declare a state of catastrophe. The emergency triggered massive response including military deployment and international firefighting assistance, testing state capacity and civil-military coordination during the transition period.",
               "actors_involved": [
                 "Gabriel Boric",
@@ -238,9 +254,13 @@
             {
               "headline": "Court revokes President Boric's dismissal in public funds misappropriation case",
               "date": "2026-01-23",
-              "source": "Nuevo Poder",
-              "source_tier": 2,
-              "source_url": "https://nuevopoder.cl/corte-revoca-sobreseimiento-de-boric-en-causa-por-malversacion-de-caudales-publicos",
+              "sources": [
+                {
+                  "name": "Nuevo Poder",
+                  "url": "https://nuevopoder.cl/corte-revoca-sobreseimiento-de-boric-en-causa-por-malversacion-de-caudales-publicos",
+                  "tier": 2
+                }
+              ],
               "summary": "Santiago Court of Appeals revoked the definitive dismissal of President Gabriel Boric in a case investigating alleged misappropriation of public funds for hiring a private lawyer. The court questioned the 'public necessity' of the contract and ordered the case reopened, maintaining Boric as an accused party during his final weeks in office.",
               "actors_involved": [
                 "Gabriel Boric"
@@ -375,6 +395,22 @@
           "source_name": "lahora.cl"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "quiet",
+        "rationale": "No wire coverage this week.\nDomestic headlines: 7 found.\nGovernment sources: - [Ministry of Culture, Arts and Heritage] Government announced the first-ever 'Heritage Day in Summer' on January 31, 2026, expanding heritage activities to summer season nationwide. Organizations can register activities until January 28. (type: both, categories: institutional)\n- [Ministry of Culture, Arts and Heritage] Government closed funding call for Municipal Theaters 2026 with total budget of 1.4 billion pesos, maximum 70 million pesos per theater for programming from May-December 2026. (type: ground_truth, categories: institutional)\n- [Council for Transparency] New transparency requirements for state enterprises approved, updating reporting obligations for public companies and state societies, effective July 1, 2026. (type: ground_truth, categories: institutional)\n- [Ministry of Labor and Social Security] Advisory Council for Individual Capitalization Account Bidding established, implementing regulations for pension system oversight body created under Law 21.735 pension reform. (type: ground_truth, categories: institutional)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],

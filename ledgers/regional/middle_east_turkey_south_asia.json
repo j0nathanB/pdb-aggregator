@@ -1,86 +1,37 @@
 {
   "region": "middle_east_turkey_south_asia",
-  "week": "2026-01-25",
-  "regional_overview": "The region shows coordinated alignment with the Trump administration's Middle East peace initiatives, with Turkey joining the Gaza Peace Council, Saudi Arabia receiving Major Non-NATO Ally status, and the UAE accepting Board of Peace membership. Simultaneously, India and the UAE are deepening their bilateral partnership through concrete defense cooperation and major energy deals, reflecting the region's continued multi-alignment strategies while selectively strengthening key relationships.",
-  "cross_cutting_dynamics": [
-    {
-      "title": "Coordinated US Alignment on Middle East Peace Initiatives",
-      "countries_involved": [
-        "tr",
-        "sa",
-        "ae"
-      ],
-      "signal_categories": [
-        "alignment_diplomatic"
-      ],
-      "pattern_type": "parallel",
-      "assessment": "Three major regional powers are simultaneously deepening ties with the United States through Trump administration Middle East peace mechanisms. Turkey gained Gaza Peace Council founding membership, Saudi Arabia received Major Non-NATO Ally designation and signed the Board of Peace charter, while the UAE accepted Board of Peace invitation. The shared institutional framework and synchronized timing suggest coordinated diplomatic engagement rather than independent alignment decisions.",
-      "significance": "This represents the Trump administration successfully drawing key Middle Eastern powers into a coordinated diplomatic framework, potentially reshaping regional alliance structures and creating shared institutional commitments that could persist beyond current leadership.",
-      "trend": "emerging",
-      "confidence": 4,
-      "confidence_inherited_from": {
-        "tr_alignment_diplomatic": 4,
-        "sa_alignment_diplomatic": 4,
-        "ae_alignment_diplomatic": 4
-      },
-      "weakest_link": "All supporting assessments maintain confidence 4, but Saudi Arabia's assessment relies heavily on US government sources for the MNNA designation",
-      "evidence_against_linkage": "Each country has independent strategic motivations for US engagement - Turkey needs support for Syria policy, Saudi Arabia seeks security guarantees, UAE maintains Abraham Accords commitments. The timing could reflect opportunistic responses to new administration rather than coordination.",
-      "linkage_strength": "strong",
-      "linkage_justification": "Shared institutional mechanism (Gaza Peace Council/Board of Peace framework) with synchronized announcement timing and similar diplomatic messaging across countries indicates deliberate coordination rather than coincidental alignment.",
-      "competing_interpretation": "Countries may be independently hedging toward the new Trump administration based on anticipated policy directions rather than coordinating their approaches."
-    },
-    {
-      "title": "India-UAE Strategic Partnership Deepening",
-      "countries_involved": [
-        "in",
-        "ae"
-      ],
-      "signal_categories": [
-        "alignment_diplomatic",
-        "economic_tech"
-      ],
-      "pattern_type": "interaction",
-      "assessment": "The UAE President's strategic visit to India produced concrete outcomes including defense partnership frameworks, $200B trade targets, and a $3B ADNOC-India LNG deal that establishes India as the UAE's largest LNG customer. This represents accelerated bilateral engagement with both countries upgrading their assessments to reflect the partnership's strategic depth.",
-      "significance": "This bilateral deepening demonstrates how middle powers are building alternative partnership networks outside traditional alliance structures, with the UAE diversifying beyond its US relationship while India advances its multi-alignment strategy through concrete energy and defense cooperation.",
-      "trend": "developing",
-      "confidence": 4,
-      "confidence_inherited_from": {
-        "in_alignment_diplomatic": 4,
-        "ae_alignment_diplomatic": 4,
-        "ae_economic_tech": 4
-      },
-      "weakest_link": "Both countries' assessments rely partially on government sources reporting their own diplomatic activities",
-      "evidence_against_linkage": "The visit could represent routine diplomatic engagement rather than strategic upgrading, with trade targets and energy deals following commercial rather than geopolitical logic.",
-      "linkage_strength": "strong",
-      "linkage_justification": "Concrete institutional outcomes (defense partnership, specific trade targets, major energy contract) with both countries independently reporting strategic significance indicates genuine bilateral deepening rather than ceremonial engagement.",
-      "competing_interpretation": "The partnership may reflect UAE energy export needs and Indian import requirements rather than strategic realignment, with defense cooperation remaining at framework level without operational significance."
-    }
-  ],
+  "week": "2026-02-01",
+  "regional_overview": "This week shows Near East and South Asian powers pursuing parallel economic diversification and diplomatic positioning without significant coordination. India's historic EU FTA conclusion represents the week's most substantial development, while the UAE deepens energy partnerships with Cyprus and Saudi Arabia expands regional trade outreach to Iraq. Turkey maintains its defensive diplomatic stance with Gaza condemnations and European security warnings. Notable undercurrent: wire reporting suggests emerging Saudi-UAE tensions that could destabilize Gulf cooperation, though only partial visibility exists into this dynamic.",
+  "cross_cutting_dynamics": [],
   "dynamics_considered_and_rejected": [
     {
-      "candidate_dynamic": "Regional Power Competition",
+      "candidate_dynamic": "Regional economic diversification pattern linking India's EU FTA, UAE's Cyprus energy partnership, and Saudi Arabia's Iraq trade exhibition",
       "countries": [
-        "tr",
+        "in",
+        "ae",
+        "sa"
+      ],
+      "reason_rejected": "While all three countries engaged in economic outreach this week, the targets (EU, Cyprus, Iraq) and mechanisms (FTA, energy partnership, trade exhibition) reflect independent strategic priorities rather than coordinated diversification. No evidence of shared framework, temporal coordination, or institutional linkage. India's EU FTA represents culmination of long-term negotiations, not reactive positioning."
+    },
+    {
+      "candidate_dynamic": "Gulf tensions affecting regional alignment based on Saudi-UAE 'mudslinging' wire report",
+      "countries": [
         "sa",
         "ae"
       ],
-      "reason_rejected": "While Turkey claims regional dominance post-Syria, Saudi Arabia counters UAE Red Sea influence, and UAE positions as mediator, these represent separate competitive dynamics rather than a coordinated regional power struggle. The Saudi-UAE rivalry stems from December 2025 developments already documented, while Turkey's regional assertions focus on Syria-specific gains rather than broader competition with Gulf states."
-    },
-    {
-      "candidate_dynamic": "Economic Diversification Coordination",
-      "countries": [
-        "sa",
-        "ae",
-        "in"
-      ],
-      "reason_rejected": "Saudi Arabia's NEOM scaling, UAE's AI investments, and India's BRICS CBDC proposal represent independent domestic economic adjustments to different structural pressures rather than coordinated diversification strategy. No shared institutional mechanism or synchronized timing suggests these are separate responses to distinct economic challenges."
+      "reason_rejected": "Only one-sided coverage from Saudi perspective with no UAE response or acknowledgment. UAE's focus on Cyprus and Italy partnerships this week could indicate strategic distancing, but insufficient evidence to establish interaction effect or assess UAE's position on reported tensions."
     }
   ],
   "gaps": [
     {
-      "expected_dynamic": "Turkey-Saudi-UAE coordination on Syria policy given all three countries' significant interests in post-Assad arrangements",
-      "observed": "Turkey reports intensive Syria coordination but only with the US, while Gulf states show no evidence of trilateral coordination on Syria policy",
-      "assessment": "The absence of regional coordination on Syria suggests these countries are pursuing bilateral rather than multilateral approaches to post-Assad opportunities, potentially creating competitive rather than cooperative dynamics."
+      "expected_dynamic": "Security coordination among regional powers facing shared Iranian and proxy threats",
+      "observed": "No security/defense cooperation or coordination visible despite all countries maintaining security concerns in their postures",
+      "assessment": "Absence suggests either collection gap in security channels or continued preference for bilateral over multilateral security arrangements in this region"
+    },
+    {
+      "expected_dynamic": "US alliance coordination between Turkey and Saudi Arabia given both countries' mentioned US partnerships",
+      "observed": "No evidence of coordination through US institutional mechanisms despite both countries having recent US alignment developments",
+      "assessment": "May indicate compartmentalized US relationships or timing mismatch in coordination cycles"
     }
   ],
   "low_confidence_items": []

@@ -54,10 +54,10 @@
       "primary": false
     }
   ],
-  "last_updated": "2026-01-25",
+  "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-01-25",
+    "as_of": "2026-02-01",
     "text": "Poland maintains its alliance maximization strategy within the Western bloc but faces increasing management complexity under cohabitation. Trump's Peace Council invitation demonstrates continued high-level US coordination, though diplomatic friction over Afghanistan comments exposed coordination challenges between President Nawrocki and PM Tusk. The NBP's expansion of gold reserves to 700 tons signals major financial hedging, while NATO's automated eastern defense systems continue forward positioning architecture. Domestically, cohabitation tensions have escalated with public feuding affecting Poland's international image, while polling shows potential fundamental political realignment with far-right entities approaching king-maker status for 2027.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -67,7 +67,7 @@
       "domestic_regime": "active"
     },
     "last_deep_dive": "2026-01-25",
-    "consecutive_maintenance_weeks": 0
+    "consecutive_maintenance_weeks": 1
   },
   "signal_categories": {
     "alignment_diplomatic": {
@@ -160,9 +160,13 @@
             {
               "headline": "Trump invites Nawrocki to Peace Council, constitutional procedures required",
               "date": "2026-01-22",
-              "source": "TVN24",
-              "source_tier": 2,
-              "source_url": "https://tvn24.pl/polska/karol-nawrocki-zaproszony-przez-donalda-trumpa-do-rady-pokoju-jest-decyzja-prezydenta-st8861401",
+              "sources": [
+                {
+                  "name": "TVN24",
+                  "url": "https://tvn24.pl/polska/karol-nawrocki-zaproszony-przez-donalda-trumpa-do-rady-pokoju-jest-decyzja-prezydenta-st8861401",
+                  "tier": 2
+                }
+              ],
               "summary": "President Nawrocki met with Trump at Davos and received invitation to join Peace Council. Nawrocki emphasized constitutional procedures requiring parliamentary approval before Poland can join international organizations. Trump confirmed US troops will remain in Poland.",
               "actors_involved": [
                 "Karol Nawrocki",
@@ -173,9 +177,13 @@
             {
               "headline": "Trump disparages NATO allies' Afghanistan role, creates Polish diplomatic tensions",
               "date": "2026-01-24",
-              "source": "TVN24",
-              "source_tier": 2,
-              "source_url": "https://tvn24.pl/swiat/usa-donald-trump-o-sojusznikach-nato-i-misji-w-afganistanie-nigdy-ich-nie-potrzebowalismy-st8863499",
+              "sources": [
+                {
+                  "name": "TVN24",
+                  "url": "https://tvn24.pl/swiat/usa-donald-trump-o-sojusznikach-nato-i-misji-w-afganistanie-nigdy-ich-nie-potrzebowalismy-st8863499",
+                  "tier": 2
+                }
+              ],
               "summary": "Trump claimed NATO allies 'stayed behind front lines' in Afghanistan. Polish officials criticized for delayed response to comments dishonoring 44 Polish soldiers killed. Created tension between Tusk and Nawrocki over proper response to ally.",
               "actors_involved": [
                 "Donald Trump",
@@ -199,9 +207,13 @@
             {
               "headline": "NATO plans robotic defense zone on eastern border with Russia and Belarus",
               "date": "2026-01-24",
-              "source": "Wiadomo\u015bci WP",
-              "source_tier": 2,
-              "source_url": "https://wydarzenia.interia.pl/zagranica/news-niemiecki-general-ujawnia-plany-nato-goraca-strefa-na-granic,nId,22543136",
+              "sources": [
+                {
+                  "name": "Wiadomo\u015bci WP",
+                  "url": "https://wydarzenia.interia.pl/zagranica/news-niemiecki-general-ujawnia-plany-nato-goraca-strefa-na-granic,nId,22543136",
+                  "tier": 2
+                }
+              ],
               "summary": "NATO announced automated defense system along eastern flank border featuring sensors, drones, and automated weapons. System designed to operate in first phase of conflict without direct soldier involvement, creating multi-layered defense.",
               "actors_involved": [
                 "Polish Armed Forces",
@@ -220,9 +232,13 @@
             {
               "headline": "NBP announces major gold reserves expansion to 700 tons",
               "date": "2026-01-21",
-              "source": "NBP",
-              "source_tier": 1,
-              "source_url": "https://nbp.pl/prof-adam-glapinski-prezes-nbp-narodowy-bank-polski-podjal-decyzje-o-dalszym-zwiekszeniu-rezerw-zlota-do-poziomu-700-ton/",
+              "sources": [
+                {
+                  "name": "NBP",
+                  "url": "https://nbp.pl/prof-adam-glapinski-prezes-nbp-narodowy-bank-polski-podjal-decyzje-o-dalszym-zwiekszeniu-rezerw-zlota-do-poziomu-700-ton/",
+                  "tier": 1
+                }
+              ],
               "summary": "NBP Governor Glapi\u0144ski announced decision to increase gold reserves from current 550 tons to 700 tons, placing Poland in global top 10 for gold holdings. NBP was world's largest central bank gold buyer in 2024, adding over 100 tons.",
               "actors_involved": [
                 "Adam Glapi\u0144ski"
@@ -232,9 +248,13 @@
             {
               "headline": "Orlen discovers new gas field off Norwegian coast",
               "date": "2026-01-20",
-              "source": "Business Insider Polska",
-              "source_tier": 2,
-              "source_url": "https://businessinsider.com.pl/biznes/orlen-odkryl-nowe-zloze-gazu-u-wybrzezy-norwegii-to-szansa-dla-polski/5g0qb21",
+              "sources": [
+                {
+                  "name": "Business Insider Polska",
+                  "url": "https://businessinsider.com.pl/biznes/orlen-odkryl-nowe-zloze-gazu-u-wybrzezy-norwegii-to-szansa-dla-polski/5g0qb21",
+                  "tier": 2
+                }
+              ],
               "summary": "Orlen Upstream Norway discovered Sissel gas field with estimated 6.3-28.3 million barrels oil equivalent, potentially yielding nearly 1 billion cubic meters of gas for Poland. Supports energy diversification from Russia.",
               "actors_involved": [
                 "PKN Orlen"
@@ -256,9 +276,13 @@
             {
               "headline": "Sejm passes new National Council of Judiciary reform legislation",
               "date": "2026-01-23",
-              "source": "Rzeczpospolita",
-              "source_tier": 2,
-              "source_url": "https://rp.pl/sady-i-trybunaly/art43689351-sejm-uchwalil-ustawe-o-krajowej-radzie-sadownictwa-reforma-waldemara-zurka-do-senatu",
+              "sources": [
+                {
+                  "name": "Rzeczpospolita",
+                  "url": "https://rp.pl/sady-i-trybunaly/art43689351-sejm-uchwalil-ustawe-o-krajowej-radzie-sadownictwa-reforma-waldemara-zurka-do-senatu",
+                  "tier": 2
+                }
+              ],
               "summary": "Parliament approved KRS reform allowing judges rather than MPs to select council members. This is coalition's second attempt after previous version struck down by Constitutional Tribunal. Enables candidacy of some 'neo-judges.'",
               "actors_involved": [
                 "Constitutional Tribunal"
@@ -276,9 +300,13 @@
             {
               "headline": "Escalating Tusk-Nawrocki political feud over foreign policy responses",
               "date": "2026-01-24",
-              "source": "TVN24",
-              "source_tier": 2,
-              "source_url": "https://tvn24.pl/polska/ostra-wymiana-zdan-miedzy-tuskiem-a-nawrockim-trzecia-dekade-pan-kleczy-st8866008",
+              "sources": [
+                {
+                  "name": "TVN24",
+                  "url": "https://tvn24.pl/polska/ostra-wymiana-zdan-miedzy-tuskiem-a-nawrockim-trzecia-dekade-pan-kleczy-st8866008",
+                  "tier": 2
+                }
+              ],
               "summary": "Sharp public exchanges between PM and President over Nawrocki's response to Trump's NATO comments. Tusk accused Nawrocki of 'kneeling' to foreign leaders, while Nawrocki attacked Tusk's European alignment history. German press noted damage to Poland's international image.",
               "actors_involved": [
                 "Donald Tusk",
@@ -289,9 +317,13 @@
             {
               "headline": "Polling shows KO leads but faces potential loss of parliamentary majority",
               "date": "2026-01-22",
-              "source": "Wiadomo\u015bci WP",
-              "source_tier": 2,
-              "source_url": "https://wiadomosci.wp.pl/jest-najnowszy-sondaz-rzad-tuska-traci-wladze-7246510502639840a",
+              "sources": [
+                {
+                  "name": "Wiadomo\u015bci WP",
+                  "url": "https://wiadomosci.wp.pl/jest-najnowszy-sondaz-rzad-tuska-traci-wladze-7246510502639840a",
+                  "tier": 2
+                }
+              ],
               "summary": "IBRiS polling shows KO at 31.2% vs PiS at 27.3%, but current coalition partners PSL and Polska 2050 below electoral threshold. Combined right-wing parties (PiS, Konfederacja, KKP) could control parliament despite KO leading individually.",
               "actors_involved": [
                 "Donald Tusk",
@@ -302,9 +334,13 @@
             {
               "headline": "Mentzen builds new party structure and launches Projekt27 platform",
               "date": "2026-01-22",
-              "source": "Konfederacja.pl",
-              "source_tier": 3,
-              "source_url": "https://konfederacja.pl/zapraszamy-do-dodawania-swoich-koncepcji-w-ramach-projekt27-pl",
+              "sources": [
+                {
+                  "name": "Konfederacja.pl",
+                  "url": "https://konfederacja.pl/zapraszamy-do-dodawania-swoich-koncepcji-w-ramach-projekt27-pl",
+                  "tier": 3
+                }
+              ],
               "summary": "Confederation leader launched crowdsourced policy platform and builds loyal parliamentary ranks for 2027 elections. Previous party deregistered, new structures formed.",
               "actors_involved": [
                 "S\u0142awomir Mentzen"
@@ -415,6 +451,22 @@
           "source_name": "wiadomosci.wp.pl"
         }
       ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "maintenance",
+      "activity_level": {
+        "rating": "quiet",
+        "rationale": "No wire coverage this week.\nDomestic headlines: 8 found.\nGovernment sources: - [National Fund for Environmental Protection and Water Management] The NaszEauto electric vehicle subsidy program budget was fully exhausted on January 27, 2026, but conditional applications continue to be accepted until April 30, 2026. (type: both, categories: economic_tech)\n- [Government Legislative Center] New legal drafting rules published in Official Journal, first amendment in 10 years, effective March 1, 2026. (type: ground_truth, categories: institutional)\n- [Ministry of Education] Education ministry published comprehensive reform timeline showing new health and civic education subjects introduced September 2025, with new primary school curricula beginning September 2026. (type: ground_truth, categories: domestic_regime)\n- [Personal Data Protection Office] Data protection office published strategic report showing 17% of Polish organizations currently use AI, primarily for administrative automation (41.2%) and data analytics (31%). (type: ground_truth, categories: economic_tech)\n- [Presidential Office] President participated in 81st anniversary commemoration of Auschwitz liberation. (type: intent_signal, categories: alignment_diplomatic)\n- [Presidential Office] Presidential press conference in Vilnius referencing Trump comments and responses from UK and Italian premiers. (type: intent_signal, categories: alignment_diplomatic)"
+      },
+      "category_movements": null,
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": null,
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": []
     }
   ],
   "structural_claim_status": [],
