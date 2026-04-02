@@ -121,6 +121,33 @@ The butchers of the Balkans produced ethnic cleansing, and the jihadists of al-Q
 
 Orwell would surely have put human-rights abuses in the same category of nerve-deadening understatement as pacification and elimination of unreliable elements. The term may occasionally be useful, but try to avoid it by rephrasing the sentence more pithily and accurately. The army is accused of committing numerous human-rights abuses probably means The army is accused of torture and murder. A high-net-worth individual is a rich man or rich woman. Zero-percent financing means an interest-free loan. Non-observable inputs are assumptions used in self-serving guesswork. Intimate apparel is under-wear.
 
+#### figures
+Never start a sentence with a figure; write the number in words instead.
+
+Use words for simple numerals from one to ten inclusive, except: in references to pages; in percentages (eg, 4%); and in sets of numerals, some of which are higher than ten.
+_Deaths from this cause in the past three years were 14, 9 and 6._
+
+Always use numbers with units of measurement, even for those less than ten:
+_4 metres, 9 miles,_ but _four cows_.
+
+It is occasionally permissible to use words rather than numbers when referring to a rough or rhetorical figure (such as _a thousand curses_, _a hundred years of solitude_).
+In all other cases, though, use figures for numerals from 11 upwards.
+
+first to tenth centuries, the 11th century
+20th century, 21st century
+20th-century ideas
+in 100 years’ time
+two and a half years later
+a 29-year-old man
+a man in his 20s
+20th anniversary
+40-fold (but fourfold, up to and including ten)
+30-something
+the Sixties (etc)
+The Thirty Years War is an exception.
+
+Use figures for all numerals that include a decimal point (eg, 4.25).”
+
 #### foreign languages
 
 **names of foreign companies, institutions, groups, parties, etc** should usually be translated. So:
@@ -177,7 +204,8 @@ Every issue of The Economist contains scores of metaphors: gay soldiers booted b
 
 Some of these are tired, and will therefore tire the reader. Most are so exhausted that they may be considered dead. Dead or alive, take great care not to mix them.
 
-#### short words ####
+
+#### short words 
 Use them. They are often Anglo-Saxon rather than Latin in origin. They are easy to spell and easy to understand. Thus prefer:
 
 about to approximately
@@ -198,7 +226,7 @@ Underdeveloped countries are often better described as poor. Substantive often m
 
 #### titles ####
 
-The overriding principle is to treat people with respect. That usually means giving them the title they themselves adopt. But some titles aremisleading (all Italian graduates are Dr) and some tiresomely long (Mr Dr Dr Federal Sanitary-Inspector Schmidt). Do not therefore indulge people's self-importance unless it would seem insulting not to.
+The overriding principle is to treat people with respect. That usually means giving them the title they themselves adopt. But some titles are misleading (all Italian graduates are Dr) and some tiresomely long (Mr Dr Dr Federal Sanitary-Inspector Schmidt). Do not therefore indulge people's self-importance unless it would seem insulting not to.
 
 Do not use Mr, Mrs, Miss, Ms or Dr on first mention. Plain Barack Obama, David Beckham or other appropriate combination of first name and surname will do. But thereafter the names of all living people should be preceded by Mr, Ms,  or some other title. Serving soldiers, sailors, airmen, etc should be given their title on first and subsequent mentions. Those (such as Colin Powell, but not Pervez Musharraf) who cast aside their uniforms for civvy street become plain Mr (or whatever). Governor X, President Y, the Rev John Z may be Mr, Ms on second mention.
 
