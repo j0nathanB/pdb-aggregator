@@ -161,17 +161,6 @@ def _render_regional_lead(
         if dynamic.significance:
             parts.append(dynamic.significance)
 
-        # Only show confidence/linkage parenthetically if confidence <= 3 or weak/speculative
-        show_meta = (
-            dynamic.confidence <= 3
-            or dynamic.linkage_strength in ("weak", "speculative")
-        )
-        if show_meta:
-            parts.append(
-                f"({CONFIDENCE_LABELS.get(dynamic.confidence, 'Moderate confidence').lower()}; "
-                f"linkage: {dynamic.linkage_strength})"
-            )
-
         paragraphs.append(" ".join(parts))
 
     # Append gaps as "Notably absent" paragraphs

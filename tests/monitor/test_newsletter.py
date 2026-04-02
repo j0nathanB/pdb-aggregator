@@ -272,11 +272,11 @@ class TestRenderRegionalLead:
         result = _render_regional_lead(Region.AMERICAS, empty_report)
         assert "No significant cross-country dynamics" in result
 
-    def test_shows_confidence_when_low(self):
+    def test_no_confidence_parenthetical(self):
+        """Confidence parentheticals are no longer rendered in regional leads."""
         report = _test_regional_report()
-        # confidence=3, linkage=moderate → should show parenthetical
         result = _render_regional_lead(Region.AMERICAS, report)
-        assert "moderate confidence" in result
+        assert "confidence" not in result.lower()
 
     def test_hides_confidence_when_high(self):
         report = RegionalReport(
