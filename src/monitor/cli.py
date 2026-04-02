@@ -246,6 +246,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
         if "watchlist" in pages:
             print("Editing watchlist...")
             pages["watchlist"] = await edit_watchlist_page(pages["watchlist"], analysis_date=end_date)
+            pages["watchlist"] = await copyedit(pages["watchlist"], max_concurrent=args.concurrency, analysis_date=end_date)
 
         # Edit region pages (regional lead + country sections)
         for slug in list(pages.keys()):
