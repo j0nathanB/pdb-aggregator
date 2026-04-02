@@ -160,17 +160,33 @@ def _update_docs_json(date_str: str, end_date: date) -> None:
             except ValueError:
                 old_label = old_date_str
 
-            old_group = {"group": old_label, "pages": old_pages}
+            old_group = {"group": old_label, "expanded": False, "pages": old_pages}
 
             if archives_tab is None:
-                archives_tab = {"tab": "Archives", "groups": []}
+                archives_tab = {"tab": "Archives", "groups": [{"group": "Past Briefs", "pages": []}]}
                 tabs.append(archives_tab)
 
-            groups = archives_tab.get("groups", [])
+            # Ensure nested structure: groups[0] is "Past Briefs" parent
+            parent_groups = archives_tab.get("groups", [])
+            past_briefs = None
+            for g in parent_groups:
+                if g.get("group") == "Past Briefs":
+                    past_briefs = g
+                    break
+            if past_briefs is None:
+                # Migrate flat groups into nested structure
+                existing_entries = []
+                for g in parent_groups:
+                    g["expanded"] = False
+                    existing_entries.append(g)
+                past_briefs = {"group": "Past Briefs", "pages": existing_entries}
+                archives_tab["groups"] = [past_briefs]
+
+            entries = past_briefs.get("pages", [])
             # Don't duplicate — check if this date is already archived
-            if not any(old_date_str in str(g.get("pages", [])) for g in groups):
-                groups.insert(0, old_group)
-            archives_tab["groups"] = groups
+            if not any(old_date_str in str(e.get("pages", [])) for e in entries if isinstance(e, dict)):
+                entries.insert(0, old_group)
+            past_briefs["pages"] = entries
 
     # Set Latest Brief to new pages
     if latest_tab is None:
@@ -192,21 +208,25 @@ def _update_docs_json(date_str: str, end_date: date) -> None:
 
     # Remove the new brief from Archives if it ended up there
     if archives_tab and archives_tab.get("groups"):
-        archives_tab["groups"] = [
-            g for g in archives_tab["groups"]
-            if date_str not in str(g.get("pages", []))
-        ]
+        for parent in archives_tab["groups"]:
+            if parent.get("group") == "Past Briefs":
+                parent["pages"] = [
+                    e for e in parent.get("pages", [])
+                    if not isinstance(e, dict) or date_str not in str(e.get("pages", []))
+                ]
 
-    # Sort archive groups by date (newest first)
+    # Sort archive entries by date (newest first)
     if archives_tab and archives_tab.get("groups"):
-        def _extract_date(group: dict) -> str:
-            pages = group.get("pages", [])
-            if pages:
+        def _extract_date(entry: dict) -> str:
+            pages = entry.get("pages", [])
+            if pages and isinstance(pages[0], str):
                 parts = pages[0].split("/")
                 if len(parts) >= 2:
                     return parts[1]
             return ""
-        archives_tab["groups"].sort(key=_extract_date, reverse=True)
+        for parent in archives_tab["groups"]:
+            if parent.get("group") == "Past Briefs":
+                parent["pages"].sort(key=_extract_date, reverse=True)
 
     docs["navigation"]["tabs"] = tabs
 
