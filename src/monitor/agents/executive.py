@@ -212,6 +212,15 @@ def parse_executive_response(response_text: str) -> dict:
     return data
 
 
+def _safe_linkage_type(value: str) -> LinkageType:
+    """Parse a LinkageType, falling back to PARALLEL_BEHAVIOR for invalid values."""
+    try:
+        return LinkageType(value)
+    except ValueError:
+        logger.warning("Invalid LinkageType '%s', falling back to parallel_behavior", value)
+        return LinkageType.PARALLEL_BEHAVIOR
+
+
 def _parse_active_dynamic(d: dict, week: date) -> ActiveDynamic:
     """Parse a single active dynamic from JSON."""
     es = d.get("evidence_strength", {})
@@ -244,7 +253,7 @@ def _parse_active_dynamic(d: dict, week: date) -> ActiveDynamic:
             confidence=es.get("confidence", 3),
             supporting_country_confidences=es.get("supporting_country_confidences", {}),
             weakest_link=es.get("weakest_link", ""),
-            linkage_type=LinkageType(es.get("linkage_type", "parallel_behavior")),
+            linkage_type=_safe_linkage_type(es.get("linkage_type", "parallel_behavior")),
             linkage_assessment=es.get("linkage_assessment", ""),
         ),
         competing_interpretation=d.get("competing_interpretation", ""),
@@ -400,7 +409,7 @@ def _apply_delta(
                 confidence=es.get("confidence", 3),
                 supporting_country_confidences=es.get("supporting_country_confidences", {}),
                 weakest_link=es.get("weakest_link", ""),
-                linkage_type=LinkageType(es.get("linkage_type", "parallel_behavior")),
+                linkage_type=_safe_linkage_type(es.get("linkage_type", "parallel_behavior")),
                 linkage_assessment=es.get("linkage_assessment", ""),
             ),
             competing_interpretation=d.get("competing_interpretation", ""),
@@ -433,7 +442,7 @@ def _apply_delta(
                             dynamic.evidence_strength.supporting_country_confidences,
                         ),
                         weakest_link=es.get("weakest_link", dynamic.evidence_strength.weakest_link),
-                        linkage_type=LinkageType(es.get("linkage_type", dynamic.evidence_strength.linkage_type.value)),
+                        linkage_type=_safe_linkage_type(es.get("linkage_type", dynamic.evidence_strength.linkage_type.value)),
                         linkage_assessment=es.get("linkage_assessment", dynamic.evidence_strength.linkage_assessment),
                     )
                 if "competing_interpretation" in u:
