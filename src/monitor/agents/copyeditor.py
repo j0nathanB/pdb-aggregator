@@ -91,6 +91,7 @@ async def run_copyeditor(
     label: str,
     section_type: str = "country",
     model: str | None = None,
+    analysis_date: date | None = None,
 ) -> str:
     """Run the copyeditor agent on a single section.
 
@@ -146,7 +147,7 @@ async def run_copyeditor(
 
     from ..trace import save_trace, extract_thinking, extract_usage
     save_trace(
-        "copyeditor", label.lower().replace(" ", "_").replace(":", "_"), date.today(),
+        "copyeditor", label.lower().replace(" ", "_").replace(":", "_"), analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
         response_text=result,
@@ -320,6 +321,7 @@ def _split_region_content(
 async def copyedit_newsletter(
     newsletter: str,
     max_concurrent: int = 5,
+    analysis_date: date | None = None,
 ) -> str:
     """Copyedit all editable sections in a newsletter in parallel.
 
@@ -355,6 +357,7 @@ async def copyedit_newsletter(
             try:
                 edited = await run_copyeditor(
                     section.text, section.label, section.section_type,
+                    analysis_date=analysis_date,
                 )
                 return (idx, edited)
             except Exception as e:

@@ -239,8 +239,8 @@ async def cmd_run(args: argparse.Namespace) -> None:
             items = latest.executive_briefing_items if latest else []
             if items:
                 print("Editing executive brief...")
-                pages["overview"] = await edit_overview_page(pages["overview"], items)
-            pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency)
+                pages["overview"] = await edit_overview_page(pages["overview"], items, analysis_date=end_date)
+            pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency, analysis_date=end_date)
 
         # Edit region pages (regional lead + country sections)
         for slug in list(pages.keys()):
@@ -248,8 +248,9 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 pages[slug] = await edit_region_page(
                     pages[slug], regional_reports, country_ledgers, country_entries,
                     max_concurrent=args.concurrency,
+                    analysis_date=end_date,
                 )
-                pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency)
+                pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency, analysis_date=end_date)
 
         brief_dir = publish_brief(pages, end_date)
         print(f"  Site published to {brief_dir}")

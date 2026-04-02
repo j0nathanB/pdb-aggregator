@@ -145,6 +145,7 @@ async def run_editor(
     ledger: CountryLedger,
     entry: WeeklyEntry,
     model: str | None = None,
+    analysis_date: date | None = None,
 ) -> str:
     """Run the editor agent on a single country section.
 
@@ -210,7 +211,7 @@ async def run_editor(
 
     from ..trace import save_trace, extract_thinking, extract_usage
     save_trace(
-        "editor", ledger.code.lower(), date.today(),
+        "editor", ledger.code.lower(), analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
         response_text=result,
@@ -238,6 +239,7 @@ async def run_regional_editor(
     assembled_lead: str,
     report: "RegionalReport",
     model: str | None = None,
+    analysis_date: date | None = None,
 ) -> str:
     """Run the editor agent on a regional lead section.
 
@@ -304,7 +306,7 @@ async def run_regional_editor(
 
     from ..trace import save_trace, extract_thinking, extract_usage
     save_trace(
-        "editor", f"regional_{label}", date.today(),
+        "editor", f"regional_{label}", analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
         response_text=result,
@@ -320,6 +322,7 @@ async def edit_newsletter(
     country_ledgers: dict[str, CountryLedger],
     country_entries: dict[str, WeeklyEntry],
     max_concurrent: int = 5,
+    analysis_date: date | None = None,
 ) -> str:
     """Edit all country sections in a newsletter in parallel.
 
@@ -350,7 +353,7 @@ async def edit_newsletter(
                 logger.warning("Editor [%s]: no ledger/entry data, skipping", code)
                 return (idx, section_text)
             try:
-                edited = await run_editor(section_text, ledger, entry)
+                edited = await run_editor(section_text, ledger, entry, analysis_date=analysis_date)
                 return (idx, edited)
             except Exception as e:
                 logger.warning("Editor [%s] failed, using original: %s", code, e)
@@ -412,6 +415,7 @@ async def edit_region_page(
     country_ledgers: dict[str, CountryLedger],
     country_entries: dict[str, WeeklyEntry],
     max_concurrent: int = 5,
+    analysis_date: date | None = None,
 ) -> str:
     """Edit a region page: regional lead + country sections.
 
@@ -459,7 +463,7 @@ async def edit_region_page(
 
         if prose.strip():
             try:
-                edited_prose = await run_regional_editor(prose, report)
+                edited_prose = await run_regional_editor(prose, report, analysis_date=analysis_date)
                 lead_text = frontmatter + "\n" + edited_prose if frontmatter else edited_prose
             except Exception as e:
                 logger.warning("Editor [regional/%s] failed, using original: %s", region.value, e)
@@ -467,7 +471,8 @@ async def edit_region_page(
     # Edit country sections
     if country_text.strip():
         edited_countries = await edit_newsletter(
-            country_text, country_ledgers, country_entries, max_concurrent
+            country_text, country_ledgers, country_entries, max_concurrent,
+            analysis_date=analysis_date,
         )
     else:
         edited_countries = country_text
@@ -484,6 +489,7 @@ async def run_executive_editor(
     assembled_brief: str,
     briefing_items: list,
     model: str | None = None,
+    analysis_date: date | None = None,
 ) -> str:
     """Run the editor agent on the executive brief.
 
@@ -566,7 +572,7 @@ async def run_executive_editor(
 
     from ..trace import save_trace, extract_thinking, extract_usage
     save_trace(
-        "editor", "executive", date.today(),
+        "editor", "executive", analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
         response_text=result,
@@ -580,6 +586,7 @@ async def run_executive_editor(
 async def edit_overview_page(
     page: str,
     briefing_items: list,
+    analysis_date: date | None = None,
 ) -> str:
     """Edit the overview page: run the executive brief through the editor.
 
@@ -607,7 +614,7 @@ async def edit_overview_page(
         return page
 
     try:
-        edited_brief = await run_executive_editor(brief_text, briefing_items)
+        edited_brief = await run_executive_editor(brief_text, briefing_items, analysis_date=analysis_date)
         return page[:brief_start] + "\n\n" + edited_brief + "\n\n" + page[brief_end:]
     except Exception as e:
         logger.warning("Editor [executive] failed, using original: %s", e)
