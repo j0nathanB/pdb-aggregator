@@ -742,7 +742,7 @@ async def summarize_card_summaries(
         r'(<Card\s+title="[^"]*"\s+icon="[^"]*"\s+href="[^"]*">)\s*\n\s*(.*?)\s*\n\s*(</Card>)',
         re.DOTALL,
     )
-    matches = list(card_pattern.finditer(page))
+    matches = [m for m in card_pattern.finditer(page) if "Watchlist" not in m.group(1)]
     if not matches:
         return page
 
