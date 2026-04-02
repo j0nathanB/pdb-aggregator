@@ -230,16 +230,18 @@ async def cmd_run(args: argparse.Namespace) -> None:
         )
 
         # Edit + copyedit multi-page output
-        from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page
+        from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page, summarize_card_summaries
         from .agents.copyeditor import copyedit_newsletter as copyedit
 
-        # Edit overview page (executive brief)
+        # Edit overview page (executive brief + card summaries)
         if "overview" in pages:
             latest = global_ledger.latest_entry()
             items = latest.executive_briefing_items if latest else []
             if items:
                 print("Editing executive brief...")
                 pages["overview"] = await edit_overview_page(pages["overview"], items, analysis_date=end_date)
+            print("Condensing card summaries...")
+            pages["overview"] = await summarize_card_summaries(pages["overview"], analysis_date=end_date)
             pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency, analysis_date=end_date)
 
         # Edit watchlist page

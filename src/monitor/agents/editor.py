@@ -723,3 +723,59 @@ async def edit_watchlist_page(
     )
 
     return _sanitize_mdx(result)
+
+
+async def summarize_card_summaries(
+    page: str,
+    analysis_date: date | None = None,
+) -> str:
+    """Condense region Card summaries on the overview page to one sentence each.
+
+    Finds each <Card> body, sends the text to Haiku for a one-sentence
+    summary, and replaces it in the page.
+    """
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    # Find all Card bodies (text between <Card ...> and </Card>)
+    card_pattern = re.compile(
+        r'(<Card\s+title="[^"]*"\s+icon="[^"]*"\s+href="[^"]*">)\s*\n\s*(.*?)\s*\n\s*(</Card>)',
+        re.DOTALL,
+    )
+    matches = list(card_pattern.finditer(page))
+    if not matches:
+        return page
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+
+    async def _summarize(text: str) -> str:
+        if not text.strip() or len(text) < 20:
+            return text
+        response = await client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=200,
+            messages=[{
+                "role": "user",
+                "content": (
+                    "Condense this regional summary into ONE concise sentence for a navigation card. "
+                    "No jargon, no hedging. State what happened this week. "
+                    "Do not invent details not in the source text.\n\n"
+                    f"{text}"
+                ),
+            }],
+        )
+        return response.content[0].text.strip()
+
+    # Summarize all cards in parallel
+    card_texts = [m.group(2).strip() for m in matches]
+    summaries = await asyncio.gather(*[_summarize(t) for t in card_texts])
+
+    # Replace in reverse order to preserve positions
+    result = page
+    for match, summary in reversed(list(zip(matches, summaries))):
+        opening = match.group(1)
+        closing = match.group(3)
+        result = result[:match.start()] + f"{opening}\n    {summary}\n  {closing}" + result[match.end():]
+
+    logger.info("Card summaries: condensed %d cards via Haiku", len(matches))
+    return result
