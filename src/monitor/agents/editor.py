@@ -472,6 +472,8 @@ async def edit_region_page(
         if prose.strip():
             try:
                 edited_prose = await run_regional_editor(prose, report, analysis_date=analysis_date)
+                # Strip any ### region heading the editor may have inserted
+                edited_prose = re.sub(r'^###\s+[^\n]+\n+', '', edited_prose.lstrip("\n"))
                 if section_heading:
                     edited_prose = section_heading + "\n\n" + edited_prose.lstrip("\n")
                 lead_text = frontmatter + "\n" + edited_prose if frontmatter else edited_prose
