@@ -133,6 +133,40 @@ def _render_executive_brief(
     return "\n\n".join(paragraphs)
 
 
+def _extract_card_summary(report: Optional["RegionalReport"]) -> str:
+    """Extract the first 1-2 sentences of the regional lead for a Card summary.
+
+    Uses the rendered regional lead text (same prose that appears on the page).
+    If the first paragraph is one sentence, returns that sentence.
+    Otherwise returns the first two sentences.
+    """
+    if not report:
+        return ""
+
+    # Get the rendered lead text (first dynamic's assessment + significance)
+    if report.regional_overview:
+        text = report.regional_overview
+    elif report.cross_cutting_dynamics:
+        d = report.cross_cutting_dynamics[0]
+        parts = [d.assessment]
+        if d.significance:
+            parts.append(d.significance)
+        text = " ".join(parts)
+    else:
+        return ""
+
+    # Get the first paragraph
+    first_para = text.split("\n\n")[0].strip()
+
+    # Split into sentences (handle Mr./Mrs./Dr./etc. abbreviations)
+    import re
+    sentences = re.split(r'(?<=[.!?])\s+(?=[A-Z])', first_para)
+
+    if len(sentences) <= 1:
+        return first_para
+    return " ".join(sentences[:2])
+
+
 def _render_regional_lead(
     region: Region,
     report: Optional[RegionalReport],
@@ -592,29 +626,12 @@ def _render_overview_page(
         slug = REGION_SLUGS[region]
         icon = REGION_ICONS[region]
 
-        # Build a one-line summary from the regional overview or deep-dive countries
+        # Build card summary from the regional lead text (first 1-2 sentences
+        # of the first paragraph, matching what appears on the region page).
         report = regional_reports.get(region)
-        if report and report.regional_overview:
-            summary = report.regional_overview
-            # Truncate to ~120 chars for card body
-            if len(summary) > 120:
-                summary = summary[:117].rsplit(" ", 1)[0] + "..."
-        elif report and report.cross_cutting_dynamics:
-            summary = report.cross_cutting_dynamics[0].assessment
-            if len(summary) > 120:
-                summary = summary[:117].rsplit(" ", 1)[0] + "..."
-        else:
-            # Summarize from deep-dive country names if available
-            region_codes = REGION_COUNTRIES.get(region, [])
-            deep_dive_names = []
-            for code in region_codes:
-                entry = country_entries.get(code)
-                if entry is not None and entry.depth == Depth.DEEP_DIVE and code in country_ledgers:
-                    deep_dive_names.append(country_ledgers[code].country)
-            if deep_dive_names:
-                summary = f"{', '.join(deep_dive_names)} received full analytical treatment this week."
-            else:
-                summary = "Country-level developments are covered in the regional page."
+        summary = _extract_card_summary(report)
+        if not summary:
+            summary = "Country-level developments are covered in the regional page."
 
         sections.append(f'  <Card title="{display_name}" icon="{icon}" href="{brief_path}/{slug}">')
         sections.append(f"    {summary}")
