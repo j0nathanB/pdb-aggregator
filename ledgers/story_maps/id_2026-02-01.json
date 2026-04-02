@@ -3,15 +3,15 @@
   "code": "id",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 107,
-  "stories_identified": 19,
-  "off_topic_filtered": 25,
-  "noise_summary": "25 off-topic results filtered: 15 tennis/Djokovic sports coverage, 2 basketball/Jokic articles, 3 technical equipment/PDI device listings unrelated to political party, 2 gas price articles from US/Alabama, 1 currency converter tool, 1 general business profile template, 1 general ASEAN news aggregator.",
+  "search_results_total": 110,
+  "stories_identified": 10,
+  "off_topic_filtered": 47,
+  "noise_summary": "47 off-topic results filtered: 30 tennis/sports articles (Djokovic matches, basketball, tennis tournaments), 5 electronics/tech products, 4 Birmingham bin strikes, 3 international non-Indonesia political articles, 2 financial instrument conversion tools, 2 ASEAN general articles, 1 Lebanese poet article.",
   "stories": [
     {
       "story_id": 1,
       "headline": "Indonesia faces $80 billion stock market rout amid MSCI downgrade warning",
-      "summary": "Indonesian stocks suffered their steepest decline since the Asian Financial Crisis after MSCI warned of a possible downgrade to frontier status. The rout prompted resignations of top financial regulators and raised concerns about President Prabowo's economic policies.",
+      "summary": "Indonesia's stock market suffered one of its worst selloffs since 1998, with $80 billion wiped out over two days. MSCI warned it may downgrade Indonesian equities to 'frontier' status, triggering the resignations of the heads of the financial regulator and stock exchange. Investors are concerned about President Prabowo's fiscal policies and state intervention in markets.",
       "actors_involved": [
         "Prabowo Subianto"
       ],
@@ -21,9 +21,9 @@
         "bloomberg.com",
         "reuters.com",
         "cnbcindonesia.com",
-        "bloombergtechnoz.com"
+        "cnnindonesia.com"
       ],
-      "date_range": "2026-01-28 to 2026-01-31",
+      "date_range": "2026-01-28 to 2026-01-30",
       "articles": [
         {
           "title": "Indonesian Strongman Prabowo Confronts a Stock-Market Rout",
@@ -62,10 +62,10 @@
           "date": "2026-01-28"
         },
         {
-          "title": "'Sarapan' Menteri & Sentilan Danantara hingga Bos OJK-BEI Mundur",
-          "source": "bloombergtechnoz.com",
-          "url": "https://www.bloombergtechnoz.com/detail-news/98210/sarapan-menteri-sentilan-danantara-hingga-bos-ojk-bei-mundur",
-          "date": "2026-01-31"
+          "title": "Danantara to Continue Investing in Indonesian Stocks After Rout",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-02-01/danantara-to-continue-investing-in-indonesian-stocks-after-rout",
+          "date": "2026-02-01"
         }
       ],
       "representative_urls": [
@@ -75,11 +75,12 @@
     },
     {
       "story_id": 2,
-      "headline": "Prabowo's nephew Thomas Djiwandono appointed Bank Indonesia deputy governor",
-      "summary": "Parliament approved Thomas Djiwandono, President Prabowo's nephew, as Bank Indonesia deputy governor despite concerns about central bank independence. The appointment contributed to rupiah weakness and investor worries.",
+      "headline": "Parliament approves Thomas Djiwandono as Bank Indonesia deputy governor despite independence concerns",
+      "summary": "Indonesia's parliament appointed President Prabowo's nephew, Thomas Djiwandono, as deputy governor of Bank Indonesia. The nomination has sparked investor concerns about the central bank's independence, contributing to the rupiah hitting record lows. Djiwandono previously served as deputy finance minister and resigned from Gerindra party positions.",
       "actors_involved": [
         "Prabowo Subianto",
-        "Bank Indonesia"
+        "Bank Indonesia",
+        "Gerindra"
       ],
       "signal_category_hint": "economic_tech",
       "source_count": 4,
@@ -116,67 +117,142 @@
         }
       ],
       "representative_urls": [
-        "https://reuters.com/world/asia-pacific/indonesian-lawmakers-approve-new-central-bank-board-member-2026-01-26",
-        "https://reuters.com/world/asia-pacific/indonesian-parliament-set-approve-presidents-nephew-central-bank-board-member-2026-01-27"
+        "https://reuters.com/world/asia-pacific/indonesian-parliament-set-approve-presidents-nephew-central-bank-board-member-2026-01-27",
+        "https://ugm.ac.id/en/news/thomas-djiwandono-named-deputy-governor-expert-explains-how-collective-leadership-safeguards-bank-indonesias-independence"
       ]
     },
     {
       "story_id": 3,
-      "headline": "Political parties debate police institutional position under president vs ministry",
-      "summary": "Multiple parliamentary factions debated whether Polri should remain directly under the president or be placed under a ministry. PDI-P, Golkar, PKS and PKB expressed support for maintaining the current structure under presidential authority.",
+      "headline": "Danantara takes over land from 28 companies linked to Sumatra floods",
+      "summary": "Sovereign wealth fund Danantara Indonesia will take over approximately 1 million hectares of land from 28 companies whose permits were revoked after being linked to environmental violations that contributed to floods and landslides in Sumatra. Danantara created a new subsidiary, Perminas, to manage mining operations including the Martabe gold mine.",
+      "actors_involved": [
+        "Danantara",
+        "Prabowo Subianto"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 8,
+      "sources": [
+        "reuters.com",
+        "idnfinancials.com",
+        "cnnindonesia.com",
+        "bloombergtechnoz.com",
+        "finance.detik.com",
+        "katadata.co.id",
+        "idntimes.com"
+      ],
+      "date_range": "2026-01-26 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Indonesia's Danantara to manage land seized from 28 firms linked to Sumatra floods, official says",
+          "source": "reuters.com",
+          "url": "https://reuters.com/business/environment/land-seized-28-firms-linked-sumatra-floods-will-be-managed-by-indonesias-2026-01-27",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Danantara takes over 1 million ha of land from 28 revoked permits",
+          "source": "idnfinancials.com",
+          "url": "https://idnfinancials.com/news/60814/danantara-takes-over-1-million-ha-of-land-from-28-revoked-permits",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Danantara Disebut akan Kelola Lahan 28 Perusahaan yang Izinnya Dicabut",
+          "source": "cnnindonesia.com",
+          "url": "https://cnnindonesia.com/ekonomi/20260126160522-92-1321197/danantara-disebut-akan-kelola-lahan-28-perusahaan-yang-izinnya-dicabut",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Danantara Ambil Alih 28 Perusahaan Sumatera yang Dicabut Izinnya",
+          "source": "bloombergtechnoz.com",
+          "url": "https://bloombergtechnoz.com/detail-news/97839/danantara-ambil-alih-28-perusahaan-sumatera-yang-dicabut-izinnya",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Danantara Bikin BUMN Baru Perminas, Mau Ambil Alih Tambang Emas Martabe",
+          "source": "finance.detik.com",
+          "url": "https://finance.detik.com/berita-ekonomi-bisnis/d-8329367/danantara-bikin-bumn-baru-perminas-mau-ambil-alih-tambang-emas-martabe",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Kata Rosan soal Danantara Bakal Ambil Alih Tambang Emas Martabe dari UNTR",
+          "source": "katadata.co.id",
+          "url": "https://katadata.co.id/finansial/bursa/697c5de76cf38/kata-rosan-soal-danantara-bakal-ambil-alih-tambang-emas-martabe-dari-untr",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Danantara Dirikan Perminas buat Caplok Tambang Emas Grup Astra",
+          "source": "idntimes.com",
+          "url": "https://idntimes.com/business/economy/danantara-dirikan-perminas-buat-caplok-tambang-emas-grup-astra-00-3m8tp-48dzdm",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Bos Danantara Ungkap Potensi Kerugian BUMN Tembus Rp50 T",
+          "source": "cnnindonesia.com",
+          "url": "https://cnnindonesia.com/ekonomi/20260129064732-92-1322223/bos-danantara-ungkap-potensi-kerugian-bumn-tembus-rp50-t",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://reuters.com/business/environment/land-seized-28-firms-linked-sumatra-floods-will-be-managed-by-indonesias-2026-01-27",
+        "https://finance.detik.com/berita-ekonomi-bisnis/d-8329367/danantara-bikin-bumn-baru-perminas-mau-ambil-alih-tambang-emas-martabe"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Political parties debate placing police under ministry versus direct presidential control",
+      "summary": "A debate emerged over whether Indonesia's police force (Polri) should be placed under a ministry or remain directly under the President. PDI-P previously proposed ministerial oversight, while Golkar, PKS, and PKB factions support keeping Polri under direct presidential control. The discussion occurred during parliamentary meetings with the national police chief.",
       "actors_involved": [
         "PDI-P",
-        "Golkar",
-        "TNI"
+        "Golkar"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 8,
       "sources": [
-        "kompas.com",
-        "detik.com",
-        "okezone.com",
-        "sultranesia.com",
+        "nasional.kompas.com",
+        "news.detik.com",
+        "liputan6.com",
+        "news.okezone.com",
         "penafaktual.com",
+        "sultranesia.com",
         "lenterasultra.com",
-        "merdeka.com"
+        "detik.com"
       ],
       "date_range": "2026-01-26 to 2026-01-30",
       "articles": [
         {
           "title": "Gagasan Polri di Bawah Kementerian Kembali Muncul, Sempat Diusulkan PDI-P",
-          "source": "kompas.com",
+          "source": "nasional.kompas.com",
           "url": "https://nasional.kompas.com/read/2026/01/26/07180791/gagasan-polri-di-bawah-kementerian-kembali-muncul-sempat-diusulkan-pdi-p",
           "date": "2026-01-26"
         },
         {
           "title": "Fraksi PDIP DPR Dukung Polri di Bawah Presiden, Bukan Menteri",
-          "source": "kompas.com",
+          "source": "nasional.kompas.com",
           "url": "https://nasional.kompas.com/read/2026/01/26/14590771/fraksi-pdip-dpr-dukung-polri-di-bawah-presiden-bukan-menteri",
           "date": "2026-01-26"
         },
         {
           "title": "Golkar Dukung Polri Tetap di Bawah Presiden: Tak Perlu Cemas",
-          "source": "kompas.com",
+          "source": "nasional.kompas.com",
           "url": "https://nasional.kompas.com/read/2026/01/26/12584201/golkar-dukung-polri-tetap-di-bawah-presiden-tak-perlu-cemas",
           "date": "2026-01-26"
         },
         {
           "title": "F-Golkar Dukung Polri Tetap di Bawah Presiden: Ini Amanat Reformasi",
-          "source": "detik.com",
+          "source": "news.detik.com",
           "url": "https://news.detik.com/berita/d-8325499/f-golkar-dukung-polri-tetap-di-bawah-presiden-ini-amanat-reformasi",
           "date": "2026-01-26"
         },
         {
-          "title": "Fraksi Golkar, PKS dan PKB Tegaskan Dukung Polri Tetap di Bawah Presiden",
-          "source": "okezone.com",
-          "url": "https://news.okezone.com/read/2026/01/26/337/3197605/fraksi-golkar-pks-dan-pkb-tegaskan-dukung-polri-tetap-di-bawah-presiden",
+          "title": "Singgung Amanat UU dan Reformasi, Rikwanto Golkar Tegaskan Polri Harus Tetap di Bawah Presiden",
+          "source": "liputan6.com",
+          "url": "https://www.liputan6.com/news/read/6265255/singgung-amanat-uu-dan-reformasi-rikwanto-golkar-tegaskan-polri-harus-tetap-di-bawah-presiden",
           "date": "2026-01-26"
         },
         {
-          "title": "Golkar Sulawesi Tenggara Dukung Polri Tetap di Bawah Presiden",
-          "source": "sultranesia.com",
-          "url": "https://sultranesia.com/golkar-sulawesi-tenggara-dukung-polri-tetap-di-bawah-presiden/",
-          "date": "2026-01-28"
+          "title": "Fraksi Golkar, PKS dan PKB Tegaskan Dukung Polri Tetap di Bawah Presiden",
+          "source": "news.okezone.com",
+          "url": "https://news.okezone.com/read/2026/01/26/337/3197605/fraksi-golkar-pks-dan-pkb-tegaskan-dukung-polri-tetap-di-bawah-presiden",
+          "date": "2026-01-26"
         },
         {
           "title": "Golkar Sultra Dukung Polri Tetap di Bawah Presiden, Darwin: Sesuai Amanat Konstitusi",
@@ -193,31 +269,46 @@
       ],
       "representative_urls": [
         "https://nasional.kompas.com/read/2026/01/26/07180791/gagasan-polri-di-bawah-kementerian-kembali-muncul-sempat-diusulkan-pdi-p",
-        "https://nasional.kompas.com/read/2026/01/26/14590771/fraksi-pdip-dpr-dukung-polri-di-bawah-presiden-bukan-menteri"
+        "https://news.detik.com/berita/d-8325499/f-golkar-dukung-polri-tetap-di-bawah-presiden-ini-amanat-reformasi"
       ]
     },
     {
-      "story_id": 4,
-      "headline": "Danantara announces stock market investments amid market turmoil",
-      "summary": "Indonesia's sovereign wealth fund Danantara instructed asset managers to continue buying local stocks with strong fundamentals and liquidity following the market rout. The fund revealed it has been quietly investing in Indonesian equities.",
+      "story_id": 5,
+      "headline": "Danantara announces major stock market investment strategy amid crisis",
+      "summary": "Indonesia's sovereign wealth fund Danantara instructed asset managers to continue buying local stocks with strong fundamentals and liquidity during the market crisis. Danantara also revealed plans to potentially own 15-30% of the Indonesian stock exchange after demutualization and disclosed it has already been investing daily in the stock market through various asset managers.",
       "actors_involved": [
         "Danantara"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 4,
+      "source_count": 9,
       "sources": [
         "bloomberg.com",
+        "cnbcindonesia.com",
         "cnnindonesia.com",
         "idxchannel.com",
-        "detik.com"
+        "katadata.co.id",
+        "monitorindonesia.com",
+        "ainvest.com"
       ],
-      "date_range": "2026-01-27 to 2026-02-01",
+      "date_range": "2026-01-29 to 2026-02-01",
       "articles": [
         {
           "title": "Danantara to Continue Investing in Indonesian Stocks After Rout",
           "source": "bloomberg.com",
           "url": "https://bloomberg.com/news/articles/2026-02-01/danantara-to-continue-investing-in-indonesian-stocks-after-rout",
           "date": "2026-02-01"
+        },
+        {
+          "title": "Danantara Incar Kepemilikan Saham BEI, Berapa Persen?",
+          "source": "cnbcindonesia.com",
+          "url": "https://cnbcindonesia.com/market/20260201194743-17-707139/danantara-incar-kepemilikan-saham-bei-berapa-persen",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Danantara Mau Jadi Pemegang Saham Bursa, OJK: Kita Welcome",
+          "source": "cnbcindonesia.com",
+          "url": "https://cnbcindonesia.com/market/20260130160423-17-706795/danantara-mau-jadi-pemegang-saham-bursa-ojk-kita-welcome",
+          "date": "2026-01-30"
         },
         {
           "title": "Danantara Diam-diam Masuk ke Pasar Modal, Ini Saham Pilihannya",
@@ -233,170 +324,21 @@
         },
         {
           "title": "Danantara Masuk Pasar Modal Tahun Ini",
-          "source": "detik.com",
+          "source": "finance.detik.com",
           "url": "https://finance.detik.com/bursa-dan-valas/d-8327077/danantara-masuk-pasar-modal-tahun-ini",
           "date": "2026-01-27"
-        }
-      ],
-      "representative_urls": [
-        "https://bloomberg.com/news/articles/2026-02-01/danantara-to-continue-investing-in-indonesian-stocks-after-rout",
-        "https://cnnindonesia.com/ekonomi/20260129200522-92-1322535/danantara-diam-diam-masuk-ke-pasar-modal-ini-saham-pilihannya"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Danantara takes control of seized lands and mining assets from revoked permits",
-      "summary": "Sovereign wealth fund Danantara began taking over 1 million hectares of land from 28 companies whose permits were revoked over environmental violations linked to Sumatra floods. The fund also created a new BUMN, Perminas, to manage seized mining assets including the Martabe gold mine.",
-      "actors_involved": [
-        "Danantara",
-        "Prabowo Subianto"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 6,
-      "sources": [
-        "idnfinancials.com",
-        "reuters.com",
-        "bloombergtechnoz.com",
-        "detik.com",
-        "idntimes.com",
-        "katadata.co.id"
-      ],
-      "date_range": "2026-01-27 to 2026-01-30",
-      "articles": [
-        {
-          "title": "Danantara takes over 1 million ha of land from 28 revoked permits",
-          "source": "idnfinancials.com",
-          "url": "https://idnfinancials.com/news/60814/danantara-takes-over-1-million-ha-of-land-from-28-revoked-permits",
-          "date": "2026-01-28"
         },
         {
-          "title": "Indonesia's Danantara to manage land seized from 28 firms linked to Sumatra floods",
-          "source": "reuters.com",
-          "url": "https://reuters.com/business/environment/land-seized-28-firms-linked-sumatra-floods-will-be-managed-by-indonesias-2026-01-27",
-          "date": "2026-01-27"
+          "title": "Danantara Berpotensi Kuasai 15\u201330% Saham BEI dalam Skema Demutualisasi",
+          "source": "monitorindonesia.com",
+          "url": "https://monitorindonesia.com/ekonomi/read/2026/02/619849/danantara-berpotensi-kuasai-15-30-saham-bei-dalam-skema-demutualisasi",
+          "date": "2026-02-01"
         },
         {
-          "title": "Danantara Ambil Alih 28 Perusahaan Sumatera yang Dicabut Izinnya",
-          "source": "bloombergtechnoz.com",
-          "url": "https://bloombergtechnoz.com/detail-news/97839/danantara-ambil-alih-28-perusahaan-sumatera-yang-dicabut-izinnya",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Danantara Bikin BUMN Baru Perminas, Mau Ambil Alih Tambang Emas Martabe",
-          "source": "detik.com",
-          "url": "https://finance.detik.com/berita-ekonomi-bisnis/d-8329367/danantara-bikin-bumn-baru-perminas-mau-ambil-alih-tambang-emas-martabe",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Danantara Dirikan Perminas buat Caplok Tambang Emas Grup Astra",
-          "source": "idntimes.com",
-          "url": "https://idntimes.com/business/economy/danantara-dirikan-perminas-buat-caplok-tambang-emas-grup-astra-00-3m8tp-48dzdm",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kata Rosan soal Danantara Bakal Ambil Alih Tambang Emas Martabe dari UNTR",
-          "source": "katadata.co.id",
-          "url": "https://katadata.co.id/finansial/bursa/697c5de76cf38/kata-rosan-soal-danantara-bakal-ambil-alih-tambang-emas-martabe-dari-untr",
-          "date": "2026-01-30"
-        }
-      ],
-      "representative_urls": [
-        "https://reuters.com/business/environment/land-seized-28-firms-linked-sumatra-floods-will-be-managed-by-indonesias-2026-01-27",
-        "https://idnfinancials.com/news/60814/danantara-takes-over-1-million-ha-of-land-from-28-revoked-permits"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Golkar appoints Sari Yuliati as deputy house speaker replacing Adies Kadir",
-      "summary": "Golkar Party appointed Sari Yuliati as Deputy Speaker of Parliament to replace Adies Kadir, who resigned after being nominated as Constitutional Court judge. Party chair Bahlil Lahadalia cited inclusivity and women's empowerment as reasons for the selection.",
-      "actors_involved": [
-        "Golkar"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 3,
-      "sources": [
-        "detik.com",
-        "liputan6.com"
-      ],
-      "date_range": "2026-01-26 to 2026-01-28",
-      "articles": [
-        {
-          "title": "Profil Sari Yuliati, Bendum Golkar Kini Jabat Wakil Ketua DPR RI",
-          "source": "detik.com",
-          "url": "https://news.detik.com/berita/d-8327236/profil-sari-yuliati-bendum-golkar-kini-jabat-wakil-ketua-dpr-ri",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Golkar: Adies Kadir Mundur dari Partai karena Dicalonkan sebagai Hakim MK",
-          "source": "detik.com",
-          "url": "https://news.detik.com/berita/d-8326128/golkar-adies-kadir-mundur-dari-partai-karena-dicalonkan-sebagai-hakim-mk",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Bahlil Ungkap Alasan Tunjuk Sari Yuliati Gantikan Adies Kadir Jadi Wakil Ketua DPR RI",
-          "source": "liputan6.com",
-          "url": "https://www.liputan6.com/news/read/6267062/bahlil-ungkap-alasan-tunjuk-sari-yuliati-gantikan-adies-kadir-jadi-wakil-ketua-dpr-ri",
-          "date": "2026-01-28"
-        }
-      ],
-      "representative_urls": [
-        "https://news.detik.com/berita/d-8327236/profil-sari-yuliati-bendum-golkar-kini-jabat-wakil-ketua-dpr-ri",
-        "https://news.detik.com/berita/d-8326128/golkar-adies-kadir-mundur-dari-partai-karena-dicalonkan-sebagai-hakim-mk"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "President Prabowo establishes National Energy Council",
-      "summary": "President Prabowo Subianto inaugurated the membership of the National Energy Council at the State Palace. The ceremony included swearing-in of the daily chairman and council members, with cabinet ministers, TNI commander, and police chief in attendance.",
-      "actors_involved": [
-        "Prabowo Subianto",
-        "TNI"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
-      "sources": [
-        "ksp.go.id"
-      ],
-      "date_range": "2026-01-29",
-      "articles": [
-        {
-          "title": "Presiden Prabowo Lantik Keanggotaan Dewan Energi Nasional",
-          "source": "ksp.go.id",
-          "url": "https://ksp.go.id/presiden-prabowo-lantik-keanggotaan-dewan-energi-nasional.html",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://ksp.go.id/presiden-prabowo-lantik-keanggotaan-dewan-energi-nasional.html"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "Danantara secures $1 billion loan and announces major investment plans",
-      "summary": "Indonesia's sovereign wealth fund Danantara obtained a $1 billion three-year loan at higher cost than its previous bond issuances. The fund announced readiness to invest up to $14 billion by 2026 across renewable energy, digital infrastructure, healthcare and food security sectors.",
-      "actors_involved": [
-        "Danantara"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 3,
-      "sources": [
-        "bloomberg.com",
-        "idnfinancials.com",
-        "ainvest.com"
-      ],
-      "date_range": "2026-01-26 to 2026-01-29",
-      "articles": [
-        {
-          "title": "Danantara Gets $1 Billion Loan at Double Cost of 'Patriot Bonds'",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-01-29/danantara-gets-1-billion-loan-at-double-cost-of-patriot-bonds",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Danantara Indonesia ready to invest up to US$14 billion by 2026",
-          "source": "idnfinancials.com",
-          "url": "https://idnfinancials.com/news/60764/danantara-indonesia-ready-to-invest-up-to-us14-billion-by-2026",
-          "date": "2026-01-26"
+          "title": "Danantara's Capital Deployment: A Structural Signal for Indonesia's Equity Market",
+          "source": "ainvest.com",
+          "url": "https://ainvest.com/news/danantara-capital-deployment-structural-signal-indonesia-equity-market-2602",
+          "date": "2026-02-01"
         },
         {
           "title": "Danantara's Capital Dilemma: Cheap Bonds vs. Costly Loans",
@@ -406,283 +348,31 @@
         }
       ],
       "representative_urls": [
-        "https://bloomberg.com/news/articles/2026-01-29/danantara-gets-1-billion-loan-at-double-cost-of-patriot-bonds",
-        "https://idnfinancials.com/news/60764/danantara-indonesia-ready-to-invest-up-to-us14-billion-by-2026"
+        "https://bloomberg.com/news/articles/2026-02-01/danantara-to-continue-investing-in-indonesian-stocks-after-rout",
+        "https://cnnindonesia.com/ekonomi/20260129200522-92-1322535/danantara-diam-diam-masuk-ke-pasar-modal-ini-saham-pilihannya"
       ]
     },
     {
-      "story_id": 9,
-      "headline": "President Prabowo joins Board of Peace alongside Trump",
-      "summary": "President Prabowo attended the signing ceremony of the Board of Peace (BoP) charter alongside US President Donald Trump. The Indonesian decision to join was described as geopolitical tactical awareness amid weakening multilateralism rather than submission.",
+      "story_id": 6,
+      "headline": "Prabowo joins Board of Peace initiative with Trump and other leaders",
+      "summary": "President Prabowo Subianto joined the Board of Peace (BoP) charter signing alongside Donald Trump and other leaders. Indonesia's participation is seen as geopolitical tactical awareness that multilateralism is weakening. Prabowo also clarified statements about Israel security guarantees that circulated on social media, explaining Indonesia's balanced position on Middle East peace.",
       "actors_involved": [
         "Prabowo Subianto"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 1,
+      "source_count": 2,
       "sources": [
-        "moderndiplomacy.eu"
+        "moderndiplomacy.eu",
+        "bloombergtechnoz.com"
       ],
-      "date_range": "2026-01-29",
+      "date_range": "2026-01-28 to 2026-01-29",
       "articles": [
         {
           "title": "Prabowo Among the Tough Guys of the Board of Peace",
           "source": "moderndiplomacy.eu",
           "url": "https://moderndiplomacy.eu/2026/01/29/prabowo-among-the-tough-guys-of-the-board-of-peace",
           "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://moderndiplomacy.eu/2026/01/29/prabowo-among-the-tough-guys-of-the-board-of-peace"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "PDI-P criticizes Jokowi's commitment to PSI party",
-      "summary": "PDI-P politician Guntur Romli sharply criticized former President Joko Widodo for stating he would work 'to the death' for the Indonesian Solidarity Party (PSI). The criticism highlights tensions between PDI-P and the former president.",
-      "actors_involved": [
-        "PDI-P",
-        "Joko Widodo"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
-      "sources": [
-        "kompas.com"
-      ],
-      "date_range": "2026-02-01",
-      "articles": [
-        {
-          "title": "Politikus PDI-P Kritik Jokowi yang Siap 'Mati-matian' untuk PSI",
-          "source": "kompas.com",
-          "url": "https://nasional.kompas.com/read/2026/02/01/17284481/politikus-pdi-p-kritik-jokowi-yang-siap-mati-matian-untuk-psi",
-          "date": "2026-02-01"
-        }
-      ],
-      "representative_urls": [
-        "https://nasional.kompas.com/read/2026/02/01/17284481/politikus-pdi-p-kritik-jokowi-yang-siap-mati-matian-untuk-psi"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "PDI-P calls for government solidarity amid rupiah weakness",
-      "summary": "PDI-P highlighted the weakening rupiah against the US dollar and urged government solidarity to address the economic crisis. Secretary General Hasto Kristiyanto emphasized the need for all government elements to work together facing global challenges.",
-      "actors_involved": [
-        "PDI-P"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
-      "sources": [
-        "kompas.com"
-      ],
-      "date_range": "2026-01-31",
-      "articles": [
-        {
-          "title": "Rupiah Melemah terhadap Dollar AS, PDI-P Harap Pemerintah Solid",
-          "source": "kompas.com",
-          "url": "https://nasional.kompas.com/read/2026/01/31/16564231/rupiah-melemah-terhadap-dollar-as-pdi-p-harap-pemerintah-solid",
-          "date": "2026-01-31"
-        }
-      ],
-      "representative_urls": [
-        "https://nasional.kompas.com/read/2026/01/31/16564231/rupiah-melemah-terhadap-dollar-as-pdi-p-harap-pemerintah-solid"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Pertamina announces fuel price reductions effective February 1",
-      "summary": "State energy company Pertamina announced price cuts for non-subsidized fuels including Pertamax (RON 92), Pertamax Turbo (RON 98), Pertamax Green (RON 95), Dexlite (CN 51), and Pertamina Dex (CN 53) effective February 1, 2026.",
-      "actors_involved": [
-        "Pertamina"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
-      "sources": [
-        "detik.com"
-      ],
-      "date_range": "2026-02-01",
-      "articles": [
-        {
-          "title": "Turun! Cek Daftar Harga Baru BBM di Semua SPBU Pertamina",
-          "source": "detik.com",
-          "url": "https://finance.detik.com/energi/d-8334872/turun-cek-daftar-harga-baru-bbm-di-semua-spbu-pertamina",
-          "date": "2026-02-01"
-        }
-      ],
-      "representative_urls": [
-        "https://finance.detik.com/energi/d-8334872/turun-cek-daftar-harga-baru-bbm-di-semua-spbu-pertamina"
-      ]
-    },
-    {
-      "story_id": 13,
-      "headline": "Pertamina announces historic oil shipment from Algeria",
-      "summary": "State energy company PT Pertamina announced the successful arrival of 1 million barrels of crude oil from Algeria, shipped from Oil and Gas Block 405A operated by Pertamina International. The shipment was connected to Cilacap Refinery Unit IV for real-time monitoring.",
-      "actors_involved": [
-        "Pertamina"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
-      "sources": [
-        "prabowosubianto.com"
-      ],
-      "date_range": "2026-01-31",
-      "articles": [
-        {
-          "title": "Historic Milestone: Pertamina Ships 1 Million Barrels of Crude Oil from Algeria to Indonesia",
-          "source": "prabowosubianto.com",
-          "url": "https://prabowosubianto.com/historic-milestone-pertamina-ships-1-million-barrels-of-crude-oil-from-algeria-to-indonesia/",
-          "date": "2026-01-31"
-        }
-      ],
-      "representative_urls": [
-        "https://prabowosubianto.com/historic-milestone-pertamina-ships-1-million-barrels-of-crude-oil-from-algeria-to-indonesia/"
-      ]
-    },
-    {
-      "story_id": 14,
-      "headline": "Danantara plans to become shareholder in Indonesia Stock Exchange",
-      "summary": "Danantara CEO Rosan P Roeslani announced the sovereign wealth fund's intention to become a shareholder in Indonesia Stock Exchange (BEI) after the demutualization process is completed. OJK welcomed the plan, which aligns with the 2023 Financial Sector Development Law.",
-      "actors_involved": [
-        "Danantara"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 2,
-      "sources": [
-        "cnbcindonesia.com"
-      ],
-      "date_range": "2026-01-30 to 2026-02-01",
-      "articles": [
-        {
-          "title": "Danantara Incar Kepemilikan Saham BEI, Berapa Persen?",
-          "source": "cnbcindonesia.com",
-          "url": "https://cnbcindonesia.com/market/20260201194743-17-707139/danantara-incar-kepemilikan-saham-bei-berapa-persen",
-          "date": "2026-02-01"
         },
-        {
-          "title": "Danantara Mau Jadi Pemegang Saham Bursa, OJK: Kita Welcome",
-          "source": "cnbcindonesia.com",
-          "url": "https://cnbcindonesia.com/market/20260130160423-17-706795/danantara-mau-jadi-pemegang-saham-bursa-ojk-kita-welcome",
-          "date": "2026-01-30"
-        }
-      ],
-      "representative_urls": [
-        "https://cnbcindonesia.com/market/20260201194743-17-707139/danantara-incar-kepemilikan-saham-bei-berapa-persen",
-        "https://cnbcindonesia.com/market/20260130160423-17-706795/danantara-mau-jadi-pemegang-saham-bursa-ojk-kita-welcome"
-      ]
-    },
-    {
-      "story_id": 15,
-      "headline": "Cabinet reshuffle speculation emerges after Thomas Djiwandono appointment",
-      "summary": "Golkar and Democratic parties stated they would leave cabinet reshuffle decisions to President Prabowo following speculation triggered by Thomas Djiwandono's selection as Bank Indonesia deputy governor. Party officials emphasized the president's full authority over cabinet composition.",
-      "actors_involved": [
-        "Prabowo Subianto",
-        "Golkar"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
-      "sources": [
-        "detik.com"
-      ],
-      "date_range": "2026-01-29",
-      "articles": [
-        {
-          "title": "Beredar Reshuffle Kabinet, Golkar-Demokrat Serahkan Keputusan ke Presiden",
-          "source": "detik.com",
-          "url": "https://news.detik.com/berita/d-8330400/beredar-reshuffle-kabinet-golkar-demokrat-serahkan-keputusan-ke-presiden",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://news.detik.com/berita/d-8330400/beredar-reshuffle-kabinet-golkar-demokrat-serahkan-keputusan-ke-presiden"
-      ]
-    },
-    {
-      "story_id": 16,
-      "headline": "Danantara announces waste-to-energy tender results for February",
-      "summary": "Danantara will announce the winner of its Waste-to-Energy (WtE) tender in the first half of 2026. The project aims to address increasing urban waste production through innovative energy conversion solutions, involving cooperation with central and local governments, private sector, and global investors.",
-      "actors_involved": [
-        "Danantara"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
-      "sources": [
-        "katadata.co.id"
-      ],
-      "date_range": "2026-01-27",
-      "articles": [
-        {
-          "title": "Pemenang Tender Waste to Energy Danantara Diumumkan Februari, Intip Skemanya",
-          "source": "katadata.co.id",
-          "url": "https://katadata.co.id/finansial/bursa/6978529b905f3/pemenang-tender-waste-to-energy-danantara-diumumkan-februari-intip-skemanya",
-          "date": "2026-01-27"
-        }
-      ],
-      "representative_urls": [
-        "https://katadata.co.id/finansial/bursa/6978529b905f3/pemenang-tender-waste-to-energy-danantara-diumumkan-februari-intip-skemanya"
-      ]
-    },
-    {
-      "story_id": 17,
-      "headline": "Former TNI commander receives LVRI honor award",
-      "summary": "Former TNI commander General Andika Perkasa received the LVRI Star Honor award directly from LVRI Chairman General HBL Mantiri at an ceremony in Jakarta. The event also included awards to Kraton Majapahit Jakarta for their participation in LVRI activities.",
-      "actors_involved": [
-        "TNI"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
-      "sources": [
-        "veteranri.go.id"
-      ],
-      "date_range": "2026-01-31",
-      "articles": [
-        {
-          "title": "JENDERAL TNI PURN ANDIKA PERKASA PEROLEH ANUGERAH BINTANG LVRI",
-          "source": "veteranri.go.id",
-          "url": "https://veteranri.go.id/jenderal-tni-purn-andika-perkasa-peroleh-anugerah-bintang-lvri/",
-          "date": "2026-01-31"
-        }
-      ],
-      "representative_urls": [
-        "https://veteranri.go.id/jenderal-tni-purn-andika-perkasa-peroleh-anugerah-bintang-lvri/"
-      ]
-    },
-    {
-      "story_id": 18,
-      "headline": "Gerindra celebrates 18th anniversary with 'Unity, Movement, Impact' theme",
-      "summary": "Gerindra Party announced its 18th anniversary celebration for February 6, 2026, under the theme 'Kompak, Bergerak, Berdampak' (Unity, Movement, Impact). The theme emphasizes collective spirit and solidarity across all party structures from national to grassroots level.",
-      "actors_involved": [
-        "Gerindra"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
-      "sources": [
-        "gerindra.id"
-      ],
-      "date_range": "2026-01-31",
-      "articles": [
-        {
-          "title": "Link Download Logo HUT ke-18 Partai Gerindra: Makna Logo dan Semangat 'Kompak, Bergerak, Berdampak'",
-          "source": "gerindra.id",
-          "url": "https://gerindra.id/2026/01/31/link-download-logo-hut-ke-18-partai-gerindra-makna-logo-dan-semangat-kompak-bergerak-berdampak/",
-          "date": "2026-01-31"
-        }
-      ],
-      "representative_urls": [
-        "https://gerindra.id/2026/01/31/link-download-logo-hut-ke-18-partai-gerindra-makna-logo-dan-semangat-kompak-bergerak-berdampak/"
-      ]
-    },
-    {
-      "story_id": 19,
-      "headline": "Fact-check addresses claims about Prabowo's Palestine-Israel comments",
-      "summary": "A fact-checking article addressed viral social media clips of President Prabowo's statements about the need for security guarantees for Israel, clarifying the context of his remarks about balanced and realistic approaches to Middle East peace.",
-      "actors_involved": [
-        "Prabowo Subianto"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 1,
-      "sources": [
-        "bloombergtechnoz.com"
-      ],
-      "date_range": "2026-01-28",
-      "articles": [
         {
           "title": "Tidak Benar Prabowo Abaikan Keamanan Palestina, Ini Faktanya",
           "source": "bloombergtechnoz.com",
@@ -691,70 +381,174 @@
         }
       ],
       "representative_urls": [
+        "https://moderndiplomacy.eu/2026/01/29/prabowo-among-the-tough-guys-of-the-board-of-peace",
         "https://bloombergtechnoz.com/detail-news/97827/tidak-benar-prabowo-abaikan-keamanan-palestina-ini-faktanya"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Golkar appoints Sari Yuliati as new deputy parliament speaker",
+      "summary": "Golkar party appointed Sari Yuliati as deputy speaker of parliament (DPR) to replace Adies Kadir, who resigned after being nominated as Constitutional Court judge. Yuliati previously served as deputy chair of Commission III and treasurer of Golkar party. The appointment was part of Golkar's commitment to inclusivity and women's emancipation.",
+      "actors_involved": [
+        "Golkar"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "news.detik.com",
+        "liputan6.com"
+      ],
+      "date_range": "2026-01-26 to 2026-01-28",
+      "articles": [
+        {
+          "title": "Profil Sari Yuliati, Bendum Golkar Kini Jabat Wakil Ketua DPR RI",
+          "source": "news.detik.com",
+          "url": "https://news.detik.com/berita/d-8327236/profil-sari-yuliati-bendum-golkar-kini-jabat-wakil-ketua-dpr-ri",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Bahlil Ungkap Alasan Tunjuk Sari Yuliati Gantikan Adies Kadir Jadi Wakil Ketua DPR RI",
+          "source": "liputan6.com",
+          "url": "https://www.liputan6.com/news/read/6267062/bahlil-ungkap-alasan-tunjuk-sari-yuliati-gantikan-adies-kadir-jadi-wakil-ketua-dpr-ri",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Golkar: Adies Kadir Mundur dari Partai karena Dicalonkan sebagai Hakim MK",
+          "source": "news.detik.com",
+          "url": "https://news.detik.com/berita/d-8326128/golkar-adies-kadir-mundur-dari-partai-karena-dicalonkan-sebagai-hakim-mk",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Profil Sari Yuliati Wakil Ketua DPR Baru, Srikandi Golkar Orang Kepercayaan Bahlil Lahadalia",
+          "source": "liputan6.com",
+          "url": "https://liputan6.com/news/read/6265918/profil-sari-yuliati-wakil-ketua-dpr-baru-srikandi-golkar-orang-kepercayaan-bahlil-lahadalia",
+          "date": "2026-01-27"
+        }
+      ],
+      "representative_urls": [
+        "https://news.detik.com/berita/d-8327236/profil-sari-yuliati-bendum-golkar-kini-jabat-wakil-ketua-dpr-ri",
+        "https://www.liputan6.com/news/read/6267062/bahlil-ungkap-alasan-tunjuk-sari-yuliati-gantikan-adies-kadir-jadi-wakil-ketua-dpr-ri"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Prabowo appoints National Energy Council and accelerates housing programs",
+      "summary": "President Prabowo Subianto inaugurated the National Energy Council membership at the State Palace and met with Housing Minister Maruarar Sirait to discuss accelerating affordable housing programs. The energy council appointment included government officials and stakeholders, while the housing meeting focused on strategic steps to speed up provision of affordable housing for the public.",
+      "actors_involved": [
+        "Prabowo Subianto",
+        "TNI"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
+      "sources": [
+        "ksp.go.id",
+        "gerindra.id"
+      ],
+      "date_range": "2026-01-29 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Presiden Prabowo Lantik Keanggotaan Dewan Energi Nasional",
+          "source": "ksp.go.id",
+          "url": "https://ksp.go.id/presiden-prabowo-lantik-keanggotaan-dewan-energi-nasional.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Presiden Prabowo Panggil Menteri PKP ke Hambalang, Bahas Percepatan Perumahan Rakyat",
+          "source": "gerindra.id",
+          "url": "https://gerindra.id/2026/01/30/presiden-prabowo-panggil-menteri-pkp-ke-hambalang-bahas-percepatan-perumahan-rakyat/",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://ksp.go.id/presiden-prabowo-lantik-keanggotaan-dewan-energi-nasional.html",
+        "https://gerindra.id/2026/01/30/presiden-prabowo-panggil-menteri-pkp-ke-hambalang-bahas-percepatan-perumahan-rakyat/"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "PDI-P criticizes Jokowi's commitment to PSI and comments on rupiah weakness",
+      "summary": "PDI-P politician Guntur Romli criticized former President Jokowi for stating he would work 'to the death' for PSI party. Separately, PDI-P Secretary General Hasto Kristiyanto commented on the weakening rupiah against the US dollar, calling for government solidarity to address the economic crisis.",
+      "actors_involved": [
+        "PDI-P",
+        "Joko Widodo"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
+      "sources": [
+        "nasional.kompas.com"
+      ],
+      "date_range": "2026-01-31 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Politikus PDI-P Kritik Jokowi yang Siap 'Mati-matian' untuk PSI",
+          "source": "nasional.kompas.com",
+          "url": "https://nasional.kompas.com/read/2026/02/01/17284481/politikus-pdi-p-kritik-jokowi-yang-siap-mati-matian-untuk-psi",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Rupiah Melemah terhadap Dollar AS, PDI-P Harap Pemerintah Solid",
+          "source": "nasional.kompas.com",
+          "url": "https://nasional.kompas.com/read/2026/01/31/16564231/rupiah-melemah-terhadap-dollar-as-pdi-p-harap-pemerintah-solid",
+          "date": "2026-01-31"
+        }
+      ],
+      "representative_urls": [
+        "https://nasional.kompas.com/read/2026/02/01/17284481/politikus-pdi-p-kritik-jokowi-yang-siap-mati-matian-untuk-psi",
+        "https://nasional.kompas.com/read/2026/01/31/16564231/rupiah-melemah-terhadap-dollar-as-pdi-p-harap-pemerintah-solid"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Pertamina reduces fuel prices and ships crude oil from Algeria operations",
+      "summary": "State energy company Pertamina reduced prices for non-subsidized fuels including Pertamax, Pertamax Turbo, Pertamax Green, Dexlite, and Pertamina Dex effective February 1. Separately, Pertamina announced the successful arrival of 1 million barrels of crude oil from its Algeria operations at Oil and Gas Block 405A, marking a milestone for the company's international operations.",
+      "actors_involved": [
+        "Pertamina"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
+      "sources": [
+        "finance.detik.com",
+        "prabowosubianto.com"
+      ],
+      "date_range": "2026-01-31 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Turun! Cek Daftar Harga Baru BBM di Semua SPBU Pertamina",
+          "source": "finance.detik.com",
+          "url": "https://finance.detik.com/energi/d-8334872/turun-cek-daftar-harga-baru-bbm-di-semua-spbu-pertamina",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Historic Milestone: Pertamina Ships 1 Million Barrels of Crude Oil from Algeria to Indonesia",
+          "source": "prabowosubianto.com",
+          "url": "https://prabowosubianto.com/historic-milestone-pertamina-ships-1-million-barrels-of-crude-oil-from-algeria-to-indonesia/",
+          "date": "2026-01-31"
+        }
+      ],
+      "representative_urls": [
+        "https://finance.detik.com/energi/d-8334872/turun-cek-daftar-harga-baru-bbm-di-semua-spbu-pertamina",
+        "https://prabowosubianto.com/historic-milestone-pertamina-ships-1-million-barrels-of-crude-oil-from-algeria-to-indonesia/"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Will Indonesia's National Mandate Party move away from religious roots?",
+      "headline": "Cabinet reshuffle speculation as Golkar and Demokrat defer to President",
+      "source": "news.detik.com",
+      "url": "https://news.detik.com/berita/d-8330400/beredar-reshuffle-kabinet-golkar-demokrat-serahkan-keputusan-ke-presiden",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "National Mandate Party rebrands as youth party moving away from religious roots",
       "source": "fulcrum.sg",
       "url": "https://fulcrum.sg/will-indonesias-national-mandate-party-move-further-away-from-its-religious-roots",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "PDI-P ideological stance in pragmatic era analysis",
-      "source": "detik.com",
-      "url": "https://news.detik.com/kolom/d-8321956/pdi-perjuangan-dan-pertaruhan-ideologis-di-era-pragmatisme",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "PDI-P Brebes chapter maintains solidarity after leadership changes",
-      "source": "kompas.com",
-      "url": "https://regional.kompas.com/read/2026/01/26/152330878/ketua-dpc-pdi-p-brebes-tegaskan-partai-tetap-solid-usai-perombakan-pengurus",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Former Brebes deputy regent appears at PDI-P anniversary after long absence",
-      "source": "ketik.com",
-      "url": "https://ketik.com/berita/kejutan-di-hut-pdi-p-mantan-wakil-bupati-brebes-kembali-muncul-usai-lama-menghilang",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Indonesia stops Pertamax imports from 2027, potential $7B foreign exchange savings",
-      "source": "bloombergtechnoz.com",
-      "url": "https://bloombergtechnoz.com/detail-news/97976/ri-mau-stop-impor-pertamax-mulai-2027-bisa-hemat-devisa-berapa",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Ahok discusses Pertamina's highest profits during his tenure as commissioner",
+      "headline": "Golkar proposes allowing merged political party factions in parliament",
       "source": "liputan6.com",
-      "url": "https://liputan6.com/news/read/6266464/ahok-singgung-keuntungan-terbesar-pertamina-dan-peran-anak-muda-yang-kini-jadi-terdakwa",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Pertamina partners with detention center for MSME empowerment program",
-      "source": "sindonews.com",
-      "url": "https://ekbis.sindonews.com/read/1672073/34/umkm-pertapreneur-aggregator-pertamina-gandeng-rutan-kebumen-berdayakan-warga-binaan-1769860860",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Danantara reveals potential BUMN losses reaching Rp50 trillion annually",
-      "source": "cnnindonesia.com",
-      "url": "https://cnnindonesia.com/ekonomi/20260129064732-92-1322223/bos-danantara-ungkap-potensi-kerugian-bumn-tembus-rp50-t",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Danantara announces PGN business direction shift from upstream operations",
-      "source": "cnbcindonesia.com",
-      "url": "https://cnbcindonesia.com/market/20260129171239-17-706490/danantara-ungkap-arah-bisnis-pgn-tak-lagi-garap-bisnis-upstream",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Political analysis on Danantara's influence and public opacity concerns",
-      "source": "asiasentinel.com",
-      "url": "https://asiasentinel.com/p/political-influence-dogs-indonesia-danantara",
-      "signal_category_hint": "economic_tech"
+      "url": "https://liputan6.com/news/read/6268701/golkar-terbuka-bahas-usulan-fraksi-gabungan-dan-penghapusan-ambang-batas-parlemen-semua-terkait-erat",
+      "signal_category_hint": "domestic_regime"
     }
   ]
 }

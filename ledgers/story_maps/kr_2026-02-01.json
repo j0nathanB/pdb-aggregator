@@ -3,101 +3,35 @@
   "code": "kr",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 151,
-  "stories_identified": 14,
-  "off_topic_filtered": 67,
-  "noise_summary": "67 off-topic results filtered: 15 Hungarian politics (DPK/Orb\u00e1n Viktor articles), 12 US/international military not Korea-related, 8 entertainment/celebrity news, 6 Serbian NIS oil company articles, 4 Brazilian social program articles, 5 K-drama content, 4 sports coverage, 13 miscellaneous international news.",
+  "search_results_total": 152,
+  "stories_identified": 12,
+  "off_topic_filtered": 47,
+  "noise_summary": "47 off-topic results filtered: 15 Hungarian political articles incorrectly matched to 'DPK' search term, 12 entertainment/celebrity articles, 8 general US/international military articles, 6 NamuWiki entries about unrelated individuals, 4 international political articles not about South Korea, 2 sports-related articles.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Lee Jae-myung pursues active regional diplomacy with China, Japan, and other partners",
-      "summary": "President Lee conducted diplomatic outreach including state visits to China and Japan in January, his first to China in six years. Other diplomatic activities included Mexico requesting more BTS concerts, Canadian meetings over submarine deals, and calls with Vietnam's leadership.",
-      "actors_involved": [
-        "Lee Jae-myung"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
-      "sources": [
-        "keia.org",
-        "reuters.com",
-        "aa.com.tr",
-        "koreaherald.com"
-      ],
-      "date_range": "2026-01-26 to 2026-01-30",
-      "articles": [
-        {
-          "title": "Lee Jae Myung Tests South Korea's Pragmatic Diplomacy Between China and Japan",
-          "source": "keia.org",
-          "url": "https://keia.org/the-peninsula/lee-jae-myung-tests-south-koreas-pragmatic-diplomacy-between-china-and-japan/",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Mexico president asks Korean counterpart for more BTS concerts",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/business/media-telecom/mexico-president-asks-korean-counterpart-more-bts-concerts-2026-01-26/",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "S.Korean President Lee's aide meets Canadian Premier Carney amid efforts to win major submarine deal",
-          "source": "aa.com.tr",
-          "url": "https://www.aa.com.tr/en/asia-pacific/skorean-president-lees-aide-meets-canadian-premier-carney-amid-efforts-to-win-major-submarine-deal/3813840",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Lee thanks Vietnam for support following S. Korean politician's death in phone talks with To Lam",
-          "source": "koreaherald.com",
-          "url": "https://koreaherald.com/article/10666761",
-          "date": "2026-01-30"
-        }
-      ],
-      "representative_urls": [
-        "https://keia.org/the-peninsula/lee-jae-myung-tests-south-koreas-pragmatic-diplomacy-between-china-and-japan/",
-        "https://www.reuters.com/business/media-telecom/mexico-president-asks-korean-counterpart-more-bts-concerts-2026-01-26/"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "Lee Jae-myung implements sweeping economic reforms targeting real estate and capital markets",
-      "summary": "President Lee announced multiple economic policy initiatives including tax reforms to address stock price suppression, real estate market normalization measures ending tax deferrals for multiple homeowners, and KOSDAQ overhauls to boost startups. The People Power Party criticized his housing policies.",
+      "headline": "Lee Jae-myung implements sweeping real estate market reforms amid PPP criticism",
+      "summary": "President Lee Jae-myung announced multiple housing policy measures including ending tax deferrals for multiple homeowners and pledging to 'normalize' the real estate market. The People Power Party attacked the policies as ineffective.",
       "actors_involved": [
         "Lee Jae-myung",
         "People Power Party"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 12,
+      "source_count": 8,
       "sources": [
-        "chosun.com",
         "koreatimes.co.kr",
         "en.sedaily.com",
+        "chosun.com",
         "khan.co.kr",
-        "upi.com",
         "mk.co.kr"
       ],
       "date_range": "2026-01-25 to 2026-02-01",
       "articles": [
         {
-          "title": "President Lee Jae Myung Proposes Tax Reform to Halt Stock Price Suppression",
-          "source": "chosun.com",
-          "url": "https://www.chosun.com/english/market-money-en/2026/01/29/WAQOWH6GRBCQ7JDVVLFASPOGIU/",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "President Lee Jae-myung Declares 'No Market Beats the Government' on Real Estate Shift",
-          "source": "chosun.com",
-          "url": "https://www.chosun.com/english/market-money-en/2026/01/26/5HZRR3FYVNFNRDYJH2UQVLXHEQ/",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "President Lee Jae-myung Orders KOSDAQ Overhaul to Revive Startup-Focused Market",
-          "source": "chosun.com",
-          "url": "https://chosun.com/english/national-en/2026/01/28/B5NNWTSNE5BRVF3GOHES5XALLU",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "President Lee Jae-myung Ends Multiple-Homeowner Tax Deferral Extension",
-          "source": "chosun.com",
-          "url": "https://chosun.com/english/national-en/2026/01/25/E4PGFBSGERHWTCB5DV24FUJ67I",
-          "date": "2026-01-25"
+          "title": "Lee calls for wider public debate on sugar levy",
+          "source": "koreatimes.co.kr",
+          "url": "https://koreatimes.co.kr/southkorea/politics/20260201/lee-calls-for-wider-public-debate-on-sugar-levy",
+          "date": "2026-02-01"
         },
         {
           "title": "Lee doubles down on housing policy in social media posts",
@@ -106,7 +40,7 @@
           "date": "2026-02-01"
         },
         {
-          "title": "People Power Party Attacks Lee Jae-myung's Real Estate Remarks: \"Why Can't You Do What You Called Easy?\"",
+          "title": "People Power Party Attacks Lee Jae-myung's Real Estate Remarks",
           "source": "en.sedaily.com",
           "url": "https://en.sedaily.com/politics/2026/01/31/people-power-party-attacks-lee-jae-myungs-real-estate",
           "date": "2026-01-31"
@@ -118,54 +52,48 @@
           "date": "2026-01-31"
         },
         {
-          "title": "Lee urges foreign investment but labor laws must come first",
-          "source": "upi.com",
-          "url": "https://upi.com/Top_News/World-News/2026/01/29/president-lee-jae-myung-foreign-chamber-of-commerce/9261769742815",
-          "date": "2026-01-30"
+          "title": "President Lee Jae-myung Orders KOSDAQ Overhaul to Revive Startup-Focused Market",
+          "source": "chosun.com",
+          "url": "https://chosun.com/english/national-en/2026/01/28/B5NNWTSNE5BRVF3GOHES5XALLU",
+          "date": "2026-01-28"
         },
         {
-          "title": "President Lee Jae Myung reiterated his position on the 28th that he will make all-out efforts to adv..",
+          "title": "President Lee Jae Myung reiterated his position on the 28th that he will make all-out efforts to advance capital markets",
           "source": "mk.co.kr",
           "url": "https://mk.co.kr/en/politics/11945826",
           "date": "2026-01-28"
         },
         {
-          "title": "President Lee Jae Myung said on the 29th, \"It would be nice to talk seriously about basic society.\"",
-          "source": "mk.co.kr",
-          "url": "https://www.mk.co.kr/en/politics/11947428",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "President Lee Jae Myung said on the 26th that he hopes this trend will settle",
-          "source": "mk.co.kr",
-          "url": "https://www.mk.co.kr/en/politics/11943653",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Syuka Rebuts KOSPI 5,000 Mockery Claims",
+          "title": "President Lee Jae-myung Declares 'No Market Beats the Government' on Real Estate Shift",
           "source": "chosun.com",
-          "url": "https://chosun.com/english/national-en/2026/01/30/FGXS55JGIJEBNKCKP2F5CWQ2EQ",
-          "date": "2026-01-30"
+          "url": "https://www.chosun.com/english/market-money-en/2026/01/26/5HZRR3FYVNFNRDYJH2UQVLXHEQ",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "President Lee Jae-myung Ends Multiple-Homeowner Tax Deferral Extension",
+          "source": "chosun.com",
+          "url": "https://chosun.com/english/national-en/2026/01/25/E4PGFBSGERHWTCB5DV24FUJ67I",
+          "date": "2026-01-25"
         }
       ],
       "representative_urls": [
-        "https://www.chosun.com/english/market-money-en/2026/01/29/WAQOWH6GRBCQ7JDVVLFASPOGIU/",
-        "https://koreatimes.co.kr/southkorea/politics/20260201/lee-doubles-down-on-housing-policy-in-social-media-posts"
+        "https://koreatimes.co.kr/southkorea/politics/20260201/lee-doubles-down-on-housing-policy-in-social-media-posts",
+        "https://en.sedaily.com/politics/2026/01/31/people-power-party-attacks-lee-jae-myungs-real-estate"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Former Prime Minister Lee Hae-chan dies during Vietnam visit, receives state honors",
-      "summary": "Former PM Lee Hae-chan, known as a 'kingmaker' for progressive presidents, died during an official visit to Vietnam. President Lee Jae-myung conferred the highest civilian honor and attended the funeral, describing Lee as a great mentor for democracy.",
+      "story_id": 2,
+      "headline": "Former Prime Minister Lee Hae-chan dies during Vietnam visit, receives state funeral",
+      "summary": "Former PM Lee Hae-chan, a key figure in South Korea's democratization and close ally of President Lee Jae-myung, died during an official visit to Vietnam. President Lee led funeral proceedings and awarded him the highest civilian honor.",
       "actors_involved": [
         "Lee Jae-myung"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 6,
+      "source_count": 7,
       "sources": [
         "reuters.com",
-        "en.yna.co.kr",
         "chosun.com",
+        "en.yna.co.kr",
         "koreaherald.com"
       ],
       "date_range": "2026-01-25 to 2026-01-31",
@@ -177,16 +105,22 @@
           "date": "2026-01-26"
         },
         {
-          "title": "(5th LD) Ex-PM Lee Hae-chan dies during Vietnam trip",
-          "source": "en.yna.co.kr",
-          "url": "https://en.yna.co.kr/view/AEN20260125002656320",
-          "date": "2026-01-25"
-        },
-        {
           "title": "President Lee Jae-myung Honors Late Prime Minister Lee Hae-chan",
           "source": "chosun.com",
           "url": "https://www.chosun.com/english/national-en/2026/01/28/MLASTBWNUFDUBEOFA2CJPDK5BE/",
           "date": "2026-01-27"
+        },
+        {
+          "title": "President Lee Jae Myung Tears Up at Late PM Lee Hae-chan's Funeral",
+          "source": "chosun.com",
+          "url": "https://chosun.com/english/national-en/2026/01/31/LRJ3DMWVBBGIZOFJHSS7C7NF2A",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "(5th LD) Ex-PM Lee Hae-chan dies during Vietnam trip",
+          "source": "en.yna.co.kr",
+          "url": "https://en.yna.co.kr/view/AEN20260125002656320",
+          "date": "2026-01-25"
         },
         {
           "title": "President Lee pays tribute to ex-prime minister Lee Hae-chan",
@@ -201,10 +135,10 @@
           "date": "2026-01-25"
         },
         {
-          "title": "President Lee Jae Myung Tears Up at Late PM Lee Hae-chan's Funeral",
-          "source": "chosun.com",
-          "url": "https://chosun.com/english/national-en/2026/01/31/LRJ3DMWVBBGIZOFJHSS7C7NF2A",
-          "date": "2026-01-31"
+          "title": "Lee thanks Vietnam for support following S. Korean politician's death in phone talks with To Lam",
+          "source": "koreaherald.com",
+          "url": "https://koreaherald.com/article/10666761",
+          "date": "2026-01-30"
         }
       ],
       "representative_urls": [
@@ -213,16 +147,16 @@
       ]
     },
     {
-      "story_id": 4,
-      "headline": "Former Prime Minister Han Duck-soo sentenced to 23 years for insurrection charges",
-      "summary": "Former PM Han Duck-soo received a 23-year prison sentence for aiding and abetting Yoon Suk-yeol's martial law declaration, eight years longer than prosecutors demanded. Both Han's legal team and special counsel filed appeals against the ruling.",
+      "story_id": 3,
+      "headline": "Former PM Han Duck-soo sentenced to 23 years for aiding Yoon's insurrection, appeals conviction",
+      "summary": "Seoul Central District Court sentenced former Prime Minister Han Duck-soo to 23 years in prison for aiding and abetting former President Yoon Suk-yeol's December 2024 martial law declaration. Both Han's legal team and prosecutors appealed the ruling.",
       "actors_involved": [
-        "Han Duck-soo"
+        "Han Duck-soo",
+        "Yoon Suk-yeol"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 6,
+      "source_count": 5,
       "sources": [
-        "aljazeera.com",
         "koreajoongangdaily.joins.com",
         "chosun.com",
         "english.news.cn",
@@ -230,12 +164,6 @@
       ],
       "date_range": "2026-01-25 to 2026-01-27",
       "articles": [
-        {
-          "title": "South Korea's former first lady sentenced to jail term in bribery case",
-          "source": "aljazeera.com",
-          "url": "https://aljazeera.com/news/2026/1/28/south-koreas-former-first-lady-sentenced-to-jail-term-in-bribery-case",
-          "date": "2026-01-28"
-        },
         {
           "title": "Han Duck-soo's fate, Kim Min-seok's counsel",
           "source": "koreajoongangdaily.joins.com",
@@ -273,9 +201,9 @@
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Former First Lady Kim Keon Hee sentenced to 20 months for bribery",
-      "summary": "Former first lady Kim Keon Hee received a 20-month prison sentence for accepting luxury gifts including Chanel bags and a diamond necklace from Unification Church officials in exchange for political favors. She faces additional trials on other charges.",
+      "story_id": 4,
+      "headline": "Former First Lady Kim Keon Hee sentenced to 20 months for bribery in luxury gifts case",
+      "summary": "Seoul Central District Court sentenced Kim Keon Hee, wife of impeached President Yoon Suk-yeol, to 20 months in prison for accepting luxury gifts including Chanel bags and diamond jewelry from the Unification Church in exchange for political favors.",
       "actors_involved": [
         "Yoon Suk-yeol"
       ],
@@ -287,11 +215,11 @@
         "reuters.com",
         "bbc.com",
         "krdo.com",
+        "localnews8.com",
         "sundayguardianlive.com",
-        "bransontrilakesnews.com",
         "english.news.cn",
-        "trtworld.com",
-        "localnews8.com"
+        "bransontrilakesnews.com",
+        "trtworld.com"
       ],
       "date_range": "2026-01-27 to 2026-01-28",
       "articles": [
@@ -326,15 +254,15 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Who Is Kim Keon Hee? South Korea's Ex-First Lady Jailed 20 Months for Corruption",
-          "source": "sundayguardianlive.com",
-          "url": "https://sundayguardianlive.com/world/who-is-kim-keon-hee-south-koreas-ex-first-lady-jailed-20-months-for-corruption-as-husband-yoon-suk-yeol-remains-imprisoned-166880/",
+          "title": "How a love of luxury brought down South Korea's former first lady",
+          "source": "localnews8.com",
+          "url": "https://localnews8.com/news/national-world/cnn-world/2026/01/27/how-a-love-of-luxury-brought-down-south-koreas-first-lady",
           "date": "2026-01-28"
         },
         {
-          "title": "South Korea's ex-first lady jailed for 20 months for taking bribes",
-          "source": "bransontrilakesnews.com",
-          "url": "https://bransontrilakesnews.com/news/national/article_b1bb253e-aa6f-50d7-a344-e4ccf1ba7c97.html",
+          "title": "Who Is Kim Keon Hee? South Korea's Ex-First Lady Jailed 20 Months for Corruption",
+          "source": "sundayguardianlive.com",
+          "url": "https://sundayguardianlive.com/world/who-is-kim-keon-hee-south-koreas-ex-first-lady-jailed-20-months-for-corruption-as-husband-yoon-suk-yeol-remains-imprisoned-166880/",
           "date": "2026-01-28"
         },
         {
@@ -344,27 +272,27 @@
           "date": "2026-01-28"
         },
         {
-          "title": "TRT World - South Korea's former first lady sentenced to prison for 20 months for corruption",
-          "source": "trtworld.com",
-          "url": "https://trtworld.com/article/edc54b6a7f79",
+          "title": "South Korea's ex-first lady jailed for 20 months for taking bribes",
+          "source": "bransontrilakesnews.com",
+          "url": "https://bransontrilakesnews.com/news/national/article_b1bb253e-aa6f-50d7-a344-e4ccf1ba7c97.html",
           "date": "2026-01-28"
         },
         {
-          "title": "How a love of luxury brought down South Korea's former first lady",
-          "source": "localnews8.com",
-          "url": "https://localnews8.com/news/national-world/cnn-world/2026/01/27/how-a-love-of-luxury-brought-down-south-koreas-first-lady",
+          "title": "TRT World - South Korea's former first lady sentenced to prison for 20 months for corruption",
+          "source": "trtworld.com",
+          "url": "https://trtworld.com/article/edc54b6a7f79",
           "date": "2026-01-28"
         }
       ],
       "representative_urls": [
         "https://reuters.com/world/asia-pacific/south-korea-court-set-rule-bribery-trial-former-first-lady-2026-01-28",
-        "https://bbc.com/news/articles/cj3vpe8zme8o"
+        "https://aljazeera.com/news/2026/1/28/south-koreas-former-first-lady-sentenced-to-jail-term-in-bribery-case"
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Samsung reports record quarterly profits driven by AI chip demand",
-      "summary": "Samsung Electronics announced record fourth-quarter profits that more than tripled year-over-year, driven by AI chip demand and memory shortages. The company warned of headwinds for smartphones and displays due to rising memory costs.",
+      "story_id": 5,
+      "headline": "Samsung reports record Q4 profits tripling to 20 trillion won amid memory chip shortage",
+      "summary": "Samsung Electronics announced record fourth-quarter operating profits of 20.1 trillion won, more than tripling from the previous year, driven by AI-driven memory demand and severe chip shortages. The company warned of rising costs for its smartphone and display businesses.",
       "actors_involved": [
         "Samsung Group"
       ],
@@ -423,23 +351,52 @@
       ]
     },
     {
+      "story_id": 6,
+      "headline": "Lee Jae-myung intensifies anti-scam campaign targeting Koreans abroad",
+      "summary": "President Lee Jae-myung issued renewed warnings against transnational organized crime targeting South Koreans, particularly in Southeast Asia, emphasizing that Korea's commitment to fighting such crimes is not 'empty talk.'",
+      "actors_involved": [
+        "Lee Jae-myung"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
+      "sources": [
+        "koreatimes.co.kr",
+        "koreaherald.com"
+      ],
+      "date_range": "2026-01-30 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Lee reiterates his warning against transnational scam crimes targeting Koreans",
+          "source": "koreatimes.co.kr",
+          "url": "https://koreatimes.co.kr/southkorea/politics/20260130/lee-reiterates-his-warning-against-transnational-scam-crimes-targeting-koreans",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Lee renews warning against transnational scams in Cambodia",
+          "source": "koreaherald.com",
+          "url": "https://koreaherald.com/article/10666452",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://koreatimes.co.kr/southkorea/politics/20260130/lee-reiterates-his-warning-against-transnational-scam-crimes-targeting-koreans",
+        "https://koreaherald.com/article/10666452"
+      ]
+    },
+    {
       "story_id": 7,
-      "headline": "Bank of Korea addresses currency policies and names FX leading banks",
-      "summary": "The Bank of Korea designated major commercial banks and JP Morgan as FX leading banks for 2026. BOK officials also addressed public misconceptions about money supply and liquidity indicators, and the US Treasury commented on recent won weakness.",
+      "headline": "Bank of Korea maintains monetary policy stance amid inflation pressures",
+      "summary": "The Bank of Korea announced several policy measures including designating FX leading banks and addressing public concerns about money supply growth. Central bank officials dismissed claims about excessive liquidity as misunderstandings.",
       "actors_involved": [
         "Bank of Korea"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 7,
+      "source_count": 3,
       "sources": [
         "koreatimes.co.kr",
-        "chosun.com",
-        "cryptonews.com",
-        "reuters.com",
-        "fxstreet.com",
-        "en.bloomingbit.io"
+        "chosun.com"
       ],
-      "date_range": "2026-01-25 to 2026-01-30",
+      "date_range": "2026-01-25 to 2026-01-29",
       "articles": [
         {
           "title": "BOK names 5 major lenders, KDB, JP Morgan as FX leading banks",
@@ -456,163 +413,44 @@
         {
           "title": "Bank of Korea Official Dismisses Money Supply Claims as Misunderstanding",
           "source": "chosun.com",
-          "url": "https://www.chosun.com/english/market-money-en/2026/01/27/LG6RZBMDQNHRFIM62PTRZXHZFI/",
+          "url": "https://www.chosun.com/english/market-money-en/2026/01/27/LG6RZBMDQNHRFIM62PTRZXHZFI",
           "date": "2026-01-26"
-        },
-        {
-          "title": "South Korea Eyes Local Crypto Issuance Amid Stablecoin Risks",
-          "source": "cryptonews.com",
-          "url": "https://cryptonews.com/news/south-korea-eyes-domestic-crypto-issuance-as-governor-warns-on-stablecoin-risks-whats-the-plan",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "US Treasury says recent Korean won weakness not aligned to fundamentals",
-          "source": "reuters.com",
-          "url": "https://reuters.com/world/asia-pacific/us-treasury-says-recent-korean-won-weakness-not-aligned-fundamentals-2026-01-29",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "KRW: BOK to maintain rates amid low inflation \u2013 DBS Bank",
-          "source": "fxstreet.com",
-          "url": "https://www.fxstreet.com/news/krw-bok-to-maintain-rates-amid-low-inflation-dbs-bank-202601301628",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "\"Buys 1\u20132 tonnes every week\"\u2026Tether made $5bn from the gold rally",
-          "source": "en.bloomingbit.io",
-          "url": "https://en.bloomingbit.io/feed/news/104910",
-          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
         "https://www.koreatimes.co.kr/business/banking-finance/20260129/bok-names-5-major-lenders-kdb-jp-morgan-as-fx-leading-banks",
-        "https://reuters.com/world/asia-pacific/us-treasury-says-recent-korean-won-weakness-not-aligned-fundamentals-2026-01-29"
+        "https://chosun.com/english/market-money-en/2026/01/26/FF5OIVZXKVEDLGLQLMGFF7QEVU"
       ]
     },
     {
       "story_id": 8,
-      "headline": "Trump threatens tariff increases against South Korea over legislative delays",
-      "summary": "President Trump threatened to raise tariffs on South Korea via social media, citing Korea's legislature not affirming their summer agreement. The opposition People Power Party urged President Lee to directly contact Trump.",
+      "headline": "Trump administration threatens South Korea with tariff increases",
+      "summary": "President Trump posted on social media threatening to raise tariffs on South Korea because the Korean legislature has not ratified their summer trade agreement. The threat adds pressure to bilateral economic relations.",
       "actors_involved": [
-        "Lee Jae-myung",
-        "People Power Party"
+        "Lee Jae-myung"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 2,
+      "source_count": 1,
       "sources": [
-        "politico.com",
-        "upi.com"
+        "politico.com"
       ],
-      "date_range": "2026-01-26 to 2026-01-28",
+      "date_range": "2026-01-26 to 2026-01-26",
       "articles": [
         {
           "title": "Trump threatens to increase tariffs on South Korea",
           "source": "politico.com",
           "url": "https://www.politico.com/news/2026/01/26/trump-threatens-to-increase-tariffs-on-south-korea-00748418",
           "date": "2026-01-26"
-        },
-        {
-          "title": "Opposition leader urges S. Korean president to call Trump over tariffs",
-          "source": "upi.com",
-          "url": "https://upi.com/Top_News/World-News/2026/01/27/opposition-leader-urged-president-lee-jae-myung-directly-contact-trump-raise-tariffs/7101769571921",
-          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
-        "https://www.politico.com/news/2026/01/26/trump-threatens-to-increase-tariffs-on-south-korea-00748418",
-        "https://upi.com/Top_News/World-News/2026/01/27/opposition-leader-urged-president-lee-jae-myung-directly-contact-trump-raise-tariffs/7101769571921"
+        "https://www.politico.com/news/2026/01/26/trump-threatens-to-increase-tariffs-on-south-korea-00748418"
       ]
     },
     {
       "story_id": 9,
-      "headline": "Lee Jae-myung proposes social policies on AI impacts and sugar consumption",
-      "summary": "President Lee called for strengthening social safety nets to address AI-led polarization concerns and proposed a sugar levy on certain foods and drinks. He emphasized the need for public debate on these health and technology policies.",
-      "actors_involved": [
-        "Lee Jae-myung"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "upi.com",
-        "koreatimes.co.kr",
-        "mk.co.kr"
-      ],
-      "date_range": "2026-01-26 to 2026-02-01",
-      "articles": [
-        {
-          "title": "Lee urges stronger social safety net to address side effects of AI-led polarization",
-          "source": "upi.com",
-          "url": "https://upi.com/Top_News/World-News/2026/01/29/korea-lee-jae-myung-AI-social-safety-net-polarization/4741769678361",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Lee calls for wider public debate on sugar levy",
-          "source": "koreatimes.co.kr",
-          "url": "https://koreatimes.co.kr/southkorea/politics/20260201/lee-calls-for-wider-public-debate-on-sugar-levy",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "President Lee Jae Myung said on the 29th, \"It would be nice to talk seriously about basic society.\"",
-          "source": "mk.co.kr",
-          "url": "https://www.mk.co.kr/en/politics/11947428",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "President Lee Jae Myung said on the 26th that he hopes this trend will settle",
-          "source": "mk.co.kr",
-          "url": "https://www.mk.co.kr/en/politics/11943653",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://upi.com/Top_News/World-News/2026/01/29/korea-lee-jae-myung-AI-social-safety-net-polarization/4741769678361",
-        "https://koreatimes.co.kr/southkorea/politics/20260201/lee-calls-for-wider-public-debate-on-sugar-levy"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Lee Jae-myung warns against transnational scam crimes targeting Koreans",
-      "summary": "President Lee renewed warnings about organized crimes targeting South Koreans in Southeast Asian countries, particularly Cambodia. He emphasized that Korea's commitment to fighting these crimes is not 'empty talk' as authorities step up investigations.",
-      "actors_involved": [
-        "Lee Jae-myung"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 3,
-      "sources": [
-        "koreatimes.co.kr",
-        "koreaherald.com",
-        "cnn.com"
-      ],
-      "date_range": "2026-01-26 to 2026-01-30",
-      "articles": [
-        {
-          "title": "Lee reiterates his warning against transnational scam crimes targeting Koreans",
-          "source": "koreatimes.co.kr",
-          "url": "https://koreatimes.co.kr/southkorea/politics/20260130/lee-reiterates-his-warning-against-transnational-scam-crimes-targeting-koreans",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Lee renews warning against transnational scams in Cambodia",
-          "source": "koreaherald.com",
-          "url": "https://koreaherald.com/article/10666452",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Ensnared by the global cyberscam vortex, swindler and victims join forces to take down ringleaders",
-          "source": "cnn.com",
-          "url": "https://www.cnn.com/2026/01/26/asia/south-korean-victims-southeast-asia-scam-network-intl-hnk-dst",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://koreatimes.co.kr/southkorea/politics/20260130/lee-reiterates-his-warning-against-transnational-scam-crimes-targeting-koreans",
-        "https://www.cnn.com/2026/01/26/asia/south-korean-victims-southeast-asia-scam-network-intl-hnk-dst"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "Lee Jae-myung maintains 53.1% approval rating in latest poll",
-      "summary": "A Realmeter poll showed President Lee Jae-myung's approval rating at 53.1%, with an 8 percentage point increase in the Daegu-Gyeongbuk region. The survey was conducted among 2,509 voters nationwide.",
+      "headline": "Lee Jae-myung's approval rating rises to 53.1 percent in latest poll",
+      "summary": "A Realmeter poll showed President Lee Jae-myung's job approval rating at 53.1 percent, representing an 8 percentage point increase in the Taegu-Kyungpook region. The nationwide survey covered 2,509 voters aged 18 and older.",
       "actors_involved": [
         "Lee Jae-myung"
       ],
@@ -621,10 +459,10 @@
       "sources": [
         "khan.co.kr"
       ],
-      "date_range": "2026-01-26",
+      "date_range": "2026-01-26 to 2026-01-26",
       "articles": [
         {
-          "title": "Approval rating for President Lee Jae Myung rose by 8 percentage points in TK\u00b7\u00b7\u00b7 recorded 53.1% nationwide",
+          "title": "Approval rating for President Lee Jae Myung rose by 8 percentage points in TK\u00b7\u00b7\u00b7 recorded 53.1% nationwide[Realmeter]",
           "source": "khan.co.kr",
           "url": "https://khan.co.kr/en/article/202601261026127",
           "date": "2026-01-26"
@@ -635,9 +473,34 @@
       ]
     },
     {
-      "story_id": 12,
+      "story_id": 10,
+      "headline": "People Power Party plans name change around Lunar New Year",
+      "summary": "South Korea's main opposition People Power Party announced plans to unveil a new party name around the Lunar New Year holiday as part of efforts to signal renewal and reenergize the party's image ahead of upcoming political contests.",
+      "actors_involved": [
+        "People Power Party"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
+      "sources": [
+        "upi.com"
+      ],
+      "date_range": "2026-01-29 to 2026-01-29",
+      "articles": [
+        {
+          "title": "S. Korea's People Power Party to unveil new name around Lunar New Year",
+          "source": "upi.com",
+          "url": "https://upi.com/Top_News/World-News/2026/01/28/people-power-party-new-name-unveil-around-lunar-new-year/6351769650362",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://upi.com/Top_News/World-News/2026/01/28/people-power-party-new-name-unveil-around-lunar-new-year/6351769650362"
+      ]
+    },
+    {
+      "story_id": 11,
       "headline": "North Korea launches multiple ballistic missiles toward East Sea",
-      "summary": "North Korea launched multiple short-range ballistic missiles toward the East Sea (Sea of Japan) on Tuesday afternoon, according to South Korean and Japanese military officials.",
+      "summary": "North Korea fired multiple short-range ballistic missiles toward the East Sea according to South Korea's Joint Chiefs of Staff and Japanese military. The launches occurred on Tuesday afternoon from northern regions of the DPRK.",
       "actors_involved": [
         "Republic of Korea Armed Forces"
       ],
@@ -646,7 +509,7 @@
       "sources": [
         "nknews.org"
       ],
-      "date_range": "2026-01-27",
+      "date_range": "2026-01-27 to 2026-01-27",
       "articles": [
         {
           "title": "North Korea launches 'multiple' ballistic missiles toward East Sea: ROK military",
@@ -660,55 +523,34 @@
       ]
     },
     {
-      "story_id": 13,
-      "headline": "Major Korean airlines ban power bank use during flights",
-      "summary": "Korean Air, Asiana Airlines, and other major South Korean carriers officially banned the use of portable power banks on flights following lithium-ion battery safety concerns. Passengers can bring them onboard but cannot use them.",
-      "actors_involved": [],
-      "signal_category_hint": "economic_tech",
+      "story_id": 12,
+      "headline": "Lee Jae-myung pursues regional diplomacy with China and Japan visits",
+      "summary": "President Lee Jae-myung conducted diplomatic visits to China and Japan in early 2026, his first such trips as president. The visits were characterized as pursuing 'pragmatic diplomacy' and included discussions on economic cooperation and regional stability.",
+      "actors_involved": [
+        "Lee Jae-myung"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
       "source_count": 1,
       "sources": [
-        "timeout.com"
+        "keia.org"
       ],
-      "date_range": "2026-01-26",
+      "date_range": "2026-01-27 to 2026-01-27",
       "articles": [
         {
-          "title": "PSA: Major South Korean airlines have officially banned power bank use in-flight",
-          "source": "timeout.com",
-          "url": "https://timeout.com/asia/news/psa-major-south-korean-airlines-have-officially-banned-power-bank-use-in-flight-012626",
-          "date": "2026-01-26"
+          "title": "Lee Jae Myung Tests South Korea's Pragmatic Diplomacy Between China and Japan",
+          "source": "keia.org",
+          "url": "https://keia.org/the-peninsula/lee-jae-myung-tests-south-koreas-pragmatic-diplomacy-between-china-and-japan/",
+          "date": "2026-01-27"
         }
       ],
       "representative_urls": [
-        "https://timeout.com/asia/news/psa-major-south-korean-airlines-have-officially-banned-power-bank-use-in-flight-012626"
-      ]
-    },
-    {
-      "story_id": 14,
-      "headline": "Canada and South Korea sign MOU on industrial cooperation",
-      "summary": "Canadian and South Korean ministers signed a memorandum of understanding on strengthening bilateral industrial cooperation, including potential Korean automotive manufacturing in Canada and electric vehicle development opportunities.",
-      "actors_involved": [],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
-      "sources": [
-        "canada.ca"
-      ],
-      "date_range": "2026-01-29",
-      "articles": [
-        {
-          "title": "Canada and Republic of Korea strengthen ties in key industrial sectors",
-          "source": "canada.ca",
-          "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/01/canada-and-republic-of-korea-strengthen-ties-in-key-industrial-sectors.html",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://www.canada.ca/en/innovation-science-economic-development/news/2026/01/canada-and-republic-of-korea-strengthen-ties-in-key-industrial-sectors.html"
+        "https://keia.org/the-peninsula/lee-jae-myung-tests-south-koreas-pragmatic-diplomacy-between-china-and-japan/"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "UAMCO names pro-Lee Jae-myung ally as new CEO",
+      "headline": "UAMCO appoints pro-Lee Jae-myung ally as new CEO",
       "source": "chosun.com",
       "url": "https://www.chosun.com/english/market-money-en/2026/01/26/JSFIS2ETBJCV7KAEZIFDIOQZBE/",
       "signal_category_hint": "domestic_regime"
@@ -720,40 +562,28 @@
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "People Power Party plans to unveil new name around Lunar New Year",
-      "source": "upi.com",
-      "url": "https://upi.com/Top_News/World-News/2026/01/28/people-power-party-new-name-unveil-around-lunar-new-year/6351769650362",
-      "signal_category_hint": "domestic_regime"
+      "headline": "US Treasury says Korean won weakness not aligned with fundamentals",
+      "source": "reuters.com",
+      "url": "https://reuters.com/world/asia-pacific/us-treasury-says-recent-korean-won-weakness-not-aligned-fundamentals-2026-01-29",
+      "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "Lee Jae-myung requests China give back panda Fubao",
-      "source": "khan.co.kr",
-      "url": "https://www.khan.co.kr/en/article/202601251520427",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "South Korea considers crypto registration regime for domestic issuance",
+      "source": "cryptonews.com",
+      "url": "https://cryptonews.com/news/south-korea-eyes-domestic-crypto-issuance-as-governor-warns-on-stablecoin-risks-whats-the-plan",
+      "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "Digital YouTuber's influence on DPK power dynamics analyzed",
-      "source": "koreatimes.co.kr",
-      "url": "https://koreatimes.co.kr/opinion/20260130/digital-power-broker-how-youtuber-weaponizes-influence-to-shape-the-dpk-power-game",
-      "signal_category_hint": "domestic_regime"
+      "headline": "Korean President's aide meets Canadian PM on submarine deal",
+      "source": "aa.com.tr",
+      "url": "https://www.aa.com.tr/en/asia-pacific/skorean-president-lees-aide-meets-canadian-premier-carney-amid-efforts-to-win-major-submarine-deal/3813840",
+      "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Ex-justice minister says Yoon ignored warnings before martial law",
+      "headline": "Ex-justice minister testifies Yoon ignored martial law warnings",
       "source": "koreaherald.com",
       "url": "https://koreaherald.com/article/10663079",
       "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Human rights groups oppose death penalty for Yoon Suk-yeol",
-      "source": "hrw.org",
-      "url": "https://hrw.org/news/2026/01/30/joint-statement-international-human-rights-groups-oppose-the-death-penalty-for",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Korean weight-loss pill creates new billionaire",
-      "source": "forbes.com",
-      "url": "https://forbes.com/sites/johnkang/2026/01/26/promising-new-weight-loss-pill-from-south-koreas-sam-chun-dang-pharm-mints-countrys-newest-billionaire",
-      "signal_category_hint": "economic_tech"
     }
   ]
 }

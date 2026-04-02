@@ -3,28 +3,27 @@
   "code": "pl",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 190,
-  "stories_identified": 12,
-  "off_topic_filtered": 8,
-  "noise_summary": "8 off-topic results filtered: 3 sports stories (Olympics, athletics competitions), 2 entertainment/celebrity pieces, 2 lifestyle articles, 1 weather-related content.",
+  "search_results_total": 187,
+  "stories_identified": 19,
+  "off_topic_filtered": 23,
+  "noise_summary": "23 off-topic results filtered: 8 sports (Olympic team ceremony, athletes, sports events), 7 entertainment and celebrity news, 5 business/financial reports unrelated to government, 3 historical commemorations without political content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Jaros\u0142aw Kaczy\u0144ski hospitalized, remains in medical care for several days",
-      "summary": "PiS leader Jaros\u0142aw Kaczy\u0144ski was admitted to hospital with respiratory infection, possibly pneumonia. He will remain hospitalized for several days, missing party meetings. President Nawrocki called to check on his condition.",
+      "headline": "Jaros\u0142aw Kaczy\u0144ski hospitalized with respiratory infection",
+      "summary": "PiS leader Jaros\u0142aw Kaczy\u0144ski was hospitalized in Warsaw with a seasonal respiratory infection, potentially pneumonia. He is expected to remain hospitalized for several days for tests and observation. President Nawrocki called him during his hospital stay.",
       "actors_involved": [
-        "Kaczy\u0144ski",
-        "PiS"
+        "Jaros\u0142aw Kaczy\u0144ski"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 12,
+      "source_count": 16,
       "sources": [
         "rmf24.pl",
         "tvn24.pl",
-        "wiadomosci.wp.pl",
         "polsatnews.pl",
         "newslubuski.pl",
         "wiadomosci.radiozet.pl",
+        "wiadomosci.wp.pl",
         "rynekzdrowia.pl",
         "onet.pl",
         "plotek.pl",
@@ -46,12 +45,6 @@
           "date": "2026-01-29"
         },
         {
-          "title": "Jaros\u0142aw Kaczy\u0144ski w szpitalu. Pob\u0119dzie tam kilka dni",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/jaroslaw-kaczynski-w-szpitalu-pobedzie-tam-kilka-dni-7248278909553024a",
-          "date": "2026-01-28"
-        },
-        {
           "title": "Jaros\u0142aw Kaczy\u0144ski w szpitalu. Rzecznik PiS poinformowa\u0142 o szczeg\u00f3\u0142ach",
           "source": "polsatnews.pl",
           "url": "https://polsatnews.pl/wiadomosc/2026-01-28/jaroslaw-kaczynski-w-szpitalu-rzecznik-pis-poinformowal-o-szczegolach",
@@ -70,16 +63,16 @@
           "date": "2026-01-30"
         },
         {
+          "title": "Jaros\u0142aw Kaczy\u0144ski w szpitalu. Pob\u0119dzie tam kilka dni",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/jaroslaw-kaczynski-w-szpitalu-pobedzie-tam-kilka-dni-7248278909553024a",
+          "date": "2026-01-28"
+        },
+        {
           "title": "Jaros\u0142aw Kaczy\u0144ski w szpitalu. Wiadomo, co si\u0119 sta\u0142o",
           "source": "rynekzdrowia.pl",
           "url": "https://rynekzdrowia.pl/Polska-i-swiat/Jaroslaw-Kaczynski-w-szpitalu-Wiadomo-co-sie-stalo,280485,15.html",
           "date": "2026-01-28"
-        },
-        {
-          "title": "Kulisy narady PiS. Pos\u0142owie nieoficjalnie o absencji Kaczy\u0144skiego",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/kulisy-narady-pis-poslowie-nieoficjalnie-o-absencji-kaczynskiego-7248685157476672a",
-          "date": "2026-01-29"
         },
         {
           "title": "Jaros\u0142aw Kaczy\u0144ski w szpitalu. Kuzyn ujawnia, w jakim stanie jest prezes PiS",
@@ -100,10 +93,40 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Nowe doniesienia o hospitalizacji Jaros\u0142awa Kaczy\u0144skiego. G\u0142os zabra\u0142 polityk PiS",
+          "title": "Nowe doniesienia o hospitalizacji Jaros\u0142awa Kaczy\u0144skiego",
           "source": "plotek.pl",
           "url": "https://plotek.pl/celebryci/7,198203,32565614,nowe-doniesienia-o-hospitalizacji-kaczynskiego-glos-zabral.html",
           "date": "2026-01-29"
+        },
+        {
+          "title": "Jaros\u0142aw Kaczy\u0144ski w szpitalu. Mariusz B\u0142aszczak zwo\u0142a\u0142 \"m\u0142ode wilki\" PiS",
+          "source": "newsweek.pl",
+          "url": "https://www.newsweek.pl/polska/polityka/jaroslaw-kaczynski-w-szpitalu-mariusz-blaszczak-zwolal-mlode-wilki-pis/77479qy",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Kaczy\u0144ski w szpitalu. Pose\u0142 PiS ujawnia: to wygl\u0105da powa\u017cnie",
+          "source": "polskieradio24.pl",
+          "url": "https://polskieradio24.pl/artykul/3640337,kaczynski-w-szpitalu-posel-pis-ujawnia-to-wyglada-powaznie",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Kaczy\u0144ski w szpitalu, Braun rusza z KINGS. W PiS zebranie \"m\u0142odych wilk\u00f3w\"",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/kaczynski-w-szpitalu-braun-rusza-z-kings-w-pis-zebranie-mlodych-wilkow-7248338453715264a",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Kulisy narady PiS. Pos\u0142owie nieoficjalnie o absencji Kaczy\u0144skiego",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/kulisy-narady-pis-poslowie-nieoficjalnie-o-absencji-kaczynskiego-7248685157476672a",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Kaczy\u0144ski traci pos\u0142uch w kluczowej grupie wyborc\u00f3w",
+          "source": "newsweek.pl",
+          "url": "https://newsweek.pl/polska/polityka/kaczynski-traci-posluch-w-kluczowej-grupie-wyborcow-pis-przegralo-wniosek-psl/243xj2x",
+          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
@@ -113,31 +136,635 @@
     },
     {
       "story_id": 2,
-      "headline": "Orlen completes PGNiG rebrand while delaying KSeF tax system implementation",
-      "summary": "State energy company Orlen finalized rebranding of PGNiG to myOrlen brand while announcing delays in implementing mandatory electronic invoice system KSeF at gas stations until April 2026.",
+      "headline": "Tusk criticizes Nawrocki and Duda over response to Trump's NATO comments",
+      "summary": "Prime Minister Donald Tusk strongly criticized President Karol Nawrocki and former President Andrzej Duda for their response to controversial remarks by US President Trump about NATO soldiers in Afghanistan. Tusk said their role is not to lobby for other countries, even closest allies, but to guard Polish national dignity.",
       "actors_involved": [
-        "Orlen"
+        "Donald Tusk",
+        "Karol Nawrocki"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 2,
+      "sources": [
+        "wiadomosci.wp.pl",
+        "atv.hu"
+      ],
+      "date_range": "2026-01-30 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Tusk mocno do Nawrockiego i Dudy. \"Wasz\u0105 rol\u0105 nie jest lobbowanie\"",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/tusk-mocno-do-nawrockiego-i-dudy-wasza-rola-nie-jest-lobbowanie-7249030359550272a",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Tusk szerint az \u00e1llamf\u0151k feladata nem a k\u00fclf\u00f6ldi \u00e9rdekek k\u00e9pviselete",
+          "source": "atv.hu",
+          "url": "https://atv.hu/kulfold/20260201/donald-tusk-lengyelorszag-beketanacs",
+          "date": "2026-02-01"
+        }
+      ],
+      "representative_urls": [
+        "https://wiadomosci.wp.pl/tusk-mocno-do-nawrockiego-i-dudy-wasza-rola-nie-jest-lobbowanie-7249030359550272a",
+        "https://atv.hu/kulfold/20260201/donald-tusk-lengyelorszag-beketanacs"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Court dismisses Kaczy\u0144ski defamation case due to minimal harm",
+      "summary": "A Warsaw court dismissed the defamation case brought by Civic Coalition MEP Krzysztof Brejza against PiS leader Jaros\u0142aw Kaczy\u0144ski. While the court found Kaczy\u0144ski's statements met the criteria for defamation, it dismissed the case due to minimal social harm. The case concerned Kaczy\u0144ski's March 2024 statements about Brejza before the Pegasus commission.",
+      "actors_involved": [
+        "Jaros\u0142aw Kaczy\u0144ski"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 7,
+      "sources": [
+        "polsatnews.pl",
+        "wiadomosci.wp.pl",
+        "tvn24.pl",
+        "rmf24.pl",
+        "rp.pl",
+        "wiadomosci.onet.pl"
+      ],
+      "date_range": "2026-01-27",
+      "articles": [
+        {
+          "title": "Sprawa Krzysztof Brejza kontra Jaros\u0142aw Kaczy\u0144ski. Jest wyrok s\u0105du",
+          "source": "polsatnews.pl",
+          "url": "https://polsatnews.pl/wiadomosc/2026-01-27/sprawa-krzysztof-brejza-kontra-jaroslaw-kaczynski-jest-wyrok-sadu",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Kaczy\u0144ski kontra Brejza. Zapad\u0142 wyrok w g\u0142o\u015bnej sprawie",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/kaczynski-kontra-brejza-zapadl-wyrok-w-glosnej-sprawie-7247962485111072a",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "S\u0105dny dzie\u0144 w sporze Kaczy\u0144ski-Brejza. Zapadnie wyrok",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/sadny-dzien-w-sporze-kaczynski-brejza-zapadnie-wyrok-7247847720356064a",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Warszawa. Brejza przeciwko Kaczy\u0144skiemu, decyzja s\u0105du",
+          "source": "tvn24.pl",
+          "url": "https://tvn24.pl/polska/warszawa-brejza-przeciwko-kaczynskiemu-decyzja-sadu-st8871498",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Kaczy\u0144ski pozwany przez Brejz\u0119. S\u0105d podj\u0105\u0142 decyzj\u0119",
+          "source": "rmf24.pl",
+          "url": "https://rmf24.pl/polityka/news-brejza-kontra-kaczynski-sad-podjal-decyzje,nId,8062305",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Czy prezes PiS Jaros\u0142aw Kaczy\u0144ski znies\u0142awi\u0142 europos\u0142a KO Krzysztofa Brejz\u0119? Jest wyrok",
+          "source": "rp.pl",
+          "url": "https://rp.pl/prawo-karne/art43698871-prezes-pis-jaroslaw-kaczynski-pomowil-europosla-krzysztofa-brejze-jest-wyrok",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Wyrok w sprawie Jaros\u0142awa Kaczy\u0144skiego zapadnie dzi\u015b w Warszawie",
+          "source": "wiadomosci.onet.pl",
+          "url": "https://wiadomosci.onet.pl/kraj/proces-jaroslawa-kaczynskiego-dzis-ma-zapasc-wyrok/qqt04y1",
+          "date": "2026-01-27"
+        }
+      ],
+      "representative_urls": [
+        "https://polsatnews.pl/wiadomosc/2026-01-27/sprawa-krzysztof-brejza-kontra-jaroslaw-kaczynski-jest-wyrok-sadu",
+        "https://tvn24.pl/polska/warszawa-brejza-przeciwko-kaczynskiemu-decyzja-sadu-st8871498"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Nawrocki meets with parliamentary groups, opposition parties boycott",
+      "summary": "President Karol Nawrocki invited representatives of all parliamentary clubs to meetings at the Presidential Palace. Civic Coalition and Left parties declined to attend, with politicians saying the meetings 'bring nothing' and accusing Nawrocki of 'torpedoing government actions'. PiS and other parties participated.",
+      "actors_involved": [
+        "Karol Nawrocki"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 6,
+      "sources": [
+        "tvn24.pl",
+        "rmf24.pl",
+        "wiadomosci.wp.pl"
+      ],
+      "date_range": "2026-01-25 to 2026-01-30",
+      "articles": [
+        {
+          "title": "KO i Lewica nie id\u0105 do Karola Nawrockiego",
+          "source": "tvn24.pl",
+          "url": "https://tvn24.pl/polska/ko-i-lewica-nie-ida-do-karola-nawrockiego-szef-gabinetu-prezydenta-pawel-szefernaker-komentuje-st8872118",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Karol Nawrocki zaprosi\u0142 na spotkania przedstawicieli wszystkich klub\u00f3w",
+          "source": "tvn24.pl",
+          "url": "https://tvn24.pl/polska/karol-nawrocki-zaprosil-na-spotkania-przedstawicieli-wszystkich-klubow-i-kol-parlamentarnych-kto-pojdzie-do-prezydenta-st8866797",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "Karol Nawrocki zaprosi\u0142 polityk\u00f3w. Kto nie wybiera si\u0119 do Pa\u0142acu Prezydenckiego?",
+          "source": "rmf24.pl",
+          "url": "https://rmf24.pl/polityka/news-prezydent-nawrocki-zaprosil-politykow-na-spotkanie-wiemy-kto,nId,8062350",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Nawrocki jak \"mi\u015b z Krup\u00f3wek\". Kulisy spotkania pos\u0142\u00f3w PiS z prezydentem",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/nawrocki-jak-mis-z-krupowek-kulisy-spotkania-poslow-pis-z-prezydentem-7248999590447488a",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Koniec wyczekiwanego spotkania Nawrocki-Sikorski. Jest pierwszy komentarz",
+          "source": "wiadomosci.gazeta.pl",
+          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32557137,koniec-wyczekiwanego-spotkania-nawrocki-sikorski-jest-pierwszy.html",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Pierwszy komunikat po spotkaniu Nawrocki-Sikorski",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/pierwszy-komunikat-po-spotkaniu-nawrocki-sikorski-zmierzamy-w-strone-znalezienia-7247641588979904a",
+          "date": "2026-01-26"
+        }
+      ],
+      "representative_urls": [
+        "https://tvn24.pl/polska/ko-i-lewica-nie-ida-do-karola-nawrockiego-szef-gabinetu-prezydenta-pawel-szefernaker-komentuje-st8872118",
+        "https://rmf24.pl/polityka/news-prezydent-nawrocki-zaprosil-politykow-na-spotkanie-wiemy-kto,nId,8062350"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Nawrocki-Sikorski meeting on ambassador nominations",
+      "summary": "President Karol Nawrocki met with Foreign Minister Rados\u0142aw Sikorski to discuss the ongoing dispute over ambassadorial nominations. The meeting was described as 'good and constructive' with both sides expressing hope for finding common ground on the diplomatic appointments.",
+      "actors_involved": [
+        "Karol Nawrocki"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "tvn24.pl",
+        "wiadomosci.gazeta.pl",
+        "wiadomosci.wp.pl",
+        "jedynka.polskieradio.pl"
+      ],
+      "date_range": "2026-01-26 to 2026-01-28",
+      "articles": [
+        {
+          "title": "Sikorski spotka\u0142 si\u0119 z Nawrockim. Nieoficjalnie: pad\u0142y konkrety w sprawie ambasador\u00f3w",
+          "source": "tvn24.pl",
+          "url": "https://tvn24.pl/polska/spotkanie-karola-nawrockiego-z-radoslawem-sikorskim-w-palacu-prezydenckim-st8869211",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Koniec wyczekiwanego spotkania Nawrocki-Sikorski. Jest pierwszy komentarz",
+          "source": "wiadomosci.gazeta.pl",
+          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32557137,koniec-wyczekiwanego-spotkania-nawrocki-sikorski-jest-pierwszy.html",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Pierwszy komunikat po spotkaniu Nawrocki-Sikorski",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/pierwszy-komunikat-po-spotkaniu-nawrocki-sikorski-zmierzamy-w-strone-znalezienia-7247641588979904a",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Sp\u00f3r o ambasador\u00f3w. Kulisy spotkania Rados\u0142awa Sikorskiego z Karolem Nawrockim",
+          "source": "tvn24.pl",
+          "url": "https://tvn24.pl/polska/spor-o-ambasadorow-kulisy-spotkania-radoslawa-sikorskiego-z-karolem-nawrockim-st8872392",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://tvn24.pl/polska/spotkanie-karola-nawrockiego-z-radoslawem-sikorskim-w-palacu-prezydenckim-st8869211",
+        "https://wiadomosci.gazeta.pl/polityka/7,198012,32557137,koniec-wyczekiwanego-spotkania-nawrocki-sikorski-jest-pierwszy.html"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Nawrocki commemorates 81st anniversary of Auschwitz liberation",
+      "summary": "President Karol Nawrocki delivered a speech at the 81st anniversary commemoration of Auschwitz liberation, calling the camp a symbol of complete dehumanization and barbarism. He emphasized the role of Polish victims and criticized previous German failures to act. Russia's Foreign Ministry later criticized his remarks about the Soviet role.",
+      "actors_involved": [
+        "Karol Nawrocki"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 4,
+      "sources": [
+        "wydarzenia.interia.pl",
+        "rmf24.pl",
+        "wiadomosci.wp.pl"
+      ],
+      "date_range": "2026-01-27 to 2026-01-29",
+      "articles": [
+        {
+          "title": "81. rocznica wyzwolenia Auschwitz. Karol Nawrocki o \"drodze pami\u0119ci\"",
+          "source": "wydarzenia.interia.pl",
+          "url": "https://wydarzenia.interia.pl/kraj/news-nawrocki-na-obchodach-w-oswiecimiu-to-symbol-zupelnego-odhum,nId,22544121",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "O\u015bwi\u0119cim. Karol Nawrocki mia\u0142 zosta\u0107 \"wykluczony\". Muzeum reaguje",
+          "source": "wydarzenia.interia.pl",
+          "url": "https://wydarzenia.interia.pl/kraj/news-nawrocki-wykluczony-z-uroczystosci-w-oswiecimiu-muzeum-fakty,nId,22545251",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Karol Nawrocki w Auschwitz: Pami\u0119tali\u015bmy o ofiarach, ale zapomnieli\u015bmy o sprawcach",
+          "source": "rmf24.pl",
+          "url": "https://rmf24.pl/regiony/krakow/news-nawrocki-pamietalismy-o-ofiarach-ale-zapomnielismy-o-sprawca,nId,8062320",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Rzeczniczka MSZ Rosji odpowiada Nawrockiemu. Tak\u0105 \"rad\u0119\" mu da\u0142a",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/rzeczniczka-msz-rosji-odpowiada-nawrockiemu-taka-rade-mu-dala-7248319083776320a",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://wydarzenia.interia.pl/kraj/news-nawrocki-na-obchodach-w-oswiecimiu-to-symbol-zupelnego-odhum,nId,22544121",
+        "https://rmf24.pl/regiony/krakow/news-nawrocki-pamietalismy-o-ofiarach-ale-zapomnielismy-o-sprawca,nId,8062320"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Kaczy\u0144ski rejects potential alliance with Grzegorz Braun",
+      "summary": "PiS leader Jaros\u0142aw Kaczy\u0144ski categorically ruled out any coalition with Grzegorz Braun's Confederation Crown of Poland, comparing such an alliance to 'an alliance with Putin.' He spoke during a meeting in Skar\u017cysko-Kamienna, saying cooperation with Braun would be 'beyond all doubt' unacceptable.",
+      "actors_involved": [
+        "Jaros\u0142aw Kaczy\u0144ski"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 6,
+      "sources": [
+        "tvn24.pl",
+        "rmf24.pl",
+        "wiadomosci.onet.pl",
+        "wiadomosci.wp.pl",
+        "rp.pl"
+      ],
+      "date_range": "2026-01-25 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Jaros\u0142aw Kaczy\u0144ski o Grzegorzu Braunie i ewentualnym sojuszu",
+          "source": "tvn24.pl",
+          "url": "https://tvn24.pl/polska/jaroslaw-kaczynski-o-grzegorzu-braunie-i-ewentualnym-sojuszu-st8867589",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "\"Sojusz z nim to jak sojusz z Putinem\". Kaczy\u0144ski odkrywa karty",
+          "source": "rmf24.pl",
+          "url": "https://rmf24.pl/regiony/kielce/news-sojusz-z-nim-to-jak-sojusz-z-putinem-kaczynski-odkrywa-karty,nId,8060230",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "Jaros\u0142aw Kaczy\u0144ski uderzy\u0142 w Grzegorza Brauna. Por\u00f3wna\u0142 go do Putina",
+          "source": "wiadomosci.onet.pl",
+          "url": "https://wiadomosci.onet.pl/kraj/jaroslaw-kaczynski-uderzyl-w-grzegorza-brauna-porownal-go-do-putina/ljx2w55",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "Kaczy\u0144ski: \"to jest bezczelne, to jest ha\u0144ba dla Polak\u00f3w\". Wspomnia\u0142 te\u017c o Braunie",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/kaczynski-to-jest-bezczelne-to-jest-hanba-dla-polakow-wspomnial-tez-o-braunie-7247262552377536a",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "Kongres gospodarczy Konfederacji Brauna. W\u0142a\u015bciciel obiektu przych\u00f3d z imprezy przeka\u017ce na pomoc Ukrainie",
+          "source": "rp.pl",
+          "url": "https://rp.pl/polityka/art43729931-kongres-konfederacji-grzegorza-brauna-w-lochowie-przychod-z-imprezy-wspomoze-ukraine",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kaczy\u0144ski i Braun w jednym rz\u0105dzie? Polacy ocenili szanse [SONDA\u017b]",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/kaczynski-i-braun-w-jednym-rzadzie-polacy-ocenili-szanse-sondaz-7248130281892096a",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://tvn24.pl/polska/jaroslaw-kaczynski-o-grzegorzu-braunie-i-ewentualnym-sojuszu-st8867589",
+        "https://rmf24.pl/regiony/kielce/news-sojusz-z-nim-to-jak-sojusz-z-putinem-kaczynski-odkrywa-karty,nId,8060230"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Tensions within Konfederacja over finances and leadership",
+      "summary": "Internal conflicts emerge in Konfederacja as S\u0142awomir Mentzen's Nowa Nadzieja party faces potential dissolution over financial irregularities. Reports suggest Mentzen and Krzysztof Bosak barely communicate, with party members criticizing Mentzen's leadership. Konfederacja risks losing millions in state funding.",
+      "actors_involved": [
+        "S\u0142awomir Mentzen"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 8,
+      "sources": [
+        "polsatnews.pl",
+        "wydarzenia.interia.pl",
+        "wiadomosci.gazeta.pl",
+        "wprost.pl",
+        "newsweek.pl",
+        "onet.pl"
+      ],
+      "date_range": "2026-01-26 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Konflikt Mentzena z Bosakiem? Pose\u0142 Konfederacji komentuje",
+          "source": "polsatnews.pl",
+          "url": "https://polsatnews.pl/graffiti/2026-01-30/konflikt-mentzena-z-bosakiem-posel-konfederacji-komentuje",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Narodowcy chc\u0105 odwo\u0142a\u0107 Miszalskiego, ludzie Mentzena m\u00f3wi\u0105 \"pas\"",
+          "source": "wydarzenia.interia.pl",
+          "url": "https://wydarzenia.interia.pl/malopolskie/news-w-konfederacji-wrze-pojawil-sie-nowy-problem-to-wierzcholek,nId,22545252",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Media: W Konfederacji w\u015bciekli na Mentzena. 'Ten Titanic idzie na dno'",
+          "source": "wiadomosci.gazeta.pl",
+          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32557916,media-konfederaci-wsciekli-na-mentzena-ten-titanic-idzie.html",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Konflikt Krzysztofa Bosaka i S\u0142awomira Mentzena. W Konfederacji wrze",
+          "source": "wprost.pl",
+          "url": "https://www.wprost.pl/kraj/12233655/konflikt-krzysztofa-bosaka-i-slawomira-mentzena-w-konfederacji-wrze.html",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Konfederacja mo\u017ce straci\u0107 miliony. \"Narasta z\u0142o\u015b\u0107 na Mentzena\"",
+          "source": "newsweek.pl",
+          "url": "https://www.newsweek.pl/polska/polityka/konfederacja-moze-stracic-miliony-narasta-zlosc-na-mentzena/bmz83ge",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "W Konfederacji wida\u0107 narastaj\u0105c\u0105 z\u0142o\u015b\u0107 na Mentzena",
+          "source": "onet.pl",
+          "url": "https://onet.pl/informacje/newsweek/w-konfederacji-widac-narastajaca-zlosc-na-mentzena-prezesa-nowej-nadziei-jak-dodaja/2zlsyjv,74524526",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Konfederacja ju\u017c nie przera\u017ca. Nie te czasy",
+          "source": "kulturaliberalna.pl",
+          "url": "https://kulturaliberalna.pl/2026/01/29/skrzydlowska-kalukin-konfederacja-juz-nie-przeraza-nie-te-czasy",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Odkrywamy karty Grzegorza Brauna. Szara eminencja",
+          "source": "wiadomosci.onet.pl",
+          "url": "https://wiadomosci.onet.pl/tylko-w-onecie/odkrywamy-karty-grzegorza-brauna-szara-eminencja-ochroniarz-putina-i-kon-trojanski/xs8m688",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://newsweek.pl/polska/polityka/konfederacja-moze-stracic-miliony-narasta-zlosc-na-mentzena/bmz83ge",
+        "https://wiadomosci.gazeta.pl/polityka/7,198012,32557916,media-konfederaci-wsciekli-na-mentzena-ten-titanic-idzie.html"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Mentzen's Nowa Nadzieja to merge with Imperium Kontratakuje",
+      "summary": "S\u0142awomir Mentzen announced that his Nowa Nadzieja party will merge with the newly created Imperium Kontratakuje party at a February 21 congress in Warsaw. The merger aims to resolve legal problems facing Nowa Nadzieja after a court decision to remove it from the party register due to financial reporting failures.",
+      "actors_involved": [
+        "S\u0142awomir Mentzen"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "rp.pl",
+        "polskieradio24.pl",
+        "rmf24.pl",
+        "xyz.pl"
+      ],
+      "date_range": "2026-01-29",
+      "articles": [
+        {
+          "title": "Partia Nowa Nadzieja S\u0142awomira Mentzena przestanie istnie\u0107, wch\u0142onie j\u0105 Imperium Kontratakuje",
+          "source": "rp.pl",
+          "url": "https://rp.pl/polityka/art43712581-imperium-kontratakuje-wchlonie-nowa-nadzieje-oto-plan-slawomira-mentzena",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Fuzja Nowej Nadziei z Imperium Kontratakuje. Nowy ruch Mentzena",
+          "source": "polskieradio24.pl",
+          "url": "https://polskieradio24.pl/artykul/3640795,fuzja-nowej-nadziei-z-imperium-kontratakuje-nowy-ruch-mentzena",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Nowa Nadzieja po\u0142\u0105czy si\u0119 z Imperium Kontratakuje. Tak, chodzi o parti\u0119 Mentzena",
+          "source": "rmf24.pl",
+          "url": "https://rmf24.pl/polityka/news-nowa-nadzieja-polaczy-sie-z-imperium-kontratakuje-tak-chodzi,nId,8062742",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Partie Nowa Nadzieja i Imperium Kontratakuje po\u0142\u0105cz\u0105 si\u0119. Mentzen zachowa star\u0105 nazw\u0119 ugrupowania",
+          "source": "xyz.pl",
+          "url": "https://xyz.pl/dzieje-sie/partie-nowa-nadzieja-i-imperium-kontratakuje-polacza-sie-mentzen-zachowa-stara-nazwe-ugrupowania-1484",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://rp.pl/polityka/art43712581-imperium-kontratakuje-wchlonie-nowa-nadzieje-oto-plan-slawomira-mentzena",
+        "https://polskieradio24.pl/artykul/3640795,fuzja-nowej-nadziei-z-imperium-kontratakuje-nowy-ruch-mentzena"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Mentzen's business results show profit despite revenue decline",
+      "summary": "Kancelaria Mentzen, controlled by S\u0142awomir Mentzen, achieved net profit in Q4 2025 compared to a loss in the same period previous year. The company improved its full-year 2025 results despite declining revenues, mainly through cost reduction. Mentzen announced no business forecasts for 2026, comparing them to fortune-telling.",
+      "actors_involved": [
+        "S\u0142awomir Mentzen"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "source_count": 4,
+      "sources": [
+        "wiadomosci.wp.pl",
+        "fakt.pl",
+        "finanse.wp.pl",
+        "businessinsider.com.pl"
+      ],
+      "date_range": "2026-01-30",
+      "articles": [
+        {
+          "title": "Firmy Mentzena bez prognoz. Wyniki lepsze mimo spadku przychod\u00f3w",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/firmy-mentzena-bez-prognoz-wyniki-lepsze-mimo-spadku-przychodow-7249052512872768a",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kancelaria Mentzen pokaza\u0142a wyniki za 2025 r. Tyle zarobi\u0142a sp\u00f3\u0142ka lidera Konfederacji",
+          "source": "fakt.pl",
+          "url": "https://fakt.pl/pieniadze/kancelaria-mentzena-poprawila-wyniki-zysk-netto-niemal-sie-podwoil/w59xcg6",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "Wysoki zysk kancelarii Mentzena. Oto ile zarobi\u0142a w 2025 r.",
+          "source": "finanse.wp.pl",
+          "url": "https://finanse.wp.pl/kancelaria-mentzen-z-zyskiem-oto-ile-zarobila-w-2025-r-7249020735408512a",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Zysk zamiast straty, ale przychody w d\u00f3\u0142. Jak Kancelaria Mentzen radzi sobie na NewConnect?",
+          "source": "businessinsider.com.pl",
+          "url": "https://businessinsider.com.pl/gielda/wiadomosci/zysk-zamiast-straty-ale-przychody-w-dol-jak-kancelaria-mentzen-radzi-sobie-na/gjxrl0j",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://businessinsider.com.pl/gielda/wiadomosci/zysk-zamiast-straty-ale-przychody-w-dol-jak-kancelaria-mentzen-radzi-sobie-na/gjxrl0j",
+        "https://wiadomosci.wp.pl/firmy-mentzena-bez-prognoz-wyniki-lepsze-mimo-spadku-przychodow-7249052512872768a"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "NBP world leader in gold purchases for second consecutive year",
+      "summary": "Poland's National Bank is the world's largest buyer of gold for the second year running, purchasing 102 tons in 2025 according to World Gold Council analysis. NBP Governor Adam Glapi\u0144ski defends the policy as building credibility and security, though some economists question the returns compared to other investments.",
+      "actors_involved": [
+        "Adam Glapi\u0144ski"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 4,
+      "sources": [
+        "money.pl",
+        "next.gazeta.pl",
+        "warszawawpigulce.pl"
+      ],
+      "date_range": "2026-01-28 to 2026-01-30",
+      "articles": [
+        {
+          "title": "\"To jest ostrze\u017cenie z mojej strony\". Analityk zabiera g\u0142os ws. planu Adama Glapi\u0144skiego",
+          "source": "money.pl",
+          "url": "https://www.money.pl/gospodarka/to-jest-ostrzezenie-z-mojej-strony-analityk-zabiera-glos-ws-planu-adama-glapinskiego-7248347957867585v.html",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "NBP jest rekordzist\u0105. Nikt na \u015bwiecie nie kupuje tyle z\u0142ota",
+          "source": "money.pl",
+          "url": "https://money.pl/gospodarka/nbp-jest-rekordzista-nikt-na-swiecie-nie-kupuje-tyle-zlota-7248668737706368a.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Niemiecka gazeta: Jak 'z\u0142oty prezes' w NBP Adam Glapi\u0144ski nap\u0119dza cen\u0119 z\u0142ota",
+          "source": "next.gazeta.pl",
+          "url": "https://next.gazeta.pl/next/7,168930,32564910,niemiecka-gazeta-jak-nbp-napedza-cene-zlota-zloty-prezes.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Fatalne doniesienia dla naszego kraju. Kryzys narasta w b\u0142yskawicznym tempie",
+          "source": "warszawawpigulce.pl",
+          "url": "https://warszawawpigulce.pl/fatalne-doniesienia-dla-naszego-kraju-kryzys-narasta-w-blyskawicznym-tempie",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://money.pl/gospodarka/nbp-jest-rekordzista-nikt-na-swiecie-nie-kupuje-tyle-zlota-7248668737706368a.html",
+        "https://next.gazeta.pl/next/7,168930,32564910,niemiecka-gazeta-jak-nbp-napedza-cene-zlota-zloty-prezes.html"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "ABW dismantles terrorist network operating for Russia across Europe",
+      "summary": "Poland's Internal Security Agency (ABW), working with an international investigation team under EUROJUST, uncovered evidence leading to prosecution of a terrorist group responsible for arson attacks across Europe on behalf of Russian intelligence. Several arrests and convictions have already occurred in Romania and Czech Republic.",
+      "actors_involved": [
+        "ABW"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 3,
+      "sources": [
+        "polsatnews.pl",
+        "wydarzenia.interia.pl"
+      ],
+      "date_range": "2026-01-30",
+      "articles": [
+        {
+          "title": "ABW. Grupa terrorystyczna rozpracowana. Podpalali na zlecenie Rosji",
+          "source": "polsatnews.pl",
+          "url": "https://www.polsatnews.pl/wiadomosc/2026-01-30/abw-rozpracowala-grupe-terrorystow-podpalali-obiekty-w-calej-europie/",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "ABW. Rozbita siatka dzia\u0142a\u0142a na rzecz Rosji, dywersanci stan\u0105 przed s\u0105dem",
+          "source": "wydarzenia.interia.pl",
+          "url": "https://wydarzenia.interia.pl/kraj/news-podpalali-obiekty-w-europie-m-in-w-polsce-dywersanci-stana-p,nId,22545658",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Bia\u0142oruskie s\u0142u\u017cby dzia\u0142aj\u0105 w Polsce? By\u0142a agentka ABW jasno",
+          "source": "wydarzenia.interia.pl",
+          "url": "https://wydarzenia.interia.pl/kraj/news-agenci-lukaszenki-infiltruja-polske-byla-funkcjonariuszka-ab,nId,22544188",
+          "date": "2026-01-27"
+        }
+      ],
+      "representative_urls": [
+        "https://www.polsatnews.pl/wiadomosc/2026-01-30/abw-rozpracowala-grupe-terrorystow-podpalali-obiekty-w-calej-europie/",
+        "https://wydarzenia.interia.pl/kraj/news-podpalali-obiekty-w-europie-m-in-w-polsce-dywersanci-stana-p,nId,22545658"
+      ]
+    },
+    {
+      "story_id": 13,
+      "headline": "Former ABW deputy chief dismissed from service for political activity",
+      "summary": "Lech Wojciechowski, former deputy head of ABW during PiS era and later BBN employee, was disciplinarily expelled from ABW service for violating the ban on political party activity. Minister Tomasz Siemoniak announced the decision, emphasizing there is no place for political activists in special services.",
+      "actors_involved": [
+        "ABW"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 4,
+      "sources": [
+        "wiadomosci.wp.pl",
+        "polsatnews.pl",
+        "rmf24.pl",
+        "wiadomosci.onet.pl"
+      ],
+      "date_range": "2026-01-26",
+      "articles": [
+        {
+          "title": "Funkcjonariusz wydalony. Siemoniak grzmi o \"politycznych dzia\u0142aczach\"",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/funkcjonariusz-wydalony-siemoniak-grzmi-o-politycznych-dzialaczach-7247679245301984a",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Zwolnienie by\u0142ego szefa ABW. Tomasz Siemoniak wskaza\u0142 na imprez\u0119 z cz\u0142onkami PiS",
+          "source": "polsatnews.pl",
+          "url": "https://www.polsatnews.pl/wiadomosc/2026-01-26/byly-wiceszef-abw-zwolniony-przez-siemoniaka-patriotyczna-impreza-w-tle/",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Dyscyplinarne wydalenie wiceszefa ABW z czas\u00f3w PiS",
+          "source": "rmf24.pl",
+          "url": "https://www.rmf24.pl/fakty/polska/news-wiceszef-abw-z-czasow-pis-dyscyplinarnie-wydalony-ze-sluzby,nId,8060434",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Funkcjonariusz ABW wydalony ze s\u0142u\u017cby. \"Uczestniczy\u0142 w przedsi\u0119wzi\u0119ciu politycznym PiS\"",
+          "source": "wiadomosci.onet.pl",
+          "url": "https://wiadomosci.onet.pl/kraj/funkcjonariusz-abw-dyscyplinarnie-zwolniony-nie-ma-miejsca-dla-politycznych-dzialaczy/m11wyjm",
+          "date": "2026-01-26"
+        }
+      ],
+      "representative_urls": [
+        "https://rmf24.pl/fakty/polska/news-wiceszef-abw-z-czasow-pis-dyscyplinarnie-wydalony-ze-sluzby,nId,8060434",
+        "https://wiadomosci.onet.pl/kraj/funkcjonariusz-abw-dyscyplinarnie-zwolniony-nie-ma-miejsca-dla-politycznych-dzialaczy/m11wyjm"
+      ]
+    },
+    {
+      "story_id": 14,
+      "headline": "Orlen rebrands PGNiG operations under unified corporate identity",
+      "summary": "PKN Orlen announced the change of PGNiG brand to Orlen and rebranded PGNiG Obr\u00f3t Detaliczny as myOrlen. The change aims to strengthen integration of the multienergectic group and introduce the Orlen Vitay platform as a central digital hub for energy services. Existing contracts and payment methods remain unchanged for customers.",
+      "actors_involved": [
+        "PKN Orlen"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 11,
       "sources": [
         "biznes.interia.pl",
         "money.pl",
+        "polskieradio24.pl",
         "motoryzacja.interia.pl",
         "fakt.pl",
-        "polskieradio24.pl",
         "moto.pl",
-        "next.gazeta.pl",
-        "rmf24.pl",
-        "trojmiasto.pl",
-        "innpoland.pl",
-        "elektromobilni.pl",
-        "wnp.pl",
-        "businessinsider.com.pl",
         "polityka.pl",
-        "auto-swiat.pl",
-        "autokult.pl",
-        "wiadomoscihandlowe.pl",
+        "elektromobilni.pl",
+        "salon24.pl",
+        "wgospodarce.pl",
         "cire.pl"
       ],
       "date_range": "2026-01-26 to 2026-02-01",
@@ -155,10 +782,10 @@
           "date": "2026-01-26"
         },
         {
-          "title": "Orlen zmienia decyzj\u0119 w ostatniej chwili. Chodzi o faktury KSeF",
-          "source": "motoryzacja.interia.pl",
-          "url": "https://motoryzacja.interia.pl/wiadomosci/news-orlen-zmienia-decyzje-w-ostatniej-chwili-chodzi-o-faktury-ks,nId,22544382",
-          "date": "2026-01-28"
+          "title": "Koniec PGNiG. Orlen wyja\u015bni\u0142, co z dostawami gazu do dom\u00f3w",
+          "source": "polskieradio24.pl",
+          "url": "https://polskieradio24.pl/artykul/3639012,koniec-pgnig-orlen-wyjasnil-co-z-dostawami-gazu-do-domow",
+          "date": "2026-01-26"
         },
         {
           "title": "Klienci PGNiG mog\u0105 dosta\u0107 50 z\u0142 na stacjach ORLEN. Oto, co trzeba zrobi\u0107",
@@ -167,16 +794,80 @@
           "date": "2026-01-27"
         },
         {
-          "title": "Koniec PGNiG. Orlen wyja\u015bni\u0142, co z dostawami gazu do dom\u00f3w",
-          "source": "polskieradio24.pl",
-          "url": "https://polskieradio24.pl/artykul/3639012,koniec-pgnig-orlen-wyjasnil-co-z-dostawami-gazu-do-domow",
-          "date": "2026-01-26"
-        },
-        {
           "title": "Orlen rozdaje po 50 z\u0142, ale liczba kupon\u00f3w ograniczona",
           "source": "moto.pl",
           "url": "https://moto.pl/MotoPL/7,88389,32564337,orlen-rozdaje-po-50-zl-ale-liczba-kuponow-ograniczona-wystarczy.html",
           "date": "2026-01-30"
+        },
+        {
+          "title": "\u017begnaj PGNiG, vitay myOrlen. B\u0119dzie synergia? Uwa\u017cajmy, nie dajmy si\u0119 nabra\u0107",
+          "source": "polityka.pl",
+          "url": "https://polityka.pl/tygodnikpolityka/rynek/2330065,1,zegnaj-pgnig-vitay-myorlen-bedzie-synergia-uwazajmy-nie-dajmy-sie-nabrac.read",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "ORLEN Przejmuje PGNiG I Buduje Cyfrow\u0105 Przysz\u0142o\u015b\u0107",
+          "source": "elektromobilni.pl",
+          "url": "https://elektromobilni.pl/orlen-przejmuje-pgnig-i-buduje-cyfrowa-przyszlosc",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Du\u017cy operator znika z rynku, umowy przejmuje Orlen",
+          "source": "salon24.pl",
+          "url": "https://salon24.pl/newsroom/1485533,klienci-pgnig-moga-sie-zdziwic-firma-znika-z-rynku-detalicznego",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Zmiana szyld\u00f3w w Grupie Orlen",
+          "source": "wgospodarce.pl",
+          "url": "https://wgospodarce.pl/informacje/154517-zmiana-szyldow-w-grupie-orlen",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "PGNiG znika z rynku. Orlen po\u017cera mark\u0119 i stawia wszystko na jedn\u0105 kart\u0119",
+          "source": "innpoland.pl",
+          "url": "https://innpoland.pl/219772,pgnig-znika-z-rynku-orlen-pozera-marke-i-stawia-wszystko-na-jedna-karte",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Sp\u00f3\u0142ka myORLEN (dawniej PGNiG Obr\u00f3t Detaliczny) ma nowego Prezesa",
+          "source": "cire.pl",
+          "url": "https://cire.pl/artykuly/serwis-informacyjny-cire-24/spolka-myorlen-dawniej-pgnig-obrot-detaliczny-ma-nowego-prezesa",
+          "date": "2026-02-01"
+        }
+      ],
+      "representative_urls": [
+        "https://biznes.interia.pl/gospodarka/news-pgnig-zmienia-sie-w-orlen-naturalny-kierunek-rozwoju,nId,22543627",
+        "https://money.pl/gospodarka/pgnig-zmienia-nazwe-na-orlen-co-to-oznacza-dla-klientow-7247586933197024a.html"
+      ]
+    },
+    {
+      "story_id": 15,
+      "headline": "Orlen delays KSeF electronic invoicing implementation for gas station customers",
+      "summary": "Orlen announced that printed invoices for business customers at gas stations will continue to be available until at least April 1, 2026, despite the mandatory e-invoicing system (KSeF) launching February 1. The decision responds to customer demands for a transition period. Other fuel networks follow similar approaches.",
+      "actors_involved": [
+        "PKN Orlen"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 10,
+      "sources": [
+        "motoryzacja.interia.pl",
+        "money.pl",
+        "next.gazeta.pl",
+        "biznes.interia.pl",
+        "rmf24.pl",
+        "wnp.pl",
+        "autokult.pl",
+        "wiadomoscihandlowe.pl",
+        "businessinsider.com.pl"
+      ],
+      "date_range": "2026-01-28 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Orlen zmienia decyzj\u0119 w ostatniej chwili. Chodzi o faktury KSeF",
+          "source": "motoryzacja.interia.pl",
+          "url": "https://motoryzacja.interia.pl/wiadomosci/news-orlen-zmienia-decyzje-w-ostatniej-chwili-chodzi-o-faktury-ks,nId,22544382",
+          "date": "2026-01-28"
         },
         {
           "title": "Faktury za paliwo na stacjach. Orlen zdecydowa\u0142",
@@ -203,28 +894,22 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Na stacjach ORLEN fina\u0142 WO\u015aP trwa przez ca\u0142y stycze\u0144",
-          "source": "trojmiasto.pl",
-          "url": "https://trojmiasto.pl/biznes/Na-stacjach-ORLEN-final-WOSP-trwa-przez-caly-styczen-n213606.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Obowi\u0105zkowy KSeF i zmiany na Orlenie. Gigant op\u00f3\u017ania wyrok na papierowe faktury",
-          "source": "innpoland.pl",
-          "url": "https://innpoland.pl/219880,obowiazkowy-ksef-i-zmiany-na-orlenie-gigant-opoznia-wyrok-na-papierowe-faktury",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "ORLEN Przejmuje PGNiG I Buduje Cyfrow\u0105 Przysz\u0142o\u015b\u0107",
-          "source": "elektromobilni.pl",
-          "url": "https://elektromobilni.pl/orlen-przejmuje-pgnig-i-buduje-cyfrowa-przyszlosc",
-          "date": "2026-01-27"
-        },
-        {
           "title": "Orlen zmienia zdanie, inni id\u0105 w jego \u015blady. Termin rewolucji dla kierowc\u00f3w przesuni\u0119ty",
           "source": "wnp.pl",
           "url": "https://wnp.pl/rynki/orlen-zmienia-zdanie-inni-ida-w-jego-slady-termin-rewolucji-dla-kierowcow-przesuniety,1026962.html",
           "date": "2026-01-28"
+        },
+        {
+          "title": "Papierowe faktury na Orlenie jednak d\u0142u\u017cej. Znamy dat\u0119 graniczn\u0105",
+          "source": "autokult.pl",
+          "url": "https://autokult.pl/papierowe-faktury-na-orlenie-jednak-dluzej-znamy-date-graniczna,7248281500449088a",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Orlen: Papierowe faktury za paliwo do kwietnia 2026 r.",
+          "source": "wiadomoscihandlowe.pl",
+          "url": "https://wiadomoscihandlowe.pl/handel-i-dystrybucja/sklepy-convenience-i-stacje-paliw/orlen-papierowe-faktury-za-paliwo-do-kwietnia-2026-r-2531807",
+          "date": "2026-01-29"
         },
         {
           "title": "Zatankowa\u0142 na Orlenie po uruchomieniu KSeF, ale faktury w tym systemie nie otrzyma\u0142",
@@ -233,106 +918,92 @@
           "date": "2026-02-01"
         },
         {
-          "title": "\u017begnaj PGNiG, vitay myOrlen. B\u0119dzie synergia? Uwa\u017cajmy, nie dajmy si\u0119 nabra\u0107",
-          "source": "polityka.pl",
-          "url": "https://polityka.pl/tygodnikpolityka/rynek/2330065,1,zegnaj-pgnig-vitay-myorlen-bedzie-synergia-uwazajmy-nie-dajmy-sie-nabrac.read",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Zatankowa\u0142e\u015b na Orlenie, wzi\u0105\u0142e\u015b faktur\u0119, a w KSeF nic nie ma? Doradca podatkowy wyja\u015bni\u0142 dlaczego",
-          "source": "auto-swiat.pl",
-          "url": "https://auto-swiat.pl/wiadomosci/aktualnosci/dlaczego-faktury-z-orlenu-nie-ma-w-ksef-doradca-podatkowy-wyjasnia/vekx249",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Papierowe faktury na Orlenie jednak d\u0142u\u017cej. Znamy dat\u0119 graniczn\u0105",
-          "source": "autokult.pl",
-          "url": "https://autokult.pl/papierowe-faktury-na-orlenie-jednak-dluzej-znamy-date-graniczna,7248281500449088a",
+          "title": "Faktury za paliwo. Orlen si\u0119 wy\u0142ama\u0142. Kierowcy mog\u0105 by\u0107 zaskoczeni",
+          "source": "money.pl",
+          "url": "https://money.pl/podatki/faktury-za-paliwo-orlen-sie-wylamal-kierowcy-moga-byc-zaskoczeni-7249043665596993v.html",
           "date": "2026-01-30"
         }
       ],
       "representative_urls": [
-        "https://biznes.interia.pl/gospodarka/news-pgnig-zmienia-sie-w-orlen-naturalny-kierunek-rozwoju,nId,22543627",
-        "https://motoryzacja.interia.pl/wiadomosci/news-orlen-zmienia-decyzje-w-ostatniej-chwili-chodzi-o-faktury-ks,nId,22544382"
+        "https://money.pl/gospodarka/faktury-za-paliwo-na-stacjach-orlenu-koncern-zmienil-decyzje-7248233041611136a.html",
+        "https://wnp.pl/rynki/orlen-zmienia-zdanie-inni-ida-w-jego-slady-termin-rewolucji-dla-kierowcow-przesuniety,1026962.html"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Polish military announces major defense procurement and ranking updates",
-      "summary": "Poland revealed plans for a 15 billion zloty air defense system called 'SAN', while international rankings placed Polish Armed Forces among top global militaries. The military also announced record recruitment numbers of 230,000 people including women and those over 50.",
+      "story_id": 16,
+      "headline": "Orlen demands immediate loan repayment from Grupa Azoty Polyolefins",
+      "summary": "PKN Orlen demanded immediate repayment of a loan worth $28.7 million (including interest) from Grupa Azoty Polyolefins, a subsidiary of chemical giant Grupa Azoty. The loan was originally intended to finance propane purchases. The move comes amid ongoing financial difficulties at the Polimery Police project.",
+      "actors_involved": [
+        "PKN Orlen"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 5,
+      "sources": [
+        "money.pl",
+        "biznes.interia.pl",
+        "next.gazeta.pl",
+        "rmf24.pl",
+        "wnp.pl"
+      ],
+      "date_range": "2026-01-29",
+      "articles": [
+        {
+          "title": "Orlen \u017c\u0105da sp\u0142aty wielkiej po\u017cyczki przez sp\u00f3\u0142k\u0119 giganta",
+          "source": "money.pl",
+          "url": "https://money.pl/gospodarka/orlen-zada-splaty-wielkiej-pozyczki-przez-spolke-giganta-7248542496913728a.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Orlen \u017c\u0105da sp\u0142aty po\u017cyczki. W grze gigantyczna kwota",
+          "source": "biznes.interia.pl",
+          "url": "https://biznes.interia.pl/gieldy/news-orlen-zada-splaty-wielkiej-pozyczki-stawka-miliony-dolarow,nId,22544729",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Pa\u0144stwowa sp\u00f3\u0142ka w tarapatach. Orlen \u017c\u0105da sp\u0142aty ogromnej po\u017cyczki",
+          "source": "next.gazeta.pl",
+          "url": "https://next.gazeta.pl/next/7,151003,32563430,panstwowa-spolka-w-tarapatach-orlen-zada-splaty-ogromnej-pozyczki.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Orlen \u017c\u0105da sp\u0142aty po\u017cyczki od Grupy Azoty Polyolefins",
+          "source": "rmf24.pl",
+          "url": "https://rmf24.pl/ekonomia/news-orlen-zada-natychmiastowej-splaty-to-ponad-28-mln-zl,nId,8062603",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Sp\u00f3\u0142ka Grupy Azoty pod ostrza\u0142em wierzycieli. Sprawa z Orlenem mo\u017ce jednak wyj\u015b\u0107 na dobre",
+          "source": "wnp.pl",
+          "url": "https://wnp.pl/przemysl/polimery-police-pod-ostrzalem-wierzycieli-sprawa-z-orlenem-moze-jednak-wyjsc-na-dobre,1027420.html",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://money.pl/gospodarka/orlen-zada-splaty-wielkiej-pozyczki-przez-spolke-giganta-7248542496913728a.html",
+        "https://next.gazeta.pl/next/7,151003,32563430,panstwowa-spolka-w-tarapatach-orlen-zada-splaty-ogromnej-pozyczki.html"
+      ]
+    },
+    {
+      "story_id": 17,
+      "headline": "Record military conscription wave to include 235,000 people",
+      "summary": "Poland's Ministry of Defense announced the largest military qualification process in years, involving approximately 235,000 people from February to April 2026. For the first time, the process will include women with relevant qualifications and men up to age 50 with unregulated military status.",
       "actors_involved": [
         "Polish Armed Forces"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 12,
+      "source_count": 4,
       "sources": [
-        "euronews.com",
-        "geekweek.interia.pl",
         "bankier.pl",
-        "polsatnews.pl",
-        "next.gazeta.pl",
-        "wydarzenia.interia.pl",
-        "wnp.pl",
-        "wiadomosci.dziennik.pl",
-        "wiadomosci.radiozet.pl",
         "money.pl",
-        "pozycjonowaniewitryn.pl",
-        "innpoland.pl"
+        "wnp.pl",
+        "wiadomosci.radiozet.pl"
       ],
-      "date_range": "2026-01-25 to 2026-01-31",
+      "date_range": "2026-01-25 to 2026-01-27",
       "articles": [
-        {
-          "title": "60 milli\u00e1rd doll\u00e1rt k\u00f6lt l\u00e9gv\u00e9delemre Lengyelorsz\u00e1g",
-          "source": "euronews.com",
-          "url": "https://hu.euronews.com/my-europe/2026/01/30/60-milliard-dollart-kolt-legvedelemre-lengyelorszag",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Ranking armii \u015bwiata 2026. Na kt\u00f3rym miejscu jest Polska?",
-          "source": "geekweek.interia.pl",
-          "url": "https://geekweek.interia.pl/militaria/news-ranking-armii-swiata-2026-oto-jak-silna-jest-polska,nId,22545841",
-          "date": "2026-01-31"
-        },
         {
           "title": "Wojsko wzywa rekordow\u0105 liczb\u0119 Polak\u00f3w. Wezwanie mog\u0105 dosta\u0107 te\u017c kobiety i 50-latkowie",
           "source": "bankier.pl",
           "url": "https://bankier.pl/wiadomosc/Rusza-najwieksza-kwalifikacja-wojskowa-Wezwania-moga-trafic-tez-do-kobiet-9074665.html",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Ranking najpot\u0119\u017cniejszych armii. USA na pierwszym miejscu, Polska za Ukrain\u0105",
-          "source": "polsatnews.pl",
-          "url": "https://polsatnews.pl/wiadomosc/2026-01-31/ranking-najpotezniejszych-armii-usa-na-pierwszym-miejscu-polska-za-ukraina",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Polska podejmie prze\u0142omow\u0105 decyzj\u0119 ws. projektu za 15 mld z\u0142. Ma by\u0107 'wzorcowy dla NATO'",
-          "source": "next.gazeta.pl",
-          "url": "https://next.gazeta.pl/inwestycje/7,186593,32563279,polska-podejmie-przelomowa-decyzje-ws-projektu-za-15-mld-zl.html",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Nocny incydent na granicy Polski z Bia\u0142orusi\u0105. Wojsko wyda\u0142o komunikat",
-          "source": "wydarzenia.interia.pl",
-          "url": "https://wydarzenia.interia.pl/kraj/news-nocny-incydent-na-granicy-polski-z-bialorusia-wojsko-wydalo,nId,22545768",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Strategiczne bezho\u0142owie czy jedyne wyj\u015bcie? Wojsko Polskie ma program bez strategii",
-          "source": "wnp.pl",
-          "url": "https://wnp.pl/bezpieczenstwo/strategiczne-bezholowie-czy-jedyne-wyjscie-wojsko-ma-program-ale-czeka-na-nowa-strategie,1023985.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Wojsko kupuje 'San'. Powstaje pot\u0119\u017cna tarcza na wrogie drony",
-          "source": "wiadomosci.dziennik.pl",
-          "url": "https://wiadomosci.dziennik.pl/wydarzenia/artykuly/10634978,polska-buduje-pogromce-dronow-system-san-za-15-miliardow-zlotych.html",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Wojsko polskie wykorzystane ukrai\u0144skie drony? MON prowadzi rozmowy",
-          "source": "wiadomosci.radiozet.pl",
-          "url": "https://wiadomosci.radiozet.pl/polska/wojsko-polskie-wykorzystane-ukrainskie-drony-mon-prowadzi-rozmowy",
           "date": "2026-01-27"
         },
         {
@@ -342,530 +1013,134 @@
           "date": "2026-01-25"
         },
         {
-          "title": "Ile zarabia sier\u017cant w Wojsku Polskim \u2013 uposa\u017cenie, dodatki i perspektywy",
-          "source": "pozycjonowaniewitryn.pl",
-          "url": "https://pozycjonowaniewitryn.pl/ile-zarabia-sierzant-w-wojsku-polskim-uposazenie-dodatki-i-perspektywy/",
+          "title": "\"Strategiczne bezho\u0142owie\" czy \"jedyne wyj\u015bcie\"? Wojsko Polskie ma program bez strategii",
+          "source": "wnp.pl",
+          "url": "https://wnp.pl/bezpieczenstwo/strategiczne-bezholowie-czy-jedyne-wyjscie-wojsko-ma-program-ale-czeka-na-nowa-strategie,1023985.html",
           "date": "2026-01-26"
         },
         {
-          "title": "Jest oficjalny smartfon polskiej armii. Spece z wojska wybrali dwa konkretne modele",
-          "source": "innpoland.pl",
-          "url": "https://innpoland.pl/220036,jest-oficjalny-smartfon-polskiej-armii-spece-z-wojska-wybrali-dwa-konkretne-modele",
-          "date": "2026-01-31"
-        }
-      ],
-      "representative_urls": [
-        "https://next.gazeta.pl/inwestycje/7,186593,32563279,polska-podejmie-przelomowa-decyzje-ws-projektu-za-15-mld-zl.html",
-        "https://wiadomosci.dziennik.pl/wydarzenia/artykuly/10634978,polska-buduje-pogromce-dronow-system-san-za-15-miliardow-zlotych.html"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "S\u0142awomir Mentzen merges parties while facing tax authority disputes",
-      "summary": "Confederation leader S\u0142awomir Mentzen announced merger of his Nowa Nadzieja party with Imperium Kontratakuje, while publicly feuding with tax authorities over KSeF implementation affecting businesses. His legal firm also reported improved profits despite revenue decline.",
-      "actors_involved": [
-        "Mentzen",
-        "Confederation"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 11,
-      "sources": [
-        "rp.pl",
-        "polskieradio24.pl",
-        "wykop.pl",
-        "next.gazeta.pl",
-        "konfederacja.pl",
-        "wiadomosci.gazeta.pl",
-        "rmf24.pl",
-        "xyz.pl",
-        "fakt.pl",
-        "finanse.wp.pl",
-        "businessinsider.com.pl"
-      ],
-      "date_range": "2026-01-25 to 2026-01-31",
-      "articles": [
-        {
-          "title": "Partia Nowa Nadzieja S\u0142awomira Mentzena przestanie istnie\u0107, wch\u0142onie j\u0105 Imperium Kontratakuje",
-          "source": "rp.pl",
-          "url": "https://rp.pl/polityka/art43712581-imperium-kontratakuje-wchlonie-nowa-nadzieje-oto-plan-slawomira-mentzena",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Fuzja Nowej Nadziei z Imperium Kontratakuje. Nowy ruch Mentzena",
-          "source": "polskieradio24.pl",
-          "url": "https://polskieradio24.pl/artykul/3640795,fuzja-nowej-nadziei-z-imperium-kontratakuje-nowy-ruch-mentzena",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "S\u0142awomir Mentzen pokazuje jak polskie urz\u0119dy niszcz\u0105 rodzime firmy",
-          "source": "wykop.pl",
-          "url": "https://wykop.pl/link/7879961/slawomir-mentzen-pokazuje-jak-polskie-urzedy-niszcza-rodzime-firmy",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "KSeF rozpala internet do czerwono\u015bci. Urz\u0119dniczka ze skarb\u00f3wki odpowiada na wpis Mentzena",
-          "source": "next.gazeta.pl",
-          "url": "https://next.gazeta.pl/pieniadz/7,188934,32552909,temat-ksef-rozpala-internet-urzedniczka-skarbowki-odpowiada.html",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Sprawa dla Mentzena. Tak wygl\u0105da niszczenie polskiej firmy przez urz\u0105d skarbowy",
-          "source": "konfederacja.pl",
-          "url": "https://konfederacja.pl/sprawa-dla-mentzena-tak-wyglada-niszczenie-polskiej-firmy-przez-urzad-skarbowy",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Od bimbrownictwa po kusze. Konfederacja zbiera pomys\u0142y do programu. Mentzen: Potrzebuj\u0119 waszej pomocy",
-          "source": "wiadomosci.gazeta.pl",
-          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32549037,od-bimbrownictwa-po-kusze-konfederacja-zbiera-pomysly-do-programu.html",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Nowa Nadzieja po\u0142\u0105czy si\u0119 z Imperium Kontratakuje. Chodzi o parti\u0119 Mentzena",
-          "source": "rmf24.pl",
-          "url": "https://rmf24.pl/polityka/news-nowa-nadzieja-polaczy-sie-z-imperium-kontratakuje-tak-chodzi,nId,8062742",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Partie Nowa Nadzieja i Imperium Kontratakuje po\u0142\u0105cz\u0105 si\u0119. Mentzen zachowa star\u0105 nazw\u0119 ugrupowania",
-          "source": "xyz.pl",
-          "url": "https://xyz.pl/dzieje-sie/partie-nowa-nadzieja-i-imperium-kontratakuje-polacza-sie-mentzen-zachowa-stara-nazwe-ugrupowania-1484",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Kancelaria Mentzen pokaza\u0142a wyniki za 2025 r. Tyle zarobi\u0142a sp\u00f3\u0142ka lidera Konfederacji",
-          "source": "fakt.pl",
-          "url": "https://fakt.pl/pieniadze/kancelaria-mentzena-poprawila-wyniki-zysk-netto-niemal-sie-podwoil/w59xcg6",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Wysoki zysk kancelarii Mentzena. Oto ile zarobi\u0142a w 2025 r.",
-          "source": "finanse.wp.pl",
-          "url": "https://finanse.wp.pl/kancelaria-mentzen-z-zyskiem-oto-ile-zarobila-w-2025-r-7249020735408512a",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Zysk zamiast straty, ale przychody w d\u00f3\u0142. Jak Kancelaria Mentzen radzi sobie na NewConnect?",
-          "source": "businessinsider.com.pl",
-          "url": "https://businessinsider.com.pl/gielda/wiadomosci/zysk-zamiast-straty-ale-przychody-w-dol-jak-kancelaria-mentzen-radzi-sobie-na/gjxrl0j",
-          "date": "2026-01-30"
-        }
-      ],
-      "representative_urls": [
-        "https://rp.pl/polityka/art43712581-imperium-kontratakuje-wchlonie-nowa-nadzieje-oto-plan-slawomira-mentzena",
-        "https://next.gazeta.pl/pieniadz/7,188934,32552909,temat-ksef-rozpala-internet-urzedniczka-skarbowki-odpowiada.html"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "ABW breaks up Russian sabotage network, dismisses PiS-era official",
-      "summary": "Poland's Internal Security Agency announced dismantling of Russian-backed terrorist network responsible for arson attacks across Europe. Separately, ABW dismissed a deputy chief from the PiS era for participating in political activities.",
-      "actors_involved": [
-        "ABW"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 8,
-      "sources": [
-        "polsatnews.pl",
-        "wydarzenia.interia.pl",
-        "wiadomosci.wp.pl",
-        "radiomaryja.pl",
-        "rmf24.pl",
-        "infosecurity24.pl",
-        "sp-7.pl",
-        "wiadomosci.onet.pl"
-      ],
-      "date_range": "2026-01-26 to 2026-01-30",
-      "articles": [
-        {
-          "title": "ABW. Grupa terrorystyczna rozpracowana. Podpalali na zlecenie Rosji",
-          "source": "polsatnews.pl",
-          "url": "https://www.polsatnews.pl/wiadomosc/2026-01-30/abw-rozpracowala-grupe-terrorystow-podpalali-obiekty-w-calej-europie/",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Bia\u0142oruskie s\u0142u\u017cby dzia\u0142aj\u0105 w Polsce? By\u0142a agentka ABW jasno",
-          "source": "wydarzenia.interia.pl",
-          "url": "https://wydarzenia.interia.pl/kraj/news-agenci-lukaszenki-infiltruja-polske-byla-funkcjonariuszka-ab,nId,22544188",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Funkcjonariusz wydalony. Siemoniak grzmi o 'politycznych dzia\u0142aczach'",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/funkcjonariusz-wydalony-siemoniak-grzmi-o-politycznych-dzialaczach-7247679245301984a",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Zwolnienie by\u0142ego szefa ABW. Tomasz Siemoniak wskaza\u0142 na imprez\u0119 z cz\u0142onkami PiS",
-          "source": "polsatnews.pl",
-          "url": "https://www.polsatnews.pl/wiadomosc/2026-01-26/byly-wiceszef-abw-zwolniony-przez-siemoniaka-patriotyczna-impreza-w-tle/",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "ABW. Rozbita siatka dzia\u0142a\u0142a na rzecz Rosji, dywersanci stan\u0105 przed s\u0105dem",
-          "source": "wydarzenia.interia.pl",
-          "url": "https://wydarzenia.interia.pl/kraj/news-podpalali-obiekty-w-europie-m-in-w-polsce-dywersanci-stana-p,nId,22545658",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Dr J. Hajdasz: W. Czarzasty powinien wyja\u015bni\u0107 publicznie spraw\u0119 braku sprawdzenia przez ABW",
-          "source": "radiomaryja.pl",
-          "url": "https://www.radiomaryja.pl/informacje/dr-j-hajdasz-w-czarzasty-powinien-wyjasnic-publicznie-sprawe-braku-sprawdzenia-przez-abw-i-zlozyc-ankiete-bezpieczenstwa/",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Dyscyplinarne wydalenie wiceszefa ABW z czas\u00f3w PiS \u2013 Lech Wojciechowski usuni\u0119ty za udzia\u0142 w polityce",
-          "source": "rmf24.pl",
-          "url": "https://www.rmf24.pl/fakty/polska/news-wiceszef-abw-z-czasow-pis-dyscyplinarnie-wydalony-ze-sluzby,nId,8060434",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Funkcjonariusz ABW wydalony ze s\u0142u\u017cby. 'Uczestniczy\u0142 w przedsi\u0119wzi\u0119ciu politycznym PiS'",
-          "source": "wiadomosci.onet.pl",
-          "url": "https://wiadomosci.onet.pl/kraj/funkcjonariusz-abw-dyscyplinarnie-zwolniony-nie-ma-miejsca-dla-politycznych-dzialaczy/m11wyjm",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://www.polsatnews.pl/wiadomosc/2026-01-30/abw-rozpracowala-grupe-terrorystow-podpalali-obiekty-w-calej-europie/",
-        "https://www.rmf24.pl/fakty/polska/news-wiceszef-abw-z-czasow-pis-dyscyplinarnie-wydalony-ze-sluzby,nId,8060434"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Court rules in Kaczy\u0144ski-Brejza defamation case",
-      "summary": "Warsaw court issued verdict in defamation lawsuit brought by KO MEP Krzysztof Brejza against PiS leader Jaros\u0142aw Kaczy\u0144ski, though the specific outcome was not detailed in headlines.",
-      "actors_involved": [
-        "Kaczy\u0144ski"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 6,
-      "sources": [
-        "polsatnews.pl",
-        "wiadomosci.wp.pl",
-        "rmf24.pl",
-        "rp.pl",
-        "tvn24.pl",
-        "wiadomosci.onet.pl"
-      ],
-      "date_range": "2026-01-27 to 2026-01-27",
-      "articles": [
-        {
-          "title": "Sprawa Krzysztof Brejza kontra Jaros\u0142aw Kaczy\u0144ski. Jest wyrok s\u0105du",
-          "source": "polsatnews.pl",
-          "url": "https://polsatnews.pl/wiadomosc/2026-01-27/sprawa-krzysztof-brejza-kontra-jaroslaw-kaczynski-jest-wyrok-sadu",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Kaczy\u0144ski kontra Brejza. Zapad\u0142 wyrok w g\u0142o\u015bnej sprawie",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/kaczynski-kontra-brejza-zapadl-wyrok-w-glosnej-sprawie-7247962485111072a",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "S\u0105dny dzie\u0144 w sporze Kaczy\u0144ski-Brejza. Zapadnie wyrok",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/sadny-dzien-w-sporze-kaczynski-brejza-zapadnie-wyrok-7247847720356064a",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Kaczy\u0144ski pozwany przez Brejz\u0119. S\u0105d podj\u0105\u0142 decyzj\u0119",
-          "source": "rmf24.pl",
-          "url": "https://rmf24.pl/polityka/news-brejza-kontra-kaczynski-sad-podjal-decyzje,nId,8062305",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Czy prezes PiS Jaros\u0142aw Kaczy\u0144ski znies\u0142awi\u0142 europos\u0142a KO Krzysztofa Brejz\u0119? Jest wyrok",
-          "source": "rp.pl",
-          "url": "https://rp.pl/prawo-karne/art43698871-prezes-pis-jaroslaw-kaczynski-pomowil-europosla-krzysztofa-brejze-jest-wyrok",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Warszawa. Brejza przeciwko Kaczy\u0144skiemu, decyzja s\u0105du",
-          "source": "tvn24.pl",
-          "url": "https://tvn24.pl/polska/warszawa-brejza-przeciwko-kaczynskiemu-decyzja-sadu-st8871498",
+          "title": "Wojsko polskie wykorzystane ukrai\u0144skie drony? MON prowadzi rozmowy",
+          "source": "wiadomosci.radiozet.pl",
+          "url": "https://wiadomosci.radiozet.pl/polska/wojsko-polskie-wykorzystane-ukrainskie-drony-mon-prowadzi-rozmowy",
           "date": "2026-01-27"
         }
       ],
       "representative_urls": [
-        "https://polsatnews.pl/wiadomosc/2026-01-27/sprawa-krzysztof-brejza-kontra-jaroslaw-kaczynski-jest-wyrok-sadu",
-        "https://rp.pl/prawo-karne/art43698871-prezes-pis-jaroslaw-kaczynski-pomowil-europosla-krzysztofa-brejze-jest-wyrok"
+        "https://bankier.pl/wiadomosc/Rusza-najwieksza-kwalifikacja-wojskowa-Wezwania-moga-trafic-tez-do-kobiet-9074665.html",
+        "https://money.pl/gospodarka/230-tys-osob-wojsko-wezwie-tez-50-latkow-z-nieuregulowanym-statusem-7247212869769408a.html"
       ]
     },
     {
-      "story_id": 7,
-      "headline": "President Nawrocki meets with Foreign Minister Sikorski on ambassador dispute",
-      "summary": "President Karol Nawrocki held meetings with Foreign Minister Rados\u0142aw Sikorski to discuss disagreements over ambassador appointments, with both sides indicating progress toward finding common ground.",
+      "story_id": 18,
+      "headline": "Constitutional Tribunal candidate shortlist circulates in ruling coalition",
+      "summary": "A working list of eight potential candidates from the ruling coalition to fill vacancies in the Constitutional Tribunal is circulating in parliamentary circles. Some individuals on the list have been preliminarily contacted about the possibility, with the selection process aimed at addressing the tribunal's ongoing legitimacy crisis.",
       "actors_involved": [
-        "Nawrocki"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 5,
-      "sources": [
-        "wiadomosci.wp.pl",
-        "wiadomosci.gazeta.pl",
-        "tvn24.pl",
-        "jedynka.polskieradio.pl"
-      ],
-      "date_range": "2026-01-26 to 2026-01-28",
-      "articles": [
-        {
-          "title": "Nawrocki spotka\u0142 si\u0119 z Sikorskim. Bogucki zabra\u0142 g\u0142os",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/nawrocki-spotkal-sie-z-sikorskim-bogucki-zabral-glos-7247861314619616a",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Koniec wyczekiwanego spotkania Nawrocki-Sikorski. Jest pierwszy komentarz",
-          "source": "wiadomosci.gazeta.pl",
-          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32557137,koniec-wyczekiwanego-spotkania-nawrocki-sikorski-jest-pierwszy.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Sp\u00f3r o ambasador\u00f3w. Kulisy spotkania Rados\u0142awa Sikorskiego z Karolem Nawrockim",
-          "source": "tvn24.pl",
-          "url": "https://tvn24.pl/polska/spor-o-ambasadorow-kulisy-spotkania-radoslawa-sikorskiego-z-karolem-nawrockim-st8872392",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Pierwszy komunikat po spotkaniu Nawrocki-Sikorski. 'Zmierzamy w stron\u0119 znalezienia'",
-          "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/pierwszy-komunikat-po-spotkaniu-nawrocki-sikorski-zmierzamy-w-strone-znalezienia-7247641588979904a",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Sikorski spotka\u0142 si\u0119 z Nawrockim. Nieoficjalnie: pad\u0142y konkrety w sprawie ambasador\u00f3w",
-          "source": "tvn24.pl",
-          "url": "https://tvn24.pl/polska/spotkanie-karola-nawrockiego-z-radoslawem-sikorskim-w-palacu-prezydenckim-st8869211",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://tvn24.pl/polska/spor-o-ambasadorow-kulisy-spotkania-radoslawa-sikorskiego-z-karolem-nawrockim-st8872392",
-        "https://tvn24.pl/polska/spotkanie-karola-nawrockiego-z-radoslawem-sikorskim-w-palacu-prezydenckim-st8869211"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "Tusk criticizes Nawrocki over presidential role in foreign policy lobbying",
-      "summary": "Prime Minister Donald Tusk publicly criticized President Nawrocki and former President Duda, stating that presidents' role is not to lobby for foreign interests, amid ongoing tensions over executive branch foreign policy coordination.",
-      "actors_involved": [
-        "Tusk",
-        "Nawrocki"
+        "Constitutional Tribunal"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 3,
       "sources": [
         "wiadomosci.wp.pl",
-        "atv.hu"
+        "oko.press",
+        "serwisy.gazetaprawna.pl"
       ],
-      "date_range": "2026-01-30 to 2026-02-01",
+      "date_range": "2026-01-27 to 2026-01-31",
       "articles": [
         {
-          "title": "Tusk mocno do Nawrockiego i Dudy. 'Wasz\u0105 rol\u0105 nie jest lobbowanie'",
+          "title": "To b\u0119d\u0105 kandydaci do TK? W koalicji kr\u0105\u017cy lista nazwisk",
           "source": "wiadomosci.wp.pl",
-          "url": "https://wiadomosci.wp.pl/tusk-mocno-do-nawrockiego-i-dudy-wasza-rola-nie-jest-lobbowanie-7249030359550272a",
+          "url": "https://wiadomosci.wp.pl/to-beda-kandydaci-do-tk-w-koalicji-krazy-lista-nazwisk-7248984781576576a",
           "date": "2026-01-30"
         },
         {
-          "title": "Tusk szerint az \u00e1llamf\u0151k feladata nem a k\u00fclf\u00f6ldi \u00e9rdekek k\u00e9pviselete",
-          "source": "atv.hu",
-          "url": "https://atv.hu/kulfold/20260201/donald-tusk-lengyelorszag-beketanacs",
+          "title": "Tajemnica nieod\u015bnie\u017canych chodnik\u00f3w? Trybuna\u0142 Konstytucyjny uzna\u0142 kiedy\u015b, \u017ce takie prawo jest dobre",
+          "source": "oko.press",
+          "url": "https://oko.press/tajemnica-nieodsniezanych-chodnikow-trybunal-konstytucyjny-uznal-kiedys-ze-takie-prawo-jest-dobre",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Wyb\u00f3r kandydat\u00f3w na I prezesa SN ju\u017c w lutym. Co zrobi Trybuna\u0142 Konstytucyjny?",
+          "source": "serwisy.gazetaprawna.pl",
+          "url": "https://serwisy.gazetaprawna.pl/orzeczenia/artykuly/10635356,wybor-kandydatow-na-i-prezesa-sn-juz-w-lutym-co-zrobi-trybunal-konsty.html",
+          "date": "2026-01-31"
+        }
+      ],
+      "representative_urls": [
+        "https://wiadomosci.wp.pl/to-beda-kandydaci-do-tk-w-koalicji-krazy-lista-nazwisk-7248984781576576a",
+        "https://oko.press/tajemnica-nieodsniezanych-chodnikow-trybunal-konstytucyjny-uznal-kiedys-ze-takie-prawo-jest-dobre"
+      ]
+    },
+    {
+      "story_id": 19,
+      "headline": "Tusk promotes government successes on international stage",
+      "summary": "Prime Minister Donald Tusk highlighted Poland's achievements in various social media posts and public appearances, including promoting the success of the government's in vitro program and Poland's positive international image. He responded to frequently searched Google questions about Poland and celebrated reaching a historic trillion-dollar GDP milestone.",
+      "actors_involved": [
+        "Donald Tusk"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 3,
+      "sources": [
+        "wiadomosci.gazeta.pl",
+        "wiadomosci.wp.pl",
+        "wpolityce.pl"
+      ],
+      "date_range": "2026-01-26 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Tusk pokaza\u0142 si\u0119 z map\u0105 Polski. 'Nowe miasto powsta\u0142o'",
+          "source": "wiadomosci.gazeta.pl",
+          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32564031,tusk-pokazal-sie-z-mapa-polski-nowe-miasto-powstalo.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "\"Why Poland is so clean?\" Tusk publikuje nagranie",
+          "source": "wiadomosci.wp.pl",
+          "url": "https://wiadomosci.wp.pl/why-poland-is-so-clean-tusk-publikuje-nagranie-7247643314022624a",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Premier z kompleks\u00f3w. Oto d\u0142uga lista kompleks\u00f3w Tuska",
+          "source": "wpolityce.pl",
+          "url": "https://wpolityce.pl/tygodniksieci/751913-premier-z-kompleksow-oto-dluga-lista-kompleksow-tuska",
           "date": "2026-02-01"
         }
       ],
       "representative_urls": [
-        "https://wiadomosci.wp.pl/tusk-mocno-do-nawrockiego-i-dudy-wasza-rola-nie-jest-lobbowanie-7249030359550272a",
-        "https://atv.hu/kulfold/20260201/donald-tusk-lengyelorszag-beketanacs"
-      ]
-    },
-    {
-      "story_id": 9,
-      "headline": "President Nawrocki invites parliamentary parties for meetings, some decline",
-      "summary": "President Karol Nawrocki invited representatives from all parliamentary groups for meetings at the Presidential Palace. Civic Coalition and Left parties declined to attend, while PiS and other groups participated.",
-      "actors_involved": [
-        "Nawrocki",
-        "Civic Coalition"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 3,
-      "sources": [
-        "tvn24.pl",
-        "rmf24.pl",
-        "wiadomosci.wp.pl"
-      ],
-      "date_range": "2026-01-25 to 2026-01-30",
-      "articles": [
-        {
-          "title": "KO i Lewica nie id\u0105 do Karola Nawrockiego. Szef Gabinetu prezydenta Pawe\u0142 Szefernaker komentuje",
-          "source": "tvn24.pl",
-          "url": "https://tvn24.pl/polska/ko-i-lewica-nie-ida-do-karola-nawrockiego-szef-gabinetu-prezydenta-pawel-szefernaker-komentuje-st8872118",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Karol Nawrocki zaprosi\u0142 polityk\u00f3w. Kto nie wybiera si\u0119 do Pa\u0142acu Prezydenckiego?",
-          "source": "rmf24.pl",
-          "url": "https://rmf24.pl/polityka/news-prezydent-nawrocki-zaprosil-politykow-na-spotkanie-wiemy-kto,nId,8062350",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Karol Nawrocki zaprosi\u0142 na spotkania przedstawicieli wszystkich klub\u00f3w i k\u00f3\u0142 parlamentarnych. Kto p\u00f3jdzie do prezydenta",
-          "source": "tvn24.pl",
-          "url": "https://tvn24.pl/polska/karol-nawrocki-zaprosil-na-spotkania-przedstawicieli-wszystkich-klubow-i-kol-parlamentarnych-kto-pojdzie-do-prezydenta-st8866797",
-          "date": "2026-01-25"
-        }
-      ],
-      "representative_urls": [
-        "https://tvn24.pl/polska/ko-i-lewica-nie-ida-do-karola-nawrockiego-szef-gabinetu-prezydenta-pawel-szefernaker-komentuje-st8872118",
-        "https://rmf24.pl/polityka/news-prezydent-nawrocki-zaprosil-politykow-na-spotkanie-wiemy-kto,nId,8062350"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "NBP continues record gold purchases, earning international attention",
-      "summary": "Poland's Central Bank (NBP) under Governor Adam Glapi\u0144ski maintained its position as the world's largest gold buyer, with German media dubbing Glapi\u0144ski the 'gold president' for driving global gold prices.",
-      "actors_involved": [
-        "Glapi\u0144ski",
-        "NBP"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 2,
-      "sources": [
-        "money.pl",
-        "next.gazeta.pl"
-      ],
-      "date_range": "2026-01-29 to 2026-01-29",
-      "articles": [
-        {
-          "title": "NBP jest rekordzist\u0105. Nikt na \u015bwiecie nie kupuje tyle z\u0142ota",
-          "source": "money.pl",
-          "url": "https://money.pl/gospodarka/nbp-jest-rekordzista-nikt-na-swiecie-nie-kupuje-tyle-zlota-7248668737706368a.html",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Niemiecka gazeta: Jak 'z\u0142oty prezes' w NBP Adam Glapi\u0144ski nap\u0119dza cen\u0119 z\u0142ota",
-          "source": "next.gazeta.pl",
-          "url": "https://next.gazeta.pl/next/7,168930,32564910,niemiecka-gazeta-jak-nbp-napedza-cene-zlota-zloty-prezes.html",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://money.pl/gospodarka/nbp-jest-rekordzista-nikt-na-swiecie-nie-kupuje-tyle-zlota-7248668737706368a.html",
-        "https://next.gazeta.pl/next/7,168930,32564910,niemiecka-gazeta-jak-nbp-napedza-cene-zlota-zloty-prezes.html"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "Konfederacja internal tensions escalate between Mentzen and Bosak factions",
-      "summary": "Reports emerged of growing conflicts within Confederation party between S\u0142awomir Mentzen and Krzysztof Bosak factions, with concerns about party finances and leadership direction.",
-      "actors_involved": [
-        "Mentzen",
-        "Confederation"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "polsatnews.pl",
-        "wiadomosci.gazeta.pl",
-        "wprost.pl",
-        "newsweek.pl"
-      ],
-      "date_range": "2026-01-26 to 2026-01-30",
-      "articles": [
-        {
-          "title": "Konflikt Mentzena z Bosakiem? Pose\u0142 Konfederacji komentuje",
-          "source": "polsatnews.pl",
-          "url": "https://polsatnews.pl/graffiti/2026-01-30/konflikt-mentzena-z-bosakiem-posel-konfederacji-komentuje",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Media: W Konfederacji w\u015bciekli na Mentzena. 'Ten Titanic idzie na dno'",
-          "source": "wiadomosci.gazeta.pl",
-          "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32557916,media-konfederaci-wsciekli-na-mentzena-ten-titanic-idzie.html",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Konflikt Krzysztofa Bosaka i S\u0142awomira Mentzena. W Konfederacji wrze",
-          "source": "wprost.pl",
-          "url": "https://www.wprost.pl/kraj/12233655/konflikt-krzysztofa-bosaka-i-slawomira-mentzena-w-konfederacji-wrze.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Konfederacja mo\u017ce straci\u0107 miliony. 'Narasta z\u0142o\u015b\u0107 na Mentzena'",
-          "source": "newsweek.pl",
-          "url": "https://www.newsweek.pl/polska/polityka/konfederacja-moze-stracic-miliony-narasta-zlosc-na-mentzena/bmz83ge",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://wiadomosci.gazeta.pl/polityka/7,198012,32557916,media-konfederaci-wsciekli-na-mentzena-ten-titanic-idzie.html",
-        "https://www.wprost.pl/kraj/12233655/konflikt-krzysztofa-bosaka-i-slawomira-mentzena-w-konfederacji-wrze.html"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Auschwitz liberation anniversary marked amid protocol disputes",
-      "summary": "President Nawrocki participated in 81st anniversary of Auschwitz liberation commemorations, speaking about remembering victims while not forgetting perpetrators. Some controversy emerged over protocol arrangements.",
-      "actors_involved": [
-        "Nawrocki"
-      ],
-      "signal_category_hint": "unclear",
-      "source_count": 3,
-      "sources": [
-        "wydarzenia.interia.pl",
-        "rmf24.pl"
-      ],
-      "date_range": "2026-01-27 to 2026-01-29",
-      "articles": [
-        {
-          "title": "81. rocznica wyzwolenia Auschwitz. Karol Nawrocki o 'drodze pami\u0119ci'",
-          "source": "wydarzenia.interia.pl",
-          "url": "https://wydarzenia.interia.pl/kraj/news-nawrocki-na-obchodach-w-oswiecimiu-to-symbol-zupelnego-odhum,nId,22544121",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "O\u015bwi\u0119cim. Karol Nawrocki mia\u0142 zosta\u0107 'wykluczony'. Muzeum reaguje",
-          "source": "wydarzenia.interia.pl",
-          "url": "https://wydarzenia.interia.pl/kraj/news-nawrocki-wykluczony-z-uroczystosci-w-oswiecimiu-muzeum-fakty,nId,22545251",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Karol \u200bNawrocki w Auschwitz: Pami\u0119tali\u015bmy o ofiarach, ale zapomnieli\u015bmy o sprawcach",
-          "source": "rmf24.pl",
-          "url": "https://rmf24.pl/regiony/krakow/news-nawrocki-pamietalismy-o-ofiarach-ale-zapomnielismy-o-sprawca,nId,8062320",
-          "date": "2026-01-27"
-        }
-      ],
-      "representative_urls": [
-        "https://wydarzenia.interia.pl/kraj/news-nawrocki-na-obchodach-w-oswiecimiu-to-symbol-zupelnego-odhum,nId,22544121",
-        "https://rmf24.pl/regiony/krakow/news-nawrocki-pamietalismy-o-ofiarach-ale-zapomnielismy-o-sprawca,nId,8062320"
+        "https://wiadomosci.gazeta.pl/polityka/7,198012,32564031,tusk-pokazal-sie-z-mapa-polski-nowe-miasto-powstalo.html",
+        "https://wiadomosci.wp.pl/why-poland-is-so-clean-tusk-publikuje-nagranie-7247643314022624a"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Constitutional Tribunal candidate list circulates in coalition",
-      "source": "wiadomosci.wp.pl",
-      "url": "https://wiadomosci.wp.pl/to-beda-kandydaci-do-tk-w-koalicji-krazy-lista-nazwisk-7248984781576576a",
+      "headline": "Mentzen launches crowdsourced political program initiative",
+      "source": "wiadomosci.gazeta.pl",
+      "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32549037,od-bimbrownictwa-po-kusze-konfederacja-zbiera-pomysly-do-programu.html",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Families of fallen soldiers write letter to Trump demanding respect",
-      "source": "polskieradio24.pl",
-      "url": "https://polskieradio24.pl/artykul/3639412,rodziny-poleglych-zolnierzy-pisza-do-trumpa-domagamy-sie-szacunku",
+      "headline": "Poland ranks 21st in global military strength ranking",
+      "source": "polsatnews.pl",
+      "url": "https://polsatnews.pl/wiadomosc/2026-01-31/ranking-najpotezniejszych-armii-usa-na-pierwszym-miejscu-polska-za-ukraina",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Polish officials appointed to key NATO and EU positions",
+      "source": "rmf24.pl",
+      "url": "https://rmf24.pl/fakty/polska/news-polscy-oficerowie-na-waznych-stanowiskach-nato-i-ue-czym-sie,nId,8062638",
       "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "Tusk shows map of Poland with 'new city'",
-      "source": "wiadomosci.gazeta.pl",
-      "url": "https://wiadomosci.gazeta.pl/polityka/7,198012,32564031,tusk-pokazal-sie-z-mapa-polski-nowe-miasto-powstalo.html",
-      "signal_category_hint": "unclear"
+      "headline": "Poland signs major anti-drone system contract worth 15 billion z\u0142oty",
+      "source": "next.gazeta.pl",
+      "url": "https://next.gazeta.pl/inwestycje/7,186593,32563279,polska-podejmie-przelomowa-decyzje-ws-projektu-za-15-mld-zl.html",
+      "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Russian Foreign Ministry spokesperson responds to Nawrocki statement",
-      "source": "wiadomosci.wp.pl",
-      "url": "https://wiadomosci.wp.pl/rzeczniczka-msz-rosji-odpowiada-nawrockiemu-taka-rade-mu-dala-7248319083776320a",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "EU-India trade agreement finalized, opening markets for 2 billion people",
+      "source": "money.pl",
+      "url": "https://money.pl/gospodarka/najwieksza-umowa-handlowa-swiata-staje-sie-faktem-dotyczy-2-miliardow-ludzi-7247860803655872a.html",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }

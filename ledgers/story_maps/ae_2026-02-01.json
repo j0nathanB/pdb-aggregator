@@ -3,28 +3,28 @@
   "code": "ae",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 115,
-  "stories_identified": 12,
-  "off_topic_filtered": 31,
-  "noise_summary": "31 off-topic results filtered: 11 computer technical articles about MBR partitions (misidentified Mohammed bin Rashid), 3 general US military articles, 2 historical/biographical pieces, 2 automotive/weapons articles, 1 Canadian military death, 1 UK naval industry, 1 fashion article, 1 topic page, 9 Arabic OPEC+ articles without UAE-specific content.",
+  "search_results_total": 117,
+  "stories_identified": 14,
+  "off_topic_filtered": 23,
+  "noise_summary": "23 off-topic results filtered: 10 computer technical articles about MBR partition tables/disk management, 8 Arabic articles about general OPEC oil production decisions (not UAE-specific), 2 Brazilian news articles about Rio de Janeiro politics, 2 general AI/tech articles not UAE-related, 1 military equipment article not UAE-specific.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Abu Dhabi consolidates ADQ into new L'IMAD holding company under Crown Prince",
-      "summary": "Abu Dhabi merged its $263 billion sovereign wealth fund ADQ into a new entity called L'IMAD Holding, overseen by Crown Prince Sheikh Khaled bin Mohamed bin Zayed Al Nahyan. The consolidation aims to create a sovereign investment powerhouse with expanded dealmaking capabilities.",
+      "headline": "Abu Dhabi consolidates ADQ into new L'IMAD sovereign investment vehicle",
+      "summary": "The UAE government announced a major restructuring of Abu Dhabi's sovereign wealth architecture, consolidating the $263 billion ADQ fund into the newly formed L'IMAD Holding Company under Crown Prince Sheikh Khaled bin Mohamed bin Zayed Al Nahyan. The consolidation creates a new investment powerhouse managing hundreds of billions in state assets.",
       "actors_involved": [
-        "Crown Prince Sheikh Khaled bin Mohamed",
-        "ADQ"
+        "Mohammed bin Zayed Al Nahyan",
+        "ADIA",
+        "Mubadala"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 6,
+      "source_count": 5,
       "sources": [
         "reuters.com",
-        "financialpost.com",
-        "thenationalnews.com",
         "finance.yahoo.com",
+        "thenationalnews.com",
         "mediaoffice.abudhabi",
-        "bloomberg.com"
+        "khaleejtimes.com"
       ],
       "date_range": "2026-01-30 to 2026-01-30",
       "articles": [
@@ -35,9 +35,9 @@
           "date": "2026-01-30"
         },
         {
-          "title": "Abu Dhabi Shakeup May Hand Crown Prince More Dealmaking Clout",
-          "source": "financialpost.com",
-          "url": "https://financialpost.com/pmn/business-pmn/abu-dhabi-folds-adq-under-new-entity-limad-in-radical-shakeup",
+          "title": "Abu Dhabi rolls $263B sovereign wealth fund ADQ into new investment vehicle",
+          "source": "finance.yahoo.com",
+          "url": "https://finance.yahoo.com/news/abu-dhabi-rolls-263b-sovereign-151223071.html",
           "date": "2026-01-30"
         },
         {
@@ -47,57 +47,172 @@
           "date": "2026-01-30"
         },
         {
-          "title": "Abu Dhabi rolls $263B sovereign wealth fund ADQ into new investment vehicle",
-          "source": "finance.yahoo.com",
-          "url": "https://finance.yahoo.com/news/abu-dhabi-rolls-263b-sovereign-151223071.html",
-          "date": "2026-01-30"
-        },
-        {
           "title": "Supreme Council for Financial and Economic Affairs Issues Resolution to Consolidate the Assets and Investments of L'IMAD Holding and Abu Dhabi Developmental Holding Group",
           "source": "mediaoffice.abudhabi",
           "url": "https://mediaoffice.abudhabi/en/economy/supreme-council-for-financial-and-economic-affairs-issues-resolution-to-consolidate-the-assets-and-investments-of-limad-holding-and-abu-dhabi-developmental-holding-group",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Abu Dhabi consolidates L'IMAD Holding, ADQ to create sovereign investment powerhouse",
+          "source": "khaleejtimes.com",
+          "url": "https://khaleejtimes.com/business/economy/abu-dhabi-consolidates-limad-holding-adq",
           "date": "2026-01-30"
         }
       ],
       "representative_urls": [
         "https://reuters.com/world/middle-east/abu-dhabis-newest-sovereign-fund-takes-control-peer-adq-major-wealth-reshuffle-2026-01-30",
-        "https://financialpost.com/pmn/business-pmn/abu-dhabi-folds-adq-under-new-entity-limad-in-radical-shakeup"
+        "https://mediaoffice.abudhabi/en/economy/supreme-council-for-financial-and-economic-affairs-issues-resolution-to-consolidate-the-assets-and-investments-of-limad-holding-and-abu-dhabi-developmental-holding-group"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Mubadala Investment Company announces multiple investment deals",
-      "summary": "Abu Dhabi's Mubadala Investment Company led a $170 million funding round for Property Finder, invested $36.5 million in US nutrition tech company L-Nutra, and sold its stake in healthcare firm Arcadia. The activities demonstrate Mubadala's continued investment expansion across sectors.",
+      "headline": "Saudi-UAE tensions escalate into public diplomatic rift",
+      "summary": "Diplomatic tensions between Saudi Arabia and the UAE became public as Saudi officials denied rumors about refusing entry to UAE National Security Adviser Sheikh Tahnoon bin Zayed, while broader tensions emerged over regional policies including Yemen and the Red Sea. Multiple analyses describe this as a significant realignment between the two Gulf powers.",
+      "actors_involved": [
+        "Tahnoun bin Zayed"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 8,
+      "sources": [
+        "arabnews.com",
+        "middleeasteye.net",
+        "bloomberg.com",
+        "ecfr.eu",
+        "jpost.com",
+        "washingtonexaminer.com",
+        "ft.com",
+        "na8anews.com"
+      ],
+      "date_range": "2026-01-27 to 2026-01-31",
+      "articles": [
+        {
+          "title": "UAE's Sheikh Tahnoon 'welcome anytime': Saudi media minister",
+          "source": "arabnews.com",
+          "url": "https://www.arabnews.com/node/2630991/saudi-arabia",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Prince Turki Al-Faisal reaffirms strong Saudi-UAE ties, urges reliance on official sources",
+          "source": "arabnews.com",
+          "url": "https://www.arabnews.com/node/2631166/saudi-arabia",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "A digital war reveals full scale of UAE-Saudi rift",
+          "source": "middleeasteye.net",
+          "url": "https://middleeasteye.net/opinion/media-digital-war-reveals-full-scale-uae-saudi-rift",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Saudi Arabia-UAE Tensions Put Middle East Businesses on Edge",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-01-27/saudi-arabia-uae-tensions-put-middle-east-businesses-on-edge",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Power struggle: What the Saudi-UAE rivalry means for the Red Sea\u2014and Europe",
+          "source": "ecfr.eu",
+          "url": "https://ecfr.eu/article/power-struggle-what-the-saudi-uae-rivalry-means-for-the-red-sea-and-europe",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "The Gulf's Cold War: How Saudi-UAE rivalry is tearing the region apart",
+          "source": "jpost.com",
+          "url": "https://jpost.com/opinion/article-885186",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Businesses fear blowback from Saudi-UAE rift",
+          "source": "ft.com",
+          "url": "https://ft.com/content/c8bba149-8ce2-4ed7-b7a6-dd0e214f1600",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "The truth about Saudi Arabia's refusal to receive Tahnoon bin Zayed: Minister of Information clarifies",
+          "source": "na8anews.com",
+          "url": "https://na8anews.com/en/saudi-minister-denies-rumors-receiving-tahnoun-bin-zayed",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://middleeasteye.net/opinion/media-digital-war-reveals-full-scale-uae-saudi-rift",
+        "https://bloomberg.com/news/articles/2026-01-27/saudi-arabia-uae-tensions-put-middle-east-businesses-on-edge"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "UAE reaffirms neutrality, bars use of airspace for military action against Iran",
+      "summary": "The UAE Ministry of Foreign Affairs issued a statement reaffirming that the country will not allow its airspace, territory, or waters to be used for hostile military actions against Iran, emphasizing dialogue and de-escalation as tensions rise with US military deployments to the region.",
+      "actors_involved": [
+        "Abdullah bin Zayed"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 4,
+      "sources": [
+        "mofa.gov.ae",
+        "reuters.com",
+        "thenationalnews.com",
+        "khaleejtimes.com",
+        "jpost.com"
+      ],
+      "date_range": "2026-01-26 to 2026-01-27",
+      "articles": [
+        {
+          "title": "UAE Reaffirms Commitment to Not Allowing Its Airspace, Territory or Waters to Be Used in Any Military Actions Against Iran",
+          "source": "mofa.gov.ae",
+          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/26/UAE-Iran",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "UAE bars use of its airspace for military action against Iran",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/world/middle-east/uae-bars-use-its-airspace-military-action-against-iran-2026-01-26/",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "UAE says it won't allow its airspace or territory to be used in any attack on Iran",
+          "source": "thenationalnews.com",
+          "url": "https://thenationalnews.com/news/mena/2026/01/26/irans-proxies-issue-threats-of-total-war-as-us-aircraft-carrier-arrives-in-middle-east",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "UAE will not allow use of airspace, territory, waters for attacks on Iran: Ministry",
+          "source": "khaleejtimes.com",
+          "url": "https://khaleejtimes.com/uae/uae-will-not-allow-use-of-airspace-territory-waters-for-attacks-on-iran-ministry",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "UAE bars use of its airspace, territorial waters for military action against Iran's Islamic Regime",
+          "source": "jpost.com",
+          "url": "https://jpost.com/middle-east/article-884642",
+          "date": "2026-01-27"
+        }
+      ],
+      "representative_urls": [
+        "https://mofa.gov.ae/en/MediaHub/News/2026/1/26/UAE-Iran",
+        "https://www.reuters.com/world/middle-east/uae-bars-use-its-airspace-military-action-against-iran-2026-01-26/"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Mubadala leads multiple major investment rounds including Property Finder",
+      "summary": "Abu Dhabi's Mubadala Investment Company led a $170 million funding round for Dubai real estate platform Property Finder, alongside separate investments including a $36.5 million round in US nutrition company L-Nutra and the launch of a $550 million co-investment fund.",
       "actors_involved": [
         "Mubadala"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 9,
+      "source_count": 8,
       "sources": [
         "bloomberg.com",
-        "ionanalytics.com",
         "thenationalnews.com",
         "waya.media",
         "semafor.com",
-        "gulfnews.com",
+        "gulfbusiness.com",
         "proptechconnect.com",
-        "tradearabia.com",
-        "gulfbusiness.com"
+        "tradearabia.com"
       ],
       "date_range": "2026-01-25 to 2026-01-29",
       "articles": [
-        {
-          "title": "GIC, Mubadala Said Poised to Join KKR's $10 Billion STT Deal",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/news/articles/2026-02-01/gic-mubadala-said-to-be-set-to-join-kkr-in-10-billion-stt-deal",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Mubadala's push into infra is just getting started",
-          "source": "ionanalytics.com",
-          "url": "https://ionanalytics.com/insights/infralogic/mubadalas-push-into-infrastructure-is-just-getting-started/",
-          "date": "2026-01-30"
-        },
         {
           "title": "Abu Dhabi's Mubadala Joins Property Finder's $170 Million Fundraise",
           "source": "bloomberg.com",
@@ -123,10 +238,10 @@
           "date": "2026-01-27"
         },
         {
-          "title": "Mubadala Sells Stake in Arcadia as Bansk Group Takes Full Ownership",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/business/markets/mubadala-exits-arcadia-after-four-year-growth-run-1.500420768",
-          "date": "2026-01-26"
+          "title": "Property Finder raises $170m from Mubadala, UAE funds",
+          "source": "gulfbusiness.com",
+          "url": "https://gulfbusiness.com/en/2026/finance/property-finder-raises-170m-mubadala-uae/",
+          "date": "2026-01-29"
         },
         {
           "title": "Property Finder secures $170 million investment led by Mubadala",
@@ -139,44 +254,38 @@
           "source": "tradearabia.com",
           "url": "https://www.tradearabia.com/News/388305/Mubadala-sells-its-minority-stake-in-US-healthcare-group-Arcadia/HEAL",
           "date": "2026-01-26"
+        },
+        {
+          "title": "Mubadala Sells Stake in Arcadia as Bansk Group Takes Full Ownership",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/business/markets/mubadala-exits-arcadia-after-four-year-growth-run-1.500420768",
+          "date": "2026-01-26"
         }
       ],
       "representative_urls": [
         "https://www.bloomberg.com/news/articles/2026-01-27/mubadala-joins-dubai-property-portal-s-170-million-fundraise",
-        "https://www.thenationalnews.com/business/property/2026/01/27/abu-dhabis-mubadala-leads-170m-funding-round-for-property-finder/"
+        "https://www.semafor.com/article/01/27/2026/mubadala-capital-raises-550m-for-debut-co-investment-fund"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "ADNOC announces major business expansion and investment projects",
-      "summary": "ADNOC Gas announced over $20 billion investment to increase gas processing capacity by 30% by 2029. ADNOC also leased Singapore fuel oil storage for the first time and signed a 27-year utilities deal with Taqa for the Ta'ziz industrial chemicals zone.",
+      "story_id": 5,
+      "headline": "ADNOC announces major business expansion with $20+ billion gas investment",
+      "summary": "ADNOC Gas announced plans to invest more than $20 billion to increase gas processing capacity by almost 30% by 2029. Separately, ADNOC Global Trading leased fuel oil storage in Singapore for the first time, and signed a 27-year utilities agreement with TAQA for the Ta'ziz industrial chemicals zone.",
       "actors_involved": [
         "ADNOC"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 8,
+      "source_count": 7,
       "sources": [
         "reuters.com",
-        "mees.com",
         "marketscreener.com",
+        "mees.com",
         "agbi.com",
         "thenationalnews.com",
         "gccbusinesswatch.com"
       ],
       "date_range": "2026-01-26 to 2026-01-30",
       "articles": [
-        {
-          "title": "Exclusive: ADNOC leases Singapore fuel oil storage for first time, sources say",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/business/energy/adnoc-leases-singapore-fuel-oil-storage-first-time-sources-say-2026-01-29/",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Adnoc, Taqa Sign 27-Year Utilities Deal For Ta'ziz",
-          "source": "mees.com",
-          "url": "https://www.mees.com/2026/1/30/news-in-brief/adnoc-taqa-sign-27-year-utilities-deal-for-taziz/39cf0920-fde8-11f0-81a7-35bf295ac9d9",
-          "date": "2026-01-30"
-        },
         {
           "title": "ADNOC Gas to invest more than $20 billion to raise gas processing capacity by almost 30%",
           "source": "reuters.com",
@@ -188,6 +297,18 @@
           "source": "marketscreener.com",
           "url": "https://marketscreener.com/news/oil-demand-to-hold-above-100-million-bpd-through-2040-says-adnoc-ceo-ce7e5bd8d98ef624",
           "date": "2026-01-27"
+        },
+        {
+          "title": "Exclusive: ADNOC leases Singapore fuel oil storage for first time, sources say",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/energy/adnoc-leases-singapore-fuel-oil-storage-first-time-sources-say-2026-01-29/",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Adnoc, Taqa Sign 27-Year Utilities Deal For Ta'ziz",
+          "source": "mees.com",
+          "url": "https://www.mees.com/2026/1/30/news-in-brief/adnoc-taqa-sign-27-year-utilities-deal-for-taziz/39cf0920-fde8-11f0-81a7-35bf295ac9d9",
+          "date": "2026-01-30"
         },
         {
           "title": "Adnoc and Taqa accelerate large-scale chemical production in UAE",
@@ -214,35 +335,35 @@
       ]
     },
     {
-      "story_id": 4,
-      "headline": "Abdullah bin Zayed conducts high-level diplomatic engagements with multiple countries",
-      "summary": "UAE Foreign Minister Abdullah bin Zayed made a working visit to Kuwait, received foreign ministers from Austria and Egypt in Abu Dhabi, and held phone calls with counterparts from the US, UK, and Spain. The meetings focused on bilateral relations and regional developments.",
+      "story_id": 6,
+      "headline": "Abdullah bin Zayed conducts diplomatic outreach with multiple foreign officials",
+      "summary": "UAE Foreign Minister Abdullah bin Zayed engaged in extensive diplomatic activities including a working visit to Kuwait, phone calls with US Secretary of State Marco Rubio, UK Foreign Secretary, and Spanish Foreign Minister, and meetings with Austrian and Egyptian foreign ministers, discussing bilateral relations and regional developments.",
       "actors_involved": [
         "Abdullah bin Zayed"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 9,
       "sources": [
-        "state.gov",
         "mofa.gov.ae",
-        "thenationalnews.com",
+        "state.gov",
         "gulfnews.com",
+        "thenationalnews.com",
         "urdupoint.com",
         "sharjah24.ae"
       ],
       "date_range": "2026-01-26 to 2026-02-01",
       "articles": [
         {
-          "title": "Secretary Rubio's Call with UAE Deputy Prime Minister and Foreign Minister Sheikh Abdullah bin Zayed Al Nahyan",
-          "source": "state.gov",
-          "url": "https://state.gov/releases/office-of-the-spokesperson/2026/01/secretary-rubios-call-with-uae-deputy-prime-minister-and-foreign-minister-sheikh-abdullah-bin-zayed-al-nahyan-5",
-          "date": "2026-01-30"
-        },
-        {
           "title": "Abdullah bin Zayed arrives in Kuwait on working visit",
           "source": "mofa.gov.ae",
           "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/27/bin-Zayed-Kuwait",
           "date": "2026-01-27"
+        },
+        {
+          "title": "Secretary Rubio's Call with UAE Deputy Prime Minister and Foreign Minister Sheikh Abdullah bin Zayed Al Nahyan",
+          "source": "state.gov",
+          "url": "https://state.gov/releases/office-of-the-spokesperson/2026/01/secretary-rubios-call-with-uae-deputy-prime-minister-and-foreign-minister-sheikh-abdullah-bin-zayed-al-nahyan-5",
+          "date": "2026-01-30"
         },
         {
           "title": "Abdullah bin Zayed receives Austria's Federal Minister for European and International Affairs",
@@ -257,22 +378,16 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Abdullah bin Zayed receives Egyptian FM; reviews fraternal ties, regional developments",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/2/2/bin-Zayed-Egypt",
-          "date": "2026-02-01"
-        },
-        {
           "title": "Abdullah bin Zayed, UK Foreign Secretary discuss bilateral relations in phone call",
           "source": "mofa.gov.ae",
           "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/26/bin-Zayed-UK-Foreign-Secretary",
           "date": "2026-01-26"
         },
         {
-          "title": "Crown Prince of Kuwait receives Abdullah bin Zayed",
+          "title": "Abdullah bin Zayed receives Egyptian FM; reviews fraternal ties, regional developments",
           "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/28/UAE-Abdullah-bin-Zayed-Kuwait",
-          "date": "2026-01-28"
+          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/2/2/bin-Zayed-Egypt",
+          "date": "2026-02-01"
         },
         {
           "title": "Sheikh Abdullah bin Zayed Al Nahyan's visit strengthens UAE-Kuwait ties",
@@ -287,12 +402,6 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Abdullah Bin Zayed Receives Phone Call From US Secretary Of State",
-          "source": "urdupoint.com",
-          "url": "https://www.urdupoint.com/en/middle-east/abdullah-bin-zayed-receives-phone-call-from-u-2128607.html",
-          "date": "2026-01-30"
-        },
-        {
           "title": "Abdullah bin Zayed, Spanish FM discuss bilateral relations",
           "source": "sharjah24.ae",
           "url": "https://sharjah24.ae/en/Articles/2026/01/31/AL0425",
@@ -305,147 +414,17 @@
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Tensions emerge between Saudi Arabia and UAE over regional policies",
-      "summary": "Saudi Arabia denied reports that it refused entry to UAE National Security Adviser Tahnoun bin Zayed. Media coverage highlighted growing tensions between the two Gulf allies over Yemen and other regional issues, with analysis suggesting deeper strategic disagreements.",
-      "actors_involved": [
-        "Tahnoun bin Zayed"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
-      "sources": [
-        "arabnews.com",
-        "na8anews.com",
-        "middleeasteye.net",
-        "bloomberg.com",
-        "ecfr.eu",
-        "ft.com",
-        "jpost.com"
-      ],
-      "date_range": "2026-01-27 to 2026-02-01",
-      "articles": [
-        {
-          "title": "UAE's Sheikh Tahnoon 'welcome anytime': Saudi media minister",
-          "source": "arabnews.com",
-          "url": "https://www.arabnews.com/node/2630991/saudi-arabia",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Prince Turki Al-Faisal reaffirms strong Saudi-UAE ties, urges reliance on official sources",
-          "source": "arabnews.com",
-          "url": "https://www.arabnews.com/node/2631166/saudi-arabia",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "The truth about Saudi Arabia's refusal to receive Tahnoon bin Zayed: Minister of Information clarifies",
-          "source": "na8anews.com",
-          "url": "https://na8anews.com/en/saudi-minister-denies-rumors-receiving-tahnoun-bin-zayed",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "A digital war reveals full scale of UAE-Saudi rift",
-          "source": "middleeasteye.net",
-          "url": "https://middleeasteye.net/opinion/media-digital-war-reveals-full-scale-uae-saudi-rift",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Saudi Arabia-UAE Tensions Put Middle East Businesses on Edge",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-01-27/saudi-arabia-uae-tensions-put-middle-east-businesses-on-edge",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Power struggle: What the Saudi-UAE rivalry means for the Red Sea\u2014and Europe",
-          "source": "ecfr.eu",
-          "url": "https://ecfr.eu/article/power-struggle-what-the-saudi-uae-rivalry-means-for-the-red-sea-and-europe",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Businesses fear blowback from Saudi-UAE rift",
-          "source": "ft.com",
-          "url": "https://ft.com/content/c8bba149-8ce2-4ed7-b7a6-dd0e214f1600",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "The Gulf's Cold War: How Saudi-UAE rivalry is tearing the region apart - opinion",
-          "source": "jpost.com",
-          "url": "https://jpost.com/opinion/article-885186",
-          "date": "2026-02-01"
-        }
-      ],
-      "representative_urls": [
-        "https://www.arabnews.com/node/2630991/saudi-arabia",
-        "https://middleeasteye.net/opinion/media-digital-war-reveals-full-scale-uae-saudi-rift"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "UAE reaffirms policy of neutrality regarding potential military action against Iran",
-      "summary": "The UAE Foreign Ministry stated it will not allow its airspace, territory, or territorial waters to be used for any hostile military action against Iran. The declaration came amid rising Middle East tensions and US military deployments to the region.",
-      "actors_involved": [
-        "Abdullah bin Zayed"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 5,
-      "sources": [
-        "mofa.gov.ae",
-        "reuters.com",
-        "thenationalnews.com",
-        "jpost.com",
-        "khaleejtimes.com"
-      ],
-      "date_range": "2026-01-26 to 2026-01-27",
-      "articles": [
-        {
-          "title": "UAE Reaffirms Commitment to Not Allowing Its Airspace, Territory or Waters to Be Used in Any Military Actions Against Iran",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/26/UAE-Iran",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "UAE bars use of its airspace for military action against Iran",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/world/middle-east/uae-bars-use-its-airspace-military-action-against-iran-2026-01-26/",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "UAE says it won't allow its airspace or territory to be used in any attack on Iran",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/mena/2026/01/26/irans-proxies-issue-threats-of-total-war-as-us-aircraft-carrier-arrives-in-middle-east",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "UAE bars use of its airspace, territorial waters for military action against Iran's Islamic Regime",
-          "source": "jpost.com",
-          "url": "https://jpost.com/middle-east/article-884642",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "UAE will not allow use of airspace, territory, waters for attacks on Iran: Ministry",
-          "source": "khaleejtimes.com",
-          "url": "https://khaleejtimes.com/uae/uae-will-not-allow-use-of-airspace-territory-waters-for-attacks-on-iran-ministry",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://mofa.gov.ae/en/MediaHub/News/2026/1/26/UAE-Iran",
-        "https://www.reuters.com/world/middle-east/uae-bars-use-its-airspace-military-action-against-iran-2026-01-26/"
-      ]
-    },
-    {
       "story_id": 7,
-      "headline": "UAE President and Crown Prince attend multiple military and police graduation ceremonies",
-      "summary": "President Sheikh Mohamed bin Zayed attended the graduation ceremony of the 50th cohort at Zayed II Military College in Al Ain. Crown Prince Sheikh Khaled bin Mohamed separately attended the graduation ceremony of the 37th cohort of police cadets.",
+      "headline": "UAE President attends multiple military and police graduation ceremonies",
+      "summary": "President Sheikh Mohamed bin Zayed attended graduation ceremonies for the 50th cohort of cadet officers at Zayed II Military College in Al Ain, while Crown Prince Sheikh Khaled bin Mohamed bin Zayed attended a separate Police College graduation ceremony for the 37th cohort of cadet officers.",
       "actors_involved": [
-        "Mohammed bin Zayed Al Nahyan",
-        "Crown Prince Sheikh Khaled bin Mohamed"
+        "Mohammed bin Zayed Al Nahyan"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
+      "signal_category_hint": "security_defense",
+      "source_count": 3,
       "sources": [
         "mediaoffice.abudhabi",
-        "emirates247.com",
-        "dubaieye1038.com"
+        "emirates247.com"
       ],
       "date_range": "2026-01-26 to 2026-01-29",
       "articles": [
@@ -466,12 +445,6 @@
           "source": "mediaoffice.abudhabi",
           "url": "https://mediaoffice.abudhabi/en/crown-prince-news/under-the-patronage-of-the-uae-president-khaled-bin-mohamed-bin-zayed-attends-police-college-graduation-ceremony-january-2026",
           "date": "2026-01-29"
-        },
-        {
-          "title": "UAE President attends military graduation ceremony",
-          "source": "dubaieye1038.com",
-          "url": "https://dubaieye1038.com/news/local/uae-president-attends-military-graduation-ceremony",
-          "date": "2026-01-26"
         }
       ],
       "representative_urls": [
@@ -482,7 +455,7 @@
     {
       "story_id": 8,
       "headline": "Sheikh Zayed Grand Mosque achieves record visitor numbers in 2025",
-      "summary": "The Sheikh Zayed Grand Mosque in Abu Dhabi welcomed nearly 7 million guests in 2025, marking a 4% increase from 2024 and the highest annual figure in its history. The achievement reinforces the mosque's status as a major cultural and tourism destination.",
+      "summary": "The Sheikh Zayed Grand Mosque in Abu Dhabi welcomed nearly 7 million visitors in 2025, marking a 4% increase compared to 2024 and the highest annual figure in its history. The mosque distributed over 2.6 million iftar and suhoor meals during Ramadan.",
       "actors_involved": [],
       "signal_category_hint": "domestic_regime",
       "source_count": 3,
@@ -513,14 +486,47 @@
         }
       ],
       "representative_urls": [
-        "https://abudhabi-news.com/abu-dhabi/4748/sheikh-zayed-grand-mosque-in-abu-dhabi-receives-approximately-seven-million-visitors-in-2025",
-        "https://thenationalnews.com/news/uae/2026/01/31/sheikh-zayed-grand-mosque-opens-doors-to-record-number-of-visitors-and-worshippers-in-2025"
+        "https://thenationalnews.com/news/uae/2026/01/31/sheikh-zayed-grand-mosque-opens-doors-to-record-number-of-visitors-and-worshippers-in-2025",
+        "https://abudhabi-news.com/abu-dhabi/4748/sheikh-zayed-grand-mosque-in-abu-dhabi-receives-approximately-seven-million-visitors-in-2025"
       ]
     },
     {
       "story_id": 9,
-      "headline": "Central Bank of UAE maintains interest rates steady in first decision of 2026",
-      "summary": "The Central Bank of the UAE (CBUAE) decided to maintain the Base Rate applicable to the Overnight Deposit Facility at 3.65%. The decision followed the US Federal Reserve's announcement to keep interest rates unchanged.",
+      "headline": "UAE President confers honor on Chinese Ambassador and meets Italian President",
+      "summary": "President Sheikh Mohamed bin Zayed conferred the First-Class Order of Zayed II on Chinese Ambassador Zhang Yiming in recognition of his contributions to UAE-China strategic relations. Separately, the UAE President held talks with Italian President Sergio Mattarella in Abu Dhabi.",
+      "actors_involved": [
+        "Mohammed bin Zayed Al Nahyan"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 2,
+      "sources": [
+        "mofa.gov.ae",
+        "thenationalnews.com"
+      ],
+      "date_range": "2026-01-28 to 2026-01-30",
+      "articles": [
+        {
+          "title": "UAE President confers First-Class Order of Zayed II on Chinese Ambassador",
+          "source": "mofa.gov.ae",
+          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/1/30/UAE-bin-zayed-china",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "President Sheikh Mohamed meets Italian President in Abu Dhabi",
+          "source": "thenationalnews.com",
+          "url": "https://www.thenationalnews.com/news/uae/2026/01/28/president-sheikh-mohamed-meets-italian-president-in-abu-dhabi/",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://mofa.gov.ae/en/MediaHub/News/2026/1/30/UAE-bin-zayed-china",
+        "https://www.thenationalnews.com/news/uae/2026/01/28/president-sheikh-mohamed-meets-italian-president-in-abu-dhabi/"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Central Bank of UAE maintains interest rates at 3.65%",
+      "summary": "The Central Bank of the UAE decided to hold the base rate applicable to the Overnight Deposit Facility steady at 3.65%, following the US Federal Reserve's decision to maintain rates unchanged. This was the first interest rate decision of 2026.",
       "actors_involved": [
         "Central Bank of the UAE"
       ],
@@ -551,27 +557,20 @@
       ]
     },
     {
-      "story_id": 10,
-      "headline": "UAE advances AI capabilities with new technology developments and partnerships",
-      "summary": "The UAE's Minister of Tolerance inaugurated the Machines Can Think 2026 AI summit in Abu Dhabi. Separately, G42 and MBZUAI launched K2 Think V2, described as the UAE's fully sovereign reasoning system, while the US authorized advanced semiconductor chip exports to G42.",
+      "story_id": 11,
+      "headline": "G42 and MBZUAI launch UAE's sovereign AI reasoning system",
+      "summary": "G42, in collaboration with Cerebras Systems and Mohamed bin Zayed University of Artificial Intelligence, announced the release of K2 Think V2, described as the UAE's fully sovereign, next-generation reasoning system. The development comes as the US authorized chip exports to G42.",
       "actors_involved": [
         "G42"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 3,
+      "source_count": 2,
       "sources": [
-        "mediaoffice.abudhabi",
         "prnewswire.com",
         "mei.edu"
       ],
       "date_range": "2026-01-27 to 2026-01-28",
       "articles": [
-        {
-          "title": "Nahyan bin Mubarak inaugurates Machines Can Think 2026 summit in Abu Dhabi",
-          "source": "mediaoffice.abudhabi",
-          "url": "https://mediaoffice.abudhabi/en/technology/nahyan-bin-mubarak-inaugurates-machines-can-think-2026-summit-in-abu-dhabi",
-          "date": "2026-01-27"
-        },
         {
           "title": "MBZUAI Launches K2 Think V2: UAE's Fully Sovereign, Next-Generation Reasoning System",
           "source": "prnewswire.com",
@@ -591,48 +590,34 @@
       ]
     },
     {
-      "story_id": 11,
-      "headline": "UAE hosts sports events including Mubadala Abu Dhabi Open and Swat Challenge",
-      "summary": "The Mubadala Abu Dhabi Open tennis tournament began with defending champion Belinda Bencic and other top players competing. Dubai also hosted 114 elite police teams for the seventh annual UAE Swat Challenge with prizes totaling Dh950,000.",
+      "story_id": 12,
+      "headline": "GCC launches joint military exercise including UAE participation",
+      "summary": "Qatar launched the 'Arabian Gulf Security 4' joint military exercise involving UAE security forces, GCC countries, and US special units. The exercise runs until February 4 and includes 114 teams from 48 countries implementing over 70 field scenarios.",
       "actors_involved": [
-        "Mubadala"
+        "UAE Armed Forces"
       ],
-      "signal_category_hint": "unclear",
-      "source_count": 3,
+      "signal_category_hint": "security_defense",
+      "source_count": 1,
       "sources": [
-        "wtatennis.com",
-        "thenationalnews.com"
+        "khaleejtimes.com"
       ],
-      "date_range": "2026-01-28 to 2026-02-01",
+      "date_range": "2026-01-26 to 2026-01-26",
       "articles": [
         {
-          "title": "Abu Dhabi Open 411: Dates, players and everything else you need to know",
-          "source": "wtatennis.com",
-          "url": "https://wtatennis.com/news/4440261/2026-wta-abu-dhabi-open-everything-you-need-to-know",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Mubadala Abu Dhabi Open 2026: Players, draw, ticket information as Belinda Bencic defends title",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/sport/tennis/2026/02/01/mubadala-abu-dhabi-open-2026-players-draw-ticket-information-as-belinda-bencic-defends-title",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Dubai to host 114 elite police teams for UAE Swat Challenge",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/uae/2026/01/28/dubai-police-uae-swat-challenge-prize-money",
-          "date": "2026-01-28"
+          "title": "Qatar launches joint military exercise with UAE, GCC countries, US special units",
+          "source": "khaleejtimes.com",
+          "url": "https://www.khaleejtimes.com/world/gulf/qatar-joint-military-exercise-uae-gcc-us-units",
+          "date": "2026-01-26"
         }
       ],
       "representative_urls": [
-        "https://thenationalnews.com/sport/tennis/2026/02/01/mubadala-abu-dhabi-open-2026-players-draw-ticket-information-as-belinda-bencic-defends-title",
-        "https://thenationalnews.com/news/uae/2026/01/28/dubai-police-uae-swat-challenge-prize-money"
+        "https://www.khaleejtimes.com/world/gulf/qatar-joint-military-exercise-uae-gcc-us-units"
       ]
     },
     {
-      "story_id": 12,
-      "headline": "UAE concludes ten-year military and humanitarian mission in Yemen",
-      "summary": "The UAE formally concluded its ten-year engagement in Yemen that began with Operation Decisive Storm in 2015. The mission evolved from military operations to humanitarian relief and development projects, with UAE forces contributing to both security and civilian aid efforts.",
+      "story_id": 13,
+      "headline": "UAE concludes 10-year military mission in Yemen",
+      "summary": "The UAE concluded its decade-long military engagement in Yemen, transitioning from military operations to humanitarian impact. Emirati forces were involved in liberation operations, counterterrorism missions, and humanitarian relief efforts as part of Operation Decisive Storm since March 2015.",
       "actors_involved": [
         "UAE Armed Forces"
       ],
@@ -661,26 +646,73 @@
         "https://gulfnews.com/uae/government/ten-years-of-uae-support-in-yemen-comes-to-an-end-1.500424598",
         "https://www.newarab.com/news/uae-backed-forces-close-stc-linked-assembly-headquarters-aden"
       ]
+    },
+    {
+      "story_id": 14,
+      "headline": "US-UAE Economic Policy Dialogue and bilateral trade discussions",
+      "summary": "The United States and UAE held their eleventh Economic Policy Dialogue in Abu Dhabi on January 15, with high-level officials from both countries discussing economic cooperation and bilateral trade relations.",
+      "actors_involved": [],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 1,
+      "sources": [
+        "state.gov"
+      ],
+      "date_range": "2026-01-27 to 2026-01-27",
+      "articles": [
+        {
+          "title": "Joint Statement on the Eleventh U.S.-UAE Economic Policy Dialogue",
+          "source": "state.gov",
+          "url": "https://state.gov/releases/office-of-the-spokesperson/2026/01/joint-statement-on-the-eleventh-u-s-uae-economic-policy-dialogue",
+          "date": "2026-01-27"
+        }
+      ],
+      "representative_urls": [
+        "https://state.gov/releases/office-of-the-spokesperson/2026/01/joint-statement-on-the-eleventh-u-s-uae-economic-policy-dialogue"
+      ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "MBZ City Station rail hub opens in Abu Dhabi as part of Etihad Rail expansion",
+      "headline": "Nahyan bin Mubarak inaugurates Machines Can Think 2026 AI summit",
+      "source": "mediaoffice.abudhabi",
+      "url": "https://mediaoffice.abudhabi/en/technology/nahyan-bin-mubarak-inaugurates-machines-can-think-2026-summit-in-abu-dhabi",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Khaled bin Mohamed bin Zayed visits Louvre Abu Dhabi exhibitions",
+      "source": "mediaoffice.abudhabi",
+      "url": "https://www.mediaoffice.abudhabi/en/crown-prince-news/khaled-bin-mohamed-bin-zayed-visits-seasonal-art-exhibitions-at-louvre-abu-dhabi/",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Sheikh Mohamed welcomes Kuwait Defence Minister for Brothers Forever week",
+      "source": "gulfnews.com",
+      "url": "https://gulfnews.com/uae/government/uae-president-receives-kuwaiti-defence-minister-on-working-visit-for-uae-kuwait-brothers-forever-week-1.500423866",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Yas bin Hamdan bin Zayed visits Challenge Sir Bani Yas sports event",
+      "source": "mediaoffice.abudhabi",
+      "url": "https://mediaoffice.abudhabi/en/sport/yas-bin-hamdan-bin-zayed-visits-challenge-sir-bani-yas-2026",
+      "signal_category_hint": "unclear"
+    },
+    {
+      "headline": "MBZ City railway station opens as part of Etihad Rail network",
       "source": "arabwheels.ae",
       "url": "https://www.arabwheels.ae/blog/mbz-city-station-etihad-rail-update/",
       "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "TikTok deal involves UAE's AI fund led by Tahnoun bin Zayed among partners",
-      "source": "timesofindia.indiatimes.com",
-      "url": "https://timesofindia.indiatimes.com/etimes/trending/is-tiktok-restricting-anti-trump-posts-in-the-us-california-governor-newsom-probes-alleged-censorship/articleshow/127679234.cms",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Sheikh Dheyab announces family welfare Quality Mark program expansion",
+      "headline": "Sheikh Dheyab launches Quality Mark for Parent-Supportive Work Environment program",
       "source": "abudhabi-news.com",
       "url": "https://abudhabi-news.com/uae/4891/sheikh-dheyab-bin-mohamed-bin-zayed-says-family-welfare-forms-part-of-uae-institutional-framework",
       "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Dubai to host 114 elite police teams for UAE Swat Challenge",
+      "source": "thenationalnews.com",
+      "url": "https://www.thenationalnews.com/news/uae/2026/01/28/dubai-police-uae-swat-challenge-prize-money",
+      "signal_category_hint": "security_defense"
     },
     {
       "headline": "Zayed Award names Palestinian organization Taawon as third honoree",
@@ -689,28 +721,16 @@
       "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "Zayed Sustainability Prize opens submissions for $7.2 million award fund",
+      "headline": "UAE's Zayed Sustainability Prize opens submissions for $7.2 million fund",
       "source": "thenationalnews.com",
       "url": "https://thenationalnews.com/news/uae/2026/01/26/uaes-zayed-sustainability-prize-opens-submissions-for-72-million-award-fund",
       "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "Atlantic Council analysis of UAE role in Sudan conflict and RSF support",
-      "source": "atlanticcouncil.org",
-      "url": "https://atlanticcouncil.org/blogs/menasource/amid-arab-competition-the-war-in-sudan-requires-a-us-balancing-act",
-      "signal_category_hint": "alignment_diplomatic"
-    },
-    {
-      "headline": "Washington Examiner opinion piece questioning UAE as reliable ally",
-      "source": "washingtonexaminer.com",
-      "url": "https://washingtonexaminer.com/in_focus/4357166/is-united-arab-emirates-really-superb-ally",
-      "signal_category_hint": "alignment_diplomatic"
-    },
-    {
-      "headline": "UAE fighter jets transfer to African nations requires French approval",
-      "source": "africa.businessinsider.com",
-      "url": "https://africa.businessinsider.com/local/lifestyle/the-uae-is-transferring-fighter-jets-to-african-nations-but-france-decides-who/s67z72d",
-      "signal_category_hint": "security_defense"
+      "headline": "Mubadala Abu Dhabi Open tennis tournament announces 2026 details",
+      "source": "thenationalnews.com",
+      "url": "https://thenationalnews.com/sport/tennis/2026/02/01/mubadala-abu-dhabi-open-2026-players-draw-ticket-information-as-belinda-bencic-defends-title",
+      "signal_category_hint": "unclear"
     }
   ]
 }

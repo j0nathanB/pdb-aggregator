@@ -62,7 +62,7 @@
   "last_updated": "2026-02-01",
   "created": "2026-03-25",
   "posture_summary": {
-    "as_of": "2026-02-08",
+    "as_of": "2026-02-01",
     "text": "Ukraine operates as a wartime state transitioning from tactical recalibration to implementation of its Western alignment strategy, with US security guarantees finalized and peace negotiations achieving procedural breakthroughs through trilateral format. The country maintains offensive military posture while institutionalizing volunteer expertise into formal defense structures, demonstrating systematic integration of wartime innovations. Security professional leadership now controls the Presidential Office following Budanov's formal appointment, while parliamentary opposition attempts to exploit ruling party fragmentation through alleged corruption schemes. Despite severe demographic decline and infrastructure destruction, the state demonstrates continued capacity for strategic adaptation and institutional evolution as it navigates simultaneous negotiation and military operations.",
     "category_status": {
       "alignment_diplomatic": "active",
@@ -71,12 +71,12 @@
       "institutional": "quiet",
       "domestic_regime": "active"
     },
-    "last_deep_dive": "2026-02-08",
+    "last_deep_dive": "2026-02-01",
     "consecutive_maintenance_weeks": 0
   },
   "signal_categories": {
     "alignment_diplomatic": {
-      "current_assessment": "Ukraine's alignment strategy is transitioning from recalibration to implementation phase, with US security guarantees document finalized and peace negotiation format achieving tactical breakthroughs. The bilateral Ukraine-Russia meetings within the trilateral framework indicate institutionalization of US-mediated conflict management, while the qualitative change in Russian approach suggests movement beyond propaganda toward technical negotiations.",
+      "current_assessment": "Ukraine's alignment strategy is transitioning from recalibration to implementation phase, with US security guarantees document finalized and peace negotiation format achieving tactical breakthroughs. The bilateral Ukraine-Russia meetings within trilateral framework indicate institutionalization of US-mediated conflict management, while the qualitative change in Russian approach suggests movement beyond propaganda toward technical negotiations.",
       "confidence": 4,
       "confidence_rationale": "Multiple independent sources confirm both security guarantees breakthrough and peace talks progress, with specific details on implementation timelines and procedural changes",
       "key_actors": [
@@ -88,7 +88,7 @@
       "dossier_sections_referenced": [
         "Section 14"
       ],
-      "last_updated": "2026-02-08"
+      "last_updated": "2026-02-01"
     },
     "security_defense": {
       "current_assessment": "Ukraine continues offensive military posture while institutionalizing volunteer expertise into formal defense structures. The appointment of drone and electronic warfare specialists as ministerial advisors indicates systematic integration of wartime innovation networks into permanent military organization, complementing the operational focus on inflicting maximum losses on Russian reserves.",
@@ -103,7 +103,7 @@
         "Section 12",
         "Section 13"
       ],
-      "last_updated": "2026-02-08"
+      "last_updated": "2026-02-01"
     },
     "economic_tech": {
       "current_assessment": "Economic structure remains unchanged with continued monetary policy normalization as NBU reduces rates in response to declining inflation. The 50 basis point reduction signals continued confidence in inflation trajectory while maintaining the structural dependency patterns on Western financing for fiscal operations.",
@@ -116,7 +116,7 @@
       "dossier_sections_referenced": [
         "Section 6"
       ],
-      "last_updated": "2026-02-08"
+      "last_updated": "2026-02-01"
     },
     "institutional": {
       "current_assessment": "No significant institutional developments this week. EU accession process continues at technical level without major milestones. Anti-corruption institutions remain operationally active with no major cases or structural changes reported.",
@@ -130,7 +130,7 @@
       "dossier_sections_referenced": [
         "Section 11"
       ],
-      "last_updated": "2026-01-25"
+      "last_updated": "2026-02-01"
     },
     "domestic_regime": {
       "current_assessment": "The Budanov transition is now formally completed, establishing security professional rather than political operative leadership of the Presidential Office. Simultaneously, parliamentary opposition is attempting to exploit Servant of the People's weakening discipline through alleged corruption schemes, indicating domestic political competition is intensifying despite wartime constraints. The investigation's connection to intelligence networks suggests security sector involvement in parliamentary management.",
@@ -143,10 +143,10 @@
         "Servant of the People"
       ],
       "dossier_sections_referenced": [
-        "Section 15",
-        "Section 0"
+        "Section 0",
+        "Section 15"
       ],
-      "last_updated": "2026-02-08"
+      "last_updated": "2026-02-01"
     }
   },
   "weekly_entries": [
@@ -424,99 +424,80 @@
     {
       "week": "2026-02-01",
       "date_range": "2026-01-25 to 2026-02-01",
-      "depth": "maintenance",
-      "activity_level": {
-        "rating": "low",
-        "rationale": "Wire coverage (4): Ukraine: Trump says Putin agreed not to hit Kyiv for 1 week, dw.com; Ukraine war briefing: Russia pounds cities across country ahead of fresh round of peace talks | Ukraine | The Guardian, theguardian.com; Ukraine receives bodies of 1,000 soldiers from Russia | Russia-Ukraine war News | Al Jazeera, aljazeera.com; \u2018It\u2019s not just about surviving\u2019: the Ukrainian frontline city where life goes on under cover | Ukraine | The Guardian, theguardian.com\nDomestic headlines: 8 found."
-      },
-      "category_movements": null,
-      "unexpected_developments": [],
-      "absence_check": [],
-      "devils_advocate": null,
-      "self_corrections": [],
-      "structural_claim_checks": [],
-      "story_clusters": []
-    },
-    {
-      "week": "2026-02-01",
-      "date_range": "2026-01-25 to 2026-02-01",
       "depth": "deep_dive",
       "activity_level": {
         "rating": "moderate",
-        "rationale": "Week featured two significant developments: finalization of US security guarantees and formal confirmation of Budanov's appointment as Head of Presidential Office. Abu Dhabi trilateral peace talks showed tactical progress in negotiation format. Lower-prominence stories (Pokrovsk fighting, SBU drone video compilation) represent routine military operations rather than strategic shifts. No high-prominence stories were assessed as non-significant."
+        "rationale": "Three signal categories show significant movement (alignment_diplomatic, security_defense, domestic_regime) with major developments including peace talks breakthrough, US security guarantees finalization, and completion of the Budanov transition. However, no single transformative event occurred, and two categories (economic_tech, institutional) remain routine or quiet. The story map shows balanced coverage across multiple domains rather than singular crisis or breakthrough."
       },
       "category_movements": {
         "alignment_diplomatic": {
           "movement": "significant",
           "developments": [
             {
-              "headline": "US-Ukraine security guarantees document finalized, awaiting signature ceremony",
-              "date": "2026-01-26",
-              "sources": [
-                {
-                  "name": "PBS",
-                  "url": "https://pbs.org/newshour/world/zelenskyy-says-u-s-security-agreement-for-ukraine-is-100-ready-to-be-signed",
-                  "tier": 2
-                },
-                {
-                  "name": "AP News",
-                  "url": "apnews.com",
-                  "tier": 2
-                },
-                {
-                  "name": "Reuters",
-                  "url": "reuters.com",
-                  "tier": 2
-                }
-              ],
-              "summary": "Zelensky announced the US security guarantees document is '100% ready' after trilateral talks in Abu Dhabi, with Ukraine waiting for partners to set signing date. Document would require ratification by both US Congress and Ukrainian parliament. Trilateral format included military representatives from Ukraine, US, and Russia - described as first such format in 'quite a long while.'",
-              "actors_involved": [
-                "Volodymyr Zelensky",
-                "Donald Trump",
-                "Steve Witkoff"
-              ],
-              "signal_category_relevance": "Represents potential formalization of the transactional US-Ukraine security relationship described in prior assessments, moving from negotiations to implementation phase. Trilateral format suggests institutionalization of Trump administration's direct engagement with Russia."
-            },
-            {
-              "headline": "Abu Dhabi peace talks show qualitative change in Russian approach with bilateral meetings",
+              "headline": "Abu Dhabi trilateral talks achieve bilateral Ukraine-Russia meetings with substantive discussions",
               "date": "2026-01-29",
               "sources": [
                 {
                   "name": "Ukrinform",
                   "url": "https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html",
-                  "tier": 3
+                  "tier": 2
                 },
                 {
                   "name": "Kyiv Post",
                   "url": "https://www.kyivpost.com/post/68981",
-                  "tier": 3
+                  "tier": 2
                 },
                 {
-                  "name": "TSN",
-                  "url": "tsn.ua",
-                  "tier": 3
+                  "name": "European Pravda",
+                  "url": "not provided",
+                  "tier": 2
                 }
               ],
-              "summary": "Foreign Minister Sybiha confirmed bilateral Ukraine-Russia meetings during Abu Dhabi talks, noting 'qualitative change' with Russia no longer delivering 'pseudo-historical lectures.' Military track discussed ceasefire parameters, monitoring procedures, and timeline definitions. Separate military intelligence and General Staff negotiations occurred.",
+              "summary": "Foreign Minister Sybiha confirmed bilateral Ukraine-Russia meetings occurred within trilateral framework, describing 'qualitative change in Russian delegation composition' with no more 'pseudo-historical lectures' and substantive discussions on ceasefire parameters, monitoring procedures, and timeline definitions. Military representatives held separate track negotiations.",
               "actors_involved": [
-                "Andrii Sybiha"
+                "Andrii Sybiha",
+                "Russian delegation",
+                "US delegation"
               ],
-              "signal_category_relevance": "Indicates tactical breakthrough in negotiation format and Russian engagement style, moving beyond propaganda to substantive discussion of technical implementation issues. Represents evolution in the trilateral negotiation architecture from procedural to operational focus."
+              "signal_category_relevance": "Represents breakthrough in negotiation format and Russian approach, indicating potential movement beyond propaganda toward technical discussions within US-mediated framework."
+            },
+            {
+              "headline": "US security guarantees document '100% ready' for signing, awaiting partner scheduling",
+              "date": "2026-01-26",
+              "sources": [
+                {
+                  "name": "AP News",
+                  "url": "https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720",
+                  "tier": 2
+                },
+                {
+                  "name": "PBS",
+                  "url": "https://pbs.org",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Zelensky announced US security guarantees document is completely ready following Abu Dhabi talks, with Ukraine waiting for partners to set signing date before Congressional and parliamentary ratification. Document would provide binding security commitments beyond previous assurance frameworks.",
+              "actors_involved": [
+                "Volodymyr Zelensky",
+                "US delegation"
+              ],
+              "signal_category_relevance": "Finalizes the security guarantees breakthrough that has been developing through the Trump administration's transactional approach, moving from bilateral negotiations toward implementation phase."
             }
           ],
-          "prior_assessment": "Ukraine is recalibrating its alignment strategy through public criticism of European paralysis while pursuing transactional security commitments with the Trump administration. The trilateral talks format suggests potential shift toward US-mediated rather than EU-led conflict resolution.",
-          "updated_assessment": "Ukraine's alignment strategy is transitioning from recalibration to implementation phase, with US security guarantees document finalized and peace negotiation format achieving tactical breakthroughs. The bilateral Ukraine-Russia meetings within the trilateral framework indicate institutionalization of US-mediated conflict management, while the qualitative change in Russian approach suggests movement beyond propaganda toward technical negotiations.",
-          "confidence_change": {
-            "from": 4,
-            "to": 4,
-            "reason": "Multiple independent sources confirm both security guarantees breakthrough and peace talks progress, with specific details on implementation timelines and procedural changes"
-          }
+          "prior_assessment": "Ukraine is recalibrating its alignment strategy, openly criticizing European paralysis while securing Trump administration security commitments through transactional diplomacy",
+          "updated_assessment": "Ukraine's alignment strategy is transitioning from recalibration to implementation phase, with US security guarantees document finalized and peace negotiation format achieving tactical breakthroughs. The bilateral Ukraine-Russia meetings within trilateral framework indicate institutionalization of US-mediated conflict management, while the qualitative change in Russian approach suggests movement beyond propaganda toward technical negotiations.",
+          "confidence_change": null
         },
         "security_defense": {
-          "movement": "minor",
+          "movement": "significant",
           "developments": [
             {
-              "headline": "Defense Minister Fedorov institutionalizes volunteer expertise through advisor appointments",
+              "headline": "Defense Minister Fedorov appoints tech bloggers and activists as military advisors",
               "date": "2026-01-27",
               "sources": [
                 {
@@ -527,17 +508,41 @@
                 {
                   "name": "Ukrinform",
                   "url": "https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html",
-                  "tier": 3
+                  "tier": 2
                 }
               ],
-              "summary": "Defense Minister Fedorov appointed tech blogger Serhiy 'Flash' Beskrestnov as advisor on defense technology and drone warfare expert Serhiy Sternenko as UAV advisor. Both represent integration of volunteer movement expertise into official defense structure. Beskrestnov specializes in electronic warfare and enemy equipment analysis; Sternenko's foundation has delivered 256,000+ drones to Ukrainian units.",
+              "summary": "Fedorov appointed Serhii 'Flash' Beskrestnov as defense technology advisor and Serhii Sternenko as UAV effectiveness advisor. Both are prominent Telegram channels with 156,000 followers (Flash) and represent volunteer expertise in drone analysis and procurement. Flash focuses on counter-drone systems and captured equipment analysis; Sternenko's foundation delivered 256,000+ drones to Ukrainian units.",
               "actors_involved": [
-                "Mykhailo Fedorov"
+                "Mykhailo Fedorov",
+                "Serhii Beskrestnov",
+                "Serhii Sternenko"
               ],
-              "signal_category_relevance": "Represents institutionalization of the volunteer-military nexus described in dossier Section 13, formalizing the parallel procurement and expertise networks that emerged during wartime. Signals Defense Ministry recognition that volunteer networks possess technical capabilities that complement formal military structures."
+              "signal_category_relevance": "Demonstrates systematic integration of wartime volunteer expertise into formal defense structures, institutionalizing the grassroots drone and tech innovation networks that emerged during the conflict."
+            },
+            {
+              "headline": "SBU releases evidence of strategic-level drone strikes destroying $1 billion in Russian aircraft",
+              "date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "United24 Media",
+                  "url": "https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398",
+                  "tier": 2
+                },
+                {
+                  "name": "The War Zone",
+                  "url": "https://www.twz.com/air/ukrainian-drone-strikes-on-parked-russian-aircraft-seen-in-greatest-hits-video",
+                  "tier": 2
+                }
+              ],
+              "summary": "SBU confirmed Alpha unit strikes against five Russian airbases in 2025, destroying 15 aircraft including Su-30SM, Su-34, MiG-31, Mi-28, and An-26 platforms. Campaign targeted core tactical and operational aviation assets with estimated $1 billion damage including ammunition and fuel storage destruction.",
+              "actors_involved": [
+                "SBU",
+                "Alpha Special Operations unit"
+              ],
+              "signal_category_relevance": "Demonstrates continued Ukrainian strategic-level strike capability against high-value Russian military targets, maintaining offensive operations doctrine despite defensive pressures on other fronts."
             }
           ],
-          "prior_assessment": "Ukraine's military posture has evolved from primarily defensive operations to offensive doctrine seeking operational initiative, with escalated casualty objectives and integration of AI-driven drone warfare capabilities.",
+          "prior_assessment": "Ukraine's military posture has shifted toward offensive operations with escalated casualty objectives and new tactical approaches including AI-integrated drone warfare",
           "updated_assessment": "Ukraine continues offensive military posture while institutionalizing volunteer expertise into formal defense structures. The appointment of drone and electronic warfare specialists as ministerial advisors indicates systematic integration of wartime innovation networks into permanent military organization, complementing the operational focus on inflicting maximum losses on Russian reserves.",
           "confidence_change": null
         },
@@ -545,31 +550,35 @@
           "movement": "minor",
           "developments": [
             {
-              "headline": "National Bank reduces key policy rate from 15.5% to 15%",
+              "headline": "National Bank reduces policy rate to 15% continuing monetary normalization",
               "date": "2026-01-29",
               "sources": [
                 {
                   "name": "Ukrinform",
-                  "url": "https://ukrinform.net/rubric-polytics/4086110-iaea-confirms-russias-attacks-on-ukraines-energy-sector-pose-direct-nuclear-threat-fm-sybiha.html",
-                  "tier": 3
+                  "url": "https://ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html",
+                  "tier": 2
                 }
               ],
-              "summary": "NBU Governor Andriy Pyshnyy announced reduction in key policy rate by 50 basis points, stating the NBU will continue responding flexibly to monetary risks. Represents continued monetary easing from peak wartime rates.",
+              "summary": "NBU lowered key policy rate from 15.5% to 15%, with Governor Pyshnyy stating continued flexible response to monetary risks. Rate reduction reflects confidence in inflation trajectory decline.",
               "actors_involved": [
                 "National Bank of Ukraine",
                 "Andriy Pyshnyy"
               ],
-              "signal_category_relevance": "Indicates NBU assessment that inflationary pressures are moderating sufficiently to allow continued monetary easing, consistent with the inflation decline from 14.3% to 8% documented in dossier Section 6. Maintains structural pattern of credible monetary policy despite wartime fiscal pressures."
+              "signal_category_relevance": "Continues established monetary policy normalization pattern as inflation declines, indicating NBU maintains credible framework despite wartime fiscal pressures."
             }
           ],
-          "prior_assessment": "Economy maintains structural transformation toward IT/agriculture/defense sectors with continued 43% fiscal dependency on Western support. Emergency energy aid demonstrates sustained international commitment but reflects reactive assistance rather than strategic economic repositioning.",
+          "prior_assessment": "Ukraine continues to rely on Western partners for emergency economic support, particularly for critical infrastructure",
           "updated_assessment": "Economic structure remains unchanged with continued monetary policy normalization as NBU reduces rates in response to declining inflation. The 50 basis point reduction signals continued confidence in inflation trajectory while maintaining the structural dependency patterns on Western financing for fiscal operations.",
-          "confidence_change": null
+          "confidence_change": {
+            "from": 3,
+            "to": 3,
+            "reason": "Single source on monetary policy change, consistent with established NBU credibility patterns but no broader economic structural shifts evident"
+          }
         },
         "institutional": {
           "movement": "none",
           "developments": [],
-          "prior_assessment": "EU accession negotiations continue as primary institutional transformation vehicle with all 35 chapters screened despite Hungarian obstruction. Anti-corruption institutions maintain operational capacity and independence.",
+          "prior_assessment": "No significant institutional developments this week. EU accession process continues at technical level without major milestones",
           "updated_assessment": "No significant institutional developments this week. EU accession process continues at technical level without major milestones. Anti-corruption institutions remain operationally active with no major cases or structural changes reported.",
           "confidence_change": null
         },
@@ -577,7 +586,7 @@
           "movement": "significant",
           "developments": [
             {
-              "headline": "Budanov officially appointed Head of Office of the President",
+              "headline": "Budanov appointment as Head of Presidential Office formally completed",
               "date": "2026-02-01",
               "sources": [
                 {
@@ -586,15 +595,15 @@
                   "tier": 3
                 }
               ],
-              "summary": "Kyrylo Budanov formally appointed Head of the Office of the President, replacing the structure after Andriy Yermak's departure. Zelensky stated Ukraine needs focus on security issues, Defense and Security Forces development, and diplomatic negotiations. Budanov moved from intelligence role to key civilian administrative position.",
+              "summary": "Kyrylo Budanov, former Head of Main Intelligence Directorate, officially appointed Head of Presidential Office, replacing previous role in military intelligence. Zelensky emphasized focus on security issues, defense forces development, and diplomatic negotiations track.",
               "actors_involved": [
                 "Kyrylo Budanov",
                 "Volodymyr Zelensky"
               ],
-              "signal_category_relevance": "Confirms the major leadership transition from political operative (Yermak) to security professional (Budanov) documented in prior assessments. Represents shift in OPU orientation toward security and negotiation focus rather than domestic political management, indicating preparation for diplomatic phase of conflict."
+              "signal_category_relevance": "Completes the transition from political operative (Yermak) to security professional leadership of Presidential Office, representing structural shift in decision-making architecture toward military-intelligence background."
             },
             {
-              "headline": "Tymoshenko corruption investigation reveals parliamentary recruitment scheme",
+              "headline": "Investigation reveals Tymoshenko's alleged scheme to undermine parliamentary majority",
               "date": "2026-01-30",
               "sources": [
                 {
@@ -603,16 +612,16 @@
                   "tier": 2
                 }
               ],
-              "summary": "Investigation reveals Tymoshenko allegedly organized scheme to recruit Servant of the People deputies for $10,000 per month to vote against government initiatives, aimed at denying Zelensky working majority. Scheme coincided with failed government reshuffle including Fedorov's defense minister appointment. Investigation connected to figure close to Budanov.",
+              "summary": "Investigation details Tymoshenko allegedly organizing $10,000 monthly payments to deputies to vote against government initiatives, coordinated via Signal app. Raid occurred same evening Rada failed to approve government reshuffle including Fedorov's defense minister appointment. Operation reportedly linked to GUR captain Ihor Kopytin and surveillance equipment at Batkivshchyna headquarters.",
               "actors_involved": [
                 "Yulia Tymoshenko",
-                "Servant of the People",
-                "Kyrylo Budanov"
+                "Ihor Kopytin",
+                "Servant of the People"
               ],
-              "signal_category_relevance": "Demonstrates continued parliamentary fragility and opposition attempts to exploit Servant of the People's declining coherence. Investigation timing and connection to Budanov associates suggests intelligence apparatus involvement in domestic political dynamics, consistent with pattern of security sector influence on civilian politics."
+              "signal_category_relevance": "Reveals opposition attempts to exploit ruling party fragmentation through alleged corruption schemes, indicating domestic political competition intensifying despite wartime constraints. Connection to intelligence networks suggests security sector involvement in parliamentary management."
             }
           ],
-          "prior_assessment": "Major leadership transition brings intelligence chief Budanov into key civilian role as head of President's Office, potentially signaling succession planning or post-war transition preparation. Simultaneous Defense Ministry reorganization suggests broader security sector personnel realignment.",
+          "prior_assessment": "Major leadership transition with intelligence chief Budanov taking key civilian role as head of President's Office, potentially signaling succession planning",
           "updated_assessment": "The Budanov transition is now formally completed, establishing security professional rather than political operative leadership of the Presidential Office. Simultaneously, parliamentary opposition is attempting to exploit Servant of the People's weakening discipline through alleged corruption schemes, indicating domestic political competition is intensifying despite wartime constraints. The investigation's connection to intelligence networks suggests security sector involvement in parliamentary management.",
           "confidence_change": null
         }
@@ -621,134 +630,126 @@
       "absence_check": [],
       "devils_advocate": {
         "challenges": [
-          "The alignment_diplomatic confidence 4 rating is not supported by the source base described. PBS (tier 2) and Ukrinform (tier 3) do not constitute 'multiple independent sources' sufficient for maximum confidence, particularly when the 'qualitative change in Russian approach' relies solely on Ukrainian FM statements which could be diplomatic messaging rather than objective assessment of negotiation dynamics.",
-          "The domestic_regime assessment makes significant interpretive leaps about 'security sector involvement in parliamentary management' based on a Meduza report connecting the Tymoshenko investigation to 'a figure close to Budanov.' This connection is too thin to support the broad conclusion about intelligence networks managing parliament, yet carries confidence 4.",
-          "The security_defense category maintains its high-confidence narrative about 'offensive doctrine seeking operational initiative' while this week's only new evidence is ministerial advisor appointments. Personnel changes do not validate strategic military posture claims, yet the assessment treats them as confirming the broader offensive narrative without establishing the evidentiary connection.",
-          "The structural claims section continues to show the exact same pattern flagged last week - all claims checked on the same future date (2026-03-25) with zero pressure weeks. This indicates the claims were copied forward rather than genuinely reassessed, directly contradicting the analyst's assertion that structural claims are being actively monitored.",
-          "The economic_tech category repeats structural claims about '43% fiscal dependency' and 'structural transformation toward IT/agriculture/defense sectors' without providing any new evidence for these patterns. A single NBU rate cut does not validate these broader structural assessments, yet they persist at confidence 3 based on momentum rather than fresh analysis."
+          "The structural claims section reveals systematic analytical failure \u2014 all claims show identical last-checked dates (2026-03-25) and zero pressure weeks, indicating the analyst carried forward prior assessments without testing them against this week's evidence. This undermines the entire analytical foundation.",
+          "The domestic_regime assessment constructs a narrative of intensifying political competition from two single sources: Nasha Niva (tier 3) for the Budanov completion and Meduza (tier 2) for the Tymoshenko investigation. The confidence appears unsupported by source independence, and the interpretation of parliamentary 'exploitation' through 'alleged corruption schemes' treats investigative reporting as confirmed fact.",
+          "The economic_tech assessment explicitly acknowledges single-source dependency while maintaining confidence level 3, which represents a fundamental miscalibration. NBU credibility does not justify confidence 3 for broader economic structural assessments, particularly when the analyst admits 'no broader economic structural shifts evident.'",
+          "The alignment_diplomatic assessment interprets Russian delegation changes as movement 'beyond propaganda toward technical negotiations' without considering alternative explanations such as tactical adaptation or messaging coordination. The 'qualitative change' claim rests on Ukrainian official characterization rather than independent verification of actual Russian negotiating behavior."
         ],
         "recommended_adjustments": [
-          "Require additional independent sourcing for alignment_diplomatic confidence 4, particularly non-Ukrainian sources that can independently confirm the substance of peace talks progress rather than relying on participant messaging about 'qualitative changes.'",
-          "Downgrade domestic_regime confidence to 2 until the connection between the Tymoshenko investigation and broader security sector parliamentary involvement can be established with stronger sourcing than proximity to unnamed figures.",
-          "Either provide fresh evidence that validates the offensive military doctrine assessment or acknowledge that this week's personnel appointments do not constitute confirmation of the strategic posture claims and adjust confidence accordingly.",
-          "Conduct genuine structural claim checks with actual pressure testing rather than automatic date rollover, or acknowledge that structural monitoring was not performed this week and set realistic check dates.",
-          "Separate routine economic policy moves (NBU rate cuts) from validation of structural economic claims, and either provide new evidence for the dependency and transformation patterns or flag them as requiring validation rather than assuming continuity."
+          "Flag all structural claims as requiring immediate reassessment since none were actually checked this week despite the procedural requirement. Begin systematic structural claim validation starting next week.",
+          "Downgrade domestic_regime confidence to maximum 2 until independent corroboration emerges for either the Budanov transition completion or the Tymoshenko investigation details. Add qualifier acknowledging single-source limitations.",
+          "Reduce economic_tech confidence to 2 and require either additional sources for monetary policy implications or explicit acknowledgment that assessment covers only NBU policy, not broader economic structure.",
+          "Add alternative interpretation for Russian delegation behavior focusing on tactical positioning rather than strategic shift, and require non-Ukrainian government sources to validate 'qualitative change' claims within two weeks."
         ]
       },
       "self_corrections": [],
       "structural_claim_checks": [],
       "story_clusters": [
         {
-          "headline": "Ukraine and US finalize security guarantees document, awaiting signature",
-          "summary": "President Zelensky announced that a US security guarantees document for Ukraine is \"100% ready\" following talks in Abu Dhabi and Vilnius. Ukraine is waiting for partners to set a signing date.",
-          "source_url": "https://pbs.org/newshour/world/zelenskyy-says-u-s-security-agreement-for-ukraine-is-100-ready-to-be-signed",
-          "source_name": "pbs.org"
-        },
-        {
-          "headline": "Abu Dhabi peace talks show improved Russian approach, bilateral meetings confirmed",
-          "summary": "Foreign Minister Sybiha confirmed bilateral Ukraine-Russia meetings during Abu Dhabi talks, noting a qualitative change with Russia no longer delivering \"pseudo-historical lectures.\" Discussions covered ceasefire parameters and a potential 20-point peace plan with the US.",
-          "source_url": "https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html",
-          "source_name": "ukrinform.net"
-        },
-        {
-          "headline": "SBU releases compilation video of 2025 drone strikes on Russian aircraft",
-          "summary": "Ukraine's Security Service published a video compilation claiming the destruction of 15 Russian aircraft worth over $1 billion in long-range drone strikes on five Russian airbases during 2025.",
+          "headline": "SBU releases compilation video of drone strikes destroying Russian aircraft worth $1 billion",
+          "summary": "Ukraine's Security Service published a video compilation showing successful long-range drone strikes against five Russian military airbases in 2025, claiming destruction of 15 aircraft and over $1 billion in damage to Russian military infrastructure.",
           "source_url": "https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398",
           "source_name": "twz.com"
         },
         {
-          "headline": "Russian forces continue offensive near Pokrovsk as Ukraine targets enemy reserves",
-          "summary": "Commander-in-Chief Syrskyi reported continued Russian attempts to break through near Pokrovsk and Ocheretyne fronts, with Russian forces bringing up reserves and using infiltration tactics. Ukrainian forces are focusing on inflicting maximum losses on Russian reserves.",
+          "headline": "Syrskyi reports intense Russian offensive attempts near Pokrovsk",
+          "summary": "Commander-in-Chief Syrskyi described the situation as difficult on the Pokrovsk and Ocheretyne fronts, with Russian forces bringing up reserves and using infiltration tactics while Ukrainian forces focus on inflicting maximum losses on enemy reserves.",
           "source_url": "https://kyivindependent.com/russia-continues-attempts-at-breakthrough-near-pokrovsk-brings-up-reserves-syrskyi-says/",
           "source_name": "united24media.com"
         },
         {
-          "headline": "Defense Minister Fedorov appoints Telegram bloggers as technology advisors",
-          "summary": "Defense Minister Mykhailo Fedorov appointed tech blogger Serhiy \"Flash\" Beskrestnov as advisor on defense technology and drone warfare, along with volunteer Serhiy Sternenko, as part of his \"team of new leaders\" to modernize military operations.",
-          "source_url": "https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html",
-          "source_name": "businessinsider.com"
-        },
-        {
-          "headline": "Russian disinformation campaign targets Budanov and Zaluzhny",
-          "summary": "Political strategist reports Russia launched a special information operation to create rifts between intelligence chief Budanov and former commander Zaluzhny. Campaign includes allegations about Budanov's training and behavior, with narratives about \"nepotism\" and \"nuclear terrorism.\"",
-          "source_url": "https://en.interfax.com.ua/news/press-conference/1140464.html",
-          "source_name": "en.interfax.com.ua"
-        },
-        {
-          "headline": "Ukraine proposes pause in Russian strikes during extreme winter weather",
-          "summary": "President Zelensky cautiously responded to US-proposed pause in Russian strikes on energy infrastructure during bitter cold weather. Zelensky said Ukraine would halt similar strikes if Russia did the same, but was waiting to see if Moscow would comply.",
-          "source_url": "https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine",
-          "source_name": "theguardian.com"
-        },
-        {
-          "headline": "Zelensky calls for more air defense as European delays leave gaps",
-          "summary": "President Zelensky blamed European states for air defense gaps and called for more Western support as Russian strikes left hundreds of buildings in Kyiv without heating during freezing temperatures. He reported Russia launched over 1,700 drones and 1,380 bombs in one week.",
-          "source_url": "https://ft.com/content/031ee418-f0cf-4919-8e59-63daf47314a5",
-          "source_name": "ft.com"
-        },
-        {
-          "headline": "Ukraine ends diplomatic passivity with Hungary over anti-Ukrainian rhetoric",
-          "summary": "Foreign Minister Sybiha announced Ukraine is ending its policy of diplomatic \"non-noticing\" with Hungary and will respond decisively to unfriendly steps and anti-Ukrainian rhetoric from Hungarian leadership, including attempts to drag Kyiv into Hungary's election campaign.",
-          "source_url": "https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html",
+          "headline": "Abu Dhabi peace talks show qualitative improvement in negotiations",
+          "summary": "Foreign Minister Sybiha confirmed bilateral Ukraine-Russia meetings took place alongside trilateral talks in Abu Dhabi, describing substantive discussions on ceasefire parameters without Russian 'pseudo-historical lectures.' Ukraine also revealed details of a 20-point peace plan with the US.",
+          "source_url": "https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html",
           "source_name": "ukrinform.net"
         },
         {
-          "headline": "Budanov appointed Head of Office of the President",
-          "summary": "Kyrylo Budanov, former Head of the Main Intelligence Directorate, was appointed Head of the Office of the President of Ukraine by President Zelensky.",
-          "source_url": "https://nashaniva.com/en/384849",
-          "source_name": "nashaniva.com"
-        },
-        {
-          "headline": "Sybiha urges continued pressure on Russia after maternity hospital strike",
-          "summary": "Foreign Minister Sybiha called on the world not to stop pressuring Russia after Russian attack UAVs struck a maternity hospital in Zaporizhzhia, injuring three women despite ongoing peace talks.",
+          "headline": "Sybiha calls for sustained international pressure on Russia following attacks",
+          "summary": "Foreign Minister Sybiha urged continued global pressure on Russia after strikes on Ukrainian infrastructure including a maternity hospital in Zaporizhzhia. He emphasized blocking Russia's 'shadow fleet' and adopting stronger EU sanctions while securing IAEA confirmation that Russian energy attacks pose nuclear threats.",
           "source_url": "https://pravda.com.ua/eng/news/2026/02/01/8018945",
           "source_name": "pravda.com.ua"
         },
         {
-          "headline": "IAEA confirms Russian attacks on energy sector pose nuclear threat",
-          "summary": "Foreign Minister Sybiha reported that IAEA Director General Rafael Grossi confirmed at an extraordinary meeting that Russia's systematic attacks on Ukraine's energy sector pose a direct nuclear threat.",
-          "source_url": "https://ukrinform.net/rubric-polytics/4086110-iaea-confirms-russias-attacks-on-ukraines-energy-sector-pose-direct-nuclear-threat-fm-sybiha.html",
-          "source_name": "ukrinform.net"
+          "headline": "US security agreement with Ukraine '100% ready' for signing, Zelensky says",
+          "summary": "President Zelensky announced that a US security guarantees document is completely ready and Ukraine is waiting for partners to set a signing date after trilateral talks in Abu Dhabi. The agreement would then go to the US Congress for ratification.",
+          "source_url": "https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720",
+          "source_name": "apnews.com"
         },
         {
-          "headline": "Ukraine prepares sanctions against Lukashenko for war complicity",
-          "summary": "Foreign Minister Sybiha said Belarus is complicit in Russia's invasion and that Kyiv is preparing sanctions against Belarusian President Alexander Lukashenko to hold him accountable for supporting the war by allowing Russian forces to use Belarusian territory.",
-          "source_url": "https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/",
-          "source_name": "kyivindependent.com"
-        },
-        {
-          "headline": "Sybiha urges EU to increase pressure on Russia with stronger sanctions",
-          "summary": "Foreign Minister Sybiha called on the EU to step up pressure on Russia by blocking the 'shadow fleet' and adopting a strong 20th sanctions package including restrictions on Russia's defense industry and oil and gas sector.",
-          "source_url": "https://ukrinform.net/rubric-polytics/4085698-we-are-winning-time-for-you-ukraines-fm-urges-eu-to-step-up-pressure-on-russia.html",
-          "source_name": "ukrinform.net"
-        },
-        {
-          "headline": "Ukraine discusses security cooperation with Moldova and energy aid with Spain",
-          "summary": "Foreign Minister Sybiha held bilateral meetings discussing Ukraine's readiness to consider Moldova's appeal for security cooperation regarding Transnistria, Spanish energy aid following Russian attacks, and EU membership benefits for Poland.",
-          "source_url": "https://en.interfax.com.ua/news/general/1139956.html",
+          "headline": "Russian disinformation campaign targets Budanov with false narratives",
+          "summary": "Ukrainian analysts report Russia launched a special information operation against intelligence chief Budanov using fake narratives about CIA training, personal conduct, and alleged conflicts with military leadership. The campaign includes fabricated stories and 'insider' messages on social media.",
+          "source_url": "https://en.interfax.com.ua/news/press-conference/1140464.html",
           "source_name": "en.interfax.com.ua"
         },
         {
-          "headline": "Commander-in-Chief Syrskyi holds medical priorities meeting",
-          "summary": "Commander Syrskyi held a meeting at General Staff Headquarters focusing on medical care in the Armed Forces, discussing development and deployment of medical battalions that provide qualified medical assistance to wounded soldiers.",
+          "headline": "Defense Minister Fedorov appoints tech bloggers as military advisors",
+          "summary": "New Defense Minister Mykhailo Fedorov appointed two prominent Telegram bloggers and activists as advisors on defense technology and drone warfare, saying they will help Ukraine build counter-systems for Russian drones and analyze captured enemy equipment.",
+          "source_url": "https://businessinsider.com/mykhailo-fedorov-advisors-defense-ministry-serhii-flash-sternenko-2026-1",
+          "source_name": "businessinsider.com"
+        },
+        {
+          "headline": "Syrskyi conducts military medical and command meetings at General Staff",
+          "summary": "Commander-in-Chief Syrskyi held meetings on medical priorities in the Armed Forces and with frontline commanders. He discussed development of medical battalions and recognized servicemen for courage and professionalism in combat.",
           "source_url": "https://www.ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html",
           "source_name": "ukrinform.net"
         },
         {
-          "headline": "Syrskyi meets with frontline commanders to review combat experience",
-          "summary": "Commander-in-Chief Syrskyi held a working meeting with military unit commanders engaged in front-line combat missions, reviewing operational situation and practical experience gained in modern warfare conditions.",
-          "source_url": "https://www.ukrinform.net/rubric-ato/4086224-cinc-syrskyi-meets-with-commanders-carrying-out-combat-missions-on-frontline.html",
+          "headline": "Zelensky appeals for more Western air defense systems",
+          "summary": "President Zelensky called on Western allies to provide more air defense support as Russian strikes left hundreds of buildings in Kyiv without heating during freezing temperatures. He blamed delayed European payments for keeping Ukraine's air defenses 'simply empty.'",
+          "source_url": "https://euronews.com/2026/01/25/zelenskyy-calls-on-to-allies-to-provide-more-air-defence-as-russian-strikes-plunge-kyiv-in",
+          "source_name": "euronews.com"
+        },
+        {
+          "headline": "Ukraine ends diplomatic passivity toward Hungary, Sybiha announces",
+          "summary": "Foreign Minister Sybiha said Ukraine is ending its policy of diplomatic 'non-noticing' with Hungary and will respond decisively to unfriendly steps and anti-Ukrainian rhetoric from Hungarian leadership, including attempts to drag Kyiv into Hungary's domestic politics.",
+          "source_url": "https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html",
           "source_name": "ukrinform.net"
         },
         {
-          "headline": "National Bank cuts key policy rate to 15%",
-          "summary": "NBU Governor Andriy Pyshnyy announced the National Bank lowered its key policy rate from 15.5% to 15%, saying the NBU will continue to respond flexibly to shifts in monetary risks.",
+          "headline": "Ukraine prepares sanctions against Lukashenko for war complicity",
+          "summary": "Foreign Minister Sybiha announced Ukraine is preparing sanctions against Belarusian President Lukashenko to hold him accountable for supporting Russia's war, saying Belarus bears equal responsibility with Russia for the invasion.",
+          "source_url": "https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/",
+          "source_name": "kyivindependent.com"
+        },
+        {
+          "headline": "Ukraine offers security cooperation to Moldova over Transnistria",
+          "summary": "Foreign Minister Sybiha said the threat of continued Russian military presence in Moldovan Transnistria is becoming increasingly obvious and that Kyiv is ready to consider Moldova's appeal for further practical security cooperation.",
+          "source_url": "https://en.interfax.com.ua/news/general/1139956.html",
+          "source_name": "en.interfax.com.ua"
+        },
+        {
+          "headline": "Sybiha emphasizes Poland's support for Ukraine's EU membership",
+          "summary": "Foreign Minister Sybiha said Poland supports Ukraine's EU and NATO membership and is one of its biggest advocates, emphasizing that Ukraine's EU membership is in Poland's interest and noting progress on sensitive historical issues.",
+          "source_url": "https://europeannewsroom.com/ukraine-foreign-minister-ukraines-membership-in-the-eu-is-in-the-interest-of-poles-2",
+          "source_name": "europeannewsroom.com"
+        },
+        {
+          "headline": "Budanov appointed Head of Presidential Office",
+          "summary": "Kyrylo Budanov, Head of the Main Intelligence Directorate since 2020, has been appointed Head of the Office of the President of Ukraine, replacing his previous role in military intelligence.",
+          "source_url": "https://nashaniva.com/en/384849",
+          "source_name": "nashaniva.com"
+        },
+        {
+          "headline": "Budanov commemorates Battle of Kruty heroes",
+          "summary": "Head of Presidential Office Budanov honored the memory of the Heroes of the Battle near Kruty on the anniversary, emphasizing their importance as symbols of courage and resistance for modern Ukraine and calling for building a country worthy of their sacrifice.",
+          "source_url": "https://news.novyny.live/en/budanov-pays-tribute-to-heroes-of-the-battle-of-kruty-308847.html",
+          "source_name": "news.novyny.live"
+        },
+        {
+          "headline": "Zelensky cautious on Russian bombing pause during extreme cold",
+          "summary": "President Zelensky said he was waiting to see whether Russia would observe a proposed pause in strikes on Ukrainian energy infrastructure during bitter winter cold. He noted no formal ceasefire agreement exists but indicated Ukraine would halt energy strikes if Russia did the same.",
+          "source_url": "https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "National Bank cuts key policy rate to 15 percent",
+          "summary": "The National Bank of Ukraine lowered its key policy rate from 15.5% to 15%, with NBU Governor Andriy Pyshnyy saying the bank will continue to respond flexibly to shifts in monetary risks.",
           "source_url": "https://ukrinform.net/rubric-economy/4085624-national-bank-cuts-key-policy-rate-to-15.html",
           "source_name": "ukrinform.net"
         },
         {
-          "headline": "Tymoshenko corruption investigation involves Zelensky party recruitment scheme",
-          "summary": "Investigation reveals corruption case against Yulia Tymoshenko involving alleged attempts to recruit enough deputies from Zelensky's Servant of the People party to deny the president a working majority, coinciding with failed government reshuffle including Fedorov's defense minister appointment.",
+          "headline": "Investigation reveals Tymoshenko's alleged plot to undermine Zelensky's parliamentary majority",
+          "summary": "Investigation details emerged about Yulia Tymoshenko allegedly attempting to recruit deputies from Zelensky's Servant of the People party to deny the president a working majority, with the raid on her office occurring the same evening the Rada failed to approve a government reshuffle including Fedorov's appointment as defense minister.",
           "source_url": "https://meduza.io/en/feature/2026/01/30/who-set-the-trap-for-ukraine-s-iron-lady-the-trail-leads-from-her-office-to-zelensky-s-top-spy",
           "source_name": "meduza.io"
         }

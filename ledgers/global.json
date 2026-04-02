@@ -3,7 +3,7 @@
   "created": "2026-03-25",
   "global_posture_summary": {
     "as_of": "2026-02-08",
-    "text": "The global alliance architecture is fragmenting along regional lines as different geographic zones develop incompatible institutional mechanisms for managing US transactional pressure. European multilateral coordination is now proceeding explicitly without US participation, while the Americas pursues bilateral accommodation strategies and Asia-Pacific adapts to differential transactional treatment. Defense sovereignty acceleration is occurring globally but through distinct regional frameworks, creating parallel rather than coordinated responses. Democratic institutional stress continues without producing unified resistance patterns.",
+    "text": "The global alliance architecture is experiencing accelerated fragmentation as different regions develop increasingly incompatible strategies for managing US transactional pressure. Alliance burden-sharing expectations are producing divergent responses within regions, while middle powers across multiple regions are abandoning coordination in favor of individual hedging strategies. Regional institutional differentiation is deepening, with Europe coordinating autonomy multilaterally, Asia-Pacific adapting to differential treatment bilaterally, and the Americas pursuing independent accommodation. Economic sovereignty is advancing through region-specific comparative advantages rather than coordinated approaches.",
     "signal_environment": {
       "most_active_categories": [
         "alignment_diplomatic",
@@ -14,10 +14,11 @@
       ],
       "geographic_hotspots": [
         "Western Europe",
-        "Asia Pacific"
+        "Asia-Pacific",
+        "Frontline Eastern Europe"
       ],
       "geographic_quiet_zones": [
-        "Frontline Eastern Europe"
+        "Americas domestic politics"
       ]
     }
   },
@@ -25,160 +26,20 @@
     {
       "dynamic_id": 1,
       "title": "Regional Institutional Differentiation in US Management Strategies",
-      "created_week": "2026-02-08",
-      "last_updated": "2026-02-08",
-      "status": "emerging",
-      "current_assessment": "Different regions are developing fundamentally incompatible institutional mechanisms for managing US transactional pressure. Europe coordinates multilaterally within existing frameworks but explicitly excluding US participation (Greenland response). The Americas pursues independent bilateral accommodation with sovereignty assertions. Middle East/South Asia employs sophisticated multi-alignment manipulation. Asia-Pacific adapts to explicit differential treatment patterns. This represents institutional divergence rather than coordinated resistance.",
-      "countries_involved": [
-        "fr",
-        "de",
-        "ca",
-        "mx",
-        "br",
-        "tr",
-        "sa",
-        "ae",
-        "in",
-        "jp",
-        "kr",
-        "tw"
-      ],
-      "signal_categories_touched": [
-        "alignment_diplomatic"
-      ],
-      "evidence_strength": {
-        "confidence": 4,
-        "supporting_country_confidences": {
-          "fr": 4,
-          "de": 4,
-          "ca": 4,
-          "mx": 4,
-          "br": 4,
-          "tr": 4,
-          "sa": 3,
-          "ae": 4,
-          "in": 4,
-          "jp": 4,
-          "kr": 4
-        },
-        "weakest_link": "Saudi Arabia's assessment rests on single-source reporting",
-        "linkage_type": "parallel_behavior",
-        "linkage_assessment": "Different regional approaches to same structural pressure with no evidence of coordination between regions"
-      },
-      "competing_interpretation": "These represent independent responses to different types of US pressure rather than institutional differentiation - each region facing distinct challenges requiring different tools rather than conscious strategic divergence",
-      "what_to_watch": "Cross-regional coordination attempts, US responses to different regional strategies, whether approaches remain regionally confined or spread",
-      "triage_implications": {
-        "countries_to_flag": [
-          "dk",
-          "nl"
-        ],
-        "reason": "European coordination test cases - Denmark's response to Greenland crisis, Netherlands' position between bilateral and multilateral approaches"
-      },
-      "weeks_active": 1,
-      "consecutive_unchanged_weeks": 0
-    },
-    {
-      "dynamic_id": 2,
-      "title": "Defense Sovereignty Acceleration Through Regional Frameworks",
-      "created_week": "2026-02-01",
-      "last_updated": "2026-02-08",
-      "status": "developing",
-      "current_assessment": "Multiple regions are simultaneously accelerating defense sovereignty investments but through distinct institutional mechanisms. Europe uses EU SAFE program for coordinated capability building (Romania's \u20ac16.6 billion represents unprecedented scale). Europe also diversifies procurement away from US systems (Norway selecting South Korean weapons). Asia-Pacific achieves defense industrial performance through bilateral frameworks. This represents parallel sovereignty acceleration without coordination.",
-      "countries_involved": [
-        "ee",
-        "ro",
-        "pl",
-        "no",
-        "jp",
-        "kr",
-        "tw"
-      ],
-      "signal_categories_touched": [
-        "security_defense",
-        "economic_tech"
-      ],
-      "evidence_strength": {
-        "confidence": 3,
-        "supporting_country_confidences": {
-          "ro": 4,
-          "pl": 4,
-          "no": 3,
-          "jp": 4,
-          "kr": 4
-        },
-        "weakest_link": "Norway's assessment rests on procurement decisions with confidence 3",
-        "linkage_type": "parallel_behavior",
-        "linkage_assessment": "Simultaneous acceleration across regions through different mechanisms suggests shared response to structural pressure"
-      },
-      "competing_interpretation": "Independent responses to different threat environments - European responses to Russian threat, Asia-Pacific responses to China threat, with different institutional tools reflecting different alliance structures",
-      "what_to_watch": "Scale of SAFE program implementation, further US procurement diversification, fiscal sustainability indicators",
-      "triage_implications": {
-        "countries_to_flag": [
-          "fi",
-          "se"
-        ],
-        "reason": "Nordic responses to defense sovereignty patterns - whether Finland and Sweden align with Norwegian diversification or maintain US procurement"
-      },
-      "weeks_active": 2,
-      "consecutive_unchanged_weeks": 0
-    },
-    {
-      "dynamic_id": 3,
-      "title": "Domestic Political Fragmentation Under External Pressure",
       "created_week": "2026-01-25",
-      "last_updated": "2026-02-01",
-      "status": "monitoring",
-      "current_assessment": "External pressure continues producing domestic political fragmentation rather than rally-around-the-flag effects across Western democracies. Previous evidence showed systematic democratic institutional vulnerability under sustained external pressure across Americas and Western Europe. This week shows limited new evidence with regional reports emphasizing different mechanisms and timing rather than shared patterns.",
-      "countries_involved": [
-        "ca",
-        "mx",
-        "br",
-        "fr",
-        "gb",
-        "it",
-        "es",
-        "se",
-        "de"
-      ],
-      "signal_categories_touched": [],
-      "evidence_strength": {
-        "confidence": 3,
-        "supporting_country_confidences": {
-          "gb": 4,
-          "fr": 4,
-          "ca": 4
-        },
-        "weakest_link": "Regional reports emphasize independent causes rather than shared pressures",
-        "linkage_type": "parallel_behavior",
-        "linkage_assessment": "Timing overlap but regional analysts identify different causal mechanisms"
-      },
-      "competing_interpretation": "Political fragmentation reflects country-specific electoral cycles and institutional dynamics rather than external pressure effects, with timing overlap purely coincidental",
-      "what_to_watch": "Expansion of fragmentation to additional democratic allies, capacity for international coordination under domestic constraints, electoral outcomes in fragmented systems",
-      "triage_implications": {
-        "countries_to_flag": [
-          "au",
-          "nz"
-        ],
-        "reason": "Whether fragmentation patterns extend to Anglosphere democracies under less direct US pressure"
-      },
-      "weeks_active": 3,
-      "consecutive_unchanged_weeks": 1
-    },
-    {
-      "dynamic_id": 4,
-      "title": "Alliance Architecture Fragmentation Under Transactional Pressure",
-      "created_week": "2026-02-01",
       "last_updated": "2026-02-08",
       "status": "developing",
-      "current_assessment": "Allied countries are developing fundamentally incompatible strategies for managing transactional alliance pressure, creating structural divergence in alliance management. European allies now coordinate explicitly without US participation (France-Germany Greenland response) while maintaining NATO frameworks. Asia-Pacific allies adapt to differential transactional treatment with coordination pressures emerging (Japan's explicit Taiwan linkage versus South Korea's China engagement). This represents alliance evolution beyond traditional coordination mechanisms.",
+      "current_assessment": "Regional differentiation is deepening with more specific institutional mechanisms emerging. Europe now demonstrates explicit strategic autonomy coordination (France-Germany-Spain parallel autonomy articulation), the Americas shows systematic divergent bilateral approaches (Canada defiance, Mexico accommodation, Brazil balancing, Chile diversification), and Asia-Pacific reveals incompatible alliance strategies (Japan escalation vs South Korea hedging). Each region is institutionalizing fundamentally different approaches to US pressure management.",
       "countries_involved": [
         "fr",
         "de",
+        "es",
+        "ca",
+        "mx",
+        "br",
+        "cl",
         "jp",
-        "kr",
-        "tw",
-        "gb",
-        "no"
+        "kr"
       ],
       "signal_categories_touched": [
         "alignment_diplomatic",
@@ -189,25 +50,211 @@
         "supporting_country_confidences": {
           "fr": 4,
           "de": 4,
+          "es": 4,
+          "ca": 4,
+          "mx": 4,
+          "br": 4,
+          "jp": 4,
+          "kr": 4
+        },
+        "weakest_link": "Chile assessment rests on single-source evidence",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Different regions developing systematically different institutional approaches to same external pressure"
+      },
+      "competing_interpretation": "Different regions face genuinely different types of US pressure requiring different institutional tools rather than conscious strategic divergence - security pressure in Asia-Pacific, economic pressure in Europe, sovereignty pressure in Americas",
+      "what_to_watch": "Cross-regional coordination attempts, expansion of regional approaches to new countries, US adaptation to different regional strategies",
+      "triage_implications": {
+        "countries_to_flag": [
+          "dk",
+          "nl",
+          "au"
+        ],
+        "reason": "Monitor whether smaller allies adopt regional institutional patterns or develop hybrid approaches"
+      },
+      "weeks_active": 3,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 2,
+      "title": "Defense Sovereignty Acceleration Through Regional Frameworks",
+      "created_week": "2026-01-25",
+      "last_updated": "2026-02-08",
+      "status": "monitoring",
+      "current_assessment": "Pattern continues with Baltic military mobility integration representing institutionalized sub-regional defense coordination, but overall dynamic shows limited new development beyond established trends. EU SAFE program implementation and defense diversification continue on established trajectories without significant acceleration or expansion.",
+      "countries_involved": [
+        "ee",
+        "lt",
+        "lv",
+        "ro",
+        "pl",
+        "no",
+        "fi"
+      ],
+      "signal_categories_touched": [
+        "security_defense",
+        "economic_tech"
+      ],
+      "evidence_strength": {
+        "confidence": 3,
+        "supporting_country_confidences": {
+          "ee": 3,
+          "lt": 3,
+          "lv": 3,
+          "ro": 4,
+          "fi": 4
+        },
+        "weakest_link": "Baltic mobility agreements rely on limited source bases",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Regional defense frameworks advancing independently but through similar institutional mechanisms"
+      },
+      "competing_interpretation": "Independent responses to different threat environments rather than coordinated sovereignty acceleration",
+      "what_to_watch": "Scale of SAFE program implementation, further US procurement diversification, fiscal sustainability of defense spending increases",
+      "triage_implications": {
+        "countries_to_flag": [
+          "se",
+          "dk"
+        ],
+        "reason": "Monitor Nordic response to Baltic integration and overall European defense framework participation"
+      },
+      "weeks_active": 3,
+      "consecutive_unchanged_weeks": 1
+    },
+    {
+      "dynamic_id": 3,
+      "title": "Domestic Political Fragmentation Under External Pressure",
+      "created_week": "2026-01-25",
+      "last_updated": "2026-02-08",
+      "status": "monitoring",
+      "current_assessment": "Western European domestic regime fragmentation continues with France, UK, Italy, and Spain all experiencing governance stress, but pattern shows no expansion to new regions or escalation. Limited new evidence suggests this may be stabilizing at current levels rather than accelerating. External pressure effects remain visible but not intensifying.",
+      "countries_involved": [
+        "ca",
+        "mx",
+        "br",
+        "fr",
+        "gb",
+        "it",
+        "es"
+      ],
+      "signal_categories_touched": [
+        "domestic_regime"
+      ],
+      "evidence_strength": {
+        "confidence": 3,
+        "supporting_country_confidences": {
+          "fr": 4,
+          "gb": 4,
+          "it": 4,
+          "es": 4
+        },
+        "weakest_link": "Americas domestic patterns less clear than European",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Similar institutional stress patterns across different democratic systems under comparable external pressures"
+      },
+      "competing_interpretation": "Political fragmentation reflects country-specific electoral cycles and institutional dynamics rather than systematic external pressure effects",
+      "what_to_watch": "Expansion to additional democratic allies, capacity for international coordination under domestic constraints, resolution or escalation of current fragmentation",
+      "triage_implications": {
+        "countries_to_flag": [
+          "au",
+          "nz"
+        ],
+        "reason": "Monitor whether fragmentation pattern spreads to other established democracies"
+      },
+      "weeks_active": 4,
+      "consecutive_unchanged_weeks": 1
+    },
+    {
+      "dynamic_id": 4,
+      "title": "Alliance Architecture Fragmentation Under Transactional Pressure",
+      "created_week": "2026-02-01",
+      "last_updated": "2026-02-08",
+      "status": "developing",
+      "current_assessment": "Alliance fragmentation is accelerating across multiple regions with allies developing fundamentally incompatible burden-sharing and strategic approaches. Czech Republic rejects NATO 3.5% spending targets while Romania embraces unprecedented EU defense funding. Japan escalates Taiwan commitments while South Korea pursues China engagement. European allies coordinate strategic autonomy without US participation. This represents structural evolution beyond traditional coordination mechanisms.",
+      "countries_involved": [
+        "fr",
+        "de",
+        "es",
+        "jp",
+        "kr",
+        "cz",
+        "ro",
+        "fi"
+      ],
+      "signal_categories_touched": [
+        "alignment_diplomatic",
+        "security_defense"
+      ],
+      "evidence_strength": {
+        "confidence": 4,
+        "supporting_country_confidences": {
+          "fr": 4,
+          "de": 4,
+          "es": 4,
           "jp": 4,
           "kr": 4,
-          "gb": 4,
-          "no": 3
+          "ro": 4,
+          "fi": 4
         },
-        "weakest_link": "Norway's procurement decisions as alliance fragmentation indicator",
-        "linkage_type": "interaction_effect",
-        "linkage_assessment": "European coordination creates precedents affecting alliance dynamics globally, Asia-Pacific positioning creates regional tensions"
+        "weakest_link": "Czech assessment relies on single source for NATO spending rejection",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Multiple regions showing incompatible alliance management strategies developing simultaneously"
       },
-      "competing_interpretation": "Region-specific responses to different types of US pressure rather than structural fragmentation - Europe facing economic pressure requiring collective response, Asia-Pacific facing security pressure requiring bilateral accommodation",
-      "what_to_watch": "Coordination breakdown between European and Asia-Pacific allies, other regions adopting either solidarity or transactional models, US response differentiation between regions",
+      "competing_interpretation": "Region-specific responses to different types of US pressure rather than structural fragmentation - different pressures requiring different tools rather than fundamental alliance breakdown",
+      "what_to_watch": "Coordination breakdown between European and Asia-Pacific allies, other regions adopting solidarity vs transactional models, US differentiated responses to regional strategies",
       "triage_implications": {
         "countries_to_flag": [
           "ca",
-          "au"
+          "au",
+          "pl"
         ],
-        "reason": "Whether North American and Oceanic allies adopt European or Asia-Pacific models for alliance management"
+        "reason": "Monitor how other major allies position between competing alliance management models"
       },
       "weeks_active": 2,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 5,
+      "title": "Middle Power Hedging Coordination Breakdown",
+      "created_week": "2026-02-08",
+      "last_updated": "2026-02-08",
+      "status": "emerging",
+      "current_assessment": "Middle powers across multiple regions are abandoning coordinated responses to great power pressure in favor of individual hedging strategies. Americas shows divergent US responses (Canada defiance, Mexico accommodation, Brazil balancing), Middle East shows divergent Iran strategies (Turkey mediation, Saudi triangulation, UAE neutrality), Asia-Pacific shows divergent alliance strategies. This represents systematic breakdown of collective middle power action under pressure.",
+      "countries_involved": [
+        "ca",
+        "mx",
+        "br",
+        "tr",
+        "sa",
+        "ae",
+        "jp",
+        "kr"
+      ],
+      "signal_categories_touched": [
+        "alignment_diplomatic"
+      ],
+      "evidence_strength": {
+        "confidence": 3,
+        "supporting_country_confidences": {
+          "ca": 4,
+          "mx": 4,
+          "tr": 4,
+          "jp": 4,
+          "kr": 4
+        },
+        "weakest_link": "Saudi triangulation assessment rests on single source without verification",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Independent decision-making replacing coordination across multiple regional contexts under great power pressure"
+      },
+      "competing_interpretation": "Different regional pressures require different responses rather than coordination breakdown - each region facing distinct challenges that legitimately require different strategies",
+      "what_to_watch": "Attempts at cross-regional middle power coordination, further fragmentation of existing partnerships, great power responses to hedging strategies",
+      "triage_implications": {
+        "countries_to_flag": [
+          "in",
+          "id",
+          "za"
+        ],
+        "reason": "Monitor whether other major middle powers adopt individual hedging vs coordination approaches"
+      },
+      "weeks_active": 1,
       "consecutive_unchanged_weeks": 0
     }
   ],
@@ -220,8 +267,8 @@
         "kr",
         "au"
       ],
-      "why_it_matters": "Could accelerate alliance fragmentation if implemented differentially",
-      "trigger": "Concrete policy implementation beyond strategic documents",
+      "why_it_matters": "Concrete policy implementation beyond strategic documents",
+      "trigger": "Specific spending targets, capability requirements, or cost-sharing arrangements",
       "added_week": "2026-01-25"
     },
     {
@@ -231,24 +278,23 @@
         "cn",
         "tw",
         "jp",
-        "kr",
-        "id"
+        "kr"
       ],
-      "why_it_matters": "Chinese retaliation could test sustainability of sovereignty investments",
-      "trigger": "Chinese policy adjustments or retaliation measures",
+      "why_it_matters": "Chinese policy adjustments or retaliation measures to economic hedging",
+      "trigger": "Trade restrictions, investment limitations, or diplomatic pressure",
       "added_week": "2026-01-25"
     },
     {
-      "item": "Middle East strategic hedging sustainability under escalation",
-      "signal_category": "alignment_diplomatic",
+      "item": "Economic sovereignty institutionalization patterns",
+      "signal_category": "economic_tech",
       "countries": [
-        "tr",
-        "sa",
-        "ae",
-        "in"
+        "fr",
+        "de",
+        "tw",
+        "kr"
       ],
-      "why_it_matters": "Iran crisis escalation could force binary choices that break multi-alignment strategies",
-      "trigger": "Military escalation forcing alignment choices or coordination breakdown",
+      "why_it_matters": "Different regions finding comparative advantages in economic hedging strategies",
+      "trigger": "EU institutional coordination success, Asia-Pacific technological advantages creating sustained patterns",
       "added_week": "2026-02-08"
     }
   ],
@@ -446,6 +492,77 @@
         {
           "candidate": "Democratic institutional coordination breakdown",
           "reason_rejected": "Regional reports emphasize different mechanisms and timing for domestic political developments. Insufficient evidence for shared causal mechanisms across regions - appears to be coincidental timing rather than connected structural pressures."
+        }
+      ],
+      "self_corrections": []
+    },
+    {
+      "week": "2026-02-01",
+      "executive_briefing_items": [
+        {
+          "title": "Alliance Architecture Fragments Along Regional Lines",
+          "regions_involved": [
+            "Western Europe",
+            "Frontline Eastern Europe",
+            "Asia-Pacific"
+          ],
+          "what": "Allied countries are developing fundamentally incompatible strategies for managing alliance burden-sharing and strategic commitments. Czech Republic explicitly rejected NATO 3.5% spending targets while Romania secured \u20ac16.6 billion in EU defense funding and Finland targets 3% GDP by 2029. Japan escalates operational commitments to Taiwan contingencies while South Korea simultaneously pursues 'full-scale restoration' with China. European allies coordinate strategic autonomy through parallel national articulations without US participation.",
+          "why_it_matters": "This represents structural evolution of alliance systems beyond traditional coordination mechanisms. When allies cannot agree on burden-sharing fundamentals or strategic priorities, the alliance becomes a framework for managing disagreement rather than coordinating action. The divergence creates strategic incoherence in US regional architecture as allies optimize independently rather than collectively, potentially requiring the US to manage incompatible alliance strategies simultaneously.",
+          "what_to_watch": "Whether coordination breakdown spreads between European and Asia-Pacific allies, if other major allies choose between solidarity and transactional models, and how the US responds to differentiated regional alliance strategies.",
+          "confidence": 4,
+          "confidence_note": "Strong evidence from multiple regions with high-confidence country assessments. Weakest link is Czech NATO rejection relying on single source, but overall pattern supported by concrete policy divergences."
+        },
+        {
+          "title": "Middle Powers Abandon Coordination Under Pressure",
+          "regions_involved": [
+            "Americas",
+            "Middle East",
+            "Asia-Pacific"
+          ],
+          "what": "Middle powers across multiple regions are abandoning coordinated responses to great power pressure, instead pursuing individual hedging strategies. The Americas shows Canada's explicit defiance, Mexico's operational accommodation, and Brazil's strategic balancing - all independent responses to US pressure. Middle East reveals Turkey positioning as mediator, Saudi Arabia pursuing triangulation, and UAE declaring neutrality on Iran - divergent strategies with no coordination. Asia-Pacific demonstrates Japan's alliance escalation versus South Korea's China hedging.",
+          "why_it_matters": "This represents systematic breakdown of collective middle power action under great power competition. When middle powers cannot coordinate responses to external pressure, it eliminates the possibility of meaningful coalition-building among secondary powers and forces individual accommodation with great power preferences. The fragmentation creates opportunities for great powers to exploit divisions while eliminating middle power leverage through collective action.",
+          "what_to_watch": "Whether other major middle powers adopt individual hedging approaches, attempts at cross-regional coordination among secondary powers, and great power responses to fragmented hedging strategies.",
+          "confidence": 3,
+          "confidence_note": "Pattern visible across multiple regions but relies on Saudi triangulation assessment from single source. Core dynamic supported by high-confidence country assessments from Canada, Turkey, Japan, South Korea."
+        },
+        {
+          "title": "Regional Institutional Differentiation Deepens",
+          "regions_involved": [
+            "Western Europe",
+            "Americas",
+            "Asia-Pacific"
+          ],
+          "what": "Different regions are developing increasingly incompatible institutional mechanisms for managing US transactional pressure. Europe demonstrates explicit strategic autonomy coordination through France's counter-offensive, Germany's power politics doctrine, and Spain's autonomous migration policy - parallel articulations without US participation. The Americas pursues systematically divergent bilateral approaches with no regional coordination. Asia-Pacific adapts to differential alliance treatment through separate bilateral frameworks.",
+          "why_it_matters": "This institutionalizes fundamentally different approaches to great power management across regions, creating structural incompatibility in how US allies operate. When regions develop their own institutional logic for external pressure, it becomes increasingly difficult to maintain global coordination on major issues. The differentiation suggests the US must now manage three distinct alliance architectures with incompatible operating principles rather than a unified system.",
+          "what_to_watch": "Cross-regional coordination attempts, expansion of regional approaches to additional countries, and whether smaller allies adopt regional patterns or develop hybrid approaches.",
+          "confidence": 4,
+          "confidence_note": "High-confidence pattern supported by concrete policy developments across three regions. Evidence includes specific institutional mechanisms and policy articulations. Weakest element is Chilean assessment relying on single source."
+        }
+      ],
+      "dynamics_created": [
+        5
+      ],
+      "dynamics_updated": [
+        1,
+        4
+      ],
+      "dynamics_archived": [],
+      "items_considered_rejected": [
+        {
+          "candidate": "Global Economic Sovereignty Acceleration Pattern",
+          "reason_rejected": "EU-India FTA institutional success and Asia-Pacific AI semiconductor boom represent different mechanisms (institutional coordination vs market advantages) without evidence of coordination or shared strategy beyond surface-level economic hedging"
+        },
+        {
+          "candidate": "Democratic Institutional Crisis Spreading",
+          "reason_rejected": "Western European domestic regime fragmentation continues but shows no expansion to new regions - pattern is stable rather than accelerating, making it unsuitable for executive briefing despite continued monitoring value"
+        },
+        {
+          "candidate": "Gulf Alliance Architecture Collapse",
+          "reason_rejected": "Saudi-UAE diplomatic rift is significant regionally but represents internal Middle Eastern dynamics rather than global pattern - no evidence of similar alliance fragmentation in other regions through comparable mechanisms"
+        },
+        {
+          "candidate": "Defense Technology Sovereignty Through Regional Specialization",
+          "reason_rejected": "Baltic military mobility integration and Asia-Pacific AI advantages represent different aspects of sovereignty (operational coordination vs technological capability) without sufficient linkage to constitute global pattern"
         }
       ],
       "self_corrections": []

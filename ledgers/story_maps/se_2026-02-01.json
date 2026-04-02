@@ -3,33 +3,180 @@
   "code": "se",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 133,
+  "search_results_total": 126,
   "stories_identified": 15,
-  "off_topic_filtered": 37,
-  "noise_summary": "37 off-topic results filtered: 15 US/international politics, 8 business/financial listings, 5 entertainment/celebrity news, 4 sports stories, 3 general interest, 2 technical/product listings.",
+  "off_topic_filtered": 8,
+  "noise_summary": "8 off-topic results filtered: 3 celebrity/entertainment (Frida Andersson Swedish model, Jon Gosselin health), 2 obituaries (Kathy Anderson), 1 sports (Anna Hasselborg curling), 1 US politics (Perry Johnson Michigan governor), 1 lifestyle (birth rates in Mullsj\u00f6).",
   "stories": [
     {
       "story_id": 1,
-      "headline": "\u00c5kesson injured in nightmare-related accident before Israel trip",
-      "summary": "SD leader Jimmie \u00c5kesson suffered a head injury requiring six stitches after hitting his head during a nightmare about being chased. The accident occurred the night before his departure to Jerusalem for an antisemitism conference.",
+      "headline": "Kristersson establishes ministerial council to combat violence against women",
+      "summary": "Prime Minister Ulf Kristersson announced the creation of a new ministerial council for 'kvinnofrid' (women's peace) to coordinate national efforts against men's violence toward women. Kristersson will chair the council, which includes multiple ministers.",
+      "actors_involved": [
+        "Kristersson"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "newkerala.com",
+        "svt.se",
+        "sydsvenskan.se",
+        "aftonbladet.se"
+      ],
+      "date_range": "2026-01-28 to 2026-01-29",
+      "articles": [
+        {
+          "title": "Sweden Launches Program to Curb Violence Against Women",
+          "source": "newkerala.com",
+          "url": "https://newkerala.com/news/a/sweden-launches-new-program-curb-violence-against-women-833.htm",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Regeringen presenterar \u00e5tg\u00e4rder om m\u00e4ns v\u00e5ld mot kvinnor",
+          "source": "svt.se",
+          "url": "https://svt.se/nyheter/inrikes/regeringen-presenterar-atgarder-om-mans-vald-mot-kvinnor",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Kristersson inr\u00e4ttar r\u00e5d f\u00f6r kvinnofrid",
+          "source": "sydsvenskan.se",
+          "url": "https://sydsvenskan.se/sverige/kristersson-inrattar-rad-for-kvinnofrid",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Kristersson om v\u00e5ldet: G\u00f6rs f\u00f6r lite",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/JOE7Xj/kristersson-om-valdet-gors-for-lite",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://newkerala.com/news/a/sweden-launches-new-program-curb-violence-against-women-833.htm",
+        "https://svt.se/nyheter/inrikes/regeringen-presenterar-atgarder-om-mans-vald-mot-kvinnor"
+      ]
+    },
+    {
+      "story_id": 2,
+      "headline": "Kristersson calls for review of statute of limitations after TV personality case",
+      "summary": "Prime Minister Kristersson opened for a review of prescription rules after a known TV profile accused of sexual purchases managed to avoid prosecution by staying abroad until crimes were statute-barred. Kristersson called the situation 'deeply provocative.'",
+      "actors_involved": [
+        "Kristersson"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 5,
+      "sources": [
+        "svt.se",
+        "aftonbladet.se",
+        "sydsvenskan.se"
+      ],
+      "date_range": "2026-01-26 to 2026-01-26",
+      "articles": [
+        {
+          "title": "Kristersson (M) vill se \u00f6ver preskriptionstiden efter tv-profilens flykt",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/inrikes/kristersson-m-vill-se-over-preskriptionstiden-efter-tv-profilens-flykt",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Kristersson: Djupt provocerande",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1440183",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Ulf Kristersson efter Dermot Clemengers preskriberade sexk\u00f6p: Djupt provocerande",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nojesbladet/a/gk0EL1/kristersson-djupt-provocerande",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Kristersson om n\u00f6jesprofilens flykt: Provocerande",
+          "source": "sydsvenskan.se",
+          "url": "https://sydsvenskan.se/sverige/kristersson-om-nojesprofilens-flykt-provocerande",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "R\u00e4tteg\u00e5ngen mot TV4-profilen har avslutats",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nojesbladet/a/n1wQlx/rattegangen-mot-tv4-profilen-har-avslutats",
+          "date": "2026-01-26"
+        }
+      ],
+      "representative_urls": [
+        "https://www.svt.se/nyheter/inrikes/kristersson-m-vill-se-over-preskriptionstiden-efter-tv-profilens-flykt",
+        "https://www.aftonbladet.se/nojesbladet/a/gk0EL1/kristersson-djupt-provocerande"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Kristersson launches 'Ring statsministern' podcast ahead of election",
+      "summary": "Prime Minister Kristersson announced the launch of his own podcast where citizens can call in with questions. The format aims to create 'good conversations' in politics and provides direct contact between the PM and voters.",
+      "actors_involved": [
+        "Kristersson",
+        "Moderate Party"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "aftonbladet.se",
+        "hd.se",
+        "resume.se",
+        "arbetet.se"
+      ],
+      "date_range": "2026-01-30 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Ulf Kristersson startar podcast",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1440577",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kristersson startar podd \u2013 svarar p\u00e5 lyssnarfr\u00e5gor",
+          "source": "hd.se",
+          "url": "https://hd.se/sverige/kristersson-startar-podd-svarar-pa-lyssnarfragor",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kristersson startar podd \u2013 nu kan du ringa statsministern",
+          "source": "resume.se",
+          "url": "https://www.resume.se/kommunikation/media/kristersson-startar-podd-nu-kan-du-ringa-statsministern/",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kristersson har roligare saker f\u00f6r sig \u00e4n att vara statsminister",
+          "source": "arbetet.se",
+          "url": "https://arbetet.se/2026/01/30/ulf-kristersson-startar-podd-nar-varlden-brinner",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1440577",
+        "https://www.resume.se/kommunikation/media/kristersson-startar-podd-nu-kan-du-ringa-statsministern/"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "\u00c5kesson injures head in nightmare, misses parts of Jerusalem antisemitism conference",
+      "summary": "Sweden Democrats leader Jimmie \u00c5kesson sustained a head injury requiring six stitches after hitting his head during a nightmare. The injury occurred before his trip to Jerusalem for an international antisemitism conference where he was invited to speak.",
       "actors_involved": [
         "Jimmie \u00c5kesson"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 10,
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 11,
       "sources": [
         "dn.se",
         "kvartal.se",
         "expressen.se",
         "omni.se",
         "aftonbladet.se",
+        "svt.se",
+        "nyheter24.se",
         "bulletin.nu",
         "varldenidag.se",
-        "sverigesradio.se",
-        "nyheter24.se",
-        "svt.se"
+        "sverigesradio.se"
       ],
-      "date_range": "2026-01-26 to 2026-01-31",
+      "date_range": "2026-01-26 to 2026-01-28",
       "articles": [
         {
           "title": "Jimmie \u00c5kesson skadad \u2013 missar m\u00f6te i Knesset",
@@ -62,6 +209,18 @@
           "date": "2026-01-26"
         },
         {
+          "title": "Jimmie \u00c5kesson till akuten \u2013 halkade och slog i spegel",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/inrikes/jimmie-akesson-till-akuten-halkade-och-slog-i-spegel",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Jimmie \u00c5kesson i olycka \u2013 fick s\u00f6ka akutv\u00e5rd",
+          "source": "nyheter24.se",
+          "url": "https://nyheter24.se/nyheter/politik/1455325-jimmie-akesson-i-olycka-fick-soka-akutvard",
+          "date": "2026-01-26"
+        },
+        {
           "title": "\u00c5kesson om skadan: \"S\u00e4ngkammarskada\"",
           "source": "bulletin.nu",
           "url": "https://bulletin.nu/akesson-om-skadan-sangkammarskada-3",
@@ -80,15 +239,9 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Jimmie \u00c5kesson i olycka \u2013 fick s\u00f6ka akutv\u00e5rd",
-          "source": "nyheter24.se",
-          "url": "https://nyheter24.se/nyheter/politik/1455325-jimmie-akesson-i-olycka-fick-soka-akutvard",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Jimmie \u00c5kesson till akuten \u2013 halkade och slog i spegel",
+          "title": "\u00c5kesson skadade sig i s\u00f6mnen \u2013 fick sy",
           "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/inrikes/jimmie-akesson-till-akuten-halkade-och-slog-i-spegel",
+          "url": "https://www.svt.se/nyheter/inrikes/senaste-nytt-om-val-2026?inlagg=4509218fb041c54cc43c7ee83d59427f",
           "date": "2026-01-26"
         }
       ],
@@ -98,28 +251,94 @@
       ]
     },
     {
-      "story_id": 2,
-      "headline": "Riksbank keeps interest rate unchanged at 1.75%, signals extended pause",
-      "summary": "Sweden's central bank left the policy rate unchanged at 1.75% and indicated it will remain at this level for some time. The bank noted increased uncertainty about the economic outlook while inflation remains near the 2% target.",
+      "story_id": 5,
+      "headline": "\u00c5kesson speaks at Jerusalem antisemitism conference, pledges Swedish terror list",
+      "summary": "Jimmie \u00c5kesson addressed an international antisemitism conference in Jerusalem, pledging to create a Swedish terror list including IRGC and Muslim Brotherhood. He criticized EU weakness on terrorism and expressed support for Israel.",
+      "actors_involved": [
+        "Jimmie \u00c5kesson"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 6,
+      "sources": [
+        "jpost.com",
+        "omni.se",
+        "expressen.se",
+        "aftonbladet.se",
+        "dn.se",
+        "kvartal.se"
+      ],
+      "date_range": "2026-01-25 to 2026-01-28",
+      "articles": [
+        {
+          "title": "\u00c5kesson pledges IRGC, Muslim Brotherhood terror designation",
+          "source": "jpost.com",
+          "url": "https://jpost.com/international/article-884931",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "\u00c5kesson i Jerusalem: \"Vill se svensk terrorlista\"",
+          "source": "omni.se",
+          "url": "https://omni.se/akesson-i-jerusalem-vill-se-svensk-terrorlista/a/wr83jA",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "SD-ledaren Jimmie \u00c5kesson hyllas i Israel p\u00e5 konferens om antisemitism, men f\u00e5r ocks\u00e5 kritik: \"H\u00e5n mot F\u00f6rintelsens offer\"",
+          "source": "expressen.se",
+          "url": "https://expressen.se/nyheter/politik/jimmie-akesson-hyllas-i-israel-och-far-kritik",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Jimmie \u00c5kesson h\u00e5ller tal i Israel om antisemitism",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/GxQr0V/akesson-haller-tal-i-israel-om-antisemitism",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "\u00c5kesson (SD) bes\u00f6ker Israel: \"Sk\u00f6nt att vara h\u00e4r\"",
+          "source": "dn.se",
+          "url": "https://dn.se/direkt/2026-01-25/akesson-sd-besoker-israel-skont-att-vara-har",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "\u00c5kesson (SD) deltar vid konferens i Israel",
+          "source": "kvartal.se",
+          "url": "https://kvartal.se/nyheter/artiklar/akesson-sd-deltar-vid-konferens-i-israel/cG9zdDo1MjY1MA",
+          "date": "2026-01-26"
+        }
+      ],
+      "representative_urls": [
+        "https://jpost.com/international/article-884931",
+        "https://expressen.se/nyheter/politik/jimmie-akesson-hyllas-i-israel-och-far-kritik"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Riksbank keeps interest rate unchanged at 1.75%, signals pause ahead",
+      "summary": "Sweden's central bank left its policy rate unchanged at 1.75% and signaled rates will remain at this level 'for some time to come.' The bank cited increased uncertainty while noting the economy continues to grow and inflation remains near the 2% target.",
       "actors_involved": [
         "Riksbank"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 10,
+      "source_count": 9,
       "sources": [
+        "global.morningstar.com",
         "riksbank.se",
         "reuters.com",
-        "svt.se",
         "centralbanking.com",
-        "expressen.se",
+        "svt.se",
         "devdiscourse.com",
-        "global.morningstar.com",
-        "globenewswire.com",
+        "expressen.se",
         "aftonbladet.se",
         "cornucopia.se"
       ],
-      "date_range": "2026-01-27 to 2026-02-01",
+      "date_range": "2026-01-29 to 2026-02-01",
       "articles": [
+        {
+          "title": "Sweden's Riksbank Leaves Interest Rates Unchanged",
+          "source": "global.morningstar.com",
+          "url": "https://global.morningstar.com/en-nd/economy/swedens-riksbank-leaves-interest-rates-unchanged",
+          "date": "2026-01-29"
+        },
         {
           "title": "Monetary policy decision: Policy rate unchanged at 1.75 per cent",
           "source": "riksbank.se",
@@ -133,21 +352,15 @@
           "date": "2026-01-29"
         },
         {
-          "title": "Riksbanken l\u00e4mnar r\u00e4ntan of\u00f6r\u00e4ndrad \u2013 men os\u00e4kerheten \u00f6kar",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/ekonomi/riksbanken-lamnar-rantan-oforandrad-l09f4k",
-          "date": "2026-01-29"
-        },
-        {
           "title": "Sveriges Riksbank holds rates, signals longer-term pause",
           "source": "centralbanking.com",
           "url": "https://centralbanking.com/central-banks/monetary-policy/monetary-policy-decisions/7974912/sveriges-riksbank-holds-rates-signals-longer-term-pause",
           "date": "2026-01-29"
         },
         {
-          "title": "Nytt r\u00e4ntebesked fr\u00e5n Riksbanken",
-          "source": "expressen.se",
-          "url": "https://www.expressen.se/ekonomi/riksbankens-nya-rantebesked/",
+          "title": "Riksbanken l\u00e4mnar r\u00e4ntan of\u00f6r\u00e4ndrad \u2013 men os\u00e4kerheten \u00f6kar",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/ekonomi/riksbanken-lamnar-rantan-oforandrad-l09f4k",
           "date": "2026-01-29"
         },
         {
@@ -157,16 +370,10 @@
           "date": "2026-01-29"
         },
         {
-          "title": "Sweden's Riksbank Leaves Interest Rates Unchanged",
-          "source": "global.morningstar.com",
-          "url": "https://global.morningstar.com/en-nd/economy/swedens-riksbank-leaves-interest-rates-unchanged",
+          "title": "Nytt r\u00e4ntebesked fr\u00e5n Riksbanken",
+          "source": "expressen.se",
+          "url": "https://www.expressen.se/ekonomi/riksbankens-nya-rantebesked/",
           "date": "2026-01-29"
-        },
-        {
-          "title": "CONDITIONS FOR SALE OF RIKSBANK CERTIFICATES",
-          "source": "globenewswire.com",
-          "url": "https://globenewswire.com/news-release/2026/01/27/3226109/0/en/CONDITIONS-FOR-SALE-OF-RIKSBANK-CERTIFICATES.html",
-          "date": "2026-01-27"
         },
         {
           "title": "H\u00e4r f\u00e5r du h\u00f6g sparr\u00e4nta i februari \u2013 vi guidar",
@@ -175,10 +382,10 @@
           "date": "2026-02-01"
         },
         {
-          "title": "Svagt veckoavslut p\u00e5 Asienb\u00f6rserna - Riksbanken l\u00e4mnar r\u00e4ntan och r\u00e4ntebananen or\u00f6rd",
-          "source": "cornucopia.se",
-          "url": "https://cornucopia.se/2026/01/svag-veckoavslut-pa-asienborserna-riksbanken-lamnar-rantan-och-rantebananen-orord-monopolisten-hemnet-anmaler-konkurrensen-till-konkurrensverket-konjunkturuppgangen-pausar/",
-          "date": "2026-01-30"
+          "title": "Penningpolitiskt beslut: Styrr\u00e4ntan of\u00f6r\u00e4ndrad p\u00e5 1,75 procent",
+          "source": "riksbank.se",
+          "url": "https://www.riksbank.se/sv/press-och-publicerat/nyheter-och-pressmeddelanden/pressmeddelanden/2026/styrrantan-oforandrad-pa-175-procent/",
+          "date": "2026-01-29"
         }
       ],
       "representative_urls": [
@@ -187,25 +394,23 @@
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Wallenberg family advances generational succession with new board appointments",
-      "summary": "The Wallenberg family continues positioning the sixth generation for leadership roles, with Martina Wallenberg proposed for SEB's board and other family members taking positions across their business empire.",
+      "story_id": 7,
+      "headline": "Wallenberg family advances sixth generation succession with Martina Wallenberg to SEB board",
+      "summary": "The Wallenberg family's nomination committee proposed electing Martina Wallenberg to SEB's board of directors, continuing the transition of the sixth generation into key positions. Other family members have also taken board roles across the business empire in recent months.",
       "actors_involved": [
         "Wallenberg family"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 10,
+      "source_count": 8,
       "sources": [
         "svd.se",
         "bloomberg.com",
-        "marketscreener.com",
-        "dagensps.se",
-        "financialpost.com",
-        "hbl.fi",
         "placera.se",
+        "hbl.fi",
         "efn.se",
-        "borlangetidning.se",
-        "di.se"
+        "di.se",
+        "finanswatch.se",
+        "marketscreener.com"
       ],
       "date_range": "2026-01-27 to 2026-02-01",
       "articles": [
@@ -216,34 +421,16 @@
           "date": "2026-02-01"
         },
         {
+          "title": "Sweden's Wallenberg Family Prepares for Succession",
+          "source": "bloomberg.com",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-01-30/sweden-s-wallenberg-family-prepares-for-succession",
+          "date": "2026-01-30"
+        },
+        {
           "title": "Sweden's Powerful Wallenberg Family is Readying for Handover",
           "source": "bloomberg.com",
           "url": "https://www.bloomberg.com/news/features/2026-01-30/sweden-s-powerful-wallenberg-family-is-readying-for-handover",
           "date": "2026-01-30"
-        },
-        {
-          "title": "SEB's Nomination Committee's proposal to the Annual General Meeting 2026",
-          "source": "marketscreener.com",
-          "url": "https://www.marketscreener.com/news/seb-s-nomination-committee-s-proposal-to-the-annual-general-meeting-2026-ce7e5bd8df8ff126",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "\u00c4nnu en Wallenberg kliver fram fr\u00e5n nya generationen",
-          "source": "dagensps.se",
-          "url": "https://www.dagensps.se/bors-finans/annu-en-wallenberg-kliver-fram-fran-nya-generationen/",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "The Succession Drama About to Hit a $40 Billion Swedish Empire",
-          "source": "financialpost.com",
-          "url": "https://financialpost.com/pmn/business-pmn/the-succession-drama-about-to-hit-a-40-billion-swedish-empire",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Sj\u00e4tte generationen tar st\u00f6rre roll i Wallenbergsf\u00e4ren",
-          "source": "hbl.fi",
-          "url": "https://www.hbl.fi/2026-01-29/sjatte-generationen-tar-storre-roll-i-wallenbergsfaren/",
-          "date": "2026-01-29"
         },
         {
           "title": "MARTINA WALLENBERG F\u00d6RESL\u00c5S TILL STYRELSEN (NY)",
@@ -252,336 +439,51 @@
           "date": "2026-01-27"
         },
         {
+          "title": "Sj\u00e4tte generationen tar st\u00f6rre roll i Wallenbergsf\u00e4ren",
+          "source": "hbl.fi",
+          "url": "https://www.hbl.fi/2026-01-29/sjatte-generationen-tar-storre-roll-i-wallenbergsfaren/",
+          "date": "2026-01-29"
+        },
+        {
           "title": "Martina Wallenberg p\u00e5 v\u00e4g in i SEB:s styrelse",
           "source": "efn.se",
           "url": "https://efn.se/martina-wallenberg-pa-vag-in-i-sebs-styrelse",
           "date": "2026-01-27"
         },
         {
-          "title": "Det \u00e4r en pangnyhet att Wallenberg nu vill g\u00f6ra krut av dalaskogen",
-          "source": "borlangetidning.se",
-          "url": "https://www.borlangetidning.se/2026-01-29/det-ar-en-pangnyhet-att-wallenberg-nu-vill-gora-krut-av-dalaskogen/",
-          "date": "2026-01-29"
-        },
-        {
           "title": "Martina Wallenberg f\u00f6resl\u00e5s ta plats i SEB:s styrelse",
           "source": "di.se",
           "url": "https://www.di.se/live/martina-wallenberg-foreslas-till-seb-s-styrelse/",
           "date": "2026-01-27"
+        },
+        {
+          "title": "SEB Proposes Election of Martina Wallenberg to the Board",
+          "source": "marketscreener.com",
+          "url": "https://www.marketscreener.com/news/seb-proposes-election-of-martina-wallenberg-to-the-board-ce7e5bd9d889f121",
+          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
         "https://www.bloomberg.com/news/features/2026-01-30/sweden-s-powerful-wallenberg-family-is-readying-for-handover",
-        "https://www.svd.se/a/JOEq6P/familjebankens-skifte-blir-historiskt"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "\u00c5kesson addresses antisemitism conference in Jerusalem, proposes Swedish terror list",
-      "summary": "SD leader Jimmie \u00c5kesson spoke at an international antisemitism conference in Jerusalem, proposing that Sweden create its own terror designation list including IRGC and Muslim Brotherhood, citing EU weakness on the issue.",
-      "actors_involved": [
-        "Jimmie \u00c5kesson"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 6,
-      "sources": [
-        "jpost.com",
-        "aftonbladet.se",
-        "omni.se",
-        "expressen.se",
-        "kvartal.se",
-        "dn.se"
-      ],
-      "date_range": "2026-01-25 to 2026-01-28",
-      "articles": [
-        {
-          "title": "\u00c5kesson pledges IRGC, Muslim Brotherhood terror designation",
-          "source": "jpost.com",
-          "url": "https://jpost.com/international/article-884931",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Att Jimmie \u00c5kesson bjuds in av Netanyahu s\u00e4ger allt om Israels regering",
-          "source": "aftonbladet.se",
-          "url": "https://aftonbladet.se/ledare/a/Bx3x4Q/att-jimmie-akesson-bjuds-in-av-netanyahu-sager-allt-om-israels-regering",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "\u00c5kesson i Jerusalem: \"Vill se svensk terrorlista\"",
-          "source": "omni.se",
-          "url": "https://omni.se/akesson-i-jerusalem-vill-se-svensk-terrorlista/a/wr83jA",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Jimmie \u00c5kesson h\u00e5ller tal i Israel om antisemitism",
-          "source": "aftonbladet.se",
-          "url": "https://aftonbladet.se/nyheter/a/GxQr0V/akesson-haller-tal-i-israel-om-antisemitism",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "\u00c5kesson (SD) deltar vid konferens i Israel",
-          "source": "kvartal.se",
-          "url": "https://kvartal.se/nyheter/artiklar/akesson-sd-deltar-vid-konferens-i-israel/cG9zdDo1MjY1MA",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "\u00c5kesson (SD) bes\u00f6ker Israel: \"Sk\u00f6nt att vara h\u00e4r\"",
-          "source": "dn.se",
-          "url": "https://dn.se/direkt/2026-01-25/akesson-sd-besoker-israel-skont-att-vara-har",
-          "date": "2026-01-25"
-        }
-      ],
-      "representative_urls": [
-        "https://jpost.com/international/article-884931",
-        "https://aftonbladet.se/nyheter/a/GxQr0V/akesson-haller-tal-i-israel-om-antisemitism"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Kristersson launches 'Ring statsministern' podcast for direct voter contact",
-      "summary": "Prime Minister Ulf Kristersson launched a weekly podcast where members of the public can call in with questions. The format aims to create direct dialogue between the PM and citizens ahead of the September election.",
-      "actors_involved": [
-        "Ulf Kristersson"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 5,
-      "sources": [
-        "aftonbladet.se",
-        "arbetet.se",
-        "via.tt.se",
-        "resume.se",
-        "kvartal.se"
-      ],
-      "date_range": "2026-01-30 to 2026-01-30",
-      "articles": [
-        {
-          "title": "Ulf Kristersson startar podcast",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1440577",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Kristersson har roligare saker f\u00f6r sig \u00e4n att vara statsminister",
-          "source": "arbetet.se",
-          "url": "https://arbetet.se/2026/01/30/ulf-kristersson-startar-podd-nar-varlden-brinner/",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Ulf Kristersson (M) startar podden \"Ring statsministern\"",
-          "source": "via.tt.se",
-          "url": "https://via.tt.se/pressmeddelande/4230297/ulf-kristersson-m-startar-podden-ring-statsministern?publisherId=3235744&lang=sv",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Kristersson startar podd \u2013 nu kan du ringa statsministern",
-          "source": "resume.se",
-          "url": "https://www.resume.se/kommunikation/media/kristersson-startar-podd-nu-kan-du-ringa-statsministern/",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Ulf Kristersson startar podd",
-          "source": "kvartal.se",
-          "url": "https://kvartal.se/nyheter/artiklar/ulf-kristersson-startar-podcast/cG9zdDo1NDk5Mw",
-          "date": "2026-01-30"
-        }
-      ],
-      "representative_urls": [
-        "https://www.resume.se/kommunikation/media/kristersson-startar-podd-nu-kan-du-ringa-statsministern/",
-        "https://via.tt.se/pressmeddelande/4230297/ulf-kristersson-m-startar-podden-ring-statsministern?publisherId=3235744&lang=sv"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Kristersson establishes ministerial council to combat violence against women",
-      "summary": "Prime Minister Kristersson announced creation of a 'kvinnofrid' (women's peace) council to coordinate efforts against male violence toward women. The council will be led by Kristersson and include four other ministers.",
-      "actors_involved": [
-        "Ulf Kristersson"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "newkerala.com",
-        "sydsvenskan.se",
-        "aftonbladet.se",
-        "svt.se",
-        "sverigesradio.se"
-      ],
-      "date_range": "2026-01-28 to 2026-01-29",
-      "articles": [
-        {
-          "title": "Sweden Launches Program to Curb Violence Against Women",
-          "source": "newkerala.com",
-          "url": "https://newkerala.com/news/a/sweden-launches-new-program-curb-violence-against-women-833.htm",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Kristersson inr\u00e4ttar r\u00e5d f\u00f6r kvinnofrid",
-          "source": "sydsvenskan.se",
-          "url": "https://sydsvenskan.se/sverige/kristersson-inrattar-rad-for-kvinnofrid",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kristersson om v\u00e5ldet: G\u00f6rs f\u00f6r lite",
-          "source": "aftonbladet.se",
-          "url": "https://aftonbladet.se/nyheter/a/JOE7Xj/kristersson-om-valdet-gors-for-lite",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Regeringen presenterar \u00e5tg\u00e4rder om m\u00e4ns v\u00e5ld mot kvinnor",
-          "source": "svt.se",
-          "url": "https://svt.se/nyheter/inrikes/regeringen-presenterar-atgarder-om-mans-vald-mot-kvinnor",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Statsministern leder r\u00e5det f\u00f6r kvinnofrid: \"Ett stort samh\u00e4llsproblem\"",
-          "source": "sverigesradio.se",
-          "url": "https://sverigesradio.se/artikel/statsministern-leder-radet-for-kvinnofrid-ett-stort-samhallsproblem",
-          "date": "2026-01-28"
-        }
-      ],
-      "representative_urls": [
-        "https://newkerala.com/news/a/sweden-launches-new-program-curb-violence-against-women-833.htm",
-        "https://svt.se/nyheter/inrikes/regeringen-presenterar-atgarder-om-mans-vald-mot-kvinnor"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Defense expansion and personnel challenges across Swedish Armed Forces",
-      "summary": "Multiple reports highlight issues with Sweden's military expansion including personnel quality concerns, winter equipment shortages, security breaches at FMV, and infrastructure development needs across various military facilities.",
-      "actors_involved": [
-        "Swedish Armed Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 8,
-      "sources": [
-        "dn.se",
-        "svt.se",
-        "tidningenangermanland.se",
-        "tv4.se",
-        "hbl.fi",
-        "fmv.se",
-        "dagen.se",
-        "altinget.se"
-      ],
-      "date_range": "2026-01-26 to 2026-02-01",
-      "articles": [
-        {
-          "title": "Larmet inifr\u00e5n F\u00f6rsvarsmakten: Risk f\u00f6r ol\u00e4mpliga officerare",
-          "source": "dn.se",
-          "url": "https://www.dn.se/sverige/larmet-inifran-forsvarsmakten-risk-for-olampliga-officerare/",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "N\u00e4rmare 100 miljoner \u2013 s\u00e5 kan F\u00f6rsvarsmakten v\u00e4xa i H\u00e4rn\u00f6sand",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/lokalt/vasternorrland/narmare-100-miljoner-sa-kan-forsvarsmakten-vaxa-i-harnosand",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Karta: Omr\u00e5det pekas ut av F\u00f6rsvarsmakten",
-          "source": "tidningenangermanland.se",
-          "url": "https://www.tidningenangermanland.se/2026-01-29/se-kartan-omradet-som-pekas-ut-av-forsvarsmakten/",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Allvarliga s\u00e4kerhetsbrister p\u00e5 FMV",
-          "source": "tv4.se",
-          "url": "https://tv4.se/artikel/1ZBku7RClEVTmhZz3raHUk/allvarliga-saekerhetsbrister-pa-fmv-anstaellda-uppmanas-bryta-mot-lagen",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Nu b\u00f6rjar bev\u00e4ringarna \u00f6va med infanteriminor",
-          "source": "hbl.fi",
-          "url": "https://hbl.fi/2026-01-28/nu-borjar-bevaringarna-ova-med-infanteriminor",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Tre m\u00e5nader fr\u00e5n kontrakt till leverans",
-          "source": "fmv.se",
-          "url": "https://fmv.se/aktuellt--press/aktuella-handelser/tre-manader-fran-kontrakt-till-leverans",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Vad g\u00f6r kyrkorna om det blir krig i Sverige?",
-          "source": "dagen.se",
-          "url": "https://dagen.se/nyheter/vad-goer-kyrkorna-om-det-blir-krig-i-sverige/10158829",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Vattenpris till jurist som tagit PFAS-strid mot F\u00f6rsvarsmakten",
-          "source": "altinget.se",
-          "url": "https://www.altinget.se/miljo/namn/vattenpris-till-jurist-som-tagit-pfas-strid-mot-forsvarsmakten",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://www.dn.se/sverige/larmet-inifran-forsvarsmakten-risk-for-olampliga-officerare/",
-        "https://tv4.se/artikel/1ZBku7RClEVTmhZz3raHUk/allvarliga-saekerhetsbrister-pa-fmv-anstaellda-uppmanas-bryta-mot-lagen"
+        "https://www.di.se/live/martina-wallenberg-foreslas-till-seb-s-styrelse/"
       ]
     },
     {
       "story_id": 8,
-      "headline": "Kristersson opens review of prescription laws after TV profile case",
-      "summary": "Prime Minister Kristersson called for review of prescription laws after a TV profile avoided prosecution by staying abroad until charges expired. Kristersson called the situation 'deeply provocative' and discussed changes with Justice Minister.",
-      "actors_involved": [
-        "Ulf Kristersson"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "svt.se",
-        "aftonbladet.se",
-        "skd.se",
-        "gp.se"
-      ],
-      "date_range": "2026-01-26 to 2026-01-26",
-      "articles": [
-        {
-          "title": "Kristersson (M) vill se \u00f6ver preskriptionstiden efter tv-profilens flykt",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/inrikes/kristersson-m-vill-se-over-preskriptionstiden-efter-tv-profilens-flykt",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Ulf Kristersson efter Dermot Clemengers preskriberade sexk\u00f6p: Djupt provocerande",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/nojesbladet/a/gk0EL1/kristersson-djupt-provocerande",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Kristersson om n\u00f6jesprofilens flykt: Provocerande",
-          "source": "skd.se",
-          "url": "https://skd.se/2026-01-26/kristersson-om-nojesprofilens-flykt-provocerande",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Kristersson (M) om preskribtionsregler: Provocerande",
-          "source": "gp.se",
-          "url": "https://gp.se/nyheter/sverige/kristersson-djupt-provocerande.a702244a-88df-457a-b39a-af38c23f06bd",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://www.svt.se/nyheter/inrikes/kristersson-m-vill-se-over-preskriptionstiden-efter-tv-profilens-flykt",
-        "https://www.aftonbladet.se/nojesbladet/a/gk0EL1/kristersson-djupt-provocerande"
-      ]
-    },
-    {
-      "story_id": 9,
-      "headline": "Parliament speaker's expensive flight arrangements draw scrutiny",
-      "summary": "Riksdag speaker Andreas Norl\u00e9n's travel costs came under scrutiny, including 660,000 kronor for a Geneva trip and 1.5 million kronor for a cancelled US visit where a private plane was hired but the trip was called off.",
+      "headline": "Parliamentary speaker's cancelled and expensive travel costs Swedish Armed Forces millions",
+      "summary": "Parliamentary Speaker Andreas Norl\u00e9n's cancelled trip to the US cost the Armed Forces nearly 1.5 million kronor, and a separate Geneva trip cost 660,000 kronor when private jets were chartered instead of regular flights. The Armed Forces covers costs for state aviation.",
       "actors_involved": [
         "Swedish Armed Forces"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 3,
+      "source_count": 4,
       "sources": [
         "dn.se",
-        "sydsvenskan.se",
         "svd.se",
+        "sydsvenskan.se",
         "aftonbladet.se"
       ],
-      "date_range": "2026-01-26 to 2026-01-28",
+      "date_range": "2026-01-26 to 2026-01-27",
       "articles": [
         {
           "title": "Notan f\u00f6r talmannens inst\u00e4llda resa: 1,5 miljoner kronor",
@@ -590,16 +492,16 @@
           "date": "2026-01-27"
         },
         {
-          "title": "Talmannen tog privatflyg f\u00f6r 660 000",
-          "source": "sydsvenskan.se",
-          "url": "https://www.sydsvenskan.se/sverige/talmannen-tog-privatflyg-for-660-000",
-          "date": "2026-01-26"
-        },
-        {
           "title": "Talmannen Andreas Norl\u00e9ns inst\u00e4llda resa kostade 1,5 miljoner",
           "source": "svd.se",
           "url": "https://www.svd.se/a/XM6Mwx/talmannens-installda-resa-kostade-1-5-miljoner",
           "date": "2026-01-27"
+        },
+        {
+          "title": "Talmannen tog privatflyg f\u00f6r 660 000",
+          "source": "sydsvenskan.se",
+          "url": "https://www.sydsvenskan.se/sverige/talmannen-tog-privatflyg-for-660-000",
+          "date": "2026-01-26"
         },
         {
           "title": "Talmannen tog privatflyg f\u00f6r 660 000",
@@ -614,18 +516,53 @@
       ]
     },
     {
+      "story_id": 9,
+      "headline": "Defense Minister P\u00e5l Jonson visits H\u00e4rn\u00f6sand naval facilities for expansion briefing",
+      "summary": "Defense Minister P\u00e5l Jonson visited H\u00e4rn\u00f6sand to receive briefings on naval operations and testing activities in the region. The visit included discussions about Armed Forces growth and nearly 100 million kronor in planned harbor investments.",
+      "actors_involved": [
+        "P\u00e5l Jonson",
+        "Swedish Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
+      "sources": [
+        "sakerhetsvarlden.se",
+        "svt.se"
+      ],
+      "date_range": "2026-01-27 to 2026-01-27",
+      "articles": [
+        {
+          "title": "F\u00f6rsvarsminister bes\u00f6ker hamn och provverksamhet i H\u00e4rn\u00f6sand",
+          "source": "sakerhetsvarlden.se",
+          "url": "https://sakerhetsvarlden.se/forsvarsminister-besoker-hamn-och-provverksamhet-i-harnosand",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "N\u00e4rmare 100 miljoner \u2013 s\u00e5 kan F\u00f6rsvarsmakten v\u00e4xa i H\u00e4rn\u00f6sand",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/lokalt/vasternorrland/narmare-100-miljoner-sa-kan-forsvarsmakten-vaxa-i-harnosand",
+          "date": "2026-01-27"
+        }
+      ],
+      "representative_urls": [
+        "https://sakerhetsvarlden.se/forsvarsminister-besoker-hamn-och-provverksamhet-i-harnosand",
+        "https://www.svt.se/nyheter/lokalt/vasternorrland/narmare-100-miljoner-sa-kan-forsvarsmakten-vaxa-i-harnosand"
+      ]
+    },
+    {
       "story_id": 10,
-      "headline": "NATO chief warns Europe cannot defend itself without US support",
-      "summary": "NATO Secretary-General Mark Rutte told European Parliament that Europe would need to double defense spending to 5-10% of GDP to defend itself without US help, dismissing talk of a 'European pillar' as empty words.",
+      "headline": "NATO chief warns Europe cannot defend itself without US military support",
+      "summary": "NATO Secretary-General Mark Rutte told European Parliament that Europe is incapable of defending itself without US support and would need to more than double defense spending to 10% of GDP to do so. His comments came amid tensions over Trump's Greenland statements.",
       "actors_involved": [],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 5,
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
       "sources": [
         "nbcnews.com",
-        "telegraph.co.uk",
         "politico.eu",
         "nytimes.com",
-        "foxnews.com"
+        "foxnews.com",
+        "telegraph.co.uk",
+        "theguardian.com"
       ],
       "date_range": "2026-01-26 to 2026-01-29",
       "articles": [
@@ -634,12 +571,6 @@
           "source": "nbcnews.com",
           "url": "https://nbcnews.com/world/greenland/think-europe-can-defend-us-help-good-luck-says-nato-chief-rcna256083",
           "date": "2026-01-27"
-        },
-        {
-          "title": "An EU army can't protect Europe. Only Nato can",
-          "source": "telegraph.co.uk",
-          "url": "https://www.telegraph.co.uk/news/2026/01/29/an-eu-army-cant-protect-europe-only-nato-can/",
-          "date": "2026-01-29"
         },
         {
           "title": "Europe can't defend itself without the US, NATO's Rutte warns",
@@ -658,51 +589,29 @@
           "source": "foxnews.com",
           "url": "https://foxnews.com/politics/keep-dreaming-natos-rutte-says-europe-needs-us-defense",
           "date": "2026-01-27"
+        },
+        {
+          "title": "An EU army can't protect Europe. Only Nato can",
+          "source": "telegraph.co.uk",
+          "url": "https://www.telegraph.co.uk/news/2026/01/29/an-eu-army-cant-protect-europe-only-nato-can/",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Nato needs to be 'reimagined' with Europe showing more capabilities, says Marco Rubio",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/world/live/2026/jan/28/europe-defence-kallas-greenland-frederiksen-macron-ukraine-netherlands-latest-news-updates",
+          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
-        "https://politico.eu/article/europe-defense-nato-mark-rutte-us-politics-threats-gdp",
-        "https://nytimes.com/2026/01/26/world/europe/nato-chief-europe-greenland-trump-us.html"
+        "https://nbcnews.com/world/greenland/think-europe-can-defend-us-help-good-luck-says-nato-chief-rcna256083",
+        "https://politico.eu/article/europe-defense-nato-mark-rutte-us-politics-threats-gdp"
       ]
     },
     {
       "story_id": 11,
-      "headline": "Defense Minister P\u00e5l Jonson visits H\u00e4rn\u00f6sand naval facilities",
-      "summary": "Defense Minister P\u00e5l Jonson visited H\u00e4rn\u00f6sand harbor to assess naval operations and testing activities. The visit came as part of plans to expand military presence in the region with potential 100 million kronor investment.",
-      "actors_involved": [
-        "P\u00e5l Jonson",
-        "Swedish Armed Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 2,
-      "sources": [
-        "sakerhetsvarlden.se",
-        "corren.se"
-      ],
-      "date_range": "2026-01-27 to 2026-01-27",
-      "articles": [
-        {
-          "title": "F\u00f6rsvarsminister bes\u00f6ker hamn och provverksamhet i H\u00e4rn\u00f6sand",
-          "source": "sakerhetsvarlden.se",
-          "url": "https://sakerhetsvarlden.se/forsvarsminister-besoker-hamn-och-provverksamhet-i-harnosand",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "INS\u00c4NDARE: St\u00f6det till Ukraina f\u00e5r konsekvenser f\u00f6r v\u00e5rt eget f\u00f6rsvar",
-          "source": "corren.se",
-          "url": "https://corren.se/insandare/artikel/stodet-till-ukraina-far-konsekvenser-for-vart-eget-forsvar-/r044np0l",
-          "date": "2026-01-27"
-        }
-      ],
-      "representative_urls": [
-        "https://sakerhetsvarlden.se/forsvarsminister-besoker-hamn-och-provverksamhet-i-harnosand",
-        "https://corren.se/insandare/artikel/stodet-till-ukraina-far-konsekvenser-for-vart-eget-forsvar-/r044np0l"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "\u00c5kesson declares readiness to become Prime Minister",
-      "summary": "SD leader Jimmie \u00c5kesson confirmed in SVT's Agenda that he is prepared to become Prime Minister if the parliamentary situation allows, stating he must be ready to take that responsibility.",
+      "headline": "\u00c5kesson confirms readiness to become prime minister if situation allows",
+      "summary": "Sweden Democrats leader Jimmie \u00c5kesson confirmed in SVT's Agenda that he is prepared to become prime minister if a situation arose where he would be 'tolerated by the chamber for that role.' He emphasized being ready to take responsibility.",
       "actors_involved": [
         "Jimmie \u00c5kesson"
       ],
@@ -723,37 +632,189 @@
       "representative_urls": [
         "https://svt.se/nyheter/inrikes/akesson-sd-beredd-att-axla-rollen-som-statsminister"
       ]
+    },
+    {
+      "story_id": 12,
+      "headline": "Criticism of Kristersson's openness to European nuclear weapons program",
+      "summary": "Prime Minister Kristersson faced criticism from peace organizations and opposition politicians after opening for a European nuclear weapons program. Svenska Freds called it 'extremely dangerous' while Social Democrats' Andersson said there was nothing new in the statement.",
+      "actors_involved": [
+        "Kristersson",
+        "Magdalena Andersson"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 1,
+      "sources": [
+        "etc.se"
+      ],
+      "date_range": "2026-01-26 to 2026-01-26",
+      "articles": [
+        {
+          "title": "De rasar mot Kristerssons \u00f6ppning om k\u00e4rnvapen: \"Oerh\u00f6rt farligt\"",
+          "source": "etc.se",
+          "url": "https://etc.se/inrikes/rasar-mot-kristerssons-oeppning-om-kaernvapen-oerhoert-farligt",
+          "date": "2026-01-26"
+        }
+      ],
+      "representative_urls": [
+        "https://etc.se/inrikes/rasar-mot-kristerssons-oeppning-om-kaernvapen-oerhoert-farligt"
+      ]
+    },
+    {
+      "story_id": 13,
+      "headline": "Armed Forces faces recruitment and security challenges amid rapid expansion",
+      "summary": "Multiple reports highlight concerns about Armed Forces expansion including risks of hiring unsuitable officers, security breaches at defense agencies, and various operational challenges as the military grows rapidly to meet 2035 targets.",
+      "actors_involved": [
+        "Swedish Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 7,
+      "sources": [
+        "dn.se",
+        "tv4.se",
+        "fmv.se",
+        "gp.se",
+        "tidningenangermanland.se",
+        "hbl.fi",
+        "barometern.se"
+      ],
+      "date_range": "2026-01-26 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Larmet inifr\u00e5n F\u00f6rsvarsmakten: Risk f\u00f6r ol\u00e4mpliga officerare",
+          "source": "dn.se",
+          "url": "https://www.dn.se/sverige/larmet-inifran-forsvarsmakten-risk-for-olampliga-officerare/",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Allvarliga s\u00e4kerhetsbrister p\u00e5 FMV",
+          "source": "tv4.se",
+          "url": "https://tv4.se/artikel/1ZBku7RClEVTmhZz3raHUk/allvarliga-saekerhetsbrister-pa-fmv-anstaellda-uppmanas-bryta-mot-lagen",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Tre m\u00e5nader fr\u00e5n kontrakt till leverans",
+          "source": "fmv.se",
+          "url": "https://fmv.se/aktuellt--press/aktuella-handelser/tre-manader-fran-kontrakt-till-leverans",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "F\u00f6rsvarsmaktens oro: Socka kan f\u00e4lla Sverige i krig",
+          "source": "gp.se",
+          "url": "https://www.gp.se/nyheter/sverige/forsvarsmaktens-oro-socka-kan-falla-sverige-i-krig.00c3d97f-0dba-4f1e-88fd-1f55bdec8e07",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Karta: Omr\u00e5det pekas ut av F\u00f6rsvarsmakten",
+          "source": "tidningenangermanland.se",
+          "url": "https://www.tidningenangermanland.se/2026-01-29/se-kartan-omradet-som-pekas-ut-av-forsvarsmakten/",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Nu b\u00f6rjar bev\u00e4ringarna \u00f6va med infanteriminor",
+          "source": "hbl.fi",
+          "url": "https://hbl.fi/2026-01-28/nu-borjar-bevaringarna-ova-med-infanteriminor",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "F\u00f6rsvarets akuta behov \u2013 vill locka lokala f\u00f6retag",
+          "source": "barometern.se",
+          "url": "https://barometern.se/affarsliv/forsvarets-akuta-behov-vill-locka-lokala-foretag",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://www.dn.se/sverige/larmet-inifran-forsvarsmakten-risk-for-olampliga-officerare/",
+        "https://tv4.se/artikel/1ZBku7RClEVTmhZz3raHUk/allvarliga-saekerhetsbrister-pa-fmv-anstaellda-uppmanas-bryta-mot-lagen"
+      ]
+    },
+    {
+      "story_id": 14,
+      "headline": "Katja Nyberg leaves Sweden Democrats but remains in parliament",
+      "summary": "Former police officer and Sweden Democrats member Katja Nyberg announced her departure from the party while maintaining her parliamentary seat. The move follows controversies and could cost the party around 3.3 million kronor in party support.",
+      "actors_involved": [
+        "Jimmie \u00c5kesson"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
+      "sources": [
+        "epochtimes.se",
+        "omni.se"
+      ],
+      "date_range": "2026-01-29 to 2026-01-31",
+      "articles": [
+        {
+          "title": "Katja Nyberg l\u00e4mnar Sverigedemokraterna \u2013 sitter kvar i riksdagen",
+          "source": "epochtimes.se",
+          "url": "https://www.epochtimes.se/katja-nyberg-jag-lamnar-sverigedemokraterna",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Nyberg kan inte petas fr\u00e5n riksdagen \u2013 \u00e4ven om hon d\u00f6ms",
+          "source": "omni.se",
+          "url": "https://omni.se/nyberg-kan-inte-petas-fran-riksdagen-aven-om-hon-doms/a/7p5J69",
+          "date": "2026-01-31"
+        }
+      ],
+      "representative_urls": [
+        "https://www.epochtimes.se/katja-nyberg-jag-lamnar-sverigedemokraterna",
+        "https://omni.se/nyberg-kan-inte-petas-fran-riksdagen-aven-om-hon-doms/a/7p5J69"
+      ]
+    },
+    {
+      "story_id": 15,
+      "headline": "Center Party approaches parliamentary threshold in new poll",
+      "summary": "A new Aftonbladet/Demoskop poll shows the Center Party dropping toward the 4% parliamentary threshold while the Moderates gain ground. The gap between political blocks is narrowing ahead of the September election.",
+      "actors_involved": [
+        "Moderate Party"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
+      "sources": [
+        "aftonbladet.se"
+      ],
+      "date_range": "2026-01-29 to 2026-01-29",
+      "articles": [
+        {
+          "title": "Tapp f\u00f6r C i Aftonbladet/Demoskop \u2013 n\u00e4rmar sig sp\u00e4rren",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/d4mLmX/tapp-for-c-i-aftonbladet-demoskop-narmar-sig-sparren",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://www.aftonbladet.se/nyheter/a/d4mLmX/tapp-for-c-i-aftonbladet-demoskop-narmar-sig-sparren"
+      ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Sweden reverses climate policy from pioneer to economics focus",
+      "headline": "Tourists arrested at parliament for flying drone over government buildings",
+      "source": "aftonbladet.se",
+      "url": "https://aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1441231",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Sweden's climate policy reversal from pioneer to economics-focused approach",
       "source": "blackout-news.de",
       "url": "https://blackout-news.de/en/news/sweden-reverses-course-in-climate-policy-from-pioneer-back-to-economics/",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Criticism against Kristersson from within government coalition",
-      "source": "svt.se",
-      "url": "https://svt.se/nyheter/inrikes/kritiken-mot-kristersson-ar-uppseendevackande",
+      "headline": "Leadership speculation around \u00c5kesson after various controversies",
+      "source": "svd.se",
+      "url": "https://svd.se/a/d4mbO1/jimmie-akessons-mardrommar-hela-tido-borde-vara-skrackslagna",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Kristersson opens for European nuclear weapons program",
-      "source": "etc.se",
-      "url": "https://etc.se/inrikes/rasar-mot-kristerssons-oeppning-om-kaernvapen-oerhoert-farligt",
-      "signal_category_hint": "security_defense"
-    },
-    {
-      "headline": "Katja Nyberg leaves Sweden Democrats but stays in parliament",
-      "source": "epochtimes.se",
-      "url": "https://www.epochtimes.se/katja-nyberg-jag-lamnar-sverigedemokraterna",
+      "headline": "Commentary questioning \u00c5kesson's judgment regarding Nyberg case",
+      "source": "dagensarena.se",
+      "url": "https://dagensarena.se/opinion/varfor-ringde-inga-varningsklockor-akesson",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Tourists arrested for flying drone over parliament and foreign ministry",
-      "source": "aftonbladet.se",
-      "url": "https://aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1441231",
+      "headline": "Wallenberg family considers gunpowder production from Dalarna forests",
+      "source": "borlangetidning.se",
+      "url": "https://www.borlangetidning.se/2026-01-29/det-ar-en-pangnyhet-att-wallenberg-nu-vill-gora-krut-av-dalaskogen/",
       "signal_category_hint": "security_defense"
     }
   ]

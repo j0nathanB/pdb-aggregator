@@ -3,22 +3,112 @@
   "code": "fi",
   "week": "2026-02-01",
   "analysis_date": "2026-02-01",
-  "search_results_total": 168,
+  "search_results_total": 177,
   "stories_identified": 12,
-  "off_topic_filtered": 23,
-  "noise_summary": "23 off-topic results filtered: 8 entertainment/TV content (Hildur series reviews, celebrity news), 7 sports references, 4 weather reports, 2 obituaries of non-political figures, 2 lifestyle/travel articles.",
+  "off_topic_filtered": 28,
+  "noise_summary": "28 off-topic results filtered: 8 entertainment/TV (Hildur series, comedy shows), 6 sports/basketball, 4 Hungarian celebrity deaths, 3 Polish crime stories, 2 business/retail, 2 weather reports, 2 general lifestyle, 1 quiz/trivia.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "PM Orpo's China visit draws domestic criticism over strategic alignment",
-      "summary": "Prime Minister Petteri Orpo visited Beijing January 25-29, meeting President Xi Jinping and signing trade agreements. Finns Party's Jani M\u00e4kel\u00e4 criticized the meetings as 'problematic' while Orpo defended the visit and urged China not to support Russia's war.",
+      "headline": "SDP harassment scandal engulfs opposition party leadership",
+      "summary": "SDP parliamentary group chair Tytti Tuppurainen faces allegations of inappropriate behavior toward staff and MPs. Multiple SDP members accused of harassment, party orders external investigation by Ty\u00f6terveyslaitos while internal divisions emerge.",
       "actors_involved": [
-        "Petteri Orpo",
-        "Kokoomus",
+        "SDP"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 34,
+      "sources": [
+        "yle.fi",
+        "iltalehti.fi",
+        "is.fi",
+        "hs.fi",
+        "sss.fi",
+        "mtvuutiset.fi",
+        "savonsanomat.fi",
+        "kouvolansanomat.fi",
+        "esaimaa.fi",
+        "satakunnankansa.fi",
+        "hbl.fi",
+        "sttinfo.fi"
+      ],
+      "date_range": "2026-01-25 to 2026-02-01",
+      "articles": [
+        {
+          "title": "STT: Tytti Tuppuraisen kerrotaan k\u00e4ytt\u00e4ytyneen toistuvasti ep\u00e4asiallisesti",
+          "source": "iltalehti.fi",
+          "url": "https://iltalehti.fi/politiikka/a/73d71eef-c5b8-46b2-964c-db7a45867c8a",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Sdp:n ty\u00f6ntekij\u00f6ilt\u00e4 poikkeuksellinen ulostulo",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011780150.html",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Sdp:n h\u00e4irint\u00e4selvityksen tekij\u00e4 selvisi",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011785272.html",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "SDP:n kansanedustaja kertoo h\u00e4neen kohdistuneesta painostuksesta",
+          "source": "mtvuutiset.fi",
+          "url": "https://mtvuutiset.fi/artikkeli/sdp-n-kansanedustaja-astuu-esiin-kertoo-painostuksesta-mentiin-henkilokohtaisuuksiin/9289312",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Tuppurainen ei siirry syrj\u00e4\u00e4n, harkitsee oikeustoimia STT:n jutun v\u00e4itteiden takia",
+          "source": "hs.fi",
+          "url": "https://hs.fi/politiikka/art-2000011779064.html",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "SDP:n varapuheenjohtaja Nasima Razmyar ei ilmaise tukeaan Tuppuraiselle",
+          "source": "savonsanomat.fi",
+          "url": "https://www.savonsanomat.fi/uutissuomalainen/9176963",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Sdp:n h\u00e4irint\u00e4kohu | Kansanedustaja Pia Hiltunen kertoo Tuppuraisen kohdelleen h\u00e4nt\u00e4 asiattomasti",
+          "source": "hs.fi",
+          "url": "https://hs.fi/politiikka/art-2000011780058.html",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Krista Kiuru kommentoi SDP:n h\u00e4irint\u00e4kohua",
+          "source": "is.fi",
+          "url": "https://is.fi/politiikka/art-2000011783020.html",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kommentti: SDP:n sis\u00e4piiriss\u00e4 kuohuu",
+          "source": "iltalehti.fi",
+          "url": "https://iltalehti.fi/politiikka/a/dc5c5784-2a9f-450c-877d-0e260f5b5dd3",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "SDP:n kansanedustaja kertoo Tuppuraisen rajuista sanoista",
+          "source": "iltalehti.fi",
+          "url": "https://iltalehti.fi/politiikka/a/f6a2bdc9-da05-4907-a4d7-40161a7ee43c",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://iltalehti.fi/politiikka/a/73d71eef-c5b8-46b2-964c-db7a45867c8a",
+        "https://hs.fi/politiikka/art-2000011780058.html"
+      ]
+    },
+    {
+      "story_id": 2,
+      "headline": "PM Orpo's Beijing visit draws coalition partner criticism",
+      "summary": "Prime Minister Petteri Orpo met Chinese President Xi Jinping and secured 11 trade agreements during visit to Beijing. Finns Party's Jani M\u00e4kel\u00e4 criticized meetings with Chinese leadership as 'problematic' while Orpo defended raising Ukraine concerns.",
+      "actors_involved": [
+        "Orpo",
         "Finns Party"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 18,
+      "source_count": 11,
       "sources": [
         "yle.fi",
         "iltalehti.fi",
@@ -41,51 +131,27 @@
           "date": "2026-01-25"
         },
         {
-          "title": "Orpolta painokas vastaus Jani M\u00e4kel\u00e4lle \u2013 p\u00e4\u00e4ministeri kertoi Xin ja Kiinan lupauksesta",
+          "title": "Orpolta painokas vastaus Jani M\u00e4kel\u00e4lle",
           "source": "is.fi",
           "url": "https://www.is.fi/politiikka/art-2000011770799.html",
           "date": "2026-01-25"
         },
         {
-          "title": "Asiantuntija varoittaa Orpoa \u2013 T\u00e4llaisia piiloehtoja Kiinalla on",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/ulkomaat/a/43796967-f2bb-420b-acb4-dbf2dc39ba28",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Orpo Kiinassa | Jani M\u00e4kel\u00e4 pit\u00e4\u00e4 tapaamisia Kiinan johdon kanssa \"ongelmallisina\"",
+          "title": "Orpo Kiinassa | Jani M\u00e4kel\u00e4 pit\u00e4\u00e4 tapaamisia Kiinan johdon kanssa ongelmallisina",
           "source": "hs.fi",
           "url": "https://hs.fi/politiikka/art-2000011775764.html",
           "date": "2026-01-27"
         },
         {
-          "title": "Petteri Orpo jyr\u00e4hti Jani M\u00e4kel\u00e4lle Ylell\u00e4: \"Jos h\u00e4n on eri mielt\u00e4...\"",
+          "title": "Petteri Orpo jyr\u00e4hti Jani M\u00e4kel\u00e4lle Ylell\u00e4",
           "source": "iltalehti.fi",
           "url": "https://iltalehti.fi/politiikka/a/d1169834-d815-4129-bf6e-9d22d6fc8253",
           "date": "2026-01-31"
         },
         {
-          "title": "Kiina yll\u00e4tti Suomen \u2013 P\u00e4\u00e4ministeri Orpo paljastaa nyt, mit\u00e4 tapahtuu",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/ulkomaat/a/2ccbe5e1-c1cc-4e60-ae5a-880b97b4ac0a",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Prime Minister Orpo in Beijing: \"China's support for peace in Ukraine is important\"",
+          "title": "Prime Minister Orpo in Beijing: China's support for peace in Ukraine is important",
           "source": "valtioneuvosto.fi",
           "url": "https://valtioneuvosto.fi/en/-/prime-minister-orpo-in-beijing-china-s-support-for-peace-in-ukraine-is-important-",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Orpo Pekingiss\u00e4 | Orpo saapui Kiinaan etsim\u00e4\u00e4n samaa kuin koko muu maailma",
-          "source": "hs.fi",
-          "url": "https://hs.fi/kirjeenvaihtajat/art-2000011760595.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Orpo mokasi Kiinassa: \"Olen t\u00e4\u00e4ll\u00e4 valtiovierailulla\"",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/ulkomaat/a/41c52ce4-beac-44e4-92fb-bf5248b76178",
           "date": "2026-01-27"
         },
         {
@@ -93,48 +159,6 @@
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20206454",
           "date": "2026-01-27"
-        },
-        {
-          "title": "Ehdotus Ven\u00e4j\u00e4lt\u00e4: Orpo ja Putin voisivat tavata",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/ulkomaat/a/b073dad7-0d4e-4da9-a337-dbc4874b4543",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Orpo kommentoi Sdp:n h\u00e4irint\u00e4kohua Ylen Ykk\u00f6saamussa",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011786101.html",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Eduskunta | Orpo Ylelle: H\u00e4irint\u00e4tapaukset pit\u00e4\u00e4 selvitt\u00e4\u00e4",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011786059.html",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "P\u00e4\u00e4ministeri Orpo: Kaikki puolueet yhdess\u00e4 pohtimaan sotea, eduskunnan h\u00e4irint\u00e4jupakka pit\u00e4\u00e4 selvitt\u00e4\u00e4",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20207570",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "P\u00e4\u00e4ministeri Orpo avasi suunsa h\u00e4irint\u00e4kohusta Ylell\u00e4",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/fbd276b6-466c-4193-bb8b-c8e42be0fbb7",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Orpo Ylell\u00e4: Yksik\u00e4\u00e4n puolue tuskin on vapaa h\u00e4irinn\u00e4st\u00e4",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/01/orpo-ylella-yksikaan-puolue-tuskin-on-vapaa-hairinnasta",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Finland looks to end \"uncontrolled human experiment\" with Australia-style ban on social media",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20207494",
-          "date": "2026-01-31"
         }
       ],
       "representative_urls": [
@@ -143,255 +167,20 @@
       ]
     },
     {
-      "story_id": 2,
-      "headline": "SDP harassment scandal rocks opposition party leadership",
-      "summary": "Multiple allegations emerged of inappropriate behavior by SDP parliamentary group chair Tytti Tuppurainen and other MPs toward staff. The party denied the claims and announced an external investigation by the occupational health institute, while internal divisions surfaced.",
-      "actors_involved": [
-        "SDP"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 34,
-      "sources": [
-        "is.fi",
-        "yle.fi",
-        "iltalehti.fi",
-        "hs.fi",
-        "mtvuutiset.fi",
-        "sss.fi",
-        "hbl.fi",
-        "satakunnankansa.fi",
-        "kouvolansanomat.fi",
-        "savonsanomat.fi",
-        "esaimaa.fi"
-      ],
-      "date_range": "2026-01-25 to 2026-02-01",
-      "articles": [
-        {
-          "title": "STT: Tytti Tuppuraisen kerrotaan k\u00e4ytt\u00e4ytyneen toistuvasti ep\u00e4asiallisesti",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/73d71eef-c5b8-46b2-964c-db7a45867c8a",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Tuppurainen ei siirry syrj\u00e4\u00e4n, harkitsee oikeustoimia STT:n jutun v\u00e4itteiden takia",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011779064.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Eduskunta | STT: Sdp:n Tytti Tuppurainen huutaa avustajilleen",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011778536.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "H\u00e4irint\u00e4kohu | Sdp:n johto ei tied\u00e4, onko ryhm\u00e4n mahdollista rangaista avustajia h\u00e4irinneit\u00e4 kansanedustajiaan",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011771114.html",
-          "date": "2026-01-25"
-        },
-        {
-          "title": "Sdp:n ty\u00f6ntekij\u00f6ilt\u00e4 poikkeuksellinen ulostulo \u2013 Yle: STT:n p\u00e4\u00e4toimittaja seisoo jutun takana",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011780150.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Sdp:n h\u00e4irint\u00e4selvityksen tekij\u00e4 selvisi",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011785272.html",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Sdp:n kansanedustaja tilitt\u00e4\u00e4 kohtelustaan \u2013 \"Ket\u00e4\u00e4n ei kiinnosta\"",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011780051.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "SDP:n kansanedustaja kertoo h\u00e4neen kohdistuneesta painostuksesta",
-          "source": "mtvuutiset.fi",
-          "url": "https://mtvuutiset.fi/artikkeli/sdp-n-kansanedustaja-astuu-esiin-kertoo-painostuksesta-mentiin-henkilokohtaisuuksiin/9289312",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "SDP:n varapuheenjohtaja Nasima Razmyar ei ilmaise tukeaan Tuppuraiselle",
-          "source": "savonsanomat.fi",
-          "url": "https://www.savonsanomat.fi/uutissuomalainen/9176963",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Krista Kiuru kommentoi SDP:n h\u00e4irint\u00e4kohua",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011783020.html",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "HS-analyysi | Sdp:n johtokaksikko vastasi syyt\u00f6ksiin siilipuolustuksella, mik\u00e4 ei kerro hyv\u00e4\u00e4 tilanteesta",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011779522.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kommentti: SDP:n sis\u00e4piiriss\u00e4 kuohuu \u2013 \"Marinin hovin\" operaatio vai Tuppuraisen silm\u00e4nk\u00e4\u00e4nt\u00f6temppu?",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/dc5c5784-2a9f-450c-877d-0e260f5b5dd3",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Sdp:n h\u00e4irint\u00e4kohu | Kansanedustaja Pia Hiltunen kertoo Tuppuraisen kohdelleen h\u00e4nt\u00e4 asiattomasti",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011780058.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Sdp:ss\u00e4 velloo h\u00e4irint\u00e4kohu \u2013 nyt puhuu Nasima Razmyar",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011781128.html",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "SDP:n kansanedustaja kertoo Tuppuraisen rajuista sanoista: \"Ket\u00e4\u00e4n ei kiinnosta Pia Hiltunen, muista se\"",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/f6a2bdc9-da05-4907-a4d7-40161a7ee43c",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "IL paljastaa: SDP on revennyt kahtia Tytti Tuppuraisen asiassa \u2013 Puolueen sis\u00e4inen tora nostettu p\u00f6yd\u00e4lle",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/72e40c1a-57dd-458e-ac08-6962b45c40ae",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "STT: Tytti Tuppuraista syytet\u00e4\u00e4n ep\u00e4asiallisesta k\u00e4yt\u00f6ksest\u00e4",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011778512.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "P\u00e4\u00e4kirjoitus: Demarit tappelevat kesken\u00e4\u00e4n kannatuksensa huipulla \u2013 T\u00e4ll\u00e4 on merkitys koko Suomelle",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/paakirjoitus/a/93d2f0ca-119e-4036-ba61-d96bde549ddf",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Puolueet | Sdp:ss\u00e4 on k\u00e4yty rajuja riitoja, k\u00e4ynniss\u00e4 oleva kriisi ei ole siihen n\u00e4hden juuri mit\u00e4\u00e4n, sanoo tutkija",
-          "source": "hs.fi",
-          "url": "https://www.hs.fi/politiikka/art-2000011783668.html",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Nyt puhuvat SDP:n kansanedustajat Tuppuraisesta: \"En voi k\u00e4sitt\u00e4\u00e4 n\u00e4it\u00e4 syyt\u00f6ksi\u00e4\"",
-          "source": "kouvolansanomat.fi",
-          "url": "https://kouvolansanomat.fi/uutissuomalainen/9173993",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kommentti: Sdp:n johto v\u00e4lttelee vastuuta h\u00e4irint\u00e4kohusta kuin ruttoa",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011772894.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "SDP:n Lindtman Ylelle: Ulkopuolinen selvitys h\u00e4irinn\u00e4st\u00e4 alkaa maanantaina ja sen tekee Ty\u00f6terveyslaitos",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20207496",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "SDP:n ryhm\u00e4kanslian ty\u00f6ntekij\u00e4t puolustavat kannanotossaan Tuppuraista \u2013 kansanedustaja kertoo saaneensa ep\u00e4asiallista kohtelua eduskuntaryhm\u00e4ss\u00e4",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/01/sdpn-ryhmakanslian-tyontekijat-puolustavat-kannanotossaan-tuppuraista-kansanedustaja-kertoo-saaneensa-epaasiallista-kohtelua-eduskuntaryhmassa",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "P\u00e4\u00e4kirjoitus | Ruusujen sota kuplii taas SDP:n sis\u00e4ll\u00e4",
-          "source": "ess.fi",
-          "url": "https://ess.fi/paakirjoitus-mielipide/9176624",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Tuppurainen ja Lindtman kiist\u00e4v\u00e4t STT:n v\u00e4itteet Tuppuraisen toiminnasta \u2013 \"En voi sulkea pois oikeudellisia toimia\"",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20206973",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Useat demaril\u00e4hteet syytt\u00e4v\u00e4t SDP:n eduskuntaryhm\u00e4n puheenjohtaja Tuppuraista ep\u00e4asiallisesta k\u00e4ytt\u00e4ytymisest\u00e4 \u2013 puolueen puheenjohtaja Lindtman pit\u00e4\u00e4 v\u00e4itteit\u00e4 kohtuuttomina",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/01/useat-demarilahteet-syyttavat-sdpn-eduskuntaryhman-puheenjohtaja-tuppuraista-epaasiallisesta-kayttaytymisesta-puolueen-puheenjohtaja-lindtman-pitaa-vaitteita-kohtuuttomina",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "STT: SDP-ledare har betett sig osakligt",
-          "source": "hbl.fi",
-          "url": "https://hbl.fi/2026-01-28/stt-sdp-ledare-har-betett-sig-osakligt",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Krista Kiuru otti kantaa kohuun SDP:n ymp\u00e4rill\u00e4",
-          "source": "mtvuutiset.fi",
-          "url": "https://mtvuutiset.fi/artikkeli/krista-kiuru-otti-kantaa-kohuun-sdp-n-ymparilla/9290106",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "SDP:n h\u00e4irint\u00e4selvityksen tekee Ty\u00f6terveyslaitos \u2013 jokainen eduskuntaryhm\u00e4n ty\u00f6ntekij\u00e4 haastatellaan",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/01/sdpn-hairintaselvityksen-tekee-tyoterveyslaitos-jokainen-eduskuntaryhman-tyontekija-haastatellaan",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Uutta tietoa SDP:n h\u00e4irint\u00e4kohun selvityksest\u00e4 \u2013 Tekij\u00e4 valittu",
-          "source": "iltalehti.fi",
-          "url": "https://www.iltalehti.fi/politiikka/a/6a448b3c-c506-4b24-850f-b3485f7f4dc2",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "P\u00e4\u00e4toimittajalta | Eduskuntavaalit horisontissa: SDP j\u00e4rjesti itsens\u00e4 liriin \u2013 Kaakkois-Suomen vaalipiiri menett\u00e4nee taas yhden paikan",
-          "source": "esaimaa.fi",
-          "url": "https://esaimaa.fi/paikalliset/9180087",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "SDP's parliamentary group chair denies accusations of inappropriate workplace behaviour",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20207023",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Kooste | Sdp:n h\u00e4irint\u00e4kohu velloo jo kolmatta viikkoa \u2013 Tiivistimme olennaisimmat k\u00e4\u00e4nteet",
-          "source": "satakunnankansa.fi",
-          "url": "https://satakunnankansa.fi/kotimaa/art-2000011780487.html",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Krista Kiuru tukee SDP:n eduskuntaryhm\u00e4n johtoa",
-          "source": "yle.fi",
-          "url": "https://yle.fi/uutiset/lyhyesti/74-20207329",
-          "date": "2026-01-30"
-        }
-      ],
-      "representative_urls": [
-        "https://yle.fi/a/74-20207023",
-        "https://hs.fi/politiikka/art-2000011779064.html"
-      ]
-    },
-    {
       "story_id": 3,
-      "headline": "Government savings audit reveals 6.5 billion euro shortfall from claimed targets",
-      "summary": "The National Audit Office found the government's actual savings amount to only 3.5 billion euros, far below the claimed 10 billion. Opposition criticized the findings while the government defended its calculations.",
+      "headline": "State audit challenges government's savings claims",
+      "summary": "State Audit Office (VTV) concludes government's actual budget savings total 3.5 billion euros, not the claimed 10 billion. Orpo defends calculations while opposition demands accountability for inflated figures.",
       "actors_involved": [
-        "Petteri Orpo",
-        "Riikka Purra"
+        "Orpo"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 4,
+      "source_count": 3,
       "sources": [
         "yle.fi",
-        "is.fi",
-        "iltalehti.fi"
+        "hs.fi",
+        "is.fi"
       ],
-      "date_range": "2026-01-28 to 2026-01-31",
+      "date_range": "2026-01-28 to 2026-02-01",
       "articles": [
         {
           "title": "Nya utr\u00e4kningar: Regeringen sparar bara 3,5 \u2013 inte 10 miljarder",
@@ -400,47 +189,37 @@
           "date": "2026-01-28"
         },
         {
-          "title": "Hallituksen leikkauksista paljastui nolo tieto \u2013 Minja Koskela haluaa hallituksen nurin heti",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011778349.html",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "P\u00e4\u00e4ministeri Orpo: Kaikki puolueet yhdess\u00e4 pohtimaan sotea, eduskunnan h\u00e4irint\u00e4jupakka pit\u00e4\u00e4 selvitt\u00e4\u00e4",
+          "title": "P\u00e4\u00e4ministeri Orpo: Kaikki puolueet yhdess\u00e4 pohtimaan sotea",
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20207570",
           "date": "2026-01-31"
         },
         {
-          "title": "Riikka Purra | S\u00e4\u00e4st\u00f6tarpeet kasvussa | Hillitt\u00f6m\u00e4n vaikeat ajat",
-          "source": "mustread.fi",
-          "url": "https://www.mustread.fi/artikkelit/riikka-purra-saastotarpeet-kasvussa-hillittoman-vaikeat-ajat/",
-          "date": "2026-02-01"
+          "title": "Hallituksen leikkauksista paljastui nolo tieto",
+          "source": "is.fi",
+          "url": "https://is.fi/politiikka/art-2000011778349.html",
+          "date": "2026-01-28"
         }
       ],
       "representative_urls": [
         "https://yle.fi/a/7-10092231",
-        "https://is.fi/politiikka/art-2000011778349.html"
+        "https://yle.fi/a/74-20207570"
       ]
     },
     {
       "story_id": 4,
-      "headline": "President Stubb gains popularity through Moomin reading marathon and Greenland stance",
-      "summary": "President Alexander Stubb participated in a weekend Moomin book reading marathon that captivated viewers. He also co-authored an op-ed with Norway's PM defending Greenland's territorial integrity against Trump's expansion ideas.",
+      "headline": "President Stubb's Muumi reading marathon becomes cultural moment",
+      "summary": "President Alexander Stubb and First Lady Suzanne Innes-Stubb participated in Yle's 60-hour Muumi book reading marathon, drawing widespread public praise for their animated performances and cultural engagement.",
       "actors_involved": [
-        "Alexander Stubb"
+        "Stubb"
       ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 9,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 7,
       "sources": [
         "is.fi",
         "iltalehti.fi",
         "hs.fi",
-        "yle.fi",
-        "vantaansanomat.fi",
-        "sss.fi",
-        "ft.com",
-        "gzeromedia.com"
+        "sss.fi"
       ],
       "date_range": "2026-01-26 to 2026-02-01",
       "articles": [
@@ -463,19 +242,145 @@
           "date": "2026-01-30"
         },
         {
-          "title": "Suzanne Innes-Stubb sai kutsun Valkoiseen taloon",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/810d839c-97bb-4129-9248-e2187c2faafa",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Suzanne Innes-Stubb luki Muumeja Ylen suorassa l\u00e4hetyksess\u00e4 \u2013 katsojilta ihastunut vastaanotto",
+          "title": "Suzanne Innes-Stubb luki Muumeja Ylen suorassa l\u00e4hetyksess\u00e4",
           "source": "is.fi",
           "url": "https://is.fi/viihde/art-2000011786980.html",
           "date": "2026-02-01"
         },
         {
-          "title": "Stubb ja Norjan p\u00e4\u00e4ministeri avasivat sanaisen arkkunsa Gr\u00f6nlannista: \"T\u00e4ss\u00e4 ei voi tehd\u00e4 kompromisseja...\"",
+          "title": "Muumikirjojen lukumaraton Ylell\u00e4 alkoi",
+          "source": "sss.fi",
+          "url": "https://sss.fi/2026/01/muumikirjojen-lukumaraton-ylella-alkoi",
+          "date": "2026-01-30"
+        }
+      ],
+      "representative_urls": [
+        "https://iltalehti.fi/tv-ja-leffat/a/276475a9-577b-45be-b012-eb7cb5455c20",
+        "https://is.fi/tv-ja-elokuvat/art-2000011773209.html"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Parliamentary harassment investigations spread across parties",
+      "summary": "Following SDP scandal, multiple parties launch internal harassment investigations. Kokoomus completed study finding no systematic issues, Perussuomalaiset and others conducting similar reviews of workplace culture.",
+      "actors_involved": [
+        "Kokoomus",
+        "Finns Party",
+        "Orpo"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 9,
+      "sources": [
+        "iltalehti.fi",
+        "is.fi",
+        "hs.fi",
+        "yle.fi",
+        "sss.fi",
+        "suomenmaa.fi"
+      ],
+      "date_range": "2026-01-25 to 2026-02-01",
+      "articles": [
+        {
+          "title": "Orpo kommentoi Sdp:n h\u00e4irint\u00e4kohua Ylen Ykk\u00f6saamussa",
+          "source": "is.fi",
+          "url": "https://www.is.fi/politiikka/art-2000011786101.html",
+          "date": "2026-01-31"
+        },
+        {
+          "title": "Fatim Diarra podcastissa: Kokoomuksen kansanedustaja ehdotteli t\u00f6rke\u00e4sti",
+          "source": "iltalehti.fi",
+          "url": "https://iltalehti.fi/politiikka/a/2aff4f2e-21fe-4c15-8c31-ac9d610a2d9c",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Kokoomus sai h\u00e4irint\u00e4selvityksen valmiiksi",
+          "source": "iltalehti.fi",
+          "url": "https://www.iltalehti.fi/politiikka/a/c347ead1-9e34-40bc-95e0-3f8f26f75501",
+          "date": "2026-01-26"
+        },
+        {
+          "title": "Perussuomalaiset selvitt\u00e4\u00e4 mahdollista h\u00e4irint\u00e4\u00e4 eduskuntaryhm\u00e4ss\u00e4\u00e4n",
+          "source": "is.fi",
+          "url": "https://is.fi/politiikka/art-2000011781396.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "Kokoomus sai valmiiksi sis\u00e4isen selvityksens\u00e4 avustajien kokemuksista",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20206419",
+          "date": "2026-01-26"
+        }
+      ],
+      "representative_urls": [
+        "https://www.iltalehti.fi/politiikka/a/c347ead1-9e34-40bc-95e0-3f8f26f75501",
+        "https://yle.fi/a/74-20206419"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Defense Minister outlines military modernization plans",
+      "summary": "Defense Minister Antti H\u00e4kk\u00e4nen discussed expanding conscription to diabetics, potential women's conscription next decade, and domestic anti-personnel mine procurement from Marine Alutech. Also addressed US defense cooperation concerns.",
+      "actors_involved": [
+        "H\u00e4kk\u00e4nen"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
+      "sources": [
+        "hameensanomat.fi",
+        "sss.fi",
+        "ess.fi",
+        "ita-savo.fi"
+      ],
+      "date_range": "2026-01-27 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Diabeetikot tulevaisuudessa armeijaan? Puolustusministeri v\u00e4l\u00e4ytt\u00e4\u00e4 muutosta",
+          "source": "hameensanomat.fi",
+          "url": "https://hameensanomat.fi/uutissuomalainen/9176761",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Maailmanpolitiikan kielenk\u00e4ytt\u00f6 on ennenkuulumatonta \u2013 N\u00e4in puolustusministeri H\u00e4kk\u00e4nen kommentoi",
+          "source": "sss.fi",
+          "url": "https://sss.fi/2026/01/maailmanpolitiikan-kielenkaytto-on-ennenkuulumatonta-nain-puolustusministeri-hakkanen-kommentoi-suhdetta-yhdysvaltoihin",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "H\u00e4kk\u00e4nen uskoo Suomen hankkivan uudet jalkav\u00e4kimiinansa kotimaasta",
+          "source": "ess.fi",
+          "url": "https://ess.fi/uutissuomalainen/9163732",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "Puolustusministeri H\u00e4kk\u00e4nen kehuu Marine Alutechi\u00e4",
+          "source": "sss.fi",
+          "url": "https://sss.fi/2026/01/koulutus-jalkavakimiinojen-kaytosta-alkaa-tassa-kuussa",
+          "date": "2026-01-29"
+        }
+      ],
+      "representative_urls": [
+        "https://hameensanomat.fi/uutissuomalainen/9176761",
+        "https://sss.fi/2026/01/koulutus-jalkavakimiinojen-kaytosta-alkaa-tassa-kuussa"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Stubb and Norwegian PM warn against Greenland annexation",
+      "summary": "President Alexander Stubb and Norwegian PM Jonas Gahr St\u00f8re published op-ed in Financial Times supporting Greenland's territorial integrity and warning against US annexation attempts amid Trump's statements.",
+      "actors_involved": [
+        "Stubb"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 3,
+      "sources": [
+        "is.fi",
+        "ft.com",
+        "gzeromedia.com"
+      ],
+      "date_range": "2026-01-26 to 2026-01-27",
+      "articles": [
+        {
+          "title": "Stubb ja Norjan p\u00e4\u00e4ministeri avasivat sanaisen arkkunsa Gr\u00f6nlannista",
           "source": "is.fi",
           "url": "https://is.fi/ulkomaat/art-2000011775090.html",
           "date": "2026-01-27"
@@ -491,33 +396,25 @@
           "source": "gzeromedia.com",
           "url": "https://gzeromedia.com/video/gzero-world-clips/stubb-russia-losing-in-ukraine",
           "date": "2026-01-26"
-        },
-        {
-          "title": "Presidentti Stubb puolisoineen vierailee Vantaalla",
-          "source": "vantaansanomat.fi",
-          "url": "https://vantaansanomat.fi/paikalliset/9166266",
-          "date": "2026-01-27"
         }
       ],
       "representative_urls": [
-        "https://is.fi/ulkomaat/art-2000011775090.html",
-        "https://ft.com/content/3dd30834-b120-43ec-91db-ffc064063465"
+        "https://ft.com/content/3dd30834-b120-43ec-91db-ffc064063465",
+        "https://is.fi/ulkomaat/art-2000011775090.html"
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Finance Minister Purra implements welfare cuts and criticizes opposition",
-      "summary": "New welfare benefit reforms took effect February 1st with modest cuts. Finance Minister Riikka Purra proposed further reforms and criticized SDP's Lindtman, while also discussing YEL entrepreneurship insurance changes.",
+      "story_id": 8,
+      "headline": "Finance Minister Purra pushes welfare reform and fiscal consolidation",
+      "summary": "Finance Minister Riikka Purra implemented income support cuts and proposed further welfare reforms, arguing current system doesn't incentivize work. Also addressed YEL pension reform and criticized opposition economic policies.",
       "actors_involved": [
-        "Riikka Purra",
-        "Finns Party"
+        "Purra"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 7,
+      "source_count": 5,
       "sources": [
         "suomenuutiset.fi",
         "iltalehti.fi",
-        "is.fi",
         "sdp.fi",
         "yrittajat.fi",
         "mustread.fi"
@@ -531,34 +428,16 @@
           "date": "2026-02-01"
         },
         {
-          "title": "Purra ry\u00f6pytt\u00e4\u00e4 Lindtmania Kauppalehdess\u00e4: \"Pupu on mennyt p\u00f6ksyyn\"",
+          "title": "Purra ry\u00f6pytt\u00e4\u00e4 Lindtmania Kauppalehdess\u00e4",
           "source": "iltalehti.fi",
           "url": "https://www.iltalehti.fi/politiikka/a/e0717fc7-e746-4479-885e-c3e4ada5d5c1",
           "date": "2026-01-29"
         },
         {
-          "title": "SU: Riikka Purra kommentoi Pekka Katajan kuolemaa",
-          "source": "is.fi",
-          "url": "https://www.is.fi/politiikka/art-2000011785877.html",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "SDP:n Kumpula-Natri: Hallitus on informoinut eduskuntaa liian my\u00f6h\u00e4\u00e4n Suomen takausvastuusta Ukrainan tukilainasta",
-          "source": "sdp.fi",
-          "url": "https://www.sdp.fi/ajankohtaista/sdpn-kumpula-natri-hallitus-on-informoinut-eduskuntaa-liian-myohaan-suomen-takausvastuusta-ukrainan-tukilainasta-yrittaako-valtiovarainministeri-purra-kiertaa-eduskunnan-kun-valmistelee-eun-yhtei/",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "YEL-uudistus \"yksi hallituksen loppukauden prioriteeteista\" \u2013 Purra KL:lle: \"Uskoisin, ett\u00e4 pian kuuluu\"",
+          "title": "YEL-uudistus yksi hallituksen loppukauden prioriteeteista",
           "source": "yrittajat.fi",
           "url": "https://www.yrittajat.fi/uutiset/yel-uudistus-yksi-hallituksen-loppukauden-prioriteeteista-purra-kllle-uskoisin-etta-pian-kuuluu/",
           "date": "2026-01-28"
-        },
-        {
-          "title": "Riikka Purra | S\u00e4\u00e4st\u00f6tarpeet kasvussa | Hillitt\u00f6m\u00e4n vaikeat ajat",
-          "source": "mustread.fi",
-          "url": "https://www.mustread.fi/artikkelit/riikka-purra-saastotarpeet-kasvussa-hillittoman-vaikeat-ajat/",
-          "date": "2026-02-01"
         }
       ],
       "representative_urls": [
@@ -567,134 +446,55 @@
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Defense Minister discusses military procurement and conscription reforms",
-      "summary": "Defense Minister Antti H\u00e4kk\u00e4nen spoke about domestic landmine production, diabetics potentially serving in military, women's conscription possibly becoming relevant in the next decade, and praised defense companies like Marine Alutech.",
-      "actors_involved": [
-        "Antti H\u00e4kk\u00e4nen",
-        "Finnish Defence Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 6,
-      "sources": [
-        "sss.fi",
-        "hameensanomat.fi",
-        "ess.fi",
-        "ita-savo.fi"
-      ],
-      "date_range": "2026-01-27 to 2026-01-30",
-      "articles": [
-        {
-          "title": "\"Maailmanpolitiikan kielenk\u00e4ytt\u00f6 on ennenkuulumatonta\" \u2013 N\u00e4in puolustusministeri H\u00e4kk\u00e4nen kommentoi suhdetta Yhdysvaltoihin",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/01/maailmanpolitiikan-kielenkaytto-on-ennenkuulumatonta-nain-puolustusministeri-hakkanen-kommentoi-suhdetta-yhdysvaltoihin",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Diabeetikot tulevaisuudessa armeijaan? Puolustusministeri v\u00e4l\u00e4ytt\u00e4\u00e4 muutosta nykytilanteeseen",
-          "source": "hameensanomat.fi",
-          "url": "https://hameensanomat.fi/uutissuomalainen/9176761",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Puolustusministeri H\u00e4kk\u00e4nen kehuu Marine Alutechi\u00e4: \"Nyt on isot kasvun mahdollisuudet\"",
-          "source": "sss.fi",
-          "url": "https://sss.fi/2026/01/koulutus-jalkavakimiinojen-kaytosta-alkaa-tassa-kuussa",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "H\u00e4kk\u00e4nen uskoo Suomen hankkivan uudet jalkav\u00e4kimiinansa kotimaasta",
-          "source": "ess.fi",
-          "url": "https://ess.fi/uutissuomalainen/9163732",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Antti H\u00e4kk\u00e4nen: Ei huolta USA:n vet\u00e4ytymisest\u00e4 osaamiskeskuksista",
-          "source": "ita-savo.fi",
-          "url": "https://www.ita-savo.fi/uutissuomalainen/9163726",
-          "date": "2026-01-27"
-        }
-      ],
-      "representative_urls": [
-        "https://hameensanomat.fi/uutissuomalainen/9176761",
-        "https://sss.fi/2026/01/maailmanpolitiikan-kielenkaytto-on-ennenkuulumatonta-nain-puolustusministeri-hakkanen-kommentoi-suhdetta-yhdysvaltoihin"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Parliament harassment investigations expand across party lines",
-      "summary": "Following the SDP scandal, multiple parties launched internal harassment investigations. National Coalition found no major issues, while Finns Party announced their own survey. Green MP Fatim Diarra alleged inappropriate behavior by a Coalition MP.",
-      "actors_involved": [
-        "Kokoomus",
-        "Finns Party"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 7,
-      "sources": [
-        "iltalehti.fi",
-        "is.fi",
-        "hs.fi",
-        "yle.fi"
-      ],
-      "date_range": "2026-01-26 to 2026-01-30",
-      "articles": [
-        {
-          "title": "Fatim Diarra podcastissa: Kokoomuksen kansanedustaja ehdotteli \"todella t\u00f6rke\u00e4sti\"",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/politiikka/a/2aff4f2e-21fe-4c15-8c31-ac9d610a2d9c",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Eduskunta | Fatim Diarra podcastissa: Kokoomuksen kansanedustaja kehui \"muotoja\" ty\u00f6matkalla, ehdotti uima-allasta",
-          "source": "hs.fi",
-          "url": "https://hs.fi/politiikka/art-2000011785561.html",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Kokoomus sai h\u00e4irint\u00e4selvityksen valmiiksi \u2013 Jukka Kopra kertoo, mit\u00e4 tuli ilmi",
-          "source": "iltalehti.fi",
-          "url": "https://www.iltalehti.fi/politiikka/a/c347ead1-9e34-40bc-95e0-3f8f26f75501",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "H\u00e4irint\u00e4\u00e4n yhdistetty kansanedustaja Jani Kokko vastasi alatyylisesti X:ss\u00e4 \u2013 \"Asiaton kommentti\", edustaja my\u00f6nt\u00e4\u00e4",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20206404?origin=rss",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Kansanedustaja Jani Kokolta kovaa teksti\u00e4 somessa",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011772322.html",
-          "date": "2026-01-26"
-        },
-        {
-          "title": "Perussuomalaiset selvitt\u00e4\u00e4 mahdollista h\u00e4irint\u00e4\u00e4 eduskuntaryhm\u00e4ss\u00e4\u00e4n",
-          "source": "is.fi",
-          "url": "https://is.fi/politiikka/art-2000011781396.html",
-          "date": "2026-01-29"
-        },
-        {
-          "title": "Kokoomus sai valmiiksi sis\u00e4isen selvityksens\u00e4 avustajien kokemuksista: Ei seksuaalisen h\u00e4irinn\u00e4n tapauksia",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20206419",
-          "date": "2026-01-26"
-        }
-      ],
-      "representative_urls": [
-        "https://yle.fi/a/74-20206419",
-        "https://hs.fi/politiikka/art-2000011785561.html"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "Bank of Finland's gold reserves reach record 6.1 billion euro value",
-      "summary": "Finland's gold reserves hit a historic high of 6.1 billion euros as gold prices surged past $5,000 per ounce. Questions were raised about the security of storing gold in the US under Trump, but the central bank expressed confidence in the arrangement.",
+      "story_id": 9,
+      "headline": "Finnish economy shows signs of recovery",
+      "summary": "Finland's economy grew 0.6% in Q4 2025 according to preliminary data, with employment and working hours increasing. Bank of Finland sees cautious signs of labor market improvement despite continued high unemployment.",
       "actors_involved": [
         "Bank of Finland"
       ],
       "signal_category_hint": "economic_tech",
       "source_count": 4,
+      "sources": [
+        "hs.fi",
+        "tekniikkatalous.fi",
+        "savonsanomat.fi",
+        "is.fi"
+      ],
+      "date_range": "2026-01-25 to 2026-01-30",
+      "articles": [
+        {
+          "title": "Suomen talous alkoi vahvistua loppuvuonna",
+          "source": "hs.fi",
+          "url": "https://hs.fi/visio/art-2000011783390.html",
+          "date": "2026-01-30"
+        },
+        {
+          "title": "Taas siin\u00e4 k\u00e4y n\u00e4in, pankki ennustaa: Ruotsissa talous kasvaa kuin h\u00e4k\u00e4",
+          "source": "tekniikkatalous.fi",
+          "url": "https://tekniikkatalous.fi/uutiset/a/04aad8ae-8438-4c52-9407-84e036103f03",
+          "date": "2026-01-25"
+        },
+        {
+          "title": "Suomalaiset sijoittamisessa historiallinen k\u00e4\u00e4nne",
+          "source": "is.fi",
+          "url": "https://is.fi/taloussanomat/art-2000011777936.html",
+          "date": "2026-01-28"
+        }
+      ],
+      "representative_urls": [
+        "https://hs.fi/visio/art-2000011783390.html",
+        "https://tekniikkatalous.fi/uutiset/a/04aad8ae-8438-4c52-9407-84e036103f03"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Bank of Finland's gold reserves reach historic high",
+      "summary": "Finland's gold reserves are now worth 6.1 billion euros, the highest ever. Central bank maintains gold is stored across multiple countries including US, UK, Sweden and Switzerland as ultimate crisis insurance.",
+      "actors_involved": [
+        "Bank of Finland"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 3,
       "sources": [
         "iltalehti.fi",
         "yle.fi"
@@ -702,7 +502,7 @@
       "date_range": "2026-01-25 to 2026-01-31",
       "articles": [
         {
-          "title": "Onko kullan s\u00e4ilytt\u00e4minen Yhdysvalloissa Trumpin aikakaudella riski? N\u00e4in Suomen Pankki vastaa",
+          "title": "Onko kullan s\u00e4ilytt\u00e4minen Yhdysvalloissa Trumpin aikakaudella riski?",
           "source": "iltalehti.fi",
           "url": "https://www.iltalehti.fi/talous/a/28a324fa-1d68-49de-b632-9efabf6ad5ce",
           "date": "2026-01-25"
@@ -718,12 +518,6 @@
           "source": "iltalehti.fi",
           "url": "https://iltalehti.fi/talous/a/f8a07a87-c92f-4f4a-9b6f-071874281f0b",
           "date": "2026-01-28"
-        },
-        {
-          "title": "Kullan hinta nousi j\u00e4lleen uuteen enn\u00e4tykseen",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20206358",
-          "date": "2026-01-26"
         }
       ],
       "representative_urls": [
@@ -732,74 +526,44 @@
       ]
     },
     {
-      "story_id": 9,
-      "headline": "Government announces parliamentary working group on healthcare regions reform",
-      "summary": "PM Orpo announced the establishment of a parliamentary working group to address the future of Finland's healthcare regions (wellbeing counties). Opposition parties gave cautious approval to the cross-party initiative.",
+      "story_id": 11,
+      "headline": "Orpo announces parliamentary working group on healthcare reform",
+      "summary": "Prime Minister Orpo announces creation of parliamentary working group to address wellbeing services areas' future, responding to opposition pressure. Group to begin work in spring after PM's statement on healthcare services.",
       "actors_involved": [
-        "Petteri Orpo"
+        "Orpo"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 1,
+      "source_count": 2,
       "sources": [
-        "hs.fi"
+        "hs.fi",
+        "yle.fi"
       ],
-      "date_range": "2026-02-01 to 2026-02-01",
+      "date_range": "2026-02-01",
       "articles": [
         {
           "title": "Hyvinvointialueiden tulevaisuus: Orpo k\u00e4ynnist\u00e4\u00e4 parlamentaarisen ty\u00f6n",
           "source": "hs.fi",
           "url": "https://hs.fi/politiikka/art-2000011787048.html",
           "date": "2026-02-01"
+        },
+        {
+          "title": "P\u00e4\u00e4ministeri Orpo: Kaikki puolueet yhdess\u00e4 pohtimaan sotea",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/74-20207570",
+          "date": "2026-01-31"
         }
       ],
       "representative_urls": [
-        "https://hs.fi/politiikka/art-2000011787048.html"
+        "https://hs.fi/politiikka/art-2000011787048.html",
+        "https://yle.fi/a/74-20207570"
       ]
     },
     {
-      "story_id": 10,
-      "headline": "Defense Forces refute British claims about US-Finnish military training performance",
-      "summary": "Finnish Defense Forces disputed British media reports claiming Finnish soldiers outperformed US troops in arctic warfare exercises, stating both forces were on the same side and worked well together.",
+      "story_id": 12,
+      "headline": "Social media restrictions for children gain political support",
+      "summary": "Prime Minister Orpo, health authorities and two-thirds of Finns support banning or restricting social media use for under-15s, following Australia's model. Researcher describes current situation as 'uncontrolled human experiment'.",
       "actors_involved": [
-        "Finnish Defence Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 3,
-      "sources": [
-        "iltalehti.fi",
-        "maaseuduntulevaisuus.fi"
-      ],
-      "date_range": "2026-01-30 to 2026-02-01",
-      "articles": [
-        {
-          "title": "Brittilehti asetti USA:n sotilaat naurunalaisiksi \u2013 Nyt Puolustusvoimat puolustaa jenkkej\u00e4",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/kotimaa/a/76a38248-a348-4a11-920d-a68de584e92f",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "HS: Suomessa kehitetty hyppypanos ei kelvannut Puolustusvoimille",
-          "source": "maaseuduntulevaisuus.fi",
-          "url": "https://maaseuduntulevaisuus.fi/uutiset/4762ea92-3036-45b7-b4e0-46f56f73653c",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Suomi saa uusia sotalaivoja \u2013 T\u00e4llaisia ne ovat",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/kotimaa/a/45d602f6-cb86-4e2c-b900-67ab605faf37",
-          "date": "2026-01-25"
-        }
-      ],
-      "representative_urls": [
-        "https://iltalehti.fi/kotimaa/a/76a38248-a348-4a11-920d-a68de584e92f"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "Finland considers social media restrictions for children under 15",
-      "summary": "Prime Minister Orpo, health authorities, and two-thirds of Finns support banning or restricting social media use for children under 15, following Australia's model. Researchers described current social media use as an 'uncontrolled human experiment.'",
-      "actors_involved": [
-        "Petteri Orpo"
+        "Orpo"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 2,
@@ -815,103 +579,36 @@
           "date": "2026-01-27"
         },
         {
-          "title": "Finland looks to end \"uncontrolled human experiment\" with Australia-style ban on social media",
+          "title": "Finland looks to end 'uncontrolled human experiment' with Australia-style ban on social media",
           "source": "yle.fi",
           "url": "https://yle.fi/a/74-20207494",
           "date": "2026-01-31"
         }
       ],
       "representative_urls": [
-        "https://yle.fi/a/74-20207494"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Multiple banking and financial service disruptions affect customers",
-      "summary": "Danske Bank experienced widespread outages in its online and mobile services on multiple occasions, affecting customers' ability to access banking services. Various fraud warnings were also issued regarding fake messages from postal services.",
-      "actors_involved": [],
-      "signal_category_hint": "economic_tech",
-      "source_count": 6,
-      "sources": [
-        "yle.fi",
-        "iltalehti.fi",
-        "is.fi"
-      ],
-      "date_range": "2026-01-27 to 2026-01-31",
-      "articles": [
-        {
-          "title": "Danske Bankilla j\u00e4lleen h\u00e4iri\u00f6it\u00e4 \u2013 ongelmat paisuivat aamup\u00e4iv\u00e4ll\u00e4",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20207348",
-          "date": "2026-01-30"
-        },
-        {
-          "title": "Danske Bankin verkkopalveluiden h\u00e4iri\u00f6 ohi",
-          "source": "yle.fi",
-          "url": "https://yle.fi/a/74-20206736",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Danske Bank toimii taas",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/digiuutiset/a/75e9e9a2-8880-4696-8378-6b093bbae339",
-          "date": "2026-01-27"
-        },
-        {
-          "title": "Saitko viestin paketista? Suomalaisia varoitetaan \u2013 Ovelasti naamioitu huijaus levi\u00e4\u00e4",
-          "source": "iltalehti.fi",
-          "url": "https://iltalehti.fi/digiuutiset/a/ca2efd20-a68b-4e0d-b7b0-8a5e50740108",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Varo PostNord-huijausta nyt",
-          "source": "is.fi",
-          "url": "https://is.fi/digitoday/tietoturva/art-2000011784773.html",
-          "date": "2026-01-31"
-        },
-        {
-          "title": "Video: Mika sai huijauspuhelun pankkihuijarilta",
-          "source": "is.fi",
-          "url": "https://is.fi/digitoday/art-2000011761889.html",
-          "date": "2026-01-29"
-        }
-      ],
-      "representative_urls": [
-        "https://yle.fi/a/74-20207348",
-        "https://iltalehti.fi/digiuutiset/a/ca2efd20-a68b-4e0d-b7b0-8a5e50740108"
+        "https://yle.fi/a/74-20207494",
+        "https://yle.fi/a/74-20206619"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Former Finns Party leader Pekka Kataja dies",
-      "source": "is.fi",
-      "url": "https://www.is.fi/politiikka/art-2000011785877.html",
-      "signal_category_hint": "domestic_regime"
+      "headline": "Suzanne Innes-Stubb receives White House invitation",
+      "source": "iltalehti.fi",
+      "url": "https://iltalehti.fi/politiikka/a/810d839c-97bb-4129-9248-e2187c2faafa",
+      "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "Wille Rydman discusses consequences of past controversies in interview",
-      "source": "is.fi",
-      "url": "https://is.fi/politiikka/art-2000011750015.html",
-      "signal_category_hint": "domestic_regime"
+      "headline": "Russian suggestion for Orpo-Putin meeting emerges",
+      "source": "iltalehti.fi",
+      "url": "https://iltalehti.fi/ulkomaat/a/b073dad7-0d4e-4da9-a337-dbc4874b4543",
+      "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "Economy shows signs of strengthening in late 2025 - Bank of Finland assessment",
-      "source": "hs.fi",
-      "url": "https://hs.fi/visio/art-2000011783390.html",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Finns cool on defence tax according to EVA poll",
+      "headline": "Danske Bank experiences service outages",
       "source": "yle.fi",
-      "url": "https://yle.fi/a/74-20206934.html",
-      "signal_category_hint": "security_defense"
-    },
-    {
-      "headline": "Finland among 14 countries warning about maritime harassment risks",
-      "source": "sss.fi",
-      "url": "https://sss.fi/2026/01/suomi-ja-13-muuta-maata-varoittavat-hairinta-pahentaa-merenkulun-riskeja",
-      "signal_category_hint": "security_defense"
+      "url": "https://yle.fi/a/74-20207348",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }
