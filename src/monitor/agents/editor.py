@@ -461,9 +461,19 @@ async def edit_region_page(
             frontmatter = ""
             prose = lead_text
 
+        # Preserve ## Regional Summary heading — strip before editing, re-prepend after
+        section_heading = ""
+        prose_stripped = prose.lstrip("\n")
+        if prose_stripped.startswith("## "):
+            heading_end = prose_stripped.index("\n") if "\n" in prose_stripped else len(prose_stripped)
+            section_heading = prose_stripped[:heading_end]
+            prose = prose_stripped[heading_end:]
+
         if prose.strip():
             try:
                 edited_prose = await run_regional_editor(prose, report, analysis_date=analysis_date)
+                if section_heading:
+                    edited_prose = section_heading + "\n\n" + edited_prose.lstrip("\n")
                 lead_text = frontmatter + "\n" + edited_prose if frontmatter else edited_prose
             except Exception as e:
                 logger.warning("Editor [regional/%s] failed, using original: %s", region.value, e)
