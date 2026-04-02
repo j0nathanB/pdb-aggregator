@@ -16,6 +16,7 @@ import argparse
 import asyncio
 import json
 import logging
+import re
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -229,8 +230,8 @@ async def cmd_run(args: argparse.Namespace) -> None:
             story_maps=story_maps_data or None,
         )
 
-        # Edit + copyedit multi-page output
-        from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page, summarize_card_summaries
+        # Edit + copyedit + style edit multi-page output
+        from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page, summarize_card_summaries, style_edit_page, run_style_editor
         from .agents.copyeditor import copyedit_newsletter as copyedit
 
         # Edit overview page (executive brief + card summaries)
@@ -259,6 +260,27 @@ async def cmd_run(args: argparse.Namespace) -> None:
                     analysis_date=end_date,
                 )
                 pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency, analysis_date=end_date)
+
+        # Style editor — final pass for style guide compliance
+        print("Style editing...")
+
+        # Executive overview prose
+        if "overview" in pages:
+            # Extract executive prose (between ## Week heading and --- before ## Regions)
+            overview = pages["overview"]
+            week_match = re.search(r'\n## Week of .+\n', overview)
+            regions_match = re.search(r'\n---\n\n## Regions', overview)
+            if week_match and regions_match:
+                exec_prose = overview[week_match.end():regions_match.start()].strip()
+                if exec_prose and not exec_prose.startswith("*No system-level"):
+                    edited_exec = await run_style_editor(exec_prose, "executive", analysis_date=end_date)
+                    pages["overview"] = overview[:week_match.end()] + "\n\n" + edited_exec + "\n\n" + overview[regions_match.start():]
+
+        # Region pages (regional lead + each country section)
+        for slug in list(pages.keys()):
+            if slug != "overview" and slug != "watchlist":
+                print(f"  Style editing {slug}...")
+                pages[slug] = await style_edit_page(pages[slug], analysis_date=end_date, max_concurrent=args.concurrency)
 
         brief_dir = publish_brief(pages, end_date)
         print(f"  Site published to {brief_dir}")

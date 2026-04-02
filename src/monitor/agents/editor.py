@@ -781,3 +781,133 @@ async def summarize_card_summaries(
 
     logger.info("Card summaries: condensed %d cards via Haiku", len(matches))
     return result
+
+
+# =========================================================================
+# Style editor — final pass for style guide compliance
+# =========================================================================
+
+async def run_style_editor(
+    section_text: str,
+    label: str,
+    analysis_date: date | None = None,
+    model: str | None = None,
+) -> str:
+    """Run the style editor on a single prose section.
+
+    This is the final editorial pass. It rewrites prose to comply with the
+    style guide without changing analytical content. Each section (executive,
+    regional, country) is processed separately for optimal output.
+
+    Args:
+        section_text: The prose section to edit.
+        label: Label for logging and trace file (e.g., "executive", "regional_americas", "ua").
+        analysis_date: Pipeline end date for trace directory.
+        model: Override the default model.
+
+    Returns:
+        The style-compliant prose section.
+    """
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    if not section_text.strip():
+        return section_text
+
+    # Strip Notes accordion — re-append after editing
+    section_to_edit, sources_suffix = _strip_sources_accordion(section_text)
+
+    task_prompt = load_prompt("style_editor")
+    style_guide = _load_style_guide()
+    system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
+
+    user_message = section_to_edit
+
+    logger.info("Style editor [%s]: starting, input=%d chars", label, len(section_to_edit))
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+
+    response = await _stream_message(
+        client,
+        model=model or EDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
+
+    text_parts = [
+        block.text for block in response.content
+        if block.type == "text"
+    ]
+    result = "\n".join(text_parts)
+
+    logger.info(
+        "Style editor [%s]: done — input=%d, output=%d tokens",
+        label, response.usage.input_tokens, response.usage.output_tokens,
+    )
+
+    from ..trace import save_trace, extract_thinking, extract_usage
+    save_trace(
+        "style_editor", label.lower().replace(" ", "_"),
+        analysis_date or date.today(),
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=result,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
+    edited = _sanitize_mdx(result)
+    if sources_suffix:
+        edited = edited.rstrip() + "\n\n" + sources_suffix + "\n"
+    return edited
+
+
+async def style_edit_page(
+    page: str,
+    analysis_date: date | None = None,
+    max_concurrent: int = 5,
+) -> str:
+    """Run the style editor on all prose sections of a page.
+
+    Splits the page into individual sections (regional lead + each country),
+    processes each through the style editor in parallel, and reassembles.
+    """
+    # Split into segments by ### country headings
+    segments = _split_country_sections(page)
+
+    semaphore = asyncio.Semaphore(max_concurrent)
+
+    async def _edit(idx: int, text: str, code: str | None) -> tuple[int, str]:
+        async with semaphore:
+            if code:
+                label = code
+            elif idx == 0:
+                # First segment is the regional lead (or overview preamble)
+                label = "regional_lead"
+            else:
+                label = f"section_{idx}"
+
+            # Skip very short segments (separators, empty)
+            if len(text.strip()) < 50:
+                return (idx, text)
+
+            try:
+                edited = await run_style_editor(text, label, analysis_date=analysis_date)
+                return (idx, edited)
+            except Exception as e:
+                logger.warning("Style editor [%s] failed, using original: %s", label, e)
+                return (idx, text)
+
+    tasks = [_edit(i, text, code) for i, (text, code) in enumerate(segments)]
+    results = await asyncio.gather(*tasks)
+
+    assembled = [text for text, _ in segments]
+    for idx, edited_text in results:
+        assembled[idx] = edited_text
+
+    return _sanitize_mdx("".join(assembled))
