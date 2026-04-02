@@ -191,7 +191,7 @@ class TestRenderHeader:
 
     def test_includes_date_range(self):
         result = _render_header(date(2026, 3, 14), 10, 18)
-        assert "March 14, 2026" in result
+        assert "March 08, 2026" in result
 
     def test_coverage_stats_not_in_header(self):
         """Coverage stats were removed from header — verify they stay out."""

@@ -88,7 +88,7 @@ def _country_heading(code: str, country: str) -> str:
 
 def _format_date_range(end_date: date) -> str:
     start = end_date - timedelta(days=6)
-    return f"{start.strftime('%B %d')} to {end_date.strftime('%B %d, %Y')}"
+    return f"{start.strftime('%B %d, %Y')}"
 
 
 def _render_header(
