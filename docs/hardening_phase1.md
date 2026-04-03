@@ -88,11 +88,13 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 671 tests passing (20 new).
 
-### Phase 2b: Deployment Rewire
-- `run_pipeline.py` rewrite (clone-and-run model)
-- Dockerfile simplification (runtime env only)
-- Preview email update
-- `PROJECT_ROOT` env var override
+### Phase 2b: Deployment Rewire — COMPLETED (2026-04-02)
+
+**`run_pipeline.py` rewrite** — Full rewrite as subprocess-based entrypoint. Runs `python -m src.monitor.cli run --date`, auto-commits `ledgers/` + `site/briefs/`, pushes to main if `GITHUB_TOKEN` set. Auto-detects next date from last brief. Local mode (in-repo) and Fargate mode (clone-and-run) supported. S3 upload and preview email stubbed for later.
+
+**Dockerfile simplified** — Runtime env only (Python + deps + ML models). Removed: `COPY src/`, dead CSV files, `gh` CLI install. Only entrypoint script is baked in; everything else comes from clone at runtime.
+
+**Dead code removed** — Deleted `scripts/migrate_to_mintlify.py` (imported nonexistent `src.persistence`).
 
 ### Phase 3: Observability
 - Cost tracking per run
