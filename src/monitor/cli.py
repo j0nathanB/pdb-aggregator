@@ -116,6 +116,37 @@ async def cmd_init(args: argparse.Namespace) -> None:
         print("  global: initialized empty global ledger")
 
 
+STAGE_ORDER = ["desk", "regional", "executive", "newsletter", "publishing"]
+
+
+def _should_run(stage: str, resume_from: str | None) -> bool:
+    """Return True if this stage should execute (not skipped by --resume-from)."""
+    if resume_from is None:
+        return True
+    return STAGE_ORDER.index(stage) >= STAGE_ORDER.index(resume_from)
+
+
+def _load_pipeline_state(end_date: date) -> tuple[dict, dict, dict, object]:
+    """Load all pipeline state from disk for resume or standalone commands.
+
+    Returns (country_ledgers, country_entries, regional_reports, global_ledger).
+    """
+    from .ledger.storage import load_all_regional_reports
+
+    country_ledgers = {}
+    country_entries: dict = {}
+    for code in list_country_ledgers():
+        ledger = load_country_ledger(code)
+        country_ledgers[code] = ledger
+        entry = ledger.latest_entry()
+        if entry:
+            country_entries[code] = entry
+
+    regional_reports = load_all_regional_reports()
+    global_ledger = load_global_ledger() if global_ledger_exists() else None
+    return country_ledgers, country_entries, regional_reports, global_ledger
+
+
 async def cmd_run(args: argparse.Namespace) -> None:
     """Run the full weekly pipeline."""
     from .orchestrator import run_desk_pipeline
@@ -127,165 +158,243 @@ async def cmd_run(args: argparse.Namespace) -> None:
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
     country_codes = [args.country] if args.country else None
+    resume_from = getattr(args, "resume_from", None)
+
+    # Validate mutually exclusive flags
+    if resume_from and args.skip_synthesis:
+        print("Error: --resume-from and --skip-synthesis are mutually exclusive.")
+        return
+    if resume_from and args.triage_only:
+        print("Error: --resume-from and --triage-only are mutually exclusive.")
+        return
 
     # Initialize run recorder and redirect log file into the run folder
     recorder = RunRecorder()
     _add_log_handler(recorder.log_path)
+    recorder.init_manifest(end_date, country_codes)
 
-    # Step 1-4: Desk pipeline (triage → country agents → devil's advocate → ledger write)
-    print(f"Running desk pipeline (end_date={end_date})...")
-    desk_result = await run_desk_pipeline(
-        country_codes=country_codes,
-        end_date=end_date,
-        max_concurrent=args.concurrency,
-        skip_triage=args.skip_triage,
-        recorder=recorder,
-    )
+    # Validate prior run on resume
+    if resume_from:
+        prior = RunRecorder.find_latest_manifest()
+        if prior is None:
+            print("No prior run with manifest found. Run without --resume-from first.")
+            return
+        _, prior_manifest = prior
+        prior_date = prior_manifest.get("end_date")
+        if prior_date != end_date.isoformat():
+            print(f"Warning: prior run was for {prior_date}, resuming for {end_date}")
+        print(f"Resuming from {resume_from} (prior run: {prior_manifest.get('run_id')})")
+    else:
+        # Snapshot ledgers before any mutations (fresh runs only)
+        recorder.snapshot_ledgers()
 
-    print(
-        f"  Desk: {len(desk_result.deep_dive_results)} deep dives, "
-        f"{len(desk_result.maintenance_results)} maintenance, "
-        f"{len(desk_result.failed_results)} failed"
-    )
+    # Pre-load state from disk when resuming
+    country_entries: dict = {}
+    country_ledgers: dict = {}
+    regional_reports: dict = {}
+    global_ledger = None
 
-    if desk_result.failed_results:
-        for r in desk_result.failed_results:
-            print(f"  FAILED: {r.code} — {r.error}")
+    if resume_from:
+        country_ledgers, country_entries, regional_reports, global_ledger = _load_pipeline_state(end_date)
 
-    if args.triage_only:
-        if desk_result.triage:
-            print("\nTriage decisions:")
-            for d in desk_result.triage.decisions:
-                print(f"  {d.code}: {d.depth.value} — {d.rationale[:100]}")
+    # ---- Stage: desk ----
+    if _should_run("desk", resume_from):
+        recorder.start_stage("desk")
+        try:
+            print(f"Running desk pipeline (end_date={end_date})...")
+            desk_result = await run_desk_pipeline(
+                country_codes=country_codes,
+                end_date=end_date,
+                max_concurrent=args.concurrency,
+                skip_triage=args.skip_triage,
+                recorder=recorder,
+            )
+            recorder.complete_stage("desk")
+        except Exception as e:
+            recorder.fail_stage("desk", str(e))
+            raise
+
+        print(
+            f"  Desk: {len(desk_result.deep_dive_results)} deep dives, "
+            f"{len(desk_result.maintenance_results)} maintenance, "
+            f"{len(desk_result.failed_results)} failed"
+        )
+
+        if desk_result.failed_results:
+            for r in desk_result.failed_results:
+                print(f"  FAILED: {r.code} — {r.error}")
+
+        if args.triage_only:
+            if desk_result.triage:
+                print("\nTriage decisions:")
+                for d in desk_result.triage.decisions:
+                    print(f"  {d.code}: {d.depth.value} — {d.rationale[:100]}")
+            return
+
+        # Collect entries and ledgers from desk results
+        for cr in desk_result.country_results:
+            if cr.success:
+                country_entries[cr.code] = cr.weekly_entry
+            if country_ledger_exists(cr.code):
+                country_ledgers[cr.code] = load_country_ledger(cr.code)
+    else:
+        recorder.skip_stage("desk")
+
+    if args.skip_synthesis:
+        print("Skipping synthesis and assembly (--skip-synthesis)")
+        print("Done.")
         return
 
-    # Collect entries and ledgers for downstream steps
-    country_entries = {}
-    country_ledgers = {}
-    for cr in desk_result.country_results:
-        if cr.success:
-            country_entries[cr.code] = cr.weekly_entry
-        if country_ledger_exists(cr.code):
-            country_ledgers[cr.code] = load_country_ledger(cr.code)
-
-    if not args.skip_synthesis:
-        # Step 5: Regional synthesis
-        print("Running regional synthesis...")
-        regional_reports = await run_all_regional_syntheses(
-            country_ledgers, country_entries, end_date, args.concurrency
-        )
-        from .ledger.storage import save_regional_report
-        for region, report in regional_reports.items():
-            save_regional_report(report)
-            n_dynamics = len(report.cross_cutting_dynamics)
-            print(f"  {region.value}: {n_dynamics} cross-cutting dynamics")
-
-        # Step 6: Executive synthesis
-        print("Running executive synthesis...")
-        global_ledger = load_global_ledger()
-        global_ledger = await run_executive_agent(regional_reports, global_ledger, end_date)
-        save_global_ledger(global_ledger)
-
-        latest = global_ledger.latest_entry()
-        if latest:
-            print(f"  Briefing items: {len(latest.executive_briefing_items)}")
-            print(f"  Dynamics created: {latest.dynamics_created}")
-            print(f"  Dynamics updated: {latest.dynamics_updated}")
-
-        # Step 7: Newsletter assembly
-        print("Assembling newsletter...")
-        newsletter = assemble_newsletter(
-            global_ledger, regional_reports, country_ledgers, country_entries, end_date
-        )
-
-        # Step 8: Editor — rewrite country sections into style-guide prose
-        from .agents.editor import edit_newsletter
-        print("Editing country sections...")
-        newsletter = await edit_newsletter(
-            newsletter, country_ledgers, country_entries, max_concurrent=args.concurrency
-        )
-
-        # Step 9: Copyeditor — mechanical polish (names, abbreviations)
-        from .agents.copyeditor import copyedit_newsletter
-        print("Copy-editing...")
-        newsletter = await copyedit_newsletter(newsletter, max_concurrent=args.concurrency)
-
-        output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d")
-        output_dir.mkdir(parents=True, exist_ok=True)
-        output_path = output_dir / "newsletter.md"
-        output_path.write_text(newsletter)
-        print(f"  Newsletter written to {output_path}")
-
-        # Step 10: Publish to Mintlify site
-        print("Publishing to site...")
-        from .ledger.storage import load_story_map, list_story_maps
-        story_maps_data: dict[str, dict] = {}
-        for code in country_ledgers:
-            try:
-                story_maps_data[code] = load_story_map(code, end_date)
-            except FileNotFoundError:
-                pass
-        pages = assemble_newsletter_pages(
-            global_ledger, regional_reports, country_ledgers, country_entries, end_date,
-            story_maps=story_maps_data or None,
-        )
-
-        # Edit + copyedit + style edit multi-page output
-        from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page, summarize_card_summaries, style_edit_page, run_style_editor
-        from .agents.copyeditor import copyedit_newsletter as copyedit
-
-        # Edit overview page (executive brief + card summaries)
-        if "overview" in pages:
-            latest = global_ledger.latest_entry()
-            items = latest.executive_briefing_items if latest else []
-            if items:
-                print("Editing executive brief...")
-                pages["overview"] = await edit_overview_page(pages["overview"], items, analysis_date=end_date)
-            print("Condensing card summaries...")
-            pages["overview"] = await summarize_card_summaries(pages["overview"], analysis_date=end_date)
-            pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency, analysis_date=end_date)
-
-        # Edit watchlist page
-        if "watchlist" in pages:
-            print("Editing watchlist...")
-            pages["watchlist"] = await edit_watchlist_page(pages["watchlist"], analysis_date=end_date)
-            pages["watchlist"] = await copyedit(pages["watchlist"], max_concurrent=args.concurrency, analysis_date=end_date)
-
-        # Edit region pages (regional lead + country sections)
-        for slug in list(pages.keys()):
-            if slug != "overview" and slug != "watchlist":
-                pages[slug] = await edit_region_page(
-                    pages[slug], regional_reports, country_ledgers, country_entries,
-                    max_concurrent=args.concurrency,
-                    analysis_date=end_date,
-                )
-                pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency, analysis_date=end_date)
-
-        # Style editor — final pass for style guide compliance
-        print("Style editing...")
-
-        # Executive overview prose
-        if "overview" in pages:
-            # Extract executive prose (between ## Week heading and --- before ## Regions)
-            overview = pages["overview"]
-            week_match = re.search(r'\n## Week of .+\n', overview)
-            regions_match = re.search(r'\n---\n\n## Regions', overview)
-            if week_match and regions_match:
-                exec_prose = overview[week_match.end():regions_match.start()].strip()
-                if exec_prose and not exec_prose.startswith("*No system-level"):
-                    edited_exec = await run_style_editor(exec_prose, "executive", analysis_date=end_date)
-                    pages["overview"] = overview[:week_match.end()] + "\n\n" + edited_exec + "\n\n" + overview[regions_match.start():]
-
-        # Region pages (regional lead + each country section)
-        for slug in list(pages.keys()):
-            if slug != "overview" and slug != "watchlist":
-                print(f"  Style editing {slug}...")
-                pages[slug] = await style_edit_page(pages[slug], analysis_date=end_date, max_concurrent=args.concurrency)
-
-        brief_dir = publish_brief(pages, end_date)
-        print(f"  Site published to {brief_dir}")
+    # ---- Stage: regional ----
+    if _should_run("regional", resume_from):
+        recorder.start_stage("regional")
+        try:
+            print("Running regional synthesis...")
+            regional_reports = await run_all_regional_syntheses(
+                country_ledgers, country_entries, end_date, args.concurrency
+            )
+            from .ledger.storage import save_regional_report
+            for region, report in regional_reports.items():
+                save_regional_report(report)
+                n_dynamics = len(report.cross_cutting_dynamics)
+                print(f"  {region.value}: {n_dynamics} cross-cutting dynamics")
+            recorder.complete_stage("regional")
+        except Exception as e:
+            recorder.fail_stage("regional", str(e))
+            raise
     else:
-        print("Skipping synthesis and assembly (--skip-synthesis)")
+        recorder.skip_stage("regional")
+
+    # ---- Stage: executive ----
+    if _should_run("executive", resume_from):
+        recorder.start_stage("executive")
+        try:
+            print("Running executive synthesis...")
+            global_ledger = load_global_ledger()
+            global_ledger = await run_executive_agent(regional_reports, global_ledger, end_date)
+            save_global_ledger(global_ledger)
+
+            latest = global_ledger.latest_entry()
+            if latest:
+                print(f"  Briefing items: {len(latest.executive_briefing_items)}")
+                print(f"  Dynamics created: {latest.dynamics_created}")
+                print(f"  Dynamics updated: {latest.dynamics_updated}")
+            recorder.complete_stage("executive")
+        except Exception as e:
+            recorder.fail_stage("executive", str(e))
+            raise
+    else:
+        recorder.skip_stage("executive")
+        if global_ledger is None:
+            global_ledger = load_global_ledger()
+
+    # ---- Stage: newsletter ----
+    if _should_run("newsletter", resume_from):
+        recorder.start_stage("newsletter")
+        try:
+            print("Assembling newsletter...")
+            newsletter = assemble_newsletter(
+                global_ledger, regional_reports, country_ledgers, country_entries, end_date
+            )
+
+            from .agents.editor import edit_newsletter
+            print("Editing country sections...")
+            newsletter = await edit_newsletter(
+                newsletter, country_ledgers, country_entries, max_concurrent=args.concurrency
+            )
+
+            from .agents.copyeditor import copyedit_newsletter
+            print("Copy-editing...")
+            newsletter = await copyedit_newsletter(newsletter, max_concurrent=args.concurrency)
+
+            output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d")
+            output_dir.mkdir(parents=True, exist_ok=True)
+            output_path = output_dir / "newsletter.md"
+            output_path.write_text(newsletter)
+            print(f"  Newsletter written to {output_path}")
+            recorder.complete_stage("newsletter")
+        except Exception as e:
+            recorder.fail_stage("newsletter", str(e))
+            raise
+    else:
+        recorder.skip_stage("newsletter")
+
+    # ---- Stage: publishing ----
+    if _should_run("publishing", resume_from):
+        recorder.start_stage("publishing")
+        try:
+            print("Publishing to site...")
+            from .ledger.storage import load_story_map, list_story_maps
+            story_maps_data: dict[str, dict] = {}
+            for code in country_ledgers:
+                try:
+                    story_maps_data[code] = load_story_map(code, end_date)
+                except FileNotFoundError:
+                    pass
+            pages = assemble_newsletter_pages(
+                global_ledger, regional_reports, country_ledgers, country_entries, end_date,
+                story_maps=story_maps_data or None,
+            )
+
+            # Edit + copyedit + style edit multi-page output
+            from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page, summarize_card_summaries, style_edit_page, run_style_editor
+            from .agents.copyeditor import copyedit_newsletter as copyedit
+
+            # Edit overview page (executive brief + card summaries)
+            if "overview" in pages:
+                latest = global_ledger.latest_entry()
+                items = latest.executive_briefing_items if latest else []
+                if items:
+                    print("Editing executive brief...")
+                    pages["overview"] = await edit_overview_page(pages["overview"], items, analysis_date=end_date)
+                print("Condensing card summaries...")
+                pages["overview"] = await summarize_card_summaries(pages["overview"], analysis_date=end_date)
+                pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency, analysis_date=end_date)
+
+            # Edit watchlist page
+            if "watchlist" in pages:
+                print("Editing watchlist...")
+                pages["watchlist"] = await edit_watchlist_page(pages["watchlist"], analysis_date=end_date)
+                pages["watchlist"] = await copyedit(pages["watchlist"], max_concurrent=args.concurrency, analysis_date=end_date)
+
+            # Edit region pages (regional lead + country sections)
+            for slug in list(pages.keys()):
+                if slug != "overview" and slug != "watchlist":
+                    pages[slug] = await edit_region_page(
+                        pages[slug], regional_reports, country_ledgers, country_entries,
+                        max_concurrent=args.concurrency,
+                        analysis_date=end_date,
+                    )
+                    pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency, analysis_date=end_date)
+
+            # Style editor — final pass for style guide compliance
+            print("Style editing...")
+
+            # Executive overview prose
+            if "overview" in pages:
+                overview = pages["overview"]
+                week_match = re.search(r'\n## Week of .+\n', overview)
+                regions_match = re.search(r'\n---\n\n## Regions', overview)
+                if week_match and regions_match:
+                    exec_prose = overview[week_match.end():regions_match.start()].strip()
+                    if exec_prose and not exec_prose.startswith("*No system-level"):
+                        edited_exec = await run_style_editor(exec_prose, "executive", analysis_date=end_date)
+                        pages["overview"] = overview[:week_match.end()] + "\n\n" + edited_exec + "\n\n" + overview[regions_match.start():]
+
+            # Region pages (regional lead + each country section)
+            for slug in list(pages.keys()):
+                if slug != "overview" and slug != "watchlist":
+                    print(f"  Style editing {slug}...")
+                    pages[slug] = await style_edit_page(pages[slug], analysis_date=end_date, max_concurrent=args.concurrency)
+
+            brief_dir = publish_brief(pages, end_date)
+            print(f"  Site published to {brief_dir}")
+            recorder.complete_stage("publishing")
+        except Exception as e:
+            recorder.fail_stage("publishing", str(e))
+            raise
+    else:
+        recorder.skip_stage("publishing")
 
     print("Done.")
 
@@ -324,7 +433,6 @@ async def cmd_triage(args: argparse.Namespace) -> None:
 async def cmd_assemble(args: argparse.Namespace) -> None:
     """Assemble newsletter from existing ledger data."""
     from .newsletter.assembly import assemble_newsletter
-    from .ledger.storage import load_all_regional_reports
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
 
@@ -332,16 +440,7 @@ async def cmd_assemble(args: argparse.Namespace) -> None:
         print("No global ledger found. Run the pipeline first.")
         return
 
-    global_ledger = load_global_ledger()
-    country_ledgers = {}
-    country_entries: dict = {}
-    for code in list_country_ledgers():
-        ledger = load_country_ledger(code)
-        country_ledgers[code] = ledger
-        entry = ledger.latest_entry()
-        country_entries[code] = entry
-
-    regional_reports = load_all_regional_reports()
+    country_ledgers, country_entries, regional_reports, global_ledger = _load_pipeline_state(end_date)
 
     newsletter = assemble_newsletter(
         global_ledger, regional_reports, country_ledgers, country_entries, end_date
@@ -358,7 +457,6 @@ def cmd_publish(args: argparse.Namespace) -> None:
     """Publish existing ledger data to the Mintlify site (no LLM calls)."""
     from .newsletter.assembly import assemble_newsletter_pages
     from .newsletter.publish import publish_brief
-    from .ledger.storage import load_all_regional_reports
 
     end_date = date.fromisoformat(args.date) if args.date else date.today()
 
@@ -366,16 +464,7 @@ def cmd_publish(args: argparse.Namespace) -> None:
         print("No global ledger found. Run the pipeline first.")
         return
 
-    global_ledger = load_global_ledger()
-    country_ledgers = {}
-    country_entries: dict = {}
-    for code in list_country_ledgers():
-        ledger = load_country_ledger(code)
-        country_ledgers[code] = ledger
-        entry = ledger.latest_entry()
-        country_entries[code] = entry
-
-    regional_reports = load_all_regional_reports()
+    country_ledgers, country_entries, regional_reports, global_ledger = _load_pipeline_state(end_date)
 
     from .ledger.storage import load_story_map
     story_maps_data: dict[str, dict] = {}
@@ -462,6 +551,9 @@ def build_parser() -> argparse.ArgumentParser:
     p_run.add_argument("--triage-only", action="store_true", help="Run triage only, no agents")
     p_run.add_argument("--skip-synthesis", action="store_true",
                         help="Skip regional/executive synthesis and newsletter assembly")
+    p_run.add_argument("--resume-from",
+                        choices=["regional", "executive", "newsletter", "publishing"],
+                        help="Resume from this stage (skips prior stages, loads state from disk)")
 
     # triage
     p_triage = subparsers.add_parser("triage", help="Run triage only")

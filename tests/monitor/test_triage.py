@@ -261,16 +261,16 @@ class TestParseTriageResponse:
         assert len(decisions) == 2
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_triage_response("not json")
 
-    def test_invalid_depth_raises(self):
+    def test_invalid_depth_falls_back_to_maintenance(self):
         bad = json.dumps({"decisions": [{
             "country": "X", "code": "xx", "depth": "invalid",
             "rationale": "test",
         }]})
-        with pytest.raises(ValueError):
-            parse_triage_response(bad)
+        decisions, _ = parse_triage_response(bad)
+        assert decisions[0].depth == Depth.MAINTENANCE
 
     def test_no_summary_ok(self):
         """Backward compat: responses without summary still parse."""

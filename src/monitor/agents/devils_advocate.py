@@ -6,9 +6,7 @@ Separate call per deep-dive country. Input is the country agent's weekly entry
 Output is the devils_advocate section appended to the entry.
 """
 
-import json
 import logging
-import re
 from datetime import date
 from typing import Optional
 
@@ -23,6 +21,7 @@ from ..config import (
     load_prompt,
 )
 from ..models import CountryLedger, DevilsAdvocate, WeeklyEntry
+from ..sanitize import extract_json
 
 logger = logging.getLogger(__name__)
 
@@ -162,12 +161,7 @@ def _build_devils_advocate_prompt(
 
 def parse_devils_advocate_response(response_text: str) -> DevilsAdvocate:
     """Parse the devil's advocate JSON response."""
-    text = response_text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
-    data = json.loads(text)
+    data = extract_json(response_text, context="devils_advocate")
 
     # Support both wrapped and unwrapped formats
     da_data = data.get("devils_advocate", data)

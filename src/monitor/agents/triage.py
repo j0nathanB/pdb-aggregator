@@ -7,9 +7,7 @@ Phase 2: Triage decision (single LLM call) — decides deep_dive or maintenance.
 """
 
 import asyncio
-import json
 import logging
-import re
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 
@@ -27,6 +25,7 @@ from ..config import (
 )
 from ..collection.brave import BraveNewsClient
 from ..models import CountryLedger, GlobalLedger
+from ..sanitize import extract_json, safe_enum
 
 logger = logging.getLogger(__name__)
 
@@ -303,19 +302,14 @@ def parse_triage_response(response_text: str) -> tuple[list[TriageDecision], str
 
     Returns (decisions, summary_assessment).
     """
-    text = response_text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
-    data = json.loads(text)
+    data = extract_json(response_text, context="triage")
 
     decisions = []
     for d in data["decisions"]:
         decisions.append(TriageDecision(
             country=d["country"],
             code=d["code"],
-            depth=Depth(d["depth"]),
+            depth=safe_enum(Depth, d.get("depth", "maintenance"), Depth.MAINTENANCE, context="triage_decision"),
             rationale=d["rationale"],
             triggered_by=d.get("triggered_by", []),
             signal_categories_flagged=d.get("signal_categories_flagged", []),

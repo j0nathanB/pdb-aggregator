@@ -6,9 +6,7 @@ Input: Story map + extracted articles + country dossier + country ledger.
 Output: WeeklyEntry (without devils_advocate) + updated signal categories + posture summary.
 """
 
-import json
 import logging
-import re
 from datetime import date, timedelta
 from typing import TYPE_CHECKING, Optional
 
@@ -19,6 +17,7 @@ from ..config import (
     MODEL,
     THINKING_BUDGET_TOKENS,
     CategoryStatus,
+    ClaimStatus,
     CountryConfig,
     Depth,
     Movement,
@@ -38,6 +37,7 @@ from ..models import (
     UnexpectedDevelopment,
     WeeklyEntry,
 )
+from ..sanitize import extract_json, safe_date, safe_enum
 
 if TYPE_CHECKING:
     from ..collection.extract import ExtractionResult
@@ -160,13 +160,13 @@ def _build_ledger_context(ledger: CountryLedger, max_entries: int = 4) -> str:
     # Structural claims to check
     active_claims = [
         c for c in ledger.structural_claim_status
-        if c.status != "falsified"
+        if c.status != ClaimStatus.FALSIFIED
     ]
     if active_claims:
         lines.append(f"\n## ACTIVE STRUCTURAL CLAIMS ({len(active_claims)} total)")
         # Show claims under pressure first, then sample of confirmed
-        priority_claims = [c for c in active_claims if c.status != "confirmed"]
-        sample_confirmed = [c for c in active_claims if c.status == "confirmed"][:5]
+        priority_claims = [c for c in active_claims if c.status != ClaimStatus.CONFIRMED]
+        sample_confirmed = [c for c in active_claims if c.status == ClaimStatus.CONFIRMED][:5]
         for c in priority_claims + sample_confirmed:
             lines.append(f"- [{c.claim_ref}] (§{c.dossier_section}, {c.status.value}): {c.claim_text[:150]}")
 
@@ -447,30 +447,7 @@ def parse_country_response(
     ledger: CountryLedger,
 ) -> CountryAgentOutput:
     """Parse the country agent's JSON response into structured output."""
-    text = response_text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
-    # Try direct parse first; if it fails, extract JSON object from response
-    try:
-        data = json.loads(text)
-    except json.JSONDecodeError:
-        # Response may contain prose before/after JSON — extract the JSON object
-        match = re.search(r"\{", text)
-        if match:
-            # Find the matching closing brace by tracking depth
-            depth = 0
-            start = match.start()
-            for i, ch in enumerate(text[start:], start):
-                if ch == "{":
-                    depth += 1
-                elif ch == "}":
-                    depth -= 1
-                    if depth == 0:
-                        text = text[start:i + 1]
-                        break
-        data = json.loads(text)
+    data = extract_json(response_text, context=f"country_response")
 
     # Support both wrapped and unwrapped formats
     entry_data = data.get("weekly_entry", data)
@@ -519,10 +496,7 @@ def parse_country_response(
             except Exception:
                 pass
 
-        try:
-            movement = Movement(cat_data.get("movement", "none"))
-        except ValueError:
-            movement = Movement.NONE
+        movement = safe_enum(Movement, cat_data.get("movement", "none"), Movement.NONE, context="category_movement")
 
         category_movements[cat] = CategoryMovement(
             movement=movement,
@@ -539,10 +513,7 @@ def parse_country_response(
             headline = u.get("headline") or u.get("title") or u.get("summary", "Unknown")
             raw_date = u.get("date")
             parsed_date = date.fromisoformat(raw_date) if isinstance(raw_date, str) else (raw_date or week_date)
-            try:
-                sig_cat = SignalCategory(u.get("signal_category", "alignment_diplomatic"))
-            except ValueError:
-                sig_cat = SignalCategory.ALIGNMENT_DIPLOMATIC
+            sig_cat = safe_enum(SignalCategory, u.get("signal_category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="unexpected_development")
             unexpected.append(UnexpectedDevelopment(
                 headline=headline,
                 date=parsed_date,
@@ -562,10 +533,7 @@ def parse_country_response(
             logger.warning("Skipping string absence_check entry: %s", a[:100])
             continue
         try:
-            try:
-                sig_cat = SignalCategory(a.get("signal_category", "alignment_diplomatic"))
-            except ValueError:
-                sig_cat = SignalCategory.ALIGNMENT_DIPLOMATIC
+            sig_cat = safe_enum(SignalCategory, a.get("signal_category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="absence_check")
             absence_checks.append(AbsenceCheck(
                 expected=a.get("expected", ""),
                 signal_category=sig_cat,
@@ -579,14 +547,8 @@ def parse_country_response(
     # Parse self-corrections
     self_corrections = []
     for s in entry_data.get("self_corrections", []):
-        try:
-            cat = SignalCategory(s.get("category", "alignment_diplomatic"))
-        except ValueError:
-            cat = SignalCategory.ALIGNMENT_DIPLOMATIC
-        try:
-            pw = date.fromisoformat(s["prior_week"]) if isinstance(s.get("prior_week"), str) else (s.get("prior_week") or week_date)
-        except (ValueError, TypeError):
-            pw = week_date
+        cat = safe_enum(SignalCategory, s.get("category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="self_correction")
+        pw = safe_date(s.get("prior_week"), week_date, context="self_correction.prior_week")
         self_corrections.append(SelfCorrection(
             category=cat,
             prior_week=pw,
@@ -635,20 +597,24 @@ def parse_country_response(
             confidence_rationale=ua.get("confidence_rationale", ""),
             key_actors=ua.get("key_actors", []),
             dossier_sections_referenced=ua.get("dossier_sections_referenced", []),
-            last_updated=date.fromisoformat(ua["last_updated"]) if ua.get("last_updated") else week_date,
+            last_updated=safe_date(ua.get("last_updated"), week_date, context="assessment.last_updated"),
         )
 
     # Parse updated posture summary
     # Support both key names
     up = data.get("updated_posture_summary", data.get("updated_posture", {}))
+    category_status = {}
+    valid_categories = {c.value for c in SignalCategory}
+    for k, v in up["category_status"].items():
+        if k not in valid_categories:
+            logger.warning("Skipping invalid SignalCategory key %r in posture.category_status", k)
+            continue
+        category_status[SignalCategory(k)] = safe_enum(CategoryStatus, v, CategoryStatus.ROUTINE, context="posture.category_status")
     posture_summary = PostureSummary(
-        as_of=date.fromisoformat(up["as_of"]) if up.get("as_of") else week_date,
+        as_of=safe_date(up.get("as_of"), week_date, context="posture.as_of"),
         text=up["text"],
-        category_status={
-            SignalCategory(k): CategoryStatus(v)
-            for k, v in up["category_status"].items()
-        },
-        last_deep_dive=date.fromisoformat(up["last_deep_dive"]) if up.get("last_deep_dive") else week_date,
+        category_status=category_status,
+        last_deep_dive=safe_date(up.get("last_deep_dive"), week_date, context="posture.last_deep_dive"),
         consecutive_maintenance_weeks=up.get("consecutive_maintenance_weeks", 0),
     )
 

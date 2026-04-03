@@ -29,6 +29,7 @@ from .retry import RetryExhausted, with_retry
 from .run_recorder import RunRecorder
 from .validation import validate_source_attribution
 from .config import (
+    ClaimStatus,
     CountryConfig,
     Depth,
     GovernmentDomainConfig,
@@ -532,14 +533,25 @@ def apply_to_ledger(
     if not result.success or result.weekly_entry is None:
         return ledger
 
-    # Append weekly entry
-    ledger.weekly_entries.append(result.weekly_entry)
+    # Upsert weekly entry (replace if same week already exists)
+    existing_idx = next(
+        (i for i, e in enumerate(ledger.weekly_entries) if e.week == result.weekly_entry.week),
+        None,
+    )
+    if existing_idx is not None:
+        logger.warning("Replacing existing entry for %s week %s", ledger.code, result.weekly_entry.week)
+        ledger.weekly_entries[existing_idx] = result.weekly_entry
+    else:
+        ledger.weekly_entries.append(result.weekly_entry)
     ledger.last_updated = result.weekly_entry.week
 
     if result.depth == Depth.DEEP_DIVE and result.output is not None:
         # Update signal categories and posture from country agent output
         ledger.signal_categories = result.output.signal_categories
         ledger.posture_summary = result.output.posture_summary
+        # Unconditional reset on deep-dive — don't rely on LLM output for this
+        ledger.posture_summary.consecutive_maintenance_weeks = 0
+        ledger.posture_summary.last_deep_dive = result.weekly_entry.week
 
         # Update structural claim status from weekly checks
         for check in result.weekly_entry.structural_claim_checks:
@@ -548,9 +560,9 @@ def apply_to_ledger(
                     claim.status = check.status
                     claim.last_checked = result.weekly_entry.week
                     claim.evidence_summary = check.evidence
-                    if check.status in ("under_pressure", "weakened"):
+                    if check.status in (ClaimStatus.UNDER_PRESSURE, ClaimStatus.WEAKENED):
                         claim.weeks_under_pressure += 1
-                    elif check.status == "confirmed":
+                    elif check.status == ClaimStatus.CONFIRMED:
                         claim.weeks_under_pressure = 0
 
         # Log self-corrections

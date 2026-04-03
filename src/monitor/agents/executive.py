@@ -5,9 +5,7 @@ Input: 5 regional reports + global ledger (prior state).
 Output: Updated global ledger (dynamics, watchlist, briefing items, triage implications).
 """
 
-import json
 import logging
-import re
 from datetime import date
 from typing import Optional
 
@@ -37,21 +35,9 @@ from ..models import (
     TriageImplication,
     WatchlistItem,
 )
+from ..sanitize import extract_json, safe_date, safe_enum, safe_enum_list
 
 logger = logging.getLogger(__name__)
-
-_VALID_CATEGORIES = {c.value for c in SignalCategory}
-
-
-def _safe_categories(raw: list) -> list[SignalCategory]:
-    """Parse signal categories, skipping invalid values from LLM output."""
-    result = []
-    for c in raw:
-        if c in _VALID_CATEGORIES:
-            result.append(SignalCategory(c))
-        else:
-            logger.warning("Skipping invalid SignalCategory from LLM: %r", c)
-    return result
 
 
 # =============================================================================
@@ -198,12 +184,7 @@ def parse_executive_response(response_text: str) -> dict:
 
     Handles both the new wrapped format (global_ledger_update) and the old flat format.
     """
-    text = response_text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
-    data = json.loads(text)
+    data = extract_json(response_text, context="executive_response")
 
     # Unwrap if using the new spec format
     if "global_ledger_update" in data:
@@ -214,11 +195,7 @@ def parse_executive_response(response_text: str) -> dict:
 
 def _safe_linkage_type(value: str) -> LinkageType:
     """Parse a LinkageType, falling back to PARALLEL_BEHAVIOR for invalid values."""
-    try:
-        return LinkageType(value)
-    except ValueError:
-        logger.warning("Invalid LinkageType '%s', falling back to parallel_behavior", value)
-        return LinkageType.PARALLEL_BEHAVIOR
+    return safe_enum(LinkageType, value, LinkageType.PARALLEL_BEHAVIOR, context="executive")
 
 
 def _parse_active_dynamic(d: dict, week: date) -> ActiveDynamic:
@@ -226,29 +203,18 @@ def _parse_active_dynamic(d: dict, week: date) -> ActiveDynamic:
     es = d.get("evidence_strength", {})
     ti = d.get("triage_implications", {})
 
-    created_week = week
-    if "created_week" in d:
-        try:
-            created_week = date.fromisoformat(str(d["created_week"]))
-        except (ValueError, TypeError):
-            created_week = week
-
-    last_updated = week
-    if "last_updated" in d:
-        try:
-            last_updated = date.fromisoformat(str(d["last_updated"]))
-        except (ValueError, TypeError):
-            last_updated = week
+    created_week = safe_date(d.get("created_week"), week, context="dynamic.created_week")
+    last_updated = safe_date(d.get("last_updated"), week, context="dynamic.last_updated")
 
     return ActiveDynamic(
         dynamic_id=d["dynamic_id"],
         title=d["title"],
         created_week=created_week,
         last_updated=last_updated,
-        status=DynamicStatus(d.get("status", "emerging")),
+        status=safe_enum(DynamicStatus, d.get("status", "emerging"), DynamicStatus.EMERGING, context="active_dynamic"),
         current_assessment=d["current_assessment"],
         countries_involved=d.get("countries_involved", []),
-        signal_categories_touched=_safe_categories(d.get("signal_categories_touched", [])),
+        signal_categories_touched=safe_enum_list(SignalCategory, d.get("signal_categories_touched", []), context="active_dynamic"),
         evidence_strength=EvidenceStrength(
             confidence=es.get("confidence", 3),
             supporting_country_confidences=es.get("supporting_country_confidences", {}),
@@ -269,16 +235,11 @@ def _parse_active_dynamic(d: dict, week: date) -> ActiveDynamic:
 
 def _parse_watchlist_item(w: dict, week: date) -> WatchlistItem:
     """Parse a single watchlist item from JSON."""
-    added_week = week
-    if "added_week" in w:
-        try:
-            added_week = date.fromisoformat(str(w["added_week"]))
-        except (ValueError, TypeError):
-            added_week = week
+    added_week = safe_date(w.get("added_week"), week, context="watchlist_item.added_week")
 
     return WatchlistItem(
         item=w["item"],
-        signal_category=SignalCategory(w["signal_category"]),
+        signal_category=safe_enum(SignalCategory, w.get("signal_category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="watchlist_item"),
         countries=w.get("countries", []),
         why_it_matters=w.get("why_it_matters", ""),
         trigger=w.get("trigger", ""),
@@ -299,29 +260,15 @@ def apply_executive_output(
 
     # Update global posture summary
     gps = data["global_posture_summary"]
-    as_of = week
-    if "as_of" in gps:
-        try:
-            as_of = date.fromisoformat(str(gps["as_of"]))
-        except (ValueError, TypeError):
-            as_of = week
-
-    def _safe_categories(names: list[str]) -> list[SignalCategory]:
-        cats = []
-        for c in names:
-            try:
-                cats.append(SignalCategory(c))
-            except ValueError:
-                logger.warning("Ignoring unknown signal category from LLM: %r", c)
-        return cats
+    as_of = safe_date(gps.get("as_of"), week, context="global_posture_summary.as_of")
 
     se = gps.get("signal_environment", {})
     global_ledger.global_posture_summary = GlobalPostureSummary(
         as_of=as_of,
         text=gps["text"],
         signal_environment=SignalEnvironment(
-            most_active_categories=_safe_categories(se.get("most_active_categories", [])),
-            quietest_categories=_safe_categories(se.get("quietest_categories", [])),
+            most_active_categories=safe_enum_list(SignalCategory, se.get("most_active_categories", []), context="signal_environment"),
+            quietest_categories=safe_enum_list(SignalCategory, se.get("quietest_categories", []), context="signal_environment"),
             geographic_hotspots=se.get("geographic_hotspots", []),
             geographic_quiet_zones=se.get("geographic_quiet_zones", []),
         ),
@@ -399,12 +346,10 @@ def _apply_delta(
             title=d["title"],
             created_week=week,
             last_updated=week,
-            status=DynamicStatus(d.get("status", "emerging")),
+            status=safe_enum(DynamicStatus, d.get("status", "emerging"), DynamicStatus.EMERGING, context="delta_create"),
             current_assessment=d["current_assessment"],
             countries_involved=d.get("countries_involved", []),
-            signal_categories_touched=[
-                SignalCategory(c) for c in d.get("signal_categories_touched", [])
-            ],
+            signal_categories_touched=safe_enum_list(SignalCategory, d.get("signal_categories_touched", []), context="delta_create"),
             evidence_strength=EvidenceStrength(
                 confidence=es.get("confidence", 3),
                 supporting_country_confidences=es.get("supporting_country_confidences", {}),
@@ -430,7 +375,7 @@ def _apply_delta(
         for dynamic in global_ledger.active_dynamics:
             if dynamic.dynamic_id == did:
                 dynamic.last_updated = week
-                dynamic.status = DynamicStatus(u["status"])
+                dynamic.status = safe_enum(DynamicStatus, u["status"], dynamic.status, context="delta_update")
                 dynamic.current_assessment = u["current_assessment"]
                 dynamic.countries_involved = u.get("countries_involved", dynamic.countries_involved)
                 if "evidence_strength" in u:
@@ -487,7 +432,7 @@ def _apply_delta(
     for w in data.get("watchlist_add", []):
         global_ledger.watchlist.append(WatchlistItem(
             item=w["item"],
-            signal_category=SignalCategory(w["signal_category"]),
+            signal_category=safe_enum(SignalCategory, w.get("signal_category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="watchlist_add"),
             countries=w.get("countries", []),
             why_it_matters=w.get("why_it_matters", ""),
             trigger=w.get("trigger", ""),
@@ -558,7 +503,15 @@ def _build_and_append_weekly_entry(
         items_considered_rejected=rejected,
         self_corrections=corrections,
     )
-    global_ledger.weekly_entries.append(weekly_entry)
+    existing_idx = next(
+        (i for i, e in enumerate(global_ledger.weekly_entries) if e.week == week),
+        None,
+    )
+    if existing_idx is not None:
+        logger.warning("Replacing existing global weekly entry for %s", week)
+        global_ledger.weekly_entries[existing_idx] = weekly_entry
+    else:
+        global_ledger.weekly_entries.append(weekly_entry)
 
 
 # =============================================================================

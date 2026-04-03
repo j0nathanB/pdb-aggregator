@@ -323,7 +323,7 @@ class TestParseRegionalResponse:
         assert len(report.cross_cutting_dynamics) == 1
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_regional_response("not json", Region.AMERICAS, date(2026, 3, 14))
 
     def test_empty_dynamics_parses(self):

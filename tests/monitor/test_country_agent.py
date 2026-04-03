@@ -417,7 +417,7 @@ class TestParseCountryResponse:
         assert isinstance(output, CountryAgentOutput)
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_country_response("not json", date(2026, 3, 14), "w1", _test_ledger())
 
     def test_missing_category_defaults_to_none(self):

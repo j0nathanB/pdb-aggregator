@@ -6,9 +6,7 @@ Output: Regional report with cross-cutting dynamics, confidence inheritance.
 No regional persistence — runs fresh each week.
 """
 
-import json
 import logging
-import re
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Optional
@@ -25,6 +23,7 @@ from ..config import (
     load_prompt,
 )
 from ..models import CountryLedger, WeeklyEntry
+from ..sanitize import extract_json
 
 logger = logging.getLogger(__name__)
 
@@ -231,12 +230,7 @@ assessments, and produce the JSON output as specified in your instructions."""
 
 def parse_regional_response(response_text: str, region: Region, week: date) -> RegionalReport:
     """Parse the regional synthesis JSON response."""
-    text = response_text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
-    data = json.loads(text)
+    data = extract_json(response_text, context=f"regional_{region.value}")
 
     dynamics = []
     for d in data.get("cross_cutting_dynamics", []):

@@ -179,7 +179,7 @@ class TestParseInitResponse:
         assert "posture_summary" in result
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_init_response("not json at all")
 
     def test_missing_category_raises(self):

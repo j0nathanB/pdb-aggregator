@@ -11,7 +11,6 @@ can see what was covered this week at a glance.
 
 import json
 import logging
-import re
 from dataclasses import dataclass, field
 from datetime import date
 
@@ -27,6 +26,7 @@ from ..config import (
     load_prompt,
 )
 from .expansion import ExpansionResult
+from ..sanitize import extract_json
 
 logger = logging.getLogger(__name__)
 
@@ -222,17 +222,11 @@ def parse_story_map_response(response_text: str) -> StoryMapOutput:
 
     Raises json.JSONDecodeError or KeyError on invalid responses.
     """
-    text = response_text.strip()
-    # Strip markdown fencing if present
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
     try:
-        data = json.loads(text)
-    except json.JSONDecodeError as e:
-        logger.warning("Story map JSON repair attempt: %s", e)
-        data = repair_json(text, return_objects=True)
+        data = extract_json(response_text, context="story_map")
+    except ValueError:
+        logger.warning("Story map extract_json failed, attempting json_repair")
+        data = repair_json(response_text.strip(), return_objects=True)
         if not isinstance(data, dict):
             raise
 

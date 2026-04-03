@@ -1,7 +1,7 @@
 """Tests for CLI argument parsing and command routing."""
 
 import pytest
-from src.monitor.cli import build_parser
+from src.monitor.cli import build_parser, _should_run
 
 
 class TestParser:
@@ -61,6 +61,47 @@ class TestParser:
         parser = build_parser()
         args = parser.parse_args(["run", "--skip-synthesis"])
         assert args.skip_synthesis
+
+    def test_run_resume_from(self):
+        parser = build_parser()
+        args = parser.parse_args(["run", "--resume-from", "publishing"])
+        assert args.resume_from == "publishing"
+
+    def test_run_resume_from_all_choices(self):
+        parser = build_parser()
+        for choice in ["regional", "executive", "newsletter", "publishing"]:
+            args = parser.parse_args(["run", "--resume-from", choice])
+            assert args.resume_from == choice
+
+    def test_run_resume_from_invalid(self):
+        parser = build_parser()
+        with pytest.raises(SystemExit):
+            parser.parse_args(["run", "--resume-from", "desk"])
+
+    def test_run_resume_from_default_is_none(self):
+        parser = build_parser()
+        args = parser.parse_args(["run"])
+        assert args.resume_from is None
+
+
+class TestShouldRun:
+    def test_no_resume_runs_everything(self):
+        for stage in ["desk", "regional", "executive", "newsletter", "publishing"]:
+            assert _should_run(stage, None) is True
+
+    def test_resume_from_regional_skips_desk(self):
+        assert _should_run("desk", "regional") is False
+        assert _should_run("regional", "regional") is True
+        assert _should_run("executive", "regional") is True
+        assert _should_run("publishing", "regional") is True
+
+    def test_resume_from_publishing_skips_all_but_publishing(self):
+        assert _should_run("desk", "publishing") is False
+        assert _should_run("regional", "publishing") is False
+        assert _should_run("executive", "publishing") is False
+        assert _should_run("newsletter", "publishing") is False
+        assert _should_run("publishing", "publishing") is True
+
 
     def test_triage_command(self):
         parser = build_parser()

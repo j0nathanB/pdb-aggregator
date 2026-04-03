@@ -5,7 +5,6 @@ Step 1 (mechanical): Extract structural fields and claims from config + dossier.
 Step 2 (LLM call): Generate initial posture summary and signal category assessments.
 """
 
-import json
 import logging
 import re
 from datetime import date
@@ -27,6 +26,7 @@ from ..models import (
     SignalCategoryAssessment,
     StructuralClaimStatus,
 )
+from ..sanitize import extract_json
 
 logger = logging.getLogger(__name__)
 
@@ -201,13 +201,7 @@ Produce the JSON object as specified in your instructions."""
 
 def parse_init_response(response_text: str) -> dict:
     """Parse the LLM's JSON response into posture_summary + signal_categories."""
-    # Strip markdown fencing if present
-    text = response_text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*\n?", "", text)
-        text = re.sub(r"\n?```\s*$", "", text)
-
-    data = json.loads(text)
+    data = extract_json(response_text, context="init_response")
 
     today = date.today()
 

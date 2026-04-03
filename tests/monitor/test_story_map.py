@@ -228,7 +228,7 @@ class TestParseStoryMapResponse:
         assert len(output.stories) == 3
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_story_map_response("not json at all")
 
     def test_empty_stories_ok(self):

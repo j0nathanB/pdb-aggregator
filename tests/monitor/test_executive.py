@@ -398,7 +398,7 @@ class TestParseExecutiveResponse:
         assert "global_posture_summary" in data
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_executive_response("not json")
 
 

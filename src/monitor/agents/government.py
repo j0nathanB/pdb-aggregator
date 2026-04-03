@@ -10,9 +10,7 @@ Runs every week for all 28 countries, before triage.
 
 from __future__ import annotations
 
-import json
 import logging
-import re
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Optional
@@ -28,6 +26,8 @@ from ..config import (
     SignalCategory,
     load_prompt,
 )
+
+from ..sanitize import extract_json
 
 logger = logging.getLogger(__name__)
 
@@ -465,13 +465,8 @@ async def run_government_agent(
 
 def _parse_response(text: str) -> dict:
     """Parse JSON from the LLM response, handling markdown code blocks."""
-    # Try to find JSON in markdown code block
-    match = re.search(r"```(?:json)?\s*\n(.*?)\n```", text, re.DOTALL)
-    if match:
-        return json.loads(match.group(1))
-    # Try raw JSON
     try:
-        return json.loads(text)
-    except json.JSONDecodeError:
+        return extract_json(text, context="government")
+    except ValueError:
         logger.warning("Could not parse government agent response as JSON")
         return {"findings": [], "discovery_gaps": [], "extraction_failures": []}

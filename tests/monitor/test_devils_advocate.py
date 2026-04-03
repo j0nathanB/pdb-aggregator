@@ -200,7 +200,7 @@ class TestParseResponse:
         assert da.recommended_adjustments == []
 
     def test_invalid_json_raises(self):
-        with pytest.raises(json.JSONDecodeError):
+        with pytest.raises((json.JSONDecodeError, ValueError)):
             parse_devils_advocate_response("not json")
 
     def test_parses_wrapped_format(self):
