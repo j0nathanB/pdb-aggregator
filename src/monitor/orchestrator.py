@@ -305,7 +305,7 @@ async def collect_layer2(
 
                 for code, lr in zip(gov_configs.keys(), layer2_results):
                     if isinstance(lr, Exception):
-                        logger.error(f"Layer 2 exception for {code}: {lr}")
+                        logger.error("Layer 2 exception for %s: %s", code, lr, exc_info=lr)
                         results[code] = Layer2Result(code=code, error=str(lr))
                     else:
                         results[code] = lr
@@ -897,7 +897,8 @@ async def run_desk_pipeline(
     # Collect results and write ledgers
     for cr in country_results:
         if isinstance(cr, Exception):
-            result.errors.append(str(cr))
+            logger.error("Country task failed: %s: %s", type(cr).__name__, cr, exc_info=cr)
+            result.errors.append(f"{type(cr).__name__}: {cr}")
             continue
 
         result.country_results.append(cr)
