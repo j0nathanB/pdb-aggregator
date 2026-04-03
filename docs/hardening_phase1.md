@@ -96,10 +96,23 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 **Dead code removed** — Deleted `scripts/migrate_to_mintlify.py` (imported nonexistent `src.persistence`).
 
-### Phase 3: Observability
+### Phase 3.4: Trace-Before-Parse — COMPLETED (2026-04-02)
+
+**Two-phase trace writes** — `save_raw_response()` saves the raw API response BEFORE parsing. `update_trace_parsed()` updates the trace after parsing succeeds. If parsing crashes, the $5-15 API response is safe on disk with `status: "raw"`.
+
+**17 agent call sites migrated** — All agents across executive, country, regional, story_map, government, triage, devils_advocate, editor (5 functions), copyeditor, initialization, consolidation.
+
+**`replay` CLI command** — `python -m src.monitor.cli replay --date YYYY-MM-DD --agent executive` loads raw traces from disk and re-parses them. No API calls. `--force` re-parses even if already parsed.
+
+**Backward compatible** — Old `save_trace()` still works. `load_trace()` reads both old and new format.
+
+686 tests passing (15 new).
+
+### Phase 3: Observability (remaining)
 - Cost tracking per run
 - ParseDiagnostics aggregation in pipeline summary
 - Prompt change detection (hash comparison)
+- Operational logging (timed_operation, TrackedSemaphore, heartbeats)
 
 ### Phase 4: Structural Improvements
 - Consolidation integrity (structured metadata companion)

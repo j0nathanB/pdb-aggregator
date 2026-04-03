@@ -566,6 +566,16 @@ async def run_executive_agent(
         response.usage.input_tokens, response.usage.output_tokens,
     )
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    save_raw_response(
+        "executive", "global", week,
+        system_prompt=load_prompt("executive"),
+        user_message=prompt,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     data = parse_executive_response(response_text)
     logger.info(
         "Executive: %d briefing items, %d dynamics created, %d updated, %d archived",
@@ -574,16 +584,6 @@ async def run_executive_agent(
         len(data.get("weekly_entry", {}).get("dynamics_updated", [])),
         len(data.get("weekly_entry", {}).get("dynamics_archived", [])),
     )
-
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
-        "executive", "global", week,
-        system_prompt=load_prompt("executive"),
-        user_message=prompt,
-        response_text=response_text,
-        parsed_output=data,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
+    update_trace_parsed("executive", "global", week, parsed_output=data)
 
     return apply_executive_output(global_ledger, data, week)

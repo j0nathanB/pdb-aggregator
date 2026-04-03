@@ -209,8 +209,8 @@ async def run_editor(
         label, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, extract_thinking, extract_usage
+    save_raw_response(
         "editor", ledger.code.lower(), analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
@@ -304,8 +304,8 @@ async def run_regional_editor(
         label, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, extract_thinking, extract_usage
+    save_raw_response(
         "editor", f"regional_{label}", analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
@@ -610,8 +610,8 @@ async def run_executive_editor(
         response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, extract_thinking, extract_usage
+    save_raw_response(
         "editor", "executive", analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
@@ -714,8 +714,8 @@ async def edit_watchlist_page(
         response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, extract_thinking, extract_usage
+    save_raw_response(
         "editor", "watchlist", analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,
@@ -850,8 +850,8 @@ async def run_style_editor(
         label, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, extract_thinking, extract_usage
+    save_raw_response(
         "style_editor", label.lower().replace(" ", "_"),
         analysis_date or date.today(),
         system_prompt=system_prompt,

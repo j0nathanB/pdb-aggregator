@@ -348,22 +348,22 @@ async def run_regional_synthesis(
         region.value, response.usage.input_tokens, response.usage.output_tokens,
     )
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    save_raw_response(
+        "regional", region.value, week,
+        system_prompt=system_prompt,
+        user_message=prompt,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     result = parse_regional_response(response_text, region, week)
     logger.info(
         "Regional %s: %d cross-cutting dynamics, %d gaps",
         region.value, len(result.cross_cutting_dynamics), len(result.gaps),
     )
-
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
-        "regional", region.value, week,
-        system_prompt=system_prompt,
-        user_message=prompt,
-        response_text=response_text,
-        parsed_output=result,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
+    update_trace_parsed("regional", region.value, week, parsed_output=result)
 
     return result
 

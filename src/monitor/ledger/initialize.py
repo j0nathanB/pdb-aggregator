@@ -271,18 +271,18 @@ async def llm_initialize(config: CountryConfig) -> dict:
         f"output_tokens={response.usage.output_tokens}"
     )
 
-    parsed = parse_init_response(response_text)
-
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    save_raw_response(
         "initialization", config.code, date.today(),
         system_prompt=INIT_SYSTEM_PROMPT,
         user_message=prompt,
         response_text=response_text,
-        parsed_output=parsed,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
     )
+
+    parsed = parse_init_response(response_text)
+    update_trace_parsed("initialization", config.code, date.today(), parsed_output=parsed)
 
     return parsed
 

@@ -145,8 +145,8 @@ async def run_copyeditor(
         label, response.usage.input_tokens, response.usage.output_tokens,
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    from ..trace import save_raw_response, extract_thinking, extract_usage
+    save_raw_response(
         "copyeditor", label.lower().replace(" ", "_").replace(":", "_"), analysis_date or date.today(),
         system_prompt=system_prompt,
         user_message=user_message,

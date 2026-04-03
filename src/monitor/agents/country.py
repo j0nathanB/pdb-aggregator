@@ -791,6 +791,17 @@ async def run_country_agent(
     if len(response_text) < 100:
         logger.warning("Country agent %s: response text very short: %r", config.code, response_text[:500])
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    save_raw_response(
+        "country", config.code, end_date,
+        system_prompt=system_prompt,
+        user_message=prompt,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+        extra={"search_log": search_log} if search_log else None,
+    )
+
     result = parse_country_response(response_text, end_date, date_range, ledger)
     active_cats = [
         c.value for c, m in result.weekly_entry.category_movements.items()
@@ -804,17 +815,6 @@ async def run_country_agent(
         sum(len(m.developments) for m in result.weekly_entry.category_movements.values()),
         len(result.weekly_entry.structural_claim_checks),
     )
-
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
-        "country", config.code, end_date,
-        system_prompt=system_prompt,
-        user_message=prompt,
-        response_text=response_text,
-        parsed_output=result,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-        extra={"search_log": search_log} if search_log else None,
-    )
+    update_trace_parsed("country", config.code, end_date, parsed_output=result)
 
     return result

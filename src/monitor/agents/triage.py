@@ -359,6 +359,16 @@ async def triage_decide(
         f"output={response.usage.output_tokens}"
     )
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    save_raw_response(
+        "triage", "decisions", date.today(),
+        system_prompt=load_prompt("triage_decision"),
+        user_message=prompt,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     decisions, summary = parse_triage_response(response_text)
 
     # Apply staleness overrides that the LLM might have missed
@@ -399,15 +409,9 @@ async def triage_decide(
                     if "first_cycle" not in d.triggered_by:
                         d.triggered_by.append("first_cycle")
 
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
+    update_trace_parsed(
         "triage", "decisions", date.today(),
-        system_prompt=load_prompt("triage_decision"),
-        user_message=prompt,
-        response_text=response_text,
         parsed_output={"decisions": [d.__dict__ for d in decisions], "summary": summary},
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
     )
 
     return TriageOutput(

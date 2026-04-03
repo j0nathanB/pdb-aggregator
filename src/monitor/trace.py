@@ -74,23 +74,123 @@ def save_trace(
     if extra:
         trace["extra"] = extra
 
-    # Filename: {agent}_{label}.json
-    safe_label = label.replace(" ", "_").replace("/", "_").lower()
-    filename = f"{agent}_{safe_label}.json"
-    path = _traces_dir(run_date) / filename
-
-    def _default(obj):
-        if dataclasses.is_dataclass(obj) and not isinstance(obj, type):
-            return dataclasses.asdict(obj)
-        return str(obj)
+    path = _trace_path(agent, label, run_date)
 
     try:
-        path.write_text(json.dumps(trace, indent=2, ensure_ascii=False, default=_default))
+        path.write_text(json.dumps(trace, indent=2, ensure_ascii=False, default=_default_serializer))
         logger.debug("Trace saved: %s", path)
     except Exception as e:
         logger.warning("Failed to save trace %s: %s", path, e)
 
     return path
+
+
+def _trace_path(agent: str, label: str, run_date: date) -> Path:
+    """Return the path for a trace file (does not create it)."""
+    safe_label = label.replace(" ", "_").replace("/", "_").lower()
+    filename = f"{agent}_{safe_label}.json"
+    return _traces_dir(run_date) / filename
+
+
+def _default_serializer(obj):
+    if dataclasses.is_dataclass(obj) and not isinstance(obj, type):
+        return dataclasses.asdict(obj)
+    return str(obj)
+
+
+def save_raw_response(
+    agent: str,
+    label: str,
+    run_date: date,
+    *,
+    system_prompt: str = "",
+    user_message: str = "",
+    response_text: str = "",
+    thinking_text: str = "",
+    usage: dict | None = None,
+    extra: dict | None = None,
+) -> Path:
+    """Save raw API response IMMEDIATELY after the call, BEFORE parsing.
+
+    This must be called before any parsing. If parsing crashes,
+    this file is the recovery point — the raw response_text is on disk.
+    """
+    trace = {
+        "agent": agent,
+        "label": label,
+        "run_date": run_date.isoformat(),
+        "status": "raw",
+        "input": {
+            "system_prompt": system_prompt,
+            "user_message": user_message,
+        },
+        "output": {
+            "response_text": response_text,
+            "parsed": None,
+            "thinking": thinking_text,
+        },
+        "usage": usage or {},
+    }
+    if extra:
+        trace["extra"] = extra
+
+    path = _trace_path(agent, label, run_date)
+    try:
+        path.write_text(json.dumps(trace, indent=2, ensure_ascii=False, default=_default_serializer))
+        logger.debug("Raw trace saved: %s", path)
+    except Exception as e:
+        logger.warning("Failed to save raw trace %s: %s", path, e)
+
+    return path
+
+
+def update_trace_parsed(
+    agent: str,
+    label: str,
+    run_date: date,
+    parsed_output: Any,
+    diagnostics: dict | None = None,
+) -> Path:
+    """Update an existing trace with parsed output after successful parsing.
+
+    If this is never called (because parsing crashed), the trace file
+    still exists with status="raw" and the full response_text.
+    """
+    path = _trace_path(agent, label, run_date)
+    try:
+        trace = json.loads(path.read_text())
+        trace["status"] = "parsed"
+        trace["output"]["parsed"] = parsed_output
+        if diagnostics:
+            trace["diagnostics"] = diagnostics
+        path.write_text(json.dumps(trace, indent=2, ensure_ascii=False, default=_default_serializer))
+        logger.debug("Trace updated with parsed output: %s", path)
+    except FileNotFoundError:
+        logger.warning("Cannot update trace — raw trace not found: %s", path)
+    except Exception as e:
+        logger.warning("Failed to update trace %s: %s", path, e)
+
+    return path
+
+
+def load_trace(agent: str, label: str, run_date: date) -> dict | None:
+    """Load a trace file from disk. Returns None if not found."""
+    path = _trace_path(agent, label, run_date)
+    if not path.exists():
+        return None
+    return json.loads(path.read_text())
+
+
+def list_traces(run_date: date) -> list[dict]:
+    """List all traces for a given run date."""
+    traces_dir = _traces_dir(run_date)
+    results = []
+    for path in sorted(traces_dir.glob("*.json")):
+        try:
+            results.append(json.loads(path.read_text()))
+        except (json.JSONDecodeError, OSError):
+            logger.warning("Skipping unreadable trace: %s", path)
+    return results
 
 
 def extract_thinking(response) -> str:

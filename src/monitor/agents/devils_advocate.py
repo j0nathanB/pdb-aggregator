@@ -226,21 +226,22 @@ async def run_devils_advocate(
         country, response.usage.input_tokens, response.usage.output_tokens,
     )
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    trace_label = country.lower().replace(" ", "_")
+    save_raw_response(
+        "devils_advocate", trace_label, entry.week,
+        system_prompt=system_prompt,
+        user_message=prompt,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     result = parse_devils_advocate_response(response_text)
     logger.info(
         "Devil's advocate %s: %d challenges, %d adjustments",
         country, len(result.challenges), len(result.recommended_adjustments),
     )
-
-    from ..trace import save_trace, extract_thinking, extract_usage
-    save_trace(
-        "devils_advocate", country.lower().replace(" ", "_"), entry.week,
-        system_prompt=system_prompt,
-        user_message=prompt,
-        response_text=response_text,
-        parsed_output=result,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
+    update_trace_parsed("devils_advocate", trace_label, entry.week, parsed_output=result)
 
     return result

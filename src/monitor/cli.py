@@ -482,6 +482,94 @@ def cmd_publish(args: argparse.Namespace) -> None:
     print(f"Published {len(pages)} pages to {brief_dir}")
 
 
+def cmd_replay(args: argparse.Namespace) -> None:
+    """Replay parsing from saved traces — no API calls needed."""
+    from .trace import list_traces, load_trace, update_trace_parsed
+
+    run_date = date.fromisoformat(args.date)
+    traces = list_traces(run_date)
+
+    if not traces:
+        print(f"No traces found for {run_date}")
+        return
+
+    # Filter by agent/label
+    if args.agent:
+        traces = [t for t in traces if t["agent"] == args.agent]
+    if args.label:
+        traces = [t for t in traces if t["label"] == args.label]
+
+    if not traces:
+        print("No matching traces found.")
+        return
+
+    # Parser dispatch table — maps agent names to parse functions
+    from .agents.executive import parse_executive_response
+    from .agents.country import parse_country_response
+    from .agents.regional import parse_regional_response
+    from .agents.devils_advocate import parse_devils_advocate_response
+    from .agents.triage import parse_triage_response
+    from .agents.story_map import parse_story_map_response
+    from .agents.government import _parse_response as parse_government_response
+
+    replayed = 0
+    skipped = 0
+    failed = 0
+
+    for trace in traces:
+        agent = trace["agent"]
+        label = trace["label"]
+        status = trace.get("status", "parsed")  # old traces without status are treated as parsed
+
+        if status == "parsed" and not args.force:
+            skipped += 1
+            continue
+
+        response_text = trace["output"]["response_text"]
+        if not response_text:
+            print(f"  {agent}/{label}: no response_text, skipping")
+            skipped += 1
+            continue
+
+        try:
+            parsed = None
+            if agent == "executive":
+                parsed = parse_executive_response(response_text)
+            elif agent == "country":
+                from .agents.country import CountryLedger
+                parsed = parse_country_response(response_text, run_date, f"replay", None)
+            elif agent == "regional":
+                from .config import Region
+                try:
+                    region = Region(label)
+                except ValueError:
+                    region = Region.AMERICAS
+                parsed = parse_regional_response(response_text, region, run_date)
+            elif agent == "devils_advocate":
+                parsed = parse_devils_advocate_response(response_text)
+            elif agent == "triage":
+                decisions, summary = parse_triage_response(response_text)
+                parsed = {"decisions": [d.__dict__ for d in decisions], "summary": summary}
+            elif agent == "story_map":
+                parsed = parse_story_map_response(response_text)
+            elif agent == "government":
+                parsed = parse_government_response(response_text)
+            else:
+                print(f"  {agent}/{label}: no parser for agent '{agent}', skipping")
+                skipped += 1
+                continue
+
+            update_trace_parsed(agent, label, run_date, parsed_output=parsed)
+            print(f"  {agent}/{label}: replayed successfully")
+            replayed += 1
+
+        except Exception as e:
+            print(f"  {agent}/{label}: parse failed — {e}")
+            failed += 1
+
+    print(f"\nReplay complete: {replayed} replayed, {skipped} skipped, {failed} failed")
+
+
 def cmd_status(args: argparse.Namespace) -> None:
     """Show pipeline status."""
     # Configs
@@ -569,6 +657,13 @@ def build_parser() -> argparse.ArgumentParser:
     p_publish = subparsers.add_parser("publish", help="Publish brief to Mintlify site")
     p_publish.add_argument("--date", help="End date (YYYY-MM-DD)")
 
+    # replay
+    p_replay = subparsers.add_parser("replay", help="Replay parsing from saved traces (no API calls)")
+    p_replay.add_argument("--date", required=True, help="Run date (YYYY-MM-DD)")
+    p_replay.add_argument("--agent", help="Filter to specific agent (e.g. executive, country)")
+    p_replay.add_argument("--label", help="Filter to specific label (e.g. mx, global)")
+    p_replay.add_argument("--force", action="store_true", help="Re-parse even if already parsed")
+
     # status
     subparsers.add_parser("status", help="Show pipeline status")
 
@@ -597,6 +692,8 @@ def main() -> None:
         asyncio.run(cmd_assemble(args))
     elif args.command == "publish":
         cmd_publish(args)
+    elif args.command == "replay":
+        cmd_replay(args)
 
 
 if __name__ == "__main__":

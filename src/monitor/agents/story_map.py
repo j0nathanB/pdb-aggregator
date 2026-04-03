@@ -374,21 +374,17 @@ async def run_story_map_agent(
         logger.error("Story map %s: no text in LLM response", config.code)
         raise ValueError(f"Story map agent returned no text for {config.code}")
 
-    from ..trace import save_trace, extract_thinking, extract_usage
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    save_raw_response(
+        "story_map", config.code, analysis_date,
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=text_content,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
 
-    try:
-        output = parse_story_map_response(text_content)
-    except (json.JSONDecodeError, KeyError):
-        save_trace(
-            "story_map", config.code, analysis_date,
-            system_prompt=system_prompt,
-            user_message=user_message,
-            response_text=text_content,
-            parsed_output=None,
-            thinking_text=extract_thinking(response),
-            usage=extract_usage(response),
-        )
-        raise
+    output = parse_story_map_response(text_content)
 
     output.prompt_dedup = prompt_dedup
 
@@ -408,14 +404,6 @@ async def run_story_map_agent(
         accounted, unique_in_prompt, gap, gap_pct,
     )
 
-    save_trace(
-        "story_map", config.code, analysis_date,
-        system_prompt=system_prompt,
-        user_message=user_message,
-        response_text=text_content,
-        parsed_output=output,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
+    update_trace_parsed("story_map", config.code, analysis_date, parsed_output=output)
 
     return output

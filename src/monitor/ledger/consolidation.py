@@ -139,9 +139,9 @@ async def consolidate_entries(
         f"input={response.usage.input_tokens}, output={response.usage.output_tokens}"
     )
 
-    from ..trace import save_trace, extract_thinking, extract_usage
+    from ..trace import save_raw_response, extract_thinking, extract_usage
     run_date = entries[0].week if entries else date.today()
-    save_trace(
+    save_raw_response(
         "consolidation", country.lower().replace(" ", "_"), run_date,
         system_prompt=CONSOLIDATION_SYSTEM_PROMPT,
         user_message=prompt,

@@ -374,6 +374,16 @@ async def run_government_agent(
                 text_content = block.text
                 break
 
+        from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+        save_raw_response(
+            "government", country_config.code, processing_date,
+            system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
+            user_message=user_message,
+            response_text=text_content,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+
         # Parse JSON from response
         parsed = _parse_response(text_content)
 
@@ -431,16 +441,7 @@ async def run_government_agent(
             len(gaps), len(failures),
         )
 
-        from ..trace import save_trace, extract_thinking, extract_usage
-        save_trace(
-            "government", country_config.code, processing_date,
-            system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
-            user_message=user_message,
-            response_text=text_content,
-            parsed_output=parsed,
-            thinking_text=extract_thinking(response),
-            usage=extract_usage(response),
-        )
+        update_trace_parsed("government", country_config.code, processing_date, parsed_output=parsed)
 
         return output
 
