@@ -173,6 +173,11 @@ async def cmd_run(args: argparse.Namespace) -> None:
     _add_log_handler(recorder.log_path)
     recorder.init_manifest(end_date, country_codes)
 
+    # Hash prompts and reset diagnostics counters
+    from .sanitize import reset_fallback_counts, get_fallback_summary
+    reset_fallback_counts()
+    prompt_hashes = recorder.record_prompt_hashes()
+
     # Validate prior run on resume
     if resume_from:
         prior = RunRecorder.find_latest_manifest()
@@ -183,6 +188,10 @@ async def cmd_run(args: argparse.Namespace) -> None:
         prior_date = prior_manifest.get("end_date")
         if prior_date != end_date.isoformat():
             print(f"Warning: prior run was for {prior_date}, resuming for {end_date}")
+        # Check for prompt changes since prior run
+        changed = RunRecorder.check_prompt_changes(prompt_hashes, prior_manifest)
+        if changed:
+            print(f"Warning: prompts changed since prior run: {', '.join(changed)}")
         print(f"Resuming from {resume_from} (prior run: {prior_manifest.get('run_id')})")
     else:
         # Snapshot ledgers before any mutations (fresh runs only)
@@ -395,6 +404,19 @@ async def cmd_run(args: argparse.Namespace) -> None:
             raise
     else:
         recorder.skip_stage("publishing")
+
+    # Print cost and diagnostics summary
+    if recorder._manifest and "usage" in recorder._manifest:
+        usage = recorder._manifest["usage"]
+        print(f"\nToken usage: {usage['total_input_tokens']:,} in / {usage['total_output_tokens']:,} out")
+        print(f"Estimated cost: ${usage.get('estimated_cost_usd', 0):.2f}")
+
+    fallbacks = get_fallback_summary()
+    if fallbacks:
+        total = sum(fallbacks.values())
+        print(f"Parse fallbacks: {total} total across {len(fallbacks)} contexts")
+        for ctx, count in sorted(fallbacks.items(), key=lambda x: -x[1])[:5]:
+            print(f"  {ctx}: {count}")
 
     print("Done.")
 

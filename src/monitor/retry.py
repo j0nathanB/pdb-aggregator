@@ -83,6 +83,13 @@ async def with_retry(
 
             if attempt < max_retries:
                 delay = _delay_with_jitter(attempt)
+
+                # Coordinated backoff: if it's a rate limit, pause all callers
+                if isinstance(e, anthropic.RateLimitError):
+                    from .rate_limit import anthropic_limiter
+                    retry_after = float(getattr(e.response, "headers", {}).get("retry-after", delay))
+                    await anthropic_limiter.backoff(retry_after)
+
                 logger.warning(
                     f"Retry {attempt + 1}/{max_retries} for {context or fn.__name__}: "
                     f"{type(e).__name__}: {e} (waiting {delay:.1f}s)"

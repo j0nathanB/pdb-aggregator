@@ -13,6 +13,8 @@ from typing import Optional
 
 import anthropic
 
+from ..rate_limit import anthropic_limiter
+
 from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
@@ -326,20 +328,21 @@ async def run_regional_synthesis(
     logger.debug("Regional %s: countries=%s, prompt=%d chars", region.value, countries_in, len(prompt))
 
     from ..timing import with_heartbeat
-    response = await with_heartbeat(
-        client.messages.create(
-            model=MODEL,
-            max_tokens=18192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": 10000,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": prompt}],
-        ),
-        f"Regional synthesis {region.value}: API call",
-    )
+    async with anthropic_limiter():
+        response = await with_heartbeat(
+            client.messages.create(
+                model=MODEL,
+                max_tokens=18192,
+                temperature=1,
+                thinking={
+                    "type": "enabled",
+                    "budget_tokens": 10000,
+                },
+                system=[{"type": "text", "text": system_prompt}],
+                messages=[{"role": "user", "content": prompt}],
+            ),
+            f"Regional synthesis {region.value}: API call",
+        )
 
     text_parts = [
         block.text for block in response.content

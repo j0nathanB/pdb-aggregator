@@ -10,6 +10,7 @@ import re
 from datetime import date
 from pathlib import Path
 
+from ..rate_limit import anthropic_limiter
 from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
@@ -246,17 +247,18 @@ async def llm_initialize(config: CountryConfig) -> dict:
     prompt = _build_init_prompt(config, dossier_text)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 4096,
-        temperature=1,  # required for extended thinking
-        thinking={
-            "type": "enabled",
-            "budget_tokens": THINKING_BUDGET_TOKENS,
-        },
-        system=[{"type": "text", "text": INIT_SYSTEM_PROMPT}],
-        messages=[{"role": "user", "content": prompt}],
-    )
+    async with anthropic_limiter():
+        response = await client.messages.create(
+            model=MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 4096,
+            temperature=1,  # required for extended thinking
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": INIT_SYSTEM_PROMPT}],
+            messages=[{"role": "user", "content": prompt}],
+        )
 
     # Extract text blocks, skip thinking blocks
     text_parts = [

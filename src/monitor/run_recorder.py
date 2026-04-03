@@ -175,6 +175,88 @@ class RunRecorder:
         return None
 
     # =========================================================================
+    # Usage tracking — aggregate token costs per stage
+    # =========================================================================
+
+    def record_usage(self, stage: str, input_tokens: int, output_tokens: int) -> None:
+        """Record token usage for a stage."""
+        if self._manifest is None:
+            return
+        if "usage" not in self._manifest:
+            self._manifest["usage"] = {
+                "total_input_tokens": 0,
+                "total_output_tokens": 0,
+                "by_stage": {},
+            }
+        usage = self._manifest["usage"]
+        usage["total_input_tokens"] += input_tokens
+        usage["total_output_tokens"] += output_tokens
+        if stage not in usage["by_stage"]:
+            usage["by_stage"][stage] = {"input_tokens": 0, "output_tokens": 0}
+        usage["by_stage"][stage]["input_tokens"] += input_tokens
+        usage["by_stage"][stage]["output_tokens"] += output_tokens
+
+        # Estimate cost from settings
+        from .config import load_settings
+        settings = load_settings()
+        input_cost = settings.get("input_cost_per_mtok", 3.0)
+        output_cost = settings.get("output_cost_per_mtok", 15.0)
+        usage["estimated_cost_usd"] = round(
+            usage["total_input_tokens"] / 1_000_000 * input_cost
+            + usage["total_output_tokens"] / 1_000_000 * output_cost,
+            2,
+        )
+        self._write_manifest()
+
+    def aggregate_usage_from_traces(self, stage: str, run_date: date) -> None:
+        """Scan trace files and aggregate usage into the manifest."""
+        from .trace import list_traces
+        traces = list_traces(run_date)
+        total_in = 0
+        total_out = 0
+        for trace in traces:
+            usage = trace.get("usage", {})
+            total_in += usage.get("input_tokens", 0)
+            total_out += usage.get("output_tokens", 0)
+        if total_in or total_out:
+            self.record_usage(stage, total_in, total_out)
+
+    # =========================================================================
+    # Prompt hashing — detect changes between runs
+    # =========================================================================
+
+    def record_prompt_hashes(self) -> dict[str, str]:
+        """Hash all prompt files and store in manifest."""
+        import hashlib
+        from .config import PROMPTS_DIR
+
+        hashes = {}
+        if PROMPTS_DIR.exists():
+            for p in sorted(PROMPTS_DIR.glob("*.md")):
+                hashes[p.name] = hashlib.sha256(p.read_bytes()).hexdigest()[:12]
+
+        if self._manifest is not None:
+            self._manifest["prompt_hashes"] = hashes
+            self._write_manifest()
+
+        return hashes
+
+    @staticmethod
+    def check_prompt_changes(current_hashes: dict[str, str], prior_manifest: dict) -> list[str]:
+        """Compare current prompt hashes against a prior manifest. Returns list of changed prompts."""
+        prior_hashes = prior_manifest.get("prompt_hashes", {})
+        changed = []
+        for name, current_hash in current_hashes.items():
+            prior_hash = prior_hashes.get(name)
+            if prior_hash and prior_hash != current_hash:
+                changed.append(name)
+        # Also check for new prompts
+        for name in current_hashes:
+            if name not in prior_hashes:
+                changed.append(f"{name} (new)")
+        return changed
+
+    # =========================================================================
     # Ledger snapshots — pre-run backup for rollback
     # =========================================================================
 

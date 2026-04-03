@@ -1,9 +1,10 @@
-# Phase 1: Stop the Bleeding — Architectural Hardening
+# Architectural Hardening — Implementation Record
 
-> **Status**: COMPLETED
+> **Status**: Phases 1–3 COMPLETED
 > **Completed**: 2026-04-02
 > **Branch**: mintlify
-> **Tests**: 651 passed (40 new + 611 existing), 0 failures
+> **Tests**: 710 passed (99 new + 611 existing), 0 failures
+> **Commits**: `604918e` (Phase 1+2), `6fdc2bf` (Phase 2b), `c84a125` (Phase 3.4), `6837dde` (Phase 1.6), `799ebf0` (Phase 3.5), this commit (Phase 3 remaining)
 
 ## Context
 
@@ -74,9 +75,9 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 ---
 
-## Remaining Work (Future Phases)
+---
 
-### Phase 2: Resumable Pipeline — COMPLETED (2026-04-02)
+## Phase 2: Resumable Pipeline — COMPLETED (2026-04-02)
 
 **Run manifest** — `RunRecorder` now tracks stage status (pending/running/completed/failed/skipped) in `manifest.json` with atomic writes. `find_latest_manifest()` finds the most recent run for resume.
 
@@ -88,7 +89,7 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 671 tests passing (20 new).
 
-### Phase 2b: Deployment Rewire — COMPLETED (2026-04-02)
+## Phase 2b: Deployment Rewire — COMPLETED (2026-04-02)
 
 **`run_pipeline.py` rewrite** — Full rewrite as subprocess-based entrypoint. Runs `python -m src.monitor.cli run --date`, auto-commits `ledgers/` + `site/briefs/`, pushes to main if `GITHUB_TOKEN` set. Auto-detects next date from last brief. Local mode (in-repo) and Fargate mode (clone-and-run) supported. S3 upload and preview email stubbed for later.
 
@@ -96,7 +97,7 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 **Dead code removed** — Deleted `scripts/migrate_to_mintlify.py` (imported nonexistent `src.persistence`).
 
-### Phase 3.4: Trace-Before-Parse — COMPLETED (2026-04-02)
+## Phase 3.4: Trace-Before-Parse — COMPLETED (2026-04-02)
 
 **Two-phase trace writes** — `save_raw_response()` saves the raw API response BEFORE parsing. `update_trace_parsed()` updates the trace after parsing succeeds. If parsing crashes, the $5-15 API response is safe on disk with `status: "raw"`.
 
@@ -108,18 +109,38 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 686 tests passing (15 new).
 
-### Phase 3: Observability (remaining)
-- Cost tracking per run
-- ParseDiagnostics aggregation in pipeline summary
-- Prompt change detection (hash comparison)
-- Operational logging (timed_operation, TrackedSemaphore, heartbeats)
+---
+
+## Remaining Work
+
+## Phase 3.5: Operational Logging — COMPLETED (2026-04-02)
+
+**timing.py** — New module with `timed_operation` (async context manager, logs start + elapsed), `TrackedSemaphore` (semaphore with in-flight/waiting visibility), `with_heartbeat` (periodic proof-of-life during long API calls).
+
+**9 bare semaphores replaced** with `TrackedSemaphore` across orchestrator (3), editor (2), copyeditor, regional, triage, expansion.
+
+**6 API calls wrapped** with `with_heartbeat` — executive, country, regional, story_map, government, triage.
+
+697 tests passing (11 new).
+
+## Phase 3 Remaining — COMPLETED (2026-04-02)
+
+**3.1 Cost tracking** — `record_usage()` on RunRecorder aggregates token usage per stage in the manifest. Pricing from `settings.yaml` (`input_cost_per_mtok`, `output_cost_per_mtok`). Cost summary printed at end of run.
+
+**3.2 ParseDiagnostics counters** — Module-level fallback counters in `sanitize.py`. `safe_enum` and `safe_enum_list` increment `_fallback_counts[context]` on every fallback. `get_fallback_summary()` returns aggregates. Summary printed at end of run.
+
+**3.3 Prompt change detection** — `record_prompt_hashes()` hashes all 14 prompt files (SHA-256, 12 chars) and stores in manifest. `check_prompt_changes()` compares against prior manifest on `--resume-from` and warns if prompts changed.
+
+**3.6 Per-call rate limiting** — `RateLimiter` class in `rate_limit.py` with coordinated backoff. Module-level `anthropic_limiter` singleton (RPM from settings.yaml). All 14 Anthropic API call sites wrapped. `retry.py` calls `anthropic_limiter.backoff()` on 429 so all concurrent tasks pause.
+
+710 tests passing (13 new).
 
 ### Phase 4: Structural Improvements
-- Consolidation integrity (structured metadata companion)
-- Global rate limiting for API calls
-- Typed `AgentResult[T]` with degradation metadata
+- 4.1 Consolidation integrity (structured metadata companion)
+- 4.3 Global rate limiting for API calls
+- 4.4 Typed `AgentResult[T]` with degradation metadata
 
 ### Phase 5: Cleanup
-- Remove dead files (`opinion_filters.csv`, `leaders_sources.csv`)
-- Pin `end_date` at pipeline entry (audit `date.today()` fallbacks)
-- Deprecate `cmd_assemble`/`cmd_publish` once `--resume-from` ships
+- 5.1 Remove dead files (`opinion_filters.csv`, `leaders_sources.csv`)
+- 5.2 Pin `end_date` at pipeline entry (audit `date.today()` fallbacks)
+- 5.3 Deprecate `cmd_assemble`/`cmd_publish` once `--resume-from` ships

@@ -12,6 +12,7 @@ from typing import Optional
 
 import anthropic
 
+from ..rate_limit import anthropic_limiter
 from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
@@ -203,17 +204,18 @@ async def run_devils_advocate(
         len(prompt),
     )
 
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=12096,
-        temperature=1,
-        thinking={
-            "type": "enabled",
-            "budget_tokens": 8000,
-        },
-        system=[{"type": "text", "text": system_prompt}],
-        messages=[{"role": "user", "content": prompt}],
-    )
+    async with anthropic_limiter():
+        response = await client.messages.create(
+            model=MODEL,
+            max_tokens=12096,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": 8000,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": prompt}],
+        )
 
     text_parts = [
         block.text for block in response.content

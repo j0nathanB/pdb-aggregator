@@ -17,6 +17,7 @@ from typing import Optional
 
 import anthropic
 
+from ..rate_limit import anthropic_limiter
 from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
@@ -352,19 +353,20 @@ async def run_government_agent(
 
     try:
         from ..timing import with_heartbeat
-        response = await with_heartbeat(
-            client.messages.create(
-                model=model or MODEL,
-                max_tokens=THINKING_BUDGET_TOKENS + 4096,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": THINKING_BUDGET_TOKENS,
-                },
-                system=system_prompt,
-                messages=[{"role": "user", "content": user_message}],
-            ),
-            f"Government agent {country_config.code}: API call",
-        )
+        async with anthropic_limiter():
+            response = await with_heartbeat(
+                client.messages.create(
+                    model=model or MODEL,
+                    max_tokens=THINKING_BUDGET_TOKENS + 4096,
+                    thinking={
+                        "type": "enabled",
+                        "budget_tokens": THINKING_BUDGET_TOKENS,
+                    },
+                    system=system_prompt,
+                    messages=[{"role": "user", "content": user_message}],
+                ),
+                f"Government agent {country_config.code}: API call",
+            )
 
         logger.debug(
             "Gov agent %s: API response — input=%d, output=%d tokens",

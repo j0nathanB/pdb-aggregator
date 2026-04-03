@@ -17,6 +17,7 @@ from datetime import date
 import anthropic
 from json_repair import repair_json
 
+from ..rate_limit import anthropic_limiter
 from ..collection.brave import BraveNewsResult
 from ..config import (
     ANTHROPIC_API_KEY,
@@ -345,21 +346,22 @@ async def run_story_map_agent(
     output_tokens = 0
 
     from ..timing import with_heartbeat
-    async with client.messages.stream(
-        model=model or MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 8192,
-        temperature=1,  # required for extended thinking
-        thinking={
-            "type": "enabled",
-            "budget_tokens": THINKING_BUDGET_TOKENS,
-        },
-        system=[{"type": "text", "text": system_prompt}],
-        messages=[{"role": "user", "content": user_message}],
-    ) as stream:
-        response = await with_heartbeat(
-            stream.get_final_message(),
-            f"Story map {config.code}: streaming API call",
-        )
+    async with anthropic_limiter():
+        async with client.messages.stream(
+            model=model or MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            temperature=1,  # required for extended thinking
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                f"Story map {config.code}: streaming API call",
+            )
 
     for block in response.content:
         if block.type == "text":

@@ -15,6 +15,7 @@ from datetime import date
 
 import anthropic
 
+from ..rate_limit import anthropic_limiter
 from ..config import ANTHROPIC_API_KEY, MODEL, PROJECT_ROOT, THINKING_BUDGET_TOKENS, load_prompt
 from .editor import _strip_sources_accordion
 
@@ -122,17 +123,18 @@ async def run_copyeditor(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    async with client.messages.stream(
-        model=model or COPYEDITOR_MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 8192,
-        thinking={
-            "type": "enabled",
-            "budget_tokens": THINKING_BUDGET_TOKENS,
-        },
-        system=[{"type": "text", "text": system_prompt}],
-        messages=[{"role": "user", "content": user_message}],
-    ) as stream:
-        response = await stream.get_final_message()
+    async with anthropic_limiter():
+        async with client.messages.stream(
+            model=model or COPYEDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await stream.get_final_message()
 
     text_parts = [
         block.text for block in response.content

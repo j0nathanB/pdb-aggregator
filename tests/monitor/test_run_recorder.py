@@ -228,3 +228,66 @@ class TestSnapshotLedgers:
         assert snap_dir.exists()
         # No files copied, but no error
         assert list(snap_dir.iterdir()) == []
+
+
+class TestUsageTracking:
+    def test_record_usage_accumulates(self, tmp_path):
+        recorder = RunRecorder(run_dir=tmp_path / "run")
+        recorder.init_manifest(date(2026, 3, 14), None)
+        recorder.record_usage("desk", 100000, 30000)
+        recorder.record_usage("desk", 50000, 10000)
+        recorder.record_usage("regional", 20000, 5000)
+
+        manifest = json.loads((tmp_path / "run" / "manifest.json").read_text())
+        assert manifest["usage"]["total_input_tokens"] == 170000
+        assert manifest["usage"]["total_output_tokens"] == 45000
+        assert manifest["usage"]["by_stage"]["desk"]["input_tokens"] == 150000
+        assert manifest["usage"]["by_stage"]["regional"]["output_tokens"] == 5000
+        assert manifest["usage"]["estimated_cost_usd"] > 0
+
+    def test_no_usage_without_manifest(self, tmp_path):
+        recorder = RunRecorder(run_dir=tmp_path / "run")
+        recorder.record_usage("desk", 100, 50)  # should not raise
+        assert not (tmp_path / "run" / "manifest.json").exists()
+
+
+class TestPromptHashing:
+    def test_record_prompt_hashes(self, tmp_path, monkeypatch):
+        prompts_dir = tmp_path / "prompts"
+        prompts_dir.mkdir()
+        (prompts_dir / "executive.md").write_text("You are an executive analyst.")
+        (prompts_dir / "country_agent.md").write_text("Analyze this country.")
+        monkeypatch.setattr("src.monitor.config.PROMPTS_DIR", prompts_dir)
+
+        recorder = RunRecorder(run_dir=tmp_path / "run")
+        recorder.init_manifest(date(2026, 3, 14), None)
+        hashes = recorder.record_prompt_hashes()
+
+        assert "executive.md" in hashes
+        assert "country_agent.md" in hashes
+        assert len(hashes["executive.md"]) == 12  # sha256 truncated to 12
+
+        manifest = json.loads((tmp_path / "run" / "manifest.json").read_text())
+        assert manifest["prompt_hashes"] == hashes
+
+    def test_check_prompt_changes_detects_diff(self, tmp_path, monkeypatch):
+        prompts_dir = tmp_path / "prompts"
+        prompts_dir.mkdir()
+        (prompts_dir / "executive.md").write_text("v1")
+        monkeypatch.setattr("src.monitor.config.PROMPTS_DIR", prompts_dir)
+
+        recorder = RunRecorder(run_dir=tmp_path / "run1")
+        recorder.init_manifest(date(2026, 3, 14), None)
+        old_hashes = recorder.record_prompt_hashes()
+
+        # Change the prompt
+        (prompts_dir / "executive.md").write_text("v2")
+        new_hashes = recorder.record_prompt_hashes()
+
+        changed = RunRecorder.check_prompt_changes(new_hashes, {"prompt_hashes": old_hashes})
+        assert "executive.md" in changed
+
+    def test_check_prompt_changes_no_diff(self):
+        hashes = {"a.md": "abc123", "b.md": "def456"}
+        changed = RunRecorder.check_prompt_changes(hashes, {"prompt_hashes": hashes})
+        assert changed == []

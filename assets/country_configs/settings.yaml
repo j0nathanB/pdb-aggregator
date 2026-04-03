@@ -14,6 +14,13 @@ confidence_max: 5
 source_tier_min: 1
 source_tier_max: 4
 
+# API pricing (per million tokens, USD) — for cost estimation in manifest
+input_cost_per_mtok: 3.0
+output_cost_per_mtok: 15.0
+
+# Rate limiting (requests per minute)
+anthropic_rpm: 50
+
 # Pipeline concurrency
 max_concurrent_country_agents: 5
 max_concurrent_triage_scans: 10

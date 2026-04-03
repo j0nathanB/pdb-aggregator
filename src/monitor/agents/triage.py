@@ -13,6 +13,8 @@ from datetime import date, timedelta
 
 import anthropic
 
+from ..rate_limit import anthropic_limiter
+
 from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
@@ -338,20 +340,21 @@ async def triage_decide(
 
     from ..timing import with_heartbeat
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
-    response = await with_heartbeat(
-        client.messages.create(
-            model=MODEL,
-            max_tokens=12096,
-            temperature=1,  # required for extended thinking
-            thinking={
-                "type": "enabled",
-                "budget_tokens": 8000,
-            },
-            system=[{"type": "text", "text": load_prompt("triage_decision")}],
-            messages=[{"role": "user", "content": prompt}],
-        ),
-        "Triage decision: API call",
-    )
+    async with anthropic_limiter():
+        response = await with_heartbeat(
+            client.messages.create(
+                model=MODEL,
+                max_tokens=12096,
+                temperature=1,  # required for extended thinking
+                thinking={
+                    "type": "enabled",
+                    "budget_tokens": 8000,
+                },
+                system=[{"type": "text", "text": load_prompt("triage_decision")}],
+                messages=[{"role": "user", "content": prompt}],
+            ),
+            "Triage decision: API call",
+        )
 
     text_parts = [
         block.text for block in response.content

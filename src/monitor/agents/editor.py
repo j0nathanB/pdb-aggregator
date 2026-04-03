@@ -26,8 +26,10 @@ logger = logging.getLogger(__name__)
 
 async def _stream_message(client: anthropic.AsyncAnthropic, **kwargs) -> anthropic.types.Message:
     """Send a message using streaming to avoid timeout on long requests."""
-    async with client.messages.stream(**kwargs) as stream:
-        response = await stream.get_final_message()
+    from ..rate_limit import anthropic_limiter
+    async with anthropic_limiter():
+        async with client.messages.stream(**kwargs) as stream:
+            response = await stream.get_final_message()
     return response
 
 
@@ -754,19 +756,21 @@ async def summarize_card_summaries(
     async def _summarize(text: str) -> str:
         if not text.strip() or len(text) < 20:
             return text
-        response = await client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=200,
-            messages=[{
-                "role": "user",
-                "content": (
-                    "Condense this regional summary into ONE concise sentence for a navigation card. "
-                    "No jargon, no hedging. State what happened this week. "
-                    "Do not invent details not in the source text.\n\n"
-                    f"{text}"
-                ),
-            }],
-        )
+        from ..rate_limit import anthropic_limiter
+        async with anthropic_limiter():
+            response = await client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=200,
+                messages=[{
+                    "role": "user",
+                    "content": (
+                        "Condense this regional summary into ONE concise sentence for a navigation card. "
+                        "No jargon, no hedging. State what happened this week. "
+                        "Do not invent details not in the source text.\n\n"
+                        f"{text}"
+                    ),
+                }],
+            )
         return response.content[0].text.strip()
 
     # Summarize all cards in parallel

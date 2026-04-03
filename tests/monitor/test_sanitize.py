@@ -16,6 +16,8 @@ from src.monitor.config import (
 from src.monitor.sanitize import (
     ParseDiagnostics,
     extract_json,
+    get_fallback_summary,
+    reset_fallback_counts,
     safe_date,
     safe_enum,
     safe_enum_list,
@@ -204,3 +206,38 @@ def test_diagnostics_no_escalation_below_threshold():
     for i in range(4):
         d.record_fallback(f"field_{i}", "bad", "default")
     d.escalate_if_needed(threshold=5)  # should not raise
+
+
+# =============================================================================
+# Module-level fallback counters
+# =============================================================================
+
+def test_fallback_counters_track_safe_enum():
+    reset_fallback_counts()
+    safe_enum(Movement, "bogus", Movement.NONE, context="test_counter")
+    safe_enum(Movement, "also_bogus", Movement.NONE, context="test_counter")
+    safe_enum(Movement, "bad", Movement.NONE, context="other_context")
+    summary = get_fallback_summary()
+    assert summary["test_counter"] == 2
+    assert summary["other_context"] == 1
+
+
+def test_fallback_counters_track_safe_enum_list():
+    reset_fallback_counts()
+    safe_enum_list(SignalCategory, ["alignment_diplomatic", "bogus", "also_bad"], context="list_ctx")
+    summary = get_fallback_summary()
+    assert summary["list_ctx"] == 2
+
+
+def test_fallback_counters_reset():
+    reset_fallback_counts()
+    safe_enum(Movement, "bogus", Movement.NONE, context="ctx")
+    assert get_fallback_summary()["ctx"] == 1
+    reset_fallback_counts()
+    assert get_fallback_summary() == {}
+
+
+def test_no_fallback_on_valid_enum():
+    reset_fallback_counts()
+    safe_enum(Movement, "significant", Movement.NONE, context="valid_ctx")
+    assert "valid_ctx" not in get_fallback_summary()

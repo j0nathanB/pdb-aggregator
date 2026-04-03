@@ -15,6 +15,7 @@ from typing import Optional
 
 import anthropic
 
+from ..rate_limit import anthropic_limiter
 from ..config import (
     ANTHROPIC_API_KEY,
     MODEL,
@@ -115,17 +116,18 @@ async def consolidate_entries(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=6048,
-        temperature=1,
-        thinking={
-            "type": "enabled",
-            "budget_tokens": 4000,
-        },
-        system=[{"type": "text", "text": CONSOLIDATION_SYSTEM_PROMPT}],
-        messages=[{"role": "user", "content": prompt}],
-    )
+    async with anthropic_limiter():
+        response = await client.messages.create(
+            model=MODEL,
+            max_tokens=6048,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": 4000,
+            },
+            system=[{"type": "text", "text": CONSOLIDATION_SYSTEM_PROMPT}],
+            messages=[{"role": "user", "content": prompt}],
+        )
 
     text_parts = [
         block.text for block in response.content

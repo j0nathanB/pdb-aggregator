@@ -18,6 +18,25 @@ logger = logging.getLogger(__name__)
 
 E = TypeVar("E", bound=Enum)
 
+# Module-level fallback counters — track how many fallbacks fired per context
+_fallback_counts: dict[str, int] = {}
+
+
+def get_fallback_summary() -> dict[str, int]:
+    """Return fallback counts per context since last reset."""
+    return dict(_fallback_counts)
+
+
+def reset_fallback_counts() -> None:
+    """Reset all fallback counters (call at start of pipeline run)."""
+    _fallback_counts.clear()
+
+
+def _record_fallback(context: str) -> None:
+    """Increment the fallback counter for a context."""
+    key = context or "unknown"
+    _fallback_counts[key] = _fallback_counts.get(key, 0) + 1
+
 
 # =============================================================================
 # Safe parsers
@@ -37,6 +56,7 @@ def safe_enum(enum_class: type[E], value: str, default: E, context: str = "") ->
             "Invalid %s value %r, using default %r%s",
             enum_class.__name__, value, default.value, ctx,
         )
+        _record_fallback(context)
         return default
 
 
@@ -58,6 +78,7 @@ def safe_enum_list(
                 "Skipping invalid %s value %r%s",
                 enum_class.__name__, v, ctx,
             )
+            _record_fallback(context)
     return result
 
 
