@@ -542,17 +542,21 @@ async def run_executive_agent(
     )
     logger.debug("Executive: prompt=%d chars", len(prompt))
 
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 12288,
-        temperature=1,
-        thinking={
-            "type": "enabled",
-            "budget_tokens": THINKING_BUDGET_TOKENS,
-        },
-        system=[{"type": "text", "text": load_prompt("executive")}],
-        messages=[{"role": "user", "content": prompt}],
-        timeout=600.0,
+    from ..timing import with_heartbeat
+    response = await with_heartbeat(
+        client.messages.create(
+            model=MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 12288,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": load_prompt("executive")}],
+            messages=[{"role": "user", "content": prompt}],
+            timeout=600.0,
+        ),
+        "Executive synthesis: API call",
     )
 
     text_parts = [

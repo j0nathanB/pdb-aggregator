@@ -342,10 +342,11 @@ async def edit_newsletter(
 
     logger.info("Editor: %d country sections to edit", len(editable))
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    from ..timing import TrackedSemaphore
+    semaphore = TrackedSemaphore(max_concurrent, "editor")
 
     async def _edit(idx: int, code: str) -> tuple[int, str]:
-        async with semaphore:
+        async with semaphore.acquire(code):
             section_text = segments[idx][0]
             ledger = country_ledgers.get(code)
             entry = country_entries.get(code)
@@ -880,10 +881,10 @@ async def style_edit_page(
     # Split into segments by ### country headings
     segments = _split_country_sections(page)
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    semaphore = TrackedSemaphore(max_concurrent, "style_editor")
 
     async def _edit(idx: int, text: str, code: str | None) -> tuple[int, str]:
-        async with semaphore:
+        async with semaphore.acquire(code or f"segment_{idx}"):
             if code:
                 label = code
             elif idx == 0:

@@ -27,6 +27,7 @@ from .collection.extract import ExtractionOrchestrator, ExtractionResult
 from .collection.searchapi import SearchAPIClient, SearchAPIResponse
 from .retry import RetryExhausted, with_retry
 from .run_recorder import RunRecorder
+from .timing import TrackedSemaphore
 from .validation import validate_source_attribution
 from .config import (
     ClaimStatus,
@@ -284,14 +285,14 @@ async def collect_layer2(
     if not gov_configs:
         return results
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    semaphore = TrackedSemaphore(max_concurrent, "layer2")
 
     try:
         async with SearchAPIClient() as searchapi_client:
             async with ExtractionOrchestrator() as extractor:
 
                 async def _collect(code: str) -> Layer2Result:
-                    async with semaphore:
+                    async with semaphore.acquire(code):
                         return await collect_layer2_country(
                             config=configs[code],
                             gov_config=gov_configs[code],
@@ -770,10 +771,10 @@ async def run_desk_pipeline(
     story_maps: dict[str, StoryMapOutput] = {}
 
     if expansion_map:
-        story_map_semaphore = asyncio.Semaphore(max_concurrent)
+        story_map_semaphore = TrackedSemaphore(max_concurrent, "story_map")
 
         async def _run_story_map(code: str) -> tuple[str, StoryMapOutput | None]:
-            async with story_map_semaphore:
+            async with story_map_semaphore.acquire(code):
                 for attempt in range(2):
                     try:
                         output = await run_story_map_agent(
@@ -865,10 +866,10 @@ async def run_desk_pipeline(
             if findings_text:
                 gov_findings_map[code] = "\n".join(findings_text)
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    semaphore = TrackedSemaphore(max_concurrent, "country_agents")
 
     async def _process(code: str) -> CountryResult:
-        async with semaphore:
+        async with semaphore.acquire(code):
             config = configs[code]
             ledger = ledgers[code]
             depth = depth_map.get(code, Depth.DEEP_DIVE)  # default deep dive for unknown

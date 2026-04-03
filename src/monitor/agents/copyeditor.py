@@ -350,10 +350,11 @@ async def copyedit_newsletter(
         ", ".join(f"{count} {stype}" for stype, count in section_types.items()),
     )
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    from ..timing import TrackedSemaphore
+    semaphore = TrackedSemaphore(max_concurrent, "copyeditor")
 
     async def _edit(idx: int, section: EditableSection) -> tuple[int, str]:
-        async with semaphore:
+        async with semaphore.acquire(section.label):
             try:
                 edited = await run_copyeditor(
                     section.text, section.label, section.section_type,

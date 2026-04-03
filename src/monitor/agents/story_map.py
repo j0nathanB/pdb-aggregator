@@ -344,6 +344,7 @@ async def run_story_map_agent(
     input_tokens = 0
     output_tokens = 0
 
+    from ..timing import with_heartbeat
     async with client.messages.stream(
         model=model or MODEL,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
@@ -355,7 +356,10 @@ async def run_story_map_agent(
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
     ) as stream:
-        response = await stream.get_final_message()
+        response = await with_heartbeat(
+            stream.get_final_message(),
+            f"Story map {config.code}: streaming API call",
+        )
 
     for block in response.content:
         if block.type == "text":

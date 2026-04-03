@@ -105,7 +105,7 @@ async def scan_country(
     config: CountryConfig,
     brave_client: BraveNewsClient,
     end_date: date | None = None,
-    semaphore: asyncio.Semaphore | None = None,
+    semaphore=None,
 ) -> ScanResult:
     """
     Run wire + domestic headline scan for a single country using Brave News API.
@@ -197,7 +197,7 @@ async def scan_country(
         )
 
     if semaphore:
-        async with semaphore:
+        async with semaphore.acquire(config.code):
             return await _do_scan()
     return await _do_scan()
 
@@ -209,7 +209,8 @@ async def scan_all_countries(
     max_concurrent: int = 10,
 ) -> list[ScanResult]:
     """Run Brave News scans for all countries with concurrency limit."""
-    semaphore = asyncio.Semaphore(max_concurrent)
+    from ..timing import TrackedSemaphore
+    semaphore = TrackedSemaphore(max_concurrent, "triage_scan")
     tasks = [
         scan_country(c, brave_client, end_date, semaphore)
         for c in configs
@@ -335,17 +336,21 @@ async def triage_decide(
 
     prompt = _build_triage_prompt(scan_results, ledgers, global_ledger)
 
+    from ..timing import with_heartbeat
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=12096,
-        temperature=1,  # required for extended thinking
-        thinking={
-            "type": "enabled",
-            "budget_tokens": 8000,
-        },
-        system=[{"type": "text", "text": load_prompt("triage_decision")}],
-        messages=[{"role": "user", "content": prompt}],
+    response = await with_heartbeat(
+        client.messages.create(
+            model=MODEL,
+            max_tokens=12096,
+            temperature=1,  # required for extended thinking
+            thinking={
+                "type": "enabled",
+                "budget_tokens": 8000,
+            },
+            system=[{"type": "text", "text": load_prompt("triage_decision")}],
+            messages=[{"role": "user", "content": prompt}],
+        ),
+        "Triage decision: API call",
     )
 
     text_parts = [

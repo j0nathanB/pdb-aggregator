@@ -163,7 +163,7 @@ async def expand_country(
     brave_client: BraveNewsClient,
     triage_scan: ScanResult | None = None,
     end_date: date | None = None,
-    semaphore: asyncio.Semaphore | None = None,
+    semaphore=None,
 ) -> ExpansionResult:
     """Run expansion queries for a single deep-dive country.
 
@@ -247,7 +247,7 @@ async def expand_country(
                 )
 
     if semaphore:
-        async with semaphore:
+        async with semaphore.acquire(config.code):
             await _run_queries()
     else:
         await _run_queries()
@@ -281,7 +281,8 @@ async def expand_all_countries(
 
     Returns results keyed by country code.
     """
-    semaphore = asyncio.Semaphore(max_concurrent)
+    from ..timing import TrackedSemaphore
+    semaphore = TrackedSemaphore(max_concurrent, "expansion")
     tasks = [
         expand_country(
             config, brave_client,

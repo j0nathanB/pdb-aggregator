@@ -325,16 +325,20 @@ async def run_regional_synthesis(
     )
     logger.debug("Regional %s: countries=%s, prompt=%d chars", region.value, countries_in, len(prompt))
 
-    response = await client.messages.create(
-        model=MODEL,
-        max_tokens=18192,
-        temperature=1,
-        thinking={
-            "type": "enabled",
-            "budget_tokens": 10000,
-        },
-        system=[{"type": "text", "text": system_prompt}],
-        messages=[{"role": "user", "content": prompt}],
+    from ..timing import with_heartbeat
+    response = await with_heartbeat(
+        client.messages.create(
+            model=MODEL,
+            max_tokens=18192,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": 10000,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": prompt}],
+        ),
+        f"Regional synthesis {region.value}: API call",
     )
 
     text_parts = [
@@ -377,10 +381,11 @@ async def run_all_regional_syntheses(
     """Run regional synthesis for all 5 regions in parallel."""
     import asyncio
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    from ..timing import TrackedSemaphore
+    semaphore = TrackedSemaphore(max_concurrent, "regional")
 
     async def _run(region: Region) -> tuple[Region, RegionalReport]:
-        async with semaphore:
+        async with semaphore.acquire(region.value):
             report = await run_regional_synthesis(region, ledgers, entries, week)
             return region, report
 

@@ -727,7 +727,11 @@ async def run_country_agent(
             "max_uses": config.search.deep_dive_queries_max,
         }]
 
-    response = await client.messages.create(**api_kwargs)
+    from ..timing import with_heartbeat
+    response = await with_heartbeat(
+        client.messages.create(**api_kwargs),
+        f"Country agent {config.code}: API call",
+    )
 
     # Extract text blocks and log web searches
     block_types = [block.type for block in response.content]

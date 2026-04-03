@@ -351,15 +351,19 @@ async def run_government_agent(
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
     try:
-        response = await client.messages.create(
-            model=model or MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 4096,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=system_prompt,
-            messages=[{"role": "user", "content": user_message}],
+        from ..timing import with_heartbeat
+        response = await with_heartbeat(
+            client.messages.create(
+                model=model or MODEL,
+                max_tokens=THINKING_BUDGET_TOKENS + 4096,
+                thinking={
+                    "type": "enabled",
+                    "budget_tokens": THINKING_BUDGET_TOKENS,
+                },
+                system=system_prompt,
+                messages=[{"role": "user", "content": user_message}],
+            ),
+            f"Government agent {country_config.code}: API call",
         )
 
         logger.debug(
