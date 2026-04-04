@@ -135,12 +135,16 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 710 tests passing (13 new).
 
+## Phase 5: Cleanup — COMPLETED (2026-04-03)
+
+**5.1 Dead files** — Deleted `leaders_sources.csv` (no code references). Kept `opinion_filters.csv` (actively used by extraction module).
+
+**5.2 `date.today()` audit** — Fixed `triage_decide()` which used `date.today()` for trace labels and `triage_date` instead of the passed `end_date`. Added `end_date` parameter and threaded through from `run_triage()`. Remaining `date.today()` calls are defensive fallbacks in function signatures — acceptable.
+
+---
+
+## Remaining Work (Future)
+
 ### Phase 4: Structural Improvements
 - 4.1 Consolidation integrity (structured metadata companion)
-- 4.3 Global rate limiting for API calls
 - 4.4 Typed `AgentResult[T]` with degradation metadata
-
-### Phase 5: Cleanup
-- 5.1 Remove dead files (`opinion_filters.csv`, `leaders_sources.csv`)
-- 5.2 Pin `end_date` at pipeline entry (audit `date.today()` fallbacks)
-- 5.3 Deprecate `cmd_assemble`/`cmd_publish` once `--resume-from` ships

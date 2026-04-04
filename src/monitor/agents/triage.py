@@ -329,6 +329,7 @@ async def triage_decide(
     scan_results: list[ScanResult],
     ledgers: dict[str, CountryLedger],
     global_ledger: GlobalLedger | None = None,
+    end_date: date | None = None,
 ) -> TriageOutput:
     """
     Phase 2: Make depth decisions for all countries based on scan results + context.
@@ -336,6 +337,7 @@ async def triage_decide(
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
+    end_date = end_date or date.today()
     prompt = _build_triage_prompt(scan_results, ledgers, global_ledger)
 
     from ..timing import with_heartbeat
@@ -369,7 +371,7 @@ async def triage_decide(
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     save_raw_response(
-        "triage", "decisions", date.today(),
+        "triage", "decisions", end_date,
         system_prompt=load_prompt("triage_decision"),
         user_message=prompt,
         response_text=response_text,
@@ -418,12 +420,12 @@ async def triage_decide(
                         d.triggered_by.append("first_cycle")
 
     update_trace_parsed(
-        "triage", "decisions", date.today(),
+        "triage", "decisions", end_date,
         parsed_output={"decisions": [d.__dict__ for d in decisions], "summary": summary},
     )
 
     return TriageOutput(
-        triage_date=date.today(),
+        triage_date=end_date,
         decisions=decisions,
         summary=summary,
     )
@@ -465,7 +467,7 @@ async def run_triage(
         )
 
     # Phase 2: triage decision
-    output = await triage_decide(scan_results, ledgers, global_ledger)
+    output = await triage_decide(scan_results, ledgers, global_ledger, end_date=end_date)
     output.scan_results = scan_results
 
     logger.info(
