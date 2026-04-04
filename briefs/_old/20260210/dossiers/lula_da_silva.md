@@ -1,0 +1,88 @@
+# 🇧🇷 Brazil
+## Lula da Silva, President
+_February 3, 2026 through February 10, 2026_
+
+> Brazilian President Luiz Inácio Lula da Silva announced plans this week to create a new public security ministry and push for a constitutional amendment expanding federal security powers, while simultaneously calling for term limits on Supreme Court justices. The president also declared that the 2026 election will be a 'war,' abandoning his previous 'peace and love' political approach, and said his son should 'pay the price' if found involved in a pension fraud case. Lula made the statements while announcing $345 million in health investments and hosting lawmakers at the presidential retreat.
+
+## Top Stories
+
+### Lula pushes public security constitutional amendment, signals new ministry
+
+SALVADOR, Brazil — President Luiz Inácio Lula da Silva said Friday he will create a Public Security Ministry if Congress approves a constitutional amendment expanding federal authority over public safety. Lula said the country recognizes public security as a problem and criticized previous policies that promoted gun ownership, stating weapons ended up in the hands of organized crime. The constitutional amendment, presented by former Justice Minister Ricardo Lewandowski, would integrate security forces and expand coordination between federal, state and municipal governments. Lula made the comments while launching health program investments in Salvador.
+
+*Sources: (UOL [1](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/06/lula-sabemos-que-a-seguranca-publica-e-um-problema-no-pais.htm); G1 [1](https://archive.ph/https://g1.globo.com/politica/noticia/2026/02/06/lula-defende-pec-da-seguranca-publica-e-cobra-apoio-do-congresso.ghtml))*
+
+### Lula delivers ambulances, announces $345 million health investment
+
+SALVADOR, Brazil — President Luiz Inácio Lula da Silva delivered 107 ambulances and announced 345 million reais ($345 million) in health investments for Bahia state Friday, according to government sources. The package includes 32 mobile dental units, surgical equipment and construction orders for three new regional polyclinics in Ibotirama, Ipirá and Seabra municipalities. The investments are part of the New PAC Health program aimed at expanding healthcare access across 402 municipalities in Brazil's northeastern state. During the ceremony at Salvador's Agricultural Exhibition Park, Lula said modern medical technology should be available to all citizens regardless of social status.
+
+*Sources: (Planalto [1](https://archive.ph/http://www.ba.gov.br/comunicacao/pauta/aviso-de-pauta-nesta-sexta-6-presidente-lula-e-governador-jeronimo-entregam-ambulancias-do); UOL [1](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/06/lula-vai-a-salvador-para-entrega-de-ambulancias-e-visita-a-obra-da-irma-dulce.htm); G1 [1](https://archive.ph/https://g1.globo.com/ba/bahia/noticia/2026/02/06/presidente-lula-entrega-novas-ambulancias-do-samu-e-anuncia-investimento-para-a-saude-da-bahia.ghtml))*
+
+### Lula says economy will translate to votes when campaign begins
+
+SALVADOR, Brazil — President Luiz Inácio Lula da Silva said his government's economic performance will become a decisive factor when the 2026 election campaign begins, stating that opposition candidates will lack arguments when voters compare economic records. Speaking at the Workers' Party's 46th anniversary celebration, Lula said "there is no way to lose to adversaries" and emphasized the importance of political narrative in the upcoming election. The president also called for reducing Brazil's work week, saying technological advances make the current 40-hour schedule outdated, and praised Vice President Geraldo Alckmin while signaling this would be his final presidential term.
+
+*Sources: (UOL [1](https://archive.ph/https://noticias.uol.com.br/politica/ultimas-noticias/2026/02/05/lula-6x1.htm),[2](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/07/lula-diz-que-se-comparar-a-economia-oposicao-nao-tera-argumento-nas-urnas.htm))*
+
+### Brazil House Speaker awaits Lula approval for staff raises
+
+BRASILIA, Brazil — House Speaker Hugo Motta said Thursday he expects President Luiz Inácio Lula da Silva to approve salary increases for congressional staff that lawmakers passed this week. Motta told TV Globo he will then raise deputy office budgets by about 30,000 reais ($5,000) monthly, from the current 133,200 reais to approximately 165,000 reais. The House speaker said the budget increase is necessary to cover the higher staff costs approved by Congress.
+
+*Sources: (G1 [1](https://archive.ph/https://g1.globo.com/politica/noticia/2026/02/05/motta-diz-esperar-que-lula-sancione-reajuste-de-servidores-da-camara-e-que-apos-isso-vai-elevar-verba-de-gabinete-dos-deputados.ghtml))*
+
+### Lula tells son to pay price if involved in pension fraud case
+
+BRASÍLIA, Brazil — President Luiz Inácio Lula da Silva said Thursday he told his son Fábio Luís Lula da Silva to "pay the price" if he has any involvement in alleged illegal pension deductions from Brazil's social security system. "If you have something, you will pay the price for having something, if not, defend yourself," Lula said in an interview with UOL News, describing a conversation with his son known as Lulinha. The son's name emerged during investigations into connections with lobbyist Antonio Carlos Camilo Antunes, though Lulinha is not formally under investigation. Lula said his administration's position is to "investigate whatever needs to be investigated."
+
+*Sources: (UOL [1](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/05/lula-sobre-lulinha-se-voce-tiver-alguma-coisa-no-caso-inss-vai-pagar-senao-se-defenda.htm))*
+
+## International
+
+### Lula congratulates António José Seguro on Portugal presidential victory
+
+BRASÍLIA, Brazil — Brazilian President Luiz Inácio Lula da Silva congratulated António José Seguro on his election Sunday as Portugal's new president, according to a social media post. Lula said the electoral process occurred peacefully and "represents the victory of democracy in such an important moment for Europe and for the world." The Brazilian leader also stated the election "consolidates Portugal's position of support for the Mercosur-European Union agreement" and pledged to work with Seguro and Prime Minister Luís Montenegro to strengthen bilateral relations. Seguro, a leftist candidate, won with 66.7% of valid votes against 33.3% for far-right candidate André Ventura in Sunday's runoff election.
+
+*Sources: (G1 [1](https://archive.ph/https://g1.globo.com/politica/politico/noticia/2026/02/08/lula-felicita-antonio-jose-seguro-eleito-presidente-de-portugal.ghtml))*
+
+## Domestic
+
+### Lula praises vice presidents at PT anniversary event
+
+SALVADOR, Brazil — President Luiz Inácio Lula da Silva praised his vice presidents during a Workers' Party anniversary event Saturday, saying he has been fortunate in his choices. "I doubt that any president has had the luck of having the vice presidents that I have," Lula said at the PT's 46th anniversary celebration, referring to current Vice President Geraldo Alckmin and former Vice President José Alencar from his earlier terms. The comments come amid speculation about whether Alckmin will remain on Lula's ticket for potential reelection, with some suggesting the vice president might pursue office in São Paulo state instead.
+
+*Sources: (UOL [1](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/07/brasil-tem-em-lula-um-lider-e-o-mundo-tem-acompanhado-diz-alckmin-em-evento-do-pt.htm))*
+
+### Lula hosts dinner with Brazilian lawmakers at presidential retreat
+
+BRASÍLIA, Brazil — President Luiz Inácio Lula da Silva and Finance Minister Fernando Haddad attended a dinner Wednesday with Chamber of Deputies leaders at the Granja do Torto presidential retreat, according to Brazilian media reports. The gathering was described as an effort by Lula to strengthen ties with the lower house of Congress. Officials said the president and lawmakers discussed government priority projects and exchanged views on upcoming elections during the dinner.
+
+*Sources: (UOL [1](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/04/lula-e-haddad-chegam-na-granja-do-torto-para-jantar-com-deputados.htm))*
+
+### Lula calls for term limits for Brazil Supreme Court justices
+
+BRASILIA, Brazil — President Luiz Inácio Lula da Silva said Brazil should discuss implementing term limits for Supreme Court justices, who currently serve until mandatory retirement at age 75. "It's not fair for someone to enter at 35 years old and stay until 75," Lula said in an interview with UOL News on Thursday. The president said the discussion about mandates has no relation to the January 8, 2023 insurrection trials and would need to be addressed with Congress.
+
+*Sources: (UOL [1](https://archive.ph/https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/02/05/nao-e-justo-alguem-entrar-com-35-anos-e-ficar-ate-75-diz-lula-sobre-mandato-do-stf.htm))*
+
+### Lula says 2026 election will be 'war,' ends 'peace and love' approach
+
+SALVADOR, Brazil — President Luiz Inácio Lula da Silva said Saturday that Brazil's 2026 election will be "a war" and declared an end to his "Lulinha paz e amor" (little Lula peace and love) approach during celebrations marking the 46th anniversary of the Workers' Party. "We have to be more bold, because they are, they are bold and we cannot stay quiet," Lula said, referring to the opposition. The 80-year-old president, who is preparing to seek a fourth term, also criticized politics as having "rotted" and become "very commercialized." Lula has intensified efforts to launch his 2026 reelection campaign, with his government seeking congressional support and aligning popular proposals.
+
+*Sources: (G1 [1](https://archive.ph/https://g1.globo.com/politica/noticia/2026/02/07/em-salvador-lula-diz-que-politica-apodreceu-e-esta-mercantilizada.ghtml))*
+
+### Brazilian judiciary warns Lula carnival parade risks electoral violations
+
+BRASÍLIA, Brazil — Brazilian judiciary members and government officials have expressed concern that a carnival parade honoring President Luiz Inácio Lula da Silva could face electoral court challenges for alleged early campaign activities, according to government sources. The Novo party filed a complaint Tuesday with the Superior Electoral Court against Lula, the Workers' Party and the Acadêmicos de Niterói samba school over their carnival theme 'From the top of the mulungu tree comes hope: Lula, the worker of Brazil.' Senator Damares Alves also petitioned the Electoral Public Ministry, arguing the parade constitutes early electoral propaganda and receives public funding through Rio de Janeiro state transfers of 40 million reais to special group schools. Government allies are monitoring potential political and legal impacts, particularly given that Justice Kassio Nunes Marques, appointed by former President Jair Bolsonaro, will lead the electoral court in the next cycle.
+
+*Sources: (G1 [1](https://archive.ph/https://g1.globo.com/politica/blog/andreia-sadi/post/2026/02/11/integrantes-do-judiciario-veem-risco-de-desfile-parar-na-justica-eleitoral-e-planalto-teme-desgaste-politico.ghtml))*
+
+## Between the Lines
+
+- Lula's simultaneous push for expanded federal security powers and Supreme Court term limits suggests a broader strategy to reshape institutional balance ahead of 2026, concentrating executive authority while limiting judicial tenure.
+- The president's shift from his trademark 'peace and love' approach to declaring 2026 a 'war' indicates internal polling or intelligence suggesting a more contentious electoral landscape than his economic confidence publicly projects.
+- Lula's handling of his son's pension fraud case and praise for vice presidents at the PT event reveals careful political positioning to insulate his family from scandal while reinforcing loyalty within his coalition.
+- The concentration of major announcements in Salvador, Bahia—including health investments, security proposals, and party events—points to targeted cultivation of this key northeastern state ahead of the next election cycle.
+
+---
+
+*Generated: 2026-02-10 22:36*

@@ -1,0 +1,665 @@
+{
+  "agent": "story_map",
+  "label": "ua",
+  "run_date": "2026-02-01",
+  "input": {
+    "system_prompt": "# Story Map Agent — System Prompt\n\n## Role\n\nYou are a news desk editor processing raw search results for Ukraine. Your job is to read a batch of headlines and snippets from this week's news coverage and organize them into distinct stories. You are not analyzing significance or making editorial judgments — you are mapping the media landscape so that the country desk analyst can see what was covered this week at a glance.\n\nThink of yourself as the morning wire editor who reads 200 items and produces a clean story list for the editorial meeting: \"Here are the 18 distinct things that happened in Mexico this week, with the key sources for each.\"\n\n---\n\n## Your Inputs\n\n**SEARCH RESULTS** — Headlines, snippets, source domains, dates, and URLs from Brave Search (both broad actor-name queries and targeted signal-category queries). These are raw search results — unsorted, with duplicates and near-duplicates across different outlets covering the same event. Typically 150-300 items.\n\n**ACTOR LIST** — The tracked actors and institutions for this country (from the CountryConfig). Use this to disambiguate — if a headline mentions \"de la Fuente,\" you know this refers to Mexico's foreign minister, not some other person with that name.\n\n---\n\n## Your Process\n\n### 1. Cluster\n\nGroup search results into distinct stories. A \"story\" is a single event, development, or ongoing situation that multiple headlines are covering. Two headlines about the same bilateral summit are one story. A summit and an unrelated trade announcement are two stories.\n\nClustering criteria:\n- **Same event, different outlets:** Multiple outlets covering the same press conference, vote, meeting, announcement, or incident. These are one story.\n- **Same ongoing situation, different angles:** A defense procurement decision and an op-ed criticizing that decision are the same story (the procurement), not two stories.\n- **Follow-on coverage:** A Monday announcement and Thursday reaction coverage are the same story if the reaction is specifically about the announcement.\n- **Genuinely distinct developments:** A trade deal and a military exercise are two separate stories even if they happened the same day.\n\nWhen in doubt about whether two items are the same story, group them together. The country agent can separate them if needed. Under-clustering (too many stories) is worse than over-clustering (some stories grouped together that could have been split).\n\n### 2. Summarize Each Cluster\n\nFor each story cluster, produce:\n\n- **Headline:** A single descriptive headline for the story (your synthesis, not copied from any source). Should capture what happened in one line.\n- **Summary:** 1-2 sentences describing the story. What happened, who was involved, and when. Factual, not analytical — do not assess significance.\n- **Actors involved:** Which tracked actors or institutions from the actor list appear in this story.\n- **Source count:** How many input results (URLs) belong to this cluster. This counts individual articles, not unique domains — if El Universal published 3 articles about the same story, that's 3 toward the source count. This number is used for accounting: the sum of all story source_counts + single_source_items + off_topic_filtered must equal the total input.\n- **Sources:** List of unique source domains that covered this story.\n- **Date range:** The span of dates across the articles in this cluster.\n- **Articles:** A list of every search result assigned to this cluster. For each, include the article title (as it appeared in the search results), the source domain, the URL, and the publication date (YYYY-MM-DD, derived from the age field relative to the analysis date). This is the full roster — every input result that belongs to this story.\n- **Representative URLs:** The 1-2 best articles for full extraction. Prefer: highest Goggle boost tier source, longest/most detailed article (by snippet length), earliest coverage (original reporting rather than follow-up).\n- **Signal category hint:** Which of the five signal categories this story most likely touches. This is a hint for the extraction step, not an analytical judgment. If unclear, mark as \"unclear.\"\n\n### 3. Order by Prominence\n\nOrder the story list by media prominence — not by analytical importance (that's the country agent's job). Prominence is approximated by:\n- Source count (more outlets covering = more prominent)\n- Source tier (Tier 1-2 outlets covering = more prominent than Tier 3-4 only)\n- Recency (more recent = higher in the list)\n\n### 4. Flag Outliers\n\nAt the bottom of the story list, note:\n- **Single-source stories:** Stories covered by only one outlet. These may be exclusive reporting, minor local news, or noise. List them briefly (headline + source) without full cluster treatment. The country agent can decide whether any are worth investigating.\n- **Off-topic results:** Search results that don't relate to the country's political, economic, security, or institutional dynamics. Filter aggressively — the country agent has limited attention. Off-topic includes: sports results, league standings, match reports, transfer news, player injuries, tournament qualifications, TV broadcast deals for sports, entertainment, celebrity news, lifestyle, weather, obituaries of non-political figures, and human-interest stories. A football story is off-topic even if it involves a national team — unless a head of state or government institution is materially involved (e.g. a stadium corruption scandal, government sports funding policy). Note how many were filtered and from which queries.\n\n### 5. Verify Completeness\n\nEvery input result must be accounted for in exactly one of three buckets: a story cluster, a single-source item, or off-topic filtered. Check your work:\n\n**`sum of all story source_counts + single_source_items count + off_topic_filtered = search_results_total`**\n\nRemember: `source_count` counts input URLs assigned to that cluster, not unique domains. If the same outlet published 3 articles about one story, all 3 count. The numbers must balance because each of the N input results goes to exactly one bucket. If they don't, go back and find the missing results.\n\nIf after your best effort the numbers still don't balance, list any remaining unaccounted-for results in the `unassigned` array (see output schema). This makes the gap auditable rather than silent.\n\n---\n\n## Your Output\n\n```json\n{\n  \"country\": \"UA\",\n  \"analysis_date\": \"2026-02-01\",\n  \"search_results_total\": 237,\n  \"stories_identified\": 18,\n  \"off_topic_filtered\": 34,\n\n  \"stories\": [\n    {\n      \"story_id\": 1,\n      \"headline\": \"Sheinbaum rejects US military intervention proposal at press conference\",\n      \"summary\": \"President Sheinbaum publicly rejected a US proposal for joint military operations against cartels, stating cooperation would continue 'without subordination.' The statement was made at the Tuesday morning press conference and drew immediate reaction from US officials.\",\n      \"actors_involved\": [\"Sheinbaum\", \"SRE\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 7,\n      \"sources\": [\"eluniversal.com.mx\", \"reforma.com\", \"reuters.com\", \"apnews.com\", \"proceso.com.mx\", \"jornada.com.mx\", \"france24.com\"],\n      \"date_range\": \"2026-03-18 to 2026-03-20\",\n      \"articles\": [\n        {\"title\": \"Sheinbaum rechaza intervención militar de EU\", \"source\": \"eluniversal.com.mx\", \"url\": \"https://www.eluniversal.com.mx/...\", \"date\": \"2026-03-18\"},\n        {\"title\": \"Mexico rejects US military proposal\", \"source\": \"reuters.com\", \"url\": \"https://www.reuters.com/...\", \"date\": \"2026-03-18\"},\n        {\"title\": \"Sheinbaum: cooperación sin subordinación\", \"source\": \"reforma.com\", \"url\": \"https://www.reforma.com/...\", \"date\": \"2026-03-18\"},\n        {\"title\": \"Mexico pushes back on cartel operations plan\", \"source\": \"apnews.com\", \"url\": \"https://apnews.com/...\", \"date\": \"2026-03-19\"},\n        {\"title\": \"Sheinbaum dice no a operativo conjunto antinarco\", \"source\": \"proceso.com.mx\", \"url\": \"https://www.proceso.com.mx/...\", \"date\": \"2026-03-19\"},\n        {\"title\": \"México rechaza propuesta militar estadounidense\", \"source\": \"jornada.com.mx\", \"url\": \"https://www.jornada.com.mx/...\", \"date\": \"2026-03-20\"},\n        {\"title\": \"Le Mexique rejette la proposition militaire américaine\", \"source\": \"france24.com\", \"url\": \"https://www.france24.com/...\", \"date\": \"2026-03-20\"}\n      ],\n      \"representative_urls\": [\n        \"https://www.eluniversal.com.mx/...\",\n        \"https://www.reuters.com/...\"\n      ]\n    },\n    {\n      \"story_id\": 2,\n      \"headline\": \"Nordic investment summit concludes with framework agreements\",\n      \"summary\": \"Mexico hosted a two-day investment summit with Nordic countries. SRE announced framework agreements on green energy cooperation with Norway and Sweden. No binding contracts signed.\",\n      \"actors_involved\": [\"de la Fuente\", \"SRE\"],\n      \"signal_category_hint\": \"economic_tech\",\n      \"source_count\": 3,\n      \"sources\": [\"eluniversal.com.mx\", \"elfinanciero.com.mx\", \"jornada.com.mx\"],\n      \"date_range\": \"2026-03-17 to 2026-03-18\",\n      \"articles\": [\n        {\"title\": \"Cumbre nórdica concluye con acuerdos marco\", \"source\": \"eluniversal.com.mx\", \"url\": \"https://www.eluniversal.com.mx/...\", \"date\": \"2026-03-17\"},\n        {\"title\": \"México firma acuerdos de energía verde con Noruega y Suecia\", \"source\": \"elfinanciero.com.mx\", \"url\": \"https://www.elfinanciero.com.mx/...\", \"date\": \"2026-03-17\"},\n        {\"title\": \"SRE anuncia cooperación con países nórdicos\", \"source\": \"jornada.com.mx\", \"url\": \"https://www.jornada.com.mx/...\", \"date\": \"2026-03-18\"}\n      ],\n      \"representative_urls\": [\n        \"https://www.eluniversal.com.mx/...\",\n        \"https://www.elfinanciero.com.mx/...\"\n      ]\n    }\n  ],\n\n  \"single_source_items\": [\n    {\n      \"headline\": \"SEDENA awards helicopter maintenance contract to local firm\",\n      \"source\": \"animalpolitico.com\",\n      \"url\": \"https://www.animalpolitico.com/...\",\n      \"signal_category_hint\": \"security_defense\"\n    },\n    {\n      \"headline\": \"Banxico deputy governor speech on digital currency framework\",\n      \"source\": \"eleconomista.com.mx\",\n      \"url\": \"https://www.eleconomista.com.mx/...\",\n      \"signal_category_hint\": \"economic_tech\"\n    }\n  ],\n\n  \"noise_summary\": \"34 off-topic results filtered: 12 sports (Sheinbaum attending a baseball game), 9 entertainment, 8 human interest, 5 classifieds/listings.\",\n\n  \"unassigned\": [\n    {\n      \"url\": \"https://www.example.com/article-that-didnt-fit\",\n      \"description\": \"Brief snippet from the search result\",\n      \"extra_snippets\": [\"Additional context snippet if available\"]\n    }\n  ]\n}\n```\n\n---\n\n## What You Must Not Do\n\n- Do not assess analytical significance. \"This matters because it signals a shift in alignment posture\" is the country agent's job. Your job is: \"This happened. Seven outlets covered it. Here are the best articles.\"\n- Do not filter based on your own judgment of importance. A celebrity scandal involving a tracked actor is still a story — the country agent may assess it as relevant to the domestic_regime category (public legitimacy), or may dismiss it. You map it either way.\n- Do not read full articles. You work from headlines and snippets only. Your summaries are based on what the headlines and snippets say, not on inferred detail.\n- Do not merge genuinely distinct stories. If Mexico hosted a trade summit AND Mexico's congress voted on electoral reform in the same week, those are two stories even if the same outlets covered both.\n- Do not invent details not present in the headlines/snippets. If the snippet says \"Sheinbaum met with a foreign leader\" but doesn't name the leader, your summary says \"met with a foreign leader\" — do not guess.\n- Do not copy headlines verbatim. Write your own summary headline that captures the story across all sources, not the framing of any single outlet.\n\nNo commentary outside the JSON.\n",
+    "user_message": "## Country: Ukraine (UA)\n## Analysis Date: 2026-02-01\n\n## ACTOR LIST\n- Volodymyr Zelensky: President (PRIMARY)\n  Search terms: Zelensky, Zelenskyy, Volodymyr Zelensky\n- Oleksandr Syrskyi: Commander-in-Chief of the Armed Forces\n  Search terms: Syrskyi, Oleksandr Syrskyi\n- Kyrylo Budanov: Head of the Office of the President\n  Search terms: Budanov, Kyrylo Budanov\n- Yuliia Svyrydenko: Prime Minister\n  Search terms: Svyrydenko, Yuliia Svyrydenko\n- Andrii Sybiha: Foreign Minister\n  Search terms: Sybiha, Andrii Sybiha\n- Armed Forces of Ukraine: Military\n  Search terms: AFU, ZSU, Armed Forces of Ukraine, Збройні сили України\n- National Bank of Ukraine: Central Bank\n  Search terms: NBU, National Bank of Ukraine, Andriy Pyshnyy\n- SBU: Security Service of Ukraine\n  Search terms: SBU, Security Service of Ukraine, Служба безпеки України\n- Servant of the People: Presidential party\n  Search terms: Servant of the People, Слуга народу\n- Mykhailo Fedorov: Defense Minister\n  Search terms: Fedorov, Mykhailo Fedorov\n- HUR: Main Intelligence Directorate\n  Search terms: HUR, GUR, Oleh Ivashchenko\n\n## SEARCH RESULTS\nTotal unique results: 50\n\n- [actor] US security agreement for Ukraine is '100% ready' to be signed, Zelenskyy says | AP News | apnews.com | January 25, 2026\n  URL: https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720\n  Snippet: Ukrainian President Volodymyr Zelenskyy speaks during a joint press conference with Lithuania’s President Gitanas Nauseda and Polish President Karol Nawrocki, at the Presidential palace in Vilnius, Lithuania, Sunday, Jan.\n  Extra: Ukrainian President Volodymyr Zelenskyy gestures while speaking at a joint press conference with Lithuania’s President Gitanas Nauseda and Polish President Karol Nawrocki, at the Presidential palace i\n  Extra: Ukrainian President Volodymyr Zelenskyy said Sunday that a U.S. security guarantees document for Ukraine is “100% ready” after two days of talks involving representatives from Ukraine, the U.S.\n  Extra: Ukrainian President Volodymyr Zelenskyy said a security agreement with the United States is “100% ready.”\n\n- [actor] Zelenskyy says U.S. security agreement for Ukraine is '100% ready' to be signed | PBS News | pbs.org | January 25, 2026\n  URL: https://pbs.org/newshour/world/zelenskyy-says-u-s-security-agreement-for-ukraine-is-100-ready-to-be-signed\n  Snippet: President Volodymyr Zelenskyy said Sunday that a U.S. security guarantees document for Ukraine is \"100% ready\" after two days of talks involving representatives from Ukraine, the U.S.\n  Extra: Speaking to journalists in Vilnius during a visit to Lithuania, Zelenskyy said Ukraine is waiting for its partners to set a signing date, after which the document would go to the U.S.\n  Extra: Zelenskyy acknowledged fundamental differences between Ukrainian and Russian positions, reaffirming territorial issues as a major sticking point.\n  Extra: Zelenskyy said the U.S.\n\n- [actor] Zelenskyy cautious on Russian bombing pause during extreme cold weather | Ukraine | The Guardian | theguardian.com | January 30, 2026\n  URL: https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine\n  Snippet: Ukraine’s president, Volodymyr Zelenskyy, said he was waiting to see whether Russia would observe a proposed pause in strikes on Ukrainian cities and energy infrastructure, as Kyiv endures a spell of bitter winter cold.\n  Extra: Kyiv has rejected those terms, though Zelenskyy has said he is willing to consider alternative arrangements, including the withdrawal of Ukrainian troops from parts of the east and the creation of a d\n  Extra: Speaking on Friday, Zelenskyy said there was no formal ceasefire agreement on energy targets between Ukraine and Russia, but added that Kyiv would halt such strikes if Moscow did the same.\n  Extra: Zelenskyy said US officials first proposed the ceasefire during trilateral talks in Abu Dhabi last week, as part of a broader effort to “create more space for diplomacy”.\n\n- [actor] Who set the trap for Ukraine’s ‘Iron Lady’? The trail leads from her office to Zelensky’s top spy. — Meduza | meduza.io | January 30, 2026\n  URL: https://meduza.io/en/feature/2026/01/30/who-set-the-trap-for-ukraine-s-iron-lady-the-trail-leads-from-her-office-to-zelensky-s-top-spy\n  Snippet: The raid on Tymoshenko’s office ... as the new defense minister. According to investigators, Tymoshenko’s goal was to recruit enough deputies from Zelensky’s party, Servant of the People, to deny the president a working majority....\n  Extra: The raid on Tymoshenko’s office took place the same evening the Rada failed to approve a major government reshuffle, including the appointment of Digital Transformation Minister Mykhailo Fedorov as th\n  Extra: Tymoshenko insists she was entrapped by lawmaker Ihor Kopytin, claiming he needed a high-profile target to bury his own case with the bureau, though there is no public record of any such charges again\n  Extra: “We want to break the majority.” According to secret recordings released by Ukraine’s National Anti-Corruption Bureau (NABU), this was the directive Yulia Tymoshenko gave to a group of deputies she al\n\n- [actor] Volodymyr Zelenskyy blames European states for Ukraine air defence gaps | ft.com | January 30, 2026\n  URL: https://ft.com/content/031ee418-f0cf-4919-8e59-63daf47314a5\n  Snippet: Delayed western payments keep country’s air defences ‘simply empty’ allowing Russia to knock out power, says president\n\n- [actor] Zelenskyy seeks more air defence amid harsh winter and Russian attacks | Euronews | euronews.com | January 25, 2026\n  URL: https://euronews.com/2026/01/25/zelenskyy-calls-on-to-allies-to-provide-more-air-defence-as-russian-strikes-plunge-kyiv-in\n  Snippet: Ukrainian President Volodymyr Zelenskyy has called on Western allies to provide more air defence support on Sunday, as Russian strikes have left hundreds of buildings in Kyiv without heating and electricity in freezing temperatures.\n  Extra: Though the negotiations provided no breakthrough, Zelenskyy said they were nevertheless \"constructive,\" with both sides agreeing to meet again in Abu Dhabi as early as next week.\n  Extra: \"This week alone, the Russians have launched more than 1,700 attack drones, over 1,380 guided aerial bombs, and 69 missiles of various types,\" Zelenskyy said as he arrived in Vilnius to take part in a\n  Extra: The Ukrainian president said that Russia launched over 1,700 drones, 1,380 bombs, and 69 missiles over the past week, leaving hundreds of buildings in the capital without heating.\n\n- [actor] Zelenskiy says security guarantees document from US is 100% ready | Reuters | reuters.com | January 26, 2026\n  URL: https://reuters.com/world/europe/zelenskiy-says-security-guarantees-document-us-is-100-ready-2026-01-25\n  Snippet: VILNIUS, Jan 25 (Reuters) - A U.S. document on security guarantees for Ukraine is completely ready and Kyiv is waiting for a time and place for it to be signed, President Volodymyr Zelenskiy said on Sunday, indicating that weekend talks with Russia in Abu Dhabi made some progress.\n  Extra: Ukrainian President Volodymyr Zelenskiy attends a press conference with Lithuanian President Gitanas Nauseda and Polish President Karol Nawrocki at the Presidential Palace in Vilnius,... Purchase Lice\n  Extra: \"For us, security guarantees are first and foremost guarantees of security from the United States. The document is 100% ready, and we are waiting for our partners to confirm the date and place when we\n  Extra: \"These are two fundamentally different positions – Ukraine's and Russia's. The Americans are trying to find a compromise,\" Zelenskiy said, adding that all sides must be prepared to compromise, includi\n\n- [actor] El general Syrskyi destaca la situación complicada en los frentes de Pokrovsk y Ocheretyne — UNITED24 Media | united24media.com | January 26, 2026\n  URL: https://united24media.com/es/latest-news/syrskyi-rusia-intenta-abrirse-paso-cerca-de-pokrovsk-mientras-ucrania-apunta-a-las-reservas-15331\n  Snippet: El general Oleksandr Syrskyi informa sobre la intensa situación en Pokrovsk y Ocheretyne, donde las fuerzas rusas intensifican sus ofensivas.\n  Extra: Syrskyi afirmó que las fuerzas ucranianas estaban prestando especial atención al fortalecimiento de las unidades de sistemas no tripulados, incluyendo un uso más amplio de drones de ataque y el desarr\n  Extra: Anteriormente, se informó que el comandante en jefe de Ucrania, Oleksandr Syrskyi, había declarado que las fuerzas rusas estaban intensificando las acciones ofensivas en dirección a Zaporizhzhia, lo q\n  Extra: El comandante en jefe de las Fuerzas Armadas de Ucrania, Oleksandr Syrskyi, habla con un militar durante una visita al frente.\n\n- [actor] CinC Syrskyi holds meeting on medical priorities in AFU | ukrinform.net | January 31, 2026\n  URL: https://www.ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html\n  Snippet: At a meeting at the General Staff Headquarters, the issue of medical care in the Armed Forces of Ukraine was discussed. — Ukrinform.\n  Extra: According to Syrskyi, the development and deployment of separate medical battalions, which have already proven their effectiveness and provide qualified medical assistance to the wounded on a daily ba\n  Extra: As reported by Ukrinform, Syrskyi discussed with the leadership of the 1st Medical Battalion of the Armed Forces of Ukraine the directions for the development of medical assistance in the combat zone \n  Extra: According to Ukrinform, Commander-in-Chief of the Armed Forces of Ukraine Oleksandr Syrskyi reported this on Facebook following a meeting with relevant military services.\n\n- [actor] CinC Syrskyi meets with commanders carrying out combat missions on frontline | ukrinform.net | January 30, 2026\n  URL: https://www.ukrinform.net/rubric-ato/4086224-cinc-syrskyi-meets-with-commanders-carrying-out-combat-missions-on-frontline.html\n  Snippet: Commander-in-Chief of the Ukrainian Armed Forces Oleksandr Syrskyi held a working meeting with commanders of military units directly engaged in combat missions on the front line. — Ukrinform.\n  Extra: Syrskyi announced this on Facebook, Ukrinform reports.\n  Extra: Syrskyi said that the participants thoroughly reviewed the operational situation and summarized practical experience gained while operating in the complex and dynamic conditions of modern warfare.\n  Extra: Syrskyi added that he separately recognized servicemen who had demonstrated courage, endurance and a high level of professionalism in combat.\n\n- [actor] Russia continues attempts at breakthrough near Pokrovsk, brings up reserves, Syrskyi says | kyivindependent.com | January 26, 2026\n  URL: https://kyivindependent.com/russia-continues-attempts-at-breakthrough-near-pokrovsk-brings-up-reserves-syrskyi-says/\n  Snippet: Russian forces are continuing attempts to expand their offensive around Pokrovsk in Donetsk Oblast, bringing up reserves and using infiltration tactics, Ukraine's commander-in-chief Oleksandr Syrskyi said on Jan.\n  Extra: Syrskyi's post on Facebook, published after a work trip to meet top commanders in the area, comes as Russian gains across the front line have slowed significantly over January, amid temperatures acros\n  Extra: Oleksandr Syrskyi, Commander-in-Chief of Ukraine's Armed Forces, photographer at a command point near Pokrovsk in Donetsk Oblast, in a photograph published on his official Facebook account on Jan.\n  Extra: \"Our key task is to inflict maximum losses on the enemy, destroy its reserves and consistently reduce the offensive potential,\" Syrskyi wrote, adding that particular focus was being assigned to the ex\n\n- [actor] Syrskyi: Russia Tries to Break Through Near Pokrovsk as Ukraine Targets Reserves — UNITED24 Media | united24media.com | January 26, 2026\n  URL: https://united24media.com/latest-news/syrskyi-russia-tries-to-break-through-near-pokrovsk-as-ukraine-targets-reserves-15331\n  Snippet: Ukrainian forces are focusing on the Pokrovsk and Ocheretyne fronts amid ongoing combat, with strategies evolving to enhance operational effectiveness.\n  Extra: Ukraine’s commander-in-chief, General Oleksandr Syrskyi, said he was continuing work on the Pokrovsk and Ocheretyne fronts in eastern Ukraine, describing the situation as difficult and saying there ha\n  Extra: Earlier, it was reported that Ukraine’s Commander‑in‑Chief Oleksandr Syrskyi said Russian forces were intensifying offensive actions in the Zaporizhzhia direction, indicating heightened pressure along\n  Extra: Ukrainian Armed Forces Commander-in-Chief Oleksandr Syrskyi speaks with a serviceman during a frontline visit.\n\n- [actor] Alarming reports from Pokrovsk front, DeepState reveals details | tsn.ua | January 26, 2026\n  URL: https://tsn.ua/en/ato/alarming-reports-from-pokrovsk-front-deepstate-reveals-details-3007910.html\n  Snippet: Earlier, Ukraine’s Commander-in-Chief Oleksandr Syrskyi said Defense Forces were controlling the northern part of Pokrovsk and holding back Russian forces in Myrnohrad.\n  Extra: Occupying forces have advanced on the Pokrovsk front, analysts say. ᐅТСN.ua (news 1+1)\n\n- [actor] Budanov: Kruty tragedy became a symbol of resistance | Novyny.live | news.novyny.live | January 29, 2026\n  URL: https://news.novyny.live/en/budanov-pays-tribute-to-heroes-of-the-battle-of-kruty-308847.html\n  Snippet: Kyrylo Budanov honored the memory of the Heroes of the Battle near Kruty and emphasized the importance of this event for modern Ukraine.\n  Extra: True remembrance of the valorous deed of the Heroes of Kruty is our responsibility for the state they defended. We must build a country worthy of their self-sacrifice: competitive, free of corruption,\n  Extra: January 29 is a day when we remember the young men who became a symbol of courage, bravery, and love for Ukraine. In 1918, near the Kruty railway station, several hundred Ukrainian students, cadets, a\n  Extra: Head of t. Photo:Head of the Office of the President of Ukraine, Kyrylo Budanov.\n\n- [actor] Budanov trained not at the CIA, but near Novosibirsk – a retired Ukrainian Armed Forces officer | Politnavigator | politnavigator.net | January 29, 2026\n  URL: https://politnavigator.net/en/budanov-trenirovalsya-ne-v-cru-a-pod-novosibirskom-otstavnojj-oficer-vsu.html\n  Snippet: Former Chief of the Main Intelligence Directorate of the Ministry of Defense of Ukraine Kirill Budanov (designated a terrorist in the Russian Federation), appointed head of the Ze-office, did not undergo any super-training at the CIA...\n  Extra: Kirill Budanov, the former head of the Main Intelligence Directorate of the Ministry of Defense of Ukraine (designated a terrorist in the Russian Federation), who was appointed head of the Ze-office, \n  Extra: The presenter, citing his sources, said that Budanov had indeed been to the United States, but it wasn't elite training, just an experience exchange trip.\n  Extra: According to him, all this talk about Budanov’s training at the CIA is an attempt to present him as an American man.\n\n- [actor] Russia launches special information operation against Budanov and Zaluzhny - political strategist | en.interfax.com.ua | January 29, 2026\n  URL: https://en.interfax.com.ua/news/press-conference/1140464.html\n  Snippet: Russia has launched a new special information operation aimed at creating a rift between the head of the GUR, Kyrylo Budanov, and commander-in-chief of the Armed Forces of Ukraine, Valeriy Zaluzhny.\n  Extra: According to him, the campaign to discredit Budanov includes narratives about \"nepotism\", \"nuclear terrorism\" in the context of the Zaporizhia NPP, and \"unfulfilled predictions\". Some of these theses \n  Extra: The ultimate goal is to undermine the credibility of Budanov and weaken the positions of the Ukrainian negotiating team.\n  Extra: \"A new special operation started on January 28: fake 'insider' messages on Telegram channels and social networks allegedly about the conflict between Budanov and Zaluzhny, with 'secret documents' abou\n\n- [actor] Kyrylo Budanov appointed Head of the Office of the President of Ukraine | nashaniva.com | February 1, 2026\n  URL: https://nashaniva.com/en/384849\n  Snippet: Kyrylo Budanov.\n  Extra: The Head of the Main Intelligence Directorate of the Ministry of Defense of Ukraine, Kyrylo Budanov, has been appointed Head of the Office of the President of Ukraine.\n  Extra: Kyrylo Budanov was born in 1986 in Kyiv.\n  Extra: On August 5, 2020, Ukrainian President Volodymyr Zelenskyi appointed Colonel Budanov as the Head of the Main Intelligence Directorate of the Ministry of Defense of Ukraine.\n\n- [actor] Budanov's drunken behavior in an American hospital left a lasting impression on Americans | Politnavigator | politnavigator.net | January 29, 2026\n  URL: https://politnavigator.net/en/nachudil-v-amerikanskom-gospitale-pyanyjj-budanov-khorosho-zapomnilsya-amerikancam.html\n  Snippet: Americans were shocked by the behavior of former Chief of the Main Intelligence Directorate of the Ministry of Defense of Ukraine, Kirill Budanov (designated a terrorist in Russia), in a US hospital...\n  Extra: Americans were shocked by the behavior of former Chief of the Main Intelligence Directorate of the Ministry of Defense of Ukraine, Kirill Budanov (designated a terrorist in the Russian Federation), in\n  Extra: According to him, Budanov made his career during the leadership of the SVR of Ukraine by Valeriy Kondratyuk (2020–2021).\n  Extra: Moreover, there's another interesting detail. The thing is, Budanov can't drink; that's actually a very bad quality for a spy,\" Bekrenev said.\n\n- [actor] Ukraine ends policy of diplomatic passivity with Hungary, Sybiha says | ukrinform.net | January 27, 2026\n  URL: https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html\n  Snippet: Ukraine is ending its policy of diplomatic \"non-noticing\" in relations with Hungary and intends to respond decisively and proportionately to unfriendly steps and anti-Ukrainian rhetoric from the Hungarian leadership, including attempts to drag Kyiv into Hungary's domestic election campaign.\n  Extra: Foreign Minister Andrii Sybiha stated this in an interview with European Pravda, Ukrinform reports.\n  Extra: Commenting on the latest unfriendly statements by his Hungarian counterpart Peter Szijjarto and Prime Minister Viktor Orban, Sybiha noted that \"we are not going to react to every piece of nonsense or \n  Extra: Read also: Sybiha shares details of bilateral meetings between Ukraine and Russia in Abu Dhabi\n\n- [actor] Ukraine's Foreign Minister Andrii Sybiha has urged the world not to stop putting pressure on Russia, which has struck a maternity hospital in Zaporizhzhia | Ukrainska Pravda | pravda.com.ua | February 1, 2026\n  URL: https://pravda.com.ua/eng/news/2026/02/01/8018945\n  Snippet: Ukraine's foreign minister addresses world after Russian strike on maternity hospital in Zaporizhzhia\n  Extra: Ukraine's Foreign Minister Andrii Sybiha has urged the world not to stop putting pressure on Russia, which has struck a maternity hospital in Zaporizhzhia despite ongoing peace talks.\n  Extra: Details: Sybiha said that Russian attack UAVs hit a maternity hospital in Zaporizhzhia on 1 February, leaving three women injured.\n  Extra: Sybiha said in an interview last week that punishing Russia and Putin for war cannot be subject to compromise in negotiations.\n\n- [actor] IAEA confirms Russia’s attacks on Ukraine’s energy sector pose direct nuclear threat - FM Sybiha | ukrinform.net | January 30, 2026\n  URL: https://ukrinform.net/rubric-polytics/4086110-iaea-confirms-russias-attacks-on-ukraines-energy-sector-pose-direct-nuclear-threat-fm-sybiha.html\n  Snippet: This was reported by Foreign Minister Andrii Sybiha on social media X, according to Ukrinform.\n  Extra: Sybiha thanked the Netherlands, Canada, Lithuania, Germany, Belgium, Luxembourg, Italy, Romania, Portugal, France, the United Kingdom, and Japan for supporting Ukraine and facilitating this meeting.\n  Extra: IAEA Director General Rafael Grossi confirmed at an extraordinary meeting of the organization that Russia's systematic attacks on Ukraine's energy sector pose a direct nuclear threat. — Ukrinform.\n\n- [actor] Sybiha shares details of bilateral meetings between Ukraine and Russia in Abu Dhabi | ukrinform.net | January 27, 2026\n  URL: https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html\n  Snippet: During the talks in Abu Dhabi, alongside the trilateral format, bilateral meetings took place between the Ukrainian and Russian delegations - without pseudo-historical lectures and with focused, substantive discussions, in particular on a possible ceasefire. — Ukrinform.\n  Extra: Foreign Minister Andrii Sybiha stated this in an interview with European Pravda, Ukrinform reports.\n  Extra: Sybiha answered affirmatively when asked whether there was a bilateral Ukrainian-Russian track there.\n  Extra: \"There were substantive discussions on the parameters of a ceasefire or truce, on the procedure for monitoring or verifying the ceasefire, and on defining timelines - what each side means by this or t\n\n- [actor] “We are winning time for you”: Ukraine’s FM urges EU to step up pressure on Russia | ukrinform.net | January 29, 2026\n  URL: https://ukrinform.net/rubric-polytics/4085698-we-are-winning-time-for-you-ukraines-fm-urges-eu-to-step-up-pressure-on-russia.html\n  Snippet: Ukraine’s Minister of Foreign Affairs Andrii Sybiha has named key mechanisms for putting pressure on Russia – blocking the so-called “shadow fleet” and adopting a strong 20th sanctions package that would include restrictions against Russia’s defense industry and oil and gas sector.\n  Extra: “Andrii Sybiha highlighted key opportunities for Europe to exert pressure on the RF: blocking the ‘shadow fleet’ and adopting a strong 20th sanctions package, including restrictions against the Russia\n  Extra: Sybiha separately highlighted the EU’s urgent energy assistance and its contributions to Ukraine’s resilience within the framework of the so-called “Energy Ramstein.”\n\n- [actor] Ukrainian foreign minister confirms Ukraine-Russia bilateral meetings took place in Abu Dhabi | European Pravda | eurointegration.com.ua | January 27, 2026\n  URL: https://www.eurointegration.com.ua/eng/news/2026/01/27/7229936/\n  Snippet: Ukrainian Foreign Minister Andrii Sybiha has confirmed that bilateral talks between representatives of Ukraine and Russia took place during the “peace meetings” in Abu Dhabi at the end of last week.\n  Extra: The Abu Dhabi meetings were primarily announced as trilateral negotiations. In response to a question from European Pravda about whether a bilateral Ukraine-Russia track was also held, Sybiha said in \n  Extra: Ukrainian Foreign Minister Andrii Sybiha has confirmed that bilateral talks between representatives of Ukraine and Russia took place during the \"peace meetings\" in Abu Dhabi at the end of last week.\n  Extra: Sybiha also noted that there was a qualitative change in the negotiations with Russia, and the Russian delegation no longer delivers pseudo-historical lectures.\n\n- [actor] Ukraine to sign 20-point peace plan with US: Sybiha reveals details — Ukraine | tsn.ua | January 27, 2026\n  URL: https://tsn.ua/en/ukrayina/ukraine-to-sign-20-point-peace-plan-with-us-sybiha-reveals-details-3009350.html\n  Snippet: Ukraine is set to sign a peace agreement with the United States, with Europe supplying a contingent backed by US support.\n  Extra: One of the most crucial elements of the future agreement, Andrii Sybiha said, is the presence of foreign military contingents on Ukrainian territory. He noted that several European partners have alrea\n  Extra: This was said by Ukraine’s Foreign Minister, Andrii Sybiha, in an interview with European Pravda.\n  Extra: Ukraine to sign 20-point peace plan with US: Sybiha reveals details\n\n- [actor] Ukraine / Foreign Minister: Ukraine’s membership in the EU is in the interest of Poles | European Newsroom | europeannewsroom.com | January 29, 2026\n  URL: https://europeannewsroom.com/ukraine-foreign-minister-ukraines-membership-in-the-eu-is-in-the-interest-of-poles-2\n  Snippet: Sybiha emphasized that Ukraine has recently made significant progress with Poland on extremely sensitive historical issues.\n  Extra: According to the minister, in Ukrainian society and among experts the opinion often appears that even without Hungary’s prime minister Viktor Orban there will always be another state that will try to \n  Extra: Minister of Foreign Affairs of Ukraine Andrij Sybiha.\n  Extra: Poland supports Ukraine’s membership in the European Union and NATO and is one of its biggest advocates, said Ukraine’s foreign minister Andrij Sybiha in an interview for the Ukrainska Pravda portal.\n\n- [actor] Lukashenko must be held accountable for 'complicity' in Russia's war, Sybiha says | kyivindependent.com | January 27, 2026\n  URL: https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/\n  Snippet: Foreign Minister Andrii Sybiha said Belarus is complicit in Russia's invasion of Ukraine and that Kyiv is preparing sanctions against Belarusian President Alexander Lukashenko to hold him accountable for supporting the war.\n  Extra: Foreign Minister Andrii Sybiha said that Belarus is complicit in Russia's invasion of Ukraine and that Kyiv is preparing sanctions against Belarusian President Alexander Lukashenko—a move aimed at hol\n  Extra: Sybiha added the current Belarusian government bears equal responsibility with Russia for the war in Ukraine, noting that Lukashenko has allowed Russian forces to use Belarus—which shares a northern b\n  Extra: Foreign Minister Andrii Sybiha takes part in a press conference on Jan. 12, 2026 in Kyiv, Ukraine.\n\n- [actor] No More ‘Pseudo-Historical Lectures’ – Sybiha Upbeat on Quality of Peace Talks and Even NATO Membership | kyivpost.com | January 29, 2026\n  URL: https://www.kyivpost.com/post/68981\n  Snippet: “The negotiations are complex,” the Foreign Minister said. “However, we can state that there has been a qualitative change in the Russian delegation.”\n  Extra: In an interview with state media published on Wednesday, Foreign Minister Andriy Sybiha‎ described the nuances of both the trilateral and bilateral peace talks with Russian and US delegations, strikin\n  Extra: Sybiha was also careful to stress the importance of Europe’s participation in the process, especially as regards security guarantees, as Washington has been clear that there would be no American troop\n  Extra: Ukraine’s Minister of Foreign Affairs Andrii Sybiha (R) speaks with High Representative of the European Union for Foreign Affairs and Security Policy Kaja Kallas before talks in Kyiv on Oct.\n\n- [actor] Albares and Sybiha discuss Spanish aid to the Ukrainian energy system following the latest Russian attacks | thediplomatinspain.com | January 27, 2026\n  URL: https://thediplomatinspain.com/en/2026/01/27/albares-and-sybiha-discuss-spanish-aid-to-the-ukrainian-energy-system-following-the-latest-russian-attacks/\n  Snippet: Foreign Minister José Manuel Albares spoke on Monday, January 26, with his Ukrainian counterpart, Andrii Sybiha.\n  Extra: Eduardo González Foreign Minister José Manuel Albares spoke on Monday, January 26, with his Ukrainian counterpart, Andrii Sybiha, to discuss\n  Extra: Albares with Andrii Sybiha.\n\n- [actor] Ukraine ready to consider Moldova's appeal for contribution to its security – Sybiha | en.interfax.com.ua | January 27, 2026\n  URL: https://en.interfax.com.ua/news/general/1139956.html\n  Snippet: The threat of the further presence of Russian military personnel on the territory of Moldovan Transnistria is becoming increasingly obvious, Ukrainian Foreign Minister Andriy Sybiha said, noting that Kyiv \"is ready to consider the appeal of friendly Moldova for further practical cooperation, ...\n  Extra: The threat of the further presence of Russian military personnel on the territory of Moldovan Transnistria is becoming increasingly obvious, Ukrainian Foreign Minister Andriy Sybiha said, noting that \n  Extra: When asked about the possibility of force assistance, Sybiha replied: \"This is and remains the right of Chisinau – to determine policy in this context.\n\n- [actor] Asesores Financieros Universitarios: Proceso, logros y proyección 2026 - Colegio de CPA de Puerto Rico | colegiocpa.com | January 26, 2026\n  URL: https://colegiocpa.com/asesores-financieros-universitarios-proceso-logros-y-proyeccion-2026\n  Snippet: Asesores Financieros Universitarios: Proceso, logros y proyección 2026 Por Asesores Financieros Universitarios (AFU) ¿Quieres ser mentor(a)? Empieza el año generando oportunidades para los futuros profesionales y las organizaciones sin fines de lucro. El fortalecimiento financiero y ...\n  Extra: Asesores Financieros Universitarios: Proceso, logros y proyección 2026 Por Asesores Financieros Universitarios (AFU) ¿Quieres ser mentor(a)? Empieza el año generando oportunidades para los futuros pro\n  Extra: El Programa Asesores Financieros Universitarios (AFU) es un internado estructurado para estudiantes universitarios, diseñado para ofrecer una experiencia práctica en un entorno real en organizaciones \n  Extra: AFU se distingue por su enfoque formativo, ético y colaborativo, preparando a futuros profesionales para comprender la realidad operativa del tercer sector y aportar desde sus conocimientos académicos\n\n- [actor] National Bank cuts key policy rate to 15% | ukrinform.net | January 29, 2026\n  URL: https://ukrinform.net/rubric-economy/4085624-national-bank-cuts-key-policy-rate-to-15.html\n  Snippet: NBU Governor Andriy Pyshnyy announced this at a briefing, Ukrinform reports.\n  Extra: He added that the NBU will continue to respond flexibly to shifts in monetary risks.\n  Extra: Read also: NBU expects further decline in inflation\n  Extra: The National Bank of Ukraine has lowered its key policy rate from 15.5% to 15%. — Ukrinform.\n\n- [actor] Ukrainian Drone Strikes On Parked Russian Aircraft Seen In “Greatest Hits” Video | twz.com | January 30, 2026\n  URL: https://www.twz.com/air/ukrainian-drone-strikes-on-parked-russian-aircraft-seen-in-greatest-hits-video\n  Snippet: As both sides in the war in Ukraine continue their campaigns of long-range drone attacks, the Ukrainian government’s internal security agency has released a compilation of strikes directed against Russian airbases. The video, published by the Security Service of Ukraine (SBU), records drone ...\n  Extra: As both sides in the war in Ukraine continue their campaigns of long-range drone attacks, the Ukrainian government’s internal security agency has released a compilation of strikes directed against Rus\n  Extra: The SBU claims that the total value of the damage was more than $1 billion, although it’s far from clear how this was calculated, especially since some of the airframes in question are decades old and\n  Extra: The highlighted airfield raids in the video are part of a wider Ukrainian drone campaign carried out last year, in which the SBU also targeted Russian air defense systems, radar installations, and cri\n\n- [actor] Ukraine war latest updates: SBU releases greatest hits video of 2025 drone strikes on Russian aircraft (8) | kyivindependent.com | January 28, 2026\n  URL: https://kyivindependent.com/ukraine-war-latest-update-2026-01-28/\n  Snippet: Live coverage of Russia’s war against Ukraine with breaking news and frontline updates, updated 8 times today. Ukraine's Security Service (SBU) on Jan. 28 released a video compilation of what it claimed was the destruction of more than $1 billion worth of Russian military aircraft in long-range ...\n  Extra: Live coverage of Russia’s war against Ukraine with breaking news and frontline updates, updated 8 times today. Ukraine's Security Service (SBU) on Jan. 28 released a video compilation of what it claim\n  Extra: SBU strikes also target other aspects of Russia's military — several production halls were destroyed at a large drone factory in Taganrog after a joint strike operation by the Ukrainian Navy and the S\n  Extra: A screenshot from a video released by Ukraine's Security Service (SBU) on Jan.\n\n- [actor] Belarus spy caught trying to penetrate Ukraine's military intelligence | global.espreso.tv | January 27, 2026\n  URL: https://global.espreso.tv/russia-ukraine-war-ukraine-foils-belarusian-spys-attempt-to-infiltrate-military-intelligence\n  Snippet: As part of a special operation that lasted several months, SBU officers and HUR internal security documented the activities of the Belarusian spy and conducted an operational game with her—providing disinformation under the guise of secret data.\n  Extra: Main Intelligence Directorate and Security Service officers exposed a Belarusian KGB spy attempting to infiltrate Ukrainian military intelligence. Read Espreso\n\n- [actor] Ukraine Destroyed 15 Russian Aircraft in 2025 Drone Strikes Worth $1 Billion in Damage — UNITED24 Media | united24media.com | January 28, 2026\n  URL: https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398\n  Snippet: Ukraine's SBU confirms Alpha unit's drone strikes on five Russian airbases, destroying 15 aircraft and causing over $1 billion in military damage.\n  Extra: Ukraine’s Security Service (SBU) confirmed that its special forces unit “Alpha” conducted successful long-range drone strikes against five Russian military airbases in 2025, targeting and destroying 1\n  Extra: The campaign caused over $1 billion in estimated damage to Russia’s military infrastructure, according to an official statement from the SBU on January 28.\n  Extra: The SBU also reported secondary damage at the targeted bases, including the destruction of ammunition and fuel storage facilities.\n\n- [actor] Russian military aviation suffers $1 billion losses after Ukrainian airfield attacks | RBC-Ukraine | newsukraine.rbc.ua | January 28, 2026\n  URL: https://newsukraine.rbc.ua/news/ukraine-s-security-service-strikes-russian-1769596723.html\n  Snippet: Ukrainian special forces carried out a series of successful attacks on Russian airfields. As a result, 15 aircraft were destroyed or damaged, causing losses of more than $1 billion to the enemy and weakening strikes against Ukraine, according to Ukraine's Security Service (SBU).\n  Extra: As noted by the SBU, ammunition storage sites and fuel and lubricants depots were also hit.\n  Extra: The SBU emphasizes that every successful strike on a Russian airfield means lives saved in Ukraine and enemy plans for new massive attacks disrupted.\n  Extra: Over the past year, SBU units have successfully eliminated 311 Russian air defense systems.\n\n- [actor] ️Former SBU officer: The brainwashed population of Kiev believes that \"we just need to endure two months, and Russia will collapse.\" Kiev's population is suffering from the blackout, but, brainwashed by propaganda, they s.. - Pravda Ukraine | ua.news-pravda.com | January 29, 2026\n  URL: https://ua.news-pravda.com/en/world/2026/01/29/88257.html\n  Snippet: ️Former SBU officer: The brainwashed population of Kiev believes that \"we just need to endure two months, and Russia will collapse. \" Kiev's population is suffering from the blackout, but, brainwashed by propaganda, they seriously believe that...\n  Extra: Former SBU Lieutenant Colonel Vasily Prozorov, who defected to Russia, stated this on the PolitWera video blog, as reported by a PolitNavigator correspondent.\n  Extra: ️Former SBU officer: The brainwashed population of Kiev believes that \"we just need to endure two months, and Russia will collapse.\" Kiev's population is suffering from the blackout, but, brainwashed \n  Extra: ️Back in November last year, SBU officers delivered some equipment to the Khmelnitskaya and Rovnenskaya nuclear power plants.\n\n- [actor] Commodore 64 Helps Revive The BBS Days | Hackaday | hackaday.com | January 25, 2026\n  URL: https://hackaday.com/2026/01/25/commodore-64-helps-revive-the-bbs-days\n  Snippet: Before the modern Internet existed, there were still plenty of ways of connecting with other computer users “online”, although many of them might seem completely foreign to those of us …\n\n- [actor] The Subversive Power of Being Human at Work | Psychology Today | psychologytoday.com | January 28, 2026\n  URL: https://psychologytoday.com/us/blog/transforming-the-status-quo/202601/the-subversive-power-of-being-human-at-work\n  Snippet: Everyday leadership behaviors like listening, curiosity, and rest can become acts of courage and resistance in systems that often sideline humanity.\n  Extra: Everyday leadership choices can become acts of resistance that restore our humanity. I used to think my work was practical. I teach leaders how to listen, really listen. I coach people to say the hard\n  Extra: I encourage people to take walks during the workday, to ask better questions than the ones they’ve been rewarded for asking, and to choose curiosity over certainty. For a long time, I thought of this \n  Extra: This, of course, is the real question. Most leaders already know that listening more deeply, asking better questions, and focusing on people rather than just problems leads to more collaborative, inno\n\n- [actor] Pope: Young people, be next generation of intercessors for world’s needs - Vatican News | vaticannews.va | January 30, 2026\n  URL: https://vaticannews.va/en/pope/news/2026-01/pope-network-prayer-intention-young-people-heart-of-jesus.html\n  Snippet: Pope Leo XIV meets with the leadership and members of the Pope’s Worldwide Prayer Network and thanks them for their work. He encourages them to ...\n  Extra: Pope Leo XIV meets with the leadership and members of the Pope’s Worldwide Prayer Network and thanks them for their work. He encourages them to continue their mission and invite young people to take p\n  Extra: Pope Leo XIV thanked the leadership and members of the Pope’s Worldwide Prayer Network for their work and encouraged them to attract young people, so that they may get closer to God.\n  Extra: “It is especially important to invite young people to take part so that they may form the next generation of intercessors for the needs of the whole world,” the Pope said in his address to the group, \n\n- [actor] Autocracy in America: Purge the Public Servants - The Atlantic | theatlantic.com | January 30, 2026\n  URL: https://theatlantic.com/podcasts/2026/01/purge-the-public-servants/685378\n  Snippet: Kathleen Walters was only 23 days away from qualifying for early retirement at the IRS when she decided to quit, rather than acquiesce to a Trump-administration request that she break the law and compromise millions of people’s privacy. She’s one of hundreds of thousands of civil servants who ...\n  Extra: Kathleen Walters was only 23 days away from qualifying for early retirement at the IRS when she decided to quit, rather than acquiesce to a Trump-administration request that she break the law and comp\n  Extra: Moynihan: And a lot of these disagreements really boil down to whether the president can order people to break the law. It’s a red flag when you see so many people saying, My god. This is so illegal t\n  Extra: In Turkey, we saw mass purges of people who were perceived as not being aligned with the administration. And so there is a common pattern there that I think serves as a warning sign. Applebaum: And wh\n\n- [actor] Premadasa vs Lalith: A recipe for conflict – The Island | island.lk | January 25, 2026\n  URL: https://island.lk/premadasa-vs-lalith-a-recipe-for-conflict\n  Snippet: I will not dwell in any detail about the numerous other issues that engaged the Minister’s (Athulathemudali) attention. That would add up to a book in itself. What I would do would be to briefly touch upon some selected matters. A structure of a Ministry is important and relevant as a facilitator ..\n  Extra: I will not dwell in any detail about the numerous other issues that engaged the Minister’s (Athulathemudali) attention. That would add up to a book in itself. What I would do would be to briefly touch\n  Extra: Mr. Abeygunawardena, the Secretary handling that area later to become Secretary to the Ministry of Health, was a disciplined public servant, who in spite of his own difficult position never attempted \n  Extra: It must be said that those in the higher education sector welcomed opportunities to meet the Minister, although it was not a comfortable position for any of them, or for that matter for any of us. As \n\n- [actor] Ewtnnews | ewtnnews.com | January 27, 2026\n  URL: https://ewtnnews.com/vatican/pope-leo-xiv-human-voices-and-faces-are-sacred-ai-requires-education-and-responsibility\n  Snippet: The pope stresses the need to protect ... of the work of journalists and other content creators must be protected. Information is a public good,” he writes. Education, he adds, is essential for building critical thinking and digital citizenship, and it should reach every generation. “As Catholics, w\n  Extra: The pope stresses the need to protect the work of journalists and creators: “The authorship and sovereign ownership of the work of journalists and other content creators must be protected. Information\n  Extra: In his first message for the 60th World Day of Social Communications, Pope Leo XIV warns that artificial intelligence and digital technologies can undermine human relationships and distort reality unl\n  Extra: The pope’s message, titled “Preserving Human Voices and Faces,” emphasizes the uniqueness of every person and the need to protect what he calls the “sacred” signs of human identity in an era increasin\n\n- [actor] Mindanao Jesuit martyr’s cause advances to theological review | CBCPNews | cbcpnews.net | January 29, 2026\n  URL: https://cbcpnews.net/cbcpnews/mindanao-jesuit-martyrs-cause-advances-to-theological-review\n  Snippet: The canonization cause of 17th-century Italian Jesuit Fr. Francesco Palliola\n  Extra: To mark the day, Bishop Severo Caermare of Dipolog presided over Mass at the site of Palliola’s killing in Ponot, now the town of Jose Dalman in Zamboanga del Norte province. Palliola arrived in Minda\n  Extra: Bishop Severo Caermare of Dipolog presides over Mass marking the 378th death anniversary of Jesuit Fr. Francesco Palliola at the site of his killing in Ponot, now Jose Dalman, Zamboanga del Norte, on \n  Extra: Francesco Palliola, described as a martyr in Mindanao, has registered a “positive development,” the Diocese of Dipolog announced Thursday.\n\n- [actor] Ukraine's new 35-year-old defense minister made 2 influential Telegram bloggers his advisors for drone warfare | businessinsider.com | January 27, 2026\n  URL: https://businessinsider.com/mykhailo-fedorov-advisors-defense-ministry-serhii-flash-sternenko-2026-1\n  Snippet: Ukraine's new defense minister, Mykhailo Fedorov, has appointed two prominent Telegram bloggers and activists to his \"team of new leaders,\" saying they will advise him on defense technology and drone warfare.\n  Extra: Mykhailo Fedorov, now Ukraine's defense minister, was previously its minister for digital transformation.\n  Extra: It comes as Mykhailo Fedorov has pledged to rework how Ukraine's military has operated.\n  Extra: Fedorov named him an advisor in defense technology on Sunday, saying Beskrestnov would focus on helping Ukraine build counter-systems for Russian strike and reconnaissance drones.\n\n- [actor] Fedorov appoints tech blogger Serhii “Flash” Beskrestnov as advisor | ukrinform.net | January 25, 2026\n  URL: https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html\n  Snippet: Defense Minister Mykhailo Fedorov has appointed tech blogger Serhii “Flash” Beskrestnov as advisor on defense technology. — Ukrinform.\n  Extra: In modern technological warfare, it is important to understand innovation trends, anticipate Russian plans, and develop products that can turn the tide on the battlefield. We are strengthening this ar\n  Extra: Today, war is about mathematics, technology, and speed of decision-making. We must not just react, but build a system that constantly evolves and becomes stronger. That is why we are reinforcing the t\n  Extra: According to Ukrinform, Fedorov announced this on Telegram.\n\n- [actor] UAWire - Ukrainian Defense Minister Fedorov names Serhiy ‘Flash’ Beskrestnov defense technology adviser to strengthen EW and drones | uawire.org | January 25, 2026\n  URL: https://www.uawire.org/ukrainian-defense-minister-fedorov-names-serhiy-flash-beskrestnov-defense-technology-adviser-to-strengthen-ew-and-drones\n  Snippet: Defense Minister Mykhailo Fedorov has appointed Serhiy “Flash” Beskrestnov as his adviser on defense technology. Beskrestnov, one of Ukraine’s …\n  Extra: Ukrainian Defense Minister Fedorov names Serhiy ‘Flash’ Beskrestnov defense technology adviser to strengthen EW and drones\n  Extra: Fedorov added that Beskrestnov will also be involved in other defense technology areas, including work with captured Russian equipment, analyzing it, and studying logistics and engineering to turn les\n  Extra: Earlier, it was reported that one of Ukraine’s most well-known volunteers, Serhiy Sternenko, who for the past four years has supplied drones to Ukraine’s Defense Forces, has also joined the Defense Mi\n\n- [actor] Ben Hur se prepara para la primera final en Gualeguaychú | Radio EME | radioeme.com | January 29, 2026\n  URL: https://radioeme.com/2026/01/ben-hur-se-prepara-para-la-primera-final-en-gualeguaychu\n  Snippet: Sportivo Ben Hur de Rafaela entrena de cara a la primera final de la Región Litoral Sur del Torneo Regional Federal Amateur. El partido frente a Juventud\n  Extra: Con una campaña perfecta en la categoría, con 12 triunfos en 12 partidos, la BH sabe que ahora viene la etapa mas dura: 2 partidos a todo nada para pasar a la final por el ascenso al Torneo Federal A.\n  Extra: Ben Hur y Juventud Unida vuelven a enfrentarse en la final de la Región Litoral Sur tal como sucedió en 2025. En esa definición, la BH terminó quedándose con la serie luego del empate 0 a 0 en Rafaela\n\n- [actor] Regional Amateur: Ben Hur a 3 partidos del ascenso y Sanjustino eliminado | Radio EME | radioeme.com | January 26, 2026\n  URL: https://radioeme.com/2026/01/regional-amateur-ben-hur-a-3-partidos-del-ascenso-y-sanjustino-eliminado\n  Snippet: Este fin de semana se disputaron las semifinales de vuelta de la Región Litoral Sur del Torneo Regional Federal Amateur. Sportivo Ben Hur le ganó como\n  Extra: Este fin de semana se disputaron las semifinales de vuelta de la Región Litoral Sur del Torneo Regional Federal Amateur. Sportivo Ben Hur le ganó como local 1 a 0 a Puerto San Martín con el gol del co\n  Extra: Por su parte, Sanjustino quedó eliminado tras perder como local 1 a 0 ante Juventud Unida de Gualeguaychú. De esta manera, el equipo entrerriano avanzó con un global de 2 a 0 y ahora enfrentará a Ben \n  Extra: Sportivo Ben Hur vs Juventud Unida de Gualeguaychú."
+  },
+  "output": {
+    "response_text": "```json\n{\n  \"country\": \"UA\",\n  \"analysis_date\": \"2026-02-01\",\n  \"search_results_total\": 50,\n  \"stories_identified\": 18,\n  \"off_topic_filtered\": 11,\n\n  \"stories\": [\n    {\n      \"story_id\": 1,\n      \"headline\": \"SBU releases compilation video of drone strikes destroying Russian aircraft worth $1 billion\",\n      \"summary\": \"Ukraine's Security Service published a video compilation showing successful long-range drone strikes against five Russian military airbases in 2025, claiming destruction of 15 aircraft and over $1 billion in damage to Russian military infrastructure.\",\n      \"actors_involved\": [\"SBU\"],\n      \"signal_category_hint\": \"security_defense\",\n      \"source_count\": 4,\n      \"sources\": [\"twz.com\", \"kyivindependent.com\", \"united24media.com\", \"newsukraine.rbc.ua\"],\n      \"date_range\": \"2026-01-28 to 2026-01-30\",\n      \"articles\": [\n        {\"title\": \"Ukrainian Drone Strikes On Parked Russian Aircraft Seen In \\\"Greatest Hits\\\" Video\", \"source\": \"twz.com\", \"url\": \"https://www.twz.com/air/ukrainian-drone-strikes-on-parked-russian-aircraft-seen-in-greatest-hits-video\", \"date\": \"2026-01-30\"},\n        {\"title\": \"Ukraine war latest updates: SBU releases greatest hits video of 2025 drone strikes on Russian aircraft (8)\", \"source\": \"kyivindependent.com\", \"url\": \"https://kyivindependent.com/ukraine-war-latest-update-2026-01-28/\", \"date\": \"2026-01-28\"},\n        {\"title\": \"Ukraine Destroyed 15 Russian Aircraft in 2025 Drone Strikes Worth $1 Billion in Damage\", \"source\": \"united24media.com\", \"url\": \"https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398\", \"date\": \"2026-01-28\"},\n        {\"title\": \"Russian military aviation suffers $1 billion losses after Ukrainian airfield attacks\", \"source\": \"newsukraine.rbc.ua\", \"url\": \"https://newsukraine.rbc.ua/news/ukraine-s-security-service-strikes-russian-1769596723.html\", \"date\": \"2026-01-28\"}\n      ],\n      \"representative_urls\": [\n        \"https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398\",\n        \"https://www.twz.com/air/ukrainian-drone-strikes-on-parked-russian-aircraft-seen-in-greatest-hits-video\"\n      ]\n    },\n    {\n      \"story_id\": 2,\n      \"headline\": \"Syrskyi reports intense Russian offensive attempts near Pokrovsk\",\n      \"summary\": \"Commander-in-Chief Syrskyi described the situation as difficult on the Pokrovsk and Ocheretyne fronts, with Russian forces bringing up reserves and using infiltration tactics while Ukrainian forces focus on inflicting maximum losses on enemy reserves.\",\n      \"actors_involved\": [\"Syrskyi\", \"Armed Forces of Ukraine\"],\n      \"signal_category_hint\": \"security_defense\",\n      \"source_count\": 4,\n      \"sources\": [\"united24media.com\", \"kyivindependent.com\", \"tsn.ua\"],\n      \"date_range\": \"2026-01-26 to 2026-01-26\",\n      \"articles\": [\n        {\"title\": \"El general Syrskyi destaca la situación complicada en los frentes de Pokrovsk y Ocheretyne\", \"source\": \"united24media.com\", \"url\": \"https://united24media.com/es/latest-news/syrskyi-rusia-intenta-abrirse-paso-cerca-de-pokrovsk-mientras-ucrania-apunta-a-las-reservas-15331\", \"date\": \"2026-01-26\"},\n        {\"title\": \"Russia continues attempts at breakthrough near Pokrovsk, brings up reserves, Syrskyi says\", \"source\": \"kyivindependent.com\", \"url\": \"https://kyivindependent.com/russia-continues-attempts-at-breakthrough-near-pokrovsk-brings-up-reserves-syrskyi-says/\", \"date\": \"2026-01-26\"},\n        {\"title\": \"Syrskyi: Russia Tries to Break Through Near Pokrovsk as Ukraine Targets Reserves\", \"source\": \"united24media.com\", \"url\": \"https://united24media.com/latest-news/syrskyi-russia-tries-to-break-through-near-pokrovsk-as-ukraine-targets-reserves-15331\", \"date\": \"2026-01-26\"},\n        {\"title\": \"Alarming reports from Pokrovsk front, DeepState reveals details\", \"source\": \"tsn.ua\", \"url\": \"https://tsn.ua/en/ato/alarming-reports-from-pokrovsk-front-deepstate-reveals-details-3007910.html\", \"date\": \"2026-01-26\"}\n      ],\n      \"representative_urls\": [\n        \"https://kyivindependent.com/russia-continues-attempts-at-breakthrough-near-pokrovsk-brings-up-reserves-syrskyi-says/\",\n        \"https://united24media.com/latest-news/syrskyi-russia-tries-to-break-through-near-pokrovsk-as-ukraine-targets-reserves-15331\"\n      ]\n    },\n    {\n      \"story_id\": 3,\n      \"headline\": \"Abu Dhabi peace talks show qualitative improvement in negotiations\",\n      \"summary\": \"Foreign Minister Sybiha confirmed bilateral Ukraine-Russia meetings took place alongside trilateral talks in Abu Dhabi, describing substantive discussions on ceasefire parameters without Russian 'pseudo-historical lectures.' Ukraine also revealed details of a 20-point peace plan with the US.\",\n      \"actors_involved\": [\"Sybiha\", \"Zelensky\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 4,\n      \"sources\": [\"ukrinform.net\", \"eurointegration.com.ua\", \"kyivpost.com\", \"tsn.ua\"],\n      \"date_range\": \"2026-01-27 to 2026-01-29\",\n      \"articles\": [\n        {\"title\": \"Sybiha shares details of bilateral meetings between Ukraine and Russia in Abu Dhabi\", \"source\": \"ukrinform.net\", \"url\": \"https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html\", \"date\": \"2026-01-27\"},\n        {\"title\": \"Ukrainian foreign minister confirms Ukraine-Russia bilateral meetings took place in Abu Dhabi\", \"source\": \"eurointegration.com.ua\", \"url\": \"https://www.eurointegration.com.ua/eng/news/2026/01/27/7229936/\", \"date\": \"2026-01-27\"},\n        {\"title\": \"No More 'Pseudo-Historical Lectures' – Sybiha Upbeat on Quality of Peace Talks and Even NATO Membership\", \"source\": \"kyivpost.com\", \"url\": \"https://www.kyivpost.com/post/68981\", \"date\": \"2026-01-29\"},\n        {\"title\": \"Ukraine to sign 20-point peace plan with US: Sybiha reveals details\", \"source\": \"tsn.ua\", \"url\": \"https://tsn.ua/en/ukrayina/ukraine-to-sign-20-point-peace-plan-with-us-sybiha-reveals-details-3009350.html\", \"date\": \"2026-01-27\"}\n      ],\n      \"representative_urls\": [\n        \"https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html\",\n        \"https://www.kyivpost.com/post/68981\"\n      ]\n    },\n    {\n      \"story_id\": 4,\n      \"headline\": \"Sybiha calls for sustained international pressure on Russia following attacks\",\n      \"summary\": \"Foreign Minister Sybiha urged continued global pressure on Russia after strikes on Ukrainian infrastructure including a maternity hospital in Zaporizhzhia. He emphasized blocking Russia's 'shadow fleet' and adopting stronger EU sanctions while securing IAEA confirmation that Russian energy attacks pose nuclear threats.\",\n      \"actors_involved\": [\"Sybiha\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 4,\n      \"sources\": [\"pravda.com.ua\", \"ukrinform.net\", \"thediplomatinspain.com\"],\n      \"date_range\": \"2026-01-27 to 2026-02-01\",\n      \"articles\": [\n        {\"title\": \"Ukraine's Foreign Minister Andrii Sybiha has urged the world not to stop putting pressure on Russia, which has struck a maternity hospital in Zaporizhzhia\", \"source\": \"pravda.com.ua\", \"url\": \"https://pravda.com.ua/eng/news/2026/02/01/8018945\", \"date\": \"2026-02-01\"},\n        {\"title\": \"IAEA confirms Russia's attacks on Ukraine's energy sector pose direct nuclear threat - FM Sybiha\", \"source\": \"ukrinform.net\", \"url\": \"https://ukrinform.net/rubric-polytics/4086110-iaea-confirms-russias-attacks-on-ukraines-energy-sector-pose-direct-nuclear-threat-fm-sybiha.html\", \"date\": \"2026-01-30\"},\n        {\"title\": \"\\\"We are winning time for you\\\": Ukraine's FM urges EU to step up pressure on Russia\", \"source\": \"ukrinform.net\", \"url\": \"https://ukrinform.net/rubric-polytics/4085698-we-are-winning-time-for-you-ukraines-fm-urges-eu-to-step-up-pressure-on-russia.html\", \"date\": \"2026-01-29\"},\n        {\"title\": \"Albares and Sybiha discuss Spanish aid to the Ukrainian energy system following the latest Russian attacks\", \"source\": \"thediplomatinspain.com\", \"url\": \"https://thediplomatinspain.com/en/2026/01/27/albares-and-sybiha-discuss-spanish-aid-to-the-ukrainian-energy-system-following-the-latest-russian-attacks/\", \"date\": \"2026-01-27\"}\n      ],\n      \"representative_urls\": [\n        \"https://pravda.com.ua/eng/news/2026/02/01/8018945\",\n        \"https://ukrinform.net/rubric-polytics/4085698-we-are-winning-time-for-you-ukraines-fm-urges-eu-to-step-up-pressure-on-russia.html\"\n      ]\n    },\n    {\n      \"story_id\": 5,\n      \"headline\": \"US security agreement with Ukraine '100% ready' for signing, Zelensky says\",\n      \"summary\": \"President Zelensky announced that a US security guarantees document is completely ready and Ukraine is waiting for partners to set a signing date after trilateral talks in Abu Dhabi. The agreement would then go to the US Congress for ratification.\",\n      \"actors_involved\": [\"Zelensky\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 3,\n      \"sources\": [\"apnews.com\", \"pbs.org\", \"reuters.com\"],\n      \"date_range\": \"2026-01-25 to 2026-01-26\",\n      \"articles\": [\n        {\"title\": \"US security agreement for Ukraine is '100% ready' to be signed, Zelenskyy says\", \"source\": \"apnews.com\", \"url\": \"https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720\", \"date\": \"2026-01-25\"},\n        {\"title\": \"Zelenskyy says U.S. security agreement for Ukraine is '100% ready' to be signed\", \"source\": \"pbs.org\", \"url\": \"https://pbs.org/newshour/world/zelenskyy-says-u-s-security-agreement-for-ukraine-is-100-ready-to-be-signed\", \"date\": \"2026-01-25\"},\n        {\"title\": \"Zelenskiy says security guarantees document from US is 100% ready\", \"source\": \"reuters.com\", \"url\": \"https://reuters.com/world/europe/zelenskiy-says-security-guarantees-document-us-is-100-ready-2026-01-25\", \"date\": \"2026-01-26\"}\n      ],\n      \"representative_urls\": [\n        \"https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720\",\n        \"https://reuters.com/world/europe/zelenskiy-says-security-guarantees-document-us-is-100-ready-2026-01-25\"\n      ]\n    },\n    {\n      \"story_id\": 6,\n      \"headline\": \"Russian disinformation campaign targets Budanov with false narratives\",\n      \"summary\": \"Ukrainian analysts report Russia launched a special information operation against intelligence chief Budanov using fake narratives about CIA training, personal conduct, and alleged conflicts with military leadership. The campaign includes fabricated stories and 'insider' messages on social media.\",\n      \"actors_involved\": [\"Budanov\"],\n      \"signal_category_hint\": \"domestic_regime\",\n      \"source_count\": 3,\n      \"sources\": [\"en.interfax.com.ua\", \"politnavigator.net\"],\n      \"date_range\": \"2026-01-29 to 2026-01-29\",\n      \"articles\": [\n        {\"title\": \"Russia launches special information operation against Budanov and Zaluzhny - political strategist\", \"source\": \"en.interfax.com.ua\", \"url\": \"https://en.interfax.com.ua/news/press-conference/1140464.html\", \"date\": \"2026-01-29\"},\n        {\"title\": \"Budanov trained not at the CIA, but near Novosibirsk – a retired Ukrainian Armed Forces officer\", \"source\": \"politnavigator.net\", \"url\": \"https://politnavigator.net/en/budanov-trenirovalsya-ne-v-cru-a-pod-novosibirskom-otstavnojj-oficer-vsu.html\", \"date\": \"2026-01-29\"},\n        {\"title\": \"Budanov's drunken behavior in an American hospital left a lasting impression on Americans\", \"source\": \"politnavigator.net\", \"url\": \"https://politnavigator.net/en/nachudil-v-amerikanskom-gospitale-pyanyjj-budanov-khorosho-zapomnilsya-amerikancam.html\", \"date\": \"2026-01-29\"}\n      ],\n      \"representative_urls\": [\n        \"https://en.interfax.com.ua/news/press-conference/1140464.html\",\n        \"https://politnavigator.net/en/budanov-trenirovalsya-ne-v-cru-a-pod-novosibirskom-otstavnojj-oficer-vsu.html\"\n      ]\n    },\n    {\n      \"story_id\": 7,\n      \"headline\": \"Defense Minister Fedorov appoints tech bloggers as military advisors\",\n      \"summary\": \"New Defense Minister Mykhailo Fedorov appointed two prominent Telegram bloggers and activists as advisors on defense technology and drone warfare, saying they will help Ukraine build counter-systems for Russian drones and analyze captured enemy equipment.\",\n      \"actors_involved\": [\"Fedorov\"],\n      \"signal_category_hint\": \"security_defense\",\n      \"source_count\": 3,\n      \"sources\": [\"businessinsider.com\", \"ukrinform.net\", \"uawire.org\"],\n      \"date_range\": \"2026-01-25 to 2026-01-27\",\n      \"articles\": [\n        {\"title\": \"Ukraine's new 35-year-old defense minister made 2 influential Telegram bloggers his advisors for drone warfare\", \"source\": \"businessinsider.com\", \"url\": \"https://businessinsider.com/mykhailo-fedorov-advisors-defense-ministry-serhii-flash-sternenko-2026-1\", \"date\": \"2026-01-27\"},\n        {\"title\": \"Fedorov appoints tech blogger Serhii \\\"Flash\\\" Beskrestnov as advisor\", \"source\": \"ukrinform.net\", \"url\": \"https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html\", \"date\": \"2026-01-25\"},\n        {\"title\": \"Ukrainian Defense Minister Fedorov names Serhiy 'Flash' Beskrestnov defense technology adviser to strengthen EW and drones\", \"source\": \"uawire.org\", \"url\": \"https://www.uawire.org/ukrainian-defense-minister-fedorov-names-serhiy-flash-beskrestnov-defense-technology-adviser-to-strengthen-ew-and-drones\", \"date\": \"2026-01-25\"}\n      ],\n      \"representative_urls\": [\n        \"https://businessinsider.com/mykhailo-fedorov-advisors-defense-ministry-serhii-flash-sternenko-2026-1\",\n        \"https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html\"\n      ]\n    },\n    {\n      \"story_id\": 8,\n      \"headline\": \"Syrskyi conducts military medical and command meetings at General Staff\",\n      \"summary\": \"Commander-in-Chief Syrskyi held meetings on medical priorities in the Armed Forces and with frontline commanders. He discussed development of medical battalions and recognized servicemen for courage and professionalism in combat.\",\n      \"actors_involved\": [\"Syrskyi\", \"Armed Forces of Ukraine\"],\n      \"signal_category_hint\": \"security_defense\",\n      \"source_count\": 2,\n      \"sources\": [\"ukrinform.net\"],\n      \"date_range\": \"2026-01-30 to 2026-01-31\",\n      \"articles\": [\n        {\"title\": \"CinC Syrskyi holds meeting on medical priorities in AFU\", \"source\": \"ukrinform.net\", \"url\": \"https://www.ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html\", \"date\": \"2026-01-31\"},\n        {\"title\": \"CinC Syrskyi meets with commanders carrying out combat missions on frontline\", \"source\": \"ukrinform.net\", \"url\": \"https://www.ukrinform.net/rubric-ato/4086224-cinc-syrskyi-meets-with-commanders-carrying-out-combat-missions-on-frontline.html\", \"date\": \"2026-01-30\"}\n      ],\n      \"representative_urls\": [\n        \"https://www.ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html\",\n        \"https://www.ukrinform.net/rubric-ato/4086224-cinc-syrskyi-meets-with-commanders-carrying-out-combat-missions-on-frontline.html\"\n      ]\n    },\n    {\n      \"story_id\": 9,\n      \"headline\": \"Zelensky appeals for more Western air defense systems\",\n      \"summary\": \"President Zelensky called on Western allies to provide more air defense support as Russian strikes left hundreds of buildings in Kyiv without heating during freezing temperatures. He blamed delayed European payments for keeping Ukraine's air defenses 'simply empty.'\",\n      \"actors_involved\": [\"Zelensky\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 2,\n      \"sources\": [\"euronews.com\", \"ft.com\"],\n      \"date_range\": \"2026-01-25 to 2026-01-30\",\n      \"articles\": [\n        {\"title\": \"Zelenskyy seeks more air defence amid harsh winter and Russian attacks\", \"source\": \"euronews.com\", \"url\": \"https://euronews.com/2026/01/25/zelenskyy-calls-on-to-allies-to-provide-more-air-defence-as-russian-strikes-plunge-kyiv-in\", \"date\": \"2026-01-25\"},\n        {\"title\": \"Volodymyr Zelenskyy blames European states for Ukraine air defence gaps\", \"source\": \"ft.com\", \"url\": \"https://ft.com/content/031ee418-f0cf-4919-8e59-63daf47314a5\", \"date\": \"2026-01-30\"}\n      ],\n      \"representative_urls\": [\n        \"https://euronews.com/2026/01/25/zelenskyy-calls-on-to-allies-to-provide-more-air-defence-as-russian-strikes-plunge-kyiv-in\",\n        \"https://ft.com/content/031ee418-f0cf-4919-8e59-63daf47314a5\"\n      ]\n    },\n    {\n      \"story_id\": 10,\n      \"headline\": \"Ukraine ends diplomatic passivity toward Hungary, Sybiha announces\",\n      \"summary\": \"Foreign Minister Sybiha said Ukraine is ending its policy of diplomatic 'non-noticing' with Hungary and will respond decisively to unfriendly steps and anti-Ukrainian rhetoric from Hungarian leadership, including attempts to drag Kyiv into Hungary's domestic politics.\",\n      \"actors_involved\": [\"Sybiha\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 1,\n      \"sources\": [\"ukrinform.net\"],\n      \"date_range\": \"2026-01-27 to 2026-01-27\",\n      \"articles\": [\n        {\"title\": \"Ukraine ends policy of diplomatic passivity with Hungary, Sybiha says\", \"source\": \"ukrinform.net\", \"url\": \"https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html\", \"date\": \"2026-01-27\"}\n      ],\n      \"representative_urls\": [\n        \"https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html\"\n      ]\n    },\n    {\n      \"story_id\": 11,\n      \"headline\": \"Ukraine prepares sanctions against Lukashenko for war complicity\",\n      \"summary\": \"Foreign Minister Sybiha announced Ukraine is preparing sanctions against Belarusian President Lukashenko to hold him accountable for supporting Russia's war, saying Belarus bears equal responsibility with Russia for the invasion.\",\n      \"actors_involved\": [\"Sybiha\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 1,\n      \"sources\": [\"kyivindependent.com\"],\n      \"date_range\": \"2026-01-27 to 2026-01-27\",\n      \"articles\": [\n        {\"title\": \"Lukashenko must be held accountable for 'complicity' in Russia's war, Sybiha says\", \"source\": \"kyivindependent.com\", \"url\": \"https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/\", \"date\": \"2026-01-27\"}\n      ],\n      \"representative_urls\": [\n        \"https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/\"\n      ]\n    },\n    {\n      \"story_id\": 12,\n      \"headline\": \"Ukraine offers security cooperation to Moldova over Transnistria\",\n      \"summary\": \"Foreign Minister Sybiha said the threat of continued Russian military presence in Moldovan Transnistria is becoming increasingly obvious and that Kyiv is ready to consider Moldova's appeal for further practical security cooperation.\",\n      \"actors_involved\": [\"Sybiha\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 1,\n      \"sources\": [\"en.interfax.com.ua\"],\n      \"date_range\": \"2026-01-27 to 2026-01-27\",\n      \"articles\": [\n        {\"title\": \"Ukraine ready to consider Moldova's appeal for contribution to its security – Sybiha\", \"source\": \"en.interfax.com.ua\", \"url\": \"https://en.interfax.com.ua/news/general/1139956.html\", \"date\": \"2026-01-27\"}\n      ],\n      \"representative_urls\": [\n        \"https://en.interfax.com.ua/news/general/1139956.html\"\n      ]\n    },\n    {\n      \"story_id\": 13,\n      \"headline\": \"Sybiha emphasizes Poland's support for Ukraine's EU membership\",\n      \"summary\": \"Foreign Minister Sybiha said Poland supports Ukraine's EU and NATO membership and is one of its biggest advocates, emphasizing that Ukraine's EU membership is in Poland's interest and noting progress on sensitive historical issues.\",\n      \"actors_involved\": [\"Sybiha\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 1,\n      \"sources\": [\"europeannewsroom.com\"],\n      \"date_range\": \"2026-01-29 to 2026-01-29\",\n      \"articles\": [\n        {\"title\": \"Ukraine / Foreign Minister: Ukraine's membership in the EU is in the interest of Poles\", \"source\": \"europeannewsroom.com\", \"url\": \"https://europeannewsroom.com/ukraine-foreign-minister-ukraines-membership-in-the-eu-is-in-the-interest-of-poles-2\", \"date\": \"2026-01-29\"}\n      ],\n      \"representative_urls\": [\n        \"https://europeannewsroom.com/ukraine-foreign-minister-ukraines-membership-in-the-eu-is-in-the-interest-of-poles-2\"\n      ]\n    },\n    {\n      \"story_id\": 14,\n      \"headline\": \"Budanov appointed Head of Presidential Office\",\n      \"summary\": \"Kyrylo Budanov, Head of the Main Intelligence Directorate since 2020, has been appointed Head of the Office of the President of Ukraine, replacing his previous role in military intelligence.\",\n      \"actors_involved\": [\"Budanov\", \"Zelensky\"],\n      \"signal_category_hint\": \"domestic_regime\",\n      \"source_count\": 1,\n      \"sources\": [\"nashaniva.com\"],\n      \"date_range\": \"2026-02-01 to 2026-02-01\",\n      \"articles\": [\n        {\"title\": \"Kyrylo Budanov appointed Head of the Office of the President of Ukraine\", \"source\": \"nashaniva.com\", \"url\": \"https://nashaniva.com/en/384849\", \"date\": \"2026-02-01\"}\n      ],\n      \"representative_urls\": [\n        \"https://nashaniva.com/en/384849\"\n      ]\n    },\n    {\n      \"story_id\": 15,\n      \"headline\": \"Budanov commemorates Battle of Kruty heroes\",\n      \"summary\": \"Head of Presidential Office Budanov honored the memory of the Heroes of the Battle near Kruty on the anniversary, emphasizing their importance as symbols of courage and resistance for modern Ukraine and calling for building a country worthy of their sacrifice.\",\n      \"actors_involved\": [\"Budanov\"],\n      \"signal_category_hint\": \"domestic_regime\",\n      \"source_count\": 1,\n      \"sources\": [\"news.novyny.live\"],\n      \"date_range\": \"2026-01-29 to 2026-01-29\",\n      \"articles\": [\n        {\"title\": \"Budanov: Kruty tragedy became a symbol of resistance\", \"source\": \"news.novyny.live\", \"url\": \"https://news.novyny.live/en/budanov-pays-tribute-to-heroes-of-the-battle-of-kruty-308847.html\", \"date\": \"2026-01-29\"}\n      ],\n      \"representative_urls\": [\n        \"https://news.novyny.live/en/budanov-pays-tribute-to-heroes-of-the-battle-of-kruty-308847.html\"\n      ]\n    },\n    {\n      \"story_id\": 16,\n      \"headline\": \"Zelensky cautious on Russian bombing pause during extreme cold\",\n      \"summary\": \"President Zelensky said he was waiting to see whether Russia would observe a proposed pause in strikes on Ukrainian energy infrastructure during bitter winter cold. He noted no formal ceasefire agreement exists but indicated Ukraine would halt energy strikes if Russia did the same.\",\n      \"actors_involved\": [\"Zelensky\"],\n      \"signal_category_hint\": \"alignment_diplomatic\",\n      \"source_count\": 1,\n      \"sources\": [\"theguardian.com\"],\n      \"date_range\": \"2026-01-30 to 2026-01-30\",\n      \"articles\": [\n        {\"title\": \"Zelenskyy cautious on Russian bombing pause during extreme cold weather\", \"source\": \"theguardian.com\", \"url\": \"https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine\", \"date\": \"2026-01-30\"}\n      ],\n      \"representative_urls\": [\n        \"https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine\"\n      ]\n    },\n    {\n      \"story_id\": 17,\n      \"headline\": \"National Bank cuts key policy rate to 15 percent\",\n      \"summary\": \"The National Bank of Ukraine lowered its key policy rate from 15.5% to 15%, with NBU Governor Andriy Pyshnyy saying the bank will continue to respond flexibly to shifts in monetary risks.\",\n      \"actors_involved\": [\"National Bank of Ukraine\"],\n      \"signal_category_hint\": \"economic_tech\",\n      \"source_count\": 1,\n      \"sources\": [\"ukrinform.net\"],\n      \"date_range\": \"2026-01-29 to 2026-01-29\",\n      \"articles\": [\n        {\"title\": \"National Bank cuts key policy rate to 15%\", \"source\": \"ukrinform.net\", \"url\": \"https://ukrinform.net/rubric-economy/4085624-national-bank-cuts-key-policy-rate-to-15.html\", \"date\": \"2026-01-29\"}\n      ],\n      \"representative_urls\": [\n        \"https://ukrinform.net/rubric-economy/4085624-national-bank-cuts-key-policy-rate-to-15.html\"\n      ]\n    },\n    {\n      \"story_id\": 18,\n      \"headline\": \"Investigation reveals Tymoshenko's alleged plot to undermine Zelensky's parliamentary majority\",\n      \"summary\": \"Investigation details emerged about Yulia Tymoshenko allegedly attempting to recruit deputies from Zelensky's Servant of the People party to deny the president a working majority, with the raid on her office occurring the same evening the Rada failed to approve a government reshuffle including Fedorov's appointment as defense minister.\",\n      \"actors_involved\": [\"Zelensky\", \"Servant of the People\", \"Fedorov\"],\n      \"signal_category_hint\": \"domestic_regime\",\n      \"source_count\": 1,\n      \"sources\": [\"meduza.io\"],\n      \"date_range\": \"2026-01-30 to 2026-01-30\",\n      \"articles\": [\n        {\"title\": \"Who set the trap for Ukraine's 'Iron Lady'? The trail leads from her office to Zelensky's top spy.\", \"source\": \"meduza.io\", \"url\": \"https://meduza.io/en/feature/2026/01/30/who-set-the-trap-for-ukraine-s-iron-lady-the-trail-leads-from-her-office-to-zelensky-s-top-spy\", \"date\": \"2026-01-30\"}\n      ],\n      \"representative_urls\": [\n        \"https://meduza.io/en/feature/2026/01/30/who-set-the-trap-for-ukraine-s-iron-lady-the-trail-leads-from-her-office-to-zelensky-s-top-spy\"\n      ]\n    }\n  ],\n\n  \"single_source_items\": [\n    {\n      \"headline\": \"SBU and HUR expose Belarusian spy attempting to infiltrate military intelligence\",\n      \"source\": \"global.espreso.tv\",\n      \"url\": \"https://global.espreso.tv/russia-ukraine-war-ukraine-foils-belarusian-spys-attempt-to-infiltrate-military-intelligence\",\n      \"signal_category_hint\": \"security_defense\"\n    }\n  ],\n\n  \"noise_summary\": \"11 off-topic results filtered: 2 sports (Ben Hur football team), 3 religious (Pope/Vatican stories, Jesuit canonization), 2 technology/lifestyle (Commodore 64, workplace psychology), 2 international politics (US civil service, Sri Lankan politics), 1 Puerto Rico financial program, 1 Russian propaganda piece (former SBU officer).\",\n\n  \"unassigned\": []\n}\n```",
+    "parsed": {
+      "country": "UA",
+      "code": "UA",
+      "analysis_date": "2026-02-01",
+      "search_results_total": 50,
+      "stories_identified": 18,
+      "off_topic_filtered": 11,
+      "stories": [
+        {
+          "story_id": 1,
+          "headline": "SBU releases compilation video of drone strikes destroying Russian aircraft worth $1 billion",
+          "summary": "Ukraine's Security Service published a video compilation showing successful long-range drone strikes against five Russian military airbases in 2025, claiming destruction of 15 aircraft and over $1 billion in damage to Russian military infrastructure.",
+          "actors_involved": [
+            "SBU"
+          ],
+          "signal_category_hint": "security_defense",
+          "source_count": 4,
+          "sources": [
+            "twz.com",
+            "kyivindependent.com",
+            "united24media.com",
+            "newsukraine.rbc.ua"
+          ],
+          "date_range": "2026-01-28 to 2026-01-30",
+          "articles": [
+            {
+              "title": "Ukrainian Drone Strikes On Parked Russian Aircraft Seen In \"Greatest Hits\" Video",
+              "source": "twz.com",
+              "url": "https://www.twz.com/air/ukrainian-drone-strikes-on-parked-russian-aircraft-seen-in-greatest-hits-video",
+              "date": "2026-01-30"
+            },
+            {
+              "title": "Ukraine war latest updates: SBU releases greatest hits video of 2025 drone strikes on Russian aircraft (8)",
+              "source": "kyivindependent.com",
+              "url": "https://kyivindependent.com/ukraine-war-latest-update-2026-01-28/",
+              "date": "2026-01-28"
+            },
+            {
+              "title": "Ukraine Destroyed 15 Russian Aircraft in 2025 Drone Strikes Worth $1 Billion in Damage",
+              "source": "united24media.com",
+              "url": "https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398",
+              "date": "2026-01-28"
+            },
+            {
+              "title": "Russian military aviation suffers $1 billion losses after Ukrainian airfield attacks",
+              "source": "newsukraine.rbc.ua",
+              "url": "https://newsukraine.rbc.ua/news/ukraine-s-security-service-strikes-russian-1769596723.html",
+              "date": "2026-01-28"
+            }
+          ],
+          "representative_urls": [
+            "https://united24media.com/latest-news/ukraine-destroyed-15-russian-aircraft-in-2025-drone-strikes-worth-1-billion-in-damage-15398",
+            "https://www.twz.com/air/ukrainian-drone-strikes-on-parked-russian-aircraft-seen-in-greatest-hits-video"
+          ]
+        },
+        {
+          "story_id": 2,
+          "headline": "Syrskyi reports intense Russian offensive attempts near Pokrovsk",
+          "summary": "Commander-in-Chief Syrskyi described the situation as difficult on the Pokrovsk and Ocheretyne fronts, with Russian forces bringing up reserves and using infiltration tactics while Ukrainian forces focus on inflicting maximum losses on enemy reserves.",
+          "actors_involved": [
+            "Syrskyi",
+            "Armed Forces of Ukraine"
+          ],
+          "signal_category_hint": "security_defense",
+          "source_count": 4,
+          "sources": [
+            "united24media.com",
+            "kyivindependent.com",
+            "tsn.ua"
+          ],
+          "date_range": "2026-01-26 to 2026-01-26",
+          "articles": [
+            {
+              "title": "El general Syrskyi destaca la situación complicada en los frentes de Pokrovsk y Ocheretyne",
+              "source": "united24media.com",
+              "url": "https://united24media.com/es/latest-news/syrskyi-rusia-intenta-abrirse-paso-cerca-de-pokrovsk-mientras-ucrania-apunta-a-las-reservas-15331",
+              "date": "2026-01-26"
+            },
+            {
+              "title": "Russia continues attempts at breakthrough near Pokrovsk, brings up reserves, Syrskyi says",
+              "source": "kyivindependent.com",
+              "url": "https://kyivindependent.com/russia-continues-attempts-at-breakthrough-near-pokrovsk-brings-up-reserves-syrskyi-says/",
+              "date": "2026-01-26"
+            },
+            {
+              "title": "Syrskyi: Russia Tries to Break Through Near Pokrovsk as Ukraine Targets Reserves",
+              "source": "united24media.com",
+              "url": "https://united24media.com/latest-news/syrskyi-russia-tries-to-break-through-near-pokrovsk-as-ukraine-targets-reserves-15331",
+              "date": "2026-01-26"
+            },
+            {
+              "title": "Alarming reports from Pokrovsk front, DeepState reveals details",
+              "source": "tsn.ua",
+              "url": "https://tsn.ua/en/ato/alarming-reports-from-pokrovsk-front-deepstate-reveals-details-3007910.html",
+              "date": "2026-01-26"
+            }
+          ],
+          "representative_urls": [
+            "https://kyivindependent.com/russia-continues-attempts-at-breakthrough-near-pokrovsk-brings-up-reserves-syrskyi-says/",
+            "https://united24media.com/latest-news/syrskyi-russia-tries-to-break-through-near-pokrovsk-as-ukraine-targets-reserves-15331"
+          ]
+        },
+        {
+          "story_id": 3,
+          "headline": "Abu Dhabi peace talks show qualitative improvement in negotiations",
+          "summary": "Foreign Minister Sybiha confirmed bilateral Ukraine-Russia meetings took place alongside trilateral talks in Abu Dhabi, describing substantive discussions on ceasefire parameters without Russian 'pseudo-historical lectures.' Ukraine also revealed details of a 20-point peace plan with the US.",
+          "actors_involved": [
+            "Sybiha",
+            "Zelensky"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 4,
+          "sources": [
+            "ukrinform.net",
+            "eurointegration.com.ua",
+            "kyivpost.com",
+            "tsn.ua"
+          ],
+          "date_range": "2026-01-27 to 2026-01-29",
+          "articles": [
+            {
+              "title": "Sybiha shares details of bilateral meetings between Ukraine and Russia in Abu Dhabi",
+              "source": "ukrinform.net",
+              "url": "https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html",
+              "date": "2026-01-27"
+            },
+            {
+              "title": "Ukrainian foreign minister confirms Ukraine-Russia bilateral meetings took place in Abu Dhabi",
+              "source": "eurointegration.com.ua",
+              "url": "https://www.eurointegration.com.ua/eng/news/2026/01/27/7229936/",
+              "date": "2026-01-27"
+            },
+            {
+              "title": "No More 'Pseudo-Historical Lectures' – Sybiha Upbeat on Quality of Peace Talks and Even NATO Membership",
+              "source": "kyivpost.com",
+              "url": "https://www.kyivpost.com/post/68981",
+              "date": "2026-01-29"
+            },
+            {
+              "title": "Ukraine to sign 20-point peace plan with US: Sybiha reveals details",
+              "source": "tsn.ua",
+              "url": "https://tsn.ua/en/ukrayina/ukraine-to-sign-20-point-peace-plan-with-us-sybiha-reveals-details-3009350.html",
+              "date": "2026-01-27"
+            }
+          ],
+          "representative_urls": [
+            "https://www.ukrinform.net/rubric-polytics/4084981-sybiha-shares-details-of-bilateral-meetings-between-ukraine-and-russia-in-abu-dhabi.html",
+            "https://www.kyivpost.com/post/68981"
+          ]
+        },
+        {
+          "story_id": 4,
+          "headline": "Sybiha calls for sustained international pressure on Russia following attacks",
+          "summary": "Foreign Minister Sybiha urged continued global pressure on Russia after strikes on Ukrainian infrastructure including a maternity hospital in Zaporizhzhia. He emphasized blocking Russia's 'shadow fleet' and adopting stronger EU sanctions while securing IAEA confirmation that Russian energy attacks pose nuclear threats.",
+          "actors_involved": [
+            "Sybiha"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 4,
+          "sources": [
+            "pravda.com.ua",
+            "ukrinform.net",
+            "thediplomatinspain.com"
+          ],
+          "date_range": "2026-01-27 to 2026-02-01",
+          "articles": [
+            {
+              "title": "Ukraine's Foreign Minister Andrii Sybiha has urged the world not to stop putting pressure on Russia, which has struck a maternity hospital in Zaporizhzhia",
+              "source": "pravda.com.ua",
+              "url": "https://pravda.com.ua/eng/news/2026/02/01/8018945",
+              "date": "2026-02-01"
+            },
+            {
+              "title": "IAEA confirms Russia's attacks on Ukraine's energy sector pose direct nuclear threat - FM Sybiha",
+              "source": "ukrinform.net",
+              "url": "https://ukrinform.net/rubric-polytics/4086110-iaea-confirms-russias-attacks-on-ukraines-energy-sector-pose-direct-nuclear-threat-fm-sybiha.html",
+              "date": "2026-01-30"
+            },
+            {
+              "title": "\"We are winning time for you\": Ukraine's FM urges EU to step up pressure on Russia",
+              "source": "ukrinform.net",
+              "url": "https://ukrinform.net/rubric-polytics/4085698-we-are-winning-time-for-you-ukraines-fm-urges-eu-to-step-up-pressure-on-russia.html",
+              "date": "2026-01-29"
+            },
+            {
+              "title": "Albares and Sybiha discuss Spanish aid to the Ukrainian energy system following the latest Russian attacks",
+              "source": "thediplomatinspain.com",
+              "url": "https://thediplomatinspain.com/en/2026/01/27/albares-and-sybiha-discuss-spanish-aid-to-the-ukrainian-energy-system-following-the-latest-russian-attacks/",
+              "date": "2026-01-27"
+            }
+          ],
+          "representative_urls": [
+            "https://pravda.com.ua/eng/news/2026/02/01/8018945",
+            "https://ukrinform.net/rubric-polytics/4085698-we-are-winning-time-for-you-ukraines-fm-urges-eu-to-step-up-pressure-on-russia.html"
+          ]
+        },
+        {
+          "story_id": 5,
+          "headline": "US security agreement with Ukraine '100% ready' for signing, Zelensky says",
+          "summary": "President Zelensky announced that a US security guarantees document is completely ready and Ukraine is waiting for partners to set a signing date after trilateral talks in Abu Dhabi. The agreement would then go to the US Congress for ratification.",
+          "actors_involved": [
+            "Zelensky"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 3,
+          "sources": [
+            "apnews.com",
+            "pbs.org",
+            "reuters.com"
+          ],
+          "date_range": "2026-01-25 to 2026-01-26",
+          "articles": [
+            {
+              "title": "US security agreement for Ukraine is '100% ready' to be signed, Zelenskyy says",
+              "source": "apnews.com",
+              "url": "https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720",
+              "date": "2026-01-25"
+            },
+            {
+              "title": "Zelenskyy says U.S. security agreement for Ukraine is '100% ready' to be signed",
+              "source": "pbs.org",
+              "url": "https://pbs.org/newshour/world/zelenskyy-says-u-s-security-agreement-for-ukraine-is-100-ready-to-be-signed",
+              "date": "2026-01-25"
+            },
+            {
+              "title": "Zelenskiy says security guarantees document from US is 100% ready",
+              "source": "reuters.com",
+              "url": "https://reuters.com/world/europe/zelenskiy-says-security-guarantees-document-us-is-100-ready-2026-01-25",
+              "date": "2026-01-26"
+            }
+          ],
+          "representative_urls": [
+            "https://apnews.com/article/us-ukraine-war-talks-security-zelenskyy-438412639e3a73cab0abf9d109519720",
+            "https://reuters.com/world/europe/zelenskiy-says-security-guarantees-document-us-is-100-ready-2026-01-25"
+          ]
+        },
+        {
+          "story_id": 6,
+          "headline": "Russian disinformation campaign targets Budanov with false narratives",
+          "summary": "Ukrainian analysts report Russia launched a special information operation against intelligence chief Budanov using fake narratives about CIA training, personal conduct, and alleged conflicts with military leadership. The campaign includes fabricated stories and 'insider' messages on social media.",
+          "actors_involved": [
+            "Budanov"
+          ],
+          "signal_category_hint": "domestic_regime",
+          "source_count": 3,
+          "sources": [
+            "en.interfax.com.ua",
+            "politnavigator.net"
+          ],
+          "date_range": "2026-01-29 to 2026-01-29",
+          "articles": [
+            {
+              "title": "Russia launches special information operation against Budanov and Zaluzhny - political strategist",
+              "source": "en.interfax.com.ua",
+              "url": "https://en.interfax.com.ua/news/press-conference/1140464.html",
+              "date": "2026-01-29"
+            },
+            {
+              "title": "Budanov trained not at the CIA, but near Novosibirsk – a retired Ukrainian Armed Forces officer",
+              "source": "politnavigator.net",
+              "url": "https://politnavigator.net/en/budanov-trenirovalsya-ne-v-cru-a-pod-novosibirskom-otstavnojj-oficer-vsu.html",
+              "date": "2026-01-29"
+            },
+            {
+              "title": "Budanov's drunken behavior in an American hospital left a lasting impression on Americans",
+              "source": "politnavigator.net",
+              "url": "https://politnavigator.net/en/nachudil-v-amerikanskom-gospitale-pyanyjj-budanov-khorosho-zapomnilsya-amerikancam.html",
+              "date": "2026-01-29"
+            }
+          ],
+          "representative_urls": [
+            "https://en.interfax.com.ua/news/press-conference/1140464.html",
+            "https://politnavigator.net/en/budanov-trenirovalsya-ne-v-cru-a-pod-novosibirskom-otstavnojj-oficer-vsu.html"
+          ]
+        },
+        {
+          "story_id": 7,
+          "headline": "Defense Minister Fedorov appoints tech bloggers as military advisors",
+          "summary": "New Defense Minister Mykhailo Fedorov appointed two prominent Telegram bloggers and activists as advisors on defense technology and drone warfare, saying they will help Ukraine build counter-systems for Russian drones and analyze captured enemy equipment.",
+          "actors_involved": [
+            "Fedorov"
+          ],
+          "signal_category_hint": "security_defense",
+          "source_count": 3,
+          "sources": [
+            "businessinsider.com",
+            "ukrinform.net",
+            "uawire.org"
+          ],
+          "date_range": "2026-01-25 to 2026-01-27",
+          "articles": [
+            {
+              "title": "Ukraine's new 35-year-old defense minister made 2 influential Telegram bloggers his advisors for drone warfare",
+              "source": "businessinsider.com",
+              "url": "https://businessinsider.com/mykhailo-fedorov-advisors-defense-ministry-serhii-flash-sternenko-2026-1",
+              "date": "2026-01-27"
+            },
+            {
+              "title": "Fedorov appoints tech blogger Serhii \"Flash\" Beskrestnov as advisor",
+              "source": "ukrinform.net",
+              "url": "https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html",
+              "date": "2026-01-25"
+            },
+            {
+              "title": "Ukrainian Defense Minister Fedorov names Serhiy 'Flash' Beskrestnov defense technology adviser to strengthen EW and drones",
+              "source": "uawire.org",
+              "url": "https://www.uawire.org/ukrainian-defense-minister-fedorov-names-serhiy-flash-beskrestnov-defense-technology-adviser-to-strengthen-ew-and-drones",
+              "date": "2026-01-25"
+            }
+          ],
+          "representative_urls": [
+            "https://businessinsider.com/mykhailo-fedorov-advisors-defense-ministry-serhii-flash-sternenko-2026-1",
+            "https://ukrinform.net/rubric-polytics/4084124-fedorov-appoints-tech-blogger-serhii-flash-beskrestnov-as-advisor.html"
+          ]
+        },
+        {
+          "story_id": 8,
+          "headline": "Syrskyi conducts military medical and command meetings at General Staff",
+          "summary": "Commander-in-Chief Syrskyi held meetings on medical priorities in the Armed Forces and with frontline commanders. He discussed development of medical battalions and recognized servicemen for courage and professionalism in combat.",
+          "actors_involved": [
+            "Syrskyi",
+            "Armed Forces of Ukraine"
+          ],
+          "signal_category_hint": "security_defense",
+          "source_count": 2,
+          "sources": [
+            "ukrinform.net"
+          ],
+          "date_range": "2026-01-30 to 2026-01-31",
+          "articles": [
+            {
+              "title": "CinC Syrskyi holds meeting on medical priorities in AFU",
+              "source": "ukrinform.net",
+              "url": "https://www.ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html",
+              "date": "2026-01-31"
+            },
+            {
+              "title": "CinC Syrskyi meets with commanders carrying out combat missions on frontline",
+              "source": "ukrinform.net",
+              "url": "https://www.ukrinform.net/rubric-ato/4086224-cinc-syrskyi-meets-with-commanders-carrying-out-combat-missions-on-frontline.html",
+              "date": "2026-01-30"
+            }
+          ],
+          "representative_urls": [
+            "https://www.ukrinform.net/rubric-ato/4086333-cinc-syrskyi-holds-meeting-on-medical-priorities-in-afu.html",
+            "https://www.ukrinform.net/rubric-ato/4086224-cinc-syrskyi-meets-with-commanders-carrying-out-combat-missions-on-frontline.html"
+          ]
+        },
+        {
+          "story_id": 9,
+          "headline": "Zelensky appeals for more Western air defense systems",
+          "summary": "President Zelensky called on Western allies to provide more air defense support as Russian strikes left hundreds of buildings in Kyiv without heating during freezing temperatures. He blamed delayed European payments for keeping Ukraine's air defenses 'simply empty.'",
+          "actors_involved": [
+            "Zelensky"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 2,
+          "sources": [
+            "euronews.com",
+            "ft.com"
+          ],
+          "date_range": "2026-01-25 to 2026-01-30",
+          "articles": [
+            {
+              "title": "Zelenskyy seeks more air defence amid harsh winter and Russian attacks",
+              "source": "euronews.com",
+              "url": "https://euronews.com/2026/01/25/zelenskyy-calls-on-to-allies-to-provide-more-air-defence-as-russian-strikes-plunge-kyiv-in",
+              "date": "2026-01-25"
+            },
+            {
+              "title": "Volodymyr Zelenskyy blames European states for Ukraine air defence gaps",
+              "source": "ft.com",
+              "url": "https://ft.com/content/031ee418-f0cf-4919-8e59-63daf47314a5",
+              "date": "2026-01-30"
+            }
+          ],
+          "representative_urls": [
+            "https://euronews.com/2026/01/25/zelenskyy-calls-on-to-allies-to-provide-more-air-defence-as-russian-strikes-plunge-kyiv-in",
+            "https://ft.com/content/031ee418-f0cf-4919-8e59-63daf47314a5"
+          ]
+        },
+        {
+          "story_id": 10,
+          "headline": "Ukraine ends diplomatic passivity toward Hungary, Sybiha announces",
+          "summary": "Foreign Minister Sybiha said Ukraine is ending its policy of diplomatic 'non-noticing' with Hungary and will respond decisively to unfriendly steps and anti-Ukrainian rhetoric from Hungarian leadership, including attempts to drag Kyiv into Hungary's domestic politics.",
+          "actors_involved": [
+            "Sybiha"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 1,
+          "sources": [
+            "ukrinform.net"
+          ],
+          "date_range": "2026-01-27 to 2026-01-27",
+          "articles": [
+            {
+              "title": "Ukraine ends policy of diplomatic passivity with Hungary, Sybiha says",
+              "source": "ukrinform.net",
+              "url": "https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html",
+              "date": "2026-01-27"
+            }
+          ],
+          "representative_urls": [
+            "https://www.ukrinform.net/rubric-polytics/4085006-ukraine-ends-policy-of-diplomatic-passivity-with-hungary-sybiha-says.html"
+          ]
+        },
+        {
+          "story_id": 11,
+          "headline": "Ukraine prepares sanctions against Lukashenko for war complicity",
+          "summary": "Foreign Minister Sybiha announced Ukraine is preparing sanctions against Belarusian President Lukashenko to hold him accountable for supporting Russia's war, saying Belarus bears equal responsibility with Russia for the invasion.",
+          "actors_involved": [
+            "Sybiha"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 1,
+          "sources": [
+            "kyivindependent.com"
+          ],
+          "date_range": "2026-01-27 to 2026-01-27",
+          "articles": [
+            {
+              "title": "Lukashenko must be held accountable for 'complicity' in Russia's war, Sybiha says",
+              "source": "kyivindependent.com",
+              "url": "https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/",
+              "date": "2026-01-27"
+            }
+          ],
+          "representative_urls": [
+            "https://kyivindependent.com/ukraine-preparing-sanctions-against-lukashenko-sybiha-says/"
+          ]
+        },
+        {
+          "story_id": 12,
+          "headline": "Ukraine offers security cooperation to Moldova over Transnistria",
+          "summary": "Foreign Minister Sybiha said the threat of continued Russian military presence in Moldovan Transnistria is becoming increasingly obvious and that Kyiv is ready to consider Moldova's appeal for further practical security cooperation.",
+          "actors_involved": [
+            "Sybiha"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 1,
+          "sources": [
+            "en.interfax.com.ua"
+          ],
+          "date_range": "2026-01-27 to 2026-01-27",
+          "articles": [
+            {
+              "title": "Ukraine ready to consider Moldova's appeal for contribution to its security – Sybiha",
+              "source": "en.interfax.com.ua",
+              "url": "https://en.interfax.com.ua/news/general/1139956.html",
+              "date": "2026-01-27"
+            }
+          ],
+          "representative_urls": [
+            "https://en.interfax.com.ua/news/general/1139956.html"
+          ]
+        },
+        {
+          "story_id": 13,
+          "headline": "Sybiha emphasizes Poland's support for Ukraine's EU membership",
+          "summary": "Foreign Minister Sybiha said Poland supports Ukraine's EU and NATO membership and is one of its biggest advocates, emphasizing that Ukraine's EU membership is in Poland's interest and noting progress on sensitive historical issues.",
+          "actors_involved": [
+            "Sybiha"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 1,
+          "sources": [
+            "europeannewsroom.com"
+          ],
+          "date_range": "2026-01-29 to 2026-01-29",
+          "articles": [
+            {
+              "title": "Ukraine / Foreign Minister: Ukraine's membership in the EU is in the interest of Poles",
+              "source": "europeannewsroom.com",
+              "url": "https://europeannewsroom.com/ukraine-foreign-minister-ukraines-membership-in-the-eu-is-in-the-interest-of-poles-2",
+              "date": "2026-01-29"
+            }
+          ],
+          "representative_urls": [
+            "https://europeannewsroom.com/ukraine-foreign-minister-ukraines-membership-in-the-eu-is-in-the-interest-of-poles-2"
+          ]
+        },
+        {
+          "story_id": 14,
+          "headline": "Budanov appointed Head of Presidential Office",
+          "summary": "Kyrylo Budanov, Head of the Main Intelligence Directorate since 2020, has been appointed Head of the Office of the President of Ukraine, replacing his previous role in military intelligence.",
+          "actors_involved": [
+            "Budanov",
+            "Zelensky"
+          ],
+          "signal_category_hint": "domestic_regime",
+          "source_count": 1,
+          "sources": [
+            "nashaniva.com"
+          ],
+          "date_range": "2026-02-01 to 2026-02-01",
+          "articles": [
+            {
+              "title": "Kyrylo Budanov appointed Head of the Office of the President of Ukraine",
+              "source": "nashaniva.com",
+              "url": "https://nashaniva.com/en/384849",
+              "date": "2026-02-01"
+            }
+          ],
+          "representative_urls": [
+            "https://nashaniva.com/en/384849"
+          ]
+        },
+        {
+          "story_id": 15,
+          "headline": "Budanov commemorates Battle of Kruty heroes",
+          "summary": "Head of Presidential Office Budanov honored the memory of the Heroes of the Battle near Kruty on the anniversary, emphasizing their importance as symbols of courage and resistance for modern Ukraine and calling for building a country worthy of their sacrifice.",
+          "actors_involved": [
+            "Budanov"
+          ],
+          "signal_category_hint": "domestic_regime",
+          "source_count": 1,
+          "sources": [
+            "news.novyny.live"
+          ],
+          "date_range": "2026-01-29 to 2026-01-29",
+          "articles": [
+            {
+              "title": "Budanov: Kruty tragedy became a symbol of resistance",
+              "source": "news.novyny.live",
+              "url": "https://news.novyny.live/en/budanov-pays-tribute-to-heroes-of-the-battle-of-kruty-308847.html",
+              "date": "2026-01-29"
+            }
+          ],
+          "representative_urls": [
+            "https://news.novyny.live/en/budanov-pays-tribute-to-heroes-of-the-battle-of-kruty-308847.html"
+          ]
+        },
+        {
+          "story_id": 16,
+          "headline": "Zelensky cautious on Russian bombing pause during extreme cold",
+          "summary": "President Zelensky said he was waiting to see whether Russia would observe a proposed pause in strikes on Ukrainian energy infrastructure during bitter winter cold. He noted no formal ceasefire agreement exists but indicated Ukraine would halt energy strikes if Russia did the same.",
+          "actors_involved": [
+            "Zelensky"
+          ],
+          "signal_category_hint": "alignment_diplomatic",
+          "source_count": 1,
+          "sources": [
+            "theguardian.com"
+          ],
+          "date_range": "2026-01-30 to 2026-01-30",
+          "articles": [
+            {
+              "title": "Zelenskyy cautious on Russian bombing pause during extreme cold weather",
+              "source": "theguardian.com",
+              "url": "https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine",
+              "date": "2026-01-30"
+            }
+          ],
+          "representative_urls": [
+            "https://theguardian.com/world/2026/jan/30/zelenskyy-cautious-russian-bombing-pause-extreme-cold-weather-ukraine"
+          ]
+        },
+        {
+          "story_id": 17,
+          "headline": "National Bank cuts key policy rate to 15 percent",
+          "summary": "The National Bank of Ukraine lowered its key policy rate from 15.5% to 15%, with NBU Governor Andriy Pyshnyy saying the bank will continue to respond flexibly to shifts in monetary risks.",
+          "actors_involved": [
+            "National Bank of Ukraine"
+          ],
+          "signal_category_hint": "economic_tech",
+          "source_count": 1,
+          "sources": [
+            "ukrinform.net"
+          ],
+          "date_range": "2026-01-29 to 2026-01-29",
+          "articles": [
+            {
+              "title": "National Bank cuts key policy rate to 15%",
+              "source": "ukrinform.net",
+              "url": "https://ukrinform.net/rubric-economy/4085624-national-bank-cuts-key-policy-rate-to-15.html",
+              "date": "2026-01-29"
+            }
+          ],
+          "representative_urls": [
+            "https://ukrinform.net/rubric-economy/4085624-national-bank-cuts-key-policy-rate-to-15.html"
+          ]
+        },
+        {
+          "story_id": 18,
+          "headline": "Investigation reveals Tymoshenko's alleged plot to undermine Zelensky's parliamentary majority",
+          "summary": "Investigation details emerged about Yulia Tymoshenko allegedly attempting to recruit deputies from Zelensky's Servant of the People party to deny the president a working majority, with the raid on her office occurring the same evening the Rada failed to approve a government reshuffle including Fedorov's appointment as defense minister.",
+          "actors_involved": [
+            "Zelensky",
+            "Servant of the People",
+            "Fedorov"
+          ],
+          "signal_category_hint": "domestic_regime",
+          "source_count": 1,
+          "sources": [
+            "meduza.io"
+          ],
+          "date_range": "2026-01-30 to 2026-01-30",
+          "articles": [
+            {
+              "title": "Who set the trap for Ukraine's 'Iron Lady'? The trail leads from her office to Zelensky's top spy.",
+              "source": "meduza.io",
+              "url": "https://meduza.io/en/feature/2026/01/30/who-set-the-trap-for-ukraine-s-iron-lady-the-trail-leads-from-her-office-to-zelensky-s-top-spy",
+              "date": "2026-01-30"
+            }
+          ],
+          "representative_urls": [
+            "https://meduza.io/en/feature/2026/01/30/who-set-the-trap-for-ukraine-s-iron-lady-the-trail-leads-from-her-office-to-zelensky-s-top-spy"
+          ]
+        }
+      ],
+      "single_source_items": [
+        {
+          "headline": "SBU and HUR expose Belarusian spy attempting to infiltrate military intelligence",
+          "source": "global.espreso.tv",
+          "url": "https://global.espreso.tv/russia-ukraine-war-ukraine-foils-belarusian-spys-attempt-to-infiltrate-military-intelligence",
+          "signal_category_hint": "security_defense"
+        }
+      ],
+      "unassigned": [],
+      "noise_summary": "11 off-topic results filtered: 2 sports (Ben Hur football team), 3 religious (Pope/Vatican stories, Jesuit canonization), 2 technology/lifestyle (Commodore 64, workplace psychology), 2 international politics (US civil service, Sri Lankan politics), 1 Puerto Rico financial program, 1 Russian propaganda piece (former SBU officer).",
+      "prompt_dedup": {
+        "raw_input": 51,
+        "unique_in_prompt": 50,
+        "deduped_at_format": 1,
+        "per_source": {
+          "wire": {
+            "input": 0,
+            "included": 0,
+            "deduped_at_format": 0
+          },
+          "domestic": {
+            "input": 0,
+            "included": 0,
+            "deduped_at_format": 0
+          },
+          "actor": {
+            "input": 51,
+            "included": 50,
+            "deduped_at_format": 1
+          },
+          "vocab": {
+            "input": 0,
+            "included": 0,
+            "deduped_at_format": 0
+          }
+        }
+      }
+    },
+    "thinking": "Let me carefully analyze these search results to cluster them into distinct stories for Ukraine. I need to go through each result and identify what distinct events/stories they cover.\n\nLooking at the search results, I can see several themes emerging:\n\n1. **US-Ukraine Security Agreement** - Multiple articles about Zelensky saying a US security agreement is \"100% ready\"\n2. **Abu Dhabi Peace Talks** - Multiple articles about trilateral and bilateral talks in Abu Dhabi between Ukraine, Russia, and US\n3. **Zelensky on Russian bombing pause** - Articles about potential ceasefire on energy targets during cold weather\n4. **Syrskyi military updates** - Multiple articles about the commander-in-chief's frontline activities and situation reports\n5. **Budanov appointment and controversies** - Multiple articles about Budanov being appointed head of Presidential Office and various controversies\n6. **Sybiha diplomatic activities** - Multiple articles about the Foreign Minister's various statements and meetings\n7. **National Bank policy rate cut** - One article about NBU cutting rates\n8. **SBU drone strikes compilation** - Multiple articles about SBU releasing video of drone strikes on Russian aircraft\n9. **Fedorov appointments** - Articles about new Defense Minister appointing advisors\n10. **Various single-source items and off-topic content**\n\nLet me go through systematically:\n\n**US Security Agreement cluster:**\n- apnews.com: \"US security agreement for Ukraine is '100% ready' to be signed, Zelenskyy says\"\n- pbs.org: \"Zelenskyy says U.S. security agreement for Ukraine is '100% ready' to be signed\"\n- reuters.com: \"Zelenskiy says security guarantees document from US is 100% ready\"\n\n**Abu Dhabi Peace Talks cluster:**\n- ukrinform.net: \"Sybiha shares details of bilateral meetings between Ukraine and Russia in Abu Dhabi\"\n- eurointegration.com.ua: \"Ukrainian foreign minister confirms Ukraine-Russia bilateral meetings took place in Abu Dhabi\"\n\n\n- euronews.com: Mentions Abu Dhabi talks alongside air defense requests\n- tsn.ua: \"Ukraine to sign 20-point peace plan with US: Sybiha reveals details\" - appears connected to the broader diplomatic framework\n\n**Russian bombing pause/Cold weather:**\n- theguardian.com: \"Zelenskyy cautious on Russian bombing pause during extreme cold weather\"\n\n**Air defense appeals:**\n- ft.com: \"Volodymyr Zelenskyy blames European states for Ukraine air defence gaps\"\n\nThe euronews piece covers both air defense concerns and the Abu Dhabi diplomatic developments, so it bridges multiple narratives rather than standing alone.\n\n**Military situation updates from Syrskyi:**\n- united24media.com (Spanish): \"El general Syrskyi destaca la situación complicada en los frentes de Pokrovsk y Ocheretyne\"\n- ukrinform.net: \"CinC Syrskyi holds meeting on medical priorities in AFU\"\n- ukrinform.net: \"CinC Syrskyi meets with commanders carrying out combat missions on frontline\"\n- kyivindependent.com: \"Russia continues attempts at breakthrough near Pokrovsk, brings up reserves, Syrskyi says\"\n- united24media.com: \"Syrskyi: Russia Tries to Break Through Near Pokrovsk as Ukraine Targets Reserves\"\n- tsn.ua: \"Alarming reports from Pokrovsk front, DeepState reveals details\" (mentions Syrskyi)\n\n**Budanov-related coverage:**\nMultiple sources covering his recent appointment and activities—nashaniva.com reporting on his new role as Head of the President's Office, news.novyny.live with his Kruty commemoration remarks, meduza.io examining the Tymoshenko investigation with Budanov's involvement, and politnavigator.net running both a disinformation piece about his training background and another story that appears to be cut off.\n\nThe Interfax piece indicates Russia is actively running a coordinated disinformation campaign targeting both Budanov and Zaluzhny. I should organize these into distinct narratives: his appointment, the ceremonial Kruty event, the Tymoshenko investigation angle, and the broader Russian information operation against him.\n\n**Sybiha diplomatic activities:**\n- ukrinform.net: \"Ukraine ends policy of diplomatic passivity with Hungary, Sybiha says\"\n- pravda.com.ua: \"Ukraine's Foreign Minister Andrii Sybiha has urged the world not to stop putting pressure on Russia, which has struck a maternity hospital in Zaporizhzhia\"\n- ukrinform.net: \"IAEA confirms Russia's attacks on Ukraine's energy sector pose direct nuclear threat - FM Sybiha\"\n- ukrinform.net: \"'We are winning time for you': Ukraine's FM urges EU to step up pressure on Russia\"\n- europeannewsroom.com: \"Ukraine / Foreign Minister: Ukraine's membership in the EU is in the interest of Poles\"\n- kyivindependent.com: \"Lukashenko must be held accountable for 'complicity' in Russia's war, Sybiha says\"\n- kyivpost.com: \"No More 'Pseudo-Historical Lectures' – Sybiha Upbeat on Quality of Peace Talks and Even NATO Membership\"\n- thediplomatinspain.com: \"Albares and Sybiha discuss Spanish aid to the Ukrainian energy system following the latest Russian attacks\"\n- en.interfax.com.ua: \"Ukraine ready to consider Moldova's appeal for contribution to its security – Sybiha\"\n\nI'm seeing several distinct themes across these statements. Sybiha's pushing for sustained international pressure on Russia and highlighting the nuclear risks from attacks on energy infrastructure. There's also diplomatic engagement on EU integration, coordination with Spain on energy support, and security discussions with Moldova. Belarus accountability and NATO membership prospects appear in the mix as well.\n\n**SBU drone strikes:**\n- twz\n\n.com: \"Ukrainian Drone Strikes On Parked Russian Aircraft Seen In \"Greatest Hits\" Video\"\n- kyivindependent.com: \"Ukraine war latest updates: SBU releases greatest hits video of 2025 drone strikes on Russian aircraft\"\n- united24media.com: \"Ukraine Destroyed 15 Russian Aircraft in 2025 Drone Strikes Worth $1 Billion in Damage\"\n- newsukraine.rbc.ua: \"Russian military aviation suffers $1 billion losses after Ukrainian airfield attacks\"\n\nThe SBU's releasing footage showcasing successful strikes against Russian aircraft, with reports indicating 15 planes destroyed and roughly $1 billion in damage inflicted through these operations.\n\n**Fedorov appointments:**\n- businessinsider.com: \"Ukraine's new 35-year-old defense minister made 2 influential Telegram bloggers his advisors for drone warfare\"\n- ukrinform.net: \"Fedorov appoints tech blogger Serhii \"Flash\" Beskrestnov as advisor\"\n- uawire.org: \"Ukrainian Defense Minister Fedorov names Serhiy 'Flash' Beskrestnov defense technology adviser\"\n\nThe new defense minister is bringing in tech-savvy advisors, particularly Beskrestnov, to guide drone warfare strategy.\n\n**NBU rate cut:**\n- ukrinform.net: \"National Bank cuts key policy rate to 15%\"\n\nThe central bank lowered its policy rate.\n\n**Other items:**\n- global.espreso.tv: Belarus intelligence operative apprehended attempting to infiltrate Ukrainian military intelligence\n- ua.news-pravda.com: Appears to be Russian disinformation claiming Kyiv residents are \"brainwashed\"\n\n**Unrelated content:**\nPuerto Rico financial advisor information, Commodore 64 computing history, workplace psychology, Vatican prayer initiatives, and US civil service matters—none relevant to the Ukraine situation.\n\nAdditional off-topic results include Sri Lankan political coverage, Pope and AI discussions, Jesuit canonization news, and Ben Hur football team articles.\n\nI'm counting 50 total results claimed, but manually tallying shows significant discrepancies. The first dozen or so are legitimate Ukraine-related sources covering security agreements, Russian military operations, air defense gaps, and frontline developments near Pokrovsk, but the list extends into numerous irrelevant categories that inflate the count. EU-Russia bilateral meetings. Coverage includes a 20-point peace proposal, EU membership discussions, sanctions on Lukashenko, assessments of peace talk viability, Spanish energy assistance, and Moldova's security arrangements. Financial advisory content about Puerto Rico appears off-topic. Economic updates cover NBU interest rate adjustments. Military operations are documented through SBU drone strike footage showing billion-dollar damage assessments, a captured Belarusian intelligence operative, and Russian aviation developments.\n\nSeveral sources diverge from the Ukraine conflict focus—a former SBU officer's propaganda piece, unrelated technology history, workplace psychology, Vatican news coverage, US civil service reform, Sri Lankan politics, papal AI discussions, and Jesuit religious matters. Relevant reporting emerges on Fedorov's advisory team composition and Ben Hur football coverage appears tangential.\n\nThe collection reaches exactly 50 sources. Organizing by narrative reveals distinct clusters: a US security agreement story anchored by major wire services and broadcasters; Abu Dhabi peace negotiations covered across Ukrainian outlets with details on bilateral engagement and proposed frameworks; Zelensky's measured stance on Russian bombing pauses during winter conditions; and appeals for expanded air defense capabilities from European news organizations.\n\nSyrskyi's military assessments span the Pokrovsk sector situation across multiple language versions and outlets, plus separate reporting on medical priorities and frontline command restructuring. Budanov's appointment to the presidential office appears in one source, while Russian disinformation efforts targeting him surface across three outlets covering alleged CIA connections and hospital-related incidents. A commemorative piece on Kruty Heroes rounds out the Budanov-related coverage, with additional stories continuing beyond this point.\n\nThe remaining narratives branch into several policy areas: Tymoshenko's involvement in the government reshuffle, a shift in Hungary diplomatic relations, Sybiha's international advocacy spanning nuclear threats and energy assistance, EU membership discussions, sanctions preparations against Lukashenko, and further developments still being catalogued. Off-topic sources include Puerto Rico business news, tech publications, psychology content, Vatican coverage, US politics, Sri Lankan news, Pope-related stories, canonization reports, football coverage, and Ukrainian propaganda outlets—11 items total. Adding these to the 38 main stories and single-source item gives 50 articles overall. Now I need to rank them by how prominently they appear across sources."
+  },
+  "usage": {
+    "input_tokens": 15998,
+    "output_tokens": 12573
+  }
+}

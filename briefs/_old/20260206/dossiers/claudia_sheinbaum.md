@@ -1,0 +1,88 @@
+# Dossier: Claudia Sheinbaum
+*President, Mexico*
+**Period:** 2026-01-30 to 2026-02-06
+**Generated:** 2026-02-06 13:16
+
+## Top Stories
+
+### Mexico evaluates ways to resume Cuba oil shipments despite Trump tariff threats
+
+MEXICO CITY, Mexico — Mexican officials are exploring ways to resume oil shipments to Cuba while avoiding potential U.S. tariffs, according to four sources familiar with the matter cited by Reuters. President Claudia Sheinbaum said Tuesday that Mexico had paused oil deliveries to Cuba, calling it a "sovereign decision" amid mounting pressure from President Donald Trump, who has threatened tariffs against countries supplying fuel to the island. Cuban President Miguel Díaz-Canel said Thursday that Cuba has not received fuel shipments since December and warned of implementing emergency measures due to what he called an "acute fuel shortage." Mexican officials have held discussions with U.S. counterparts every two days to clarify the scope of Trump's tariff threats while seeking ways to address Cuba's energy crisis, the sources said.
+
+*Sources: (AP News [1](https://apnews.com/article/mexico-cuba-oil-shipments-trump-venezuela-fb5f082572ee12144908f45802448f67); El Financiero [1](https://www.elfinanciero.com.mx/nacional/2026/02/05/cuba-agradece-a-sheinbaum-envio-de-petroleo-pero-lamenta-que-desde-diciembre-no-recibe-combustible/),[2](https://www.elfinanciero.com.mx/nacional/2026/02/05/mexico-evalua-como-mandar-petroleo-a-cuba-sin-salir-raspado-por-los-aranceles-de-trump-reuters/))*
+
+### Mexico's Sheinbaum rejects foreign intervention amid Trump tensions
+
+QUERÉTARO, Mexico — Mexican President Claudia Sheinbaum said Thursday that Mexico will never accept foreign military operations on its territory, reinforcing her stance on national sovereignty amid ongoing tensions with the United States. Speaking at a ceremony marking the 109th anniversary of Mexico's Constitution, Sheinbaum said "Mexico will not bow, will not kneel, will not surrender and will not sell itself," according to Mexican media reports. Querétaro Governor Mauricio Kuri voiced support for Sheinbaum, saying "Mexico does not accept foreign dictates" and the president "is not alone." The statements came after Sheinbaum spoke by phone with U.S. President Donald Trump about trade and security issues, though she said they did not discuss a recent controversial arrest case involving joint U.S.-Mexican operations.
+
+*Sources: (AP News [1](https://apnews.com/article/sheinbaum-trump-ryan-wedding-mexico-olympic-canadian-snowboarder-cartels-58f67e3eaaf237b78998a1ee5bb41b7c); La Jornada [1](https://www.jornada.com.mx/2026/02/06/politica/003n1pol),[2](https://www.jornada.com.mx/noticia/2026/02/05/politica/mexico-no-acepta-dictados-extranjeros-presidenta-sheinbaum-no-esta-sola-dice-el-gobernador-kuri))*
+
+### Mexico Opens Final Section of Toluca-Mexico City Train
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum inaugurated the final section of the Toluca-Mexico City intercity train on Sunday, completing a 12-year, $5 billion infrastructure project. The train now connects Toluca to Mexico City's Observatorio station across 57.7 kilometers with seven stations, Sheinbaum said at the opening ceremony. The project faced significant cost overruns and construction delays since beginning in 2014, officials said. The train will carry an estimated 140,000 passengers daily between the two metropolitan areas, according to government data.
+
+*Sources: (Presidencia de México [1](https://www.gob.mx/presidencia/es/articulos/version-estenografica-conferencia-de-prensa-de-la-presidenta-claudia-sheinbaum-pardo-del-02-de-febrero-de-2026?tab=))*
+
+### Mexico's Sheinbaum says Pemex will remain energy industry centerpiece
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum said Wednesday that her government will maintain state oil company Pemex as the central pillar of Mexico's energy industry, with the company holding 80-90% participation in projects. Sheinbaum said private partnerships will operate under "mixed" schemes that do not involve concessions or guarantee profits to companies, unlike previous administrations. She said all partners must first pay a 30% petroleum welfare tax before profits are divided, with Pemex maintaining operational control.
+
+*Sources: (La Jornada [1](https://www.jornada.com.mx/noticia/2026/02/04/economia/sheinbaum-mantendra-a-pemex-como-eje-de-la-industria-energetica))*
+
+## International
+
+### Mexican newspaper publishes philosophical essay on Trump, Sheinbaum
+
+MEXICO CITY, Mexico — Mexican newspaper La Jornada published a philosophical essay exploring connections between President Claudia Sheinbaum and former U.S. President Donald Trump through the lens of Federico García Lorca's concept of 'duende.' The piece, titled 'Trump and Claudia, Black Sounds,' draws parallels between the unconscious minds of both leaders using literary and psychoanalytic references. The essay references García Lorca's theory that 'everything with black sounds has duende,' applying this concept to analyze the two political figures. No direct quotes from either Trump or Sheinbaum were included in the philosophical commentary.
+
+*Sources: (La Jornada [1](https://www.jornada.com.mx/2026/02/06/opinion/a04a2cul))*
+
+### Mexico's Sheinbaum calls on US to stop arms trafficking
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum on Wednesday renewed her call for the United States to halt arms trafficking into Mexico and rejected claims by U.S. President Donald Trump that cartels govern the country. Sheinbaum said at her regular press conference that bilateral security cooperation must be based on shared responsibility and respect for sovereignty. She stated that at least 75% of high-powered weapons seized in Mexico come illegally from the United States, emphasizing that just as Mexico works to prevent fentanyl from reaching the U.S., America must control weapons entering Mexico. Sheinbaum called Trump's assertion that cartels rule Mexico "absolutely false," saying only the Mexican people govern the country.
+
+*Sources: (La Jornada [1](https://www.jornada.com.mx/noticia/2026/02/04/politica/el-pais-no-esta-gobernado-por-carteles-sheinbaum-afirmaciones-de-trump-son-falsas))*
+
+### Mexico, US sign critical minerals supply chain agreement
+
+MEXICO CITY, Mexico — Mexico and the United States signed an action plan to protect critical mineral supply chains, officials said, as President Claudia Sheinbaum's administration seeks to strengthen ties with the Trump administration ahead of the 2026 USMCA trade agreement review. Jamieson Greer, head of the U.S. Trade Representative's Office, said the "pioneering" agreement reinforces commercial ties between the neighboring countries and addresses global market distortions that have left North American critical mineral supply chains vulnerable to disruptions. The governments will work over the next 60 days to identify specific critical minerals of common interest and design coordinated trade policies, including exploring price floors for critical mineral imports to counter dumping practices.
+
+*Sources: (El Financiero [1](https://www.elfinanciero.com.mx/nacional/2026/02/04/mexico-hace-meritos-con-trump-firma-acuerdo-para-suministro-de-minerales-criticos/))*
+
+### Family seeks Sheinbaum intervention for missing engineer in Sinaloa
+
+MEXICO CITY, Mexico — The family of a missing 26-year-old engineer has asked President Claudia Sheinbaum to intervene in the search for their son, who disappeared Jan. 23 in Sinaloa state along with about 10 other mining workers. Pablo Osorio Sánchez, an indigenous Mixtec civil engineer from Oaxaca, was working as a tunnel supervisor on a Canadian mining project when he vanished near La Concordia municipality, his mother Socorro Osorio said. The UN Committee on Enforced Disappearances has issued an urgent action on the case, according to the family's lawyer. Sinaloa authorities have provided no official information about the investigation, the family said.
+
+*Sources: (Aristegui Noticias [1](https://aristeguinoticias.com/0402/mexico/familia-de-ingeniero-desaparecido-en-sinaloa-pide-intervencion-de-la-presidenta-sheinbaum/))*
+
+### Mexico, US differ on Cuba oil policy amid embargo
+
+MEXICO CITY, Mexico — Mexican President Claudia Sheinbaum and U.S. President Donald Trump have differing accounts about Mexico's suspension of oil shipments to Cuba, according to analysis on a Mexican news program Monday. Former Mexican ambassador to Cuba Ricardo Pascoe said Mexico halted petroleum deliveries to the island following direct U.S. pressure, while Sheinbaum stated Sunday she had not discussed the oil issue with Trump. The suspension comes as Cuba faces severe fuel shortages that Pascoe described as a humanitarian crisis.
+
+*Sources: (Aristegui Noticias [1](https://aristeguinoticias.com/0202/mexico/aristegui-en-vivo-trump-y-sheinbaum-difieren-sobre-cuba-adan-augusto-deja-coordinacion-bad-bunny-contra-ice-en-los-grammy-02-02-2026/))*
+
+## Domestic
+
+### Sheinbaum meets business leaders amid investment concerns
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum met with business leaders to promote private investment, according to El Financiero. Foreign Minister Marcelo Ebrard promised an investment portfolio exceeding $400 billion, the newspaper reported. However, business confidence remains low following judicial reforms that altered Mexico's Supreme Court structure, El Financiero said. The publication noted that despite government assurances of legal certainty, private investment has stagnated.
+
+*Sources: (El Financiero [1](https://www.elfinanciero.com.mx/opinion/leonardo-kourchenko-la-aldea/2026/02/05/mucha-certeza-poca-inversion/))*
+
+### Mexico's Sheinbaum Courts Private Investment at Business Summit
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum met with more than 1,000 business leaders from across Mexico at the country's first National Investment Promotion Meeting, seeking to boost private sector confidence in the economy. "The government wants investments, we are seeking private investment, both national and foreign," Sheinbaum said at the gathering, according to La Jornada newspaper. The meeting marked a significant shift toward courting private sector support, contrasting with her predecessor's approach. Separately, Sheinbaum said Mexican nationals could be investigated in connection with the Jeffrey Epstein case if requested by the U.S. Department of Justice.
+
+*Sources: (La Jornada [1](https://www.jornada.com.mx/2026/02/05/opinion/006o1eco))*
+
+### Mexican mayor praises Sheinbaum over Tequila official's arrest
+
+URUAPAN, Mexico — The mayor of Uruapan praised President Claudia Sheinbaum on Thursday for the arrest of Tequila municipality's mayor on extortion charges and alleged organized crime links. Grecia Quiroz said the detention of Diego Rivera Navarro should set a precedent against impunity and called for broader investigations into politicians her late husband had identified before his murder. Federal authorities arrested Rivera Navarro along with three other municipal officials as part of Operation Swarm, with officials saying he faces charges related to extortion and possible ties to the Jalisco New Generation Cartel.
+
+*Sources: (El Financiero [1](https://www.elfinanciero.com.mx/nacional/2026/02/05/que-se-investiguen-a-todos-grecia-quiroz-celebra-detencion-de-alcalde-de-tequila/))*
+
+## Between the Lines
+
+- Sheinbaum is simultaneously courting private investment while reinforcing state control over key sectors, suggesting a careful balancing act between economic pragmatism and ideological continuity with her predecessor's nationalist policies.
+- Mexico is proactively engaging with the U.S. on cooperative agreements like critical minerals while firmly rejecting any military intervention, indicating a strategy to compartmentalize bilateral relations and maintain sovereignty red lines.
+- The president's public praise for anti-corruption arrests and her meetings with business leaders suggest she is working to establish credibility with both domestic constituencies and international investors who may have concerns about rule of law and economic policy predictability.

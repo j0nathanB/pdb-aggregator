@@ -1,0 +1,67 @@
+# The Middle Powers Monitor
+## Week of March 16 to March 22, 2026
+
+*Covering 28 countries across five regions. 1 countries received full analytical treatment this week; 0 were held at maintenance.*
+
+*No system-level dynamics met the threshold for executive-level analysis this week. See regional sections for country-level developments.*
+
+---
+
+## Frontline & Eastern Europe
+
+No significant cross-country dynamics emerged in Frontline & Eastern Europe this week. Country-level developments are covered below.
+
+---
+
+## Western Europe
+
+No significant cross-country dynamics emerged in Western Europe this week. Country-level developments are covered below.
+
+---
+
+## Asia-Pacific
+
+No significant cross-country dynamics emerged in Asia-Pacific this week. Country-level developments are covered below.
+
+---
+
+## Middle East, Turkey & South Asia
+
+No significant cross-country dynamics emerged in Middle East, Turkey & South Asia this week. Country-level developments are covered below.
+
+---
+
+## The Americas
+
+No significant cross-country dynamics emerged in The Americas this week. Country-level developments are covered below.
+
+### Mexico
+
+Mexico under Claudia Sheinbaum has entered the critical USMCA review period while maintaining the dual-track approach of structural integration with the United States alongside symbolic hedging through South American partnerships. The formal March 16 launch of trade negotiations with clear Mexican priorities (tariff elimination, trilateral preservation) occurs against the backdrop of 83% export dependency that forecloses genuine strategic autonomy. García Harfuch's institutional consolidation continues through expanded security coordination including World Cup planning, while the military-commercial complex deepens civilian integration. Energy sovereignty rhetoric masks deeper dependency acknowledgment, with ambitious PEMEX production targets confronting unchanged structural constraints. The judiciary's disciplinary mechanisms show early operational capacity, though executive influence patterns remain to be established. Domestically, Sheinbaum maintains stable legitimacy through sovereignty narrative management of external pressures while preserving business confidence and 4T movement continuity.
+
+**Key developments:**
+
+- **Diplomatic:** Secretary of Economy Marcelo Ebrard and USTR Ambassador Jamieson Greer launched the first bilateral round of formal conversations for USMCA review on March 16. Mexico's priority is eliminating tariffs on steel, aluminum, and automotive products while maintaining the trilateral nature of the agreement despite US bilateral approach. *(La Jornada, 2026-03-16)*
+- **Diplomatic:** Following telephone conversation with President Lula, Sheinbaum confirmed acceptance of invitation to visit Brazil between June-July 2026. Focus will be on economic complementarity, not free trade agreement, with timing chosen to avoid Brazilian electoral period starting in June. *(La Jornada, 2026-03-09)*
+- **Security:** Plan Kukulkán unveiled with three joint task forces for Mexico's World Cup cities, coordinating over 20 federal dependencies plus international cooperation with US, Canada, and FIFA. García Harfuch emphasized dual challenge of projecting reliable Mexico while maintaining security capacity against national security threats. *(Animal Político, 2026-03-15)*
+- **Security:** García Harfuch confirmed FGR opened investigation files based on media revelations of CJNG 'narco-nominas' implicating police and officials. Over 180 internet sites dismantled for recruitment purposes, with collaboration from tech platforms for takedowns and arrests of recruiters. *(Proceso, 2026-03-13)*
+- **Economic:** At 88th anniversary of oil nationalization, Sheinbaum declared that Mexico imports 75% of natural gas and will increase domestic production to strengthen sovereignty. PEMEX debt reduced 13% in one year, 100% supplier payments achieved, and 1.3 million barrels daily refined into gasoline and diesel. *(El Financiero, 2026-03-19)*
+- **Unexpected:** Unknown.
+
+> **Between the Lines:** The economic_tech assessment suffers from source dependency, with both PEMEX developments sourced exclusively from El Financiero. This single-outlet reliance undermines the confidence in Mexico's energy sovereignty shift, particularly given the analyst's own acknowledgment that 'structural constraints on PEMEX's capacity remain unchanged.'
+
+
+---
+
+## Watchlist
+
+*Items worth monitoring that didn't make the executive briefing.*
+
+- **Restoration of country desk analytical pipeline** (ALL_PIPELINE_COUNTRIES): Third consecutive week of system-wide analytical failure. Extended blind period creates strategic vulnerability and prevents identification of emerging global patterns. *Trigger: Receipt of country desk reports enabling regional synthesis.*
+
+
+---
+
+*The Middle Powers Monitor tracks 28 countries across five regions, analyzing state positioning through five analytical dimensions: diplomatic alignment, security posture, economic statecraft, institutional engagement, and domestic constraints. Published weekly.*
+
+*This edition: 2026-03-22*

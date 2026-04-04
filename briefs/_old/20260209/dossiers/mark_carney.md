@@ -1,0 +1,98 @@
+# 🇨🇦 Canada / Mark Carney, Prime Minister
+**Period:** 2026-02-02 to 2026-02-09
+
+> Prime Minister Mark Carney scrapped Canada's electric vehicle mandate this week, replacing it with purchase incentives and emissions standards as his government recalibrates climate policy amid German automaker interest in Canadian expansion. Carney discussed the possibility of triggering an early election with Ontario Premier Doug Ford, according to sources, while China overturned a Canadian citizen's death sentence following the Prime Minister's recent visit to Beijing. The Prime Minister warned international allies they must move beyond rhetoric about the rules-based order, as China removed three defense-sector lawmakers amid ongoing military investigations.
+
+## Top Stories
+
+### Carney scraps EV mandate, boosts purchase incentives
+
+VAUGHAN, Ontario — Prime Minister Mark Carney announced Thursday he was scrapping Canada's electric vehicle sales mandate, replacing it with stricter tailpipe emissions standards and introducing new purchase incentives for EVs under $50,000. The government said it would repeal the Electric Vehicle Availability Standard that required 100% zero-emission vehicle sales by 2035, a policy Carney called unrealistic after consulting with industry. The new $2.3 billion affordability program offers up to $5,000 incentives for battery electric vehicles and includes $3 billion in manufacturing support, officials said. Carney said the approach allows manufacturers to use various technologies while driving EV adoption toward goals of 75% by 2035 and 90% by 2040.
+
+*Sources: (Office of the Prime Minister [1](https://archive.ph/https://www.pm.gc.ca/en/news/news-releases/2026/02/05/prime-minister-carney-launches-new-strategy-transform-canadas-auto); National Post [1](https://archive.ph/https://nationalpost.com/news/politics/carney-to-scrap-ev-mandate-new-incentive))*
+
+### Carney, Ford discussed early election idea, sources say
+
+OTTAWA, Canada — Prime Minister Mark Carney and Ontario Premier Doug Ford discussed the possibility of triggering an early federal election to secure a majority government, sources told CBC News. The conversations occurred as Carney's Liberal government remains three seats short of a majority and faces challenges passing key legislation. Behind the scenes, Liberals and Conservatives have been negotiating potential deals to avoid a second federal election within 12 months, three senior sources from both parties said. Carney publicly downplayed election speculation Monday, saying his government is "focused on results for Canadians."
+
+*Sources: (CBC News [1](https://archive.ph/https://www.cbc.ca/news/politics/carney-poilievre-bills-9.7081480); Toronto Star [1](https://archive.ph/https://www.thestar.com/politics/political-opinion/its-getting-easier-to-imagine-another-federal-election-this-spring/article_b6dae331-48d0-480b-9638-4a8a5014039f.html))*
+
+## International
+
+### China overturns Canadian's death sentence after Carney visit
+
+BEIJING, China — China's Supreme People's Court overturned a Canadian man's death sentence on drug charges, his lawyer said Monday, marking a breakthrough in a case that has strained diplomatic relations for years. Robert Schellenberg was condemned to death in January 2019, one month after Huawei executive Meng Wanzhou was arrested in Vancouver. The court ruling came less than a month after Canadian Prime Minister Mark Carney made a four-day visit to China, where he hailed improving ties between the countries. Beijing-based lawyer Zhang Dongshuo said the likelihood of the Supreme Court's decision being related to Carney's visit was "very high."
+
+*Sources: (Reuters [1](https://archive.ph/https://www.reuters.com/world/china/china-overturns-canadians-death-sentence-after-carney-visit-lawyer-says-2026-02-09/))*
+
+### Carney to host Luxembourg PM Frieden in February
+
+OTTAWA, Canada — Prime Minister Mark Carney announced that Canada will welcome Luxembourg Prime Minister Luc Frieden to Ottawa from Feb. 7-9, 2026, according to the Prime Minister's Office. The leaders will discuss strengthening partnerships in advanced manufacturing, infrastructure, aerospace and financial services, the office said. They will also address global challenges including Russia's war against Ukraine and efforts to reinforce transatlantic security as NATO allies, officials said. Luxembourg's foreign direct investment stock in Canada totaled $22.3 billion in 2024, according to government data.
+
+*Sources: (Office of the Prime Minister [1](https://archive.ph/https://www.pm.gc.ca/en/news/news-releases/2026/02/05/prime-minister-carney-welcome-prime-minister-luxembourg-luc-frieden))*
+
+### German minister says auto industry in talks to expand in Canada
+
+OTTAWA, Canada — Germany's auto industry is in discussions to expand its presence in Canada, drawn by Prime Minister Mark Carney's new automotive strategy, a German minister said Monday. Economic Affairs and Energy Minister Katherina Reiche called Carney's $3.1-billion auto strategy "very attractive" and said German companies are "in talks to extend our footprint" in Canada. The discussions come as Ottawa has asked Germany and South Korea to make auto industry production pledges as part of their bids to build Canada's next submarines. Volkswagen has already committed to building an electric-vehicle battery factory in Ontario through its PowerCo subsidiary.
+
+*Sources: (Globe and Mail [1](https://archive.ph/https://www.theglobeandmail.com/politics/article-german-minister-says-auto-industry-in-talks-to-expand-footprint-in/))*
+
+### Carney warns allies must bring substance beyond rhetoric
+
+OTTAWA, Canada — Prime Minister Mark Carney said Canada and its allies must move beyond invoking the rules-based international order and acknowledge they now operate in "a system of intensifying great power rivalry," according to remarks he made at the World Economic Forum in Davos. The Munich Security Conference report, released ahead of this week's gathering in Bavaria, echoed Carney's assessment that middle powers face diminishing influence without "actual material power" to back their positions, researchers Tobias Bunde and Sophie Eisentraut said. The report warned that alliances now require sustained investment and credibility rather than assumptions about enduring institutions. Polling data cited in the report showed more Canadian respondents now view the United States as a threat than as an ally.
+
+*Sources: (CBC News [1](https://archive.ph/https://www.cbc.ca/news/politics/munich-security-trump-carney-9.7077801))*
+
+## Domestic
+
+### China removes three lawmakers with defence-sector ties after top general probed
+
+China removes three lawmakers with defence-sector ties after top general probed
+
+*Sources: (Reuters [1](https://archive.ph/https://www.reuters.com/world/china/china-removes-3-lawmakers-with-defence-sector-ties-after-top-general-probed-2026-02-05/))*
+
+### Chinese EVs are coming to Canada soon. Should you buy one?
+
+Chinese EVs are coming to Canada soon. Should you buy one?
+
+*Sources: (Toronto Star [1](https://archive.ph/https://www.thestar.com/business/personal-finance/chinese-evs-are-coming-to-canada-soon-should-you-buy-one/article_09512b95-f831-45b6-804d-4fd63c70e2d4.html))*
+
+### Right Honourable Mark Carney
+
+Right Honourable Mark Carney
+
+*Sources: (Office of the Prime Minister [1](https://archive.ph/https://www.pm.gc.ca/en))*
+
+### Jimmy Lai sentenced to 20 years by Hong Kong court in landmark national security case
+
+Jimmy Lai sentenced to 20 years by Hong Kong court in landmark national security case
+
+*Sources: (National Post [1](https://archive.ph/https://nationalpost.com/news/world/jimmy-lai-20-years-sentence-hong-kong))*
+
+### Where’s Mark Carney? Sadly, not where he should be: the Olympics
+
+Where’s Mark Carney? Sadly, not where he should be: the Olympics
+
+*Sources: (Globe and Mail [1](https://archive.ph/https://www.theglobeandmail.com/sports/article-wheres-mark-carney-sadly-not-where-he-should-be-the-olympics/))*
+
+### How the latest Epstein files have revived conspiracy theorists’ attempts to link Mark Carney with the notorious sex offender
+
+How the latest Epstein files have revived conspiracy theorists’ attempts to link Mark Carney with the notorious sex offender
+
+*Sources: (Toronto Star [1](https://archive.ph/https://www.thestar.com/politics/federal/how-the-latest-epstein-files-have-revived-conspiracy-theorists-attempts-to-link-mark-carney-with/article_ca791413-e8e1-4a15-91f4-208f5396029c.html))*
+
+### Judge seems skeptical of legal justification for Pentagon’s punishment of Sen. Mark Kelly
+
+Judge seems skeptical of legal justification for Pentagon’s punishment of Sen. Mark Kelly
+
+*Sources: (Toronto Star [1](https://archive.ph/https://www.thestar.com/news/world/united-states/judge-seems-skeptical-of-legal-justification-for-pentagons-punishment-of-sen-mark-kelly/article_bcf600c1-bd74-5c1c-9796-8de46d1c48cc.html))*
+
+## Between the Lines
+
+- Carney's pivot from EV mandates to incentives and emissions standards suggests his government is recalibrating climate policy to balance environmental goals with industry concerns, particularly as German automakers express interest in Canadian expansion.
+- The timing of discussions between Carney and Ford about triggering an early election, coupled with China's sudden reversal on a Canadian death sentence following Carney's visit, indicates the Prime Minister may be positioning for a majority mandate while diplomatic wins provide political capital.
+- Carney's warning that allies must move beyond rhetoric about the rules-based international order reflects a shift toward acknowledging great power competition, coinciding with China's removal of defense-linked lawmakers amid internal military investigations.
+
+---
+
+*Generated: 2026-02-09 21:41*
