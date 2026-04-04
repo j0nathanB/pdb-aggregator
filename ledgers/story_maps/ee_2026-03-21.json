@@ -3,37 +3,51 @@
   "code": "ee",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 401,
-  "stories_identified": 12,
-  "off_topic_filtered": 287,
-  "noise_summary": "287 off-topic results filtered: 89 sports (cycling, football, NHL, basketball, various leagues and matches), 76 entertainment and celebrity news (Michael Jackson biopic, actors, musicians), 45 international business and energy news (EDF France, various corporate news), 31 non-Estonian political content (Reform UK, various international politics), 24 lifestyle and human interest stories, 12 technology and gaming content, 10 weather and local events not related to Estonia's political/security/economic dynamics.",
+  "search_results_total": 377,
+  "stories_identified": 8,
+  "off_topic_filtered": 298,
+  "noise_summary": "298 off-topic results filtered: 89 international sports (cycling, football, hockey), 47 British Reform UK party stories, 41 French EDF electricity company articles, 34 entertainment/celebrity content, 28 various international political stories using similar search terms, 25 gaming/lifestyle content, 18 unrelated financial/business stories, 16 miscellaneous international content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Estonia ready to discuss military support for US Strait of Hormuz operations",
-      "summary": "Defense Minister Hanno Pevkur and Foreign Minister Margus Tsahkna stated Estonia is prepared to discuss sending military forces to help secure the Strait of Hormuz if the US makes an official request. No concrete request has been received yet.",
+      "headline": "Estonia ready to discuss sending forces to Strait of Hormuz if US requests",
+      "summary": "Foreign Minister Margus Tsahkna and Defense Minister Hanno Pevkur stated Estonia is prepared to discuss contributing to US operations in the Strait of Hormuz. Multiple statements made this week emphasizing Estonia's readiness to support US allies, though no formal request has been received.",
       "actors_involved": [
-        "Pevkur",
-        "Tsahkna"
+        "Tsahkna",
+        "Pevkur"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 23,
+      "source_count": 24,
       "sources": [
-        "politico.com",
-        "rferl.org",
         "err.ee",
         "news.err.ee",
-        "lrt.lt",
-        "delfi.ee",
+        "politico.com",
+        "rferl.org",
         "timesofisrael.com",
         "yahoo.com",
+        "lrt.lt",
+        "delfi.ee",
+        "postimees.ee",
         "lounaeestlane.ee",
-        "news-pravda.com",
-        "estonia.news-pravda.com",
-        "postimees.ee"
+        "ourmidland.com",
+        "ms.now",
+        "uueduudised.ee",
+        "ohtuleht.ee"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
+        {
+          "title": "Tsahkna: Eesti on valmis arutama v\u00e4gede saatmist Hormuzi v\u00e4ina",
+          "source": "err.ee",
+          "url": "https://www.err.ee/1609969811/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "FM: Estonia prepared to discuss sending forces to Hormuz Strait with US",
+          "source": "news.err.ee",
+          "url": "https://news.err.ee/1609969862/fm-estonia-prepared-to-discuss-sending-forces-to-hormuz-strait-with-us",
+          "date": "2026-03-17"
+        },
         {
           "title": "Estonia 'ready to talk' on Strait of Hormuz backup",
           "source": "politico.com",
@@ -47,46 +61,105 @@
           "date": "2026-03-18"
         },
         {
+          "title": "Estonia is ready to discuss Hormuz mission with US, foreign minister tells ToI",
+          "source": "timesofisrael.com",
+          "url": "https://timesofisrael.com/estonia-is-ready-to-discuss-hormuz-mission-with-us-foreign-minister-tells-toi",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Estonia open to protecting ships in Strait of Hormuz, minister says",
+          "source": "yahoo.com",
+          "url": "https://www.yahoo.com/news/articles/estonia-open-protecting-ships-strait-165921145.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Defense minister: US has made no concrete Strait of Hormuz request to allies",
+          "source": "news.err.ee",
+          "url": "https://news.err.ee/1609970837/defense-minister-us-has-made-no-concrete-strait-of-hormuz-request-to-allies",
+          "date": "2026-03-18"
+        },
+        {
           "title": "Pevkur: USA-lt ei ole liitlastele tulnud \u00fchtegi konkreetset palvet",
           "source": "err.ee",
           "url": "https://www.err.ee/1609970714/pevkur-usa-lt-ei-ole-liitlastele-tulnud-uhtegi-konkreetset-palvet",
           "date": "2026-03-18"
         },
         {
-          "title": "FM: Estonia prepared to discuss sending forces to Hormuz Strait with US",
-          "source": "news.err.ee",
-          "url": "https://news.err.ee/1609969862/fm-estonia-prepared-to-discuss-sending-forces-to-hormuz-strait-with-us",
+          "title": "Estonia calls for unity as US-allied divide grows over Hormuz crisis",
+          "source": "lrt.lt",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2872107/estonia-calls-for-unity-as-us-allied-divide-grows-over-hormuz-crisis",
           "date": "2026-03-18"
         },
         {
-          "title": "Tsahkna: Eesti on valmis arutama v\u00e4gede saatmist Hormuzi v\u00e4ina",
+          "title": "Tsahkna: ei saa \u00f6elda, et s\u00f5da Iraanis pole ka meie s\u00f5da",
           "source": "err.ee",
-          "url": "https://www.err.ee/1609969811/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina",
+          "url": "https://www.err.ee/1609971938/tsahkna-ei-saa-oelda-et-soda-iraanis-pole-ka-meie-soda",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "V\u00e4lisminister Tsahkna: peame aru saama, mis on USA pikem plaan Iraanis",
+          "source": "delfi.ee",
+          "url": "https://www.delfi.ee/artikkel/120443329/valisminister-tsahkna-peame-aru-saama-mis-on-usa-pikem-plaan-iraanis",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Tsahkna: oleme valmis arutama USAga Hormuzi v\u00e4ina olukorda",
+          "source": "postimees.ee",
+          "url": "https://www.postimees.ee/8434306/tsahkna-oleme-valmis-arutama-usaga-hormuzi-vaina-olukorda",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Eesti on valmis minema USA-le appi Hormuzi v\u00e4ina avamiseks: Iraani s\u00f5da on ka meie s\u00f5da",
+          "source": "lounaeestlane.ee",
+          "url": "https://lounaeestlane.ee/eesti-on-valmis-minema-usa-le-appi-hormuzi-vaina-avamiseks-iraani-soda-on-ka-meie-soda/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Europeans seek clarity about Trump's Iran war aims before agreeing to his warship demands",
+          "source": "ourmidland.com",
+          "url": "https://www.ourmidland.com/news/world/article/eu-weighs-action-to-keep-strait-of-hormuz-open-22078985.php",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Estonia defense minister reacts to Trump pressuring NATO on Strait of Hormuz",
+          "source": "ms.now",
+          "url": "https://www.ms.now/katy-tur/watch/estonia-defense-minister-reacts-to-trump-pressuring-nato-on-strait-of-hormuz-2492301379981",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Eesti on valmis saatma s\u00f5jav\u00e4elasi osalema s\u00f5jalisel missioonil Hormuzi v\u00e4inas-Margus Tsahkna",
+          "source": "uueduudised.ee",
+          "url": "https://uueduudised.ee/eesti-on-valmis-saatma-sojavaelasioslema-sojalisel-missioonil-hormuzi-vainas-margus-tsahkna/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Tsahkna: Eesti on valmis arutama v\u00e4gede saatmist Hormuzi v\u00e4ina, kui USA seda palub",
+          "source": "ohtuleht.ee",
+          "url": "https://ohtuleht.ee/1153443/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina-kui-usa-seda-palub",
           "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://www.politico.com/news/2026/03/18/estonia-strait-of-hormuz-iran-00834179",
-        "https://www.err.ee/1609970714/pevkur-usa-lt-ei-ole-liitlastele-tulnud-uhtegi-konkreetset-palvet"
+        "https://www.err.ee/1609969811/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina"
       ]
     },
     {
       "story_id": 2,
       "headline": "Lockheed Martin to establish HIMARS maintenance center in Estonia",
-      "summary": "Defense Minister Hanno Pevkur and Lockheed Martin agreed to establish a HIMARS missile system maintenance center in Estonia that will serve all three Baltic states. The $10 million investment represents strengthened defense cooperation with the US.",
+      "summary": "Defense Minister Hanno Pevkur announced agreement with Lockheed Martin to build HIMARS missile system maintenance center in Estonia to serve all three Baltic states. The $10 million investment represents expanding US defense industry presence in Estonia.",
       "actors_involved": [
         "Pevkur"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 12,
+      "source_count": 9,
       "sources": [
         "latvia.news-pravda.com",
         "defence-industry.eu",
         "postimees.ee",
-        "estonia.news-pravda.com",
         "uudis.net"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-19 to 2026-03-19",
       "articles": [
         {
           "title": "Lockheed Martin to build maintenance center for HIMARS in Estonia",
@@ -95,201 +168,51 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Lockheed Martin to establish HIMARS sustainment centre in Estonia",
+          "title": "Lockheed Martin to establish HIMARS sustainment centre in Estonia to support Baltic defence cooperation",
           "source": "defence-industry.eu",
           "url": "https://defence-industry.eu/lockheed-martin-to-establish-himars-sustainment-centre-in-estonia-to-support-baltic-defence-cooperation/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "A maintenance center for M142 HIMARS missile systems for the Baltic states will be established in Estonia",
+          "source": "latvia.news-pravda.com",
+          "url": "https://latvia.news-pravda.com/en/world/2026/03/19/32091.html",
           "date": "2026-03-19"
         },
         {
           "title": "USA ettev\u00f5te rajab Balti riikide teenindamiseks Eestisse relvas\u00fcsteemide hoolduskeskuse",
           "source": "postimees.ee",
           "url": "https://www.postimees.ee/8436205/usa-ettevote-rajab-balti-riikide-teenindamiseks-eestisse-relvasusteemide-hoolduskeskuse",
-          "date": "2026-03-20"
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Lockheed Martin rajab Eestisse HIMARSi relvas\u00fcsteemide hoolduskeskuse",
+          "source": "uudis.net",
+          "url": "https://uudis.net/12144456",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://latvia.news-pravda.com/en/world/2026/03/19/32108.html",
+        "https://defence-industry.eu/lockheed-martin-to-establish-himars-sustainment-centre-in-estonia-to-support-baltic-defence-cooperation/",
         "https://www.postimees.ee/8436205/usa-ettevote-rajab-balti-riikide-teenindamiseks-eestisse-relvasusteemide-hoolduskeskuse"
       ]
     },
     {
       "story_id": 3,
-      "headline": "Russian fighter jet violates Estonian airspace",
-      "summary": "A Russian SU-30 fighter aircraft violated Estonian airspace near Vaindloo Island for approximately one minute on March 18. Estonia summoned the Russian charge d'affaires and NATO's Baltic Air Policing mission responded.",
-      "actors_involved": [
-        "Tsahkna"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 8,
-      "sources": [
-        "usnews.com",
-        "delfi.ee",
-        "estonia.news-pravda.com",
-        "err.ee",
-        "postimees.ee"
-      ],
-      "date_range": "2026-03-19 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Estonia Says Russian Jet Violates Airspace, Triggers Response",
-          "source": "usnews.com",
-          "url": "https://www.usnews.com/news/world/articles/2026-03-19/estonia-summons-russian-diplomat-after-russian-jet-violates-estonian-airspace",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "VIDEO ja BLOGI | Tsahkna: Venemaa h\u00e4vituslennuk rikkus Eesti \u00f5huruumi piiri",
-          "source": "delfi.ee",
-          "url": "https://www.delfi.ee/artikkel/120443260/otsepilt-ja-blogi-valitsus-tegi-riigikogule-ettepaneku-tuhistada-aktsiisitousud-kutustele-maagaasile-ja-elektrienergiale",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.usnews.com/news/world/articles/2026-03-19/estonia-summons-russian-diplomat-after-russian-jet-violates-estonian-airspace",
-        "https://www.delfi.ee/artikkel/120443260/otsepilt-ja-blogi-valitsus-tegi-riigikogule-ettepaneku-tuhistada-aktsiisitousud-kutustele-maagaasile-ja-elektrienergiale"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Explosion at Russian military base near Estonia",
-      "summary": "A large explosion occurred at a Russian military base in Pskov, 32 kilometers from Estonia. Defense Minister Hanno Pevkur said it was likely a fuel depot that was hit, possibly by Ukrainian forces.",
-      "actors_involved": [
-        "Pevkur"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 4,
-      "sources": [
-        "err.ee",
-        "delfi.ee",
-        "uudis.net"
-      ],
-      "date_range": "2026-03-18 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Pevkur: Pihkva s\u00f5jav\u00e4eosas l\u00f5hkes k\u00fctuseladu",
-          "source": "err.ee",
-          "url": "https://www.err.ee/1609970276/pevkur-pihkva-sojavaeosas-lohkes-kutuseladu",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sotsiaalmeedias teatati p\u00f5lengust Pihkva s\u00f5jav\u00e4epol\u00fcgoonil",
-          "source": "delfi.ee",
-          "url": "https://delfi.ee/artikkel/120442893/sotsiaalmeedias-teatati-polengust-pihkva-sojavaepolugoonil",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.err.ee/1609970276/pevkur-pihkva-sojavaeosas-lohkes-kutuseladu"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Estonian border guards injured in Mediterranean accident",
-      "summary": "Estonian border patrol boat M-80 sank during a Frontex operation in Greek waters. Four Estonians and one Greek were on board, with two Estonian border guards in serious condition. All survived.",
-      "actors_involved": [
-        "Estonian Defence Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 3,
-      "sources": [
-        "ohtuleht.ee",
-        "err.ee"
-      ],
-      "date_range": "2026-03-17 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Vahemerel l\u00e4ks p\u00f5hja PPA kaater, mitu eestlast sai viga",
-          "source": "ohtuleht.ee",
-          "url": "https://ohtuleht.ee/1153397/vahemerel-laks-pohja-ppa-kaater-mitu-eestlast-sai-viga",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Eesti piirivalvurid sattusid Kreekas Frontexi operatsioonil raskesse \u00f5nnetusse",
-          "source": "err.ee",
-          "url": "https://err.ee/1609969271/eesti-piirivalvurid-sattusid-kreekas-frontexi-operatsioonil-raskesse-onnetusse",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://ohtuleht.ee/1153397/vahemerel-laks-pohja-ppa-kaater-mitu-eestlast-sai-viga"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Russian citizen expelled from Estonia over security concerns",
-      "summary": "KAPO expelled Russian citizen Kirill Kudriavtsev for national security reasons, citing his ties to Russian intelligence services. He was also issued a Schengen entry ban.",
-      "actors_involved": [
-        "KAPO"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 2,
-      "sources": [
-        "news.err.ee"
-      ],
-      "date_range": "2026-03-13 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Russian citizen expelled from Estonia days after entering country",
-          "source": "news.err.ee",
-          "url": "https://news.err.ee/1609971125/russian-citizen-expelled-from-estonia-days-after-entering-country",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://news.err.ee/1609971125/russian-citizen-expelled-from-estonia-days-after-entering-country"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Presidential election discussions and candidate speculation",
-      "summary": "Discussions continue about Estonia's presidential election with parties considering candidates. Social Democrats mentioned diplomat Riina Kionka as a potential candidate suggested by Reform Party, though Kionka states no party has contacted her directly.",
-      "actors_involved": [
-        "Karis",
-        "Reform Party"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 8,
-      "sources": [
-        "err.ee",
-        "postimees.ee",
-        "sakala.postimees.ee",
-        "jarvateataja.postimees.ee",
-        "delfi.ee",
-        "ohtuleht.ee"
-      ],
-      "date_range": "2026-03-17 to 2026-03-18",
-      "articles": [
-        {
-          "title": "L\u00e4\u00e4nemets vabandas Riina Kionka ja Alar Karise ees",
-          "source": "err.ee",
-          "url": "https://err.ee/1609970108/laanemets-vabandas-riina-kionka-ja-alar-karise-ees",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Riina Kionka: \u00fckski erakond pole minuga presidendiks kandideerimisest r\u00e4\u00e4kinud",
-          "source": "postimees.ee",
-          "url": "https://www.postimees.ee/8434559/riina-kionka-ukski-erakond-pole-minuga-presidendiks-kandideerimisest-raakinud",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://www.postimees.ee/8434559/riina-kionka-ukski-erakond-pole-minuga-presidendiks-kandideerimisest-raakinud"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "EKRE holds party congress in Viljandi",
-      "summary": "Conservative People's Party held its council meeting in Viljandi, adopting political statements focused on economic growth, defending the nation-state, and radical changes to migration policy ahead of next year's parliamentary elections.",
+      "headline": "EKRE holds volikogu meeting in Viljandi, adopts political declaration",
+      "summary": "Conservative People's Party (EKRE) held its volikogu meeting in Viljandi, adopting a political declaration for upcoming parliamentary elections. Party chair Martin Helme emphasized economic growth, national defense, and migration policy changes as key themes.",
       "actors_involved": [
         "EKRE"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 15,
+      "source_count": 8,
       "sources": [
         "err.ee",
         "postimees.ee",
         "delfi.ee",
         "uueduudised.ee",
-        "sakala.postimees.ee"
+        "sakala.postimees.ee",
+        "uudis.net"
       ],
       "date_range": "2026-03-15 to 2026-03-16",
       "articles": [
@@ -300,7 +223,7 @@
           "date": "2026-03-15"
         },
         {
-          "title": "EKRE VOLIKOGU \u203a Ainus sisser\u00e4nne, mida Eesti vajab, on eestlaste tagasir\u00e4nne",
+          "title": "EKRE VOLIKOGU \u27e9 Ainus sisser\u00e4nne, mida Eesti vajab, on eestlaste tagasir\u00e4nne",
           "source": "postimees.ee",
           "url": "https://www.postimees.ee/8433446/ekre-volikogu-ainus-sisseranne-mida-eesti-vajab-on-eestlaste-tagasiranne",
           "date": "2026-03-15"
@@ -310,41 +233,140 @@
           "source": "delfi.ee",
           "url": "https://www.delfi.ee/artikkel/120442261/fotod-ekre-kogunes-viljandisse-uut-volikogu-esimeest-valima",
           "date": "2026-03-15"
+        },
+        {
+          "title": "Martin Helme EKRE volikogul: meie ideed on v\u00f5itnud, n\u00fc\u00fcd peab ka erakond v\u00f5itma",
+          "source": "uueduudised.ee",
+          "url": "https://uueduudised.ee/martin-helme-ekre-volikogul-meie-ideed-on-voitnud-nuud-peab-ka-erakond-voitma/",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "EKRE volikogu kogunes Viljandis",
+          "source": "sakala.postimees.ee",
+          "url": "https://sakala.postimees.ee/8433507/ekre-volikogu-kogunes-viljandis",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "EKRE volikogu avaldus: Eesti vajab kursimuutust! Kursi muudab EKRE!",
+          "source": "uudis.net",
+          "url": "https://uudis.net/12120754",
+          "date": "2026-03-15"
         }
       ],
       "representative_urls": [
         "https://www.postimees.ee/8433446/ekre-volikogu-ainus-sisseranne-mida-eesti-vajab-on-eestlaste-tagasiranne",
-        "https://www.delfi.ee/artikkel/120442261/fotod-ekre-kogunes-viljandisse-uut-volikogu-esimeest-valima"
+        "https://err.ee/1609967633/ekre-volikogu-keskendus-riigikogu-valimistele"
       ]
     },
     {
-      "story_id": 9,
-      "headline": "Coop Pank launches bond offering to raise capital",
-      "summary": "Coop Pank announced a public offering of subordinated bonds worth 10 million euros to strengthen its capital base and support growth plans. The bank aims to achieve a 10% market share in Estonia by 2030.",
+      "story_id": 4,
+      "headline": "Russian military incidents near Estonian border",
+      "summary": "Multiple Russian military incidents occurred this week including an explosion at a fuel depot in Pskov military base 32km from Estonia and a Russian Su-30 fighter jet violating Estonian airspace for about a minute.",
       "actors_involved": [
-        "Bank of Estonia"
+        "Pevkur",
+        "Tsahkna"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "err.ee",
+        "delfi.ee"
+      ],
+      "date_range": "2026-03-18 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Pevkur: Pihkva s\u00f5jav\u00e4eosas l\u00f5hkes k\u00fctuseladu",
+          "source": "err.ee",
+          "url": "https://www.err.ee/1609970276/pevkur-pihkva-sojavaeosas-lohkes-kutuseladu",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "VIDEO ja BLOGI | Tsahkna: Venemaa h\u00e4vituslennuk rikkus Eesti \u00f5huruumi piiri",
+          "source": "delfi.ee",
+          "url": "https://www.delfi.ee/artikkel/120443260/otsepilt-ja-blogi-valitsus-tegi-riigikogule-ettepaneku-tuhistada-aktsiisitousud-kutustele-maagaasile-ja-elektrienergiale",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Sotsiaalmeedias teatati p\u00f5lengust Pihkva s\u00f5jav\u00e4epol\u00fcgoonil",
+          "source": "delfi.ee",
+          "url": "https://delfi.ee/artikkel/120442893/sotsiaalmeedias-teatati-polengust-pihkva-sojavaepolugoonil",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://www.err.ee/1609970276/pevkur-pihkva-sojavaeosas-lohkes-kutuseladu",
+        "https://www.delfi.ee/artikkel/120443260/otsepilt-ja-blogi-valitsus-tegi-riigikogule-ettepaneku-tuhistada-aktsiisitousud-kutustele-maagaasile-ja-elektrienergiale"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Estonian border guards injured in accident during Frontex operation in Greece",
+      "summary": "Estonian border guards were involved in a serious accident during a Frontex operation near Megisti island in the Mediterranean. Four people were hospitalized from the Estonian patrol boat incident.",
+      "actors_involved": [],
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
+      "sources": [
+        "err.ee",
+        "ohtuleht.ee"
+      ],
+      "date_range": "2026-03-17 to 2026-03-17",
+      "articles": [
+        {
+          "title": "Eesti piirivalvurid sattusid Kreekas Frontexi operatsioonil raskesse \u00f5nnetusse",
+          "source": "err.ee",
+          "url": "https://err.ee/1609969271/eesti-piirivalvurid-sattusid-kreekas-frontexi-operatsioonil-raskesse-onnetusse",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Vahemerel l\u00e4ks p\u00f5hja PPA kaater, mitu eestlast sai viga",
+          "source": "ohtuleht.ee",
+          "url": "https://ohtuleht.ee/1153397/vahemerel-laks-pohja-ppa-kaater-mitu-eestlast-sai-viga",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://err.ee/1609969271/eesti-piirivalvurid-sattusid-kreegas-frontexi-operatsioonil-raskesse-onnetusse"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Coop Pank launches subordinated bond offering to raise up to 20 million euros",
+      "summary": "Coop Pank announced public offering of subordinated bonds worth 10 million euros with possibility to increase to 20 million if oversubscribed. The 11-year bonds are part of the bank's capital strengthening and growth strategy.",
+      "actors_involved": [
+        "Coop Pank"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 6,
+      "source_count": 4,
       "sources": [
-        "postimees.ee",
-        "delfi.ee",
+        "majandus.postimees.ee",
+        "arileht.delfi.ee",
         "globenewswire.com",
-        "uudis.net",
-        "manilatimes.net"
+        "uudis.net"
       ],
       "date_range": "2026-03-17 to 2026-03-18",
       "articles": [
         {
           "title": "Coop Pank pakub tavatu pikkusega v\u00f5lakirju",
-          "source": "postimees.ee",
+          "source": "majandus.postimees.ee",
           "url": "https://majandus.postimees.ee/8434946/coop-pank-pakub-tavatu-pikkusega-volakirju",
           "date": "2026-03-17"
         },
         {
           "title": "Coop Pank soovib v\u00f5lakirjadega kaasata kuni 20 miljonit eurot",
-          "source": "delfi.ee",
+          "source": "arileht.delfi.ee",
           "url": "https://arileht.delfi.ee/a/120443007/coop-pank-soovib-volakirjadega-kaasata-kuni-20-miljonit-eurot",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Coop Pank AS tagamata allutatud v\u00f5lakirjade avaliku pakkumise teade",
+          "source": "globenewswire.com",
+          "url": "https://globenewswire.com/news-release/2026/03/17/3256854/0/et/Coop-Pank-AS-tagamata-allutatud-v%C3%B5lakirjade-avaliku-pakkumise-teade.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Coop Pank plaanib turuosa kasvatada ja alustab 10 miljoni euro suurust v\u00f5lakirjaemissiooni",
+          "source": "uudis.net",
+          "url": "https://uudis.net/12133061",
           "date": "2026-03-18"
         }
       ],
@@ -354,20 +376,20 @@
       ]
     },
     {
-      "story_id": 10,
-      "headline": "Parliament advisor dismissed over gambling tax legislation error",
-      "summary": "A veteran Riigikogu advisor was dismissed following a disciplinary procedure related to an error in gambling tax legislation that cost the state millions. Opposition claims the advisor was made a scapegoat for politicians' mistakes.",
+      "story_id": 7,
+      "headline": "Parliamentary advisor fired over gambling tax law drafting error",
+      "summary": "A veteran Riigikogu advisor was dismissed following disciplinary proceedings related to errors in gambling tax legislation that resulted in millions in lost state revenue. Opposition accuses Reform Party and Eesti 200 of scapegoating the advisor for politicians' mistakes.",
       "actors_involved": [
         "Reform Party"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 4,
+      "source_count": 3,
       "sources": [
         "err.ee",
         "postimees.ee",
         "uudis.net"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-19 to 2026-03-19",
       "articles": [
         {
           "title": "Riigikogu n\u00f5unik kaotas hasartm\u00e4ngumaksu prohmaka p\u00e4rast t\u00f6\u00f6",
@@ -379,89 +401,91 @@
           "title": "Kas teenekas ametnik tehti patuoinaks? Eeln\u00f5u menetlemise k\u00e4igus tehtud viga sai saatuslikuks",
           "source": "postimees.ee",
           "url": "https://postimees.ee/8435891/kas-teenekas-ametnik-tehti-patuoinaks-eelnou-menetlemise-kaigus-tehtud-viga-sai-saatuslikuks",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://err.ee/1609970861/riigikogu-nounik-kaotas-hasartmangumaksu-prohmaka-parast-too"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "EU adopts Estonian initiative on Russian fighter visa bans",
-      "summary": "The European Union agreed to work on Estonia's initiative to impose visa restrictions on Russian fighters who served in Ukraine. Twenty-five EU countries supported examining the proposal.",
-      "actors_involved": [
-        "Tsahkna"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 2,
-      "sources": [
-        "err.ee"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
+          "date": "2026-03-19"
+        },
         {
-          "title": "Euroopa Liit v\u00f5ttis t\u00f6\u00f6sse Eesti algatatud Vene v\u00f5itlejate viisakeelu",
-          "source": "err.ee",
-          "url": "https://www.err.ee/1609974027/euroopa-liit-vottis-toosse-eesti-algatatud-vene-voitlejate-viisakeelu",
-          "date": "2026-03-21"
+          "title": "Riigikogu n\u00f5unik vallandati poliitikute prohmaka p\u00e4rast. Kokk: \u201eV\u00e4iklane ja ennekuulmatult k\u00fc\u00fcniline!\"",
+          "source": "uudis.net",
+          "url": "https://uudis.net/12139648",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.err.ee/1609974027/euroopa-liit-vottis-toosse-eesti-algatatud-vene-voitlejate-viisakeelu"
+        "https://err.ee/1609970861/riigikogu-nounik-kaotas-hasartmangumaksu-prohmaka-parast-too",
+        "https://postimees.ee/8435891/kas-teenekas-ametnik-tehti-patuoinaks-eelnou-menetlemise-kaigus-tehtud-viga-sai-saatuslikuks"
       ]
     },
     {
-      "story_id": 12,
-      "headline": "President Alar Karis honored as friend of libraries",
-      "summary": "The Estonian Library Association named President Alar Karis as the 2025 Friend of Libraries, recognizing his active role as patron of Estonia's Book Year and his support for reading and literature through various initiatives.",
+      "story_id": 8,
+      "headline": "Reform Party discusses presidential candidates for upcoming election",
+      "summary": "Social Democrats revealed that Reform Party representatives suggested diplomat Riina Kionka as potential presidential candidate. Discussions ongoing about presidential election candidates, though Kionka states no party has contacted her directly about candidacy.",
       "actors_involved": [
+        "Reform Party",
         "Karis"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 3,
       "sources": [
-        "postimees.ee",
-        "jarvateataja.postimees.ee",
-        "goodnews.ee"
+        "err.ee",
+        "delfi.ee",
+        "ohtuleht.ee"
       ],
-      "date_range": "2026-03-17 to 2026-03-18",
+      "date_range": "2026-03-15 to 2026-03-17",
       "articles": [
         {
-          "title": "Raamatukogude suurim s\u00f5ber on president Alar Karis",
-          "source": "postimees.ee",
-          "url": "https://raamatud.postimees.ee/8434519/raamatukogude-suurim-sober-on-president-alar-karis",
+          "title": "Kionka: \u00fckski erakond pole minuga presidendiks kandideerimisest r\u00e4\u00e4kinud",
+          "source": "err.ee",
+          "url": "https://err.ee/1609968953/kionka-ukski-erakond-pole-minuga-presidendiks-kandideerimisest-raakinud",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "\u201eReformierakond valetab suurelt ja \u00fclbelt.\" Tanel Kiik: v\u00f5imalike presidentide nimed saatis mulle oravate peasekret\u00e4r s\u00f5numiga",
+          "source": "delfi.ee",
+          "url": "https://delfi.ee/artikkel/120442765/reformierakond-valetab-suurelt-ja-ulbelt-tanel-kiik-riina-kionka-nime-saatis-mulle-oravate-peasekretar-sonumiga",
           "date": "2026-03-17"
         },
         {
-          "title": "Raamatukogude s\u00f5braks valiti Alar Karis",
-          "source": "jarvateataja.postimees.ee",
-          "url": "https://jarvateataja.postimees.ee/8434314/raamatukogude-sobraks-valiti-alar-karis",
-          "date": "2026-03-17"
+          "title": "Lauri L\u00e4\u00e4nemets: reformierakondlased palusid sotsidel presidendikandidaadina v\u00e4lja k\u00e4ia Riina Kionka",
+          "source": "ohtuleht.ee",
+          "url": "https://ohtuleht.ee/1153315/lauri-laanemets-reformierakondlased-palusid-sotsidel-presidendikandidaadina-valja-kaia-riina-kionka",
+          "date": "2026-03-15"
         }
       ],
       "representative_urls": [
-        "https://raamatud.postimees.ee/8434519/raamatukogude-suurim-sober-on-president-alar-karis"
+        "https://err.ee/1609968953/kionka-ukski-erakond-pole-minuga-presidendiks-kandideerimisest-raakinud",
+        "https://delfi.ee/artikkel/120442765/reformierakond-valetab-suurelt-ja-ulbelt-tanel-kiik-riina-kionka-nime-saatis-mulle-oravate-peasekretar-sonumiga"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "President's spouse recognizes social workers at ceremony in J\u00f5hvi",
-      "source": "goodnews.ee",
-      "url": "https://goodnews.ee/sirje-karis-sotsiaaltootajad-loovad-uhiskonda-turvatunde-ja-usalduse/",
-      "signal_category_hint": "domestic_regime"
+      "headline": "Russian citizen expelled from Estonia over security concerns",
+      "source": "news.err.ee",
+      "url": "https://news.err.ee/1609971125/russian-citizen-expelled-from-estonia-days-after-entering-country",
+      "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Mallukas creates controversial database of convicted sex offenders",
-      "source": "postimees.ee",
+      "headline": "EU takes up Estonia's proposal to restrict visas for Russian fighters",
+      "source": "news.err.ee",
+      "url": "https://news.err.ee/1609974102/eu-takes-up-estonia-s-proposal-to-restrict-visas-for-russian-fighters",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Blogija Mallukas creates database of convicted sex offenders",
+      "source": "elu24.postimees.ee",
       "url": "https://elu24.postimees.ee/8436116/mallukas-pani-pusti-pedofiilide-ja-seksuaalkurjategijate-andmebaasi-justiitsminister-takka-ei-kiida",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Narva renames bus stops after removing Soviet-era street names",
-      "source": "err.ee",
-      "url": "https://err.ee/1609969625/narva-nimetab-punatanavate-jarel-umber-ka-punanimedega-bussipeatused",
+      "headline": "Luminor forecasts 2% economic growth amid uncertainty",
+      "source": "majandus.postimees.ee",
+      "url": "https://majandus.postimees.ee/8435564/luminor-majanduskasvu-varjutab-ebakindlus-kasvutempo-maaravad-tarbijate-otsused-ja-hinnasurve",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Olympic coach T\u00f5nis Sildaru renounces awards over EOK controversy",
+      "source": "sport.err.ee",
+      "url": "https://sport.err.ee/1609969706/tonis-sildaru-loobub-preemiast-ja-treeneritoetusest",
       "signal_category_hint": "domestic_regime"
     }
   ]

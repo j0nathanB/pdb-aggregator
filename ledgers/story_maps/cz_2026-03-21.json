@@ -3,35 +3,95 @@
   "code": "cz",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 295,
-  "stories_identified": 8,
-  "off_topic_filtered": 127,
-  "noise_summary": "127 off-topic results filtered: 45 sports (hockey players named Pavel, football coverage, sports awards), 28 entertainment/celebrity news (Michael B. Jordan Oscar coverage, music industry, film content), 23 international content matching search terms but unrelated to Czech Republic (Spanish rap artist 'Babi', Dragon Ball character 'Baby', various 'Ana'/'Anna' international celebrities), 18 lifestyle/astrological content (astrological new year content), 13 miscellaneous (technology, business unrelated to Czech institutions).",
+  "search_results_total": 297,
+  "stories_identified": 6,
+  "off_topic_filtered": 89,
+  "noise_summary": "89 off-topic results filtered: 23 entertainment (Michael B. Jordan Oscar coverage, Ana Castela Brazilian singer content), 18 sports (hockey player Pavel Dorofeyev, soccer content), 15 anime/gaming content (Dragon Ball 'Baby' character, Palworld game), 12 Portuguese/Brazilian astrological content about 'Ano Novo', 8 Spanish language content about rapper 'Babi', 6 weather/lifestyle content, 7 other unrelated international content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Tens of thousands protest in Prague against Babi\u0161 government over defense cuts and democracy concerns",
-      "summary": "Czech Republic's largest anti-government demonstration since 2019 drew tens of thousands to Prague's Letn\u00e1 park on March 21, with protesters condemning PM Babi\u0161 for defense spending cuts and alleged democratic backsliding. Organizers from Million Moments for Democracy accused the government of steering toward autocracy.",
+      "headline": "Babi\u0161 cancels Budapest CPAC trip, returns mid-flight due to suspected arson at Czech defense facility",
+      "summary": "Prime Minister Andrej Babi\u0161 cancelled his trip to the CPAC Hungary conference and turned his plane around mid-flight after a fire broke out at a defense facility in Pardubice. Czech authorities are investigating the incident as suspected terrorism linked to an anti-Israel group claiming responsibility.",
       "actors_involved": [
-        "Andrej Babi\u0161",
+        "Babi\u0161",
+        "BIS"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 43,
+      "sources": [
+        "hvg.hu",
+        "24.hu",
+        "index.hu",
+        "telex.hu",
+        "hirado.hu",
+        "blikk.hu",
+        "szeretlekmagyarorszag.hu",
+        "vasarnap.hu",
+        "ripost.hu",
+        "apnews.com",
+        "reuters.com",
+        "timesofisrael.com",
+        "independent.co.uk",
+        "thehindu.com",
+        "wral.com",
+        "kyivindependent.com",
+        "united24media.com",
+        "rferl.org",
+        "mezha.net",
+        "middleeasteye.net",
+        "thecradle.co",
+        "dimsumdaily.hk",
+        "militarnyi.com",
+        "expats.cz",
+        "pravda.com.ua",
+        "dailynewshungary.com"
+      ],
+      "date_range": "2026-03-20 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Visszafordult Budapestr\u0151l Andrej Babi\u0161 cseh minisztereln\u00f6k, miut\u00e1n egy Izrael-ellenes csoport felgy\u00fajtott egy rakt\u00e1r\u00e9p\u00fcletet Csehorsz\u00e1gban",
+          "source": "24.hu",
+          "url": "https://24.hu/belfold/2026/03/20/andrej-babis-cpac-budapest-csehorszag",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Czech authorities probe warehouse fire in drone technology firm",
+          "source": "apnews.com",
+          "url": "https://apnews.com/article/czech-fire-warehouse-drones-lpp-arson-3fed52f223f3426d07056e0c56b2cfc0",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Anti-Israel group claims responsibility for blaze at Czech arms maker",
+          "source": "timesofisrael.com",
+          "url": "https://timesofisrael.com/anti-israel-group-claims-responsibility-for-blaze-at-czech-arms-maker",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://apnews.com/article/czech-fire-warehouse-drones-lpp-arson-3fed52f223f3426d07056e0c56b2cfc0",
+        "https://24.hu/belfold/2026/03/20/andrej-babis-cpac-budapest-csehorszag"
+      ]
+    },
+    {
+      "story_id": 2,
+      "headline": "Tens of thousands rally in Prague against Babi\u0161 government in largest protest since 2019",
+      "summary": "Massive anti-government demonstrations took place in Prague's Letn\u00e1 park, with protesters expressing concerns about democratic backsliding under Prime Minister Babi\u0161. The protests drew attendees from across the Czech Republic and marked the largest such demonstration since 2019.",
+      "actors_involved": [
+        "Babi\u0161",
         "ANO"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 23,
+      "source_count": 8,
       "sources": [
         "hvg.hu",
         "dw.com",
         "apnews.com",
         "reuters.com",
         "independent.co.uk",
-        "euronews.com",
-        "expats.cz",
-        "echo24.cz",
-        "forum24.cz",
-        "seznamzpravy.cz",
-        "aktualne.cz"
+        "pbs.org",
+        "expats.cz"
       ],
-      "date_range": "2026-03-21 to 2026-03-21",
+      "date_range": "2026-03-21",
       "articles": [
         {
           "title": "Vil\u00e1g: Nem j\u00f6tt Budapestre, ehelyett j\u00f3kora t\u00fcntet\u00e9sbe \u201eszaladt bele\" Babis Pr\u00e1g\u00e1ban",
@@ -56,160 +116,75 @@
           "source": "reuters.com",
           "url": "https://reuters.com/world/czechs-rally-countrys-largest-anti-government-protest-since-2019-2026-03-21",
           "date": "2026-03-21"
-        },
-        {
-          "title": "Czech Republic protests: Tens of thousands rally in Prague to 'defend democracy' from new government",
-          "source": "independent.co.uk",
-          "url": "https://independent.co.uk/news/world/europe/prague-protests-czech-andrej-babis-b2943194.html",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Major rally planned as Czech MPs mull 'foreign agent' law",
-          "source": "dw.com",
-          "url": "https://dw.com/en/major-rally-planned-as-czech-mps-mull-foreign-agent-law/a-76429630",
-          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://reuters.com/world/czechs-rally-countrys-largest-anti-government-protest-since-2019-2026-03-21",
-        "https://apnews.com/article/czech-anti-government-protest-babis-cd7ca6ff35aa4548118a1e6d981dbd20"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "Fire at Czech arms facility investigated as terrorism, prompts Babi\u0161 to cancel CPAC trip",
-      "summary": "A warehouse fire at LPP Holding's drone manufacturing facility in Pardubice on March 20 is being investigated as suspected terrorism after an anti-Israel group claimed responsibility. The incident prompted PM Babi\u0161 to cancel his planned CPAC appearance in Budapest and convene the National Security Council.",
-      "actors_involved": [
-        "Andrej Babi\u0161",
-        "BIS",
-        "Czech Armed Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 45,
-      "sources": [
-        "24.hu",
-        "hvg.hu",
-        "vasarnap.hu",
-        "ripost.hu",
-        "index.hu",
-        "telex.hu",
-        "hirado.hu",
-        "szeretlekmagyarorszag.hu",
-        "blikk.hu",
-        "apnews.com",
-        "reuters.com",
-        "timesofisrael.com",
-        "independent.co.uk",
-        "thehindu.com",
-        "rferl.org",
-        "kyivindependent.com",
-        "mezha.net"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Visszafordult Budapestr\u0151l Andrej Babi\u0161 cseh minisztereln\u00f6k, miut\u00e1n egy Izrael-ellenes csoport felgy\u00fajtott egy rakt\u00e1r\u00e9p\u00fcletet Csehorsz\u00e1gban",
-          "source": "24.hu",
-          "url": "https://24.hu/belfold/2026/03/20/andrej-babis-cpac-budapest-csehorszag",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Czech authorities probe warehouse fire in drone technology firm",
-          "source": "apnews.com",
-          "url": "https://apnews.com/article/czech-fire-warehouse-drones-lpp-arson-3fed52f223f3426d07056e0c56b2cfc0",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Anti-Israel group claims responsibility for blaze at Czech arms maker",
-          "source": "timesofisrael.com",
-          "url": "https://timesofisrael.com/anti-israel-group-claims-responsibility-for-blaze-at-czech-arms-maker",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Czechs investigate fire after reports of anti-Israel group claiming responsibility",
-          "source": "reuters.com",
-          "url": "https://reuters.com/world/czechs-investigate-fire-after-reports-anti-israel-group-claiming-responsibility-2026-03-20",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Fire At Czech Arms Producer With Ukraine Ties Investigated As Terror Attack",
-          "source": "rferl.org",
-          "url": "https://rferl.org/a/czech-fire-terror-drones-missiles-ukraine/33712180.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://apnews.com/article/czech-fire-warehouse-drones-lpp-arson-3fed52f223f3426d07056e0c56b2cfc0",
-        "https://reuters.com/world/czechs-investigate-fire-after-reports-anti-israel-group-claiming-responsibility-2026-03-20"
+        "https://apnews.com/article/czech-anti-government-protest-babis-cd7ca6ff35aa4548118a1e6d981dbd20",
+        "https://dw.com/en/mass-prague-rally-hits-babis-over-democracy-concerns/a-76470345"
       ]
     },
     {
       "story_id": 3,
-      "headline": "President Pavel visits Central Bohemia, criticizes government defense spending",
-      "summary": "President Petr Pavel conducted a two-day visit to Central Bohemia region March 18-19, meeting with mayors, visiting \u0160koda Auto, and holding public discussions in Nymburk. He used the visits to criticize the government's insufficient defense spending and express concerns about NATO commitments.",
+      "headline": "President Pavel conducts regional visits while criticizing government defense spending",
+      "summary": "President Petr Pavel visited the Central Bohemia region, including stops in Nymburk and meetings with local officials and citizens. During his visits, Pavel continued to criticize the government's planned defense budget as insufficient for NATO commitments.",
       "actors_involved": [
-        "Petr Pavel"
+        "Pavel"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 12,
       "sources": [
         "nymbursky.denik.cz",
+        "rakovnicky.denik.cz",
         "cnn.iprima.cz",
         "iboleslav.cz",
         "nasregion.cz",
         "ceskenoviny.cz",
-        "rakovnicky.denik.cz"
+        "mosteckoonline.cz",
+        "forum24.cz"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-03-19 to 2026-03-20",
       "articles": [
         {
           "title": "N\u00e1v\u0161t\u011bvy prezident\u016f v Nymburce. Zeman p\u0159ijel za komunisty a byl vyp\u00edsk\u00e1n",
           "source": "nymbursky.denik.cz",
           "url": "https://nymbursky.denik.cz/zpravy_region/navstevy-prezident-nymburk-zeman-havel-klaus-petr-pavel-minulost.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Prezident Petr Pavel dnes p\u0159ij\u00ed\u017ed\u00ed do Nymburka. Ve\u010der jej \u010dek\u00e1 beseda s m\u00edstn\u00edmi",
-          "source": "nymbursky.denik.cz",
-          "url": "https://nymbursky.denik.cz/zpravy_region/prezident-petr-pavel-setkani-s-obcany-debata-nymburk-zivy-prenos.html",
           "date": "2026-03-19"
         },
         {
           "title": "Pavel na n\u00e1v\u0161t\u011bv\u011b St\u0159edo\u010desk\u00e9ho kraje: Prezident si prohl\u00e9dne \u0160kodovku i st\u0159edov\u011bk\u00fd hrad",
           "source": "cnn.iprima.cz",
           "url": "https://cnn.iprima.cz/pavel-na-navsteve-stredoceskeho-kraje-prezident-si-prohledne-skodovku-i-stredoveky-hrad-507065",
-          "date": "2026-03-18"
+          "date": "2026-03-19"
         },
         {
-          "title": "Prezident Petr Pavel nav\u0161t\u00edvil Boleslav, prohl\u00e9dl si \u0160kodovku i fotbalov\u00fd stadion",
-          "source": "iboleslav.cz",
-          "url": "https://iboleslav.cz/mlada-boleslav/prezident-petr-pavel-navstivil-boleslav-prohledl-si-skodovku-i-fotbalovy-stadion/",
-          "date": "2026-03-19"
+          "title": "Pavel: \u010cR zaost\u00e1v\u00e1 za standardy ochrany p\u016fdy oproti t\u0159eba N\u011bmecku \u010di Rakousku",
+          "source": "ceskenoviny.cz",
+          "url": "https://www.ceskenoviny.cz/zpravy/2801287",
+          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
         "https://cnn.iprima.cz/pavel-na-navsteve-stredoceskeho-kraje-prezident-si-prohledne-skodovku-i-stredoveky-hrad-507065",
-        "https://nymbursky.denik.cz/zpravy_region/prezident-petr-pavel-setkani-s-obcany-debata-nymburk-zivy-prenos.html"
+        "https://www.ceskenoviny.cz/zpravy/2801287"
       ]
     },
     {
       "story_id": 4,
-      "headline": "Czech defense spending cuts draw US and NATO criticism",
-      "summary": "Czech President Pavel and US NATO Ambassador Matthew Whitaker criticized the Babi\u0161 government's 2026 budget for inadequate defense spending, with the US warning that Czech defense outlays may fall short of NATO's 2% GDP commitment. The government defended its spending as compliant but faces pressure from allies.",
+      "headline": "Dispute emerges over Czech NATO summit representation amid defense spending criticism",
+      "summary": "A political dispute developed between President Pavel and PM Babi\u0161 over who should represent Czech Republic at the July NATO summit in Turkey. This comes amid ongoing criticism from NATO allies about Czech defense spending falling short of commitments.",
       "actors_involved": [
-        "Petr Pavel",
-        "Andrej Babi\u0161",
-        "Czech Armed Forces"
+        "Babi\u0161",
+        "Pavel"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 18,
+      "source_count": 11,
       "sources": [
         "reuters.com",
+        "info.cz",
         "echo24.cz",
+        "aktuality.sk",
         "eurozpravy.cz",
-        "ekonomickydenik.cz",
-        "expats.cz",
-        "forum24.cz"
+        "ekonomickydenik.cz"
       ],
       "date_range": "2026-03-16 to 2026-03-20",
       "articles": [
@@ -220,226 +195,104 @@
           "date": "2026-03-16"
         },
         {
+          "title": "Babi\u0161 chce jet na summit NATO s Macinkou a Pavla nechat doma. Prezident se ohrazuje proti zm\u011bn\u011b zvyklost\u00ed",
+          "source": "echo24.cz",
+          "url": "https://echo24.cz/a/HKGAc/zpravy-domaci-spor-summit-nato-babis-macinka-pavel-vydaje-na-obranu",
+          "date": "2026-03-19"
+        },
+        {
           "title": "Czech president signs 2026 budget despite worries over NATO defence spending commitments",
           "source": "reuters.com",
           "url": "https://reuters.com/business/aerospace-defense/czech-president-signs-2026-budget-despite-worries-over-nato-defence-spending-2026-03-20",
           "date": "2026-03-20"
-        },
-        {
-          "title": "Co se po\u010d\u00edt\u00e1 do v\u00fddaj\u016f na obranu: Metodika NATO se zm\u011bnila, kone\u010dn\u00e9 slovo m\u00e1 alian\u010dn\u00ed centr\u00e1la",
-          "source": "echo24.cz",
-          "url": "https://m.echo24.cz/a/HFRwQ/zpravy-domaci-velvyslanec-nato-kritika-vydaju-zavazek-ctime-zuna-uzna-aliance-vydaje",
-          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://reuters.com/business/czech-president-adds-criticism-governments-defence-spending-cuts-2026-03-16",
-        "https://reuters.com/business/aerospace-defense/czech-president-signs-2026-budget-despite-worries-over-nato-defence-spending-2026-03-20"
+        "https://echo24.cz/a/HKGAc/zpravy-domaci-spor-summit-nato-babis-macinka-pavel-vydaje-na-obranu"
       ]
     },
     {
       "story_id": 5,
-      "headline": "Babi\u0161 announces he will attend NATO summit instead of President Pavel",
-      "summary": "PM Babi\u0161 told Czech Television he plans to attend the July NATO summit in Ankara instead of President Pavel, breaking with traditional practice. Babi\u0161 said he could better explain Czech defense spending decisions, while Pavel expressed surprise at not being consulted about the change.",
-      "actors_involved": [
-        "Andrej Babi\u0161",
-        "Petr Pavel"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 8,
-      "sources": [
-        "echo24.cz",
-        "eurozpravy.cz",
-        "forum24.cz",
-        "aktuality.sk",
-        "podcasty.hn.cz"
-      ],
-      "date_range": "2026-03-18 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Babi\u0161 chce jet na summit NATO s Macinkou a Pavla nechat doma. Prezident se ohrazuje proti zm\u011bn\u011b zvyklost\u00ed",
-          "source": "echo24.cz",
-          "url": "https://m.echo24.cz/a/HKGAc/zpravy-domaci-spor-summit-nato-babis-macinka-pavel-vydaje-na-obranu",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Babi\u0161 asi dok\u00e1\u017ee v NATO l\u00e9pe vysv\u011btlit, pro\u010d \u010cesko neinvestuje do obrany, poznamenal ironicky Pavel",
-          "source": "eurozpravy.cz",
-          "url": "https://eurozpravy.cz/domaci/babis-asi-dokaze-v-nato-lepe-vysvetlit-proc-cesko-neinvestuje-do-obranu-poznamenal-ironicky-pavel.jm3rqioy",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Ten bude sed\u011bt doma! V\u00edme, co je v pozad\u00ed sporu prezidenta a premi\u00e9ra o summit NATO",
-          "source": "podcasty.hn.cz",
-          "url": "https://podcasty.hn.cz/c1-67857710-ten-bude-sedet-doma-vime-co-je-v-pozadi-sporu-prezidenta-a-premiera-o-summit-nato",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://m.echo24.cz/a/HKGAc/zpravy-domaci-spor-summit-nato-babis-macinka-pavel-vydaje-na-obranu",
-        "https://eurozpravy.cz/domaci/babis-asi-dokaze-v-nato-lepe-vysvetlit-proc-cesko-neinvestuje-do-obranu-poznamenal-ironicky-pavel.jm3rqioy"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Czech fuel prices rise due to Middle East conflict",
-      "summary": "Diesel and gasoline prices in Czech Republic reached multi-year highs following escalation in the Middle East conflict between Israel/US and Iran. Government officials discussed potential measures to cap fuel prices if they exceed regional levels.",
-      "actors_involved": [
-        "Tomio Okamura",
-        "SPD"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 6,
-      "sources": [
-        "expats.cz",
-        "novinky.cz",
-        "ceskenoviny.cz",
-        "eurozpravy.cz"
-      ],
-      "date_range": "2026-03-15 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Czech fuel prices continue to rise in wake of Middle East conflict",
-          "source": "expats.cz",
-          "url": "https://expats.cz/czech-news/article/czech-fuel-prices-continue-to-rise-in-wake-of-middle-east-conflict",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Okamura: \u010cesko p\u0159istoup\u00ed k opat\u0159en\u00edm, kdyby benzin a nafta byly dra\u017e\u0161\u00ed ne\u017e u soused\u016f",
-          "source": "novinky.cz",
-          "url": "https://www.novinky.cz/clanek/ekonomika-okamura-cesko-pristoupi-k-opatrenim-kdyby-benzin-a-nafta-byly-drazsi-nez-u-sousedu-40568004",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Opat\u0159en\u00ed u paliv by byla na m\u00edst\u011b u cen kolem 50 K\u010d/l, \u0159ekl Radim Fiala",
-          "source": "ceskenoviny.cz",
-          "url": "https://ceskenoviny.cz/zpravy/2802374",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://expats.cz/czech-news/article/czech-fuel-prices-continue-to-rise-in-wake-of-middle-east-conflict",
-        "https://www.novinky.cz/clanek/ekonomika-okamura-cesko-pristoupi-k-opatrenim-kdyby-benzin-a-nafta-byly-drazsi-nez-u-sousedu-40568004"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Czech military cooperation with Ukraine and NATO allies continues",
-      "summary": "Czech Armed Forces Chief Karel \u0158ehka announced that Czech instructors have trained over 9,500 Ukrainian troops. Czech Republic also signed defense cooperation agreements with Hungary and participated in allied cyber exercises, while supporting Ukraine aid initiatives.",
+      "headline": "Czech military cooperation developments including F-35 program and Ukrainian training",
+      "summary": "Multiple defense cooperation announcements including Lockheed Martin finalizing industrial agreements for Czech F-35 program and reports that Czech instructors have helped train over 9,500 Ukrainian troops. Czech military chief also provided interviews on security cooperation.",
       "actors_involved": [
         "Czech Armed Forces"
       ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "signal_category_hint": "security_defense",
+      "source_count": 9,
       "sources": [
+        "airforce-technology.com",
+        "defence-industry.eu",
         "ukrinform.net",
         "militaeraktuell.at",
-        "dvidshub.net",
-        "defence-industry.eu",
-        "airforce-technology.com",
-        "marketscreener.com"
+        "marketscreener.com",
+        "dvidshub.net"
       ],
-      "date_range": "2026-03-16 to 2026-03-20",
+      "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
+        {
+          "title": "Lockheed Martin signs all industrial projects in Czech F-35 programme",
+          "source": "airforce-technology.com",
+          "url": "https://airforce-technology.com/news/czech-f35-programme-lockheed-martin",
+          "date": "2026-03-18"
+        },
         {
           "title": "Czech instructors help train over 9,500 Ukrainian troops",
           "source": "ukrinform.net",
           "url": "https://ukrinform.net/rubric-ato/4103086-czech-instructors-help-train-over-9500-ukrainian-troops.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Karel \u0158ehka, Chief of the General Staff of the Czech Armed Forces",
-          "source": "ukrinform.net",
-          "url": "https://www.ukrinform.net/rubric-ato/4103070-karel-rehka-chief-of-the-general-staff-of-the-czech-armed-forces.html",
           "date": "2026-03-18"
         },
         {
-          "title": "Czech Republic and Hungary strengthen military partnership",
-          "source": "militaeraktuell.at",
-          "url": "https://militaeraktuell.at/en/czech-republic-and-hungary-strengthen-military-partnership/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Lockheed Martin finalizes 11 industrial agreements for Czech F-35 program",
-          "source": "defence-industry.eu",
-          "url": "https://defence-industry.eu/lockheed-martin-finalizes-11-industrial-agreements-for-czech-f-35-program",
-          "date": "2026-03-19"
+          "title": "From Partnership to Power: U.S., Czech, and Allied Cyber Forces Strengthen Collective Defense in Cyberspace",
+          "source": "dvidshub.net",
+          "url": "https://www.dvidshub.net/news/560558/partnership-power-us-czech-and-allied-cyber-forces-strengthen-collective-defense-cyberspace",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://ukrinform.net/rubric-ato/4103086-czech-instructors-help-train-over-9500-ukrainian-troops.html",
-        "https://militaeraktuell.at/en/czech-republic-and-hungary-strengthen-military-partnership/"
+        "https://airforce-technology.com/news/czech-f35-programme-lockheed-martin",
+        "https://ukrinform.net/rubric-ato/4103086-czech-instructors-help-train-over-9500-ukrainian-troops.html"
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Tomio Okamura faces legal proceedings while serving as Parliament Speaker",
-      "summary": "Parliament Speaker Tomio Okamura is involved in ongoing court proceedings related to campaign materials from previous elections, with court excluding him from hearings while maintaining proceedings against his SPD party. He also faced criticism for parliamentary reform proposals.",
+      "story_id": 6,
+      "headline": "Czech Republic signs cooperation agreement with Texas",
+      "summary": "Deputy PM Karel Havl\u00ed\u010dek signed a historic cooperation deal with Texas and opened a Czech House in Austin, highlighting business ties and the Czech-American community in Texas. The visit also included discussions with Lockheed Martin about F-35 deliveries.",
       "actors_involved": [
-        "Tomio Okamura",
-        "SPD"
+        "Czech Armed Forces"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 11,
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
       "sources": [
-        "ceska-justice.cz",
-        "parlamentnilisty.cz",
-        "irozhlas.cz",
-        "seznamzpravy.cz",
-        "info.cz",
-        "extra.cz"
+        "expats.cz"
       ],
-      "date_range": "2026-03-14 to 2026-03-20",
+      "date_range": "2026-03-18",
       "articles": [
         {
-          "title": "Pokuta pro SPD za plak\u00e1ty? Okamuru soud z projedn\u00e1n\u00ed vylou\u010dil",
-          "source": "ceska-justice.cz",
-          "url": "https://ceska-justice.cz/2026/03/pokuta-spd-plakaty-okamuru-soud-vyloucil",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "T\u00fdden\u00edk iROZHLASu: Moravec zah\u00fdbal \u010ceskou televiz\u00ed, Okamura \u0160ichta\u0159ovou a Babi\u0161 Vystr\u010dilem",
-          "source": "irozhlas.cz",
-          "url": "https://www.irozhlas.cz/zpravy-domov/tydenik-irozhlasu-moravec-zahybal-ceskou-televizi-okamura-sichtarovou-a-babis_2603140800_lar",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Okamura: Z\u00e1kon o financov\u00e1n\u00ed neziskov\u00fdch organizac\u00ed vznikne na ministerstvu",
-          "source": "seznamzpravy.cz",
-          "url": "https://www.seznamzpravy.cz/clanek/domaci-politika-okamura-zakon-o-financovani-neziskovych-organizaci-vznikne-na-ministerstvu-301726",
+          "title": "More than kolaches: Czechia signs historic cooperation deal with Texas",
+          "source": "expats.cz",
+          "url": "https://expats.cz/czech-news/article/more-than-kolaches-czechia-signs-historic-cooperation-deal-with-texas",
           "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://ceska-justice.cz/2026/03/pokuta-spd-plakaty-okamuru-soud-vyloucil",
-        "https://www.irozhlas.cz/zpravy-domov/tydenik-irozhlasu-moravec-zahybal-ceskou-televizi-okamura-sichtarovou-a-babis_2603140800_lar"
+        "https://expats.cz/czech-news/article/more-than-kolaches-czechia-signs-historic-cooperation-deal-with-texas"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "President Pavel meets with PM Babi\u0161 on state budget",
-      "source": "forum24.cz",
-      "url": "https://www.forum24.cz/prezident-pavel-prijal-premiera-babise-rozpocet-podepise-v-patek",
-      "signal_category_hint": "economic_tech"
+      "headline": "Tomio Okamura faces legal proceedings over campaign posters",
+      "source": "ceska-justice.cz",
+      "url": "https://ceska-justice.cz/2026/03/pokuta-spd-plakaty-okamuru-soud-vyloucil",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "President Pavel criticizes government budget for insufficient defense spending",
-      "source": "mosteckoonline.cz",
-      "url": "https://www.mosteckoonline.cz/novinky/pavel-nebude-rozpocet-vetovat-spokojen-ale-neni-priznala-schillerova/",
-      "signal_category_hint": "security_defense"
-    },
-    {
-      "headline": "Czech Republic joins international effort to protect Strait of Hormuz shipping",
+      "headline": "Czech fuel prices rise due to Middle East conflict",
       "source": "expats.cz",
-      "url": "https://expats.cz/czech-news/article/czechia-joins-international-effort-to-protect-shipping-in-strait-of-hormuz",
-      "signal_category_hint": "alignment_diplomatic"
-    },
-    {
-      "headline": "Czech Republic supports EU initiative to ban Russian military from entering EU",
-      "source": "oreanda-news.com",
-      "url": "https://oreanda-news.com/en/v_mire/czech-republic-supports-the-initiative-to-ban-russian-military-from-entering-the-/article1587673",
-      "signal_category_hint": "alignment_diplomatic"
+      "url": "https://expats.cz/czech-news/article/czech-fuel-prices-continue-to-rise-in-wake-of-middle-east-conflict",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }

@@ -3,37 +3,34 @@
   "code": "br",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 453,
-  "stories_identified": 23,
+  "search_results_total": 444,
+  "stories_identified": 13,
   "off_topic_filtered": 89,
-  "noise_summary": "89 off-topic results filtered: 34 sports coverage (Vin\u00edcius Lira injury at Santos FC, various football matches and transfers), 18 international news not directly Brazil-related, 12 entertainment/celebrity content, 11 human interest stories, 8 technology/gaming content, 6 general business/economic content not government-related.",
+  "noise_summary": "89 off-topic results filtered: 31 sports (Vin\u00edcius Lira injury, Santos FC, football transfers), 23 international news not directly related to Brazil (Iran-US war, European politics, BRICS general coverage), 18 business/economic news without government connection, 9 entertainment/lifestyle content, 8 technical articles about unrelated topics",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Haddad deixa Minist\u00e9rio da Fazenda para disputar governo de S\u00e3o Paulo",
-      "summary": "Fernando Haddad confirmou sa\u00edda da pasta para ser pr\u00e9-candidato do PT ao governo paulista contra Tarc\u00edsio de Freitas. Dario Durigan foi nomeado como substituto.",
+      "headline": "Fernando Haddad leaves Finance Ministry to run for S\u00e3o Paulo governor, replaced by Dario Durigan",
+      "summary": "Finance Minister Fernando Haddad officially left his position to launch his pre-candidacy for S\u00e3o Paulo governor, with President Lula announcing current Secretary-Executive Dario Durigan as his replacement. Haddad will face current Governor Tarc\u00edsio de Freitas in what appears to be a rematch of 2022.",
       "actors_involved": [
         "Lula",
-        "PT"
+        "Fernando Haddad"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 34,
+      "source_count": 47,
       "sources": [
         "g1.globo.com",
         "estadao.com.br",
-        "www1.folha.uol.com.br",
-        "cnnbrasil.com.br",
         "valor.globo.com",
+        "cnn.com",
+        "folha.uol.com.br",
         "gazetadopovo.com.br",
-        "poder360.com.br",
-        "infomoney.com.br",
-        "terra.com.br",
-        "revistaoeste.com",
-        "cartacapital.com.br",
         "metropoles.com",
-        "economia.uol.com.br"
+        "infomoney.com.br",
+        "em.com.br",
+        "veja.abril.com.br"
       ],
-      "date_range": "2026-03-17 to 2026-03-20",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
           "title": "PT confirma pr\u00e9-candidatura de Haddad ao governo de SP",
@@ -52,131 +49,45 @@
           "source": "economia.uol.com.br",
           "url": "https://economia.uol.com.br/noticias/redacao/2026/03/19/fernando-haddad---saida-do-ministerio-da-fazenda.ghtm",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Lula anuncia Dario Durigan como substituto de Fernando Haddad no Minist\u00e9rio da Fazenda",
+          "source": "valor.globo.com",
+          "url": "https://valor.globo.com/politica/noticia/2026/03/19/lula-anuncia-dario-durigan-como-substituto-de-fernando-haddad-no-ministerio-da-fazenda.ghtml",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/2026/03/19/lula-anuncia-pre-candidatura-de-haddad-ao-governo-de-sp.ghtml",
-        "https://www.estadao.com.br/economia/balanco-fernando-haddad-ministerio-fazenda/"
+        "https://g1.globo.com/politica/noticia/2026/03/20/dario-durigan-e-nomeado-como-novo-ministro-da-fazenda.ghtml"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Crise no STF com caso Master envolve ministros Toffoli e Moraes",
-      "summary": "Esc\u00e2ndalo do Banco Master exp\u00f5e conex\u00f5es de ministros do STF com banqueiro Daniel Vorcaro, gerando tens\u00f5es internas na corte e especula\u00e7\u00f5es sobre ren\u00fancia de Toffoli.",
-      "actors_involved": [
-        "STF"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 26,
-      "sources": [
-        "oglobo.globo.com",
-        "estadao.com.br",
-        "cnnbrasil.com.br",
-        "gazetadopovo.com.br",
-        "veja.abril.com.br",
-        "oantagonista.com.br",
-        "crusoe.com.br",
-        "noticias.uol.com.br",
-        "em.com.br",
-        "revistaforum.com.br"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Crise do Master aumenta inc\u00f4modo de Lula com Moraes",
-          "source": "gazetadopovo.com.br",
-          "url": "https://www.gazetadopovo.com.br/sem-rodeios/crise-do-master-aumenta-incomodo-de-lula-com-moraes/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Ala do STF v\u00ea ren\u00fancia de Toffoli como 'inevit\u00e1vel'",
-          "source": "cnnbrasil.com.br",
-          "url": "https://cnnbrasil.com.br/blogs/matheus-teixeira/politica/ala-do-stf-ve-renuncia-de-toffoli-como-inevitavel",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Briga intestina no STF",
-          "source": "oglobo.globo.com",
-          "url": "https://oglobo.globo.com/blogs/merval-pereira/coluna/2026/03/briga-intestina-no-stf.ghtml",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.estadao.com.br/politica/vera-rosa/vorcaro-ameaca-atingir-pt-e-governo-lula-em-delacao-premiada-sobre-conexoes-do-master/",
-        "https://cnnbrasil.com.br/blogs/matheus-teixeira/politica/ala-do-stf-ve-renuncia-de-toffoli-como-inevitavel"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Bolsonaro internado na UTI com pneumonia bacteriana enquanto Fl\u00e1vio lidera pesquisas",
-      "summary": "Ex-presidente foi internado com pneumonia bilateral grave, gerando pedidos de pris\u00e3o domiciliar. Paralelamente, filho Fl\u00e1vio aparece \u00e0 frente nas pesquisas presidenciais.",
-      "actors_involved": [
-        "Jair Bolsonaro",
-        "PL"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 31,
-      "sources": [
-        "g1.globo.com",
-        "oglobo.globo.com",
-        "cnnbrasil.com.br",
-        "em.com.br",
-        "noticias.uol.com.br",
-        "metropoles.com",
-        "gazetadopovo.com.br",
-        "infomoney.com.br",
-        "oantagonista.com.br",
-        "veja.abril.com.br",
-        "estadao.com.br"
-      ],
-      "date_range": "2026-03-13 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Bolsonaro apresenta melhora, mas segue na UTI com pneumonia bacteriana",
-          "source": "oglobo.globo.com",
-          "url": "https://oglobo.globo.com/politica/noticia/2026/03/16/bolsonaro-boletim.ghtml",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Fl\u00e1vio Bolsonaro lidera contra Lula em mais um estado do Sudeste",
-          "source": "veja.abril.com.br",
-          "url": "https://veja.abril.com.br/brasil/flavio-bolsonaro-lidera-contra-lula-em-mais-um-estado-do-sudeste-diz-real-time-big-data/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Ministros do STF defendem pris\u00e3o domiciliar para Bolsonaro",
-          "source": "g1.globo.com",
-          "url": "https://g1.globo.com/politica/blog/andreia-sadi/post/2026/03/18/ministros-do-stf-prisao-domiciliar-para-bolsonaro.ghtml",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://oglobo.globo.com/politica/noticia/2026/03/16/bolsonaro-boletim.ghtml",
-        "https://veja.abril.com.br/brasil/flavio-bolsonaro-lidera-contra-lula-em-mais-um-estado-do-sudeste-diz-real-time-big-data/"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Lula anuncia reestatiza\u00e7\u00e3o de refinaria e critica privatiza\u00e7\u00f5es de Bolsonaro",
-      "summary": "Presidente afirmou que Petrobras vai recomprar refinaria de Mataripe vendida na gest\u00e3o anterior e criticou privatiza\u00e7\u00e3o da BR Distribuidora durante agenda em Minas Gerais.",
+      "headline": "Lula announces plans for new state fuel distributor and Petrobras re-nationalization initiatives amid rising fuel prices",
+      "summary": "President Lula outlined plans to create a new state-owned fuel distribution company and announced intentions to re-nationalize the Landulpho Alves refinery previously privatized under Bolsonaro. The announcements came amid rising fuel costs due to Middle East conflicts and trucker strike threats.",
       "actors_involved": [
         "Lula",
         "Petrobras"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "source_count": 31,
       "sources": [
-        "em.com.br",
         "infomoney.com.br",
-        "valor.globo.com",
+        "em.com.br",
         "g1.globo.com",
-        "cnnbrasil.com.br",
-        "poder360.com.br",
-        "extra.globo.com",
-        "plantaonews.com.br"
+        "estadao.com.br",
+        "cnn.com",
+        "poder360.com.br"
       ],
-      "date_range": "2026-03-20 to 2026-03-21",
+      "date_range": "2026-03-07 to 2026-03-21",
       "articles": [
+        {
+          "title": "Os planos de Lula sobre nova estatal para distribui\u00e7\u00e3o de combust\u00edveis",
+          "source": "infomoney.com.br",
+          "url": "https://www.infomoney.com.br/politica/os-planos-de-lula-sobre-nova-estatal-para-distribuicao-de-combustiveis/",
+          "date": "2026-03-07"
+        },
         {
           "title": "Em Betim, Lula diz que vai reestatizar refinaria privatizada por Bolsonaro",
           "source": "em.com.br",
@@ -184,265 +95,166 @@
           "date": "2026-03-20"
         },
         {
-          "title": "Lula diz que 'pode demorar', mas Petrobras vai recomprar refinaria de Mataripe",
-          "source": "valor.globo.com",
-          "url": "https://valor.globo.com/empresas/noticia/2026/03/20/lula-diz-que-petrobras-vai-recomprar-refinaria-de-mataripe-na-bahia.ghtml",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Lula anuncia a retomada de investimentos da Petrobras em Minas Gerais",
-          "source": "em.com.br",
-          "url": "https://www.em.com.br/politica/2026/03/7380381-lula-anuncia-a-retomada-de-investimentos-da-petrobras-em-minas-gerais.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.em.com.br/politica/2026/03/7380628-em-betim-lula-diz-que-vai-reestatizar-refinaria-privatizada-por-bolsonaro.html",
-        "https://valor.globo.com/empresas/noticia/2026/03/20/lula-diz-que-petrobras-vai-recomprar-refinaria-de-mataripe-na-bahia.ghtml"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Crise dos combust\u00edveis leva governo a criar subs\u00eddios e pressionar distribuidores",
-      "summary": "Alta dos pre\u00e7os do diesel e gasolina devido \u00e0 guerra no Ir\u00e3 levou o governo a zerar impostos federais e criar subs\u00eddios, enquanto ANP pressiona Petrobras por maior oferta.",
-      "actors_involved": [
-        "Lula",
-        "Petrobras"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 29,
-      "sources": [
-        "g1.globo.com",
-        "cnnbrasil.com.br",
-        "valor.globo.com",
-        "em.com.br",
-        "infomoney.com.br",
-        "oglobo.globo.com",
-        "agenciabrasil.ebc.com.br",
-        "moneytimes.com.br",
-        "newsrondonia.com.br"
-      ],
-      "date_range": "2026-03-17 to 2026-03-21",
-      "articles": [
-        {
           "title": "Lula diz que pre\u00e7o do combust\u00edvel subiu porque tem 'gente que gosta de tirar proveito da desgra\u00e7a'",
           "source": "g1.globo.com",
           "url": "https://g1.globo.com/politica/noticia/2026/03/18/lula-aumento-combustivel.ghtml",
           "date": "2026-03-18"
-        },
-        {
-          "title": "ANP manda Petrobras ofertar diesel e gasolina ap\u00f3s cancelamento de leil\u00f5es",
-          "source": "infomoney.com.br",
-          "url": "https://www.infomoney.com.br/mercados/anp-manda-petrobras-ofertar-diesel-e-gasolina-apos-cancelamento-de-leiloes/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Petrobras reduz venda de combust\u00edvel em 20%, dizem fontes",
-          "source": "cnnbrasil.com.br",
-          "url": "https://www.cnnbrasil.com.br/infra/petrobras-reduz-venda-de-combustivel-em-20-mercado-teme-desabastecimento/",
-          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://g1.globo.com/politica/noticia/2026/03/18/lula-aumento-combustivel.ghtml",
-        "https://valor.globo.com/empresas/noticia/2026/03/17/distribuidoras-estao-preocupadas-com-desabastecimento-apos-petrobras-cancelar-leiloes-de-diesel-e-gasolina.ghtml"
+        "https://www.infomoney.com.br/politica/os-planos-de-lula-sobre-nova-estatal-para-distribuicao-de-combustiveis/",
+        "https://www.em.com.br/politica/2026/03/7380628-em-betim-lula-diz-que-vai-reestatizar-refinaria-privatizada-por-bolsonaro.html"
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Lula participa de c\u00fapula da Celac na Col\u00f4mbia e critica interven\u00e7\u00f5es americanas",
-      "summary": "Presidente viajou para Bogot\u00e1 para participar da reuni\u00e3o da Celac com baixa ades\u00e3o de l\u00edderes e criticou uso da for\u00e7a por na\u00e7\u00f5es ricas para invadir outros pa\u00edses.",
+      "story_id": 3,
+      "headline": "Lula participates in CELAC summit in Colombia, criticizes US interventions in Latin America",
+      "summary": "President Lula traveled to Bogot\u00e1 to participate in the Community of Latin American and Caribbean States summit, where he criticized US invasions and military interventions while defending regional sovereignty. The summit had low attendance with only five heads of state confirming presence.",
       "actors_involved": [
         "Lula"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 18,
       "sources": [
         "g1.globo.com",
-        "metropoles.com",
-        "cnnbrasil.com.br",
+        "cnn.com",
         "em.com.br",
+        "metropoles.com",
         "estadao.com.br",
-        "aljazeera.com",
         "agenciabrasil.ebc.com.br",
-        "cartacapital.com.br"
+        "aljazeera.com"
       ],
-      "date_range": "2026-03-20 to 2026-03-21",
+      "date_range": "2026-03-21 to 2026-03-22",
       "articles": [
         {
-          "title": "Lula embarca para reuni\u00e3o da Celac, que tenta protagonismo em meio aos movimentos de Trump",
+          "title": "Lula embarca para reuni\u00e3o da Celac, que tenta protagonismo em meio aos movimentos de Trump na Am\u00e9rica Latina e Caribe",
           "source": "g1.globo.com",
           "url": "https://g1.globo.com/politica/noticia/2026/03/21/lula-embarca-para-reuniao-da-celac-que-tenta-protagonismo-em-meio-aos-movimentos-de-trump-na-america-latina-e-caribe.ghtml",
           "date": "2026-03-21"
         },
         {
-          "title": "'They want to colonise us': Brazil's Lula warns of foreign interference",
-          "source": "aljazeera.com",
-          "url": "https://aljazeera.com/news/2026/3/21/they-want-to-colonise-us-brazils-lula-warns-of-foreign-interference",
-          "date": "2026-03-21"
+          "title": "Com baixa ades\u00e3o de l\u00edderes, Lula participa de c\u00fapula da Celac na Col\u00f4mbia",
+          "source": "cnn.com",
+          "url": "https://cnnbrasil.com.br/politica/com-baixa-adesao-de-lideres-lula-participa-de-cupula-da-celac-na-colombia",
+          "date": "2026-03-20"
         },
         {
-          "title": "Na Col\u00f4mbia, Lula critica guerras e faz discurso de coopera\u00e7\u00e3o com a \u00c1frica",
-          "source": "cnnbrasil.com.br",
-          "url": "https://cnnbrasil.com.br/internacional/na-colombia-lula-critica-guerras-e-faz-discurso-de-cooperacao-com-a-africa",
+          "title": "Lula critica uso da for\u00e7a por na\u00e7\u00f5es ricas para invadir outros pa\u00edses",
+          "source": "agenciabrasil.ebc.com.br",
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-03/lula-critica-uso-da-forca-por-nacoes-ricas-para-invadir-outros-paises",
           "date": "2026-03-21"
         }
       ],
       "representative_urls": [
         "https://g1.globo.com/politica/noticia/2026/03/21/lula-embarca-para-reuniao-da-celac-que-tenta-protagonismo-em-meio-aos-movimentos-de-trump-na-america-latina-e-caribe.ghtml",
-        "https://aljazeera.com/news/2026/3/21/they-want-to-colonise-us-brazils-lula-warns-of-foreign-interference"
+        "https://agenciabrasil.ebc.com.br/politica/noticia/2026-03/lula-critica-uso-da-forca-por-nacoes-ricas-para-invadir-outros-paises"
       ]
     },
     {
-      "story_id": 7,
-      "headline": "Arthur Lira anuncia pr\u00e9-candidatura ao Senado por Alagoas",
-      "summary": "Ex-presidente da C\u00e2mara lan\u00e7ou candidatura ao Senado em evento sem presen\u00e7a do prefeito de Macei\u00f3 JHC, evidenciando divis\u00f5es na direita alagoana.",
+      "story_id": 4,
+      "headline": "Supreme Court crisis deepens over Master Bank scandal involving Ministers Toffoli and Moraes",
+      "summary": "The STF faces its worst crisis as the Master Bank scandal exposes financial connections between bank owner Daniel Vorcaro and Supreme Court ministers Dias Toffoli and Alexandre de Moraes. Reports suggest Minister Toffoli may resign, while government seeks to distance itself from the court.",
       "actors_involved": [
-        "Arthur Lira"
+        "STF",
+        "Lula"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 13,
+      "source_count": 29,
       "sources": [
-        "veja.abril.com.br",
-        "poder360.com.br",
         "gazetadopovo.com.br",
-        "cartacapital.com.br",
-        "www1.folha.uol.com.br",
-        "cnnbrasil.com.br",
-        "tnh1.com.br",
-        "alagoas24horas.com.br"
+        "revistaforum.com.br",
+        "oglobo.globo.com",
+        "oantagonista.com.br",
+        "estadao.com.br",
+        "cnn.com",
+        "g1.globo.com"
       ],
-      "date_range": "2026-03-17 to 2026-03-21",
+      "date_range": "2026-03-01 to 2026-03-21",
       "articles": [
         {
-          "title": "Arthur Lira anuncia pr\u00e9-candidatura ao Senado por Alagoas",
-          "source": "poder360.com.br",
-          "url": "https://www.poder360.com.br/poder-eleicoes/arthur-lira-anuncia-pre-candidatura-ao-senado-por-alagoas/",
+          "title": "Crise do Master aumenta inc\u00f4modo de Lula com Moraes",
+          "source": "gazetadopovo.com.br",
+          "url": "https://www.gazetadopovo.com.br/sem-rodeios/crise-do-master-aumenta-incomodo-de-lula-com-moraes/",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Master: GloboNews usa PowerPoint com graves distor\u00e7\u00f5es para atacar Lula e PT",
+          "source": "revistaforum.com.br",
+          "url": "https://revistaforum.com.br/politica/master-globonews-usa-powerpoint-com-graves-distorcoes-para-atacar-lula-e-pt/",
           "date": "2026-03-20"
         },
         {
-          "title": "O an\u00fancio de Arthur Lira que refor\u00e7a a dif\u00edcil vida de Lula em Alagoas",
-          "source": "veja.abril.com.br",
-          "url": "https://veja.abril.com.br/brasil/o-anuncio-de-arthur-lira-que-reforca-a-dificil-vida-de-lula-em-alagoas/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sem JHC, Lira se lan\u00e7a ao Senado e confirma o filho na disputa pela C\u00e2mara",
-          "source": "cartacapital.com.br",
-          "url": "https://www.cartacapital.com.br/politica/sem-jhc-lira-se-lanca-ao-senado-e-confirma-o-filho-na-disputa-pela-camara/",
-          "date": "2026-03-20"
+          "title": "Governo busca se afastar do STF para evitar desgaste em caso Master",
+          "source": "oglobo.globo.com",
+          "url": "https://oglobo.globo.com/politica/noticia/2026/03/17/governo-busca-se-afastar-do-stf-para-evitar-desgaste-em-caso-master.ghtml",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://poder360.com.br/poder-eleicoes/arthur-lira-anuncia-pre-candidatura-ao-senado-por-alagoas/",
-        "https://veja.abril.com.br/brasil/o-anuncio-de-arthur-lira-que-reforca-a-dificil-vida-de-lula-em-alagoas/"
+        "https://www.gazetadopovo.com.br/sem-rodeios/crise-do-master-aumenta-incomodo-de-lula-com-moraes/",
+        "https://oglobo.globo.com/politica/noticia/2026/03/17/governo-busca-se-afastar-do-stf-para-evitar-desgaste-em-caso-master.ghtml"
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Investiga\u00e7\u00e3o sobre Lulinha no esc\u00e2ndalo do INSS gera tens\u00f5es no PT",
-      "summary": "Pol\u00edcia Federal suspeita que filho de Lula recebeu propina via empres\u00e1ria investigada no esquema de desvios no INSS, causando mobiliza\u00e7\u00e3o para sepultar CPI.",
+      "story_id": 5,
+      "headline": "Investigations continue into Lula's son 'Lulinha' regarding alleged INSS fraud connections",
+      "summary": "Federal Police investigations into social security fraud involve President Lula's son F\u00e1bio Luis 'Lulinha' and businesswoman Roberta Luchsinger. Defense argues PF made errors in reports suggesting money laundering through jewelry purchases, while Lulinha opened a shell company in Spain during investigations.",
       "actors_involved": [
         "Lula"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 8,
+      "source_count": 12,
       "sources": [
         "g1.globo.com",
+        "folha.uol.com.br",
         "metropoles.com",
-        "www1.folha.uol.com.br",
         "oglobo.globo.com"
       ],
       "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
         {
-          "title": "Defesa de empres\u00e1ria amiga de Lulinha diz ao STF que PF errou em relat\u00f3rio",
+          "title": "Defesa de empres\u00e1ria amiga de Lulinha diz ao STF que PF errou em relat\u00f3rio que traz suspeita de propina via ag\u00eancia de viagens",
           "source": "g1.globo.com",
           "url": "https://g1.globo.com/politica/noticia/2026/03/19/defesa-de-empresaria-amiga-de-lulinha-diz-ao-stf-que-pf-errou-em-relatorio-que-traz-suspeita-de-propina-via-agencia-de-viagens.ghtml",
           "date": "2026-03-19"
         },
         {
+          "title": "Lulinha abre empresa em Madri em meio ao caso INSS",
+          "source": "folha.uol.com.br",
+          "url": "https://www1.folha.uol.com.br/poder/2026/03/lulinha-abre-empresa-de-gaveta-na-espanha-em-meio-a-investigacoes-do-inss.shtml",
+          "date": "2026-03-17"
+        },
+        {
           "title": "Amiga de Lulinha gasta R$ 474,5 mil em joias, e PF suspeita de lavagem",
           "source": "metropoles.com",
           "url": "https://metropoles.com/colunas/tacio-lorran/amiga-de-lulinha-gasta-r-4745-mil-em-joias-e-pf-suspeita-de-lavagem",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Caso Master e Lulinha levam PT e Centr\u00e3o a atuarem para sepultar CPI do INSS",
-          "source": "oglobo.globo.com",
-          "url": "https://oglobo.globo.com/politica/noticia/2026/03/19/caso-master-e-lulinha-levam-pt-e-centrao-a-atuarem-para-sepultar-cpi-do-inss.ghtml",
-          "date": "2026-03-19"
+          "date": "2026-03-15"
         }
       ],
       "representative_urls": [
         "https://g1.globo.com/politica/noticia/2026/03/19/defesa-de-empresaria-amiga-de-lulinha-diz-ao-stf-que-pf-errou-em-relatorio-que-traz-suspeita-de-propina-via-agencia-de-viagens.ghtml",
-        "https://oglobo.globo.com/politica/noticia/2026/03/19/caso-master-e-lulinha-levam-pt-e-centrao-a-atuarem-para-sepultar-cpi-do-inss.ghtml"
+        "https://www1.folha.uol.com.br/poder/2026/03/lulinha-abre-empresa-de-gaveta-na-espanha-em-meio-a-investigacoes-do-inss.shtml"
       ]
     },
     {
-      "story_id": 9,
-      "headline": "PT articula alian\u00e7as eleitorais nos estados para reelei\u00e7\u00e3o de Lula",
-      "summary": "Partido negocia palanques em nove estados, incluindo poss\u00edvel alian\u00e7a com Marconi Perillo em Goi\u00e1s e defini\u00e7\u00e3o de chapas no Rio Grande do Sul com PDT.",
+      "story_id": 6,
+      "headline": "Petrobras expands operations with asset acquisitions, refinery investments, and new discoveries",
+      "summary": "Petrobras announced multiple business moves including acquiring 50% stakes in Tartaruga Verde and Espadarte fields from Petronas for US$450 million, discovering new gas reserves in Colombia, and committing R$9 billion in investments for Minas Gerais refineries. The company also reopened biodiesel production in Cear\u00e1.",
       "actors_involved": [
-        "PT",
+        "Petrobras",
         "Lula"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 19,
-      "sources": [
-        "metropoles.com",
-        "infomoney.com.br",
-        "cnnbrasil.com.br",
-        "ohoje.com",
-        "veja.abril.com.br",
-        "jornalopcao.com.br",
-        "terra.com.br",
-        "g1.globo.com",
-        "abcmais.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Al\u00e9m de Minas, PT ainda precisa definir palanques em nove estados",
-          "source": "metropoles.com",
-          "url": "https://metropoles.com/colunas/igor-gadelha/alem-de-minas-pt-ainda-precisa-definir-palanques-em-nove-estados",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "PT tenta se aproximar de Marconi Perillo para di\u00e1logo com o agro em GO",
-          "source": "infomoney.com.br",
-          "url": "https://www.infomoney.com.br/politica/pt-tenta-se-aproximar-de-marconi-perillo-para-dialogo-com-o-agro-em-go/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Entenda negocia\u00e7\u00f5es entre PT e PDT para palanque \u00fanico para Lula no RS",
-          "source": "g1.globo.com",
-          "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/03/21/lula-intervir-eleicoes-rs-pt-pdt.ghtml",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://metropoles.com/colunas/igor-gadelha/alem-de-minas-pt-ainda-precisa-definir-palanques-em-nove-estados",
-        "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/03/21/lula-intervir-eleicoes-rs-pt-pdt.ghtml"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Petrobras recompra participa\u00e7\u00e3o da Petronas em campos na Bacia de Campos",
-      "summary": "Estatal exerceu direito de prefer\u00eancia para comprar 50% dos campos Tartaruga Verde e Espadarte por US$ 450 milh\u00f5es, frustrando planos da Brava Energia.",
-      "actors_involved": [
-        "Petrobras"
-      ],
       "signal_category_hint": "economic_tech",
-      "source_count": 7,
+      "source_count": 25,
       "sources": [
         "g1.globo.com",
-        "cnnbrasil.com.br",
+        "valor.globo.com",
+        "cnn.com",
         "agenciabrasil.ebc.com.br",
-        "braziljournal.com",
-        "safras.com.br"
+        "investidor10.com.br",
+        "infomoney.com.br"
       ],
-      "date_range": "2026-03-16 to 2026-03-17",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
           "title": "Petrobras compra fatia da Petronas em Tartaruga Verde e Espadarte",
@@ -451,52 +263,231 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Petrobras recompra ativos da Petronas por US$ 450 milh\u00f5es",
-          "source": "cnnbrasil.com.br",
-          "url": "https://cnnbrasil.com.br/infra/petrobras-recompra-ativos-da-petronas-por-us-450-milhoes",
-          "date": "2026-03-16"
+          "title": "Petrobras confirma nova descoberta de g\u00e1s na Col\u00f4mbia",
+          "source": "valor.globo.com",
+          "url": "https://valor.globo.com/empresas/noticia/2026/03/18/petrobras-confirma-nova-descoberta-de-gs-na-colmbia.ghtml",
+          "date": "2026-03-18"
         },
         {
-          "title": "Petrobras retoma 100% da produ\u00e7\u00e3o em duas \u00e1reas na Bacia de Campos",
-          "source": "agenciabrasil.ebc.com.br",
-          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-03/petrobras-volta-ter-100-em-areas-na-bacia-de-campos",
-          "date": "2026-03-16"
+          "title": "Presidente da Petrobras anuncia reabertura de usina de biodiesel em Quixad\u00e1, no Cear\u00e1",
+          "source": "g1.globo.com",
+          "url": "https://g1.globo.com/ce/ceara/noticia/2026/03/20/petrobras-reabertura-usina-biodiesel-quixada.ghtml",
+          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
         "https://g1.globo.com/economia/noticia/2026/03/16/petrobras-compra-fatia-da-petronas-em-tartaruga-verde-e-espadarte-por-us-450-milhoes.ghtml",
-        "https://braziljournal.com/petrobras-retoma-campos-vendidos-no-governo-anterior-e-frustra-aquisicao-da-brava/"
+        "https://valor.globo.com/empresas/noticia/2026/03/18/petrobras-confirma-nova-descoberta-de-gs-na-colmbia.ghtml"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Former President Bolsonaro hospitalized with pneumonia, remains in ICU",
+      "summary": "Former President Jair Bolsonaro was hospitalized in Bras\u00edlia with bacterial pneumonia after suffering from fever and breathing difficulties. He remains in intensive care with no discharge date set, while his family pushed for home detention due to his health condition. Son Fl\u00e1vio met with STF Minister Alexandre de Moraes requesting house arrest.",
+      "actors_involved": [
+        "Jair Bolsonaro",
+        "STF"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 24,
+      "sources": [
+        "noticias.uol.com.br",
+        "oglobo.globo.com",
+        "cnn.com",
+        "g1.globo.com",
+        "em.com.br",
+        "gazetadopovo.com.br",
+        "metropoles.com"
+      ],
+      "date_range": "2026-03-13 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Fun\u00e7\u00e3o renal de Bolsonaro tem melhora, mas indicadores inflamat\u00f3rios pioram",
+          "source": "noticias.uol.com.br",
+          "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2026/03/15/boletim-medico-bolsonaro-domingo.htm",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Bolsonaro apresenta melhora, mas segue na UTI com pneumonia bacteriana",
+          "source": "oglobo.globo.com",
+          "url": "https://oglobo.globo.com/politica/noticia/2026/03/16/bolsonaro-boletim.ghtml",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Bolsonaro apresenta melhora, mas segue na UTI e sem previs\u00e3o de alta",
+          "source": "em.com.br",
+          "url": "https://www.em.com.br/politica/2026/03/7381079-bolsonaro-apresenta-melhora-mas-segue-na-uti-e-sem-previsao-de-alta.html",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://noticias.uol.com.br/politica/ultimas-noticias/2026/03/15/boletim-medico-bolsonaro-domingo.htm",
+        "https://oglobo.globo.com/politica/noticia/2026/03/16/bolsonaro-boletim.ghtml"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Arthur Lira announces pre-candidacy for Senate in Alagoas",
+      "summary": "Chamber of Deputies President Arthur Lira officially launched his pre-candidacy for Senate in Alagoas and confirmed his son \u00c1lvaro will run for Chamber of Deputies. The move creates tension with Senator Renan Calheiros and complicates President Lula's political calculations in the state. Prefeito JHC notably did not attend the launch event.",
+      "actors_involved": [
+        "Arthur Lira",
+        "Lula"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 11,
+      "sources": [
+        "g1.globo.com",
+        "veja.abril.com.br",
+        "estadao.com.br",
+        "infomoney.com.br",
+        "cnn.com"
+      ],
+      "date_range": "2026-03-17 to 2026-03-21",
+      "articles": [
+        {
+          "title": "O an\u00fancio de Arthur Lira que refor\u00e7a a dif\u00edcil vida de Lula em Alagoas",
+          "source": "veja.abril.com.br",
+          "url": "https://veja.abril.com.br/brasil/o-anuncio-de-arthur-lira-que-reforca-a-dificil-vida-de-lula-em-alagoas",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Arthur Lira anuncia pr\u00e9-candidatura ao Senado Federal por Alagoas",
+          "source": "g1.globo.com",
+          "url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/03/20/arthur-lira-lanca-pre-candidatura-ao-senado-federal-por-al-durante-evento-em-maceio.ghtml",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Arthur Lira lan\u00e7a pr\u00e9-candidatura ao Senado e confirma filho na disputa pela C\u00e2mara",
+          "source": "infomoney.com.br",
+          "url": "https://infomoney.com.br/politica/arthur-lira-lanca-pre-candidatura-ao-senado-e-confirma-filho-na-disputa-pela-camara",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://veja.abril.com.br/brasil/o-anuncio-de-arthur-lira-que-reforca-a-dificil-vida-de-lula-em-alagoas",
+        "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/03/20/arthur-lira-lanca-pre-candidatura-ao-senado-federal-por-al-durante-evento-em-maceio.ghtml"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "PT refines 2026 electoral strategy, targets Fl\u00e1vio Bolsonaro and seeks state alliances",
+      "summary": "The Workers' Party published a political resolution outlining electoral strategy for 2026, specifically targeting Senator Fl\u00e1vio Bolsonaro and linking the Master Bank scandal to the previous Bolsonaro government. PT leaders also negotiated alliances with PSB and PDT while still defining support in nine states including Goi\u00e1s and Minas Gerais.",
+      "actors_involved": [
+        "PT",
+        "Lula"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 28,
+      "sources": [
+        "g1.globo.com",
+        "em.com.br",
+        "cnn.com",
+        "veja.abril.com.br",
+        "metropoles.com",
+        "estadao.com.br"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Resolu\u00e7\u00e3o do PT formaliza mudan\u00e7a de estrat\u00e9gia para 2026 e associa Fl\u00e1vio Bolsonaro \u00e0 amea\u00e7a democr\u00e1tica",
+          "source": "g1.globo.com",
+          "url": "https://g1.globo.com/politica/noticia/2026/03/17/resolucao-do-pt-formaliza-mudanca-de-estrategia-para-2026-e-associa-flavio-bolsonaro-a-ameaca-democratica.ghtml",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "PT sobe o tom contra Fl\u00e1vio Bolsonaro: 'Autorit\u00e1rio e antipopular'",
+          "source": "em.com.br",
+          "url": "https://www.em.com.br/politica/2026/03/7378023-pt-sobe-o-tom-contra-flavio-bolsonaro-autoritario-e-antipopular.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Al\u00e9m de Minas, PT ainda precisa definir palanques em nove estados",
+          "source": "metropoles.com",
+          "url": "https://metropoles.com/colunas/igor-gadelha/alem-de-minas-pt-ainda-precisa-definir-palanques-em-nove-estados",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://g1.globo.com/politica/noticia/2026/03/17/resolucao-do-pt-formaliza-mudanca-de-estrategia-para-2026-e-associa-flavio-bolsonaro-a-ameaca-democratica.ghtml",
+        "https://metropoles.com/colunas/igor-gadelha/alem-de-minas-pt-ainda-precisa-definir-palanques-em-nove-estados"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Brazilian Armed Forces acquire new missiles and equipment citing international conflicts",
+      "summary": "The Brazilian Army spent R$1.27 billion on missiles, armored vehicles, and artillery during the Lula government, with military leadership citing experiences from Ukraine and Palestine conflicts as justification. The acquisitions aim to improve the military's deterrent capacity and prepare for contemporary threats.",
+      "actors_involved": [
+        "Brazilian Armed Forces",
+        "Lula"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 8,
+      "sources": [
+        "oantagonista.com.br",
+        "folha.uol.com.br",
+        "metropoles.com",
+        "sociedademilitar.com.br"
+      ],
+      "date_range": "2026-03-13 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Ex\u00e9rcito gasta R$ 1,27 bilh\u00e3o com m\u00edsseis, blindados e canh\u00f5es no governo Lula",
+          "source": "oantagonista.com.br",
+          "url": "https://oantagonista.com.br/brasil/exercito-gasta-r-127-bilhao-com-misseis-blindados-e-canhoes-no-governo-lula",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "Ex\u00e9rcito gasta R$ 1,3 bi em novos m\u00edsseis e blindados e cita experi\u00eancias na Ucr\u00e2nia e Palestina",
+          "source": "folha.uol.com.br",
+          "url": "https://www1.folha.uol.com.br/poder/2026/03/exercito-gasta-r-13-bi-em-novos-misseis-e-blindados-e-cita-experiencias-na-ucrania-e-palestina.shtml",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "Reforma das for\u00e7as armadas (por Andr\u00e9 Gustavo Stumpf)",
+          "source": "metropoles.com",
+          "url": "https://www.metropoles.com/blog-do-noblat/artigos/reforma-das-forcas-armadas-por-andre-gustavo-stumpf",
+          "date": "2026-03-15"
+        }
+      ],
+      "representative_urls": [
+        "https://oantagonista.com.br/brasil/exercito-gasta-r-127-bilhao-com-misseis-blindados-e-canhoes-no-governo-lula",
+        "https://www1.folha.uol.com.br/poder/2026/03/exercito-gasta-r-13-bi-em-novos-misseis-e-blindados-e-cita-experiencias-na-ucrania-e-palestina.shtml"
       ]
     },
     {
       "story_id": 11,
-      "headline": "Banco Central corta Selic para 14,75% em meio \u00e0 crise dos combust\u00edveis",
-      "summary": "Copom reduziu taxa b\u00e1sica de juros por unanimidade, mas comunicado destacou necessidade de cautela diante da guerra no Ir\u00e3 e impactos nos pre\u00e7os de energia.",
+      "headline": "Central Bank cuts Selic rate to 14.75% amid Middle East war inflation pressures",
+      "summary": "Brazil's Central Bank lowered the benchmark Selic rate by 0.25 percentage points to 14.75% in a unanimous decision. The move comes amid uncertainty caused by the Middle East conflict's impact on oil prices and inflation, with economists divided on future monetary policy direction.",
       "actors_involved": [
         "Banco Central do Brasil"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 5,
+      "source_count": 6,
       "sources": [
         "revistaoeste.com",
-        "www1.folha.uol.com.br",
-        "letsmoney.com.br",
-        "seudinheiro.com",
-        "platobr.com.br"
+        "folha.uol.com.br",
+        "platobr.com.br",
+        "seudinheiro.com"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-20 to 2026-03-21",
       "articles": [
         {
           "title": "Banco Central corta Selic para 14,75%",
           "source": "revistaoeste.com",
           "url": "https://revistaoeste.com/economia/banco-central-corta-selic-guerra/",
-          "date": "2026-03-19"
+          "date": "2026-03-20"
         },
         {
           "title": "Banco Central ter\u00e1 de decidir juros em cen\u00e1rio incerto, diz Henrique Meirelles",
-          "source": "www1.folha.uol.com.br",
+          "source": "folha.uol.com.br",
           "url": "https://www1.folha.uol.com.br/mercado/2026/03/banco-central-tera-de-decidir-juros-em-cenario-incerto-diz-henrique-meirelles.shtml",
-          "date": "2026-03-18"
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Copom sinaliza interrup\u00e7\u00e3o do corte de juros diante da guerra no Oriente M\u00e9dio",
+          "source": "platobr.com.br",
+          "url": "https://platobr.com.br/copom-sinaliza-interrupcao-do-corte-de-juros-diante-da-guerra-no-oriente-medio",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
@@ -506,21 +497,66 @@
     },
     {
       "story_id": 12,
-      "headline": "Brasil assina acordo de coopera\u00e7\u00e3o antidrogas com Bol\u00edvia em meio a tens\u00f5es com EUA",
-      "summary": "Lula e presidente boliviano Rodrigo Paz firmaram acordo contra crime organizado transnacional enquanto governo americano pressiona por classificar PCC e CV como terroristas.",
+      "headline": "ABIN warns against classifying PCC and CV as terrorist organizations",
+      "summary": "The Brazilian Intelligence Agency assessed that the potential designation of criminal organizations PCC and CV as terrorist groups by the United States could compromise national sovereignty and open doors for sanctions and external interference. ABIN argues that terrorism requires political, religious, or ideological motivation, which these groups lack.",
       "actors_involved": [
-        "Lula",
         "ABIN"
       ],
-      "signal_category_hint": "alignment_diplomatic",
+      "signal_category_hint": "security_defense",
       "source_count": 4,
       "sources": [
-        "poder360.com.br",
-        "estadao.com.br",
-        "oantagonista.com.br"
+        "grupoportaldenoticias.com.br",
+        "oantagonista.com.br",
+        "estrategiaconcursos.com.br"
       ],
-      "date_range": "2026-03-16 to 2026-03-19",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
+        {
+          "title": "Abin avalia que designa\u00e7\u00e3o de PCC e CV como terroristas abre brecha para interfer\u00eancia",
+          "source": "grupoportaldenoticias.com.br",
+          "url": "https://grupoportaldenoticias.com.br/abin-avalia-que-designacao-de-pcc-e-cv-como-terroristas-abre-brecha-para-interferencia/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Abin alerta para risco de enquadrar PCC e CV como terroristas",
+          "source": "oantagonista.com.br",
+          "url": "https://oantagonista.com.br/brasil/abin-alerta-para-risco-de-enquadrar-pcc-e-cv-como-terroristas",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Voc\u00ea estaria pronto para o concurso da ABIN?",
+          "source": "estrategiaconcursos.com.br",
+          "url": "https://www.estrategiaconcursos.com.br/blog/voce-estaria-pronto-para-o-concurso-da-abin/",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://grupoportaldenoticias.com.br/abin-avalia-que-designacao-de-pcc-e-cv-como-terroristas-abre-brecha-para-interferencia/",
+        "https://oantagonista.com.br/brasil/abin-alerta-para-risco-de-enquadrar-pcc-e-cv-como-terroristas"
+      ]
+    },
+    {
+      "story_id": 13,
+      "headline": "Brazil and Bolivia sign cooperation agreement on organized crime amid Trump pressures",
+      "summary": "President Lula and Bolivian President Rodrigo Paz signed a formal cooperation agreement to combat transnational organized crime during Paz's visit to Bras\u00edlia. The agreement comes as the Trump administration pressures Brazil to classify criminal organizations as terrorist groups and strengthen cooperation terms.",
+      "actors_involved": [
+        "Lula"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "g1.globo.com",
+        "poder360.com.br",
+        "estadao.com.br"
+      ],
+      "date_range": "2026-03-16 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Lula defende integra\u00e7\u00e3o da Am\u00e9rica Latina e diz que pa\u00edses n\u00e3o ter\u00e3o condi\u00e7\u00f5es de prosperar isoladamente",
+          "source": "g1.globo.com",
+          "url": "https://g1.globo.com/politica/noticia/2026/03/16/lula-cita-integracao-regional-com-a-bolivia-e-diz-que-nenhum-pais-da-america-do-sul-tem-condicoes-de-prosperar-isoladamente.ghtml",
+          "date": "2026-03-16"
+        },
         {
           "title": "Sem esperar os EUA, Lula fecha acordo com Bol\u00edvia contra o crime",
           "source": "poder360.com.br",
@@ -532,386 +568,32 @@
           "source": "estadao.com.br",
           "url": "https://estadao.com.br/internacional/lula-e-presidente-da-bolivia-assinam-acordo-contra-crime-organizado-ante-ameacas-de-trump-a-pcc-e-cv",
           "date": "2026-03-16"
-        },
-        {
-          "title": "Abin alerta para risco de enquadrar PCC e CV como terroristas",
-          "source": "oantagonista.com.br",
-          "url": "https://oantagonista.com.br/brasil/abin-alerta-para-risco-de-enquadrar-pcc-e-cv-como-terroristas/",
-          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://poder360.com.br/poder-governo/sem-esperar-os-eua-lula-fecha-acordo-com-bolivia-contra-o-crime/",
-        "https://oantagonista.com.br/brasil/abin-alerta-para-risco-de-enquadrar-pcc-e-cv-como-terroristas/"
-      ]
-    },
-    {
-      "story_id": 13,
-      "headline": "Ex\u00e9rcito brasileiro investe R$ 1,27 bilh\u00e3o em m\u00edsseis e blindados citando conflitos globais",
-      "summary": "For\u00e7as Armadas gastaram quantia significativa na compra de m\u00edsseis anticarro e tanques anf\u00edbios, justificando investimentos com base nas experi\u00eancias da guerra na Ucr\u00e2nia e conflitos contempor\u00e2neos.",
-      "actors_involved": [
-        "For\u00e7as Armadas"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 4,
-      "sources": [
-        "oantagonista.com.br",
-        "www1.folha.uol.com.br",
-        "sociedademilitar.com.br"
-      ],
-      "date_range": "2026-03-14 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Ex\u00e9rcito gasta R$ 1,27 bilh\u00e3o com m\u00edsseis, blindados e canh\u00f5es no governo Lula",
-          "source": "oantagonista.com.br",
-          "url": "https://oantagonista.com.br/brasil/exercito-gasta-r-127-bilhao-com-misseis-blindados-e-canhoes-no-governo-lula",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Ex\u00e9rcito gasta R$ 1,3 bi em novos m\u00edsseis e blindados e cita experi\u00eancias na Ucr\u00e2nia e Palestina",
-          "source": "www1.folha.uol.com.br",
-          "url": "https://www1.folha.uol.com.br/poder/2026/03/exercito-gasta-r-13-bi-em-novos-misseis-e-blindados-e-cita-experiencias-na-ucrania-e-palestina.shtml",
-          "date": "2026-03-14"
-        }
-      ],
-      "representative_urls": [
-        "https://oantagonista.com.br/brasil/exercito-gasta-r-127-bilhao-com-misseis-blindados-e-canhoes-no-governo-lula",
-        "https://www1.folha.uol.com.br/poder/2026/03/exercito-gasta-r-13-bi-em-novos-misseis-e-blindados-e-cita-experiencias-na-ucrania-e-palestina.shtml"
-      ]
-    },
-    {
-      "story_id": 14,
-      "headline": "STF condena deputados do PL por desvio de emendas parlamentares no Maranh\u00e3o",
-      "summary": "Primeira Turma do Supremo condenou por unanimidade dois deputados e um ex-parlamentar do Partido Liberal por corrup\u00e7\u00e3o passiva em esquema de R$ 6,67 milh\u00f5es.",
-      "actors_involved": [
-        "STF",
-        "PL"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 2,
-      "sources": [
-        "g1.globo.com",
-        "veja.abril.com.br"
-      ],
-      "date_range": "2026-03-17 to 2026-03-17",
-      "articles": [
-        {
-          "title": "STF condena deputados do PL por desvio de emendas parlamentares",
-          "source": "g1.globo.com",
-          "url": "https://g1.globo.com/politica/noticia/2026/03/17/stf-condena-por-corrupcao-deputados-do-pl-acusados-de-irregularidades-com-emendas.ghtml",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Supremo condena deputados do PL que desviaram emendas parlamentares no Maranh\u00e3o",
-          "source": "veja.abril.com.br",
-          "url": "https://veja.abril.com.br/politica/supremo-condena-deputados-do-pl-que-desviaram-emendas-parlamentares-no-maranhao/",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://g1.globo.com/politica/noticia/2026/03/17/stf-condena-por-corrupcao-deputados-do-pl-acusados-de-irregularidades-com-emendas.ghtml",
-        "https://veja.abril.com.br/politica/supremo-condena-deputados-do-pl-que-desviaram-emendas-parlamentares-no-maranhao/"
-      ]
-    },
-    {
-      "story_id": 15,
-      "headline": "Governo Lula lan\u00e7a Plano Clima ap\u00f3s embates com setor agropecu\u00e1rio",
-      "summary": "Executivo oficializou diretrizes para redu\u00e7\u00e3o de emiss\u00f5es de gases estufa com or\u00e7amento de R$ 27 bilh\u00f5es em 2026, ap\u00f3s resist\u00eancia do Minist\u00e9rio da Agricultura que barrou lan\u00e7amento na COP30.",
-      "actors_involved": [
-        "Lula"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 3,
-      "sources": [
-        "www1.folha.uol.com.br",
-        "estadao.com.br"
-      ],
-      "date_range": "2026-03-16 to 2026-03-16",
-      "articles": [
-        {
-          "title": "Governo Lula lan\u00e7a plano para reduzir emiss\u00f5es ap\u00f3s embates com agro sobre desmatamento",
-          "source": "www1.folha.uol.com.br",
-          "url": "https://www1.folha.uol.com.br/ambiente/2026/03/governo-lula-lanca-plano-para-reduzir-emissoes-apos-embates-com-agro-sobre-desmatamento.shtml",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Governo Lula lan\u00e7a plano para enfrentar a crise clim\u00e1tica e prev\u00ea R$ 27 bilh\u00f5es em 2026",
-          "source": "estadao.com.br",
-          "url": "https://estadao.com.br/sustentabilidade/governo-lula-lanca-plano-para-enfrentar-a-crise-climatica",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://www1.folha.uol.com.br/ambiente/2026/03/governo-lula-lanca-plano-para-reduzir-emissoes-apos-embates-com-agro-sobre-desmatamento.shtml",
-        "https://estadao.com.br/sustentabilidade/governo-lula-lanca-plano-para-enfrentar-a-crise-climatica"
-      ]
-    },
-    {
-      "story_id": 16,
-      "headline": "Deputada do PL faz blackface em protesto transf\u00f3bico contra Erika Hilton",
-      "summary": "Deputada estadual Fabiana Bolsonaro se pintou de marrom no plen\u00e1rio da Alesp atacando deputada federal trans, gerando pedidos de cassa\u00e7\u00e3o e investiga\u00e7\u00e3o por crime de racismo.",
-      "actors_involved": [
-        "PL"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "em.com.br",
-        "noticias.uol.com.br",
-        "metropoles.com",
-        "g1.globo.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Deputada Fabiana Bolsonaro faz 'blackface' em protesto transf\u00f3bico",
-          "source": "em.com.br",
-          "url": "https://www.em.com.br/politica/2026/03/7378775-deputada-fabiana-bolsonaro-faz-blackface-em-protesto-transfobico.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Alesp: Partidos pedem cassa\u00e7\u00e3o de deputada do PL que fez 'blackface' na tribuna",
-          "source": "noticias.uol.com.br",
-          "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2026/03/19/fabiana-bolsonaro-blackface-erika-hilton-cassacao-alesp.ghtm",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Blackface: quem \u00e9 Fabiana Bolsonaro, deputada que atacou Erika Hilton",
-          "source": "metropoles.com",
-          "url": "https://www.metropoles.com/sao-paulo/blackface-quem-e-fabiana-bolsonaro",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.em.com.br/politica/2026/03/7378775-deputada-fabiana-bolsonaro-faz-blackface-em-protesto-transfobico.html",
-        "https://noticias.uol.com.br/politica/ultimas-noticias/2026/03/19/fabiana-bolsonaro-blackface-erika-hilton-cassacao-alesp.ghtm"
-      ]
-    },
-    {
-      "story_id": 17,
-      "headline": "PGR defende anula\u00e7\u00e3o de condena\u00e7\u00e3o de ex-presidente da Petrobras Sergio Gabrielli",
-      "summary": "Procuradoria-Geral da Rep\u00fablica argumenta que houve prescri\u00e7\u00e3o no caso de superfaturamento em obras durante os governos do PT, defendendo anula\u00e7\u00e3o de multa de R$ 134 mil.",
-      "actors_involved": [
-        "Petrobras"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 3,
-      "sources": [
-        "gazetadopovo.com.br",
-        "noticias.uol.com.br",
-        "diariodocentrodomundo.com.br"
-      ],
-      "date_range": "2026-03-21 to 2026-03-21",
-      "articles": [
-        {
-          "title": "PGR defende anula\u00e7\u00e3o de multa a ex-presidente da Petrobras por superfaturamento",
-          "source": "gazetadopovo.com.br",
-          "url": "https://www.gazetadopovo.com.br/republica/pgr-defende-anulacao-de-multa-a-ex-presidente-da-petrobras-por-superfaturamento/",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "PGR se manifesta por anular condena\u00e7\u00e3o de ex-presidente da Petrobras durante governos do PT",
-          "source": "noticias.uol.com.br",
-          "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2026/03/21/pgr-anulacao-condenacao-ex-presidente-petrobras.ghtm",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.gazetadopovo.com.br/republica/pgr-defende-anulacao-de-multa-a-ex-presidente-da-petrobras-por-superfaturamento/",
-        "https://noticias.uol.com.br/politica/ultimas-noticias/2026/03/21/pgr-anulacao-condenacao-ex-presidente-petrobras.ghtm"
-      ]
-    },
-    {
-      "story_id": 18,
-      "headline": "Empresa de filho de Arthur Lira recebeu R$ 250 mil da J&F em opera\u00e7\u00e3o at\u00edpica",
-      "summary": "Coaf detectou pagamento da holding dos irm\u00e3os Batista para empresa rec\u00e9m-criada do filho do ex-presidente da C\u00e2mara, considerando a transa\u00e7\u00e3o suspeita pelos \u00f3rg\u00e3os de controle.",
-      "actors_involved": [
-        "Arthur Lira"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 3,
-      "sources": [
-        "estadao.com.br",
-        "revistaoeste.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Empresa rec\u00e9m-aberta de filho de Arthur Lira recebeu pagamento de R$ 250 mil da J&F",
-          "source": "estadao.com.br",
-          "url": "https://estadao.com.br/economia/empresa-recem-aberta-de-filho-de-arthur-lira-recebeu-pagamento-de-r-250-mil-da-jf",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Empresa de filho de Arthur Lira recebeu R$ 250 mil da J&F e Coaf cita opera\u00e7\u00e3o at\u00edpica",
-          "source": "revistaoeste.com",
-          "url": "https://revistaoeste.com/politica/empresa-de-filho-de-arthur-lira-recebeu-r-250-mil-da-jf-e-coaf-cita-operacao-atipica/",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://estadao.com.br/economia/empresa-recem-aberta-de-filho-de-arthur-lira-recebeu-pagamento-de-r-250-mil-da-jf",
-        "https://revistaoeste.com/politica/empresa-de-filho-de-arthur-lira-recebeu-r-250-mil-da-jf-e-coaf-cita-operacao-atipica/"
-      ]
-    },
-    {
-      "story_id": 19,
-      "headline": "Governo cancela evento sobre ECA Digital ap\u00f3s confus\u00e3o interna",
-      "summary": "Planalto adiou cerim\u00f4nia de assinatura de decretos sobre prote\u00e7\u00e3o de crian\u00e7as online depois que Lula solicitou 24 horas para an\u00e1lise t\u00e9cnica, segundo secret\u00e1rio da Secom.",
-      "actors_involved": [
-        "Lula"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
-      "sources": [
-        "oantagonista.com.br"
-      ],
-      "date_range": "2026-03-18 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Ap\u00f3s confus\u00e3o com ECA Digital, governo Lula cancela evento",
-          "source": "oantagonista.com.br",
-          "url": "https://oantagonista.com.br/brasil/apos-confusao-com-eca-digital-governo-lula-cancela-evento/",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://oantagonista.com.br/brasil/apos-confusao-com-eca-digital-governo-lula-cancela-evento/"
-      ]
-    },
-    {
-      "story_id": 20,
-      "headline": "Governadora do RN desiste de candidatura ao Senado ap\u00f3s conversa com Lula",
-      "summary": "F\u00e1tima Bezerra anunciou que cumprir\u00e1 mandato at\u00e9 o final, desistindo da disputa senatorial ap\u00f3s reuni\u00e3o com presidente e ministra das Rela\u00e7\u00f5es Institucionais.",
-      "actors_involved": [
-        "Lula"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 2,
-      "sources": [
-        "novonoticias.com.br",
-        "agorarn.com.br"
-      ],
-      "date_range": "2026-03-17 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Ap\u00f3s conversa com Lula, governadora F\u00e1tima Bezerra desiste de concorrer ao Senado",
-          "source": "novonoticias.com.br",
-          "url": "https://www.novonoticias.com.br/apos-conversa-com-lula-governadora-fatima-bezerra-desiste-de-concorrer-ao-senado/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "PT anuncia Samanda Alves como pr\u00e9-candidata ao Senado no lugar de F\u00e1tima Bezerra",
-          "source": "agorarn.com.br",
-          "url": "https://agorarn.com.br/ultimas/pt-confirma-indicacao-samanda-alves-senado",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.novonoticias.com.br/apos-conversa-com-lula-governadora-fatima-bezerra-desiste-de-concorrer-ao-senado/",
-        "https://agorarn.com.br/ultimas/pt-confirma-indicacao-samanda-alves-senado"
-      ]
-    },
-    {
-      "story_id": 21,
-      "headline": "For\u00e7as Armadas perdem confian\u00e7a e ficam entre institui\u00e7\u00f5es mais rejeitadas pelos brasileiros",
-      "summary": "Pesquisa AtlasIntel/Estad\u00e3o mostra que militares t\u00eam apenas 27% de confian\u00e7a e 60% de desconfian\u00e7a, contrastando com Pol\u00edcia Federal que lidera ranking com maior credibilidade.",
-      "actors_involved": [
-        "For\u00e7as Armadas"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 2,
-      "sources": [
-        "sociedademilitar.com.br"
-      ],
-      "date_range": "2026-03-20 to 2026-03-20",
-      "articles": [
-        {
-          "title": "For\u00e7as Armadas despencam em confian\u00e7a no Brasil, ficam entre as institui\u00e7\u00f5es mais rejeitadas",
-          "source": "sociedademilitar.com.br",
-          "url": "https://sociedademilitar.com.br/2026/03/forcas-armadas-despencam-em-confianca-no-brasil-ficam-entre-as-instituicoes-mais-rejeitadas-e-acendem-alerta-sobre-desgaste-diante-dos-brasileiros-afch.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://sociedademilitar.com.br/2026/03/forcas-armadas-despencam-em-confianca-no-brasil-ficam-entre-as-instituicoes-mais-rejeitadas-e-acendem-alerta-sobre-desgaste-diante-dos-brasileiros-afch.html"
-      ]
-    },
-    {
-      "story_id": 22,
-      "headline": "Fracasso em negocia\u00e7\u00f5es sobre minerais cr\u00edticos com Brasil frustra estrat\u00e9gia americana",
-      "summary": "Governo Lula n\u00e3o enviou representantes para c\u00fapula de minerais cr\u00edticos, dificultando planos dos EUA de estabelecer parceria estrat\u00e9gica para reduzir depend\u00eancia da China no setor.",
-      "actors_involved": [
-        "Lula"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 1,
-      "sources": [
-        "bloomberg.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-18",
-      "articles": [
-        {
-          "title": "US-Brazil Critical Minerals Talks Stall as Lula Government Skips Summit",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-03-18/us-snubbed-by-lula-government-at-brazil-critical-minerals-summit",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://bloomberg.com/news/articles/2026-03-18/us-snubbed-by-lula-government-at-brazil-critical-minerals-summit"
-      ]
-    },
-    {
-      "story_id": 23,
-      "headline": "Projeto de Lula prop\u00f5e restri\u00e7\u00f5es a manifesta\u00e7\u00f5es pol\u00edticas durante Copa Feminina de 2027",
-      "summary": "Governo enviou projeto ao Congresso estabelecendo regras para acesso aos est\u00e1dios da Copa do Mundo Feminina, incluindo proibi\u00e7\u00e3o de manifesta\u00e7\u00f5es de opini\u00e3o pol\u00edtica durante o evento.",
-      "actors_involved": [
-        "Lula"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
-      "sources": [
-        "tnh1.com.br"
-      ],
-      "date_range": "2026-03-18 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Projeto enviado por Lula ao Congresso prop\u00f5e restri\u00e7\u00f5es a manifesta\u00e7\u00f5es pol\u00edticas na Copa Feminina de 2027",
-          "source": "tnh1.com.br",
-          "url": "https://tnh1.com.br/amp/nid/projeto-enviado-por-lula-ao-congresso-propoe-restricoes-a-manifestacoes-politicas-na-copa-feminina-de-2027",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://tnh1.com.br/amp/nid/projeto-enviado-por-lula-ao-congresso-propoe-restricoes-a-manifestacoes-politicas-na-copa-feminina-de-2027"
+        "https://g1.globo.com/politica/noticia/2026/03/16/lula-cita-integracao-regional-com-a-bolivia-e-diz-que-nenhum-pais-da-america-do-sul-tem-condicoes-de-prosperar-isoladamente.ghtml",
+        "https://www.poder360.com.br/poder-governo/sem-esperar-os-eua-lula-fecha-acordo-com-bolivia-contra-o-crime/"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Vice-governador de MG chama Lula de 'mentiroso' sobre ICMS do diesel",
-      "source": "em.com.br",
-      "url": "https://www.em.com.br/politica/2026/03/7378619-simoes-diz-nao-poder-cortar-icms-do-diesel-e-chama-lula-de-mentiroso.html",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Senador Cleitinho isenta Lula por aumento de pre\u00e7os de combust\u00edveis",
-      "source": "em.com.br",
-      "url": "https://www.em.com.br/politica/2026/03/7376038-cleitinho-isenta-lula-por-aumento-de-precos-de-combustiveis-em-postos.html",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "V\u00eddeo tira de contexto fala de Lula sobre andar a p\u00e9 e combust\u00edvel",
-      "source": "em.com.br",
-      "url": "https://www.em.com.br/politica/2026/03/7378200-video-tira-de-contexto-fala-de-lula-sobre-andar-a-pe-e-combustivel.html",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Justi\u00e7a suspende Licen\u00e7a Pr\u00e9via da Petrobras na Bacia de Santos",
-      "source": "brasilemfolhas.com.br",
-      "url": "https://www.brasilemfolhas.com.br/2026/03/justica-suspende-licenca-previa-petrobras-bacia-santos/",
+      "headline": "Lula launches climate plan for reducing emissions after agro sector disputes",
+      "source": "folha.uol.com.br",
+      "url": "https://www1.folha.uol.com.br/ambiente/2026/03/governo-lula-lanca-plano-para-reduzir-emissoes-apos-embates-com-agro-sobre-desmatamento.shtml",
       "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "After ECA Digital confusion, Lula government cancels event",
+      "source": "oantagonista.com.br",
+      "url": "https://oantagonista.com.br/brasil/apos-confusao-com-eca-digital-governo-lula-cancela-evento/",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Lula confirms presence at PT fundraising dinner",
+      "source": "folha.uol.com.br",
+      "url": "https://www1.folha.uol.com.br/colunas/painel/2026/03/lula-confirma-presenca-em-jantar-de-arrecadacao-do-pt.shtml",
+      "signal_category_hint": "domestic_regime"
     }
   ]
 }

@@ -1,70 +1,100 @@
 {
   "region": "asia_pacific",
-  "week": "2026-02-08",
-  "regional_overview": "Asia-Pacific displays divergent national trajectories this week, with Japan achieving historic electoral consolidation while Australia and Indonesia face significant domestic pressures. The most substantive cross-border development is the Australia-Indonesia comprehensive defense treaty, marking the strongest bilateral relationship in their history. Economic conditions vary sharply across countries - from South Korea managing external market volatility to Australia implementing the first major economy rate increase post-pandemic, reflecting distinct national challenges rather than regional trends.",
+  "week": "2026-02-15",
+  "regional_overview": "Asia-Pacific countries are simultaneously strengthening security architecture while managing distinct economic and political pressures. Japan's historic supermajority enables constitutional revision momentum, Australia commits $30 billion to AUKUS submarine infrastructure, and Taiwan deepens US alignment through unprecedented economic concessions, suggesting coordinated response to shared threat perceptions. However, each faces domestic challenges\u2014Australia's opposition party collapse, Indonesia's market turmoil requiring state intervention, and Taiwan's continued legislative dysfunction\u2014that could constrain their strategic ambitions.",
   "cross_cutting_dynamics": [
     {
-      "title": "Australia-Indonesia Defense Integration Deepening",
+      "title": "Coordinated Security Infrastructure Expansion Across Alliance Partners",
       "countries_involved": [
-        "au",
-        "id"
+        "tw",
+        "jp",
+        "au"
       ],
       "signal_categories": [
-        "alignment_diplomatic",
-        "security_defense"
+        "security_defense",
+        "domestic_regime",
+        "economic_tech"
+      ],
+      "pattern_type": "parallel",
+      "assessment": "Three key US allies are simultaneously advancing major security infrastructure projects: Taiwan's TSMC geographic dispersion to Japan (reducing silicon shield concentration), Japan's constitutional revision momentum with 93% legislative support enabling security normalization, and Australia's $30 billion AUKUS submarine shipyard representing the largest defense investment in its history. The timing and scale suggest coordinated preparation for extended strategic competition.",
+      "significance": "These parallel investments indicate alliance-wide transition from deterrence-focused to wartime production-capable infrastructure, with each country accepting different costs\u2014Taiwan sacrificing technological monopoly, Japan constitutional pacifism, Australia unprecedented fiscal commitment.",
+      "trend": "emerging",
+      "confidence": 4,
+      "confidence_inherited_from": {
+        "tw_economic_tech": 4,
+        "jp_domestic_regime": 5,
+        "au_security_defense": 4
+      },
+      "weakest_link": "All supporting assessments maintain confidence 4+, with Japan's constitutional revision momentum at confidence 5 providing strongest foundation",
+      "evidence_against_linkage": "Different institutional mechanisms (TSMC corporate decision vs constitutional revision vs AUKUS treaty implementation), different timeframes (TSMC ongoing vs constitutional revision potential vs AUKUS immediate), and different strategic rationales could indicate independent responses to general threat environment rather than coordination",
+      "linkage_strength": "moderate",
+      "linkage_justification": "Temporal proximity of major security investments by three alliance partners, shared institutional framework (US alliance system), and explicit threat framing in all three contexts indicates coordination beyond coincidence",
+      "competing_interpretation": "These could represent independent national responses to the same structural threat environment rather than coordinated strategy, with each country pursuing security upgrades according to their unique capabilities and constraints"
+    },
+    {
+      "title": "Taiwan-Japan Strategic Technology Transfer Accelerating",
+      "countries_involved": [
+        "tw",
+        "jp"
+      ],
+      "signal_categories": [
+        "economic_tech"
       ],
       "pattern_type": "interaction",
-      "assessment": "Australia and Indonesia have formalized their strongest bilateral defense relationship ever through a comprehensive treaty establishing senior military officer exchanges and joint training facilities. This represents a significant deepening of regional alignment outside traditional US-centered alliance structures, with both countries actively implementing expanded military cooperation mechanisms.",
-      "significance": "This bilateral deepening creates an alternative security architecture within the region that operates independently of broader alliance frameworks, potentially serving as a model for other regional partnerships and reducing dependence on external security guarantees.",
-      "trend": "emerging",
-      "confidence": 3,
+      "assessment": "Taiwan's TSMC expansion of 3nm production to Japan directly enhances Japan's semiconductor manufacturing capacity while reducing Taiwan's technological monopoly position. This represents concrete implementation of silicon shield diversification that strengthens Japan's strategic autonomy while making Taiwan more dependent on alliance protection as its technological leverage diminishes.",
+      "significance": "This technology transfer fundamentally alters regional strategic balance by reducing Taiwan's defensive advantage while enhancing Japan's technological sovereignty, potentially changing alliance dynamics as Taiwan becomes more militarily dependent while Japan gains economic leverage.",
+      "trend": "developing",
+      "confidence": 4,
       "confidence_inherited_from": {
-        "au_alignment_diplomatic": 3,
-        "id_security_defense": 3
+        "tw_economic_tech": 4,
+        "jp_economic_tech": 4
       },
-      "weakest_link": "Australia's assessment confidence increased from 2 to 3 but still reflects limited sourcing beyond government announcements",
-      "evidence_against_linkage": "The treaty may be largely symbolic rather than substantive operational integration, and Indonesia's multi-alignment strategy suggests this cooperation has natural limits that preserve strategic autonomy",
+      "weakest_link": "Both assessments maintain confidence 4 with strong sourcing on TSMC expansion and Japanese market response",
+      "evidence_against_linkage": "TSMC's Japan expansion could be driven by corporate diversification strategy rather than strategic calculation, with technology transfer being incidental rather than intentional geopolitical repositioning",
       "linkage_strength": "strong",
-      "linkage_justification": "Both countries explicitly report complementary developments - Australia signing the treaty and establishing exchanges while Indonesia confirms receiving senior military position offers, indicating coordinated bilateral action",
-      "competing_interpretation": "This may represent routine diplomatic engagement elevated in description rather than genuine strategic realignment, particularly given Indonesia's established pattern of maintaining multiple partnerships without deep integration"
+      "linkage_justification": "Direct causal relationship with documented technology transfer, explicit geographic shift of strategic capability, and measurable impact on both countries' relative positions in semiconductor ecosystem",
+      "competing_interpretation": "Corporate risk management driving geographic diversification rather than strategic rebalancing, with geopolitical implications being secondary to business continuity planning"
     }
   ],
   "dynamics_considered_and_rejected": [
     {
-      "candidate_dynamic": "Regional economic stress pattern across South Korea, Australia, and Indonesia",
-      "countries": [
-        "kr",
-        "au",
-        "id"
-      ],
-      "reason_rejected": "Despite all three countries experiencing economic pressures, they stem from different sources: South Korea faces external market volatility from 'Warsh Shock,' Australia responds to domestic inflation requiring rate increases, and Indonesia confronts governance-related investor confidence crisis. These represent distinct national situations rather than shared structural conditions."
-    },
-    {
-      "candidate_dynamic": "Domestic political strengthening across Japan, South Korea, and Australia",
-      "countries": [
-        "jp",
-        "kr",
-        "au"
-      ],
-      "reason_rejected": "While Japan achieved historic electoral success, South Korea's leader gained approval, and Australia's PM benefits from opposition dysfunction, these developments use completely different mechanisms (electoral mandate vs. policy performance vs. opponent weakness) with no evidence of coordination, contagion, or shared causal factors."
-    },
-    {
-      "candidate_dynamic": "Varied US alliance management creating regional fragmentation",
+      "candidate_dynamic": "Democratic Institutional Fragmentation Pattern",
       "countries": [
         "tw",
-        "jp",
-        "kr",
         "au"
       ],
-      "reason_rejected": "Although countries show different patterns of US engagement (Taiwan strengthening, Japan receiving summit invitation, South Korea facing Congressional investigation, Australia experiencing AUKUS uncertainty), these reflect bilateral relationship management rather than a coherent regional dynamic or institutional breakdown."
+      "reason_rejected": "While both Taiwan and Australia show political dysfunction (Taiwan's executive-legislative deadlock, Australia's opposition collapse), these stem from different institutional causes with no evidence of connection. Taiwan's dysfunction reflects constitutional crisis over defense policy, while Australia's reflects party system realignment over leadership. No shared mechanism or temporal coordination exists."
+    },
+    {
+      "candidate_dynamic": "Economic Sovereignty Divergence",
+      "countries": [
+        "tw",
+        "id"
+      ],
+      "reason_rejected": "Taiwan's economic subordination to US trade demands and Indonesia's state-directed response to market pressure represent opposite approaches to economic sovereignty rather than convergent behavior. This is divergence, not a regional pattern, with no evidence these policies influence each other."
+    },
+    {
+      "candidate_dynamic": "Regional Peacekeeping Engagement Expansion",
+      "countries": [
+        "kr",
+        "id"
+      ],
+      "reason_rejected": "South Korea's potential Indo-Pacific marine restructuring (confidence 2) and Indonesia's Gaza peacekeeping commitment operate in different theaters with different objectives. The KR assessment is quarantined due to low confidence, and no evidence suggests coordination between these distinct military deployments."
     }
   ],
   "gaps": [
     {
-      "expected_dynamic": "Taiwan's major TSMC investment in Japan ($17 billion for 3nm production) should generate Japanese strategic assessment of semiconductor supply chain implications",
-      "observed": "Taiwan reports this as accelerating 'silicon shield erosion' with significant strategic implications, but Japan's analysis contains no assessment of receiving this advanced technology production",
-      "assessment": "This represents a major strategic interaction affecting regional technology architecture and security calculations, but the analytical gap prevents regional confidence assessment of the full dynamic"
+      "expected_dynamic": "ASEAN institutional coordination on Indonesia's market crisis",
+      "observed": "No evidence of regional economic coordination mechanisms activating despite Indonesia's significant economic governance crisis",
+      "assessment": "Indonesia's market turmoil and regulatory intervention proceeded without apparent ASEAN institutional response, suggesting either institutional capacity limitations or Indonesia's preference for bilateral over multilateral crisis management"
     }
   ],
-  "low_confidence_items": []
+  "low_confidence_items": [
+    {
+      "item": "South Korean marines restructuring toward Indo-Pacific operations suggesting potential security posture expansion",
+      "origin": "KR security_defense",
+      "confidence": 2,
+      "note": "Included for awareness\u2014potential regional security architecture development but insufficient sourcing for synthesis into regional dynamics"
+    }
+  ]
 }

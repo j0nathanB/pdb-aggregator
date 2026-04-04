@@ -3,41 +3,36 @@
   "code": "ae",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 289,
-  "stories_identified": 7,
-  "off_topic_filtered": 82,
-  "noise_summary": "82 off-topic results filtered: 15 Indonesian MBZ toll road traffic reports, 42 Brazilian MBRF food company earnings, 6 German ZF automotive company news, 5 non-UAE ADIA references, 8 sports and entertainment, 4 technical/academic articles, 2 real estate listings.",
+  "search_results_total": 281,
+  "stories_identified": 8,
+  "off_topic_filtered": 198,
+  "noise_summary": "198 off-topic results filtered: 89 about Brazilian food company MBRF (unrelated to UAE), 34 about German automotive company ZF and highways, 28 computer technical articles about Master Boot Record (MBR), 18 Indonesian traffic/infrastructure, 12 sports and entertainment, 17 other international business/technical content not related to UAE.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Iran launches sustained missile and drone attacks on UAE, air defenses intercept over 2,000 projectiles",
-      "summary": "Iran has conducted extensive missile and drone attacks on the UAE since late February, with UAE air defenses intercepting 341 ballistic missiles, 15 cruise missiles, and 1,748 UAVs as of March 21. Eight people have been killed including two UAE military personnel and six foreign civilians. Key infrastructure including oil facilities, airports, and gas fields have been targeted.",
+      "headline": "Iran launches sustained missile and drone attacks on UAE amid regional war",
+      "summary": "Iran has conducted weeks of missile and drone attacks targeting UAE infrastructure including airports, oil facilities, and military sites. UAE air defenses have intercepted over 340 ballistic missiles and 1,700+ drones since attacks began. Eight people killed including two UAE military personnel and six foreign nationals. UAE leaders condemned attacks as unprovoked terrorism.",
       "actors_involved": [
-        "UAE Armed Forces",
-        "Abdullah bin Zayed"
+        "Mohammed bin Zayed Al Nahyan",
+        "Abdullah bin Zayed",
+        "UAE Armed Forces"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 89,
+      "source_count": 45,
       "sources": [
         "thenationalnews.com",
         "gulfnews.com",
         "reuters.com",
         "aljazeera.com",
-        "aa.com.tr",
         "mofa.gov.ae",
-        "state.gov",
+        "zawya.com",
+        "aa.com.tr",
         "dubaieye1038.com",
-        "middleeastmonitor.com",
-        "sharjah24.ae",
         "emirates247.com",
-        "hindustantimes.com",
-        "timesofindia.indiatimes.com",
-        "abc.net.au",
-        "euronews.com",
-        "dailymail.co.uk",
-        "bbc.com",
-        "newkerala.com",
-        "kurdistan24.net"
+        "state.gov",
+        "middleeastmonitor.com",
+        "arabianbusiness.com",
+        "timesofindia.indiatimes.com"
       ],
       "date_range": "2026-03-14 to 2026-03-21",
       "articles": [
@@ -48,15 +43,9 @@
           "date": "2026-03-18"
         },
         {
-          "title": "UAE air defences intercept 7 ballistic missiles, 15 UAVs",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/government/uae-air-defences-intercept-7-ballistic-missiles-15-uavs-1.500479881",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "What's in the major $8bn US arms package bolstering UAE defences?",
+          "title": "President Sheikh Mohamed and Turkish Foreign Minister discuss Iran war in Abu Dhabi",
           "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences",
+          "url": "https://thenationalnews.com/news/uae/2026/03/20/president-sheikh-mohamed-and-turkish-foreign-minister-discuss-iran-war-in-abu-dhabi",
           "date": "2026-03-20"
         },
         {
@@ -64,121 +53,45 @@
           "source": "thenationalnews.com",
           "url": "https://thenationalnews.com/news/uae/2026/03/18/names-released-of-civilian-victims-of-iran-missile-attacks-in-uae",
           "date": "2026-03-18"
+        },
+        {
+          "title": "UAE reports 304 ballistic missiles engagement amid ongoing Iran strikes",
+          "source": "airforce-technology.com",
+          "url": "https://www.airforce-technology.com/news/uae-mod-iran-missile-engagement/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "UAE intercepts new wave of 4 ballistic missiles, 26 drones launched from Iran",
+          "source": "aa.com.tr",
+          "url": "https://aa.com.tr/en/middle-east/uae-intercepts-new-wave-of-4-ballistic-missiles-26-drones-launched-from-iran/3872821",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://mofa.gov.ae/en/mediahub/news/2026/3/18/bin-zayed-iran",
-        "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences"
+        "https://thenationalnews.com/news/uae/2026/03/18/names-released-of-civilian-victims-of-iran-missile-attacks-in-uae"
       ]
     },
     {
       "story_id": 2,
-      "headline": "US approves $8+ billion emergency arms package for UAE including air defense upgrades and counter-drone systems",
-      "summary": "The US State Department approved multiple emergency arms sales to the UAE worth over $8 billion, including $4.5 billion for THAAD radar upgrades, $2.1 billion for counter-drone systems, and $644 million for F-16 munitions. Additional unannounced deals worth $7 billion were also approved.",
-      "actors_involved": [
-        "UAE Armed Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 12,
-      "sources": [
-        "state.gov",
-        "thenationalnews.com",
-        "reuters.com",
-        "turdef.com",
-        "wsj.com"
-      ],
-      "date_range": "2026-03-19 to 2026-03-20",
-      "articles": [
-        {
-          "title": "United Arab Emirates \u2013 Advanced Medium-Range Air-to-Air Missiles (AMRAAMs)",
-          "source": "state.gov",
-          "url": "https://www.state.gov/united-arab-emirates-advanced-medium-range-air-to-air-missiles-amraams/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "United Arab Emirates \u2013 Long-Range Discrimination Radar with Terminal High Altitude Area Defense Integration",
-          "source": "state.gov",
-          "url": "https://state.gov/united-arab-emirates-long-range-discrimination-radar-with-terminal-high-altitude-area-defense-integration",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "US approves $7 billion more in weapons for UAE, WSJ reports",
-          "source": "reuters.com",
-          "url": "https://reuters.com/world/middle-east/us-approves-7-billion-more-weapons-uae-wsj-reports-2026-03-20",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://state.gov/united-arab-emirates-long-range-discrimination-radar-with-terminal-high-altitude-area-defense-integration",
-        "https://reuters.com/world/middle-east/us-approves-7-billion-more-weapons-uae-wsj-reports-2026-03-20"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "ADNOC and OMV advance $60 billion chemicals mega-merger despite regional attacks",
-      "summary": "Abu Dhabi National Oil Company and Austria's OMV are proceeding with forming Borouge Group International AG, completing asset usage agreements for the Borouge 4 complex. The companies delayed the public listing until 2027 citing market volatility from the Iran conflict, but the merger itself remains on track.",
-      "actors_involved": [
-        "ADNOC"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 18,
-      "sources": [
-        "reuters.com",
-        "rigzone.com",
-        "arabianbusiness.com",
-        "gulfnews.com",
-        "ogj.com",
-        "tradingview.com",
-        "agbi.com",
-        "beijingtimes.com"
-      ],
-      "date_range": "2026-03-19 to 2026-03-21",
-      "articles": [
-        {
-          "title": "ADNOC and OMV are set to complete chemicals mega-merger by end of March",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/business/energy/adnoc-omv-are-set-complete-chemicals-mega-merger-by-end-march-2026-03-19/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "ADNOC, OMV Tweak Investment Plans for Polyolefins JV",
-          "source": "rigzone.com",
-          "url": "https://rigzone.com/news/adnoc_omv_tweak_investment_plans_for_polyolefins_jv-20-mar-2026-183257-article",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "ADNOC and OMV push ahead with Borouge mega-merger, $400m profit uplift expected",
-          "source": "arabianbusiness.com",
-          "url": "https://www.arabianbusiness.com/business/energy/adnoc-and-omv-push-ahead-with-borouge-mega-merger-400m-profit-uplift-expected",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.reuters.com/business/energy/adnoc-omv-are-set-complete-chemicals-mega-merger-by-end-march-2026-03-19/",
-        "https://www.arabianbusiness.com/business/energy/adnoc-and-omv-push-ahead-with-borouge-mega-merger-400m-profit-uplift-expected"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Central Bank of UAE launches AED 1 trillion financial resilience package amid Iran crisis",
-      "summary": "CBUAE Board, chaired by Sheikh Mansour bin Zayed, approved a comprehensive financial resilience package backed by AED 1 trillion in reserves. The package includes enhanced liquidity access, temporary regulatory relief, and capital buffer flexibility to support banks during the Iran conflict.",
+      "headline": "UAE Central Bank launches AED 1 trillion financial resilience package amid regional crisis",
+      "summary": "Central Bank of UAE approved comprehensive Financial Institution Resilience Package to strengthen banking sector stability during regional tensions. Chaired by Mansour bin Zayed, the package includes enhanced liquidity access and support measures. CBUAE also maintained base rate at 3.65% following Fed decision.",
       "actors_involved": [
         "Central Bank of the UAE"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 21,
+      "source_count": 18,
       "sources": [
-        "emirates247.com",
         "gulfnews.com",
-        "reuters.com",
+        "emirates247.com",
         "zawya.com",
+        "arabianbusiness.com",
+        "dubaieye1038.com",
+        "reuters.com",
         "gulfbusiness.com",
-        "alvarezandmarsal.com",
-        "ibsintelligence.com",
-        "economymiddleeast.com",
-        "arabianbusiness.com"
+        "economymiddleeast.com"
       ],
-      "date_range": "2026-03-17 to 2026-03-19",
+      "date_range": "2026-03-17 to 2026-03-20",
       "articles": [
         {
           "title": "Mansour bin Zayed Chairs CBUAE Meeting, Approves AED1 Trillion Financial Resilience Package",
@@ -190,13 +103,13 @@
           "title": "UAE central bank support package lifts lenders shaken by Iran war",
           "source": "reuters.com",
           "url": "https://www.reuters.com/world/middle-east/uae-central-bank-launches-resilience-package-amid-iran-crisis-2026-03-17/",
-          "date": "2026-03-17"
+          "date": "2026-03-18"
         },
         {
           "title": "CBUAE maintains the base rate at 3.65%",
           "source": "zawya.com",
           "url": "https://www.zawya.com/en/press-release/government-news/cbuae-maintains-the-base-rate-at-365-av0f1kwr",
-          "date": "2026-03-18"
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -205,39 +118,80 @@
       ]
     },
     {
-      "story_id": 5,
-      "headline": "UAE conducts intensive diplomatic engagement amid regional escalation",
-      "summary": "President Sheikh Mohamed bin Zayed and Foreign Minister Abdullah bin Zayed conducted extensive diplomatic outreach, including meetings with Jordan's King Abdullah, Turkey's Foreign Minister, and phone calls with multiple counterparts. The UAE also received calls from President Trump and coordinated regional responses to Iranian attacks.",
+      "story_id": 3,
+      "headline": "ADNOC operations disrupted by Iranian attacks as CEO condemns energy infrastructure targeting",
+      "summary": "ADNOC suspended crude loading operations at Fujairah port after drone attacks and fires. CEO Sultan Al Jaber condemned attacks on energy infrastructure as 'global economic warfare.' ADNOC also advanced Borouge Group formation with OMV despite regional tensions. UAE oil production reported to have dropped over 50%.",
+      "actors_involved": [
+        "ADNOC"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 12,
+      "sources": [
+        "thenationalnews.com",
+        "reuters.com",
+        "arabianbusiness.com",
+        "rigzone.com",
+        "bizjournals.com",
+        "beijingtimes.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Adnoc CEO says Iran's attacks on Gulf energy sites are acts of 'global economic warfare'",
+          "source": "thenationalnews.com",
+          "url": "https://www.thenationalnews.com/business/energy/2026/03/19/adnoc-ceo-says-irans-attacks-on-gulf-energy-sites-are-acts-of-global-economic-warfare/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "ADNOC oil loading still halted at UAE's Fujairah, other loadings resume, sources say",
+          "source": "reuters.com",
+          "url": "https://reuters.com/business/energy/oil-loading-operations-suspended-uaes-fujairah-port-sources-say-2026-03-16",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "ADNOC and OMV are set to complete chemicals mega-merger by end of March",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/energy/adnoc-omv-are-set-complete-chemicals-mega-merger-by-end-march-2026-03-19/",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://www.thenationalnews.com/business/energy/2026/03/19/adnoc-ceo-says-irans-attacks-on-gulf-energy-sites-are-acts-of-global-economic-warfare/",
+        "https://reuters.com/business/energy/oil-loading-operations-suspended-uaes-fujairah-port-sources-say-2026-03-16"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "UAE leadership engages in regional diplomacy amid escalating Iran conflict",
+      "summary": "UAE President Mohammed bin Zayed met Jordan's King Abdullah in Dubai to discuss regional developments. Mohammed bin Rashid and Mansour bin Zayed attended the meeting. Abdullah bin Zayed held extensive phone calls with foreign ministers worldwide condemning Iranian attacks and discussing regional stability.",
       "actors_involved": [
         "Mohammed bin Zayed Al Nahyan",
-        "Abdullah bin Zayed",
-        "Mohammed bin Rashid Al Maktoum"
+        "Mohammed bin Rashid Al Maktoum",
+        "Abdullah bin Zayed"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 25,
+      "source_count": 8,
       "sources": [
         "thenationalnews.com",
         "gulfnews.com",
-        "mofa.gov.ae",
-        "sharjah24.ae",
         "dubaieye1038.com",
+        "mofa.gov.ae",
         "sheikhmohammed.ae",
-        "english.news.cn",
-        "emirates247.com"
+        "english.news.cn"
       ],
-      "date_range": "2026-03-15 to 2026-03-20",
+      "date_range": "2026-03-16 to 2026-03-20",
       "articles": [
         {
-          "title": "President Sheikh Mohamed and Turkish Foreign Minister discuss Iran war in Abu Dhabi",
+          "title": "President Sheikh Mohamed holds talks on Iran war with Jordan's King Abdullah in Dubai",
           "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/uae/2026/03/20/president-sheikh-mohamed-and-turkish-foreign-minister-discuss-iran-war-in-abu-dhabi",
-          "date": "2026-03-20"
+          "url": "https://thenationalnews.com/news/uae/2026/03/16/sheikh-mohamed-holds-talks-in-dubai-with-jordans-king-abdullah-on-iran-war",
+          "date": "2026-03-16"
         },
         {
-          "title": "UAE President receives phone call from US President",
-          "source": "sharjah24.ae",
-          "url": "https://sharjah24.ae/en/Articles/2026/03/20/mm05",
-          "date": "2026-03-20"
+          "title": "UAE President and King of Jordan discuss regional developments and implications for security and stability",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability-2-1.500476685",
+          "date": "2026-03-17"
         },
         {
           "title": "Abdullah bin Zayed holds phone calls with Foreign Ministers, Officials to discuss regional developments",
@@ -247,26 +201,67 @@
         }
       ],
       "representative_urls": [
-        "https://thenationalnews.com/news/uae/2026/03/20/president-sheikh-mohamed-and-turkish-foreign-minister-discuss-iran-war-in-abu-dhabi",
+        "https://thenationalnews.com/news/uae/2026/03/16/sheikh-mohamed-holds-talks-in-dubai-with-jordans-king-abdullah-on-iran-war",
         "https://mofa.gov.ae/en/MediaHub/News/2026/3/19/UAE-ABDZAYED"
       ]
     },
     {
+      "story_id": 5,
+      "headline": "US approves major arms packages for UAE amid Iranian attacks",
+      "summary": "US State Department approved over $8 billion in defense packages for UAE including THAAD radar systems, F-16 munitions, AMRAAMs, and counter-drone systems under emergency authorization. Packages aimed at bolstering UAE air defenses against Iranian missile and drone threats.",
+      "actors_involved": [
+        "UAE Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
+      "sources": [
+        "state.gov",
+        "thenationalnews.com",
+        "reuters.com",
+        "janes.com"
+      ],
+      "date_range": "2026-03-20 to 2026-03-21",
+      "articles": [
+        {
+          "title": "United Arab Emirates \u2013 Advanced Medium-Range Air-to-Air Missiles (AMRAAMs)",
+          "source": "state.gov",
+          "url": "https://www.state.gov/united-arab-emirates-advanced-medium-range-air-to-air-missiles-amraams/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "What's in the major $8bn US arms package bolstering UAE defences?",
+          "source": "thenationalnews.com",
+          "url": "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "US approves $7 billion more in weapons for UAE, WSJ reports",
+          "source": "reuters.com",
+          "url": "https://reuters.com/world/middle-east/us-approves-7-billion-more-weapons-uae-wsj-reports-2026-03-20",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://www.state.gov/united-arab-emirates-advanced-medium-range-air-to-air-missiles-amraams/",
+        "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences"
+      ]
+    },
+    {
       "story_id": 6,
-      "headline": "ADIA commits up to $500 million to Hong Kong-based Dignari Capital private credit fund",
-      "summary": "Abu Dhabi Investment Authority subsidiary committed capital to Dignari Capital Partners for an Asia Pacific real estate credit strategy focused on developed markets. The move aligns with ADIA's strategy of partnering with specialist managers with deep regional expertise.",
+      "headline": "ADIA expands private credit investments with new partnerships",
+      "summary": "Abu Dhabi Investment Authority committed up to $500 million to Hong Kong-based Dignari Capital for private credit strategy focused on Asia-Pacific real estate. ADIA subsidiary also partnered with other private credit managers as part of diversification strategy.",
       "actors_involved": [
         "ADIA"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 5,
+      "source_count": 4,
       "sources": [
         "perenews.com",
         "fundsglobalmena.com",
         "agbi.com",
         "mingtiandi.com"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-03-15 to 2026-03-18",
       "articles": [
         {
           "title": "ADIA commits up to $500m to Dignari Capital in private credit push",
@@ -278,13 +273,13 @@
           "title": "ADIA unit backs Dignari Capital private credit strategy",
           "source": "fundsglobalmena.com",
           "url": "https://fundsglobalmena.com/adia-unit-backs-dignari-capital-private-credit-strategy",
-          "date": "2026-03-19"
+          "date": "2026-03-15"
         },
         {
           "title": "ADIA Backs Dignari's APAC Real Estate Credit Fund",
           "source": "mingtiandi.com",
           "url": "https://mingtiandi.com/real-estate/finance/adia-backs-dignaris-apac-real-estate-credit-fund-with-hong-kong-focus",
-          "date": "2026-03-19"
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
@@ -294,55 +289,98 @@
     },
     {
       "story_id": 7,
-      "headline": "Mubadala completes $6.2 billion acquisition of Clear Channel Outdoor",
-      "summary": "UAE sovereign wealth fund Mubadala Investment Company acquired Clear Channel Outdoor Holdings for $6.2 billion, taking full ownership of the out-of-home advertising leader. The acquisition positions Mubadala in the digital transformation of outdoor advertising.",
+      "headline": "Mubadala completes major acquisitions and investment activities",
+      "summary": "Mubadala closed acquisition of Clear Channel Outdoor for $6.2 billion and completed GlobalFoundries secondary offering with $300 million share buyback. Mubadala executives promoted the investment company's global expansion at various conferences.",
       "actors_involved": [
         "Mubadala"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 3,
+      "source_count": 4,
       "sources": [
         "trysignalbase.com",
-        "theglobeandmail.com"
+        "theglobeandmail.com",
+        "impactalpha.com",
+        "tradingview.com"
       ],
-      "date_range": "2026-03-13 to 2026-03-18",
+      "date_range": "2026-03-13 to 2026-03-20",
       "articles": [
         {
           "title": "Clear Channel Outdoor Acquired by Mubadala",
           "source": "trysignalbase.com",
           "url": "https://www.trysignalbase.com/news/acquisitions/clear-channel-outdoor-acquired-by-mubadala-acquisition",
-          "date": "2026-03-18"
+          "date": "2026-03-15"
         },
         {
           "title": "GlobalFoundries Closes Mubadala Secondary Offering and $300 Million Share Buyback",
           "source": "theglobeandmail.com",
           "url": "https://www.theglobeandmail.com/investing/markets/stocks/GFS/pressreleases/755729/globalfoundries-closes-mubadala-secondary-offering-and-300-million-share-buyback/",
           "date": "2026-03-13"
+        },
+        {
+          "title": "Middle East sovereign wealth financed massive green investments. Now what?",
+          "source": "impactalpha.com",
+          "url": "https://impactalpha.com/middle-east-sovereign-wealth-financed-massive-green-infrastructure-investments-now-what/",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://www.trysignalbase.com/news/acquisitions/clear-channel-outdoor-acquired-by-mubadala-acquisition"
+        "https://www.trysignalbase.com/news/acquisitions/clear-channel-outdoor-acquired-by-mubadala-acquisition",
+        "https://www.theglobeandmail.com/investing/markets/stocks/GFS/pressreleases/755729/globalfoundries-closes-mubadala-secondary-offering-and-300-million-share-buyback/"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "G42 signs AI partnership agreements and expands technology services",
+      "summary": "G42 signed memorandum of understanding with Publicis Sapient to explore AI-first services joint venture for UAE and Global South. Partnership aims to combine G42's sovereign AI infrastructure with Publicis Sapient's enterprise AI platforms for digital transformation.",
+      "actors_involved": [
+        "G42"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 3,
+      "sources": [
+        "campaignme.com",
+        "core42.ai",
+        "analyticsinsight.ae"
+      ],
+      "date_range": "2026-03-15 to 2026-03-18",
+      "articles": [
+        {
+          "title": "G42, Publicis Sapient set to explore AI-first services JV for the UAE and Global South",
+          "source": "campaignme.com",
+          "url": "https://campaignme.com/g42-publicis-sapient-set-to-explore-ai-first-services-jv-for-the-uae-and-global-south/",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "The G42 Intelligence Grid - Why Core42 AI Cloud Is the Foundation for Global, Sovereign Intelligence",
+          "source": "core42.ai",
+          "url": "https://www.core42.ai/en/news/g42-intelligence-grid-sovereign-ai-infrastructure",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Publicis Sapient Collabs With G42, Aims To Explore AI-First Services",
+          "source": "analyticsinsight.ae",
+          "url": "https://www.analyticsinsight.ae/business/publicis-sapient-collabs-with-g42-aims-to-explore-ai-first-services",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://campaignme.com/g42-publicis-sapient-set-to-explore-ai-first-services-jv-for-the-uae-and-global-south/",
+        "https://www.core42.ai/en/news/g42-intelligence-grid-sovereign-ai-infrastructure"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "G42 and Publicis Sapient explore AI services joint venture for UAE and Global South",
-      "source": "campaignme.com",
-      "url": "https://campaignme.com/g42-publicis-sapient-set-to-explore-ai-first-services-jv-for-the-uae-and-global-south/",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Central Bank issues silver commemorative coin for Emirati Children's Day",
+      "headline": "UAE marks Emirati Children's Day with commemorative silver coin",
       "source": "gulfnews.com",
       "url": "https://gulfnews.com/uae/uaes-central-bank-issues-silver-coin-on-emirati-childrens-day-1.500475344",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "UAE Treasury Bonds auction completes with AED 1.1 billion issuance",
+      "headline": "Mohammed bin Rashid meets with Fujairah Crown Prince in Dubai",
       "source": "emirates247.com",
-      "url": "https://www.emirates247.com/business/uae-treasury-bonds-auction-held-in-line-with-march-schedule-with-total-issuance-of-aed11-billion/225",
-      "signal_category_hint": "economic_tech"
+      "url": "https://emirates247.com/uae/mohammed-bin-rashid-meets-with-fujairah-crown-prince-in-dubai/323",
+      "signal_category_hint": "domestic_regime"
     }
   ]
 }
