@@ -224,7 +224,10 @@ async def edit_country(
             system=[{"type": "text", "text": system_prompt}],
             messages=[{"role": "user", "content": user_message}],
         ) as stream:
-            response = await stream.get_final_message()
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                f"Editor {country.code}: streaming API call",
+            )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -296,7 +299,10 @@ async def edit_regional(
             system=[{"type": "text", "text": system_prompt}],
             messages=[{"role": "user", "content": user_message}],
         ) as stream:
-            response = await stream.get_final_message()
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                f"Editor regional/{page.region.value}: streaming API call",
+            )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -375,7 +381,10 @@ async def edit_executive(
             system=[{"type": "text", "text": system_prompt}],
             messages=[{"role": "user", "content": items_json}],
         ) as stream:
-            response = await stream.get_final_message()
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                "Editor executive: streaming API call",
+            )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)

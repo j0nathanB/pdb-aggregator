@@ -108,7 +108,10 @@ async def _copyedit_prose(
             system=[{"type": "text", "text": system_prompt}],
             messages=[{"role": "user", "content": user_message}],
         ) as stream:
-            response = await stream.get_final_message()
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                f"Copyeditor {label}: streaming API call",
+            )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
