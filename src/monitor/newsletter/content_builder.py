@@ -352,6 +352,24 @@ def build_all_pages(
         # Sort by activity level (high → moderate → low → none)
         countries.sort(key=lambda c: _ACTIVITY_SORT.get(c.activity_rating or "", 99))
 
+        # Build raw dynamics for editor context
+        raw_dynamics = None
+        if report and report.cross_cutting_dynamics:
+            raw_dynamics = []
+            for d in report.cross_cutting_dynamics:
+                raw_dynamics.append({
+                    "title": d.title,
+                    "countries_involved": d.countries_involved,
+                    "signal_categories": d.signal_categories,
+                    "assessment": d.assessment,
+                    "significance": d.significance,
+                    "trend": d.trend,
+                    "confidence": d.confidence,
+                    "weakest_link": d.weakest_link,
+                    "evidence_against_linkage": d.evidence_against_linkage,
+                    "competing_interpretation": d.competing_interpretation,
+                })
+
         page = RegionPageContent(
             region=region,
             display_name=display_name,
@@ -360,6 +378,7 @@ def build_all_pages(
             regional_lead=lead,
             gap_paragraphs=gaps,
             card_summary=card_summary,
+            raw_dynamics=raw_dynamics,
             countries=countries,
         )
         region_pages[region] = page

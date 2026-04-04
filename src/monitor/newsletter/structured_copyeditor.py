@@ -137,7 +137,19 @@ async def _copyedit_prose(
         update_trace_parsed("copyeditor", label, run_date, parsed_output=data)
         return data
     except (ValueError, KeyError):
-        logger.warning("Copyeditor [%s]: JSON parse failed, keeping original", label)
+        # LLM returned prose instead of JSON — use as polished version
+        if response_text.strip():
+            logger.info("Copyeditor [%s]: raw prose response, using as polished output", label)
+            keys = list(prose_fields.keys())
+            if len(keys) == 1:
+                result = {keys[0]: response_text.strip()}
+            else:
+                result = dict(prose_fields)
+                main_key = next((k for k in keys if k in ("narrative_body", "regional_lead", "edited_essay")), keys[0])
+                result[main_key] = response_text.strip()
+            update_trace_parsed("copyeditor", label, run_date, parsed_output=result)
+            return result
+        logger.warning("Copyeditor [%s]: empty response, keeping original", label)
         return prose_fields
 
 

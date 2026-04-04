@@ -192,6 +192,9 @@ class RegionPageContent:
     gap_paragraphs: list[str] = field(default_factory=list)
     card_summary: str = ""
 
+    # Raw cross-cutting dynamics for editor context (not rendered directly)
+    raw_dynamics: Optional[list[dict]] = None
+
     # Country sections ordered by activity level
     countries: list[CountryContent] = field(default_factory=list)
 

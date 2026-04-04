@@ -173,23 +173,30 @@ REGIONAL_EDITOR_SYSTEM = """# Regional Lead Editor
 
 ## Role
 
-You edit the regional lead for a geopolitical intelligence briefing. You receive structured cross-cutting dynamics and produce polished narrative prose plus a one-sentence card summary.
+You edit the regional lead for a geopolitical intelligence briefing. You receive a condensed regional overview PLUS the full cross-cutting dynamics from the analyst. Your job is to produce rich, detailed narrative prose — not a summary of a summary.
+
+## Your Inputs
+
+- `regional_lead` — the analyst's condensed overview (use as a starting point, not the whole story)
+- `cross_cutting_dynamics` — the FULL analytical detail for each cross-regional pattern. Each has: title, countries involved, assessment, significance, trend, confidence, weakest link, evidence against linkage, competing interpretation. USE THIS DEPTH in your prose.
+- `gap_paragraphs` — notable absences to polish
+- `card_summary_seed` — starting point for the navigation card summary
 
 ## What You Do
 
-1. Rewrite the regional lead into flowing analytical prose
+1. Rewrite the regional lead into flowing analytical prose of 3-5 SUBSTANTIAL paragraphs. Draw on the cross_cutting_dynamics for concrete detail — assessments, significance, competing interpretations, weakest links. Do NOT just summarize the summary. Expand into rich narrative.
 2. Polish any gap paragraphs (notable absences)
-3. Produce a card_summary — a single sentence capturing the region's week, for a navigation card
+3. Produce a card_summary — a single sentence for a navigation card
 
-## Style
-Same as country editor: plain words, active voice, no clichés, no jargon. Names get office + forename + surname on first mention.
+### Style
+Plain words. Active voice. Cut ruthlessly. No clichés, jargon, euphemisms, or throat-clearing. Lead with action. Names get office + forename + surname on first mention. No inline source citations.
 
 ## Your Output
 
 Return JSON:
 ```json
 {
-    "regional_lead": "Edited regional lead prose...",
+    "regional_lead": "Edited regional lead prose — 3-5 substantial paragraphs...",
     "gap_paragraphs": ["Notably absent this week: ..."],
     "card_summary": "One sentence summary for the overview card."
 }
@@ -312,12 +319,16 @@ async def edit_regional(
     if not page.regional_lead:
         return page
 
-    user_message = json.dumps({
+    input_data = {
         "region": page.display_name,
         "regional_lead": page.regional_lead,
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary_seed": page.card_summary,
-    }, indent=2, ensure_ascii=False)
+    }
+    # Include full cross-cutting dynamics for editorial depth
+    if page.raw_dynamics:
+        input_data["cross_cutting_dynamics"] = page.raw_dynamics
+    user_message = json.dumps(input_data, indent=2, ensure_ascii=False)
 
     style_guide = _load_style_guide()
     system_prompt = REGIONAL_EDITOR_SYSTEM
@@ -595,7 +606,22 @@ async def style_edit_prose(
         update_trace_parsed("style_editor", label, run_date, parsed_output=data)
         return data
     except (ValueError, KeyError):
-        logger.warning("Style editor [%s]: JSON parse failed, keeping original", label)
+        # LLM returned prose instead of JSON — use it as the polished version
+        # of the first prose field in the input
+        if response_text.strip():
+            logger.info("Style editor [%s]: raw prose response, using as polished output", label)
+            keys = list(prose_fields.keys())
+            if len(keys) == 1:
+                # Single field — map response directly
+                result = {keys[0]: response_text.strip()}
+            else:
+                # Multiple fields — use response for the main prose field
+                result = dict(prose_fields)
+                main_key = next((k for k in keys if k in ("narrative_body", "regional_lead", "edited_essay")), keys[0])
+                result[main_key] = response_text.strip()
+            update_trace_parsed("style_editor", label, run_date, parsed_output=result)
+            return result
+        logger.warning("Style editor [%s]: empty response, keeping original", label)
         return prose_fields
 
 
