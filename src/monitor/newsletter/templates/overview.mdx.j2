@@ -1,0 +1,40 @@
+---
+title: "The Middle Powers Monitor"
+description: "Weekly intelligence brief covering {{ country_count }} middle powers across five regions"
+sidebarTitle: "Overview"
+mode: "wide"
+---
+
+## Week of {{ date_range }}
+
+{% if executive_brief.edited_essay %}
+{{ executive_brief.edited_essay }}
+{% elif executive_brief.items %}
+{% for item in executive_brief.items %}
+### {{ item.title }}
+
+{{ item.what }}
+
+{{ item.why_it_matters }}
+
+*What to watch: {{ item.what_to_watch }}*
+
+{% endfor %}
+{% else %}
+*No system-level dynamics identified this week.*
+{% endif %}
+
+---
+
+## Regions
+
+<Columns cols={2}>
+{% for card in region_cards %}
+  <Card title="{{ card.display_name }}" icon="{{ card.icon }}" href="/briefs/{{ end_date_str }}/{{ card.slug }}">
+    {{ card.summary }}
+  </Card>
+{% endfor %}
+  <Card title="Watchlist" icon="binoculars" href="/briefs/{{ end_date_str }}/watchlist">
+    {{ watchlist_card_summary or "No active watchlist items." }}
+  </Card>
+</Columns>
