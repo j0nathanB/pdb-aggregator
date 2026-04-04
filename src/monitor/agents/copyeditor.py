@@ -252,6 +252,10 @@ def _split_region_page(
     """Split a standalone region page (MDX frontmatter + lead + countries)."""
     result: list[tuple[str, EditableSection | None]] = []
 
+    # Extract region name from frontmatter title for unique trace labels
+    title_match = re.search(r'^title:\s*"(.+?)"', newsletter, re.MULTILINE)
+    region_label = title_match.group(1) if title_match else "Regional Lead"
+
     # Split into lead (before first ### country heading) and country sections
     parts = re.split(r'(?=\n\n### )', newsletter)
     lead = parts[0]
@@ -260,7 +264,7 @@ def _split_region_page(
     if not _is_boilerplate(lead):
         result.append((
             lead,
-            EditableSection(text=lead, label="Regional Lead", section_type="regional"),
+            EditableSection(text=lead, label=region_label, section_type="regional"),
         ))
     else:
         result.append((lead, None))

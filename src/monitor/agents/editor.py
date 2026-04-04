@@ -885,6 +885,7 @@ async def style_edit_page(
     # Split into segments by ### country headings
     segments = _split_country_sections(page)
 
+    from ..timing import TrackedSemaphore
     semaphore = TrackedSemaphore(max_concurrent, "style_editor")
 
     async def _edit(idx: int, text: str, code: str | None) -> tuple[int, str]:

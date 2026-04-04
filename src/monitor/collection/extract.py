@@ -28,6 +28,9 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
+import csv
+import re
+
 import httpx
 import yaml
 from dotenv import load_dotenv
@@ -36,7 +39,74 @@ from ..config import HTTP_USER_AGENT as _HTTP_USER_AGENT
 
 logger = logging.getLogger(__name__)
 
+# File extensions and URL patterns that indicate non-extractable binary content
+_BINARY_EXTENSIONS = frozenset({
+    ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx",
+    ".zip", ".rar", ".gz", ".tar", ".7z",
+    ".png", ".jpg", ".jpeg", ".gif", ".svg", ".bmp", ".webp",
+    ".mp3", ".mp4", ".wav", ".avi", ".mov",
+})
+_PDF_URL_PATTERNS = ("_to_pdf.php", "/nota_to_pdf", "/export/pdf")
+
+
+def _is_binary_url(url: str) -> bool:
+    """Check if a URL points to a binary file based on path/extension."""
+    path = urlparse(url).path.lower()
+    if any(path.endswith(ext) for ext in _BINARY_EXTENSIONS):
+        return True
+    if any(pat in url.lower() for pat in _PDF_URL_PATTERNS):
+        return True
+    return False
+
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+
+# ---------------------------------------------------------------------------
+# Opinion / editorial filter (loaded from opinion_filters.csv)
+# ---------------------------------------------------------------------------
+_OPINION_FILTERS_PATH = PROJECT_ROOT / "opinion_filters.csv"
+
+
+def _load_opinion_filters() -> list[dict]:
+    """Load opinion filter rules from CSV. Called once at module load."""
+    if not _OPINION_FILTERS_PATH.exists():
+        logger.warning("opinion_filters.csv not found at %s", _OPINION_FILTERS_PATH)
+        return []
+    rules = []
+    with open(_OPINION_FILTERS_PATH, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            rule = {
+                "domain": row["domain"].strip(),
+                "type": row["opinion_type"].strip(),
+                "pattern": row["opinion_pattern"].strip(),
+            }
+            if rule["type"] == "regex":
+                rule["_compiled"] = re.compile(rule["pattern"])
+            rules.append(rule)
+    return rules
+
+
+_OPINION_RULES: list[dict] = _load_opinion_filters()
+
+
+def _is_opinion_url(url: str) -> bool:
+    """Check if a URL matches an opinion/editorial filter rule."""
+    parsed = urlparse(url)
+    hostname = parsed.netloc.lower()
+    if hostname.startswith("www."):
+        hostname = hostname[4:]
+    path = parsed.path.lower()
+
+    for rule in _OPINION_RULES:
+        if rule["domain"] not in hostname:
+            continue
+        if rule["type"] == "path" and path.startswith(rule["pattern"].lower()):
+            return True
+        if rule["type"] == "subdomain" and hostname == rule["pattern"].lower():
+            return True
+        if rule["type"] == "regex" and rule["_compiled"].search(url):
+            return True
+    return False
 load_dotenv(PROJECT_ROOT / ".env")
 
 ROUTING_PATH = PROJECT_ROOT / "assets" / "country_configs" / "extraction_routing.yaml"
@@ -808,6 +878,18 @@ class ExtractionOrchestrator:
         For single-URL extraction outside of batch context. Uses sequential
         fallback (not two-phase). For batch extraction, use extract_batch().
         """
+        if _is_binary_url(url):
+            logger.debug("Skipping binary URL: %s", url)
+            return ExtractionResult(
+                url=url, method="skipped_binary", success=False,
+                error="Binary/PDF URL detected from path",
+            )
+        if _is_opinion_url(url):
+            logger.debug("Skipping opinion URL: %s", url)
+            return ExtractionResult(
+                url=url, method="skipped_opinion", success=False,
+                error="Opinion/editorial URL filtered",
+            )
         route = self._config.route_for_url(url)
 
         # Try primary method
@@ -870,7 +952,21 @@ class ExtractionOrchestrator:
         filtered_urls: list[str] = []
         skipped_indices: set[int] = set()
 
+        binary_skipped = 0
+        opinion_skipped = 0
+        binary_indices: set[int] = set()
+        opinion_indices: set[int] = set()
         for i, url in enumerate(urls):
+            if _is_binary_url(url):
+                skipped_indices.add(i)
+                binary_indices.add(i)
+                binary_skipped += 1
+                continue
+            if _is_opinion_url(url):
+                skipped_indices.add(i)
+                opinion_indices.add(i)
+                opinion_skipped += 1
+                continue
             domain = urlparse(url).netloc.lower()
             if domain.startswith("www."):
                 domain = domain[4:]
@@ -880,6 +976,10 @@ class ExtractionOrchestrator:
                 continue
             domain_counts[domain] = count + 1
             filtered_urls.append(url)
+        if binary_skipped:
+            logger.info("Skipped %d binary/PDF URLs", binary_skipped)
+        if opinion_skipped:
+            logger.info("Skipped %d opinion/editorial URLs", opinion_skipped)
 
         # ── Phase 1: Primary dispatch ──────────────────────────────────
         # All URLs dispatched to their primary method concurrently.
@@ -975,7 +1075,17 @@ class ExtractionOrchestrator:
         # ── Build ordered result list ──────────────────────────────────
         ordered = []
         for i, url in enumerate(urls):
-            if i in skipped_indices:
+            if i in binary_indices:
+                ordered.append(ExtractionResult(
+                    url=url, method="skipped_binary", success=False,
+                    error="Binary/PDF URL detected from path",
+                ))
+            elif i in opinion_indices:
+                ordered.append(ExtractionResult(
+                    url=url, method="skipped_opinion", success=False,
+                    error="Opinion/editorial URL filtered",
+                ))
+            elif i in skipped_indices:
                 ordered.append(ExtractionResult(
                     url=url, method="skipped", success=False,
                     error=f"Per-domain limit ({limit}) exceeded",
