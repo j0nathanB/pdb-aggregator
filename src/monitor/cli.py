@@ -297,104 +297,68 @@ async def cmd_run(args: argparse.Namespace) -> None:
         if global_ledger is None:
             global_ledger = load_global_ledger()
 
-    # ---- Stage: newsletter ----
+    # ---- Stage: newsletter (structured content → editor → copyeditor) ----
     if _should_run("newsletter", resume_from):
         recorder.start_stage("newsletter")
         try:
-            print("Assembling newsletter...")
-            newsletter = assemble_newsletter(
-                global_ledger, regional_reports, country_ledgers, country_entries, end_date
-            )
+            from .newsletter.content_builder import build_all_pages
+            from .newsletter.structured_editor import edit_all
+            from .newsletter.structured_copyeditor import copyedit_all
 
-            from .agents.editor import edit_newsletter
-            print("Editing country sections...")
-            newsletter = await edit_newsletter(
-                newsletter, country_ledgers, country_entries, max_concurrent=args.concurrency
-            )
-
-            from .agents.copyeditor import copyedit_newsletter
-            print("Copy-editing...")
-            newsletter = await copyedit_newsletter(newsletter, max_concurrent=args.concurrency)
-
-            output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d")
-            output_dir.mkdir(parents=True, exist_ok=True)
-            output_path = output_dir / "newsletter.md"
-            output_path.write_text(newsletter)
-            print(f"  Newsletter written to {output_path}")
-            recorder.complete_stage("newsletter")
-        except Exception as e:
-            recorder.fail_stage("newsletter", str(e))
-            raise
-    else:
-        recorder.skip_stage("newsletter")
-
-    # ---- Stage: publishing ----
-    if _should_run("publishing", resume_from):
-        recorder.start_stage("publishing")
-        try:
-            print("Publishing to site...")
-            from .ledger.storage import load_story_map, list_story_maps
+            print("Building structured content...")
+            from .ledger.storage import load_story_map
             story_maps_data: dict[str, dict] = {}
             for code in country_ledgers:
                 try:
                     story_maps_data[code] = load_story_map(code, end_date)
                 except FileNotFoundError:
                     pass
-            pages = assemble_newsletter_pages(
+
+            overview_content, region_page_contents, watchlist_content = build_all_pages(
                 global_ledger, regional_reports, country_ledgers, country_entries, end_date,
                 story_maps=story_maps_data or None,
             )
 
-            # Edit + copyedit + style edit multi-page output
-            from .agents.editor import edit_region_page, edit_overview_page, edit_watchlist_page, summarize_card_summaries, style_edit_page, run_style_editor
-            from .agents.copyeditor import copyedit_newsletter as copyedit
+            print("Editing (structured JSON I/O)...")
+            overview_content, region_page_contents = await edit_all(
+                overview_content, region_page_contents,
+                analysis_date=end_date, max_concurrent=args.concurrency,
+            )
 
-            # Edit overview page (executive brief + card summaries)
-            if "overview" in pages:
-                latest = global_ledger.latest_entry()
-                items = latest.executive_briefing_items if latest else []
-                if items:
-                    print("Editing executive brief...")
-                    pages["overview"] = await edit_overview_page(pages["overview"], items, analysis_date=end_date)
-                print("Condensing card summaries...")
-                pages["overview"] = await summarize_card_summaries(pages["overview"], analysis_date=end_date)
-                pages["overview"] = await copyedit(pages["overview"], max_concurrent=args.concurrency, analysis_date=end_date)
+            print("Copy-editing (structured JSON I/O)...")
+            overview_content, region_page_contents, watchlist_content = await copyedit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency,
+            )
 
-            # Edit watchlist page
-            if "watchlist" in pages:
-                print("Editing watchlist...")
-                pages["watchlist"] = await edit_watchlist_page(pages["watchlist"], analysis_date=end_date)
-                pages["watchlist"] = await copyedit(pages["watchlist"], max_concurrent=args.concurrency, analysis_date=end_date)
+            recorder.complete_stage("newsletter")
+        except Exception as e:
+            recorder.fail_stage("newsletter", str(e))
+            raise
+    else:
+        recorder.skip_stage("newsletter")
+        # Build unedited content for the publishing stage
+        from .newsletter.content_builder import build_all_pages as _build
+        from .ledger.storage import load_story_map
+        _sm: dict[str, dict] = {}
+        for code in country_ledgers:
+            try:
+                _sm[code] = load_story_map(code, end_date)
+            except FileNotFoundError:
+                pass
+        overview_content, region_page_contents, watchlist_content = _build(
+            global_ledger, regional_reports, country_ledgers, country_entries, end_date,
+            story_maps=_sm or None,
+        )
 
-            # Edit region pages (regional lead + country sections)
-            for slug in list(pages.keys()):
-                if slug != "overview" and slug != "watchlist":
-                    pages[slug] = await edit_region_page(
-                        pages[slug], regional_reports, country_ledgers, country_entries,
-                        max_concurrent=args.concurrency,
-                        analysis_date=end_date,
-                    )
-                    pages[slug] = await copyedit(pages[slug], max_concurrent=args.concurrency, analysis_date=end_date)
+    # ---- Stage: publishing (render templates → MDX → publish) ----
+    if _should_run("publishing", resume_from):
+        recorder.start_stage("publishing")
+        try:
+            from .newsletter.renderer import render_pages
 
-            # Style editor — final pass for style guide compliance
-            print("Style editing...")
-
-            # Executive overview prose
-            if "overview" in pages:
-                overview = pages["overview"]
-                week_match = re.search(r'\n## Week of .+\n', overview)
-                regions_match = re.search(r'\n---\n\n## Regions', overview)
-                if week_match and regions_match:
-                    exec_prose = overview[week_match.end():regions_match.start()].strip()
-                    if exec_prose and not exec_prose.startswith("*No system-level"):
-                        edited_exec = await run_style_editor(exec_prose, "executive", analysis_date=end_date)
-                        pages["overview"] = overview[:week_match.end()] + "\n\n" + edited_exec + "\n\n" + overview[regions_match.start():]
-
-            # Region pages (regional lead + each country section)
-            for slug in list(pages.keys()):
-                if slug != "overview" and slug != "watchlist":
-                    print(f"  Style editing {slug}...")
-                    pages[slug] = await style_edit_page(pages[slug], analysis_date=end_date, max_concurrent=args.concurrency)
+            print("Rendering templates → MDX...")
+            pages = render_pages(overview_content, region_page_contents, watchlist_content)
 
             brief_dir = publish_brief(pages, end_date)
             print(f"  Site published to {brief_dir}")
