@@ -178,16 +178,47 @@ def _build_country_content(
                     significance=absence.significance,
                 ))
 
-        # Raw analysis for editor context
+        # Raw analysis for editor context — full detail matching old editor input
         if entry.category_movements:
-            content.raw_analysis = {
-                cat.value: {
+            raw = {}
+            for cat, mov in entry.category_movements.items():
+                cat_key = cat.value
+                raw[cat_key] = {
                     "movement": mov.movement.value,
-                    "updated_assessment": mov.updated_assessment,
                     "prior_assessment": mov.prior_assessment,
+                    "updated_assessment": mov.updated_assessment,
+                    "developments": [
+                        {
+                            "headline": d.headline,
+                            "summary": d.summary,
+                            "signal_category_relevance": d.signal_category_relevance,
+                            "actors_involved": d.actors_involved,
+                        }
+                        for d in mov.developments
+                    ],
+                    "confidence_change": (
+                        {
+                            "from": mov.confidence_change.from_,
+                            "to": mov.confidence_change.to,
+                            "reason": mov.confidence_change.reason,
+                        }
+                        if mov.confidence_change
+                        else None
+                    ),
                 }
-                for cat, mov in entry.category_movements.items()
+            content.raw_analysis = {
+                "activity_level": entry.activity_level,
+                "category_movements": raw,
             }
+            if entry.structural_claim_checks:
+                content.raw_analysis["structural_claim_checks"] = [
+                    {
+                        "claim_ref": s.claim_ref,
+                        "status": s.status.value if hasattr(s.status, "value") else str(s.status),
+                        "evidence": s.evidence,
+                    }
+                    for s in entry.structural_claim_checks
+                ]
 
     return content
 

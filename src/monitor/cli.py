@@ -302,7 +302,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
         recorder.start_stage("newsletter")
         try:
             from .newsletter.content_builder import build_all_pages
-            from .newsletter.structured_editor import edit_all
+            from .newsletter.structured_editor import edit_all, style_edit_all
             from .newsletter.structured_copyeditor import copyedit_all
 
             print("Building structured content...")
@@ -327,6 +327,12 @@ async def cmd_run(args: argparse.Namespace) -> None:
 
             print("Copy-editing (structured JSON I/O)...")
             overview_content, region_page_contents, watchlist_content = await copyedit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency,
+            )
+
+            print("Style editing (structured JSON I/O)...")
+            overview_content, region_page_contents, watchlist_content = await style_edit_all(
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency,
             )
