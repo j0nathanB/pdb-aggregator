@@ -97,20 +97,18 @@ async def _copyedit_prose(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
     async with anthropic_limiter():
-        response = await with_heartbeat(
-            client.messages.create(
-                model=model or COPYEDITOR_MODEL,
-                max_tokens=THINKING_BUDGET_TOKENS + 8192,
-                temperature=1,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": THINKING_BUDGET_TOKENS,
-                },
-                system=[{"type": "text", "text": system_prompt}],
-                messages=[{"role": "user", "content": user_message}],
-            ),
-            f"Copyeditor {label}: API call",
-        )
+        async with client.messages.stream(
+            model=model or COPYEDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await stream.get_final_message()
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)

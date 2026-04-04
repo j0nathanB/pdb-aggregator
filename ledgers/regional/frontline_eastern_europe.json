@@ -1,104 +1,83 @@
 {
   "region": "frontline_eastern_europe",
-  "week": "2026-02-15",
-  "regional_overview": "Frontline Europe demonstrates continued Western institutional integration through NATO command restructuring while simultaneously signaling growing concerns about US alliance reliability. Poland's historic NATO command appointment coincides with systematic transfer of US positions to European leadership, indicating accelerated alliance Europeanization. Multiple countries used the Munich Security Conference to articulate tensions with US policy, from Latvia's 'no business as usual' stance to Lithuania's open NATO collapse contingency planning. Meanwhile, constitutional crises are simultaneously stressing democratic institutions in Czech Republic, Poland, and Romania, though through different domestic mechanisms.",
+  "week": "2026-02-22",
+  "regional_overview": "Frontline and Eastern Europe faces a striking paradox this week: robust alliance integration proceeds alongside widespread domestic political crises. Nearly every country reports significant governance stress - from Ukraine's Zaluzhnyi-Zelensky rupture to Poland's institutional warfare, Czech constitutional mobilization, and Romanian coalition destabilization. Yet defense cooperation, NATO integration, and Western alignment mechanisms continue functioning effectively. This suggests institutional resilience at the alliance level while domestic political systems strain under various pressures.",
   "cross_cutting_dynamics": [
     {
-      "title": "NATO Command Structure Europeanization",
+      "title": "Widespread Domestic Political Stress Amid Continued Alliance Integration",
       "countries_involved": [
+        "ua",
         "pl",
-        "lt"
-      ],
-      "signal_categories": [
-        "alignment_diplomatic",
-        "institutional"
-      ],
-      "pattern_type": "institutional",
-      "assessment": "NATO is systematically transferring command positions from US to European allies, with Poland receiving a historic command appointment while Lithuania reports broader US withdrawal from regional leadership roles. This represents institutional adaptation within NATO to reduce American command dominance and increase European responsibility.",
-      "significance": "This institutional restructuring indicates NATO is proactively adapting to anticipated changes in US engagement levels, giving European allies greater operational control over alliance mechanisms in the region.",
-      "trend": "emerging",
-      "confidence": 3,
-      "confidence_inherited_from": {
-        "pl_alignment_diplomatic": 4,
-        "lt_institutional": 3
-      },
-      "weakest_link": "Lithuania's assessment relies on single source (LRT.lt) for the broader NATO command transfer pattern",
-      "evidence_against_linkage": "The Poland appointment could be routine promotion unrelated to broader US withdrawal pattern, and Lithuania's reporting may overinterpret standard NATO rotation procedures",
-      "linkage_strength": "strong",
-      "linkage_justification": "Both developments involve the same institutional mechanism (NATO command structure) with clear temporal coordination and operational interdependence - US withdrawal creates positions that European allies fill",
-      "competing_interpretation": "Standard NATO rotation cycle coinciding with Poland's military modernization qualifying it for higher command roles"
-    },
-    {
-      "title": "Munich Conference Alliance Relationship Recalibration",
-      "countries_involved": [
-        "lv",
         "fi",
+        "ee",
+        "lt",
+        "lv",
         "cz",
-        "ro",
-        "ua"
+        "ro"
       ],
       "signal_categories": [
+        "domestic_regime",
+        "security_defense",
         "alignment_diplomatic"
       ],
       "pattern_type": "parallel",
-      "assessment": "Multiple regional allies used the Munich Security Conference as a coordinated platform to signal concerns about US alliance reliability, from Latvia's explicit 'no business as usual' stance to Finland's analytical assessment of US policy direction and Czech constitutional tensions affecting diplomatic coordination.",
-      "significance": "The convergence of alliance concerns expressed through the same institutional forum indicates regional coordination in messaging alliance relationship adjustments to US policy changes.",
-      "trend": "emerging",
+      "assessment": "Seven of eight regional countries report significant domestic political stress this week, ranging from elite ruptures (Ukraine's Zaluzhnyi break with Zelensky) to institutional warfare (Poland's presidential counter-legislation), constitutional crises (Czech mass rallies), and coalition destabilization (Romania, Lithuania, Latvia). Yet alliance integration mechanisms continue functioning effectively across all countries, with NATO exercises, defense procurement milestones, and diplomatic coordination proceeding normally.",
+      "significance": "This pattern reveals institutional resilience at the alliance level despite domestic political fragmentation. The disconnection between domestic governance stress and continued external integration suggests that regional security architecture has developed sufficient institutional momentum to function independently of domestic political stability in member states.",
+      "trend": "developing",
       "confidence": 3,
       "confidence_inherited_from": {
-        "lv_alignment_diplomatic": 4,
-        "fi_alignment_diplomatic": 3,
-        "cz_alignment_diplomatic": 3,
-        "ro_alignment_diplomatic": 4,
-        "ua_alignment_diplomatic": 4
+        "ua_domestic_regime": 4,
+        "pl_domestic_regime": 4,
+        "fi_domestic_regime": 4,
+        "ee_domestic_regime": 3,
+        "lt_domestic_regime": 3,
+        "lv_domestic_regime": 3,
+        "cz_domestic_regime": 4,
+        "ro_domestic_regime": 4
       },
-      "weakest_link": "Finland and Czech Republic assessments both rely on single sources for Munich positioning",
-      "evidence_against_linkage": "Different countries may have had independent motivations for Munich messaging, and diplomatic criticism could reflect standard alliance consultation rather than coordinated pushback",
+      "weakest_link": "Estonia, Lithuania, and Latvia domestic regime assessments limit confidence to 3 despite strong evidence of parallel governance stress",
+      "evidence_against_linkage": "The domestic crises have different root causes - Ukraine's stems from wartime elite tensions, Poland's from cohabitation dysfunction, Czech Republic's from constitutional disputes, others from routine coalition pressures. The timing could be coincidental rather than reflecting shared structural pressures.",
       "linkage_strength": "moderate",
-      "linkage_justification": "Shared institutional platform (Munich Security Conference) with temporal concentration of similar messaging themes about US alliance relationship concerns suggests coordinated diplomatic signaling",
-      "competing_interpretation": "Routine alliance consultation and independent national responses to same US policy changes rather than coordinated messaging strategy"
+      "linkage_justification": "The simultaneity across eight countries experiencing governance stress while maintaining identical patterns of external integration suggests shared structural conditions - possibly related to post-2022 institutional strains, coalition governance pressures under security spending demands, or broader democratic stress patterns in the region.",
+      "competing_interpretation": "These could be independent domestic political cycles coincidentally overlapping, with alliance integration continuing due to bureaucratic momentum rather than reflecting deeper institutional resilience patterns."
     }
   ],
   "dynamics_considered_and_rejected": [
     {
-      "candidate_dynamic": "Regional defense spending acceleration",
+      "candidate_dynamic": "Coordinated US relationship management across Estonia, Latvia, and Romania",
       "countries": [
-        "pl",
+        "ee",
         "lv",
         "ro"
       ],
-      "reason_rejected": "While Poland (\u20ac200 billion SAFE program), Latvia (4.9% GDP spending), and Romania (military modernization) all show defense buildup, these represent continuation of established trajectories rather than new coordinated response. Different timelines and institutional mechanisms suggest parallel response to shared threat environment rather than active coordination."
+      "reason_rejected": "Countries show divergent approaches rather than coordination - Estonia's anti-MAGA rhetoric contrasts sharply with Romania's proactive Trump administration engagement, while Latvia adopts middle ground. These appear to be independent strategic calculations rather than coordinated responses."
     },
     {
-      "candidate_dynamic": "Domestic constitutional crisis pattern",
+      "candidate_dynamic": "Synchronized defense procurement and infrastructure milestones",
       "countries": [
-        "cz",
-        "pl",
+        "lt",
+        "lv",
+        "fi",
         "ro"
       ],
-      "reason_rejected": "Czech Republic (mass demonstrations), Poland (cohabitation dysfunction), and Romania (coalition destabilization) all face institutional stress, but through completely different mechanisms - constitutional powers conflict, executive-presidential tensions, and coalition infighting respectively. No evidence of contagion or coordination."
+      "reason_rejected": "Defense developments represent completion of pre-planned programs (Lithuanian JLTV delivery, Latvian training facility opening, Finnish NATO exercises) with different timelines and procurement cycles. No evidence of deliberate synchronization or shared triggering events."
     },
     {
-      "candidate_dynamic": "China policy convergence",
+      "candidate_dynamic": "Regional economic policy coordination amid fiscal pressures",
       "countries": [
-        "lt"
+        "lv",
+        "ro",
+        "ua"
       ],
-      "reason_rejected": "Only Lithuania shows significant China policy movement (Taiwan office renaming proposals). Single-country development without parallel behavior elsewhere in region."
+      "reason_rejected": "While multiple countries face fiscal constraints, their responses are country-specific - Latvia's debt warnings, Romania's monetary policy maintenance, Ukraine's IMF program adjustments reflect different economic structures and institutional relationships rather than coordinated regional approach."
     }
   ],
   "gaps": [
     {
-      "expected_dynamic": "EU institutional coordination on defense policies",
-      "observed": "Countries show NATO institutional adaptation but limited EU defense framework development despite multiple countries mentioning European defense alternatives",
-      "assessment": "Regional allies are adapting alliance structures through NATO mechanisms while EU defense integration remains underdeveloped, suggesting institutional path dependence favoring Atlantic over European frameworks"
+      "expected_dynamic": "EU institutional coordination on Ukraine support given multiple countries' continued engagement",
+      "observed": "Individual country initiatives (Czech ammunition program, various bilateral support) without visible EU-level coordination mechanisms",
+      "assessment": "The absence of visible EU coordination despite sustained member state Ukraine engagement may indicate either collection gaps in EU institutional reporting or genuine lack of Brussels-led coordination in favor of bilateral/coalition approaches."
     }
   ],
-  "low_confidence_items": [
-    {
-      "item": "Lithuania's economic policy adjustment regarding dairy farmer support",
-      "origin": "LT economic_tech",
-      "confidence": 2,
-      "note": "Included for awareness, not synthesized into dynamics"
-    }
-  ]
+  "low_confidence_items": []
 }

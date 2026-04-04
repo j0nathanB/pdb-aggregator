@@ -213,20 +213,18 @@ async def edit_country(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
     async with anthropic_limiter():
-        response = await with_heartbeat(
-            client.messages.create(
-                model=model or EDITOR_MODEL,
-                max_tokens=THINKING_BUDGET_TOKENS + 8192,
-                temperature=1,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": THINKING_BUDGET_TOKENS,
-                },
-                system=[{"type": "text", "text": system_prompt}],
-                messages=[{"role": "user", "content": user_message}],
-            ),
-            f"Editor {country.code}: API call",
-        )
+        async with client.messages.stream(
+            model=model or EDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await stream.get_final_message()
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -287,20 +285,18 @@ async def edit_regional(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
     async with anthropic_limiter():
-        response = await with_heartbeat(
-            client.messages.create(
-                model=model or EDITOR_MODEL,
-                max_tokens=THINKING_BUDGET_TOKENS + 4096,
-                temperature=1,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": THINKING_BUDGET_TOKENS,
-                },
-                system=[{"type": "text", "text": system_prompt}],
-                messages=[{"role": "user", "content": user_message}],
-            ),
-            f"Editor regional/{page.region.value}: API call",
-        )
+        async with client.messages.stream(
+            model=model or EDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 4096,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await stream.get_final_message()
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -368,21 +364,18 @@ async def edit_executive(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
     async with anthropic_limiter():
-        response = await with_heartbeat(
-            client.messages.create(
-                model=model or EDITOR_MODEL,
-                max_tokens=THINKING_BUDGET_TOKENS + 8192,
-                temperature=1,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": THINKING_BUDGET_TOKENS,
-                },
-                system=[{"type": "text", "text": system_prompt}],
-                messages=[{"role": "user", "content": items_json}],
-                timeout=600.0,
-            ),
-            "Editor executive: API call",
-        )
+        async with client.messages.stream(
+            model=model or EDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": items_json}],
+        ) as stream:
+            response = await stream.get_final_message()
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
