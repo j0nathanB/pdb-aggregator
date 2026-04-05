@@ -36,6 +36,15 @@ EDITOR_MODEL = MODEL
 # Style guide loaded once per process
 _style_guide: str | None = None
 
+NAMES_AND_TITLES_SECTION = """#### names and titles — briefing conventions ####
+
+- First mention: forename + surname, with office as appositive or context (*Andrii Sybiha, the foreign minister*; *Oleksandr Syrskyi, the commander-in-chief*)
+- For universally recognised figures (Trump, Zelensky, Putin), forename + surname alone is sufficient on first mention.
+- Subsequent mentions: Mr/Ms + surname (*Mr Sybiha*) or the office in lowercase (*the foreign minister*, *the president*)
+- Military officers on active duty: retain rank on all mentions (*General Syrskyi*)
+- No Mr, Mrs, Miss, Ms or Dr on first mention.
+"""
+
 
 def _load_style_guide() -> str:
     global _style_guide
@@ -47,6 +56,14 @@ def _load_style_guide() -> str:
         else:
             _style_guide = ""
     return _style_guide
+
+
+def _build_system_prompt(base_prompt: str) -> str:
+    """Append the style guide wrapped in XML tags to a base system prompt."""
+    style_guide = _load_style_guide()
+    if style_guide:
+        return f"{base_prompt}\n\n<style_guide>\n{NAMES_AND_TITLES_SECTION}\n{style_guide}\n</style_guide>"
+    return base_prompt
 
 
 def _build_country_input(country: CountryContent) -> str:
