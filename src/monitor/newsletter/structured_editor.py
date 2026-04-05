@@ -58,6 +58,23 @@ def _load_style_guide() -> str:
     return _style_guide
 
 
+def _unwrap_double_json(data: dict) -> dict:
+    """Fix LLM double-encoding: if a value is a JSON string containing the same keys, unwrap it."""
+    result = {}
+    for key, value in data.items():
+        if isinstance(value, str) and value.strip().startswith("{"):
+            try:
+                inner = json.loads(value)
+                if isinstance(inner, dict) and key in inner:
+                    # Double-wrapped: {"regional_lead": "{\"regional_lead\": \"...\"}"}
+                    result[key] = inner[key]
+                    continue
+            except (json.JSONDecodeError, KeyError):
+                pass
+        result[key] = value
+    return result
+
+
 def _build_system_prompt(base_prompt: str) -> str:
     """Append the style guide wrapped in XML tags to a base system prompt."""
     style_guide = _load_style_guide()
@@ -743,10 +760,7 @@ async def style_edit_prose(
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
-    style_guide = _load_style_guide()
-    system_prompt = STYLE_EDITOR_SYSTEM
-    if style_guide:
-        system_prompt += f"\n\n---\n\n## Full Style Guide\n\n{style_guide}"
+    system_prompt = _build_system_prompt(STYLE_EDITOR_SYSTEM)
 
     user_message = json.dumps(prose_fields, indent=2, ensure_ascii=False)
 
@@ -791,6 +805,7 @@ async def style_edit_prose(
 
     try:
         data = extract_json(response_text, context=f"style_editor_{label}")
+        data = _unwrap_double_json(data)
         update_trace_parsed("style_editor", label, run_date, parsed_output=data)
         return data
     except (ValueError, KeyError):

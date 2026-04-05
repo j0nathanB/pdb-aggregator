@@ -175,6 +175,8 @@ async def _copyedit_prose(
 
     try:
         data = extract_json(response_text, context=f"copyeditor_{label}")
+        from .structured_editor import _unwrap_double_json
+        data = _unwrap_double_json(data)
         update_trace_parsed("copyeditor", label, run_date, parsed_output=data)
         return data
     except (ValueError, KeyError):
