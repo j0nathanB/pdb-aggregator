@@ -100,6 +100,8 @@ def _render_notes_section(story_map_data: dict) -> str:
 
 def _escape_mdx(text: str) -> str:
     """Escape special characters that break MDX rendering."""
+    # Strip emoji (flag emoji and others break Mintlify's MDX parser)
+    text = re.sub(r'[\U0001F000-\U0001FFFF]', '', text)
     # Escape unescaped dollar signs (prevent LaTeX)
     text = re.sub(r'(?<!\\)\$(?!\$)', r'\$', text)
     return text
