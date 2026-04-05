@@ -62,6 +62,8 @@ def _render_notes_section(story_map_data: dict) -> str:
             continue
 
         headline = story.get("headline", "Untitled")
+        # Sanitize headline for JSX attribute — quotes break name="..."
+        headline = headline.replace('\\', '').replace('"', "'")
         date_range = _format_date_range_display([a.get("date", "") for a in articles])
 
         lines.append(f'<ResponseField name="{headline}" type="{date_range}">')
