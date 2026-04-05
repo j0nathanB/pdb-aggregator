@@ -1,10 +1,9 @@
 # Architectural Hardening — Implementation Record
 
-> **Status**: Phases 1–3 COMPLETED
-> **Completed**: 2026-04-02
+> **Status**: Phases 1–5 + Template Migration COMPLETED
 > **Branch**: mintlify
-> **Tests**: 710 passed (99 new + 611 existing), 0 failures
-> **Commits**: `604918e` (Phase 1+2), `6fdc2bf` (Phase 2b), `c84a125` (Phase 3.4), `6837dde` (Phase 1.6), `799ebf0` (Phase 3.5), this commit (Phase 3 remaining)
+> **Tests**: 731+ passed
+> **Period**: 2026-04-02 through 2026-04-05
 
 ## Context
 
@@ -141,10 +140,45 @@ Note: These comparisons worked by accident because `ClaimStatus(str, Enum)` inhe
 
 **5.2 `date.today()` audit** — Fixed `triage_decide()` which used `date.today()` for trace labels and `triage_date` instead of the passed `end_date`. Added `end_date` parameter and threaded through from `run_triage()`. Remaining `date.today()` calls are defensive fallbacks in function signatures — acceptable.
 
+## Phase 4: Template Migration — COMPLETED (2026-04-03 through 2026-04-05)
+
+Replaced the regex-split markdown interchange format with structured dataclasses + Jinja2 templates. The editor and copyeditor now work on structured JSON, not markdown.
+
+**New modules:**
+- `newsletter/content_models.py` — 13 dataclasses (CountryContent, RegionPageContent, etc.)
+- `newsletter/content_builder.py` — `build_all_pages()` maps ledgers/reports → content models. Enhanced development selection (all 5 categories always populated, even Movement.NONE)
+- `newsletter/renderer.py` — Jinja2 templates → MDX. Single rendering pass with `$` escaping, emoji stripping, ResponseField attribute sanitization
+- `newsletter/structured_editor.py` — Country, regional, executive, watchlist, and style editors. JSON I/O, XML-tagged prompts, streaming API calls with heartbeats
+- `newsletter/structured_copyeditor.py` — Mechanical polish on structured prose fields
+- `newsletter/templates/` — 3 Jinja2 templates (overview, region, watchlist)
+
+**New pipeline flow:**
+```
+content_builder → editor (JSON) → copyeditor (JSON) → style_editor (JSON) → renderer (Jinja2 → MDX) → publish
+```
+
+**Prompt architecture** — all 5 editors use consistent XML tags: `<role>`, `<inputs>`, `<instructions>`, `<style>`, `<constraints>`, `<example>`, `<output_format>`. Style guide appended at runtime in `<style_guide>` tags with names/titles convention prepended. `<style>` block identical across all editors.
+
+**Targeted re-edit tool** — `scripts/reedit.py` re-runs editorial passes on specific countries/regions without re-running the full pipeline. Loads content from disk, runs editor → copyeditor → style editor, outputs markdown and patches MDX files.
+
+**Key fixes during validation:**
+- Streaming required for extended thinking requests (messages.create → messages.stream)
+- Double-encoded JSON detection (`_unwrap_double_json`) for style editor/copyeditor
+- ResponseField name attribute sanitization (quotes break JSX)
+- Emoji stripping in renderer (flag emoji break Mintlify parser)
+- Duplicate accordion detection and removal
+
+**Old code retained** — `assembly.py`, old `editor.py`, old `copyeditor.py` still exist for `cmd_assemble`/`cmd_publish` fallback. Will be deleted once new pipeline is fully validated.
+
 ---
 
 ## Remaining Work (Future)
 
-### Phase 4: Structural Improvements
-- 4.1 Consolidation integrity (structured metadata companion)
-- 4.4 Typed `AgentResult[T]` with degradation metadata
+### Structural Improvements (deferred)
+- Consolidation integrity (structured metadata companion)
+- Typed `AgentResult[T]` with degradation metadata
+
+### Template Migration Cleanup (steps 9-10)
+- Delete old regex-split code (`_split_country_sections`, `_strip_sources_accordion`, `_sanitize_mdx`, `summarize_card_summaries`, `style_edit_page`)
+- Delete or rewrite `cmd_assemble`
+- Delete `assemble_newsletter()` single-page format
