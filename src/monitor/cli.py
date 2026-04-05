@@ -320,8 +320,8 @@ async def cmd_run(args: argparse.Namespace) -> None:
             )
 
             print("Editing (structured JSON I/O)...")
-            overview_content, region_page_contents = await edit_all(
-                overview_content, region_page_contents,
+            overview_content, region_page_contents, watchlist_content = await edit_all(
+                overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency,
             )
 

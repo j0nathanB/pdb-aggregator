@@ -6,7 +6,9 @@ sidebarTitle: "Watchlist"
 
 ## Items on Watch
 
-{% if items %}
+{% if edited_narrative %}
+{{ edited_narrative }}
+{% elif items %}
 {% for item in items %}
 - **{{ item.item }}**{% if item.countries %} ({{ item.countries | join(", ") }}){% endif %}: {{ item.why_it_matters }}{% if item.trigger %} *Trigger: {{ item.trigger }}.*{% endif %}
 

@@ -206,3 +206,6 @@ class WatchlistPageContent:
     week_start: date
     week_end: date
     items: list[WatchlistItemContent] = field(default_factory=list)
+
+    # Editor output — narrative prose. None until editor runs.
+    edited_narrative: Optional[str] = None

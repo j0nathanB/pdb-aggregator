@@ -638,6 +638,135 @@ async def edit_executive(
     return brief
 
 
+WATCHLIST_EDITOR_SYSTEM = """
+<role>
+You are an editor for a weekly geopolitical intelligence briefing. You receive structured watchlist items — developments the analyst is monitoring but that have not yet crystallised into full dynamics — and produce a short narrative that a reader can scan quickly.
+</role>
+
+<inputs>
+You receive a JSON array of watchlist items, each with:
+
+- `item` — what is being watched
+- `countries` — country codes involved
+- `why_it_matters` — analytical significance
+- `trigger` — what would escalate this from watch to action
+</inputs>
+
+<instructions>
+Produce a short narrative of 2-4 paragraphs that weaves the watchlist items into coherent prose.
+
+- Group related items. If two items involve the same countries or tensions, put them together.
+- For each item, convey what is being watched, why it matters, and what the trigger is — but in flowing prose, not as a bulleted list.
+- Lead with the most consequential item.
+- Use transitions between items so the watchlist reads as a coherent scan of the horizon, not disconnected bullet points.
+</instructions>
+
+<style>
+Plain words. Short words over long. *Let* not *permit*, *buy* not *purchase*, *show* not *demonstrate*. Poor countries are *poor*, not *underdeveloped*.
+
+Active voice. "Sheinbaum rejected the proposal" not "The proposal was rejected by Sheinbaum."
+
+Cut ruthlessly. If you can cut a word without losing meaning, cut it. *Currently*, *actually*, *really*, *very*, *significantly* — these usually serve no purpose.
+
+No clichés. No *level playing fields*, *windows of opportunity*, *paradigm shifts*, *road maps*. No *it remains to be seen* or *only time will tell*.
+
+No jargon. No *stakeholders*, *leveraging*, *synergies*, *going forward*.
+
+No euphemisms. *Torture* not *enhanced interrogation*. *Poor* not *underprivileged*.
+
+No throat-clearing. No "It is worth noting that" or "It should be mentioned that."
+
+Translate foreign-language quotes into English.
+</style>
+
+<constraints>
+- Do not change analytical judgments.
+- Do not add facts, claims, or context not present in the inputs.
+- Do not produce markdown formatting (headings, bullets, bold) — just plain prose paragraphs.
+</constraints>
+
+<output_format>
+Return JSON:
+{"edited_narrative": "Your watchlist narrative here..."}
+
+No commentary. Just the JSON object.
+</output_format>"""
+
+
+async def edit_watchlist(
+    watchlist: "WatchlistPageContent",
+    analysis_date: date | None = None,
+    model: str | None = None,
+) -> "WatchlistPageContent":
+    """Edit watchlist items into a cohesive narrative."""
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    if not watchlist.items:
+        return watchlist
+
+    items_json = json.dumps([
+        {
+            "item": w.item,
+            "countries": w.countries,
+            "why_it_matters": w.why_it_matters,
+            "trigger": w.trigger,
+        }
+        for w in watchlist.items
+    ], indent=2, ensure_ascii=False)
+
+    system_prompt = _build_system_prompt(WATCHLIST_EDITOR_SYSTEM)
+
+    logger.info("Editor [watchlist]: starting, %d items", len(watchlist.items))
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    async with anthropic_limiter():
+        async with client.messages.stream(
+            model=model or EDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 4096,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": items_json}],
+        ) as stream:
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                "Editor watchlist: streaming API call",
+            )
+
+    text_parts = [b.text for b in response.content if b.type == "text"]
+    response_text = "\n".join(text_parts)
+
+    logger.info(
+        "Editor [watchlist]: done — input=%d, output=%d tokens",
+        response.usage.input_tokens, response.usage.output_tokens,
+    )
+
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    run_date = analysis_date or date.today()
+    save_raw_response(
+        "editor", "watchlist", run_date,
+        system_prompt=system_prompt,
+        user_message=items_json,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
+    try:
+        data = extract_json(response_text, context="editor_watchlist")
+        watchlist.edited_narrative = data.get("edited_narrative", response_text)
+        update_trace_parsed("editor", "watchlist", run_date, parsed_output=data)
+    except (ValueError, KeyError):
+        logger.warning("Editor [watchlist]: JSON parse failed, using raw response")
+        watchlist.edited_narrative = response_text
+
+    return watchlist
+
+
 # =============================================================================
 # Orchestration — edit all content in parallel
 # =============================================================================
@@ -645,10 +774,11 @@ async def edit_executive(
 async def edit_all(
     overview: OverviewPageContent,
     region_pages: dict,
+    watchlist: "WatchlistPageContent | None" = None,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
-) -> tuple[OverviewPageContent, dict]:
-    """Edit all content: executive brief, regional leads, and country sections."""
+) -> tuple[OverviewPageContent, dict, "WatchlistPageContent | None"]:
+    """Edit all content: executive brief, regional leads, country sections, and watchlist."""
 
     # Edit executive brief
     if overview.executive_brief.items:
@@ -682,6 +812,13 @@ async def edit_all(
             if country.developments or country.posture_summary:
                 tasks.append(_edit_country(country))
 
+    # Watchlist
+    if watchlist and watchlist.items:
+        async def _edit_watchlist():
+            async with semaphore.acquire("watchlist"):
+                return await edit_watchlist(watchlist, analysis_date=analysis_date)
+        tasks.append(_edit_watchlist())
+
     if tasks:
         await asyncio.gather(*tasks)
 
@@ -691,7 +828,7 @@ async def edit_all(
         if page and page.card_summary:
             card.summary = page.card_summary
 
-    return overview, region_pages
+    return overview, region_pages, watchlist
 
 
 # =============================================================================

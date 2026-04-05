@@ -164,6 +164,7 @@ def render_pages(
     pages["watchlist"] = _escape_mdx(watchlist_tmpl.render(
         date_range=date_range,
         items=watchlist.items,
+        edited_narrative=watchlist.edited_narrative,
     ))
 
     return pages
