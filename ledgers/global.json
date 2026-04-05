@@ -1,23 +1,23 @@
 {
-  "last_updated": "2026-02-22",
+  "last_updated": "2026-03-01",
   "created": "2026-03-25",
   "global_posture_summary": {
-    "as_of": "2026-02-22",
-    "text": "The global system is experiencing simultaneous domestic political fragmentation across three major regions while alliance structures demonstrate institutional resilience independent of member state governance stability. US strategic recalibration is producing systematically differentiated regional responses\u2014European coordination, Americas divergence, Asia-Pacific adaptation\u2014suggesting the emergence of distinct regional management frameworks for great power pressure. The collapse of Gulf security architecture represents the first major alliance breakdown, while synchronized domestic crises across Western democracies create a paradox of institutional weakness enabling strategic reorientation.",
+    "as_of": "2026-03-01",
+    "text": "The Iran crisis has functioned as a global stress test revealing systematic divergence in alliance solidarity across all major regions, with each regional framework producing distinct responses to the same trigger. Domestic political fragmentation continues expanding across Western democracies while alliance institutional mechanisms demonstrate both resilience and newly revealed limits. The simultaneous operation of institutional strength and political weakness creates unprecedented conditions for strategic realignment.",
     "signal_environment": {
       "most_active_categories": [
-        "domestic_regime",
         "alignment_diplomatic",
+        "domestic_regime",
         "security_defense"
       ],
       "quietest_categories": [],
       "geographic_hotspots": [
         "Western Europe",
-        "Gulf region",
+        "Middle East",
         "Americas"
       ],
       "geographic_quiet_zones": [
-        "Asia-Pacific"
+        "Central Asia"
       ]
     }
   },
@@ -25,21 +25,23 @@
     {
       "dynamic_id": 1,
       "title": "Regional Institutional Differentiation in US Management Strategies",
-      "created_week": "2026-01-25",
-      "last_updated": "2026-02-22",
+      "created_week": "2026-01-18",
+      "last_updated": "2026-03-01",
       "status": "established",
-      "current_assessment": "Regional differentiation has crystallized into three distinct institutional frameworks for managing US pressure. Europe demonstrates coordinated strategic autonomy through synchronized criticism and defense capability expansion. Americas shows systematic divergence with Canada pursuing defensive diversification while Mexico deepens tactical cooperation. Asia-Pacific remains institutionally aligned while building independent infrastructure capacity. Each regional approach now has institutional momentum suggesting permanent structural differentiation rather than tactical hedging.",
+      "current_assessment": "The Iran crisis provided real-world validation of regional differentiation patterns. Americas countries defaulted to distinct alignment patterns overriding hemispheric considerations. Western Europe prioritized individual national positioning over unified response. Asia-Pacific maintained overlapping bilateral relationships rather than integrated coordination. Each regional framework now demonstrates operational independence from US crisis management preferences.",
       "countries_involved": [
-        "de",
-        "gb",
-        "fr",
         "ca",
         "mx",
         "br",
         "cl",
-        "tw",
+        "fr",
+        "gb",
+        "it",
+        "no",
+        "se",
+        "au",
         "jp",
-        "au"
+        "id"
       ],
       "signal_categories_touched": [
         "alignment_diplomatic",
@@ -50,221 +52,253 @@
         "supporting_country_confidences": {
           "ca": 4,
           "mx": 4,
-          "br": 4,
+          "br": 3,
           "cl": 4,
-          "fr": 3,
-          "de": 4,
-          "se": 4
-        },
-        "weakest_link": "France assessment at confidence 3 due to defensive rather than proactive positioning",
-        "linkage_type": "parallel_behavior",
-        "linkage_assessment": "Strong evidence of regional coordination within Europe, clear divergence across regions, systematic responses to same US pressure source"
-      },
-      "competing_interpretation": "Independent regional responses to genuinely different types of US pressure rather than conscious strategic differentiation, with apparent coordination reflecting shared threat perceptions rather than institutional planning",
-      "what_to_watch": "Cross-regional coordination attempts, US adaptation to different regional strategies, expansion of frameworks to additional countries within regions",
-      "triage_implications": {
-        "countries_to_flag": [
-          "dk",
-          "nl",
-          "kr"
-        ],
-        "reason": "These countries represent potential expansion points for existing regional frameworks or development of new approaches"
-      },
-      "weeks_active": 5,
-      "consecutive_unchanged_weeks": 0
-    },
-    {
-      "dynamic_id": 2,
-      "title": "Defense Sovereignty Acceleration Through Regional Frameworks",
-      "created_week": "2026-01-25",
-      "last_updated": "2026-02-22",
-      "status": "developing",
-      "current_assessment": "Defense capability expansion accelerating across European framework with France developing AI sovereignty, Germany authorizing expanded cyber operations, and Italy planning massive personnel expansion. This combines with continued procurement diversification to create comprehensive capability base independent of US systems. The simultaneity and scale suggest coordinated European defense autonomy rather than independent national programs.",
-      "countries_involved": [
-        "fr",
-        "de",
-        "it",
-        "pl",
-        "lt",
-        "gb",
-        "no",
-        "se"
-      ],
-      "signal_categories_touched": [
-        "security_defense"
-      ],
-      "evidence_strength": {
-        "confidence": 3,
-        "supporting_country_confidences": {
-          "fr": 3,
-          "de": 4,
-          "it": 3
-        },
-        "weakest_link": "France and Italy assessments rest on specialized publications without broader corroboration",
-        "linkage_type": "parallel_behavior",
-        "linkage_assessment": "Strong temporal correlation and similar strategic objectives, but limited evidence of explicit coordination mechanisms"
-      },
-      "competing_interpretation": "Independent national military modernization programs responding to shared threat environment without coordination, with different capability focuses reflecting national strategic priorities rather than division of labor",
-      "what_to_watch": "Evidence of explicit coordination mechanisms, integration of capabilities across countries, US responses to European capability development",
-      "triage_implications": {
-        "countries_to_flag": [
-          "dk",
-          "nl",
-          "es"
-        ],
-        "reason": "NATO allies that could join European defense capability coordination or develop competing approaches"
-      },
-      "weeks_active": 5,
-      "consecutive_unchanged_weeks": 0
-    },
-    {
-      "dynamic_id": 3,
-      "title": "Cross-Regional Domestic Political Fragmentation",
-      "created_week": "2026-01-18",
-      "last_updated": "2026-02-22",
-      "status": "established",
-      "current_assessment": "Domestic political fragmentation has expanded beyond Western Europe to create cross-regional pattern affecting three major regions simultaneously. Western Europe shows universal stress across all major powers. Frontline Eastern Europe shows widespread domestic stress across seven of eight countries while alliance integration continues normally. Americas shows political stress in Canada, Mexico, and Brazil. The breadth and simultaneity across different institutional contexts suggests shared structural pressures rather than coincidental domestic cycles.",
-      "countries_involved": [
-        "gb",
-        "de",
-        "se",
-        "it",
-        "es",
-        "fr",
-        "ua",
-        "pl",
-        "fi",
-        "ee",
-        "lt",
-        "lv",
-        "cz",
-        "ro",
-        "ca",
-        "mx",
-        "br"
-      ],
-      "signal_categories_touched": [
-        "domestic_regime"
-      ],
-      "evidence_strength": {
-        "confidence": 4,
-        "supporting_country_confidences": {
           "fr": 4,
-          "de": 4,
-          "gb": 4,
-          "it": 4,
-          "es": 4,
+          "gb": 3,
+          "it": 3,
+          "no": 4,
           "se": 4,
-          "ua": 4,
-          "pl": 4,
-          "fi": 4,
-          "cz": 4,
-          "ro": 4
+          "au": 4,
+          "jp": 3,
+          "id": 4
         },
-        "weakest_link": "Baltic states assessments at confidence 3, but overwhelming evidence from other countries",
+        "weakest_link": "Multiple countries at confidence 3 due to single-source crisis response reporting",
         "linkage_type": "parallel_behavior",
-        "linkage_assessment": "Extraordinary temporal correlation across different institutional systems and regional contexts indicates systematic external pressures rather than coincidence"
+        "linkage_assessment": "Strong parallel behavior across regions with similar triggers producing systematically different responses based on regional framework positioning"
       },
-      "competing_interpretation": "Normal democratic turbulence coincidentally overlapping across different political cycles, with different specific triggers indicating separate rather than connected phenomena",
-      "what_to_watch": "Expansion to Asia-Pacific allies, resolution patterns, impact on international coordination capacity",
+      "competing_interpretation": "Crisis responses reflect independent rational calculations rather than institutional frameworks, with apparent regional patterns resulting from coincidental similarity of national interests within geographic proximity",
+      "what_to_watch": "Additional global crises testing regional frameworks, evidence of cross-regional coordination attempts, US adaptation strategies for different regional approaches",
       "triage_implications": {
         "countries_to_flag": [
-          "au",
-          "jp",
+          "dk",
+          "nl",
           "kr"
         ],
-        "reason": "Major democratic allies not yet showing domestic fragmentation pattern - early indicators would confirm systematic external pressure"
+        "reason": "Key allies within established frameworks whose positioning could indicate framework expansion or modification"
       },
       "weeks_active": 6,
       "consecutive_unchanged_weeks": 0
     },
     {
-      "dynamic_id": 4,
-      "title": "Alliance Integration Resilience Despite Domestic Instability",
-      "created_week": "2026-02-01",
-      "last_updated": "2026-02-22",
+      "dynamic_id": 2,
+      "title": "Defense Sovereignty Acceleration Through Regional Frameworks",
+      "created_week": "2026-01-18",
+      "last_updated": "2026-03-01",
       "status": "developing",
-      "current_assessment": "Alliance institutional mechanisms demonstrate remarkable resilience independent of member state domestic political stability. Frontline Eastern Europe shows seven of eight countries experiencing domestic political stress while alliance integration proceeds normally through NATO exercises, defense procurement, and diplomatic coordination. Western Europe shows coordinated strategic positioning despite universal domestic fragmentation. This suggests alliance architecture has developed sufficient institutional momentum to function independently of democratic governance stability.",
+      "current_assessment": "Mixed signals this week with Asia-Pacific showing coordinated security enhancement (Japan weapons exports, Australia AUKUS investment, South Korea exercises) while Frontline Eastern Europe demonstrates resistance to NATO spending commitments. This suggests defense sovereignty operates differently across regional contexts - coordination where institutional autonomy exists, resistance where external obligations dominate.",
       "countries_involved": [
-        "ua",
-        "pl",
-        "fi",
-        "ee",
-        "lt",
-        "lv",
-        "cz",
-        "ro",
         "fr",
         "de",
-        "se"
+        "it",
+        "gb",
+        "jp",
+        "au",
+        "kr",
+        "pl",
+        "cz"
       ],
       "signal_categories_touched": [
-        "domestic_regime",
         "security_defense",
         "alignment_diplomatic"
       ],
       "evidence_strength": {
         "confidence": 3,
         "supporting_country_confidences": {
-          "ua": 4,
-          "pl": 4,
-          "fi": 4,
-          "cz": 4,
-          "ro": 4,
-          "fr": 4,
-          "de": 4
+          "jp": 4,
+          "au": 4,
+          "kr": 3,
+          "pl": 3,
+          "cz": 4
         },
-        "weakest_link": "Baltic states domestic assessments at confidence 3, but clear evidence of continued alliance function",
-        "linkage_type": "interaction_effect",
-        "linkage_assessment": "Strong evidence that alliance mechanisms operate independently of domestic political conditions, suggesting institutional rather than political foundations"
+        "weakest_link": "Mixed evidence with some regions showing advancement while others show resistance",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Parallel advancement in Asia-Pacific but resistance patterns in Eastern Europe suggest regional context matters more than global trends"
       },
-      "competing_interpretation": "Alliance integration continues due to bureaucratic momentum and external threat pressure rather than reflecting deeper institutional resilience, with apparent disconnect indicating impending breakdown rather than strength",
-      "what_to_watch": "Breakdown of alliance coordination due to domestic instability, evidence of institutional strain, expansion of resilience to other alliance frameworks",
+      "competing_interpretation": "Independent national military modernization responding to distinct regional threats rather than coordinated sovereignty advancement, with timing coincidences rather than strategic coordination",
+      "what_to_watch": "Resolution of Eastern European resistance, evidence of cross-regional defense coordination, US responses to capability divergence",
       "triage_implications": {
         "countries_to_flag": [
-          "gb",
-          "it",
+          "dk",
+          "nl",
           "es"
         ],
-        "reason": "Major alliance members with significant domestic stress - test cases for alliance resilience limits"
+        "reason": "European allies whose defense positioning could indicate broader regional coordination or resistance patterns"
       },
-      "weeks_active": 2,
+      "weeks_active": 6,
       "consecutive_unchanged_weeks": 0
     },
     {
-      "dynamic_id": 7,
-      "title": "Gulf Security Architecture Collapse",
-      "created_week": "2026-02-22",
-      "last_updated": "2026-02-22",
-      "status": "emerging",
-      "current_assessment": "Saudi-UAE relationship has escalated from commercial competition to direct military confrontation in Yemen with formal diplomatic complaints, representing fundamental breakdown of Gulf Cooperation Council security architecture. This collapse of the foundational Gulf partnership forces regional realignment and potentially destabilizes broader Middle East balance, with implications for energy markets, regional security coordination, and US alliance management in the region.",
+      "dynamic_id": 3,
+      "title": "Cross-Regional Domestic Political Fragmentation",
+      "created_week": "2026-01-25",
+      "last_updated": "2026-03-01",
+      "status": "established",
+      "current_assessment": "Domestic political fragmentation expanded this week with Western Europe showing universal governing party stress (France, Britain, Italy, Spain, Sweden) and Frontline Eastern Europe showing institutional stress across four countries (Poland, Czech Republic, Estonia, Romania). This brings the total affected countries to seventeen across three major regions, indicating systematic rather than coincidental pressures on democratic governance.",
       "countries_involved": [
-        "sa",
-        "ae"
+        "gb",
+        "fr",
+        "it",
+        "es",
+        "se",
+        "pl",
+        "cz",
+        "ee",
+        "ro",
+        "ca",
+        "mx",
+        "br",
+        "de",
+        "ua",
+        "fi",
+        "lt",
+        "lv"
+      ],
+      "signal_categories_touched": [
+        "domestic_regime",
+        "institutional"
+      ],
+      "evidence_strength": {
+        "confidence": 4,
+        "supporting_country_confidences": {
+          "fr": 4,
+          "gb": 4,
+          "it": 4,
+          "es": 4,
+          "se": 4,
+          "pl": 4,
+          "cz": 3,
+          "ee": 3,
+          "ro": 4
+        },
+        "weakest_link": "Czech and Estonian assessments at confidence 3 due to incremental rather than acute developments",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Strong parallel timing across different political systems and geographic regions suggests shared structural pressures rather than coincidental cycles"
+      },
+      "competing_interpretation": "Normal democratic turbulence with coincidental overlap across different political cycles, where specific triggers indicate separate rather than connected phenomena",
+      "what_to_watch": "Expansion to Asia-Pacific allies, resolution patterns indicating whether structural or cyclical, impact on international coordination capacity",
+      "triage_implications": {
+        "countries_to_flag": [
+          "au",
+          "jp",
+          "kr"
+        ],
+        "reason": "Major Asia-Pacific allies where domestic instability would complete cross-regional pattern"
+      },
+      "weeks_active": 5,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 4,
+      "title": "Alliance Integration Resilience with Crisis-Revealed Limits",
+      "created_week": "2026-02-15",
+      "last_updated": "2026-03-01",
+      "status": "developing",
+      "current_assessment": "The Iran crisis revealed significant limits to alliance resilience while confirming institutional momentum in other domains. Alliance mechanisms continue operating normally through domestic political instability (NATO integration in Eastern Europe, defense coordination) but the Iran crisis exposed alliance fragmentation when faced with unilateral US actions. This suggests resilience operates selectively - strong for planned institutional processes, weak for crisis solidarity.",
+      "countries_involved": [
+        "ua",
+        "pl",
+        "fi",
+        "ee",
+        "lt",
+        "lv",
+        "cz",
+        "ro",
+        "fr",
+        "de",
+        "se",
+        "gb",
+        "it",
+        "no"
+      ],
+      "signal_categories_touched": [
+        "security_defense",
+        "alignment_diplomatic",
+        "institutional"
+      ],
+      "evidence_strength": {
+        "confidence": 3,
+        "supporting_country_confidences": {
+          "fr": 4,
+          "gb": 3,
+          "it": 3,
+          "no": 4,
+          "se": 4,
+          "pl": 4,
+          "cz": 4,
+          "ee": 3,
+          "ro": 4
+        },
+        "weakest_link": "Multiple countries at confidence 3 for crisis response assessment",
+        "linkage_type": "parallel_behavior",
+        "linkage_assessment": "Strong institutional continuity amid domestic chaos but crisis responses reveal fragmentation limits"
+      },
+      "competing_interpretation": "Crisis fragmentation reflects healthy alliance diversity allowing different forms of support rather than institutional weakness, with routine operations continuing normally",
+      "what_to_watch": "Additional crisis tests of alliance solidarity, evidence of institutional adaptation to fragmentation, breakdown of routine alliance coordination",
+      "triage_implications": {
+        "countries_to_flag": [
+          "dk",
+          "nl"
+        ],
+        "reason": "Key European allies whose crisis positioning could indicate broader alliance adaptation patterns"
+      },
+      "weeks_active": 3,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 8,
+      "title": "Global Crisis Alignment Test Reveals Systematic Regional Divergence",
+      "created_week": "2026-03-01",
+      "last_updated": "2026-03-01",
+      "status": "emerging",
+      "current_assessment": "The Iran crisis functioned as a simultaneous global test of alliance solidarity, revealing systematic divergence patterns across all major regions. Americas countries produced an alignment spectrum from Western partnership to Global South positioning. Western Europe showed alliance fragmentation with each country prioritizing national positioning. Asia-Pacific demonstrated flexible bilateral relationships over integrated coordination. This pattern is visible only at the global level - no single region reveals the systematic nature of the divergence.",
+      "countries_involved": [
+        "ca",
+        "mx",
+        "br",
+        "cl",
+        "fr",
+        "gb",
+        "it",
+        "no",
+        "se",
+        "au",
+        "jp",
+        "id"
       ],
       "signal_categories_touched": [
         "alignment_diplomatic",
         "security_defense"
       ],
       "evidence_strength": {
-        "confidence": 4,
+        "confidence": 3,
         "supporting_country_confidences": {
-          "sa": 4,
-          "ae": 4
+          "ca": 4,
+          "mx": 4,
+          "br": 3,
+          "cl": 4,
+          "fr": 4,
+          "gb": 3,
+          "it": 3,
+          "no": 4,
+          "se": 4,
+          "au": 4,
+          "jp": 3,
+          "id": 4
         },
-        "weakest_link": "Both assessments maintain confidence 4 with corroborating evidence",
+        "weakest_link": "Multiple countries at confidence 3 for crisis response analysis",
         "linkage_type": "interaction_effect",
-        "linkage_assessment": "Clear bilateral escalation from economic to military confrontation with formal diplomatic acknowledgment from both sides"
+        "linkage_assessment": "Same global trigger producing systematically different regional response patterns based on distinct strategic positioning frameworks"
       },
-      "competing_interpretation": "Tactical escalation within broader Gulf cooperation framework rather than fundamental alliance breakdown, with military confrontation representing negotiating pressure rather than structural divergence",
-      "what_to_watch": "Expansion of confrontation beyond Yemen, impact on other Gulf states' positioning, effects on regional energy coordination, US mediation attempts",
+      "competing_interpretation": "Independent national responses to the same crisis reflecting pre-existing foreign policy frameworks rather than revealing systematic regional divergence patterns",
+      "what_to_watch": "Additional global crises testing similar patterns, evidence of regional coordination in crisis response, US adaptation to systematic divergence",
       "triage_implications": {
         "countries_to_flag": [
-          "qa",
-          "kw",
-          "bh"
+          "kr",
+          "tr",
+          "in"
         ],
-        "reason": "Other Gulf states forced to choose sides or develop alternative cooperation frameworks as fundamental partnership breaks down"
+        "reason": "Key countries whose crisis positioning could reveal expansion of divergence patterns to additional regions"
       },
       "weeks_active": 1,
       "consecutive_unchanged_weeks": 0
@@ -279,22 +313,22 @@
         "kr",
         "au"
       ],
-      "why_it_matters": "Could indicate formalization of regional differentiation in alliance management",
+      "why_it_matters": "Could accelerate regional defense sovereignty patterns",
       "trigger": "Specific spending targets, capability requirements, or cost-sharing arrangements beyond current NATO guidelines",
       "added_week": "2026-02-01"
     },
     {
       "item": "China responses to alliance security infrastructure coordination",
-      "signal_category": "security_defense",
+      "signal_category": "alignment_diplomatic",
       "countries": [
         "cn",
         "tw",
         "jp",
         "kr"
       ],
-      "why_it_matters": "Chinese counter-responses could escalate alliance integration trends or force additional regional adaptations",
+      "why_it_matters": "Chinese reaction patterns could reshape regional coordination incentives",
       "trigger": "Chinese military responses to coordinated alliance infrastructure development or technology transfer patterns",
-      "added_week": "2026-02-08"
+      "added_week": "2026-02-01"
     },
     {
       "item": "Middle power hedging strategy convergence",
@@ -305,9 +339,9 @@
         "br",
         "id"
       ],
-      "why_it_matters": "Parallel hedging strategies could evolve into coordinated middle power framework despite current independent approaches",
+      "why_it_matters": "Cross-regional hedging coordination could create alternative institutional frameworks",
       "trigger": "Cross-regional coordination mechanisms or shared institutional frameworks among hedging states",
-      "added_week": "2026-02-22"
+      "added_week": "2026-02-01"
     }
   ],
   "weekly_entries": [
@@ -715,6 +749,76 @@
         }
       ],
       "self_corrections": []
+    },
+    {
+      "week": "2026-03-01",
+      "executive_briefing_items": [
+        {
+          "title": "Iran Crisis Exposes Systematic Alliance Divergence Across All Regions",
+          "regions_involved": [
+            "Americas",
+            "Western Europe",
+            "Asia-Pacific"
+          ],
+          "what": "The US-Israeli strikes against Iran triggered simultaneous but systematically divergent responses across all major allied regions, revealing fundamental differences in alliance solidarity. Americas countries defaulted to distinct alignment patterns overriding hemispheric considerations, Western Europe prioritized individual national positioning over unified response, and Asia-Pacific maintained overlapping bilateral relationships rather than integrated coordination.",
+          "why_it_matters": "This represents the first global test of alliance resilience since major regional framework differentiation emerged, demonstrating that alliance solidarity varies systematically by region rather than by crisis severity. The pattern suggests US alliance architecture now operates as multiple distinct regional frameworks rather than integrated global system, with profound implications for crisis management and strategic coordination.",
+          "what_to_watch": "Additional global crises testing similar patterns, evidence of US adaptation strategies for different regional approaches, potential for cross-regional coordination mechanisms to emerge in response to revealed divergence",
+          "confidence": 3,
+          "confidence_note": "Based on strong parallel patterns across three regions but weakest links include multiple countries at confidence 3 for crisis response analysis due to single-source reporting"
+        },
+        {
+          "title": "Domestic Political Fragmentation Reaches Critical Mass Across Democratic Allies",
+          "regions_involved": [
+            "Western Europe",
+            "Frontline Eastern Europe"
+          ],
+          "what": "Democratic allies are experiencing unprecedented simultaneous domestic political stress with Western Europe showing universal governing party weakness across five countries and Frontline Eastern Europe showing institutional stress across four countries. This brings affected countries to seventeen across three major regions, indicating systematic pressures rather than coincidental political cycles.",
+          "why_it_matters": "The breadth and simultaneity of democratic fragmentation across different political systems and geographic regions suggests shared structural pressures affecting post-Cold War democratic governance. This creates unprecedented conditions where alliance institutional mechanisms must function amid widespread domestic political instability, potentially reshaping how democratic allies coordinate internationally.",
+          "what_to_watch": "Expansion to Asia-Pacific allies which would complete global democratic fragmentation pattern, resolution patterns indicating whether pressures are structural or cyclical, impact on alliance coordination capacity during simultaneous domestic crises",
+          "confidence": 4,
+          "confidence_note": "High confidence based on strong evidence from multiple regions with consistent patterns, though some individual country assessments rely on incremental developments"
+        },
+        {
+          "title": "Alliance Institutional Resilience Reveals Crisis-Specific Limits",
+          "regions_involved": [
+            "Western Europe",
+            "Frontline Eastern Europe",
+            "Asia-Pacific"
+          ],
+          "what": "Alliance mechanisms demonstrate selective resilience - continuing normal institutional operations amid widespread domestic political instability but revealing significant fragmentation during the Iran crisis. Routine defense coordination, NATO integration, and planned military cooperation proceed normally while crisis solidarity shows systematic regional divergence.",
+          "why_it_matters": "This selective resilience pattern suggests alliance architecture has developed sufficient institutional momentum for planned activities but lacks mechanisms for unified crisis response. The distinction between institutional continuity and crisis coordination indicates fundamental structural changes in how alliances function, with implications for deterrence credibility and crisis management.",
+          "what_to_watch": "Additional crisis tests revealing whether Iran response was exceptional or indicative of broader crisis coordination limits, evidence of institutional adaptation to accommodate regional divergence, breakdown of routine alliance coordination if domestic instability intensifies",
+          "confidence": 3,
+          "confidence_note": "Moderate confidence due to complex interaction between institutional strength and crisis weakness, with multiple countries showing confidence 3 for crisis response elements"
+        }
+      ],
+      "dynamics_created": [
+        8
+      ],
+      "dynamics_updated": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "dynamics_archived": [
+        7
+      ],
+      "items_considered_rejected": [
+        {
+          "candidate": "Cross-regional security enhancement coordination",
+          "reason_rejected": "Mixed evidence with Asia-Pacific showing advancement while Eastern Europe shows resistance - pattern is regional rather than global"
+        },
+        {
+          "candidate": "Economic diversification acceleration",
+          "reason_rejected": "Regional reports show limited economic movement this week - development represents continuation of existing trajectories rather than new patterns"
+        },
+        {
+          "candidate": "Middle power hedging convergence",
+          "reason_rejected": "While individual countries show hedging adaptation, no evidence of cross-regional coordination or shared institutional frameworks emerging"
+        }
+      ],
+      "self_corrections": []
     }
   ],
   "archived_dynamics": [
@@ -798,6 +902,44 @@
           "es"
         ],
         "reason": "Major Western European countries not yet affected by apparent coordinated information operation"
+      },
+      "weeks_active": 1,
+      "consecutive_unchanged_weeks": 0
+    },
+    {
+      "dynamic_id": 7,
+      "title": "Gulf Security Architecture Collapse",
+      "created_week": "2026-02-22",
+      "last_updated": "2026-02-22",
+      "status": "resolved",
+      "current_assessment": "Saudi-UAE relationship has escalated from commercial competition to direct military confrontation in Yemen with formal diplomatic complaints, representing fundamental breakdown of Gulf Cooperation Council security architecture. This collapse of the foundational Gulf partnership forces regional realignment and potentially destabilizes broader Middle East balance, with implications for energy markets, regional security coordination, and US alliance management in the region.",
+      "countries_involved": [
+        "sa",
+        "ae"
+      ],
+      "signal_categories_touched": [
+        "alignment_diplomatic",
+        "security_defense"
+      ],
+      "evidence_strength": {
+        "confidence": 4,
+        "supporting_country_confidences": {
+          "sa": 4,
+          "ae": 4
+        },
+        "weakest_link": "Both assessments maintain confidence 4 with corroborating evidence",
+        "linkage_type": "interaction_effect",
+        "linkage_assessment": "Clear bilateral escalation from economic to military confrontation with formal diplomatic acknowledgment from both sides"
+      },
+      "competing_interpretation": "Tactical escalation within broader Gulf cooperation framework rather than fundamental alliance breakdown, with military confrontation representing negotiating pressure rather than structural divergence",
+      "what_to_watch": "Expansion of confrontation beyond Yemen, impact on other Gulf states' positioning, effects on regional energy coordination, US mediation attempts",
+      "triage_implications": {
+        "countries_to_flag": [
+          "qa",
+          "kw",
+          "bh"
+        ],
+        "reason": "Other Gulf states forced to choose sides or develop alternative cooperation frameworks as fundamental partnership breaks down"
       },
       "weeks_active": 1,
       "consecutive_unchanged_weeks": 0

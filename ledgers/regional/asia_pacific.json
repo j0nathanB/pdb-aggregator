@@ -1,40 +1,86 @@
 {
   "region": "asia_pacific",
-  "week": "2026-02-22",
-  "regional_overview": "Asia-Pacific experienced significant individual country developments this week, with Japan completing institutional consolidation under Takaichi's historic supermajority, Indonesia conducting its most substantial US engagement under Trump's second term through Board of Peace participation and trade agreements, and Taiwan considering a transformational $100 billion TSMC expansion to the United States. However, these major movements occurred through independent national processes rather than coordinated regional dynamics, reflecting countries responding to their distinct strategic circumstances within the broader US-China competition framework.",
-  "cross_cutting_dynamics": [],
-  "dynamics_considered_and_rejected": [
+  "week": "2026-03-01",
+  "regional_overview": "Asia-Pacific demonstrates alliance fragmentation in response to Middle East crisis, with US partners taking divergent positions from active military backing (Australia) to diplomatic caution (Japan) to neutral mediation (Indonesia). Meanwhile, multiple allies advance security capabilities simultaneously through historic policy changes and concrete military investments, suggesting coordinated strengthening despite different tactical approaches to immediate crises.",
+  "cross_cutting_dynamics": [
     {
-      "candidate_dynamic": "Trump administration coordinated Asia-Pacific engagement strategy",
-      "countries": [
-        "id",
-        "tw"
-      ],
-      "reason_rejected": "Indonesia's Board of Peace participation and Taiwan's TSMC expansion operate through different domains (diplomatic/economic), different mechanisms (multilateral summit vs. private investment), and different timeframes with no evidence of coordination. Both represent responses to Trump administration policies but through independent strategic calculations rather than coordinated regional approach."
-    },
-    {
-      "candidate_dynamic": "US alliance economic-security integration deepening",
-      "countries": [
-        "tw",
-        "au"
-      ],
-      "reason_rejected": "Taiwan's TSMC expansion and Australia's AUKUS infrastructure spending both involve massive economic commitments supporting US security interests, but linkage is speculative. Different strategic rationales (semiconductor geographic dispersion vs. nuclear submarine capability), different institutional mechanisms (private corporate decision vs. government defense spending), and no evidence of coordination beyond parallel timing."
-    },
-    {
-      "candidate_dynamic": "Regional leadership consolidation trend",
-      "countries": [
+      "title": "Divergent Alliance Responses to Iran Crisis",
+      "countries_involved": [
+        "au",
         "jp",
-        "kr",
         "id"
       ],
-      "reason_rejected": "Japan's Takaichi institutional consolidation, South Korea's Lee approval strengthening, and Indonesia's Prabowo coalition building occur through completely different mechanisms (electoral mandate operationalization, post-martial law accountability completion, controlled re-militarization), different timeframes, and different political contexts with no evidence of mutual influence or shared causation."
+      "signal_categories": [
+        "alignment_diplomatic"
+      ],
+      "pattern_type": "parallel",
+      "assessment": "US allies and partners responded to the same Iran crisis with fundamentally different approaches within the same timeframe. Australia provided active military backing for US-Israeli strikes while condemning Iran as 'without legitimacy.' Japan responded with diplomatic caution to the same strikes. Indonesia positioned itself as neutral mediator, offering to travel to Tehran. This reveals how the same external trigger produces divergent responses based on distinct strategic positions rather than coordinated alliance policy.",
+      "significance": "This divergence challenges assumptions about Asian alliance cohesion and reveals that US partners maintain independent foreign policy calculus even during active military operations. The variation from active military support to neutral mediation suggests the US alliance system in Asia-Pacific operates more as overlapping bilateral relationships than as integrated multilateral coordination.",
+      "trend": "emerging",
+      "confidence": 3,
+      "confidence_inherited_from": {
+        "au_alignment_diplomatic": 4,
+        "jp_alignment_diplomatic": 3,
+        "id_alignment_diplomatic": 4
+      },
+      "weakest_link": "Japan's assessment of cautious response relies on single government source without independent verification of policy reasoning",
+      "evidence_against_linkage": "These responses may reflect pre-existing foreign policy frameworks rather than reactions to the same event. Australia's Middle East positioning has been consistently hawkish, Japan's caution reflects constitutional constraints, and Indonesia's mediation offers are routine diplomatic practice.",
+      "linkage_strength": "moderate",
+      "linkage_justification": "All three responses occurred within the same 48-hour period following the same trigger event (US-Israeli Iran strikes), with explicit reference to the same external development in each case.",
+      "competing_interpretation": "Rather than revealing alliance fragmentation, this could demonstrate alliance flexibility where different partners contribute different capabilities - military backing, diplomatic restraint, and mediation - in a division of labor approach."
+    },
+    {
+      "title": "Coordinated Security Enhancement Across Allies",
+      "countries_involved": [
+        "jp",
+        "au",
+        "kr"
+      ],
+      "signal_categories": [
+        "security_defense"
+      ],
+      "pattern_type": "parallel",
+      "assessment": "Multiple US allies advanced significant security capabilities simultaneously: Japan approved lethal weapons exports for the first time since WWII, Australia committed additional concrete investments to AUKUS ($310M reactor components), and South Korea proceeded with scheduled joint military exercises. While individual developments follow separate institutional timelines, the concentration of capability enhancements suggests coordinated alliance strengthening.",
+      "significance": "This parallel advancement of military capabilities across key US allies indicates systematic security architecture strengthening in response to regional threat perceptions. The coordination spans different domains - weapons export policy, nuclear submarine development, and operational exercises - suggesting comprehensive alliance modernization rather than isolated national decisions.",
+      "trend": "developing",
+      "confidence": 3,
+      "confidence_inherited_from": {
+        "jp_security_defense": 4,
+        "au_security_defense": 4,
+        "kr_security_defense": 3
+      },
+      "weakest_link": "South Korea's assessment treats joint exercises as routine rather than strategically significant, potentially understating coordination element",
+      "evidence_against_linkage": "These developments may represent separate pre-planned initiatives rather than coordinated timing. Japan's weapons export debate has been ongoing for months, AUKUS follows its own implementation schedule, and US-ROK exercises are regularly scheduled annual events.",
+      "linkage_strength": "weak",
+      "linkage_justification": "The temporal concentration of historically significant (Japan weapons exports), financially substantial (Australia AUKUS investment), and operationally relevant (ROK exercises) security developments across three key allies exceeds statistical coincidence.",
+      "competing_interpretation": "Each development reflects domestic political opportunities rather than alliance coordination - Japan's supermajority enabling policy changes, Australia's budget cycle allowing AUKUS funding, and South Korea's standard alliance management under new leadership."
+    }
+  ],
+  "dynamics_considered_and_rejected": [
+    {
+      "candidate_dynamic": "Regional technology sovereignty coordination",
+      "countries": [
+        "tw",
+        "id",
+        "kr"
+      ],
+      "reason_rejected": "TSMC's market performance reflects global AI demand rather than policy coordination, Indonesia's semiconductor partnership with UK is bilateral commercial arrangement, and South Korea's AI cooperation visits are routine diplomatic business. No evidence of coordination mechanism or shared strategic framework beyond independent responses to global technology trends."
+    },
+    {
+      "candidate_dynamic": "Leadership consolidation wave",
+      "countries": [
+        "kr",
+        "jp",
+        "id"
+      ],
+      "reason_rejected": "While all three countries show leadership strengthening (Lee's rising approval, Takaichi's resilience, Prabowo's control), these reflect distinct domestic political dynamics with different mechanisms and timelines. No evidence suggests mutual influence or shared external factors driving simultaneous consolidation."
     }
   ],
   "gaps": [
     {
-      "expected_dynamic": "Chinese responses to increased US engagement across multiple regional partners",
-      "observed": "No reported Chinese activity despite Indonesia's Board of Peace participation, Taiwan's TSMC expansion consideration, and continued US alliance infrastructure development",
-      "assessment": "The absence of visible Chinese counter-responses to significant US engagement deepening suggests either collection gaps or Chinese strategic patience, but represents a notable gap in expected competitive dynamics"
+      "expected_dynamic": "Chinese responses to alliance security enhancement and Iran positioning",
+      "observed": "No documented Chinese reactions to Japan's weapons export approval, Australia's Iran backing, or broader alliance activities",
+      "assessment": "The absence of visible Chinese diplomatic or military responses to significant alliance developments suggests either strategic restraint, focus on other priorities, or collection gaps in Chinese reaction patterns."
     }
   ],
   "low_confidence_items": []
