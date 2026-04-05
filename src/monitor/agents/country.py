@@ -375,20 +375,28 @@ def _format_story_map(story_map: "StoryMapOutput") -> str:
     for s in story_map.stories:
         actors = ", ".join(s.actors_involved) if s.actors_involved else "none listed"
         sources = ", ".join(s.sources) if s.sources else "unknown"
+        # Include article URLs so the country agent can cite them
+        article_lines = ""
+        if s.articles:
+            refs = [f"  - {a.source}: {a.url}" for a in s.articles if a.url]
+            if refs:
+                article_lines = "\n**Article URLs:**\n" + "\n".join(refs)
         lines.append(
             f"### Story #{s.story_id}: {s.headline}\n"
             f"**Summary:** {s.summary}\n"
             f"**Actors:** {actors}\n"
             f"**Signal category hint:** {s.signal_category_hint}\n"
-            f"**Sources ({s.source_count}):** {sources}\n"
+            f"**Sources ({s.source_count}):** {sources}"
+            f"{article_lines}\n"
             f"**Date range:** {s.date_range}"
         )
 
     if story_map.single_source_items:
         lines.append("\n### Single-Source Items")
         for item in story_map.single_source_items:
+            url_suffix = f" — {item.url}" if item.url else ""
             lines.append(
-                f"- {item.headline} ({item.source}) — {item.signal_category_hint}"
+                f"- {item.headline} ({item.source}{url_suffix}) — {item.signal_category_hint}"
             )
 
     if story_map.noise_summary:
