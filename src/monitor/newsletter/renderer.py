@@ -26,9 +26,9 @@ TEMPLATES_DIR = Path(__file__).parent / "templates"
 
 
 def _format_date_range(end_date: date) -> str:
-    """Format end_date into 'Month DD, YYYY' range string."""
+    """Format end_date into 'Month DD, YYYY' start date string."""
     start = end_date - timedelta(days=6)
-    return f"{start.strftime('%B %d')} – {end_date.strftime('%B %d, %Y')}"
+    return f"{start.strftime('%B %d, %Y')}"
 
 
 def _format_date_range_display(dates: list[str]) -> str:
