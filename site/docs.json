@@ -34,7 +34,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/briefs/2026-03-01/overview"
+      "destination": "/briefs/2026-03-08/overview"
     }
   ],
   "navigation": {
@@ -42,13 +42,13 @@
       {
         "tab": "Latest Brief",
         "pages": [
-          "briefs/2026-03-01/overview",
-          "briefs/2026-03-01/frontline-eastern-europe",
-          "briefs/2026-03-01/western-europe",
-          "briefs/2026-03-01/asia-pacific",
-          "briefs/2026-03-01/middle-east-turkey-south-asia",
-          "briefs/2026-03-01/the-americas",
-          "briefs/2026-03-01/watchlist"
+          "briefs/2026-03-08/overview",
+          "briefs/2026-03-08/frontline-eastern-europe",
+          "briefs/2026-03-08/western-europe",
+          "briefs/2026-03-08/asia-pacific",
+          "briefs/2026-03-08/middle-east-turkey-south-asia",
+          "briefs/2026-03-08/the-americas",
+          "briefs/2026-03-08/watchlist"
         ]
       },
       {
@@ -57,6 +57,19 @@
           {
             "group": "Past Briefs",
             "pages": [
+              {
+                "group": "Feb 23 — Mar 1",
+                "expanded": false,
+                "pages": [
+                  "briefs/2026-03-01/overview",
+                  "briefs/2026-03-01/frontline-eastern-europe",
+                  "briefs/2026-03-01/western-europe",
+                  "briefs/2026-03-01/asia-pacific",
+                  "briefs/2026-03-01/middle-east-turkey-south-asia",
+                  "briefs/2026-03-01/the-americas",
+                  "briefs/2026-03-01/watchlist"
+                ]
+              },
               {
                 "group": "Feb 16 — Feb 22",
                 "expanded": false,
