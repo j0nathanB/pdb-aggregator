@@ -5,8 +5,8 @@ Checks that named entities in country agent development summaries
 actually appear in the cited source articles. Flags unattributed
 entities for review.
 
-Runs between the country agent output and the ledger write —
-no extra LLM calls, no new dependencies.
+Runs between the country agent output and the ledger write.
+Uses spaCy NER for entity extraction (en_core_web_md).
 """
 
 from __future__ import annotations
@@ -15,36 +15,33 @@ import logging
 import re
 from dataclasses import dataclass, field
 
+import spacy
+
 from .collection.extract import ExtractionResult
 from .config import SignalCategory
 from .models import WeeklyEntry
 
 logger = logging.getLogger(__name__)
 
-# Words that look like proper nouns but aren't entity names
-_STOP_WORDS = frozenset({
-    # Common sentence starters / section labels
-    "The", "This", "That", "These", "Those", "However", "Meanwhile",
-    "According", "Additionally", "Furthermore", "Moreover", "Nevertheless",
-    "Despite", "Following", "During", "After", "Before", "Since", "While",
-    "Both", "Either", "Neither", "Several", "Many", "Some", "Most", "Each",
-    "Under", "Between", "Among", "Within", "Through", "Against", "About",
-    # Days/months (often capitalized in summaries)
-    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December",
-    # Generic geopolitical terms that appear capitalized
-    "President", "Minister", "Prime", "Foreign", "Defense", "Defence",
-    "Secretary", "General", "Ambassador", "Government", "Parliament",
-    "Congress", "Senate", "Council", "Commission", "Committee",
-    "North", "South", "East", "West", "Central",
-    "National", "International", "European", "African", "Asian",
-    "Pacific", "Atlantic", "Arctic", "Mediterranean",
-    "Republic", "Kingdom", "Union", "States", "Democratic",
-})
+# spaCy model — loaded once on first call, reused across all countries
+_nlp: spacy.Language | None = None
 
-# Minimum token length to consider as a potential entity
+# Entity labels to extract from NER output
+_NER_ENTITY_LABELS = frozenset({"PERSON", "ORG", "GPE", "LOC", "FAC"})
+
+# Minimum character length to consider as a potential entity
 _MIN_ENTITY_LEN = 2
+
+
+def _get_nlp() -> spacy.Language:
+    """Lazy-load spaCy model with only the NER component enabled."""
+    global _nlp
+    if _nlp is None:
+        _nlp = spacy.load(
+            "en_core_web_md",
+            disable=["tok2vec", "tagger", "parser", "attribute_ruler", "lemmatizer"],
+        )
+    return _nlp
 
 
 @dataclass
@@ -73,49 +70,22 @@ class ValidationResult:
         return len(self.flags) == 0
 
 
-def extract_proper_nouns(text: str) -> set[str]:
-    """Extract likely proper noun phrases from text.
+def extract_entities(text: str) -> set[str]:
+    """Extract named entities from text using spaCy NER.
 
-    Uses a simple heuristic: sequences of capitalized words that aren't
-    at sentence boundaries or in the stop list. No NLP library needed.
-
-    Returns lowercased names for case-insensitive matching.
+    Returns lowercased entity strings for case-insensitive matching.
+    Keeps PERSON, ORG, GPE, LOC, and FAC entities.
     """
     if not text:
         return set()
-
-    entities: set[str] = set()
-
-    # Pattern: 2+ capitalized words in sequence (e.g., "Rustem Umerov")
-    # or single capitalized word that isn't a sentence starter
-    multi_cap = re.findall(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\b", text)
-    for phrase in multi_cap:
-        tokens = phrase.split()
-        # Skip if every token is a stop word
-        if all(t in _STOP_WORDS for t in tokens):
-            continue
-        # Keep the phrase if at least one token is not a stop word
-        entities.add(phrase.lower())
-
-    # Single capitalized words not at sentence start
-    # Split on sentence boundaries first
-    sentences = re.split(r"[.!?]\s+", text)
-    for sentence in sentences:
-        words = sentence.split()
-        for i, word in enumerate(words):
-            # Skip first word of sentence (capitalized by grammar)
-            if i == 0:
-                continue
-            clean = re.sub(r"[^A-Za-z]", "", word)
-            if (
-                clean
-                and len(clean) >= _MIN_ENTITY_LEN
-                and clean[0].isupper()
-                and clean not in _STOP_WORDS
-            ):
-                entities.add(clean.lower())
-
-    return entities
+    nlp = _get_nlp()
+    doc = nlp(text)
+    return {
+        ent.text.lower()
+        for ent in doc.ents
+        if ent.label_ in _NER_ENTITY_LABELS
+        and len(ent.text.strip()) >= _MIN_ENTITY_LEN
+    }
 
 
 # Patterns that look like numbers but aren't meaningful figures
@@ -170,13 +140,28 @@ def _build_source_indexes(
     articles: list[ExtractionResult],
 ) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
     """Build URL → entity set and URL → figure set mappings from extracted articles."""
+    nlp = _get_nlp()
     entity_index: dict[str, set[str]] = {}
     figure_index: dict[str, set[str]] = {}
+
+    # Prepare texts for batch NER
+    url_text_pairs: list[tuple[str, str]] = []
     for article in articles:
         if article.success and article.text:
             combined = f"{article.title or ''} {article.text}"
-            entity_index[article.url] = extract_proper_nouns(combined)
+            url_text_pairs.append((article.url, combined))
             figure_index[article.url] = extract_figures(combined)
+
+    # Batch NER processing
+    texts = [t for _, t in url_text_pairs]
+    for (url, _), doc in zip(url_text_pairs, nlp.pipe(texts, batch_size=8)):
+        entity_index[url] = {
+            ent.text.lower()
+            for ent in doc.ents
+            if ent.label_ in _NER_ENTITY_LABELS
+            and len(ent.text.strip()) >= _MIN_ENTITY_LEN
+        }
+
     return entity_index, figure_index
 
 
@@ -187,10 +172,10 @@ def validate_source_attribution(
 ) -> ValidationResult:
     """Check that entities in development summaries appear in cited sources.
 
-    For each development with sources, extracts proper nouns from the summary
-    and checks whether they appear in at least one of the cited articles.
-    Entities that appear in the summary but none of the cited sources are
-    flagged.
+    For each development with sources, extracts named entities from the summary
+    using spaCy NER and checks whether they appear in at least one of the cited
+    articles. Entities that appear in the summary but none of the cited sources
+    are flagged.
 
     Args:
         code: Country code.
@@ -232,7 +217,7 @@ def validate_source_attribution(
 
             # Extract entities from the development summary + headline
             summary_text = f"{dev.headline} {dev.summary}"
-            summary_entities = extract_proper_nouns(summary_text)
+            summary_entities = extract_entities(summary_text)
 
             # Flag entities in summary not found in any cited source.
             # Allow partial matches: "umerov" matches "rustem umerov".

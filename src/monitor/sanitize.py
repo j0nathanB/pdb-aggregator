@@ -139,9 +139,10 @@ def extract_json(text: str, context: str = "") -> dict:
         cleaned = re.sub(r"^```(?:json)?\s*\n?", "", cleaned)
         cleaned = re.sub(r"\n?```\s*$", "", cleaned)
 
-    # Try direct parse first
+    # Try direct parse first (strict=False tolerates literal newlines in strings,
+    # which LLMs frequently produce)
     try:
-        return json.loads(cleaned)
+        return json.loads(cleaned, strict=False)
     except json.JSONDecodeError:
         pass
 
@@ -151,7 +152,7 @@ def extract_json(text: str, context: str = "") -> dict:
         ctx = f" [{context}]" if context else ""
         raise ValueError(f"No JSON object found in LLM response{ctx}")
 
-    decoder = json.JSONDecoder()
+    decoder = json.JSONDecoder(strict=False)
     try:
         obj, _ = decoder.raw_decode(cleaned, idx)
         if isinstance(obj, dict):

@@ -148,7 +148,7 @@ class GuardianAPI:
         api_key: str | None = None,
         rate_limit: float = 12.0,
     ):
-        self.api_key = api_key or os.getenv("GUARDIAN_API_KEY")
+        self.api_key = api_key or os.getenv("GUARDIAN_API_KEY") or os.getenv("THE_GUARDIAN_API_KEY")
         if not self.api_key:
             raise ValueError("GUARDIAN_API_KEY not found in environment or constructor")
         self._semaphore = asyncio.Semaphore(int(rate_limit))

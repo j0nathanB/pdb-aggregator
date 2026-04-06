@@ -19,6 +19,9 @@ black>=24.0.0
 ruff>=0.6.0
 mypy>=1.11.0
 
+# NLP / validation
+spacy>=3.8.0,<4.0.0
+
 # Event clustering
 sentence-transformers>=2.2.0
 hdbscan>=0.8.33
