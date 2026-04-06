@@ -1,7 +1,7 @@
 country: Saudi Arabia
 code: sa
 tier: pivot
-region: middle_east_turkey_south_asia
+region: near_east_south_asia
 actors:
 - name: Mohammed bin Salman
   role: Crown Prince and Prime Minister
@@ -99,36 +99,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "علاقات ثنائية"
-      - "اتفاق دبلوماسي"
-      - "قمة ثنائية"
-      - "فيصل بن فرحان"
-      - "سفير"
+    - علاقات ثنائية
+    - اتفاق دبلوماسي
+    - قمة ثنائية
+    - فيصل بن فرحان
+    - سفير
     security_defense:
-      - "وزارة الدفاع السعودية"
-      - "صفقة أسلحة"
-      - "تعاون أمني"
-      - "خالد بن سلمان"
-      - "الحرس الوطني"
+    - وزارة الدفاع السعودية
+    - صفقة أسلحة
+    - تعاون أمني
+    - خالد بن سلمان
+    - الحرس الوطني
     economic_tech:
-      - "استثمار أجنبي"
-      - "صندوق الاستثمارات العامة"
-      - "أرامكو"
-      - "SAMA"
-      - "رؤية 2030"
-      - "NEOM"
+    - استثمار أجنبي
+    - صندوق الاستثمارات العامة
+    - أرامكو
+    - SAMA
+    - رؤية 2030
+    - NEOM
+    - supply chain
     institutional:
-      - "أوبك"
-      - "الأمم المتحدة"
-      - "مجلس التعاون الخليجي"
-      - "G20"
-      - "جامعة الدول العربية"
+    - أوبك
+    - الأمم المتحدة
+    - مجلس التعاون الخليجي
+    - G20
+    - جامعة الدول العربية
     domestic_constraints:
-      - "مجلس الشورى"
-      - "ولي العهد"
-      - "إصلاح اقتصادي"
-      - "خصخصة"
-      - "هيئة الترفيه"
+    - مجلس الشورى
+    - ولي العهد
+    - إصلاح اقتصادي
+    - خصخصة
+    - هيئة الترفيه
 government_discovery:
   config_file: assets/government/sa.yaml
 interpretive_context_file: assets/context/sa_sources.md

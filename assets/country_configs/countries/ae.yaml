@@ -1,7 +1,7 @@
 country: United Arab Emirates
 code: ae
 tier: pivot
-region: middle_east_turkey_south_asia
+region: near_east_south_asia
 actors:
 - name: Mohammed bin Zayed Al Nahyan
   role: President (Abu Dhabi ruler)
@@ -90,36 +90,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "علاقات ثنائية"
-      - "اتفاقية دبلوماسية"
-      - "قمة ثنائية"
-      - "عبدالله بن زايد"
-      - "سفير الإمارات"
+    - علاقات ثنائية
+    - اتفاقية دبلوماسية
+    - قمة ثنائية
+    - عبدالله بن زايد
+    - سفير الإمارات
     security_defense:
-      - "القوات المسلحة الإماراتية"
-      - "صفقة أسلحة"
-      - "تعاون أمني"
-      - "الحرس الرئاسي"
-      - "صناعة دفاعية"
+    - القوات المسلحة الإماراتية
+    - صفقة أسلحة
+    - تعاون أمني
+    - الحرس الرئاسي
+    - صناعة دفاعية
     economic_tech:
-      - "ADNOC"
-      - "استثمار أجنبي"
-      - "G42"
-      - "المصرف المركزي"
-      - "Mubadala"
-      - "ذكاء اصطناعي"
+    - ADNOC
+    - استثمار أجنبي
+    - G42
+    - المصرف المركزي
+    - Mubadala
+    - ذكاء اصطناعي
+    - supply chain
     institutional:
-      - "أوبك"
-      - "الأمم المتحدة"
-      - "مجلس التعاون الخليجي"
-      - "COP"
-      - "جامعة الدول العربية"
+    - أوبك
+    - الأمم المتحدة
+    - مجلس التعاون الخليجي
+    - COP
+    - جامعة الدول العربية
     domestic_constraints:
-      - "المجلس الوطني الاتحادي"
-      - "رؤية أبوظبي"
-      - "ADIA"
-      - "إصلاح اقتصادي"
-      - "PIF"
+    - المجلس الوطني الاتحادي
+    - رؤية أبوظبي
+    - ADIA
+    - إصلاح اقتصادي
+    - PIF
 government_discovery:
   config_file: assets/government/ae.yaml
 interpretive_context_file: assets/context/ae_sources.md

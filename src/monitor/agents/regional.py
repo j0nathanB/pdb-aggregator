@@ -98,7 +98,7 @@ REGION_COUNTRIES: dict[Region, list[str]] = {
     Region.AMERICAS: ["ca", "mx", "br", "cl"],
     Region.WESTERN_EUROPE: ["fr", "de", "gb", "it", "es", "no", "se"],
     Region.FRONTLINE_EASTERN_EUROPE: ["ua", "pl", "fi", "ee", "lt", "lv", "cz", "ro"],
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: ["tr", "sa", "ae", "in"],
+    Region.NEAR_EAST_SOUTH_ASIA: ["tr", "sa", "ae", "in", "pk"],
     Region.ASIA_PACIFIC: ["tw", "jp", "kr", "au", "id"],
 }
 
@@ -106,7 +106,7 @@ REGION_DISPLAY_NAMES: dict[Region, str] = {
     Region.AMERICAS: "Americas",
     Region.WESTERN_EUROPE: "Western Europe",
     Region.FRONTLINE_EASTERN_EUROPE: "Frontline and Eastern Europe",
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "Near East and South Asia",
+    Region.NEAR_EAST_SOUTH_ASIA: "Near East and South Asia",
     Region.ASIA_PACIFIC: "Asia-Pacific",
 }
 

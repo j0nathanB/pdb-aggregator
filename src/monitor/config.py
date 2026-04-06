@@ -110,7 +110,7 @@ class Region(str, Enum):
     AMERICAS = "americas"
     WESTERN_EUROPE = "western_europe"
     FRONTLINE_EASTERN_EUROPE = "frontline_eastern_europe"
-    MIDDLE_EAST_TURKEY_SOUTH_ASIA = "middle_east_turkey_south_asia"
+    NEAR_EAST_SOUTH_ASIA = "near_east_south_asia"
     ASIA_PACIFIC = "asia_pacific"
 
 

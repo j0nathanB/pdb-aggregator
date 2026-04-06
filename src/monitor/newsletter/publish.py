@@ -23,7 +23,7 @@ PAGE_ORDER = [
     "frontline-eastern-europe",
     "western-europe",
     "asia-pacific",
-    "middle-east-turkey-south-asia",
+    "near-east-south-asia",
     "the-americas",
     "watchlist",
 ]

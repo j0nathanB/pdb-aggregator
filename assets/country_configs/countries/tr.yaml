@@ -1,7 +1,7 @@
 country: Turkey
 code: tr
 tier: pivot
-region: middle_east_turkey_south_asia
+region: near_east_south_asia
 actors:
 - name: Recep Tayyip Erdoğan
   role: President
@@ -109,35 +109,36 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "ikili ilişkiler"
-      - "diplomatik anlaşma"
-      - "dış politika"
-      - "ikili zirve"
-      - "büyükelçi"
+    - ikili ilişkiler
+    - diplomatik anlaşma
+    - dış politika
+    - ikili zirve
+    - büyükelçi
     security_defense:
-      - "TSK"
-      - "savunma ihalesi"
-      - "güvenlik işbirliği"
-      - "MİT"
-      - "askeri operasyon"
+    - TSK
+    - savunma ihalesi
+    - güvenlik işbirliği
+    - MİT
+    - askeri operasyon
     economic_tech:
-      - "yabancı yatırım"
-      - "ticaret anlaşması"
-      - "TCMB"
-      - "sanayi politikası"
-      - "enerji güvenliği"
+    - yabancı yatırım
+    - ticaret anlaşması
+    - TCMB
+    - sanayi politikası
+    - enerji güvenliği
+    - supply chain
     institutional:
-      - "NATO"
-      - "Birleşmiş Milletler"
-      - "Avrupa Birliği"
-      - "G20"
-      - "antlaşma onayı"
+    - NATO
+    - Birleşmiş Milletler
+    - Avrupa Birliği
+    - G20
+    - antlaşma onayı
     domestic_constraints:
-      - "TBMM"
-      - "AKP"
-      - "CHP"
-      - "MHP"
-      - "DEM Parti"
+    - TBMM
+    - AKP
+    - CHP
+    - MHP
+    - DEM Parti
 government_discovery:
   config_file: assets/government/tr.yaml
 interpretive_context_file: assets/context/tr_sources.md

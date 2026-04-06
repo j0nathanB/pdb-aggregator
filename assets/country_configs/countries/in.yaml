@@ -1,7 +1,7 @@
 country: India
 code: in
 tier: pivot
-region: middle_east_turkey_south_asia
+region: near_east_south_asia
 actors:
 - name: Narendra Modi
   role: Prime Minister (BJP)
@@ -101,37 +101,38 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilateral relations"
-      - "diplomatic agreement"
-      - "Ministry of External Affairs"
-      - "bilateral summit"
-      - "Jaishankar"
+    - bilateral relations
+    - diplomatic agreement
+    - Ministry of External Affairs
+    - bilateral summit
+    - Jaishankar
     security_defense:
-      - "Indian Armed Forces"
-      - "defence procurement"
-      - "security cooperation"
-      - "RAW"
-      - "LAC standoff"
-      - "Make in India defence"
+    - Indian Armed Forces
+    - defence procurement
+    - security cooperation
+    - RAW
+    - LAC standoff
+    - Make in India defence
     economic_tech:
-      - "foreign investment"
-      - "trade agreement"
-      - "RBI"
-      - "Adani"
-      - "critical minerals"
-      - "semiconductor"
+    - foreign investment
+    - trade agreement
+    - RBI
+    - Adani
+    - critical minerals
+    - semiconductor
+    - supply chain
     institutional:
-      - "Quad"
-      - "United Nations"
-      - "G20"
-      - "BRICS"
-      - "SCO"
+    - Quad
+    - United Nations
+    - G20
+    - BRICS
+    - SCO
     domestic_constraints:
-      - "Lok Sabha"
-      - "BJP"
-      - "Congress"
-      - "Rajya Sabha"
-      - "Supreme Court"
+    - Lok Sabha
+    - BJP
+    - Congress
+    - Rajya Sabha
+    - Supreme Court
 government_discovery:
   config_file: assets/government/in.yaml
 interpretive_context_file: assets/context/in_sources.md

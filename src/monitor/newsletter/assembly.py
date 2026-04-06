@@ -30,7 +30,7 @@ REGION_DISPLAY_NAMES: dict[Region, str] = {
     Region.FRONTLINE_EASTERN_EUROPE: "Frontline and Eastern Europe",
     Region.WESTERN_EUROPE: "Western Europe",
     Region.ASIA_PACIFIC: "Asia-Pacific",
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "Near East and South Asia",
+    Region.NEAR_EAST_SOUTH_ASIA: "Near East and South Asia",
     Region.AMERICAS: "The Americas",
 }
 
@@ -39,7 +39,7 @@ REGION_ORDER = [
     Region.FRONTLINE_EASTERN_EUROPE,
     Region.WESTERN_EUROPE,
     Region.ASIA_PACIFIC,
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA,
+    Region.NEAR_EAST_SOUTH_ASIA,
     Region.AMERICAS,
 ]
 
@@ -64,7 +64,7 @@ REGION_SLUGS: dict[Region, str] = {
     Region.FRONTLINE_EASTERN_EUROPE: "frontline-eastern-europe",
     Region.WESTERN_EUROPE: "western-europe",
     Region.ASIA_PACIFIC: "asia-pacific",
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "middle-east-turkey-south-asia",
+    Region.NEAR_EAST_SOUTH_ASIA: "near-east-south-asia",
     Region.AMERICAS: "the-americas",
 }
 
@@ -569,7 +569,7 @@ REGION_ICONS: dict[Region, str] = {
     Region.FRONTLINE_EASTERN_EUROPE: "shield",
     Region.WESTERN_EUROPE: "landmark",
     Region.ASIA_PACIFIC: "ship",
-    Region.MIDDLE_EAST_TURKEY_SOUTH_ASIA: "compass",
+    Region.NEAR_EAST_SOUTH_ASIA: "compass",
     Region.AMERICAS: "scroll-text",
 }
 
