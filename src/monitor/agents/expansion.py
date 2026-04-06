@@ -171,7 +171,7 @@ async def expand_country(
     vocabulary queries.
     """
     end_date = end_date or date.today()
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=6)
     freshness = f"{start_date.isoformat()}to{end_date.isoformat()}"
 
     # Resolve goggle URL

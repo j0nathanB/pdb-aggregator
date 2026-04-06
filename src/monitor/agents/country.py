@@ -181,7 +181,7 @@ def _build_country_prompt(
     end_date: date,
     allowed_domains: list[str] | None = None,
 ) -> str:
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=6)
 
     actor_lines = []
     for a in config.actors:
@@ -281,7 +281,7 @@ def _build_story_map_country_prompt(
     story map first (breadth), then extracted articles (depth), then produces
     its analysis.
     """
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=6)
 
     actor_lines = []
     for a in config.actors:
@@ -666,7 +666,7 @@ async def run_country_agent(
         raise ValueError("ANTHROPIC_API_KEY not set")
 
     end_date = end_date or date.today()
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=6)
     date_range = f"{start_date.isoformat()} to {end_date.isoformat()}"
 
     dossier_text = config.dossier_path.read_text()

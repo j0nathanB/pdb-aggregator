@@ -116,7 +116,7 @@ async def scan_country(
     Domestic sweep: goggled search for primary actor → all results.
     """
     end_date = end_date or date.today()
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=6)
     freshness = f"{start_date.isoformat()}to{end_date.isoformat()}"
     primary_term = _primary_actor_term(config)
 

@@ -174,7 +174,7 @@ async def collect_layer2_country(
             domains.append({"domain": dom.domain, "queries": queries})
 
         # SearchAPI: query government domains (past week)
-        start_date = processing_date - timedelta(days=7)
+        start_date = processing_date - timedelta(days=6)
         time_min = start_date.strftime("%m/%d/%Y")
         time_max = processing_date.strftime("%m/%d/%Y")
         logger.info(f"Layer 2 search: {code} ({len(domains)} domains)")
@@ -458,7 +458,7 @@ async def process_maintenance(
     Records triage scan results (wire headlines, domestic headline count)
     and government source findings for the historical record.
     """
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=6)
     date_range = f"{start_date.isoformat()} to {end_date.isoformat()}"
 
     try:
