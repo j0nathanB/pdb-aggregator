@@ -89,35 +89,36 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "kahdenväliset suhteet"
-      - "diplomaattinen sopimus"
-      - "ulkopolitiikka"
-      - "kahdenvälinen huippukokous"
-      - "suurlähettiläs"
+    - kahdenväliset suhteet
+    - diplomaattinen sopimus
+    - ulkopolitiikka
+    - kahdenvälinen huippukokous
+    - suurlähettiläs
     security_defense:
-      - "Puolustusvoimat"
-      - "puolustushankinta"
-      - "turvallisuusyhteistyö"
-      - "SUPO"
-      - "sotilastiedustelu"
+    - Puolustusvoimat
+    - puolustushankinta
+    - turvallisuusyhteistyö
+    - SUPO
+    - sotilastiedustelu
     economic_tech:
-      - "ulkomainen investointi"
-      - "kauppasopimus"
-      - "Suomen Pankki"
-      - "teollisuuspolitiikka"
-      - "kriittiset raaka-aineet"
+    - ulkomainen investointi
+    - kauppasopimus
+    - Suomen Pankki
+    - teollisuuspolitiikka
+    - kriittiset raaka-aineet
+    - supply chain
     institutional:
-      - "NATO"
-      - "Euroopan unioni"
-      - "YK"
-      - "Pohjoismainen yhteistyö"
-      - "sopimuksen ratifiointi"
+    - NATO
+    - Euroopan unioni
+    - YK
+    - Pohjoismainen yhteistyö
+    - sopimuksen ratifiointi
     domestic_constraints:
-      - "eduskunta"
-      - "Kokoomus"
-      - "Perussuomalaiset"
-      - "hallitusohjelma"
-      - "oppositio"
+    - eduskunta
+    - Kokoomus
+    - Perussuomalaiset
+    - hallitusohjelma
+    - oppositio
 government_discovery:
   config_file: assets/government/fi.yaml
 interpretive_context_file: assets/context/fi_sources.md

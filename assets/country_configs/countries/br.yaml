@@ -90,36 +90,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "relações bilaterais"
-      - "acordo diplomático"
-      - "Itamaraty"
-      - "cúpula bilateral"
-      - "embaixador"
+    - relações bilaterais
+    - acordo diplomático
+    - Itamaraty
+    - cúpula bilateral
+    - embaixador
     security_defense:
-      - "Forças Armadas"
-      - "aquisição militar"
-      - "cooperação em segurança"
-      - "ABIN"
-      - "defesa nacional"
+    - Forças Armadas
+    - aquisição militar
+    - cooperação em segurança
+    - ABIN
+    - defesa nacional
     economic_tech:
-      - "investimento estrangeiro"
-      - "acordo comercial"
-      - "Banco Central"
-      - "Petrobras"
-      - "minerais críticos"
-      - "nearshoring"
+    - investimento estrangeiro
+    - acordo comercial
+    - Banco Central
+    - Petrobras
+    - minerais críticos
+    - nearshoring
+    - supply chain
     institutional:
-      - "BRICS"
-      - "Nações Unidas"
-      - "G20"
-      - "Mercosul"
-      - "ratificação tratado"
+    - BRICS
+    - Nações Unidas
+    - G20
+    - Mercosul
+    - ratificação tratado
     domestic_constraints:
-      - "reforma constitucional"
-      - "coalizão legislativa"
-      - "PT"
-      - "STF"
-      - "Câmara dos Deputados"
+    - reforma constitucional
+    - coalizão legislativa
+    - PT
+    - STF
+    - Câmara dos Deputados
 government_discovery:
   config_file: assets/government/br.yaml
 interpretive_context_file: assets/context/br_sources.md

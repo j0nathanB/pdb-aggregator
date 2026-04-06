@@ -3,29 +3,33 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=g4media.ro
-$boost=3,site=digi24.ro
-$boost=3,site=agerpres.ro
-$boost=3,site=zf.ro
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=g4media.ro
+$boost=10,site=digi24.ro
+$boost=10,site=agerpres.ro
+$boost=10,site=zf.ro
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=hotnews.ro
-$boost=2,site=recorder.ro
-$boost=2,site=riseproject.ro
-$boost=2,site=presidency.ro
-$boost=2,site=mapn.ro
-$boost=2,site=mae.ro
-$boost=2,site=newstrategycenter.ro
-$boost=2,site=romania-insider.com
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=hotnews.ro
+$boost=5,site=recorder.ro
+$boost=5,site=riseproject.ro
+$boost=5,site=presidency.ro
+$boost=5,site=mapn.ro
+$boost=5,site=mae.ro
+$boost=5,site=newstrategycenter.ro
+$boost=5,site=romania-insider.com
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=pressone.ro
-$boost=1,site=profit.ro
-$boost=1,site=euronews.com
-$boost=1,site=cdep.ro
-$boost=1,site=senat.ro
-$boost=1,site=expertforum.ro
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=pressone.ro
+$boost=3,site=profit.ro
+$boost=3,site=euronews.com
+$boost=3,site=cdep.ro
+$boost=3,site=senat.ro
+$boost=3,site=expertforum.ro
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=romaniatv.net

@@ -1,0 +1,175 @@
+country: Pakistan
+code: pk
+tier: pivot
+region: near_east_south_asia
+actors:
+- name: Asim Munir
+  role: Chief of Defence Forces (Field Marshal); de facto most powerful figure
+  primary: true
+  search_terms:
+  - Asim Munir
+  - Field Marshal Munir
+  - Chief of Defence Forces
+  - CDF
+- name: Shehbaz Sharif
+  role: Prime Minister (PML-N), senior coalition partner
+  primary: false
+  search_terms:
+  - Shehbaz Sharif
+  - PM Sharif
+- name: Asif Ali Zardari
+  role: President (PPP)
+  primary: false
+  search_terms:
+  - Zardari
+  - Asif Ali Zardari
+- name: Imran Khan
+  role: Imprisoned former PM (PTI), opposition leader
+  primary: false
+  search_terms:
+  - Imran Khan
+  - PTI
+- name: Bilawal Bhutto-Zardari
+  role: PPP chairman, junior coalition partner
+  primary: false
+  search_terms:
+  - Bilawal
+  - Bilawal Bhutto
+- name: Pakistan Armed Forces
+  role: Military / The Establishment (Fauj)
+  primary: false
+  search_terms:
+  - Pakistan Army
+  - Pakistan Armed Forces
+  - GHQ
+  - Rawalpindi
+- name: ISI
+  role: Inter-Services Intelligence (political kingmaker)
+  primary: false
+  search_terms:
+  - ISI
+  - Inter-Services Intelligence
+- name: ISPR
+  role: Inter-Services Public Relations (military media arm)
+  primary: false
+  search_terms:
+  - ISPR
+  - Inter-Services Public Relations
+- name: PML-N
+  role: Pakistan Muslim League-Nawaz (governing party)
+  primary: false
+  search_terms:
+  - PML-N
+  - Pakistan Muslim League
+  - Nawaz Sharif
+- name: PPP
+  role: Pakistan Peoples Party (junior coalition)
+  primary: false
+  search_terms:
+  - PPP
+  - Pakistan Peoples Party
+- name: PTI
+  role: Pakistan Tehreek-e-Insaf (suppressed opposition)
+  primary: false
+  search_terms:
+  - PTI
+  - Tehreek-e-Insaf
+- name: State Bank of Pakistan
+  role: Central bank
+  primary: false
+  search_terms:
+  - SBP
+  - State Bank of Pakistan
+- name: Federal Constitutional Court
+  role: Apex court created by 27th Amendment
+  primary: false
+  search_terms:
+  - Federal Constitutional Court
+  - FCC
+languages:
+  primary: ur
+  additional:
+  - en
+  - sd
+  - pa
+  - ps
+  metadata: en
+blind_spots:
+- domain: Nuclear weapons program and missile development
+  reason: Operational details classified; ISPR is the only domestic channel and treats
+    nuclear posture as strategic communication
+  where_signal_lives: SIPRI/IISS assessments, Federation of American Scientists, ISPR
+    statements, Indian/Western intelligence community leaks
+- domain: ISI domestic operations and political manipulation
+  reason: Internal enforcement role obscured by structural media capture; PECA criminalises
+    most reporting
+  where_signal_lives: HRW and Amnesty reports, PTM testimony, leaked diplomatic cables,
+    diaspora investigative outlets, Dawn boundary-pushing reporting
+- domain: Balochistan insurgency and security operations
+  reason: Internet shutdowns and unofficial censorship; restricted journalist access
+  where_signal_lives: BLA claim statements, satellite imagery, Frontier Corps press
+    releases, diaspora Baloch media, occasional Dawn investigations
+- domain: Military-corporate (Milbus) finances
+  reason: Fauji Foundation, AWT, DHA, Bahria/Shaheen Foundations are opaque; not subject
+    to civilian audit
+  where_signal_lives: Ayesha Siddiqa research, parliamentary questions, EPBD Wealth
+    Perception Index, Federal Board of Revenue disputes
+- domain: PTI suppression details and internal party state
+  reason: Court restrictions on coverage of Imran Khan cases; ECP and judiciary controlled
+    via 27th Amendment
+  where_signal_lives: Court documents, defence team statements, diaspora PTI channels,
+    HRW reporting, diplomatic démarches
+news_discovery:
+  goggle_file: assets/country_goggles/pk.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: PK
+    search_lang: en
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - Ministry of Foreign Affairs Pakistan
+    - CPEC
+    - Pakistan China relations
+    - Pakistan India relations
+    - Saudi Pakistan defence pact
+    - SMDA
+    - Pakistan Afghanistan
+    security_defense:
+    - Asim Munir
+    - ISPR
+    - Pakistan Army
+    - Indus Waters Treaty
+    - LoC
+    - J-35
+    - Pakistan nuclear
+    - Balochistan insurgency
+    economic_tech:
+    - IMF Pakistan
+    - Extended Fund Facility
+    - State Bank of Pakistan
+    - remittances Pakistan
+    - Fauji Foundation
+    - PECA
+    - tax-to-GDP Pakistan
+    - supply chain
+    institutional:
+    - 27th Constitutional Amendment
+    - Federal Constitutional Court
+    - Pakistan SCO
+    - Pakistan FATF
+    - UN Security Council Pakistan
+    domestic_constraints:
+    - Imran Khan
+    - PTI
+    - Shehbaz Sharif
+    - Bilawal Bhutto
+    - Pashtun Tahafuz Movement
+    - Pakistan judiciary
+    - Pakistan press freedom
+government_discovery:
+  config_file: assets/government/pk.yaml
+interpretive_context_file: assets/context/pk_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

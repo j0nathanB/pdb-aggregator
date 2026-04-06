@@ -3,26 +3,30 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=lrt.lt
-$boost=3,site=15min.lt
-$boost=3,site=siena.lt
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=lrt.lt
+$boost=10,site=15min.lt
+$boost=10,site=siena.lt
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=bns.lt
-$boost=2,site=lrs.lt
-$boost=2,site=kam.lt
-$boost=2,site=urm.lt
-$boost=2,site=vsd.lt
-$boost=2,site=lrv.lt
-$boost=2,site=president.lt
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=bns.lt
+$boost=5,site=lrs.lt
+$boost=5,site=kam.lt
+$boost=5,site=urm.lt
+$boost=5,site=vsd.lt
+$boost=5,site=lrv.lt
+$boost=5,site=president.lt
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=baltictimes.com
-$boost=1,site=eesc.lt
-$boost=1,site=iq.lt
-$boost=1,site=veidas.lt
-$boost=1,site=vilniusinstitute.lt
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=baltictimes.com
+$boost=3,site=eesc.lt
+$boost=3,site=iq.lt
+$boost=3,site=veidas.lt
+$boost=3,site=vilniusinstitute.lt
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=sputniknews.lt

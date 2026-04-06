@@ -3,29 +3,33 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=nrk.no
-$boost=3,site=aftenposten.no
-$boost=3,site=dn.no
-$boost=3,site=klassekampen.no
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=nrk.no
+$boost=10,site=aftenposten.no
+$boost=10,site=dn.no
+$boost=10,site=klassekampen.no
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=vg.no
-$boost=2,site=forsvaretsforum.no
-$boost=2,site=e24.no
-$boost=2,site=regjeringen.no
-$boost=2,site=stortinget.no
-$boost=2,site=nupi.no
-$boost=2,site=aldrimer.no
-$boost=2,site=morgenbladet.no
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=vg.no
+$boost=5,site=forsvaretsforum.no
+$boost=5,site=e24.no
+$boost=5,site=regjeringen.no
+$boost=5,site=stortinget.no
+$boost=5,site=nupi.no
+$boost=5,site=aldrimer.no
+$boost=5,site=morgenbladet.no
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=highnorthnews.com
-$boost=1,site=minerva.no
-$boost=1,site=dagbladet.no
-$boost=1,site=energiogklima.no
-$boost=1,site=filternyheter.no
-$boost=1,site=ffi.no
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=highnorthnews.com
+$boost=3,site=minerva.no
+$boost=3,site=dagbladet.no
+$boost=3,site=energiogklima.no
+$boost=3,site=filternyheter.no
+$boost=3,site=ffi.no
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=thelocal.no

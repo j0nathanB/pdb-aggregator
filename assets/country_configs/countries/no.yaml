@@ -88,36 +88,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilaterale forbindelser"
-      - "diplomatisk avtale"
-      - "utenrikspolitikk"
-      - "bilateralt toppmøte"
-      - "ambassadør"
+    - bilaterale forbindelser
+    - diplomatisk avtale
+    - utenrikspolitikk
+    - bilateralt toppmøte
+    - ambassadør
     security_defense:
-      - "Forsvaret"
-      - "forsvarskjøp"
-      - "sikkerhetssamarbeid"
-      - "E-tjenesten"
-      - "militær deployering"
+    - Forsvaret
+    - forsvarskjøp
+    - sikkerhetssamarbeid
+    - E-tjenesten
+    - militær deployering
     economic_tech:
-      - "utenlandsk investering"
-      - "handelsavtale"
-      - "Norges Bank"
-      - "Equinor"
-      - "oljefondet"
-      - "GPFG"
+    - utenlandsk investering
+    - handelsavtale
+    - Norges Bank
+    - Equinor
+    - oljefondet
+    - GPFG
+    - supply chain
     institutional:
-      - "NATO"
-      - "FN"
-      - "Nordisk samarbeid"
-      - "EØS"
-      - "traktatratifisering"
+    - NATO
+    - FN
+    - Nordisk samarbeid
+    - EØS
+    - traktatratifisering
     domestic_constraints:
-      - "Stortinget"
-      - "Arbeiderpartiet"
-      - "Fremskrittspartiet"
-      - "koalisjon"
-      - "opposisjon"
+    - Stortinget
+    - Arbeiderpartiet
+    - Fremskrittspartiet
+    - koalisjon
+    - opposisjon
 government_discovery:
   config_file: assets/government/no.yaml
 interpretive_context_file: assets/context/no_sources.md

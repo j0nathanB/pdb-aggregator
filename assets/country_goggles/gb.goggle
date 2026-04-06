@@ -3,29 +3,33 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=rusi.org
-$boost=3,site=chathamhouse.org
-$boost=3,site=ukdefencejournal.org.uk
-$boost=3,site=iiss.org
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=rusi.org
+$boost=10,site=chathamhouse.org
+$boost=10,site=ukdefencejournal.org.uk
+$boost=10,site=iiss.org
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=theguardian.com
-$boost=2,site=bbc.co.uk
-$boost=2,site=bbc.com
-$boost=2,site=gov.uk
-$boost=2,site=parliament.uk
-$boost=2,site=newstatesman.com
-$boost=2,site=spectator.co.uk
-$boost=2,site=declassifieduk.org
-$boost=2,site=private-eye.co.uk
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=theguardian.com
+$boost=5,site=bbc.co.uk
+$boost=5,site=bbc.com
+$boost=5,site=gov.uk
+$boost=5,site=parliament.uk
+$boost=5,site=newstatesman.com
+$boost=5,site=spectator.co.uk
+$boost=5,site=declassifieduk.org
+$boost=5,site=private-eye.co.uk
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=janes.com
-$boost=1,site=politico.eu
-$boost=1,site=opendemocracy.net
-$boost=1,site=bellingcat.com
-$boost=1,site=apnews.com
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=janes.com
+$boost=3,site=politico.eu
+$boost=3,site=opendemocracy.net
+$boost=3,site=bellingcat.com
+$boost=3,site=apnews.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=dailymail.co.uk

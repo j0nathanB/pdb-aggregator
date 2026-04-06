@@ -88,36 +88,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "kahepoolsed suhted"
-      - "diplomaatiline leping"
-      - "välispoliitika"
-      - "kahepoolne tippkohtumine"
-      - "suursaadik"
+    - kahepoolsed suhted
+    - diplomaatiline leping
+    - välispoliitika
+    - kahepoolne tippkohtumine
+    - suursaadik
     security_defense:
-      - "Kaitsevägi"
-      - "sõjaline hange"
-      - "julgeolekukoostöö"
-      - "KAPO"
-      - "Kaitseliit"
-      - "NATO lahingugrupp"
+    - Kaitsevägi
+    - sõjaline hange
+    - julgeolekukoostöö
+    - KAPO
+    - Kaitseliit
+    - NATO lahingugrupp
     economic_tech:
-      - "välisinvesteering"
-      - "kaubandusleping"
-      - "Eesti Pank"
-      - "digimajandus"
-      - "e-residentsus"
+    - välisinvesteering
+    - kaubandusleping
+    - Eesti Pank
+    - digimajandus
+    - e-residentsus
+    - supply chain
     institutional:
-      - "NATO"
-      - "Euroopa Liit"
-      - "ÜRO"
-      - "Balti koostöö"
-      - "lepingu ratifitseerimine"
+    - NATO
+    - Euroopa Liit
+    - ÜRO
+    - Balti koostöö
+    - lepingu ratifitseerimine
     domestic_constraints:
-      - "Riigikogu"
-      - "Reformierakond"
-      - "EKRE"
-      - "koalitsioon"
-      - "valitsus"
+    - Riigikogu
+    - Reformierakond
+    - EKRE
+    - koalitsioon
+    - valitsus
 government_discovery:
   config_file: assets/government/ee.yaml
 interpretive_context_file: assets/context/ee_sources.md

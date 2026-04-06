@@ -88,35 +88,36 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilaterala förbindelser"
-      - "diplomatiskt avtal"
-      - "utrikespolitik"
-      - "bilateralt toppmöte"
-      - "ambassadör"
+    - bilaterala förbindelser
+    - diplomatiskt avtal
+    - utrikespolitik
+    - bilateralt toppmöte
+    - ambassadör
     security_defense:
-      - "Försvarsmakten"
-      - "försvarsupphandling"
-      - "säkerhetssamarbete"
-      - "SÄPO"
-      - "militär insats"
+    - Försvarsmakten
+    - försvarsupphandling
+    - säkerhetssamarbete
+    - SÄPO
+    - militär insats
     economic_tech:
-      - "utländsk investering"
-      - "handelsavtal"
-      - "Riksbanken"
-      - "industripolitik"
-      - "kritiska råvaror"
+    - utländsk investering
+    - handelsavtal
+    - Riksbanken
+    - industripolitik
+    - kritiska råvaror
+    - supply chain
     institutional:
-      - "NATO"
-      - "Europeiska unionen"
-      - "FN"
-      - "Nordiskt samarbete"
-      - "fördragsratificering"
+    - NATO
+    - Europeiska unionen
+    - FN
+    - Nordiskt samarbete
+    - fördragsratificering
     domestic_constraints:
-      - "riksdagen"
-      - "Moderaterna"
-      - "Sverigedemokraterna"
-      - "Tidöavtalet"
-      - "opposition"
+    - riksdagen
+    - Moderaterna
+    - Sverigedemokraterna
+    - Tidöavtalet
+    - opposition
 government_discovery:
   config_file: assets/government/se.yaml
 interpretive_context_file: assets/context/se_sources.md

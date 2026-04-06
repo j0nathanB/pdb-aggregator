@@ -86,36 +86,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilaterale Beziehungen"
-      - "diplomatisches Abkommen"
-      - "Auswärtiges Amt"
-      - "bilateraler Gipfel"
-      - "Botschafter"
+    - bilaterale Beziehungen
+    - diplomatisches Abkommen
+    - Auswärtiges Amt
+    - bilateraler Gipfel
+    - Botschafter
     security_defense:
-      - "Bundeswehr"
-      - "Rüstungsbeschaffung"
-      - "Sicherheitskooperation"
-      - "BND"
-      - "Sondervermögen"
-      - "Zeitenwende"
+    - Bundeswehr
+    - Rüstungsbeschaffung
+    - Sicherheitskooperation
+    - BND
+    - Sondervermögen
+    - Zeitenwende
     economic_tech:
-      - "Auslandsinvestition"
-      - "Handelsabkommen"
-      - "Bundesbank"
-      - "Industriepolitik"
-      - "kritische Rohstoffe"
+    - Auslandsinvestition
+    - Handelsabkommen
+    - Bundesbank
+    - Industriepolitik
+    - kritische Rohstoffe
+    - supply chain
     institutional:
-      - "NATO"
-      - "Europäische Union"
-      - "Vereinte Nationen"
-      - "G7"
-      - "Vertragsratifizierung"
+    - NATO
+    - Europäische Union
+    - Vereinte Nationen
+    - G7
+    - Vertragsratifizierung
     domestic_constraints:
-      - "Bundestag"
-      - "CDU/CSU"
-      - "AfD"
-      - "Koalitionsvertrag"
-      - "Bundesrat"
+    - Bundestag
+    - CDU/CSU
+    - AfD
+    - Koalitionsvertrag
+    - Bundesrat
 government_discovery:
   config_file: assets/government/de.yaml
 interpretive_context_file: assets/context/de_sources.md

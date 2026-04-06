@@ -3,33 +3,37 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=en.yna.co.kr
-$boost=3,site=www.yna.co.kr
-$boost=3,site=koreaherald.com
-$boost=3,site=koreapro.org
-$boost=3,site=chosun.com
-$boost=3,site=english.chosun.com
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=en.yna.co.kr
+$boost=10,site=www.yna.co.kr
+$boost=10,site=koreaherald.com
+$boost=10,site=koreapro.org
+$boost=10,site=chosun.com
+$boost=10,site=english.chosun.com
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=koreajoongangdaily.joins.com
-$boost=2,site=english.hani.co.kr
-$boost=2,site=nknews.org
-$boost=2,site=38north.org
-$boost=2,site=kedglobal.com
-$boost=2,site=hankyung.com
-$boost=2,site=en.asaninst.org
-$boost=2,site=asaninst.org
-$boost=2,site=mofa.go.kr
-$boost=2,site=korea.net
-$boost=2,site=president.go.kr
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=koreajoongangdaily.joins.com
+$boost=5,site=english.hani.co.kr
+$boost=5,site=nknews.org
+$boost=5,site=38north.org
+$boost=5,site=kedglobal.com
+$boost=5,site=hankyung.com
+$boost=5,site=en.asaninst.org
+$boost=5,site=asaninst.org
+$boost=5,site=mofa.go.kr
+$boost=5,site=korea.net
+$boost=5,site=president.go.kr
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=koreatimes.co.kr
-$boost=1,site=thediplomat.com
-$boost=1,site=ifans.go.kr
-$boost=1,site=kiep.go.kr
-$boost=1,site=en.sedaily.com
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=koreatimes.co.kr
+$boost=3,site=thediplomat.com
+$boost=3,site=ifans.go.kr
+$boost=3,site=kiep.go.kr
+$boost=3,site=en.sedaily.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=keia.org

@@ -3,30 +3,34 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=folha.uol.com.br
-$boost=3,site=oglobo.globo.com
-$boost=3,site=valor.globo.com
-$boost=3,site=poder360.com.br
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=folha.uol.com.br
+$boost=10,site=oglobo.globo.com
+$boost=10,site=valor.globo.com
+$boost=10,site=poder360.com.br
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=metropoles.com
-$boost=2,site=jota.info
-$boost=2,site=defesanet.com.br
-$boost=2,site=agenciabrasil.ebc.com.br
-$boost=2,site=gov.br
-$boost=2,site=planalto.gov.br
-$boost=2,site=senado.leg.br
-$boost=2,site=camara.leg.br
-$boost=2,site=brazilian.report
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=metropoles.com
+$boost=5,site=jota.info
+$boost=5,site=defesanet.com.br
+$boost=5,site=agenciabrasil.ebc.com.br
+$boost=5,site=gov.br
+$boost=5,site=planalto.gov.br
+$boost=5,site=senado.leg.br
+$boost=5,site=camara.leg.br
+$boost=5,site=brazilian.report
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=congressoemfoco.com.br
-$boost=1,site=defesaemfoco.com.br
-$boost=1,site=cebri.org
-$boost=1,site=igarape.org.br
-$boost=1,site=americasquarterly.org
-$boost=1,site=dialogo-americas.com
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=congressoemfoco.com.br
+$boost=3,site=defesaemfoco.com.br
+$boost=3,site=cebri.org
+$boost=3,site=igarape.org.br
+$boost=3,site=americasquarterly.org
+$boost=3,site=dialogo-americas.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=brasil247.com

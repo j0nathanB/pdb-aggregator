@@ -84,36 +84,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilateral relations"
-      - "diplomatic agreement"
-      - "Foreign Office"
-      - "bilateral summit"
-      - "ambassador"
+    - bilateral relations
+    - diplomatic agreement
+    - Foreign Office
+    - bilateral summit
+    - ambassador
     security_defense:
-      - "Ministry of Defence"
-      - "defence procurement"
-      - "AUKUS"
-      - "MI6"
-      - "GCHQ"
-      - "military deployment"
+    - Ministry of Defence
+    - defence procurement
+    - AUKUS
+    - MI6
+    - GCHQ
+    - military deployment
     economic_tech:
-      - "foreign investment"
-      - "trade agreement"
-      - "Bank of England"
-      - "industrial strategy"
-      - "critical minerals"
+    - foreign investment
+    - trade agreement
+    - Bank of England
+    - industrial strategy
+    - critical minerals
+    - supply chain
     institutional:
-      - "NATO"
-      - "United Nations"
-      - "G7"
-      - "Five Eyes"
-      - "Commonwealth"
+    - NATO
+    - United Nations
+    - G7
+    - Five Eyes
+    - Commonwealth
     domestic_constraints:
-      - "House of Commons"
-      - "Labour"
-      - "Conservative Party"
-      - "Reform UK"
-      - "House of Lords"
+    - House of Commons
+    - Labour
+    - Conservative Party
+    - Reform UK
+    - House of Lords
 government_discovery:
   config_file: assets/government/gb.yaml
 interpretive_context_file: assets/context/gb_sources.md

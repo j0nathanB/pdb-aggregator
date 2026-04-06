@@ -95,36 +95,37 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "relaciones bilaterales"
-      - "acuerdo diplomático"
-      - "política exterior"
-      - "cumbre bilateral"
-      - "embajador"
+    - relaciones bilaterales
+    - acuerdo diplomático
+    - política exterior
+    - cumbre bilateral
+    - embajador
     security_defense:
-      - "Fuerzas Armadas"
-      - "adquisición militar"
-      - "cooperación en seguridad"
-      - "CNI"
-      - "despliegue militar"
+    - Fuerzas Armadas
+    - adquisición militar
+    - cooperación en seguridad
+    - CNI
+    - despliegue militar
     economic_tech:
-      - "inversión extranjera"
-      - "acuerdo comercial"
-      - "Banco de España"
-      - "política industrial"
-      - "transición energética"
+    - inversión extranjera
+    - acuerdo comercial
+    - Banco de España
+    - política industrial
+    - transición energética
+    - supply chain
     institutional:
-      - "OTAN"
-      - "Unión Europea"
-      - "Naciones Unidas"
-      - "G20"
-      - "ratificación tratado"
+    - OTAN
+    - Unión Europea
+    - Naciones Unidas
+    - G20
+    - ratificación tratado
     domestic_constraints:
-      - "Congreso de los Diputados"
-      - "PSOE"
-      - "Partido Popular"
-      - "Vox"
-      - "Senado"
-      - "Junts"
+    - Congreso de los Diputados
+    - PSOE
+    - Partido Popular
+    - Vox
+    - Senado
+    - Junts
 government_discovery:
   config_file: assets/government/es.yaml
 interpretive_context_file: assets/context/es_sources.md

@@ -3,27 +3,31 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=svt.se
-$boost=3,site=sverigesradio.se
-$boost=3,site=dn.se
-$boost=3,site=aftonbladet.se
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=svt.se
+$boost=10,site=sverigesradio.se
+$boost=10,site=dn.se
+$boost=10,site=aftonbladet.se
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=svd.se
-$boost=2,site=expressen.se
-$boost=2,site=di.se
-$boost=2,site=government.se
-$boost=2,site=riksdagen.se
-$boost=2,site=foi.se
-$boost=2,site=ui.se
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=svd.se
+$boost=5,site=expressen.se
+$boost=5,site=di.se
+$boost=5,site=government.se
+$boost=5,site=riksdagen.se
+$boost=5,site=foi.se
+$boost=5,site=ui.se
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=altinget.se
-$boost=1,site=fokus.se
-$boost=1,site=kvartal.se
-$boost=1,site=gp.se
-$boost=1,site=sceeus.se
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=altinget.se
+$boost=3,site=fokus.se
+$boost=3,site=kvartal.se
+$boost=3,site=gp.se
+$boost=3,site=sceeus.se
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=nyadagbladet.se

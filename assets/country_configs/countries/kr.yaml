@@ -91,37 +91,38 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilateral relations Korea"
-      - "diplomatic agreement"
-      - "ROK foreign policy"
-      - "bilateral summit"
-      - "ambassador"
+    - bilateral relations Korea
+    - diplomatic agreement
+    - ROK foreign policy
+    - bilateral summit
+    - ambassador
     security_defense:
-      - "ROK Armed Forces"
-      - "defense procurement Korea"
-      - "security cooperation"
-      - "NIS Korea"
-      - "USFK"
-      - "Ministry of National Defense"
+    - ROK Armed Forces
+    - defense procurement Korea
+    - security cooperation
+    - NIS Korea
+    - USFK
+    - Ministry of National Defense
     economic_tech:
-      - "foreign investment Korea"
-      - "trade agreement"
-      - "Bank of Korea"
-      - "Samsung"
-      - "semiconductor"
-      - "BOK"
+    - foreign investment Korea
+    - trade agreement
+    - Bank of Korea
+    - Samsung
+    - semiconductor
+    - BOK
+    - supply chain
     institutional:
-      - "United Nations"
-      - "G20"
-      - "ASEAN"
-      - "Quad"
-      - "treaty ratification"
+    - United Nations
+    - G20
+    - ASEAN
+    - Quad
+    - treaty ratification
     domestic_constraints:
-      - "National Assembly Korea"
-      - "Democratic Party Korea"
-      - "People Power Party"
-      - "impeachment"
-      - "Constitutional Court Korea"
+    - National Assembly Korea
+    - Democratic Party Korea
+    - People Power Party
+    - impeachment
+    - Constitutional Court Korea
 government_discovery:
   config_file: assets/government/kr.yaml
 interpretive_context_file: assets/context/kr_sources.md

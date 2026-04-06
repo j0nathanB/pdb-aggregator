@@ -3,34 +3,38 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=english.kyodonews.net
-$boost=3,site=kyodonews.jp
-$boost=3,site=www3.nhk.or.jp
-$boost=3,site=asia.nikkei.com
-$boost=3,site=www.japantimes.co.jp
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=english.kyodonews.net
+$boost=10,site=kyodonews.jp
+$boost=10,site=www3.nhk.or.jp
+$boost=10,site=asia.nikkei.com
+$boost=10,site=www.japantimes.co.jp
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=jen.jiji.com
-$boost=2,site=jiji.com
-$boost=2,site=www.asahi.com
-$boost=2,site=the-japan-news.com
-$boost=2,site=www.tokyo-np.co.jp
-$boost=2,site=www.nippon.com
-$boost=2,site=japan.kantei.go.jp
-$boost=2,site=kantei.go.jp
-$boost=2,site=www.mofa.go.jp
-$boost=2,site=www.mod.go.jp
-$boost=2,site=www.nikkei.com
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=jen.jiji.com
+$boost=5,site=jiji.com
+$boost=5,site=www.asahi.com
+$boost=5,site=the-japan-news.com
+$boost=5,site=www.tokyo-np.co.jp
+$boost=5,site=www.nippon.com
+$boost=5,site=japan.kantei.go.jp
+$boost=5,site=kantei.go.jp
+$boost=5,site=www.mofa.go.jp
+$boost=5,site=www.mod.go.jp
+$boost=5,site=www.nikkei.com
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=www.nids.mod.go.jp
-$boost=1,site=www.jiia.or.jp
-$boost=1,site=www.spf.org
-$boost=1,site=spfusa.org
-$boost=1,site=shugiin.go.jp
-$boost=1,site=sangiin.go.jp
-$boost=1,site=www.okinawatimes.co.jp
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=www.nids.mod.go.jp
+$boost=3,site=www.jiia.or.jp
+$boost=3,site=www.spf.org
+$boost=3,site=spfusa.org
+$boost=3,site=shugiin.go.jp
+$boost=3,site=sangiin.go.jp
+$boost=3,site=www.okinawatimes.co.jp
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=japanbuzz.info

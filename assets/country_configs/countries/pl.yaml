@@ -91,35 +91,36 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "stosunki dwustronne"
-      - "umowa dyplomatyczna"
-      - "polityka zagraniczna"
-      - "szczyt bilateralny"
-      - "ambasador"
+    - stosunki dwustronne
+    - umowa dyplomatyczna
+    - polityka zagraniczna
+    - szczyt bilateralny
+    - ambasador
     security_defense:
-      - "Wojsko Polskie"
-      - "zamówienie zbrojeniowe"
-      - "współpraca bezpieczeństwa"
-      - "ABW"
-      - "Tarcza Wschód"
+    - Wojsko Polskie
+    - zamówienie zbrojeniowe
+    - współpraca bezpieczeństwa
+    - ABW
+    - Tarcza Wschód
     economic_tech:
-      - "inwestycje zagraniczne"
-      - "umowa handlowa"
-      - "NBP"
-      - "PKN Orlen"
-      - "polityka przemysłowa"
+    - inwestycje zagraniczne
+    - umowa handlowa
+    - NBP
+    - PKN Orlen
+    - polityka przemysłowa
+    - supply chain
     institutional:
-      - "NATO"
-      - "Unia Europejska"
-      - "ONZ"
-      - "Trójmorze"
-      - "ratyfikacja traktatu"
+    - NATO
+    - Unia Europejska
+    - ONZ
+    - Trójmorze
+    - ratyfikacja traktatu
     domestic_constraints:
-      - "Sejm"
-      - "Koalicja Obywatelska"
-      - "PiS"
-      - "Konfederacja"
-      - "Senat"
+    - Sejm
+    - Koalicja Obywatelska
+    - PiS
+    - Konfederacja
+    - Senat
 government_discovery:
   config_file: assets/government/pl.yaml
 interpretive_context_file: assets/context/pl_sources.md

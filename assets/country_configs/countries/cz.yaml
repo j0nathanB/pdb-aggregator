@@ -88,35 +88,36 @@ news_discovery:
     freshness: pw
   query_vocabulary:
     diplomatic_alignment:
-      - "bilaterální vztahy"
-      - "diplomatická dohoda"
-      - "zahraniční politika"
-      - "dvoustranný summit"
-      - "velvyslanec"
+    - bilaterální vztahy
+    - diplomatická dohoda
+    - zahraniční politika
+    - dvoustranný summit
+    - velvyslanec
     security_defense:
-      - "Armáda České republiky"
-      - "vojenská akvizice"
-      - "bezpečnostní spolupráce"
-      - "BIS"
-      - "vojenské nasazení"
+    - Armáda České republiky
+    - vojenská akvizice
+    - bezpečnostní spolupráce
+    - BIS
+    - vojenské nasazení
     economic_tech:
-      - "zahraniční investice"
-      - "obchodní dohoda"
-      - "ČNB"
-      - "ČEZ"
-      - "průmyslová politika"
+    - zahraniční investice
+    - obchodní dohoda
+    - ČNB
+    - ČEZ
+    - průmyslová politika
+    - supply chain
     institutional:
-      - "NATO"
-      - "Evropská unie"
-      - "OSN"
-      - "Visegrádská skupina"
-      - "ratifikace smlouvy"
+    - NATO
+    - Evropská unie
+    - OSN
+    - Visegrádská skupina
+    - ratifikace smlouvy
     domestic_constraints:
-      - "Poslanecká sněmovna"
-      - "ANO"
-      - "SPOLU"
-      - "koaliční jednání"
-      - "Senát"
+    - Poslanecká sněmovna
+    - ANO
+    - SPOLU
+    - koaliční jednání
+    - Senát
 government_discovery:
   config_file: assets/government/cz.yaml
 interpretive_context_file: assets/context/cz_sources.md

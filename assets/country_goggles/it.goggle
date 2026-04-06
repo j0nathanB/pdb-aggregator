@@ -3,30 +3,34 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=ansa.it
-$boost=3,site=formiche.net
-$boost=3,site=decode39.com
-$boost=3,site=ilsole24ore.com
-$boost=3,site=ilfattoquotidiano.it
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=ansa.it
+$boost=10,site=formiche.net
+$boost=10,site=decode39.com
+$boost=10,site=ilsole24ore.com
+$boost=10,site=ilfattoquotidiano.it
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=iai.it
-$boost=2,site=affarinternazionali.it
-$boost=2,site=ispionline.it
-$boost=2,site=agenzianova.com
-$boost=2,site=governo.it
-$boost=2,site=esteri.it
-$boost=2,site=difesa.it
-$boost=2,site=quirinale.it
-$boost=2,site=agi.it
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=iai.it
+$boost=5,site=affarinternazionali.it
+$boost=5,site=ispionline.it
+$boost=5,site=agenzianova.com
+$boost=5,site=governo.it
+$boost=5,site=esteri.it
+$boost=5,site=difesa.it
+$boost=5,site=quirinale.it
+$boost=5,site=agi.it
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=rid.it
-$boost=1,site=analisidifesa.it
-$boost=1,site=editorialedomani.it
-$boost=1,site=limesonline.com
-$boost=1,site=euractiv.it
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=rid.it
+$boost=3,site=analisidifesa.it
+$boost=3,site=editorialedomani.it
+$boost=3,site=limesonline.com
+$boost=3,site=euractiv.it
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=theaviationist.com

@@ -3,28 +3,32 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=lsm.lv
-$boost=3,site=rebaltica.lv
-$boost=3,site=ir.lv
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=lsm.lv
+$boost=10,site=rebaltica.lv
+$boost=10,site=ir.lv
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=tvnet.lv
-$boost=2,site=delfi.lv
-$boost=2,site=nra.lv
-$boost=2,site=saeima.lv
-$boost=2,site=mod.gov.lv
-$boost=2,site=mfa.gov.lv
-$boost=2,site=mk.gov.lv
-$boost=2,site=president.lv
-$boost=2,site=liia.lv
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=tvnet.lv
+$boost=5,site=delfi.lv
+$boost=5,site=nra.lv
+$boost=5,site=saeima.lv
+$boost=5,site=mod.gov.lv
+$boost=5,site=mfa.gov.lv
+$boost=5,site=mk.gov.lv
+$boost=5,site=president.lv
+$boost=5,site=liia.lv
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=la.lv
-$boost=1,site=diena.lv
-$boost=1,site=db.lv
-$boost=1,site=providus.lv
-$boost=1,site=baltictimes.com
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=la.lv
+$boost=3,site=diena.lv
+$boost=3,site=db.lv
+$boost=3,site=providus.lv
+$boost=3,site=baltictimes.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise ---
 $discard,site=baltnews.lv

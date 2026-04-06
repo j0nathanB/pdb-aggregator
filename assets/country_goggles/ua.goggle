@@ -3,30 +3,34 @@
 ! public: false
 ! author: MPM Pipeline
 
-! --- Tier 1: Essential (boost=3) ---
-$boost=3,site=pravda.com.ua
-$boost=3,site=zn.ua
-$boost=3,site=kyivindependent.com
-$boost=3,site=defence-ua.com
-$boost=3,site=eurointegration.com.ua
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=pravda.com.ua
+$boost=10,site=zn.ua
+$boost=10,site=kyivindependent.com
+$boost=10,site=defence-ua.com
+$boost=10,site=eurointegration.com.ua
 
-! --- Tier 2: Important (boost=2) ---
-$boost=2,site=epravda.com.ua
-$boost=2,site=nv.ua
-$boost=2,site=liga.net
-$boost=2,site=ukrinform.net
-$boost=2,site=interfax.com.ua
-$boost=2,site=president.gov.ua
-$boost=2,site=mfa.gov.ua
-$boost=2,site=rada.gov.ua
-$boost=2,site=kmu.gov.ua
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=epravda.com.ua
+$boost=5,site=nv.ua
+$boost=5,site=liga.net
+$boost=5,site=ukrinform.net
+$boost=5,site=interfax.com.ua
+$boost=5,site=president.gov.ua
+$boost=5,site=mfa.gov.ua
+$boost=5,site=rada.gov.ua
+$boost=5,site=kmu.gov.ua
 
-! --- Tier 3: Supplementary (boost=1) ---
-$boost=1,site=texty.org.ua
-$boost=1,site=razumkov.org.ua
-$boost=1,site=ces.org.ua
-$boost=1,site=militarnyi.com
-$boost=1,site=unian.ua
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=texty.org.ua
+$boost=3,site=razumkov.org.ua
+$boost=3,site=ces.org.ua
+$boost=3,site=militarnyi.com
+$boost=3,site=unian.ua
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
 
 ! --- Discard: Noise and adversarial ---
 $discard,site=strana.ua
