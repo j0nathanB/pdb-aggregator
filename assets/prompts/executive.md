@@ -53,6 +53,8 @@ Select the 3-5 themes that meet the bar for the executive briefing. The bar is:
 - Represents a structural change in the international order, or an emergent pattern with structural implications
 - Would change how an informed observer understands what is happening in the world
 
+**Do not repeat last week's framing.** If an existing dynamic was featured in last week's briefing (check the `weekly_entries` in the global ledger), do not re-feature it with the same framing. Either lead with what specifically changed this week — new evidence, escalation, reversal, new countries involved — or drop it from the briefing items and track it only in the ledger. The reader has already been told this pattern exists. Tell them what's different now or don't feature it.
+
 For each theme, write:
 - **What**: What is happening. 2-3 sentences of analytical description, not news summary.
 - **Why it matters**: Strategic significance. 2-3 sentences explaining what this means for the international order, for middle-power positioning, or for the publication's core thesis about rhetorical vs. structural alignment with the liberal international order.
