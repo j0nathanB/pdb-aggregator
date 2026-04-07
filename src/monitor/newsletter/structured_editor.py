@@ -199,6 +199,7 @@ Translate foreign-language quotes into English.
 - Do not add facts, claims, or context not present in the inputs.
 - Do not add inline source citations. Sources belong in the Notes accordion only.
 - Do not produce markdown formatting (headings, bullets, bold) — just plain prose paragraphs.
+- Do not produce JSX or accordion markup of any kind. No `<Accordion>`, `<Card>`, `<ResponseField>`, `<Expandable>`, or any other component tags. The renderer handles all accordions and structural components — your only output is plain prose paragraphs in the `narrative_body` field. The `other_stories` items are rendered separately by the template; do not echo them into your narrative.
 - Do not add commentary outside the edited prose.
 </constraints>
 
