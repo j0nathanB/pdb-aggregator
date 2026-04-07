@@ -122,11 +122,24 @@ class StoryMapOutput:
 # Prompt building
 # =============================================================================
 
+# Cap on the formatted search results text. ~150K chars ≈ 60K input tokens,
+# leaving plenty of room for system prompt + thinking budget + output.
+# When exceeded, we drop results from the END of the assembled list. The
+# formatter adds in priority order (wire → domestic → actor → vocab) and
+# Brave returns each query by relevance, so dropping from the end first
+# discards low-priority vocab matches, then low-relevance actor matches.
+MAX_SEARCH_TEXT_CHARS = 150_000
+
+
 def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
     """Format raw Brave results into a text block for the LLM.
 
     Returns (formatted_text, dedup_record) where dedup_record tracks
     per-source-label counts and any URLs deduplicated at this stage.
+
+    If the assembled text exceeds MAX_SEARCH_TEXT_CHARS, results are
+    dropped from the tail (lowest-priority sources first) until the text
+    fits. The dedup_record reports how many were truncated.
     """
     lines = []
     seen_urls: set[str] = set()
@@ -166,15 +179,36 @@ def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
 
     total_input = sum(lc["input"] for lc in label_counts.values())
     total_deduped = sum(lc["deduped_at_format"] for lc in label_counts.values())
+    pre_cap_count = len(lines)
+
+    # Apply context-budget cap by dropping from the tail
+    truncated = 0
+    text = f"Total unique results: {len(lines)}\n\n" + "\n\n".join(lines)
+    if len(text) > MAX_SEARCH_TEXT_CHARS:
+        while len(text) > MAX_SEARCH_TEXT_CHARS and lines:
+            lines.pop()
+            truncated += 1
+            text = (
+                f"Total unique results: {len(lines)} "
+                f"(truncated {truncated} from {pre_cap_count} to fit context budget)\n\n"
+                + "\n\n".join(lines)
+            )
+        logger.warning(
+            "Story map: truncated %d of %d formatted results to fit context budget "
+            "(%d chars > %d cap)",
+            truncated, pre_cap_count, len(text) + truncated * 1000, MAX_SEARCH_TEXT_CHARS,
+        )
+        from ..sanitize import _record_fallback
+        _record_fallback("story_map_truncated")
 
     dedup_record = {
         "raw_input": total_input,
         "unique_in_prompt": len(lines),
         "deduped_at_format": total_deduped,
+        "truncated_for_context": truncated,
         "per_source": label_counts,
     }
 
-    text = f"Total unique results: {len(lines)}\n\n" + "\n\n".join(lines)
     return text, dedup_record
 
 
