@@ -91,12 +91,14 @@ Prompts live in `dev/source_maps/`.
 
 19. **Update `REGION_COUNTRIES`** in `src/monitor/agents/regional.py`: add the country code to its region list.
 20. **Update Guardian mapping** in `src/monitor/collection/guardian.py`: only if Guardian publishes a country tag.
-21. **Validation triage scan**: run `python -m src.monitor.cli run --country {code} --triage-only --date {today}` to confirm Brave queries return results and extraction succeeds on a sample.
-22. **First full single-country run**: `python -m src.monitor.cli run --country {code} --date {today}` to verify end-to-end.
+21. **Update `site/about.mdx`**: bump the country count in the lead paragraph and add the country to its region's `<Card>` list.
+22. **Update `site/llms.txt`**: bump the country count in the blockquote and the **Coverage** section, and add the country to its region's bullet.
+23. **Validation triage scan**: run `python -m src.monitor.cli run --country {code} --triage-only --date {today}` to confirm Brave queries return results and extraction succeeds on a sample.
+24. **First full single-country run**: `python -m src.monitor.cli run --country {code} --date {today}` to verify end-to-end.
 
 ### Phase 6: Final report
 
-23. **Comprehensive onboarding report**: write a markdown file at `dev/check_dossiers/onboarding_reports/{name}_{date}.md` listing every output path, the verification results from each phase, dropped sources with reasons, extraction method coverage, and the validation run summary. Surface anything that requires human review before the country goes into the next weekly pipeline.
+25. **Comprehensive onboarding report**: write a markdown file at `dev/check_dossiers/onboarding_reports/{name}_{date}.md` listing every output path, the verification results from each phase, dropped sources with reasons, extraction method coverage, and the validation run summary. Surface anything that requires human review before the country goes into the next weekly pipeline.
 
 ---
 
