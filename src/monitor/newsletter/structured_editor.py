@@ -213,21 +213,22 @@ You are not an analyst. The analyst has done the hard work — assessed posture,
 </role>
 
 <inputs>
-You receive a JSON object with:
+You receive a JSON object with these top-level fields:
 
-- `posture_summary` — the analyst's high-level assessment (often bloated and clause-heavy — rewrite it)
-- `activity_level` — object with `rating` (high/moderate/low) and `rationale`
-- `category_movements` — per-category objects keyed by signal category (alignment_diplomatic, security_defense, economic_tech, institutional, domestic_regime), each containing:
-  - `movement` — significant, minor, or none
-  - `prior_assessment` — last week's assessment for this category
-  - `updated_assessment` — this week's updated assessment
-  - `developments` — array of developments, each with `headline`, `summary`, `actors_involved`, `signal_category_relevance`, `date`, and `sources` (array of `{name, url, tier}`)
-  - `confidence_change` — whether confidence shifted this week
-- `unexpected_developments` — developments that broke from structural patterns
-- `absence_check` — notable absences (expected events that did not occur)
-- `other_stories` — minor items for the accordion (do not incorporate into narrative)
+- `country` — the country's display name (use this naturally; never echo it as a heading)
+- `code` — the 2-letter country code (do not include in output)
+- `posture_summary` — the analyst's high-level assessment (often bloated and clause-heavy — rewrite it as your lede if useful)
+- `activity_rating` — a single string: "high", "moderate", or "low". Use it to gauge how much to write — do NOT include the literal phrase "Activity Level" anywhere in your prose.
+- `developments` — flat list of this week's key developments. Each has `category` (signal-category label), `movement` (significant/minor/none), `text` (the development summary), and `sources` (list of `{name, url}`). This is your primary narrative material.
+- `unexpected` — list of `{headline, assessment}` for developments that broke from structural patterns. Weave them in if analytically significant.
+- `absences` — list of `{expected, significance}` for notable non-events. Mention only if structurally telling.
+- `other_stories` — minor items rendered separately by the template. DO NOT incorporate these into your narrative.
+- `raw_analysis` — full per-category analytical context (NESTED). Contains:
+  - `activity_level` — `{rating, rationale}` explaining why activity rating was set
+  - `category_movements` — per-category objects keyed by `alignment_diplomatic`, `security_defense`, `economic_tech`, `institutional`, `domestic_regime`. Each has `movement`, `prior_assessment`, `updated_assessment`, `developments` (with `headline`, `summary`, `signal_category_relevance`, `actors_involved`), and `confidence_change`.
+  - `structural_claim_checks` — pattern verifications
 
-Use the full analytical depth — prior_assessment and updated_assessment tell you what changed this week; signal_category_relevance tells you why a development matters analytically; movement ratings tell you where the action is. This depth informs your editorial choices — what to lead with, what deserves emphasis, what connections to draw — but DO NOT add facts or claims not present in the data.
+Use the full analytical depth in `raw_analysis.category_movements` — `prior_assessment` vs `updated_assessment` tells you what changed this week; `signal_category_relevance` tells you why a development matters analytically; `movement` ratings tell you where the action is. This depth informs your editorial choices — what to lead with, what deserves emphasis, what connections to draw — but DO NOT add facts or claims not present in the data.
 </inputs>
 
 <instructions>
@@ -503,6 +504,43 @@ No commentary. Just the JSON object.
 # Editor functions
 # =============================================================================
 
+async def _call_editor_once(
+    client: anthropic.AsyncAnthropic,
+    system_prompt: str,
+    user_message: str,
+    label: str,
+    model: str,
+) -> tuple[str, anthropic.types.Message]:
+    """Single API call for the country editor. Returns (response_text, response)."""
+    async with anthropic_limiter():
+        async with client.messages.stream(
+            model=model,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                f"Editor {label}: streaming API call",
+            )
+    text_parts = [b.text for b in response.content if b.type == "text"]
+    return "\n".join(text_parts), response
+
+
+# Stricter retry message used when the editor returns the wrong shape
+# (e.g., echoed input JSON, prose without the narrative_body wrapper).
+_RETRY_INSTRUCTION = """The previous attempt did not return the expected format. Try again. Your output must be EXACTLY one JSON object with a single key `narrative_body` containing a multi-paragraph prose string. No other top-level keys. No markdown headings. No JSON shape that mirrors the input. Example shape:
+
+{"narrative_body": "First paragraph of flowing prose.\\n\\nSecond paragraph.\\n\\nThird paragraph."}
+
+Now produce that for the country whose input you received above."""
+
+
 async def edit_country(
     country: CountryContent,
     analysis_date: date | None = None,
@@ -516,31 +554,15 @@ async def edit_country(
         return country
 
     system_prompt = _build_system_prompt(COUNTRY_EDITOR_SYSTEM)
-
     user_message = _build_country_input(country)
+    use_model = model or EDITOR_MODEL
 
     logger.info("Editor [%s]: starting structured edit", country.code)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or EDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                f"Editor {country.code}: streaming API call",
-            )
-
-    text_parts = [b.text for b in response.content if b.type == "text"]
-    response_text = "\n".join(text_parts)
+    response_text, response = await _call_editor_once(
+        client, system_prompt, user_message, country.code, use_model,
+    )
 
     logger.info(
         "Editor [%s]: done — input=%d, output=%d tokens",
@@ -558,27 +580,55 @@ async def edit_country(
         usage=extract_usage(response),
     )
 
+    def _has_narrative(data) -> bool:
+        return isinstance(data, dict) and "narrative_body" in data and isinstance(data["narrative_body"], str) and data["narrative_body"].strip()
+
+    parsed = None
     try:
-        data = extract_json(response_text, context=f"editor_{country.code}")
-        if "narrative_body" in data:
-            country.narrative_body = data["narrative_body"]
-            update_trace_parsed("editor", country.code, run_date, parsed_output=data)
-        else:
-            # JSON parsed but missing narrative_body — usually means the LLM
-            # echoed the input back instead of producing prose. Do NOT fall
-            # back to response_text (which is the raw input dump). Use the
-            # posture summary as a placeholder so the brief still renders
-            # cleanly, and log loudly so this is visible.
-            logger.error(
-                "Editor [%s]: parsed dict has no narrative_body field "
-                "(keys: %s) — likely JSON-echo bug. Falling back to posture_summary.",
-                country.code, list(data.keys())[:5],
-            )
-            _record_fallback("editor_json_echo")
-            country.narrative_body = country.posture_summary or ""
-            update_trace_parsed("editor", country.code, run_date, parsed_output=data)
+        parsed = extract_json(response_text, context=f"editor_{country.code}")
     except (ValueError, KeyError):
-        # Fallback: use raw text as narrative (LLM returned prose, not JSON)
+        pass
+
+    # Retry once if the first response is missing narrative_body
+    if not _has_narrative(parsed):
+        logger.warning(
+            "Editor [%s]: first attempt missing narrative_body (parsed keys: %s); retrying with stricter instruction",
+            country.code,
+            list(parsed.keys())[:5] if isinstance(parsed, dict) else type(parsed).__name__,
+        )
+        retry_message = (
+            f"{user_message}\n\n---\n\n{_RETRY_INSTRUCTION}"
+        )
+        try:
+            response_text, response = await _call_editor_once(
+                client, system_prompt, retry_message, f"{country.code}-retry", use_model,
+            )
+            logger.info(
+                "Editor [%s] retry: input=%d, output=%d tokens",
+                country.code, response.usage.input_tokens, response.usage.output_tokens,
+            )
+            try:
+                parsed = extract_json(response_text, context=f"editor_{country.code}_retry")
+            except (ValueError, KeyError):
+                parsed = None
+        except Exception as e:
+            logger.error("Editor [%s] retry failed: %s", country.code, e)
+
+    if _has_narrative(parsed):
+        country.narrative_body = parsed["narrative_body"]
+        update_trace_parsed("editor", country.code, run_date, parsed_output=parsed)
+    elif parsed is not None and isinstance(parsed, dict):
+        # Parsed but still no narrative_body after retry — JSON-echo bug.
+        # Fall back to posture_summary so the brief renders something coherent.
+        logger.error(
+            "Editor [%s]: retry also missing narrative_body — falling back to posture_summary",
+            country.code,
+        )
+        _record_fallback("editor_json_echo")
+        country.narrative_body = country.posture_summary or ""
+        update_trace_parsed("editor", country.code, run_date, parsed_output=parsed)
+    else:
+        # JSON parse failed entirely — use raw text as narrative (LLM returned prose, not JSON)
         logger.warning("Editor [%s]: JSON parse failed, using raw response", country.code)
         country.narrative_body = response_text
 
