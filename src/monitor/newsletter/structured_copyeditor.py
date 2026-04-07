@@ -219,7 +219,11 @@ async def copyedit_country(
 
     result = await _copyedit_prose(fields, country.code, analysis_date)
 
-    country.narrative_body = result.get("narrative_body", country.narrative_body)
+    from .structured_editor import sanitize_narrative_body
+    country.narrative_body = sanitize_narrative_body(
+        result.get("narrative_body", country.narrative_body),
+        label=f"copyeditor_{country.code}",
+    )
     if "other_stories" in result and country.other_stories:
         for i, story_data in enumerate(result["other_stories"]):
             if i < len(country.other_stories):

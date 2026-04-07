@@ -200,14 +200,17 @@ async def run_copyeditor(country: CountryContent, end_date: date) -> CountryCont
 
 
 async def run_style_editor_country(country: CountryContent, end_date: date) -> CountryContent:
-    from src.monitor.newsletter.structured_editor import style_edit_prose
+    from src.monitor.newsletter.structured_editor import sanitize_narrative_body, style_edit_prose
     if not country.narrative_body:
         return country
     result = await style_edit_prose(
         {"narrative_body": country.narrative_body},
         country.code, analysis_date=end_date,
     )
-    country.narrative_body = result.get("narrative_body", country.narrative_body)
+    country.narrative_body = sanitize_narrative_body(
+        result.get("narrative_body", country.narrative_body),
+        label=f"reedit_style_{country.code}",
+    )
     return country
 
 

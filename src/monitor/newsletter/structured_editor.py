@@ -8,6 +8,7 @@ analytical data and returns JSON with prose fields. No markdown I/O.
 import asyncio
 import json
 import logging
+import re
 from datetime import date
 
 import anthropic
@@ -19,7 +20,7 @@ from ..config import (
     load_prompt,
 )
 from ..rate_limit import anthropic_limiter
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 from ..timing import TrackedSemaphore, with_heartbeat
 from .content_models import (
     CountryContent,
@@ -35,6 +36,80 @@ EDITOR_MODEL = MODEL
 
 # Style guide loaded once per process
 _style_guide: str | None = None
+
+# =============================================================================
+# Narrative body sanitizer
+# =============================================================================
+#
+# Editor LLMs sometimes inject artifacts into narrative_body that should not
+# be there: leading `### Country` headings (the template renders the flag
+# heading separately), `**Activity Level:** ...` markers (analytical metadata
+# not for the reader), and `<Accordion>...</Accordion>` blocks (rendered
+# separately from the structured `other_stories` field). Editor system prompts
+# explicitly prohibit these, but LLMs occasionally regress.
+#
+# This sanitizer runs after every editorial pass on narrative_body and strips
+# the known artifact patterns. Logs a WARNING when it strips anything so we
+# can track regression rates. Patterns are extensible — add new ones here as
+# we discover them.
+
+# Match opening accordion tag, anything (non-greedy), closing tag
+_ACCORDION_RE = re.compile(
+    r"<Accordion[^>]*>.*?</Accordion>\s*",
+    re.DOTALL | re.IGNORECASE,
+)
+
+# Match leading `### ...` heading on first non-blank line
+_LEADING_HEADING_RE = re.compile(r"^\s*###\s+[^\n]*\n+")
+
+# Match `**Activity Level:** ...` (with or without colon, on its own line)
+_ACTIVITY_LEVEL_RE = re.compile(
+    r"^\s*\*\*Activity\s*Level:?\*\*[^\n]*\n+",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+
+def sanitize_narrative_body(text: str, label: str = "") -> str:
+    """Strip known artifact patterns from narrative_body prose.
+
+    Removes accordion blocks, leading `### Heading` lines, and `**Activity
+    Level:**` markers that editor LLMs sometimes inject. Logs a warning and
+    increments the `narrative_sanitized` fallback counter when anything is
+    stripped, so regression is observable.
+    """
+    if not text:
+        return text
+
+    original_len = len(text)
+    stripped: list[str] = []
+
+    new_text, n = _ACCORDION_RE.subn("", text)
+    if n > 0:
+        stripped.append(f"{n} accordion block(s)")
+        text = new_text
+
+    new_text, n = _LEADING_HEADING_RE.subn("", text)
+    if n > 0:
+        stripped.append("leading heading")
+        text = new_text
+
+    new_text, n = _ACTIVITY_LEVEL_RE.subn("", text)
+    if n > 0:
+        stripped.append(f"{n} activity-level marker(s)")
+        text = new_text
+
+    text = text.strip()
+
+    if stripped:
+        ctx = f" [{label}]" if label else ""
+        logger.warning(
+            "Sanitized narrative_body%s: stripped %s (%d → %d chars)",
+            ctx, ", ".join(stripped), original_len, len(text),
+        )
+        _record_fallback("narrative_sanitized")
+
+    return text
+
 
 NAMES_AND_TITLES_SECTION = """#### names and titles — briefing conventions ####
 
@@ -482,6 +557,9 @@ async def edit_country(
         logger.warning("Editor [%s]: JSON parse failed, using raw response", country.code)
         country.narrative_body = response_text
 
+    country.narrative_body = sanitize_narrative_body(
+        country.narrative_body, label=f"editor_{country.code}",
+    )
     return country
 
 
@@ -985,7 +1063,10 @@ async def style_edit_all(
                 {"narrative_body": country.narrative_body},
                 country.code, analysis_date,
             )
-            country.narrative_body = result.get("narrative_body", country.narrative_body)
+            country.narrative_body = sanitize_narrative_body(
+                result.get("narrative_body", country.narrative_body),
+                label=f"style_editor_{country.code}",
+            )
 
     async def _se_regional(page: RegionPageContent):
         if not page.regional_lead:
