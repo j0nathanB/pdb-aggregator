@@ -128,9 +128,14 @@ def extract_json(text: str, context: str = "") -> dict:
     - ```json fences
     - Prose before/after JSON
     - Nested objects with escaped braces in strings
+    - Common LLM mistakes (missing commas, trailing commas, single quotes,
+      unescaped newlines) via json-repair fallback
 
     Uses json.JSONDecoder().raw_decode() for correct string-escape handling
-    instead of hand-rolled brace counting.
+    instead of hand-rolled brace counting. Falls back to json-repair as a
+    last resort — when this fires, we log a warning because repaired JSON
+    can be structurally incorrect (the library guesses structure without
+    knowing the schema).
     """
     cleaned = text.strip()
 
@@ -159,6 +164,26 @@ def extract_json(text: str, context: str = "") -> dict:
             return obj
     except json.JSONDecodeError:
         pass
+
+    # Last resort: json-repair. Warn loudly because repaired JSON may be
+    # structurally wrong — the library guesses structure without schema
+    # knowledge, and downstream parsers may silently get malformed data.
+    try:
+        from json_repair import repair_json
+        repaired = repair_json(cleaned, return_objects=True)
+        if isinstance(repaired, dict) and repaired:
+            ctx = f" [{context}]" if context else ""
+            logger.warning(
+                "JSON repair fallback used%s — original JSON was malformed. "
+                "Repaired output may be structurally incorrect; verify downstream parsing.",
+                ctx,
+            )
+            _record_fallback("json_repair_used")
+            return repaired
+    except ImportError:
+        logger.debug("json-repair not installed; skipping repair fallback")
+    except Exception as e:
+        logger.debug("json-repair failed: %s", e)
 
     ctx = f" [{context}]" if context else ""
     raise ValueError(f"Could not parse JSON from LLM response{ctx}")
