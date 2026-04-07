@@ -109,6 +109,37 @@ def _escape_mdx(text: str) -> str:
     return text
 
 
+# Boilerplate openers the regional editor sometimes prepends to gap paragraphs.
+# We strip these so the gap reads as direct prose.
+_GAP_BOILERPLATE_RE = re.compile(
+    r"^\s*(?:notably absent|missing|not present|absent)\s*(?:this week)?\s*[:\-—–]?\s*",
+    re.IGNORECASE,
+)
+
+
+def _sanitize_gap_paragraphs(gaps: list[str]) -> list[str]:
+    """Strip boilerplate openers and merge multiple gaps into one paragraph.
+
+    The regional editor's prompt asks for a single woven gap, but LLMs sometimes
+    produce multiple separate items with "Notably absent this week:" prefixes.
+    This deterministic post-process enforces both invariants.
+    """
+    cleaned: list[str] = []
+    for g in gaps:
+        if not g or not g.strip():
+            continue
+        stripped = _GAP_BOILERPLATE_RE.sub("", g.strip())
+        # Capitalise first letter if the boilerplate stripped one off mid-sentence
+        if stripped and stripped[0].islower():
+            stripped = stripped[0].upper() + stripped[1:]
+        cleaned.append(stripped)
+    if len(cleaned) <= 1:
+        return cleaned
+    # Merge multiple paragraphs into one with sentence-level joins
+    merged = " ".join(p.rstrip(".") + "." for p in cleaned)
+    return [merged]
+
+
 def _build_env() -> Environment:
     """Create Jinja2 environment with custom globals."""
     env = Environment(
@@ -159,7 +190,7 @@ def render_pages(
             display_name=page_content.display_name,
             date_range=date_range,
             regional_lead=page_content.regional_lead,
-            gap_paragraphs=page_content.gap_paragraphs,
+            gap_paragraphs=_sanitize_gap_paragraphs(page_content.gap_paragraphs),
             countries=page_content.countries,
         ))
 

@@ -59,12 +59,14 @@ _ACCORDION_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
-# Match leading `### ...` heading on first non-blank line
-_LEADING_HEADING_RE = re.compile(r"^\s*###\s+[^\n]*\n+")
+# Match any `### ...` or `#### ...` heading line, anywhere in the text.
+# Editor prompts prohibit markdown headings; any heading line is an artifact.
+_HEADING_RE = re.compile(r"^\s*#{3,4}\s+[^\n]*\n+", re.MULTILINE)
 
-# Match `**Activity Level:** ...` (with or without colon, on its own line)
+# Match `**Activity Level:** ...` and the variant `**Activity Level: ...**`
+# (LLM sometimes wraps the value inside the bold markers).
 _ACTIVITY_LEVEL_RE = re.compile(
-    r"^\s*\*\*Activity\s*Level:?\*\*[^\n]*\n+",
+    r"^\s*\*\*Activity\s*Level[:\s]?[^\n*]*\*\*[^\n]*\n+",
     re.MULTILINE | re.IGNORECASE,
 )
 
@@ -88,9 +90,9 @@ def sanitize_narrative_body(text: str, label: str = "") -> str:
         stripped.append(f"{n} accordion block(s)")
         text = new_text
 
-    new_text, n = _LEADING_HEADING_RE.subn("", text)
+    new_text, n = _HEADING_RE.subn("", text)
     if n > 0:
-        stripped.append("leading heading")
+        stripped.append(f"{n} heading(s)")
         text = new_text
 
     new_text, n = _ACTIVITY_LEVEL_RE.subn("", text)
@@ -273,8 +275,9 @@ Translate foreign-language quotes into English.
 - Do not change analytical judgments. If the analyst says movement was "minor," do not upgrade it.
 - Do not add facts, claims, or context not present in the inputs.
 - Do not add inline source citations. Sources belong in the Notes accordion only.
-- Do not produce markdown formatting (headings, bullets, bold) — just plain prose paragraphs.
+- Do not produce markdown formatting — no headings (`### Economic`, `## Section`, `#### Diplomatic`, etc.), no bullet lists, no bold section labels (`**Activity Level:**`, `**Posture:**`). Just plain prose paragraphs separated by blank lines. Group developments by narrative logic, not by signal category. If you need to mark a transition, use a transition sentence ("Even as it fights at home, the government turned outward this week."), not a heading.
 - Do not produce JSX or accordion markup of any kind. No `<Accordion>`, `<Card>`, `<ResponseField>`, `<Expandable>`, or any other component tags. The renderer handles all accordions and structural components — your only output is plain prose paragraphs in the `narrative_body` field. The `other_stories` items are rendered separately by the template; do not echo them into your narrative.
+- Your output MUST be valid JSON in the form `{"narrative_body": "..."}`. Do NOT echo the input JSON back. Do NOT return the input dict. The `narrative_body` field is required and must contain your edited prose as a single string with `\\n\\n` between paragraphs.
 - Do not add commentary outside the edited prose.
 </constraints>
 
@@ -355,7 +358,12 @@ Rewrite the regional lead into 3-5 SUBSTANTIAL paragraphs of flowing narrative p
 </regional_lead_task>
 
 <gap_task>
-Tighten the gap paragraphs. Keep the "Notably absent this week:" framing.
+Produce ONE polished paragraph in `gap_paragraphs` (always a single-element array, even if the input has multiple gap items — weave them into one coherent paragraph).
+
+- If the input has multiple gap items, find the analytical thread that connects them and merge into one paragraph that names each absence in turn.
+- Do NOT begin with "Notably absent this week:", "Missing this week:", or any similar boilerplate prefix. State the absence directly.
+- Keep it tight: 2-4 sentences maximum.
+- Lead with the absence itself, not the framing. "EU coordination on economic crisis response did not appear this week" beats "Notably absent this week: EU coordination on economic crisis response."
 </gap_task>
 
 <card_task>
@@ -393,9 +401,11 @@ Translate foreign-language quotes into English.
 Return JSON:
 {
     "regional_lead": "3-5 substantial paragraphs of flowing prose...",
-    "gap_paragraphs": ["Notably absent this week: ..."],
+    "gap_paragraphs": ["EU coordination on economic crisis response did not appear this week. ..."],
     "card_summary": "One sentence for the navigation card."
 }
+
+The `gap_paragraphs` array MUST contain exactly one element. Do not start the paragraph with "Notably absent" or "Missing this week".
 
 No commentary. Just the JSON object.
 </output_format>"""
@@ -550,10 +560,25 @@ async def edit_country(
 
     try:
         data = extract_json(response_text, context=f"editor_{country.code}")
-        country.narrative_body = data.get("narrative_body", response_text)
-        update_trace_parsed("editor", country.code, run_date, parsed_output=data)
+        if "narrative_body" in data:
+            country.narrative_body = data["narrative_body"]
+            update_trace_parsed("editor", country.code, run_date, parsed_output=data)
+        else:
+            # JSON parsed but missing narrative_body — usually means the LLM
+            # echoed the input back instead of producing prose. Do NOT fall
+            # back to response_text (which is the raw input dump). Use the
+            # posture summary as a placeholder so the brief still renders
+            # cleanly, and log loudly so this is visible.
+            logger.error(
+                "Editor [%s]: parsed dict has no narrative_body field "
+                "(keys: %s) — likely JSON-echo bug. Falling back to posture_summary.",
+                country.code, list(data.keys())[:5],
+            )
+            _record_fallback("editor_json_echo")
+            country.narrative_body = country.posture_summary or ""
+            update_trace_parsed("editor", country.code, run_date, parsed_output=data)
     except (ValueError, KeyError):
-        # Fallback: use raw text as narrative
+        # Fallback: use raw text as narrative (LLM returned prose, not JSON)
         logger.warning("Editor [%s]: JSON parse failed, using raw response", country.code)
         country.narrative_body = response_text
 

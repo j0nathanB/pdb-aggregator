@@ -104,11 +104,51 @@ def test_strips_leading_heading_with_whitespace():
     assert result.startswith("Ukraine clashed")
 
 
-def test_does_not_strip_mid_paragraph_heading_pattern():
-    # H3 in middle of text isn't stripped (only leading)
+def test_strips_mid_paragraph_heading():
+    # Editor prompts prohibit headings; any `### ` line anywhere is an artifact
     text = "Opening paragraph.\n\n### Mid paragraph\n\nMore prose."
     result = sanitize_narrative_body(text)
-    assert "### Mid paragraph" in result
+    assert "### Mid paragraph" not in result
+    assert "Opening paragraph." in result
+    assert "More prose." in result
+
+
+def test_strips_multiple_category_headings_poland_case():
+    """Reproduces the Poland 2026-03-29 case: signal-category sub-headings."""
+    text = (
+        "Poland's institutional warfare has intensified.\n\n"
+        "### Economic\n\n"
+        "Fuel prices surged this week.\n\n"
+        "### Institutional\n\n"
+        "Constitutional restoration enters a new phase.\n\n"
+        "### Diplomatic\n\n"
+        "Tusk and Nawrocki split.\n\n"
+        "### Security\n\n"
+        "Defence modernisation continued.\n\n"
+        "### Domestic\n\n"
+        "PiS leadership reshuffled."
+    )
+    result = sanitize_narrative_body(text, label="test_pl")
+    assert "### " not in result
+    assert "Poland's institutional warfare" in result
+    assert "Fuel prices" in result
+    assert "Constitutional restoration" in result
+    assert "Tusk and Nawrocki split" in result
+
+
+def test_strips_h4_headings_too():
+    text = "Opening.\n\n#### Subsection heading\n\nMore prose."
+    result = sanitize_narrative_body(text)
+    assert "#### Subsection heading" not in result
+
+
+def test_strips_activity_level_with_value_inside_bold():
+    """Variant where the value is inside the bold markers, not after."""
+    text = "Lead paragraph.\n\n**Activity Level: High**\n\nBody paragraph."
+    result = sanitize_narrative_body(text)
+    assert "Activity Level" not in result
+    assert "Lead paragraph" in result
+    assert "Body paragraph" in result
 
 
 # =============================================================================
