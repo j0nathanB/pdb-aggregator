@@ -511,7 +511,7 @@ async def edit_country(
 
     logger.info("Editor [%s]: starting structured edit", country.code)
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or EDITOR_MODEL,
@@ -590,7 +590,7 @@ async def edit_regional(
 
     logger.info("Editor [regional/%s]: starting", page.region.value)
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or EDITOR_MODEL,
@@ -669,7 +669,7 @@ async def edit_executive(
 
     logger.info("Editor [executive]: starting, %d items", len(brief.items))
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or EDITOR_MODEL,
@@ -798,7 +798,7 @@ async def edit_watchlist(
 
     logger.info("Editor [watchlist]: starting, %d items", len(watchlist.items))
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or EDITOR_MODEL,
@@ -982,7 +982,7 @@ async def style_edit_prose(
 
     logger.info("Style editor [%s]: starting", label)
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or EDITOR_MODEL,
