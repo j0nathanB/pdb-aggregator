@@ -1,0 +1,24 @@
+/* Make bold text more visible.
+ *
+ * Mintlify's default body text is medium-gray in dark mode, and the
+ * default `<strong>` weight increase alone doesn't read as emphasised
+ * against that gray. Pushing the colour to pure white in dark mode
+ * (and pure black in light mode) gives bold text the contrast it needs.
+ *
+ * Mintlify is built on Tailwind, so dark mode is toggled via a `.dark`
+ * class on a parent element. CSS variables let both modes share the
+ * same selector. */
+
+:root {
+  --mpm-strong-color: #000000;
+}
+
+.dark {
+  --mpm-strong-color: #ffffff;
+}
+
+strong,
+b {
+  color: var(--mpm-strong-color);
+  font-weight: 700;
+}
