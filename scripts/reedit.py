@@ -11,7 +11,21 @@ Usage:
     # Re-edit the executive brief from the editor stage
     python scripts/reedit.py --date 2026-02-22 --executive --from editor
 
-Stages: editor, copyeditor, style_editor
+    # Recover a country whose agent failed: parse the trace, rebuild the
+    # ledger entry + story map, then run editor → copyeditor → style → patch.
+    # Use this when the country agent's JSON was malformed; manually patch the
+    # response_text in briefs/{date}/traces/country_{code}.json first if needed.
+    python scripts/reedit.py --date 2026-03-15 --country ae --from country
+
+Stages: country, editor, copyeditor, style_editor
+
+The 'country' stage is special — it runs before the editorial passes and
+recovers a failed country from its trace files. It will:
+  1. Parse the (manually-patched) response_text from country_{code}.json
+  2. Build a WeeklyEntry and append/replace it in the country ledger
+  3. Save the story_map_{code}.json sidecar from the trace if it exists
+  4. Attach story_clusters from the story map to the new weekly entry
+After recovery, the standard editor → copyeditor → style → patch flow runs.
 
 Outputs markdown files to briefs/{date}/reedits/ and patches the corresponding
 MDX pages in site/briefs/{date}/.
@@ -50,7 +64,125 @@ logging.basicConfig(
 )
 logger = logging.getLogger("reedit")
 
-STAGES = ["editor", "copyeditor", "style_editor"]
+STAGES = ["country", "editor", "copyeditor", "style_editor"]
+EDITORIAL_STAGES = ["editor", "copyeditor", "style_editor"]
+
+
+# =============================================================================
+# Country recovery from trace
+# =============================================================================
+
+def recover_country_from_trace(code: str, end_date: date) -> bool:
+    """Recover a failed country from its trace files.
+
+    When a country agent's JSON parse fails, the orchestrator marks the country
+    as failed and skips ledger update. This recovery:
+      1. Reads briefs/{date}/traces/country_{code}.json
+      2. Parses the response_text (assumes manually patched if originally broken)
+      3. Builds a WeeklyEntry and appends/replaces it in the country ledger
+      4. Reads briefs/{date}/traces/story_map_{code}.json if present
+      5. Saves the story map sidecar to ledgers/story_maps/{code}_{date}.json
+      6. Attaches story_clusters to the weekly entry from the story map
+
+    Returns True on success.
+    """
+    from src.monitor.agents.country import parse_country_response
+    from src.monitor.ledger.storage import (
+        load_country_ledger,
+        save_country_ledger,
+    )
+    from src.monitor.models import StoryClusterSummary
+    from datetime import timedelta
+
+    date_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "traces"
+    country_trace_path = date_dir / f"country_{code}.json"
+    story_map_trace_path = date_dir / f"story_map_{code}.json"
+
+    if not country_trace_path.exists():
+        logger.error("Country trace not found: %s", country_trace_path)
+        return False
+
+    # 1. Parse country trace
+    trace = json.loads(country_trace_path.read_text())
+    response_text = trace["output"]["response_text"]
+    if not response_text:
+        logger.error("Country trace has empty response_text: %s", country_trace_path)
+        return False
+
+    # 2. Load ledger and parse country output
+    ledger = load_country_ledger(code)
+    date_range = f"{(end_date - timedelta(days=6)).isoformat()} to {end_date.isoformat()}"
+    try:
+        result = parse_country_response(response_text, end_date, date_range, ledger)
+    except Exception as e:
+        logger.error(
+            "Failed to parse country trace for %s: %s. "
+            "If JSON was malformed, manually patch the response_text in %s and retry.",
+            code, e, country_trace_path,
+        )
+        return False
+
+    n_devs = sum(len(m.developments) for m in result.weekly_entry.category_movements.values())
+    logger.info("Recovered %s: %d categories, %d developments", code, len(result.weekly_entry.category_movements), n_devs)
+
+    # 3. Save story map sidecar from trace if available, then attach clusters
+    if story_map_trace_path.exists():
+        sm_trace = json.loads(story_map_trace_path.read_text())
+        sm_parsed = sm_trace.get("output", {}).get("parsed")
+        if sm_parsed and isinstance(sm_parsed, dict):
+            sm_ledger_path = PROJECT_ROOT / "ledgers" / "story_maps" / f"{code}_{end_date.isoformat()}.json"
+            sm_ledger_path.parent.mkdir(parents=True, exist_ok=True)
+            sm_ledger_entry = {
+                "country": ledger.country,
+                "code": code,
+                "week": end_date.isoformat(),
+                "analysis_date": sm_parsed.get("analysis_date", end_date.isoformat()),
+                "search_results_total": sm_parsed.get("search_results_total", 0),
+                "stories_identified": sm_parsed.get("stories_identified", 0),
+                "off_topic_filtered": sm_parsed.get("off_topic_filtered", 0),
+                "noise_summary": sm_parsed.get("noise_summary", ""),
+                "stories": sm_parsed.get("stories", []),
+                "single_source_items": sm_parsed.get("single_source_items", []),
+            }
+            sm_ledger_path.write_text(json.dumps(sm_ledger_entry, indent=2))
+            logger.info("  Story map sidecar saved: %s (%d stories, %d singles)",
+                        sm_ledger_path, len(sm_ledger_entry["stories"]), len(sm_ledger_entry["single_source_items"]))
+
+            # Attach story clusters to the weekly entry
+            clusters = []
+            for sc in sm_parsed.get("stories", []):
+                rep_urls = sc.get("representative_urls") or []
+                sources = sc.get("sources") or []
+                clusters.append(StoryClusterSummary(
+                    headline=sc.get("headline", "Untitled"),
+                    summary=sc.get("summary", ""),
+                    source_url=rep_urls[0] if rep_urls else "",
+                    source_name=sources[0] if sources else "",
+                ))
+            result.weekly_entry.story_clusters = clusters
+            logger.info("  Attached %d story clusters to weekly entry", len(clusters))
+    else:
+        logger.warning("  No story map trace at %s — Other Stories/Notes will be empty", story_map_trace_path)
+
+    # 4. Append or replace the weekly entry in the ledger
+    existing_idx = next(
+        (i for i, e in enumerate(ledger.weekly_entries) if e.week == end_date),
+        None,
+    )
+    if existing_idx is not None:
+        ledger.weekly_entries[existing_idx] = result.weekly_entry
+        logger.info("  Replaced existing entry at index %d", existing_idx)
+    else:
+        ledger.weekly_entries.append(result.weekly_entry)
+        logger.info("  Appended new weekly entry")
+
+    ledger.posture_summary = result.posture_summary
+    ledger.signal_categories = result.signal_categories
+    ledger.last_updated = end_date
+
+    save_country_ledger(ledger)
+    logger.info("  Saved ledger: %s now has %d weekly entries", code, len(ledger.weekly_entries))
+    return True
 
 
 # =============================================================================
@@ -243,11 +375,17 @@ async def reedit_countries(
     from_stage: str,
     overview, region_pages, watchlist,
 ):
-    """Re-edit specific countries through the editorial chain."""
+    """Re-edit specific countries through the editorial chain.
+
+    If from_stage is "country", country recovery already ran in main();
+    here we just normalize to "editor" so all editorial passes execute.
+    """
     output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "reedits"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    stage_idx = STAGES.index(from_stage)
+    # "country" stage normalizes to running all editorial passes
+    effective_stage = "editor" if from_stage == "country" else from_stage
+    stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
     for region, page in region_pages.items():
         for country in page.countries:
@@ -291,7 +429,9 @@ async def reedit_regions(
     output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "reedits"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    stage_idx = STAGES.index(from_stage)
+    # "country" stage doesn't apply to regional reedits — normalize to "editor"
+    effective_stage = "editor" if from_stage == "country" else from_stage
+    stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
     for region, page in region_pages.items():
         if region.value not in region_values:
@@ -329,7 +469,9 @@ async def reedit_executive(
     output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "reedits"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    stage_idx = STAGES.index(from_stage)
+    # "country" stage doesn't apply to executive reedits — normalize to "editor"
+    effective_stage = "editor" if from_stage == "country" else from_stage
+    stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
     logger.info("Re-editing executive brief from %s", from_stage)
 
@@ -377,6 +519,17 @@ async def main():
 
     if not args.country and not args.region and not args.executive:
         parser.error("Specify --country, --region, or --executive")
+
+    # Country recovery from trace (must happen before building content)
+    if args.from_stage == "country":
+        if not args.country:
+            parser.error("--from country requires --country to specify which country to recover")
+        logger.info("Recovering %d country(ies) from trace files...", len(args.country))
+        for code in args.country:
+            ok = recover_country_from_trace(code, end_date)
+            if not ok:
+                logger.error("Recovery failed for %s — aborting", code)
+                sys.exit(1)
 
     # Build structured content from disk
     logger.info("Building structured content for %s...", end_date)
