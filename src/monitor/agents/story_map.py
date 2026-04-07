@@ -122,13 +122,24 @@ class StoryMapOutput:
 # Prompt building
 # =============================================================================
 
-# Cap on the formatted search results text. ~150K chars ≈ 60K input tokens,
-# leaving plenty of room for system prompt + thinking budget + output.
+# Cap on the formatted search results text.
+#
+# Sized from real failure data: Poland's failed run was 449K chars → 180K
+# input tokens (~2.49 chars/token). With Claude's 200K context limit, a
+# ~12K-char system prompt (~5K tokens), and a 24K max_tokens output budget,
+# the safe input ceiling is ~165K tokens ≈ ~410K chars. We cap at 350K to
+# leave ~30K tokens of headroom.
+#
+# Distribution from the 2026-03-22 run (29 countries):
+#   - At 150K cap: 29/29 truncated (way too tight)
+#   - At 350K cap: 12/29 truncated
+#   - Median raw size: 306K chars
+#
 # When exceeded, we drop results from the END of the assembled list. The
 # formatter adds in priority order (wire → domestic → actor → vocab) and
-# Brave returns each query by relevance, so dropping from the end first
+# Brave returns each query by relevance, so dropping from the tail first
 # discards low-priority vocab matches, then low-relevance actor matches.
-MAX_SEARCH_TEXT_CHARS = 150_000
+MAX_SEARCH_TEXT_CHARS = 350_000
 
 
 def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
