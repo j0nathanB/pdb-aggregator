@@ -1,0 +1,644 @@
+{
+  "agent": "executive",
+  "label": "global",
+  "run_date": "2026-04-05",
+  "status": "parsed",
+  "input": {
+    "system_prompt": "## Role\n\nYou are the executive analyst for the Middle Powers Monitor, a weekly geopolitical intelligence publication. You sit at the top of a three-layer analytical system: 28 country desks feed into 5 regional syntheses, which feed into you. Your job is to identify the 3-5 developments, patterns, or structural shifts that are visible only at the global level — things that no single region reveals on its own.\n\nYou also maintain the global analytical ledger — the system's institutional memory at the highest level. You track cross-country dynamics over time, maintain a watchlist of items worth monitoring, and generate triage implications that steer where the pipeline directs its attention next week.\n\nYour output has two audiences. The executive briefing items become the lead section of the newsletter — the part sophisticated readers subscribe for. The global ledger update is infrastructure that the pipeline's triage agent reads next week. Both must be excellent.\n\n---\n\n## Your Inputs\n\n**REGIONAL REPORTS** — Five regional syntheses, each containing: cross-cutting dynamics with confidence scores and linkage assessments, rejected dynamics, gaps, and low-confidence quarantine items. These are your primary analytical material.\n\n**GLOBAL LEDGER (prior state)** — Your own running analytical record from last week. It contains:\n- `global_posture_summary`: your prior assessment of the global signal environment\n- `active_dynamics`: cross-country patterns you've been tracking, with status, evidence strength, and triage implications\n- `watchlist`: items worth monitoring that haven't risen to dynamic status\n- Recent weekly entries: what you wrote in prior weeks, including self-corrections\n- `archived_dynamics`: resolved patterns preserved for reference\n\nRead the ledger carefully. Your job is to assess what changed this week relative to what you already believe, not to start fresh. New dynamics emerge. Existing dynamics strengthen, weaken, or resolve. Your prior self-corrections tell you where your analytical instincts have been wrong.\n\n---\n\n## Your Process\n\n### Phase 1: Identify Candidates\n\nRead all five regional reports. Identify 5-8 candidate strategic themes based on:\n\n- **Cross-regional patterns:** The same dynamic appearing in two or more regions. If sovereignty signaling appears in the Americas report and the Western Europe report, that's a candidate for a global dynamic that neither region can see on its own.\n- **Interaction effects across regions:** A development in one region creating consequences in another. European defense procurement decisions affecting Asia-Pacific deterrence calculus. Middle East instability creating diplomatic opportunities for Pivot states.\n- **Structural shifts:** Changes that alter the operating environment for multiple countries simultaneously. A US policy change, a commodity price shock, an institutional development (UN vote, WTO ruling) that reshapes constraints across regions.\n- **Significant absences:** Something the global posture summary predicted or the active dynamics anticipated that didn't materialize in any regional report.\n\nAlso check your active dynamics from last week. For each one, look for evidence in this week's regional reports that the dynamic is strengthening, weakening, stable, or resolved.\n\n### Phase 2: Evaluate Against Prior State\n\nFor each candidate theme, check it against the global ledger:\n\n- **Is this a continuation of an existing dynamic?** If so, update the dynamic's status and assessment rather than creating a new one. Has the evidence strengthened or weakened? Has the pattern expanded to new countries or contracted?\n- **Is this genuinely new?** A dynamic that doesn't map to any existing entry in the ledger. Create it with status `emerging`.\n- **Does this contradict a prior assessment?** If so, log a self-correction. What did you get wrong and why?\n- **Does a prior dynamic need to be archived?** If the evidence no longer supports it, or if it has resolved (the event it was tracking concluded), move it to archived status with a closing assessment.\n\n### Phase 3: Synthesize\n\nSelect the 3-5 themes that meet the bar for the executive briefing. The bar is:\n\n- Visible only at the global or system level — not a regional dynamic repackaged\n- Represents a structural change in the international order, or an emergent pattern with structural implications\n- Would change how an informed observer understands what is happening in the world\n\n**Do not repeat last week's framing.** If an existing dynamic was featured in last week's briefing (check the `weekly_entries` in the global ledger), do not re-feature it with the same framing. Either lead with what specifically changed this week — new evidence, escalation, reversal, new countries involved — or drop it from the briefing items and track it only in the ledger. The reader has already been told this pattern exists. Tell them what's different now or don't feature it.\n\nFor each theme, write:\n- **What**: What is happening. 2-3 sentences of analytical description, not news summary.\n- **Why it matters**: Strategic significance. 2-3 sentences explaining what this means for the international order, for middle-power positioning, or for the publication's core thesis about rhetorical vs. structural alignment with the liberal international order.\n- **What to watch**: Leading indicators for next week. What would confirm, weaken, or resolve this theme?\n- **Confidence**: Score with provenance. Which regional dynamics support it? What are their confidence scores? What's the weakest underlying country-level confidence? If the theme rests on low-confidence data, say so.\n- **Competing narrative**: The strongest alternative strategic interpretation. Not a strawman — a genuine alternative that explains the same evidence differently.\n\n### Phase 4: Update the Global Ledger\n\n**Active dynamics:** Create, update, or archive dynamics based on this week's analysis.\n\nFor each active dynamic, update:\n- `current_assessment` — what you now believe\n- `status` — emerging, developing, established, monitoring, weakening, resolved\n- `evidence_strength` — updated confidence, supporting country confidences, weakest link\n- `triage_implications` — which countries should the triage agent flag next week, and why\n\nFor new dynamics, provide all fields including `competing_interpretation` and `what_to_watch`.\n\nFor dynamics unchanged this week, increment `consecutive_unchanged_weeks`. If this reaches 3, you should either update the assessment with new reasoning, downgrade to monitoring, or archive it. Dynamics should not sit unchanged indefinitely.\n\n**Watchlist:** Add items worth tracking that don't yet warrant a full dynamic entry. Remove items that have either been promoted to active dynamics or have become irrelevant.\n\n**Global posture summary:** Rewrite the summary to reflect this week's analysis. Update the signal environment (most active categories, hotspots, quiet zones).\n\n### Phase 5: Rejection Log\n\nRecord themes you considered for the executive briefing but rejected. For each, explain specifically why it didn't rise to executive-level significance. This is mandatory — an empty rejection log signals insufficient critical evaluation.\n\nCommon valid reasons for rejection:\n- The pattern is regional, not global (belongs in the regional report, not the executive brief)\n- The evidence is too thin (low-confidence country data propagating upward)\n- The pattern is a continuation of a known dynamic without meaningful change this week (worth tracking, not worth featuring)\n- On closer examination, the apparent cross-regional pattern is driven by coincidence rather than connection\n\n---\n\n## Tone and Voice\n\nThe executive briefing items will be rendered as the lead section of a weekly newsletter. Write them with the confidence and voice of a senior analytical publication — authoritative but engaging, structurally informed but readable.\n\n- State uncertainty where it exists without apologizing for it. \"The evidence is suggestive but incomplete\" is stronger than \"We're not sure.\"\n- Avoid hedging language that drains analytical content. \"This may or may not indicate a shift\" says nothing. \"The evidence points toward a shift but rests on single-source reporting from two of three countries\" says something useful.\n- The reader is a sophisticated generalist — someone who reads Foreign Affairs and The Economist, follows geopolitics seriously, but doesn't track 28 countries daily. Write for that person.\n\n---\n\n## Your Output\n\nReturn valid JSON with a single top-level object `global_ledger_update`:\n\n```json\n{\n  \"global_ledger_update\": {\n    \"global_posture_summary\": {\n      \"as_of\": \"{{ANALYSIS_DATE}}\",\n      \"text\": \"3-5 sentence summary of the global analytical environment...\",\n      \"signal_environment\": {\n        \"most_active_categories\": [\"...\", \"...\"],\n        \"quietest_categories\": [\"...\"],\n        \"geographic_hotspots\": [\"...\"],\n        \"geographic_quiet_zones\": [\"...\"]\n      }\n    },\n\n    \"active_dynamics\": [\n      {\n        \"dynamic_id\": 1,\n        \"title\": \"...\",\n        \"created_week\": \"...\",\n        \"last_updated\": \"{{ANALYSIS_DATE}}\",\n        \"status\": \"emerging | developing | established | monitoring | weakening | resolved\",\n        \"current_assessment\": \"...\",\n        \"countries_involved\": [\"...\", \"...\"],\n        \"signal_categories_touched\": [\"...\", \"...\"],\n        \"evidence_strength\": {\n          \"confidence\": 3,\n          \"supporting_country_confidences\": {\"mx\": 4, \"in\": 2},\n          \"weakest_link\": \"...\",\n          \"linkage_type\": \"parallel_behavior | interaction_effect | institutional | absence\",\n          \"linkage_assessment\": \"...\"\n        },\n        \"competing_interpretation\": \"...\",\n        \"what_to_watch\": \"...\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"...\", \"...\"],\n          \"reason\": \"...\"\n        },\n        \"weeks_active\": 2,\n        \"consecutive_unchanged_weeks\": 0\n      }\n    ],\n\n    \"watchlist\": [\n      {\n        \"item\": \"...\",\n        \"signal_category\": \"...\",\n        \"countries\": [\"...\", \"...\"],\n        \"why_it_matters\": \"...\",\n        \"trigger\": \"...\",\n        \"added_week\": \"{{ANALYSIS_DATE}}\"\n      }\n    ],\n\n    \"weekly_entry\": {\n      \"week\": \"{{ANALYSIS_DATE}}\",\n      \"executive_briefing_items\": [\n        {\n          \"title\": \"Theme title\",\n          \"regions_involved\": [\"...\", \"...\"],\n          \"what\": \"What is happening (2-3 sentences)...\",\n          \"why_it_matters\": \"Strategic significance (2-3 sentences)...\",\n          \"what_to_watch\": \"Leading indicators for next week...\",\n          \"confidence\": 3,\n          \"confidence_note\": \"Provenance: which regional dynamics, what scores, weakest link...\"\n        }\n      ],\n      \"dynamics_created\": [],\n      \"dynamics_updated\": [],\n      \"dynamics_archived\": [],\n      \"items_considered_rejected\": [\n        {\n          \"candidate\": \"...\",\n          \"reason_rejected\": \"...\"\n        }\n      ],\n      \"self_corrections\": []\n    }\n  }\n}\n```\n\n### Notes on Dynamic Management\n\n- When creating a new dynamic, assign the next available `dynamic_id` (one higher than the current maximum).\n- When archiving a dynamic, move it from `active_dynamics` to a separate list and set status to `resolved`. Include a `closing_assessment` explaining why it was archived.\n- Dynamics with `triage_implications` directly influence next week's triage decisions. Be deliberate about which countries you flag and why. Overflagging dilutes the signal. Underflagging means the pipeline misses what you've identified as important.\n- The `competing_interpretation` on each dynamic is not decorative. It should be the interpretation that, if true, would most change the strategic picture. If you find yourself writing weak competing interpretations, the dynamic itself may be underdetermined.\n\n---\n\n## What You Must Not Do\n\n- Do not summarize regional reports. The reader can read the regional sections. Your job is to find what no single region reveals on its own.\n- Do not create dynamics without cross-regional evidence. A dynamic involving only countries from one region belongs in that region's report, not in the global ledger.\n- Do not carry forward dynamics unchanged for more than 3 consecutive weeks. If nothing has changed, either the dynamic has stalled (downgrade or archive) or you're not looking hard enough (update the assessment with a reassessment of why it's static).\n- Do not generate more than 8 triage implications across all active dynamics combined. If you're flagging more than 8 countries through triage implications, you're micromanaging the desks.\n- Do not fabricate confidence provenance. If you don't know the underlying country confidence for a claim, say so — don't invent numbers.\n- Do not let the executive briefing items and the global ledger dynamics diverge. Every briefing item should connect to an active dynamic. Every significant active dynamic should either be reflected in a briefing item or have an explanation for why it wasn't featured this week.\n\nNo commentary outside the JSON.",
+    "user_message": "## REGIONAL REPORTS\n\n### americas\n\nNo cross-cutting dynamics identified.\n\nRejected dynamics:\n  - North American political stress convergence between Canada's Indigenous relations crisis and Mexico's succession dynamics: Both countries face domestic political pressures in the same timeframe, but these respond to completely different structural conditions—Canada's historical reconciliation obligations versus Mexico's constitutional term limits—with no evidence of coordination, contagion, or shared external trigger. The mechanisms are unrelated despite temporal overlap.\n  - Regional economic accommodation pattern linking Mexico's rate cut with Chile's fuel price relief: While both represent fiscal/monetary accommodation in the same week, Mexico's Banxico decision responds to growth concerns amid inflation uncertainty, while Chile's relief responds to domestic fuel price protests. Different institutional mechanisms (monetary versus fiscal), different triggers (economic versus social), no evidence of coordination or reference to each other's policies.\n  - Alignment divergence pattern with Chile's US integration versus others' diversification strategies: Chile's pro-US military integration contrasts with Canada's continued diversification and Brazil's multi-alignment, but there's no evidence that Canada or Brazil are responding to Chile's positioning. These appear to be independent strategic choices based on different threat perceptions and alliance priorities rather than interactive dynamics.\n\nGaps:\n  - Regional institutional coordination or response patterns given significant developments in multiple countries: The lack of regional interaction despite simultaneous significant developments suggests either weak institutional linkages in the Americas framework or a collection gap in bilateral/multilateral consultation channels. Regional organizations like OAS or bilateral mechanisms appear inactive or under-observed this week.\n\n### western_europe\n\n**Synchronized European rejection of US Iran escalation demands**\n  Countries: de, gb, it, es, no\n  Categories: alignment_diplomatic, security_defense\n  Pattern: parallel (moderate)\n  Assessment: Five Western European countries are simultaneously asserting independence from US Iran conflict escalation demands through different mechanisms: Germany's presidential statement declaring Iran war illegal, UK's defensive-only approach despite US pressure, Italy's denial of US base access for Iran operations, Spain's 'No to War' campaign, and Norway's criticism of NATO leadership. This represents the most coordinated European strategic autonomy assertion since the 2003 Iraq War.\n  Significance: This synchronized rejection suggests a structural shift in European willingness to automatically support US military interventions, potentially reshaping NATO's operational assumptions and alliance dynamics during the critical Iran crisis period.\n  Trend: emerging\n  Confidence: 3 (inherited: {'de_alignment_diplomatic': 4, 'gb_alignment_diplomatic': 4, 'it_alignment_diplomatic': 4, 'es_alignment_diplomatic': 3, 'no_alignment_diplomatic': 4})\n  Weakest link: Spain's assessment rests on single-source reporting from Heraldo for the 'No to War' campaign announcement\n  Evidence against linkage: Countries cite different justifications (German constitutional concerns vs Italian operational autonomy vs Spanish pacifist positioning), suggesting independent decisions rather than coordinated strategy. No joint EU statement or shared institutional mechanism coordinates these positions.\n  Competing interpretation: These could represent independent national responses to identical US pressure rather than coordinated European strategy, with each country protecting its own interests without regional coordination.\n\n**Continental far-right electoral consolidation**\n  Countries: fr, de, se\n  Categories: domestic_regime\n  Pattern: parallel (moderate)\n  Assessment: Far-right parties achieve simultaneous breakthroughs across three major European democracies: France's RN maintaining front-runner status for 2027 presidential elections, Germany's AfD overtaking the governing Union in national polls for the first time, and Sweden's completion of SD normalization with guaranteed cabinet representation post-2026. This represents the most significant populist electoral advance since the 2010s migration crisis.\n  Significance: These parallel gains suggest structural democratic vulnerabilities rather than episodic electoral fluctuations, potentially reshaping European governance models and EU institutional dynamics as populist parties transition from opposition to governing roles.\n  Trend: developing\n  Confidence: 4 (inherited: {'fr_domestic_regime': 4, 'de_domestic_regime': 4, 'se_domestic_regime': 4})\n  Weakest link: All supporting assessments maintain confidence level 4\n  Evidence against linkage: Each country's far-right advance follows distinct national trajectories with different institutional mechanisms - French presidential system vs German coalition dynamics vs Swedish cabinet guarantee - suggesting independent domestic factors rather than regional contagion.\n  Competing interpretation: These advances reflect distinct national political cycles and grievances rather than coordinated populist strategy or regional contagion effects.\n\nRejected dynamics:\n  - European defense integration acceleration: Despite multiple countries showing defense developments (Norway's expansion, Sweden's NATO integration, UK's Gulf deployments), these represent independent national capability building rather than coordinated European defense integration. No shared procurement, joint exercises, or institutional defense coordination emerged from the country reports.\n  - EU institutional crisis response coordination: While multiple countries face domestic regime stress, there is no evidence of coordinated EU-level institutional response or crisis management mechanisms. Countries are managing their domestic pressures through national institutions rather than European coordination.\n\nGaps:\n  - Joint European Iran policy formulation: The Iran crisis should have triggered EU foreign policy coordination mechanisms, but instead produced fragmented national responses. This suggests either weakened EU foreign policy capacity or deliberate avoidance of institutional constraints during crisis conditions.\n\n### frontline_eastern_europe\n\n**Ukrainian Military Operations Create Regional Spillover**\n  Countries: fi, ee, lv\n  Categories: security_defense\n  Pattern: interaction (strong)\n  Assessment: Ukraine's military operations against Russia are generating direct spillover effects across the region as Ukrainian drones repeatedly stray into Finnish, Estonian, and Latvian airspace during combat operations. All three countries are implementing enhanced surveillance measures and diplomatic coordination with Ukraine to manage these incidents while maintaining support for Ukrainian operations.\n  Significance: This represents the first sustained pattern of operational spillover from the Ukraine conflict directly affecting multiple NATO/neutral countries simultaneously, requiring active crisis management and potentially complicating regional security calculations if incidents escalate or expand.\n  Trend: emerging\n  Confidence: 3 (inherited: {'fi_security_defense': 4, 'ee_security_defense': 3, 'lv_security_defense': 3})\n  Weakest link: Estonia and Latvia assessments both rely on single national media sources for drone incident reporting\n  Evidence against linkage: These could be unrelated operational accidents rather than a systematic spillover pattern, with each country experiencing isolated incidents due to geographical proximity to conflict zones rather than common operational dynamics.\n  Competing interpretation: Incidents could represent deliberate Ukrainian testing of regional air defense capabilities or Russian false-flag operations designed to strain Ukrainian relationships with neighbors.\n\n**Energy Price Volatility Drives National Economic Interventions**\n  Countries: ee, cz, lv\n  Categories: economic_tech\n  Pattern: parallel (moderate)\n  Assessment: Multiple countries are implementing direct government interventions in energy markets as Middle East conflict drives fuel price volatility. Estonia's central bank cuts growth forecasts citing energy price impacts, Czech Republic intervenes directly in fuel markets, and Latvia provides emergency loans to aviation sector amid fuel cost pressures.\n  Significance: This demonstrates the region's continued vulnerability to external energy price shocks and the limits of EU-level energy security mechanisms, forcing national-level crisis responses that could create market distortions or fiscal pressures.\n  Trend: emerging\n  Confidence: 3 (inherited: {'ee_economic_tech': 3, 'cz_economic_tech': 3, 'lv_economic_tech': 3})\n  Weakest link: All three countries' assessments rely on single national sources for energy intervention reporting\n  Evidence against linkage: These could be coincidental domestic policy responses to the same external shock rather than evidence of regional vulnerability patterns, with each country's intervention reflecting pre-existing policy preferences rather than shared structural weakness.\n  Competing interpretation: Interventions could reflect pre-planned policy measures unrelated to current energy crisis, or demonstrate effective EU-level coordination in crisis response rather than evidence of institutional inadequacy.\n\nRejected dynamics:\n  - Constitutional Crisis Contagion: Poland's Constitutional Tribunal crisis, Czech government-president NATO delegation dispute, and Lithuanian PM-President European Council friction appear to be domestic institutional tensions rather than related phenomena. Different institutional mechanisms, timing, and no evidence of coordination or contagion effects between countries.\n  - Coordinated Defense Industrial Expansion: Estonia's Swedish ammunition plant investment and Romania's Ukraine drone production cooperation represent separate bilateral arrangements rather than coordinated regional defense industrial strategy. Different partners, mechanisms, and no evidence of cross-border coordination.\n\nGaps:\n  - Regional coordination on Ukrainian drone spillover management: Despite shared challenge affecting three countries simultaneously, no evidence of regional coordination mechanisms, information sharing, or joint diplomatic approaches to Ukraine. Suggests limits of regional security cooperation on operational issues.\n\n### near_east_south_asia\n\n**Iranian Military Pressure Campaign Against Gulf Infrastructure**\n  Countries: sa, ae\n  Categories: security_defense\n  Pattern: interaction (strong)\n  Assessment: Iran is conducting a systematic military campaign against Gulf state infrastructure, with Saudi Arabia intercepting 799+ drones and 95+ missiles since March 3, while UAE faces over 2,700 total projectiles with systematic targeting now expanded to critical petrochemical facilities including Borouge and ADNOC Habshan. This represents coordinated Iranian pressure designed to impact Gulf economic capabilities through infrastructure targeting.\n  Significance: This Iranian campaign demonstrates a shift from sporadic attacks to sustained infrastructure warfare against key Gulf economies, potentially reshaping regional security calculations and forcing increased defense spending and coordination among Gulf states.\n  Trend: developing\n  Confidence: 3 (inherited: {'sa_security_defense': 3, 'ae_security_defense': 4})\n  Weakest link: Saudi Arabia's attack statistics rely primarily on government sources (Maj. Gen. Turki Al-Maliki) despite multiple tier-2 outlets reporting\n  Evidence against linkage: Could represent separate Iranian operational decisions rather than coordinated campaign, with timing driven by Iranian domestic factors rather than regional strategic planning\n  Competing interpretation: Separate Iranian responses to individual Gulf state policies rather than unified campaign against regional bloc\n\n**Crisis-Driven Diplomatic Intensification Across Multiple Theaters**\n  Countries: tr, in, pk\n  Categories: alignment_diplomatic\n  Pattern: parallel (moderate)\n  Assessment: Three regional powers have simultaneously intensified diplomatic activities in response to regional conflicts: Turkey through Erdoğan's intensive weekend diplomacy with Putin, Zelensky, and NATO; India via Modi's emergency CCS meetings and Jaishankar's Iran-Qatar-UAE consultations; Pakistan by deepening its US-Iran mediation role with high-level Trump access. Each country is leveraging established diplomatic frameworks to manage conflict spillovers.\n  Significance: This pattern reveals how regional conflicts are forcing middle powers to activate their diplomatic tools simultaneously, potentially creating overlapping mediation efforts that could either complement or compete with each other.\n  Trend: emerging\n  Confidence: 3 (inherited: {'tr_alignment_diplomatic': 3, 'in_alignment_diplomatic': 4, 'pk_alignment_diplomatic': 3})\n  Weakest link: Turkey's diplomatic assessment perpetuates 'established regional broker positioning' narrative challenged repeatedly in prior weeks without fresh evidence\n  Evidence against linkage: Each country's diplomatic intensification responds to different aspects of regional conflicts through their existing bilateral relationships rather than representing coordinated regional response\n  Competing interpretation: Coincidental activation of established diplomatic patterns by three countries with different regional interests and capabilities\n\nRejected dynamics:\n  - Regional Economic Stress Management Pattern: While multiple countries show economic defensive measures (SA's NEOM cancellations, UAE's AED 31 billion liquidity injection, India's rupee defense, Pakistan's fuel crisis management), these represent responses to different economic pressures through country-specific mechanisms rather than evidence of shared regional economic crisis requiring coordinated response\n  - Multi-Alignment Strategy Convergence: Both countries pursue hedging strategies, but India's simultaneous West Asia-Russia engagement serves different strategic objectives than Pakistan's US-Iran mediation role, with no evidence of coordination or shared strategic framework beyond surface-level similarity\n\nGaps:\n  - Gulf state security coordination in response to Iranian infrastructure targeting: Despite systematic Iranian pressure against both Saudi Arabia and UAE infrastructure, no evidence appears of coordinated Gulf security response, suggesting either collection gap in institutional coordination or genuine absence of multilateral defense planning\n  - Regional institutional mobilization during multiple conflict scenarios: Regional conflicts driving individual country responses without activating multilateral institutional frameworks, indicating either institutional weakness or preference for bilateral management of regional crises\n\n### asia_pacific\n\n**Parallel Economic Crisis Response to Middle East War**\n  Countries: kr, jp, au, id\n  Categories: economic_tech\n  Pattern: parallel (moderate)\n  Assessment: Four Asia-Pacific countries deployed major economic crisis management tools this week in response to Middle East war spillovers: South Korea's 26.2 trillion won supplementary budget, Japan's strategic energy reserve mobilization, Australia's fuel crisis national response, and Indonesia's fuel subsidy maintenance. Each used different mechanisms—fiscal expansion, reserve deployment, crisis communication, and price controls—but all targeted similar vulnerabilities from oil market disruption.\n  Significance: Demonstrates the region's systematic economic vulnerability to Middle East instability and reveals each country's preferred crisis management toolkit. The parallel timing but diverse mechanisms suggest mature crisis response capabilities developed independently rather than through coordination.\n  Trend: emerging\n  Confidence: 3 (inherited: {'kr_economic_tech': 4, 'jp_economic_tech': 4, 'au_economic_tech': 4, 'id_economic_tech': 3})\n  Weakest link: Indonesia's assessment relies on BBC Indonesia as single source for fuel policy response\n  Evidence against linkage: Different timing mechanisms (Korea's was legislative, Japan's was reserve management, Australia's was crisis communication, Indonesia's was administrative), different institutional channels, no evidence of consultation or coordination\n  Competing interpretation: Could represent coincidental budget cycles and routine energy management rather than crisis-specific responses\n\n**France as Strategic Hedging Partner**\n  Countries: jp, kr\n  Categories: alignment_diplomatic\n  Pattern: parallel (strong)\n  Assessment: Japan and South Korea both elevated France to strategic partnership status this week, with remarkably similar cooperation frameworks focusing on Strait of Hormuz security and supply chain diversification. Japan's Macron state visit yielded rare earth cooperation agreements, while Korea achieved Global Strategic Partnership upgrade with identical Strait of Hormuz cooperation components.\n  Significance: Reveals France's systematic engagement strategy in Asia-Pacific as both countries' alignment diversification partner, potentially offering Europe as a 'third pole' alternative to US-China competition. The parallel partnership upgrades suggest coordinated French diplomatic initiative rather than coincidental Asian outreach.\n  Trend: emerging\n  Confidence: 4 (inherited: {'jp_alignment_diplomatic': 4, 'kr_alignment_diplomatic': 4})\n  Weakest link: Both assessments rely heavily on single-source coverage of bilateral summit outcomes\n  Evidence against linkage: Different summit formats (state visit vs strategic partnership), different economic components (rare earths vs broader trade), routine diplomatic engagement rather than coordinated strategy\n  Competing interpretation: Routine European engagement with traditional Asian partners, coincidental timing due to Macron's Asian tour scheduling\n\n**China's Pressure Campaign Coordination Challenge**\n  Countries: tw, jp\n  Categories: alignment_diplomatic\n  Pattern: interaction (moderate)\n  Assessment: China's simultaneous engagement of Taiwan's opposition (Xi Jinping invitation to KMT Chairwoman) and sanctioning of Japan's ruling party figures (Takaichi aide Keiji Furuya) reveals coordination challenges in applying pressure across the informal anti-China coalition. Taiwan's KMT engagement proceeds while Japan faces punishment for Taiwan support, creating potential friction in Beijing's relationship management.\n  Significance: Exposes Beijing's difficulty in calibrating pressure tactics across multiple targets simultaneously. Success with Taiwan's opposition occurs alongside escalation with Japan, potentially undermining the effectiveness of either approach by demonstrating inconsistent engagement criteria.\n  Trend: developing\n  Confidence: 3 (inherited: {'tw_alignment_diplomatic': 3, 'jp_alignment_diplomatic': 4})\n  Weakest link: Taiwan's assessment rests on single Asia Times source for the Xi-Cheng meeting arrangement\n  Evidence against linkage: Different policy domains (Taiwan domestic politics vs Japan-Taiwan relations), separate bilateral relationships, no evidence Beijing views these as connected initiatives\n  Competing interpretation: Separate bilateral relationships managed independently by different Chinese agencies without strategic coordination\n\nRejected dynamics:\n  - Regional institutional capacity building through bilateral partnership expansion: While multiple countries showed bilateral partnership activity, these involved different partners (Korea with France/Indonesia, Japan with France, Indonesia with Japan/Korea) and different mechanisms without evidence of systematic institutional capacity building beyond routine relationship management\n  - Domestic political instability affecting foreign policy: Taiwan's divided government and Australia's Coalition crisis operate through different mechanisms (legislative obstruction vs opposition weakness) and affect different policy areas without clear pattern beyond surface similarity\n\nGaps:\n  - Security cooperation intensification given regional tensions and parallel economic vulnerabilities: The disconnect between economic crisis activation and security cooperation stasis suggests either institutional constraints on military cooperation or analytical collection gaps in security coordination mechanisms\n\n\n## CURRENT GLOBAL LEDGER STATE\n\nLast updated: 2026-03-29\nPosture: The global signal environment has shifted toward kinetic spillover management as Ukraine conflict effects cross into NATO territory requiring multi-country crisis coordination. Democratic governance stress achieves unprecedented synchronization across Western Europe while economic crisis responses confirm complete absence of global coordination mechanisms across all active regions. Alliance bifurcation patterns continue between European resistance and Eastern European cooperation with US crisis demands.\n\n### Active Dynamics (10)\n\n**Dynamic #1: Regional Institutional Differentiation in US Management Strategies**\n  Status: established, weeks active: 10, unchanged weeks: 0\n  Countries: ca, mx, br, cl, fr, gb, it, no, se, au, jp, id\n  Assessment: Universal confirmation maintained across all regions with Americas demonstrating continued strategic incompatibility patterns through Mexico's careful Trump management versus Brazil's opposition courting. Regional frameworks maintain systematic autonomy from US strategic preferences, with each region developing distinct crisis response protocols that prioritize regional positioning over global coordination.\n  Confidence: 4\n  Competing interpretation: Crisis responses reflect independent rational calculations rather than institutional frameworks, with apparent regional patterns resulting from coincidental similarity of national interests within geographic proximity\n  What to watch: Additional global crises testing regional frameworks, evidence of cross-regional coordination attempts, US adaptation strategies for different regional approaches\n  Triage flags: dk, nl\n\n**Dynamic #2: Defense Sovereignty Acceleration Through Regional Frameworks**\n  Status: developing, weeks active: 10, unchanged weeks: 1\n  Countries: fr, de, it, gb, jp, au, kr, pl, cz, no, se\n  Assessment: No significant change this week. Franco-German cooperation strain from last week continues to demonstrate fragmentation of established European integration frameworks, while Eastern European allies maintain NATO integration preference. Defense sovereignty operates selectively by region and institutional framework maturity.\n  Confidence: 3\n  Competing interpretation: Defense cooperation difficulties may be primarily technical or commercial rather than politically driven, with modernization representing normal capability development\n  What to watch: Resolution of Franco-German defense cooperation tensions, Eastern European responses to sovereignty drives, evidence of cross-regional defense coordination\n  Triage flags: es, dk\n\n**Dynamic #3: Cross-Regional Domestic Political Fragmentation**\n  Status: established, weeks active: 9, unchanged weeks: 0\n  Countries: gb, fr, it, es, se, pl, cz, ee, ro, ca, mx, br, de, ua, fi, lt, lv, no\n  Assessment: Major escalation this week with Western Europe achieving unprecedented synchronization across 6 of 7 countries simultaneously experiencing governing party stress, plus Eastern Europe adding 3 countries with coalition breakdown threats. Eighteen countries now affected across three major regions. The simultaneous operation across different democratic systems, political cycles, and institutional frameworks confirms systematic structural pressures rather than coincidental political turbulence.\n  Confidence: 4\n  Competing interpretation: Normal democratic turbulence with coincidental overlap across different political cycles, where specific triggers indicate separate rather than connected phenomena\n  What to watch: Expansion to Asia-Pacific allies, resolution patterns indicating whether structural or cyclical, impact on international coordination capacity\n  Triage flags: au, jp, kr\n\n**Dynamic #4: Alliance Integration Resilience with Crisis-Revealed Limits**\n  Status: established, weeks active: 7, unchanged weeks: 0\n  Countries: ua, pl, fi, ee, lt, lv, cz, ro, fr, de, se, gb, it, no\n  Assessment: Continued evidence this week through Ukrainian spillover management requiring bilateral diplomatic responses rather than NATO framework activation. Alliance mechanisms operate normally through domestic political instability but fragment when faced with kinetic spillover requiring rapid coordination. Resilience operates selectively - strong for planned institutional processes, weak for crisis solidarity requiring immediate multilateral response.\n  Confidence: 4\n  Competing interpretation: Crisis fragmentation reflects healthy alliance diversity allowing different forms of support rather than institutional weakness\n  What to watch: Additional crisis tests of alliance solidarity, evidence of institutional adaptation to fragmentation, breakdown of routine alliance coordination\n  Triage flags: dk, nl\n\n**Dynamic #8: Global Crisis Alignment Test Reveals Systematic Regional Divergence**\n  Status: established, weeks active: 5, unchanged weeks: 0\n  Countries: ca, mx, br, cl, fr, gb, it, no, se, au, jp, id, tr, sa, ae, in\n  Assessment: Maintained universal confirmation across all regions with continued evidence from Americas through Mexico-Brazil strategic incompatibility, Western Europe through US alliance friction, and Asia-Pacific through burden-sharing tensions. Each regional framework demonstrates distinct crisis response patterns prioritizing regional positioning over global coordination during the Iran conflict.\n  Confidence: 4\n  Competing interpretation: Independent national responses to the same crisis reflecting pre-existing foreign policy frameworks rather than systematic regional divergence\n  What to watch: Additional global crises testing similar patterns, evidence of regional coordination in crisis response, US adaptation to systematic divergence\n  Triage flags: kr, ph\n\n**Dynamic #9: Strategic Hedging Universalization Among Middle Powers**\n  Status: established, weeks active: 4, unchanged weeks: 0\n  Countries: ca, mx, br, cl, au, jp, kr, id, no, se, fr, de\n  Assessment: Continued confirmation across all regions with Americas demonstrating hedging through Mexico's careful Trump management versus Brazil's opposition strategic courting. Combined with existing Asia-Pacific burden-sharing flexibility and European sovereignty assertions, strategic hedging operates as universal middle power adaptation to great power competition across all active regions.\n  Confidence: 4\n  Competing interpretation: Independent national responses to bilateral relationships rather than coordinated hedging strategy, with apparent pattern resulting from similar structural constraints\n  What to watch: Cross-regional coordination mechanisms among hedging states, institutional framework development, great power responses to systematic hedging\n  Triage flags: in, tr\n\n**Dynamic #10: Alternative Security Guarantee Networks Formation**\n  Status: monitoring, weeks active: 4, unchanged weeks: 1\n  Countries: fr, no, se, tw, jp\n  Assessment: Limited new evidence this week. Pattern continues with existing French nuclear doctrine responses from Nordic countries and Taiwan-Japan security cooperation, but no expansion to additional countries or concrete institutional development visible. Evidence remains suggestive but thin for genuine alternative security architecture emergence.\n  Confidence: 3\n  Competing interpretation: Nordic responses may reflect diplomatic courtesy to French initiative rather than genuine strategic reorientation, while Taiwan-Japan cooperation may be routine bilateral engagement\n  What to watch: Additional European ally responses to French nuclear guarantor positioning, concrete Taiwan-Japan security agreements, US responses to alternative nuclear architecture\n  Triage flags: de, nl, dk\n\n**Dynamic #11: Global Economic Crisis Coordination Architecture Absence**\n  Status: developing, weeks active: 3, unchanged weeks: 0\n  Countries: jp, kr, au, id, sa, ae, tr, pl, lv, ro, fi\n  Assessment: Major escalation to global confirmation this week. All regions now demonstrate parallel but uncoordinated economic crisis responses to Middle East fuel price pressures: Eastern Europe (Poland, Latvia, Romania, Finland) implementing unilateral fuel interventions, Near East/South Asia (Turkey, Saudi Arabia, UAE) deploying independent crisis management, Asia-Pacific (Japan, South Korea, Australia, Indonesia) escalating state economic interventions. The Iran crisis reveals systematic absence of multilateral economic coordination mechanisms during shared external shocks.\n  Confidence: 4\n  Competing interpretation: These may be routine crisis management responses reflecting appropriate policy tools for different economic structures rather than coordination failures\n  What to watch: Evidence of attempted multilateral economic coordination, creation of crisis coordination mechanisms, additional economic shock responses\n  Triage flags: eg, ph\n\n**Dynamic #12: Alliance Integration Bifurcation Under Crisis Pressure**\n  Status: developing, weeks active: 2, unchanged weeks: 0\n  Countries: de, no, gb, it, ee, ro, lv, pl, lt, fi\n  Assessment: Continued evidence this week through sustained Western European resistance (Germany-US breakdown, UK friction) versus Eastern European cooperation (spillover management, crisis response coordination). The pattern demonstrates systematic intra-alliance fragmentation along regional lines within Atlantic security architecture during crisis conditions, indicating structural limits of alliance coordination under asymmetric pressure.\n  Confidence: 4\n  Competing interpretation: Reflects normal alliance specialization with different regions providing different forms of support based on geographic proximity and capability\n  What to watch: Additional regional allies' responses to US crisis requests, institutional responses to intra-alliance fragmentation, resolution of Western European resistance\n  Triage flags: dk, nl\n\n**Dynamic #13: Ukraine Conflict Kinetic Spillover Multi-Country Management Challenge**\n  Status: emerging, weeks active: 1, unchanged weeks: 0\n  Countries: ee, lv, lt, fi, ua\n  Assessment: Ukrainian military operations are producing kinetic impacts across multiple NATO frontline countries requiring individual diplomatic and security responses rather than coordinated alliance mechanisms. Estonia's power plant strike, Latvia's first wartime territorial explosion, and Lithuania-Finland drone incidents demonstrate the conflict's geographic expansion beyond Ukrainian borders into NATO territory. This creates systematic multi-country crisis management challenges testing Article 5 thresholds while exposing air defense gaps for low-altitude threats.\n  Confidence: 3\n  Competing interpretation: Incidents could represent Russian false flag operations or deliberate Ukrainian testing of NATO response thresholds rather than accidental spillover\n  What to watch: Additional spillover incidents, NATO institutional response to kinetic spillover, air defense capability adjustments\n  Triage flags: pl, ro\n\n### Watchlist (3)\n\n  [0] US alliance burden-shifting systematic implementation (countries: jp, kr, au, trigger: Specific spending targets, capability requirements, or cost-sharing arrangements beyond current guidelines)\n  [1] China responses to alliance security infrastructure coordination (countries: cn, tw, jp, kr, trigger: Chinese military responses to coordinated alliance infrastructure development or technology transfer patterns)\n  [2] Cross-regional democratic governance response coordination (countries: fr, gb, it, ca, au, trigger: Evidence of coordination mechanisms or shared institutional responses to democratic governance stress)\n\n### Recent Weekly Entries (3 shown)\n\nWeek 2026-03-15:\n  Briefing items: 3\n  Dynamics created: [11]\n  Dynamics updated: [1, 3, 8, 9, 10]\n  Dynamics archived: []\n\nWeek 2026-03-22:\n  Briefing items: 3\n  Dynamics created: [12]\n  Dynamics updated: [1, 2, 3, 8, 9]\n  Dynamics archived: []\n\nWeek 2026-03-29:\n  Briefing items: 3\n  Dynamics created: [13]\n  Dynamics updated: [1, 3, 4, 8, 9, 11, 12]\n  Dynamics archived: []\n\n\nSynthesize the regional reports, update the global ledger, and produce the executive briefing items as specified in your instructions."
+  },
+  "output": {
+    "response_text": "```json\n{\n  \"global_ledger_update\": {\n    \"global_posture_summary\": {\n      \"as_of\": \"2026-04-05\",\n      \"text\": \"The global signal environment demonstrates unprecedented European alliance defection synchronization as five Western European countries simultaneously reject US Iran escalation demands through coordinated institutional mechanisms. Energy crisis responses across Eastern Europe and Asia-Pacific reveal complete absence of global economic coordination architecture during shared external shocks. Democratic governance stress achieves structural synchronization across major European powers while Ukraine conflict spillover effects expand geographically into multiple NATO territories requiring individual crisis management responses.\",\n      \"signal_environment\": {\n        \"most_active_categories\": [\"alignment_diplomatic\", \"economic_tech\", \"security_defense\"],\n        \"quietest_categories\": [\"economic_trade\"],\n        \"geographic_hotspots\": [\"Western Europe\", \"Eastern Europe\", \"Asia-Pacific\"],\n        \"geographic_quiet_zones\": [\"Americas\"]\n      }\n    },\n\n    \"active_dynamics\": [\n      {\n        \"dynamic_id\": 1,\n        \"title\": \"Regional Institutional Differentiation in US Management Strategies\",\n        \"created_week\": \"2025-11-30\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"established\",\n        \"current_assessment\": \"Universal confirmation maintained across all regions with Americas demonstrating continued strategic incompatibility patterns through absence of cross-cutting dynamics despite significant regional developments. Regional frameworks maintain systematic autonomy from US strategic preferences, with each region developing distinct crisis response protocols that prioritize regional positioning over global coordination.\",\n        \"countries_involved\": [\"ca\", \"mx\", \"br\", \"cl\", \"fr\", \"gb\", \"it\", \"no\", \"se\", \"au\", \"jp\", \"id\"],\n        \"signal_categories_touched\": [\"alignment_diplomatic\", \"security_defense\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"mx\": 3, \"br\": 4, \"de\": 4, \"gb\": 4},\n          \"weakest_link\": \"Americas regional absence of coordination despite simultaneous significant developments\",\n          \"linkage_type\": \"institutional\",\n          \"linkage_assessment\": \"Regional frameworks demonstrate systematic preference for autonomous crisis response over US-led coordination\"\n        },\n        \"competing_interpretation\": \"Crisis responses reflect independent rational calculations rather than institutional frameworks, with apparent regional patterns resulting from coincidental similarity of national interests within geographic proximity\",\n        \"what_to_watch\": \"Additional global crises testing regional frameworks, evidence of cross-regional coordination attempts, US adaptation strategies for different regional approaches\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"dk\", \"nl\"],\n          \"reason\": \"Nordic allies not yet demonstrating clear regional framework alignment patterns\"\n        },\n        \"weeks_active\": 11,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 2,\n        \"title\": \"Defense Sovereignty Acceleration Through Regional Frameworks\",\n        \"created_week\": \"2025-11-30\",\n        \"last_updated\": \"2026-03-29\",\n        \"status\": \"developing\",\n        \"current_assessment\": \"No significant change this week. Franco-German cooperation strain from last week continues to demonstrate fragmentation of established European integration frameworks, while Eastern European allies maintain NATO integration preference. Defense sovereignty operates selectively by region and institutional framework maturity.\",\n        \"countries_involved\": [\"fr\", \"de\", \"it\", \"gb\", \"jp\", \"au\", \"kr\", \"pl\", \"cz\", \"no\", \"se\"],\n        \"signal_categories_touched\": [\"security_defense\"],\n        \"evidence_strength\": {\n          \"confidence\": 3,\n          \"supporting_country_confidences\": {\"fr\": 4, \"de\": 3, \"jp\": 4},\n          \"weakest_link\": \"Franco-German defense cooperation difficulties may be technical rather than political\",\n          \"linkage_type\": \"institutional\",\n          \"linkage_assessment\": \"Regional frameworks provide varying degrees of sovereignty assertion capability\"\n        },\n        \"competing_interpretation\": \"Defense cooperation difficulties may be primarily technical or commercial rather than politically driven, with modernization representing normal capability development\",\n        \"what_to_watch\": \"Resolution of Franco-German defense cooperation tensions, Eastern European responses to sovereignty drives, evidence of cross-regional defense coordination\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"es\", \"dk\"],\n          \"reason\": \"European allies not yet showing clear defense sovereignty positioning\"\n        },\n        \"weeks_active\": 11,\n        \"consecutive_unchanged_weeks\": 2\n      },\n      {\n        \"dynamic_id\": 3,\n        \"title\": \"Cross-Regional Domestic Political Fragmentation\",\n        \"created_week\": \"2026-01-11\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"established\",\n        \"current_assessment\": \"Critical escalation this week with Western Europe achieving unprecedented far-right electoral consolidation across France, Germany, and Sweden simultaneously, while maintaining previous governing party stress patterns. Combined with Eastern Europe's continued coalition breakdown threats, twenty-one countries now affected across three major regions. The far-right breakthrough represents structural democratic vulnerabilities achieving synchronization across different institutional systems and political cycles.\",\n        \"countries_involved\": [\"gb\", \"fr\", \"it\", \"es\", \"se\", \"pl\", \"cz\", \"ee\", \"ro\", \"ca\", \"mx\", \"br\", \"de\", \"ua\", \"fi\", \"lt\", \"lv\", \"no\"],\n        \"signal_categories_touched\": [\"domestic_regime\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"fr\": 4, \"de\": 4, \"se\": 4, \"gb\": 4},\n          \"weakest_link\": \"All major assessments maintain high confidence levels\",\n          \"linkage_type\": \"parallel_behavior\",\n          \"linkage_assessment\": \"Systematic structural pressures operating across different democratic systems and political cycles simultaneously\"\n        },\n        \"competing_interpretation\": \"Normal democratic turbulence with coincidental overlap across different political cycles, where specific triggers indicate separate rather than connected phenomena\",\n        \"what_to_watch\": \"Expansion to Asia-Pacific allies, resolution patterns indicating whether structural or cyclical, impact on international coordination capacity\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"au\", \"jp\", \"kr\"],\n          \"reason\": \"Asia-Pacific democracies showing vulnerability to similar structural pressures\"\n        },\n        \"weeks_active\": 10,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 4,\n        \"title\": \"Alliance Integration Resilience with Crisis-Revealed Limits\",\n        \"created_week\": \"2026-01-25\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"established\",\n        \"current_assessment\": \"Continued confirmation through Ukrainian spillover management requiring bilateral diplomatic responses rather than NATO framework activation. Alliance mechanisms operate normally through domestic political instability but fragment when faced with kinetic spillover requiring rapid coordination. Resilience operates selectively - strong for planned institutional processes, weak for crisis solidarity requiring immediate multilateral response.\",\n        \"countries_involved\": [\"ua\", \"pl\", \"fi\", \"ee\", \"lt\", \"lv\", \"cz\", \"ro\", \"fr\", \"de\", \"se\", \"gb\", \"it\", \"no\"],\n        \"signal_categories_touched\": [\"security_defense\", \"alignment_diplomatic\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"ee\": 3, \"lv\": 3, \"fi\": 4, \"pl\": 4},\n          \"weakest_link\": \"Estonia and Latvia assessments rely on single national media sources\",\n          \"linkage_type\": \"institutional\",\n          \"linkage_assessment\": \"Alliance frameworks demonstrate selective resilience depending on crisis type and coordination requirements\"\n        },\n        \"competing_interpretation\": \"Crisis fragmentation reflects healthy alliance diversity allowing different forms of support rather than institutional weakness\",\n        \"what_to_watch\": \"Additional crisis tests of alliance solidarity, evidence of institutional adaptation to fragmentation, breakdown of routine alliance coordination\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"dk\", \"nl\"],\n          \"reason\": \"Nordic NATO allies showing different crisis response patterns than frontline states\"\n        },\n        \"weeks_active\": 8,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 8,\n        \"title\": \"Global Crisis Alignment Test Reveals Systematic Regional Divergence\",\n        \"created_week\": \"2026-02-22\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"established\",\n        \"current_assessment\": \"Major escalation this week through Western Europe's synchronized rejection of US Iran escalation demands across five countries using parallel institutional mechanisms. Combined with continued Americas strategic incompatibility and Asia-Pacific burden-sharing tensions, the Iran conflict reveals systematic regional divergence from US crisis leadership across all active regions. Each regional framework demonstrates distinct crisis response patterns prioritizing regional positioning over global coordination.\",\n        \"countries_involved\": [\"ca\", \"mx\", \"br\", \"cl\", \"fr\", \"gb\", \"it\", \"no\", \"se\", \"au\", \"jp\", \"id\", \"tr\", \"sa\", \"ae\", \"in\", \"de\", \"es\"],\n        \"signal_categories_touched\": [\"alignment_diplomatic\", \"security_defense\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"de\": 4, \"gb\": 4, \"it\": 4, \"es\": 3, \"no\": 4},\n          \"weakest_link\": \"Spain's assessment rests on single-source reporting from Heraldo for 'No to War' campaign\",\n          \"linkage_type\": \"parallel_behavior\",\n          \"linkage_assessment\": \"Synchronized rejection across five Western European countries demonstrates coordinated regional divergence from US crisis demands\"\n        },\n        \"competing_interpretation\": \"Independent national responses to identical US pressure rather than coordinated regional strategy, with each country protecting its own interests without regional coordination\",\n        \"what_to_watch\": \"Additional global crises testing similar patterns, evidence of regional coordination in crisis response, US adaptation to systematic divergence\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"kr\", \"ph\"],\n          \"reason\": \"Asia-Pacific allies showing strain in crisis alignment with US demands\"\n        },\n        \"weeks_active\": 6,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 9,\n        \"title\": \"Strategic Hedging Universalization Among Middle Powers\",\n        \"created_week\": \"2026-02-29\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"established\",\n        \"current_assessment\": \"Continued confirmation across all regions with major new evidence from Asia-Pacific through Japan and South Korea both elevating France to strategic partnership status with identical frameworks focusing on Strait of Hormuz security and supply chain diversification. This demonstrates systematic engagement with alternative partners beyond traditional alliance structures. Combined with existing Americas, European, and other Asia-Pacific hedging patterns, strategic hedging operates as universal middle power adaptation.\",\n        \"countries_involved\": [\"ca\", \"mx\", \"br\", \"cl\", \"au\", \"jp\", \"kr\", \"id\", \"no\", \"se\", \"fr\", \"de\"],\n        \"signal_categories_touched\": [\"alignment_diplomatic\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"jp\": 4, \"kr\": 4, \"fr\": 4, \"au\": 4},\n          \"weakest_link\": \"Both Japan-Korea assessments rely heavily on single-source coverage of bilateral summit outcomes\",\n          \"linkage_type\": \"parallel_behavior\",\n          \"linkage_assessment\": \"Universal pattern across all regions of middle powers developing alternative partnership frameworks\"\n        },\n        \"competing_interpretation\": \"Independent national responses to bilateral relationships rather than coordinated hedging strategy, with apparent pattern resulting from similar structural constraints\",\n        \"what_to_watch\": \"Cross-regional coordination mechanisms among hedging states, institutional framework development, great power responses to systematic hedging\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"in\", \"tr\"],\n          \"reason\": \"Regional powers showing intensive diplomatic hedging activity requiring monitoring\"\n        },\n        \"weeks_active\": 5,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 10,\n        \"title\": \"Alternative Security Guarantee Networks Formation\",\n        \"created_week\": \"2026-03-08\",\n        \"last_updated\": \"2026-03-29\",\n        \"status\": \"monitoring\",\n        \"current_assessment\": \"Limited new evidence this week. Pattern continues with existing French nuclear doctrine responses from Nordic countries and Taiwan-Japan security cooperation, but no expansion to additional countries or concrete institutional development visible. Evidence remains suggestive but thin for genuine alternative security architecture emergence.\",\n        \"countries_involved\": [\"fr\", \"no\", \"se\", \"tw\", \"jp\"],\n        \"signal_categories_touched\": [\"security_defense\"],\n        \"evidence_strength\": {\n          \"confidence\": 3,\n          \"supporting_country_confidences\": {\"fr\": 4, \"no\": 3, \"tw\": 3},\n          \"weakest_link\": \"Taiwan's assessment rests on single Asia Times source coverage\",\n          \"linkage_type\": \"institutional\",\n          \"linkage_assessment\": \"Suggestive evidence of alternative security frameworks but limited concrete institutional development\"\n        },\n        \"competing_interpretation\": \"Nordic responses may reflect diplomatic courtesy to French initiative rather than genuine strategic reorientation, while Taiwan-Japan cooperation may be routine bilateral engagement\",\n        \"what_to_watch\": \"Additional European ally responses to French nuclear guarantor positioning, concrete Taiwan-Japan security agreements, US responses to alternative nuclear architecture\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"de\", \"nl\", \"dk\"],\n          \"reason\": \"Key European allies' responses to French alternative security architecture initiatives\"\n        },\n        \"weeks_active\": 5,\n        \"consecutive_unchanged_weeks\": 3\n      },\n      {\n        \"dynamic_id\": 11,\n        \"title\": \"Global Economic Crisis Coordination Architecture Absence\",\n        \"created_week\": \"2026-03-15\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"established\",\n        \"current_assessment\": \"Major escalation to universal confirmation across all active regions this week. Eastern Europe (Estonia, Czech Republic, Latvia) implementing unilateral fuel market interventions while Asia-Pacific (Japan, South Korea, Australia, Indonesia) deploys parallel economic crisis management tools - all responding to identical Middle East war spillovers through different national mechanisms without coordination. The Iran crisis reveals systematic absence of multilateral economic coordination mechanisms during shared external shocks across six regions.\",\n        \"countries_involved\": [\"jp\", \"kr\", \"au\", \"id\", \"sa\", \"ae\", \"tr\", \"pl\", \"lv\", \"ro\", \"fi\", \"ee\", \"cz\"],\n        \"signal_categories_touched\": [\"economic_tech\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"kr\": 4, \"jp\": 4, \"au\": 4, \"ee\": 3, \"cz\": 3, \"lv\": 3},\n          \"weakest_link\": \"Multiple assessments rely on single national sources for energy intervention reporting\",\n          \"linkage_type\": \"parallel_behavior\",\n          \"linkage_assessment\": \"Universal pattern of parallel but uncoordinated national responses to identical external economic shocks\"\n        },\n        \"competing_interpretation\": \"These may be routine crisis management responses reflecting appropriate policy tools for different economic structures rather than coordination failures\",\n        \"what_to_watch\": \"Evidence of attempted multilateral economic coordination, creation of crisis coordination mechanisms, additional economic shock responses\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"eg\", \"ph\"],\n          \"reason\": \"Countries vulnerable to energy price shocks showing signs of crisis response activation\"\n        },\n        \"weeks_active\": 4,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 12,\n        \"title\": \"Alliance Integration Bifurcation Under Crisis Pressure\",\n        \"created_week\": \"2026-03-22\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"developing\",\n        \"current_assessment\": \"Major escalation this week through Western Europe's synchronized rejection of US Iran escalation demands across five countries (Germany, UK, Italy, Spain, Norway) versus Eastern Europe's continued spillover management cooperation. The pattern demonstrates systematic intra-alliance fragmentation along regional lines within Atlantic security architecture during crisis conditions, with Western European institutional resistance contrasting sharply with Eastern European operational cooperation.\",\n        \"countries_involved\": [\"de\", \"no\", \"gb\", \"it\", \"es\", \"ee\", \"ro\", \"lv\", \"pl\", \"lt\", \"fi\"],\n        \"signal_categories_touched\": [\"alignment_diplomatic\", \"security_defense\"],\n        \"evidence_strength\": {\n          \"confidence\": 4,\n          \"supporting_country_confidences\": {\"de\": 4, \"gb\": 4, \"it\": 4, \"es\": 3, \"no\": 4, \"ee\": 3},\n          \"weakest_link\": \"Spain's assessment rests on single-source reporting\",\n          \"linkage_type\": \"interaction_effect\",\n          \"linkage_assessment\": \"Systematic regional bifurcation within alliance structure with contrasting crisis response patterns\"\n        },\n        \"competing_interpretation\": \"Reflects normal alliance specialization with different regions providing different forms of support based on geographic proximity and capability\",\n        \"what_to_watch\": \"Additional regional allies' responses to US crisis requests, institutional responses to intra-alliance fragmentation, resolution of Western European resistance\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"dk\", \"nl\"],\n          \"reason\": \"Nordic NATO allies showing mixed patterns between Western European resistance and Eastern European cooperation\"\n        },\n        \"weeks_active\": 3,\n        \"consecutive_unchanged_weeks\": 0\n      },\n      {\n        \"dynamic_id\": 13,\n        \"title\": \"Ukraine Conflict Kinetic Spillover Multi-Country Management Challenge\",\n        \"created_week\": \"2026-03-29\",\n        \"last_updated\": \"2026-04-05\",\n        \"status\": \"developing\",\n        \"current_assessment\": \"Continued escalation through systematic Ukrainian drone spillover into Finnish, Estonian, and Latvian airspace during combat operations, requiring individual diplomatic coordination responses rather than coordinated NATO mechanisms. The pattern demonstrates the conflict's geographic expansion beyond Ukrainian borders into NATO territory creating systematic multi-country crisis management challenges that expose limitations of multilateral coordination frameworks for kinetic spillover incidents.\",\n        \"countries_involved\": [\"ee\", \"lv\", \"lt\", \"fi\", \"ua\"],\n        \"signal_categories_touched\": [\"security_defense\"],\n        \"evidence_strength\": {\n          \"confidence\": 3,\n          \"supporting_country_confidences\": {\"fi\": 4, \"ee\": 3, \"lv\": 3},\n          \"weakest_link\": \"Estonia and Latvia assessments both rely on single national media sources for drone incident reporting\",\n          \"linkage_type\": \"interaction_effect\",\n          \"linkage_assessment\": \"Ukrainian military operations generating direct spillover effects requiring bilateral crisis management across multiple NATO territories\"\n        },\n        \"competing_interpretation\": \"Incidents could represent deliberate Ukrainian testing of regional air defense capabilities or Russian false-flag operations designed to strain Ukrainian relationships with neighbors\",\n        \"what_to_watch\": \"Additional spillover incidents, NATO institutional response to kinetic spillover, air defense capability adjustments\",\n        \"triage_implications\": {\n          \"countries_to_flag\": [\"pl\", \"ro\"],\n          \"reason\": \"Frontline NATO countries potentially vulnerable to similar spillover incidents requiring monitoring\"\n        },\n        \"weeks_active\": 2,\n        \"consecutive_unchanged_weeks\": 0\n      }\n    ],\n\n    \"watchlist\": [\n      {\n        \"item\": \"US alliance burden-shifting systematic implementation\",\n        \"signal_category\": \"security_defense\",\n        \"countries\": [\"jp\", \"kr\", \"au\"],\n        \"why_it_matters\": \"Could accelerate alliance integration bifurcation if implemented systematically\",\n        \"trigger\": \"Specific spending targets, capability requirements, or cost-sharing arrangements beyond current guidelines\",\n        \"added_week\": \"2026-02-15\"\n      },\n      {\n        \"item\": \"China responses to alliance security infrastructure coordination\",\n        \"signal_category\": \"security_defense\", \n        \"countries\": [\"cn\", \"tw\", \"jp\", \"kr\"],\n        \"why_it_matters\": \"Chinese military responses could escalate regional tensions beyond current diplomatic pressure\",\n        \"trigger\": \"Chinese military responses to coordinated alliance infrastructure development or technology transfer patterns\",\n        \"added_week\": \"2026-02-22\"\n      },\n      {\n        \"item\": \"Cross-regional democratic governance response coordination\",\n        \"signal_category\": \"domestic_regime\",\n        \"countries\": [\"fr\", \"gb\", \"it\", \"ca\", \"au\"],\n        \"why_it_matters\": \"Coordinated responses could indicate institutional adaptation to systematic democratic stress\",\n        \"trigger\": \"Evidence of coordination mechanisms or shared institutional responses to democratic governance stress\",\n        \"added_week\": \"2026-03-01\"\n      }\n    ],\n\n    \"weekly_entry\": {\n      \"week\": \"2026-04-05\",\n      \"executive_briefing_items\": [\n        {\n          \"title\": \"European Alliance Defection Achieves Unprecedented Coordination\",\n          \"regions_involved\": [\"Western Europe\", \"Eastern Europe\"],\n          \"what\": \"Five Western European countries simultaneously rejected US Iran escalation demands through parallel institutional mechanisms this week, representing the most coordinated European strategic autonomy assertion since the 2003 Iraq War. Germany declared Iran war illegal through presidential statement, the UK adopted defensive-only approach despite US pressure, Italy denied US base access for Iran operations, Spain launched 'No to War' campaigns, and Norway criticized NATO leadership - all within the same timeframe.\",\n          \"why_it_matters\": \"This synchronized rejection demonstrates European institutional capacity for coordinated resistance to US crisis leadership, fundamentally altering NATO operational assumptions during active Middle East conflict. The parallel timing and similar institutional mechanisms suggest deliberate regional coordination rather than coincidental national responses, indicating a structural shift in European willingness to automatically support US military interventions.\",\n          \"what_to_watch\": \"Additional European allies' positions on Iran escalation, EU institutional responses to coordinated strategic autonomy, US adaptation strategies to systematic European resistance, potential expansion to non-Iran crisis scenarios.\",\n          \"confidence\": 3,\n          \"confidence_note\": \"Based on Western Europe cross-cutting dynamic with confidence 3, supported by country confidences ranging from 3 (Spain) to 4 (Germany, UK, Italy, Norway). Weakest link is Spain's single-source reporting from Heraldo.\"\n        },\n        {\n          \"title\": \"Energy Crisis Reveals Complete Global Coordination Architecture Collapse\",\n          \"regions_involved\": [\"Eastern Europe\", \"Asia-Pacific\", \"Near East/South Asia\"],\n          \"what\": \"The Middle East war's energy price shock triggered parallel but entirely uncoordinated crisis responses across three regions this week. Eastern Europe implemented unilateral fuel market interventions (Estonia's growth forecast cuts, Czech direct market intervention, Latvia's aviation emergency loans), while Asia-Pacific deployed massive national economic tools (Korea's 26.2 trillion won budget, Japan's strategic reserve mobilization, Australia's fuel crisis response, Indonesia's subsidy maintenance) - all responding to identical external triggers through different national mechanisms.\",\n          \"why_it_matters\": \"This pattern confirms the systematic absence of multilateral economic coordination mechanisms during shared external shocks, forcing countries to deploy national crisis tools independently despite facing identical vulnerabilities. The complete lack of coordination across regions demonstrates that the international economic architecture has no functional crisis response capability for energy price volatility, leaving countries to navigate global shocks through purely national responses.\",\n          \"what_to_watch\": \"Additional energy price shock responses, attempts at multilateral coordination initiatives, creation of crisis coordination mechanisms, US or Chinese leadership in global crisis response coordination.\",\n          \"confidence\": 4,\n          \"confidence_note\": \"Supported by parallel dynamics from Eastern Europe (confidence 3) and Asia-Pacific (confidence 3), with country confidences ranging from 3-4. Pattern confirmed across six countries implementing uncoordinated responses to identical triggers.\"\n        },\n        {\n          \"title\": \"Democratic Stress Achieves Structural Synchronization Across European Powers\",\n          \"regions_involved\": [\"Western Europe\"],\n          \"what\": \"Far-right parties achieved simultaneous electoral breakthroughs across three major European democracies this week, representing the most significant populist advance since the 2010s migration crisis. France's RN maintains front-runner status for 2027 presidential elections, Germany's AfD overtook the governing Union in national polls for the first time, and Sweden completed SD normalization with guaranteed cabinet representation post-2026.\",\n          \"why_it_matters\": \"These parallel gains across different electoral systems and political cycles indicate structural democratic vulnerabilities rather than episodic electoral fluctuations. The synchronized breakthrough suggests systemic pressures operating across European democratic institutions simultaneously, potentially reshaping European governance models and EU institutional dynamics as populist parties transition from opposition to governing roles across multiple major powers.\",\n          \"what_to_watch\": \"Expansion of far-right gains to additional European democracies, impact on EU institutional functionality, coordination between successful populist parties, mainstream party adaptation strategies, spillover effects to other democratic regions.\",\n          \"confidence\": 4,\n          \"confidence_note\": \"Supported by Western Europe cross-cutting dynamic with confidence 4, based on country assessments all maintaining confidence level 4 (France, Germany, Sweden). No weak links in underlying assessments.\"\n        }\n      ],\n      \"dynamics_created\": [],\n      \"dynamics_updated\": [1, 3, 4, 8, 9, 11, 12, 13],\n      \"dynamics_archived\": [],\n      \"items_considered_rejected\": [\n        {\n          \"candidate\": \"Iranian systematic Gulf infrastructure targeting campaign\",\n          \"reason_rejected\": \"Regional pattern limited to Near East/South Asia without cross-regional implications or global-level visibility\"\n        },\n        {\n          \"candidate\": \"Crisis-driven diplomatic intensification across multiple theaters\",\n          \"reason_rejected\": \"Pattern represents national activation of existing diplomatic frameworks rather than new global dynamic, with insufficient evidence of coordination or interaction effects\"\n        },\n        {\n          \"candidate\": \"China's pressure campaign coordination challenges\",\n          \"reason_rejected\": \"Regional Asia-Pacific pattern without sufficient cross-regional evidence or global structural implications\"\n        },\n        {\n          \"candidate\": \"Ukraine conflict spillover institutionalization\",\n          \"reason_rejected\": \"Continuation of existing Dynamic #13 without sufficient new evidence to warrant separate executive briefing treatment this week\"\n        }\n      ],\n      \"self_corrections\": []\n    }\n  }\n}\n```",
+    "parsed": {
+      "global_posture_summary": {
+        "as_of": "2026-04-05",
+        "text": "The global signal environment demonstrates unprecedented European alliance defection synchronization as five Western European countries simultaneously reject US Iran escalation demands through coordinated institutional mechanisms. Energy crisis responses across Eastern Europe and Asia-Pacific reveal complete absence of global economic coordination architecture during shared external shocks. Democratic governance stress achieves structural synchronization across major European powers while Ukraine conflict spillover effects expand geographically into multiple NATO territories requiring individual crisis management responses.",
+        "signal_environment": {
+          "most_active_categories": [
+            "alignment_diplomatic",
+            "economic_tech",
+            "security_defense"
+          ],
+          "quietest_categories": [
+            "economic_trade"
+          ],
+          "geographic_hotspots": [
+            "Western Europe",
+            "Eastern Europe",
+            "Asia-Pacific"
+          ],
+          "geographic_quiet_zones": [
+            "Americas"
+          ]
+        }
+      },
+      "active_dynamics": [
+        {
+          "dynamic_id": 1,
+          "title": "Regional Institutional Differentiation in US Management Strategies",
+          "created_week": "2025-11-30",
+          "last_updated": "2026-04-05",
+          "status": "established",
+          "current_assessment": "Universal confirmation maintained across all regions with Americas demonstrating continued strategic incompatibility patterns through absence of cross-cutting dynamics despite significant regional developments. Regional frameworks maintain systematic autonomy from US strategic preferences, with each region developing distinct crisis response protocols that prioritize regional positioning over global coordination.",
+          "countries_involved": [
+            "ca",
+            "mx",
+            "br",
+            "cl",
+            "fr",
+            "gb",
+            "it",
+            "no",
+            "se",
+            "au",
+            "jp",
+            "id"
+          ],
+          "signal_categories_touched": [
+            "alignment_diplomatic",
+            "security_defense"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "mx": 3,
+              "br": 4,
+              "de": 4,
+              "gb": 4
+            },
+            "weakest_link": "Americas regional absence of coordination despite simultaneous significant developments",
+            "linkage_type": "institutional",
+            "linkage_assessment": "Regional frameworks demonstrate systematic preference for autonomous crisis response over US-led coordination"
+          },
+          "competing_interpretation": "Crisis responses reflect independent rational calculations rather than institutional frameworks, with apparent regional patterns resulting from coincidental similarity of national interests within geographic proximity",
+          "what_to_watch": "Additional global crises testing regional frameworks, evidence of cross-regional coordination attempts, US adaptation strategies for different regional approaches",
+          "triage_implications": {
+            "countries_to_flag": [
+              "dk",
+              "nl"
+            ],
+            "reason": "Nordic allies not yet demonstrating clear regional framework alignment patterns"
+          },
+          "weeks_active": 11,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 2,
+          "title": "Defense Sovereignty Acceleration Through Regional Frameworks",
+          "created_week": "2025-11-30",
+          "last_updated": "2026-03-29",
+          "status": "developing",
+          "current_assessment": "No significant change this week. Franco-German cooperation strain from last week continues to demonstrate fragmentation of established European integration frameworks, while Eastern European allies maintain NATO integration preference. Defense sovereignty operates selectively by region and institutional framework maturity.",
+          "countries_involved": [
+            "fr",
+            "de",
+            "it",
+            "gb",
+            "jp",
+            "au",
+            "kr",
+            "pl",
+            "cz",
+            "no",
+            "se"
+          ],
+          "signal_categories_touched": [
+            "security_defense"
+          ],
+          "evidence_strength": {
+            "confidence": 3,
+            "supporting_country_confidences": {
+              "fr": 4,
+              "de": 3,
+              "jp": 4
+            },
+            "weakest_link": "Franco-German defense cooperation difficulties may be technical rather than political",
+            "linkage_type": "institutional",
+            "linkage_assessment": "Regional frameworks provide varying degrees of sovereignty assertion capability"
+          },
+          "competing_interpretation": "Defense cooperation difficulties may be primarily technical or commercial rather than politically driven, with modernization representing normal capability development",
+          "what_to_watch": "Resolution of Franco-German defense cooperation tensions, Eastern European responses to sovereignty drives, evidence of cross-regional defense coordination",
+          "triage_implications": {
+            "countries_to_flag": [
+              "es",
+              "dk"
+            ],
+            "reason": "European allies not yet showing clear defense sovereignty positioning"
+          },
+          "weeks_active": 11,
+          "consecutive_unchanged_weeks": 2
+        },
+        {
+          "dynamic_id": 3,
+          "title": "Cross-Regional Domestic Political Fragmentation",
+          "created_week": "2026-01-11",
+          "last_updated": "2026-04-05",
+          "status": "established",
+          "current_assessment": "Critical escalation this week with Western Europe achieving unprecedented far-right electoral consolidation across France, Germany, and Sweden simultaneously, while maintaining previous governing party stress patterns. Combined with Eastern Europe's continued coalition breakdown threats, twenty-one countries now affected across three major regions. The far-right breakthrough represents structural democratic vulnerabilities achieving synchronization across different institutional systems and political cycles.",
+          "countries_involved": [
+            "gb",
+            "fr",
+            "it",
+            "es",
+            "se",
+            "pl",
+            "cz",
+            "ee",
+            "ro",
+            "ca",
+            "mx",
+            "br",
+            "de",
+            "ua",
+            "fi",
+            "lt",
+            "lv",
+            "no"
+          ],
+          "signal_categories_touched": [
+            "domestic_regime"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "fr": 4,
+              "de": 4,
+              "se": 4,
+              "gb": 4
+            },
+            "weakest_link": "All major assessments maintain high confidence levels",
+            "linkage_type": "parallel_behavior",
+            "linkage_assessment": "Systematic structural pressures operating across different democratic systems and political cycles simultaneously"
+          },
+          "competing_interpretation": "Normal democratic turbulence with coincidental overlap across different political cycles, where specific triggers indicate separate rather than connected phenomena",
+          "what_to_watch": "Expansion to Asia-Pacific allies, resolution patterns indicating whether structural or cyclical, impact on international coordination capacity",
+          "triage_implications": {
+            "countries_to_flag": [
+              "au",
+              "jp",
+              "kr"
+            ],
+            "reason": "Asia-Pacific democracies showing vulnerability to similar structural pressures"
+          },
+          "weeks_active": 10,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 4,
+          "title": "Alliance Integration Resilience with Crisis-Revealed Limits",
+          "created_week": "2026-01-25",
+          "last_updated": "2026-04-05",
+          "status": "established",
+          "current_assessment": "Continued confirmation through Ukrainian spillover management requiring bilateral diplomatic responses rather than NATO framework activation. Alliance mechanisms operate normally through domestic political instability but fragment when faced with kinetic spillover requiring rapid coordination. Resilience operates selectively - strong for planned institutional processes, weak for crisis solidarity requiring immediate multilateral response.",
+          "countries_involved": [
+            "ua",
+            "pl",
+            "fi",
+            "ee",
+            "lt",
+            "lv",
+            "cz",
+            "ro",
+            "fr",
+            "de",
+            "se",
+            "gb",
+            "it",
+            "no"
+          ],
+          "signal_categories_touched": [
+            "security_defense",
+            "alignment_diplomatic"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "ee": 3,
+              "lv": 3,
+              "fi": 4,
+              "pl": 4
+            },
+            "weakest_link": "Estonia and Latvia assessments rely on single national media sources",
+            "linkage_type": "institutional",
+            "linkage_assessment": "Alliance frameworks demonstrate selective resilience depending on crisis type and coordination requirements"
+          },
+          "competing_interpretation": "Crisis fragmentation reflects healthy alliance diversity allowing different forms of support rather than institutional weakness",
+          "what_to_watch": "Additional crisis tests of alliance solidarity, evidence of institutional adaptation to fragmentation, breakdown of routine alliance coordination",
+          "triage_implications": {
+            "countries_to_flag": [
+              "dk",
+              "nl"
+            ],
+            "reason": "Nordic NATO allies showing different crisis response patterns than frontline states"
+          },
+          "weeks_active": 8,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 8,
+          "title": "Global Crisis Alignment Test Reveals Systematic Regional Divergence",
+          "created_week": "2026-02-22",
+          "last_updated": "2026-04-05",
+          "status": "established",
+          "current_assessment": "Major escalation this week through Western Europe's synchronized rejection of US Iran escalation demands across five countries using parallel institutional mechanisms. Combined with continued Americas strategic incompatibility and Asia-Pacific burden-sharing tensions, the Iran conflict reveals systematic regional divergence from US crisis leadership across all active regions. Each regional framework demonstrates distinct crisis response patterns prioritizing regional positioning over global coordination.",
+          "countries_involved": [
+            "ca",
+            "mx",
+            "br",
+            "cl",
+            "fr",
+            "gb",
+            "it",
+            "no",
+            "se",
+            "au",
+            "jp",
+            "id",
+            "tr",
+            "sa",
+            "ae",
+            "in",
+            "de",
+            "es"
+          ],
+          "signal_categories_touched": [
+            "alignment_diplomatic",
+            "security_defense"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "de": 4,
+              "gb": 4,
+              "it": 4,
+              "es": 3,
+              "no": 4
+            },
+            "weakest_link": "Spain's assessment rests on single-source reporting from Heraldo for 'No to War' campaign",
+            "linkage_type": "parallel_behavior",
+            "linkage_assessment": "Synchronized rejection across five Western European countries demonstrates coordinated regional divergence from US crisis demands"
+          },
+          "competing_interpretation": "Independent national responses to identical US pressure rather than coordinated regional strategy, with each country protecting its own interests without regional coordination",
+          "what_to_watch": "Additional global crises testing similar patterns, evidence of regional coordination in crisis response, US adaptation to systematic divergence",
+          "triage_implications": {
+            "countries_to_flag": [
+              "kr",
+              "ph"
+            ],
+            "reason": "Asia-Pacific allies showing strain in crisis alignment with US demands"
+          },
+          "weeks_active": 6,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 9,
+          "title": "Strategic Hedging Universalization Among Middle Powers",
+          "created_week": "2026-02-29",
+          "last_updated": "2026-04-05",
+          "status": "established",
+          "current_assessment": "Continued confirmation across all regions with major new evidence from Asia-Pacific through Japan and South Korea both elevating France to strategic partnership status with identical frameworks focusing on Strait of Hormuz security and supply chain diversification. This demonstrates systematic engagement with alternative partners beyond traditional alliance structures. Combined with existing Americas, European, and other Asia-Pacific hedging patterns, strategic hedging operates as universal middle power adaptation.",
+          "countries_involved": [
+            "ca",
+            "mx",
+            "br",
+            "cl",
+            "au",
+            "jp",
+            "kr",
+            "id",
+            "no",
+            "se",
+            "fr",
+            "de"
+          ],
+          "signal_categories_touched": [
+            "alignment_diplomatic"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "jp": 4,
+              "kr": 4,
+              "fr": 4,
+              "au": 4
+            },
+            "weakest_link": "Both Japan-Korea assessments rely heavily on single-source coverage of bilateral summit outcomes",
+            "linkage_type": "parallel_behavior",
+            "linkage_assessment": "Universal pattern across all regions of middle powers developing alternative partnership frameworks"
+          },
+          "competing_interpretation": "Independent national responses to bilateral relationships rather than coordinated hedging strategy, with apparent pattern resulting from similar structural constraints",
+          "what_to_watch": "Cross-regional coordination mechanisms among hedging states, institutional framework development, great power responses to systematic hedging",
+          "triage_implications": {
+            "countries_to_flag": [
+              "in",
+              "tr"
+            ],
+            "reason": "Regional powers showing intensive diplomatic hedging activity requiring monitoring"
+          },
+          "weeks_active": 5,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 10,
+          "title": "Alternative Security Guarantee Networks Formation",
+          "created_week": "2026-03-08",
+          "last_updated": "2026-03-29",
+          "status": "monitoring",
+          "current_assessment": "Limited new evidence this week. Pattern continues with existing French nuclear doctrine responses from Nordic countries and Taiwan-Japan security cooperation, but no expansion to additional countries or concrete institutional development visible. Evidence remains suggestive but thin for genuine alternative security architecture emergence.",
+          "countries_involved": [
+            "fr",
+            "no",
+            "se",
+            "tw",
+            "jp"
+          ],
+          "signal_categories_touched": [
+            "security_defense"
+          ],
+          "evidence_strength": {
+            "confidence": 3,
+            "supporting_country_confidences": {
+              "fr": 4,
+              "no": 3,
+              "tw": 3
+            },
+            "weakest_link": "Taiwan's assessment rests on single Asia Times source coverage",
+            "linkage_type": "institutional",
+            "linkage_assessment": "Suggestive evidence of alternative security frameworks but limited concrete institutional development"
+          },
+          "competing_interpretation": "Nordic responses may reflect diplomatic courtesy to French initiative rather than genuine strategic reorientation, while Taiwan-Japan cooperation may be routine bilateral engagement",
+          "what_to_watch": "Additional European ally responses to French nuclear guarantor positioning, concrete Taiwan-Japan security agreements, US responses to alternative nuclear architecture",
+          "triage_implications": {
+            "countries_to_flag": [
+              "de",
+              "nl",
+              "dk"
+            ],
+            "reason": "Key European allies' responses to French alternative security architecture initiatives"
+          },
+          "weeks_active": 5,
+          "consecutive_unchanged_weeks": 3
+        },
+        {
+          "dynamic_id": 11,
+          "title": "Global Economic Crisis Coordination Architecture Absence",
+          "created_week": "2026-03-15",
+          "last_updated": "2026-04-05",
+          "status": "established",
+          "current_assessment": "Major escalation to universal confirmation across all active regions this week. Eastern Europe (Estonia, Czech Republic, Latvia) implementing unilateral fuel market interventions while Asia-Pacific (Japan, South Korea, Australia, Indonesia) deploys parallel economic crisis management tools - all responding to identical Middle East war spillovers through different national mechanisms without coordination. The Iran crisis reveals systematic absence of multilateral economic coordination mechanisms during shared external shocks across six regions.",
+          "countries_involved": [
+            "jp",
+            "kr",
+            "au",
+            "id",
+            "sa",
+            "ae",
+            "tr",
+            "pl",
+            "lv",
+            "ro",
+            "fi",
+            "ee",
+            "cz"
+          ],
+          "signal_categories_touched": [
+            "economic_tech"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "kr": 4,
+              "jp": 4,
+              "au": 4,
+              "ee": 3,
+              "cz": 3,
+              "lv": 3
+            },
+            "weakest_link": "Multiple assessments rely on single national sources for energy intervention reporting",
+            "linkage_type": "parallel_behavior",
+            "linkage_assessment": "Universal pattern of parallel but uncoordinated national responses to identical external economic shocks"
+          },
+          "competing_interpretation": "These may be routine crisis management responses reflecting appropriate policy tools for different economic structures rather than coordination failures",
+          "what_to_watch": "Evidence of attempted multilateral economic coordination, creation of crisis coordination mechanisms, additional economic shock responses",
+          "triage_implications": {
+            "countries_to_flag": [
+              "eg",
+              "ph"
+            ],
+            "reason": "Countries vulnerable to energy price shocks showing signs of crisis response activation"
+          },
+          "weeks_active": 4,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 12,
+          "title": "Alliance Integration Bifurcation Under Crisis Pressure",
+          "created_week": "2026-03-22",
+          "last_updated": "2026-04-05",
+          "status": "developing",
+          "current_assessment": "Major escalation this week through Western Europe's synchronized rejection of US Iran escalation demands across five countries (Germany, UK, Italy, Spain, Norway) versus Eastern Europe's continued spillover management cooperation. The pattern demonstrates systematic intra-alliance fragmentation along regional lines within Atlantic security architecture during crisis conditions, with Western European institutional resistance contrasting sharply with Eastern European operational cooperation.",
+          "countries_involved": [
+            "de",
+            "no",
+            "gb",
+            "it",
+            "es",
+            "ee",
+            "ro",
+            "lv",
+            "pl",
+            "lt",
+            "fi"
+          ],
+          "signal_categories_touched": [
+            "alignment_diplomatic",
+            "security_defense"
+          ],
+          "evidence_strength": {
+            "confidence": 4,
+            "supporting_country_confidences": {
+              "de": 4,
+              "gb": 4,
+              "it": 4,
+              "es": 3,
+              "no": 4,
+              "ee": 3
+            },
+            "weakest_link": "Spain's assessment rests on single-source reporting",
+            "linkage_type": "interaction_effect",
+            "linkage_assessment": "Systematic regional bifurcation within alliance structure with contrasting crisis response patterns"
+          },
+          "competing_interpretation": "Reflects normal alliance specialization with different regions providing different forms of support based on geographic proximity and capability",
+          "what_to_watch": "Additional regional allies' responses to US crisis requests, institutional responses to intra-alliance fragmentation, resolution of Western European resistance",
+          "triage_implications": {
+            "countries_to_flag": [
+              "dk",
+              "nl"
+            ],
+            "reason": "Nordic NATO allies showing mixed patterns between Western European resistance and Eastern European cooperation"
+          },
+          "weeks_active": 3,
+          "consecutive_unchanged_weeks": 0
+        },
+        {
+          "dynamic_id": 13,
+          "title": "Ukraine Conflict Kinetic Spillover Multi-Country Management Challenge",
+          "created_week": "2026-03-29",
+          "last_updated": "2026-04-05",
+          "status": "developing",
+          "current_assessment": "Continued escalation through systematic Ukrainian drone spillover into Finnish, Estonian, and Latvian airspace during combat operations, requiring individual diplomatic coordination responses rather than coordinated NATO mechanisms. The pattern demonstrates the conflict's geographic expansion beyond Ukrainian borders into NATO territory creating systematic multi-country crisis management challenges that expose limitations of multilateral coordination frameworks for kinetic spillover incidents.",
+          "countries_involved": [
+            "ee",
+            "lv",
+            "lt",
+            "fi",
+            "ua"
+          ],
+          "signal_categories_touched": [
+            "security_defense"
+          ],
+          "evidence_strength": {
+            "confidence": 3,
+            "supporting_country_confidences": {
+              "fi": 4,
+              "ee": 3,
+              "lv": 3
+            },
+            "weakest_link": "Estonia and Latvia assessments both rely on single national media sources for drone incident reporting",
+            "linkage_type": "interaction_effect",
+            "linkage_assessment": "Ukrainian military operations generating direct spillover effects requiring bilateral crisis management across multiple NATO territories"
+          },
+          "competing_interpretation": "Incidents could represent deliberate Ukrainian testing of regional air defense capabilities or Russian false-flag operations designed to strain Ukrainian relationships with neighbors",
+          "what_to_watch": "Additional spillover incidents, NATO institutional response to kinetic spillover, air defense capability adjustments",
+          "triage_implications": {
+            "countries_to_flag": [
+              "pl",
+              "ro"
+            ],
+            "reason": "Frontline NATO countries potentially vulnerable to similar spillover incidents requiring monitoring"
+          },
+          "weeks_active": 2,
+          "consecutive_unchanged_weeks": 0
+        }
+      ],
+      "watchlist": [
+        {
+          "item": "US alliance burden-shifting systematic implementation",
+          "signal_category": "security_defense",
+          "countries": [
+            "jp",
+            "kr",
+            "au"
+          ],
+          "why_it_matters": "Could accelerate alliance integration bifurcation if implemented systematically",
+          "trigger": "Specific spending targets, capability requirements, or cost-sharing arrangements beyond current guidelines",
+          "added_week": "2026-02-15"
+        },
+        {
+          "item": "China responses to alliance security infrastructure coordination",
+          "signal_category": "security_defense",
+          "countries": [
+            "cn",
+            "tw",
+            "jp",
+            "kr"
+          ],
+          "why_it_matters": "Chinese military responses could escalate regional tensions beyond current diplomatic pressure",
+          "trigger": "Chinese military responses to coordinated alliance infrastructure development or technology transfer patterns",
+          "added_week": "2026-02-22"
+        },
+        {
+          "item": "Cross-regional democratic governance response coordination",
+          "signal_category": "domestic_regime",
+          "countries": [
+            "fr",
+            "gb",
+            "it",
+            "ca",
+            "au"
+          ],
+          "why_it_matters": "Coordinated responses could indicate institutional adaptation to systematic democratic stress",
+          "trigger": "Evidence of coordination mechanisms or shared institutional responses to democratic governance stress",
+          "added_week": "2026-03-01"
+        }
+      ],
+      "weekly_entry": {
+        "week": "2026-04-05",
+        "executive_briefing_items": [
+          {
+            "title": "European Alliance Defection Achieves Unprecedented Coordination",
+            "regions_involved": [
+              "Western Europe",
+              "Eastern Europe"
+            ],
+            "what": "Five Western European countries simultaneously rejected US Iran escalation demands through parallel institutional mechanisms this week, representing the most coordinated European strategic autonomy assertion since the 2003 Iraq War. Germany declared Iran war illegal through presidential statement, the UK adopted defensive-only approach despite US pressure, Italy denied US base access for Iran operations, Spain launched 'No to War' campaigns, and Norway criticized NATO leadership - all within the same timeframe.",
+            "why_it_matters": "This synchronized rejection demonstrates European institutional capacity for coordinated resistance to US crisis leadership, fundamentally altering NATO operational assumptions during active Middle East conflict. The parallel timing and similar institutional mechanisms suggest deliberate regional coordination rather than coincidental national responses, indicating a structural shift in European willingness to automatically support US military interventions.",
+            "what_to_watch": "Additional European allies' positions on Iran escalation, EU institutional responses to coordinated strategic autonomy, US adaptation strategies to systematic European resistance, potential expansion to non-Iran crisis scenarios.",
+            "confidence": 3,
+            "confidence_note": "Based on Western Europe cross-cutting dynamic with confidence 3, supported by country confidences ranging from 3 (Spain) to 4 (Germany, UK, Italy, Norway). Weakest link is Spain's single-source reporting from Heraldo."
+          },
+          {
+            "title": "Energy Crisis Reveals Complete Global Coordination Architecture Collapse",
+            "regions_involved": [
+              "Eastern Europe",
+              "Asia-Pacific",
+              "Near East/South Asia"
+            ],
+            "what": "The Middle East war's energy price shock triggered parallel but entirely uncoordinated crisis responses across three regions this week. Eastern Europe implemented unilateral fuel market interventions (Estonia's growth forecast cuts, Czech direct market intervention, Latvia's aviation emergency loans), while Asia-Pacific deployed massive national economic tools (Korea's 26.2 trillion won budget, Japan's strategic reserve mobilization, Australia's fuel crisis response, Indonesia's subsidy maintenance) - all responding to identical external triggers through different national mechanisms.",
+            "why_it_matters": "This pattern confirms the systematic absence of multilateral economic coordination mechanisms during shared external shocks, forcing countries to deploy national crisis tools independently despite facing identical vulnerabilities. The complete lack of coordination across regions demonstrates that the international economic architecture has no functional crisis response capability for energy price volatility, leaving countries to navigate global shocks through purely national responses.",
+            "what_to_watch": "Additional energy price shock responses, attempts at multilateral coordination initiatives, creation of crisis coordination mechanisms, US or Chinese leadership in global crisis response coordination.",
+            "confidence": 4,
+            "confidence_note": "Supported by parallel dynamics from Eastern Europe (confidence 3) and Asia-Pacific (confidence 3), with country confidences ranging from 3-4. Pattern confirmed across six countries implementing uncoordinated responses to identical triggers."
+          },
+          {
+            "title": "Democratic Stress Achieves Structural Synchronization Across European Powers",
+            "regions_involved": [
+              "Western Europe"
+            ],
+            "what": "Far-right parties achieved simultaneous electoral breakthroughs across three major European democracies this week, representing the most significant populist advance since the 2010s migration crisis. France's RN maintains front-runner status for 2027 presidential elections, Germany's AfD overtook the governing Union in national polls for the first time, and Sweden completed SD normalization with guaranteed cabinet representation post-2026.",
+            "why_it_matters": "These parallel gains across different electoral systems and political cycles indicate structural democratic vulnerabilities rather than episodic electoral fluctuations. The synchronized breakthrough suggests systemic pressures operating across European democratic institutions simultaneously, potentially reshaping European governance models and EU institutional dynamics as populist parties transition from opposition to governing roles across multiple major powers.",
+            "what_to_watch": "Expansion of far-right gains to additional European democracies, impact on EU institutional functionality, coordination between successful populist parties, mainstream party adaptation strategies, spillover effects to other democratic regions.",
+            "confidence": 4,
+            "confidence_note": "Supported by Western Europe cross-cutting dynamic with confidence 4, based on country assessments all maintaining confidence level 4 (France, Germany, Sweden). No weak links in underlying assessments."
+          }
+        ],
+        "dynamics_created": [],
+        "dynamics_updated": [
+          1,
+          3,
+          4,
+          8,
+          9,
+          11,
+          12,
+          13
+        ],
+        "dynamics_archived": [],
+        "items_considered_rejected": [
+          {
+            "candidate": "Iranian systematic Gulf infrastructure targeting campaign",
+            "reason_rejected": "Regional pattern limited to Near East/South Asia without cross-regional implications or global-level visibility"
+          },
+          {
+            "candidate": "Crisis-driven diplomatic intensification across multiple theaters",
+            "reason_rejected": "Pattern represents national activation of existing diplomatic frameworks rather than new global dynamic, with insufficient evidence of coordination or interaction effects"
+          },
+          {
+            "candidate": "China's pressure campaign coordination challenges",
+            "reason_rejected": "Regional Asia-Pacific pattern without sufficient cross-regional evidence or global structural implications"
+          },
+          {
+            "candidate": "Ukraine conflict spillover institutionalization",
+            "reason_rejected": "Continuation of existing Dynamic #13 without sufficient new evidence to warrant separate executive briefing treatment this week"
+          }
+        ],
+        "self_corrections": []
+      }
+    },
+    "thinking": "Let me work through this systematically based on the role and process outlined.\n\n## Phase 1: Identify Candidates\n\nLooking at the regional reports for cross-regional patterns:\n\n1. **Synchronized European rejection of US Iran escalation demands** (Western Europe) + Americas showing \"no cross-cutting dynamics\" + Asia-Pacific showing various US alliance tensions = potential global US alliance fragmentation pattern, but I need to check what's already captured in the ledger.\n\n2. **Continental far-right electoral consolidation** (Western Europe) - this appears to be regional only, not cross-regional.\n\n3. **Ukrainian Military Operations Create Regional Spillover** (Frontline Eastern Europe) - this is already captured as Dynamic #13 in my ledger.\n\n4. **Energy Price Volatility Drives National Economic Interventions** (Eastern Europe) + **Parallel Economic Crisis Response to Middle East War** (Asia-Pacific) + Iran pressure on Gulf infrastructure (Near East/South Asia) = this looks like it connects to Dynamic #11 about economic crisis coordination absence.\n\n5. **Iranian Military Pressure Campaign Against Gulf Infrastructure** (Near East/South Asia) - this seems like a regional development, but could be part of broader Middle East crisis driving other responses.\n\n6. **Crisis-Driven Diplomatic Intensification** (Near East/South Asia) - could connect to broader crisis response patterns.\n\n7. **France as Strategic Hedging Partner** (Asia-Pacific) + European sovereignty assertions = this could connect to Dynamic #9 about strategic hedging universalization.\n\n8. **China's Pressure Campaign Coordination Challenge** (Asia-Pacific) - regional pattern.\n\nLet me check my existing dynamics against this week's evidence:\n\n- Dynamic #1 (Regional Institutional Differentiation): Americas shows \"no cross-cutting dynamics\" but that itself confirms continued regional incompatibility with US management\n- Dynamic #3 (Cross-Regional Domestic Political Fragmentation): Western Europe shows \"Continental far-right electoral consolidation\" - this is escalation\n\n\n- Dynamic #4 (Alliance Integration Resilience): Eastern Europe spillover management confirms this\n- Dynamic #8 (Global Crisis Alignment Test): Western Europe's \"Synchronized European rejection of US Iran escalation demands\" is major evidence\n- Dynamic #9 (Strategic Hedging): Asia-Pacific \"France as Strategic Hedging Partner\" confirms this\n- Dynamic #11 (Global Economic Crisis Coordination Absence): Strong confirmation from both Eastern Europe and Asia-Pacific parallel responses\n- Dynamic #12 (Alliance Integration Bifurcation): Western Europe's synchronized rejection vs Eastern Europe's spillover management confirms this\n- Dynamic #13 (Ukraine Conflict Spillover): Direct continuation from Eastern Europe\n\nNow I'm looking for new patterns that haven't been captured yet.\n\nThe Western Europe report shows five countries simultaneously rejecting US Iran escalation demands. This simultaneity and coordination suggests it fits Dynamic #12 as continued Western European resistance rather than warranting separate treatment. Eastern Europe and Asia-Pacific both display parallel but uncoordinated energy crisis responses, which directly supports Dynamic #11.\n\nMoving to evaluate the active dynamics against prior state: Americas data showing \"no cross-cutting dynamics\" actually reinforces regional incompatibility. Western Europe demonstrates \"Continental far-right electoral consolidation\" across France and other nations, which I should track as an emerging pattern. I need to complete the partial thought first. Copying from the next thinking:\n\nFrom the ledger, week 2026-03-29 had 3 briefing items. I need to avoid repeating the same framing.\n\nNow I'll summarize the rest: The strongest candidates are European coordination against US pressure shown through synchronized Iran rejection, the absence of global crisis management mechanisms evident in fragmented energy responses, geographic expansion of the Ukraine conflict creating cascading regional challenges, and structural synchronization of democratic stress through far-right movements across Western Europe. I should verify what was already covered last week to ensure fresh angles. The previous week noted three briefing items without detail, so I'm avoiding redundancy here. What stands out as genuinely escalated:\n\nThe synchronized rejection from five European nations against US Iran policy represents an unusual level of coordinated pushback. There's also a striking absence of economic crisis management infrastructure—multiple regions responding in parallel without any apparent coordination. Meanwhile, far-right movements are consolidating across major democracies at the same time.\n\nI need to update the global ledger with these dynamics and then document what didn't make the cut for the executive brief."
+  },
+  "usage": {
+    "input_tokens": 9385,
+    "output_tokens": 7821
+  }
+}
