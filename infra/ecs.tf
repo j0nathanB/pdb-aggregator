@@ -69,12 +69,28 @@ resource "aws_ecs_task_definition" "pipeline" {
           valueFrom = aws_secretsmanager_secret.github_token.arn
         },
         {
+          name      = "BRAVE_API_KEY"
+          valueFrom = aws_secretsmanager_secret.brave_api_key.arn
+        },
+        {
           name      = "SEARCHAPI_KEY"
           valueFrom = aws_secretsmanager_secret.searchapi_key.arn
         },
         {
           name      = "DIFFBOT_TOKEN"
           valueFrom = aws_secretsmanager_secret.diffbot_token.arn
+        },
+        {
+          name      = "BROWSERBASE_API_KEY"
+          valueFrom = aws_secretsmanager_secret.browserbase_api_key.arn
+        },
+        {
+          name      = "BROWSERBASE_PROJECT_ID"
+          valueFrom = aws_secretsmanager_secret.browserbase_project_id.arn
+        },
+        {
+          name      = "THE_GUARDIAN_API_KEY"
+          valueFrom = aws_secretsmanager_secret.guardian_api_key.arn
         },
       ]
 

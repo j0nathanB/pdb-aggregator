@@ -50,6 +50,7 @@ Nothing in the **kept** category should be destroyed:
 - ECS task execution role + secrets-access policy
 - Scheduler IAM role
 - Anthropic, GitHub, SearchAPI, Diffbot secrets (containers — values stay)
+- New: Brave, Browserbase (×2), Guardian secrets — added by this same commit; populated post-apply
 
 ### Migration steps
 
@@ -152,7 +153,7 @@ If something goes wrong:
 | `ecs.tf` | Fargate cluster + task definition + CloudWatch log group |
 | `eventbridge.tf` | The Sunday 9pm Eastern cron schedule |
 | `iam.tf` | ECS execution role, ECS task role, scheduler role |
-| `secrets.tf` | Secrets Manager entries (Anthropic, GitHub, SearchAPI, Diffbot) |
+| `secrets.tf` | Secrets Manager entries (Anthropic, GitHub, Brave, SearchAPI, Diffbot, Browserbase ×2, Guardian) |
 | `variables.tf` | Tunable inputs (region, CPU/memory, image tag, schedule toggle) |
 | `outputs.tf` | Resource ARNs for reference |
 | `terraform.tfvars` | Local config (gitignored) |
@@ -172,17 +173,23 @@ If you're applying after the email-infra cleanup, the plan will show ~25 resourc
 
 ### 2. Populate secrets
 
-After Terraform creates the empty secret containers, set their values:
+After Terraform creates the empty secret containers, set their values. The pipeline uses **eight** secrets — copy each from your local `.env`:
 
 ```bash
+# Required for every run
 aws secretsmanager put-secret-value \
   --secret-id ideal-brief-prod-anthropic-api-key \
   --secret-string 'sk-ant-...'
 
 aws secretsmanager put-secret-value \
   --secret-id ideal-brief-prod-github-token \
-  --secret-string '{"token":"ghp_..."}'
+  --secret-string 'ghp_...'
 
+aws secretsmanager put-secret-value \
+  --secret-id ideal-brief-prod-brave-api-key \
+  --secret-string '...'
+
+# Source extraction + government discovery
 aws secretsmanager put-secret-value \
   --secret-id ideal-brief-prod-searchapi-key \
   --secret-string '...'
@@ -190,9 +197,21 @@ aws secretsmanager put-secret-value \
 aws secretsmanager put-secret-value \
   --secret-id ideal-brief-prod-diffbot-token \
   --secret-string '...'
+
+aws secretsmanager put-secret-value \
+  --secret-id ideal-brief-prod-browserbase-api-key \
+  --secret-string '...'
+
+aws secretsmanager put-secret-value \
+  --secret-id ideal-brief-prod-browserbase-project-id \
+  --secret-string '...'
+
+aws secretsmanager put-secret-value \
+  --secret-id ideal-brief-prod-guardian-api-key \
+  --secret-string '...'
 ```
 
-The GitHub token needs `repo` scope (push access to the repo).
+The GitHub token needs `repo` scope (push access to the repo). All other values are plain strings — copy them from your local `.env` file.
 
 ### 3. Build and push the Docker image
 
@@ -350,7 +369,48 @@ aws secretsmanager put-secret-value \
   --secret-string 'sk-ant-NEW...'
 ```
 
-The change applies on the next Fargate run (each task pulls fresh secret values at startup).
+The change applies on the next Fargate run (each task pulls fresh secret values at startup). No image rebuild, no Terraform change.
+
+### Adding a new secret
+
+When the pipeline starts using a new API key (e.g., a new collection adapter), three things have to change:
+
+1. **Declare the secret container** in `infra/secrets.tf`:
+
+```terraform
+resource "aws_secretsmanager_secret" "new_thing_api_key" {
+  name        = "${local.name_prefix}-new-thing-api-key"
+  description = "API key for the new thing"
+
+  tags = {
+    Name = "${local.name_prefix}-new-thing-api-key"
+  }
+}
+```
+
+2. **Wire it into the task definition** in `infra/ecs.tf`, inside the `secrets = [...]` block:
+
+```terraform
+{
+  name      = "NEW_THING_API_KEY"
+  valueFrom = aws_secretsmanager_secret.new_thing_api_key.arn
+},
+```
+
+3. **Apply Terraform**, then **populate the value**:
+
+```bash
+cd infra
+terraform apply
+
+aws secretsmanager put-secret-value \
+  --secret-id ideal-brief-prod-new-thing-api-key \
+  --secret-string '...'
+```
+
+The next Fargate task that starts will see `NEW_THING_API_KEY` as an environment variable. No image rebuild needed — secrets are injected by the ECS execution role at task startup.
+
+The execution role's `secrets-access` policy uses a wildcard (`secret:${local.name_prefix}-*`), so any new secret following the naming convention is automatically allowed.
 
 ### Checking task history
 
