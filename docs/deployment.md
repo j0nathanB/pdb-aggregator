@@ -15,6 +15,133 @@ The pipeline does its own work. AWS provides the schedule, the Fargate runtime, 
 
 There is no email, no S3, no API Gateway, no DynamoDB. The only outputs are git commits and CloudWatch logs.
 
+## Migration: from email-infra state to current state
+
+If you're reading this for the first time after the email-infra cleanup commit (`15cfe9d`), the live AWS environment **still has the old infrastructure**. The Terraform code and the Python `run_pipeline.py` are both updated, but nothing is deployed yet. Here's the sequence to bring AWS in line with the code.
+
+### What changes in AWS
+
+`terraform plan` will show roughly **25 resources being destroyed**:
+
+| Category | Resources |
+|----------|-----------|
+| Lambda functions | `email_sender`, `unsubscribe`, `ses_events`, `dead_mans_switch`, `authorizer` |
+| SES | configuration set, identity, event destination |
+| DynamoDB | `subscribers` table, `email_events` table |
+| API Gateway | HTTP API, stage, routes, integrations, authorizer, log group |
+| S3 | `artifacts` bucket (versioning, encryption, lifecycle, public access block) |
+| Secrets Manager | `api_key` secret + version |
+| IAM | `lambda_execution` role, `lambda_authorizer` role, attached policies |
+| EventBridge | `dead_mans_switch` schedule |
+| VPC | `lambda` security group |
+
+And ~3 resources being **modified in place**:
+
+| Resource | What changes |
+|----------|--------------|
+| `aws_ecs_task_definition.pipeline` | New revision — env vars trimmed to `{ENVIRONMENT, REPO}`, S3/SES/DynamoDB references removed |
+| `aws_iam_role_policy.ecs_task` | The S3 + SES policy is removed (the role becomes empty) |
+| `aws_scheduler_schedule.generate_brief` | New cron expression: `cron(0 21 ? * SUN *)` in `America/New_York` |
+
+Nothing in the **kept** category should be destroyed:
+- VPC, public subnet, Fargate security group
+- ECR repo and existing image
+- ECS cluster and CloudWatch log group
+- ECS task execution role + secrets-access policy
+- Scheduler IAM role
+- Anthropic, GitHub, SearchAPI, Diffbot secrets (containers — values stay)
+
+### Migration steps
+
+#### 1. Snapshot the destroy list before applying
+
+```bash
+cd infra
+terraform plan -out=migration.tfplan
+terraform show migration.tfplan | tee migration_review.txt
+```
+
+Read `migration_review.txt`. Confirm the destroy list matches the expected ~25 resources above. If anything else shows up — particularly the four kept secrets, the ECS cluster, the ECR repo, or the VPC — STOP and investigate. The `enable_schedules` variable should still be `true` in your `terraform.tfvars`; if it's `false`, the schedule will also flip to `DISABLED` (probably not what you want during a migration).
+
+#### 2. Apply Terraform
+
+```bash
+terraform apply migration.tfplan
+```
+
+This destroys the email infra and updates the task definition. The cron is updated atomically — there's no window where the schedule is broken.
+
+The old Docker image is still in ECR and still works at this point. Its `run_pipeline.py` checks env vars before doing email/S3 work and silently skips when they're absent, so even if a Fargate task runs between this step and the image rebuild, it will still produce a valid brief.
+
+#### 3. Rebuild and push the Docker image
+
+```bash
+ECR_URL=$(terraform output -raw ecr_repository_url)
+
+aws ecr get-login-password --region us-east-1 \
+  | docker login --username AWS --password-stdin "${ECR_URL%/*}"
+
+cd ..    # back to project root
+docker buildx build --platform linux/arm64 \
+  -t "${ECR_URL}:latest" --push .
+```
+
+The new image has the updated `run_pipeline.py` (commits `briefs/` for traces, no email/S3 stubs). Fargate pulls `:latest` on each task start, so the next scheduled run will use it automatically.
+
+#### 4. Test with a manual run
+
+Don't wait until Sunday to find out if it works:
+
+```bash
+cd infra
+aws ecs run-task \
+  --cluster $(terraform output -raw ecs_cluster_name) \
+  --task-definition $(terraform output -raw pipeline_task_definition_arn) \
+  --launch-type FARGATE \
+  --network-configuration "awsvpcConfiguration={
+    subnets=[$(terraform output -raw public_subnet_id)],
+    securityGroups=[$(terraform output -raw fargate_security_group_id)],
+    assignPublicIp=ENABLED
+  }"
+```
+
+Tail the logs:
+
+```bash
+aws logs tail /ecs/ideal-brief-prod-pipeline --follow
+```
+
+Expect ~1.5–2 hours. The task should: clone the repo, run the pipeline, commit `ledgers/ + site/briefs/ + briefs/`, push to `main`, and exit cleanly.
+
+After it finishes, verify:
+- `git pull origin main` brings down the new brief and the trace files
+- The brief shows up at `https://middlepowers.fyi/briefs/{date}/overview` after Mintlify rebuilds (~1 minute)
+- CloudWatch shows the full pipeline log under `/ecs/ideal-brief-prod-pipeline`
+
+#### 5. Confirm next scheduled run
+
+```bash
+aws scheduler get-schedule --name ideal-brief-prod-generate-brief \
+  --query '{Cron:ScheduleExpression,TZ:ScheduleExpressionTimezone,State:State}'
+```
+
+Should return:
+```json
+{
+  "Cron": "cron(0 21 ? * SUN *)",
+  "TZ": "America/New_York",
+  "State": "ENABLED"
+}
+```
+
+### Rollback
+
+If something goes wrong:
+
+- **Bad task definition revision**: revert by running `terraform apply` against the previous git SHA, OR manually update the service to use a prior task definition revision number.
+- **Image bug**: re-tag a known-good image as `latest` and push (or pin `pipeline_image_tag` in `terraform.tfvars` to a specific older tag and `terraform apply`).
+- **Need the email infra back**: check out commit `4e9ac7f` (last commit before the cleanup), `terraform apply` from there. The Lambda function code still exists in git history.
+
 ## What's in `infra/`
 
 | File | What it manages |
