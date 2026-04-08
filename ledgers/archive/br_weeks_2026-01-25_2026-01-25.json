@@ -1,0 +1,377 @@
+[
+  {
+    "week": "2026-01-25",
+    "date_range": "2026-01-18 to 2026-01-25",
+    "depth": "deep_dive",
+    "activity_level": {
+      "rating": "high",
+      "rationale": "Multiple high-prominence developments across alignment and domestic spheres: Lula's NYT op-ed condemning US Venezuela intervention (8 sources), major STF legitimacy crisis over Toffoli/Master Bank (15 sources), Trump's Gaza council invitation creating diplomatic dilemma (4 sources), and extensive 2026 electoral positioning (multiple stories with 12-15 sources). The combination of foreign policy assertion, institutional crisis, and electoral mobilization represents elevated activity."
+    },
+    "category_movements": {
+      "alignment_diplomatic": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Lula publishes NYT op-ed condemning US military intervention in Venezuela",
+            "date": "2026-01-18",
+            "sources": [
+              {
+                "name": "G1",
+                "url": "https://g1.globo.com/economia/noticia/2026/01/18/lula-artigo-eua-venezuela-nyt.ghtml",
+                "tier": 2
+              }
+            ],
+            "summary": "Lula called the US capture of Maduro 'another lamentable chapter in the continuous erosion of international law,' stating this is the first time in 200+ years that South America suffered direct US military attack. Declared Brazil will not submit to hegemonic projects while maintaining dialogue with Washington.",
+            "actors_involved": [
+              "Lula"
+            ],
+            "signal_category_relevance": "Clear assertion of strategic autonomy doctrine against US unilateralism, published in America's paper of record to maximize diplomatic impact while maintaining dialogue channels"
+          },
+          {
+            "headline": "Lula-Xi Jinping phone call coordinates Global South response to Trump initiatives",
+            "date": "2026-01-23",
+            "sources": [
+              {
+                "name": "G1",
+                "url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+                "tier": 2
+              }
+            ],
+            "summary": "45-minute call where Xi emphasized protecting Global South interests and strengthening UN role. Occurred same day as Trump's Gaza Peace Council launch. Lula announced visa exemptions for Chinese citizens in reciprocity for China's 2025 measure.",
+            "actors_involved": [
+              "Lula"
+            ],
+            "signal_category_relevance": "Timing coordination with China against US initiatives demonstrates active Global South alliance building as core element of multi-alignment strategy"
+          },
+          {
+            "headline": "Trump invites Lula to Gaza Peace Council creating diplomatic pressure",
+            "date": "2026-01-19",
+            "sources": [
+              {
+                "name": "Gazeta do Povo",
+                "url": "https://www.gazetadopovo.com.br/republica/trump-pressiona-lula-com-armadilha-diplomatica-em-convite-para-conselho-de-paz-para-gaza/",
+                "tier": 2
+              }
+            ],
+            "summary": "Invitation described as 'diplomatic trap' forcing choice between accepting and subordinating to US-controlled framework or declining and assuming public misalignment. Analysis notes this exposes Lula to 'difficult choice' that constrains multi-alignment strategy.",
+            "actors_involved": [
+              "Lula"
+            ],
+            "signal_category_relevance": "Forces binary choice that tests limits of multi-alignment doctrine - represents escalating pressure to choose between Western and Global South frameworks"
+          }
+        ],
+        "prior_assessment": "Brazil maintains strategic multi-alignment through simultaneous engagement with competing blocs: OECD accession process, Mercosur-EU FTA ratification, BRICS expansion, and COP30 presidency.",
+        "updated_assessment": "Brazil is actively asserting strategic autonomy through high-profile criticism of US military interventionism while deepening coordination with China and Global South partners. The multi-alignment strategy faces increasing pressure from forced binary choices but Lula is responding with more assertive sovereignty positioning rather than accommodation.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "Multiple independent Tier 2 sources confirm coordinated diplomatic positioning with specific actions (NYT op-ed, Xi call timing, visa reciprocity) demonstrating active policy implementation"
+        }
+      },
+      "security_defense": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Army selects European EMADS air defense system",
+            "date": "2026-01-18",
+            "sources": [
+              {
+                "name": "Defesa A\u00e9rea Naval",
+                "url": "https://defesaaereanaval.com.br/exercito/exercito-brasileiro-avanca-na-defesa-antiaerea-com-a-escolha-do-sistema-emads-da-mbda",
+                "tier": 2
+              }
+            ],
+            "summary": "Brazilian Army officially chose European MBDA EMADS system for medium-altitude air defense capability up to 20km altitude. Uses same CAMM-ER missiles as Navy's new frigates for logistics integration. Part of R$30 billion modernization package.",
+            "actors_involved": [
+              "Brazilian Armed Forces"
+            ],
+            "signal_category_relevance": "Confirms continuation of European defense partnerships rather than US or Chinese systems, reinforcing the diversification away from single-source dependency"
+          }
+        ],
+        "prior_assessment": "The military establishment carries political DNA from six republican interventions but faces unprecedented accountability through January 8 coup trials and potential rank-stripping of convicted generals. Defense modernization proceeds through European partnerships.",
+        "updated_assessment": "Defense modernization continues through European partnerships with EMADS air defense system selection reinforcing the pattern of technological diversification away from both US and Chinese systems. The institutional accountability framework from January 8 trials proceeds separately from technical modernization programs.",
+        "confidence_change": null
+      },
+      "economic_tech": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Petrobras announces R$6 billion biorefinery investment plus R$2.8 billion in new vessels",
+            "date": "2026-01-20",
+            "sources": [
+              {
+                "name": "O Globo",
+                "url": "https://oglobo.globo.com/economia/negocios/noticia/2026/01/20/petrobras-vai-investir-r-6-bilhoes-para-ter-sua-primeira-biorrefinaria.ghtml",
+                "tier": 2
+              }
+            ],
+            "summary": "Petrobras will convert Riograndense Refinery into Brazil's first 100% bio-products refinery for R$6 billion, plus R$2.8 billion for five gaseiro ships, 18 barges, and 18 pushers across three shipyards. Projects aim to reduce import dependence and increase logistics efficiency.",
+            "actors_involved": [
+              "Petrobras"
+            ],
+            "signal_category_relevance": "Demonstrates continuation of state-led investment strategy and energy transition while maintaining oil production expansion - confirms the dual approach of renewables plus hydrocarbon export maximization"
+          },
+          {
+            "headline": "Central Bank orders R$2.6 billion provision from BRB over Master Bank exposure",
+            "date": "2026-01-23",
+            "sources": [
+              {
+                "name": "Valor Econ\u00f4mico",
+                "url": "https://valor.globo.com/impresso/noticia/2026/01/23/bc-determina-ao-brb-provisao-de-r-26-bilhoes.ghtml",
+                "tier": 2
+              }
+            ],
+            "summary": "Central Bank required Banco de Bras\u00edlia to establish R$2.6 billion provision for potential losses related to Master Bank portfolio acquisition. BRB says it has capital recomposition plan through various instruments if losses are confirmed.",
+            "actors_involved": [
+              "Banco Central do Brasil"
+            ],
+            "signal_category_relevance": "Shows Central Bank taking proactive regulatory action to contain systemic risk from Master Bank collapse, demonstrating institutional autonomy in financial stability management"
+          }
+        ],
+        "prior_assessment": "The $2.18 trillion economy exhibits structural commodity dependency with China absorbing 27% of total trade through soybeans, oil, and iron ore exports. Fiscal rigidity consumes 90%+ of primary federal expenditure through constitutional mandates.",
+        "updated_assessment": "State-led investment continues through Petrobras biorefinery and shipping investments while Central Bank maintains regulatory vigilance over banking system stability. The underlying structural constraints of commodity dependency and fiscal rigidity remain binding, with policy operating within these parameters rather than challenging them.",
+        "confidence_change": null
+      },
+      "institutional": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "STF faces internal crisis over Toffoli's Master Bank case handling",
+            "date": "2026-01-22",
+            "sources": [
+              {
+                "name": "Folha de S.Paulo",
+                "url": "https://www1.folha.uol.com.br/mercado/2026/01/ministros-do-stf-defendem-envio-do-caso-master-a-1a-instancia-como-saida-honrosa-para-toffoli.shtml",
+                "tier": 2
+              }
+            ],
+            "summary": "Internal STF pressure on Justice Toffoli over his conduct in Master Bank investigation, including jet travel with defense lawyer and family business connections to Master-linked funds. Other justices advocate 'honorable exit' by sending case to first instance, but Toffoli resists.",
+            "actors_involved": [
+              "STF"
+            ],
+            "signal_category_relevance": "Shows internal fractures within the institution central to democratic defense, creating legitimacy pressures on the Court's authority - though institutional framework continues operating"
+          }
+        ],
+        "prior_assessment": "The 1988 Constitution's coalition presidentialism requires constant Centr\u00e3o bargaining for governability, while STF judicial activism expanded through self-initiated inquiries and digital platform regulation.",
+        "updated_assessment": "Coalition presidentialism dynamics continue with Centr\u00e3o bargaining patterns intact, while STF faces internal legitimacy pressure over the Master Bank case handling. The judicial activism pattern persists but with increased institutional stress that could constrain future self-initiated inquiries.",
+        "confidence_change": null
+      },
+      "domestic_regime": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Lula signals 2026 reelection candidacy maintaining Alckmin ticket",
+            "date": "2026-01-18",
+            "sources": [
+              {
+                "name": "Veja",
+                "url": "https://veja.abril.com.br/politica/a-reuniao-em-que-lula-sinalizou-que-repetira-chapa-com-alckmin-em-2026/",
+                "tier": 2
+              }
+            ],
+            "summary": "In private meeting, Lula indicated plans to repeat winning ticket with VP Alckmin, saying 'in a winning team, you don't change players.' Also discussed S\u00e3o Paulo electoral scenarios with different roles for Haddad depending on Tarc\u00edsio's presidential intentions.",
+            "actors_involved": [
+              "Lula"
+            ],
+            "signal_category_relevance": "Confirms electoral planning despite age/health concerns, maintaining continuity strategy for 2026 race that polling shows will be highly competitive"
+          },
+          {
+            "headline": "Pro-Bolsonaro rally draws 18,000 supporters in Bras\u00edlia demanding freedom",
+            "date": "2026-01-25",
+            "sources": [
+              {
+                "name": "G1",
+                "url": "https://g1.globo.com/df/distrito-federal/noticia/2026/01/25/manifestacao-pela-liberdade-de-bolsonaro-reune-18-mil-pessoas-em-brasilia-diz-ong.ghtml",
+                "tier": 2
+              }
+            ],
+            "summary": "Rally organized by Deputy Nikolas Ferreira drew ~18,000 people calling for Bolsonaro's release and other January 8 convictions. Demonstrates continued mobilization capacity despite former president's imprisonment and ineligibility.",
+            "actors_involved": [
+              "Bolsonaro"
+            ],
+            "signal_category_relevance": "Shows Bolsonaro movement retains substantial organized support and mobilization infrastructure independent of the leader's physical presence - confirms movement institutionalization beyond personality"
+          },
+          {
+            "headline": "PT activates electoral machinery across multiple states for 2026",
+            "date": "2026-01-23",
+            "sources": [
+              {
+                "name": "G1",
+                "url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+                "tier": 2
+              }
+            ],
+            "summary": "Workers' Party organizing electoral strategies including pressuring Haddad for Senate run in S\u00e3o Paulo, negotiating Marina Silva's potential return, defining candidates across states. Shows systematic preparation for competitive 2026 cycle.",
+            "actors_involved": [
+              "PT",
+              "Haddad"
+            ],
+            "signal_category_relevance": "Demonstrates left-wing electoral machinery activation in response to competitive polling environment - both sides preparing for intense 2026 competition"
+          },
+          {
+            "headline": "Polling shows Lula leading but competitive 2026 scenarios with Bolsonaro family",
+            "date": "2026-01-22",
+            "sources": [
+              {
+                "name": "Poder360",
+                "url": "https://www.poder360.com.br/poder-pesquisas/flavio-bolsonaro-vence-em-2o-turno-contra-lula-diz-pesquisa/",
+                "tier": 2
+              }
+            ],
+            "summary": "Futura/Apex polling shows Fl\u00e1vio Bolsonaro defeating Lula 48.1%-41.9% in hypothetical runoff, while Lula leads most first-round scenarios. Confirms competitive dynamics with Bolsonaro political legacy transferring to family members.",
+            "actors_involved": [
+              "Lula",
+              "Bolsonaro"
+            ],
+            "signal_category_relevance": "Validates assessment that political competition remains structured around Lula-Bolsonaro axis despite former president's legal situation - polarization persists through proxy candidates"
+          }
+        ],
+        "prior_assessment": "Political competition centers on the Lula-Bolsonaro axis despite Bolsonaro's imprisonment, with evangelical growth creating cross-cutting cleavages in traditional left-wing constituencies.",
+        "updated_assessment": "The political system remains fundamentally structured around Lula-Bolsonaro polarization despite the former president's imprisonment and ineligibility. Both sides demonstrate continued organizational capacity - PT through electoral machinery activation and Lula's 2026 candidacy signals, Bolsonarismo through 18,000-person mobilization and competitive polling for Fl\u00e1vio Bolsonaro. The 2026 race will be highly competitive with institutional legitimacy pressures (STF crisis) adding complexity.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "Multiple independent sources across polling, electoral organizing, and mobilization events confirm the persistence of polarized competition with both sides maintaining operational capacity"
+        }
+      }
+    },
+    "unexpected_developments": [
+      {
+        "headline": "Unknown",
+        "date": "2026-01-25",
+        "source": "unknown",
+        "source_tier": 2,
+        "signal_category": "alignment_diplomatic",
+        "assessment": "",
+        "disposition": "logged"
+      }
+    ],
+    "absence_check": [
+      {
+        "expected": "",
+        "signal_category": "alignment_diplomatic",
+        "occurred": false,
+        "significance": "",
+        "confidence": 2
+      }
+    ],
+    "devils_advocate": {
+      "challenges": [
+        "The alignment_diplomatic confidence increase to 4 rests on source dependency masquerading as independent verification. G1, Gazeta do Povo, and other Tier 2 outlets reporting Lula's NYT op-ed, Xi call, and Trump invitation response are all covering the same official government actions and statements, not providing independent verification of strategic intent. Multiple outlets reporting the same press releases or official announcements represents one source repeated, not multiple independent sources.",
+        "The economic_tech assessment persists in the 'structural constraints remain binding' narrative despite evidence that could challenge this frame. Petrobras's R$8.8 billion investment package represents significant state-led economic activism that could signal loosening fiscal constraints or strategic economic repositioning, yet the analyst immediately categorizes it as operating 'within existing parameters' without examining whether the parameters themselves might be shifting.",
+        "The domestic_regime confidence increase to 4 appears miscalibrated against the evidence quality. The supporting evidence includes one rally attendance figure (18K), routine party electoral organizing, and polling from a single source partnership (Poder360/Futura/Apex). This represents normal political activity rather than dramatically stronger evidence warranting a confidence increase.",
+        "The alignment_diplomatic assessment lacks a genuine alternative interpretation. The developments (Venezuela criticism, China coordination, Trump resistance) are presented as clear evidence of strategic autonomy assertion, but could equally represent domestic political positioning aimed at Lula's left-wing base rather than fundamental foreign policy realignment. High-profile anti-US rhetoric serves domestic political needs regardless of actual strategic intent.",
+        "Structural claim verification is inadequate with only one unspecified claim checked against 35 in the ledger. The single check lacks proper identification (which numbered claim) and the 'elite-managed transition' evidence (measured diplomatic response vs mass mobilization) is thin support for whatever structural pattern is being tested."
+      ],
+      "recommended_adjustments": [
+        "Require non-governmental sources for alignment_diplomatic strategic intent within two weeks or downgrade confidence to 2. Look for independent analysts, foreign diplomatic commentary, or policy implementation evidence beyond official statements and their media coverage.",
+        "Re-examine whether the R$8.8 billion Petrobras investment package represents continuity within existing fiscal constraints or signals increased state economic activism that challenges the structural assessment. Consider alternative framing that accounts for potential shifts in state-led development strategy.",
+        "Justify the domestic_regime confidence increase with evidence beyond routine political activity, or return confidence to 3. Rally attendance and electoral organizing represent normal political competition rather than evidence of intensified polarization dynamics.",
+        "Add alternative interpretation for alignment developments: could this be domestic political positioning rather than genuine strategic autonomy? Evaluate whether anti-US rhetoric serves electoral base maintenance independent of actual foreign policy shifts.",
+        "Identify and properly test at least 3 structural claims by number, explaining what evidence would confirm or challenge each. Provide specific claim numbers and evidence standards rather than generic pattern-matching."
+      ]
+    },
+    "self_corrections": [],
+    "structural_claim_checks": [
+      {
+        "claim_ref": "unknown",
+        "claim_text": "",
+        "status": "confirmed",
+        "evidence": "Lula's measured response to US Venezuela intervention through NYT op-ed rather than mass mobilization follows the elite-managed transition pattern - diplomatic rather than popular resistance",
+        "confidence_in_claim": 3
+      }
+    ],
+    "story_clusters": [
+      {
+        "headline": "Lula criticizes Trump and US military intervention in Venezuela",
+        "summary": "President Lula published an op-ed in the New York Times condemning the US military operation that captured Venezuelan leader Maduro, calling it a violation of international law. He also criticized Trump's governing style via social media during events in Rio Grande do Sul.",
+        "source_url": "https://g1.globo.com/economia/noticia/2026/01/18/lula-artigo-eua-venezuela-nyt.ghtml",
+        "source_name": "g1.globo.com"
+      },
+      {
+        "headline": "STF faces crisis over Toffoli's handling of Master Bank case",
+        "summary": "Justice Dias Toffoli's conduct of the Master Bank fraud investigation sparked internal STF tensions and calls for ethics codes. President Fachin defended Toffoli while other ministers expressed concerns about the case's handling and Toffoli's potential conflicts of interest.",
+        "source_url": "https://www1.folha.uol.com.br/mercado/2026/01/ministros-do-stf-defendem-envio-do-caso-master-a-1a-instancia-como-saida-honrosa-para-toffoli.shtml",
+        "source_name": "oglobo.globo.com"
+      },
+      {
+        "headline": "Trump invites Lula to Gaza Peace Council creating diplomatic dilemma",
+        "summary": "President Trump invited Lula to join a new Gaza Peace Council, putting Brazil in a difficult diplomatic position between supporting multilateralism through the UN and engaging with US-led initiatives. The invitation is seen as a calculated diplomatic pressure move.",
+        "source_url": "https://www.gazetadopovo.com.br/republica/trump-pressiona-lula-com-armadilha-diplomatica-em-convite-para-conselho-de-paz-para-gaza/",
+        "source_name": "gazetadopovo.com.br"
+      },
+      {
+        "headline": "Petrobras announces R$6+ billion investment in shipbuilding and biorrefineries",
+        "summary": "Petrobras announced major investments including R$2.8 billion for new ships and maritime vessels, plus R$6 billion to convert the Riograndense Refinery into Brazil's first biorefinery. The announcements were made during events in Rio Grande do Sul with President Lula present.",
+        "source_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/01/20/petrobras-vai-investir-r-6-bilhoes-para-ter-sua-primeira-biorrefinaria.ghtml",
+        "source_name": "oglobo.globo.com"
+      },
+      {
+        "headline": "Pro-Bolsonaro rally in Bras\u00edlia draws 18,000 supporters, lightning strike injures dozens",
+        "summary": "A rally organized by Deputy Nikolas Ferreira supporting imprisoned former President Bolsonaro drew approximately 18,000 people to Bras\u00edlia. During the event, a lightning strike hit the crowd, injuring 72 people who required medical attention.",
+        "source_url": "https://g1.globo.com/df/distrito-federal/noticia/2026/01/25/manifestacao-pela-liberdade-de-bolsonaro-reune-18-mil-pessoas-em-brasilia-diz-ong.ghtml",
+        "source_name": "g1.globo.com"
+      },
+      {
+        "headline": "Lula signals 2026 reelection ticket with Vice President Alckmin",
+        "summary": "President Lula indicated he plans to maintain the same ticket with Vice President Geraldo Alckmin for his 2026 reelection campaign, saying 'in a winning team, you don't change players' during a private meeting with Alckmin.",
+        "source_url": "https://veja.abril.com.br/politica/a-reuniao-em-que-lula-sinalizou-que-repetira-chapa-com-alckmin-em-2026/",
+        "source_name": "veja.abril.com.br"
+      },
+      {
+        "headline": "Lula and Xi Jinping discuss bilateral cooperation and visa exemptions",
+        "summary": "Brazilian President Lula and Chinese President Xi Jinping held a phone conversation discussing deepening strategic cooperation to protect Global South interests and strengthen the UN's role. Lula announced Brazil will grant visa exemptions to some categories of Chinese citizens.",
+        "source_url": "https://g1.globo.com/politica/noticia/2026/01/23/lula-e-xi-conversa-telefone.ghtml",
+        "source_name": "g1.globo.com"
+      },
+      {
+        "headline": "PT strategizes 2026 elections across multiple states",
+        "summary": "The Workers' Party is organizing electoral strategies for 2026, including pressuring Fernando Haddad to run for Senate in S\u00e3o Paulo, negotiating Marina Silva's potential return to the party, and defining candidates across various states including Pernambuco, Rio Grande do Norte, and Rio Grande do Sul.",
+        "source_url": "https://g1.globo.com/politica/blog/julia-duailibi/post/2026/01/22/pt-haddad-candidatura-sp.ghtml",
+        "source_name": "g1.globo.com"
+      },
+      {
+        "headline": "Haddad discusses economic policy and potential 2026 candidacy",
+        "summary": "Finance Minister Fernando Haddad addressed economic challenges, attributing public debt pressure to high interest rates rather than fiscal deficits. He discussed his potential departure from the ministry for 2026 elections and proposed transferring investment fund oversight from CVM to the Central Bank following the Master Bank scandal.",
+        "source_url": "https://g1.globo.com/economia/noticia/2026/01/19/apos-escandalo-no-banco-master-haddad-quer-banco-central-fiscalizando-e-regulando-fundos-de-investimento-hoje-na-cvm.ghtml",
+        "source_name": "agenciabrasil.ebc.com.br"
+      },
+      {
+        "headline": "Arthur Lira and Hugo Motta accused of pressuring TCU in Master Bank case",
+        "summary": "Senator Renan Calheiros accused Chamber of Deputies President Hugo Motta and former President Arthur Lira of pressuring the Federal Court of Accounts (TCU) regarding the Master Bank case. Lira denied the accusations, calling them 'fake news' aimed at gaining media attention.",
+        "source_url": "https://www.estadao.com.br/politica/calheiros-diz-que-motta-e-lira-pressionaram-tcu-para-anular-liquidacao-do-master/",
+        "source_name": "jc.uol.com.br"
+      },
+      {
+        "headline": "Brazilian Armed Forces modernization and personnel developments",
+        "summary": "Multiple developments in Brazil's military including the Army's selection of the European EMADS air defense system, planned acquisition of Centauro II tanks for Roraima, and STF decisions regarding convicted military personnel's participation in Armed Forces activities.",
+        "source_url": "https://defesaaereanaval.com.br/exercito/exercito-brasileiro-avanca-na-defesa-antiaerea-com-a-escolha-do-sistema-emads-da-mbda",
+        "source_name": "sociedademilitar.com.br"
+      },
+      {
+        "headline": "Polls show Lula leading 2026 presidential scenarios against Bolsonaro family",
+        "summary": "New polling by Apex/Futura shows President Lula leading in most first-round scenarios for the 2026 presidential election, though Senator Fl\u00e1vio Bolsonaro leads in some configurations and wins in simulated second-round matchups. The polls tested various scenarios including potential candidates like Governor Tarc\u00edsio.",
+        "source_url": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/01/22/lula-e-flavio-bolsonaro-lideram-em-cenario-com-tarcisio-no-1-turno-aponta-pesquisa.htm",
+        "source_name": "noticias.uol.com.br"
+      },
+      {
+        "headline": "PT uses AI-generated content to counter Pix disinformation campaign",
+        "summary": "PT-linked communication networks launched AI-generated videos to counter false information about Pix payment system taxation, including content that portrayed opponents as 'cockroaches.' The campaign responded to disinformation spread by right-wing figures about government tax policies.",
+        "source_url": "https://infomoney.com.br/politica/rede-do-pt-usa-ia-brava-para-desmentir-fake-do-pix-e-associa-direita-a-baratas",
+        "source_name": "infomoney.com.br"
+      },
+      {
+        "headline": "ABIN requests authorization for new civil service examination",
+        "summary": "The Brazilian Intelligence Agency (ABIN) submitted a request to the Ministry of Management and Innovation for authorization to hold a new public examination to fill positions across four career tracks, with salaries up to R$19,000. The request remains under analysis.",
+        "source_url": "https://www.apostilasopcao.com.br/blog/abin/",
+        "source_name": "apostilasopcao.com.br"
+      },
+      {
+        "headline": "Central Bank orders R$2.6 billion provision from BRB over Master Bank exposure",
+        "summary": "The Central Bank determined that Banco de Bras\u00edlia (BRB) must establish a R$2.6 billion provision related to potential losses from its acquisition of Master Bank portfolios. The measure is linked to the ongoing Master Bank fraud investigation.",
+        "source_url": "https://valor.globo.com/impresso/noticia/2026/01/23/bc-determina-ao-brb-provisao-de-r-26-bilhoes.ghtml",
+        "source_name": "valor.globo.com"
+      }
+    ]
+  }
+]

@@ -1,3 +1,5 @@
+Use research mode to ground claims in reputable sources
+
 You are producing a **Structural Country Dossier** for **{{COUNTRY}}**. This dossier is not a chronological history. It is an analytical reference document that explains why this country behaves the way it does today by identifying the historical structures, traumas, dependencies, and constraints that continue to exert gravitational pull on its decision-makers and population.
 
 ### Primary Consumer: Automated Intelligence Pipeline

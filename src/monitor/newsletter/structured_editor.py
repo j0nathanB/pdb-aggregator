@@ -438,6 +438,7 @@ Weave the items into a unified analytical essay of 3-5 SUBSTANTIAL paragraphs. E
 - Reorder for narrative flow — lead with the most important development.
 - Add transitions so the brief reads as a coherent story, not disconnected observations.
 - Eliminate redundancy across items.
+- When a regional report contains a concrete fact — a number, a named actor, a direct action — and you reference that finding in your briefing item, the concrete fact must survive. If you write 'European countries resisted American pressure,' stop and name which countries did what."
 - If evidence is thin, say so in plain language.
 - Find the connections. Where are the same actors or forces at work? What is the overarching pattern this week?
 - Produce a genuine synthesis — not a list of items with transitions bolted on, and not a compression of each item into one sentence.
@@ -473,7 +474,7 @@ Translate foreign-language quotes into English.
 
 <constraints>
 - Do not change analytical judgments.
-- Do not add facts, claims, or context not present in the inputs.
+- Do not add facts, claims, or context not present in the inputs. You may add editorial framing — interpretive turns, rhetorical structure, transitions — that make the analysis land, provided they don't alter the analytical judgment.
 - Do not add inline source citations.
 - Do not produce markdown formatting (headings, bullets, bold) — just plain prose paragraphs.
 </constraints>
@@ -835,7 +836,7 @@ Translate foreign-language quotes into English.
 
 <constraints>
 - Do not change analytical judgments.
-- Do not add facts, claims, or context not present in the inputs.
+- Do not add facts, claims, or context not present in the inputs. You may add editorial framing — interpretive turns, rhetorical structure, transitions — that make the analysis land, provided they don't alter the analytical judgment.
 - Do not produce markdown formatting (headings, bullets, bold) — just plain prose paragraphs.
 </constraints>
 

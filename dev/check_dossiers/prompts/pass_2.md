@@ -1,4 +1,20 @@
+Use research mode to ground claims in reputable sources
+
 You are producing a **Structural Country Dossier** for **COUNTRY**. This dossier is not a chronological history. It is an analytical reference document that explains why this country behaves the way it does today by identifying the historical structures, traumas, dependencies, and constraints that continue to exert gravitational pull on its decision-makers and population.
+
+**GENERATION INSTRUCTION:**
+
+This is Pass 2 of 3. Pass 1 output is provided above as context. Generate ONLY the following sections:
+
+- Section 8: ENVIRONMENTAL & CLIMATIC STRUCTURE
+- Section 9: ILLICIT NETWORKS & SHADOW GOVERNANCE
+- Section 10: INFORMATION ECOSYSTEM & MEDIA STRUCTURE
+- Section 11: INTERNATIONAL INSTITUTIONAL COMMITMENTS & LEGAL FRAMEWORKS
+- Section 12: MILITARY & SECURITY SECTOR DNA
+
+Do NOT regenerate Sections 0–7. Do NOT generate Sections 13–20. Stop after Section 12 and its STRUCTURAL CLAIMS block.
+
+Pass 1 used footnotes [^1] through [^0]. Begin this pass’s footnote numbering at [^1]. Do not redefine any footnotes from Pass 1.
 
 ### Primary Consumer: Automated Intelligence Pipeline
 
@@ -173,7 +189,7 @@ Aim for a minimum of 15–25 citations per pass. Density should be highest in se
 
 ## PASS 1 OUTPUT (Sections 0–7 — Context, Do Not Regenerate)
 
-# Structural Country Dossier: Italy — Research Compilation (Sections 0–7)
+# Structural Country Dossier: COUNTRY — Research Compilation (Sections 0–7)
 
 **This research compilation provides the factual foundation for Pass 1 of the Middle Powers Monitor's Structural Country Dossier on COUNTRY.** It synthesizes findings across all eight sections, prioritizing concrete statistics, institutional details, named actors, and analytical frameworks. All data points are current through early 2026 unless otherwise noted.
 
@@ -183,15 +199,3 @@ Aim for a minimum of 15–25 citations per pass. Density should be highest in se
 
 ---
 
-**GENERATION INSTRUCTION:**
-
-This is Pass 2 of 3. Pass 1 output is provided above as context. Generate ONLY the following sections:
-- Section 8: ENVIRONMENTAL & CLIMATIC STRUCTURE
-- Section 9: ILLICIT NETWORKS & SHADOW GOVERNANCE
-- Section 10: INFORMATION ECOSYSTEM & MEDIA STRUCTURE
-- Section 11: INTERNATIONAL INSTITUTIONAL COMMITMENTS & LEGAL FRAMEWORKS
-- Section 12: MILITARY & SECURITY SECTOR DNA
-
-Do NOT regenerate Sections 0–7. Do NOT generate Sections 13–20. Stop after Section 12 and its STRUCTURAL CLAIMS block.
-
-Pass 1 used footnotes [^1] through [^0]. Begin this pass’s footnote numbering at [^1]. Do not redefine any footnotes from Pass 1.

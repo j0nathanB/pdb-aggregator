@@ -11,14 +11,15 @@
 ### Tools & dependencies
 
 ```bash
-# Python packages (trafilatura for curl test, playwright for browser test)
-pip install trafilatura playwright
+# Python packages (trafilatura for curl test, playwright for browser test, browserbase for cloud browser)
+pip install trafilatura playwright browserbase
 playwright install chromium
 
 # Diffbot API token — stored in /Users/zen/dev/src/pdb/.env as DIFFBOT_TOKEN
 # Rate limit: 5 calls/minute (1 call per 12 seconds)
 
-# Claude WebFetch — available natively via Claude Code's WebFetch tool
+# Browserbase — requires BROWSERBASE_API_KEY and BROWSERBASE_PROJECT_ID in .env
+# Cloud browser that bypasses Cloudflare JS challenges and bot protection
 ```
 
 ### Input format
@@ -93,24 +94,7 @@ Expected time: ~1-2 minutes for 50 domains.
 
 ---
 
-## Method 2: Claude WebFetch (native)
-
-Use Claude Code's built-in WebFetch tool. For each URL, call:
-
-```
-WebFetch(url=<url>, prompt="Extract the article title and first 2 sentences of the article body text. If this is a paywall, cookie wall, or error page, say BLOCKED.")
-```
-
-**Scoring:**
-- **OK** — article content was returned
-- **BLOCKED** — paywall, cookie wall, or captcha detected
-- **FAILED** — error, timeout, redirect loop, or "unable to fetch"
-
-Save results in the same JSON format as curl. Note: this must be run interactively through Claude Code or via subagents. For large batches (>30 domains), split into parallel agents of ~30-40 domains each to avoid timeouts. Each agent should read `input_urls.json` and process its assigned chunk.
-
----
-
-## Method 3: Diffbot API (rate-limited — run last or in background)
+## Method 2: Diffbot API (rate-limited — run last or in background)
 
 **Rate limit: 5 calls per minute.** A failed `/v3/article` call followed by a `/v3/analyze` fallback = 2 calls, so worst case is ~2.5 domains/minute.
 
@@ -190,9 +174,9 @@ Expected time: ~12 seconds per URL minimum. 50 domains × 3 URLs = ~30 min best 
 
 ---
 
-## Method 4: Playwright + trafilatura (headless browser)
+## Method 3: Playwright + trafilatura (local headless browser)
 
-Uses a real Chromium browser to render JS, dismiss cookie banners, and extract content. Slowest but handles JS-rendered sites that curl can't.
+Uses a local Chromium browser to render JS, dismiss cookie banners, and extract content. Handles JS-rendered sites that curl can't.
 
 ```python
 """playwright_test.py — Headless browser extraction."""
@@ -254,6 +238,67 @@ Expected time: ~5-10 seconds per URL. 50 domains × 3 URLs = ~12-25 minutes.
 
 ---
 
+## Method 4: Browserbase (cloud browser — bypasses bot protection)
+
+Uses Browserbase's managed cloud browser infrastructure via CDP. Handles Cloudflare JS challenges, aggressive bot detection, and geo-restricted content that local Playwright can't bypass. Requires `BROWSERBASE_API_KEY` and `BROWSERBASE_PROJECT_ID` in `.env`.
+
+```python
+"""browserbase_test.py — Cloud browser extraction via Browserbase."""
+import json, os, time
+from browserbase import Browserbase
+from playwright.sync_api import sync_playwright
+import trafilatura
+
+API_KEY = os.environ["BROWSERBASE_API_KEY"]
+PROJECT_ID = os.environ["BROWSERBASE_PROJECT_ID"]
+
+input_data = json.load(open("input_urls.json"))
+results = {}
+
+bb = Browserbase(api_key=API_KEY)
+
+for domain in sorted(input_data.keys()):
+    urls = input_data[domain]["urls"]
+    domain_results = []
+    for url in urls:
+        try:
+            session = bb.sessions.create(project_id=PROJECT_ID)
+            with sync_playwright() as p:
+                browser = p.chromium.connect_over_cdp(session.connect_url)
+                context = browser.contexts[0]
+                page = context.pages[0]
+                page.goto(url, timeout=30000, wait_until="domcontentloaded")
+                # Wait for Cloudflare JS challenge to resolve
+                page.wait_for_timeout(8000)
+                html = page.content()
+                browser.close()
+
+            text = trafilatura.extract(html)
+            if text and len(text.strip()) > 200:
+                domain_results.append({"url": url, "status": "OK", "snippet": text[:200]})
+            else:
+                domain_results.append({"url": url, "status": "FAILED", "reason": "insufficient text after extraction"})
+        except Exception as e:
+            domain_results.append({"url": url, "status": "FAILED", "reason": str(e)[:100]})
+
+    ok = sum(1 for r in domain_results if r["status"] == "OK")
+    results[domain] = {
+        "ok": ok, "total": len(domain_results),
+        "score": f"{ok}/{len(domain_results)}", "results": domain_results
+    }
+    print(f"{domain}: {ok}/{len(domain_results)}")
+
+with open("browserbase_results.json", "w") as f:
+    json.dump(results, f, indent=2)
+```
+
+Run: `python3 browserbase_test.py`
+Expected time: ~10-15 seconds per URL (includes challenge wait). 50 domains × 3 URLs = ~25-40 minutes.
+
+**When to use over local Playwright:** Sites protected by Cloudflare JS challenges, aggressive bot detection, or IP-based blocking. Browserbase sessions run from cloud IPs with residential fingerprints, bypassing protections that block local Playwright.
+
+---
+
 ## Compiling the Cross-Method Report
 
 After all 4 methods have run, compile results:
@@ -263,19 +308,19 @@ After all 4 methods have run, compile results:
 import json
 
 curl = json.load(open("curl_results.json"))
-claude = json.load(open("claude_results.json"))
 diffbot = json.load(open("diffbot_results.json"))
 pw = json.load(open("playwright_results.json"))
+bb = json.load(open("browserbase_results.json"))
 
-all_domains = sorted(set(curl) | set(claude) | set(diffbot) | set(pw))
+all_domains = sorted(set(curl) | set(diffbot) | set(pw) | set(bb))
 
 lines = []
-lines.append("| # | Domain | Claude | curl+traf | Diffbot | Playwright | Best |")
-lines.append("|---|--------|--------|-----------|---------|------------|------|")
+lines.append("| # | Domain | curl+traf | Diffbot | Playwright | Browserbase | Best |")
+lines.append("|---|--------|-----------|---------|------------|-------------|------|")
 
 for i, d in enumerate(all_domains, 1):
     scores = {}
-    for name, data in [("Claude", claude), ("curl", curl), ("Diffbot", diffbot), ("PW", pw)]:
+    for name, data in [("curl", curl), ("Diffbot", diffbot), ("PW", pw), ("BB", bb)]:
         if d in data:
             scores[name] = data[d]["ok"] / max(data[d]["total"], 1)
 
@@ -284,7 +329,7 @@ for i, d in enumerate(all_domains, 1):
     def fmt(data, d):
         return data[d]["score"] if d in data else "--"
 
-    lines.append(f"| {i} | `{d}` | {fmt(claude,d)} | {fmt(curl,d)} | {fmt(diffbot,d)} | {fmt(pw,d)} | {best} |")
+    lines.append(f"| {i} | `{d}` | {fmt(curl,d)} | {fmt(diffbot,d)} | {fmt(pw,d)} | {fmt(bb,d)} | {best} |")
 
 print("\n".join(lines))
 ```
@@ -299,14 +344,15 @@ From our tests on 377 news/policy domains:
 |--------|-----------------|----------|
 | **curl + trafilatura** | **81%** | Most sites. Fast, free, no rate limits. First choice. |
 | **Diffbot API** | 65% | Sites that block Python user-agents but serve Diffbot's crawler (reuters.com, nationalpost.com, defence.gov.au). Rate-limited. |
-| **Claude WebFetch** | 51% on hard domains, 100% on easy | Sites that block trafilatura but allow Claude's infra (e.g., cbc.ca). |
 | **Playwright** | 48% | JS-rendered sites where content isn't in initial HTML (intelligenceonline.com, president.gov.ua, lalettre.fr, irozhlas.cz). |
+| **Browserbase** | Use for Cloudflare-protected sites | Sites behind Cloudflare JS challenges and aggressive bot detection that block both curl and local Playwright. Cloud IPs with residential fingerprints. |
 
 **Government sites specifically** were the hardest category in prior tests. defence.gov.au, mod.go.jp, mnd.gov.tw all failed across multiple methods. Expect lower success rates than news/policy sources.
 
 ## Recommended execution order
 
 1. **curl + trafilatura first** — fast, free, best overall performer
-2. **For domains where curl scored <3/3**, run Claude WebFetch and Diffbot in parallel
-3. **For domains still <3/3**, run Playwright as last resort
-4. Compile cross-method report to determine the optimal method per domain
+2. **For domains where curl scored <3/3**, run Diffbot in parallel
+3. **For domains still <3/3**, run Playwright (local) for JS-rendered sites
+4. **For domains still failing** (especially Cloudflare-protected), run Browserbase
+5. Compile cross-method report to determine the optimal method per domain
