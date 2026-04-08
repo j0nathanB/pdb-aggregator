@@ -55,11 +55,8 @@ resource "aws_ecs_task_definition" "pipeline" {
       essential = true
 
       environment = [
-        { name = "ARTIFACTS_BUCKET", value = aws_s3_bucket.artifacts.id },
-        { name = "SES_FROM_EMAIL", value = var.ses_from_email },
-        { name = "ALERT_EMAIL", value = var.alert_email },
         { name = "ENVIRONMENT", value = var.environment },
-        { name = "CONTENT_REPO", value = var.content_repo },
+        { name = "REPO", value = var.content_repo },
       ]
 
       secrets = [

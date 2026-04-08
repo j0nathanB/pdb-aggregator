@@ -5,10 +5,12 @@ Usage:
     python scripts/run_pipeline.py --date 2026-02-15
     python scripts/run_pipeline.py                     # auto-detect next date
 
-Local mode:  Runs directly in the repo. Commits ledgers/ + site/briefs/.
+Local mode:  Runs directly in the repo. Commits ledgers/ + site/briefs/ + briefs/.
 Fargate mode: Clones the repo, runs from clone, commits + pushes to main.
 
-Post-pipeline steps (S3 upload, preview email) are stubbed for later.
+Mintlify Cloud handles deployment automatically when the push lands on main.
+No email, no S3 upload — debugging artifacts (traces, manifests) are committed
+to the repo so they're accessible via `git pull`.
 """
 
 import argparse
@@ -94,11 +96,17 @@ def run_pipeline(end_date: str, project_root: Path, extra_args: list[str] | None
 # =============================================================================
 
 def commit_results(end_date: str, project_root: Path) -> bool:
-    """Git add ledgers/ + site/briefs/ and commit if there are changes."""
+    """Git add ledgers/ + site/briefs/ + briefs/ and commit if there are changes.
+
+    Includes briefs/ (the trace + manifest directory) so debugging context
+    survives a Fargate run — the user can `git pull` and inspect traces
+    locally without needing CloudWatch.
+    """
+    paths_to_commit = ["ledgers/", "site/briefs/", "briefs/"]
     try:
         # Check for changes in the paths we care about
         status = subprocess.run(
-            ["git", "status", "--porcelain", "ledgers/", "site/briefs/"],
+            ["git", "status", "--porcelain", *paths_to_commit],
             cwd=project_root, capture_output=True, text=True, check=True,
         )
         if not status.stdout.strip():
@@ -106,7 +114,7 @@ def commit_results(end_date: str, project_root: Path) -> bool:
             return False
 
         subprocess.run(
-            ["git", "add", "ledgers/", "site/briefs/"],
+            ["git", "add", *paths_to_commit],
             cwd=project_root, check=True, capture_output=True,
         )
         subprocess.run(
@@ -177,34 +185,6 @@ def is_in_repo() -> bool:
 
 
 # =============================================================================
-# Stubs (for future Fargate automation)
-# =============================================================================
-
-def upload_artifacts(end_date: str, project_root: Path) -> bool:
-    """(Stub) Upload brief artifacts to S3."""
-    bucket = os.environ.get("ARTIFACTS_BUCKET", "")
-    if not bucket:
-        logger.info("ARTIFACTS_BUCKET not set, skipping S3 upload")
-        return False
-
-    # TODO: Upload site/briefs/{end_date}/ contents to S3
-    logger.warning("S3 upload not yet implemented")
-    return False
-
-
-def send_preview_email(end_date: str, pushed: bool) -> bool:
-    """(Stub) Send preview email via SES."""
-    alert_email = os.environ.get("ALERT_EMAIL", "")
-    if not alert_email:
-        logger.info("ALERT_EMAIL not set, skipping preview email")
-        return False
-
-    # TODO: Read pipeline summary from global ledger, send via SES
-    logger.warning("Preview email not yet implemented")
-    return False
-
-
-# =============================================================================
 # Main
 # =============================================================================
 
@@ -245,22 +225,18 @@ def main():
     if not args.no_commit:
         committed = commit_results(end_date, project_root)
 
-    # Step 3: Push to remote
+    # Step 3: Push to remote — this triggers Mintlify Cloud deployment
     pushed = False
     if committed and not args.no_push:
         pushed = push_to_remote(project_root)
-
-    # Step 4: Upload artifacts (stub)
-    upload_artifacts(end_date, project_root)
-
-    # Step 5: Send preview email (stub)
-    send_preview_email(end_date, pushed)
 
     logger.info("=" * 60)
     logger.info("Done!")
     logger.info("  Brief: %s", end_date)
     logger.info("  Committed: %s", committed)
     logger.info("  Pushed: %s", pushed)
+    if pushed:
+        logger.info("  Mintlify will rebuild the site automatically.")
     logger.info("=" * 60)
 
 

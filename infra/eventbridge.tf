@@ -1,7 +1,12 @@
-# EventBridge Scheduler rules for pipeline execution and monitoring
+# EventBridge Scheduler rule for pipeline execution
 
 # -----------------------------------------------------------------------------
-# Schedule: Generate Brief (Sunday 11 PM ET = Monday 04:00 UTC)
+# Schedule: Generate Brief (Sunday 9 PM Eastern, DST-aware)
+#
+# Pipeline takes ~1.5-2 hours to execute, so a 9 PM kickoff finishes around
+# 10:30-11 PM Eastern, leaving the user time for manual review before sleep.
+# Using America/New_York timezone (instead of fixed UTC offset) so the
+# schedule stays at 9 PM Eastern across DST transitions.
 # -----------------------------------------------------------------------------
 
 resource "aws_scheduler_schedule" "generate_brief" {
@@ -12,8 +17,8 @@ resource "aws_scheduler_schedule" "generate_brief" {
     mode = "OFF"
   }
 
-  schedule_expression          = "cron(0 4 ? * MON *)"
-  schedule_expression_timezone = "UTC"
+  schedule_expression          = "cron(0 21 ? * SUN *)"
+  schedule_expression_timezone = "America/New_York"
 
   target {
     arn      = aws_ecs_cluster.main.arn
@@ -34,34 +39,6 @@ resource "aws_scheduler_schedule" "generate_brief" {
     retry_policy {
       maximum_retry_attempts       = 2
       maximum_event_age_in_seconds = 3600 # 1 hour
-    }
-  }
-
-  state = var.enable_schedules ? "ENABLED" : "DISABLED"
-}
-
-# -----------------------------------------------------------------------------
-# Schedule: Dead Man's Switch (Monday 8 AM ET = Monday 13:00 UTC)
-# -----------------------------------------------------------------------------
-
-resource "aws_scheduler_schedule" "dead_mans_switch" {
-  name       = "${local.name_prefix}-dead-mans-switch"
-  group_name = "default"
-
-  flexible_time_window {
-    mode = "OFF"
-  }
-
-  schedule_expression          = "cron(0 13 ? * MON *)"
-  schedule_expression_timezone = "UTC"
-
-  target {
-    arn      = aws_lambda_function.dead_mans_switch.arn
-    role_arn = aws_iam_role.scheduler.arn
-
-    retry_policy {
-      maximum_retry_attempts       = 2
-      maximum_event_age_in_seconds = 3600
     }
   }
 

@@ -1,4 +1,4 @@
-# IAM roles for ECS Fargate and Lambda functions
+# IAM roles for ECS Fargate
 
 # =============================================================================
 # ECS Task Execution Role (for Fargate to pull images, write logs)
@@ -24,7 +24,7 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
-# Allow reading secrets from Secrets Manager
+# Allow reading secrets from Secrets Manager (Anthropic key, GitHub token, etc.)
 resource "aws_iam_role_policy" "ecs_execution_secrets" {
   name = "secrets-access"
   role = aws_iam_role.ecs_task_execution.id
@@ -42,8 +42,13 @@ resource "aws_iam_role_policy" "ecs_execution_secrets" {
 }
 
 # =============================================================================
-# ECS Task Role (for the running container to access AWS services)
+# ECS Task Role (for the running container)
 # =============================================================================
+#
+# The pipeline container runs `scripts/run_pipeline.py`, which clones the repo
+# via HTTPS + token, runs the LLM pipeline, commits, and pushes back to main.
+# It doesn't need any AWS service access — secrets are injected as env vars
+# by the execution role above.
 
 resource "aws_iam_role" "ecs_task" {
   name = "${local.name_prefix}-ecs-task"
@@ -57,120 +62,6 @@ resource "aws_iam_role" "ecs_task" {
         Service = "ecs-tasks.amazonaws.com"
       }
     }]
-  })
-}
-
-resource "aws_iam_role_policy" "ecs_task" {
-  name = "task-permissions"
-  role = aws_iam_role.ecs_task.id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "S3ArtifactsWrite"
-        Effect = "Allow"
-        Action = [
-          "s3:PutObject",
-          "s3:GetObject",
-          "s3:ListBucket"
-        ]
-        Resource = [
-          aws_s3_bucket.artifacts.arn,
-          "${aws_s3_bucket.artifacts.arn}/*"
-        ]
-      },
-      {
-        Sid    = "SESPreviewEmail"
-        Effect = "Allow"
-        Action = [
-          "ses:SendEmail",
-          "ses:SendRawEmail"
-        ]
-        Resource = "*"
-        Condition = {
-          StringEquals = {
-            "ses:FromAddress" = var.ses_from_email
-          }
-        }
-      }
-    ]
-  })
-}
-
-# =============================================================================
-# Lambda Execution Role (for email sender, handlers)
-# =============================================================================
-
-resource "aws_iam_role" "lambda_execution" {
-  name = "${local.name_prefix}-lambda"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [{
-      Action = "sts:AssumeRole"
-      Effect = "Allow"
-      Principal = {
-        Service = "lambda.amazonaws.com"
-      }
-    }]
-  })
-}
-
-# Basic Lambda execution (CloudWatch Logs)
-resource "aws_iam_role_policy_attachment" "lambda_basic" {
-  role       = aws_iam_role.lambda_execution.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-}
-
-resource "aws_iam_role_policy" "lambda_permissions" {
-  name = "lambda-permissions"
-  role = aws_iam_role.lambda_execution.id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "DynamoDBAccess"
-        Effect = "Allow"
-        Action = [
-          "dynamodb:GetItem",
-          "dynamodb:PutItem",
-          "dynamodb:UpdateItem",
-          "dynamodb:DeleteItem",
-          "dynamodb:Query",
-          "dynamodb:Scan"
-        ]
-        Resource = [
-          aws_dynamodb_table.subscribers.arn,
-          "${aws_dynamodb_table.subscribers.arn}/index/*",
-          aws_dynamodb_table.email_events.arn,
-          "${aws_dynamodb_table.email_events.arn}/index/*"
-        ]
-      },
-      {
-        Sid    = "S3ArtifactsRead"
-        Effect = "Allow"
-        Action = [
-          "s3:GetObject",
-          "s3:HeadObject",
-          "s3:ListBucket"
-        ]
-        Resource = [
-          aws_s3_bucket.artifacts.arn,
-          "${aws_s3_bucket.artifacts.arn}/*"
-        ]
-      },
-      {
-        Sid    = "SESEmailSend"
-        Effect = "Allow"
-        Action = [
-          "ses:SendEmail",
-          "ses:SendRawEmail"
-        ]
-        Resource = "*"
-      }
-    ]
   })
 }
 
@@ -206,7 +97,7 @@ resource "aws_iam_role_policy" "scheduler" {
         Action = [
           "ecs:RunTask"
         ]
-        Resource = "*" # Will be scoped to specific task definition later
+        Resource = "*" # Scoped via condition below
         Condition = {
           ArnLike = {
             "ecs:cluster" = "arn:aws:ecs:${var.aws_region}:*:cluster/${local.name_prefix}-*"
@@ -223,14 +114,6 @@ resource "aws_iam_role_policy" "scheduler" {
           aws_iam_role.ecs_task_execution.arn,
           aws_iam_role.ecs_task.arn
         ]
-      },
-      {
-        Sid    = "InvokeLambda"
-        Effect = "Allow"
-        Action = [
-          "lambda:InvokeFunction"
-        ]
-        Resource = "arn:aws:lambda:${var.aws_region}:*:function:${local.name_prefix}-*"
       }
     ]
   })

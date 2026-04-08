@@ -10,12 +10,6 @@ variable "environment" {
   default     = "prod"
 }
 
-variable "artifacts_bucket_name" {
-  description = "S3 bucket name for brief artifacts"
-  type        = string
-  default     = "ideal-brief-artifacts"
-}
-
 # VPC CIDR - small range sufficient for this workload
 variable "vpc_cidr" {
   description = "CIDR block for VPC"
@@ -33,18 +27,6 @@ variable "availability_zone" {
   description = "Availability zone for subnet"
   type        = string
   default     = "us-east-1a"
-}
-
-# Email settings
-variable "ses_from_email" {
-  description = "Email address to send from (must be verified in SES)"
-  type        = string
-  default     = "brief@idealbrief.org"
-}
-
-variable "alert_email" {
-  description = "Email address for dead man's switch alerts"
-  type        = string
 }
 
 # ECS Pipeline settings
@@ -76,11 +58,4 @@ variable "enable_schedules" {
   description = "Whether to enable EventBridge schedules (set false for initial deploy)"
   type        = bool
   default     = false
-}
-
-# Security
-variable "webhook_api_key" {
-  description = "API key for webhook authentication (generate with: openssl rand -hex 32)"
-  type        = string
-  sensitive   = true
 }

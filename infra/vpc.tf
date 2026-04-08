@@ -70,21 +70,3 @@ resource "aws_security_group" "fargate_task" {
   }
 }
 
-# Security group for Lambda functions in VPC (if needed later)
-resource "aws_security_group" "lambda" {
-  name        = "${local.name_prefix}-lambda"
-  description = "Lambda functions - no inbound, all outbound"
-  vpc_id      = aws_vpc.main.id
-
-  egress {
-    description = "Allow all outbound traffic"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "${local.name_prefix}-lambda-sg"
-  }
-}

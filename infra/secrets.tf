@@ -1,21 +1,5 @@
 # Secrets Manager for API keys and credentials
 
-resource "aws_secretsmanager_secret" "api_key" {
-  name        = "${local.name_prefix}-api-key"
-  description = "API key for webhook authentication"
-
-  tags = {
-    Name = "${local.name_prefix}-api-key"
-  }
-}
-
-resource "aws_secretsmanager_secret_version" "api_key" {
-  secret_id = aws_secretsmanager_secret.api_key.id
-  secret_string = jsonencode({
-    api_key = var.webhook_api_key
-  })
-}
-
 resource "aws_secretsmanager_secret" "github_token" {
   name        = "${local.name_prefix}-github-token"
   description = "GitHub token for PR creation"
