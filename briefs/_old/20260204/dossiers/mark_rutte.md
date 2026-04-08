@@ -1,0 +1,36 @@
+# Dossier: Mark Rutte
+*NATO Secretary General, NATO*
+**Period:** 2026-01-28 to 2026-02-04
+**Generated:** 2026-02-04 12:03
+
+## Main Stories
+
+### NATO chief rejects European army calls amid Trump concerns
+
+BRUSSELS, Belgium — NATO Secretary General Mark Rutte on Monday dismissed calls for a separate European army, telling advocates to "keep dreaming" during a meeting with European Parliament committees. Rutte said Russian President Vladimir Putin would "love" the idea because it would stretch Europe's armies and make them weaker, according to his remarks to lawmakers. The NATO chief said European nations should take more responsibility for their security within the existing transatlantic alliance rather than creating duplicate forces. Spanish Foreign Minister Jose Manuel Albares and European Defence Commissioner Andrius Kubilius have both raised the prospect of a European force in recent weeks amid doubts over President Donald Trump's commitment to European security. Rutte said building a separate European defense capability would cost far more than NATO's agreed 5% of GDP target and would require developing independent nuclear capabilities costing "billions and billions of euros."
+
+*Sources: (Reuters [1](https://www.reuters.com/world/nato-boss-rutte-slaps-down-calls-european-army-prompted-by-trump-fears-2026-01-26/); NATO Press [1](https://www.nato.int/en/news-and-events/articles/news/2026/01/26/nato-secretary-general-attends-meeting-of-the-european-parliaments-committee-on-security-and-defence),[2](https://www.nato.int/en/news-and-events/articles/news/2026/01/28/nato-secretary-general-joins-industry-during-natos-c-uas-week))*
+
+### NATO chief meets Zelenskyy in Kyiv, pledges continued support
+
+KYIV, Ukraine — NATO Secretary General Mark Rutte arrived in Kyiv on Tuesday and met with Ukrainian President Volodymyr Zelenskyy, according to a Financial Times correspondent and NATO officials. In an address to Ukraine's parliament, Rutte said Allied support would not waver and stated "Ukraine is and will remain essential to our security," according to NATO. The NATO chief said Ukraine needs "hard power" to back up any future peace deal, highlighting transatlantic security guarantees. Rutte's visit came after Russia attacked Ukraine with 450 drones and over 60 missiles overnight, Reuters reported.
+
+*Sources: (Reuters [1](https://www.reuters.com/world/europe/natos-rutte-meet-zelenskiy-kyiv-ft-says-2026-02-03/); NATO Press [1](https://www.nato.int/en/news-and-events/articles/news/2026/02/03/nato-secretary-general-in-kyiv-nato-stands-with-ukraine))*
+
+### NATO chief says Europe cannot defend itself without US
+
+BRUSSELS, Belgium — NATO Secretary-General Mark Rutte said Monday that Europe cannot defend itself without U.S. military support and would need to spend 10% of its economic output on defense to go it alone. "If anyone thinks here … that the European Union or Europe as a whole can defend itself without the U.S., keep on dreaming. You can't," Rutte told European Union lawmakers in Brussels. Rutte said Europe would lose "the ultimate guarantor of our freedom, which is the U.S. nuclear umbrella" without American support. His comments come as tensions persist within the 32-nation alliance over President Donald Trump's recent threats regarding Greenland, a territory of NATO ally Denmark, though Trump later dropped those threats after a framework for a deal was reached with Rutte's help.
+
+*Sources: (AP News [1](https://apnews.com/article/nato-europe-us-nuclear-trump-defense-security-c1575be708cbd813f1c7d97c87628ff6))*
+
+### US begins technical talks with Denmark, Greenland on Arctic security
+
+WASHINGTON — Technical talks between the United States, Denmark and Greenland over an Arctic security agreement have begun, Secretary of State Marco Rubio said Wednesday. The discussions stem from a working group created after President Donald Trump's repeated calls for the U.S. to take over Greenland, a Danish territory, which Denmark and Greenland rejected. "It begins today and it will be a regular process," Rubio said while testifying before the Senate Foreign Relations Committee. The Danish Foreign Ministry said the talks focused on addressing U.S. security concerns in the Arctic while respecting Greenland's sovereignty. NATO Secretary-General Mark Rutte helped broker a framework for the discussions after Trump initially threatened tariffs on Denmark and other European countries over the Greenland dispute.
+
+*Sources: (AP News [1](https://apnews.com/article/trump-rubio-greenland-denmark-technical-talks-7e2180f90bc6e7a6005a6895a8164a00))*
+
+## Between the Lines
+
+- Rutte's blunt dismissal of European army proposals while simultaneously stating Europe cannot defend itself without the U.S. suggests NATO leadership is actively discouraging European defense autonomy amid concerns about potential U.S. policy shifts.
+- The timing of Rutte's Kyiv visit coinciding with his strong statements about European defense dependence indicates NATO may be using Ukraine support as leverage to reinforce transatlantic military ties.
+- Rutte's claim that Europe would need to spend 10% of GDP on defense to achieve independence—far above current NATO's 2% target—appears designed to make European military autonomy seem economically prohibitive rather than strategically undesirable.

@@ -1,0 +1,147 @@
+country: Turkey
+code: tr
+tier: pivot
+region: near_east_south_asia
+actors:
+- name: Recep Tayyip Erdoğan
+  role: President
+  primary: true
+  search_terms:
+  - Erdoğan
+  - Erdogan
+  - Recep Tayyip Erdoğan
+- name: AKP
+  role: Governing party (Justice and Development Party)
+  primary: false
+  search_terms:
+  - AKP
+  - AK Parti
+  - Justice and Development Party
+- name: Ekrem İmamoğlu
+  role: Istanbul Mayor (CHP)
+  primary: false
+  search_terms:
+  - İmamoğlu
+  - Imamoglu
+  - Ekrem İmamoğlu
+- name: CHP
+  role: Main opposition (Republican People's Party)
+  primary: false
+  search_terms:
+  - CHP
+  - Republican People's Party
+  - Özgür Özel
+- name: Devlet Bahçeli
+  role: MHP leader (nationalist coalition partner)
+  primary: false
+  search_terms:
+  - Bahçeli
+  - Bahceli
+  - MHP
+- name: TCMB
+  role: Central Bank of Turkey
+  primary: false
+  search_terms:
+  - TCMB
+  - Central Bank of Turkey
+  - Fatih Karahan
+- name: MİT
+  role: National Intelligence Organization
+  primary: false
+  search_terms:
+  - MİT
+  - MIT
+  - İbrahim Kalın
+- name: Turkish Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - TSK
+  - Turkish Armed Forces
+  - Türk Silahlı Kuvvetleri
+- name: DEM Party
+  role: Pro-Kurdish party
+  primary: false
+  search_terms:
+  - DEM
+  - DEM Party
+  - HDP
+- name: Hakan Fidan
+  role: Foreign Minister (former MIT chief)
+  primary: false
+  search_terms:
+  - Hakan Fidan
+  - Fidan
+- name: Mehmet Şimşek
+  role: Finance Minister
+  primary: false
+  search_terms:
+  - Şimşek
+  - Mehmet Şimşek
+  - Simşek
+languages:
+  primary: tr
+  additional:
+  - ku
+  metadata: en
+blind_spots:
+- domain: Kurdish peace process and PKK dissolution
+  reason: Negotiations between Erdogan-Bahçeli alliance and Öcalan/DEM party are opaque;
+    constitutional amendment linkage unclear
+  where_signal_lives: Kurdish media (ANF, Rudaw), DEM Party statements, Turkish MoD
+    communiqués, ICG Turkey reports
+- domain: Monetary policy independence
+  reason: Presidential pressure on TCMB rate decisions is structural but difficult
+    to verify in real time
+  where_signal_lives: TCMB meeting minutes, Financial Times Turkey coverage, IMF Article
+    IV consultations
+- domain: İmamoğlu trial and judicial independence
+  reason: Opposition leader's imprisonment and trial politicized; 90% of media is
+    government-aligned
+  where_signal_lives: Bianet/Medyascope independent coverage, ECHR rulings, Venice
+    Commission opinions
+news_discovery:
+  goggle_file: assets/country_goggles/tr.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: TR
+    search_lang: tr
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - ikili ilişkiler
+    - diplomatik anlaşma
+    - dış politika
+    - ikili zirve
+    - büyükelçi
+    security_defense:
+    - TSK
+    - savunma ihalesi
+    - güvenlik işbirliği
+    - MİT
+    - askeri operasyon
+    economic_tech:
+    - yabancı yatırım
+    - ticaret anlaşması
+    - TCMB
+    - sanayi politikası
+    - enerji güvenliği
+    - supply chain
+    institutional:
+    - NATO
+    - Birleşmiş Milletler
+    - Avrupa Birliği
+    - G20
+    - antlaşma onayı
+    domestic_constraints:
+    - TBMM
+    - AKP
+    - CHP
+    - MHP
+    - DEM Parti
+government_discovery:
+  config_file: assets/government/tr.yaml
+interpretive_context_file: assets/context/tr_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

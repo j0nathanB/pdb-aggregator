@@ -1,0 +1,127 @@
+country: Estonia
+code: ee
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Kristen Michal
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Michal
+  - Kristen Michal
+- name: Alar Karis
+  role: President
+  primary: false
+  search_terms:
+  - Karis
+  - Alar Karis
+- name: Hanno Pevkur
+  role: Defence Minister
+  primary: false
+  search_terms:
+  - Pevkur
+  - Hanno Pevkur
+- name: Margus Tsahkna
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Tsahkna
+  - Margus Tsahkna
+- name: Reform Party
+  role: Governing party
+  primary: false
+  search_terms:
+  - Reform Party
+  - Reformierakond
+- name: EKRE
+  role: Right-wing populist opposition
+  primary: false
+  search_terms:
+  - EKRE
+  - Conservative People's Party
+- name: Estonian Defence Forces
+  role: Military
+  primary: false
+  search_terms:
+  - EDF
+  - Kaitsevägi
+  - Estonian Defence Forces
+- name: Kaitseliit
+  role: Defence League (volunteer)
+  primary: false
+  search_terms:
+  - Kaitseliit
+  - Estonian Defence League
+- name: KAPO
+  role: Internal Security Service
+  primary: false
+  search_terms:
+  - KAPO
+  - Internal Security Service
+- name: Bank of Estonia
+  role: Central Bank (Eurosystem member)
+  primary: false
+  search_terms:
+  - Eesti Pank
+  - Bank of Estonia
+languages:
+  primary: et
+  additional:
+  - ru
+  metadata: en
+blind_spots:
+- domain: Russian-speaking community sentiment
+  reason: Russian-language media largely banned; remaining community views poorly
+    captured in Estonian-language press
+  where_signal_lives: ERR's ETV+ Russian-language service, academic surveys, KAPO
+    annual reports
+- domain: NATO forward presence operations
+  reason: Details of UK-led battlegroup activities at Tapa are classified
+  where_signal_lives: NATO eFP communiqués, UK MoD releases, Estonian Defence Ministry
+    briefings
+news_discovery:
+  goggle_file: assets/country_goggles/ee.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: EE
+    search_lang: et
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - kahepoolsed suhted
+    - diplomaatiline leping
+    - välispoliitika
+    - kahepoolne tippkohtumine
+    - suursaadik
+    security_defense:
+    - Kaitsevägi
+    - sõjaline hange
+    - julgeolekukoostöö
+    - KAPO
+    - Kaitseliit
+    - NATO lahingugrupp
+    economic_tech:
+    - välisinvesteering
+    - kaubandusleping
+    - Eesti Pank
+    - digimajandus
+    - e-residentsus
+    - supply chain
+    institutional:
+    - NATO
+    - Euroopa Liit
+    - ÜRO
+    - Balti koostöö
+    - lepingu ratifitseerimine
+    domestic_constraints:
+    - Riigikogu
+    - Reformierakond
+    - EKRE
+    - koalitsioon
+    - valitsus
+government_discovery:
+  config_file: assets/government/ee.yaml
+interpretive_context_file: assets/context/ee_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

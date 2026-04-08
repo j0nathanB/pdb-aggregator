@@ -1,0 +1,131 @@
+country: South Korea
+code: kr
+tier: next_test
+region: asia_pacific
+actors:
+- name: Lee Jae-myung
+  role: President
+  primary: true
+  search_terms:
+  - Lee Jae-myung
+  - 이재명
+- name: Democratic Party of Korea
+  role: Governing party
+  primary: false
+  search_terms:
+  - DPK
+  - Democratic Party
+  - Minjudang
+- name: People Power Party
+  role: Opposition party
+  primary: false
+  search_terms:
+  - PPP
+  - People Power Party
+  - Gungminuihim
+- name: Bank of Korea
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Bank of Korea
+  - BOK
+  - 한국은행
+- name: Republic of Korea Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - ROK Armed Forces
+  - Korean military
+  - 대한민국 국군
+- name: National Intelligence Service
+  role: Intelligence agency
+  primary: false
+  search_terms:
+  - NIS
+  - National Intelligence Service
+  - 국가정보원
+- name: Samsung Group
+  role: Leading chaebol
+  primary: false
+  search_terms:
+  - Samsung
+  - 삼성
+- name: Han Duck-soo
+  role: Acting President / Prime Minister
+  primary: false
+  search_terms:
+  - Han Duck-soo
+  - 한덕수
+- name: Ministry of National Defense
+  role: Defense establishment
+  primary: false
+  search_terms:
+  - Ministry of National Defense
+  - 국방부
+- name: Yoon Suk-yeol
+  role: Impeached President
+  primary: false
+  search_terms:
+  - Yoon Suk-yeol
+  - Yoon
+  - 윤석열
+languages:
+  primary: ko
+  additional: []
+  metadata: en
+blind_spots:
+- domain: North Korea intelligence and military readiness
+  reason: ROK-US intelligence sharing and contingency planning details are classified
+  where_signal_lives: MND white papers, USFK releases, NIS parliamentary briefings
+- domain: Chaebol-government relations
+  reason: Deep structural ties between conglomerates and political establishment obscured
+    by media ownership
+  where_signal_lives: Fair Trade Commission rulings, Hankyoreh investigative coverage,
+    shareholder activism reports
+news_discovery:
+  goggle_file: assets/country_goggles/kr.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: KR
+    search_lang: ko
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - bilateral relations Korea
+    - diplomatic agreement
+    - ROK foreign policy
+    - bilateral summit
+    - ambassador
+    security_defense:
+    - ROK Armed Forces
+    - defense procurement Korea
+    - security cooperation
+    - NIS Korea
+    - USFK
+    - Ministry of National Defense
+    economic_tech:
+    - foreign investment Korea
+    - trade agreement
+    - Bank of Korea
+    - Samsung
+    - semiconductor
+    - BOK
+    - supply chain
+    institutional:
+    - United Nations
+    - G20
+    - ASEAN
+    - Quad
+    - treaty ratification
+    domestic_constraints:
+    - National Assembly Korea
+    - Democratic Party Korea
+    - People Power Party
+    - impeachment
+    - Constitutional Court Korea
+government_discovery:
+  config_file: assets/government/kr.yaml
+interpretive_context_file: assets/context/kr_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

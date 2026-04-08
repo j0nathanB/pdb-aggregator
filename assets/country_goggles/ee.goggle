@@ -1,0 +1,34 @@
+! name: MPM Estonia
+! description: MPM pipeline source prioritization for Estonia — boosts high-signal sources, discards Kremlin-linked noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=err.ee
+$boost=10,site=postimees.ee
+$boost=10,site=icds.ee
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=delfi.ee
+$boost=5,site=epl.delfi.ee
+$boost=5,site=ekspress.delfi.ee
+$boost=5,site=rus.err.ee
+$boost=5,site=valitsus.ee
+$boost=5,site=vm.ee
+$boost=5,site=kaitseministeerium.ee
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=aripaev.ee
+$boost=3,site=ohtuleht.ee
+$boost=3,site=propastop.org
+$boost=3,site=riigikogu.ee
+$boost=3,site=maaleht.ee
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Kremlin-linked noise ---
+$discard,site=sputnik-news.ee
+$discard,site=baltnews.ee
+$discard,site=rubaltic.ru

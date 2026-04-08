@@ -1,0 +1,707 @@
+{
+  "step": "search",
+  "timestamp": "2026-02-02T20:47:01.013965",
+  "leader": "Claudia Sheinbaum",
+  "time_period": "last_week",
+  "sources": [
+    {
+      "name": "Reuters",
+      "domain": "reuters.com",
+      "source_type": "wire"
+    },
+    {
+      "name": "AP News",
+      "domain": "apnews.com",
+      "source_type": "wire"
+    },
+    {
+      "name": "AFP",
+      "domain": "afp.com",
+      "source_type": "wire"
+    },
+    {
+      "name": "Presidencia de M\u00e9xico",
+      "domain": "gob.mx/presidencia",
+      "source_type": "domestic"
+    },
+    {
+      "name": "El Universal",
+      "domain": "eluniversal.com.mx",
+      "source_type": "domestic"
+    },
+    {
+      "name": "La Jornada",
+      "domain": "jornada.com.mx",
+      "source_type": "domestic"
+    },
+    {
+      "name": "El Financiero",
+      "domain": "elfinanciero.com.mx",
+      "source_type": "domestic"
+    },
+    {
+      "name": "Aristegui Noticias",
+      "domain": "aristeguinoticias.com",
+      "source_type": "domestic"
+    },
+    {
+      "name": "Reforma",
+      "domain": "reforma.com",
+      "source_type": "domestic"
+    }
+  ],
+  "total_snippets": 80,
+  "per_source": {
+    "Reuters": 10,
+    "AP News": 10,
+    "AFP": 0,
+    "Presidencia de M\u00e9xico": 10,
+    "El Universal": 10,
+    "La Jornada": 10,
+    "El Financiero": 10,
+    "Aristegui Noticias": 10,
+    "Reforma": 10
+  },
+  "results_by_source": {
+    "Reuters": {
+      "source_name": "Reuters",
+      "domain": "reuters.com",
+      "source_type": "wire",
+      "query": "site:reuters.com Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Mexico's Sheinbaum, Trump talk trade as USMCA review approaches",
+          "link": "https://www.reuters.com/world/mexicos-sheinbaum-says-she-had-productive-call-with-trump-trade-2026-01-29/",
+          "snippet": "U.S. President Donald Trump and Mexican President Claudia Sheinbaum spoke on Thursday about trade and security, as both governments geared up for...",
+          "source": "Reuters",
+          "date": "4 days ago"
+        },
+        {
+          "title": "Mexico's Sheinbaum does not deny halting oil shipment to Cuba",
+          "link": "https://www.reuters.com/business/energy/sheinbaum-does-not-deny-report-mexico-halted-oil-shipment-cuba-2026-01-27/",
+          "snippet": "Mexican President Claudia Sheinbaum, pressed on Tuesday whether Mexico had halted oil shipments to Cuba amid pressure from Washington, said shipment...",
+          "source": "Reuters",
+          "date": "6 days ago"
+        },
+        {
+          "title": "Mexico seeks to avoid US tariffs on states shipping oil to Cuba",
+          "link": "https://www.reuters.com/world/americas/mexico-seek-diplomatic-solution-after-us-threatens-cuba-oil-tariffs-2026-01-30/",
+          "snippet": "Mexico will seek diplomatic solutions and alternatives to help Cuba, Mexican President Claudia Sheinbaum said on Friday, after U.S. President Donald Trump...",
+          "source": "Reuters",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Trump says Mexico will stop sending oil to energy-starved Cuba",
+          "link": "https://www.reuters.com/business/energy/trump-says-mexico-will-stop-sending-oil-energy-starved-cuba-2026-02-02/",
+          "snippet": "U.S. President Donald Trump said on Monday that Mexico would stop sending oil to Cuba as he ramped up a pressure campaign on the Caribbean nation.",
+          "source": "Reuters",
+          "date": "6 hours ago"
+        },
+        {
+          "title": "Mexico president asks Korean counterpart for more BTS concerts",
+          "link": "https://www.reuters.com/business/media-telecom/mexico-president-asks-korean-counterpart-more-bts-concerts-2026-01-26/",
+          "snippet": "Huge demand to see K-pop boy band BTS, among the world's most popular artists, has led Mexican President Claudia Sheinbaum to formally request of her...",
+          "source": "Reuters",
+          "date": "6 days ago"
+        },
+        {
+          "title": "US may make a deal on Cuba, Trump says",
+          "link": "https://www.reuters.com/world/americas/us-may-make-deal-cuba-trump-says-2026-02-01/",
+          "snippet": "A floating power plant is docked on Havana Bay, after U.S. President Donald Trump vowed to stop Venezuelan oil and money from reaching the island as Cubans...",
+          "source": "Reuters",
+          "date": "2 days ago"
+        },
+        {
+          "title": "Hungary charges Budapest mayor over role in banned Pride march",
+          "link": "https://www.reuters.com/world/hungarian-prosecutors-press-charges-against-budapest-mayor-organizing-banned-2026-01-28/",
+          "snippet": "Hungarian prosecutors have brought charges against Budapest's liberal mayor, Gergely Karacsony, over his role in arranging an LGBTQ+ rights rally,...",
+          "source": "Reuters",
+          "date": "5 days ago"
+        },
+        {
+          "title": "Verificaci\u00f3n: Video antiguo muestra protesta en Los \u00c1ngeles, no bienvenida a Sheinbaum en EEUU",
+          "link": "https://www.reuters.com/fact-check/espanol/KURQKGLBVNKIDAL5L62IRX2F74-2026-02-02/",
+          "snippet": "Un video de una protesta realizada en Los \u00c1ngeles, California, en febrero de 2025 fue compartido de forma err\u00f3nea en redes sociales como si mostrara a una...",
+          "source": "Reuters",
+          "date": "12 hours ago"
+        },
+        {
+          "title": "Mexico's Sheinbaum appeals to South Korea for more BTS shows",
+          "link": "https://www.reuters.com/video/watch/idRW023927012026RP1/",
+          "snippet": "Huge demand to see K-pop boy band BTS, among the world's most popular artists, has led Mexican President Claudia Sheinbaum to formally ask South Korean...",
+          "source": "Reuters",
+          "date": "6 days ago"
+        },
+        {
+          "title": "Mexico's Sheinbaum appeals to South Korea for more BTS shows",
+          "link": "https://jp.reuters.com/video/watch/idRW023927012026RP1/",
+          "snippet": "Huge demand to see K-pop boy band BTS, among the world's most popular artists, has led Mexican President Claudia Sheinbaum to formally ask South Korean...",
+          "source": "\u30ed\u30a4\u30bf\u30fc",
+          "date": "6 days ago"
+        }
+      ]
+    },
+    "AP News": {
+      "source_name": "AP News",
+      "domain": "apnews.com",
+      "source_type": "wire",
+      "query": "site:apnews.com Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Mexico\u2019s Sheinbaum pledges to send humanitarian aid to Cuba",
+          "link": "https://apnews.com/article/mexico-cuba-sheinbaum-humanitarian-aid-oil-0cad2c4f270321c897dd54e094763235",
+          "snippet": "Mexico's President Claudia Sheinbaum says she plans to send humanitarian aid to Cuba this week, including food and other supplies. Sheinbaum's comments come...",
+          "source": "AP News",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Mexican president says her country has paused oil shipments to Cuba",
+          "link": "https://apnews.com/article/mexico-cuba-oil-shipments-trump-venezuela-fb5f082572ee12144908f45802448f67",
+          "snippet": "Mexican President Claudia Sheinbaum says that her government has suspended oil shipments to Cuba, but says the pause in shipments has been a \u201csovereign...",
+          "source": "AP News",
+          "date": "6 days ago"
+        },
+        {
+          "title": "Latin American News | Latest Latin American News",
+          "link": "https://apnews.com/hub/latin-america",
+          "snippet": "Get the latest breaking news in Latin America with The Associated Press. View coverage on all the latest stories, from politics to weather events.",
+          "source": "AP News",
+          "date": "Aug 20, 2020"
+        },
+        {
+          "title": "Trump says US is \u2018starting to talk to Cuba\u2019 as he moves to cut its oil supplies",
+          "link": "https://apnews.com/article/cuba-trump-oil-venezuela-talks-mexico-b4237de7a66adc4524a2abade5e0df38",
+          "snippet": "President Donald Trump says the United States is beginning to talk with Cuban leaders. That word comes as his administration puts greater pressure on the...",
+          "source": "AP News",
+          "date": "1 day ago"
+        },
+        {
+          "title": "After Mexico bans vapes, cartels tighten their grip on a booming market",
+          "link": "https://apnews.com/article/mexico-vaping-cartels-china-sheinbaum-organized-crime-1f8c5cdc2c180a2e909bf49ba499c295",
+          "snippet": "Organized crime in Mexico is tightening its grip on the vape market, a $1.5 billion industry.",
+          "source": "AP News",
+          "date": "2 days ago"
+        },
+        {
+          "title": "Trump threatens tariffs on any country selling oil to Cuba, backing Mexico into a corner",
+          "link": "https://apnews.com/article/oil-cuba-tariffs-trump-mexico-30f1d74a766fee23001684a5bb8079d9",
+          "snippet": "President Donald Trump has signed an executive order that would impose a tariff on any goods from countries that sell or provide oil to Cuba, a move that...",
+          "source": "AP News",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Cuban diplomat tells the AP there\u2019s no dialogue with the US but the island is open to one",
+          "link": "https://apnews.com/article/cuba-cossio-us-trump-dialogue-negotiations-diplomat-bf386bb43bf9e101f0d76d24781c26e6",
+          "snippet": "HAVANA (AP) \u2014 A senior Cuban diplomat told The Associated Press on Monday that his government does not have a dialogue with the United States but is open to...",
+          "source": "AP News",
+          "date": "8 hours ago"
+        },
+        {
+          "title": "Mexico's Sheinbaum reiterates sovereignty in Trump call after Olympic snowboarder detained",
+          "link": "https://apnews.com/article/sheinbaum-trump-ryan-wedding-mexico-olympic-canadian-snowboarder-cartels-58f67e3eaaf237b78998a1ee5bb41b7c",
+          "snippet": "Mexican President Claudia Sheinbaum and U.S. President Donald Trump spoke over the phone on Thursday in the midst of a controversy over the arrest of a...",
+          "source": "AP News",
+          "date": "4 days ago"
+        },
+        {
+          "title": "Democrats and White House reach deal to avert shutdown and fund Homeland Security for now",
+          "link": "https://apnews.com/live/donald-trump-news-updates-1-29-2026",
+          "snippet": "Democrats and President Donald Trump's administration have struck a deal to avert a partial government shutdown and temporarily fund the Department of...",
+          "source": "AP News",
+          "date": "4 days ago"
+        },
+        {
+          "title": "Balloons from Belarus cross into Polish airspace for a third night",
+          "link": "https://apnews.com/article/poland-belarus-lithuania-smuggling-balloons-hybrid-war-1c1a09b5fb2cc2b0b9e13b91409e890e",
+          "snippet": "Poland reports that smuggling balloons from Belarus have crossed into its airspace for a third consecutive night.",
+          "source": "AP News",
+          "date": "17 hours ago"
+        }
+      ]
+    },
+    "AFP": {
+      "source_name": "AFP",
+      "domain": "afp.com",
+      "source_type": "wire",
+      "query": "site:afp.com Claudia Sheinbaum",
+      "result_count": 0,
+      "results": []
+    },
+    "Presidencia de M\u00e9xico": {
+      "source_name": "Presidencia de M\u00e9xico",
+      "domain": "gob.mx/presidencia",
+      "source_type": "domestic",
+      "query": "site:gob.mx/presidencia Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Presidenta Claudia Sheinbaum informa env\u00edo, esta semana, de ayuda humanitaria a Cuba",
+          "link": "https://www.gob.mx/presidencia/prensa/presidenta-claudia-sheinbaum-informa-envio-esta-semana-de-ayuda-humanitaria-a-cuba",
+          "snippet": "En Guaymas, Sonora, la Presidenta Claudia Sheinbaum Pardo inform\u00f3 que el Gobierno de M\u00e9xico planea el env\u00edo, esta semana, de ayuda humanitaria a Cuba:...",
+          "source": "Gob MX",
+          "date": "2 days ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Conferencia de prensa de la presidenta Claudia Sheinbaum Pardo del 27 de enero de 2026",
+          "link": "https://www.gob.mx/presidencia/articulos/version-estenografica-conferencia-de-prensa-de-la-presidenta-claudia-sheinbaum-pardo-del-27-de-enero-de-2026?idiom=es",
+          "snippet": "PRESIDENTA DE M\u00c9XICO, CLAUDIA SHEINBAUM PARDO: Buenos d\u00edas. PREGUNTA: Buenos d\u00edas. PRESIDENTA DE M\u00c9XICO, CLAUDIA SHEINBAUM PARDO: \u00bfC\u00f3mo est\u00e1n?",
+          "source": "Gob MX",
+          "date": "6 days ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Conferencia de prensa de la presidenta Claudia Sheinbaum Pardo del 30 de enero de 2026",
+          "link": "https://www.gob.mx/presidencia/articulos/version-estenografica-conferencia-de-prensa-de-la-presidenta-claudia-sheinbaum-pardo-del-30-de-enero-de-2026",
+          "snippet": "Conferencia encabezada por la presidenta de los Estados Unidos Mexicanos, Claudia Sheinbaum Pardo, desde Tijuana, Baja California.",
+          "source": "Gob MX",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Presidenta Claudia Sheinbaum inaugura la aduana de Nuevo Laredo en Tamaulipas; permitir\u00e1 mayor eficiencia y honestidad en la recaudaci\u00f3n",
+          "link": "https://www.gob.mx/presidencia/prensa/presidenta-claudia-sheinbaum-inaugura-la-aduana-de-nuevo-laredo-en-tamaulipas-permitira-mayor-eficiencia-y-honestidad-en-la-recaudacion",
+          "snippet": "Estas instalaciones nos van a permitir todav\u00eda mayor eficiencia, mayor productividad, mayor honestidad, mayor beneficio para las y los t...",
+          "source": "Gob MX",
+          "date": "1 week ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Inauguraci\u00f3n del Viaducto Elevado, primera etapa. Tijuana, Baja California",
+          "link": "https://www.gob.mx/presidencia/es/articulos/version-estenografica-inauguracion-del-viaducto-elevado-primera-etapa-tijuana-baja-california?idiom=es",
+          "snippet": "Conferencia encabezada por la presidenta de los Estados Unidos Mexicanos, Claudia Sheinbaum Pardo, desde Tijuana, Baja California.",
+          "source": "Gob MX",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Plan de Justicia para Trabajadores Agr\u00edcolas de San Quint\u00edn, Baja California",
+          "link": "https://www.gob.mx/presidencia/es/articulos/version-estenografica-plan-de-justicia-para-trabajadores-agricolas-de-san-quintin-baja-california?idiom=es",
+          "snippet": "Evento encabezado por la presidenta de los Estados Unidos Mexicanos, Claudia Sheinbaum Pardo, desde San Quint\u00edn, Baja California.",
+          "source": "Gob MX",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Presentaci\u00f3n del Proyecto de Expansi\u00f3n del Puerto de Guaymas, Sonora",
+          "link": "https://www.gob.mx/presidencia/es/articulos/presentacion-del-proyecto-de-expansion-del-puerto-de-guaymas-sonora-418541",
+          "snippet": "Evento encabezado por la presidenta de los Estados Unidos Mexicanos, Claudia Sheinbaum Pardo, desde Guaymas, Sonora.",
+          "source": "Gob MX",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Mundial Social 2026: Gobierno de M\u00e9xico presenta 74 Mundialitos y Copas de Futbol",
+          "link": "https://www.gob.mx/presidencia/prensa/mundial-social-2026-gobierno-de-mexico-presenta-74-mundialitos-y-copas-de-futbol?idiom=fr",
+          "snippet": "Se trata de seis copas: Copa Escolar en la que se espera la participaci\u00f3n de 22 millones de estudiantes; Copa Conade; Copa Paral\u00edmpica; l...",
+          "source": "Gob MX",
+          "date": "6 days ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Programas para el Bienestar. Reynosa, Tamaulipas",
+          "link": "https://www.gob.mx/presidencia/es/articulos/version-estenografica-programas-para-el-bienestar-reynosa-tamaulipas",
+          "snippet": "Evento encabezado por la presidenta de los Estados Unidos Mexicanos, Claudia Sheinbaum Pardo, desde Reynosa, Tamaulipas.",
+          "source": "Gob MX",
+          "date": "1 week ago"
+        },
+        {
+          "title": "Versi\u00f3n estenogr\u00e1fica. Inauguraci\u00f3n de la Universidad Nacional \u201cRosario Castellanos\u201d. Tijuana, Baja California",
+          "link": "https://www.gob.mx/presidencia/es/articulos/version-estenografica-inauguracion-de-la-universidad-nacional-rosario-castellanos-tijuana-baja-california",
+          "snippet": "Conferencia encabezada por la presidenta de los Estados Unidos Mexicanos, Claudia Sheinbaum Pardo, desde Tijuana, Baja California.",
+          "source": "Gob MX",
+          "date": "2 days ago"
+        }
+      ]
+    },
+    "El Universal": {
+      "source_name": "El Universal",
+      "domain": "eluniversal.com.mx",
+      "source_type": "domestic",
+      "query": "site:eluniversal.com.mx Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Trump pidi\u00f3 a Sheinbaum dejar de enviar petr\u00f3leo a Cuba",
+          "link": "https://www.eluniversal.com.mx/mundo/trump-responde-a-sheinbaum-considera-que-no-hay-crisis-humanitaria-y-espera-que-cuba-llegue-a-un-trato-para-ser-libre/",
+          "snippet": "El presidente estadounidense Donald Trump consider\u00f3 este s\u00e1bado que la isla buscar\u00e1 un \"trato\" con Washington tras el anuncio de aranceles para los pa\u00edses...",
+          "source": "El Universal",
+          "date": "2 days ago"
+        },
+        {
+          "title": "D\u00eda de la Candelaria: Sheinbaum llega con tamales y atole a la Cineteca Nacional",
+          "link": "https://www.eluniversal.com.mx/nacion/sheinbaum-llega-con-tamales-y-atole-a-la-cineteca-nacional-asi-celebra-la-presidenta-el-dia-de-la-candelaria/",
+          "snippet": "La Presidenta revel\u00f3 que su tamal favorito es el verde.",
+          "source": "El Universal",
+          "date": "11 hours ago"
+        },
+        {
+          "title": "La ma\u00f1anera de Sheinbaum, 30 de enero, minuto a minuto",
+          "link": "https://www.eluniversal.com.mx/nacion/la-mananera-de-sheinbaum-30-de-enero-minuto-a-minuto-2/",
+          "snippet": "Este viernes 30 de enero la presidente Claudia Sheinbaum Pardo ofrece su conferencia matutina desde Tijuana, Baja California, como parte de la estrategia de...",
+          "source": "El Universal",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Sheinbaum reacciona a orden de Trump sobre aranceles por env\u00edo de petr\u00f3leo a Cuba",
+          "link": "https://www.eluniversal.com.mx/nacion/sheinbaum-reacciona-a-orden-de-trump-sobre-aranceles-por-envio-de-petroleo-a-cuba-podria-desencadenar-una-crisis-humanitaria/",
+          "snippet": "La presidenta Claudia Sheinbaum Pardo se posicion\u00f3 sobre la orden del mandatario estadounidense Donald Trump de aplicar aranceles a pa\u00edses que suministran...",
+          "source": "El Universal",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Inauguran \u00faltimo tramo del Tren Interurbano M\u00e9xico\u2013Toluca El Insurgente: Sheinbaum y Brugada encabezan acto",
+          "link": "https://www.eluniversal.com.mx/metropoli/inauguran-ultimo-tramo-del-tren-interurbano-mexicotoluca-el-insurgente-sheinbaum-y-brugada-encabezan-acto/",
+          "snippet": "Autoridades federales y locales cortaron el list\u00f3n en la estaci\u00f3n Vasco de Quiroga y realizaron el recorrido inaugural rumbo a Observatorio. Clara Brugada...",
+          "source": "El Universal",
+          "date": "12 hours ago"
+        },
+        {
+          "title": "Ad\u00e1n Augusto, de \u201ccorcholata\u201d presidencial a pasar factura en el Senado, qu\u00e9 sucede con Noro\u00f1a, Monreal, Velasco y Ebrard",
+          "link": "https://www.eluniversal.com.mx/nacion/adan-augusto-no-es-la-unica-corcholata-desgastada-de-morena-asi-le-ha-ido-a-norona-monreal-velasco-y-ebrard/",
+          "snippet": "EL UNIVERSAL consult\u00f3 a Javier Oliva Posada, doctor en Ciencias Pol\u00edticas, y Mauricio Alfaro, polit\u00f3logo del ITAM, para analizar el desempe\u00f1o durante 2025...",
+          "source": "El Universal",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Niegan en p\u00fablico lo que ceden en privado, escribe Salvador Garc\u00eda Soto",
+          "link": "https://www.eluniversal.com.mx/opinion/salvador-garcia-soto/niegan-en-publico-lo-que-ceden-en-privado/",
+          "snippet": "Justo ayer, que la presidenta Claudia Sheinbaum afirmaba en su conferencia ma\u00f1anera que \u201cno hay operaciones conjuntas con el gobierno de Estados Unidos\u201d y...",
+          "source": "El Universal",
+          "date": "6 days ago"
+        },
+        {
+          "title": "Tras 11 a\u00f1os, el Tren Interurbano llega a la parada final",
+          "link": "https://www.eluniversal.com.mx/metropoli/tras-11-anos-el-tren-interurbano-llega-a-la-parada-final/",
+          "snippet": "El gobierno federal pondr\u00e1 en operaci\u00f3n la \u00faltima etapa de El Insurgente que arribar\u00e1 a Observatorio y as\u00ed conectar al Edomex con la CDMX; la obra termina...",
+          "source": "El Universal",
+          "date": "18 hours ago"
+        },
+        {
+          "title": "Rosa Icela abre puerta a cambios en la reforma electoral de Sheinbaum; Morena analiza puntos clave",
+          "link": "https://www.eluniversal.com.mx/nacion/rosa-icela-abre-puerta-a-cambios-en-la-reforma-electoral-de-sheinbaum-morena-analiza-puntos-clave/",
+          "snippet": "El senador Javier Corral advierti\u00f3 reservas en Morena sobre la reforma electoral y la autonom\u00eda del INE, y reconoce la gesti\u00f3n de Ad\u00e1n Augusto.",
+          "source": "El Universal",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Econom\u00eda mexicana crece 0.7% en 2025",
+          "link": "https://www.eluniversal.com.mx/cartera/economia-mexicana-crece-07-en-2025-confirma-su-peor-resultado-desde-2020/",
+          "snippet": "La cifra qued\u00f3 dentro del rango previsto por el gobierno federal, de 0.5% a 1.5%, y super\u00f3 el avance de 0.4% que el consenso del sector privado pronostic\u00f3...",
+          "source": "El Universal",
+          "date": "3 days ago"
+        }
+      ]
+    },
+    "La Jornada": {
+      "source_name": "La Jornada",
+      "domain": "jornada.com.mx",
+      "source_type": "domestic",
+      "query": "site:jornada.com.mx Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Cuba y las mentiras de Trump",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/02/editorial/cuba-y-las-mentiras-de-trump",
+          "snippet": "El jueves pasado la presidenta Claudia Sheinbaum sostuvo una conversaci\u00f3n telef\u00f3nica con su hom\u00f3logo estadunidense, Donald Trump, quien poco despu\u00e9s...",
+          "source": "La Jornada",
+          "date": "15 hours ago"
+        },
+        {
+          "title": "Enviaremos ayuda humanitaria a Cuba: Sheinbaum",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/02/politica/enviaremos-ayuda-humanitaria-a-cuba-sheinbaum",
+          "snippet": "La presidenta Claudia Sheinbaum Pardo rechaz\u00f3 haber tratado con el presidente de Estados Unidos, Donald Trump, cualquier acuerdo relacionado con el env\u00edo de...",
+          "source": "La Jornada",
+          "date": "16 hours ago"
+        },
+        {
+          "title": "Protestan frente a la antigua embajada de EU en M\u00e9xico contra aranceles de Trump al petr\u00f3leo para Cuba",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/01/politica/protestan-frente-a-la-antigua-embajada-de-eu-en-cdmx-contra-aranceles-de-trump-al-petroleo-para-cuba",
+          "snippet": "Los manifestantes, convocados por el Movimiento Mexicano de Solidaridad con Cuba, condenaron el decreto del presidente Donald Trump que sanciona con...",
+          "source": "La Jornada",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Nunca hablamos del petr\u00f3leo a Cuba con el presidente Trump: Sheinbaum; anuncia ayuda humanitaria a la isla",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/01/politica/sheinbaum-aclara-que-no-hablo-con-trump-sobre-el-envio-de-petroleo-a-cuba",
+          "snippet": "Durante su gira de trabajo por Guaymas, Sonora, la presidenta Claudia Sheinbaum explic\u00f3 que el apoyo incluir\u00e1 alimentos, enseres y productos b\u00e1sicos,...",
+          "source": "La Jornada",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Corea analiza con promotoras m\u00e1s conciertos de BTS tras solicitud; Sheinbaum espera respuesta positiva",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/02/espectaculos/sheinbaum-confirma-respuesta-de-corea-del-sur-sobre-solicitud-para-mas-fechas-de-bts",
+          "snippet": "La presidenta Claudia Sheinbaum, durante su conferencia matutina en la Cineteca Nacional en Chapultepec, en la Ciudad de M\u00e9xico, el 2 de febrero de 2026.",
+          "source": "La Jornada",
+          "date": "13 hours ago"
+        },
+        {
+          "title": "Sheinbaum presenta \u00faltimos detalles del tren 'El Insurgente' que hoy inaugura",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/02/politica/sheinbaum-presenta-detalles-de-construccion-de-ultimo-tramo-del-tren-el-insurgente-que-hoy-inaugura",
+          "snippet": "Ciudad de M\u00e9xico. La presidenta Claudia Sheinbaum Pardo present\u00f3 este lunes los detalles sobre la construcci\u00f3n del \u00faltimo tramo del Tren El insurgente...",
+          "source": "La Jornada",
+          "date": "14 hours ago"
+        },
+        {
+          "title": "Astillero",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/02/columnas/astillero-60587",
+          "snippet": "Con j\u00f3venes en Guaymas, Sonora. La presidenta Claudia Sheinbaum estuvo en este puerto donde se anunci\u00f3 la construcci\u00f3n de una planta de licuefacci\u00f3n de gas...",
+          "source": "La Jornada",
+          "date": "15 hours ago"
+        },
+        {
+          "title": "Fue decisi\u00f3n de Ad\u00e1n Augusto renunciar a coordinaci\u00f3n de Morena en el Senado, aclara Sheinbaum",
+          "link": "https://www.jornada.com.mx/noticia/2026/02/02/politica/renuncia-de-adan-augusto-a-coordinacion-morenista-fue-su-decision-aclara-sheinbaum",
+          "snippet": "Ad\u00e1n Augusto L\u00f3pez anunci\u00f3, durante una conferencia de prensa, su renuncia como coordinador del grupo parlamentario de Morena en el Senado de la Rep\u00fablica y...",
+          "source": "La Jornada",
+          "date": "14 hours ago"
+        },
+        {
+          "title": "Empezamos a hablar con l\u00edderes de Cuba: Trump",
+          "link": "https://www.jornada.com.mx/2026/02/01/politica/003n1pol",
+          "snippet": "Ped\u00ed a Sheinbaum dejar de enviarles petr\u00f3leo y est\u00e1 cumpliendo, asegura.",
+          "source": "La Jornada",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Senadores respaldan a la Presidenta",
+          "link": "https://www.jornada.com.mx/2026/02/02/politica/002n2pol",
+          "snippet": "Los grupos parlamentarios de los partidos Morena, del Trabajo y Verde Ecologista de M\u00e9xico en el Senado respaldaron la postura de la presidenta Claudia...",
+          "source": "La Jornada",
+          "date": "20 hours ago"
+        }
+      ]
+    },
+    "El Financiero": {
+      "source_name": "El Financiero",
+      "domain": "elfinanciero.com.mx",
+      "source_type": "domestic",
+      "query": "site:elfinanciero.com.mx Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Caso BTS: Sheinbaum revela respuesta del presidente de Corea del Sur; Ticketmaster afrontar\u00eda multa de 5mdp",
+          "link": "https://www.elfinanciero.com.mx/entretenimiento/2026/02/02/caso-bts-sheinbaum-revela-respuesta-de-corea-del-sur-ticketmaster-afrontaria-multa-de-5mdp/",
+          "snippet": "Entretenimiento. Caso BTS: Sheinbaum revela respuesta del presidente de Corea del Sur; Ticketmaster afrontar\u00eda multa de 5mdp. La presidenta Claudia...",
+          "source": "El Financiero",
+          "date": "12 hours ago"
+        },
+        {
+          "title": "\u2018Fue muy buena\u2019: Trump confirma que pidi\u00f3 a Sheinbaum detener env\u00edos de petr\u00f3leo a Cuba",
+          "link": "https://www.elfinanciero.com.mx/nacional/2026/02/01/donald-trump-confirma-que-pidio-a-claudia-sheinbaum-detener-envios-de-petroleo-a-cuba/",
+          "snippet": "Nacional. 'Fue muy buena': Trump confirma que pidi\u00f3 a Sheinbaum detener env\u00edos de petr\u00f3leo a Cuba. Luego de que Claudia Sheinbaum mencionara que los...",
+          "source": "El Financiero",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Claudia no fue, fue Tet\u00e9",
+          "link": "https://www.elfinanciero.com.mx/opinion/sergio-negrete-cardenas/2026/01/30/claudia-no-fue-fue-tete/",
+          "snippet": "Se ha evidenciado como una de las m\u00e1s notables caracter\u00edsticas de la personalidad de Claudia Sheinbaum.",
+          "source": "El Financiero",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Profeco sube multa a Ticketmaster a 5 mdp; \u2018amaga\u2019 con restringir operaci\u00f3n de Stubhub en M\u00e9xico",
+          "link": "https://www.elfinanciero.com.mx/nacional/2026/02/02/claudia-sheinbaum-mananera-temas-hoy-2-de-febrero-de-2026-en-vivo/",
+          "snippet": "Durante la conferencia 'ma\u00f1anera' de la presidenta Claudia Sheinbaum, la Procuradur\u00eda Federal del Consumidor (Profeco) anunci\u00f3 que se elevar\u00e1 la multa a...",
+          "source": "El Financiero",
+          "date": "15 hours ago"
+        },
+        {
+          "title": "Sheinbaum niega petici\u00f3n de Trump para dejar de mandar petr\u00f3leo a Cuba: Anuncia nueva ayuda humanitaria",
+          "link": "https://www.elfinanciero.com.mx/nacional/2026/02/01/claudia-sheinbaum-niega-peticion-de-donald-trump-para-dejar-de-enviar-petroleo-a-cuba-anuncia-ayuda-humanitaria/",
+          "snippet": "Claudia Sheinbaum neg\u00f3 que Donald Trump le pidiera dejar de enviar crudo a Cuba en su llamada.",
+          "source": "El Financiero",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Frente com\u00fan entre bancos y Presidencia",
+          "link": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/01/28/frente-comun-entre-bancos-y-presidencia/",
+          "snippet": "Moneda en el Aire. Frente com\u00fan entre bancos y Presidencia. La reuni\u00f3n a la que convoc\u00f3 la presidenta Claudia Sheinbaum tuvo el objetivo de abrir el di\u00e1logo...",
+          "source": "El Financiero",
+          "date": "5 days ago"
+        },
+        {
+          "title": "Sheinbaum plantea a Trump que EU env\u00ede petr\u00f3leo a Cuba: \u2018M\u00e9xico apenas manda 1% de su producci\u00f3n\u2019",
+          "link": "https://www.elfinanciero.com.mx/nacional/2026/01/30/sheinbaum-plantea-que-eu-mande-petroleo-a-cuba-por-crisis-humanitaria/",
+          "snippet": "La presidenta Sheinbaum remarc\u00f3 que su principal preocupaci\u00f3n es evitar que Estados Unidos aplique otro paquete de aranceles a M\u00e9xico por el env\u00edo de crudo...",
+          "source": "El Financiero",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Reforma laboral de las 40 horas: \u00bfC\u00f3mo se aplicar\u00e1 la reducci\u00f3n a\u00f1o por a\u00f1o? Esto sabemos",
+          "link": "https://www.elfinanciero.com.mx/nacional/2026/01/31/reforma-laboral-de-las-40-horas-como-se-aplicara-la-reduccion-ano-por-ano-esto-sabemos/",
+          "snippet": "Nacional. Reforma laboral de las 40 horas: \u00bfC\u00f3mo se aplicar\u00e1 la reducci\u00f3n a\u00f1o por a\u00f1o? Esto sabemos. El gobierno de la presidenta Claudia Sheinbaum envi\u00f3 el...",
+          "source": "El Financiero",
+          "date": "2 days ago"
+        },
+        {
+          "title": "Afloja una tuerca Trump",
+          "link": "https://www.elfinanciero.com.mx/opinion/raymundo-riva-palacio/2026/01/30/afloja-una-tuerca-trump/",
+          "snippet": "Claudia Sheinbaum sali\u00f3 con ventaja de la llamada con Donald Trump? Raymundo Riva Palacio explica los detalles.",
+          "source": "El Financiero",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Invertir para salvar a M\u00e9xico",
+          "link": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/01/30/invertir-para-salvar-a-mexico/",
+          "snippet": "La pr\u00f3xima semana la presidenta Claudia Sheinbaum se reunir\u00e1 con empresarios locales de todo el pa\u00eds, que en \u201ccorto\u201d muchos mantienen su distancia o...",
+          "source": "El Financiero",
+          "date": "3 days ago"
+        }
+      ]
+    },
+    "Aristegui Noticias": {
+      "source_name": "Aristegui Noticias",
+      "domain": "aristeguinoticias.com",
+      "source_type": "domestic",
+      "query": "site:aristeguinoticias.com Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "La Ma\u00f1anera de Sheinbaum | \u00bfPor qu\u00e9 reprendi\u00f3 a legisladores?; Profeco ya act\u00faa contra Ticketmaster (02/02/2026)",
+          "link": "https://aristeguinoticias.com/0202/mexico/la-mananera-de-sheinbaum-inauguran-tren-mexico-toluca-profeco-ya-actua-contra-ticketmaster-02-02-2026/",
+          "snippet": "Conoce aqu\u00ed la informaci\u00f3n m\u00e1s relevante durante la conferencia matutina desde la Cineteca Nacional de Chapultepec, en la Ciudad de M\u00e9xico.",
+          "source": "Aristegui Noticias",
+          "date": "12 hours ago"
+        },
+        {
+          "title": "De la Fuente afirma que M\u00e9xico mantendr\u00e1 la ayuda humanitaria 'donde sea requerida'",
+          "link": "https://aristeguinoticias.com/3101/mexico/mexico-mantendra-la-ayuda-humanitaria-pese-a-aranceles-ligados-a-cuba-de-la-fuente/",
+          "snippet": "No aceptamos que no haya ayuda humanitaria cuando alg\u00fan pa\u00eds del mundo lo requiere y lo vamos a seguir ejerciendo\u201d, sostuvo el funcionario.",
+          "source": "Aristegui Noticias",
+          "date": "2 days ago"
+        },
+        {
+          "title": "Sheinbaum reprende a morenistas en BC: \u201c\u00a1Todos ustedes: a trabajar m\u00e1s con la gente!\u201d | Video",
+          "link": "https://aristeguinoticias.com/0102/mexico/sheinbaum-reprende-a-morenistas-en-bc-todos-ustedes-a-trabajar-mas-con-la-gente-video/",
+          "snippet": "La presidenta Claudia Sheinbaum Pardo llam\u00f3 la atenci\u00f3n a legisladores de Morena durante su visita a San Quint\u00edn, Baja California, en el marco de la...",
+          "source": "Aristegui Noticias",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Trump afirma que Sheinbaum accedi\u00f3 a su petici\u00f3n de frenar los env\u00edos de petr\u00f3leo a Cuba",
+          "link": "https://aristeguinoticias.com/0102/mexico/trump-dice-que-sheinbaum-fue-muy-buena-y-dejo-de-enviar-petroleo-a-cuba/",
+          "snippet": "La presidenta Claudia Sheinbaum neg\u00f3 el jueves pasado haber hablado con Trump sobre el env\u00edo de petr\u00f3leo a Cuba durante la conversaci\u00f3n que sostuvieron esa...",
+          "source": "Aristegui Noticias",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Trump ordena aranceles a pa\u00edses que suministran petr\u00f3leo a Cuba",
+          "link": "https://aristeguinoticias.com/2901/mexico/trump-ordena-aranceles-a-paises-que-suministran-petroleo-a-cuba/",
+          "snippet": "El gobierno mexicano se convirti\u00f3 en el primer proveedor de petr\u00f3leo a Cuba en 2025, seg\u00fan reportajes period\u00edsticos, aunque los env\u00edos se detuvieron los...",
+          "source": "Aristegui Noticias",
+          "date": "4 days ago"
+        },
+        {
+          "title": "Mirador Pol\u00edtico: La presidenta no tiene quien le escriba | Jorge Alcocer V.",
+          "link": "https://aristeguinoticias.com/0102/opinion/mirador-politico-la-presidenta-no-tiene-quien-le-escriba-jorge-alcocer-v/",
+          "snippet": "Hasta 2015 nuestro sistema electoral hab\u00eda funcionado adecuadamente, permitiendo una aceptable correspondencia entre votos, curules y esca\u00f1os,...",
+          "source": "Aristegui Noticias",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Manifestantes piden a M\u00e9xico sostener apoyo a Cuba ante endurecimiento de medidas de EE.UU.",
+          "link": "https://aristeguinoticias.com/0102/mexico/manifestantes-piden-a-mexico-sostener-apoyo-a-cuba-ante-endurecimiento-de-medidas-de-ee-uu/",
+          "snippet": "Con banderas, pancartas y consignas, asistentes dijeron que el objetivo fue expresar solidaridad con la poblaci\u00f3n cubana y rechazar lo que describieron como...",
+          "source": "Aristegui Noticias",
+          "date": "1 day ago"
+        },
+        {
+          "title": "Aristegui Noticias | Desde cualquier medio, periodismo en libertad",
+          "link": "https://aristeguinoticias.com/",
+          "snippet": "Desde cualquier medio, periodismo en libertad.",
+          "source": "Aristegui Noticias",
+          "date": "Apr 19, 2015"
+        },
+        {
+          "title": "Chiapas | Denuncias penales alcanzan a familias por Tren Interoce\u00e1nico",
+          "link": "https://aristeguinoticias.com/3001/mexico/chiapas-denuncias-penales-alcanzan-a-familias-por-tren-interoceanico/",
+          "snippet": "Familias y mujeres en situaci\u00f3n de vulnerabilidad en Chiapas son se\u00f1aladas penalmente por invasi\u00f3n de bienes nacionales.",
+          "source": "Aristegui Noticias",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Lo mejor de Aristegui en Vivo: FGR atribuye a exceso de velocidad descarrilamiento del Interoce\u00e1nico; Foro Econ\u00f3mico CAF (28/01/2026)",
+          "link": "https://aristeguinoticias.com/2801/aristegui-en-vivo/programas-completos/aristegui-en-vivo-fgr-atribuye-al-exceso-de-velocidad-descarrilamiento-del-interoceanico-foro-economico-en-panama-28-01-2026/",
+          "snippet": "La Fiscal\u00eda General de la Rep\u00fablica atribuy\u00f3 al exceso de velocidad el descarrilamiento del Tren Interoce\u00e1nico el pasado 28 de diciembre, que dej\u00f3 un saldo...",
+          "source": "Aristegui Noticias",
+          "date": "5 days ago"
+        }
+      ]
+    },
+    "Reforma": {
+      "source_name": "Reforma",
+      "domain": "reforma.com",
+      "source_type": "domestic",
+      "query": "site:reforma.com Claudia Sheinbaum",
+      "result_count": 10,
+      "results": [
+        {
+          "title": "Ped\u00ed a Sheinbaum no enviar crudo a Cuba y cumpli\u00f3.- Trump",
+          "link": "https://www.reforma.com/pedi-a-sheinbaum-no-enviar-crudo-a-cuba-y-cumplio-trump/ar3145093",
+          "snippet": "El Presidente de Estados Unidos Donald Trump revel\u00f3 la noche del s\u00e1bado que \u00e9l mismo fue quien le pidi\u00f3 personalmente a la Presidenta Claudia Sheinbaum...",
+          "source": "Reforma",
+          "date": "1 day ago"
+        },
+        {
+          "title": "REFORMA | Periodismo independiente",
+          "link": "https://www.reforma.com/",
+          "snippet": "Noticias en tiempo real, contenido multimedia y los mejores editorialistas en la instituci\u00f3n informativa con m\u00e1s credibilidad y prestigio en M\u00e9xico.",
+          "source": "Reforma",
+          "date": "Jul 26, 2017"
+        },
+        {
+          "title": "Perfilan aumentar horas extras para alcanzar las 40 horas",
+          "link": "https://www.reforma.com/perfilan-aumentar-horas-extras-para-alcanzar-las-40-horas/ar3144658",
+          "snippet": "Comisiones del Senado circularon un proyecto de dictamen sobre la reducci\u00f3n de la jornada laboral a 40 horas, en el que se descarta otorgar a los...",
+          "source": "Reforma",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Templo Mayor 2026-01-30",
+          "link": "https://www.reforma.com/templo-mayor-f-bartolome-2026-01-30/op307515",
+          "snippet": "LA LLAMADA entre Donald Trump y Claudia Sheinbaum fue mucho m\u00e1s larga de lo usual pues se extendi\u00f3 durante 40 minutos. Algo muuuy importante deben haber...",
+          "source": "Reforma",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Advierte CSP crisis en Cuba; busca evitar riesgo para M\u00e9xico",
+          "link": "https://www.reforma.com/advierte-csp-crisis-en-cuba-busca-evitar-riesgo-para-mexico/ar3144302",
+          "snippet": "Tras advertir que los aranceles anunciados por Donald Trump podr\u00edan desencadenar una crisis humanitaria en Cuba, la Presidenta Claudia Sheinbaum afirm\u00f3 que...",
+          "source": "Reforma",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Defiende CSP soberan\u00eda de M\u00e9xico desde frontera norte",
+          "link": "https://www.reforma.com/defiende-csp-soberania-de-mexico-desde-frontera-norte/ar3144485",
+          "snippet": "En medio de las tensiones con Estados Unidos en materia de seguridad y pol\u00edtica petrolera, la Presidenta Claudia Sheinbaum eligi\u00f3 esta ciudad fronteriza...",
+          "source": "Reforma",
+          "date": "3 days ago"
+        },
+        {
+          "title": "Dictadura cubana",
+          "link": "https://www.reforma.com/dictadura-cubana-2026-02-02/op307671",
+          "snippet": "para salvaguardar una revoluci\u00f3n; uno hace la revoluci\u00f3n para establecer una dictadura\". George Orwell, 1984. La presidenta Claudia Sheinbaum declar\u00f3 que...",
+          "source": "Reforma",
+          "date": "18 hours ago"
+        },
+        {
+          "title": "La se\u00f1al del CIDE",
+          "link": "https://www.reforma.com/la-senal-del-cide-2026-01-29/op307431",
+          "snippet": "Carlos A. P\u00e9rez Ricart es Profesor-Investigador del CIDE. Tiene un doctorado en Ciencias Pol\u00edticas por la Universidad Libre de Berl\u00edn y una licenciatura en...",
+          "source": "Reforma",
+          "date": "4 days ago"
+        },
+        {
+          "title": "Hierve Sinaloa, pese a militares",
+          "link": "https://www.reforma.com/hierve-sinaloa-pese-a-militares/ar3144688",
+          "snippet": "A pesar del env\u00edo de 10 mil soldados a Sinaloa durante 2025, los homicidios subieron en un 67% con respecto al a\u00f1o anterior.",
+          "source": "Reforma",
+          "date": "2 days ago"
+        },
+        {
+          "title": "Recuerda Sheinbaum invasiones de EU y defiende soberan\u00eda",
+          "link": "https://www.reforma.com/recuerda-sheinbaum-invasiones-de-eu-y-defiende-soberania/ar3145019",
+          "snippet": "Sheinbaum record\u00f3 invasiones de EU, defendi\u00f3 la soberan\u00eda y vincul\u00f3 esos episodios hist\u00f3ricos con la 4T durante un acto en Sonora.",
+          "source": "Reforma",
+          "date": "2 days ago"
+        }
+      ]
+    }
+  }
+}

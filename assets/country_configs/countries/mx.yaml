@@ -1,0 +1,125 @@
+country: Mexico
+code: mx
+tier: periphery
+region: americas
+actors:
+- name: Claudia Sheinbaum
+  role: President
+  primary: true
+  search_terms:
+  - Sheinbaum
+  - Claudia Sheinbaum
+- name: Juan Ramón de la Fuente
+  role: Foreign Minister (SRE)
+  primary: false
+  search_terms:
+  - de la Fuente
+  - Juan Ramón de la Fuente
+- name: SEDENA
+  role: National Defense Secretariat
+  primary: false
+  search_terms:
+  - SEDENA
+  - Secretaría de la Defensa Nacional
+- name: SEMAR
+  role: Navy Secretariat
+  primary: false
+  search_terms:
+  - SEMAR
+  - Secretaría de Marina
+- name: SRE
+  role: Foreign Affairs Secretariat
+  primary: false
+  search_terms:
+  - SRE
+  - Secretaría de Relaciones Exteriores
+- name: Banxico
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Banxico
+  - Banco de México
+- name: Morena
+  role: Governing party
+  primary: false
+  search_terms:
+  - Morena
+- name: Omar García Harfuch
+  role: Secretary of Security (SSPC)
+  primary: false
+  search_terms:
+  - García Harfuch
+  - Omar García Harfuch
+- name: PEMEX
+  role: State oil company
+  primary: false
+  search_terms:
+  - PEMEX
+  - Petróleos Mexicanos
+- name: CFE
+  role: State electricity utility
+  primary: false
+  search_terms:
+  - CFE
+  - Comisión Federal de Electricidad
+languages:
+  primary: es
+  additional: []
+  metadata: en
+news_discovery:
+  goggle_file: assets/country_goggles/mx.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: MX
+    search_lang: es
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - relaciones bilaterales
+    - acuerdo diplomático
+    - cancillería
+    - cumbre bilateral
+    - embajador
+    security_defense:
+    - SEDENA
+    - adquisición militar
+    - cooperación en seguridad
+    - Guardia Nacional
+    - despliegue militar
+    economic_tech:
+    - inversión extranjera
+    - tratado comercial
+    - Banxico
+    - nearshoring
+    - minerales críticos
+    - supply chain
+    institutional:
+    - OEA
+    - Naciones Unidas
+    - G20
+    - ratificación tratado
+    domestic_constraints:
+    - reforma constitucional
+    - coalición legislativa
+    - Morena
+    - oposición
+    - Diputados
+government_discovery:
+  config_file: assets/government/mx.yaml
+interpretive_context_file: assets/context/mx_sources.md
+blind_spots:
+- domain: Defense procurement
+  reason: No dedicated defense press; SEDENA/SEMAR communicate through controlled
+    bulletins only
+  where_signal_lives: SEDENA/SEMAR official bulletins, leaked documents in Proceso
+    or Animal Político
+- domain: Real-time security
+  reason: Telegram/WhatsApp channels precede news coverage but are not ingestible
+  where_signal_lives: Local journalists who monitor these channels; downstream reporting
+    lag of 12-48 hours
+- domain: Legislative proceedings
+  reason: Committee testimony not covered by media
+  where_signal_lives: gob.mx portals, Senate/Chamber of Deputies websites
+search:
+  triage_queries_max: 3
+  deep_dive_queries_max: 20

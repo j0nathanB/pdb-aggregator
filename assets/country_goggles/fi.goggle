@@ -1,0 +1,30 @@
+! name: MPM Finland
+! description: MPM pipeline source prioritization for Finland — boosts high-signal sources for a compact Nordic media ecosystem
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=yle.fi
+$boost=10,site=hs.fi
+$boost=10,site=suomenkuvalehti.fi
+$boost=10,site=kauppalehti.fi
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=iltalehti.fi
+$boost=5,site=hbl.fi
+$boost=5,site=fiia.fi
+$boost=5,site=valtioneuvosto.fi
+$boost=5,site=eduskunta.fi
+$boost=5,site=presidentti.fi
+$boost=5,site=maanpuolustus-lehti.fi
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=uusisuomi.fi
+$boost=3,site=verkkouutiset.fi
+$boost=3,site=kansanuutiset.fi
+$boost=3,site=helsinkitimes.fi
+$boost=3,site=longplay.fi
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org

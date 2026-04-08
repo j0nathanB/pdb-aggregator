@@ -1,0 +1,37 @@
+! name: MPM Norway
+! description: MPM pipeline source prioritization for Norway — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=nrk.no
+$boost=10,site=aftenposten.no
+$boost=10,site=dn.no
+$boost=10,site=klassekampen.no
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=vg.no
+$boost=5,site=forsvaretsforum.no
+$boost=5,site=e24.no
+$boost=5,site=regjeringen.no
+$boost=5,site=stortinget.no
+$boost=5,site=nupi.no
+$boost=5,site=aldrimer.no
+$boost=5,site=morgenbladet.no
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=highnorthnews.com
+$boost=3,site=minerva.no
+$boost=3,site=dagbladet.no
+$boost=3,site=energiogklima.no
+$boost=3,site=filternyheter.no
+$boost=3,site=ffi.no
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=thelocal.no
+$discard,site=norwaytoday.info
+$discard,site=resett.no

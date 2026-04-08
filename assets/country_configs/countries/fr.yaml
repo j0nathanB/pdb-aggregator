@@ -1,0 +1,125 @@
+country: France
+code: fr
+tier: shield
+region: western_europe
+actors:
+- name: Emmanuel Macron
+  role: President
+  primary: true
+  search_terms:
+  - Macron
+  - Emmanuel Macron
+- name: Sébastien Lecornu
+  role: Prime Minister
+  primary: false
+  search_terms:
+  - Lecornu
+  - Sébastien Lecornu
+- name: Rassemblement National
+  role: Far-right party (largest single party)
+  primary: false
+  search_terms:
+  - RN
+  - Rassemblement National
+- name: Marine Le Pen
+  role: RN leader
+  primary: false
+  search_terms:
+  - Le Pen
+  - Marine Le Pen
+- name: Jordan Bardella
+  role: RN president
+  primary: false
+  search_terms:
+  - Bardella
+  - Jordan Bardella
+- name: Jean-Luc Mélenchon
+  role: LFI leader
+  primary: false
+  search_terms:
+  - Mélenchon
+  - Jean-Luc Mélenchon
+  - LFI
+- name: DGSE
+  role: External intelligence service
+  primary: false
+  search_terms:
+  - DGSE
+  - Direction générale de la sécurité extérieure
+- name: Banque de France
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Banque de France
+- name: Ministère des Armées
+  role: Ministry of Armed Forces
+  primary: false
+  search_terms:
+  - Ministère des Armées
+  - Ministry of Armed Forces
+- name: Quai d'Orsay
+  role: Foreign Affairs Ministry
+  primary: false
+  search_terms:
+  - Quai d'Orsay
+  - Ministry for Europe and Foreign Affairs
+languages:
+  primary: fr
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Nuclear deterrent policy
+  reason: Presidential domaine réservé with minimal parliamentary oversight; stockpile
+    numbers no longer disclosed
+  where_signal_lives: Defense Ministry communiqués, IISS assessments, NATO ally briefings
+- domain: Françafrique networks
+  reason: Post-colonial security arrangements operate through informal channels not
+    covered in French press
+  where_signal_lives: Africa-focused outlets (Jeune Afrique, Africa Confidential),
+    leaked diplomatic cables
+news_discovery:
+  goggle_file: assets/country_goggles/fr.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: FR
+    search_lang: fr
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - relations bilatérales
+    - accord diplomatique
+    - Quai d'Orsay
+    - sommet bilatéral
+    - ambassadeur
+    security_defense:
+    - Ministère des Armées
+    - acquisition militaire
+    - coopération sécuritaire
+    - DGSE
+    - déploiement militaire
+    - dissuasion nucléaire
+    economic_tech:
+    - investissement étranger
+    - accord commercial
+    - Banque de France
+    - politique industrielle
+    - transition énergétique
+    - supply chain
+    institutional:
+    - OTAN
+    - Union européenne
+    - Nations Unies
+    - G7
+    - ratification traité
+    domestic_constraints:
+    - Assemblée nationale
+    - Rassemblement National
+    - motion de censure
+    - Sénat
+    - cohabitation
+government_discovery:
+  config_file: assets/government/fr.yaml
+interpretive_context_file: assets/context/fr_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

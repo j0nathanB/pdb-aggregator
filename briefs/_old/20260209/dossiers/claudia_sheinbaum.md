@@ -1,0 +1,117 @@
+# 🇲🇽 Mexico / Claudia Sheinbaum, President
+**Period:** 2026-02-02 to 2026-02-09
+
+> MEXICO CITY — President Claudia Sheinbaum halted oil shipments to Cuba this week amid reported U.S. sanctions threats, while simultaneously declaring Mexico will not bow to foreign pressures and will defend its sovereignty against intervention. Sheinbaum named a new National Guard commander and called for increased private investment in Mexico as she navigates tensions between maintaining pragmatic U.S. relations and asserting Mexican independence. The president also pledged continued humanitarian aid to Cuba and defended her administration's welfare programs despite the oil shipment suspension.
+
+## Top Stories
+
+### Mexico halts oil shipments to Cuba amid US sanctions threat
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum said Monday that Mexico has halted oil shipments to Cuba to avoid potential sanctions from the United States, which has threatened penalties against countries supplying petroleum to the island. Sheinbaum said Mexico is seeking diplomatic solutions to ensure Cuba receives fuel while protecting Mexico from repercussions. The president announced Mexico will send additional humanitarian aid to Cuba beyond the 800 tons of supplies shipped Sunday, calling U.S. sanctions threats "very unjust." Mexico sent the aid amid Cuba's ongoing energy crisis.
+
+*Sources: (El Universal [1](https://archive.ph/https://www.eluniversal.com.mx/nacion/esta-detenido-en-este-momentos-el-envio-de-petroleo-a-cuba-confirma-sheinbaum-buscamos-evitar-afectaciones-a-mexico-explica/),[2](https://archive.ph/https://www.eluniversal.com.mx/nacion/va-a-haber-mas-apoyo-a-cuba-adelanta-sheinbaum-mexico-envio-mas-de-800-toneladas-de-ayuda-humanitaria/))*
+
+### Sheinbaum says Mexico won't bow to US pressures
+
+QUERETARO, Mexico — President Claudia Sheinbaum said Thursday that Mexico will not accept foreign interference or become a "protectorate" of any government, defending national sovereignty amid tensions with the United States. Speaking at a ceremony marking the 109th anniversary of Mexico's Constitution, Sheinbaum stated that "Mexico will not bow, will not kneel, will not surrender and will not sell itself." The remarks came as Mexico faces pressure from President Donald Trump over migration, drug trafficking and trade issues, with Trump having imposed tariffs on Mexican auto parts.
+
+*Sources: (La Jornada [1](https://archive.ph/https://www.jornada.com.mx/2026/02/06/politica/003n1pol); Aristegui Noticias [1](https://archive.ph/https://aristeguinoticias.com/0502/mexico/sheinbaum-asegura-que-mexico-no-se-doblega-ante-presiones-de-ee-uu/); El Universal [1](https://archive.ph/https://www.eluniversal.com.mx/nacion/no-somos-santa-anna-dice-sheinbaum-ante-declaraciones-de-trump-lee-articulos-de-la-constitucion-mexicana-en-la-mananera/))*
+
+### Mexico's Sheinbaum Names New National Guard Commander
+
+MORELIA, Mexico — President Claudia Sheinbaum announced Friday that General Guillermo Briceño will serve as the new commander of Mexico's National Guard, replacing General Hernán Cortés. Speaking at her morning press conference at the 12th Infantry Battalion of the 21st Military Zone, Sheinbaum said Cortés will take on a new role as chief administrative officer in the Defense Ministry. The president introduced Briceño to reporters, asking him to stand so attendees could meet the new commander.
+
+*Sources: (El Universal [1](https://archive.ph/https://www.eluniversal.com.mx/nacion/sheinbaum-presenta-al-general-guillermo-briceno-como-nuevo-comandante-de-la-guardia-nacional/))*
+
+## International
+
+### Sheinbaum calls for private investment in Mexico
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum called Wednesday for domestic and foreign private companies to invest in Mexico, saying the country offers "certainty and conditions of confidence" for productive projects. Sheinbaum said the federal government would announce several public and private investment initiatives in February aimed at strengthening growth and employment. Economy Secretary Marcelo Ebrard reported that the investment portfolio increased from $367.9 billion to $406.8 billion, encompassing 2,539 projects with projected employment growth.
+
+*Sources: (Aristegui Noticias [1](https://archive.ph/https://aristeguinoticias.com/0402/dinero-y-economia/sheinbaum-llama-a-empresas-mexicanas-y-extranjeras-a-invertir-en-mexico/))*
+
+### Sheinbaum Says Mexico Will Defend Sovereignty Against Foreign Intervention
+
+QUERÉTARO, Mexico — President Claudia Sheinbaum said Mexico will defend its sovereignty and will not accept foreign interventions, according to Aristegui Noticias. Sheinbaum made the statement during commemorations of the 109th anniversary of Mexico's Constitution in Querétaro. The remarks came as federal forces arrested Diego Rivera, the mayor of Tequila, Jalisco, along with three municipal officials as part of Operation Enjambre. Rivera faces accusations of extortion schemes against tequila and beer companies and alleged links to a Jalisco New Generation Cartel cell, the report said.
+
+*Sources: (Aristegui Noticias [1](https://archive.ph/https://aristeguinoticias.com/0602/mexico/aristegui-en-vivo-cae-el-alcalde-de-tequila-jalisco-sheinbaum-mexico-no-se-doblega-narcocampamentos-en-sinaloa-06-02-2026/))*
+
+### Opposition Governor Backs Sheinbaum Amid Foreign Pressure
+
+QUERETARO, Mexico — Opposition Governor Mauricio Kuri called for unified support behind President Claudia Sheinbaum during a Constitution Day ceremony, saying Mexico faces foreign pressure. "Mexico does not accept foreign dictates, does not admit instructions from anyone," Kuri said at the Teatro de la República. The PAN party governor said electoral reform should strengthen rather than divide democracy. Senate President Laura Itzel Castillo praised Sheinbaum's diplomatic handling of international challenges, saying she "has raised high the name of our homeland and national sovereignty."
+
+*Sources: (La Jornada [1](https://archive.ph/https://www.jornada.com.mx/2026/02/06/politica/003n2pol))*
+
+### Family seeks Sheinbaum intervention for missing engineer in Sinaloa
+
+MEXICO CITY, Mexico — The family of a missing 26-year-old engineer has requested President Claudia Sheinbaum's intervention to help locate their son, who disappeared Jan. 23 in Sinaloa state. Pablo Osorio Sánchez, a civil engineer from Oaxaca working on a mining project linked to Canadian company Vizsla Silver Corp, vanished along with about 10 other mining sector workers near La Concordia municipality, his mother Socorro Osorio said. The UN Committee on Enforced Disappearances has issued an urgent action for the case, according to the family's lawyer. Osorio's mother made a direct appeal to Sheinbaum, saying authorities have provided no official information despite reported searches in the area.
+
+*Sources: (Aristegui Noticias [1](https://archive.ph/https://aristeguinoticias.com/0402/mexico/familia-de-ingeniero-desaparecido-en-sinaloa-pide-intervencion-de-la-presidenta-sheinbaum/))*
+
+### Sheinbaum pledges continued humanitarian aid to Cuba
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum said Monday that Mexico will continue sending humanitarian aid to Cuba, calling U.S. tariffs on countries exporting oil to the island "very unjust." Speaking at her daily morning press conference, Sheinbaum said Mexico sent food supplies to Cuba over the weekend and will provide additional assistance. She criticized U.S. sanctions that affect the Cuban population, saying "no one can be indifferent to the situation the Cuban people are experiencing." Sheinbaum also announced that welfare pension cards will be distributed starting Tuesday to people who registered in December 2025.
+
+*Sources: (Aristegui Noticias [1](https://archive.ph/https://aristeguinoticias.com/0902/mexico/la-mananera-de-sheinbaum-que-opino-de-bad-bunny-pensiones-del-bienestar-y-mas-ayuda-a-cuba-09-02-2026/))*
+
+## Domestic
+
+### Sheinbaum says she received complaints against Tequila mayor
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum said Friday she personally received complaints from business owners and citizens about Diego Rivera, the mayor of Tequila, Jalisco, who was recently arrested on extortion and corruption charges. Sheinbaum said the complaints about Rivera's alleged irregularities reached her office, the Security Cabinet and the Attorney General's Office, leading to his detention. She denied that her Morena party knew of Rivera's alleged links to the Jalisco New Generation Cartel when he was a candidate, stating the party consults prosecutors about all candidates and received negative responses regarding any investigation files.
+
+*Sources: (El Financiero [1](https://archive.ph/https://www.elfinanciero.com.mx/nacional/2026/02/06/sheinbaum-revela-que-recibio-denuncias-contra-alcalde-de-tequila-fueron-muchisimas/))*
+
+### Sheinbaum defends welfare state programs in Mexico
+
+JUÁREZ, Mexico — President Claudia Sheinbaum said her administration will continue prioritizing Mexico's most vulnerable populations through welfare state programs during a housing delivery event in Nuevo León state. Sheinbaum said the Fourth Transformation movement has reduced poverty by 13.5 million people over six years through social programs focused on education, health, housing and income rights. The president said her government maintains the principle of 'for the good of all, the poor first' while distinguishing between private investment and state responsibilities for basic services.
+
+*Sources: (El Universal [1](https://archive.ph/https://www.eluniversal.com.mx/nacion/sheinbaum-defiende-el-estado-de-bienestar-y-la-4t-asegura-que-seguira-priorizando-a-los-sectores-mas-vulnerables/))*
+
+### Sheinbaum leads ceremony marking 113th anniversary of Loyalty March
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum led a ceremony Monday commemorating the 113th anniversary of the Loyalty March, retracing the route taken by President Francisco I. Madero on Feb. 9, 1913, when he was escorted by military cadets during the start of Mexico's "Tragic Ten Days" period. Defense Secretary Ricardo Trevilla Trejo called for unity among all Mexicans to face adversities that threaten the country's security, according to La Jornada. Sheinbaum unveiled a commemorative plaque at the Museum of Fine Arts before traveling by military vehicle through downtown Mexico City, accompanied by congressional leaders and Supreme Court President Hugo Aguilar Ortiz.
+
+*Sources: (La Jornada [1](https://archive.ph/https://www.jornada.com.mx/noticia/2026/02/09/politica/sheinbaum-encabeza-la-conmemoracion-por-el-113-aniversario-de-la-marcha-de-la-lealtad))*
+
+### Mexico President Activates Review Protocol After Oaxaca Earthquake
+
+MEXICO CITY, Mexico — President Claudia Sheinbaum said authorities activated review protocols following a 5.7-magnitude earthquake that struck northeast of Puerto Escondido, Oaxaca, at 3:42 p.m. Tuesday. The federal government said no damage or injuries were immediately reported from the tremor, which triggered seismic alerts in Mexico City. Sheinbaum announced the protocol activation through social media, according to the federal government's official account.
+
+*Sources: (La Jornada [1](https://archive.ph/https://www.jornada.com.mx/noticia/2026/02/08/politica/sheinbaum-se-activa-protocolo-de-revision-tras-sismo-de-57-en-puerto-escondido-oaxaca))*
+
+### Sheinbaum announces scholarships at new university campus opening
+
+SAN LUIS POTOSI, Mexico — President Claudia Sheinbaum announced that all students in the Rosario Castellanos University system will receive the Gertrudis Bocanegra scholarship during the inauguration of the university's first campus phase in San Luis Potosi. The scholarship provides 1,900 pesos bimonthly for transportation and other expenses for up to 45 months, Sheinbaum said. She criticized previous neoliberal policies for treating education as a business rather than a constitutional right. Governor Ricardo Gallardo said the new campus will offer programs in robotics, artificial intelligence and electronics to meet automotive industry demand.
+
+*Sources: (La Jornada [1](https://archive.ph/https://www.jornada.com.mx/noticia/2026/02/07/politica/claudia-sheinbaum-inaugura-plantel-de-la-universidad-rosario-castellanos-en-slp))*
+
+### PRI loses third of members as Sheinbaum prepares electoral reform
+
+MEXICO CITY, Mexico — Mexico's Institutional Revolutionary Party has lost one-third of its members over two years, dropping from 1.4 million to 911,069 affiliates, according to National Electoral Institute data. PRI leader Alejandro Moreno said the ruling party and organized crime threaten PRI members with loss of social programs. Moreno said his party will vote against electoral reform that President Claudia Sheinbaum plans to present in coming days, calling the initiative "born dead and rotten." The membership decline spans nearly the entire country, with some former strongholds now reporting fewer than 800 members.
+
+*Sources: (La Jornada [1](https://archive.ph/https://www.jornada.com.mx/noticia/2026/02/07/politica/en-dos-anos-el-pri-ha-perdido-la-tercera-parte-de-sus-militantes))*
+
+### Mexico Mayor Seeks Federal Help Against Violence After Husband's Murder
+
+URUAPAN, Mexico — The mayor of Uruapan agreed to new security measures with Mexico's federal security chief to combat a wave of violence that has gripped the city since her husband's assassination in November, officials said. Grecia Quiroz said she met with Security Secretary Omar García Harfuch during President Claudia Sheinbaum's February 6 visit to Michoacán state to coordinate federal support against organized crime. Quiroz said Harfuch told her the government would work not only to reduce homicides but to completely calm the violence in Uruapan. The mayor's husband, Carlos Manzo, was killed November 1, and Quiroz has requested federal investigators examine possible political motives in the assassination.
+
+*Sources: (El Financiero [1](https://archive.ph/https://www.elfinanciero.com.mx/nacional/2026/02/09/grecia-quiroz-revela-nueva-estrategia-con-harfuch-para-aplacar-la-violencia-y-homicidios-en-uruapan/))*
+
+### BBVA backs Sheinbaum investment plan, seeks regulatory certainty
+
+MEXICO CITY, Mexico — BBVA Mexico said Thursday it supports President Claudia Sheinbaum's 5.6 trillion peso infrastructure investment plan for 2026-2030, calling it "a very good message" that recognizes investment is essential for economic growth. The bank's CEO Eduardo Osuna said the plan requires "impeccable" execution and regulatory certainty to succeed, noting that private investment needs assurance "the rules won't change" given long-term investment horizons. BBVA maintains a 1.2% growth forecast for 2026 but said the plan's impact would become clearer by 2027.
+
+*Sources: (Aristegui Noticias [1](https://archive.ph/https://aristeguinoticias.com/0502/dinero-y-economia/bbva-respalda-plan-de-inversiones-de-sheinbaum-pero-pide-certidumbre-en-las-reglas/))*
+
+## Between the Lines
+
+- Sheinbaum is navigating a delicate balance between asserting Mexican sovereignty and maintaining pragmatic relations with the US, as evidenced by halting Cuba oil shipments while simultaneously declaring Mexico won't bow to foreign pressures.
+- The president is making strategic personnel changes in security leadership with the National Guard commander replacement, suggesting potential shifts in Mexico's security approach or response to operational challenges.
+- Sheinbaum is actively courting private investment while expanding social programs, indicating an economic strategy that seeks to blend market-friendly policies with her administration's welfare state commitments.
+- The president's direct involvement in local governance issues, such as personally receiving complaints about a municipal mayor, suggests a more hands-on federal approach to addressing citizen concerns at the local level.
+
+---
+
+*Generated: 2026-02-09 21:50*

@@ -1,0 +1,2176 @@
+_generated_from:
+- dev/source_maps/media/2_claude_fetch_results/WEBFETCH_REPORT.md
+- dev/source_maps/media/6_all_results_analysis/REPORT.md
+_note: 'Do not edit manually. Regenerate with: python dev/source_maps/media/generate_extraction_routing.py'
+test_methodology: 3 URLs per domain, 4 methods tested
+domains_total: 377
+default_fallback_chain:
+- curl
+- diffbot
+- playwright
+- browserbase
+- snippet_only
+concurrency:
+  curl: 20
+  diffbot: 5
+  playwright: 3
+  browserbase: 3
+  publisher_api: 5
+rate_limits:
+  per_domain_delay_seconds: 1.0
+  max_urls_per_domain: 5
+routes:
+  15min.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  38north.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  aawsat.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  abc.es:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  abc.net.au:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  aftenposten.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  aftonbladet.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  agbi.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  agenciabrasil.ebc.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  agenzianova.com:
+    primary: diffbot
+    confidence: medium
+    fallbacks: []
+  agerpres.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  agi.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  aktualne.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  al-monitor.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  alarabiya.net:
+    primary: diffbot
+    confidence: high
+    fallbacks:
+    - playwright
+  albayan.ae:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  aldrimer.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  aletihad.ae:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  alriyadh.com:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  altinget.se:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  americasquarterly.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  amo.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  animalpolitico.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ansa.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  antaranews.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  antena3.ro:
+    primary: curl
+    confidence: medium
+    fallbacks:
+    - diffbot
+    - playwright
+  arabianbusiness.com:
+    primary: playwright
+    confidence: medium
+    fallbacks:
+    - diffbot
+  arabnews.com:
+    primary: playwright
+    confidence: medium
+    fallbacks:
+    - diffbot
+  aripaev.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  aristeguinoticias.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  asahi.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  asia.nikkei.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  aspistrategist.org.au:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  atalayar.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  athenalab.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  australiandefence.com.au:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  australianforeignaffairs.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  bbc.co.uk:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  bhaskar.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  bianet.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  biobiochile.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  birgun.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  bisnis.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  bloomberght.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  bnamericas.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  bnnbloomberg.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  bns.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  breakingdefense.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  canada.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  canadiandefencereview.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  cbc.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  cebri.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  ces.org.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  chathamhouse.org:
+    primary: playwright
+    confidence: medium
+    fallbacks:
+    - curl
+    - diffbot
+  chosun.com:
+    primary: diffbot
+    confidence: medium
+    fallbacks:
+    - playwright
+  cigionline.org:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - curl
+  cincodias.elpais.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - playwright
+  ciperchile.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  cnbcindonesia.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  cnnindonesia.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  congressoemfoco.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  contexte.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  cooperativa.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  corriere.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  csis.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ct24.ceskatelevize.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ctvnews.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  cumhuriyet.com.tr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  cw.com.tw:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  czdefence.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  dagbladet.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  dailysabah.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  db.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  declassifieduk.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  decode39.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  defence.gov.au:
+    primary: diffbot
+    confidence: high
+    fallbacks: []
+  defence24.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  defenceconnect.com.au:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  defesaemfoco.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  defesanet.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  delfi.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  delfi.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  delfi.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  denikn.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  detik.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  df.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  dgap.org:
+    primary: snippet_only
+    confidence: null
+    fallbacks: []
+  di.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  dialogo-americas.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  diena.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  digi24.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  dn.no:
+    primary: diffbot
+    confidence: medium
+    fallbacks:
+    - curl
+    - playwright
+  dn.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  dorzeczy.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  duvarenglish.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  dw.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  e24.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  eastasiaforum.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - playwright
+  economictimes.indiatimes.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  economist.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  editorialedomani.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  efe.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  ekspress.delfi.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  elconfidencial.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  eldiario.es:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  eleconomista.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  eleconomista.es:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - diffbot
+  elespanol.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  elfinanciero.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  elmostrador.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  elmundo.es:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  elpais.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  eluniversal.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  emol.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  en.sedaily.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  en.yna.co.kr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  energiogklima.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  english.alarabiya.net:
+    primary: diffbot
+    confidence: medium
+    fallbacks:
+    - playwright
+  english.hani.co.kr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  english.kyodonews.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  epl.delfi.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  epravda.com.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  epw.in:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  err.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  estadao.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  esteri.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  eurointegration.com.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  euronews.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  europeum.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ex-ante.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  excelsior.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  expansion.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  expressen.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - playwright
+  faz.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  fiia.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  filternyheter.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  focustaiwan.tw:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  fokus.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  folha.uol.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  forceindia.net:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  formiche.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  forsvaretsforum.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  fr.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  france24.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  ft.com:
+    primary: publisher_api
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+    publisher_api: ft
+  fulcrum.sg:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  g4media.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  gatewayhouse.in:
+    primary: diffbot
+    confidence: medium
+    fallbacks: []
+  gazetaprawna.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  globalnews.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  gov.br:
+    primary: curl
+    confidence: medium
+    fallbacks: []
+  gov.uk:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  governo.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  gp.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  grc.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  gulfnews.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  handelsblatt.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  hbl.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  helsinkitimes.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  highnorthnews.com:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  hilltimes.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  hindustantimes.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  hlidacipes.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  hn.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  hotnews.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  hs.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  hurriyet.com.tr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  hurriyetdailynews.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  icds.ee:
+    primary: curl
+    confidence: low
+    fallbacks:
+    - playwright
+  ici.radio-canada.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  idsa.in:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  igarape.org.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ilfattoquotidiano.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ilsole24ore.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  iltalehti.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  indianexpress.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  indsr.org.tw:
+    primary: diffbot
+    confidence: high
+    fallbacks: []
+  infodefensa.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  insightcrime.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  intelligenceonline.com:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  interfax.com.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  interferencia.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  internationalaffairs.org.au:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ipg-journal.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ir.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  irozhlas.cz:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  is.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  ispionline.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  jagran.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  jakartaglobe.id:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  janes.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  japan-forward.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  japan.kantei.go.jp:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  japantimes.co.jp:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  jornada.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  jota.info:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  kam.lt:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  kansanuutiset.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  kauppalehti.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  kedglobal.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ketagalanmedia.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  khaleejtimes.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  klassekampen.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  kompas.id:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  kontan.co.id:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  koreaherald.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  koreajoongangdaily.joins.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  koreapro.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  koreatimes.co.kr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  kvartal.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  kyivindependent.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  la-croix.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  la.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  lalettre.fr:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  lapresse.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  latercera.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  latinus.us:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  lavanguardia.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  ledevoir.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  lefigaro.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  lemonde.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  leparisien.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  lesechos.fr:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - diffbot
+  liberation.fr:
+    primary: snippet_only
+    confidence: null
+    fallbacks: []
+  libertatea.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  liga.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  limesonline.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  livemint.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  lopinion.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  lowyinstitute.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  lrs.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  lrt.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  lrytas.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  lsm.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ltn.com.tw:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  maaal.com:
+    primary: curl
+    confidence: high
+    fallbacks: []
+  maanpuolustus-lehti.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  macdonaldlaurier.ca:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  mea.gov.in:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  mediapart.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  medyascope.tv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  metropoles.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  mexiconewsdaily.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  middleeasteye.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  milenio.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  militarnyi.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  minerva.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  minrel.gob.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  mnd.gov.tw:
+    primary: snippet_only
+    confidence: null
+    fallbacks: []
+  mo.gov.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  mod.go.jp:
+    primary: snippet_only
+    confidence: null
+    fallbacks: []
+  monde-diplomatique.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  morgenbladet.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  mzv.gov.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  n-tv.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  nationalpost.com:
+    primary: diffbot
+    confidence: high
+    fallbacks: []
+  nettavisen.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  newbloommag.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  neweasterneurope.eu:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  news.tvbs.com.tw:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  newstatesman.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nexos.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nikkei.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nippon.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nknews.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  notesfrompoland.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  novinky.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nra.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nrk.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nupi.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  nv.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - playwright
+  oglobo.globo.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  ohtuleht.ee:
+    primary: diffbot
+    confidence: high
+    fallbacks: []
+  oko.press:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  omni.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  onet.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  opencanada.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  orfonline.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  osw.waw.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ouest-france.fr:
+    primary: diffbot
+    confidence: medium
+    fallbacks: []
+  pauta.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  pf.org.tw:
+    primary: curl
+    confidence: medium
+    fallbacks:
+    - diffbot
+    - playwright
+  piedepagina.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  poder360.com.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  policyoptions.irpp.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  politicaexterior.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  politico.eu:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  polityka.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  polsatnews.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  postimees.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  pravda.com.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  president.gov.ua:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  proceso.com.mx:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  profit.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  publicsenat.fr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  razumkov.org.ua:
+    primary: curl
+    confidence: medium
+    fallbacks:
+    - diffbot
+  realinstitutoelcano.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  recorder.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  reforma.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  regjeringen.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  repubblica.it:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  republika.co.id:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  respekt.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  reuters.com:
+    primary: diffbot
+    confidence: low
+    fallbacks: []
+  riigikogu.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  riseproject.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  rmf24.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  rp.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  rus.err.ee:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  sabq.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  sansadtv.nic.in:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  sbs.com.au:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  senado.leg.br:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  setav.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  setn.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  seznamzpravy.cz:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  sozcu.com.tr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  spectator.co.uk:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  spf.org:
+    primary: snippet_only
+    confidence: null
+    fallbacks: []
+  spiegel.de:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - diffbot
+  storm.mg:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  stortinget.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  subrei.gob.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  sueddeutsche.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  suomenkuvalehti.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  svd.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  sverigesradio.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  svt.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  sydsvenskan.se:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  t13.cl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  t24.com.tr:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  tagesspiegel.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  taipeitimes.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  taiwannews.com.tw:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  takshashila.org.in:
+    primary: playwright
+    confidence: high
+    fallbacks: []
+  talouselama.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  taz.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  telegraph.co.uk:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  tempo.co:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  texty.org.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  theconversation.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  thediplomat.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  theglobeandmail.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  theguardian.com:
+    primary: publisher_api
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+    publisher_api: guardian
+  thehindu.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  thejakartapost.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  thenationalnews.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  thenewslens.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  theprint.in:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  thestar.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  thewire.in:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  tirto.id:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  tokyo-np.co.jp:
+    primary: curl
+    confidence: low
+    fallbacks:
+    - diffbot
+  tvn24.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  tvnet.lv:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  twreporter.org:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  udn.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ukdefencejournal.org.uk:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ukrinform.net:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  ussc.edu.au:
+    primary: playwright
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  uusisuomi.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  valor.globo.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  valtioneuvosto.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  verkkouutiset.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  vg.no:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  vozpopuli.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  vz.lt:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  wam.ae:
+    primary: snippet_only
+    confidence: null
+    fallbacks: []
+  welt.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  wiwo.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  www3.nhk.or.jp:
+    primary: curl
+    confidence: low
+    fallbacks:
+    - diffbot
+  wyborcza.pl:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  yle.fi:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  zeit.de:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+    - playwright
+  zetatijuana.com:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - diffbot
+  zf.ro:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot
+  zn.ua:
+    primary: curl
+    confidence: high
+    fallbacks:
+    - curl
+    - diffbot

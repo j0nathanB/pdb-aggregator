@@ -1,0 +1,127 @@
+country: Norway
+code: 'no'
+tier: shield
+region: western_europe
+actors:
+- name: Jonas Gahr Støre
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Støre
+  - Jonas Gahr Støre
+- name: King Harald V
+  role: Head of State
+  primary: false
+  search_terms:
+  - King Harald
+  - Harald V
+- name: Jens Stoltenberg
+  role: Finance Minister (former NATO Secretary General)
+  primary: false
+  search_terms:
+  - Stoltenberg
+  - Jens Stoltenberg
+- name: Espen Barth Eide
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Barth Eide
+  - Espen Barth Eide
+- name: Sylvi Listhaug
+  role: Progress Party leader (opposition)
+  primary: false
+  search_terms:
+  - Listhaug
+  - Sylvi Listhaug
+  - FrP
+- name: Norwegian Armed Forces
+  role: Military (Forsvaret)
+  primary: false
+  search_terms:
+  - Forsvaret
+  - Norwegian Armed Forces
+- name: E-tjenesten
+  role: Norwegian Intelligence Service
+  primary: false
+  search_terms:
+  - E-tjenesten
+  - NIS
+  - Norwegian Intelligence Service
+- name: Norges Bank
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Norges Bank
+  - Ida Wolden Bache
+- name: Equinor
+  role: State energy company
+  primary: false
+  search_terms:
+  - Equinor
+- name: Government Pension Fund Global
+  role: Sovereign wealth fund
+  primary: false
+  search_terms:
+  - GPFG
+  - Government Pension Fund Global
+  - oil fund
+languages:
+  primary: 'no'
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Arctic/High North military posture
+  reason: Finnmark Brigade activities near Russian border and intelligence operations
+    are classified
+  where_signal_lives: E-tjenesten annual Focus report, NATO Arctic exercises communiqués,
+    Barents Observer
+- domain: Sovereign wealth fund ethical exclusions
+  reason: GPFG divestment decisions carry geopolitical implications rarely covered
+    in domestic press
+  where_signal_lives: NBIM annual reports, Council on Ethics recommendations
+news_discovery:
+  goggle_file: assets/country_goggles/no.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: 'NO'
+    search_lang: 'no'
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - bilaterale forbindelser
+    - diplomatisk avtale
+    - utenrikspolitikk
+    - bilateralt toppmøte
+    - ambassadør
+    security_defense:
+    - Forsvaret
+    - forsvarskjøp
+    - sikkerhetssamarbeid
+    - E-tjenesten
+    - militær deployering
+    economic_tech:
+    - utenlandsk investering
+    - handelsavtale
+    - Norges Bank
+    - Equinor
+    - oljefondet
+    - GPFG
+    - supply chain
+    institutional:
+    - NATO
+    - FN
+    - Nordisk samarbeid
+    - EØS
+    - traktatratifisering
+    domestic_constraints:
+    - Stortinget
+    - Arbeiderpartiet
+    - Fremskrittspartiet
+    - koalisjon
+    - opposisjon
+government_discovery:
+  config_file: assets/government/no.yaml
+interpretive_context_file: assets/context/no_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

@@ -1,0 +1,38 @@
+! name: MPM Canada
+! description: MPM pipeline source prioritization for Canada — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=cbc.ca
+$boost=10,site=theglobeandmail.com
+$boost=10,site=ici.radio-canada.ca
+$boost=10,site=hilltimes.com
+$boost=10,site=lapresse.ca
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=ledevoir.com
+$boost=5,site=ctvnews.ca
+$boost=5,site=globalnews.ca
+$boost=5,site=bnnbloomberg.ca
+$boost=5,site=canada.ca
+$boost=5,site=pm.gc.ca
+$boost=5,site=cgai.ca
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=opencanada.org
+$boost=3,site=cigionline.org
+$boost=3,site=macdonaldlaurier.ca
+$boost=3,site=policyoptions.irpp.org
+$boost=3,site=ipolitics.ca
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=rebelnews.com
+$discard,site=dailyhive.com
+$discard,site=narcity.com
+$discard,site=torontosun.com
+$discard,site=ottawasun.com

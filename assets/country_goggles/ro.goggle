@@ -1,0 +1,37 @@
+! name: MPM Romania
+! description: MPM pipeline source prioritization for Romania — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=g4media.ro
+$boost=10,site=digi24.ro
+$boost=10,site=agerpres.ro
+$boost=10,site=zf.ro
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=hotnews.ro
+$boost=5,site=recorder.ro
+$boost=5,site=riseproject.ro
+$boost=5,site=presidency.ro
+$boost=5,site=mapn.ro
+$boost=5,site=mae.ro
+$boost=5,site=newstrategycenter.ro
+$boost=5,site=romania-insider.com
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=pressone.ro
+$boost=3,site=profit.ro
+$boost=3,site=euronews.com
+$boost=3,site=cdep.ro
+$boost=3,site=senat.ro
+$boost=3,site=expertforum.ro
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=romaniatv.net
+$discard,site=realitatea.net
+$discard,site=b1tv.ro

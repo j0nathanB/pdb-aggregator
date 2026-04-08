@@ -1,0 +1,1310 @@
+_generated_from: dev/source_maps/media/0_brave_search_results/REPORT.md
+_note: 'Do not edit manually. Regenerate with: python dev/source_maps/media/generate_brave_config.py'
+defaults:
+  count: 50
+  offset: 0
+  freshness: pw
+  extra_snippets: true
+countries:
+  ae:
+    use_local_params: false
+    sources:
+    - name: WAM (Emirates News Agency)
+      domain: wam.ae
+      rss_full_text: false
+    - name: The National
+      domain: thenationalnews.com
+      rss_full_text: false
+    - name: Gulf News
+      domain: gulfnews.com
+      rss_full_text: true
+    - name: Khaleej Times
+      domain: khaleejtimes.com
+      rss_full_text: true
+    - name: Al Ittihad
+      domain: aletihad.ae
+      rss_full_text: false
+    - name: Al Bayan
+      domain: albayan.ae
+      rss_full_text: false
+    - name: Al Arabiya English
+      domain: english.alarabiya.net
+      rss_full_text: false
+    - name: Al-Monitor UAE Coverage
+      domain: al-monitor.com
+      rss_full_text: true
+    - name: Middle East Eye
+      domain: middleeasteye.net
+      rss_full_text: false
+    - name: Arabian Business
+      domain: arabianbusiness.com
+      rss_full_text: false
+    - name: AGBI (Arabian Gulf Business Insight)
+      domain: agbi.com
+      rss_full_text: true
+    - name: Defense News / Breaking Defense (UAE coverage)
+      domain: breakingdefense.com
+      rss_full_text: true
+  au:
+    use_local_params: false
+    sources:
+    - name: The Guardian Australia
+      domain: theguardian.com
+      rss_full_text: true
+    - name: ABC News
+      domain: abc.net.au
+      rss_full_text: false
+    - name: SBS News
+      domain: sbs.com.au
+      rss_full_text: false
+    - name: The Lowy Institute — *The Interpreter
+      domain: lowyinstitute.org
+      rss_full_text: false
+    - name: ASPI — *The Strategist
+      domain: aspistrategist.org.au
+      rss_full_text: false
+    - name: United States Studies Centre (USSC)
+      domain: ussc.edu.au
+      rss_full_text: false
+    - name: East Asia Forum
+      domain: eastasiaforum.org
+      rss_full_text: false
+    - name: Australian Institute of International Affairs (AIIA) — *Australian Outlook
+      domain: internationalaffairs.org.au
+      rss_full_text: true
+    - name: Australian Foreign Affairs (AFA)
+      domain: australianforeignaffairs.com
+      rss_full_text: false
+    - name: Defence Connect
+      domain: defenceconnect.com.au
+      rss_full_text: false
+    - name: Australian Defence Magazine (ADM)
+      domain: australiandefence.com.au
+      rss_full_text: false
+    - name: Department of Defence — Official Releases & Publications
+      domain: defence.gov.au
+      rss_full_text: false
+    - name: The Conversation — Australia
+      domain: theconversation.com
+      rss_full_text: false
+  br:
+    use_local_params: true
+    local_params:
+      search_lang: pt-br
+      ui_lang: pt-BR
+      country: BR
+    sources:
+    - name: Folha de S.Paulo
+      domain: folha.uol.com.br
+      rss_full_text: false
+    - name: O Globo
+      domain: oglobo.globo.com
+      rss_full_text: false
+    - name: O Estado de S. Paulo (Estadão)
+      domain: estadao.com.br
+      rss_full_text: false
+    - name: Valor Econômico
+      domain: valor.globo.com
+      rss_full_text: false
+    - name: Poder360
+      domain: poder360.com.br
+      rss_full_text: true
+    - name: Metrópoles
+      domain: metropoles.com
+      rss_full_text: true
+    - name: JOTA
+      domain: jota.info
+      rss_full_text: true
+    - name: Agência Brasil
+      domain: agenciabrasil.ebc.com.br
+      rss_full_text: true
+    - name: Itamaraty Press Releases (MRE)
+      domain: gov.br
+      rss_full_text: true
+    - name: Agência Senado / Agência Câmara
+      domain: senado.leg.br
+      rss_full_text: false
+    - name: DefesaNet
+      domain: defesanet.com.br
+      rss_full_text: true
+    - name: Defesa em Foco
+      domain: defesaemfoco.com.br
+      rss_full_text: true
+    - name: CEBRI (Centro Brasileiro de Relações Internacionais)
+      domain: cebri.org
+      rss_full_text: false
+    - name: Instituto Igarapé
+      domain: igarape.org.br
+      rss_full_text: true
+    - name: Americas Quarterly (AQ)
+      domain: americasquarterly.org
+      rss_full_text: true
+    - name: Congresso em Foco
+      domain: congressoemfoco.com.br
+      rss_full_text: true
+    - name: Diálogo Américas
+      domain: dialogo-americas.com
+      rss_full_text: true
+  ca:
+    use_local_params: true
+    local_params:
+      search_lang: fr
+      ui_lang: fr-CA
+      country: CA
+    sources:
+    - name: CBC News
+      domain: cbc.ca
+      rss_full_text: false
+    - name: Radio-Canada (ICI Radio-Canada)
+      domain: ici.radio-canada.ca
+      rss_full_text: false
+    - name: The Globe and Mail
+      domain: theglobeandmail.com
+      rss_full_text: true
+    - name: National Post / Financial Post
+      domain: nationalpost.com
+      rss_full_text: true
+    - name: Toronto Star
+      domain: thestar.com
+      rss_full_text: false
+    - name: La Presse
+      domain: lapresse.ca
+      rss_full_text: false
+    - name: Le Devoir
+      domain: ledevoir.com
+      rss_full_text: false
+    - name: The Hill Times
+      domain: hilltimes.com
+      rss_full_text: true
+    - name: CTV News
+      domain: ctvnews.ca
+      rss_full_text: false
+    - name: Global News
+      domain: globalnews.ca
+      rss_full_text: true
+    - name: BNN Bloomberg
+      domain: bnnbloomberg.ca
+      rss_full_text: false
+    - name: OpenCanada (Canadian International Council)
+      domain: opencanada.org
+      rss_full_text: true
+    - name: CIGI (Centre for International Governance Innovation)
+      domain: cigionline.org
+      rss_full_text: false
+    - name: Macdonald-Laurier Institute (MLI)
+      domain: macdonaldlaurier.ca
+      rss_full_text: false
+    - name: Policy Options (IRPP)
+      domain: policyoptions.irpp.org
+      rss_full_text: true
+    - name: Canadian Defence Review
+      domain: canadiandefencereview.com
+      rss_full_text: true
+    - name: Canada.ca (Global Affairs / DND official releases)
+      domain: canada.ca
+      rss_full_text: false
+  cl:
+    use_local_params: false
+    sources:
+    - name: La Tercera
+      domain: latercera.com
+      rss_full_text: true
+    - name: El Mercurio / EMOL
+      domain: emol.com
+      rss_full_text: false
+    - name: Ex-Ante
+      domain: ex-ante.cl
+      rss_full_text: false
+    - name: El Mostrador
+      domain: elmostrador.cl
+      rss_full_text: false
+    - name: CIPER Chile
+      domain: ciperchile.cl
+      rss_full_text: true
+    - name: Interferencia
+      domain: interferencia.cl
+      rss_full_text: true
+    - name: Diario Financiero
+      domain: df.cl
+      rss_full_text: false
+    - name: Radio Cooperativa
+      domain: cooperativa.cl
+      rss_full_text: false
+    - name: BioBioChile (Radio Bío-Bío)
+      domain: biobiochile.cl
+      rss_full_text: false
+    - name: Pauta
+      domain: pauta.cl
+      rss_full_text: false
+    - name: T13 (Teletrece / Canal 13)
+      domain: t13.cl
+      rss_full_text: false
+    - name: Infodefensa (Chile edition)
+      domain: infodefensa.com
+      rss_full_text: false
+    - name: Ministerio de Relaciones Exteriores (Cancillería)
+      domain: minrel.gob.cl
+      rss_full_text: false
+    - name: SUBREI (Subsecretaría de Relaciones Económicas Internacionales)
+      domain: subrei.gob.cl
+      rss_full_text: false
+    - name: AthenaLab
+      domain: athenalab.org
+      rss_full_text: true
+    - name: Americas Quarterly
+      domain: americasquarterly.org
+      rss_full_text: true
+    - name: BNamericas
+      domain: bnamericas.com
+      rss_full_text: false
+    - name: Reuters / AFP Santiago Bureau
+      domain: reuters.com
+      rss_full_text: false
+  cz:
+    use_local_params: false
+    sources:
+    - name: CT24 (Ceska televize)
+      domain: ct24.ceskatelevize.cz
+      rss_full_text: true
+    - name: iROZHLAS.cz (Cesky rozhlas)
+      domain: iROZHLAS.cz
+      rss_full_text: false
+    - name: Hospodarske noviny (HN)
+      domain: hn.cz
+      rss_full_text: true
+    - name: Denik N
+      domain: denikn.cz
+      rss_full_text: true
+    - name: Respekt
+      domain: respekt.cz
+      rss_full_text: true
+    - name: Seznam Zpravy
+      domain: seznamzpravy.cz
+      rss_full_text: true
+    - name: HlidaciPes.org
+      domain: HlidaciPes.org
+      rss_full_text: true
+    - name: Pravo / Novinky.cz
+      domain: novinky.cz
+      rss_full_text: true
+    - name: Ministry of Foreign Affairs (MZV)
+      domain: mzv.gov.cz
+      rss_full_text: false
+    - name: Ministry of Defence (MO)
+      domain: mo.gov.cz
+      rss_full_text: true
+    - name: CZDEFENCE
+      domain: czdefence.com
+      rss_full_text: true
+    - name: AMO -- Association for International Affairs
+      domain: amo.cz
+      rss_full_text: true
+    - name: EUROPEUM -- Institute for European Policy
+      domain: europeum.org
+      rss_full_text: true
+    - name: Aktualne.cz
+      domain: Aktualne.cz
+      rss_full_text: true
+  de:
+    use_local_params: true
+    local_params:
+      search_lang: de
+      ui_lang: de-DE
+      country: DE
+    sources:
+    - name: Frankfurter Allgemeine Zeitung (FAZ)
+      domain: faz.net
+      rss_full_text: false
+    - name: Süddeutsche Zeitung (SZ)
+      domain: sueddeutsche.de
+      rss_full_text: false
+    - name: Die Zeit
+      domain: zeit.de
+      rss_full_text: false
+    - name: Handelsblatt
+      domain: handelsblatt.com
+      rss_full_text: false
+    - name: WirtschaftsWoche
+      domain: wiwo.de
+      rss_full_text: false
+    - name: Der Spiegel
+      domain: spiegel.de
+      rss_full_text: false
+    - name: Die Welt / Welt am Sonntag
+      domain: welt.de
+      rss_full_text: false
+    - name: taz (Die Tageszeitung)
+      domain: taz.de
+      rss_full_text: true
+    - name: Der Tagesspiegel
+      domain: tagesspiegel.de
+      rss_full_text: false
+    - name: Politico Europe (Berlin bureau)
+      domain: politico.eu
+      rss_full_text: true
+    - name: Deutsche Welle (DW)
+      domain: dw.com
+      rss_full_text: false
+    - name: DGAP / Internationale Politik Quarterly (IPQ)
+      domain: dgap.org
+      rss_full_text: false
+    - name: Frankfurter Rundschau
+      domain: fr.de
+      rss_full_text: false
+    - name: n-tv.de
+      domain: n-tv.de
+      rss_full_text: true
+    - name: Internationale Politik und Gesellschaft (IPG) — Friedrich-Ebert-Stiftung
+      domain: ipg-journal.de
+      rss_full_text: false
+  ee:
+    use_local_params: false
+    sources:
+    - name: ERR (Eesti Rahvusringhääling)
+      domain: err.ee
+      rss_full_text: false
+    - name: Postimees
+      domain: postimees.ee
+      rss_full_text: false
+    - name: Eesti Päevaleht
+      domain: epl.delfi.ee
+      rss_full_text: false
+    - name: Delfi Estonia
+      domain: delfi.ee
+      rss_full_text: false
+    - name: Eesti Ekspress
+      domain: ekspress.delfi.ee
+      rss_full_text: false
+    - name: Äripäev
+      domain: aripaev.ee
+      rss_full_text: false
+    - name: Õhtuleht
+      domain: ohtuleht.ee
+      rss_full_text: false
+    - name: ICDS (International Centre for Defence and Security)
+      domain: icds.ee
+      rss_full_text: false
+    - name: ERR Russian Service
+      domain: rus.err.ee
+      rss_full_text: false
+    - name: Riigikogu (Parliament)
+      domain: riigikogu.ee
+      rss_full_text: true
+  es:
+    use_local_params: true
+    local_params:
+      search_lang: es
+      ui_lang: es-ES
+      country: ES
+    sources:
+    - name: El Pais
+      domain: elpais.com
+      rss_full_text: false
+    - name: El Mundo
+      domain: elmundo.es
+      rss_full_text: false
+    - name: ABC
+      domain: abc.es
+      rss_full_text: false
+    - name: El Confidencial
+      domain: elconfidencial.com
+      rss_full_text: false
+    - name: elDiario.es
+      domain: elDiario.es
+      rss_full_text: true
+    - name: El Espanol
+      domain: elespanol.com
+      rss_full_text: true
+    - name: Expansion
+      domain: expansion.com
+      rss_full_text: false
+    - name: Cinco Dias
+      domain: cincodias.elpais.com
+      rss_full_text: false
+    - name: El Economista
+      domain: eleconomista.es
+      rss_full_text: false
+    - name: La Vanguardia
+      domain: lavanguardia.com
+      rss_full_text: false
+    - name: Agencia EFE
+      domain: efe.com
+      rss_full_text: false
+    - name: Infodefensa
+      domain: infodefensa.com
+      rss_full_text: false
+    - name: Atalayar
+      domain: atalayar.com
+      rss_full_text: true
+    - name: Politica Exterior
+      domain: politicaexterior.com
+      rss_full_text: true
+    - name: Real Instituto Elcano
+      domain: realinstitutoelcano.org
+      rss_full_text: true
+    - name: Voz Populi
+      domain: vozpopuli.com
+      rss_full_text: true
+  fi:
+    use_local_params: true
+    local_params:
+      search_lang: fi
+      ui_lang: fi-FI
+      country: FI
+    sources:
+    - name: Yle Uutiset
+      domain: yle.fi
+      rss_full_text: false
+    - name: Helsingin Sanomat
+      domain: hs.fi
+      rss_full_text: false
+    - name: Kauppalehti
+      domain: kauppalehti.fi
+      rss_full_text: false
+    - name: Talouselama
+      domain: talouselama.fi
+      rss_full_text: false
+    - name: Ilta-Sanomat
+      domain: is.fi
+      rss_full_text: false
+    - name: Iltalehti
+      domain: iltalehti.fi
+      rss_full_text: true
+    - name: Hufvudstadsbladet
+      domain: hbl.fi
+      rss_full_text: false
+    - name: Suomen Kuvalehti
+      domain: suomenkuvalehti.fi
+      rss_full_text: false
+    - name: Maanpuolustus-lehti
+      domain: maanpuolustus-lehti.fi
+      rss_full_text: false
+    - name: Uusi Suomi
+      domain: uusisuomi.fi
+      rss_full_text: false
+    - name: Verkkouutiset
+      domain: verkkouutiset.fi
+      rss_full_text: false
+    - name: Kansan Uutiset
+      domain: kansanuutiset.fi
+      rss_full_text: false
+    - name: Helsinki Times
+      domain: helsinkitimes.fi
+      rss_full_text: false
+    - name: Valtioneuvosto (Government)
+      domain: valtioneuvosto.fi
+      rss_full_text: false
+    - name: FIIA (Finnish Institute of International Affairs)
+      domain: fiia.fi
+      rss_full_text: true
+  fr:
+    use_local_params: true
+    local_params:
+      search_lang: fr
+      ui_lang: fr-FR
+      country: FR
+    sources:
+    - name: Le Monde
+      domain: lemonde.fr
+      rss_full_text: false
+    - name: Le Figaro
+      domain: lefigaro.fr
+      rss_full_text: false
+    - name: Les Echos
+      domain: lesechos.fr
+      rss_full_text: false
+    - name: Libération
+      domain: liberation.fr
+      rss_full_text: false
+    - name: France 24
+      domain: france24.com
+      rss_full_text: true
+    - name: Mediapart
+      domain: mediapart.fr
+      rss_full_text: false
+    - name: L'Opinion
+      domain: lopinion.fr
+      rss_full_text: false
+    - name: La Croix
+      domain: la-croix.com
+      rss_full_text: true
+    - name: Contexte
+      domain: contexte.com
+      rss_full_text: false
+    - name: Le Monde diplomatique
+      domain: monde-diplomatique.fr
+      rss_full_text: true
+    - name: Intelligence Online
+      domain: intelligenceonline.com
+      rss_full_text: false
+    - name: La Lettre A (Indigo Publications)
+      domain: lalettre.fr
+      rss_full_text: false
+    - name: Le Parisien / Aujourd'hui en France
+      domain: leparisien.fr
+      rss_full_text: false
+    - name: Ouest-France
+      domain: ouest-france.fr
+      rss_full_text: false
+    - name: Public Sénat / LCP (La Chaîne Parlementaire)
+      domain: publicsenat.fr
+      rss_full_text: true
+  gb:
+    use_local_params: false
+    sources:
+    - name: BBC News
+      domain: bbc.co.uk
+      rss_full_text: false
+    - name: Financial Times
+      domain: ft.com
+      rss_full_text: false
+    - name: The Guardian
+      domain: theguardian.com
+      rss_full_text: true
+    - name: The Telegraph
+      domain: telegraph.co.uk
+      rss_full_text: false
+    - name: The Economist
+      domain: economist.com
+      rss_full_text: false
+    - name: Chatham House (Royal Institute of International Affairs)
+      domain: chathamhouse.org
+      rss_full_text: false
+    - name: GOV.UK (HM Government official)
+      domain: gov.uk
+      rss_full_text: false
+    - name: Politico Europe (London)
+      domain: politico.eu
+      rss_full_text: true
+    - name: Janes (formerly Jane's)
+      domain: janes.com
+      rss_full_text: false
+    - name: UK Defence Journal
+      domain: ukdefencejournal.org.uk
+      rss_full_text: true
+    - name: The Spectator
+      domain: spectator.co.uk
+      rss_full_text: false
+    - name: The New Statesman
+      domain: newstatesman.com
+      rss_full_text: true
+    - name: Reuters (UK wire)
+      domain: reuters.com
+      rss_full_text: false
+    - name: Declassified UK
+      domain: declassifieduk.org
+      rss_full_text: true
+  id:
+    use_local_params: false
+    sources:
+    - name: Antara (English & Indonesian)
+      domain: antaranews.com
+      rss_full_text: true
+    - name: Kompas / Kompas.id
+      domain: kompas.id
+      rss_full_text: false
+    - name: Tempo / Tempo.co
+      domain: tempo.co
+      rss_full_text: false
+    - name: The Jakarta Post
+      domain: thejakartapost.com
+      rss_full_text: false
+    - name: Jakarta Globe
+      domain: jakartaglobe.id
+      rss_full_text: false
+    - name: Detik.com
+      domain: Detik.com
+      rss_full_text: false
+    - name: CNN Indonesia
+      domain: cnnindonesia.com
+      rss_full_text: true
+    - name: CNBC Indonesia
+      domain: cnbcindonesia.com
+      rss_full_text: true
+    - name: Kontan
+      domain: kontan.co.id
+      rss_full_text: false
+    - name: Tirto.id
+      domain: Tirto.id
+      rss_full_text: false
+    - name: Republika Online
+      domain: republika.co.id
+      rss_full_text: true
+    - name: Fulcrum / ISEAS-Yusof Ishak Institute
+      domain: fulcrum.sg
+      rss_full_text: true
+    - name: Bisnis Indonesia / Bisnis.com
+      domain: bisnis.com
+      rss_full_text: false
+  in:
+    use_local_params: false
+    sources:
+    - name: Ministry of External Affairs (MEA) -- Official Statements
+      domain: mea.gov.in
+      rss_full_text: false
+    - name: The Hindu
+      domain: thehindu.com
+      rss_full_text: false
+    - name: The Indian Express
+      domain: indianexpress.com
+      rss_full_text: true
+    - name: Hindustan Times
+      domain: hindustantimes.com
+      rss_full_text: false
+    - name: ThePrint
+      domain: theprint.in
+      rss_full_text: false
+    - name: The Wire
+      domain: thewire.in
+      rss_full_text: false
+    - name: The Economic Times
+      domain: economictimes.indiatimes.com
+      rss_full_text: false
+    - name: LiveMint
+      domain: livemint.com
+      rss_full_text: true
+    - name: Observer Research Foundation (ORF)
+      domain: orfonline.org
+      rss_full_text: false
+    - name: Manohar Parrikar Institute for Defence Studies and Analyses (MP-IDSA)
+      domain: idsa.in
+      rss_full_text: true
+    - name: Carnegie India
+      domain: carnegieindia.org
+      rss_full_text: false
+    - name: Gateway House
+      domain: gatewayhouse.in
+      rss_full_text: true
+    - name: Takshashila Institution
+      domain: takshashila.org.in
+      rss_full_text: false
+    - name: Economic and Political Weekly (EPW)
+      domain: epw.in
+      rss_full_text: false
+    - name: Dainik Jagran
+      domain: jagran.com
+      rss_full_text: false
+    - name: Dainik Bhaskar
+      domain: bhaskar.com
+      rss_full_text: false
+    - name: Sansad TV (Parliament Television)
+      domain: sansadtv.nic.in
+      rss_full_text: true
+    - name: FORCE Magazine
+      domain: forceindia.net
+      rss_full_text: false
+  it:
+    use_local_params: true
+    local_params:
+      search_lang: it
+      ui_lang: it-IT
+      country: IT
+    sources:
+    - name: ANSA (Agenzia Nazionale Stampa Associata)
+      domain: ansa.it
+      rss_full_text: true
+    - name: Corriere della Sera
+      domain: corriere.it
+      rss_full_text: false
+    - name: La Repubblica
+      domain: repubblica.it
+      rss_full_text: false
+    - name: Il Sole 24 Ore
+      domain: ilsole24ore.com
+      rss_full_text: false
+    - name: Formiche.net
+      domain: formiche.net
+      rss_full_text: true
+    - name: Decode39
+      domain: decode39.com
+      rss_full_text: true
+    - name: Limes - Rivista Italiana di Geopolitica
+      domain: limesonline.com
+      rss_full_text: true
+    - name: ISPI - Istituto per gli Studi di Politica Internazionale
+      domain: ispionline.it
+      rss_full_text: false
+    - name: Governo.it (Presidenza del Consiglio dei Ministri)
+      domain: governo.it
+      rss_full_text: true
+    - name: Farnesina (Ministero degli Affari Esteri e della Cooperazione Internazionale)
+      domain: esteri.it
+      rss_full_text: false
+    - name: Agenzia Nova
+      domain: agenzianova.com
+      rss_full_text: false
+    - name: Il Fatto Quotidiano
+      domain: ilfattoquotidiano.it
+      rss_full_text: true
+    - name: Domani
+      domain: editorialedomani.it
+      rss_full_text: true
+    - name: AGI (Agenzia Giornalistica Italia)
+      domain: agi.it
+      rss_full_text: false
+  jp:
+    use_local_params: true
+    local_params:
+      search_lang: jp
+      ui_lang: ja-JP
+      country: JP
+    sources:
+    - name: Kyodo News (Japan Wire)
+      domain: english.kyodonews.net
+      rss_full_text: false
+    - name: NHK World-Japan
+      domain: www3.nhk.or.jp
+      rss_full_text: false
+    - name: Nikkei Asia
+      domain: asia.nikkei.com
+      rss_full_text: false
+    - name: The Japan Times
+      domain: japantimes.co.jp
+      rss_full_text: true
+    - name: Asahi Shimbun (Asia & Japan Watch)
+      domain: asahi.com
+      rss_full_text: false
+    - name: Sankei Shimbun / JAPAN Forward
+      domain: japan-forward.com
+      rss_full_text: true
+    - name: Tokyo Shimbun / Chunichi Shimbun
+      domain: tokyo-np.co.jp
+      rss_full_text: false
+    - name: Prime Minister's Office (Kantei) & Chief Cabinet Secretary Pressers
+      domain: japan.kantei.go.jp
+      rss_full_text: false
+    - name: Ministry of Defense (MOD) / Joint Staff Office
+      domain: mod.go.jp
+      rss_full_text: false
+    - name: Sasakawa Peace Foundation (SPF) / Sasakawa USA
+      domain: spf.org
+      rss_full_text: false
+    - name: Nippon.com
+      domain: Nippon.com
+      rss_full_text: false
+    - name: Nikkei Shimbun (Japanese edition)
+      domain: nikkei.com
+      rss_full_text: false
+    - name: Reuters Japan / AP Tokyo Bureau
+      domain: reuters.com
+      rss_full_text: false
+  kr:
+    use_local_params: false
+    sources:
+    - name: Yonhap News Agency (연합뉴스)
+      domain: en.yna.co.kr
+      rss_full_text: false
+    - name: The Korea Herald (코리아헤럴드)
+      domain: koreaherald.com
+      rss_full_text: false
+    - name: Korea JoongAng Daily (중앙일보 영문판)
+      domain: koreajoongangdaily.joins.com
+      rss_full_text: false
+    - name: Hankyoreh English (한겨레 영문판)
+      domain: english.hani.co.kr
+      rss_full_text: true
+    - name: The Korea Times (코리아타임스)
+      domain: koreatimes.co.kr
+      rss_full_text: false
+    - name: Chosun Ilbo (조선일보)
+      domain: chosun.com
+      rss_full_text: false
+    - name: Korea Pro
+      domain: koreapro.org
+      rss_full_text: true
+    - name: NK News / NK Pro
+      domain: nknews.org
+      rss_full_text: true
+    - name: Korea Economic Daily / KED Global (한국경제신문)
+      domain: kedglobal.com
+      rss_full_text: false
+    - name: 38 North
+      domain: 38north.org
+      rss_full_text: true
+    - name: The Diplomat (Asia-Pacific)
+      domain: thediplomat.com
+      rss_full_text: true
+    - name: Seoul Economic Daily (서울경제)
+      domain: en.sedaily.com
+      rss_full_text: true
+  lt:
+    use_local_params: false
+    sources:
+    - name: LRT (Lietuvos nacionalinis radijas ir televizija)
+      domain: lrt.lt
+      rss_full_text: true
+    - name: Delfi.lt
+      domain: delfi.lt
+      rss_full_text: false
+    - name: 15min.lt
+      domain: 15min.lt
+      rss_full_text: true
+    - name: Lietuvos rytas
+      domain: lrytas.lt
+      rss_full_text: true
+    - name: Verslo zinios
+      domain: vz.lt
+      rss_full_text: false
+    - name: BNS Lithuania
+      domain: bns.lt
+      rss_full_text: false
+    - name: Seimas (Parliament)
+      domain: lrs.lt
+      rss_full_text: false
+    - name: Ministry of National Defence
+      domain: kam.lt
+      rss_full_text: false
+  lv:
+    use_local_params: false
+    sources:
+    - name: LSM (Latvijas Sabiedriskie Mediji)
+      domain: lsm.lv
+      rss_full_text: true
+    - name: Delfi Latvia
+      domain: delfi.lv
+      rss_full_text: true
+    - name: TVNET
+      domain: tvnet.lv
+      rss_full_text: true
+    - name: Diena
+      domain: diena.lv
+      rss_full_text: false
+    - name: Neatkariga Rita Avize (NRA)
+      domain: nra.lv
+      rss_full_text: true
+    - name: Latvijas Avize
+      domain: la.lv
+      rss_full_text: true
+    - name: IR
+      domain: ir.lv
+      rss_full_text: true
+    - name: Verslo / db.lv (Dienas Bizness)
+      domain: db.lv
+      rss_full_text: false
+  mx:
+    use_local_params: true
+    local_params:
+      search_lang: es
+      ui_lang: es-MX
+      country: MX
+    sources:
+    - name: El Universal
+      domain: eluniversal.com.mx
+      rss_full_text: false
+    - name: Reforma / Mexico Today
+      domain: reforma.com
+      rss_full_text: false
+    - name: La Jornada
+      domain: jornada.com.mx
+      rss_full_text: false
+    - name: Milenio
+      domain: milenio.com
+      rss_full_text: false
+    - name: El Financiero
+      domain: elfinanciero.com.mx
+      rss_full_text: true
+    - name: El Economista
+      domain: eleconomista.com.mx
+      rss_full_text: false
+    - name: Animal Político
+      domain: animalpolitico.com
+      rss_full_text: false
+    - name: Proceso
+      domain: proceso.com.mx
+      rss_full_text: false
+    - name: Aristegui Noticias
+      domain: aristeguinoticias.com
+      rss_full_text: false
+    - name: Latinus
+      domain: latinus.us
+      rss_full_text: false
+    - name: Excélsior
+      domain: excelsior.com.mx
+      rss_full_text: true
+    - name: InSight Crime
+      domain: insightcrime.org
+      rss_full_text: true
+    - name: Semanario Zeta
+      domain: zetatijuana.com
+      rss_full_text: true
+    - name: Pie de Página
+      domain: piedepagina.mx
+      rss_full_text: true
+    - name: Nexos
+      domain: nexos.com.mx
+      rss_full_text: false
+    - name: El País México
+      domain: elpais.com
+      rss_full_text: false
+    - name: Mexico News Daily
+      domain: mexiconewsdaily.com
+      rss_full_text: true
+  'no':
+    use_local_params: false
+    sources:
+    - name: NRK (Norsk rikskringkasting)
+      domain: nrk.no
+      rss_full_text: false
+    - name: Aftenposten
+      domain: aftenposten.no
+      rss_full_text: true
+    - name: VG (Verdens Gang)
+      domain: vg.no
+      rss_full_text: true
+    - name: Dagens Naeringsliv (DN)
+      domain: dn.no
+      rss_full_text: false
+    - name: E24
+      domain: e24.no
+      rss_full_text: true
+    - name: Klassekampen
+      domain: klassekampen.no
+      rss_full_text: false
+    - name: Morgenbladet
+      domain: morgenbladet.no
+      rss_full_text: true
+    - name: Minerva
+      domain: minerva.no
+      rss_full_text: false
+    - name: Forsvarets forum
+      domain: forsvaretsforum.no
+      rss_full_text: false
+    - name: Aldrimer.no
+      domain: Aldrimer.no
+      rss_full_text: true
+    - name: High North News
+      domain: highnorthnews.com
+      rss_full_text: false
+    - name: Regjeringen.no (Norwegian Government)
+      domain: Regjeringen.no
+      rss_full_text: false
+    - name: Stortinget.no (Norwegian Parliament)
+      domain: Stortinget.no
+      rss_full_text: false
+    - name: NUPI (Norsk utenrikspolitisk institutt)
+      domain: nupi.no
+      rss_full_text: false
+    - name: Dagbladet
+      domain: dagbladet.no
+      rss_full_text: false
+    - name: Nettavisen
+      domain: nettavisen.no
+      rss_full_text: false
+    - name: Filter Nyheter
+      domain: filternyheter.no
+      rss_full_text: true
+    - name: Energi og Klima
+      domain: energiogklima.no
+      rss_full_text: true
+  pl:
+    use_local_params: true
+    local_params:
+      search_lang: pl
+      ui_lang: pl-PL
+      country: PL
+    sources:
+    - name: TVN24 / tvn24.pl
+      domain: tvn24.pl
+      rss_full_text: false
+    - name: Rzeczpospolita
+      domain: rp.pl
+      rss_full_text: false
+    - name: Gazeta Wyborcza
+      domain: wyborcza.pl
+      rss_full_text: false
+    - name: Defence24
+      domain: defence24.pl
+      rss_full_text: true
+    - name: OSW -- Centre for Eastern Studies
+      domain: osw.waw.pl
+      rss_full_text: false
+    - name: Onet
+      domain: onet.pl
+      rss_full_text: false
+    - name: Dziennik Gazeta Prawna
+      domain: gazetaprawna.pl
+      rss_full_text: false
+    - name: Polityka
+      domain: polityka.pl
+      rss_full_text: false
+    - name: Do Rzeczy / wPolityce.pl / wPolsce24
+      domain: dorzeczy.pl
+      rss_full_text: true
+    - name: Notes from Poland
+      domain: notesfrompoland.com
+      rss_full_text: true
+    - name: RMF24
+      domain: rmf24.pl
+      rss_full_text: true
+    - name: New Eastern Europe
+      domain: neweasterneurope.eu
+      rss_full_text: true
+    - name: Polsat News
+      domain: polsatnews.pl
+      rss_full_text: true
+    - name: OKO.press
+      domain: OKO.press
+      rss_full_text: true
+  ro:
+    use_local_params: false
+    sources:
+    - name: AGERPRES (National News Agency)
+      domain: agerpres.ro
+      rss_full_text: true
+    - name: G4Media
+      domain: G4Media.ro
+      rss_full_text: true
+    - name: Digi24
+      domain: digi24.ro
+      rss_full_text: true
+    - name: HotNews.ro
+      domain: HotNews.ro
+      rss_full_text: true
+    - name: Recorder
+      domain: Recorder.ro
+      rss_full_text: true
+    - name: RISE Project
+      domain: riseproject.ro
+      rss_full_text: true
+    - name: Ziarul Financiar (ZF)
+      domain: zf.ro
+      rss_full_text: true
+    - name: Profit.ro
+      domain: Profit.ro
+      rss_full_text: true
+    - name: Libertatea
+      domain: libertatea.ro
+      rss_full_text: true
+    - name: Euronews Romania / Euronews (Romania tag)
+      domain: euronews.com
+      rss_full_text: true
+    - name: Antena 3 CNN
+      domain: antena3.ro
+      rss_full_text: true
+  sa:
+    use_local_params: false
+    sources:
+    - name: Arab News
+      domain: arabnews.com
+      rss_full_text: false
+    - name: Asharq Al-Awsat
+      domain: aawsat.com
+      rss_full_text: true
+    - name: Maaal
+      domain: maaal.com
+      rss_full_text: false
+    - name: Al-Riyadh
+      domain: alriyadh.com
+      rss_full_text: false
+    - name: Sabq
+      domain: sabq.org
+      rss_full_text: false
+    - name: Al Arabiya
+      domain: alarabiya.net
+      rss_full_text: false
+    - name: Al-Monitor Saudi Desk
+      domain: al-monitor.com
+      rss_full_text: true
+    - name: Gulf Research Center (GRC)
+      domain: grc.net
+      rss_full_text: false
+    - name: Middle East Eye
+      domain: middleeasteye.net
+      rss_full_text: false
+    - name: Chatham House MENA Programme
+      domain: chathamhouse.org
+      rss_full_text: false
+    - name: CSIS Middle East Program
+      domain: csis.org
+      rss_full_text: true
+  se:
+    use_local_params: false
+    sources:
+    - name: Sveriges Television (SVT)
+      domain: svt.se
+      rss_full_text: false
+    - name: Sveriges Radio (SR)
+      domain: sverigesradio.se
+      rss_full_text: false
+    - name: Dagens Nyheter (DN)
+      domain: dn.se
+      rss_full_text: false
+    - name: Svenska Dagbladet (SvD)
+      domain: svd.se
+      rss_full_text: false
+    - name: Aftonbladet
+      domain: aftonbladet.se
+      rss_full_text: true
+    - name: Expressen
+      domain: expressen.se
+      rss_full_text: true
+    - name: Dagens Industri (DI)
+      domain: di.se
+      rss_full_text: false
+    - name: Omni
+      domain: omni.se
+      rss_full_text: false
+    - name: Göteborgs-Posten
+      domain: gp.se
+      rss_full_text: false
+    - name: Sydsvenskan
+      domain: sydsvenskan.se
+      rss_full_text: false
+    - name: Fokus
+      domain: fokus.se
+      rss_full_text: true
+    - name: Kvartal
+      domain: kvartal.se
+      rss_full_text: false
+    - name: Altinget Sverige
+      domain: altinget.se
+      rss_full_text: false
+  tr:
+    use_local_params: true
+    local_params:
+      search_lang: tr
+      ui_lang: tr-TR
+      country: TR
+    sources:
+    - name: Hurriyet
+      domain: hurriyet.com.tr
+      rss_full_text: false
+    - name: Hurriyet Daily News
+      domain: hurriyetdailynews.com
+      rss_full_text: false
+    - name: Daily Sabah
+      domain: dailysabah.com
+      rss_full_text: true
+    - name: Cumhuriyet
+      domain: cumhuriyet.com.tr
+      rss_full_text: true
+    - name: Sozcu
+      domain: sozcu.com.tr
+      rss_full_text: false
+    - name: BirGun
+      domain: birgun.net
+      rss_full_text: false
+    - name: T24
+      domain: t24.com.tr
+      rss_full_text: false
+    - name: Medyascope
+      domain: medyascope.tv
+      rss_full_text: true
+    - name: Bianet
+      domain: bianet.org
+      rss_full_text: false
+    - name: Bloomberg HT
+      domain: bloomberght.com
+      rss_full_text: true
+    - name: SETA (Insight Turkey)
+      domain: setav.org
+      rss_full_text: false
+    - name: Al-Monitor Turkey
+      domain: al-monitor.com
+      rss_full_text: true
+    - name: Middle East Eye
+      domain: middleeasteye.net
+      rss_full_text: false
+    - name: Duvar English
+      domain: duvarenglish.com
+      rss_full_text: false
+  tw:
+    use_local_params: true
+    local_params:
+      search_lang: zh-hant
+      ui_lang: zh-TW
+      country: TW
+    sources:
+    - name: Focus Taiwan (CNA English)
+      domain: focustaiwan.tw
+      rss_full_text: false
+    - name: Liberty Times (自由時報)
+      domain: ltn.com.tw
+      rss_full_text: false
+    - name: Taipei Times
+      domain: taipeitimes.com
+      rss_full_text: false
+    - name: United Daily News (聯合報 / UDN)
+      domain: udn.com
+      rss_full_text: false
+    - name: CommonWealth Magazine (天下雜誌)
+      domain: cw.com.tw
+      rss_full_text: false
+    - name: TVBS News (TVBS新聞)
+      domain: news.tvbs.com.tw
+      rss_full_text: false
+    - name: SET News / Sanlih E-Television (三立新聞)
+      domain: setn.com
+      rss_full_text: false
+    - name: The Reporter (報導者)
+      domain: twreporter.org
+      rss_full_text: false
+    - name: The News Lens (關鍵評論網 / TNL)
+      domain: thenewslens.com
+      rss_full_text: false
+    - name: Storm Media (風傳媒)
+      domain: storm.mg
+      rss_full_text: false
+    - name: Institute for National Defense and Security Research (國防安全研究院 / INDSR)
+      domain: indsr.org.tw
+      rss_full_text: false
+    - name: Prospect Foundation (遠景基金會)
+      domain: pf.org.tw
+      rss_full_text: false
+    - name: Ministry of National Defense (國防部 / MND)
+      domain: mnd.gov.tw
+      rss_full_text: true
+    - name: Ketagalan Media
+      domain: ketagalanmedia.com
+      rss_full_text: true
+    - name: New Bloom Magazine (破土)
+      domain: newbloommag.net
+      rss_full_text: true
+    - name: Taiwan News
+      domain: taiwannews.com.tw
+      rss_full_text: false
+  ua:
+    use_local_params: false
+    sources:
+    - name: Ukrainska Pravda
+      domain: pravda.com.ua
+      rss_full_text: true
+    - name: Ekonomichna Pravda
+      domain: epravda.com.ua
+      rss_full_text: true
+    - name: Yevropeiska Pravda (European Pravda)
+      domain: eurointegration.com.ua
+      rss_full_text: false
+    - name: Kyiv Independent
+      domain: kyivindependent.com
+      rss_full_text: true
+    - name: Dzerkalo Tyzhnia (Mirror Weekly / ZN.UA)
+      domain: zn.ua
+      rss_full_text: false
+    - name: Ukrinform
+      domain: ukrinform.net
+      rss_full_text: true
+    - name: Interfax-Ukraine
+      domain: interfax.com.ua
+      rss_full_text: false
+    - name: NV (Novoe Vremya / New Voice of Ukraine)
+      domain: nv.ua
+      rss_full_text: false
+    - name: Liga.net
+      domain: Liga.net
+      rss_full_text: true
+    - name: Militarnyi
+      domain: militarnyi.com
+      rss_full_text: false
+    - name: President of Ukraine Official Website
+      domain: president.gov.ua
+      rss_full_text: false
+    - name: Razumkov Centre
+      domain: razumkov.org.ua
+      rss_full_text: false
+    - name: Centre for Economic Strategy (CES)
+      domain: ces.org.ua
+      rss_full_text: true
+    - name: Texty.org.ua
+      domain: Texty.org.ua
+      rss_full_text: false

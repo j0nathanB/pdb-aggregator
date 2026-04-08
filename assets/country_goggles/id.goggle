@@ -1,0 +1,40 @@
+! name: MPM Indonesia
+! description: MPM pipeline source prioritization for Indonesia — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=kompas.id
+$boost=10,site=kompas.com
+$boost=10,site=tempo.co
+$boost=10,site=en.tempo.co
+$boost=10,site=antaranews.com
+$boost=10,site=en.antaranews.com
+$boost=10,site=thejakartapost.com
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=cnnindonesia.com
+$boost=5,site=cnbcindonesia.com
+$boost=5,site=tirto.id
+$boost=5,site=republika.co.id
+$boost=5,site=kemlu.go.id
+$boost=5,site=setkab.go.id
+$boost=5,site=kemhan.go.id
+$boost=5,site=csis.or.id
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=kontan.co.id
+$boost=3,site=bisnis.com
+$boost=3,site=jakartaglobe.id
+$boost=3,site=fulcrum.sg
+$boost=3,site=iseas.edu.sg
+$boost=3,site=presidenri.go.id
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=tribunnews.com
+$discard,site=suara.com
+$discard,site=merdeka.com

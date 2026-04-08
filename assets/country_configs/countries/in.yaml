@@ -1,0 +1,141 @@
+country: India
+code: in
+tier: pivot
+region: near_east_south_asia
+actors:
+- name: Narendra Modi
+  role: Prime Minister (BJP)
+  primary: true
+  search_terms:
+  - Modi
+  - Narendra Modi
+- name: Amit Shah
+  role: Home Minister
+  primary: false
+  search_terms:
+  - Amit Shah
+- name: S. Jaishankar
+  role: External Affairs Minister
+  primary: false
+  search_terms:
+  - Jaishankar
+  - S. Jaishankar
+- name: BJP
+  role: Governing party (Bharatiya Janata Party)
+  primary: false
+  search_terms:
+  - BJP
+  - Bharatiya Janata Party
+- name: Indian National Congress
+  role: Main opposition
+  primary: false
+  search_terms:
+  - Congress
+  - INC
+  - Rahul Gandhi
+- name: Ajit Doval
+  role: National Security Adviser
+  primary: false
+  search_terms:
+  - Doval
+  - Ajit Doval
+  - NSA
+- name: Reserve Bank of India
+  role: Central Bank
+  primary: false
+  search_terms:
+  - RBI
+  - Reserve Bank of India
+- name: Indian Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Indian Armed Forces
+  - Indian Army
+  - Indian Navy
+  - CDS
+- name: RAW
+  role: Research and Analysis Wing (external intelligence)
+  primary: false
+  search_terms:
+  - RAW
+  - Research and Analysis Wing
+- name: Gautam Adani
+  role: Adani Group chairman (infrastructure conglomerate)
+  primary: false
+  search_terms:
+  - Adani
+  - Gautam Adani
+  - Adani Group
+languages:
+  primary: hi
+  additional:
+  - en
+  - te
+  - ta
+  - bn
+  - ml
+  - kn
+  metadata: en
+blind_spots:
+- domain: Kashmir and LAC border operations
+  reason: Military operations in J&K and LAC standoff details are classified and media
+    access restricted
+  where_signal_lives: MoD press briefings, DGMO statements, satellite imagery analyses
+    (Maxar/Planet)
+- domain: Adani-government nexus
+  reason: Business-state relationship scrutiny is constrained by media ownership concentration
+  where_signal_lives: Hindenburg-style investigative reports, SEBI filings, parliamentary
+    question records
+- domain: India-Pakistan military confrontation
+  reason: Operation Sindoor and post-Pahalgam escalation dynamics involve classified
+    military operations
+  where_signal_lives: CCS statements, Indian military press briefings, SIPRI/IISS
+    assessments, Pakistan ISPR releases
+news_discovery:
+  goggle_file: assets/country_goggles/in.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: IN
+    search_lang: en
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - bilateral relations
+    - diplomatic agreement
+    - Ministry of External Affairs
+    - bilateral summit
+    - Jaishankar
+    security_defense:
+    - Indian Armed Forces
+    - defence procurement
+    - security cooperation
+    - RAW
+    - LAC standoff
+    - Make in India defence
+    economic_tech:
+    - foreign investment
+    - trade agreement
+    - RBI
+    - Adani
+    - critical minerals
+    - semiconductor
+    - supply chain
+    institutional:
+    - Quad
+    - United Nations
+    - G20
+    - BRICS
+    - SCO
+    domestic_constraints:
+    - Lok Sabha
+    - BJP
+    - Congress
+    - Rajya Sabha
+    - Supreme Court
+government_discovery:
+  config_file: assets/government/in.yaml
+interpretive_context_file: assets/context/in_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

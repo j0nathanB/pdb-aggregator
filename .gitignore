@@ -30,5 +30,16 @@ _site/
 .jekyll-cache/
 .sass-cache/
 
-# Local pipeline output (committed via PR as _briefs/)
-briefs/
+# Pipeline logs
+logs/
+
+# Debug / tuning scripts (personal dev tooling)
+debug/
+
+# Pipeline run recordings
+updated_architecture/
+
+# Scratch notes
+adaptive_clustering_notes.md
+archives.md
+archives/

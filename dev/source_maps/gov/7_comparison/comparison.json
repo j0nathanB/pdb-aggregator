@@ -1,0 +1,5795 @@
+{
+  "australia/au_asd": {
+    "domain": "asd.gov.au",
+    "country": "australia",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/1",
+      "webfetch": "0/1",
+      "diffbot": "1/1",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.asd.gov.au/news/2026-02-24-asd-has-open-sourced-azul-help-uplift-cyber-defences-globally-against-malware",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "australia/au_asio": {
+    "domain": "asio.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.careers.asio.gov.au/public/jncustomsearch.viewFullSingle?in_organid=12852&in_jnCounter=221301297&in_version=&in_jobDate=All&in_jobType=&in_residency=&in_graphic=&in_param=&in_searchbox=YES&in_recruiter=&in_jobreference=&in_orderby=&in_sessionid=&in_navigation1=&in_summary=S",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.careers.asio.gov.au/public/jncustomsearch.viewFullSingle?in_organid=12852&in_jnCounter=221301239&in_version=&in_jobDate=All&in_jobType=&in_residency=&in_graphic=&in_param=&in_searchbox=YES&in_recruiter=&in_jobreference=&in_orderby=&in_sessionid=&in_navigation1=&in_summary=S",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.careers.asio.gov.au/public/apcustomappmgr.displayjobdetail?in_jncounter=221301301&in_organid=12852&in_adminorganid=12852",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_austrade": {
+    "domain": "austrade.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.austrade.gov.au/en/news-and-analysis/news/australian-government-and-industry-unite-to-support-exporters-to-diversify-and-grow",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.austrade.gov.au/en/news-and-analysis/news/trade-agreement-powers-mining-tech-exports-to-India",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.austrade.gov.au/en/news-and-analysis/news/australian-skills-software-goes-nationwide-in-india",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_defence": {
+    "domain": "defence.gov.au",
+    "country": "australia",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "3/3",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.defence.gov.au/news-events/news/2026-03-17/military-leaders-meet-strengthen-regional-security",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.minister.defence.gov.au/statements/2026-03-17/operationalising-australia-new-zealand-alliance-anzac-2035-closer-defence-relations-statement",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.defence.gov.au/news-events/releases/2026-03-10/australian-defence-force-strengthens-space-cyber-capabilities-allies-partners",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "australia/au_dfat_foreign_minister": {
+    "domain": "foreignminister.gov.au",
+    "country": "australia",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "2/3",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.foreignminister.gov.au/minister/penny-wong/media-release/joint-statement-australia-new-zealand-foreign-and-defence-ministerial-consultations-22",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.foreignminister.gov.au/minister/penny-wong/media-release/press-conference-blue-room-parliament-house",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.foreignminister.gov.au/minister/penny-wong/media-release/further-humanitarian-assistance-lebanon",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "australia/au_dfat_sanctions": {
+    "domain": "dfat.gov.au",
+    "country": "australia",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "2/3",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.dfat.gov.au/news/revised-guidance-and-advisory-notes",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.dfat.gov.au/news/news/russia-australia-lowers-price-cap-russian-crude-oil",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.dfat.gov.au/news/news/australian-national-statement-imo-councils-36th-extraordinary-session",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "australia/au_homeaffairs": {
+    "domain": "homeaffairs.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "1/1",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.homeaffairs.gov.au/news-media/archive/article?itemId=1390",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.homeaffairs.gov.au/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.homeaffairs.gov.au/reports-and-publications/reviews-and-inquiries/inquiries",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_industry": {
+    "domain": "industry.gov.au",
+    "country": "australia",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "2/3",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.minister.industry.gov.au/ministers/king/media-releases/australia-invests-53-million-help-unlock-critical-minerals-future",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.minister.industry.gov.au/ministers/king/media-releases/stocktake-reinforces-australias-strength-critical-minerals",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.industry.gov.au/news/53-million-grants-help-create-critical-metal-refining-industry",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "australia/au_legislation": {
+    "domain": "legislation.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.legislation.gov.au/F2026L00215/asmade/details",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_nationalsecurity": {
+    "domain": "nationalsecurity.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.nationalsecurity.gov.au/news-media/national-security-campaign/related-initiatives",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.nationalsecurity.gov.au/what-australia-is-doing/places-you-cant-go/protocol-for-declaring-an-area",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_parliament": {
+    "domain": "aph.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.aph.gov.au/live/?page=9&ps=10&watchParliamentOn=19/02/2026&tab=tab1a",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.aph.gov.au/Parliamentary_Business/Senate_estimates/fadt",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.aph.gov.au/Parliamentary_Business/Senate_estimates/Daily_summaries",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_pm": {
+    "domain": "pm.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.pm.gov.au/media/press-conference-parliament-house-canberra-46",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.pm.gov.au/media/radio-interview-abc-hobart",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.pm.gov.au/media/television-interview-sky-news-sunday-agenda-4",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_rba": {
+    "domain": "rba.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.rba.gov.au/speeches/2026/sp-so-2026-02-24.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.rba.gov.au/media-releases/2026/mr-26-08.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.rba.gov.au/speeches/2026/mc-gov-2026-03-17.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "australia/au_treasury": {
+    "domain": "treasury.gov.au",
+    "country": "australia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/transcripts/interview-natalie-barr-and-matt-shirvington-sunrise-3",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/transcripts/interview-james-glenday-news-breakfast-abc-10",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/transcripts/interview-peter-stefanovic-sky-news-25",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "brazil/br_bcb": {
+    "domain": "bcb.gov.br",
+    "country": "brazil",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "1/3",
+      "playwright": "2/2"
+    },
+    "urls": [
+      {
+        "url": "https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Comunicado&numero=44926",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.bcb.gov.br/publicacoes/atascomef/202603",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.bcb.gov.br/publicacoes/focus",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "brazil/br_defesa": {
+    "domain": "gov.br/defesa",
+    "country": "brazil",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.br/defesa/pt-br/centrais-de-conteudo/noticias/esd-abre-inscricao-para-mestrado-em-seguranca-desenvolvimento-e-defesa",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/defesa/pt-br/centrais-de-conteudo/noticias/catrimani-ii-forcas-armadas-destroem-pista-de-pouso-clandestina-em-territorio-yanomami",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/defesa/pt-br/centrais-de-conteudo/noticias/defesa-apresenta-prognostico-de-cheias-na-amazonia-para-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "brazil/br_fazenda": {
+    "domain": "gov.br/fazenda",
+    "country": "brazil",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/fevereiro/goias-paraiba-e-alagoas-tiveram-os-maiores-crescimentos-despesas-correntes-em-2025",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/marco/prisma-fiscal-de-marco-mostra-melhora-de-estimativas-para-a-evolucao-de-diversos-indicadores-macroeconomicos",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/marco/receita-federal-anuncia-regras-para-declaracao-do-imposto-de-renda-da-pessoa-fisica-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "brazil/br_mre": {
+    "domain": "gov.br/mre",
+    "country": "brazil",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.br/mre/pt-br/centrais-de-conteudo/publicacoes/declaracoes/comunicado-conjunto-sobre-a-palestina",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/mre/pt-br/agendas/agenda-do-ministro-das-relacoes-exteriores/2026-03-17",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/mre/pt-br/consulado-cordoba/quem-somos-1",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "brazil/br_planalto": {
+    "domain": "gov.br/planalto",
+    "country": "brazil",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/03/presidente-lula-sanciona-lei-que-amplia-reducao-de-impostos-para-a-industria-quimica-nacional",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/03/lula-encaminha-projeto-de-lei-ao-congresso-com-medidas-para-a-copa-do-mundo-feminina-da-fifa-2027-no-brasil",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/03/presidente-lula-participa-do-anuncio-de-investimentos-de-r-300-milhoes-da-byd-no-rio-de-janeiro",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "brazil/br_senado": {
+    "domain": "senado.leg.br",
+    "country": "brazil",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www12.senado.leg.br/noticias/materias/2026/03/10/mourao-alerta-para-conflitos-e-defende-preparacao-do-brasil-para-a-defesa",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www12.senado.leg.br/noticias/materias/2026/02/24/senado-aprova-acordo-de-cooperacao-entre-brasil-e-benin-na-area-de-defesa",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www12.senado.leg.br/radio/1/noticia/2026/02/24/senado-confirma-acordo-de-cooperacao-em-defesa-entre-brasil-e-benim",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "canada/ca_boc": {
+    "domain": "bankofcanada.ca",
+    "country": "canada",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bankofcanada.ca/2026/03/fad-press-release-2026-03-18/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bankofcanada.ca/2026/03/opening-statement-2026-03-18/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bankofcanada.ca/2026/03/staff-working-paper-2026-11/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "canada/ca_dnd": {
+    "domain": "canada.ca",
+    "country": "canada",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/03/canada-advances-defence-industrial-strategy-to-strengthen-security-sovereignty-and-prosperity0.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.canada.ca/en/department-national-defence/news/2026/03/minister-mcguinty-announces-strategic-investments-in-sovereign-space-launch.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.canada.ca/en/department-national-defence/news/2026/03/minister-mcguinty-announces-investment-of-1-4-billion-into-domestic-ammunition-production.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "canada/ca_finance": {
+    "domain": "canada.ca",
+    "country": "canada",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.canada.ca/en/department-finance/news/2026/02/department-of-finance-releases-annual-report-on-federal-tax-expenditures.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.canada.ca/en/department-finance/news/2026/03/secretary-of-state-long-highlights-recent-measures-to-make-life-more-affordable-for-canadians.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "canada/ca_gac": {
+    "domain": "international.gc.ca",
+    "country": "canada",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/essential-informations-essentielles.aspx?lang=eng",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/guidance-orientation.aspx?lang=eng",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.international.gc.ca/world-monde/issues_development-enjeux_developpement/response_conflict-reponse_conflits/crisis-crises/ukraine-sanctions.aspx?lang=eng",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "canada/ca_parliament": {
+    "domain": "parl.ca",
+    "country": "canada",
+    "recommended_method": "webfetch",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "2/2",
+      "diffbot": "1/2",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.parl.ca/DocumentViewer/en/45-1/bill/C-22/first-reading",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.parl.ca/legisinfo/en/bill/45-1/c-270",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.parl.ca/documentviewer/en/45-1/bill/C-9/second-reading",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": "webfetch"
+      }
+    ]
+  },
+  "canada/ca_pm": {
+    "domain": "pm.gc.ca",
+    "country": "canada",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.pm.gc.ca/en/news/speeches/2026/03/12/prime-minister-carney-announces-ambitious-new-plan-defend-build-and",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.pm.gc.ca/en/news/statements/2026/03/20/statement-prime-minister-carney-international-day-la-francophonie",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.pm.gc.ca/fr/nouvelles/discours/2026/03/12/premier-ministre-carney-annonce-nouveau-plan-ambitieux-defendre",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "chile/cl_bcentral": {
+    "domain": "bcentral.cl",
+    "country": "chile",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "2/3",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.bcentral.cl/detalle-noticias-y-publicaciones/-/asset_publisher/Exzd7l9NC3Y6/content/condiciones-financieras-venta-forward-17-de-marzo-de-2026",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.bcentral.cl/web/banco-central/contenido/-/detalle/publicaciones/estadistica/boletin-estadistico-18-de-marzo-2026",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.bcentral.cl/areas/mercados-financieros",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "chile/cl_defensa": {
+    "domain": "defensa.cl",
+    "country": "chile",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.defensa.cl/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.defensa.cl/index48f1.html?p=6927",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.defensa.cl/index2771.html?p=6936",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "chile/cl_hacienda": {
+    "domain": "hacienda.cl",
+    "country": "chile",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.hacienda.cl/index.php/subsecretaria/noticias",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.hacienda.cl/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.hacienda.cl/areas-de-trabajo/finanzas-internacionales/exportacion-de-servicios-globales/documentos/listado-codigos-aduaneros",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "chile/cl_minrel": {
+    "domain": "minrel.gob.cl",
+    "country": "chile",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.minrel.gob.cl/minrel/sala-de-prensa/p/1",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.minrel.gob.cl/sala-de-prensa/chile-y-estados-unidos-firman-declaracion-conjunta-sobre-minerales-criticos",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.minrel.gob.cl/sala-de-prensa/francisco-perez-mackenna-asume-como-ministro-de-relaciones-exteriores-de",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "chile/cl_presidencia": {
+    "domain": "prensa.presidencia.cl",
+    "country": "chile",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://prensa.presidencia.cl/comunicado.aspx?id=321804",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://prensa.presidencia.cl/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "chile/cl_senado": {
+    "domain": "senado.cl",
+    "country": "chile",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.senado.cl/comunicaciones/noticias/aprueban-reforma-que-incorpora-gendarmeria-las-fuerzas-de-orden-y-seguridad",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.senado.cl/comunicaciones/noticias/ante-congreso-pleno-jose-antonio-kast-asumio-como-presidente-de-la",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.senado.cl/comunicaciones/noticias/cable-submarino-de-fibra-optica-chile-china-express-abordan-relaciones",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "czech_republic/cz_cnb": {
+    "domain": "cnb.cz",
+    "country": "czech_republic",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.cnb.cz/cs/cnb-news/aktuality/Inflace-v-unoru-klesla-na-14-a-byla-nejnize-od-roku-2016-00001",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.cnb.cz/cs/verejnost/servis-pro-media/autorske-clanky-rozhovory-s-predstaviteli-cnb/Vyvoj-na-Blizkem-vychode-netlaci-centralni-banku-k-okamzite-reakci/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.cnb.cz/cs/cnb-news/aktuality/Rozhodnuti-bankovni-rady-CNB-00057",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "czech_republic/cz_mf": {
+    "domain": "mfcr.cz",
+    "country": "czech_republic",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mfcr.cz/cs/rozpoctova-politika/rizeni-statniho-dluhu/statistiky/ciste-vydaje-na-obsluhu-statniho-dluhu",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mfcr.cz/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mfcr.cz/cs/rozpoctova-politika/rizeni-statniho-dluhu/statistiky/struktura-a-vyvoj-statniho-dluhu",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "czech_republic/cz_mo": {
+    "domain": "army.cz",
+    "country": "czech_republic",
+    "recommended_method": "webfetch",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "3/3",
+      "diffbot": "2/3",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://mocr.army.cz/informacni-servis/zpravodajstvi/ministr-obrany-jaromir-zuna-navstivil-stredni-skolu-_-centrum-odborne-pripravy-technicke-uhersky-brod-262970/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://acr.army.cz/informacni-servis/zpravodajstvi/odstraseni-musi-byt-verohodne--shodli-se-generalove-rehka-a-breuer-262842/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.army.cz/informacni-servis/zpravodajstvi/v-brne-se-diskutovalo-o-trendech-ve-vyvoji-a-vyrobe-bezpilotnich-prostredku--na-konferenci-vystoupil-take-ministr-obrany-262923/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "webfetch"
+      }
+    ]
+  },
+  "czech_republic/cz_mzv": {
+    "domain": "mzv.cz",
+    "country": "czech_republic",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mzv.cz/rome/cz/viza_a_konzularni_informace/konzularni_informace_pro_italii?force_format=mobile",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "estonia/ee_ep": {
+    "domain": "eestipank.ee",
+    "country": "estonia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.eestipank.ee/press/euroopa-keskpanga-pressiteade-rahapoliitilised-otsused-19032026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.eestipank.ee/et/kalender/kommentaar-martsi-inflatsiooni-kohta-20032026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.eestipank.ee/blogi/madis-muller-ecb-intressiotsusest-iraani-soja-valguses-pimedas-toas-pole-tark-tormata",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "estonia/ee_riigikogu": {
+    "domain": "riigikogu.ee",
+    "country": "estonia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.riigikogu.ee/pressiteated/riigikaitsekomisjon-et-et/komisjonid-soovivad-iga-aastast-julgeolekupoliitika-arutelu-t-iskogus/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.riigikogu.ee/category/pressiteated/keskkonnakomisjon-et-et/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.riigikogu.ee/tegevus/kalender-ja-eelinfo/komisjonid/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "estonia/ee_rm": {
+    "domain": "fin.ee",
+    "country": "estonia",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.fin.ee/node/47/main_chapter/12535/pdf",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.fin.ee/node/47/main_chapter/12531/pdf",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.fin.ee/node/47/main_chapter/12530/pdf",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "estonia/ee_vm": {
+    "domain": "vm.ee",
+    "country": "estonia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.vm.ee/uudised/eesti-avas-sofias-uue-aukonsulaadi",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://vm.ee/euroopa-liidu-kohtu-ulevaated-ja-kokkuvotted",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://vm.ee/uudised/valisministeeriumi-uuendatud-konsulaarinfo",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "estonia/ee_vv": {
+    "domain": "valitsus.ee",
+    "country": "estonia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://valitsus.ee/uudised/michal-ulemkogu-eel-vene-voitlejad-kujutavad-otsest-ohtu-euroopa-julgeolekule",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://valitsus.ee/uudised/valitsuse-19326-istungi-kommenteeritud-paevakord",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "finland/fi_bof": {
+    "domain": "suomenpankki.fi",
+    "country": "finland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.suomenpankki.fi/fi/ajankohtaista/ekpn-neuvoston-paatokset/2026/ekpn-rahapoliittisia-paatoksia2/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.suomenpankki.fi/fi/ajankohtaista/ekpn-neuvoston-paatokset/2026/rahapolitiikkakatsaus/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://vuosikertomus.suomenpankki.fi/2025/suomen-pankki/paajohtajan-tervehdys/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "finland/fi_defmin": {
+    "domain": "defmin.fi",
+    "country": "finland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://defmin.fi/-/ydinenergia-ja-rikoslakiin-esitetaan-muutoksia-naton-puolustuksen-ja-pelotteen-vahvistamiseksi",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://defmin.fi/-/10623/suomi-osallistuu-keskusteluihin-uudesta-puolustuksen-rahoitusmekanismista",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://defmin.fi/-/prikaatikenraali-jami-virta-paaesikunnan-hallintopaallikoksi",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "finland/fi_eduskunta": {
+    "domain": "eduskunta.fi",
+    "country": "finland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.eduskunta.fi/FI/vaski/KokousPoytakirja/Sivut/PuVP_16+2026.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.eduskunta.fi/FI/vaski/KasittelytiedotValtiopaivaasia/Sivut/U_1+2026.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.eduskunta.fi/FI/tiedotteet/Sivut/valtiovarainvaliokunnan-hallinto-ja-turvallisuusjaosto-vierailee-kreikassa-17-20-3.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "finland/fi_um": {
+    "domain": "um.fi",
+    "country": "finland",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "3/3"
+    },
+    "urls": [
+      {
+        "url": "https://um.fi/uutiset/-/asset_publisher/GRSnUwaHDPv5/content/vientivalvonnan-raportointiasetus-hyvaksyttiin/35732",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://um.fi/puheet",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://um.fi/vientivalvontauutiset",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "finland/fi_vm": {
+    "domain": "vm.fi",
+    "country": "finland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "0/2",
+      "diffbot": "0/2",
+      "playwright": "0/2"
+    },
+    "urls": [
+      {
+        "url": "https://vm.fi/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://vm.fi/documents/10623/307577/Vuoden%202027%20talousarvioesityksen%20valmistelu.pdf/c50402f2-e73c-5dc8-3d76-c3a1c38a4785?t=1773817103472",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://vm.fi/delegate/file/223109",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "finland/fi_vn": {
+    "domain": "valtioneuvosto.fi",
+    "country": "finland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://valtioneuvosto.fi/-/10623/valtiovarainministerion-ehdotus-valtiontalouden-kehyksiksi-vuosille-2027-2030-on-julkaistu",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://valtioneuvosto.fi/-/1410829/ministeri-ranne-autoilijoita-ei-tule-kurittaa-lisaa-liikenteen-verokertyman-pysyttava-nykytasolla",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://valtioneuvosto.fi/-/1410903/yleistiedoksianto-urjalan-kunnalle-lupa-lunastaa-yhdyskuntarakentamista-varten",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "france/fr_assemblee": {
+    "domain": "assemblee-nationale.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/projet-de-budget-2026-pour-les-armees-audition-des-chefs-d-etats-majors-de-de-l-armee-de-terre-et-de-la-marine",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/revue-nationale-strategique-2025-audition-du-secretaire-general-de-la-defense",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/plf-2023-audition-de-sebastien-lecornu-ministre-des-armees",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "france/fr_banque": {
+    "domain": "banque-france.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.banque-france.fr/fr/actualites/inflation-et-croissance-des-niveaux-dincertitude-qui-restent-eleves-chez-les-previsionnistes",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.banque-france.fr/fr/communiques-de-presse/declaration-de-politique-monetaire-13",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.banque-france.fr/fr/communiques-de-presse/decisions-de-politique-monetaire-23",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "france/fr_defense": {
+    "domain": "defense.gouv.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.defense.gouv.fr/dsae/actualites/drones-nouvelle-generation-coordination-renforcee-au-service-securite-linnovation",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "http://www.defense.gouv.fr/defense-sud-est/actualites/reserve-operationnelle-niveau-2-mobilisee-lexercice-vortex",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.defense.gouv.fr/air/actualites/baltic-air-policing-26-police-du-ciel-flanc-est-leurope",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "france/fr_diplomatie": {
+    "domain": "diplomatie.gouv.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.diplomatie.gouv.fr/fr/politique-etrangere-de-la-france/la-france-et-l-europe/evenements-et-actualites-lies-a-la-politique-europeenne-de-la-france/actualites-europeennes/article/cybersecurite-l-union-europeenne-sanctionne-plusieurs-acteurs-de-l-ecosysteme",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.diplomatie.gouv.fr/fr/salle-de-presse/fr/politique-etrangere-de-la-france/la-france-et-l-europe/evenements-et-actualites-lies-a-la-politique-europeenne-de-la-france/actualites-europeennes/article/union-europeenne-participation-du-ministre-au-conseil-affaires-etrangeres-17-03",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.diplomatie.gouv.fr/fr/dossiers-pays/ukraine/evenements/article/declarations-a-la-presse-de-jean-noel-barrot-en-amont-du-conseil-affaires",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "france/fr_economie": {
+    "domain": "economie.gouv.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "0/2",
+      "diffbot": "0/2",
+      "playwright": "1/2"
+    },
+    "urls": [
+      {
+        "url": "https://www.tresor.economie.gouv.fr/Articles/2026/03/20/la-situation-financiere-de-la-base-industrielle-et-technologique-de-defense-depuis-le-debut-de-la-guerre-en-ukraine",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.economie.gouv.fr/particuliers/gerer-mon-argent/beneficier-daides-et-de-reductions-dimpots/particuliers-les-reductions-et-credits-dimpot-auxquels-vous-pouvez-pretendre",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.economie.gouv.fr/particuliers/gerer-mon-argent/fiches-pratiques",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "france/fr_elysee": {
+    "domain": "elysee.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.elysee.fr/G7evian/2026/03/09/communique-des-ministres-des-finances-du-g7",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.elysee.fr/emmanuel-macron/2026/03/04/compte-rendu-du-conseil-des-ministres-du-4-mars-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.elysee.fr/emmanuel-macron/2026/03/11/compte-rendu-du-conseil-des-ministres-du-11-mars-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "france/fr_legifrance": {
+    "domain": "legifrance.gouv.fr",
+    "country": "france",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053704193",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053703348",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053586369",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "france/fr_senat": {
+    "domain": "senat.fr",
+    "country": "france",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.senat.fr/compte-rendu-commissions/20260302/etra.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.senat.fr/questions/base/2026/qSEQ260308069.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.senat.fr/questions/base/2026/qSEQ260207797.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "germany/de_auswaertiges": {
+    "domain": "auswaertiges-amt.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.auswaertiges-amt.de/de/newsroom/regierungspressekonferenz-2760112",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.auswaertiges-amt.de/de/newsroom/regierungspressekonferenz-2760210",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.auswaertiges-amt.de/de/newsroom/2760576-2760576",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "germany/de_bmf": {
+    "domain": "bundesfinanzministerium.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.bundesfinanzministerium.de/Monatsberichte/Ausgabe/2026/03/Inhalte/Kapitel-3-Wirtschafts-und-Finanzlage/3-3-entwicklung-bundeshaushalt-februar-2026.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bundesfinanzministerium.de/Monatsberichte/Ausgabe/2026/03/Inhalte/Kapitel-2-Analysen/2-1-kreditaufnahme-neue-rahmenbedingungen.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/Monatsberichte/2026/monatsbericht-2026-02.pdf?__blob=publicationFile&v=5",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "germany/de_bmvg": {
+    "domain": "bmvg.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bmvg.de/de/presse/nato-zieht-personal-nato-mission-iraq-voruebergehend-irak-ab-6083024",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bmvg.de/de/presse/statement-industriedialog-sicherheits-verteidigungsindustrie-6081208",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bmvg.de/de/mediathek/uebersicht",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "germany/de_bundesbank": {
+    "domain": "bundesbank.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bundesbank.de/de/presse/reden/aktuelle-wirtschaftsperspektiven-fuer-deutschland-992318",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bundesbank.de/de/presse/reden/umwelt-und-bankensektor-neue-herausforderungen-infolge-des-klimawandels-und-des-biodiversitaetsverlusts-991668",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bundesbank.de/de/startseite/inflationsrate-in-deutschland-750764",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "germany/de_bundeskanzler": {
+    "domain": "bundeskanzler.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bundeskanzler.de/breg-de/aktuelles/kanzler-reise-china-2408382",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "germany/de_bundestag": {
+    "domain": "bundestag.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw12-de-zivile-verteidigung-1151718",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw13-de-wehrbericht-1156714",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bundestag.de/ausschuesse/verteidigung/tagesordnungen",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "germany/de_gesetze": {
+    "domain": "gesetze-im-internet.de",
+    "country": "germany",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gesetze-im-internet.de/blv_2026/__1.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gesetze-im-internet.de/blv_2026/__13.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gesetze-im-internet.de/blv_2026/__23.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "india/in_mea": {
+    "domain": "mea.gov.in",
+    "country": "india",
+    "recommended_method": "webfetch",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "3/3",
+      "diffbot": "2/3",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.mea.gov.in/bilateral-documents.htm?dtl/40828/India__Israel_Joint_Statement_February_26_2026",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.mea.gov.in/press-releases.htm?dtl/40949/IndiaROK+Secretary+East++Vice+Minister+Consultations",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.mea.gov.in/press-releases.htm?dtl/40948/9th+IndiaItaly+Foreign+Office+Consultations+March+20+2026",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      }
+    ]
+  },
+  "india/in_mod": {
+    "domain": "mod.gov.in",
+    "country": "india",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "http://mod.gov.in/hi/organization_chart",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "http://mod.gov.in/en/former-defence-production-ministers-of-state",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://mod.gov.in/dod/hi/modd",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "india/in_parliament": {
+    "domain": "sansad.in",
+    "country": "india",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://sansad.in/getFile/app/lsscommittee/Defence/18_Defence_19.pdf?source=app",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://sansad.in/getFile/loksabhaquestions/annex/187/AU3462_eUsQ9B.pdf?source=pqals",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://sansad.in/getFile/loksabhaquestions/annex/187/AU3470_aPonPQ.pdf?source=pqals",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "india/in_pmo": {
+    "domain": "pmindia.gov.in",
+    "country": "india",
+    "recommended_method": "webfetch",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "3/3",
+      "diffbot": "3/3",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.pmindia.gov.in/en/news_updates/pm-to-address-post-budget-webinar-on-agriculture-and-rural-transformation-on-6th-march/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.pmindia.gov.in/en/news_updates/pm-addresses-post-budget-webinar-on-agriculture-and-rural-transformation/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.pmindia.gov.in/en/news_updates/pms-address-in-post-budget-webinar-on-technology-reforms-and-finance-for-viksit-bharat/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "OK"
+        },
+        "best_method": "webfetch"
+      }
+    ]
+  },
+  "indonesia/id_bi": {
+    "domain": "bi.go.id",
+    "country": "indonesia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_285326.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_286526.aspx",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_284326.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "indonesia/id_dpr": {
+    "domain": "dpr.go.id",
+    "country": "indonesia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://emedia.dpr.go.id/2026/03/12/komisi-i-dpr-ri-perkuat-pertahanan-nasonal-melalui-modernisasi-alutsista-tvr-120/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://emedia.dpr.go.id/2026/03/10/okta-kumala-dewi-kesiapsiagaan-tni-wajar-di-tengah-memburuknya-geopolitik-global/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://emedia.dpr.go.id/2026/03/12/komisi-i-dpr-ri-pastikan-jalur-evakuasi-wni-dari-iran-aman-tvr-120/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "indonesia/id_kemenkeu": {
+    "domain": "kemenkeu.go.id",
+    "country": "indonesia",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "1/3",
+      "diffbot": "2/3",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.djpb.kemenkeu.go.id/kppn/purwokerto/id/data-publikasi/press-release-apbn/3051-realisasi-belanja-apbn-hingga-31-januari-2026-lingkup-kppn-purwokerto-2.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://djpb.kemenkeu.go.id/kppn/pelaihari/id/data-publikasi/berita-terbaru/3005-press-release-kinerja-belanja-apbn-di-tanah-laut-s-d-28-februari-2026.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://djpb.kemenkeu.go.id/kppn/kotabumi/id/download/pengumuman/3812-langkah-strategis-belanja-kementerian-lembaga-pada-tahun-anggaran-2026.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "webfetch"
+      }
+    ]
+  },
+  "indonesia/id_kemhan": {
+    "domain": "kemhan.go.id",
+    "country": "indonesia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.kemhan.go.id/2026/03/12/wamenhan-ri-pimpin-rakor-tindak-lanjut-arahan-presiden-terkait-program-koperasi-desa-kelurahan-merah-putih.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.kemhan.go.id/2026/03/09/menhan-ikuti-rapat-yang-dipimpin-presiden-prabowo-bahas-isu-strategis-nasional.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.kemhan.go.id/2026/03/17/wamenhan-ri-hadiri-rapat-lintas-kementerian-bahas-pengawakan-program-prioritas-presiden.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "indonesia/id_kemlu": {
+    "domain": "kemlu.go.id",
+    "country": "indonesia",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "0/2",
+      "diffbot": "0/2",
+      "playwright": "2/2"
+    },
+    "urls": [
+      {
+        "url": "https://kemlu.go.id/berita/berita/pemuda-didorong-aktif-dalam-diplomasi-lewat-ngobras-diplomasi-di-uiii?type=publication",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://kemlu.go.id/berita/berita/wisatawan-polandia-cetak-rekor-kunjungan-2025-didukung-promosi-kbri?type=publication",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://galeri.kemlu.go.id/galleries/pertemuan-wakil-menteri-luar-negeri-ri-anis-matta-dengan-imam-besar-kroasia",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "indonesia/id_setkab": {
+    "domain": "setkab.go.id",
+    "country": "indonesia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://setkab.go.id/pemerintah-jaga-defisit-apbn-3-persen/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://setkab.go.id/presiden-prabowo-ingatkan-dampak-konflik-global-siapkan-langkah-proaktif-dan-efisiensi-nasional/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://setkab.go.id/presiden-prabowo-terima-laporan-kondisi-ekonomi-nasional-pemerintah-pastikan-stabil-di-tengah-dinamika-global/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "italy/it_bankitalia": {
+    "domain": "bancaditalia.it",
+    "country": "italy",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bancaditalia.it/media/notizia/pubblicazione-nuovi-temi-di-discussione-17-marzo-2026/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bancaditalia.it/pubblicazioni/temi-discussione/2026/2026-1525/index.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bancaditalia.it/pubblicazioni/temi-discussione/2026/2026-1524/index.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "italy/it_difesa": {
+    "domain": "difesa.it",
+    "country": "italy",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.difesa.it/primopiano/dichiarazione-del-ministro-crosetto/93851.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.aeronautica.difesa.it/news/sicurezza-del-volo-a-palazzo-aeronautica-il-2-workshop-contaminazioni-di-sicurezza/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.aeronautica.difesa.it/news/il-generale-di-squadra-aerea-antonio-conserva-incontra-il-generale-stephen-n-whiting-capo-dello-u-s-space-command/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "italy/it_esteri": {
+    "domain": "esteri.it",
+    "country": "italy",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "1/2",
+      "diffbot": "0/2",
+      "playwright": "0/2"
+    },
+    "urls": [
+      {
+        "url": "https://www.esteri.it/it/sala_stampa/archivionotizie/comunicati/2026/03/dichiarazione-dellalto-rappresentante-a-nome-dellunione-europea-sugli-sviluppi-in-medio-oriente/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ambvienna.esteri.it/wp-content/uploads/2026/03/all._a_offerta_di_sponsorizzazione-in-italiano-2026.doc",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://consbarcellona.esteri.it/wp-content/uploads/2026/03/All-b.docx",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "italy/it_governo": {
+    "domain": "governo.it",
+    "country": "italy",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.commissariobonificadiscariche.governo.it/it/comunicazione/comunicati-stampa-e-notizie/2026-15/20260310-strasburgo/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.commissariobonificadiscariche.governo.it/it/comunicazione/comunicati-stampa-e-notizie/2026-15/20260315_eu/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.commissariobonificadiscariche.governo.it/it/comunicazione/comunicati-stampa-e-notizie/2026-15/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "italy/it_mef": {
+    "domain": "mef.gov.it",
+    "country": "italy",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mef.gov.it/bandi/bandi-di-gara/2026/Procedura-aperta-ai-sensi-degli-artt.-50-e-71-del-D.-Lgs.-n.-36-del-2023-e-s.m.i.-mediante-Richiesta-di-Offerta-su-MEPA-per-laffidamento-del-servizio-telematico-di-rassegna-stampa-quotidiana-realizzato-attraverso-la-selezione-di-articoli-sulla-base-d/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mef.gov.it/ufficio-stampa/comunicati/2026/Comunicato/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mef.gov.it/ufficio-stampa/comunicati/2026/Emissione-BTP-Short-Term-e-BTPi-00069/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "italy/it_parlamento": {
+    "domain": "parlamento.it",
+    "country": "italy",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.parlamento.it/show-doc?id=1013394&leg=17&tipodoc=DOSSIER&part=dossier_dossier1-sezione_sezione13-h2_h230",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.parlamento.it/show-doc?id=953786&leg=17&tipodoc=DOSSIER&part=dossier_dossier1-sezione_sezione8-h5_h542",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.parlamento.it/show-doc?id=972642&leg=17&tipodoc=DOSSIER&part=dossier_dossier1",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "japan/jp_boj": {
+    "domain": "boj.or.jp",
+    "country": "japan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.boj.or.jp/research/wps_rev/wps_2026/wp26j03.htm",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "japan/jp_diet": {
+    "domain": "sangiin.go.jp",
+    "country": "japan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/new.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "japan/jp_kantei": {
+    "domain": "kantei.go.jp",
+    "country": "japan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.kantei.go.jp/jp/105/statement/2026/0311kaiken2.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.kantei.go.jp/jp/105/actions/202602/24keizai.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.kantei.go.jp/jp/kakugikettei/2026/index.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "japan/jp_mod": {
+    "domain": "mod.go.jp",
+    "country": "japan",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "1/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.mod.go.jp/j/press/news/2026/03/20a.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.mod.go.jp/j/press/news/2026/03/21a.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.mod.go.jp/j/press/kisha/2026/0306a.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "japan/jp_mof": {
+    "domain": "mof.go.jp",
+    "country": "japan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.mof.go.jp/insideLink/20260312140428.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.mof.go.jp/public_relations/whats_new/202602.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mof.go.jp/index.htm",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "japan/jp_mofa": {
+    "domain": "mofa.go.jp",
+    "country": "japan",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "2/3",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.mofa.go.jp/mofaj/press/release/pressit_000001_03443.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/press/release/pressit_000001_03513.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/press/pr/chosa/yoron/index.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "latvia/lv_fm": {
+    "domain": "fm.gov.lv",
+    "country": "latvia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.fm.gov.lv/lv/jaunums/sacies-2025-gada-ienakumu-deklaracijas-iesniegsanas-periods",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.fm.gov.lv/lv/notikums/olaf-seminars-par-krapsanas-izmeklesanam-es-fondu-joma-un-neatbilstibam?date=0",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.fm.gov.lv/lv/notikums/latvijas-kapitala-tirgus-aktivitates-barometra-prezentacija-un-diskusija?date=0",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "latvia/lv_mfa": {
+    "domain": "mfa.gov.lv",
+    "country": "latvia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mfa.gov.lv/lv/jaunums/es-arlietu-padomes-fokusa-es-sankcijas-pret-krieviju-atbalsts-ukrainas-pasaizsardzibai-un-civiliedzivotajiem",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mfa.gov.lv/lv/jaunums/es-arlietu-padome-vienojas-par-papildu-sankcijam-krievijas-cilvektiesibu-rezima-un-nepieciesamibu-sniegt-savlaicigu-un-vajadzibas-balstitu-palidzibu-ukrainai",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mfa.gov.lv/lv/jaunums/parlamentarais-sekretars-artjoms-ursulskis-es-visparejo-lietu-padomes-sanaksme-tuvo-austrumu-saspilejuma-nedrikstam-aizmirst-ari-par-ukrainu",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "latvia/lv_mk": {
+    "domain": "mk.gov.lv",
+    "country": "latvia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mk.gov.lv/lv/jaunums/apstiprinats-latvijas-sestais-nacionalais-atvertas-parvaldibas-ricibas-plans-2026-2027-gadam",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mk.gov.lv/lv/notikums/augsta-limena-ekspertu-forums-latvijas-strategiskas-attistibas-planosanas-arhitektura-ieklaujosa-nakotnesana-merktiecigai-parveidei",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mk.gov.lv/lv/atverta-parvaldiba",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "latvia/lv_mod": {
+    "domain": "mod.gov.lv",
+    "country": "latvia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mod.gov.lv/lv/zinas/aizsardzibas-ministrs-oslo-parruna-pretkugu-rakesu-sistemas-piegades-nodrosinasanu-latvijai",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mod.gov.lv/lv/zinas/aizsardzibas-ministrs-atskatas-uz-2025-gada-paveikto-no-brunojuma-iepirkumiem-lidz-vietejai",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mod.gov.lv/lv/zinas/aizsardzibas-ministrs-oslo-stiprinas-latvijas-un-norvegijas-sadarbibu-dronu-tehnologijas-un",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "lithuania/lt_fm": {
+    "domain": "finmin.lrv.lt",
+    "country": "lithuania",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/2",
+      "webfetch": "0/2",
+      "diffbot": "0/2",
+      "playwright": "0/2"
+    },
+    "urls": [
+      {
+        "url": "https://finmin.lrv.lt/lt/naujienos/paskirstytas-skolinimosi-limitas-centrinei-valdziai-HOjo/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://finmin.lrv.lt/lt/aktualus-valstybes-finansu-duomenys/valstybes-biudzeto-vykdymo-duomenys-2/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "lithuania/lt_kam": {
+    "domain": "kam.lt",
+    "country": "lithuania",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://kam.lt/nksc-pristato-nauja-kursa-padesianti-saugiai-naudotis-dirbtiniu-intelektu/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://kam.lt/krasto-apsaugos-viceministras-k-aleksa-lietuvos-gynybos-biudzeto-augimas-sekmes-istorija-kuria-privalome-dalintis/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://kam.lt/duk/nacionalinio-saugumo-strategija/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "lithuania/lt_lb": {
+    "domain": "lb.lt",
+    "country": "lithuania",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.lb.lt/lt/naujienos/ecb-valdancioji-taryba",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.lb.lt/lt/pasauline-pinigu-savaite-2026",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.lb.lt/lt/ivykiai-renginiai",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "lithuania/lt_lrv": {
+    "domain": "lrv.lt",
+    "country": "lithuania",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://finmin.lrv.lt/lt/veiklos-sritys/biudzetas/patvirtinti-biudzetai/2026-2028-m-patvirtintas-biudzetas/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://finmin.lrv.lt/lt/veiklos-sritys/biudzetas/biudzetu-projektai/2026-2028-m-biudzeto-projektas/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://finmin.lrv.lt/lt/veiklos-sritys/biudzetas/biudzetu-projektai/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "lithuania/lt_seimas": {
+    "domain": "lrs.lt",
+    "country": "lithuania",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.lrs.lt/sip/portal.show?p_r=35403&p_k=1&p_t=294287",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.lrs.lt/sip/portal.show?p_r=35403&p_k=1&p_t=294299",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.lrs.lt/sip/portal.show?p_r=35403&p_k=1&p_t=294270",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "lithuania/lt_urm": {
+    "domain": "urm.lt",
+    "country": "lithuania",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.urm.lt/skelbimai/2083",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.urm.lt/skelbimai/2083/konkursas-i-veiklos-valdymo-ir-teisiniu-klausimu-grupes-teisininko-es-darbuotojo-os-pagal-darbo-sutarti-pareigas:825",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.urm.lt/ministerija/veikla/finansiniu-ataskaitu-rinkiniai/233",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "mexico/mx_banxico": {
+    "domain": "banxico.org.mx",
+    "country": "mexico",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.banxico.org.mx/publicaciones-y-prensa/presentaciones/presentaciones-junta-gobierno.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "mexico/mx_presidencia": {
+    "domain": "gob.mx/presidencia",
+    "country": "mexico",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gob.mx/presidencia/prensa/inversion-educativa-historica-1-1-billones-de-pesos-en-2026-para-educacion-basica-media-y-superior-becas-e-infraestructura?idiom=es",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gob.mx/presidencia/prensa/paquete-economico-2026-garantiza-programas-de-bienestar-aumento-en-salud-educacion-vivienda-seguridad-inversion-y-rescate-a-pemex",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gob.mx/presidencia/prensa/presidenta-enviara-plan-b-de-reforma-electoral-para-disminuir-privilegios-en-congresos-locales-municipios-y-fortalecer-la-consulta-popular?idiom=es",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "mexico/mx_senado": {
+    "domain": "senado.gob.mx",
+    "country": "mexico",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://comunicacionsocial.senado.gob.mx/informacion/comunicados/14699-recibe-senado-de-la-republica-primer-informe-de-la-estrategia-nacional-de-seguridad-publica-2024-2030",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://comunicacionsocial.senado.gob.mx/informacion/comunicados?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name:senadomexicano%7Ctwcon%5Es1&start=20",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.pan.senado.gob.mx/2026/03/senadora-ivideliza-reyes-hernandez-atencion-a-la-violencia-digital-contra-las-mujeres-y-ninas-para-promover-programas-de-alfabetizacion-y-seguridad-digital-con-perspectiva-de-genero/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "mexico/mx_sre": {
+    "domain": "gob.mx/sre",
+    "country": "mexico",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gob.mx/sre/acciones-y-programas/servicios-migratorios",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gob.mx/sre/documentos/primer-informe-de-actividades-de-la-mesa-institucional",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gob.mx/sre/prensa/sre-utilizara-todas-las-vias-diplomaticas-y-legales-frente-al-lamentable-fallecimiento-de-mexicano-bajo-custodia-de-ice-en-florida",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "norway/no_fd": {
+    "domain": "regjeringen.no",
+    "country": "norway",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/kristian-ure-tildeles-krigsmedaljen-for-sin-innsats-i-afghanistan/id3153265/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/nato-trekker-personell-ut-av-irak/id3153406/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/russland-gjer-seg-skuldig-i-brotsverk-mot-menneskeslekta/id3152987/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "norway/no_fin": {
+    "domain": "regjeringen.no",
+    "country": "norway",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regjeringen.no/no/dokument/dep/jd/tildelingsbrev-arsrapporter-og-instrukser--justis--og-beredskapsdepartementet/id710554/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/dokumenter/rapport-med-notater-fra-teknisk-beregningsutvalg-for-kommunal-og-fylkeskommunal-okonomi/id3151161/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/id3152666/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "norway/no_norgesbank": {
+    "domain": "norges-bank.no",
+    "country": "norway",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.norges-bank.no/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.norges-bank.no/tema/pengepolitikk/forventningsundersokinga/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "norway/no_regjeringen": {
+    "domain": "regjeringen.no",
+    "country": "norway",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/statsministerens-introduksjon-pa-pressetreffet-for-budsjettkonferansen/id3153422/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/et-godt-utgangspunkt-i-en-mer-urolig-verden/id3151646/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/tema/okonomi-og-budsjett/statsbudsjett/tidligere-statsbudsjetter/id450436/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "norway/no_stortinget": {
+    "domain": "stortinget.no",
+    "country": "norway",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Referater/Stortinget/2025-2026/refs-202526-03-18?all=true",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.stortinget.no/no/Saker-og-publikasjoner/Saker/Sak/?p=200023",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.stortinget.no/no/Hva-skjer-pa-Stortinget/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "norway/no_ud": {
+    "domain": "regjeringen.no",
+    "country": "norway",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/offisielt-fra-statsrad-20.-mars-2026/id3153241/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/en-utenrikstjeneste-i-endring/id3151842/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regjeringen.no/no/aktuelt/offisielt-fra-statsrad-6.-mars-2026/id3151187/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "poland/pl_mf": {
+    "domain": "gov.pl",
+    "country": "poland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.pl/web/finanse/szacunkowe-wykonanie-budzetu-panstwa-w-2025-r",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.pl/web/finanse/szacunkowe-wykonanie-budzetu-panstwa-w-okresie-styczen--luty-2026-r",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://bdl.stat.gov.pl/bdl/dane/podgrup/temat/27",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "poland/pl_mon": {
+    "domain": "gov.pl",
+    "country": "poland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.pl/web/obrona-narodowa/program-safe-bezpieczenstwo-europy-oraz-rozwoj-zdolnosci-obronnych",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.pl/web/obrona-narodowa/cyberbezpieczenstwo-i-walka-z-dezinformacja-w-centrum-debaty-o-odpornosci-panstwa",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.pl/web/obrona-narodowa/nie-ma-bezpiecznego-nato-bez-bezpiecznego-baltyku",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "poland/pl_msz": {
+    "domain": "gov.pl",
+    "country": "poland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.pl/web/dyplomacja/wicepremier-radoslaw-sikorski-o-wsparciu-dla-ukrainy-na-radzie-do-spraw-zagranicznych",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.pl/attachment/0b271825-be4a-4b10-bc6c-a61a3eef403c",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.gov.pl/web/kas/zapoznaj-sie-z-poradnikiem-turystycznym-2026-przed-wyjazdem-poza-granice-polski",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "poland/pl_nbp": {
+    "domain": "nbp.pl",
+    "country": "poland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://nbp.pl/inflacja-bazowa-w-lutym-2026-r/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://nbp.pl/projekcja-inflacji-i-pkb-marzec-2026/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://nbp.pl/raport-o-inflacji-marzec-2026/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "poland/pl_sejm": {
+    "domain": "sejm.gov.pl",
+    "country": "poland",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.sejm.gov.pl/sejm10.nsf/wypowiedz.xsp?id=078&data=13-03-2026&posiedzenie=53&symbol=OSWIADCZENIE&nr=4873&view=4",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DS2L4X",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.sejm.gov.pl/sejm10.nsf/PrzebiegProc.xsp?nr=1106",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "romania/ro_gov": {
+    "domain": "gov.ro",
+    "country": "romania",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "0/2",
+      "diffbot": "0/2",
+      "playwright": "2/2"
+    },
+    "urls": [
+      {
+        "url": "https://gov.ro/ro/print?modul=sedinte&link=informatie-de-presa-privind-actele-normative-adoptate-in-edinta-extraordinara-a-guvernului-romaniei-din-12-martie-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://sgg.gov.ro/1/intalnire-de-lucru-pentru-demararea-procesului-de-actualizare-anuala-a-planurilor-strategice-institutionale-psi/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://oportunitati-ue.gov.ro/a-fost-lansat-apelul-urbact-pentru-retele-de-actiune/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "romania/ro_mae": {
+    "domain": "mae.ro",
+    "country": "romania",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "3/3"
+    },
+    "urls": [
+      {
+        "url": "http://mae.ro/print/68227",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.mae.ro/node/20945",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://bangkok.mae.ro/node/797",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "romania/ro_mapn": {
+    "domain": "mapn.ro",
+    "country": "romania",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mapn.ro/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mapn.ro/purtator_de_cuvant/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mapn.ro/cpresa/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "romania/ro_mf": {
+    "domain": "mfinante.gov.ro",
+    "country": "romania",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.anaf.mfinante.gov.ro/anaf/internet/Cluj/info_cluj/norme_venit?uri=nm:oid:Z6_H1H6H282JGNPC0QL4PEMK618V7",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "romania/ro_parlament": {
+    "domain": "cdep.ro",
+    "country": "romania",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.cdep.ro/pls/caseta/ecaseta2015.ordinezi",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://cdep.ro/relatii_publice/site2015.text_presa?pid=30005",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.cdep.ro/pls/steno/evot.mp?idm=238&pag=1&idl=0&sns=D",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "saudi_arabia/sa_mod": {
+    "domain": "mod.gov.sa",
+    "country": "saudi_arabia",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "0/3"
+    },
+    "urls": [
+      {
+        "url": "https://mod.gov.sa/ar/MediaCenter/MinistryNews/Pages/2450.aspx",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://mod.gov.sa/ar/MediaCenter/MinistryNews/Pages/2439.aspx",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://afca.mod.gov.sa/SysAfcaCollegeInfo/QualificationCoursesAddress.aspx",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "saudi_arabia/sa_mof": {
+    "domain": "mof.gov.sa",
+    "country": "saudi_arabia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mof.gov.sa/Knowledgecenter/Dictionary/Pages/default.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "saudi_arabia/sa_mofa": {
+    "domain": "mofa.gov.sa",
+    "country": "saudi_arabia",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "3/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.mofa.gov.sa/ar/ministry/news/Pages/%D8%B3%D9%85%D9%88-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%88%D9%86%D8%B8%D9%8A%D8%B1%D9%87-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D9%88%D9%82%D8%B9%D8%A7%D9%86-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%A9-%D8%A5%D8%B9%D9%81%D8%A7%D8%A1-%D9%85%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D9%84%D8%AD%D8%A7%D9%85%D9%84%D9%8A-%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D8%A8%D9%84%D9%88%D9%85%D8%A7%D8%B3%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9.aspx",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.mofa.gov.sa/ar/ministry/statements/Pages/%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86-%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83-%D8%A7%D9%84%D8%B5%D8%A7%D8%AF%D8%B1-%D8%B9%D9%86-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A-%D8%A7%D9%84%D8%AA%D8%B4%D8%A7%D9%88%D8%B1%D9%8A-%D9%84%D9%88%D8%B2%D8%B1%D8%A7%D8%A1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%A8%D8%B4%D8%A3%D9%86-%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D8%AF%D8%A7%D8%A1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86.aspx?csrt=8962475155167183671",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.mofa.gov.sa/ar/ministry/statements/Pages/-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%AA%D8%B1%D8%AD%D8%A8-%D8%A8%D8%A5%D8%B9%D9%84%D8%A7%D9%86-%D8%A7%D9%84%D9%87%D8%AF%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA%D8%A9-%D8%A8%D9%8A%D9%86-%D8%A8%D8%A7%D9%83%D8%B3%D8%AA%D8%A7%D9%86-%D9%88%D8%A3%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9-%D8%AD%D9%84%D9%88%D9%84-%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D9%81%D8%B7%D8%B1.aspx?csrt=5347148040691416205",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "saudi_arabia/sa_sama": {
+    "domain": "sama.gov.sa",
+    "country": "saudi_arabia",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.sama.gov.sa/ar-sa/News/Pages/news-1132.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.sama.gov.sa/ar-sa/News/Pages/AllNews.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.sama.gov.sa/ar-sa/News/pages/news-1004.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "saudi_arabia/sa_spa": {
+    "domain": "spa.gov.sa",
+    "country": "saudi_arabia",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "0/3",
+      "playwright": "3/3"
+    },
+    "urls": [
+      {
+        "url": "https://www.spa.gov.sa/N2535131",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.spa.gov.sa/N2513604",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.spa.gov.sa/N2540858",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "south_korea/kr_bok": {
+    "domain": "bok.or.kr",
+    "country": "south_korea",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bok.or.kr/portal/bbs/B0000501/view.do?nttId=10096576&oldMenuNo=201150&menuNo=201264&programType=newsData&depth=201264&relate=Y",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=10096923&searchCnd=1&searchKwd=&depth2=200038&depth3=201263&depth=201263&pageUnit=10&pageIndex=1&programType=newsData&menuNo=201265&oldMenuNo=201263",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bok.or.kr/portal/bbs/P0001773/view.do?nttId=10097015&menuNo=200037&programType=newsData&relate=Y&depth=200037",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "south_korea/kr_mnd": {
+    "domain": "mnd.go.kr",
+    "country": "south_korea",
+    "recommended_method": "NONE",
+    "reachable": false,
+    "method_scores": {
+      "curl": "0/1",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.mnd.go.kr/mbshome/mbs/mnd/subview.do?id=mnd_050101000000",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      }
+    ]
+  },
+  "south_korea/kr_mofa": {
+    "domain": "mofa.go.kr",
+    "country": "south_korea",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mofa.go.kr/www/brd/m_4080/view.do?seq=377022&page=1&pitem=10",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ae.mofa.go.kr/www/brd/m_4080/view.do?seq=377027",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://nl.mofa.go.kr/www/brd/m_4080/view.do?seq=377023&srchFr=&amp;srchTo=&amp;srchWord=&amp;srchTp=&amp;multi_itm_seq=0&amp;itm_seq_1=0&amp;itm_seq_2=0&amp;company_cd=&amp;company_nm=",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "south_korea/kr_mosf": {
+    "domain": "moef.go.kr",
+    "country": "south_korea",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.moef.go.kr/sns/blogList.do",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.moef.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000077165&menuNo=4010100",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.moef.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000077181&menuNo=4010100",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "south_korea/kr_president": {
+    "domain": "president.go.kr",
+    "country": "south_korea",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.president.go.kr/newsroom/briefing/PhPd3uYE",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.president.go.kr/newsroom/briefing/NzyUDuMu",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "spain/es_bde": {
+    "domain": "bde.es",
+    "country": "spain",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.bde.es/wbe/es/noticias-eventos/blog/responder-no-lo-se-que-nos-dice-sobre-tu-genero-conocimientos-y-comportamientos-financieros.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bde.es/wbe/es/noticias-eventos/blog/educacion-financiera-desde-la-infancia-una-inversion-rentable.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bde.es/wbe/es/publicaciones/analisis-economico-investigacion/documentos-trabajo/consumer-price-stickiness-in-the-euro-area-during-an-inflation-surge.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "spain/es_congreso": {
+    "domain": "congreso.es",
+    "country": "spain",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "0/2",
+      "diffbot": "2/2",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.congreso.es/fotonoticias",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.congreso.es/proyectos-de-ley",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://app.congreso.es/v1/15769413C",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "spain/es_defensa": {
+    "domain": "defensa.gob.es",
+    "country": "spain",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/10-Operacion_Inherent_Resolve/noticias/listado/260315-ni-irak-redespliegue.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ejercitodelaireydelespacio.defensa.gob.es/EA/ejercitodelaire/es/Actualidad/Noticias/Noticia/96cd3375-1865-11f1-888e-005056a2cb59/?resourceId=96cd3375-1865-11f1-888e-005056a2cb59&path=/sites/internet.es/.content/noticiaEA/noticiaEA_01460.xml",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.defensa.gob.es/gabinete/notasPrensa/2026/03/DGC-260320-tropas-evacuadas-irak.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "spain/es_exteriores": {
+    "domain": "exteriores.gob.es",
+    "country": "spain",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.exteriores.gob.es/es/Comunicacion/Comunicados/Paginas/2026_COMUNICADOS/Espana-condena-los-ataques-contra-infraestructuras-energeticas-criticas-en-Oriente-Medio-e-insta-a-su-cese-inmediato.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.exteriores.gob.es/es/Comunicacion/Comunicados/Paginas/2026_COMUNICADOS/El-Gobierno-de-Espana-expresa-su-maxima-preocupacion-por-el-grave-deterioro-de-la-situacion-en-Libano.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.exteriores.gob.es/es/Comunicacion/Comunicados/Paginas/2026_COMUNICADOS/Comunicado-sobre-ataques-a-paises-del-Consejo-de-Cooperacion-del-Golfo-y-Turquia.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "spain/es_hacienda": {
+    "domain": "hacienda.gob.es",
+    "country": "spain",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.hacienda.gob.es/gl-es/prensa/noticias/paginas/2026/20260317-np-cm-unidades-de-aceleracion-dual.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.hacienda.gob.es/gl-ES/Prensa/Noticias/Paginas/2026/20260317-NP-CM-SUBVENCIONES-PROGRAMAS-PREVENCION.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.hacienda.gob.es/en-gb/prensa/noticias/paginas/2026/20260317-np-cm-becas-culturex.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "spain/es_moncloa": {
+    "domain": "lamoncloa.gob.es",
+    "country": "spain",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2026/20260317-referencia-rueda-de-prensa-ministros.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.lamoncloa.gob.es/presidente/actividades/paginas/2026/090326-sanchez-becas-medrano.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.lamoncloa.gob.es/info-dana/paginas/2026/090326-datos-seguimiento-actuaciones-gobierno.aspx",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "sweden/se_fi": {
+    "domain": "fi.se",
+    "country": "sweden",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/1",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.fi.se/sv/resultat/?catid=60&page=86",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "sweden/se_forsvar": {
+    "domain": "regeringen.se",
+    "country": "sweden",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-presenterar-beredskapspaket/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regeringen.se/pressmeddelanden/2026/03/ministern-for-civilt-forsvar-besoker-vastra-gotaland/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-presenterar-beredskapspaket-presstraff/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "sweden/se_regeringen": {
+    "domain": "regeringen.se",
+    "country": "sweden",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-foreslar-mojlighet-till-obligatoriska-kommunala-hyresgarantier/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regeringen.se/pressmeddelanden/2026/03/pressbriefing-med-statsminister-ulf-kristersson-och-finansminister-elisabeth-svantesson/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regeringen.se/remisser/2026/03/remiss-av-skatteverkets-promemoria-harmoniserade-skatteregler-for-pension-fran-utlandet/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "sweden/se_riksbank": {
+    "domain": "riksbank.se",
+    "country": "sweden",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.riksbank.se/sv/press-och-publicerat/nyheter-och-pressmeddelanden/pressmeddelanden/2026/styrrantan-oforandrad-pa-175-procent2/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.riksbank.se/sv/penningpolitik/penningpolitisk-rapport/2026/penningpolitiskt-beslut-mars-2026/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.riksbank.se/sv/press-och-publicerat/riksbanken-play/2026/presstraff-om-det-penningpolitiska-beslutet-i-mars-2026/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "sweden/se_riksdagen": {
+    "domain": "riksdagen.se",
+    "country": "sweden",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/skriftlig-fraga/dronarnas-roll-i-framtidens-forsvar_hd11550/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/regeringens-skrivelse/sveriges-militara-stod-till-ukraina_hd03162/html/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023938/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "sweden/se_ud": {
+    "domain": "regeringen.se",
+    "country": "sweden",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.regeringen.se/pressmeddelanden/2026/03/forslag-om-sanktionsavgift-och-bidragssparr-for-att-motverka-felaktiga-utbetalningar-och-bidragsbrott/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.regeringen.se/rattsliga-dokument/proposition/2026/03/prop.-202526210",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "taiwan/tw_cbc": {
+    "domain": "cbc.gov.tw",
+    "country": "taiwan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "1/1",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.cbc.gov.tw/tw/cp-357-190951-367ba-1.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.cbc.gov.tw/tw/cp-971-190955-53feb-1.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.cbc.gov.tw/dl-225077-3047382cdeb447728b9ee6b83d3db406.html",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "taiwan/tw_ly": {
+    "domain": "ly.gov.tw",
+    "country": "taiwan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://ppg.ly.gov.tw/ppg/sittings/2026031277/details?meetingDate=115/03/16",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ppg.ly.gov.tw/ppg/sittings/2026031279/details?meetingDate=115/03/19",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://ppg.ly.gov.tw/ppg/sittings/2026031278/details?meetingDate=115/03/18",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "taiwan/tw_mnd": {
+    "domain": "mnd.gov.tw",
+    "country": "taiwan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mnd.gov.tw/news/plaact/86346",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://mna.mnd.gov.tw/news/overview/?PageIndex=2",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://aode.mnd.gov.tw/Unit/Index/14",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "taiwan/tw_mof": {
+    "domain": "mof.gov.tw",
+    "country": "taiwan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=3ee59a0b82a94e35a7cfc684d8e12d0d",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=6653570854c84a9796ecc0cde59447cd",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=9d0565f319434455a02ac7354524b39f",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "taiwan/tw_mofa": {
+    "domain": "mofa.gov.tw",
+    "country": "taiwan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mofa.gov.tw/News.aspx?n=97&sms=75",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mofa.gov.tw/News.aspx?n=141&sms=144",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mofa.gov.tw/News.aspx?n=245&sms=109",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "taiwan/tw_president": {
+    "domain": "president.gov.tw",
+    "country": "taiwan",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.president.gov.tw/News/39900",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.president.gov.tw/News/39858",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.president.gov.tw/News/39877",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "turkey/tr_mfa": {
+    "domain": "mfa.gov.tr",
+    "country": "turkey",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/2",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mfa.gov.tr/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://saraybosna-be.mfa.gov.tr/Mission/Announcements",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "turkey/tr_msb": {
+    "domain": "msb.gov.tr",
+    "country": "turkey",
+    "recommended_method": "webfetch",
+    "reachable": true,
+    "method_scores": {
+      "curl": "1/3",
+      "webfetch": "2/2",
+      "diffbot": "0/2",
+      "playwright": "1/2"
+    },
+    "urls": [
+      {
+        "url": "https://www.msb.gov.tr/Ihale/IlanDetay/c0da704f-5faf-4ec0-ae64-41d82e3a0312",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://www.msb.gov.tr/SlaytHaber/722d3a5133574738a628d60dc015604d",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "OK",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": "webfetch"
+      },
+      {
+        "url": "https://personeltemin.msb.gov.tr/AnaSayfa/DuyuruDetay/?id=47e91476-ab1f-4712-a1e3-1f0ffc4b056a",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "turkey/tr_tbmm": {
+    "domain": "tbmm.gov.tr",
+    "country": "turkey",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.tbmm.gov.tr/Haber/Detay?Id=38d60366-e785-48a8-b5f6-019cae7aa2c1",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.tbmm.gov.tr/Haber/Detay?Id=27040533-2033-48d1-8525-019cd803a21f",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.tbmm.gov.tr/milletvekili/UyeKomisyonKonusmaTutanakDetay?tutanakId=84343",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "turkey/tr_tcmb": {
+    "domain": "tcmb.gov.tr",
+    "country": "turkey",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Duyurular/Basin/2026/DUY2026-14",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://tcmb.gov.tr/wps/wcm/connect/tr/tcmb+tr/main+menu/duyurular/basin/2026/duy2026-12",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Duyurular/Basin/2026/DUY2026-13",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "uae/ae_mof": {
+    "domain": "mof.gov.ae",
+    "country": "uae",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://mof.gov.ae/ar/public-finance/uae-federal-budget/uae-federal-budget-2026/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://mof.gov.ae/ar/home/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://mof.gov.ae/ar/public-finance/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "uae/ae_mofa": {
+    "domain": "mofa.gov.ae",
+    "country": "uae",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mofa.gov.ae/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mofa.gov.ae/ar-ae/the-ministry/the-foreign-policy/cultural-and-public-diplomacy",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.mofa.gov.ae/services/issue-id-card",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "ukraine/ua_mfa": {
+    "domain": "mfa.gov.ua",
+    "country": "ukraine",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "2/3",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://mfa.gov.ua/news/maryana-beca-vzyala-uchast-v-onlajn-zahodi-oesr-shchodo-ukrayinciv-za-kordonom",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://mfa.gov.ua/news/maryana-beca-zvernulas-do-uchasnikiv-zahodu-komunikacijnoyi-grupi-z-pitan-ukrayini",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://mfa.gov.ua/news/ukrayinci-u-velikij-britaniyi-kanadi-ta-ssha-zmozhut-otrimuvati-pasporti-v-centrah-vfs",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "ukraine/ua_mod": {
+    "domain": "mil.gov.ua",
+    "country": "ukraine",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/1",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "1/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.mil.gov.ua/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "ukraine/ua_mof": {
+    "domain": "mof.gov.ua",
+    "country": "ukraine",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "1/3",
+      "playwright": "2/2"
+    },
+    "urls": [
+      {
+        "url": "https://mof.gov.ua/uk/news/minfin_vidatki_zagalnogo_fondu_derzhbiudzhetu_za_sichen_-_liutii_stanovili_5472_mlrd_grn-5639",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.mof.gov.ua/uk/news/minfin_uriad_skhvaliv_zakonoproiekt_pro_ratifikatsiiu_konventsii_z_avstraliieiu_pro_usunennia_podviinogo_opodatkuvannia-5638",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://mof.gov.ua/uk/news/imf_mission_and_ukraines_ministry_of_finance_started_policy_discussions_on_implementation_of_the_extended_fund_facility_arrangement-5636",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "ukraine/ua_nbu": {
+    "domain": "bank.gov.ua",
+    "country": "ukraine",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://bank.gov.ua/ua/news/all/komentar-natsionalnogo-banku-schodo-rivnya-inflyatsiyi-v-lyutomu-2026-roku",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://bank.gov.ua/ua/news/all/prosto-pro-ekonomiku-chogo-chekati-dali-lyutiy-2026-roku",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://bank.gov.ua/ua/news/all/natsionalniy-bank-ukrayini-zberig-oblikovu-stavku-na-rivni-15-22565",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "ukraine/ua_president": {
+    "domain": "president.gov.ua",
+    "country": "ukraine",
+    "recommended_method": "playwright",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/2",
+      "webfetch": "0/2",
+      "diffbot": "0/2",
+      "playwright": "2/2"
+    },
+    "urls": [
+      {
+        "url": "https://www.president.gov.ua/news/rosiya-maye-chitko-usvidomiti-j-realno-vidchuti-sho-ukrayina-103445",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      },
+      {
+        "url": "https://www.president.gov.ua/news/vid-nas-usih-zalezhit-shob-rosiyani-ne-prijshli-na-peregovor-103449",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "FAILED",
+          "playwright": "OK"
+        },
+        "best_method": "playwright"
+      }
+    ]
+  },
+  "ukraine/ua_rada": {
+    "domain": "rada.gov.ua",
+    "country": "ukraine",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.rada.gov.ua/news/Top-novyna/270756.html",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://komtrans.rada.gov.ua/news/main_news/",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://zakon.rada.gov.ua/go/214-2026-%D1%80",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_boe": {
+    "domain": "bankofengland.co.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "2/3",
+      "webfetch": "0/1",
+      "diffbot": "0/1",
+      "playwright": "0/1"
+    },
+    "urls": [
+      {
+        "url": "https://www.bankofengland.co.uk/-/media/boe/files/monetary-policy-summary-and-minutes/2026/monetary-policy-summary-and-minutes-march-2026",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "FAILED",
+          "diffbot": "FAILED",
+          "playwright": "FAILED"
+        },
+        "best_method": null
+      },
+      {
+        "url": "https://www.bankofengland.co.uk/speech/2026/march/speech-by-alan-taylor-getting-the-right-directions",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.bankofengland.co.uk/working-paper/2026/targeting-inflation-expectations",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_fcdo": {
+    "domain": "gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.uk/government/news/foreign-office-travel-advice-updates",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/foreign-secretary-sets-out-new-innovative-development-reforms",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/speeches/foreign-secretary-statement-on-international-development-19-march",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_legislation": {
+    "domain": "legislation.gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.legislation.gov.uk/new/uksi/2026-03-11",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.legislation.gov.uk/uksi/2026/237/made",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.legislation.gov.uk/ukdsi/2026/9780348280630",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_mi5": {
+    "domain": "mi5.gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/2",
+      "webfetch": "0/2",
+      "diffbot": "2/2",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.mi5.gov.uk/director-general-mi5-statement",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://www.mi5.gov.uk/mi5-official-secrets-exhibition-shortlisted-for-national-award",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "united_kingdom/uk_mod": {
+    "domain": "gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.uk/government/news/uk-defence-industry-steps-up-support-for-gulf-partners-facing-iranian-attacks",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/final-piece-in-place-for-defence-support-transformation",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/transformative-new-childcare-support-will-save-defence-families-up-to-6000-a-year",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_parliament": {
+    "domain": "parliament.uk",
+    "country": "united_kingdom",
+    "recommended_method": "diffbot",
+    "reachable": true,
+    "method_scores": {
+      "curl": "0/3",
+      "webfetch": "0/3",
+      "diffbot": "3/3",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://committees.parliament.uk/committee/826/select-committee-on-the-armed-forces-bill/news/212731/armed-forces-bill-committee-visits-defence-serious-crime-command-and-defence-housing/",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://hansard.parliament.uk/Commons/2026-03-16/debates/99F459DB-C41A-4098-BCEC-C002D351F0D4/DefenceInvestmentPlan",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      },
+      {
+        "url": "https://hansard.parliament.uk/Commons/2026-03-16/debates/2FF030E5-A670-4ACD-AB45-942970A2510B/DefenceUKAllies",
+        "statuses": {
+          "curl": "FAILED",
+          "webfetch": "BLOCKED",
+          "diffbot": "OK"
+        },
+        "best_method": "diffbot"
+      }
+    ]
+  },
+  "united_kingdom/uk_pm": {
+    "domain": "gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.uk/government/speeches/prime-ministers-oral-statement-on-iran-2-march-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/speeches/pm-remarks-16-march-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/speeches/pm-statement-on-iran-28-february-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_trade": {
+    "domain": "gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.uk/government/publications/policy-statement-on-the-operation-of-part-3-of-the-uk-internal-market-act-2020/uk-internal-market-act-2020-policy-statement-on-the-operation-of-part-3-of-the-act-recognition-of-professional-qualifications",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/speeches/trade-minister-speech-at-chatham-house",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/update-following-round-4-of-negotiations-on-an-enhanced-free-trade-agreement-with-turkey",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  },
+  "united_kingdom/uk_treasury": {
+    "domain": "gov.uk",
+    "country": "united_kingdom",
+    "recommended_method": "curl",
+    "reachable": true,
+    "method_scores": {
+      "curl": "3/3",
+      "webfetch": "--",
+      "diffbot": "--",
+      "playwright": "--"
+    },
+    "urls": [
+      {
+        "url": "https://www.gov.uk/government/news/spring-forecast-2026-the-right-economic-plan-for-britain",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/statistics/public-spending-statistics-release-february-2026/public-spending-statistics-february-2026",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/chancellors-growth-plan-sets-key-principles-for-uk-eu-alignment",
+        "statuses": {
+          "curl": "OK"
+        },
+        "best_method": "curl"
+      }
+    ]
+  }
+}

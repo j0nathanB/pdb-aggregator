@@ -1,0 +1,126 @@
+country: Sweden
+code: se
+tier: shield
+region: western_europe
+actors:
+- name: Ulf Kristersson
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Kristersson
+  - Ulf Kristersson
+- name: Jimmie Åkesson
+  role: Sweden Democrats leader
+  primary: false
+  search_terms:
+  - Åkesson
+  - Jimmie Åkesson
+  - Sweden Democrats
+  - SD
+- name: Magdalena Andersson
+  role: Social Democrats leader (opposition)
+  primary: false
+  search_terms:
+  - Andersson
+  - Magdalena Andersson
+- name: Pål Jonson
+  role: Defense Minister
+  primary: false
+  search_terms:
+  - Pål Jonson
+- name: Maria Malmer Stenergard
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Malmer Stenergard
+  - Maria Malmer Stenergard
+- name: Swedish Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Försvarsmakten
+  - Swedish Armed Forces
+- name: SÄPO
+  role: Security Service
+  primary: false
+  search_terms:
+  - SÄPO
+  - Säkerhetspolisen
+  - Swedish Security Service
+- name: Riksbank
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Riksbank
+  - Sveriges Riksbank
+- name: Moderate Party
+  role: Governing party
+  primary: false
+  search_terms:
+  - Moderate Party
+  - Moderaterna
+- name: Wallenberg family
+  role: Industrial sphere (~40% of Stockholm Stock Exchange)
+  primary: false
+  search_terms:
+  - Wallenberg
+  - Investor AB
+languages:
+  primary: sv
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Gotland military buildup
+  reason: Garrison expansion and NATO exercise details on the strategically critical
+    island are classified
+  where_signal_lives: Försvarsmakten press releases, FOI reports, NATO Baltic exercises
+    communiqués
+- domain: Tidö Agreement implementation
+  reason: Sweden Democrats' informal influence on policy through the agreement is
+    poorly tracked by international media
+  where_signal_lives: Swedish parliamentary committee reports, SVT investigative coverage
+news_discovery:
+  goggle_file: assets/country_goggles/se.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: SE
+    search_lang: sv
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - bilaterala förbindelser
+    - diplomatiskt avtal
+    - utrikespolitik
+    - bilateralt toppmöte
+    - ambassadör
+    security_defense:
+    - Försvarsmakten
+    - försvarsupphandling
+    - säkerhetssamarbete
+    - SÄPO
+    - militär insats
+    economic_tech:
+    - utländsk investering
+    - handelsavtal
+    - Riksbanken
+    - industripolitik
+    - kritiska råvaror
+    - supply chain
+    institutional:
+    - NATO
+    - Europeiska unionen
+    - FN
+    - Nordiskt samarbete
+    - fördragsratificering
+    domestic_constraints:
+    - riksdagen
+    - Moderaterna
+    - Sverigedemokraterna
+    - Tidöavtalet
+    - opposition
+government_discovery:
+  config_file: assets/government/se.yaml
+interpretive_context_file: assets/context/se_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

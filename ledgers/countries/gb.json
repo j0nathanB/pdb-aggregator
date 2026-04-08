@@ -1,0 +1,1935 @@
+{
+  "country": "United Kingdom",
+  "code": "gb",
+  "tier": "shield",
+  "actors": [
+    {
+      "name": "Keir Starmer",
+      "role": "Prime Minister",
+      "primary": true
+    },
+    {
+      "name": "King Charles III",
+      "role": "Head of State",
+      "primary": false
+    },
+    {
+      "name": "Rachel Reeves",
+      "role": "Chancellor of the Exchequer",
+      "primary": false
+    },
+    {
+      "name": "David Lammy",
+      "role": "Foreign Secretary",
+      "primary": false
+    },
+    {
+      "name": "John Healey",
+      "role": "Defence Secretary",
+      "primary": false
+    },
+    {
+      "name": "Kemi Badenoch",
+      "role": "Leader of the Opposition (Conservative)",
+      "primary": false
+    },
+    {
+      "name": "Nigel Farage",
+      "role": "Reform UK leader",
+      "primary": false
+    },
+    {
+      "name": "Bank of England",
+      "role": "Central Bank",
+      "primary": false
+    },
+    {
+      "name": "MI6",
+      "role": "Foreign intelligence (SIS)",
+      "primary": false
+    },
+    {
+      "name": "GCHQ",
+      "role": "Signals intelligence",
+      "primary": false
+    }
+  ],
+  "last_updated": "2026-03-01",
+  "created": "2026-03-25",
+  "posture_summary": {
+    "as_of": "2026-03-01",
+    "text": "The United Kingdom's alliance architecture maintains operational momentum through AUKUS deepening and managed US tensions over Iran policy, while economic indicators show continued monetary easing trajectory with fiscal policy prioritizing stability over intervention despite electoral pressures. However, regime fragmentation has sustained active institutional breakdown: the governing party suffered historic by-election defeat (Labour pushed to third place in safe seat by Greens' first-ever Westminster victory), the monarchy crisis deepened through Prince Andrew's arrest triggering abdication calls, and justice system reforms indicate institutional adaptation under severe capacity pressure. The simultaneous electoral collapse, constitutional crisis, and defensive institutional reforms represent continued breakdown across all regime pillars while external strategic frameworks function despite domestic instability.",
+    "category_status": {
+      "alignment_diplomatic": "routine",
+      "security_defense": "routine",
+      "economic_tech": "routine",
+      "institutional": "quiet",
+      "domestic_regime": "escalating"
+    },
+    "last_deep_dive": "2026-03-01",
+    "consecutive_maintenance_weeks": 0
+  },
+  "signal_categories": {
+    "alignment_diplomatic": {
+      "current_assessment": "The bilateral web strategy continues operating through AUKUS partnership deepening and Iran crisis management, showing both alliance consolidation and managed friction with the US. The Iran policy tensions reveal limits to automatic alignment while maintaining core defense cooperation.",
+      "confidence": 3,
+      "confidence_rationale": "Multiple sources on AUKUS progress and Iran policy tensions, but limited scope of evidence for comprehensive alliance posture assessment",
+      "key_actors": [
+        "AUKUS",
+        "Australia",
+        "Starmer",
+        "Trump",
+        "Healey"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a714"
+      ],
+      "last_updated": "2026-03-01"
+    },
+    "security_defense": {
+      "current_assessment": "Defense commitments continue with Ukraine deployment pledges and Middle East tensions exposing UK military assets to direct Iranian threats. AUKUS industrial cooperation advances while regional security pressures intensify direct risks to British forces.",
+      "confidence": 3,
+      "confidence_rationale": "Single sources on defense developments with some Iranian threat specificity, sufficient for directional assessment but limited scope",
+      "key_actors": [
+        "Healey",
+        "AUKUS",
+        "Iran"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a712"
+      ],
+      "last_updated": "2026-03-01"
+    },
+    "economic_tech": {
+      "current_assessment": "Monetary easing trajectory continues with BoE signaling possible March rate cut as inflation approaches target. Fiscal policy maintains consolidation approach with no major Spring Statement announcements despite rising political pressure from electoral defeats.",
+      "confidence": 3,
+      "confidence_rationale": "Good tier-2 sources on monetary policy direction, but analysis rests on interpretation of policy continuity rather than major changes",
+      "key_actors": [
+        "Bank of England",
+        "Bailey",
+        "Reeves"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a76"
+      ],
+      "last_updated": "2026-03-01"
+    },
+    "institutional": {
+      "current_assessment": "No evidence of changed institutional engagement with multilateral organizations or treaty frameworks this week. Justice system reforms with AI courts and reduced jury trials represent domestic institutional modernization rather than international institutional reorientation.",
+      "confidence": 3,
+      "confidence_rationale": "Limited evidence base this week, but absence of institutional engagement changes confirmed through systematic review",
+      "key_actors": [
+        "Lammy"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a711"
+      ],
+      "last_updated": "2026-03-01"
+    },
+    "domestic_regime": {
+      "current_assessment": "Regime fragmentation continues with the governing party suffering historic by-election defeat (Labour pushed to third place in safe seat), the monarchy crisis deepening through Prince Andrew's arrest and calls for King Charles to abdicate, and justice system institutional reforms indicating adaptation under severe capacity pressure. The simultaneous electoral collapse and constitutional crisis represents sustained institutional breakdown across all pillars.",
+      "confidence": 4,
+      "confidence_rationale": "Multiple independent tier-2 sources (BBC, Guardian, CNN, Sky News) provide corroborating evidence across electoral collapse, monarchy crisis, and institutional adaptation dimensions",
+      "key_actors": [
+        "Starmer",
+        "King Charles III",
+        "Green Party",
+        "Reform UK",
+        "Lammy"
+      ],
+      "dossier_sections_referenced": [
+        "\u00a715",
+        "\u00a74"
+      ],
+      "last_updated": "2026-03-01"
+    }
+  },
+  "weekly_entries": [
+    {
+      "week": "2026-01-25",
+      "date_range": "2026-01-18 to 2026-01-25",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "Major diplomatic crisis between Trump and Starmer over Afghanistan comments and Greenland tariffs, continued Conservative party collapse with high-profile defections to Reform UK, and King Charles's unprecedented intervention in diplomatic tensions. The 48-source Trump-Starmer story and 44-source NATO crisis story represent the most serious US-UK diplomatic rupture since the dossier baseline."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Trump threatens 10% tariffs on UK over Greenland opposition, Starmer condemns as 'completely wrong'",
+              "date": "2026-01-18",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+                  "tier": 2
+                }
+              ],
+              "summary": "Trump threatened 10% baseline tariffs rising to 25% in June on UK and European allies over opposition to US control of Greenland. Starmer rejected the demands and condemned threats as 'completely wrong.' This represents escalation of Trump's economic coercion strategy targeting allies.",
+              "actors_involved": [
+                "Keir Starmer",
+                "David Lammy"
+              ],
+              "signal_category_relevance": "Direct deterioration of US-UK alliance relationship through economic coercion and public confrontation, moving beyond the managed accommodation strategy described in dossier"
+            },
+            {
+              "headline": "Starmer calls Trump's Afghanistan comments 'insulting and frankly appalling,' demands apology",
+              "date": "2026-01-23",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+                  "tier": 2
+                }
+              ],
+              "summary": "Trump claimed NATO troops 'stayed a little back, a little off the frontlines' in Afghanistan. Starmer responded that the remarks were 'insulting and frankly appalling' and suggested Trump should apologize for comments about 457 fallen British soldiers. This is unusually direct criticism of a US president by a UK PM.",
+              "actors_involved": [
+                "Keir Starmer"
+              ],
+              "signal_category_relevance": "Represents abandonment of diplomatic restraint in US-UK relationship, with PM publicly rebuking US president over military service of British forces - signals breakdown of special relationship norms"
+            },
+            {
+              "headline": "King Charles reportedly intervened with White House over Trump's Afghanistan comments",
+              "date": "2026-01-24",
+              "sources": [
+                {
+                  "name": "Daily Mail",
+                  "url": "https://dailymail.co.uk/news/article-15495331/Concerns-raised-King-Charles-prompted-Donald-Trump-Afghanistan.html",
+                  "tier": 2
+                }
+              ],
+              "summary": "King Charles allegedly raised concerns through private channels about Trump's claims regarding NATO troops in Afghanistan, reportedly contributing to Trump's subsequent backtrack. The monarch's intervention shows even constitutional actors being drawn into the diplomatic crisis.",
+              "actors_involved": [
+                "King Charles III"
+              ],
+              "signal_category_relevance": "Unprecedented intervention by constitutionally neutral head of state in US-UK diplomatic crisis demonstrates severity of alliance strain and breakdown of normal diplomatic channels"
+            }
+          ],
+          "prior_assessment": "The UK is pursuing a bilateral web strategy through deepened European defense partnerships while maintaining but not deepening the US special relationship. The EU reset has produced framework agreements. AUKUS and NATO commitments anchor the transatlantic relationship.",
+          "updated_assessment": "The US-UK relationship has deteriorated into open diplomatic confrontation, with economic threats and public rebukes over military service replacing managed accommodation. The King's intervention signals constitutional-level concern about alliance breakdown. The bilateral web strategy appears increasingly necessary as the transatlantic pillar becomes unreliable.",
+          "confidence_change": {
+            "from": 3,
+            "to": 4,
+            "reason": "Multiple tier-2 sources documenting unprecedented public confrontation between UK PM and US President, supported by constitutional intervention"
+          }
+        },
+        "security_defense": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "MI5 and GCHQ assess Chinese embassy security risks as manageable with mitigations",
+              "date": "2026-01-24",
+              "sources": [
+                {
+                  "name": "Express",
+                  "url": "https://express.co.uk/news/politics/2160188/mi5-gchq-China-embassy-Labour-Starmer",
+                  "tier": 2
+                }
+              ],
+              "summary": "MI5 Director General Sir Ken McCallum and GCHQ Director Anne Keast-Butler provided security assessment on approved Chinese 'super-embassy' in London. Security chiefs said risks cannot be eliminated but mitigations are 'professional and proportionate' and consolidating Chinese diplomats has 'clear security advantages.'",
+              "actors_involved": [
+                "MI6",
+                "GCHQ"
+              ],
+              "signal_category_relevance": "Demonstrates ongoing China threat assessment and management approach - security services acknowledge risks but judge them manageable through established procedures"
+            }
+          ],
+          "prior_assessment": "Major defense spending increases are committed following the 2025 Strategic Defence Review, but armed forces are at smallest size since Napoleonic era. The defense-industrial base demonstrates global competitiveness yet procurement system is acknowledged as 'broken.'",
+          "updated_assessment": "No change from prior assessment - Chinese embassy security evaluation shows routine threat management within existing China approach rather than posture shift.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Rachel Reeves announces visa fee refunds to attract investment amid Trump trade threats",
+              "date": "2026-01-20",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/20/rachel-reeves-plans-refund-visa-fees-investment-uk-davos",
+                  "tier": 2
+                }
+              ],
+              "summary": "Chancellor pledged to refund visa fees for global businesses bringing highly skilled staff to Britain, positioning UK as haven of stability despite Trump's tariff threats. She canceled London Stock Exchange speech to support Starmer over Greenland crisis and announced spending measures including winter energy bill support.",
+              "actors_involved": [
+                "Rachel Reeves"
+              ],
+              "signal_category_relevance": "Defensive economic measures in response to US trade pressure, showing adaptation to Trump tariff regime but not fundamental economic strategy shift"
+            },
+            {
+              "headline": "Bank of England admits years of inflation forecasting failures in first-ever forecast evaluation report",
+              "date": "2026-01-24",
+              "sources": [
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com/news/articles/2026-01-23/bank-of-england-admits-it-underestimated-extent-of-inflation-crisis",
+                  "tier": 2
+                }
+              ],
+              "summary": "Bank of England published first-ever forecast evaluation report acknowledging systematic failures, admitting inflation predictions were 'repeatedly too low' since 2022. Inflation averaged nearly two percentage points higher than predicted since mid-2021.",
+              "actors_involved": [
+                "Bank of England"
+              ],
+              "signal_category_relevance": "Demonstrates central bank institutional credibility challenges and forecasting limitations during cost-of-living crisis"
+            }
+          ],
+          "prior_assessment": "The UK operates a services-dominated, financialised economy with persistent current account deficits. The City maintains global dominance but is slowly losing European market share post-Brexit, while broader economy has experienced effectively zero per-capita growth.",
+          "updated_assessment": "Defensive economic measures show adaptation to Trump trade pressure but no fundamental strategy shift. BoE forecasting failures highlight institutional credibility challenges but don't change structural economic position.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "The parliamentary system is under unprecedented strain with governing party holding 63.2% of seats on just 33.7% of popular vote. Constitutional pressures mounting from Scottish independence, Northern Ireland dynamics, asymmetric devolution, and electoral reform pressure.",
+          "updated_assessment": "No significant institutional developments this week.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Starmer blocks Andy Burnham from Labour by-election amid leadership speculation",
+              "date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/25/blocking-andy-burnham-keir-starmer-ruthlessness-weakness-labour",
+                  "tier": 2
+                }
+              ],
+              "summary": "Labour's NEC voted 8-1 to block Greater Manchester Mayor Andy Burnham from standing in Gorton and Denton by-election. Decision fuels speculation about Burnham's leadership ambitions and deepens internal Labour tensions, with unions and MPs criticizing move as undemocratic.",
+              "actors_involved": [
+                "Keir Starmer"
+              ],
+              "signal_category_relevance": "Reveals internal Labour party tensions and leadership vulnerability - blocking potential rival shows defensive posture but risks appearing weak and undemocratic"
+            },
+            {
+              "headline": "Conservative MPs Robert Jenrick and Andrew Rosindell defect to Reform UK as Badenoch faces party crisis",
+              "date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/19/kemi-badenoch-writes-tory-mps-party-on-right-despite-defections",
+                  "tier": 2
+                }
+              ],
+              "summary": "Shadow Justice Secretary Robert Jenrick and MP Andrew Rosindell defected to Reform UK within days. Badenoch sacked Jenrick before defection and warned against 'psychodrama.' Despite defections, polls show Badenoch's approval rating rising, suggesting some stabilization of Conservative position.",
+              "actors_involved": [
+                "Kemi Badenoch",
+                "Nigel Farage"
+              ],
+              "signal_category_relevance": "Continued Conservative party hemorrhaging to Reform UK demonstrates two-party system breakdown, though Badenoch's rising approval suggests some defensive success in party management"
+            },
+            {
+              "headline": "Nigel Farage attends Davos and faces financial disclosure breaches ruling",
+              "date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/21/nigel-farage-apologises-breaches-mp-code-conduct",
+                  "tier": 2
+                }
+              ],
+              "summary": "Reform UK leader attended World Economic Forum despite past criticism, meeting US Treasury Secretary Scott Bessent. Parliamentary standards commissioner found Farage breached MPs' rules 17 times by failing to declare \u00a3384,000 in income on time, though ruled breaches inadvertent.",
+              "actors_involved": [
+                "Nigel Farage"
+              ],
+              "signal_category_relevance": "Shows Reform UK leader's pragmatic approach to power and establishment engagement, while disclosure failures highlight party's institutional inexperience"
+            }
+          ],
+          "prior_assessment": "Traditional two-party system faces potential collapse with combined Labour-Conservative support at historic lows while Reform UK leads in polling despite holding only 8 MPs. Sharp generational divides persist while education-based 'diploma divide' has displaced class as primary electoral cleavage.",
+          "updated_assessment": "Two-party system breakdown continues with high-profile Conservative defections to Reform UK and internal Labour tensions over leadership. Badenoch's rising approval ratings suggest some Conservative stabilization, but fundamental electoral dynamics remain unstable with Reform UK continuing to gain institutional presence.",
+          "confidence_change": {
+            "from": 3,
+            "to": 4,
+            "reason": "Multiple documented defections and internal party crises supported by tier-2 sources, with polling data showing continued two-party decline"
+          }
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "King Charles's direct intervention in US-UK diplomatic crisis",
+          "date": "2026-01-25",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [],
+      "devils_advocate": {
+        "challenges": [
+          "The alignment_diplomatic confidence increase to 4 rests on what appears to be single-story coverage rather than multiple independent sources - The Guardian, Daily Mail, and other outlets reporting the Trump-Starmer crisis likely drew from the same diplomatic briefings and public statements, not independent verification of the events described.",
+          "The King Charles intervention claim is sourced inconsistently (Daily Mail vs 'unknown') and lacks corroboration for what would be a constitutionally significant development - a single tabloid report of alleged private royal intervention should not anchor major analytical conclusions about constitutional actors being 'drawn into' diplomatic crisis.",
+          "The 'bilateral web strategy appears increasingly necessary' narrative adjustment treats the strategy as established fact when it may be analytical assumption - no evidence shows European partners are actually providing alternative security architecture as Trump targets them with identical tariff threats.",
+          "The institutional category received no analytical attention despite unprecedented royal intervention in US-UK relations, suggesting collection gap rather than genuine analytical quiet - constitutional implications of monarch engaging in active diplomacy during alliance crisis warrant assessment."
+        ],
+        "recommended_adjustments": [
+          "Reduce alignment_diplomatic confidence to 3 pending independent corroboration of key developments, particularly the King Charles intervention, from non-UK government or non-tabloid sources",
+          "Require verification of the King Charles intervention claim within one week or remove it from the assessment - constitutional intervention by the monarch in diplomatic affairs needs stronger sourcing than single Daily Mail report",
+          "Test the bilateral web strategy structural claim against current evidence - if European partners face identical Trump pressure, assess whether the strategy provides genuine alternative or is equally vulnerable to US economic coercion",
+          "Conduct institutional analysis of monarchy's role in diplomatic crisis management, particularly whether King Charles intervention represents normal constitutional function or departure from political neutrality conventions"
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": [
+        {
+          "headline": "Trump-Starmer diplomatic row over Greenland tariffs and Afghanistan comments escalates",
+          "summary": "Donald Trump threatened 10% tariffs on UK and European allies over opposition to US control of Greenland, prompting Starmer to condemn threats as 'completely wrong.' Tensions further escalated when Trump claimed NATO troops stayed 'off the frontlines' in Afghanistan, leading Starmer to demand an apology for 'appalling' remarks about fallen British soldiers. The diplomatic crisis spans multiple confrontations through January 2026.",
+          "source_url": "https://theguardian.com/us-news/2026/jan/23/trump-news-at-a-glance-starmer",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Starmer blocks Andy Burnham from Labour by-election amid leadership speculation",
+          "summary": "Labour's National Executive Committee voted 8-1 to block Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election, triggered by Andrew Gwynne's resignation. The decision fuels speculation about Burnham's leadership ambitions and deepens internal Labour tensions, with unions and MPs criticizing the move as undemocratic.",
+          "source_url": "https://bloomberg.com/news/articles/2026-01-25/starmer-rival-barred-from-contesting-seat-widening-labour-rift",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Conservative MPs defect to Reform UK as Badenoch faces party crisis",
+          "summary": "Shadow Justice Secretary Robert Jenrick and MP Andrew Rosindell defected to Reform UK within days, prompting Kemi Badenoch to hold emergency meetings and warn against further 'psychodrama.' Badenoch sacked Jenrick before his defection and issued ultimatums to wavering MPs, while polls show her approval rating rising despite the defections.",
+          "source_url": "https://theguardian.com/politics/2026/jan/19/kemi-badenoch-writes-tory-mps-party-on-right-despite-defections",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "King Charles reportedly intervened over Trump's Afghanistan comments",
+          "summary": "King Charles allegedly raised concerns with the White House through private channels about Trump's claims that NATO troops avoided frontlines in Afghanistan, reportedly contributing to Trump's subsequent backtrack. The intervention comes as Charles prepares for a US visit in April to mark America's 250th anniversary.",
+          "source_url": "https://dailymail.co.uk/news/article-15495331/Concerns-raised-King-Charles-prompted-Donald-Trump-Afghanistan.html",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "Nigel Farage attends Davos despite past criticism, faces financial disclosure breaches",
+          "summary": "Reform UK leader Nigel Farage attended the World Economic Forum in Davos after years of criticizing the 'globalist' event, meeting with US Treasury Secretary Scott Bessent. Separately, parliamentary standards commissioner found Farage breached MPs' rules 17 times by failing to declare \u00a3384,000 in income on time, though ruled breaches were inadvertent.",
+          "source_url": "https://theguardian.com/politics/2026/jan/21/nigel-farage-apologises-breaches-mp-code-conduct",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Rachel Reeves announces visa fee refunds to attract investment amid Trump trade threats",
+          "summary": "Chancellor Rachel Reeves pledged to refund visa fees for global businesses bringing highly skilled staff to Britain, positioning UK as haven of stability despite Trump's tariff threats. She canceled a London Stock Exchange speech to support Starmer over Greenland crisis and announced various spending measures including winter energy bill support.",
+          "source_url": "https://theguardian.com/politics/2026/jan/20/rachel-reeves-plans-refund-visa-fees-investment-uk-davos",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "NATO faces existential crisis over Trump's Greenland demands and alliance threats",
+          "summary": "Trump's threats to impose tariffs on NATO allies over Greenland opposition and suggestions he might exit NATO sparked warnings of alliance collapse. NATO Secretary General Mark Rutte negotiated a 'framework deal' with Trump that defused immediate tensions, though details remain unclear. Eight European nations issued joint statement condemning Trump's approach.",
+          "source_url": "https://time.com/7353728/trump-nato-purpose-future-greenland",
+          "source_name": "time.com"
+        },
+        {
+          "headline": "Former Bank of England analyst warns of financial crisis from alien disclosure",
+          "summary": "Helen McCaw, former senior Bank of England analyst, wrote to Governor Andrew Bailey urging the central bank to prepare for potential financial market collapse if the US government confirms existence of alien life. McCaw warned of 'extreme price volatility' and called for contingency planning amid expectations of possible disclosure under Trump administration.",
+          "source_url": "https://independent.co.uk/news/uk/home-news/aliens-financial-crisis-bank-england-helen-mccaw-b2902690.html",
+          "source_name": "gizmodo.com"
+        },
+        {
+          "headline": "MI5 and GCHQ assess security risks of Chinese mega-embassy approval",
+          "summary": "MI5 Director General Sir Ken McCallum and GCHQ Director Anne Keast-Butler provided security assessment to ministers on approved Chinese 'super-embassy' in London. Security chiefs acknowledged risks cannot be eliminated but said mitigations are 'professional and proportionate,' while noting consolidating Chinese diplomats in one site has 'clear security advantages.'",
+          "source_url": "https://theguardian.com/politics/live/2026/jan/20/chagos-donald-trump-keir-starmer-greenland-uk-politics-live",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Bank of England admits years of inflation forecasting failures",
+          "summary": "Bank of England published first-ever forecast evaluation report acknowledging systematic failures in economic forecasting, admitting inflation predictions were 'repeatedly too low' since 2022. Central bank revealed inflation averaged nearly two percentage points higher than predicted since mid-2021, prompting renewed scrutiny of economic modeling amid cost-of-living crisis.",
+          "source_url": "https://bloomberg.com/news/articles/2026-01-23/bank-of-england-admits-it-underestimated-extent-of-inflation-crisis",
+          "source_name": "bloomberg.com"
+        }
+      ]
+    },
+    {
+      "week": "2026-02-01",
+      "date_range": "2026-01-25 to 2026-02-01",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "Three separate domains show significant movement: Starmer's China visit delivers concrete bilateral web validation amid direct Trump criticism (alignment_diplomatic); Labour's Burnham blocking, King Charles's political documentary, and Conservative defections continue regime fragmentation (domestic_regime escalation); security_defense remains quiet with only routine procurement. High-prominence stories (15+ sources on China, 23 on Burnham, 14 on Conservative defections) all represent structurally significant developments rather than Westminster noise."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Starmer's China visit produces concrete deliverables while facing Trump criticism",
+              "date": "2026-01-27",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/27/starmer-vows-to-remain-clear-eyed-over-national-security-as-he-flies-to-china",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Prime Minister Starmer completed the first UK leader visit to China in eight years, announcing visa-free travel for British citizens, trade agreements, and securing AstraZeneca's \u00a310.9 billion China investment commitment through 2030. Trump called UK-China business deals 'very dangerous,' marking direct US criticism of the engagement strategy.",
+              "actors_involved": [
+                "Keir Starmer",
+                "Xi Jinping",
+                "Donald Trump"
+              ],
+              "signal_category_relevance": "The visit delivers concrete bilateral web strategy validation through actual economic agreements and investment commitments, while Trump's criticism confirms US friction over third-country engagement patterns that the bilateral web strategy is designed to hedge against."
+            }
+          ],
+          "prior_assessment": "The bilateral web strategy gains concrete validation through Starmer's successful Beijing visit - producing visa-free travel, trade agreements, and \u00a310.9bn AstraZeneca investment commitment. Trump's 'very dangerous' criticism of UK-China engagement, combined with renewed EU defense fund pursuit, confirms the strategic logic of partnership diversification beyond US dependence.",
+          "updated_assessment": "The bilateral web strategy receives further concrete validation through the first UK-China leadership engagement in eight years, delivering visa-free travel, expanded trade frameworks, and major investment commitments. Trump's direct criticism of UK-China business relationships, combined with continued EU defense cooperation, confirms the diversification logic - the UK can secure substantial economic partnerships with China while managing US displeasure through continued alliance cooperation.",
+          "confidence_change": null
+        },
+        "security_defense": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Ministry of Defence awards Palantir \u00a3240M data analytics contract",
+              "date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "The Register",
+                  "url": "https://theregister.com/2026/01/28/mod_palantir_deal",
+                  "tier": 3
+                }
+              ],
+              "summary": "UK Ministry of Defence directly awarded a three-year \u00a3240.6 million contract to Palantir UK for continued licensing and support of data analytics capabilities. The contract covers strategic, tactical and operational decision-making across defense classifications and NATO interoperability.",
+              "actors_involved": [
+                "Ministry of Defence",
+                "Palantir Technologies UK"
+              ],
+              "signal_category_relevance": "Routine defense procurement maintaining existing technological capabilities rather than representing a shift in defense posture or strategic positioning."
+            }
+          ],
+          "prior_assessment": "Major defense spending increases are committed following the 2025 Strategic Defence Review, but armed forces are at smallest size since Napoleonic era. The defense-industrial base demonstrates global competitiveness yet procurement system is acknowledged as 'broken.' China threat management continues through established assessment procedures.",
+          "updated_assessment": "Major defense spending increases are committed following the 2025 Strategic Defence Review, but armed forces are at smallest size since Napoleonic era. The defense-industrial base demonstrates global competitiveness yet procurement system is acknowledged as 'broken.' China threat management continues through established assessment procedures. Routine procurement activities maintain baseline capabilities.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Bank of England expected to maintain interest rates amid inflation concerns",
+              "date": "2026-01-26",
+              "sources": [
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Economists predict Bank of England will hold interest rates at 3.75% at February meeting as inflation rose to 3.4% in December. Central bank faces cost-cutting pressures with staff reorganization and potential job reductions planned.",
+              "actors_involved": [
+                "Bank of England"
+              ],
+              "signal_category_relevance": "Routine monetary policy decisions maintaining existing economic management approach without fundamental shifts to the services-dominated, financialised economic structure."
+            }
+          ],
+          "prior_assessment": "The UK operates a services-dominated, financialised economy with persistent current account deficits. Defensive economic measures show adaptation to Trump trade pressure through investment attraction policies, while central bank credibility faces challenges from forecasting failures during the inflation crisis.",
+          "updated_assessment": "The UK operates a services-dominated, financialised economy with persistent current account deficits. Defensive economic measures show adaptation to Trump trade pressure through investment attraction policies, while central bank credibility faces challenges from forecasting failures during the inflation crisis. Monetary policy decisions maintain existing economic management framework.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "The parliamentary system is under unprecedented strain with governing party holding 63.2% of seats on just 33.7% of popular vote. Constitutional pressures mounting from Scottish independence, Northern Ireland dynamics, asymmetric devolution, and electoral reform pressure.",
+          "updated_assessment": "The parliamentary system is under unprecedented strain with governing party holding 63.2% of seats on just 33.7% of popular vote. Constitutional pressures mounting from Scottish independence, Northern Ireland dynamics, asymmetric devolution, and electoral reform pressure.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Labour blocks Andy Burnham from by-election amid leadership protection concerns",
+              "date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/jan/25/andy-burnham-blocked-from-byelection-race-by-labour-ruling-committee",
+                  "tier": 2
+                },
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.co.uk",
+                  "tier": 2
+                }
+              ],
+              "summary": "Labour's National Executive Committee voted to block Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election, with PM Starmer personally voting against his potential rival. The decision triggered accusations of internal 'civil war' and concerns about electoral prospects.",
+              "actors_involved": [
+                "Keir Starmer",
+                "Andy Burnham"
+              ],
+              "signal_category_relevance": "Demonstrates governing party prioritizing leadership protection over electoral competitiveness, indicating internal fragmentation and elite fear of intra-party challenges that destabilizes regime cohesion."
+            },
+            {
+              "headline": "King Charles releases unprecedented political documentary breaking royal tradition",
+              "date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/uk-news/2026/jan/28/i-wasnt-going-to-be-diverted-says-king-charles-about-campaign-on-the-environment",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com",
+                  "tier": 2
+                },
+                {
+                  "name": "AP News",
+                  "url": "https://apnews.com/article/britain-king-charles-documentary-38cc5fef32a704175c76e862698e4515",
+                  "tier": 2
+                }
+              ],
+              "summary": "King Charles III's Amazon Prime documentary 'Finding Harmony: A King's Vision' premiered at Windsor Castle, marking an unprecedented project for a British monarch and breaking tradition of avoiding political topics. The environmental advocacy film represents direct political engagement by the constitutional head of state.",
+              "actors_involved": [
+                "King Charles III"
+              ],
+              "signal_category_relevance": "Constitutional boundary-breaking by the monarchy engaging directly in political advocacy, following the pattern of institutional stress across governing party, opposition, and now constitutional monarchy simultaneously."
+            },
+            {
+              "headline": "Conservative Party fragments further as Badenoch explicitly abandons centrism",
+              "date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://www.theguardian.com/politics/2026/jan/28/centrist-ideas-no-longer-wanted-in-conservative-party-says-kemi-badenoch",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "Sky News",
+                  "url": "https://news.sky.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Following Suella Braverman's defection to Reform UK, Conservative leader Kemi Badenoch declared centrist ideas 'no longer wanted' in the party and told dissenters to 'get out of the way.' The rightward shift explicitly rejects the historically strong centrist tradition in conservatism.",
+              "actors_involved": [
+                "Kemi Badenoch",
+                "Suella Braverman",
+                "Nigel Farage"
+              ],
+              "signal_category_relevance": "Opposition party fragmentation accelerates with explicit abandonment of centrism and high-profile defections to Reform UK, continuing the multi-dimensional regime breakdown across governing and opposition parties."
+            }
+          ],
+          "prior_assessment": "Regime fragmentation accelerates across multiple dimensions: Labour's Burnham blocking demonstrates prioritizing leadership protection over electoral competitiveness; Conservative defections to Reform UK continue with Badenoch's explicit abandonment of centrism; King Charles's environmental documentary breaks constitutional neutrality conventions. The confluence creates unprecedented institutional stress across governing party, opposition, and monarchy simultaneously.",
+          "updated_assessment": "Regime fragmentation continues accelerating across all institutional dimensions: Labour's systematic blocking of potential leadership rivals prioritizes elite protection over electoral strategy; Conservative fragmentation deepens with explicit abandonment of centrist positioning and continued defections to Reform UK; King Charles's unprecedented political documentary represents constitutional boundary-breaking by the monarchy. The convergence of governing party defensiveness, opposition collapse, and monarchical political engagement creates simultaneous institutional stress unprecedented in modern British politics.",
+          "confidence_change": null
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "King Charles releases first-ever streaming platform documentary with explicit political content",
+          "date": "2026-02-01",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [
+        {
+          "expected": "",
+          "signal_category": "alignment_diplomatic",
+          "occurred": false,
+          "significance": "",
+          "confidence": 2
+        }
+      ],
+      "devils_advocate": {
+        "challenges": [
+          "The domestic_regime assessment rests entirely on single-source dependency from The Guardian for all three developments (Burnham blocking, King Charles documentary, Conservative fragmentation) - this represents source concentration rather than independent corroboration for what the analyst claims as 'significant movement' across multiple institutional dimensions.",
+          "The 'bilateral web strategy gains concrete validation' narrative persists through comfortable repetition rather than genuine analytical re-evaluation - the language is nearly identical to prior weeks despite the analyst claiming 'further concrete validation,' suggesting analytical inertia rather than evidence-driven assessment updates.",
+          "The analyst has not addressed last week's devil's advocate challenges about King Charles sourcing inconsistencies and institutional category neglect - the King Charles documentary appears with contradictory sourcing (The Guardian in domestic_regime, 'unknown' in unexpected developments) while institutional category receives no analytical attention despite constitutional significance.",
+          "The security_defense assessment conflates routine procurement activity with analytical insight - the Palantir contract represents standard defense spending continuation rather than strategic shift, yet it's framed as movement when the prior assessment already established that procurement continues within existing frameworks."
+        ],
+        "recommended_adjustments": [
+          "Require independent source corroboration for domestic_regime developments within 48 hours or downgrade movement classification from significant to minor - three major institutional stress points sourced to single outlet cannot sustain confidence in simultaneous fragmentation claim.",
+          "Re-examine whether the bilateral web strategy frame accurately describes current UK positioning or has become analytical assumption - provide evidence that European partners are actually responding to UK diversification signals rather than treating this as established strategic fact.",
+          "Resolve King Charles documentary sourcing discrepancy and assess constitutional impact in institutional category - if the monarch's political documentary represents boundary-breaking, institutional movement should reflect this rather than domestic_regime alone.",
+          "Distinguish between routine capability maintenance and strategic movement in security_defense - standard procurement should not generate movement classifications unless it represents departure from established defense frameworks."
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [
+        {
+          "claim_ref": "unknown",
+          "claim_text": "The Brexit identity cleavage has not faded by 2026 and will remain the primary predictor of UK political alignment through at least 2030",
+          "status": "confirmed",
+          "evidence": "",
+          "confidence_in_claim": 3
+        },
+        {
+          "claim_ref": "unknown",
+          "claim_text": "Labour's governing-party polling collapse is historically unprecedented in speed",
+          "status": "confirmed",
+          "evidence": "",
+          "confidence_in_claim": 3
+        }
+      ],
+      "story_clusters": [
+        {
+          "headline": "Starmer visits China seeking economic reset amid Trump tensions",
+          "summary": "Prime Minister Keir Starmer made the first visit to China by a British leader in eight years, meeting Xi Jinping and announcing visa-free travel for Brits. The trip faced criticism from Trump who called UK-China business deals 'very dangerous', while Starmer defended pursuing closer economic ties.",
+          "source_url": "https://reuters.com/world/china/uks-starmer-heads-china-repair-ties-he-navigates-tensions-with-us-2026-01-27",
+          "source_name": "abcnews.go.com"
+        },
+        {
+          "headline": "Labour blocks Andy Burnham from by-election, triggering internal party tensions",
+          "summary": "The Labour Party's National Executive Committee voted to block Greater Manchester Mayor Andy Burnham from standing in the Gorton and Denton by-election, with PM Starmer personally voting to block his potential rival. The decision sparked accusations of internal 'civil war' and fears about Labour's election prospects.",
+          "source_url": "https://theguardian.com/politics/2026/jan/25/andy-burnham-blocked-from-byelection-race-by-labour-ruling-committee",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "King Charles releases environmental documentary breaking royal tradition",
+          "summary": "King Charles III's new documentary 'Finding Harmony: A King's Vision' premiered at Windsor Castle and launches on Amazon Prime Video. The film charts his lifelong environmental advocacy despite past criticism, marking an unprecedented project for a British monarch and breaking the tradition of avoiding political topics.",
+          "source_url": "https://theguardian.com/uk-news/2026/jan/28/i-wasnt-going-to-be-diverted-says-king-charles-about-campaign-on-the-environment",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "Conservative MPs defect to Reform UK amid party direction disputes",
+          "summary": "Former Home Secretary Suella Braverman defected to Reform UK, following Robert Jenrick's earlier switch. Conservative leader Kemi Badenoch responded by saying centrist ideas are 'no longer wanted' in the party and that dissenters should 'get out of the way', marking a rightward shift in Conservative positioning.",
+          "source_url": "https://www.reuters.com/world/uk/british-lawmaker-braverman-defects-farages-reform-uk-2026-01-26/",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Rachel Reeves faces questions over absence from China trip and policy pressures",
+          "summary": "Chancellor Rachel Reeves was notably absent from Starmer's high-profile China visit despite previously advocating for stronger economic ties. Speculation arose about tensions with the PM, while she separately faced criticism over student loan threshold freezes and business rate changes affecting pubs.",
+          "source_url": "https://dailymail.co.uk/news/article-15505325/Mystery-Rache-Reeves-Chancellor-absence-China-trip-tensions-Starmer.html",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "David Lammy stands in for Starmer at PMQs, faces Conservative attacks",
+          "summary": "Deputy Prime Minister David Lammy stepped in for Prime Minister's Questions while Starmer was in China, facing criticism from Conservative shadow business secretary Andrew Griffith about pub closures and business rates. Lammy was dubbed 'left-behind Lammy' by opponents.",
+          "source_url": "https://www.bbc.co.uk/news/live/c4gw427eenpt",
+          "source_name": "bbc.co.uk"
+        },
+        {
+          "headline": "Bank of England expected to hold interest rates amid inflation concerns",
+          "summary": "Economists predict the Bank of England will keep interest rates at 3.75% at its February meeting as inflation rose to 3.4% in December. The central bank also faces cost-cutting pressures, leading to staff reorganization and potential job reductions.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-01-30/even-the-bank-of-england-is-struggling-to-make-ends-meet",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "Starmer faces migrant protests and calls Andrew to testify on Epstein links",
+          "summary": "Thousands protested in Crowborough chanting 'Keir Starmer's a traitor' over migrants being housed at a former army camp. Separately, Starmer called for Andrew Mountbatten-Windsor to testify before US Congress about his Jeffrey Epstein connections following release of new Epstein files.",
+          "source_url": "https://dailymail.co.uk/news/article-15496219/Thousands-chant-Starmers-traitor-march-Crowborough-protesting-migrants.html",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "King Charles makes public appearances amid ongoing cancer treatment",
+          "summary": "King Charles attended the Sandringham parkrun for the second consecutive year, greeting joggers as they completed their first lap. The event was organized in partnership with Move Against Cancer charity. The King has been receiving cancer treatment since early 2024.",
+          "source_url": "https://news.sky.com/story/the-king-greets-joggers-in-surprise-appearance-at-cancer-charity-parkrun-13501390",
+          "source_name": "news.sky.com"
+        },
+        {
+          "headline": "King Charles faces calls to formally apologise for crown's role in slavery",
+          "summary": "MPs and campaigners called on King Charles to make a formal apology for transatlantic slavery after new research detailed how the British crown and Royal Navy extended and protected the trade in enslaved people for centuries. The calls follow publication of 'The Crown's Silence' book.",
+          "source_url": "https://theguardian.com/news/2026/jan/30/calls-for-king-charles-to-formally-apologise-for-slavery-after-research-shows-crowns-role",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Reform UK campaigns in Gorton by-election with attacks on Starmer's Brexit policy",
+          "summary": "Reform UK candidate Matt Goodwin declared the Gorton and Denton by-election a 'referendum on Starmer', claiming Brexit voters have been betrayed. The campaign focuses on immigration and higher bills, with Goodwin arguing Labour is edging Britain back under EU control through customs deals and youth mobility schemes.",
+          "source_url": "https://bloomberg.com/news/articles/2026-01-28/starmer-attack-on-reform-candidate-shows-his-future-on-ballot",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "Starmer criticized over historical legal pursuit of British soldiers",
+          "summary": "Former Army chief Lord Dannatt called on PM Keir Starmer to explain his involvement in legal cases that saw hundreds of British soldiers investigated for alleged war crimes. Critics questioned Starmer's role and enthusiasm for pursuing these cases during his legal career.",
+          "source_url": "https://gbnews.com/politics/keir-starmer-british-soldiers-explain-himself",
+          "source_name": "gbnews.com"
+        }
+      ]
+    },
+    {
+      "week": "2026-02-08",
+      "date_range": "2026-02-01 to 2026-02-08",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "The Mandelson-Epstein scandal triggered the most acute governing crisis since Starmer took office, with Chief of Staff resignation, Scottish Labour leader defection, and 78-source media coverage. This represents genuine regime stress rather than routine political turbulence. King Charles facing public heckling over Andrew-Epstein connections adds monarchical pressure. Reform UK's policy advancement and Badenoch's momentum from government weakness compound the domestic crisis."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "NATO begins Arctic military planning amid Greenland dispute",
+              "date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "NATO started military planning for Arctic mission as tensions rise over Trump's Greenland acquisition demands",
+              "actors_involved": [
+                "NATO"
+              ],
+              "signal_category_relevance": "Routine NATO planning response to regional tensions, not a UK posture shift toward new alignment patterns"
+            }
+          ],
+          "prior_assessment": "The bilateral web strategy receives further concrete validation through the first UK-China leadership engagement in eight years, delivering visa-free travel, expanded trade frameworks, and major investment commitments. Trump's direct criticism of UK-China business relationships, combined with continued EU defense cooperation, confirms the diversification logic.",
+          "updated_assessment": "The bilateral web strategy continues operating as designed, with European defense cooperation through Lancaster House 2.0 and Trinity House proceeding alongside managed US tensions. No developments this week alter the assessment that the UK can secure substantial partnerships while managing US displeasure through alliance cooperation.",
+          "confidence_change": null
+        },
+        "security_defense": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Defence Secretary holds urgent talks with Leonardo over \u00a31bn helicopter contract",
+              "date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "Sky News",
+                  "url": "https://news.sky.com/story/healey-meets-leonardo-boss-amid-yeovil-closure-threat-13503737",
+                  "tier": 2
+                }
+              ],
+              "summary": "John Healey met Roberto Cingolani about medium-lift helicopter contract affecting thousands of jobs at Yeovil plant, amid Cabinet row over sovereign helicopter capability needs",
+              "actors_involved": [
+                "John Healey",
+                "Leonardo"
+              ],
+              "signal_category_relevance": "Routine procurement discussion that demonstrates continued defense industrial engagement but doesn't indicate strategic posture changes"
+            }
+          ],
+          "prior_assessment": "Major defense spending increases are committed following the 2025 Strategic Defence Review, but armed forces are at smallest size since Napoleonic era. The defense-industrial base demonstrates global competitiveness yet procurement system is acknowledged as 'broken.' China threat management continues through established assessment procedures.",
+          "updated_assessment": "Defense spending commitments and industrial base competitiveness remain as assessed, with continued procurement system dysfunction illustrated by ongoing contract negotiations and delays. The Leonardo helicopter discussion exemplifies the gap between strategic ambition and delivery capacity without changing the fundamental assessment.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Bank of England holds interest rates at 3.75% in narrow vote",
+              "date": "2026-02-06",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/czx1vly05pvo",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "BoE maintained rates at 3.75% in 5-4 vote, with Governor Bailey indicating future cuts likely as inflation expected to reach 2% target by spring. Growth forecast downgraded from 1.2% to 0.9% for 2026.",
+              "actors_involved": [
+                "Bank of England",
+                "Andrew Bailey"
+              ],
+              "signal_category_relevance": "Standard monetary policy decision maintaining existing economic management framework without fundamental shifts to the services-dominated architecture"
+            }
+          ],
+          "prior_assessment": "The UK operates a services-dominated, financialised economy with persistent current account deficits. Defensive economic measures show adaptation to Trump trade pressure through investment attraction policies, while central bank credibility faces challenges from forecasting failures during the inflation crisis.",
+          "updated_assessment": "Bank of England continues managing inflation toward target through standard monetary policy tools, with growth forecasts reflecting ongoing structural economic weaknesses. The 5-4 rate vote demonstrates policy complexity but maintains the existing economic management approach.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Government Digital Service marks AI Accelerator anniversary with capability expansion",
+              "date": "2026-02-01",
+              "sources": [
+                {
+                  "name": "Government Digital Service",
+                  "url": "https://gov.uk/gds",
+                  "tier": 1
+                }
+              ],
+              "summary": "AI Accelerator programme completed one year since March 2025 launch, with GDS implementing new architectural frameworks and conducting trials of AI coding assistants across departments",
+              "actors_involved": [
+                "Government Digital Service"
+              ],
+              "signal_category_relevance": "Routine government modernization activity that maintains existing institutional engagement posture without affecting multilateral framework participation"
+            }
+          ],
+          "prior_assessment": "The parliamentary system is under unprecedented strain with governing party holding 63.2% of seats on just 33.7% of popular vote. Constitutional pressures mounting from Scottish independence, Northern Ireland dynamics, asymmetric devolution, and electoral reform pressure.",
+          "updated_assessment": "Parliamentary system strain continues as previously assessed, with no developments this week affecting institutional engagement with multilateral organizations or treaty frameworks. Government modernization initiatives proceed routinely.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Starmer fights for political survival as Mandelson-Epstein scandal engulfs government",
+              "date": "2026-02-04",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/live/c74wd01egvyt",
+                  "tier": 2
+                },
+                {
+                  "name": "Independent",
+                  "url": "https://independent.co.uk",
+                  "tier": 2
+                },
+                {
+                  "name": "Guardian",
+                  "url": "https://theguardian.com",
+                  "tier": 2
+                }
+              ],
+              "summary": "Morgan McSweeney resigned as Chief of Staff, Tim Allan stepped down as communications director, and Scottish Labour leader Anas Sarwar publicly called for Starmer's resignation. Starmer told PLP he's 'not prepared to walk away from my mandate' amid the deepest governing crisis since taking office.",
+              "actors_involved": [
+                "Keir Starmer",
+                "Morgan McSweeney",
+                "Anas Sarwar",
+                "Angela Rayner"
+              ],
+              "signal_category_relevance": "This represents the most severe governing party crisis since 2024 election, with inner circle collapse and formal defection by highest-profile Labour figure, indicating regime fragmentation acceleration"
+            },
+            {
+              "headline": "King Charles faces public heckling over Andrew's Epstein connections",
+              "date": "2026-02-06",
+              "sources": [
+                {
+                  "name": "Hello Magazine",
+                  "url": "https://www.hellomagazine.com/royalty/882190/king-charles-heckled-brother-andrew-mountbatten-windsor-epstein/",
+                  "tier": 3
+                },
+                {
+                  "name": "Mirror",
+                  "url": "https://mirror.co.uk",
+                  "tier": 2
+                }
+              ],
+              "summary": "King Charles was publicly confronted during Essex walkabout with shouted questions about pressuring police to investigate Andrew's Epstein ties, as new US DoJ documents were released. Police removed the heckler.",
+              "actors_involved": [
+                "King Charles III"
+              ],
+              "signal_category_relevance": "Direct public confrontation of the monarch over scandal represents unprecedented breach of royal protocols and public accountability pressure on constitutional institution"
+            },
+            {
+              "headline": "Reform UK advances policy platform while Badenoch gains opposition momentum",
+              "date": "2026-02-07",
+              "sources": [
+                {
+                  "name": "Mirror",
+                  "url": "https://mirror.co.uk/news/politics/live-nigel-farage-make-major-36662757",
+                  "tier": 2
+                },
+                {
+                  "name": "Conservative Home",
+                  "url": "https://conservativehome.com/2026/02/06/how-badenoch-forced-labours-hand-on-mandelson",
+                  "tier": 3
+                }
+              ],
+              "summary": "Farage announced pub support policies funded by reinstating two-child benefit cap and unveiled Welsh leader, while Badenoch successfully forced government document releases over Mandelson appointment with polling showing improved favorability",
+              "actors_involved": [
+                "Nigel Farage",
+                "Kemi Badenoch"
+              ],
+              "signal_category_relevance": "Reform UK's policy development and Conservative opposition gains from government weakness demonstrate continued fragmentation across governing party, opposition, and insurgent party dynamics"
+            }
+          ],
+          "prior_assessment": "Regime fragmentation continues accelerating across all institutional dimensions: Labour's systematic blocking of potential leadership rivals prioritizes elite protection over electoral strategy; Conservative fragmentation deepens with explicit abandonment of centrist positioning and continued defections to Reform UK; King Charles's unprecedented political documentary represents constitutional boundary-breaking by the monarchy.",
+          "updated_assessment": "Regime fragmentation has escalated to governing crisis levels with the Labour government's inner circle collapsing (Chief of Staff resignation), formal Labour defection (Sarwar resignation call), and monarchical accountability pressure (public heckling of King Charles). Combined with Reform UK's continued advance and Conservative momentum from government weakness, all regime pillars face simultaneous institutional stress.",
+          "confidence_change": {
+            "from": 4,
+            "to": 4,
+            "reason": "Multiple independent tier-2 sources document regime crisis across governing party (BBC on McSweeney resignation, Sarwar defection), monarchy (Mirror, Hello Magazine on public heckling), and opposition dynamics (Conservative Home on Badenoch success), maintaining high confidence in fragmentation assessment"
+          }
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "Scottish Labour leader publicly calls for Starmer's resignation over Mandelson scandal",
+          "date": "2026-02-08",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [],
+      "devils_advocate": {
+        "challenges": [
+          "The 'bilateral web strategy' narrative persists through comfortable repetition rather than analytical re-evaluation \u2014 the alignment_diplomatic assessment uses nearly identical language to prior weeks ('continues operating as designed,' 'managed US tensions through alliance cooperation') despite being explicitly challenged two weeks running for narrative persistence without addressing those challenges.",
+          "The domestic_regime confidence score of 4 is undermined by source quality problems \u2014 while multiple tier-2 sources exist, one development is sourced as 'unknown' which should automatically cap confidence at 2, and the analyst has not explained how unknown sourcing supports high-confidence assessment.",
+          "The institutional category receives minimal analytical attention despite the week's governing crisis representing potential constitutional stress \u2014 a Chief of Staff resignation and formal Labour defection during the deepest crisis since taking office warrants institutional analysis beyond routine AI programme updates, suggesting collection gap rather than genuine quiet.",
+          "Single-source dependency dominates most categories \u2014 alignment_diplomatic (single Reuters), security_defense (single Sky News), and economic_tech (single BBC) each rest on individual outlets, while institutional relies entirely on government messaging (GDS, Tier 1), making confidence scores across all categories inflated relative to evidence base."
+        ],
+        "recommended_adjustments": [
+          "Require independent evidence for bilateral web strategy effectiveness within one week or acknowledge the assessment rests on analytical assumption rather than demonstrated policy outcomes \u2014 specifically seek non-UK government sources on whether European partners view UK approach as successful diversification.",
+          "Downgrade domestic_regime confidence to 2 until 'unknown' source is identified or replaced with verified tier-2 reporting \u2014 high-confidence assessments cannot rest partially on unverified information regardless of other source quality.",
+          "Conduct institutional impact analysis of the governing crisis within constitutional framework \u2014 examine whether Chief of Staff resignation and intra-party defection represent routine political turbulence or institutional stress requiring monarchical intervention or early election mechanisms.",
+          "Establish minimum two-source rule for routine categories and three-source rule for significant movements \u2014 current single-source pattern across alignment_diplomatic, security_defense, and economic_tech creates analytical vulnerability to outlet bias and limits confidence calibration accuracy."
+        ]
+      },
+      "self_corrections": [
+        {
+          "category": "alignment_diplomatic",
+          "prior_week": "2026-02-08",
+          "original_claim": "",
+          "correction": "This week's domestic regime assessment is based on multiple independent tier-2 sources (BBC, Independent, Guardian, Mirror) providing corroborating evidence from different angles rather than relying on single-source reporting",
+          "root_cause": "Previous week relied too heavily on Guardian clustering rather than seeking source diversity for verification"
+        }
+      ],
+      "structural_claim_checks": [
+        {
+          "claim_ref": "unknown",
+          "claim_text": "",
+          "status": "confirmed",
+          "evidence": "This week saw simultaneous pressure across governing party (McSweeney resignation, Sarwar defection), monarchy (public heckling of King Charles), and opposition (Reform UK policy advance, Conservative momentum), confirming the multi-institutional fragmentation pattern",
+          "confidence_in_claim": 3
+        }
+      ],
+      "story_clusters": [
+        {
+          "headline": "Starmer fights for political survival as Mandelson-Epstein scandal engulfs government",
+          "summary": "Prime Minister Keir Starmer faces mounting pressure to resign after revelations about former ambassador Peter Mandelson's ties to Jeffrey Epstein. Chief of staff Morgan McSweeney resigned, Deputy PM David Lammy revealed he warned against the appointment, and Labour MPs are speculating about leadership challenges.",
+          "source_url": "https://www.bbc.com/news/live/c74wd01egvyt",
+          "source_name": "foxnews.com"
+        },
+        {
+          "headline": "King Charles faces public pressure over Andrew's Epstein connections amid royal activities",
+          "summary": "King Charles was heckled during public appearances about his brother Andrew Mountbatten-Windsor's ties to Jeffrey Epstein. Andrew has moved from Royal Lodge to Sandringham estate. Meanwhile, Charles continued royal duties including hosting the Aga Khan and promoting his environmental documentary 'Finding Harmony'.",
+          "source_url": "https://www.hellomagazine.com/royalty/882190/king-charles-heckled-brother-andrew-mountbatten-windsor-epstein/",
+          "source_name": "mirror.co.uk"
+        },
+        {
+          "headline": "Bank of England holds interest rates at 3.75% after narrow vote but signals cuts ahead",
+          "summary": "The Bank of England kept interest rates unchanged at 3.75% in a surprisingly close 5-4 vote, with Governor Andrew Bailey indicating inflation will fall to target by spring and opening the door for future rate cuts. The decision reflected caution amid conflicting economic signals.",
+          "source_url": "https://www.bbc.com/news/articles/czx1vly05pvo",
+          "source_name": "reuters.com"
+        },
+        {
+          "headline": "Reform UK advances policy agenda as Farage faces scrutiny over past allegations",
+          "summary": "Nigel Farage announced plans to cut beer prices while reinstating the two-child benefit cap, unveiled a new Welsh leader, and faced allegations about racist behavior at school. Reform UK attracted more Conservative defectors while positioning itself for potential government.",
+          "source_url": "https://mirror.co.uk/news/politics/live-nigel-farage-make-major-36662757",
+          "source_name": "standard.co.uk"
+        },
+        {
+          "headline": "Badenoch gains momentum from Mandelson scandal and strengthens Conservative opposition",
+          "summary": "Conservative leader Kemi Badenoch successfully pressured the government over the Mandelson appointment, forcing document releases through parliamentary procedure. Polling shows her favorability improving as she considers shadow cabinet changes and positions the Conservatives for potential gains.",
+          "source_url": "https://conservativehome.com/2026/02/06/how-badenoch-forced-labours-hand-on-mandelson",
+          "source_name": "yougov.com"
+        },
+        {
+          "headline": "UK Defence Secretary meets with Leonardo CEO over potential helicopter contract affecting thousands of jobs",
+          "summary": "Defence Secretary John Healey held urgent talks with Leonardo's chief executive about a \u00a31 billion medium helicopter contract that could impact thousands of jobs at the Italian firm's Yeovil plant in Somerset.",
+          "source_url": "https://news.sky.com/story/healey-meets-leonardo-boss-amid-yeovil-closure-threat-13503737",
+          "source_name": "news.sky.com"
+        }
+      ]
+    },
+    {
+      "week": "2026-02-15",
+      "date_range": "2026-02-08 to 2026-02-15",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "The week was dominated by the Starmer government's most severe crisis since taking office, with Chief of Staff resignation, Communications Director departure, and Scottish Labour leader calling for PM's resignation over the Mandelson-Epstein scandal. This domestic regime crisis accounts for the highest media attention (67 sources for Story #1). Other significant developments included Chancellor Reeves's explicit EU integration advocacy and continued institutional stress on the monarchy through Prince Andrew revelations. High-prominence stories align with analytical significance."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Reeves declares closer EU integration 'biggest prize' for UK economy at LSE",
+              "date": "2026-02-11",
+              "sources": [
+                {
+                  "name": "POLITICO Europe",
+                  "url": "https://politico.eu/article/rachel-reeves-rebuilding-eu-ties-boost-british-economy",
+                  "tier": 2
+                },
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/feb/11/nigel-farage-heckled-reform-jewish-alliance-launch",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/news/articles/cp853p5g9meo",
+                  "tier": 2
+                }
+              ],
+              "summary": "Chancellor Rachel Reeves argued that stronger ties with the European bloc are 'the biggest prize' for Britain and said the UK would consider following EU rules even without reciprocal deals. Conservative opponents accused Labour of Brexit betrayal.",
+              "actors_involved": [
+                "Rachel Reeves"
+              ],
+              "signal_category_relevance": "This represents more explicit EU integration rhetoric than previous government positioning, suggesting tactical shift toward European alignment discourse while maintaining the bilateral web strategy's operational framework."
+            },
+            {
+              "headline": "NATO launches Arctic Sentry mission with UK carrier deployment",
+              "date": "2026-02-09",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/news/articles/cp853p5g9meo",
+                  "tier": 2
+                },
+                {
+                  "name": "Reuters",
+                  "url": "https://reuters.com",
+                  "tier": 2
+                },
+                {
+                  "name": "UK Defence Journal",
+                  "url": "https://ukdefencejournal.org.uk/european-allies-take-over-nato-joint-force-commands",
+                  "tier": 3
+                }
+              ],
+              "summary": "NATO announced Arctic Sentry mission to counter Russian and Chinese threats in the High North. PM Starmer announced at Munich Security Conference that UK will deploy HMS Prince of Wales carrier strike group to the Arctic.",
+              "actors_involved": [
+                "Keir Starmer",
+                "John Healey",
+                "NATO"
+              ],
+              "signal_category_relevance": "This represents routine NATO alliance activity consistent with existing transatlantic commitments rather than bilateral web strategy innovation, maintaining the established alignment framework."
+            }
+          ],
+          "prior_assessment": "The bilateral web strategy continues operating as designed, with European defense cooperation through Lancaster House 2.0 and Trinity House proceeding alongside managed US tensions.",
+          "updated_assessment": "The bilateral web strategy continues operating as designed through NATO alliance activity and established European defense frameworks, with Chancellor Reeves introducing more explicit EU integration rhetoric that represents tactical messaging rather than strategic reorientation.",
+          "confidence_change": null
+        },
+        "security_defense": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "Defense spending commitments and industrial base competitiveness remain as assessed, with continued procurement system dysfunction illustrated by ongoing contract negotiations and delays.",
+          "updated_assessment": "Defense spending commitments and industrial base competitiveness remain as assessed, with routine alliance contributions to Ukraine support and NATO command structure adjustments that do not alter the fundamental strategic posture.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "Bank of England continues managing inflation toward target through standard monetary policy tools, with growth forecasts reflecting ongoing structural economic weaknesses.",
+          "updated_assessment": "Bank of England continues managing inflation toward target through standard monetary policy tools, maintaining rates at 3.75% after split decision amid concerns inflation remains above target, with growth forecasts reflecting ongoing structural economic weaknesses.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "Parliamentary system strain continues as previously assessed, with no developments this week affecting institutional engagement with multilateral organizations or treaty frameworks.",
+          "updated_assessment": "Parliamentary system strain continues as previously assessed, with the domestic governing crisis representing internal political dysfunction rather than changed institutional engagement with multilateral organizations or treaty frameworks.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Starmer government inner circle collapses over Mandelson-Epstein scandal",
+              "date": "2026-02-08",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/news/live/c74wd01egvyt",
+                  "tier": 2
+                },
+                {
+                  "name": "PBS",
+                  "url": "https://pbs.org/newshour/world/uk-prime-minister-starmer-averts-a-leadership-challenge-for-now-but-remains-damaged-by-epstein-fallout",
+                  "tier": 2
+                },
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/feb/15/labour-together-thinktank-inquiry-calls-journalists-investigation-keir-starmer",
+                  "tier": 2
+                }
+              ],
+              "summary": "Chief of Staff Morgan McSweeney and Communications Director Tim Allan both resigned over the Mandelson appointment. Scottish Labour leader Anas Sarwar called for Starmer's resignation, becoming the highest-profile Labour figure to demand his departure. Cabinet ministers provided choreographed support, and Starmer told the Parliamentary Labour Party he is 'not prepared to walk away from my mandate.'",
+              "actors_involved": [
+                "Keir Starmer",
+                "Morgan McSweeney",
+                "Tim Allan",
+                "Anas Sarwar",
+                "Angela Rayner"
+              ],
+              "signal_category_relevance": "This represents the most severe breakdown of governing-party coherence since Labour took office, with inner circle collapse and formal Labour defection calls demonstrating regime fragmentation has reached governing crisis levels."
+            },
+            {
+              "headline": "King Charles expresses 'profound concern' over Prince Andrew Epstein allegations",
+              "date": "2026-02-08",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/news/articles/cqlgv3z79klo",
+                  "tier": 2
+                },
+                {
+                  "name": "Associated Press",
+                  "url": "https://apnews.com/article/epstein-andrew-king-charles-iii-07cb587ce6468d80df268781f1a44e71",
+                  "tier": 2
+                },
+                {
+                  "name": "The Independent",
+                  "url": "https://independent.co.uk",
+                  "tier": 2
+                }
+              ],
+              "summary": "King Charles made his first intervention in the latest Epstein revelations, expressing 'profound concern' and saying Buckingham Palace will support police investigations. The King forced Andrew to move from Royal Lodge amid growing pressure over the scandal. The King was publicly heckled during a Clitheroe visit.",
+              "actors_involved": [
+                "King Charles III",
+                "Prince Andrew"
+              ],
+              "signal_category_relevance": "This represents unprecedented monarchical accountability pressure through direct public heckling and forced intervention in family scandal, demonstrating institutional stress across regime pillars beyond the governing party."
+            },
+            {
+              "headline": "Labour Together surveillance operation targeting journalists revealed",
+              "date": "2026-02-15",
+              "sources": [
+                {
+                  "name": "The Guardian",
+                  "url": "https://theguardian.com/politics/2026/feb/15/labour-together-thinktank-inquiry-calls-journalists-investigation-keir-starmer",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://bbc.com/news/articles/c0ljzzk62kyo",
+                  "tier": 2
+                },
+                {
+                  "name": "Daily Mail",
+                  "url": "https://dailymail.co.uk/news/article-15560199/Bank-England-dress-code-genderfluid.html",
+                  "tier": 3
+                }
+              ],
+              "summary": "Revelations emerged that Labour Together, the think tank that helped Starmer gain leadership, commissioned a \u00a330,000+ investigation into Sunday Times journalists' personal backgrounds including religious affiliations. The scandal adds pressure on Cabinet minister Josh Simons who commissioned the report.",
+              "actors_involved": [
+                "Keir Starmer",
+                "Josh Simons"
+              ],
+              "signal_category_relevance": "This adds to the governing crisis by revealing surveillance operations against journalists by Starmer-linked organizations, further undermining regime legitimacy and demonstrating the expansion of crisis beyond the Mandelson scandal."
+            }
+          ],
+          "prior_assessment": "Regime fragmentation has escalated to governing crisis levels with the Labour government's inner circle collapsing (Chief of Staff resignation), formal Labour defection (Sarwar resignation call), and monarchical accountability pressure (public heckling of King Charles).",
+          "updated_assessment": "Regime fragmentation has reached peak crisis intensity with the Mandelson-Epstein scandal triggering the most severe breakdown since Starmer took office: inner circle collapse (Chief of Staff and Communications Director resignations), formal Labour defection (Sarwar resignation call), monarchical institutional stress (King Charles intervention and public heckling), and surveillance scandal revelations targeting journalists by Starmer-linked organizations.",
+          "confidence_change": {
+            "from": 4,
+            "to": 4,
+            "reason": "Multiple independent tier-2 sources continue to document regime crisis across all institutional pillars with the Mandelson scandal representing qualitative escalation from previous fragmentation"
+          }
+        }
+      },
+      "unexpected_developments": [],
+      "absence_check": [],
+      "devils_advocate": {
+        "challenges": [
+          "The 'bilateral web strategy continues operating as designed' narrative persists for the fourth consecutive week despite explicit prior devil's advocate challenge \u2014 the alignment_diplomatic assessment uses nearly identical language and analytical frame without addressing whether new evidence (Reeves's explicit EU integration advocacy) challenges the established 'managed tensions' interpretation.",
+          "The institutional category assessment dismisses the governing crisis as merely 'internal political dysfunction' without exploring how regime fragmentation affects institutional capacity for multilateral engagement \u2014 a Chief of Staff collapse and formal leadership challenge represent potential constitutional stress that warrants analysis beyond categorical dismissal.",
+          "Source dependency undermines confidence in non-domestic categories \u2014 economic_tech references BoE rate decision without specific sourcing, security_defense cites NATO announcement without clear attribution, while domestic_regime benefits from multiple independent tier-2 sources, creating an analytical imbalance that suggests collection gaps rather than genuine quiet.",
+          "The Reeves EU integration statement receives no competing interpretation despite representing potential strategic reorientation \u2014 dismissing it as 'tactical messaging rather than strategic reorientation' without exploring alternatives (genuine policy shift, coalition management, economic necessity) violates the requirement for alternative interpretations on movement assessments."
+        ],
+        "recommended_adjustments": [
+          "Re-evaluate the bilateral web strategy framework within 1 week using this week's EU integration advocacy as a test case \u2014 either provide new evidence that the strategy remains coherent despite Reeves's rhetoric, or acknowledge that the framework may need updating.",
+          "Conduct specific institutional capacity analysis during regime crisis \u2014 assess whether governing dysfunction affects treaty compliance, multilateral negotiation capability, or EU relationship management rather than categorically dismissing institutional implications.",
+          "Require independent sourcing for economic_tech and security_defense assessments within 1 week or downgrade movement claims to 'insufficient evidence' \u2014 BoE rate decisions and NATO deployments generate sufficient media coverage to support proper source triangulation.",
+          "Provide competing interpretation for Reeves EU statement that explains the same evidence through different causal mechanism \u2014 consider whether Brexit recalibration, economic crisis response, or coalition pressure could account for the rhetoric shift."
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [],
+      "story_clusters": [
+        {
+          "headline": "Starmer fights for political survival amid Mandelson-Epstein scandal and aide resignations",
+          "summary": "Prime Minister Keir Starmer faces the most serious crisis of his tenure after revelations about Peter Mandelson's Epstein ties led to resignations of chief of staff Morgan McSweeney and communications director Tim Allan. Scottish Labour leader Anas Sarwar called for Starmer to resign, though cabinet ministers rallied behind him at crucial parliamentary meeting.",
+          "source_url": "https://www.bbc.com/news/live/c74wd01egvyt",
+          "source_name": "racket.news"
+        },
+        {
+          "headline": "King Charles expresses 'profound concern' over Prince Andrew Epstein allegations, pledges police cooperation",
+          "summary": "King Charles III broke his silence on new Jeffrey Epstein revelations involving his brother Andrew, expressing 'profound concern' and saying Buckingham Palace will support police investigations. The King forced Andrew to move from Royal Lodge amid growing pressure over the scandal.",
+          "source_url": "https://www.bbc.com/news/articles/cqlgv3z79klo",
+          "source_name": "economist.com"
+        },
+        {
+          "headline": "NATO launches Arctic Sentry mission as Starmer announces UK carrier deployment to region",
+          "summary": "NATO announced the launch of its new Arctic Sentry mission to counter Russian and Chinese threats in the High North, following tensions over Trump's Greenland demands. Prime Minister Starmer announced at Munich Security Conference that UK will deploy HMS Prince of Wales carrier strike group to the Arctic.",
+          "source_url": "https://www.bbc.com/news/articles/cp853p5g9meo",
+          "source_name": "foxnews.com"
+        },
+        {
+          "headline": "Reeves declares closer EU integration 'biggest prize' for UK economy, sparks Brexit betrayal accusations",
+          "summary": "Chancellor Rachel Reeves argued at London School of Economics that developing closer ties with the European Union would be the 'biggest prize' for Britain's economy. Conservative opponents accused Labour of Brexit betrayal, while Reeves said the UK would consider following EU rules even without reciprocal deals.",
+          "source_url": "https://politico.eu/article/rachel-reeves-rebuilding-eu-ties-boost-british-economy",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "Farage criticizes working from home as 'nonsense,' launches Reform Jewish Alliance amid protests",
+          "summary": "Reform UK leader Nigel Farage attacked working from home policies and launched the party's Jewish Alliance group at a London synagogue, where he was heckled by pro-Palestinian Jewish activists. Farage also defended Jim Ratcliffe's controversial immigration comments about Britain being 'colonized.'",
+          "source_url": "https://www.theguardian.com/politics/2026/feb/11/nigel-farage-heckled-reform-jewish-alliance-launch",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Bank of England holds rates at 3.75% amid inflation concerns, introduces new gender-fluid dress code",
+          "summary": "The Bank of England kept interest rates at 3.75% after split decision amid concerns inflation remains above target. Separately, the central bank introduced new dress code guidance allowing 'genderfluid' staff to wear eyeshadow and high heels regardless of gender identity.",
+          "source_url": "https://bloomberg.com/news/articles/2026-02-14/boe-on-knife-edge-over-rates-awaits-pivotal-uk-inflation-data",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "UK pledges millions for Ukraine weapons program as NATO reshuffles command structure",
+          "summary": "Defence Secretary John Healey announced UK commitment of \u00a3150 million to the Prioritised Ukraine Requirements List for US weapons to Ukraine. NATO also announced command structure changes with European allies taking over more leadership roles from the United States.",
+          "source_url": "https://www.reuters.com/business/aerospace-defense/uk-pledges-205-million-send-us-weapons-ukraine-2026-02-11",
+          "source_name": "reuters.com"
+        },
+        {
+          "headline": "Starmer faces new crisis as Labour think tank's journalist surveillance operation exposed",
+          "summary": "Prime Minister Starmer faces calls for inquiry after revelations that Labour Together, a think tank that helped him gain leadership, commissioned a \u00a330,000+ investigation into journalists' personal backgrounds including religious affiliations. The scandal adds to pressure on Cabinet minister Josh Simons.",
+          "source_url": "https://theguardian.com/politics/2026/feb/15/labour-together-thinktank-inquiry-calls-journalists-investigation-keir-starmer",
+          "source_name": "theguardian.com"
+        }
+      ]
+    },
+    {
+      "week": "2026-02-22",
+      "date_range": "2026-02-15 to 2026-02-22",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "Multiple high-prominence developments across domestic regime (Prince Andrew arrest with 47-source coverage, Starmer's 15th U-turn with 38 sources, Labour Together surveillance scandal with 18 sources) and economic indicators (record budget surplus, inflation falling to 10-month low). The Prince Andrew arrest represents unprecedented royal institutional stress, while the Labour Together scandal escalates to active government minister involvement in targeting journalists through intelligence services. Story prominence matches analytical significance."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "AUKUS partnership advances with Australian submarine shipyard investment",
+              "date": "2026-02-20",
+              "sources": [
+                {
+                  "name": "Breaking Defense",
+                  "url": "https://breakingdefense.com/2026/02/australia-invests-2-75-billion-in-aukus-submarine-yard/",
+                  "tier": 2
+                }
+              ],
+              "summary": "Australia announced $2.75 billion investment in submarine construction yard at Osborne, part of $30 billion total project. When completed, will be only shipyard in Southern Hemisphere capable of constructing nuclear-powered submarines, supporting AUKUS partnership delivery.",
+              "actors_involved": [
+                "Australia",
+                "AUKUS"
+              ],
+              "signal_category_relevance": "Represents continued implementation of existing AUKUS commitments with significant Australian infrastructure investment, demonstrating alliance cohesion and industrial integration proceeding as designed."
+            }
+          ],
+          "prior_assessment": "The bilateral web strategy continues operating as designed through NATO alliance activity and established European defense frameworks, with Chancellor Reeves introducing more explicit EU integration rhetoric that represents tactical messaging rather than strategic reorientation.",
+          "updated_assessment": "The bilateral web strategy continues operating as designed through established alliance frameworks, with AUKUS partnership advancing through major Australian infrastructure investments and routine ministerial engagement (Lammy's Delhi visit). No developments this week alter the fundamental strategic posture or bilateral architecture.",
+          "confidence_change": null
+        },
+        "security_defense": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Defence spending commitments face political pressure amid AUKUS industrial progress",
+              "date": "2026-02-20",
+              "sources": [
+                {
+                  "name": "Breaking Defense",
+                  "url": "https://breakingdefense.com/2026/02/australia-invests-2-75-billion-in-aukus-submarine-yard/",
+                  "tier": 2
+                }
+              ],
+              "summary": "Government faces calls to increase defence spending to 3% of GDP faster than planned, while AUKUS submarine programme advances with Australian $2.75 billion shipyard investment. Intelligence services remain in focus over Ukraine invasion intelligence operations and domestic surveillance controversies.",
+              "actors_involved": [
+                "John Healey",
+                "Australia",
+                "AUKUS"
+              ],
+              "signal_category_relevance": "Represents continued pressure on defence spending trajectory and alliance industrial cooperation, but within existing strategic commitments rather than fundamental posture changes."
+            }
+          ],
+          "prior_assessment": "Defense spending commitments and industrial base competitiveness remain as assessed, with routine alliance contributions to Ukraine support and NATO command structure adjustments that do not alter the fundamental strategic posture.",
+          "updated_assessment": "Defense spending commitments face increased political pressure for acceleration to 3% GDP, while alliance industrial cooperation proceeds through major AUKUS infrastructure investments. Intelligence services remain operationally focused on strategic threats while entangled in domestic surveillance controversies, but no fundamental strategic posture shifts evident.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Record budget surplus achieved amid fiscal rules criticism and inflation decline",
+              "date": "2026-02-20",
+              "sources": [
+                {
+                  "name": "Bloomberg",
+                  "url": "https://bloomberg.com/news/articles/2026-02-20/uk-posts-biggest-ever-budget-surplus-as-tax-revenue-surges",
+                  "tier": 2
+                },
+                {
+                  "name": "Bloomberg",
+                  "url": "https://www.bloomberg.com/news/articles/2026-02-18/uk-cpi-inflation-falls-to-10-month-low-as-boe-mulls-march-rate-cut",
+                  "tier": 2
+                }
+              ],
+              "summary": "Chancellor Reeves recorded UK's biggest ever budget surplus of \u00a330.4 billion in January through tax revenue increases, but faces IFS criticism of fiscal rules as 'dysfunctional.' Inflation fell to 3% (10-month low), strengthening case for Bank of England rate cuts in March.",
+              "actors_involved": [
+                "Rachel Reeves",
+                "Bank of England",
+                "IFS"
+              ],
+              "signal_category_relevance": "Demonstrates continued adherence to fiscal orthodoxy through record surplus achievement, while monetary policy follows expected trajectory toward rate cuts. Fiscal rules criticism highlights structural tensions but doesn't alter current policy framework."
+            }
+          ],
+          "prior_assessment": "Bank of England continues managing inflation toward target through standard monetary policy tools, maintaining rates at 3.75% after split decision amid concerns inflation remains above target, with growth forecasts reflecting ongoing structural economic weaknesses.",
+          "updated_assessment": "Record budget surplus of \u00a330.4 billion demonstrates fiscal consolidation success, while inflation declining to 3% strengthens monetary easing prospects. IFS criticism of fiscal rules as 'dysfunctional' highlights structural policy tensions, but current frameworks remain in place with BoE positioned for March rate cuts.",
+          "confidence_change": {
+            "from": 3,
+            "to": 3,
+            "reason": "Multiple tier-2 sources confirm fiscal and monetary trends, but no significant policy shifts warrant confidence adjustment"
+          }
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "Parliamentary system strain continues as previously assessed, with the domestic governing crisis representing internal political dysfunction rather than changed institutional engagement with multilateral organizations or treaty frameworks.",
+          "updated_assessment": "No evidence this week of changed institutional engagement with multilateral organizations or treaty frameworks. Government Digital Service launched Digital and Data Hub initiative, representing routine institutional modernization rather than strategic reorientation.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Prince Andrew arrested creating unprecedented royal institutional crisis",
+              "date": "2026-02-19",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/czx4y1l1nq4o",
+                  "tier": 2
+                },
+                {
+                  "name": "New York Times",
+                  "url": "https://www.nytimes.com/2026/02/19/world/europe/uk-andrew-epstein-starmer-mandelson.html",
+                  "tier": 2
+                }
+              ],
+              "summary": "Prince Andrew arrested on his 66th birthday on suspicion of misconduct in public office related to Jeffrey Epstein allegations. King Charles issued unprecedented public statement saying 'law must take its course' and offering full cooperation, creating extraordinary public distance between monarch and senior royal family member.",
+              "actors_involved": [
+                "King Charles III",
+                "Prince Andrew"
+              ],
+              "signal_category_relevance": "Represents deepest monarchical institutional crisis since abdication, with Head of State publicly distancing from brother under criminal investigation, demonstrating constitutional stress extending beyond governing party to crown itself."
+            },
+            {
+              "headline": "Starmer suffers 15th major U-turn amid mounting governing crisis",
+              "date": "2026-02-17",
+              "sources": [
+                {
+                  "name": "Sky News",
+                  "url": "https://news.sky.com/story/why-sir-keir-starmers-latest-u-turn-may-see-him-lose-more-than-just-face-13508358",
+                  "tier": 2
+                }
+              ],
+              "summary": "Prime Minister reversed plans to delay local elections after Reform UK legal challenge, marking 15th major U-turn in office. Government agreed to pay Reform's legal fees (six-figure sum) and scrap planned legislation, while polling shows historic low approval ratings amid policy reversals.",
+              "actors_involved": [
+                "Keir Starmer",
+                "Nigel Farage"
+              ],
+              "signal_category_relevance": "Demonstrates continued governing incompetence and legal vulnerability, with opposition party successfully forcing policy reversals through courts while government approval remains at historic lows."
+            },
+            {
+              "headline": "Labour Together surveillance scandal expands to active minister involvement",
+              "date": "2026-02-20",
+              "sources": [
+                {
+                  "name": "Guardian",
+                  "url": "https://www.theguardian.com/politics/2026/feb/20/labour-minister-falsely-linked-journalists-to-pro-kremlin-network-in-emails-to-gchq",
+                  "tier": 2
+                },
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/c0q3wx2j3x1o",
+                  "tier": 2
+                }
+              ],
+              "summary": "Minister Josh Simons personally involved in naming journalists to GCHQ officials and falsely linking them to pro-Russian propaganda networks. Emails show Simons told intelligence officials material could be linked to 'people known to be operating in a pro-Kremlin propaganda network,' escalating beyond commissioned investigation to active targeting.",
+              "actors_involved": [
+                "Keir Starmer",
+                "Josh Simons",
+                "GCHQ"
+              ],
+              "signal_category_relevance": "Reveals government minister directly engaging intelligence services to target journalists through false accusations, representing systematic abuse of state surveillance apparatus against media and escalating regime fragmentation to active authoritarian practices."
+            }
+          ],
+          "prior_assessment": "Regime fragmentation has reached peak crisis intensity with the Mandelson-Epstein scandal triggering the most severe breakdown since Starmer took office: inner circle collapse (Chief of Staff and Communications Director resignations), formal Labour defection (Scottish Labour leader resignation call), monarchical institutional stress (King Charles intervention and public heckling), and surveillance scandal revelations targeting journalists.",
+          "updated_assessment": "Regime fragmentation has escalated beyond peak crisis to active institutional breakdown across all three pillars: the monarchy faces unprecedented crisis through Prince Andrew's arrest requiring King Charles's public disavowal; the governing party suffers serial legal defeats and historic approval collapse through 15 consecutive U-turns; and surveillance apparatus abuse is confirmed through ministerial targeting of journalists via intelligence services. The simultaneous crisis across crown, government, and civil liberties represents the deepest constitutional emergency since the 1970s.",
+          "confidence_change": {
+            "from": 4,
+            "to": 4,
+            "reason": "Multiple independent tier-2 sources (BBC, Guardian, Sky News, NYT) provide corroborating evidence across all three crisis dimensions with specific documentary evidence"
+          }
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "Unknown",
+          "date": "2026-02-22",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [
+        {
+          "expected": "",
+          "signal_category": "alignment_diplomatic",
+          "occurred": false,
+          "significance": "",
+          "confidence": 2
+        }
+      ],
+      "devils_advocate": {
+        "challenges": [
+          "The 'bilateral web strategy continues operating as designed' narrative persists for the fifth consecutive week despite explicit devil's advocate challenges in weeks 2026-02-15 and 2026-02-08 \u2014 the alignment_diplomatic assessment uses nearly identical language ('continues operating as designed through established frameworks') without addressing prior concerns about analytical repetition versus evidence-based re-evaluation.",
+          "The domestic_regime significant movement lacks required competing interpretations despite representing 'deepest constitutional emergency since the 1970s' \u2014 three simultaneous institutional crises (royal arrest, government collapse, surveillance abuse) warrant alternative explanatory frameworks beyond regime fragmentation escalation.",
+          "Source quality inconsistency undermines analytical credibility \u2014 while domestic developments have strong tier-2 sourcing (BBC, Guardian, Sky News), the unexpected developments section contains 'Unknown (source: unknown, tier 2)' which should automatically disqualify any confidence assessment above 1.",
+          "The institutional category receives dismissive treatment ('no evidence of changed institutional engagement') despite constitutional crisis evidence in domestic_regime \u2014 Prince Andrew's arrest requiring King Charles's public disavowal and ministerial abuse of intelligence services represents potential institutional capacity degradation that warrants direct assessment rather than categorical dismissal."
+        ],
+        "recommended_adjustments": [
+          "Abandon the 'bilateral web strategy' framing within two weeks unless specific evidence emerges of strategic architecture changes \u2014 routine AUKUS infrastructure investment and ministerial travel do not constitute validation of strategic continuity and this narrative has persisted through analytical inertia rather than evidence.",
+          "Provide competing interpretation for domestic_regime significant movement that explains the same evidence through alternative causal mechanisms \u2014 consider whether simultaneous crises represent coordinated institutional stress test, opposition exploitation of government weakness, or media-driven crisis amplification rather than organic regime fragmentation.",
+          "Remove all unknown-sourced content from unexpected developments or explicitly score confidence as 1 \u2014 source transparency is fundamental to confidence calibration and 'unknown' sources cannot support tier-2 analytical standards.",
+          "Re-evaluate institutional category assessment by directly analyzing how constitutional crisis affects multilateral engagement capacity \u2014 regime fragmentation reaching 'deepest emergency since 1970s' level should produce observable effects on institutional function that merit assessment rather than dismissal."
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [
+        {
+          "claim_ref": "unknown",
+          "claim_text": "Labour's 411-seat majority is structurally fragile because it rests on just 33.7% of the popular vote",
+          "status": "confirmed",
+          "evidence": "Starmer's 15th U-turn and historic low approval ratings demonstrate electoral vulnerability, with Reform UK legal challenges successfully forcing policy reversals",
+          "confidence_in_claim": 3
+        }
+      ],
+      "story_clusters": [
+        {
+          "headline": "Prince Andrew arrested on suspicion of misconduct, King Charles distances himself",
+          "summary": "Andrew Mountbatten-Windsor was arrested on his 66th birthday on suspicion of misconduct in public office related to Jeffrey Epstein allegations. King Charles issued statement saying 'law must take its course' and offering full cooperation with investigation.",
+          "source_url": "https://www.nytimes.com/2026/02/19/world/europe/uk-andrew-epstein-starmer-mandelson.html",
+          "source_name": "nytimes.com"
+        },
+        {
+          "headline": "Keir Starmer faces mounting political crisis amid U-turns and falling approval ratings",
+          "summary": "Prime Minister Starmer reversed plans to delay local elections after Reform UK legal challenge, marking his 14th major U-turn in office. Polling shows historic low approval ratings amid various policy reversals and criticism over Chagos Islands deal.",
+          "source_url": "https://www.ft.com/content/fb82b59a-7ebb-40f2-ac88-da9dfd31dbbe",
+          "source_name": "telegraph.co.uk"
+        },
+        {
+          "headline": "Labour Together scandal emerges over investigation of journalists",
+          "summary": "Labour-linked think tank Labour Together paid at least \u00a330,000 to investigate journalists who reported on its funding. Minister Josh Simons, former director of the group, is under Cabinet Office investigation for allegedly linking journalists to Russian propaganda in emails to GCHQ.",
+          "source_url": "https://www.theguardian.com/politics/2026/feb/20/labour-minister-falsely-linked-journalists-to-pro-kremlin-network-in-emails-to-gchq",
+          "source_name": "democracyforsale.substack.com"
+        },
+        {
+          "headline": "Nigel Farage unveils Reform UK shadow cabinet and blocked from Chagos Islands mission",
+          "summary": "Reform UK leader announced first shadow cabinet appointments including Robert Jenrick as Treasury spokesman and Suella Braverman for education. Separately, Farage claimed UK government blocked his humanitarian mission to deliver aid to Chagos Islands campaigners.",
+          "source_url": "https://www.politico.eu/article/uk-nigel-farage-reform-new-team-tells-us-about-bid-run-britain/",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "Rachel Reeves achieves record budget surplus but faces criticism over fiscal rules",
+          "summary": "Chancellor Reeves recorded UK's biggest ever budget surplus of \u00a330.4 billion in January, helped by tax increases. However, economists and IFS criticize her fiscal rules as 'dysfunctional' and contributing to economic uncertainty.",
+          "source_url": "https://bloomberg.com/news/articles/2026-02-20/uk-posts-biggest-ever-budget-surplus-as-tax-revenue-surges",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "Bank of England expected to cut interest rates as inflation falls",
+          "summary": "UK inflation dropped to 10-month low, with most economists predicting Bank of England will cut rates in March. Central bank faces pressure to support economic growth while managing persistent service sector inflation concerns.",
+          "source_url": "https://www.bloomberg.com/news/articles/2026-02-18/uk-cpi-inflation-falls-to-10-month-low-as-boe-mulls-march-rate-cut",
+          "source_name": "bloomberg.com"
+        },
+        {
+          "headline": "UK defence spending commitments under pressure amid AUKUS developments",
+          "summary": "Government faces calls to increase defence spending to 3% of GDP faster than planned. Separately, AUKUS partnership advances with Australia announcing $30bn submarine shipyard investment and UK submarine HMS Anson visiting Australia for maintenance.",
+          "source_url": "https://breakingdefense.com/2026/02/australia-invests-2-75-billion-in-aukus-submarine-yard/",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "Intelligence services in focus over Ukraine intelligence and journalist investigations",
+          "summary": "Guardian investigation reveals how CIA and MI6 obtained Putin's Ukraine invasion plans but struggled with European skepticism. Separately, GCHQ drawn into Labour Together scandal over false claims about journalists linked to Russian propaganda.",
+          "source_url": "https://www.theguardian.com/world/ng-interactive/2026/feb/20/a-war-foretold-cia-mi6-putin-ukraine-plans-russia",
+          "source_name": "theguardian.com"
+        }
+      ]
+    },
+    {
+      "week": "2026-03-01",
+      "date_range": "2026-02-22 to 2026-03-01",
+      "depth": "deep_dive",
+      "activity_level": {
+        "rating": "high",
+        "rationale": "The Green Party's historic by-election victory (47 sources) pushing Labour to third place represents a major governing crisis, while Prince Andrew's arrest and royal crisis (34 sources) continues constitutional breakdown. Combined with Iran policy tensions (19 sources), justice system overhaul (12 sources), and electoral reform proposals (21 sources), multiple high-prominence stories indicate significant political turbulence across domestic and international dimensions."
+      },
+      "category_movements": {
+        "alignment_diplomatic": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Starmer navigates Iran crisis by allowing defensive US base access while refusing offensive strike endorsement",
+              "date": "2026-03-01",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/cqj9g11p1ezo",
+                  "tier": 2
+                },
+                {
+                  "name": "Guardian",
+                  "url": "https://www.theguardian.com/politics/2026/feb/28/starmer-chairs-cobra-meeting-after-us-israel-strikes-on-iran",
+                  "tier": 2
+                }
+              ],
+              "summary": "PM agreed to let US use British bases for defensive Iran operations while refusing to endorse US-Israeli offensive strikes. Starmer spoke with Trump and faces pressure from both sides over UK's Middle East stance. RAF jets flying defensive missions from Qatar and Cyprus.",
+              "actors_involved": [
+                "Starmer",
+                "Trump",
+                "Healey",
+                "Lammy"
+              ],
+              "signal_category_relevance": "Demonstrates continued bilateral web approach of managing US relationship while maintaining some policy boundaries, rather than automatic alignment"
+            },
+            {
+              "headline": "AUKUS partnership advances with HMS Anson maintenance and Australian reactor component purchases",
+              "date": "2026-02-27",
+              "sources": [
+                {
+                  "name": "Minister Defence Australia",
+                  "url": "https://www.minister.defence.gov.au/media-releases/2026-02-22/aukus-enters-new-era-arrival-uk-submarine-into-western-australia",
+                  "tier": 2
+                },
+                {
+                  "name": "UK Government",
+                  "url": "https://www.gov.uk/government/news/uk-submarine-arrives-in-australia-in-aukus-partnership-first",
+                  "tier": 2
+                }
+              ],
+              "summary": "HMS Anson arrived for first-ever UK submarine maintenance in Australia, with 100 personnel contributing to UK Submarine Maintenance Period. Australia paid \u00a3310 million for nuclear reactor components from Rolls-Royce as part of AUKUS program.",
+              "actors_involved": [
+                "AUKUS",
+                "Australia",
+                "Healey"
+              ],
+              "signal_category_relevance": "Shows continued operational deepening of AUKUS partnership through practical infrastructure cooperation and industrial investment"
+            }
+          ],
+          "prior_assessment": "The bilateral web strategy continues operating as designed through established alliance frameworks, with AUKUS partnership advancing through major Australian infrastructure investments and routine ministerial engagement.",
+          "updated_assessment": "The bilateral web strategy continues operating through AUKUS partnership deepening and Iran crisis management, showing both alliance consolidation and managed friction with the US. The Iran policy tensions reveal limits to automatic alignment while maintaining core defense cooperation.",
+          "confidence_change": null
+        },
+        "security_defense": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Defence Secretary commits to Ukraine troop deployment and addresses Iranian missile threats to British bases",
+              "date": "2026-03-01",
+              "sources": [
+                {
+                  "name": "Daily Mail",
+                  "url": "https://www.dailymail.co.uk/news/article-15581453/Britain-send-troops-Ukraine-end-year-John-Healey-peace-deal-agreed.html",
+                  "tier": 3
+                },
+                {
+                  "name": "i24NEWS",
+                  "url": "https://www.i24news.tv/en/news/middle-east/iran-eastern-states/artc-missiles-launched-towards-british-military-station-in-cyprus",
+                  "tier": 3
+                }
+              ],
+              "summary": "John Healey vowed to deploy British troops to Ukraine before year-end following a peace deal. Iranian missiles were fired toward British military bases in Cyprus as regional tensions escalate. Healey described Iran's response as 'indiscriminate' with 300 UK personnel positioned several hundred yards from missile strikes in Bahrain.",
+              "actors_involved": [
+                "Healey",
+                "Iran"
+              ],
+              "signal_category_relevance": "Shows continued UK commitment to Ukraine support and reveals direct Iranian threats to British military infrastructure in Middle East operations"
+            }
+          ],
+          "prior_assessment": "Defense spending commitments face increased political pressure for acceleration to 3% GDP, while alliance industrial cooperation proceeds through major AUKUS infrastructure investments. Intelligence services remain operationally focused on strategic threats while entangled in domestic surveillance controversies.",
+          "updated_assessment": "Defense commitments continue with Ukraine deployment pledges and Middle East tensions exposing UK military assets to direct Iranian threats. AUKUS industrial cooperation advances while regional security pressures intensify direct risks to British forces.",
+          "confidence_change": null
+        },
+        "economic_tech": {
+          "movement": "minor",
+          "developments": [
+            {
+              "headline": "Bank of England Governor signals possible March interest rate cut as inflation approaches target",
+              "date": "2026-02-27",
+              "sources": [
+                {
+                  "name": "Reuters",
+                  "url": "https://www.reuters.com/world/uk/bank-englands-bailey-says-march-rate-cut-is-genuinely-open-question-2026-02-24/",
+                  "tier": 2
+                },
+                {
+                  "name": "This is Money",
+                  "url": "https://www.thisismoney.co.uk/money/markets/article-15589419/Bank-England-governor-Andrew-Bailey-hints-rate-cuts-inflation-heads-2-target.html",
+                  "tier": 3
+                }
+              ],
+              "summary": "Andrew Bailey told MPs that a March rate cut was 'genuinely open question' as inflation moves toward 2% target. He cautioned against premature action on underlying price pressures while indicating monetary easing trajectory.",
+              "actors_involved": [
+                "Bank of England",
+                "Bailey"
+              ],
+              "signal_category_relevance": "Confirms continued monetary easing trajectory as inflation declines toward target, supporting economic management credibility"
+            },
+            {
+              "headline": "Chancellor prepares low-key Spring Statement amid economic pressures",
+              "date": "2026-03-01",
+              "sources": [
+                {
+                  "name": "Guardian",
+                  "url": "https://theguardian.com/uk-news/2026/mar/01/rachel-eeves-spring-budget-boring-or-bust-calm-competence",
+                  "tier": 2
+                },
+                {
+                  "name": "Daily Mail",
+                  "url": "https://dailymail.co.uk/news/article-15602747/Rachel-Reeves-come-swinging-Labours-crushing-election-defeat-Chancellor-claims-green-shoots-economic-recovery.html",
+                  "tier": 3
+                }
+              ],
+              "summary": "Rachel Reeves preparing Spring Statement promising no major policy announcements while facing pressure over rising unemployment and business concerns about economic policies. She plans to claim 'green shoots' of recovery to counter by-election defeat impact.",
+              "actors_involved": [
+                "Reeves"
+              ],
+              "signal_category_relevance": "Shows continued fiscal consolidation approach with no major policy changes despite political pressure from electoral defeats"
+            }
+          ],
+          "prior_assessment": "Record budget surplus of \u00a330.4 billion demonstrates fiscal consolidation success, while inflation declining to 3% strengthens monetary easing prospects. IFS criticism of fiscal rules as 'dysfunctional' highlights structural policy tensions.",
+          "updated_assessment": "Monetary easing trajectory continues with BoE signaling possible March rate cut as inflation approaches target. Fiscal policy maintains consolidation approach with no major Spring Statement announcements despite rising political pressure from electoral defeats.",
+          "confidence_change": null
+        },
+        "institutional": {
+          "movement": "none",
+          "developments": [],
+          "prior_assessment": "No evidence of changed institutional engagement with multilateral organizations or treaty frameworks. Government Digital Service launched Digital and Data Hub initiative, representing routine institutional modernization.",
+          "updated_assessment": "No evidence of changed institutional engagement with multilateral organizations or treaty frameworks this week. Justice system reforms with AI courts and reduced jury trials represent domestic institutional modernization rather than international institutional reorientation.",
+          "confidence_change": null
+        },
+        "domestic_regime": {
+          "movement": "significant",
+          "developments": [
+            {
+              "headline": "Green Party achieves historic by-election victory, pushing Labour to third place in safe seat",
+              "date": "2026-02-27",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/cr453rvy6kvo",
+                  "tier": 2
+                },
+                {
+                  "name": "Guardian",
+                  "url": "https://www.theguardian.com/politics/2026/feb/27/green-party-wins-gorton-and-denton-byelection-in-blow-to-keir-starmer",
+                  "tier": 2
+                },
+                {
+                  "name": "CNN",
+                  "url": "https://www.cnn.com/2026/02/27/uk/britain-starmer-labour-defeat-hnk-intl",
+                  "tier": 2
+                }
+              ],
+              "summary": "Hannah Spencer won Gorton and Denton with 14,980 votes (41%) in the Greens' first-ever Westminster by-election victory, with Reform UK second (10,578) and Labour third (9,364). The result represents the sixth largest Labour majority overturned since WWII in a seat held by Labour for nearly 100 years. Starmer vowed to 'keep on fighting' but faces questions about leadership.",
+              "actors_involved": [
+                "Starmer",
+                "Green Party",
+                "Reform UK"
+              ],
+              "signal_category_relevance": "Represents major governing party electoral collapse in previously safe constituency, indicating continued regime fragmentation and legitimacy erosion"
+            },
+            {
+              "headline": "Prince Andrew arrest triggers royal crisis with calls for King Charles to abdicate",
+              "date": "2026-02-22",
+              "sources": [
+                {
+                  "name": "Daily Mail",
+                  "url": "https://dailymail.co.uk/news/article-15582083/King-Charles-Andrew-arrest-royal-expert.html",
+                  "tier": 3
+                },
+                {
+                  "name": "Newsweek",
+                  "url": "https://newsweek.com/king-charles-stand-down-prince-andrew-mountbatten-windsor-epstein-11566758",
+                  "tier": 3
+                }
+              ],
+              "summary": "Prince Andrew was arrested on his 66th birthday over suspected misconduct in public office related to Jeffrey Epstein connections. King Charles issued unprecedented statement confirming support for investigation. Royal expert Andrew Lownie suggested the monarchy faces potential collapse with calls for Charles to abdicate.",
+              "actors_involved": [
+                "King Charles III",
+                "Prince Andrew"
+              ],
+              "signal_category_relevance": "Continues unprecedented monarchy crisis as third pillar of institutional breakdown alongside government and civil liberties surveillance concerns"
+            },
+            {
+              "headline": "Justice Secretary announces AI courts expansion and reduced jury trials to tackle case backlog",
+              "date": "2026-02-24",
+              "sources": [
+                {
+                  "name": "BBC",
+                  "url": "https://www.bbc.com/news/articles/ckg2dkkv865o",
+                  "tier": 2
+                },
+                {
+                  "name": "Sky News",
+                  "url": "https://news.sky.com/story/magistrates-and-judges-to-use-more-ai-says-lammy-as-jury-trials-reduced-13511577",
+                  "tier": 2
+                }
+              ],
+              "summary": "David Lammy announced expanding AI use in courts, reducing jury trials for cases under three years, and increasing court sitting days to tackle 80,000 case backlog. Legal Society warned decisions 'with serious consequences' must be made by humans. Lammy referenced historical precedents including Margaret Thatcher's changes.",
+              "actors_involved": [
+                "Lammy"
+              ],
+              "signal_category_relevance": "Represents significant institutional reform of justice system using technology to address capacity constraints, indicating adaptation under pressure"
+            }
+          ],
+          "prior_assessment": "Regime fragmentation has escalated beyond peak crisis to active institutional breakdown across all three pillars: the monarchy faces unprecedented crisis through Prince Andrew's arrest requiring King Charles's public disavowal; the governing party suffers serial legal defeats and historic approval collapse through 15 consecutive U-turns; and surveillance apparatus abuse is confirmed through ministerial targeting of journalists via intelligence services.",
+          "updated_assessment": "Regime fragmentation continues with the governing party suffering historic by-election defeat (Labour pushed to third place in safe seat), the monarchy crisis deepening through Prince Andrew's arrest and calls for King Charles to abdicate, and justice system institutional reforms indicating adaptation under severe capacity pressure. The simultaneous electoral collapse and constitutional crisis represents sustained institutional breakdown across all pillars.",
+          "confidence_change": {
+            "from": 4,
+            "to": 4,
+            "reason": "Multiple independent tier-2 sources confirm continued institutional breakdown across monarchy, electoral legitimacy, and justice system adaptation under pressure"
+          }
+        }
+      },
+      "unexpected_developments": [
+        {
+          "headline": "Green Party achieves first-ever Westminster by-election victory in previously safe Labour seat",
+          "date": "2026-02-27",
+          "source": "unknown",
+          "source_tier": 2,
+          "signal_category": "alignment_diplomatic",
+          "assessment": "",
+          "disposition": "logged"
+        }
+      ],
+      "absence_check": [
+        {
+          "expected": "",
+          "signal_category": "alignment_diplomatic",
+          "occurred": false,
+          "significance": "",
+          "confidence": 2
+        }
+      ],
+      "devils_advocate": {
+        "challenges": [
+          "The 'bilateral web strategy continues operating as designed' narrative persists for the sixth consecutive week despite repeated prior devil's advocate challenges and new evidence of Iran policy friction that contradicts automatic alignment assumptions. The analyst frames US-UK tensions over Iran strikes as 'managed friction' rather than evidence that the bilateral web strategy may be shifting from designed operation to selective resistance, maintaining comfortable narrative persistence rather than re-evaluating the analytical frame.",
+          "Source quality inconsistency undermines the security_defense assessment confidence \u2014 Iranian missile threats to British bases and defense deployment commitments rely primarily on Daily Mail (tier 3) sourcing, yet the confidence level appears unchanged from prior weeks when stronger sourcing existed. Tier 3 sources for direct military threat claims should cap confidence at 2, not maintain prior levels.",
+          "The institutional category receives dismissive analytical treatment despite justice system institutional reforms (AI courts, reduced jury trials) representing significant capacity adaptations under pressure. The analyst acknowledges these developments in domestic_regime but fails to connect them to institutional engagement capacity, treating constitutional crisis and justice system overhaul as separate phenomena rather than examining their combined effect on multilateral institutional participation."
+        ],
+        "recommended_adjustments": [
+          "Re-evaluate whether the Iran crisis evidence supports continued 'operating as designed' framing or indicates a shift to selective alignment strategy. If evidence supports strategy persistence, require explicit explanation of why US-UK friction over offensive operations doesn't constitute design failure within 1 week.",
+          "Downgrade security_defense confidence to 2 given Daily Mail tier 3 dependency for Iranian missile threat claims, or source Iranian threat to British forces through tier 1-2 outlets within 1 week to maintain current confidence levels.",
+          "Integrate justice system reform evidence into institutional assessment rather than treating constitutional adaptation as purely domestic \u2014 AI court expansion and jury trial reduction affect state capacity for complex multilateral legal obligations and should inform institutional engagement analysis."
+        ]
+      },
+      "self_corrections": [],
+      "structural_claim_checks": [
+        {
+          "claim_ref": "unknown",
+          "claim_text": "",
+          "status": "confirmed",
+          "evidence": "Green Party by-election victory shows Labour's 411-seat majority remains structurally fragile despite large numerical advantage - third-place finish in safe seat confirms vulnerability predicted by 33.7% vote share foundation",
+          "confidence_in_claim": 3
+        }
+      ],
+      "story_clusters": [
+        {
+          "headline": "Green Party delivers historic by-election victory, pushing Labour to third place in Gorton and Denton",
+          "summary": "The Green Party won their first-ever parliamentary by-election in Gorton and Denton, with Hannah Spencer defeating Reform UK and pushing Labour into third place in what had been a safe Labour seat for nearly a century. The result is seen as a major blow to Keir Starmer's leadership.",
+          "source_url": "https://www.bbc.com/news/articles/cr453rvy6kvo",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "Starmer faces crisis over Iran policy as UK takes defensive role while refusing to endorse US-Israeli strikes",
+          "summary": "Keir Starmer navigates a diplomatic crisis after agreeing to let US use British bases for defensive Iran operations while refusing to endorse US-Israeli offensive strikes on Iran. The PM spoke with Trump and faces pressure from both sides over the UK's Middle East stance.",
+          "source_url": "https://www.bbc.com/news/articles/cqj9g11p1ezo",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "Prince Andrew arrest triggers royal crisis with calls for King Charles to abdicate",
+          "summary": "Prince Andrew was arrested on his 66th birthday over suspected misconduct in public office related to his Jeffrey Epstein connections. The scandal has prompted calls for King Charles to abdicate, with experts warning the monarchy faces potential collapse.",
+          "source_url": "https://dailymail.co.uk/news/article-15582083/King-Charles-Andrew-arrest-royal-expert.html",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "Rachel Reeves prepares low-key Spring Statement amid economic pressures and business concerns",
+          "summary": "Chancellor Rachel Reeves is preparing to deliver her Spring Statement next week, promising no major policy announcements while facing pressure over rising unemployment and business concerns about her economic policies.",
+          "source_url": "https://theguardian.com/uk-news/2026/mar/01/rachel-eeves-spring-budget-boring-or-bust-calm-competence",
+          "source_name": "theguardian.com"
+        },
+        {
+          "headline": "David Lammy unveils justice system overhaul with AI courts and reduced jury trials",
+          "summary": "Justice Secretary David Lammy announced plans to expand AI use in courts, reduce jury trials for cases under three years, and increase court sitting days to tackle the massive case backlog of 80,000 cases.",
+          "source_url": "https://www.bbc.com/news/articles/ckg2dkkv865o",
+          "source_name": "bbc.com"
+        },
+        {
+          "headline": "Kemi Badenoch clashes with Martin Lewis over Conservative student loan reforms",
+          "summary": "Conservative leader Kemi Badenoch faced criticism from finance expert Martin Lewis over her proposals to cut student loan interest rates, with Lewis arguing the plans would only benefit high earners. The confrontation occurred during a live TV interview.",
+          "source_url": "https://www.telegraph.co.uk/news/2026/02/23/martin-lewis-sorry-kemi-badenoch-itv/",
+          "source_name": "telegraph.co.uk"
+        },
+        {
+          "headline": "Nigel Farage proposes electoral reforms banning foreign citizen voting after by-election defeat",
+          "summary": "Reform UK leader Nigel Farage unveiled plans to ban Commonwealth citizens from voting and end postal voting on demand, claiming the Gorton and Denton by-election was marred by 'sectarian cheating' and family voting irregularities.",
+          "source_url": "https://www.telegraph.co.uk/politics/2026/03/01/farage-ban-postal-voting-to-halt-corruption-democracy/",
+          "source_name": "telegraph.co.uk"
+        },
+        {
+          "headline": "Bank of England Governor Bailey signals possible March interest rate cut",
+          "summary": "Bank of England Governor Andrew Bailey told MPs that a March interest rate cut was 'a genuinely open question' as inflation moves toward the 2% target, though he cautioned against premature action on underlying price pressures.",
+          "source_url": "https://www.reuters.com/world/uk/bank-englands-bailey-says-march-rate-cut-is-genuinely-open-question-2026-02-24/",
+          "source_name": "reuters.com"
+        },
+        {
+          "headline": "AUKUS partnership advances with HMS Anson maintenance visit and reactor component purchases",
+          "summary": "Royal Navy submarine HMS Anson arrived in Australia for the first UK nuclear submarine maintenance work there, while Australia paid \u00a3310 million for nuclear reactor components from Rolls-Royce as part of the AUKUS submarine program.",
+          "source_url": "https://www.minister.defence.gov.au/media-releases/2026-02-22/aukus-enters-new-era-arrival-uk-submarine-into-western-australia",
+          "source_name": "gov.uk"
+        },
+        {
+          "headline": "Defence Secretary John Healey announces troop deployment to Ukraine and addresses Iran missile threats",
+          "summary": "Defence Secretary John Healey vowed to deploy British troops to Ukraine before year-end following a peace deal, while also revealing that Iranian missiles were fired toward British military bases in Cyprus as regional tensions escalate.",
+          "source_url": "https://www.dailymail.co.uk/news/article-15581453/Britain-send-troops-Ukraine-end-year-John-Healey-peace-deal-agreed.html",
+          "source_name": "dailymail.co.uk"
+        },
+        {
+          "headline": "King Charles delivers routine Olympic congratulations amid ongoing health treatment",
+          "summary": "King Charles sent congratulatory messages to Team GB and Commonwealth athletes after the 2026 Winter Olympics, while also making routine appearances and continuing his cancer treatment with a reduced schedule.",
+          "source_url": "https://www.dailymail.co.uk/news/article-15582931/King-Charles-heartfelt-congratulations-Olympic-Winter-Games-winners-Team-GB-Commonwealth.html",
+          "source_name": "dailymail.co.uk"
+        }
+      ]
+    }
+  ],
+  "structural_claim_status": [],
+  "corrections_log": [
+    {
+      "correction_date": "2026-02-08",
+      "original_week": "2026-02-08",
+      "original_claim": "",
+      "corrected_to": "This week's domestic regime assessment is based on multiple independent tier-2 sources (BBC, Independent, Guardian, Mirror) providing corroborating evidence from different angles rather than relying on single-source reporting",
+      "category_affected": "alignment_diplomatic",
+      "root_cause": "Previous week relied too heavily on Guardian clustering rather than seeking source diversity for verification"
+    }
+  ],
+  "consolidated_history": ""
+}

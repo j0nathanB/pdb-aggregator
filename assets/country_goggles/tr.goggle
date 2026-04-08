@@ -1,0 +1,43 @@
+! name: MPM Turkey
+! description: MPM pipeline source prioritization for Turkey — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=anadolu.com.tr
+$boost=10,site=cumhuriyet.com.tr
+$boost=10,site=t24.com.tr
+$boost=10,site=bloomberght.com
+$boost=10,site=al-monitor.com
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=hurriyet.com.tr
+$boost=5,site=sozcu.com.tr
+$boost=5,site=medyascope.tv
+$boost=5,site=bianet.org
+$boost=5,site=tccb.gov.tr
+$boost=5,site=mfa.gov.tr
+$boost=5,site=resmigazete.gov.tr
+$boost=5,site=tbmm.gov.tr
+$boost=5,site=middleeasteye.net
+$boost=5,site=setav.org
+$boost=5,site=mezopotamyaajansi42.com
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=hurriyetdailynews.com
+$boost=3,site=dailysabah.com
+$boost=3,site=birgun.net
+$boost=3,site=defenceturkey.com
+$boost=3,site=c4defence.com
+$boost=3,site=duvarenglish.com
+$boost=3,site=ahvalnews.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=yeniakit.com.tr
+$discard,site=odatv.com
+$discard,site=haber7.com
+$discard,site=takvim.com.tr

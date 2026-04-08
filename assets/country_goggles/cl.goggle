@@ -1,0 +1,35 @@
+! name: MPM Chile
+! description: MPM pipeline source prioritization for Chile — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=latercera.com
+$boost=10,site=elmostrador.cl
+$boost=10,site=ciperchile.cl
+$boost=10,site=df.cl
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=emol.com
+$boost=5,site=ex-ante.cl
+$boost=5,site=cooperativa.cl
+$boost=5,site=biobiochile.cl
+$boost=5,site=infodefensa.com
+$boost=5,site=minrel.gob.cl
+$boost=5,site=subrei.gob.cl
+$boost=5,site=gob.cl
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=interferencia.cl
+$boost=3,site=pauta.cl
+$boost=3,site=athenalab.org
+$boost=3,site=americasquarterly.org
+$boost=3,site=bnamericas.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=gamba.cl
+$discard,site=elciudadano.com

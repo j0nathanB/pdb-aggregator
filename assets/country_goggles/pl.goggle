@@ -1,0 +1,40 @@
+! name: MPM Poland
+! description: MPM pipeline source prioritization for Poland — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=pap.pl
+$boost=10,site=rp.pl
+$boost=10,site=defence24.pl
+$boost=10,site=tvn24.pl
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=pism.pl
+$boost=5,site=osw.waw.pl
+$boost=5,site=wyborcza.pl
+$boost=5,site=gazetaprawna.pl
+$boost=5,site=notesfrompoland.com
+$boost=5,site=dorzeczy.pl
+$boost=5,site=wpolityce.pl
+$boost=5,site=wpolsce24.pl
+$boost=5,site=gov.pl
+$boost=5,site=prezydent.pl
+$boost=5,site=sejm.gov.pl
+$boost=5,site=rmf24.pl
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=polityka.pl
+$boost=3,site=oko.press
+$boost=3,site=republikatv.pl
+$boost=3,site=neweasterneurope.eu
+$boost=3,site=polsatnews.pl
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=niezalezna.pl
+$discard,site=pch24.pl
+$discard,site=sputnik.pl

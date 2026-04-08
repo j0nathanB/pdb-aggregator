@@ -1,0 +1,40 @@
+! name: MPM Germany
+! description: MPM pipeline source prioritization for Germany — boosts high-signal sources, discards noise. Heavy crawler-block mitigation: extractable sources promoted.
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=handelsblatt.com
+$boost=10,site=tagesspiegel.de
+$boost=10,site=swp-berlin.org
+$boost=10,site=faz.net
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=sueddeutsche.de
+$boost=5,site=spiegel.de
+$boost=5,site=welt.de
+$boost=5,site=taz.de
+$boost=5,site=dgap.org
+$boost=5,site=internationalepolitik.de
+$boost=5,site=bundesregierung.de
+$boost=5,site=auswaertiges-amt.de
+$boost=5,site=bundestag.de
+$boost=5,site=ipg-journal.de
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=zeit.de
+$boost=3,site=wiwo.de
+$boost=3,site=dw.com
+$boost=3,site=defensenews.com
+$boost=3,site=kas.de
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=de.rt.com
+$discard,site=jungefreiheit.de
+$discard,site=compact-online.de
+$discard,site=snanews.de
+$discard,site=de.sputniknews.com

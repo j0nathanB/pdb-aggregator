@@ -1,0 +1,129 @@
+country: Latvia
+code: lv
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Evika Siliņa
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Siliņa
+  - Evika Siliņa
+- name: Edgars Rinkēvičs
+  role: President
+  primary: false
+  search_terms:
+  - Rinkēvičs
+  - Edgars Rinkēvičs
+- name: New Unity
+  role: Governing party
+  primary: false
+  search_terms:
+  - JV
+  - New Unity
+  - Jaunā Vienotība
+- name: National Armed Forces
+  role: Military (NBS)
+  primary: false
+  search_terms:
+  - NBS
+  - Nacionālie bruņotie spēki
+  - National Armed Forces
+- name: SAB
+  role: Constitution Protection Bureau (security service)
+  primary: false
+  search_terms:
+  - SAB
+  - Constitution Protection Bureau
+- name: KNAB
+  role: Corruption Prevention Bureau
+  primary: false
+  search_terms:
+  - KNAB
+  - Corruption Prevention Bureau
+- name: Bank of Latvia
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Latvijas Banka
+  - Bank of Latvia
+  - Mārtiņš Kazāks
+- name: National Alliance
+  role: Ethno-nationalist opposition
+  primary: false
+  search_terms:
+  - NA
+  - National Alliance
+  - Nacionālā apvienība
+- name: Progressives
+  role: Left-liberal coalition partner
+  primary: false
+  search_terms:
+  - Progressives
+  - Progresīvie
+- name: Andris Sprūds
+  role: Defence Minister
+  primary: false
+  search_terms:
+  - Sprūds
+  - Andris Sprūds
+languages:
+  primary: lv
+  additional:
+  - ru
+  metadata: en
+blind_spots:
+- domain: Russian-speaking community dynamics
+  reason: Russian-language public media phased out; community views largely invisible
+    in Latvian-language press
+  where_signal_lives: SAB annual reports, academic surveys, remaining independent
+    Russian-language outlets
+- domain: NATO brigade buildup
+  reason: Canadian-led multinational brigade operational details classified
+  where_signal_lives: Canadian DND releases, NATO eFP communiqués, Latvian Defence
+    Ministry statements
+news_discovery:
+  goggle_file: assets/country_goggles/lv.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: LV
+    search_lang: lv
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - divpusējās attiecības
+    - diplomātiskā vienošanās
+    - ārpolitika
+    - divpusēja samits
+    - vēstnieks
+    security_defense:
+    - Nacionālie bruņotie spēki
+    - militārais iepirkums
+    - drošības sadarbība
+    - SAB
+    - NATO kaujas grupa
+    economic_tech:
+    - ārvalstu investīcijas
+    - tirdzniecības nolīgums
+    - Latvijas Banka
+    - enerģētiskā drošība
+    - digitālā ekonomika
+    - supply chain
+    institutional:
+    - NATO
+    - Eiropas Savienība
+    - ANO
+    - Baltijas sadarbība
+    - līguma ratifikācija
+    domestic_constraints:
+    - Saeima
+    - Jaunā Vienotība
+    - Nacionālā apvienība
+    - koalīcija
+    - Progresīvie
+government_discovery:
+  config_file: assets/government/lv.yaml
+interpretive_context_file: assets/context/lv_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

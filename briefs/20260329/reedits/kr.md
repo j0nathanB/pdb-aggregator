@@ -1,0 +1,11 @@
+Lee Jae-myung, South Korea's president, nominated Shin Hyun-song as the country's new central bank governor this week, picking a hawkish economist who predicted the 2008 financial crisis. The choice comes as South Korea faces pressure from the Middle East conflict.
+
+Mr Shin, who works for the Bank for International Settlements, brings international experience to monetary policy as South Korea confronts an energy squeeze. Mr Lee launched a 12-step conservation campaign — shorter showers, less driving — and promised an emergency budget as the Iran conflict threatens to disrupt oil supplies. The won has fallen to its fourth-lowest monthly level this year as foreign investors dump Korean assets and oil prices surge.
+
+Even as the currency weakened, the Bank of Korea posted record profits of 15.3 trillion won from its dollar-selling interventions, paying over 10 trillion won to the government. A weak won alongside profitable forex operations shows Mr Lee is managing external pressure while keeping his options open.
+
+Mr Lee is taking the same approach to defence. He attended the launch ceremony for South Korea's first mass-produced KF-21 fighter jet, calling it a step toward joining the world's top four defence powers. The supersonic fighter, which completed over 1,600 test flights, gives Mr Lee the self-reliant capability he wants as he pushes for early recovery of wartime operational control from the United States.
+
+Yet Mr Lee is playing both sides. Even as he accelerates the timeline for taking back operational control, Seoul is considering skipping co-sponsorship of the annual UN resolution on North Korean human rights — a move that would keep diplomatic channels open with Pyongyang while frustrating Washington and human rights groups.
+
+At home, Mr Lee's approval rating dipped to 65% from 67%, where it had been for three weeks, but his position remains strong as the opposition People Power Party (PPP) hits record-low support at 19%. The party faces nomination disputes and internal chaos ahead of June local elections. Mr Lee courted his progressive base this week by visiting Jeju Island for the 78th anniversary of the April 3 massacre, pledging to eliminate statutes of limitations for state violence and make perpetrators accountable "like Nazi war criminals."

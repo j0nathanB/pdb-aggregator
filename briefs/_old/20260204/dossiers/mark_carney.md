@@ -1,0 +1,62 @@
+# Dossier: Mark Carney
+*Prime Minister, Canada*
+**Period:** 2026-01-28 to 2026-02-04
+**Generated:** 2026-02-04 11:21
+
+## Main Stories
+
+### Carney denies walking back Davos comments to Trump
+
+OTTAWA, Canada — Canadian Prime Minister Mark Carney said Tuesday he told U.S. President Donald Trump that he meant what he said in his speech at Davos and rejected claims by U.S. Treasury Secretary Scott Bessent that he walked back his comments. Carney said he explained to Trump during a half-hour phone call Monday that Canada plans to pursue 12 new trade deals across four continents in six months to diversify away from U.S. dependence. Bessent told Fox News that Carney "was very aggressively walking back some of the unfortunate remarks he made at Davos," but Carney rolled his eyes at the claim and said "I meant what I said in Davos." The dispute stems from Carney's World Economic Forum speech last week where he said "middle powers must act together because if you are not at the table, you are on the menu," comments that received a standing ovation but drew criticism from Trump. Trump threatened over the weekend to impose 100% tariffs on Canadian goods if Ottawa pursued a trade deal with China, though Carney said Canada has no interest in a comprehensive agreement with Beijing.
+
+*Sources: (Reuters [1](https://www.reuters.com/world/americas/canadas-carney-walked-back-davos-comments-call-with-trump-bessent-tells-fox-news-2026-01-27/); National Post [1](https://nationalpost.com/news/canadas-new-global-strategy-hits-a-trump-wall-something-has-to-give); AP News [1](https://apnews.com/article/carney-trump-canada-trade-davos-bessent-tariffs-8e83cdd9443f6f4a523b6e05fd63843a))*
+
+### Carney expects US to respect Canadian sovereignty amid separatist meetings
+
+OTTAWA, Canada — Prime Minister Mark Carney said Thursday he expects the U.S. administration to respect Canadian sovereignty after reports that American officials met with Alberta separatists seeking independence for the energy-producing province. "We expect the U.S. administration to respect Canadian sovereignty. I'm always clear in my conversations with President Trump to that effect," Carney said at a press conference following a meeting with Canada's premiers. The Financial Times reported that State Department officials held three meetings with the Alberta Prosperity Project, which is pushing for a referendum on whether Alberta should break away from Canada. The U.S. State Department confirmed officials met with members of the Alberta separatist movement, saying in a statement that it "regularly meets with civil society types" and that "no commitments were made." Alberta Premier Danielle Smith said she expected the U.S. "would confine their discussion about Alberta's democratic process to Albertans and to Canadians," while British Columbia Premier David Eby called the separatists' outreach to a foreign country "treason."
+
+*Sources: (Reuters [1](https://www.reuters.com/world/americas/carney-says-he-expects-us-administration-respect-canadian-sovereignty-2026-01-29/); CBC News [1](https://www.cbc.ca/news/politics/livestory/carney-premiers-news-conference-9.7066716))*
+
+### Carney likely to visit India in March, envoy says
+
+OTTAWA, Canada — Canadian Prime Minister Mark Carney will likely visit India in the first week of March to sign deals on uranium, energy, minerals and artificial intelligence, India's High Commissioner to Canada Dinesh Patnaik said in an interview. Formal negotiations for a Comprehensive Economic Partnership Agreement with India should also start in March, Patnaik said, as the countries agreed to restart stalled trade talks in November. Carney is working to diversify Canada's trade beyond the United States, its top trade partner, following his recent agreement with China to slash tariffs on electric vehicles and canola. The visit would reset relations with India after former Prime Minister Justin Trudeau accused the Indian government of involvement in the killing of a Sikh separatist leader in 2023, claims India has denied.
+
+*Sources: (Reuters [1](https://www.reuters.com/world/carney-likely-visit-india-early-march-canada-trade-pivot-intensifies-envoy-says-2026-01-26/))*
+
+### Alberta Premier demands more say in federal judge appointments
+
+CALGARY, Canada — Alberta Premier Danielle Smith called on Prime Minister Mark Carney to give her province more control over federal judicial appointments, threatening to withhold funding for court positions if Ottawa refuses her demands. In a letter published Tuesday, Smith said she wants Alberta to have increased say in appointments to the Supreme Court of Canada and for the federal government to reduce bilingualism requirements for top court judges. Smith said the changes would support national unity, referencing separatist sentiment in her province. Justice Minister Sean Fraser's spokeswoman Lola Dandybaeva said the federal government "values engagement with Alberta" but will work within Canada's constitutional framework. Under Canada's Constitution, Ottawa appoints judges to higher courts including the Supreme Court and provincial superior courts.
+
+*Sources: (Globe and Mail [1](https://www.theglobeandmail.com/canada/article-danielle-smith-calls-mark-carney-give-alberta-say-judges-selection/))*
+
+### Carney says Conservative MP briefed before Washington trade trip
+
+OTTAWA, Canada — Prime Minister Mark Carney said Wednesday that Canada-U.S. Trade Minister Dominic LeBlanc briefed Conservative MP Jamil Jivani before his independent trip to Washington to improve trade relations. Speaking before a Liberal caucus meeting, Carney downplayed Jivani's prospects, saying his government maintains "constant contact with the U.S. administration" and has "extensive contacts" in the Trump administration. Jivani, a friend of U.S. Vice-President JD Vance, told CBC News Tuesday that no meeting with LeBlanc had taken place as of that morning, despite offering to collaborate with the Liberal government in emails dating from December to February. The Bowmanville-Oshawa North MP plans to meet with General Motors representatives and attend the National Prayer Breakfast in Washington this week.
+
+*Sources: (CBC News [1](https://www.cbc.ca/news/politics/jivani-washington-trip-9.7072956))*
+
+### Russian disinformation increasingly successful in Canada, security official says
+
+OTTAWA, Canada — Prime Minister Mark Carney's national security advisor said Tuesday that Russia's information warfare against Canada is increasingly successful, with more Canadians believing Ukraine started the 2022 war that Russia initiated through its invasion. Nathalie Drouin, Carney's outgoing national security and intelligence advisor, told lawmakers on the Procedure and House Affairs committee that Russia's influence campaigns have gained traction since 2021. "Russia wants to influence their own narrative. And I must say that, unfortunately, we are seeing more Canadians believing that the conflict was started at the initiative of Ukraine in 2022," Drouin said. She testified alongside David Morrison from Global Affairs Canada and Tricia Geddes from Public Safety about foreign interference in Canadian federal elections. Russia invaded Ukraine in early 2022, sparking what became the longest and deadliest European conflict since World War II.
+
+*Sources: (National Post [1](https://nationalpost.com/news/politics/russias-information-war-against-canada-increasingly-successful-top-security-official))*
+
+### Carney praises Harper at portrait unveiling ceremony
+
+OTTAWA, Canada — Prime Minister Mark Carney praised former Prime Minister Stephen Harper's fiscal policies and leadership during the unveiling of Harper's official portrait on Parliament Hill Tuesday. "He served as prime minister of Canada for nearly a decade — the sixth-longest tenure in our history — leaving an extensive record of policy and legislative accomplishments," Carney said during the ceremony. Harper, who led Canada from 2006 to 2015, called for political unity and said "we must preserve Canada, this country handed down to us by providence." The portrait was painted by Canadian artist Phil Richards and completed in 2023, with former Prime Minister Jean Chrétien and other political figures attending the ceremony.
+
+*Sources: (National Post [1](https://nationalpost.com/news/official-portrait-former-prime-minister-stephen-harper-unveiled))*
+
+## International Stories
+
+### Former diplomat warns against Carney's China trade deal risks
+
+WASHINGTON, D.C. — Former Canadian diplomat Michael Kovrig warned that the risks of Prime Minister Mark Carney's recent trade deal with China outweigh the benefits, saying the agreement could lead to economic dependence and strategic vulnerability. Kovrig, who was detained in China for nearly three years in retaliation for Canada's arrest of Huawei executive Meng Wanzhou, said in an interview with the National Post that China's Communist Party "actively seeks to undermine" Western countries and increase their dependence on China. He said Carney's deal, which restored partial market access for Canadian canola farmers in exchange for allowing limited Chinese electric vehicle imports, creates "asymmetric certainty" where Canada's concessions are immediate while China's benefits remain speculative. Kovrig warned that Canada risks losing its automotive industry if the arrangement is not managed carefully, stating that Chinese automakers will likely "front-load all the imported cars they can squeeze in" while making only token manufacturing investments.
+
+*Sources: (National Post [1](https://nationalpost.com/news/risks-of-working-with-china-outweigh-the-benefits-michael-kovrig-warns))*
+
+## Between the Lines
+
+- Carney faces mounting pressure from multiple directions this week, with Alberta Premier Smith demanding judicial appointment control, former diplomat Kovrig criticizing his China trade deal, and reports of U.S. officials meeting with Alberta separatists testing federal authority.
+- The Prime Minister's diplomatic calendar reveals a strategic pivot toward India with planned March visits for uranium and AI deals, even as his national security advisor warns of increasingly successful Russian disinformation campaigns targeting Canadian public opinion on Ukraine.
+- Carney's praise of predecessor Stephen Harper's fiscal policies at Tuesday's portrait ceremony signals potential policy continuity themes, while his insistence that he meant his Davos comments to Trump suggests ongoing tensions over trade relationships despite briefing Conservative MPs on Washington outreach.

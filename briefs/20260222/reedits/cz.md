@@ -1,0 +1,9 @@
+Czechs rallied in 400 municipalities this week to defend Petr Pavel, the president, against his government's attempt to force him to accept a minister he had rejected.
+
+Million Moments for Democracy organised the demonstrations, which built on protests in Prague two weeks earlier that drew tens of thousands. Mr Pavel had refused to appoint Filip Turek as a minister after inappropriate social media posts emerged, triggering a constitutional row with Petr Macinka, the foreign minister. The spread of the rallies — reaching hundreds of towns and cities — showed that ordinary Czechs remain ready to defend the president's right to reject ministers.
+
+The governing coalition also moved to protect its own leaders from the courts. A parliamentary committee recommended against allowing prosecutors to charge Andrej Babiš, the prime minister, in a fraud case and Tomio Okamura, the speaker, for hate speech. Opposition parties called the decision an attack on the rule of law. The full parliament votes March 5.
+
+Prague continues to arm Ukraine despite the domestic turmoil. Mr Pavel announced that the Czech-organised ammunition programme has delivered 4.4 million large-calibre rounds to Ukraine, with nearly 2 million delivered in the past year. The initiative combines Czech arms dealers with international donor funding from 16 countries and shows how Prague maintains its Ukraine role even under the Babiš government. Mr Pavel also attended the Munich Security Conference.
+
+The crisis shows deeper tensions between democratic institutions and a coalition willing to test their limits. While ordinary Czechs have rallied to defend presidential authority, the government shows no hesitation in using its parliamentary majority to shield leaders from prosecution. Czech ties with the West — through F-35 commitments, the KHNP nuclear deal, and EU economic dependence — constrain any radical policy shifts, but the government is testing democratic boundaries.

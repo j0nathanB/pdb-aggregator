@@ -1,0 +1,36 @@
+! name: MPM Latvia
+! description: MPM pipeline source prioritization for Latvia — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=lsm.lv
+$boost=10,site=rebaltica.lv
+$boost=10,site=ir.lv
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=tvnet.lv
+$boost=5,site=delfi.lv
+$boost=5,site=nra.lv
+$boost=5,site=saeima.lv
+$boost=5,site=mod.gov.lv
+$boost=5,site=mfa.gov.lv
+$boost=5,site=mk.gov.lv
+$boost=5,site=president.lv
+$boost=5,site=liia.lv
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=la.lv
+$boost=3,site=diena.lv
+$boost=3,site=db.lv
+$boost=3,site=providus.lv
+$boost=3,site=baltictimes.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=baltnews.lv
+$discard,site=rt.com
+$discard,site=sputniknews.com

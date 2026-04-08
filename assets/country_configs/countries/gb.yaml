@@ -1,0 +1,123 @@
+country: United Kingdom
+code: gb
+tier: shield
+region: western_europe
+actors:
+- name: Keir Starmer
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Starmer
+  - Keir Starmer
+- name: King Charles III
+  role: Head of State
+  primary: false
+  search_terms:
+  - King Charles
+  - Charles III
+- name: Rachel Reeves
+  role: Chancellor of the Exchequer
+  primary: false
+  search_terms:
+  - Reeves
+  - Rachel Reeves
+- name: David Lammy
+  role: Foreign Secretary
+  primary: false
+  search_terms:
+  - Lammy
+  - David Lammy
+- name: John Healey
+  role: Defence Secretary
+  primary: false
+  search_terms:
+  - Healey
+  - John Healey
+- name: Kemi Badenoch
+  role: Leader of the Opposition (Conservative)
+  primary: false
+  search_terms:
+  - Badenoch
+  - Kemi Badenoch
+- name: Nigel Farage
+  role: Reform UK leader
+  primary: false
+  search_terms:
+  - Farage
+  - Nigel Farage
+  - Reform UK
+- name: Bank of England
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Bank of England
+  - Andrew Bailey
+- name: MI6
+  role: Foreign intelligence (SIS)
+  primary: false
+  search_terms:
+  - MI6
+  - SIS
+  - Secret Intelligence Service
+- name: GCHQ
+  role: Signals intelligence
+  primary: false
+  search_terms:
+  - GCHQ
+languages:
+  primary: en
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Northern Ireland power-sharing dynamics
+  reason: Stormont politics receive minimal coverage in London-based media
+  where_signal_lives: Belfast Telegraph, Irish News, Slugger O'Toole blog
+- domain: Five Eyes intelligence cooperation
+  reason: Classified arrangements rarely surface in open-source reporting
+  where_signal_lives: RUSI analyses, parliamentary ISC reports, occasional leaks
+news_discovery:
+  goggle_file: assets/country_goggles/gb.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: GB
+    search_lang: en
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - bilateral relations
+    - diplomatic agreement
+    - Foreign Office
+    - bilateral summit
+    - ambassador
+    security_defense:
+    - Ministry of Defence
+    - defence procurement
+    - AUKUS
+    - MI6
+    - GCHQ
+    - military deployment
+    economic_tech:
+    - foreign investment
+    - trade agreement
+    - Bank of England
+    - industrial strategy
+    - critical minerals
+    - supply chain
+    institutional:
+    - NATO
+    - United Nations
+    - G7
+    - Five Eyes
+    - Commonwealth
+    domestic_constraints:
+    - House of Commons
+    - Labour
+    - Conservative Party
+    - Reform UK
+    - House of Lords
+government_discovery:
+  config_file: assets/government/gb.yaml
+interpretive_context_file: assets/context/gb_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

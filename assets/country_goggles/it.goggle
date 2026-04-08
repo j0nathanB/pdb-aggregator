@@ -1,0 +1,39 @@
+! name: MPM Italy
+! description: MPM pipeline source prioritization for Italy — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=ansa.it
+$boost=10,site=formiche.net
+$boost=10,site=decode39.com
+$boost=10,site=ilsole24ore.com
+$boost=10,site=ilfattoquotidiano.it
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=iai.it
+$boost=5,site=affarinternazionali.it
+$boost=5,site=ispionline.it
+$boost=5,site=agenzianova.com
+$boost=5,site=governo.it
+$boost=5,site=esteri.it
+$boost=5,site=difesa.it
+$boost=5,site=quirinale.it
+$boost=5,site=agi.it
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=rid.it
+$boost=3,site=analisidifesa.it
+$boost=3,site=editorialedomani.it
+$boost=3,site=limesonline.com
+$boost=3,site=euractiv.it
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=theaviationist.com
+$discard,site=difesaonline.it
+$discard,site=liberoquotidiano.it
+$discard,site=iltempo.it

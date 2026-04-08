@@ -1,0 +1,66 @@
+---
+title: "{{ display_name }}"
+description: "Week of {{ date_range }}"
+sidebarTitle: "{{ display_name }}"
+---
+
+## Regional Summary
+
+{% if regional_lead %}
+{{ regional_lead }}
+{% else %}
+No significant cross-country dynamics emerged in {{ display_name }} this week. Country-level developments are covered below.
+{% endif %}
+
+{% for gap in gap_paragraphs %}
+
+{{ gap }}
+
+{% endfor %}
+
+{% for country in countries %}
+
+---
+
+### <img src="https://flagcdn.com/{{ country.code }}.svg" alt="{{ country.country }} flag" style={% raw %}{{ width: "24px", height: "18px", display: "inline", verticalAlign: "middle", marginRight: "8px" }}{% endraw %} /> {{ country.country }}
+
+{% if country.narrative_body %}
+{{ country.narrative_body }}
+{% else %}
+{{ country.posture_summary }}
+
+{% if country.developments %}
+**Key developments:**
+
+{% for dev in country.developments %}
+{% if dev.movement.value != "none" %}
+- **{{ dev.category_display }}:** {{ dev.text }}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% for ud in country.unexpected %}
+- **Unexpected:** {{ ud.headline }}. {{ ud.assessment }}
+{% endfor %}
+
+{% for absence in country.absences %}
+- **Notable absence:** {{ absence.expected }} — {{ absence.significance }}
+{% endfor %}
+{% endif %}
+
+{% if country.other_stories %}
+
+<Accordion title="Other Stories">
+{% for story in country.other_stories %}
+- **{{ story.headline }}** — {{ story.summary }}{% if story.source_url and story.source_name %} *([{{ story.source_name }}]({{ story.source_url }}))*{% endif %}
+
+{% endfor %}
+</Accordion>
+{% endif %}
+
+{% if country.story_map_data and country.story_map_data.stories %}
+
+{{ render_notes_section(country.story_map_data) }}
+{% endif %}
+
+{% endfor %}

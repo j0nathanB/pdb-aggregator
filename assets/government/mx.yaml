@@ -1,0 +1,30 @@
+country: Mexico
+code: mx
+information_culture: managed
+
+domains:
+  - domain: gob.mx
+    institutions: [Presidency, SEDENA, SEMAR, SRE, SE]
+    priority: P1
+  - domain: sre.gob.mx
+    institutions: [Foreign Ministry]
+    priority: P1
+  - domain: banxico.org.mx
+    institutions: [Central Bank]
+    priority: P2
+  - domain: senado.gob.mx
+    institutions: [Senate]
+    priority: P2
+  - domain: diputados.gob.mx
+    institutions: [Chamber of Deputies]
+    priority: P2
+  - domain: dof.gob.mx
+    institutions: [Official Gazette]
+    priority: P2
+
+query_terms:
+  - "comunicado"
+  - "acuerdo bilateral"
+  - "decreto"
+  - "adquisición"
+  - "presupuesto"

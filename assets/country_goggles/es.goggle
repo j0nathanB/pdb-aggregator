@@ -1,0 +1,37 @@
+! name: MPM Spain
+! description: MPM pipeline source prioritization for Spain — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=eldiario.es
+$boost=10,site=elespanol.com
+$boost=10,site=infodefensa.com
+$boost=10,site=efe.com
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=elpais.com
+$boost=5,site=elmundo.es
+$boost=5,site=lavanguardia.com
+$boost=5,site=expansion.com
+$boost=5,site=realinstitutoelcano.org
+$boost=5,site=politicaexterior.com
+$boost=5,site=lamoncloa.gob.es
+$boost=5,site=congreso.es
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=elconfidencial.com
+$boost=3,site=atalayar.com
+$boost=3,site=eleconomista.es
+$boost=3,site=vozpopuli.com
+$boost=3,site=rtve.es
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=okdiario.com
+$discard,site=casoaislado.com
+$discard,site=periodistadigital.com
+$discard,site=hispanidad.com

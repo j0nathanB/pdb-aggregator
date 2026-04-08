@@ -1,0 +1,51 @@
+! name: MPM Pakistan
+! description: MPM pipeline source prioritization for Pakistan
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=dawn.com
+$boost=10,site=geo.tv
+$boost=10,site=thenews.com.pk
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=tribune.com.pk
+$boost=5,site=brecorder.com
+$boost=5,site=arynews.tv
+$boost=5,site=jang.com.pk
+$boost=5,site=thediplomat.com
+$boost=5,site=app.com.pk
+$boost=5,site=aljazeera.com
+$boost=5,site=crisisgroup.org
+$boost=5,site=commerce.gov.pk
+$boost=5,site=finance.gov.pk
+$boost=5,site=ispr.gov.pk
+$boost=5,site=mod.gov.pk
+$boost=5,site=modp.gov.pk
+$boost=5,site=mofa.gov.pk
+$boost=5,site=na.gov.pk
+$boost=5,site=pakistancode.gov.pk
+$boost=5,site=pcp.gov.pk
+$boost=5,site=pid.gov.pk
+$boost=5,site=pmo.gov.pk
+$boost=5,site=sbp.org.pk
+$boost=5,site=senate.gov.pk
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=pakistantoday.com.pk
+$boost=3,site=thefridaytimes.com
+$boost=3,site=nayadaur.tv
+$boost=3,site=dawnnews.tv
+$boost=3,site=reuters.com
+$boost=3,site=france24.com
+$boost=3,site=propakistani.pk
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=bolnews.com
+$discard,site=92newshd.tv
+$discard,site=en.dailypakistan.com.pk
+$discard,site=republicworld.com

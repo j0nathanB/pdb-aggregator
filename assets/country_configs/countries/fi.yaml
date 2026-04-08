@@ -1,0 +1,127 @@
+country: Finland
+code: fi
+tier: shield
+region: frontline_eastern_europe
+actors:
+- name: Petteri Orpo
+  role: Prime Minister
+  primary: true
+  search_terms:
+  - Orpo
+  - Petteri Orpo
+- name: Alexander Stubb
+  role: President
+  primary: false
+  search_terms:
+  - Stubb
+  - Alexander Stubb
+- name: Riikka Purra
+  role: Finance Minister (Finns Party leader)
+  primary: false
+  search_terms:
+  - Purra
+  - Riikka Purra
+- name: Antti Häkkänen
+  role: Defense Minister
+  primary: false
+  search_terms:
+  - Häkkänen
+  - Antti Häkkänen
+- name: Kokoomus
+  role: Governing party (National Coalition)
+  primary: false
+  search_terms:
+  - Kokoomus
+  - National Coalition Party
+- name: Finns Party
+  role: Junior coalition partner
+  primary: false
+  search_terms:
+  - Finns Party
+  - Perussuomalaiset
+- name: Finnish Defence Forces
+  role: Military
+  primary: false
+  search_terms:
+  - Puolustusvoimat
+  - Finnish Defence Forces
+- name: SUPO
+  role: Security Intelligence Service
+  primary: false
+  search_terms:
+  - SUPO
+  - Suojelupoliisi
+- name: Bank of Finland
+  role: Central Bank (Eurosystem member)
+  primary: false
+  search_terms:
+  - Suomen Pankki
+  - Bank of Finland
+  - Olli Rehn
+- name: SDP
+  role: Main opposition (Social Democrats)
+  primary: false
+  search_terms:
+  - SDP
+  - Social Democrats
+  - Antti Lindtman
+languages:
+  primary: fi
+  additional:
+  - sv
+  metadata: en
+blind_spots:
+- domain: Russian border incidents
+  reason: Border Guard operations and hybrid warfare responses are classified
+  where_signal_lives: Finnish Border Guard communiqués, SUPO annual reports, NATO
+    Baltic Sentry updates
+- domain: Åland Islands demilitarization debate
+  reason: Sensitive topic touching on international treaties; rarely covered beyond
+    Finland
+  where_signal_lives: Ålandstidningen, Finnish parliamentary committee reports, academic
+    analyses
+news_discovery:
+  goggle_file: assets/country_goggles/fi.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: FI
+    search_lang: fi
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - kahdenväliset suhteet
+    - diplomaattinen sopimus
+    - ulkopolitiikka
+    - kahdenvälinen huippukokous
+    - suurlähettiläs
+    security_defense:
+    - Puolustusvoimat
+    - puolustushankinta
+    - turvallisuusyhteistyö
+    - SUPO
+    - sotilastiedustelu
+    economic_tech:
+    - ulkomainen investointi
+    - kauppasopimus
+    - Suomen Pankki
+    - teollisuuspolitiikka
+    - kriittiset raaka-aineet
+    - supply chain
+    institutional:
+    - NATO
+    - Euroopan unioni
+    - YK
+    - Pohjoismainen yhteistyö
+    - sopimuksen ratifiointi
+    domestic_constraints:
+    - eduskunta
+    - Kokoomus
+    - Perussuomalaiset
+    - hallitusohjelma
+    - oppositio
+government_discovery:
+  config_file: assets/government/fi.yaml
+interpretive_context_file: assets/context/fi_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

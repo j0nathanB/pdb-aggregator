@@ -1,0 +1,1070 @@
+{
+  "step": "nlp",
+  "timestamp": "2026-02-02T20:58:07.874157",
+  "per_event": {
+    "Trump afirma que Sheinbaum accedi\u00f3 a su petici\u00f3n de frenar los env\u00edos de petr\u00f3leo a Cuba": [
+      {
+        "entities": [
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.9969083
+          },
+          {
+            "name": "Donald Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.99413294
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9909113
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.98517627
+          },
+          {
+            "name": "Nicol\u00e1s Maduro",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E05qd7PSeNs2jGD6cNoWzyg",
+            "salience": 0.98211855
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.9706516
+          },
+          {
+            "name": "Venezuela",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EAE7oJxr6OJabXvc184XwVw",
+            "salience": 0.9650601
+          },
+          {
+            "name": "Mira",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/ENOse2CiUOrm4z1y6SHBe2g",
+            "salience": 0.9338731
+          },
+          {
+            "name": "Air Force One",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/EFHjUYYqNPjSHE25VZFg81w",
+            "salience": 0.9326931
+          },
+          {
+            "name": "WhatsApp",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/ERnu_6RfRMD-Vj81rug3MKw",
+            "salience": 0.9293544
+          },
+          {
+            "name": "President of the United States",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E9CwP7HZ6MpGOtY2H3br34w",
+            "salience": 0.8525225
+          },
+          {
+            "name": "Tambi\u00e9n",
+            "type": "location",
+            "uri": "",
+            "salience": 0.88229114
+          }
+        ],
+        "summary": "El presidente Donald Trump afirm\u00f3 que Cuba buscar\u00e1 un \"trato\" con Estados Unidos tras el anuncio de aranceles para los pa\u00edses que env\u00edan petr\u00f3leo a la isla. Destac\u00f3 que Claudia Sheinbaum fue \"muy buena\" al aceptar no enviar crudo a Cuba. Durante su vuelo en el Air Force One, respondi\u00f3 a preguntas sobre la advertencia de Sheinbaum sobre una posible crisis humanitaria. Trump asegur\u00f3 que no deber\u00eda haber tal crisis y que Cuba probablemente vendr\u00e1 a negociar. Mencion\u00f3 que la situaci\u00f3n en Cuba es \"muy mala\" debido a la falta de apoyo de Venezuela. El 3 de enero, Estados Unidos captur\u00f3 a Nicol\u00e1s Maduro, afectando el suministro de petr\u00f3leo. Trump firm\u00f3 una orden ejecutiva para imponer aranceles a los pa\u00edses que suministren petr\u00f3leo a Cuba. El Gobierno cubano calific\u00f3 la medida de \"fascista\", consider\u00e1ndola una asfixia energ\u00e9tica. Sheinbaum anunci\u00f3 que M\u00e9xico buscar\u00e1 \"distintas alternativas\" para ayudar al pueblo cubano. La situaci\u00f3n actual plantea desaf\u00edos significativos para la isla y sus relaciones con Estados Unidos.",
+        "raw_entity_count": 21
+      },
+      {
+        "entities": [
+          {
+            "name": "Juan Ram\u00f3n de la Fuente",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/Edf7P8UyQNO2z2JuZ5hZQuw",
+            "salience": 0.9947792
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9928437
+          },
+          {
+            "name": "Donald Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.9892396
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.98865557
+          },
+          {
+            "name": "Miguel D\u00edaz-Canel",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E3na7mHgGMEGMc327VASv_w",
+            "salience": 0.98407143
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.948365
+          },
+          {
+            "name": "Marco Rubio",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EJLYINOgjMQK2iqNd4xetmA",
+            "salience": 0.9418397
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.93920237
+          },
+          {
+            "name": "Jer\u00f3nimo de la Fuente",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EwKNaA9oVNGKAIUc-MCgyWQ",
+            "salience": 0.9222393
+          },
+          {
+            "name": "WhatsApp",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/ERnu_6RfRMD-Vj81rug3MKw",
+            "salience": 0.8729953
+          },
+          {
+            "name": "U.S. Department of State",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/Ed2gCb2O7MomGy_5Z60PsEw",
+            "salience": 0.84772295
+          }
+        ],
+        "summary": "La presidenta Claudia Sheinbaum Pardo se pronunci\u00f3 sobre los aranceles que Donald Trump quiere aplicar a pa\u00edses que env\u00edan petr\u00f3leo a Cuba. Afirm\u00f3 que esto podr\u00eda causar una crisis humanitaria grave. Sheinbaum destac\u00f3 que la situaci\u00f3n afectar\u00eda a hospitales y servicios b\u00e1sicos en Cuba. Instruy\u00f3 al canciller Juan Ram\u00f3n de la Fuente a comunicarse con el secretario de Estado de EE. UU. para entender mejor las implicaciones. Subray\u00f3 la importancia de buscar v\u00edas diplom\u00e1ticas y evitar la confrontaci\u00f3n. Reiter\u00f3 el principio de soberan\u00eda y autodeterminaci\u00f3n de los pueblos en la pol\u00edtica exterior. Tambi\u00e9n mencion\u00f3 que M\u00e9xico buscar\u00e1 alternativas para ayudar humanitariamente a Cuba. Expres\u00f3 su solidaridad con el pueblo cubano en este momento dif\u00edcil. Sheinbaum espera la comunicaci\u00f3n con EE. UU. para informar sobre la situaci\u00f3n. La defensa de M\u00e9xico y la ayuda humanitaria son prioridades en su enfoque.",
+        "raw_entity_count": 21
+      },
+      {
+        "entities": [
+          {
+            "name": "Juan Ram\u00f3n de la Fuente",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/Edf7P8UyQNO2z2JuZ5hZQuw",
+            "salience": 0.9980237
+          },
+          {
+            "name": "Ad\u00e1n Augusto L\u00f3pez Hern\u00e1ndez",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EgZ4EG2_pOMKBgQX0IA4HzQ",
+            "salience": 0.99525434
+          },
+          {
+            "name": "Guaymas",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EEXh_uUEUObu30Meut-M2UQ",
+            "salience": 0.99005014
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9757123
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.97073114
+          },
+          {
+            "name": "Alfonso Durazo Monta\u00f1o",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/Ezau4Ijl2MsGB8QZf25sPgg",
+            "salience": 0.9686266
+          },
+          {
+            "name": "Toluca",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EL3K-eB0-N_ySKv8_4EKAeA",
+            "salience": 0.96791
+          },
+          {
+            "name": "Secretaria de Marina",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EkpWSeP9hPmW7iW8zDZEzQg",
+            "salience": 0.9664913
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.9651785
+          },
+          {
+            "name": "Heroica Guaymas",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EUlRuDEOdO6CL6Al-zF9YzA",
+            "salience": 0.9624591
+          },
+          {
+            "name": "Sonora",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E3-B-1KsnO8ehuY_MvFTFCg",
+            "salience": 0.9435235
+          },
+          {
+            "name": "Marco Rubio",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EJLYINOgjMQK2iqNd4xetmA",
+            "salience": 0.9374206
+          },
+          {
+            "name": "executive branch",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/Ee-qXUaxVPbWce-AaRhu2Ow",
+            "salience": 0.93386143
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.917478
+          },
+          {
+            "name": "Donald Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.91415936
+          },
+          {
+            "name": "Santa Fe",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EI57mbX93MVSbE2y7sSqykA",
+            "salience": 0.9099695
+          },
+          {
+            "name": "Morena",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/ECGGXQMfGOcup135x0TcFeQ",
+            "salience": 0.9071333
+          },
+          {
+            "name": "Observatorio",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EdyvBlusUOXS988HFQbl5yQ",
+            "salience": 0.83863944
+          },
+          {
+            "name": "Senate of the Republic",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/Eks4Zkiw9OTOmGq32d4qvdg",
+            "salience": 0.802131
+          }
+        ],
+        "summary": "Claudia Sheinbaum, presidenta de M\u00e9xico, desminti\u00f3 a Donald Trump sobre supuestas conversaciones sobre el env\u00edo de petr\u00f3leo a Cuba. Aclar\u00f3 que nunca se trat\u00f3 el tema en sus pl\u00e1ticas. La mandataria busca v\u00edas diplom\u00e1ticas para enviar combustible a la isla, a pesar de los aranceles impuestos por Estados Unidos. Sheinbaum enfatiz\u00f3 que el apoyo a Cuba es para evitar una crisis humanitaria. Esta semana, planean enviar ayuda humanitaria, incluyendo alimentos, a Cuba. La Secretar\u00eda de Marina se encargar\u00e1 de esta asistencia. Tambi\u00e9n inaugurar\u00e1 un tramo del tren de Santa Fe a Observatorio en la Ciudad de M\u00e9xico. Al ser cuestionada sobre cambios en la dirigencia de Morena en el Senado, se neg\u00f3 a comentar. Reconoci\u00f3 al gobernador Alfonso Durazo por los avances en el Plan Sonora de Energ\u00edas Sostenibles. Adem\u00e1s, inaugur\u00f3 el Museo Subacu\u00e1tico del Sistema Arrecifal Artificial Sonorense.",
+        "raw_entity_count": 20
+      }
+    ],
+    "M\u00e9xico busca evitar crisis humanitaria en Cuba por decreto de Trump": [
+      {
+        "entities": [
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.9962047
+          },
+          {
+            "name": "Bruno Rodr\u00edguez P",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EZh5bD-zoPYa6N2OwH_gHBQ",
+            "salience": 0.99223614
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.9921757
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9911137
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.986141
+          },
+          {
+            "name": "foreign affairs ministry",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/EZmr3bdUIMaOdQtjUjSAMvg",
+            "salience": 0.97107106
+          },
+          {
+            "name": "tariff",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/EaSr1yFDRN0CT0xZ07gdN0Q",
+            "salience": 0.9644842
+          },
+          {
+            "name": "Nicol\u00e1s Maduro",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E05qd7PSeNs2jGD6cNoWzyg",
+            "salience": 0.9635857
+          },
+          {
+            "name": "Caribbean",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/ERkuB2dItPCel-1MZGYEBgg",
+            "salience": 0.9553413
+          },
+          {
+            "name": "Donald Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.95065486
+          },
+          {
+            "name": "Venezuela",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EAE7oJxr6OJabXvc184XwVw",
+            "salience": 0.9401262
+          },
+          {
+            "name": "Mexico City",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EW2PYD1atM0-mMG4reHk9Mw",
+            "salience": 0.92030144
+          },
+          {
+            "name": "Pemex",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EGAw63UUfPeyAQ5Bg7pBOKg",
+            "salience": 0.87140346
+          },
+          {
+            "name": "U.S. Department of State",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/Ed2gCb2O7MomGy_5Z60PsEw",
+            "salience": 0.84951156
+          },
+          {
+            "name": "humanitarian aid",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/EjASq0lVEOE21w8iIKz37Ng",
+            "salience": 0.8467122
+          },
+          {
+            "name": "Haiti",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E1jkyRRx1Noi0awKTb6bWdg",
+            "salience": 0.8314719
+          },
+          {
+            "name": "Gasolinas de Bienestar",
+            "type": "organization",
+            "uri": "",
+            "salience": 0.9843292
+          },
+          {
+            "name": "Cuba\nSarah",
+            "type": "person",
+            "uri": "",
+            "salience": 0.93026155
+          },
+          {
+            "name": "White House",
+            "type": "organization",
+            "uri": "",
+            "salience": 0.9591323
+          }
+        ],
+        "summary": "Mexico will pursue diplomatic solutions to support Cuba after the U.S. imposed tariffs on oil suppliers. President Claudia Sheinbaum emphasized the humanitarian risks of cutting off oil shipments. She highlighted that the decision to send oil is Mexico's sovereign choice, despite economic vulnerabilities. Cuba's Foreign Minister declared an \"international emergency\" due to the U.S. tariffs. Sheinbaum warned that halting oil shipments could lead to a severe humanitarian crisis in Cuba. She instructed her foreign minister to engage with the U.S. State Department for clarity on the executive order. Sheinbaum spoke with Trump before the announcement, but tariffs were not mentioned. In 2024, Mexico exported significant oil quantities to Cuba, which is crucial for its economy. Venezuela, previously a top supplier, has ceased shipments due to U.S. blockades. Venezuela condemned the U.S. decree as a violation of international law and expressed solidarity with Cuba.",
+        "raw_entity_count": 56
+      },
+      {
+        "entities": [],
+        "summary": "",
+        "raw_entity_count": 0
+      },
+      {
+        "entities": [],
+        "summary": "03 MIN 30 SEG\nTijuana, M\u00e9xico (30 enero 2026) .-10:40 hrs\nTras advertir que los aranceles anunciados por Donald Trump podr\u00edan desencadenar una crisis humanitaria en Cuba, la Presidenta Claudia Sheinbaum afirm\u00f3 que M\u00e9xico buscar\u00e1 apoyar al pueblo cubano, pero sin poner en riesgo al Pa\u00eds.",
+        "raw_entity_count": 0
+      }
+    ],
+    "Presidenta Claudia Sheinbaum informa env\u00edo, esta semana, de ayuda humanitaria a Cuba": [
+      {
+        "entities": [
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.987237
+          },
+          {
+            "name": "Donald Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.9870877
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9822169
+          },
+          {
+            "name": "United States Secretary of State",
+            "type": "job title",
+            "uri": "https://diffbot.com/entity/E1YFGzC8pO168MYu830UQlQ",
+            "salience": 0.9689784
+          },
+          {
+            "name": "South America",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/ErCfFSRX_Pc-LB-ddql8nvQ",
+            "salience": 0.9686497
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.9594094
+          },
+          {
+            "name": "Sonora",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E3-B-1KsnO8ehuY_MvFTFCg",
+            "salience": 0.94589317
+          },
+          {
+            "name": "Mexico City",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EW2PYD1atM0-mMG4reHk9Mw",
+            "salience": 0.9455249
+          },
+          {
+            "name": "Havana",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EMjv176FpOo6O6dH2_c260A",
+            "salience": 0.9381989
+          },
+          {
+            "name": "Nicol\u00e1s Maduro",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E05qd7PSeNs2jGD6cNoWzyg",
+            "salience": 0.936796
+          },
+          {
+            "name": "Venezuela",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EAE7oJxr6OJabXvc184XwVw",
+            "salience": 0.9179203
+          },
+          {
+            "name": "Caribbean",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/ERkuB2dItPCel-1MZGYEBgg",
+            "salience": 0.9139093
+          },
+          {
+            "name": "Marco Rubio",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EJLYINOgjMQK2iqNd4xetmA",
+            "salience": 0.89748865
+          },
+          {
+            "name": "petroleum",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/ESDA-pzjoNdqOxYi2CPqERw",
+            "salience": 0.8868445
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.8705828
+          }
+        ],
+        "summary": "Mexico's President Claudia Sheinbaum announced Sunday she plans to send humanitarian aid to Cuba this week, including food and other humanitarian aid. Her comments came after U.S. President Donald Trump said he asked the Mexican leader to suspend oil shipments to the Caribbean island. Sheinbaum said at a public event in the northern state of Sonora that she did not discuss Cuban affairs in a phone conversation with Trump on Thursday. She added that her government seeks to \"diplomatically solve everything related to the oil shipments (to Cuba) for humanitarian reasons.\" Earlier, Trump told reporters that he told the Mexican president not to send oil to Cuba. Following the U.S. military operation carried out in early January to remove Venezuela's President Nicol\u00e1s Maduro, the South American nation suspended oil shipments to Havana, which had been declining in recent years. Mexico then became the main supplier of crude oil and refined products to Havana. Mexican oil has long acted as a key lifeline for Cuba. In its most recent report, Pemex said it shipped nearly 20,000 barrels of oil per day to Cuba from January through Sept. 30, 2025. In September, U.S. Secretary of State Marco Rubio visited Mexico City.",
+        "raw_entity_count": 35
+      },
+      {
+        "entities": [
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.9881805
+          },
+          {
+            "name": "president",
+            "type": "job title",
+            "uri": "https://diffbot.com/entity/Edhzoi7-0O0WG2qvOnnjKOg",
+            "salience": 0.98421854
+          },
+          {
+            "name": "Juan Ram\u00f3n de la Fuente",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/Edf7P8UyQNO2z2JuZ5hZQuw",
+            "salience": 0.98042536
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.9788831
+          },
+          {
+            "name": "Donald J. Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.9627181
+          },
+          {
+            "name": "Guaymas",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EEXh_uUEUObu30Meut-M2UQ",
+            "salience": 0.9546508
+          },
+          {
+            "name": "Marco Rubio",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EJLYINOgjMQK2iqNd4xetmA",
+            "salience": 0.95073676
+          },
+          {
+            "name": "Secretaria de Marina",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EkpWSeP9hPmW7iW8zDZEzQg",
+            "salience": 0.9432616
+          },
+          {
+            "name": "politics of Mexico",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/EsOVuPY6mOXKEB6hThXVAhg",
+            "salience": 0.9298651
+          },
+          {
+            "name": "executive branch",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/Ee-qXUaxVPbWce-AaRhu2Ow",
+            "salience": 0.9197711
+          },
+          {
+            "name": "Heroica Guaymas",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EUlRuDEOdO6CL6Al-zF9YzA",
+            "salience": 0.9056272
+          },
+          {
+            "name": "Federal",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EdfMQKrIyNLOoKvi_dcNhWQ",
+            "salience": 0.90484214
+          },
+          {
+            "name": "Sonora",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E3-B-1KsnO8ehuY_MvFTFCg",
+            "salience": 0.89086086
+          }
+        ],
+        "summary": "Explic\u00f3 que en tanto se resuelve por la v\u00eda diplom\u00e1tica lo concerniente al env\u00edo de petr\u00f3leo a Cuba, se trabaja en ayuda humanitaria para el pueblo cubano\n| Comunicado\nPresidenta Claudia Sheinbaum informa env\u00edo, esta semana, de ayuda humanitaria a Cuba\nEn Guaymas, Sonora, la Presidenta Claudia Sheinbaum Pardo inform\u00f3 que el Gobierno de M\u00e9xico planea el env\u00edo, esta semana, de ayuda humanitaria a Cuba: alimentos, enseres e insumos fundamentales, a trav\u00e9s de la Secretar\u00eda de Marina, en tanto se resuelve por la v\u00eda diplom\u00e1tica el env\u00edo de petr\u00f3leo a la isla caribe\u00f1a por razones humanitarias.\n\u201cEsta semana estamos planeando una ayuda humanitaria a Cuba, es una ayuda que va a hacer la Secretar\u00eda de Marina, de alimentaci\u00f3n y otros productos, en lo que resolvemos de manera diplom\u00e1tica todo lo que tenga que ver con el env\u00edo de petr\u00f3leo por razones humanitarias, pero estamos haciendo ya todos los trabajos para poder enviar mientras tanto ayuda humanitaria que requiere el pueblo cubano de otros enseres, otros insumos fundamentales. Eso es importante\u201d, detall\u00f3 luego de la presentaci\u00f3n del proyecto de expansi\u00f3n del Puerto de Guaymas.\nLa Jefa del Ejecutivo Federal puntualiz\u00f3 que en ninguna de las conversaciones que ha sostenido con el Presidente de Estados Unidos, Donald Trump, se ha abordado el tema del env\u00edo de petr\u00f3leo mexicano a Cuba.\n\u201cCuando s\u00ed se toc\u00f3 el tema, fue en la conversaci\u00f3n que tuvo el secretario de Relaciones Exteriores, (Juan Ram\u00f3n de la Fuente) con el secretario (de Estado de Estados Unidos), Marco Rubio, ah\u00ed s\u00ed tocaron el tema. Y como lo digo, estamos buscando todas las v\u00edas diplom\u00e1ticas para poder enviar combustible al pueblo cubano, porque esto no es un asunto de los gobiernos, sino de apoyo para evitar una crisis humanitaria en Cuba y mientras tanto vamos a enviar alimentos y otras ayudas importantes para la isla\u201d, agreg\u00f3.\nContesta nuestra encuesta de satisfacci\u00f3n.",
+        "raw_entity_count": 18
+      },
+      {
+        "entities": [
+          {
+            "name": "Juan Ram\u00f3n de la Fuente",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/Edf7P8UyQNO2z2JuZ5hZQuw",
+            "salience": 0.9976266
+          },
+          {
+            "name": "Heroica Guaymas",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EUlRuDEOdO6CL6Al-zF9YzA",
+            "salience": 0.9907327
+          },
+          {
+            "name": "Hermosillo",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EpYD1eTsDNsKVA-xlPOhQKw",
+            "salience": 0.9853292
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.9763418
+          },
+          {
+            "name": "Marco Rubio",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EJLYINOgjMQK2iqNd4xetmA",
+            "salience": 0.9750505
+          },
+          {
+            "name": "Secretaria de Marina",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EkpWSeP9hPmW7iW8zDZEzQg",
+            "salience": 0.9700911
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.9293486
+          },
+          {
+            "name": "San Carlos",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E9K_z_zO1NTqrjL95_1eKTA",
+            "salience": 0.91660947
+          },
+          {
+            "name": "Washington",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E42EHJBWPOQmnsbb4p9iMzg",
+            "salience": 0.91044104
+          },
+          {
+            "name": "Donald J. Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.8908961
+          },
+          {
+            "name": "Expansi\u00f3n",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/E1GUBO3j-P_2AbPfZqU5Nuw",
+            "salience": 0.88907385
+          },
+          {
+            "name": "Sonora",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E3-B-1KsnO8ehuY_MvFTFCg",
+            "salience": 0.88132006
+          },
+          {
+            "name": "Texas",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EkoIuXpjvM6eoD4DCh1PbPA",
+            "salience": 0.85413766
+          },
+          {
+            "name": "liquefied natural gas",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/EuD9bw1w9O3WROiCLxZbVww",
+            "salience": 0.8307096
+          }
+        ],
+        "summary": "Claudia Sheinbaum Pardo neg\u00f3 haber discutido con Donald Trump sobre el env\u00edo de petr\u00f3leo a Cuba. Confirm\u00f3 que su gobierno prepara ayuda humanitaria urgente para la isla. Esta asistencia incluir\u00e1 alimentos y productos b\u00e1sicos, coordinada por la Secretar\u00eda de Marina. Sheinbaum aclar\u00f3 que las comunicaciones han sido diplom\u00e1ticas, sin acuerdos con Trump. Las nuevas sanciones de Estados Unidos se impusieron despu\u00e9s de su conversaci\u00f3n con el presidente. La ayuda humanitaria es fundamental y se busca por todas las v\u00edas diplom\u00e1ticas. Sheinbaum calific\u00f3 su visita a Sonora como muy productiva. Present\u00f3 el Proyecto de Expansi\u00f3n del Puerto de Guaymas, una inversi\u00f3n estrat\u00e9gica. Este proyecto incluye una terminal de gas natural licuado que comenzar\u00e1 a construirse pronto. Tambi\u00e9n inaugur\u00f3 el Museo Subacu\u00e1tico del Sistema Arrecifal Artificial Sonorense en San Carlos.",
+        "raw_entity_count": 23
+      }
+    ],
+    "Mexico's Sheinbaum appeals to South Korea for more BTS shows": [
+      {
+        "entities": [
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9890854
+          },
+          {
+            "name": "South Korea",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/E5e9LHia0M2SQ4WkyEVSyXQ",
+            "salience": 0.9867893
+          },
+          {
+            "name": "Mexico City",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EW2PYD1atM0-mMG4reHk9Mw",
+            "salience": 0.9822809
+          },
+          {
+            "name": "Ticketmaster",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EVw9eJJkjOFS38Im7DTVDQg",
+            "salience": 0.9762184
+          },
+          {
+            "name": "Viagogo",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EN_I4bOB9N_2EVwvEZc0o2g",
+            "salience": 0.92956877
+          },
+          {
+            "name": "ticket",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/E-T8HcPNYPDehNzN3jtKLww",
+            "salience": 0.9110921
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.90122217
+          },
+          {
+            "name": "K-pop",
+            "type": "skill",
+            "uri": "https://diffbot.com/entity/EmV29Fs08ME6Uqww_bRaz0Q",
+            "salience": 0.8570569
+          },
+          {
+            "name": "BTS",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/ETXy4T4s3PHOtWlG8vlGwkA",
+            "salience": 0.84811854
+          },
+          {
+            "name": "Estadio Banorte",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E6wI6PGczNfylDQ1yBPZGvA",
+            "salience": 0.8284988
+          },
+          {
+            "name": "President of South Korea",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E3T8UCTnMNgG9-77adcgF2g",
+            "salience": 0.8275734
+          },
+          {
+            "name": "Goyang",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EjFyzkEDpO3er2zLYecQA_g",
+            "salience": 0.8259592
+          },
+          {
+            "name": "StubHub",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EL3W00KQZOcWw7c1VEDHNVQ",
+            "salience": 0.8183948
+          },
+          {
+            "name": "Huge",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EaQJvI9C7M76cRhgLaqcaeA",
+            "salience": 0.81784886
+          },
+          {
+            "name": "Live Nation Entertainment",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/Ewa3B0r_9MWOiH40FKKJhGQ",
+            "salience": 0.815862
+          },
+          {
+            "name": "very important person",
+            "type": "unknown",
+            "uri": "https://diffbot.com/entity/E-H2zslFjNqW37Hcj_svtAw",
+            "salience": 0.81447226
+          },
+          {
+            "name": "Bad Bunny",
+            "type": "organization",
+            "uri": "",
+            "salience": 0.85139185
+          }
+        ],
+        "summary": "Mexican President Claudia Sheinbaum has formally requested of her counterpart, South Korean President Lee Jae Myung, that he help arrange more concerts in Mexico for K-pop boy band BTS. The demand for tickets to see the band is so great that around 1 million young people want to buy them, but there are only 150,000 tickets available. The band is set to embark on a global tour in April shortly after they launch their first new album in three years. The new tour launched a worldwide scramble for tickets, particularly in Mexico, one of K-pop's largest fan bases, where many people missed the initial rush and others complained to the consumer watchdog about problems with sales. Mexico's consumer watchdog has launched a probe into Ticketmaster and is sanctioning resale platforms StubHub (STUB.N) and Viagogo for \"abusive and disloyal practices\" over the BTS ticketing process. Tickets were selling on Ticketmaster from about 1,800 pesos to as much as 17,800 pesos for VIP tickets (around $100 to $1,030), but on resale platforms on Monday the tickets were selling from 11,300 to 92,100 pesos (more than $5,300). The companies did not immediately respond to a request for comment.",
+        "raw_entity_count": 62
+      },
+      {
+        "entities": [
+          {
+            "name": "Chapultepec",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E76mFY2oUMXGAl0ovoLK2Mw",
+            "salience": 0.98883915
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.9827994
+          },
+          {
+            "name": "PROFECO",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EHgIKYeXzNaCtjh-bN3K0tQ",
+            "salience": 0.96144724
+          },
+          {
+            "name": "Lee Jae-myung",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EhF3_IfHENE-itCyglbLOGw",
+            "salience": 0.8829651
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.8775854
+          },
+          {
+            "name": "Mexico City",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EW2PYD1atM0-mMG4reHk9Mw",
+            "salience": 0.8619225
+          },
+          {
+            "name": "Diario Oficial De La Federaci\u00f3n",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/Ey8pdAsauNuGr9yu5I-4uDQ",
+            "salience": 0.8504603
+          },
+          {
+            "name": "Cineteca Nacional",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EgnX9Ja58NNyGFSIv6dFXvA",
+            "salience": 0.8290653
+          },
+          {
+            "name": "Ticketmaster",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EVw9eJJkjOFS38Im7DTVDQg",
+            "salience": 0.8157546
+          },
+          {
+            "name": "Tambi\u00e9n",
+            "type": "location",
+            "uri": "",
+            "salience": 0.95561177
+          },
+          {
+            "name": "Agencia de Transformaci\u00f3n Digital y Telecomunicaciones",
+            "type": "organization",
+            "uri": "",
+            "salience": 0.9684606
+          }
+        ],
+        "summary": "Ciudad de M\u00e9xico. Luego de que envi\u00f3 una \u201csolicitud diplom\u00e1tica\u201d al presidente de Corea del Sur, Lee Jae-myung, para que pueda interceder en busca de que tengan m\u00e1s presentaciones en M\u00e9xico el grupo de pop coreano BTS, la presidenta Claudia Sheinbaum Pardo dio a conocer que el mandatario asi\u00e1tico respondi\u00f3 que ya est\u00e1n en contacto con la empresa promotora y agradeci\u00f3 por el inter\u00e9s de las y los mexicanos por este grupo.\nDurante su conferencia de prensa matutina, que este lunes se realiza en la Cineteca Nacional de la cuarta secci\u00f3n de Chapultepec, la jefa de Ejecutivo federal expuso que el presidente Coreano respondi\u00f3 que \u201cya est\u00e1n en contacto con la empresa promotora y que esperan que muy pronto se pongan en contacto, esperemos que sean buenas noticias\u201d.\nMomentos antes, la Procuradur\u00eda Federal del Consumidor (Profeco) anunci\u00f3 que se estableci\u00f3 un procedimiento por infracci\u00f3n a la Ley contra la empresa Ticketmaster, relacionado con la venta de boletos para la banda de K-pop BTS. La sanci\u00f3n por m\u00e1s de 5 millones de pesos fue presentada el pasado 28 de enero, tras lo cual la empresa proveedora tiene diez d\u00edas para manifestarse, lo cual vence el 12 de febrero.\nTambi\u00e9n se emitieron notificaciones a tres plataformas enfocadas a la reventa, que deber\u00e1n ajustarse a la legislaci\u00f3n nacional para evitar pr\u00e1cticas desleales. De no haber respuesta, la Profeco iniciar\u00e1 acciones legales y administrativas.\nLa dependencia detall\u00f3 que trabaja en la elaboraci\u00f3n de lineamientos para la regulaci\u00f3n de publicidad y venta de boletos para conciertos, festivales y espect\u00e1culos, la cual se elabora junto en coordinaci\u00f3n con la Agencia de Transformaci\u00f3n Digital y Telecomunicaciones, mismas que se publicar\u00e1n pr\u00f3ximamente en el Diario Oficial de la Federaci\u00f3n.",
+        "raw_entity_count": 26
+      }
+    ],
+    "Mexico's Sheinbaum does not deny halting oil shipment to Cuba": [
+      {
+        "entities": [
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.9930261
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.99300164
+          },
+          {
+            "name": "Venezuela",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EAE7oJxr6OJabXvc184XwVw",
+            "salience": 0.9917143
+          },
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.98917353
+          },
+          {
+            "name": "Donald J. Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.9876284
+          },
+          {
+            "name": "Nicol\u00e1s Maduro",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E05qd7PSeNs2jGD6cNoWzyg",
+            "salience": 0.9770425
+          },
+          {
+            "name": "Washington",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E42EHJBWPOQmnsbb4p9iMzg",
+            "salience": 0.97447395
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.974148
+          },
+          {
+            "name": "Pemex",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EGAw63UUfPeyAQ5Bg7pBOKg",
+            "salience": 0.96825624
+          },
+          {
+            "name": "PDVSA",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EIAnJz9kjOYuu5eq4ubiX5w",
+            "salience": 0.9653453
+          },
+          {
+            "name": "Mexico City",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EW2PYD1atM0-mMG4reHk9Mw",
+            "salience": 0.9646096
+          },
+          {
+            "name": "President of Venezuela",
+            "type": "job title",
+            "uri": "https://diffbot.com/entity/ENaF4V6FZMt-J2XKuJCnqRg",
+            "salience": 0.95608735
+          },
+          {
+            "name": "President of Mexico",
+            "type": "job title",
+            "uri": "https://diffbot.com/entity/Eu-rAZ8uJNECjyMQlVzhPNw",
+            "salience": 0.8970628
+          },
+          {
+            "name": "Bloomberg",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EwGwMta79MgibMmxi2O1wYw",
+            "salience": 0.87287486
+          }
+        ],
+        "summary": "Mexican President Claudia Sheinbaum appeared to acknowledge that Mexico had halted oil shipments to Cuba on Tuesday after reports surfaced that the government was considering doing so in response to growing concerns over the policy following the capture of Venezuelan President Nicolas Maduro by U.S. special forces. She said that the decision to suspend shipment was a sovereign decision and it is made \"in the moment when necessary.\" The suspension of oil shipment follows a recent report that the United States had threatened reprisals against Mexico over its oil shipments to Cuba. With Venezuela offline, shipments from Pemex have become a critical lifeline for Cuba due to the economic blockade on the island nation. However, with the economic blockade still in place, Mexico's oil shipments to Cuba are currently insufficient and not enough to meet the island nation's energy needs.",
+        "raw_entity_count": 46
+      },
+      {
+        "entities": [
+          {
+            "name": "Mexico",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EaCBJOQzENmexdPEwO3Z7mg",
+            "salience": 0.9959786
+          },
+          {
+            "name": "Washington, D.C.",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/Ep2MLLdkjO_C-R6NA7cOlcQ",
+            "salience": 0.99484605
+          },
+          {
+            "name": "Donald J. Trump",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EY1mA3TomNVWxY0sLifAwEQ",
+            "salience": 0.99226016
+          },
+          {
+            "name": "Havana",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EMjv176FpOo6O6dH2_c260A",
+            "salience": 0.98885673
+          },
+          {
+            "name": "Cuba",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EOCSrGYsGNlS015AIqL8_DQ",
+            "salience": 0.98390067
+          },
+          {
+            "name": "Venezuela",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EAE7oJxr6OJabXvc184XwVw",
+            "salience": 0.98179907
+          },
+          {
+            "name": "United States",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/E01d4EK33MmCosgI2KXa4-A",
+            "salience": 0.9787291
+          },
+          {
+            "name": "Mexico City",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EW2PYD1atM0-mMG4reHk9Mw",
+            "salience": 0.9607716
+          },
+          {
+            "name": "Nicol\u00e1s Maduro",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E05qd7PSeNs2jGD6cNoWzyg",
+            "salience": 0.9514752
+          },
+          {
+            "name": "Claudia Sheinbaum",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/E83saqUtfOumkFNBzHq6DvA",
+            "salience": 0.94886184
+          },
+          {
+            "name": "Pemex",
+            "type": "organization",
+            "uri": "https://diffbot.com/entity/EGAw63UUfPeyAQ5Bg7pBOKg",
+            "salience": 0.9449337
+          },
+          {
+            "name": "Marco Rubio",
+            "type": "person",
+            "uri": "https://diffbot.com/entity/EJLYINOgjMQK2iqNd4xetmA",
+            "salience": 0.93550575
+          },
+          {
+            "name": "Russia",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EUpFBVj7tPaapsVrIRjZksA",
+            "salience": 0.9311059
+          },
+          {
+            "name": "President of Venezuela",
+            "type": "job title",
+            "uri": "https://diffbot.com/entity/ENaF4V6FZMt-J2XKuJCnqRg",
+            "salience": 0.91721344
+          },
+          {
+            "name": "Latin America",
+            "type": "location",
+            "uri": "https://diffbot.com/entity/EcyCY5MsCPoKef-66w1kZSQ",
+            "salience": 0.9072908
+          },
+          {
+            "name": "President of Mexico",
+            "type": "job title",
+            "uri": "https://diffbot.com/entity/Eu-rAZ8uJNECjyMQlVzhPNw",
+            "salience": 0.8963292
+          },
+          {
+            "name": "State",
+            "type": "organization",
+            "uri": "",
+            "salience": 0.8830319
+          },
+          {
+            "name": "Jorge Pi\u00f1on",
+            "type": "person",
+            "uri": "",
+            "salience": 0.99493796
+          }
+        ],
+        "summary": "Mexican President Claudia Sheinbaum said Tuesday her government has at least temporarily stopped oil shipments to Cuba, but struck an ambiguous tone, saying the pause was part of general fluctuations in oil supplies and that it was a \"sovereign decision\" not made under pressure from the United States. Sheinbaum was responding to inquiries on whether the state oil company Pemex had cut off oil shipments to Cuba in the wake of mounting pressure from U.S. President Donald Trump that Mexico distance itself from the Cuban government, though U.S. officials have not publicly requested that Mexico stop the oil. The pause is likely related to the ongoing economic crisis in Cuba, which has been exacerbated by the loss of oil shipments from Venezuela and the demise of former Venezuelan President Nicol\u00e1s Maduro. Mexico has sought to balance its long-term support of Cuba's government with pressure from Trump for Latin American leaders to fall in line with his vision for the region. While Sheinbaum did not provide clear data on exports to Cuba, experts believe that the future of shipments from Mexico remains uncertain due to the uncertainty surrounding the situation. Analysts expect further changes in the direction of oil shipments between Mexico and Cuba as the political and economic climate continues to evolve over the course of the next few months.",
+        "raw_entity_count": 40
+      }
+    ]
+  }
+}

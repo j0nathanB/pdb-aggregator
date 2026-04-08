@@ -1,0 +1,137 @@
+country: Indonesia
+code: id
+tier: pivot
+region: asia_pacific
+actors:
+- name: Prabowo Subianto
+  role: President
+  primary: true
+  search_terms:
+  - Prabowo
+  - Prabowo Subianto
+- name: Gibran Rakabuming Raka
+  role: Vice President
+  primary: false
+  search_terms:
+  - Gibran
+  - Gibran Rakabuming
+- name: PDI-P
+  role: Opposition party (Indonesian Democratic Party of Struggle)
+  primary: false
+  search_terms:
+  - PDI-P
+  - PDIP
+  - Megawati
+  - Megawati Sukarnoputri
+- name: Golkar
+  role: Coalition party
+  primary: false
+  search_terms:
+  - Golkar
+- name: Gerindra
+  role: Governing party (Great Indonesia Movement)
+  primary: false
+  search_terms:
+  - Gerindra
+- name: TNI
+  role: Indonesian National Armed Forces
+  primary: false
+  search_terms:
+  - TNI
+  - Tentara Nasional Indonesia
+  - Indonesian military
+- name: Bank Indonesia
+  role: Central Bank
+  primary: false
+  search_terms:
+  - Bank Indonesia
+  - BI
+  - Perry Warjiyo
+- name: BIN
+  role: State Intelligence Agency
+  primary: false
+  search_terms:
+  - BIN
+  - Badan Intelijen Negara
+- name: Pertamina
+  role: State energy company
+  primary: false
+  search_terms:
+  - Pertamina
+- name: Danantara
+  role: Sovereign wealth fund
+  primary: false
+  search_terms:
+  - Danantara
+  - Daya Anagata Nusantara
+- name: Joko Widodo
+  role: Former President
+  primary: false
+  search_terms:
+  - Jokowi
+  - Joko Widodo
+languages:
+  primary: id
+  additional: []
+  metadata: en
+blind_spots:
+- domain: Papua security operations
+  reason: Military operations and human rights situation in Papua provinces face media
+    access restrictions
+  where_signal_lives: Amnesty International reports, Free West Papua advocacy, APCET
+    monitoring
+- domain: Nusantara capital relocation
+  reason: Mega-project financing, land acquisition disputes, and environmental impact
+    are under-scrutinized
+  where_signal_lives: IKN Authority releases, WALHI (environmental NGO) reports, World
+    Bank assessments
+- domain: Danantara sovereign wealth fund governance
+  reason: Political management of ~$570B in SOE assets with minimal independent oversight
+  where_signal_lives: SOE financial reports, Tempo/Kompas investigative coverage,
+    World Bank governance assessments
+news_discovery:
+  goggle_file: assets/country_goggles/id.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: ID
+    search_lang: id
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - hubungan bilateral
+    - perjanjian diplomatik
+    - kebijakan luar negeri
+    - KTT bilateral
+    - duta besar
+    security_defense:
+    - TNI
+    - pengadaan militer
+    - kerja sama keamanan
+    - BIN
+    - pengerahan militer
+    economic_tech:
+    - investasi asing
+    - perjanjian dagang
+    - Bank Indonesia
+    - Pertamina
+    - Danantara
+    - mineral kritis
+    - supply chain
+    institutional:
+    - ASEAN
+    - PBB
+    - G20
+    - Gerakan Non-Blok
+    - ratifikasi perjanjian
+    domestic_constraints:
+    - DPR
+    - Gerindra
+    - PDI-P
+    - Golkar
+    - Mahkamah Konstitusi
+government_discovery:
+  config_file: assets/government/id.yaml
+interpretive_context_file: assets/context/id_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

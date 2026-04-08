@@ -1,0 +1,129 @@
+country: United Arab Emirates
+code: ae
+tier: pivot
+region: near_east_south_asia
+actors:
+- name: Mohammed bin Zayed Al Nahyan
+  role: President (Abu Dhabi ruler)
+  primary: true
+  search_terms:
+  - MBZ
+  - Mohammed bin Zayed
+  - Mohamed bin Zayed
+- name: Mohammed bin Rashid Al Maktoum
+  role: Vice President and PM (Dubai ruler)
+  primary: false
+  search_terms:
+  - MBR
+  - Mohammed bin Rashid
+  - Sheikh Mohammed Dubai
+- name: Tahnoun bin Zayed
+  role: National Security Adviser
+  primary: false
+  search_terms:
+  - Tahnoun bin Zayed
+  - Sheikh Tahnoun
+- name: ADNOC
+  role: Abu Dhabi National Oil Company
+  primary: false
+  search_terms:
+  - ADNOC
+  - Sultan Al Jaber
+- name: ADIA
+  role: Abu Dhabi Investment Authority (sovereign wealth fund)
+  primary: false
+  search_terms:
+  - ADIA
+  - Abu Dhabi Investment Authority
+- name: Mubadala
+  role: State investment company
+  primary: false
+  search_terms:
+  - Mubadala
+  - Khaldoon Al Mubarak
+- name: Central Bank of the UAE
+  role: Central Bank
+  primary: false
+  search_terms:
+  - CBUAE
+  - Central Bank of UAE
+- name: UAE Armed Forces
+  role: Military
+  primary: false
+  search_terms:
+  - UAE Armed Forces
+  - Presidential Guard
+- name: Abdullah bin Zayed
+  role: Foreign Minister
+  primary: false
+  search_terms:
+  - Abdullah bin Zayed
+  - ABZ
+- name: G42
+  role: AI and technology conglomerate
+  primary: false
+  search_terms:
+  - G42
+  - Group 42
+languages:
+  primary: ar
+  additional:
+  - en
+  metadata: en
+blind_spots:
+- domain: Abu Dhabi-Dubai power dynamics
+  reason: Inter-emirate competition on economic strategy and foreign policy is not
+    discussed in domestic media
+  where_signal_lives: Financial Times Gulf coverage, Chatham House analyses, leaked
+    diplomatic cables
+- domain: AI and surveillance technology exports
+  reason: G42 and DarkMatter-linked entities' technology transfers face limited local
+    scrutiny
+  where_signal_lives: NYT/Reuters investigative pieces, US Commerce Dept entity list
+    decisions, academic research
+news_discovery:
+  goggle_file: assets/country_goggles/ae.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: AE
+    search_lang: ar
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - علاقات ثنائية
+    - اتفاقية دبلوماسية
+    - قمة ثنائية
+    - عبدالله بن زايد
+    - سفير الإمارات
+    security_defense:
+    - القوات المسلحة الإماراتية
+    - صفقة أسلحة
+    - تعاون أمني
+    - الحرس الرئاسي
+    - صناعة دفاعية
+    economic_tech:
+    - ADNOC
+    - استثمار أجنبي
+    - G42
+    - المصرف المركزي
+    - Mubadala
+    - ذكاء اصطناعي
+    - supply chain
+    institutional:
+    - أوبك
+    - الأمم المتحدة
+    - مجلس التعاون الخليجي
+    - COP
+    - جامعة الدول العربية
+    domestic_constraints:
+    - المجلس الوطني الاتحادي
+    - رؤية أبوظبي
+    - ADIA
+    - إصلاح اقتصادي
+    - PIF
+government_discovery:
+  config_file: assets/government/ae.yaml
+interpretive_context_file: assets/context/ae_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

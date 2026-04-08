@@ -1,0 +1,37 @@
+! name: MPM Taiwan
+! description: MPM pipeline source prioritization for Taiwan — boosts high-signal sources, discards noise
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=focustaiwan.tw
+$boost=10,site=ltn.com.tw
+$boost=10,site=taipeitimes.com
+$boost=10,site=udn.com
+$boost=10,site=cw.com.tw
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=indsr.org.tw
+$boost=5,site=pf.org.tw
+$boost=5,site=thenewslens.com
+$boost=5,site=storm.mg
+$boost=5,site=twreporter.org
+$boost=5,site=mofa.gov.tw
+$boost=5,site=mnd.gov.tw
+$boost=5,site=president.gov.tw
+$boost=5,site=ey.gov.tw
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=news.tvbs.com.tw
+$boost=3,site=ketagalanmedia.com
+$boost=3,site=taiwannews.com.tw
+$boost=3,site=newbloommag.net
+$boost=3,site=digitimes.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=peoplenews.tw
+$discard,site=newtalk.tw
