@@ -100,7 +100,7 @@ def _stamp_archived(brief_date_str: str) -> None:
 
         # Description (renders below the title): keep original content
         new_desc = (
-            "Weekly intelligence brief covering 28 middle powers across five regions"
+            "A weekly survey of 29 middle powers across five regions"
             if is_overview else week_label
         )
         text = desc_pattern.sub(rf'\g<1>{new_desc}\3', text)
