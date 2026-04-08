@@ -136,7 +136,7 @@ async def _copyedit_prose(
 
     logger.info("Copyeditor [%s]: starting", label)
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=600.0)
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or COPYEDITOR_MODEL,
