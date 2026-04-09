@@ -89,10 +89,14 @@ def parse_comparison_report(text: str) -> dict[str, dict]:
 
 
 def build_fallbacks(comp: dict, primary: str) -> list[str]:
-    """Build fallback chain from comparison data, excluding the primary method."""
+    """Build fallback chain from comparison data, excluding the primary method.
+
+    Order: curl → playwright → browserbase → diffbot.
+    Diffbot is always last-resort due to its 5 calls/min rate limit.
+    Browserbase is preferred over diffbot for bot-protected sites.
+    """
     methods = []
-    # Order: curl > diffbot > playwright (by overall effectiveness)
-    for method in ["curl", "diffbot", "playwright"]:
+    for method in ["curl", "playwright", "browserbase", "diffbot"]:
         if method == primary:
             continue
         ok, total = comp.get(method, (0, 0))
@@ -119,7 +123,7 @@ def main():
             route = {
                 "primary": "publisher_api",
                 "confidence": "high",
-                "fallbacks": ["curl", "diffbot"],
+                "fallbacks": ["curl", "playwright", "browserbase", "diffbot"],
                 "publisher_api": publisher,
             }
         elif ok == total and total > 0:
@@ -127,7 +131,7 @@ def main():
             route = {
                 "primary": "claude",
                 "confidence": "high",
-                "fallbacks": ["curl", "diffbot"],
+                "fallbacks": ["curl", "playwright", "browserbase", "diffbot"],
             }
         elif domain in comparison_data:
             # Fallback domain — use comparison data
@@ -157,7 +161,7 @@ def main():
             route = {
                 "primary": "curl",
                 "confidence": None,
-                "fallbacks": ["diffbot", "playwright"],
+                "fallbacks": ["playwright", "browserbase", "diffbot"],
             }
 
         routes[domain] = route
@@ -171,12 +175,12 @@ def main():
         "_note": "Do not edit manually. Regenerate with: python dev/source_maps/media/generate_extraction_routing.py",
         "test_methodology": "3 URLs per domain, 4 methods tested",
         "domains_total": len(routes),
-        "default_fallback_chain": ["claude", "curl", "diffbot", "playwright", "snippet_only"],
+        "default_fallback_chain": ["curl", "playwright", "browserbase", "diffbot", "snippet_only"],
         "concurrency": {
-            "claude": 10,
             "curl": 20,
             "diffbot": 5,
             "playwright": 3,
+            "browserbase": 10,
             "publisher_api": 5,
         },
         "rate_limits": {

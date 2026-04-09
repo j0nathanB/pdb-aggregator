@@ -6,13 +6,12 @@ Dispatches URLs to the optimal extraction method based on empirical testing
 concurrency limits and automatic fallback on primary failure.
 
 Extraction tiers:
-    Tier 0: Claude web_fetch (195 domains, ~51%)
-    Tier 1: curl + trafilatura (145 domains, ~38%)
-    Tier 2: Diffbot Article API (12 domains, ~3%)
-    Tier 3: Playwright (18 domains, ~4%)
-    Tier 3b: Browserbase (cloud browser — bypasses Cloudflare JS challenges)
-    Tier 4: Publisher APIs (Guardian, etc.)
-    Fallback: snippet_only (6 unretrievable domains)
+    Tier 1: curl + trafilatura (primary for most domains, ~85% success)
+    Tier 2: Playwright (JS-rendered sites)
+    Tier 3: Browserbase (cloud browser — bypasses Cloudflare/bot-protection)
+    Tier 4: Diffbot Article API (last-resort — 5 calls/min hard cap)
+    Tier 5: Publisher APIs (Guardian, etc.)
+    Fallback: snippet_only (unretrievable domains)
 """
 
 from __future__ import annotations
@@ -542,7 +541,7 @@ class PlaywrightExtractor(Extractor):
 
 
 # =============================================================================
-# Tier 3b: Browserbase (cloud browser — bypasses Cloudflare JS challenges)
+# Tier 3: Browserbase (cloud browser — bypasses bot protection)
 # =============================================================================
 
 
@@ -553,6 +552,9 @@ class BrowserbaseExtractor(Extractor):
     bot-protection (Cloudflare JS challenges, etc.) that blocks both
     curl and local Playwright. Requires BROWSERBASE_API_KEY and
     BROWSERBASE_PROJECT_ID in environment.
+
+    Plan limits (Developer tier): 25 concurrent sessions, 25 new
+    sessions per 60 seconds, 1-minute minimum billing per session.
     """
 
     method_name = "browserbase"
@@ -580,18 +582,24 @@ class BrowserbaseExtractor(Extractor):
             from playwright.async_api import async_playwright
 
             bb = Browserbase(api_key=self._api_key)
-            session = bb.sessions.create(project_id=self._project_id)
+            # bb.sessions.create is a sync HTTP call — run it off the
+            # event loop so concurrent extractors are not blocked.
+            session = await asyncio.to_thread(
+                bb.sessions.create, project_id=self._project_id,
+            )
 
             async with async_playwright() as p:
                 browser = await p.chromium.connect_over_cdp(session.connect_url)
-                context = browser.contexts[0]
-                page = context.pages[0]
-                await page.goto(url, timeout=self._timeout, wait_until="domcontentloaded")
+                try:
+                    context = browser.contexts[0]
+                    page = context.pages[0]
+                    await page.goto(url, timeout=self._timeout, wait_until="domcontentloaded")
 
-                # Wait for Cloudflare JS challenge to resolve
-                await page.wait_for_timeout(self._challenge_wait)
-                html = await page.content()
-                await browser.close()
+                    # Wait for Cloudflare JS challenge to resolve
+                    await page.wait_for_timeout(self._challenge_wait)
+                    html = await page.content()
+                finally:
+                    await browser.close()
 
             if not html:
                 return ExtractionResult(

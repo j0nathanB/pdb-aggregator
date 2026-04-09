@@ -1,0 +1,373 @@
+{
+  "description": "Domains where diffbot was actually invoked in the last 6 local runs (2026-04-05 through 2026-04-07). Target set for Phase 1 bake-off.",
+  "runs_analyzed": [
+    "20260405_001952",
+    "20260405_232355",
+    "20260406_165641",
+    "20260406_235347",
+    "20260407_104425",
+    "20260407_164418"
+  ],
+  "domains": {
+    "reuters.com": {
+      "diffbot_ok": 34,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://reuters.com/business/aerospace-defense/czech-president-signs-2026-budget-despite-worries-over-nato-defence-spending-2026-03-20",
+        "https://reuters.com/business/aerospace-defense/zelenskiy-says-ukraine-will-help-us-counter-iranian-drones-2026-03-05",
+        "https://reuters.com/business/czech-president-adds-criticism-governments-defence-spending-cuts-2026-03-16"
+      ],
+      "total_calls": 34
+    },
+    "nationalpost.com": {
+      "diffbot_ok": 6,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://nationalpost.com/news/canada/applications-to-canadas-armed-forces-surged-12-9-in-the-past-eight-months-says-national-defence-minister",
+        "https://nationalpost.com/news/carney-says-deadlines-under-energy-deal-with-alberta-will-be-missed",
+        "https://nationalpost.com/news/liberals-are-almost-guaranteed-a-majority-but-172-seats-would-be-a-poison-pill"
+      ],
+      "total_calls": 6
+    },
+    "thehindu.com": {
+      "diffbot_ok": 5,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://thehindu.com/news/national/pm-narendra-modi-cabinet-committee-of-security-ccs-meeting-march-1-2026/article70691990.ece",
+        "https://thehindu.com/news/national/west-bengal/bjp-begins-campaign-for-bengal-assembly-elections-with-parivartan-yatras/article70692222.ece",
+        "https://www.thehindu.com/news/cities/Delhi/modi-is-corrupt-bjp-countdown-has-begun-says-kejriwal/article70691071.ece"
+      ],
+      "total_calls": 5
+    },
+    "t24.com.tr": {
+      "diffbot_ok": 4,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://t24.com.tr/gundem/akpden-tarim-ve-orman-duzenlemesi-tapu-hobi-bahcesi-ve-alkol-satisina-yeni-duzenlemeler-getiriliyor,1306640",
+        "https://t24.com.tr/gundem/devlet-bahceliden-nevruz-mesaji-turkun-bayrami-kutlu-olsun,1308742",
+        "https://t24.com.tr/gundem/ibb-davasinda-kisi-hakkinda-tahliye-karari,1311786"
+      ],
+      "total_calls": 4
+    },
+    "politico.com": {
+      "diffbot_ok": 4,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://politico.com/newsletters/forecast/2026/03/17/how-erdogan-could-emerge-stronger-from-the-iran-war-00833089",
+        "https://www.politico.com/live-updates/2026/03/24/congress/king-charles-us-visit-congress-00841510",
+        "https://www.politico.com/news/2026/03/18/estonia-strait-of-hormuz-iran-00834179"
+      ],
+      "total_calls": 4
+    },
+    "euromaidanpress.com": {
+      "diffbot_ok": 3,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://euromaidanpress.com/2026/03/28/finland-to-audit-whether-us-is-actually-delivering-nato-bought-weapons-to-ukraine/",
+        "https://euromaidanpress.com/2026/03/31/kyiv-accuses-russia-of-redirecting-drones-into-finland-and-baltics/",
+        "https://euromaidanpress.com/2026/04/03/stoltenberg-proposed-discussing-nato-troop-limits-with-russia-without-baltic-backing/"
+      ],
+      "total_calls": 3
+    },
+    "ohtuleht.ee": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.ohtuleht.ee/1152105/michal-saab-zelenskoilt-teenetemargi-see-on-tunnustus-kogu-eestile",
+        "https://www.ohtuleht.ee/1152183/blogi-video-ja-fotod-dubais-viibiv-kaitseminister-pevkur-praegu-tuleb-tund-korraga-votta-leiti-iraani-juhi-ali-khamenei-surnukeha"
+      ],
+      "total_calls": 2
+    },
+    "ouest-france.fr": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.ouest-france.fr/politique/marine-le-pen/presidentielle-marine-le-pen-assure-quelle-ne-fera-pas-campagne-si-elle-doit-porter-un-bracelet-electronique-76d99642-128b-11f1-ac20-ad3e04eb72b3",
+        "https://www.ouest-france.fr/societe/justice/telechargements-de-documents-classes-secret-defense-une-relaxe-et-une-peine-avec-sursis-pour-lex-ingenieur-de-la-dgse-56bb6552-10bf-11f1-b929-abb85d5fd4cd"
+      ],
+      "total_calls": 2
+    },
+    "economist.com": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.economist.com/asia/2026/03/29/is-bollywoods-latest-megahit-propaganda-for-narendra-modi",
+        "https://www.economist.com/britain/2026/03/03/rachel-reevess-economic-update-was-reassuringly-boring"
+      ],
+      "total_calls": 2
+    },
+    "investing.com": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://investing.com/news/stock-market-news/czechoslovak-group-beats-revenue-expectations-despite-ammunition-weakness-93CH-4581531",
+        "https://investing.com/news/stock-market-news/openai-considering-new-contract-with-nato-after-pentagon-deal-reports-4539833"
+      ],
+      "total_calls": 2
+    },
+    "thediplomat.com": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://thediplomat.com/2026/03/amending-the-japans-constitution-after-the-ldps-landslide-victory/",
+        "https://thediplomat.com/2026/03/south-korean-president-pledges-to-respect-norths-system-in-march-1st-address/"
+      ],
+      "total_calls": 2
+    },
+    "de.euronews.com": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://de.euronews.com/2026/03/15/bundeswehr-heimatschutzdivision-drohnen-sabotage-russland",
+        "https://de.euronews.com/my-europe/2026/03/12/kanzler-merz-baden-wurttemberg"
+      ],
+      "total_calls": 2
+    },
+    "bernardinai.lt": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.bernardinai.lt/jav-gynybos-pramones-milzine-lockheed-martin-isteige-savo-filiala-lietuvoje/",
+        "https://www.bernardinai.lt/r-duchnevicius-vilniaus-rajono-lsdp-skyrius-rems-m-sinkeviciaus-kandidatura-partijos-pirmininko-rinkimuose/"
+      ],
+      "total_calls": 2
+    },
+    "pbs.org": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.pbs.org/newshour/world/g7-meets-on-russia-ukraine-war-as-rubio-tries-to-sell-u-s-strategy-in-iran-to-skeptical-allies-insulted-by-trump",
+        "https://www.pbs.org/newshour/world/thousands-of-chileans-protest-president-kasts-environmental-rollbacks-on-world-water-day"
+      ],
+      "total_calls": 2
+    },
+    "chosun.com": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://chosun.com/english/national-en/2026/03/25/7643LJ2AVJDUDG7A7LEXIXWPWM",
+        "https://chosun.com/english/national-en/2026/03/28/56GADK2ZTNFUHB7CZYTQIDOVB4"
+      ],
+      "total_calls": 2
+    },
+    "urdupoint.com": {
+      "diffbot_ok": 2,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://urdupoint.com/arabic/story/2165098.html",
+        "https://www.urdupoint.com/en/business/sbp-revokes-authorization-license-of-exchang-2158885.html"
+      ],
+      "total_calls": 2
+    },
+    "thenewdaily.com.au": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://thenewdaily.com.au/news/politics/australian-politics/2026/02/26/liberal-party-collapse"
+      ],
+      "total_calls": 1
+    },
+    "thestatesman.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.thestatesman.com/india/amit-shah-interacts-with-bharat-taxi-drivers-says-those-toiling-should-get-share-of-profit-1503561381.html"
+      ],
+      "total_calls": 1
+    },
+    "hedgeweek.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.hedgeweek.com/japans-keidanren-postpones-private-meeting-with-activist-elliott/"
+      ],
+      "total_calls": 1
+    },
+    "washingtonpost.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.washingtonpost.com/politics/2026/02/28/trump-iran-decision-saudi-arabia-israel/"
+      ],
+      "total_calls": 1
+    },
+    "time.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://time.com/7380742/zelensky-world-war-russia-ukraine-trump-security-guarantees-peace-talks"
+      ],
+      "total_calls": 1
+    },
+    "axios.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.axios.com/2026/02/25/trump-zelensky-call-end-war-ukraine"
+      ],
+      "total_calls": 1
+    },
+    "rte.ie": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.rte.ie/news/world/2026/0225/1560386-ukraine-zelensky/"
+      ],
+      "total_calls": 1
+    },
+    "kedglobal.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://kedglobal.com/aerospace-defense/newsView/ked202603080002"
+      ],
+      "total_calls": 1
+    },
+    "lejdd.fr": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://lejdd.fr/Societe/france-televisions-lecornu-demande-a-delphine-ernotte-de-faire-plus-deconomies-167640"
+      ],
+      "total_calls": 1
+    },
+    "jauns.lv": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://jauns.lv/raksts/zinas/699278-veja-parku-strida-del-planots-mainit-teritorijas-planosanas-noteikumus-pavesta-silina"
+      ],
+      "total_calls": 1
+    },
+    "replicaonline.ro": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.replicaonline.ro/fostul-sef-al-vamii-agigea-christian-gudu-este-fratele-unui-lider-pnl-din-tulcea-651901"
+      ],
+      "total_calls": 1
+    },
+    "gp.se": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://gp.se/politik/nato-tappar-mest-i-fortroendebarometern-2026.b66f9a56-2211-4ef2-97f5-e842ad362983"
+      ],
+      "total_calls": 1
+    },
+    "cbn.globo.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://cbn.globo.com/brasilia/noticia/2026/03/12/visita-de-assessor-de-trump-a-bolsonaro-pode-representar-interferencia-externa-diz-itamaraty.ghtml"
+      ],
+      "total_calls": 1
+    },
+    "cnews.fr": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.cnews.fr/france/2026-03-10/porte-avions-charles-de-gaulle-quel-est-le-salaire-dun-pilote-de-rafale-1829014"
+      ],
+      "total_calls": 1
+    },
+    "dawn.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.dawn.com/news/1981543"
+      ],
+      "total_calls": 1
+    },
+    "brecorder.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.brecorder.com/news/40411327"
+      ],
+      "total_calls": 1
+    },
+    "news.ltn.com.tw": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://news.ltn.com.tw/news/focus/breakingnews/5378284"
+      ],
+      "total_calls": 1
+    },
+    "portaldeprefeitura.com.br": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://portaldeprefeitura.com.br/bastidores-da-politica/relatorio-que-envolvia-lulinha-e-ex-ministros-de-lula-e-bolsonaro-e/618006"
+      ],
+      "total_calls": 1
+    },
+    "inc42.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://inc42.com/buzz/from-e-cheques-to-cross-border-rails-rbi-lays-out-its-payments-vision-for-2028"
+      ],
+      "total_calls": 1
+    },
+    "sustainablejapan.jp": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://sustainablejapan.jp/2026/03/28/keidanren-circular-economy/123407"
+      ],
+      "total_calls": 1
+    },
+    "defence-blog.com": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://defence-blog.com/latvia-sends-cvrt-reconnaissance-vehicles-to-ukraine/"
+      ],
+      "total_calls": 1
+    },
+    "poder360.com.br": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.poder360.com.br/poder-eleicoes/lula-segura-silveira-no-governo-por-messias-no-stf-e-pacheco-em-mg/"
+      ],
+      "total_calls": 1
+    },
+    "theclinic.cl": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.theclinic.cl/2026/04/05/constanza-martinez-president-del-frente-amplio-nosotros-no-nos-arrepentimos-de-los-principios-de-que-nos-inspiran"
+      ],
+      "total_calls": 1
+    },
+    "firstonline.info": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://www.firstonline.info/lallarme-della-banca-ditalia-sulleconomia-italiana-e-un-chiaro-messaggio-alla-meloni-galleggiare-non-basta-piu/"
+      ],
+      "total_calls": 1
+    },
+    "dn.no": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://dn.no/utenriks/eide-etter-hormuz-mote-forblir-svart-alvorlig/2-1-1969481"
+      ],
+      "total_calls": 1
+    },
+    "news.usni.org": {
+      "diffbot_ok": 1,
+      "diffbot_fail": 0,
+      "sample_urls": [
+        "https://news.usni.org/2026/03/31/taiwan-president-inspects-anti-ship-air-defense-missile-production"
+      ],
+      "total_calls": 1
+    }
+  },
+  "total_domains": 42,
+  "total_calls": 102
+}

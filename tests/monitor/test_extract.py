@@ -599,6 +599,6 @@ class TestRoutingConfigIntegration:
 
     def test_all_routes_have_valid_primary(self):
         config = load_routing_config()
-        valid = {"claude", "curl", "diffbot", "playwright", "publisher_api", "snippet_only"}
+        valid = {"claude", "curl", "diffbot", "playwright", "browserbase", "publisher_api", "snippet_only"}
         for domain, route in config.routes.items():
             assert route.primary in valid, f"{domain} has invalid primary: {route.primary}"

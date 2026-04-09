@@ -6,15 +6,15 @@ test_methodology: 3 URLs per domain, 4 methods tested
 domains_total: 377
 default_fallback_chain:
 - curl
-- diffbot
 - playwright
 - browserbase
+- diffbot
 - snippet_only
 concurrency:
   curl: 20
   diffbot: 5
   playwright: 3
-  browserbase: 3
+  browserbase: 10
   publisher_api: 5
 rate_limits:
   per_domain_delay_seconds: 1.0
@@ -24,105 +24,124 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   38north.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   aawsat.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   abc.es:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   abc.net.au:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   aftenposten.no:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   aftonbladet.se:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   agbi.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   agenciabrasil.ebc.com.br:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   agenzianova.com:
-    primary: diffbot
+    primary: playwright
     confidence: medium
-    fallbacks: []
+    fallbacks:
+    - browserbase
+    - diffbot
   agerpres.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   agi.it:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   aktualne.cz:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   al-monitor.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   alarabiya.net:
-    primary: diffbot
+    primary: playwright
     confidence: high
     fallbacks:
-    - playwright
+    - browserbase
+    - diffbot
   albayan.ae:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   aldrimer.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   aletihad.ae:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   alriyadh.com:
     primary: playwright
@@ -133,209 +152,245 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   americasquarterly.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   amo.cz:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   animalpolitico.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ansa.it:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   antaranews.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   antena3.ro:
     primary: curl
     confidence: medium
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   arabianbusiness.com:
     primary: playwright
     confidence: medium
     fallbacks:
+    - browserbase
     - diffbot
   arabnews.com:
     primary: playwright
     confidence: medium
     fallbacks:
+    - browserbase
     - diffbot
   aripaev.ee:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   aristeguinoticias.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   asahi.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   asia.nikkei.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   aspistrategist.org.au:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   atalayar.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   athenalab.org:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   australiandefence.com.au:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   australianforeignaffairs.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   bbc.co.uk:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   bhaskar.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   bianet.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   biobiochile.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   birgun.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   bisnis.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   bloomberght.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   bnamericas.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   bnnbloomberg.ca:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   bns.lt:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   breakingdefense.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   canada.ca:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   canadiandefencereview.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   cbc.ca:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   cebri.org:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   ces.org.ua:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   chathamhouse.org:
     primary: playwright
     confidence: medium
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   chosun.com:
-    primary: diffbot
+    primary: browserbase
     confidence: medium
     fallbacks:
     - playwright
+    - diffbot
   cigionline.org:
     primary: playwright
     confidence: high
@@ -351,168 +406,198 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   cnbcindonesia.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   cnnindonesia.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   congressoemfoco.com.br:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   contexte.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   cooperativa.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   corriere.it:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   csis.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ct24.ceskatelevize.cz:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ctvnews.ca:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   cumhuriyet.com.tr:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   cw.com.tw:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   czdefence.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   dagbladet.no:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   dailysabah.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   db.lv:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   declassifieduk.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   decode39.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   defence.gov.au:
-    primary: diffbot
+    primary: playwright
     confidence: high
-    fallbacks: []
+    fallbacks:
+    - browserbase
+    - diffbot
   defence24.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   defenceconnect.com.au:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   defesaemfoco.com.br:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   defesanet.com.br:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   delfi.ee:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   delfi.lt:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   delfi.lv:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   denikn.cz:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   detik.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   df.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   dgap.org:
     primary: snippet_only
@@ -522,28 +607,32 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   dialogo-americas.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   diena.lv:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   digi24.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   dn.no:
-    primary: diffbot
+    primary: curl
     confidence: medium
     fallbacks:
     - curl
@@ -552,31 +641,36 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   dorzeczy.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   duvarenglish.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   dw.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   e24.no:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   eastasiaforum.org:
     primary: curl
     confidence: high
@@ -586,199 +680,233 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   economist.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   editorialedomani.it:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   efe.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   ekspress.delfi.ee:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   elconfidencial.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   eldiario.es:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   eleconomista.com.mx:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   eleconomista.es:
     primary: playwright
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   elespanol.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   elfinanciero.com.mx:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   elmostrador.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   elmundo.es:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   elpais.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   eluniversal.com.mx:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   emol.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   en.sedaily.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   en.yna.co.kr:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   energiogklima.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   english.alarabiya.net:
-    primary: diffbot
+    primary: playwright
     confidence: medium
     fallbacks:
-    - playwright
+    - browserbase
+    - diffbot
   english.hani.co.kr:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   english.kyodonews.net:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   epl.delfi.ee:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   epravda.com.ua:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   epw.in:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   err.ee:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   estadao.com.br:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   esteri.it:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   eurointegration.com.ua:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   euronews.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   europeum.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ex-ante.cl:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   excelsior.com.mx:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   expansion.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   expressen.se:
     primary: curl
     confidence: high
@@ -788,72 +916,84 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   fiia.fi:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   filternyheter.no:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   focustaiwan.tw:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   fokus.se:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   folha.uol.com.br:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   forceindia.net:
     primary: playwright
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   formiche.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   forsvaretsforum.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   fr.de:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   france24.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   ft.com:
     primary: publisher_api
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
     publisher_api: ft
   fulcrum.sg:
@@ -861,28 +1001,34 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   g4media.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   gatewayhouse.in:
-    primary: diffbot
+    primary: playwright
     confidence: medium
-    fallbacks: []
+    fallbacks:
+    - browserbase
+    - diffbot
   gazetaprawna.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   globalnews.ca:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   gov.br:
     primary: curl
@@ -893,100 +1039,117 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   governo.it:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   gp.se:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   grc.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   gulfnews.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   handelsblatt.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   hbl.fi:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   helsinkitimes.fi:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   highnorthnews.com:
     primary: playwright
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   hilltimes.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   hindustantimes.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   hlidacipes.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   hn.cz:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   hotnews.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   hs.fi:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   hurriyet.com.tr:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   hurriyetdailynews.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   icds.ee:
     primary: curl
@@ -998,56 +1161,67 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   idsa.in:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   igarape.org.br:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ilfattoquotidiano.it:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ilsole24ore.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   iltalehti.fi:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   indianexpress.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   indsr.org.tw:
-    primary: diffbot
+    primary: playwright
     confidence: high
-    fallbacks: []
+    fallbacks:
+    - browserbase
+    - diffbot
   infodefensa.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   insightcrime.org:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   intelligenceonline.com:
     primary: playwright
@@ -1058,31 +1232,36 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   interferencia.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   internationalaffairs.org.au:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ipg-journal.de:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ir.lv:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   irozhlas.cz:
     primary: playwright
     confidence: high
@@ -1091,58 +1270,68 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   ispionline.it:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   jagran.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   jakartaglobe.id:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   janes.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   japan-forward.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   japan.kantei.go.jp:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   japantimes.co.jp:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   jornada.com.mx:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   jota.info:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   kam.lt:
     primary: playwright
@@ -1152,92 +1341,108 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   kauppalehti.fi:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   kedglobal.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ketagalanmedia.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   khaleejtimes.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   klassekampen.no:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   kompas.id:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   kontan.co.id:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   koreaherald.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   koreajoongangdaily.joins.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   koreapro.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   koreatimes.co.kr:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   kvartal.se:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   kyivindependent.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   la-croix.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   la.lv:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   lalettre.fr:
     primary: playwright
@@ -1248,53 +1453,62 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   latercera.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   latinus.us:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   lavanguardia.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   ledevoir.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   lefigaro.fr:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   lemonde.fr:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   leparisien.fr:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   lesechos.fr:
     primary: playwright
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   liberation.fr:
     primary: snippet_only
@@ -1304,63 +1518,74 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   liga.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   limesonline.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   livemint.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   lopinion.fr:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   lowyinstitute.org:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   lrs.lt:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   lrt.lt:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   lrytas.lt:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   lsm.lv:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ltn.com.tw:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   maaal.com:
     primary: curl
@@ -1371,71 +1596,83 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   macdonaldlaurier.ca:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   mea.gov.in:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   mediapart.fr:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   medyascope.tv:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   metropoles.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   mexiconewsdaily.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   middleeasteye.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   milenio.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   militarnyi.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   minerva.no:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   minrel.gob.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   mnd.gov.tw:
     primary: snippet_only
@@ -1446,6 +1683,7 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   mod.go.jp:
     primary: snippet_only
@@ -1455,27 +1693,31 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   morgenbladet.no:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   mzv.gov.cz:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   n-tv.de:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   nationalpost.com:
-    primary: diffbot
+    primary: curl
     confidence: high
     fallbacks: []
   nettavisen.no:
@@ -1483,82 +1725,96 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   newbloommag.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   neweasterneurope.eu:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   news.tvbs.com.tw:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   newstatesman.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nexos.com.mx:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nikkei.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nippon.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nknews.org:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   notesfrompoland.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   novinky.cz:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nra.lv:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nrk.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nupi.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   nv.ua:
     primary: curl
@@ -1569,10 +1825,11 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   ohtuleht.ee:
-    primary: diffbot
+    primary: curl
     confidence: high
     fallbacks: []
   oko.press:
@@ -1580,58 +1837,67 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   omni.se:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   onet.pl:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   opencanada.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   orfonline.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   osw.waw.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ouest-france.fr:
-    primary: diffbot
+    primary: curl
     confidence: medium
     fallbacks: []
   pauta.cl:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   pf.org.tw:
     primary: curl
     confidence: medium
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   piedepagina.mx:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   poder360.com.br:
     primary: curl
@@ -1644,41 +1910,48 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   politicaexterior.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   politico.eu:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   polityka.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   polsatnews.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   postimees.ee:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   pravda.com.ua:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   president.gov.ua:
     primary: playwright
@@ -1689,152 +1962,178 @@ routes:
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   profit.ro:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   publicsenat.fr:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   razumkov.org.ua:
     primary: curl
     confidence: medium
     fallbacks:
+    - browserbase
     - diffbot
   realinstitutoelcano.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   recorder.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   reforma.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   regjeringen.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   repubblica.it:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   republika.co.id:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   respekt.cz:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   reuters.com:
-    primary: diffbot
+    primary: browserbase
     confidence: low
-    fallbacks: []
+    fallbacks:
+    - diffbot
   riigikogu.ee:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   riseproject.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   rmf24.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   rp.pl:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   rus.err.ee:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   sabq.org:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   sansadtv.nic.in:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   sbs.com.au:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   senado.leg.br:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   setav.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   setn.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   seznamzpravy.cz:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   sozcu.com.tr:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   spectator.co.uk:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   spf.org:
     primary: snippet_only
@@ -1844,89 +2143,104 @@ routes:
     primary: playwright
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   storm.mg:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   stortinget.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   subrei.gob.cl:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   sueddeutsche.de:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   suomenkuvalehti.fi:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   svd.se:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   sverigesradio.se:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   svt.se:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   sydsvenskan.se:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   t13.cl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   t24.com.tr:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   tagesspiegel.de:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   taipeitimes.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   taiwannews.com.tw:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   takshashila.org.in:
     primary: playwright
@@ -1936,188 +2250,220 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   taz.de:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   telegraph.co.uk:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   tempo.co:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   texty.org.ua:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   theconversation.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   thediplomat.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   theglobeandmail.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   theguardian.com:
     primary: publisher_api
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
     publisher_api: guardian
   thehindu.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   thejakartapost.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   thenationalnews.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   thenewslens.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   theprint.in:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   thestar.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   thewire.in:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   tirto.id:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   tokyo-np.co.jp:
     primary: curl
     confidence: low
     fallbacks:
+    - browserbase
     - diffbot
   tvn24.pl:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   tvnet.lv:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   twreporter.org:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   udn.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ukdefencejournal.org.uk:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ukrinform.net:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   ussc.edu.au:
     primary: playwright
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   uusisuomi.fi:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   valor.globo.com:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   valtioneuvosto.fi:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   verkkouutiset.fi:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   vg.no:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   vozpopuli.com:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   vz.lt:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   wam.ae:
     primary: snippet_only
     confidence: null
@@ -2126,51 +2472,60 @@ routes:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   wiwo.de:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   www3.nhk.or.jp:
     primary: curl
     confidence: low
     fallbacks:
+    - browserbase
     - diffbot
   wyborcza.pl:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   yle.fi:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   zeit.de:
     primary: curl
     confidence: high
     fallbacks:
-    - diffbot
     - playwright
+    - browserbase
+    - diffbot
   zetatijuana.com:
     primary: curl
     confidence: high
     fallbacks:
+    - browserbase
     - diffbot
   zf.ro:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
   zn.ua:
     primary: curl
     confidence: high
     fallbacks:
     - curl
+    - browserbase
     - diffbot
