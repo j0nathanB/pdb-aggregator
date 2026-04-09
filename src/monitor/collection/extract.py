@@ -23,6 +23,7 @@ import os
 import subprocess
 import time
 from abc import ABC, abstractmethod
+from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -326,24 +327,118 @@ class DiffbotExtractor(Extractor):
 
     Best for JavaScript-heavy sites and paywalled content that Diffbot
     has cached. Requires DIFFBOT_TOKEN in environment.
+
+    Rate limiting: the Diffbot plan allows 5 calls per 60-second sliding
+    window. This extractor enforces that cap with a token bucket shared
+    across all concurrent callers on the same instance. If the required
+    wait exceeds ``max_wait_seconds``, the call fails fast so the pipeline
+    does not stall.
     """
 
     method_name = "diffbot"
     API_URL = "https://api.diffbot.com/v3/article"
 
-    def __init__(self, api_key: str | None = None, timeout: int = 30):
+    # Diffbot plan limit: 5 calls per rolling minute.
+    RATE_LIMIT_CALLS = 5
+    RATE_LIMIT_WINDOW_SEC = 60.0
+    DEFAULT_MAX_WAIT_SEC = 90.0
+
+    def __init__(
+        self,
+        api_key: str | None = None,
+        timeout: int = 30,
+        max_wait_seconds: float = DEFAULT_MAX_WAIT_SEC,
+    ):
         self._api_key = api_key or os.getenv("DIFFBOT_TOKEN")
         if not self._api_key:
             raise ValueError("DIFFBOT_TOKEN not found in environment or constructor")
         self._client = httpx.AsyncClient(timeout=timeout)
+        self._max_wait = max_wait_seconds
+        # Token-bucket state: monotonic timestamps of recent successful reservations.
+        self._call_times: deque[float] = deque()
+        self._rate_lock = asyncio.Lock()
+
+    async def _reserve_slot(self) -> bool:
+        """Reserve a rate-limit slot, waiting up to ``max_wait_seconds``.
+
+        Returns True if the slot was reserved and the caller may proceed,
+        False if the required wait would exceed the budget.
+        """
+        async with self._rate_lock:
+            now = time.monotonic()
+            # Drop any slots outside the sliding window.
+            while self._call_times and now - self._call_times[0] >= self.RATE_LIMIT_WINDOW_SEC:
+                self._call_times.popleft()
+
+            if len(self._call_times) < self.RATE_LIMIT_CALLS:
+                self._call_times.append(now)
+                return True
+
+            # Bucket is full — wait for the oldest slot to age out.
+            wait = self.RATE_LIMIT_WINDOW_SEC - (now - self._call_times[0])
+            if wait > self._max_wait:
+                return False
+
+            logger.info("Diffbot rate-limit wait %.1fs (bucket full)", wait)
+            await asyncio.sleep(wait)
+            now = time.monotonic()
+            while self._call_times and now - self._call_times[0] >= self.RATE_LIMIT_WINDOW_SEC:
+                self._call_times.popleft()
+            self._call_times.append(now)
+            return True
 
     async def extract(self, url: str) -> ExtractionResult:
         start = time.monotonic()
+
+        if not await self._reserve_slot():
+            return ExtractionResult(
+                url=url, method=self.method_name, success=False,
+                error=f"diffbot rate-limit wait exceeds {self._max_wait:.0f}s budget",
+                latency_ms=int((time.monotonic() - start) * 1000),
+            )
+
         try:
             response = await self._client.get(
                 self.API_URL,
                 params={"token": self._api_key, "url": url},
             )
+
+            # Handle 429 with a single retry honoring Retry-After (or the
+            # next open slot in our own bucket, whichever is shorter).
+            if response.status_code == 429:
+                retry_after_header = response.headers.get("Retry-After")
+                body_excerpt = (response.text or "")[:300]
+                wait_sec: float | None = None
+                if retry_after_header:
+                    try:
+                        wait_sec = float(retry_after_header)
+                    except ValueError:
+                        wait_sec = None
+                if wait_sec is None and self._call_times:
+                    wait_sec = max(
+                        0.0,
+                        self.RATE_LIMIT_WINDOW_SEC - (time.monotonic() - self._call_times[0]) + 0.5,
+                    )
+                wait_sec = wait_sec or 1.0
+
+                logger.warning(
+                    "Diffbot 429 for %s (retry_after=%s, body=%r)",
+                    url, retry_after_header, body_excerpt,
+                )
+
+                if wait_sec > self._max_wait:
+                    return ExtractionResult(
+                        url=url, method=self.method_name, success=False,
+                        error=f"diffbot 429: retry-after {wait_sec:.0f}s exceeds budget; body={body_excerpt}",
+                        latency_ms=int((time.monotonic() - start) * 1000),
+                    )
+
+                await asyncio.sleep(wait_sec)
+                response = await self._client.get(
+                    self.API_URL,
+                    params={"token": self._api_key, "url": url},
+                )
+
             response.raise_for_status()
             data = response.json()
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import time
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
@@ -244,6 +245,77 @@ class TestDiffbotExtractor:
             with patch.dict(os.environ, env, clear=True):
                 with pytest.raises(ValueError, match="DIFFBOT_TOKEN"):
                     DiffbotExtractor(api_key=None)
+
+    @pytest.mark.asyncio
+    async def test_rate_limit_fails_fast_when_wait_exceeds_budget(self):
+        """When the token bucket is full and the wait would exceed the
+        configured budget, extract() must return a failed result immediately
+        instead of blocking the pipeline."""
+        extractor = DiffbotExtractor(api_key="test-key", max_wait_seconds=0.05)
+
+        # Pre-fill the bucket with 5 very recent reservations — next call
+        # would need to wait nearly the full 60s window.
+        now = time.monotonic()
+        for _ in range(DiffbotExtractor.RATE_LIMIT_CALLS):
+            extractor._call_times.append(now)
+
+        # Client should never be called — guard against a regression.
+        extractor._client.get = AsyncMock(side_effect=AssertionError("client called despite budget"))
+
+        result = await extractor.extract("https://example.com/article")
+
+        assert result.success is False
+        assert "rate-limit wait exceeds" in result.error
+        await extractor.close()
+
+    @pytest.mark.asyncio
+    async def test_429_retry_then_success(self):
+        """A 429 response should be retried once after honoring Retry-After,
+        and the retry's success should be returned normally."""
+        extractor = DiffbotExtractor(api_key="test-key")
+
+        first = MagicMock()
+        first.status_code = 429
+        first.text = '{"error":"Too Many Requests"}'
+        first.headers = {"Retry-After": "0"}
+
+        second = MagicMock()
+        second.status_code = 200
+        second.raise_for_status = MagicMock()
+        second.json.return_value = {
+            "objects": [{"title": "After Retry", "text": "Body."}]
+        }
+
+        extractor._client.get = AsyncMock(side_effect=[first, second])
+
+        with patch("asyncio.sleep", new=AsyncMock()):
+            result = await extractor.extract("https://example.com/article")
+
+        assert result.success is True
+        assert result.title == "After Retry"
+        assert extractor._client.get.await_count == 2
+        await extractor.close()
+
+    @pytest.mark.asyncio
+    async def test_429_body_captured_in_error_when_budget_exceeded(self):
+        """If the 429's Retry-After exceeds the budget, the error must
+        include the response body excerpt so we can diagnose it from traces."""
+        extractor = DiffbotExtractor(api_key="test-key", max_wait_seconds=1.0)
+
+        response = MagicMock()
+        response.status_code = 429
+        response.text = '{"error":"Monthly credit limit exceeded"}'
+        response.headers = {"Retry-After": "3600"}
+
+        extractor._client.get = AsyncMock(return_value=response)
+
+        result = await extractor.extract("https://example.com/article")
+
+        assert result.success is False
+        assert "Monthly credit limit exceeded" in result.error
+        assert "retry-after" in result.error.lower()
+        assert extractor._client.get.await_count == 1
+        await extractor.close()
 
 
 # =============================================================================

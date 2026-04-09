@@ -27,6 +27,10 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
+# httpx logs full request URLs at INFO, which exposes API tokens passed
+# as query params (Diffbot, SearchAPI). Clamp to WARNING so secrets stay
+# out of CloudWatch.
+logging.getLogger("httpx").setLevel(logging.WARNING)
 logger = logging.getLogger("run_pipeline")
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")

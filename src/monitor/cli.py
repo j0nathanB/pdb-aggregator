@@ -81,6 +81,10 @@ def setup_logging(level: str = "INFO", log_file: str | None = None) -> None:
     handlers.append(file_handler)
 
     logging.basicConfig(level=logging.DEBUG, handlers=handlers)
+    # httpx logs full request URLs at INFO, which exposes API tokens passed
+    # as query params (Diffbot, SearchAPI). Clamp to WARNING so secrets stay
+    # out of stdout, log files, and CloudWatch.
+    logging.getLogger("httpx").setLevel(logging.WARNING)
     logging.getLogger("monitor").info("Logging to %s", log_file)
 
 
