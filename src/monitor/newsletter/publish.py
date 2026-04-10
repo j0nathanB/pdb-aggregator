@@ -19,8 +19,8 @@ DOCS_JSON = SITE_DIR / "docs.json"
 
 # Stable page order for navigation
 PAGE_ORDER = [
-    "overview",
     "at-a-glance",
+    "overview",
     "frontline-eastern-europe",
     "western-europe",
     "asia-pacific",
@@ -199,12 +199,12 @@ def _update_docs_json(date_str: str, end_date: date) -> None:
     docs.setdefault("redirects", [])
     for r in docs["redirects"]:
         if r.get("source") == "/":
-            r["destination"] = f"/{brief_prefix}/overview"
+            r["destination"] = f"/{brief_prefix}/at-a-glance"
             break
     else:
         docs["redirects"].append({
             "source": "/",
-            "destination": f"/{brief_prefix}/overview",
+            "destination": f"/{brief_prefix}/at-a-glance",
         })
 
     # Remove the new brief from Archives if it ended up there
