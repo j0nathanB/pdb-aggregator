@@ -14,10 +14,9 @@ Top story per country this week, ranked by coverage volume. Select a story to vi
 ## [{{ region.display_name }}](/briefs/{{ end_date_str }}/{{ region.slug }})
 
 {% for c in region.countries %}
-<a href="/briefs/{{ end_date_str }}/{{ region.slug }}#{{ c.name | lower | replace(' ', '-') }}" style={{ "{{ textDecoration: 'none', color: 'inherit' }}" }}>
-<img src="https://flagcdn.com/{{ c.code }}.svg" alt="{{ c.name }} flag" style={% raw %}{{ width: "20px", height: "15px", display: "inline", verticalAlign: "middle", marginRight: "6px" }}{% endraw %} /> **{{ c.name }}** — {{ c.headline }}
-</a>
-
+<Card title="{{ c.name }}" icon="https://flagcdn.com/w40/{{ c.code }}.png" href="/briefs/{{ end_date_str }}/{{ region.slug }}#{{ c.name | lower | replace(' ', '-') }}" horizontal>
+{{ c.headline }}
+</Card>
 {% endfor %}
 {% endif %}
 {% endfor %}
