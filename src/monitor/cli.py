@@ -320,7 +320,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 except FileNotFoundError:
                     pass
 
-            overview_content, region_page_contents, watchlist_content = build_all_pages(
+            overview_content, region_page_contents, watchlist_content, at_a_glance_content = build_all_pages(
                 global_ledger, regional_reports, country_ledgers, country_entries, end_date,
                 story_maps=story_maps_data or None,
             )
@@ -397,7 +397,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 _sm[code] = load_story_map(code, end_date)
             except FileNotFoundError:
                 pass
-        overview_content, region_page_contents, watchlist_content = _build(
+        overview_content, region_page_contents, watchlist_content, at_a_glance_content = _build(
             global_ledger, regional_reports, country_ledgers, country_entries, end_date,
             story_maps=_sm or None,
         )
@@ -409,7 +409,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
             from .newsletter.renderer import render_pages
 
             print("Rendering templates → MDX...")
-            pages = render_pages(overview_content, region_page_contents, watchlist_content)
+            pages = render_pages(overview_content, region_page_contents, watchlist_content, at_a_glance_content)
 
             brief_dir = publish_brief(pages, end_date)
             print(f"  Site published to {brief_dir}")

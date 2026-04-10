@@ -198,7 +198,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        overview, region_pages, watchlist = build_all_pages(
+        overview, region_pages, watchlist, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -214,7 +214,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _ = build_all_pages(
+        _, region_pages, _, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -229,7 +229,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _ = build_all_pages(
+        _, region_pages, _, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -243,7 +243,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        overview, _, _ = build_all_pages(
+        overview, _, _, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -256,7 +256,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _ = build_all_pages(
+        _, region_pages, _, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 

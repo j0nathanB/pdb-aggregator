@@ -20,6 +20,7 @@ DOCS_JSON = SITE_DIR / "docs.json"
 # Stable page order for navigation
 PAGE_ORDER = [
     "overview",
+    "at-a-glance",
     "frontline-eastern-europe",
     "western-europe",
     "asia-pacific",

@@ -342,7 +342,7 @@ async def run(end_date: date) -> None:
 
     # Build structured content. We only use overview.executive_brief here.
     logger.info("Building structured content...")
-    overview, _region_pages, _watchlist = build_all_pages(
+    overview, _region_pages, _watchlist, _ = build_all_pages(
         global_ledger,
         regional_reports,
         country_ledgers,

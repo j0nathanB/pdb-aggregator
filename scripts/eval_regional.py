@@ -306,7 +306,7 @@ async def run(end_date: date, region: Region) -> None:
 
     # Build structured content for all pages (we only use the one we care about).
     logger.info("Building structured content...")
-    _overview, region_pages, _watchlist = build_all_pages(
+    _overview, region_pages, _watchlist, _ = build_all_pages(
         global_ledger,
         regional_reports,
         country_ledgers,

@@ -15,6 +15,7 @@ from jinja2 import Environment, FileSystemLoader
 from ..config import Region
 from .assembly import REGION_SLUGS, REGION_ORDER
 from .content_models import (
+    AtAGlancePageContent,
     OverviewPageContent,
     RegionPageContent,
     WatchlistPageContent,
@@ -156,6 +157,7 @@ def render_pages(
     overview: OverviewPageContent,
     region_pages: dict[Region, RegionPageContent],
     watchlist: WatchlistPageContent,
+    at_a_glance: AtAGlancePageContent | None = None,
 ) -> dict[str, str]:
     """Render all pages from structured content models.
 
@@ -178,6 +180,15 @@ def render_pages(
         region_cards=overview.region_cards,
         watchlist_card_summary=overview.watchlist_card_summary,
     ))
+
+    # At-a-glance page
+    if at_a_glance and at_a_glance.regions:
+        glance_tmpl = env.get_template("at-a-glance.mdx.j2")
+        pages["at-a-glance"] = _escape_mdx(glance_tmpl.render(
+            date_range=date_range,
+            end_date_str=end_date_str,
+            regions=at_a_glance.regions,
+        ))
 
     # Region pages
     region_tmpl = env.get_template("region.mdx.j2")

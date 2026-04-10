@@ -209,3 +209,38 @@ class WatchlistPageContent:
 
     # Editor output — narrative prose. None until editor runs.
     edited_narrative: Optional[str] = None
+
+
+# =============================================================================
+# At-a-glance page
+# =============================================================================
+
+@dataclass
+class AtAGlanceCountry:
+    """A single country entry on the at-a-glance page."""
+    code: str
+    name: str
+    headline: str
+    source_count: int
+
+
+@dataclass
+class AtAGlanceRegion:
+    """A region group on the at-a-glance page."""
+    region: Region
+    display_name: str
+    slug: str
+    countries: list[AtAGlanceCountry] = field(default_factory=list)
+
+
+@dataclass
+class AtAGlancePageContent:
+    """Structured content for the at-a-glance page.
+
+    Deterministic — built from story maps, no LLM calls.
+    Shows top story headline per country, grouped by region.
+    """
+
+    week_start: date
+    week_end: date
+    regions: list[AtAGlanceRegion] = field(default_factory=list)

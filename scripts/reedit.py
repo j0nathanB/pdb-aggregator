@@ -555,7 +555,7 @@ async def main():
         except FileNotFoundError:
             pass
 
-    overview, region_pages, watchlist = build_all_pages(
+    overview, region_pages, watchlist, at_a_glance = build_all_pages(
         global_ledger, regional_reports, country_ledgers, country_entries,
         end_date, story_maps=story_maps or None,
     )

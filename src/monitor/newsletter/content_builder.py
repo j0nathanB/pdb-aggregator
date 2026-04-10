@@ -27,6 +27,9 @@ from .assembly import (
 )
 from .content_models import (
     AbsenceContent,
+    AtAGlanceCountry,
+    AtAGlancePageContent,
+    AtAGlanceRegion,
     BriefingItemInput,
     CountryContent,
     DevelopmentContent,
@@ -257,6 +260,72 @@ def _extract_card_summary(report: Optional[RegionalReport]) -> str:
 
 
 # =============================================================================
+# At-a-glance builder
+# =============================================================================
+
+def _top_story(story_map: dict) -> tuple[str, int]:
+    """Return (headline, source_count) for the top story in a story map."""
+    stories = story_map.get("stories", [])
+    if not stories:
+        return "", 0
+    best = max(stories, key=lambda s: s.get("source_count", 0))
+    return best.get("headline", ""), best.get("source_count", 0)
+
+
+def _build_at_a_glance(
+    story_maps: dict[str, dict],
+    country_ledgers: dict[str, "CountryLedger"],
+    week_start: date,
+    week_end: date,
+) -> AtAGlancePageContent:
+    """Build the at-a-glance page from story maps.
+
+    Deterministic. Picks the top story (by source_count) for each country,
+    groups by region in editorial order.
+    """
+    regions: list[AtAGlanceRegion] = []
+
+    for region in REGION_ORDER:
+        region_codes = REGION_COUNTRIES.get(region, [])
+        countries: list[AtAGlanceCountry] = []
+
+        for code in region_codes:
+            sm = story_maps.get(code)
+            if not sm:
+                continue
+            headline, source_count = _top_story(sm)
+            if not headline:
+                continue
+
+            # Get country name from ledger, fall back to story map metadata
+            ledger = country_ledgers.get(code)
+            name = ledger.country if ledger else sm.get("country", code.upper())
+
+            countries.append(AtAGlanceCountry(
+                code=code,
+                name=name,
+                headline=headline,
+                source_count=source_count,
+            ))
+
+        # Sort by source_count descending within region
+        countries.sort(key=lambda c: -c.source_count)
+
+        regions.append(AtAGlanceRegion(
+            region=region,
+            display_name=REGION_DISPLAY_NAMES.get(region, region.value),
+            slug=REGION_SLUGS.get(region, region.value),
+            countries=countries,
+        ))
+
+    return AtAGlancePageContent(
+        week_start=week_start,
+        week_end=week_end,
+        regions=regions,
+    )
+
+
+# =============================================================================
 # Main entry point
 # =============================================================================
 
@@ -267,7 +336,7 @@ def build_all_pages(
     country_entries: dict[str, Optional[WeeklyEntry]],
     end_date: date,
     story_maps: Optional[dict[str, dict]] = None,
-) -> tuple[OverviewPageContent, dict[Region, RegionPageContent], WatchlistPageContent]:
+) -> tuple[OverviewPageContent, dict[Region, RegionPageContent], WatchlistPageContent, AtAGlancePageContent]:
     """Build structured content for all pages.
 
     Deterministic, no LLM calls. This is the structured equivalent of
@@ -393,4 +462,9 @@ def build_all_pages(
             else f"{len(watchlist_items)} items on watch — {watchlist_items[0].item}"
         )
 
-    return overview, region_pages, watchlist
+    # --- At-a-glance page ---
+    at_a_glance = _build_at_a_glance(
+        story_maps, country_ledgers, week_start, end_date,
+    )
+
+    return overview, region_pages, watchlist, at_a_glance
