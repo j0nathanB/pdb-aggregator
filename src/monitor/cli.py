@@ -331,9 +331,10 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
             )
-            overview_content, region_page_contents, watchlist_content = await copyedit_all(
+            overview_content, region_page_contents, watchlist_content, at_a_glance_content = await copyedit_all(
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
+                at_a_glance=at_a_glance_content,
             )
             overview_content, region_page_contents, watchlist_content = await style_edit_all(
                 overview_content, region_page_contents, watchlist_content,
@@ -352,7 +353,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
             )
-            overview_content, region_page_contents, watchlist_content = await copyedit_all(
+            overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
             )
@@ -373,7 +374,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
             )
-            overview_content, region_page_contents, watchlist_content = await copyedit_all(
+            overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
                 overview_content, region_page_contents, watchlist_content,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
             )

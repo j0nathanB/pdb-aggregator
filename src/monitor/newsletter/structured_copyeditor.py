@@ -23,6 +23,7 @@ from ..rate_limit import anthropic_limiter
 from ..sanitize import extract_json
 from ..timing import TrackedSemaphore, with_heartbeat
 from .content_models import (
+    AtAGlancePageContent,
     CountryContent,
     ExecutiveBriefContent,
     OverviewPageContent,
@@ -299,6 +300,131 @@ async def copyedit_watchlist(
     return watchlist
 
 
+AT_A_GLANCE_SYSTEM = """
+<role>
+You are a headline copyeditor for a geopolitical intelligence briefing's front page.
+You receive a JSON array of headline objects, each with a country_code, country_name,
+and headline. You return the same array with polished headlines.
+</role>
+
+<rules>
+1. NAMES AND TITLES
+   - When a person appears on their OWN country's card, prefer their title alone:
+     "Macron concludes Asia tour..." on the France card → "President concludes Asia tour..."
+   - When a person appears on ANOTHER country's card, use nationality + title:
+     "Macron concludes state visit to Japan..." on the Japan card → "French president concludes state visit with Emperor Naruhito"
+   - Exception: when the person's identity IS the news (appointment, resignation, election),
+     keep the name: "Avi Lewis wins federal NDP leadership" stays as is.
+     "Juan Ramón de la Fuente leaves Foreign Ministry" stays as is.
+
+2. ABBREVIATIONS
+   - Expand all unfamiliar abbreviations to their English name:
+     KMT → Kuomintang, STF → Supreme Federal Court, NDP → New Democratic Party,
+     SPD → Social Democratic Party, PT → Workers' Party, AfD → Alternative for Germany
+   - Familiar abbreviations may stay: NATO, EU, GDP, UN, CIA, FBI, BBC, AIDS, UNESCO, OECD
+   - Country-specific acronyms that a global reader would not know MUST be expanded.
+   - Pronounceable abbreviations in mixed case: Pemex, Mercosur, Unicef
+
+3. STYLE
+   - Plain words, short sentences. Cut unnecessary words.
+   - No jargon, no clichés.
+   - Keep headlines factual and direct.
+   - Do not add information not in the original headline.
+
+4. PRESERVE
+   - Do not change the country_code or country_name fields.
+   - Do not reorder the array.
+   - If a headline is already clean, return it unchanged.
+</rules>
+
+<output_format>
+Return the same JSON array structure with only the headline field modified where needed.
+</output_format>"""
+
+
+async def copyedit_at_a_glance(
+    at_a_glance: AtAGlancePageContent,
+    analysis_date: date | None = None,
+) -> AtAGlancePageContent:
+    """Copyedit at-a-glance headlines — single LLM call for all countries."""
+    headlines = []
+    for region in at_a_glance.regions:
+        for c in region.countries:
+            headlines.append({
+                "country_code": c.code,
+                "country_name": c.name,
+                "headline": c.headline,
+            })
+
+    if not headlines:
+        return at_a_glance
+
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    from .structured_editor import _build_system_prompt
+    system_prompt = _build_system_prompt(AT_A_GLANCE_SYSTEM)
+
+    user_message = json.dumps(headlines, indent=2, ensure_ascii=False)
+
+    logger.info("Copyeditor [at_a_glance]: starting (%d headlines)", len(headlines))
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
+
+    async with anthropic_limiter():
+        async with client.messages.stream(
+            model=COPYEDITOR_MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
+            temperature=1,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        ) as stream:
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                "Copyeditor at_a_glance: streaming API call",
+            )
+
+    text_parts = [b.text for b in response.content if b.type == "text"]
+    response_text = "\n".join(text_parts)
+
+    logger.info(
+        "Copyeditor [at_a_glance]: done — input=%d, output=%d tokens",
+        response.usage.input_tokens, response.usage.output_tokens,
+    )
+
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    run_date = analysis_date or date.today()
+    save_raw_response(
+        "copyeditor", "at_a_glance", run_date,
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
+    try:
+        data = extract_json(response_text, context="copyeditor_at_a_glance")
+        update_trace_parsed("copyeditor", "at_a_glance", run_date, parsed_output=data)
+    except (ValueError, KeyError):
+        logger.warning("Copyeditor [at_a_glance]: failed to parse response, keeping originals")
+        return at_a_glance
+
+    # Apply polished headlines back
+    if isinstance(data, list):
+        lookup = {item["country_code"]: item["headline"] for item in data if "country_code" in item and "headline" in item}
+        for region in at_a_glance.regions:
+            for c in region.countries:
+                if c.code in lookup:
+                    c.headline = lookup[c.code]
+
+    return at_a_glance
+
+
 # =============================================================================
 # Orchestration
 # =============================================================================
@@ -310,7 +436,8 @@ async def copyedit_all(
     analysis_date: date | None = None,
     max_concurrent: int = 5,
     scope: str = "all",
-) -> tuple[OverviewPageContent, dict, WatchlistPageContent]:
+    at_a_glance: AtAGlancePageContent | None = None,
+) -> tuple[OverviewPageContent, dict, WatchlistPageContent, AtAGlancePageContent | None]:
     """Copyedit content models. scope: 'all' | 'countries' | 'regional' | 'executive'."""
 
     semaphore = TrackedSemaphore(max_concurrent, "structured_copyeditor")
@@ -342,6 +469,14 @@ async def copyedit_all(
                 watchlist = await copyedit_watchlist(watchlist, analysis_date)
         tasks.append(_ce_wl())
 
+    # At-a-glance headlines
+    if scope in ("all", "countries") and at_a_glance and at_a_glance.regions:
+        async def _ce_glance():
+            async with semaphore.acquire("at_a_glance"):
+                nonlocal at_a_glance
+                at_a_glance = await copyedit_at_a_glance(at_a_glance, analysis_date)
+        tasks.append(_ce_glance())
+
     # Regional leads
     if scope in ("all", "regional"):
         for region, page in region_pages.items():
@@ -365,4 +500,4 @@ async def copyedit_all(
             if page and page.card_summary:
                 card.summary = page.card_summary
 
-    return overview, region_pages, watchlist
+    return overview, region_pages, watchlist, at_a_glance
