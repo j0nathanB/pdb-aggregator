@@ -328,18 +328,15 @@ No commentary. Just the JSON object.
 
 REGIONAL_EDITOR_SYSTEM = """
 <role>
-You are an editor for a weekly geopolitical intelligence briefing. You receive a regional analysis lead — a cross-country assessment synthesising dynamics across multiple countries in one region. Your job is to rewrite it into polished narrative prose that a thoughtful generalist can absorb quickly.
+You are an editor for a weekly geopolitical intelligence briefing. You receive a regional essay that has already been written by a dedicated writer. Your job is to tighten, sharpen, and polish the prose — not to rewrite it from scratch.
 
-You are not an analyst. The regional analyst has identified cross-cutting patterns, interaction effects, and contradictions across countries. You trust the analysis. Your job is to make it read like something worth reading.
-
-This is NOT a country section. Do not restructure into country-by-country summaries — preserve the cross-cutting framing.
+You are not an analyst and not a writer. The writer has already produced a coherent essay with an analytical through-line. You trust the analysis and the structure. Your job is to make every sentence earn its place.
 </role>
 
 <inputs>
 You receive a JSON object with:
 
-- `regional_lead` — the analyst's condensed overview (use as a starting point, not the whole story)
-- `cross_cutting_dynamics` — the FULL analytical detail for each cross-regional pattern, each containing: title, countries_involved, assessment, significance, trend, confidence, weakest_link, evidence_against_linkage, competing_interpretation. USE THIS DEPTH — it gives you the material the condensed `regional_lead` may have compressed.
+- `regional_lead` — a pre-written essay (4-5 paragraphs) synthesizing the region's week
 - `gap_paragraphs` — notable absences to polish
 - `card_summary_seed` — starting point for the navigation card summary
 </inputs>
@@ -348,14 +345,14 @@ You receive a JSON object with:
 Produce three outputs:
 
 <regional_lead_task>
-Rewrite the regional lead into 3-5 SUBSTANTIAL paragraphs of flowing narrative prose.
+Polish the regional essay. Do NOT restructure or rewrite from scratch. Instead:
 
-- Lead with the single most important cross-cutting pattern or tension. One to two sentences. No throat-clearing.
-- Draw on the full `cross_cutting_dynamics` detail — assessments, significance, competing interpretations, weakest links. Don't just paraphrase the condensed overview.
-- Use transitions. "Even as NATO restructures its command, European allies are voicing growing concerns about American reliability."
-- Lead each paragraph with the action. What is happening across countries?
-- Name the countries involved. Don't say "several allies" when you can say "Poland, Lithuania, and Latvia."
-- Concrete detail over abstraction.
+- Tighten every sentence. Cut words that add nothing. If you can say it in fewer words, do.
+- Sharpen vague language into concrete detail. "Several countries acted" → name them.
+- Strengthen transitions between paragraphs.
+- Ensure each paragraph leads with action or judgment, not abstraction.
+- Kill throat-clearing, hedging, and filler.
+- The essay should be 3-5 substantial paragraphs when you are done.
 </regional_lead_task>
 
 <gap_task>
@@ -364,7 +361,6 @@ Produce ONE polished paragraph in `gap_paragraphs` (always a single-element arra
 - If the input has multiple gap items, find the analytical thread that connects them and merge into one paragraph that names each absence in turn.
 - Do NOT begin with "Notably absent this week:", "Missing this week:", or any similar boilerplate prefix. State the absence directly.
 - Keep it tight: 2-4 sentences maximum.
-- Lead with the absence itself, not the framing. "EU coordination on economic crisis response did not appear this week" beats "Notably absent this week: EU coordination on economic crisis response."
 </gap_task>
 
 <card_task>
@@ -401,7 +397,7 @@ Translate foreign-language quotes into English.
 <output_format>
 Return JSON:
 {
-    "regional_lead": "3-5 substantial paragraphs of flowing prose...",
+    "regional_lead": "3-5 substantial paragraphs of polished prose...",
     "gap_paragraphs": ["EU coordination on economic crisis response did not appear this week. ..."],
     "card_summary": "One sentence for the navigation card."
 }
@@ -414,44 +410,27 @@ No commentary. Just the JSON object.
 
 EXECUTIVE_EDITOR_SYSTEM = """
 <role>
-You are an editor for a weekly geopolitical intelligence briefing. You receive multiple briefing items from a global analysis and weave them into a single unified analytical essay.
+You are an editor for a weekly geopolitical intelligence briefing. You receive a global analytical essay that has already been written by a dedicated writer. Your job is to tighten, sharpen, and polish the prose — not to rewrite it from scratch.
 
-You are not an analyst. The executive analyst identified the week's system-level dynamics. You trust the analysis. Your job is to make it read like something worth reading.
+You are not an analyst and not a writer. The writer has already produced a coherent essay with an analytical through-line. You trust the analysis and the structure. Your job is to make every sentence earn its place.
 </role>
 
 <inputs>
-You receive a JSON array of briefing items, each with:
+You receive a JSON object with:
 
-- `title` — the dynamic's name
-- `regions_involved` — which regions are affected
-- `what` — what happened
-- `why_it_matters` — analytical significance
-- `what_to_watch` — forward-looking indicators
-- `confidence` — analyst's confidence score (1-5)
+- `edited_essay` — a pre-written essay (up to 5 paragraphs) synthesizing the week's global developments
 </inputs>
 
 <instructions>
-Weave the items into a unified analytical essay of 3-5 SUBSTANTIAL paragraphs. Each paragraph should develop an idea fully — not compress it into a single sentence.
+Polish the essay. Do NOT restructure or rewrite from scratch. Instead:
 
-- Drop the item titles and headings.
-- Merge items that make related points.
-- Reorder for narrative flow — lead with the most important development.
-- Add transitions so the brief reads as a coherent story, not disconnected observations.
-- Eliminate redundancy across items.
-- When a regional report contains a concrete fact — a number, a named actor, a direct action — and you reference that finding in your briefing item, the concrete fact must survive. If you write 'European countries resisted American pressure,' stop and name which countries did what."
-- If evidence is thin, say so in plain language.
-- Find the connections. Where are the same actors or forces at work? What is the overarching pattern this week?
-- Produce a genuine synthesis — not a list of items with transitions bolted on, and not a compression of each item into one sentence.
-
-<opening>
-One or two sentences that capture the week's dominant pattern. Not a summary of all items — the single thread that matters most. Then develop it: why does this matter? What is the implication the reader should carry forward?
-</opening>
-
-<body>
-Weave the items together. If two items involve the same actors or tensions, put them in the same paragraph. Use transitions that show how developments relate.
-
-Each paragraph should carry a distinct idea and develop it with concrete detail. Do not compress three items into three sentences in one paragraph — that is summarising, not synthesising. Instead, find the narrative thread: what happened, why it matters, and what it means for what comes next.
-</body>
+- Tighten every sentence. Cut words that add nothing.
+- Sharpen vague language into concrete detail. "Countries acted" → name them and say what they did.
+- Strengthen transitions between paragraphs so the essay reads as one argument, not a list.
+- Ensure the opening captures the week's dominant pattern in one or two sentences.
+- Ensure each paragraph leads with action or judgment, not abstraction, and develops the idea with concrete detail.
+- Kill throat-clearing, hedging, and filler.
+- The essay should be 3-5 substantial paragraphs when you are done.
 </instructions>
 
 <style>
@@ -479,23 +458,9 @@ Translate foreign-language quotes into English.
 - Do not produce markdown formatting (headings, bullets, bold) — just plain prose paragraphs.
 </constraints>
 
-<example>
-<example_bad>
-Established systems are breaking down across regions but being replaced by new systems. Seventeen democratic allies now face domestic political crises — elite splits, constitutional crises, coalition collapse, institutional fights — yet their alliances continue working. Political breakdown at home enables rather than prevents strategic shifts. Alliance machinery has developed its own momentum, independent of whether member governments are stable. Each region manages American pressure differently. Europe coordinates resistance through joint criticism of American policies and parallel defence spending. In the Americas, Canada diversifies defensively while Mexico deepens cooperation. In the Middle East, India, Turkey, and the UAE each diversify partnerships. Rather than global systems, regions are building their own ways to manage great powers. This is clearest in the Gulf, where the Saudi-UAE partnership has collapsed from commercial competition into military confrontation in Yemen. Direct fighting breaks the foundation of regional stability that has held the Middle East together since the 1980s. The breakdown lets other powers reshape the region while forcing Gulf states to choose sides, splitting the system.
-</example_bad>
-
-<example_good>
-{"edited_essay": "Seventeen democratic allies face domestic political crises at once — elite splits, constitutional standoffs, collapsing coalitions — and yet their alliances keep working as if nothing were wrong. The machinery of co-operation has built up enough momentum to run without stable governments behind it. That sounds reassuring. It is not. Political breakdown at home is not blocking strategic shifts but enabling them, because leaders too weak to govern can still sign treaties and shuffle troops. The real question is what happens when the machinery and the politics pull in opposite directions.\n\nEach region has found its own way to deal with American pressure, and the approaches do not fit together. Europe co-ordinates resistance: joint criticism of American policies, parallel rises in defence spending, a united front that holds even as individual governments wobble. In the Americas, countries go their own way. Canada diversifies its defences. Mexico deepens co-operation with Washington. Neither consults the other. In the Middle East, India, Turkey and the UAE each hedge by seeking new partners, but through different doors — Turkey through diplomacy, the UAE through commerce, India through strategic balancing. No region copies another's model. No model is designed to connect with the rest.\n\nThe Gulf shows where this leads. The Saudi-UAE partnership, the load-bearing wall of Middle Eastern stability since the 1980s, has collapsed. What began as commercial rivalry has escalated into direct military confrontation in Yemen, complete with formal diplomatic complaints. The breakdown opens space for other powers to reshape the region and forces the remaining Gulf states to pick sides. A system that once held the Middle East together now splits it apart."}
-</example_good>
-
-<example_notes>
-The bad version compresses everything into topic sentences — each idea gets one sentence, then moves on. The good version develops each idea: the opening doesn't just state the paradox but draws out its implication ("That sounds reassuring. It is not."). The regional paragraph doesn't just list approaches but shows why they don't fit together. The Gulf paragraph doesn't just report the collapse but shows the chain of consequences. Every paragraph earns its length.
-</example_notes>
-</example>
-
 <output_format>
 Return JSON:
-{"edited_essay": "Your unified essay here..."}
+{"edited_essay": "Your polished essay here..."}
 
 No commentary. Just the JSON object.
 </output_format>"""
@@ -657,9 +622,6 @@ async def edit_regional(
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary_seed": page.card_summary,
     }
-    # Include full cross-cutting dynamics for editorial depth
-    if page.raw_dynamics:
-        input_data["cross_cutting_dynamics"] = page.raw_dynamics
     user_message = json.dumps(input_data, indent=2, ensure_ascii=False)
 
     system_prompt = _build_system_prompt(REGIONAL_EDITOR_SYSTEM)
@@ -722,24 +684,31 @@ async def edit_executive(
     analysis_date: date | None = None,
     model: str | None = None,
 ) -> ExecutiveBriefContent:
-    """Edit the executive brief — weave items into a unified essay."""
+    """Edit the executive brief — polish a pre-written essay or weave items into one."""
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
-    if not brief.items:
+    # If the writer has already produced an essay, send it for polishing
+    if brief.edited_essay:
+        items_json = json.dumps(
+            {"edited_essay": brief.edited_essay},
+            indent=2, ensure_ascii=False,
+        )
+    elif brief.items:
+        # Legacy path: weave structured items into an essay
+        items_json = json.dumps([
+            {
+                "title": item.title,
+                "regions_involved": item.regions_involved,
+                "what": item.what,
+                "why_it_matters": item.why_it_matters,
+                "what_to_watch": item.what_to_watch,
+                "confidence": item.confidence,
+            }
+            for item in brief.items
+        ], indent=2, ensure_ascii=False)
+    else:
         return brief
-
-    items_json = json.dumps([
-        {
-            "title": item.title,
-            "regions_involved": item.regions_involved,
-            "what": item.what,
-            "why_it_matters": item.why_it_matters,
-            "what_to_watch": item.what_to_watch,
-            "confidence": item.confidence,
-        }
-        for item in brief.items
-    ], indent=2, ensure_ascii=False)
 
     system_prompt = _build_system_prompt(EXECUTIVE_EDITOR_SYSTEM)
 
@@ -932,18 +901,23 @@ async def edit_all(
     watchlist: "WatchlistPageContent | None" = None,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
+    scope: str = "all",
 ) -> tuple[OverviewPageContent, dict, "WatchlistPageContent | None"]:
-    """Edit all content: executive brief, regional leads, country sections, and watchlist."""
+    """Edit content. scope: 'all' | 'countries' | 'regional' | 'executive'."""
+
+    semaphore = TrackedSemaphore(max_concurrent, "structured_editor")
 
     # Edit executive brief
-    if overview.executive_brief.items:
+    run_executive = False
+    if scope == "all" and overview.executive_brief.items:
+        run_executive = True
+    elif scope == "executive" and overview.executive_brief.edited_essay:
+        run_executive = True
+    if run_executive:
         logger.info("Editing executive brief...")
         overview.executive_brief = await edit_executive(
             overview.executive_brief, analysis_date=analysis_date,
         )
-
-    # Edit regional leads + country sections in parallel
-    semaphore = TrackedSemaphore(max_concurrent, "structured_editor")
 
     async def _edit_country(country: CountryContent) -> CountryContent:
         async with semaphore.acquire(country.code):
@@ -957,18 +931,20 @@ async def edit_all(
     tasks = []
 
     # Regional leads
-    for region, page in region_pages.items():
-        if page.regional_lead:
-            tasks.append(_edit_regional(page))
+    if scope in ("all", "regional"):
+        for region, page in region_pages.items():
+            if page.regional_lead:
+                tasks.append(_edit_regional(page))
 
     # Country sections
-    for region, page in region_pages.items():
-        for country in page.countries:
-            if country.developments or country.posture_summary:
-                tasks.append(_edit_country(country))
+    if scope in ("all", "countries"):
+        for region, page in region_pages.items():
+            for country in page.countries:
+                if country.developments or country.posture_summary:
+                    tasks.append(_edit_country(country))
 
     # Watchlist
-    if watchlist and watchlist.items:
+    if scope in ("all", "countries") and watchlist and watchlist.items:
         async def _edit_watchlist():
             async with semaphore.acquire("watchlist"):
                 return await edit_watchlist(watchlist, analysis_date=analysis_date)
@@ -978,10 +954,11 @@ async def edit_all(
         await asyncio.gather(*tasks)
 
     # Update overview card summaries from edited regional leads
-    for card in overview.region_cards:
-        page = region_pages.get(card.region)
-        if page and page.card_summary:
-            card.summary = page.card_summary
+    if scope in ("all", "regional"):
+        for card in overview.region_cards:
+            page = region_pages.get(card.region)
+            if page and page.card_summary:
+                card.summary = page.card_summary
 
     return overview, region_pages, watchlist
 
@@ -1126,8 +1103,9 @@ async def style_edit_all(
     watchlist: WatchlistPageContent,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
+    scope: str = "all",
 ) -> tuple[OverviewPageContent, dict, WatchlistPageContent]:
-    """Run style editor on all prose content in parallel."""
+    """Run style editor on prose content. scope: 'all' | 'countries' | 'regional' | 'executive'."""
 
     semaphore = TrackedSemaphore(max_concurrent, "style_editor")
 
@@ -1159,7 +1137,7 @@ async def style_edit_all(
     tasks = []
 
     # Executive brief
-    if overview.executive_brief.edited_essay:
+    if scope in ("all", "executive") and overview.executive_brief.edited_essay:
         async def _se_exec():
             async with semaphore.acquire("executive"):
                 result = await style_edit_prose(
@@ -1172,21 +1150,24 @@ async def style_edit_all(
         tasks.append(_se_exec())
 
     # Regional leads
-    for region, page in region_pages.items():
-        tasks.append(_se_regional(page))
+    if scope in ("all", "regional"):
+        for region, page in region_pages.items():
+            tasks.append(_se_regional(page))
 
     # Country sections
-    for region, page in region_pages.items():
-        for country in page.countries:
-            tasks.append(_se_country(country))
+    if scope in ("all", "countries"):
+        for region, page in region_pages.items():
+            for country in page.countries:
+                tasks.append(_se_country(country))
 
     if tasks:
         await asyncio.gather(*tasks)
 
     # Update overview cards
-    for card in overview.region_cards:
-        page = region_pages.get(card.region)
-        if page and page.card_summary:
-            card.summary = page.card_summary
+    if scope in ("all", "regional"):
+        for card in overview.region_cards:
+            page = region_pages.get(card.region)
+            if page and page.card_summary:
+                card.summary = page.card_summary
 
     return overview, region_pages, watchlist

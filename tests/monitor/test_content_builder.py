@@ -222,7 +222,8 @@ class TestBuildAllPages:
         codes = [c.code for c in americas.countries]
         assert "mx" in codes
 
-    def test_regional_lead_populated(self):
+    def test_regional_lead_placeholder(self):
+        """Regional lead is empty after build — the regional writer fills it later."""
         gl = _test_global_ledger()
         reports = {Region.AMERICAS: _test_regional_report()}
         ledgers = {"mx": _test_ledger()}
@@ -233,9 +234,10 @@ class TestBuildAllPages:
         )
 
         americas = region_pages[Region.AMERICAS]
-        assert "diplomatic shifts" in americas.regional_lead
+        assert americas.regional_lead == ""
 
-    def test_card_summary_seeded(self):
+    def test_card_summary_placeholder(self):
+        """Card summary is empty after build — the regional writer fills it later."""
         gl = _test_global_ledger()
         reports = {Region.AMERICAS: _test_regional_report()}
         ledgers = {"mx": _test_ledger()}
@@ -246,7 +248,7 @@ class TestBuildAllPages:
         )
 
         americas_card = next(c for c in overview.region_cards if c.region == Region.AMERICAS)
-        assert americas_card.summary  # should have seeded summary
+        assert americas_card.summary == ""  # writer fills this later
 
     def test_country_content_has_developments(self):
         gl = _test_global_ledger()

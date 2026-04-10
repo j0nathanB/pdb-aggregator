@@ -308,6 +308,8 @@ async def cmd_run(args: argparse.Namespace) -> None:
             from .newsletter.content_builder import build_all_pages
             from .newsletter.structured_editor import edit_all, style_edit_all
             from .newsletter.structured_copyeditor import copyedit_all
+            from .newsletter.regional_writer import write_all_regional_essays
+            from .newsletter.global_writer import write_global_essay
 
             print("Building structured content...")
             from .ledger.storage import load_story_map
@@ -323,22 +325,61 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 story_maps=story_maps_data or None,
             )
 
-            print("Editing (structured JSON I/O)...")
+            # Round 1: Edit country summaries + watchlist
+            print("Round 1: Editing country summaries...")
             overview_content, region_page_contents, watchlist_content = await edit_all(
                 overview_content, region_page_contents, watchlist_content,
-                analysis_date=end_date, max_concurrent=args.concurrency,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
             )
-
-            print("Copy-editing (structured JSON I/O)...")
             overview_content, region_page_contents, watchlist_content = await copyedit_all(
                 overview_content, region_page_contents, watchlist_content,
-                analysis_date=end_date, max_concurrent=args.concurrency,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
             )
-
-            print("Style editing (structured JSON I/O)...")
             overview_content, region_page_contents, watchlist_content = await style_edit_all(
                 overview_content, region_page_contents, watchlist_content,
-                analysis_date=end_date, max_concurrent=args.concurrency,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
+            )
+
+            # Regional Writer: produce regional essays from edited country prose
+            print("Writing regional essays...")
+            region_page_contents = await write_all_regional_essays(
+                region_page_contents, max_concurrent=args.concurrency,
+            )
+
+            # Round 2: Edit regional essays
+            print("Round 2: Editing regional essays...")
+            overview_content, region_page_contents, watchlist_content = await edit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
+            )
+            overview_content, region_page_contents, watchlist_content = await copyedit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
+            )
+            overview_content, region_page_contents, watchlist_content = await style_edit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
+            )
+
+            # Global Writer: produce global essay from edited regional prose
+            print("Writing global essay...")
+            overview_content = await write_global_essay(
+                overview_content, region_page_contents,
+            )
+
+            # Round 3: Edit global essay
+            print("Round 3: Editing global essay...")
+            overview_content, region_page_contents, watchlist_content = await edit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+            )
+            overview_content, region_page_contents, watchlist_content = await copyedit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+            )
+            overview_content, region_page_contents, watchlist_content = await style_edit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
             )
 
             recorder.complete_stage("newsletter")

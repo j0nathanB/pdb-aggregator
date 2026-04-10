@@ -228,26 +228,17 @@ def _build_country_content(
 # =============================================================================
 
 def _extract_regional_lead(report: Optional[RegionalReport]) -> tuple[str, list[str]]:
-    """Extract regional lead prose and gap paragraphs from a regional report.
+    """Extract gap paragraphs from a regional report.
 
-    Returns (lead_prose, gap_paragraphs).
+    Returns (lead_prose, gap_paragraphs). Lead is empty — the regional
+    writer produces it later from edited country summaries.
     """
     if not report:
         return "", []
 
-    # Use regional overview if available
-    if report.regional_overview:
-        lead = report.regional_overview
-    elif report.cross_cutting_dynamics:
-        paragraphs = []
-        for dynamic in report.cross_cutting_dynamics:
-            parts = [dynamic.assessment]
-            if dynamic.significance:
-                parts.append(dynamic.significance)
-            paragraphs.append(" ".join(parts))
-        lead = "\n\n".join(paragraphs)
-    else:
-        lead = ""
+    # Regional lead is now produced by the regional writer after
+    # country summaries are edited. Set to empty placeholder.
+    lead = ""
 
     # Extract gaps as separate paragraphs
     gaps = []
@@ -261,26 +252,8 @@ def _extract_regional_lead(report: Optional[RegionalReport]) -> tuple[str, list[
 
 
 def _extract_card_summary(report: Optional[RegionalReport]) -> str:
-    """Extract first 1-2 sentences for the region card on the overview page."""
-    if not report:
-        return ""
-
-    if report.regional_overview:
-        text = report.regional_overview
-    elif report.cross_cutting_dynamics:
-        d = report.cross_cutting_dynamics[0]
-        parts = [d.assessment]
-        if d.significance:
-            parts.append(d.significance)
-        text = " ".join(parts)
-    else:
-        return ""
-
-    first_para = text.split("\n\n")[0].strip()
-    sentences = re.split(r'(?<=[.!?])\s+(?=[A-Z])', first_para)
-    if len(sentences) <= 1:
-        return first_para
-    return " ".join(sentences[:2])
+    """Placeholder — the regional writer produces the card summary later."""
+    return ""
 
 
 # =============================================================================

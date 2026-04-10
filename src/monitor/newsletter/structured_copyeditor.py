@@ -309,8 +309,9 @@ async def copyedit_all(
     watchlist: WatchlistPageContent,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
+    scope: str = "all",
 ) -> tuple[OverviewPageContent, dict, WatchlistPageContent]:
-    """Copyedit all content models in parallel."""
+    """Copyedit content models. scope: 'all' | 'countries' | 'regional' | 'executive'."""
 
     semaphore = TrackedSemaphore(max_concurrent, "structured_copyeditor")
 
@@ -325,7 +326,7 @@ async def copyedit_all(
     tasks = []
 
     # Executive brief
-    if overview.executive_brief.edited_essay:
+    if scope in ("all", "executive") and overview.executive_brief.edited_essay:
         async def _ce_exec():
             async with semaphore.acquire("executive"):
                 overview.executive_brief = await copyedit_executive(
@@ -334,7 +335,7 @@ async def copyedit_all(
         tasks.append(_ce_exec())
 
     # Watchlist
-    if watchlist.items:
+    if scope in ("all", "countries") and watchlist.items:
         async def _ce_wl():
             async with semaphore.acquire("watchlist"):
                 nonlocal watchlist
@@ -342,23 +343,26 @@ async def copyedit_all(
         tasks.append(_ce_wl())
 
     # Regional leads
-    for region, page in region_pages.items():
-        if page.regional_lead:
-            tasks.append(_ce_regional(page))
+    if scope in ("all", "regional"):
+        for region, page in region_pages.items():
+            if page.regional_lead:
+                tasks.append(_ce_regional(page))
 
     # Country sections
-    for region, page in region_pages.items():
-        for country in page.countries:
-            if country.narrative_body:
-                tasks.append(_ce_country(country))
+    if scope in ("all", "countries"):
+        for region, page in region_pages.items():
+            for country in page.countries:
+                if country.narrative_body:
+                    tasks.append(_ce_country(country))
 
     if tasks:
         await asyncio.gather(*tasks)
 
     # Update overview cards from copyedited regional summaries
-    for card in overview.region_cards:
-        page = region_pages.get(card.region)
-        if page and page.card_summary:
-            card.summary = page.card_summary
+    if scope in ("all", "regional"):
+        for card in overview.region_cards:
+            page = region_pages.get(card.region)
+            if page and page.card_summary:
+                card.summary = page.card_summary
 
     return overview, region_pages, watchlist
