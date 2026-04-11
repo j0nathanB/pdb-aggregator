@@ -17,6 +17,7 @@ from ..config import (
     MODEL,
     PROJECT_ROOT,
     THINKING_BUDGET_TOKENS,
+    load_country_config,
     load_prompt,
 )
 from ..rate_limit import anthropic_limiter
@@ -53,11 +54,34 @@ def _load_style_guide() -> str:
 COPYEDITOR_SYSTEM = load_prompt("editors/structured_copyeditor")
 
 
+def _build_leader_reference(codes: list[str]) -> str:
+    """Build a <leader_reference> block from country config actors."""
+    lines = []
+    for code in codes:
+        try:
+            cfg = load_country_config(code)
+        except FileNotFoundError:
+            continue
+        actors = [f"{a.name} ({a.role})" for a in cfg.actors if a.role]
+        if actors:
+            lines.append(f"  {code.upper()} ({cfg.country}): {', '.join(actors)}")
+    if not lines:
+        return ""
+    return (
+        "\n\n<leader_reference>\n"
+        "Current leaders and key political figures. Use these roles/titles when "
+        "referring to these individuals — do not use outdated titles.\n"
+        + "\n".join(lines)
+        + "\n</leader_reference>"
+    )
+
+
 async def _copyedit_prose(
     prose_fields: dict,
     label: str,
     analysis_date: date | None = None,
     model: str | None = None,
+    country_codes: list[str] | None = None,
 ) -> dict:
     """Send prose fields to the copyeditor and return polished versions."""
     if not ANTHROPIC_API_KEY:
@@ -65,6 +89,9 @@ async def _copyedit_prose(
 
     from .structured_editor import _build_system_prompt
     system_prompt = _build_system_prompt(COPYEDITOR_SYSTEM)
+
+    if country_codes:
+        system_prompt += _build_leader_reference(country_codes)
 
     user_message = json.dumps(prose_fields, indent=2, ensure_ascii=False)
 
@@ -151,7 +178,7 @@ async def copyedit_country(
             for s in country.other_stories
         ]
 
-    result = await _copyedit_prose(fields, country.code, analysis_date)
+    result = await _copyedit_prose(fields, country.code, analysis_date, country_codes=[country.code])
 
     from .structured_editor import sanitize_narrative_body
     country.narrative_body = sanitize_narrative_body(
@@ -181,7 +208,8 @@ async def copyedit_regional(
         "card_summary": page.card_summary,
     }
 
-    result = await _copyedit_prose(fields, f"regional_{page.region.value}", analysis_date)
+    region_codes = [c.code for c in page.countries]
+    result = await _copyedit_prose(fields, f"regional_{page.region.value}", analysis_date, country_codes=region_codes)
 
     page.regional_lead = result.get("regional_lead", page.regional_lead)
     if "gap_paragraphs" in result:
@@ -201,7 +229,8 @@ async def copyedit_executive(
         return brief
 
     fields = {"edited_essay": brief.edited_essay}
-    result = await _copyedit_prose(fields, "executive", analysis_date)
+    all_codes = [cfg.stem for cfg in sorted((PROJECT_ROOT / "assets" / "country_configs" / "countries").glob("*.yaml"))]
+    result = await _copyedit_prose(fields, "executive", analysis_date, country_codes=all_codes)
     brief.edited_essay = result.get("edited_essay", brief.edited_essay)
     return brief
 
@@ -258,6 +287,9 @@ async def copyedit_at_a_glance(
 
     from .structured_editor import _build_system_prompt
     system_prompt = _build_system_prompt(AT_A_GLANCE_SYSTEM)
+
+    codes = [h["country_code"] for h in headlines]
+    system_prompt += _build_leader_reference(codes)
 
     user_message = json.dumps(headlines, indent=2, ensure_ascii=False)
 
