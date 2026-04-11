@@ -41,7 +41,7 @@ def _build_system_prompt() -> str:
 
     # Load style guide
     from ..config import PROJECT_ROOT
-    style_path = PROJECT_ROOT / "assets" / "prompts" / "style_editor.md"
+    style_path = PROJECT_ROOT / "assets" / "prompts" / "editors" / "style_editor.md"
     style_guide = style_path.read_text() if style_path.exists() else ""
 
     _system_prompt = f"""<role>
