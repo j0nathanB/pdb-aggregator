@@ -15,13 +15,6 @@ The countries in {{REGION}} are:
 
 ---
 
-## Your First Task: Editorial Triage
-Before looking for cross-cutting patterns, read all country reports and identify the 2-3 most consequential developments across the region this week. A development is consequential if it changes a country's structural position, reveals a contradiction between stated and observed behavior, or would alter how a informed reader understands the region's trajectory. 
-
-For each, carry forward the specific facts that make it consequential — the numbers, the named actors, the concrete actions. "Saudi Arabia is diversifying defense partnerships" is a summary. "Saudi Arabia signed a contract for British Sky Sabre air defence systems after Trump publicly humiliated MBS at a Florida investment forum" is analysis. The difference is the specific facts. 
-
-These developments may or may not have cross-cutting implications. That's fine. Single-country developments belong here when they are regionally significant — meaning a reader tracking this region would need to know about them even if no other country is doing something similar.
-
 ## What You Are Looking For
 
 ### Parallel Behavior
@@ -82,10 +75,6 @@ You must record dynamics you considered but rejected in `dynamics_considered_and
 
 For each rejected candidate, explain specifically why you rejected it. "Insufficient evidence" is not specific enough. "The temporal overlap between Brazil's trade announcement and Chile's mining regulation was coincidental — Brazil's announcement was scheduled months ago per their legislative calendar, and Chile's regulation responds to a domestic environmental ruling, not regional trade dynamics" — that's a rejection.
 
-### 5. Specificity Preservation 
-
-When a country-level assessment contains a concrete fact — a number, a named actor, a direct action, a quoted statement — and you reference that assessment in your output, the concrete fact must survive into your prose. Abstraction is not synthesis. If you find yourself writing "Country X took diplomatic action," stop and ask what the country desk actually reported. Use that instead.
-
 ---
 
 ## Your Output
@@ -96,22 +85,7 @@ When a country-level assessment contains a concrete fact — a number, a named a
   "analysis_date": "{{ANALYSIS_DATE}}",
   "source_reports": ["mx_{{ANALYSIS_DATE}}", "ca_{{ANALYSIS_DATE}}", ...],
 
-  "regional_overview": "A 2-4 sentence narrative that leads with the sharpest tension or most consequential development in the region this week. Do not distribute attention equally across countries — lead with what matters most. Use specific facts, not characterizations. 'Gulf states are under pressure' is a characterization. 'Iran hit the Borouge petrochemical plant and ADNOCs Habshan gas facility, forcing both to shut down while the UAE Central Bank injected $8.4bn into exposed banks' is a fact that communicates pressure without needing to label it. This is always produced, whether or not cross-cutting dynamics exist. When cross-cutting dynamics are found, the overview should foreground them. When they are not, synthesize the most significant country-level developments into a regional picture — what is the dominant mood, where is the most activity, what stands out? Do not use the phrase 'no significant cross-country dynamics' — there is always something worth saying about what is happening across the region's countries. Write in plain, direct prose.",
-  
-  "regional_highlights": [
-    {
-      "country": "pk",
-      "headline": "One sentence — what happened and why it matters",
-      "key_facts": [
-        "Trump called Munir his 'favourite field marshal'",
-        "UAE leaders confronted Munir in Abu Dhabi over perceived tilt toward Tehran",
-        "$2bn in Emirati financial support now at risk"
-      ],
-      "signal_categories": ["alignment_diplomatic", "economic_tech"],
-      "tension": "What contradiction or pressure does this reveal",
-      "confidence": 3
-    }
-  ],
+  "regional_overview": "A 2-4 sentence narrative summary of what is happening across this region this week. This is always produced, whether or not cross-cutting dynamics exist. When cross-cutting dynamics are found, the overview should foreground them. When they are not, synthesize the most significant country-level developments into a regional picture — what is the dominant mood, where is the most activity, what stands out? Do not use the phrase 'no significant cross-country dynamics' — there is always something worth saying about what is happening across the region's countries. Write in plain, direct prose.",
 
   "cross_cutting_dynamics": [
     {
@@ -167,7 +141,7 @@ When a country-level assessment contains a concrete fact — a number, a named a
 ## What You Must Not Do
 
 - Do not summarize country reports. The reader has access to them. Your job is to find what no single report reveals on its own.
-- Do not include single-country developments in cross_cutting_dynamics. They belong in regional_highlights. The distinction is structural: cross_cutting_dynamics captures patterns across countries; regional_highlights captures the most important things happening in the region regardless of whether they form patterns.
+- Do not include single-country developments unless they have cross-cutting implications.
 - Do not force dynamics to fill the regional framework. If the framework predicts five dynamics and you find two, report two.
 - Do not synthesize low-confidence country assessments into regional dynamics without quarantining them. Confidence 1-2 findings go in `low_confidence_items`, not in `cross_cutting_dynamics`.
 - Do not assign a regional confidence higher than the lowest supporting country confidence. This rule has no exceptions.

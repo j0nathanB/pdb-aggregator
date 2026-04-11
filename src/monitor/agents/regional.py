@@ -79,11 +79,23 @@ class LowConfidenceItem:
 
 
 @dataclass
+class RegionalHighlight:
+    """A significant single-country development highlighted at regional level."""
+    country: str
+    headline: str
+    key_facts: list[str] = field(default_factory=list)
+    signal_categories: list[str] = field(default_factory=list)
+    tension: str = ""
+    confidence: int = 3
+
+
+@dataclass
 class RegionalReport:
     """Output of a regional synthesis call."""
     region: Region
     week: date
     regional_overview: str = ""
+    regional_highlights: list[RegionalHighlight] = field(default_factory=list)
     cross_cutting_dynamics: list[CrossCuttingDynamic] = field(default_factory=list)
     dynamics_considered_and_rejected: list[RejectedDynamic] = field(default_factory=list)
     gaps: list[Gap] = field(default_factory=list)
@@ -286,10 +298,24 @@ def parse_regional_response(response_text: str, region: Region, week: date) -> R
         for lc in lc_raw
     ]
 
+    # Parse regional highlights
+    highlights = [
+        RegionalHighlight(
+            country=h.get("country", ""),
+            headline=h.get("headline", ""),
+            key_facts=h.get("key_facts", []),
+            signal_categories=h.get("signal_categories", []),
+            tension=h.get("tension", ""),
+            confidence=h.get("confidence", 3),
+        )
+        for h in data.get("regional_highlights", [])
+    ]
+
     return RegionalReport(
         region=region,
         week=week,
         regional_overview=data.get("regional_overview", ""),
+        regional_highlights=highlights,
         cross_cutting_dynamics=dynamics,
         dynamics_considered_and_rejected=rejected,
         gaps=gaps,
