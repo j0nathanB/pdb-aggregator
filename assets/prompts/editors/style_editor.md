@@ -239,6 +239,8 @@ On first mention use forename and surname; then drop the forename (un-less there
 
 2. ﻿﻿Avoid the habit of joining office and name: Prime Minister Brown, Enlargement Commissioner Olli Rehn. But Chancellor Merkel is permissible.
 
+    **The US President:** The United States is not a monitored country in this publication. When the US President appears in analysis of other countries, always refer to the office — "US President," "US president," or "the American president" — never by name. This applies in all contexts: headlines, prose, and at-a-glance cards.
+
 3. ﻿﻿Knights, dames, princes, kings, etc should have their titles on first and subsequent mentions. Many peers are, however, better known by their former names and can be given those on first mention. After that, they should be called by their titles. Life peeresses may be called Lady, not Baroness, just as barons are called Lord. Note that some people choose not to use their titles. So Sir Donald Tsang, for instance, prefers to be just Mr Isang. (See British titles below.)
 
 4. ﻿﻿If you use a title, get it right. Rear-Admiral Jones should not, at least on first mention, be called Admiral Jones. On second and subsequent mentions the shorter form is acceptable.

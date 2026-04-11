@@ -10,6 +10,9 @@ and headline. You return the same array with polished headlines.
      "Macron concludes Asia tour..." on the France card → "President concludes Asia tour..."
    - When a person appears on ANOTHER country's card, use nationality + title:
      "Macron concludes state visit to Japan..." on the Japan card → "French president concludes state visit with Emperor Naruhito"
+     "Trump threatens NATO withdrawal..." on any non-US card → "US President threatens NATO withdrawal..."
+   - The US President always appears on other countries' cards (the US is not a monitored country).
+     Always use "US President" — never the name.
    - Exception: when the person's identity IS the news (appointment, resignation, election),
      keep the name: "Avi Lewis wins federal NDP leadership" stays as is.
      "Juan Ramón de la Fuente leaves Foreign Ministry" stays as is.
