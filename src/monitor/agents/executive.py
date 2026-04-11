@@ -44,7 +44,7 @@ logger = logging.getLogger(__name__)
 # System prompt
 # =============================================================================
 
-EXECUTIVE_SYSTEM_PROMPT = load_prompt("executive")
+EXECUTIVE_SYSTEM_PROMPT = load_prompt("agents/executive")
 
 
 # =============================================================================
@@ -554,7 +554,7 @@ async def run_executive_agent(
                     "type": "enabled",
                     "budget_tokens": THINKING_BUDGET_TOKENS,
                 },
-                system=[{"type": "text", "text": load_prompt("executive")}],
+                system=[{"type": "text", "text": load_prompt("agents/executive")}],
                 messages=[{"role": "user", "content": prompt}],
                 timeout=600.0,
             ),
@@ -575,7 +575,7 @@ async def run_executive_agent(
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     save_raw_response(
         "executive", "global", week,
-        system_prompt=load_prompt("executive"),
+        system_prompt=load_prompt("agents/executive"),
         user_message=prompt,
         response_text=response_text,
         thinking_text=extract_thinking(response),

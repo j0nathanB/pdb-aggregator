@@ -368,7 +368,7 @@ async def run_story_map_agent(
         )
 
     system_prompt = load_prompt(
-        "story_map_agent",
+        "agents/story_map_agent",
         COUNTRY=config.country,
         COUNTRY_CODE=config.code.upper(),
         ANALYSIS_DATE=analysis_date.isoformat(),

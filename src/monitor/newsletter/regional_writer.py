@@ -37,7 +37,7 @@ def _build_system_prompt() -> str:
     if _system_prompt is not None:
         return _system_prompt
 
-    task_instructions = load_prompt("regional_writer")
+    task_instructions = load_prompt("writers/regional_writer")
 
     # Load style guide
     from ..config import PROJECT_ROOT

@@ -31,7 +31,7 @@ MAX_CONCURRENT = 3
 
 
 def _load_system_prompt() -> str:
-    return (PROMPTS_DIR / "dossier_copyeditor.md").read_text()
+    return (PROMPTS_DIR / "editors" / "dossier_copyeditor.md").read_text()
 
 
 # ---------------------------------------------------------------------------

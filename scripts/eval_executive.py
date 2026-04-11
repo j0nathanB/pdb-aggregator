@@ -107,8 +107,8 @@ def _install_patches() -> None:
     """
     # 1. Rebind load_prompt inside the executive module so "executive" → "executive_eval".
     def _patched_load_prompt(name: str, **kwargs):
-        if name == "executive":
-            name = "executive_eval"
+        if name == "agents/executive":
+            name = "eval/executive_eval"
         return _real_load_prompt(name, **kwargs)
 
     executive_mod.load_prompt = _patched_load_prompt

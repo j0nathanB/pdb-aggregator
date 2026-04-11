@@ -114,7 +114,7 @@ async def run_copyeditor(
     # Strip Sources accordion — mechanical reference data, not prose to copyedit.
     section_to_edit, sources_suffix = _strip_sources_accordion(section_text)
 
-    task_prompt = load_prompt("copyeditor", COUNTRY=label)
+    task_prompt = load_prompt("editors/copyeditor", COUNTRY=label)
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
     user_message = build_copyeditor_prompt(section_to_edit, section_type)

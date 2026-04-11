@@ -156,8 +156,7 @@ Be especially wary of borrowing the empty phrases of politicians who constantly 
 ### 4. Preserve Structure and Attributions
 
 **For country and regional sections:**
-- The editor has already rewritten these into narrative prose. Your job is mechanical polish only — do not restructure, reorder paragraphs, or rewrite sentences.
-- Keep source attributions `(Source, date)` or `([Source](URL), date)` unchanged — do not edit source names, URLs, or dates.
+- The editor has already rewritten these into narrative prose. Your job is mechanical polish only — do not restructure, reorder paragraphs, or rewrite sentences. 
 - Keep `###` headings, `<Accordion>` tags, and `<Icon>` components unchanged.
 
 **For the executive brief:**
@@ -204,11 +203,11 @@ Problems: "Trump" on first mention (needs office + forename + surname); bare abb
 
 President Claudia Sheinbaum's first major legislative defeat — on electoral reform — laid bare the limits of her supermajority.
 
-Ms Sheinbaum's reform bill failed when Labour Party (PT) and Ecologist Green Party of Mexico (PVEM) allies broke ranks and voted against it alongside the opposition (259 in favour, 234 against, requiring 333 for a two-thirds majority). The National Regeneration Movement (Morena) pivoted immediately to a Plan B with modified proposals. ([La Jornada](https://www.jornada.com.mx/...), 2026-03-11) The Fourth Transformation (4T) coalition can adapt, but the stress is real.
+Ms Sheinbaum's reform bill failed when Labour Party (PT) and Ecologist Green Party of Mexico (PVEM) allies broke ranks and voted against it alongside the opposition (259 in favour, 234 against, requiring 333 for a two-thirds majority). The National Regeneration Movement (Morena) pivoted immediately to a Plan B with modified proposals. The Fourth Transformation (4T) coalition can adapt, but the stress is real.
 
-The dual track of sovereignty rhetoric and practical American cooperation continues. President Donald Trump stated that "the cartels are controlling Mexico" and criticised Ms Sheinbaum for rejecting American military help. The president said cooperation would continue "without subordination." ([Infobae](https://www.infobae.com/...), 2026-03-14) Meanwhile, Security Secretary Omar García Harfuch met Drug Enforcement Administration (DEA) director Terrance Cole to discuss counter-narcotics and arms trafficking. ([El Universal](https://www.eluniversal.com.mx/...), 2026-03-10) Mr García Harfuch also detailed the El Mencho operation in American media interviews, emphasising zero impunity. ([Infobae](https://www.infobae.com/...), 2026-03-13)
+The dual track of sovereignty rhetoric and practical American cooperation continues. President Donald Trump stated that "the cartels are controlling Mexico" and criticised Ms Sheinbaum for rejecting American military help. The president said cooperation would continue "without subordination." Meanwhile, Security Secretary Omar García Harfuch met Drug Enforcement Administration (DEA) director Terrance Cole to discuss counter-narcotics and arms trafficking. Mr García Harfuch also detailed the El Mencho operation in American media interviews, emphasising zero impunity. 
 
-Viral footage of an expensive XV años celebration exposed Juan Carlos Guerrero, a Pemex contractor with billions in government contracts. The government published a list of millionaire pension recipients from state companies including Pemex. ([El Financiero](https://www.elfinanciero.com.mx/...), 2026-03-08)
+Viral footage of an expensive XV años celebration exposed Juan Carlos Guerrero, a Pemex contractor with billions in government contracts. The government published a list of millionaire pension recipients from state companies including Pemex. 
 ```
 
 Note what changed: all abbreviations expanded on first use (4T, PT, PVEM, DEA, Morena); party names translated; Spanish quotes rendered in English; President Donald Trump given office + forename + surname on first mention; pronounceable abbreviation Pemex in upper-and-lower case. The prose structure was left untouched — the editor already handled that.

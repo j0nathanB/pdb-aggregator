@@ -31,12 +31,12 @@ logger = logging.getLogger(__name__)
 # System prompt template
 # =============================================================================
 
-DEVILS_ADVOCATE_SYSTEM_PROMPT_TEMPLATE = load_prompt("devils_advocate")
+DEVILS_ADVOCATE_SYSTEM_PROMPT_TEMPLATE = load_prompt("agents/devils_advocate")
 
 
 def _build_system_prompt(country: str) -> str:
     """Fill template variables in the system prompt."""
-    return load_prompt("devils_advocate", COUNTRY=country)
+    return load_prompt("agents/devils_advocate", COUNTRY=country)
 
 
 # =============================================================================

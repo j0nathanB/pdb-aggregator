@@ -224,7 +224,7 @@ async def scan_all_countries(
 # Phase 2: Triage decision
 # =============================================================================
 
-TRIAGE_SYSTEM_PROMPT = load_prompt("triage_decision")
+TRIAGE_SYSTEM_PROMPT = load_prompt("agents/triage_decision")
 
 
 def _build_triage_prompt(
@@ -352,7 +352,7 @@ async def triage_decide(
                     "type": "enabled",
                     "budget_tokens": 8000,
                 },
-                system=[{"type": "text", "text": load_prompt("triage_decision")}],
+                system=[{"type": "text", "text": load_prompt("agents/triage_decision")}],
                 messages=[{"role": "user", "content": prompt}],
             ),
             "Triage decision: API call",
@@ -372,7 +372,7 @@ async def triage_decide(
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     save_raw_response(
         "triage", "decisions", end_date,
-        system_prompt=load_prompt("triage_decision"),
+        system_prompt=load_prompt("agents/triage_decision"),
         user_message=prompt,
         response_text=response_text,
         thinking_text=extract_thinking(response),

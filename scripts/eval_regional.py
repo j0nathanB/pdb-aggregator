@@ -85,7 +85,7 @@ def _install_patches() -> None:
         country_codes = regional_mod.get_region_countries(region)
         country_list = ", ".join(c.upper() for c in country_codes)
         return load_prompt(
-            "regional_synthesis_eval",
+            "eval/regional_synthesis_eval",
             REGION=display_name,
             COUNTRY_LIST=country_list,
         )

@@ -166,14 +166,14 @@ class GovernmentAgentOutput:
 # Prompt
 # =============================================================================
 
-SYSTEM_PROMPT = load_prompt("gov_source_agent")
+SYSTEM_PROMPT = load_prompt("agents/gov_source_agent")
 
-OUTPUT_SCHEMA = load_prompt("gov_source_agent_output_schema")
+OUTPUT_SCHEMA = load_prompt("agents/gov_source_agent_output_schema")
 
 
 def _render_system_prompt(country_name: str) -> str:
     """Render the system prompt with country-specific template variables."""
-    return load_prompt("gov_source_agent", COUNTRY=country_name)
+    return load_prompt("agents/gov_source_agent", COUNTRY=country_name)
 
 
 # =============================================================================
@@ -275,7 +275,7 @@ def _build_user_message(
 
     # Output schema with template variables filled
     schema = load_prompt(
-        "gov_source_agent_output_schema",
+        "agents/gov_source_agent_output_schema",
         COUNTRY_CODE=country_config.code,
         ANALYSIS_DATE=processing_date,
     )

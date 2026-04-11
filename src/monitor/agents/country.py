@@ -69,7 +69,7 @@ class CountryAgentOutput:
 # System prompt template
 # =============================================================================
 
-COUNTRY_AGENT_SYSTEM_PROMPT_TEMPLATE = load_prompt("country_agent")
+COUNTRY_AGENT_SYSTEM_PROMPT_TEMPLATE = load_prompt("agents/country_agent")
 
 
 def _build_system_prompt(config: CountryConfig) -> str:
@@ -88,7 +88,7 @@ def _build_system_prompt(config: CountryConfig) -> str:
     source_language = lang_names.get(primary_lang, primary_lang)
 
     return load_prompt(
-        "country_agent",
+        "agents/country_agent",
         COUNTRY=config.country,
         SOURCE_LANGUAGE=source_language,
     )

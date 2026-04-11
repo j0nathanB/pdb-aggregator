@@ -36,7 +36,7 @@ def _build_system_prompt() -> str:
     if _system_prompt is not None:
         return _system_prompt
 
-    task_instructions = load_prompt("global_writer")
+    task_instructions = load_prompt("writers/global_writer")
 
     # Load style guide
     from ..config import PROJECT_ROOT

@@ -119,7 +119,7 @@ def get_region_countries(region: Region) -> list[str]:
 # System prompt template
 # =============================================================================
 
-REGIONAL_SYSTEM_PROMPT_TEMPLATE = load_prompt("regional_synthesis")
+REGIONAL_SYSTEM_PROMPT_TEMPLATE = load_prompt("agents/regional_synthesis")
 
 
 def _build_system_prompt(region: Region) -> str:
@@ -129,7 +129,7 @@ def _build_system_prompt(region: Region) -> str:
     country_list = ", ".join(c.upper() for c in country_codes)
 
     return load_prompt(
-        "regional_synthesis",
+        "agents/regional_synthesis",
         REGION=display_name,
         COUNTRY_LIST=country_list,
     )

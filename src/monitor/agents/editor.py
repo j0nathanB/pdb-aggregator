@@ -170,7 +170,7 @@ async def run_editor(
     # Re-append after editing so the editor doesn't drop it.
     section_to_edit, sources_suffix = _strip_sources_accordion(assembled_section)
 
-    task_prompt = load_prompt("editor")
+    task_prompt = load_prompt("editors/editor")
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
 
@@ -261,7 +261,7 @@ async def run_regional_editor(
     if not assembled_lead.strip():
         return assembled_lead
 
-    task_prompt = load_prompt("editor")
+    task_prompt = load_prompt("editors/editor")
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
 
@@ -522,7 +522,7 @@ async def run_executive_editor(
     if not assembled_brief.strip():
         return assembled_brief
 
-    task_prompt = load_prompt("editor")
+    task_prompt = load_prompt("editors/editor")
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
 
@@ -680,7 +680,7 @@ async def edit_watchlist_page(
     if not page.strip() or "*No items on the watchlist" in page:
         return page
 
-    task_prompt = load_prompt("watchlist_editor")
+    task_prompt = load_prompt("editors/watchlist_editor")
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
 
@@ -822,7 +822,7 @@ async def run_style_editor(
     # Strip Notes accordion — re-append after editing
     section_to_edit, sources_suffix = _strip_sources_accordion(section_text)
 
-    task_prompt = load_prompt("style_editor")
+    task_prompt = load_prompt("editors/style_editor")
     style_guide = _load_style_guide()
     system_prompt = f"{task_prompt}\n\n---\n\n## Reference Style Guide\n\n{style_guide}"
 
