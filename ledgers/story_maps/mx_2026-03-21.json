@@ -3,38 +3,203 @@
   "code": "mx",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 437,
-  "stories_identified": 16,
+  "search_results_total": 358,
+  "stories_identified": 12,
   "off_topic_filtered": 89,
-  "noise_summary": "89 off-topic results filtered: 67 sports stories (primarily Luis de la Fuente Spanish football team coverage, Finalissima controversy, player selections), 8 entertainment/celebrity content, 6 gaming/technology references (Zelda, GTA content), 4 unrelated business stories, 3 international sports events, 1 weather report.",
+  "noise_summary": "89 off-topic results filtered: 52 Spanish football team selections and Luis de la Fuente coach coverage, 15 entertainment/celebrity news, 12 video game references, 6 general biographical entries, 4 technical/infrastructure non-political stories",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Sheinbaum meets German President in Canc\u00fan, discusses trade and commercial relations",
-      "summary": "President Sheinbaum held meetings with German President Frank-Walter Steinmeier in Canc\u00fan, discussing commercial relations and the upcoming EU-Mexico trade agreement update. Steinmeier invited Sheinbaum to visit Germany.",
+      "headline": "Morena, PT, and PVEM reach agreement on Plan B electoral reform after initial setback",
+      "summary": "The three coalition parties announced unanimous support for President Sheinbaum's modified electoral reform proposal after the original version was rejected. The Plan B includes cuts to local congress budgets and limits on legislative salaries while maintaining electoral pluralism.",
       "actors_involved": [
         "Sheinbaum",
-        "de la Fuente",
-        "SRE"
+        "Morena"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 47,
+      "sources": [
+        "jornada.com.mx",
+        "elfinanciero.com.mx",
+        "excelsior.com.mx",
+        "diario.mx",
+        "infobae.com",
+        "milenio.com",
+        "eluniversal.com.mx",
+        "contrareplica.mx",
+        "proceso.com.mx",
+        "elsiglodetorreon.com.mx",
+        "morena.senado.gob.mx",
+        "diputadosmorena.org.mx",
+        "adn40.mx",
+        "sopitas.com",
+        "reforma.com",
+        "politico.mx",
+        "abcnoticias.mx",
+        "bajopalabra.mx",
+        "mipuntodevista.com.mx",
+        "informador.mx",
+        "sergiovalle.mx"
+      ],
+      "date_range": "2026-03-15 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Morena, PT y PVEM acuerdan 'respaldo total' a Plan B de Sheinbaum",
+          "source": "elsiglodetorreon.com.mx",
+          "url": "https://elsiglodetorreon.com.mx/noticia/2026/morena-pt-y-pvem-acuerdan-respaldo-total-a-plan-b-de-sheinbaum.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Plan B de reforma electoral: Morena y aliados llegan a acuerdo para apoyar propuesta de Claudia Sheinbaum",
+          "source": "elfinanciero.com.mx",
+          "url": "https://elfinanciero.com.mx/nacional/2026/03/15/plan-b-de-reforma-electoral-morena-y-aliados-llegan-a-acuerdo-para-apoyar-prouesta-de-claudia-sheinbaum",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Sellan Morena y aliados apoyo total al plan B de la reforma electoral",
+          "source": "jornada.com.mx",
+          "url": "https://jornada.com.mx/2026/03/16/politica/004n1pol?partner=rss",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Plan B de reforma electoral generar\u00e1 ahorro y consolidar\u00e1 la austeridad en el sistema pol\u00edtico: Monreal",
+          "source": "diputadosmorena.org.mx",
+          "url": "https://diputadosmorena.org.mx/plan-b-de-reforma-electoral-generara-ahorro-y-consolidara-la-austeridad-en-el-sistema-politico-monreal/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Cambios y focos rojos del plan b de la reforma electoral de Morena",
+          "source": "adn40.mx",
+          "url": "https://www.adn40.mx/politica/2026-03-17/cambios-y-focos-rojos-del-plan-b-la-reforma-electoral-morena",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Plan B electoral al pleno del Senado el mi\u00e9rcoles: Morena",
+          "source": "jornada.com.mx",
+          "url": "https://jornada.com.mx/noticia/2026/03/19/politica/plan-b-electoral-al-pleno-del-senado-el-miercoles-morena",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Prev\u00e9 Morena aprobar el mi\u00e9rcoles el plan B; Verde y PT mantienen apoyo",
+          "source": "jornada.com.mx",
+          "url": "https://jornada.com.mx/2026/03/19/politica/005n2pol",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Senadores aliados de Morena exigen ajustes al Plan B de revocaci\u00f3n de mandato",
+          "source": "abcnoticias.mx",
+          "url": "https://abcnoticias.mx/nacional/2026/3/19/senadores-aliados-de-morena-exigen-ajustes-al-plan-de-revocacion-de-mandato-276616.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Senadora Geovanna Ba\u00f1uelos refrenda apoyo al Plan B de Sheinbaum",
+          "source": "eluniversal.com.mx",
+          "url": "https://www.eluniversal.com.mx/nacion/senadora-geovanna-banuelos-refrenda-apoyo-al-plan-b-de-sheinbaum-morena-preve-respaldo-de-aliados/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Morena busca aprobar 4 reformas de Sheinbaum antes de fin de sesiones",
+          "source": "bajopalabra.mx",
+          "url": "https://www.bajopalabra.mx/morena-busca-aprobar-4-reformas-de-sheinbaum-antes-de-fin-de-sesiones/",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://elsiglodetorreon.com.mx/noticia/2026/morena-pt-y-pvem-acuerdan-respaldo-total-a-plan-b-de-sheinbaum.html",
+        "https://jornada.com.mx/2026/03/16/politica/004n1pol?partner=rss"
+      ]
+    },
+    {
+      "story_id": 2,
+      "headline": "Garc\u00eda Harfuch meets with FBI and DEA directors in Washington to strengthen security cooperation",
+      "summary": "Security Secretary Omar Garc\u00eda Harfuch held meetings with FBI Director Kash Patel and DEA Director Terrance Cole to discuss bilateral cooperation in combating drug trafficking and arms smuggling. The meetings emphasized reciprocity, sovereignty respect, and shared responsibility in security matters.",
+      "actors_involved": [
+        "Garc\u00eda Harfuch"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
+      "source_count": 23,
       "sources": [
-        "milenio.com",
         "elfinanciero.com.mx",
-        "latinus.us",
-        "elindependiente.mx",
+        "jornada.com.mx",
+        "eluniversal.com.mx",
+        "eleconomista.com.mx",
+        "forbes.com.mx",
+        "heraldodemexico.com.mx",
+        "punto.mx",
+        "milenio.com",
+        "abcnoticias.mx",
+        "politico.mx",
+        "zetatijuana.com",
+        "contralinea.com.mx",
+        "grupoanimal.mx",
         "excelsior.com.mx",
-        "tiempo.com.mx",
-        "ruptura360.mx",
-        "quintanaroo.heraldodemexico.com.mx"
+        "wradio.com.mx"
+      ],
+      "date_range": "2026-03-16 to 2026-03-19",
+      "articles": [
+        {
+          "title": "Garc\u00eda Harfuch se re\u00fane con titular de DEA por lucha contra el narco",
+          "source": "milenio.com",
+          "url": "https://milenio.com/policia/garcia-harfuch-se-reune-titular-dea-lucha-contra-narco",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Harfuch se re\u00fane con director de la DEA en Washington, de esto hablaron",
+          "source": "punto.mx",
+          "url": "https://punto.mx/2026/03/16/harfuch-se-reune-con-director-de-la-dea-en-washington-de-esto-hablaron/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Garc\u00eda Harfuch se re\u00fane con el director del FBI, Kash Patel, para reafirmar la cooperaci\u00f3n bilateral",
+          "source": "eleconomista.com.mx",
+          "url": "https://eleconomista.com.mx/politica/garcia-harfuch-reune-director-fbi-kash-patel-reafirmar-cooperacion-bilateral-20260318-804857.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Harfuch se re\u00fane con Kash Patel, director del FBI; destaca coordinaci\u00f3n de M\u00e9xico y EU",
+          "source": "eluniversal.com.mx",
+          "url": "https://eluniversal.com.mx/nacion/harfuch-se-reune-con-kash-patel-director-del-fbi-destaca-coordinacion-de-mexico-y-eu-para-detener-a-objetivos-prioritarios",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Omar Garc\u00eda Harfuch se reuni\u00f3 en Washington con Kash Patel, director del FBI",
+          "source": "heraldodemexico.com.mx",
+          "url": "https://heraldodemexico.com.mx/nacional/2026/3/18/omar-garcia-harfuch-se-reunio-en-washington-con-kash-patel-director-del-fbi-781667.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Reafirma Garc\u00eda Harfuch cooperaci\u00f3n con La FBI",
+          "source": "jornada.com.mx",
+          "url": "https://www.jornada.com.mx/2026/03/19/politica/011n5pol",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://milenio.com/policia/garcia-harfuch-se-reune-titular-dea-lucha-contra-narco",
+        "https://eleconomista.com.mx/politica/garcia-harfuch-reune-director-fbi-kash-patel-reafirmar-cooperacion-bilateral-20260318-804857.html"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Sheinbaum meets with German President Steinmeier in Canc\u00fan to discuss trade and EU agreement",
+      "summary": "President Sheinbaum held an official meeting with German President Frank-Walter Steinmeier in Canc\u00fan, discussing commercial relations and the upcoming update of Mexico's trade agreement with the European Union expected to be finalized in May. Both leaders emphasized the importance of defending international order based on multilateralism.",
+      "actors_involved": [
+        "Sheinbaum",
+        "SRE"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 5,
+      "sources": [
+        "elfinanciero.com.mx",
+        "excelsior.com.mx",
+        "latinus.us"
       ],
       "date_range": "2026-03-19 to 2026-03-20",
       "articles": [
         {
-          "title": "Sheinbaum analizar\u00e1 visita a Alemania tras reuni\u00f3n con Steinmeier",
-          "source": "milenio.com",
-          "url": "https://www.milenio.com/politica/sheinbaum-analizara-visita-alemania-reunion-steinmeier",
+          "title": "Sheinbaum se re\u00fane con presidente de Alemania: \u00bfDe qu\u00e9 hablaron en Canc\u00fan?",
+          "source": "elfinanciero.com.mx",
+          "url": "https://elfinanciero.com.mx/nacional/2026/03/19/sheinbaum-se-reune-con-presidente-de-alemania-de-que-hablaron-en-cancun",
           "date": "2026-03-19"
         },
         {
@@ -50,458 +215,185 @@
           "date": "2026-03-20"
         },
         {
-          "title": "Sheinbaum se re\u00fane con presidente de Alemania: \u00bfDe qu\u00e9 hablaron en Canc\u00fan?",
-          "source": "elfinanciero.com.mx",
-          "url": "https://elfinanciero.com.mx/nacional/2026/03/19/sheinbaum-se-reune-con-presidente-de-alemania-de-que-hablaron-en-cancun",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Ma\u00f1anera en vivo: Sheinbaum encabeza conferencia desde Canc\u00fan",
-          "source": "tiempo.com.mx",
-          "url": "https://www.tiempo.com.mx/local/mananera-hoy-minuto-a-minuto-cancun-20-marzo-2026/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Claudia Sheinbaum consolida megainversi\u00f3n en Quintana Roo",
-          "source": "ruptura360.mx",
-          "url": "https://ruptura360.mx/el-estado/claudia-sheinbaum-megainversion/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "La 'Ma\u00f1anera' de Sheinbaum EN VIVO: Temas de la conferencia hoy 20 de marzo de 2026",
+          "title": "La Ma\u00f1anera de Sheinbaum EN VIVO: Temas de la conferencia hoy 20 de marzo de 2026",
           "source": "excelsior.com.mx",
           "url": "https://www.excelsior.com.mx/politica/mananera-sheinbaum-hoy-temas-conferencia-20-marzo-2026",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Canc\u00fan, escenario de la ma\u00f1anera durante visita de Sheinbaum",
-          "source": "quintanaroo.heraldodemexico.com.mx",
-          "url": "https://quintanaroo.heraldodemexico.com.mx/local/2026/3/20/cancun-escenario-de-la-mananera-durante-visita-de-sheinbaum-15145.html",
           "date": "2026-03-20"
         }
       ],
       "representative_urls": [
-        "https://www.elfinanciero.com.mx/nacional/2026/03/19/presidente-de-alemania-hace-visita-oficial-a-mexico-se-reunira-con-sheinbaum-en-quintana-roo/",
+        "https://elfinanciero.com.mx/nacional/2026/03/19/sheinbaum-se-reune-con-presidente-de-alemania-de-que-hablaron-en-cancun",
         "https://latinus.us/mexico/2026/3/20/sheinbaum-detalla-que-hablo-con-el-presidente-de-alemania-sobre-temas-comerciales-la-situacion-internacional-167514.html"
       ]
     },
     {
-      "story_id": 2,
-      "headline": "Morena, PT and PVEM reach agreement to support Plan B electoral reform",
-      "summary": "After negotiations, Morena and its allied parties (PT and PVEM) reached consensus to support President Sheinbaum's Plan B electoral reform proposal, which includes austerity measures and revocation of mandate provisions.",
+      "story_id": 4,
+      "headline": "Spain's King Felipe VI acknowledges colonial 'abuses' prompting Sheinbaum to invite him to 2026 World Cup",
+      "summary": "King Felipe VI recognized that 'much abuse' occurred during Spain's colonization of America, which President Sheinbaum called a gesture of rapprochement. In response, she sent an invitation for the king to attend the 2026 World Cup in Mexico, potentially easing tensions that began when AMLO requested an apology in 2019.",
       "actors_involved": [
-        "Sheinbaum",
-        "Morena"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 34,
-      "sources": [
-        "elfinanciero.com.mx",
-        "jornada.com.mx",
-        "excelsior.com.mx",
-        "launion.com.mx",
-        "politico.mx",
-        "elsiglodetorreon.com.mx",
-        "laverdad.com.mx",
-        "adn40.mx",
-        "infobae.com",
-        "sopitas.com",
-        "sinembargo.mx",
-        "unotv.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Plan B de reforma electoral: Morena y aliados llegan a acuerdo para apoyar propuesta de Claudia Sheinbaum",
-          "source": "elfinanciero.com.mx",
-          "url": "https://elfinanciero.com.mx/nacional/2026/03/15/plan-b-de-reforma-electoral-morena-y-aliados-llegan-a-acuerdo-para-apoyar-prouesta-de-claudia-sheinbaum",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "La Jornada - Sellan acuerdo Morena, PT y PVEM para dar salida a plan B",
-          "source": "jornada.com.mx",
-          "url": "https://jornada.com.mx/noticia/2026/03/14/politica/sellan-acuerdo-morena-pt-y-pvem-para-dar-salida-a-plan-b",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Morena, PT y PVEM cierran filas en torno al plan B de reforma electoral de Sheinbaum",
-          "source": "excelsior.com.mx",
-          "url": "https://excelsior.com.mx/nacional/morena-pt-y-pvem-cierran-filas-torno-plan-b-reforma-electoral-sheinbaum",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Senadores de Morena, PVEM y PT respaldan Plan B electoral de Sheinbaum",
-          "source": "launion.com.mx",
-          "url": "https://launion.com.mx/morelos/nacional/noticias/290679-senadores-de-morena-pvem-y-pt-respaldan-plan-b-electoral-de-sheinbaum.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "La Jornada: Prev\u00e9 Morena aprobar el mi\u00e9rcoles el plan B; Verde y PT mantienen apoyo",
-          "source": "jornada.com.mx",
-          "url": "https://jornada.com.mx/2026/03/19/politica/005n2pol",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://elfinanciero.com.mx/nacional/2026/03/15/plan-b-de-reforma-electoral-morena-y-aliados-llegan-a-acuerdo-para-apoyar-prouesta-de-claudia-sheinbaum",
-        "https://jornada.com.mx/noticia/2026/03/14/politica/sellan-acuerdo-morena-pt-y-pvem-para-dar-salida-a-plan-b"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Garc\u00eda Harfuch meets with FBI and DEA directors in Washington",
-      "summary": "Security Secretary Omar Garc\u00eda Harfuch held meetings in Washington with FBI Director Kash Patel and DEA Director Terrance Cole to discuss bilateral security cooperation, drug trafficking, and arms trafficking.",
-      "actors_involved": [
-        "Garc\u00eda Harfuch"
+        "Sheinbaum"
       ],
       "signal_category_hint": "alignment_diplomatic",
       "source_count": 12,
       "sources": [
-        "excelsior.com.mx",
         "elfinanciero.com.mx",
+        "entornoinformativo.com.mx",
+        "actualidad.rt.com",
+        "theobjective.com",
+        "bbc.com",
         "jornada.com.mx",
-        "nmas.com.mx",
-        "eluniversal.com.mx",
-        "punto.mx",
-        "politico.mx",
-        "reforma.com"
+        "elchamuco.com.mx",
+        "libertaddigital.com",
+        "infobae.com",
+        "viveusa.mx"
       ],
-      "date_range": "2026-03-16 to 2026-03-20",
+      "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
         {
-          "title": "Garc\u00eda Harfuch se re\u00fane con director del FBI en Washington",
-          "source": "excelsior.com.mx",
-          "url": "https://www.excelsior.com.mx/nacional/garcia-harfuch-reune-con-director-fbi-washington",
-          "date": "2026-03-19"
+          "title": "Sheinbaum celebra que el rey de Espa\u00f1a reconozca 'abusos' en la conquista",
+          "source": "elfinanciero.com.mx",
+          "url": "https://elfinanciero.com.mx/nacional/2026/03/17/sheinbaum-celebra-que-el-rey-de-espana-reconozca-abusos-en-la-conquista-es-un-gesto-de-acercamiento",
+          "date": "2026-03-17"
         },
         {
-          "title": "Garc\u00eda Harfuch se re\u00fane con el director del FBI, Kash Patel; reafirman cooperaci\u00f3n bilateral",
-          "source": "elfinanciero.com.mx",
-          "url": "https://elfinanciero.com.mx/nacional/2026/03/18/garcia-harfuch-se-reune-con-el-director-del-fbi-kash-patel-reafirman-cooperacion-bilateral",
+          "title": "Sheinbaum reconoce el gesto del rey de Espa\u00f1a Felipe VI",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/mundo/articles/c33j3vmj1rro",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Sheinbaum invita al rey Felipe VI al Mundial tras sus palabras sobre la Conquista",
+          "source": "infobae.com",
+          "url": "https://infobae.com/mexico/2026/03/18/sheinbaum-invita-al-rey-felipe-vi-al-mundial-tras-sus-palabras-sobre-la-conquista-una-hermandad-historica-entre-nuestros-pueblos",
           "date": "2026-03-18"
         },
         {
-          "title": "Garc\u00eda Harfuch Se Re\u00fane con Administrador de la DEA; Dialogan sobre Lucha Contra el Narco",
-          "source": "nmas.com.mx",
-          "url": "https://nmas.com.mx/internacional/administrador-de-la-dea-terry-cole-se-reune-con-garcia-harfuch-dialogan-sobre-colaboracion-en-lucha-contra-el-narco",
-          "date": "2026-03-16"
+          "title": "Sheinbaum invita al Rey de Espa\u00f1a al Mundial 2026",
+          "source": "elfinanciero.com.mx",
+          "url": "https://elfinanciero.com.mx/nacional/2026/03/18/sheinbaum-invita-al-rey-de-espana-al-mundial-2026-que-dice-la-carta-que-le-envio-a-felipe-vi",
+          "date": "2026-03-18"
         },
         {
-          "title": "Harfuch se re\u00fane en Washington D.C. con Terrance Cole, director de la DEA",
-          "source": "eluniversal.com.mx",
-          "url": "https://www.eluniversal.com.mx/nacion/harfuch-se-reune-en-washington-dc-con-director-de-la-dea-hablan-sobre-combate-al-narco-y-trafico-de-armas/",
-          "date": "2026-03-16"
+          "title": "\u00bfSheinbaum podr\u00eda reunirse con el rey de Espa\u00f1a en el Mundial 2026? Esto respondi\u00f3",
+          "source": "elfinanciero.com.mx",
+          "url": "https://elfinanciero.com.mx/nacional/2026/03/19/claudia-sheinbaum-mananera-temas-hoy-19-de-marzo-de-2026-en-vivo",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.excelsior.com.mx/nacional/garcia-harfuch-reune-con-director-fbi-washington",
-        "https://elfinanciero.com.mx/nacional/2026/03/18/garcia-harfuch-se-reune-con-el-director-del-fbi-kash-patel-reafirman-cooperacion-bilateral"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Fire at PEMEX Dos Bocas refinery kills five people",
-      "summary": "An early morning fire at the perimeter of PEMEX's Olmeca refinery in Dos Bocas, Tabasco killed five people, including one direct PEMEX employee and four contractors. The fire was caused by overflow of oily waters.",
-      "actors_involved": [
-        "PEMEX"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 9,
-      "sources": [
-        "elfinanciero.com.mx",
-        "proceso.com.mx",
-        "forbes.com.mx",
-        "cnnespanol.cnn.com",
-        "eluniversal.com.mx",
-        "misionpolitica.com",
-        "cronica.com.mx",
-        "heraldodemexico.com.mx"
-      ],
-      "date_range": "2026-03-17 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Pemex confirma que incendio en la Refiner\u00eda Olmeca dej\u00f3 cinco muertos: Fuego inici\u00f3 por derrame",
-          "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/estados/2026/03/17/pemex-confirma-que-incendio-en-la-refineria-olmeca-dejo-cinco-muertos-fuego-inicio-por-derrame/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Incendio en Dos Bocas moviliza a cuerpos de emergencia; Pemex reporta control del siniestro",
-          "source": "proceso.com.mx",
-          "url": "https://www.proceso.com.mx/nacional/estados/2026/3/17/incendio-en-dos-bocas-moviliza-cuerpos-de-emergencia-pemex-reporta-control-del-siniestro-370416.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Incendio en refiner\u00eda 'Olmeca': \u00bfQui\u00e9nes son las v\u00edctimas del accidente en la planta de Pemex?",
-          "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/estados/2026/03/17/incendio-en-refineria-olmeca-quienes-son-las-victimas-del-accidente-en-la-planta-de-pemex/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Incendio en refiner\u00eda de Pemex en el sureste de M\u00e9xico deja cinco muertos",
-          "source": "cnnespanol.cnn.com",
-          "url": "https://cnnespanol.cnn.com/2026/03/17/mexico/muertos-incendio-refineria-pemex-efe",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elfinanciero.com.mx/estados/2026/03/17/pemex-confirma-que-incendio-en-la-refineria-olmeca-dejo-cinco-muertos-fuego-inicio-por-derrame/",
-        "https://www.proceso.com.mx/nacional/estados/2026/3/17/incendio-en-dos-bocas-moviliza-cuerpos-de-emergencia-pemex-reporta-control-del-siniestro-370416.html"
+        "https://elfinanciero.com.mx/nacional/2026/03/17/sheinbaum-celebra-que-el-rey-de-espana-reconozca-abusos-en-la-conquista-es-un-gesto-de-acercamiento",
+        "https://infobae.com/mexico/2026/03/18/sheinbaum-invita-al-rey-felipe-vi-al-mundial-tras-sus-palabras-sobre-la-conquista-una-hermandad-historica-entre-nuestros-pueblos"
       ]
     },
     {
       "story_id": 5,
-      "headline": "PEMEX appoints Cuauht\u00e9moc C\u00e1rdenas to head new Petroleum Advisory Commission",
-      "summary": "On the 88th anniversary of oil expropriation, PEMEX announced the creation of a new Petroleum Advisory Commission to be headed by Cuauht\u00e9moc C\u00e1rdenas. The commission will provide strategic analysis on industry trends.",
+      "headline": "Cuauht\u00e9moc C\u00e1rdenas appointed to lead new Pemex petroleum advisory commission",
+      "summary": "Pemex announced the creation of a Petroleum Advisory Commission to be headed by Cuauht\u00e9moc C\u00e1rdenas, son of former president L\u00e1zaro C\u00e1rdenas who nationalized oil. The commission will provide strategic analysis of industry trends and support decision-making. The appointment was made during the 88th anniversary of oil expropriation.",
       "actors_involved": [
         "PEMEX",
         "Sheinbaum"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 8,
+      "signal_category_hint": "economic_tech",
+      "source_count": 18,
       "sources": [
-        "eluniversal.com.mx",
-        "eleconomista.com.mx",
-        "excelsior.com.mx",
         "elfinanciero.com.mx",
+        "eluniversal.com.mx",
+        "excelsior.com.mx",
+        "contralinea.com.mx",
+        "veracruz.quadratin.com.mx",
+        "jornada.com.mx",
+        "diario.mx",
+        "sdpnoticias.com",
         "infobae.com",
-        "reforma.com",
-        "veracruz.quadratin.com.mx"
+        "chihuahua.quadratin.com.mx"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
-        {
-          "title": "Pemex anuncia creaci\u00f3n de la 'Comisi\u00f3n Consultiva del Petr\u00f3leo'",
-          "source": "eluniversal.com.mx",
-          "url": "https://www.eluniversal.com.mx/nacion/pemex-anuncia-creacion-de-la-comision-consultiva-del-petroleo-sera-presidida-por-cuauhtemoc-cardenas/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Pemex tendr\u00e1 nueva Comisi\u00f3n Consultiva del Petr\u00f3leo presidida por Cuauht\u00e9moc C\u00e1rdenas",
-          "source": "eleconomista.com.mx",
-          "url": "https://www.eleconomista.com.mx/empresas/pemex-tendra-nueva-comision-consultiva-petroleo-presidida-cuauhtemoc-cardenas-20260318-804782.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Cuauht\u00e9moc C\u00e1rdenas Sol\u00f3rzano dirigir\u00e1 nueva \u00e1rea estrat\u00e9gica en Pemex",
-          "source": "excelsior.com.mx",
-          "url": "https://www.excelsior.com.mx/nacional/cuauhtemoc-cardenas-solorzano-dirigira-nueva-area-estrategica-pemex",
-          "date": "2026-03-18"
-        },
         {
           "title": "Proponen a Cuauht\u00e9moc C\u00e1rdenas para encabezar \u00f3rgano consultivo en Pemex",
           "source": "elfinanciero.com.mx",
           "url": "https://elfinanciero.com.mx/economia/2026/03/18/proponen-a-cuauhtemoc-cardenas-para-encabezar-organo-consultivo-en-pemex",
           "date": "2026-03-18"
+        },
+        {
+          "title": "Pemex anuncia creaci\u00f3n de la Comisi\u00f3n Consultiva del Petr\u00f3leo",
+          "source": "eluniversal.com.mx",
+          "url": "https://www.eluniversal.com.mx/nacion/pemex-anuncia-creacion-de-la-comision-consultiva-del-petroleo-sera-presidida-por-cuauhtemoc-cardenas/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Cuauht\u00e9moc C\u00e1rdenas presidir\u00e1 comisi\u00f3n consultiva para Pemex",
+          "source": "jornada.com.mx",
+          "url": "https://jornada.com.mx/2026/03/19/politica/004n1pol?partner=rss",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Cuauht\u00e9moc C\u00e1rdenas Sol\u00f3rzano dirigir\u00e1 nueva \u00e1rea estrat\u00e9gica en Pemex",
+          "source": "excelsior.com.mx",
+          "url": "https://excelsior.com.mx/nacional/cuauhtemoc-cardenas-solorzano-dirigira-nueva-area-estrategica-pemex",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Cuauht\u00e9moc C\u00e1rdenas dirigir\u00e1 nueva \u00e1rea en Pemex: as\u00ed fue su nombramiento por Sheinbaum",
+          "source": "infobae.com",
+          "url": "https://infobae.com/mexico/2026/03/18/cuauhtemoc-cardenas-dirigira-nueva-area-en-pemex",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://www.eluniversal.com.mx/nacion/pemex-anuncia-creacion-de-la-comision-consultiva-del-petroleo-sera-presidida-por-cuauhtemoc-cardenas/",
-        "https://www.eleconomista.com.mx/empresas/pemex-tendra-nueva-comision-consultiva-petroleo-presidida-cuauhtemoc-cardenas-20260318-804782.html"
+        "https://elfinanciero.com.mx/economia/2026/03/18/proponen-a-cuauhtemoc-cardenas-para-encabezar-organo-consultivo-en-pemex",
+        "https://jornada.com.mx/2026/03/19/politica/004n1pol?partner=rss"
       ]
     },
     {
       "story_id": 6,
-      "headline": "Garc\u00eda Harfuch clarifies release of 'El Mayo' Zambada's daughter after operation",
-      "summary": "Security Secretary Garc\u00eda Harfuch explained that M\u00f3nica Zambada Niebla, daughter of 'El Mayo' Zambada, was detained and released during an operation in Sinaloa because she has no outstanding arrest warrants in Mexico or the US.",
+      "headline": "Garc\u00eda Harfuch confirms CJNG remains highly dangerous despite El Mencho's death",
+      "summary": "Security Secretary Garc\u00eda Harfuch stated that while the Jalisco New Generation Cartel was weakened by the death of its leader Nemesio Oseguera 'El Mencho', the organization remains highly dangerous and active across multiple states. He emphasized that the cartel has not disappeared and maintains significant operational capacity.",
       "actors_involved": [
         "Garc\u00eda Harfuch"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 11,
-      "sources": [
-        "elfinanciero.com.mx",
-        "infobae.com",
-        "reforma.com",
-        "eluniversal.com.mx",
-        "informador.mx",
-        "wradio.com.mx",
-        "elsiglodetorreon.com.mx",
-        "notiver.com",
-        "miciudad.mx"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Harfuch aclara por qu\u00e9 M\u00f3nica 'N' fue liberada: 'No tiene orden de aprehensi\u00f3n en M\u00e9xico ni EU'",
-          "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/20/claudia-sheinbaum-mananera-temas-hoy-20-de-marzo-de-2026-en-vivo/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Harfuch asegura que M\u00f3nica Zambada Niebla no cuenta con orden de aprehensi\u00f3n ni en M\u00e9xico ni en EEUU",
-          "source": "infobae.com",
-          "url": "https://www.infobae.com/mexico/2026/03/20/harfuch-asegura-que-monica-zambada-niebla-no-cuenta-con-orden-de-aprehension-ni-en-mexico-ni-en-eeuu-la-retuvieron-con-una-menor/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "EU indag\u00f3 a 'Mayita' y no encontraron nada, dice Harfuch",
-          "source": "reforma.com",
-          "url": "https://www.reforma.com/eu-indago-a-mayita-y-no-encontraron-nada-dice-harfuch/ar3173027",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elfinanciero.com.mx/nacional/2026/03/20/claudia-sheinbaum-mananera-temas-hoy-20-de-marzo-de-2026-en-vivo/",
-        "https://www.infobae.com/mexico/2026/03/20/harfuch-asegura-que-monica-zambada-niebla-no-cuenta-con-orden-de-aprehension-ni-en-mexico-ni-en-eeuu-la-retuvieron-con-una-menor/"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Sheinbaum announces mandatory digital payments for gas stations and toll booths",
-      "summary": "President Sheinbaum announced that before the end of 2026, payments for gasoline and toll booths will be mandatory to be made digitally, as part of efforts to reduce cash usage and promote financial digitization.",
-      "actors_involved": [
-        "Sheinbaum",
-        "Banxico"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 7,
-      "sources": [
-        "elfinanciero.com.mx",
-        "tvazteca.com",
-        "quintanaroo.heraldodemexico.com.mx",
-        "elindependiente.mx"
-      ],
-      "date_range": "2026-03-19 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Adi\u00f3s al 'cash': Sheinbaum anuncia pago con tarjeta obligatorio de casetas y gasolinas para este a\u00f1o",
-          "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/economia/2026/03/20/claudia-sheinbaum-anuncia-pago-digital-con-tarjeta-obligatorio-de-casetas-y-gasolinas-para-este-ano-en-convencion-bancaria/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Ma\u00f1anera Sheinbaum hoy 20 de marzo: \u00bfQu\u00e9 dijo sobre el operativo en Sinaloa y liberaci\u00f3n de hija de 'El Mayo'?",
-          "source": "tvazteca.com",
-          "url": "https://www.tvazteca.com/aztecanoticias/mananera-sheinbaum-hoy-20-marzo-que-dijo-el-operativo-en-sinaloa-y-liberacion-hija-de-el-mayo/",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elfinanciero.com.mx/economia/2026/03/20/claudia-sheinbaum-anuncia-pago-digital-con-tarjeta-obligatorio-de-casetas-y-gasolinas-para-este-ano-en-convencion-bancaria/",
-        "https://www.tvazteca.com/aztecanoticias/mananera-sheinbaum-hoy-20-marzo-que-dijo-el-operativo-en-sinaloa-y-liberacion-hija-de-el-mayo/"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "Anti-corruption agency corrects PEMEX pension amounts after transparency concerns",
-      "summary": "The Anti-corruption Secretariat corrected the amounts of six PEMEX retirees' pensions after receiving additional information from the company, reducing several amounts that had been reported as exceeding one million pesos monthly.",
-      "actors_involved": [
-        "PEMEX"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 6,
-      "sources": [
-        "eluniversal.com.mx",
-        "milenio.com",
-        "infobae.com",
-        "elimparcial.com",
-        "heraldodemexico.com.mx"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Anticorrupci\u00f3n corrige monto de seis 'pensiones doradas' de extrabajadores de Pemex",
-          "source": "eluniversal.com.mx",
-          "url": "https://www.eluniversal.com.mx/nacion/anticorrupcion-corrige-monto-de-seis-pensiones-doradas-de-extrabajadores-de-pemex-petrolera-ajusta-registros/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Pemex: Anticorrupci\u00f3n corrige montos de seis 'pensiones doradas'",
-          "source": "milenio.com",
-          "url": "https://www.milenio.com/politica/anticorrupcion-corrige-montos-de-seis-pensiones-doradas-de-pemex",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Le corrigen la lista a la Secretar\u00eda Anticorrupci\u00f3n, exhiben nuevos montos de pensiones doradas en Pemex",
-          "source": "infobae.com",
-          "url": "https://www.infobae.com/mexico/2026/03/20/la-secretaria-anticorrupcion-corrige-la-lista-de-pensiones-doradas-en-pemex/",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.eluniversal.com.mx/nacion/anticorrupcion-corrige-monto-de-seis-pensiones-doradas-de-extrabajadores-de-pemex-petrolera-ajusta-registros/",
-        "https://www.milenio.com/politica/anticorrupcion-corrige-montos-de-seis-pensiones-doradas-de-pemex"
-      ]
-    },
-    {
-      "story_id": 9,
-      "headline": "Sheinbaum responds to Spanish King Felipe VI's comments on conquest abuses",
-      "summary": "President Sheinbaum recognized as 'a gesture' Spanish King Felipe VI's acknowledgment that there was 'much abuse' during the conquest of Mexico, calling it progress in bilateral relations after years of tensions over historical reckoning.",
-      "actors_involved": [
-        "Sheinbaum"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 5,
-      "sources": [
-        "actualidad.rt.com",
-        "bbc.com",
-        "entornoinformativo.com.mx",
-        "elfinanciero.com.mx",
-        "theobjective.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Sheinbaum responde a declaraciones del rey Felipe sobre abusos en la Conquista",
-          "source": "actualidad.rt.com",
-          "url": "https://actualidad.rt.com/actualidad/593477-sheinbaum-responde-rey-felipe-abusos-conquista",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sheinbaum reconoce 'el gesto' del rey de Espa\u00f1a Felipe VI, quien dijo que 'hubo mucho abuso' en la conquista de M\u00e9xico",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/mundo/articles/c33j3vmj1rro",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Felipe VI se planta ante Sheinbaum y no pedir\u00e1 perd\u00f3n a M\u00e9xico: \u00abNo vamos a ir m\u00e1s all\u00e1\u00bb",
-          "source": "theobjective.com",
-          "url": "https://theobjective.com/espana/2026-03-19/felipe-sheinbaum-perdon-mexico-conquista/",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://actualidad.rt.com/actualidad/593477-sheinbaum-responde-rey-felipe-abusos-conquista",
-        "https://www.bbc.com/mundo/articles/c33j3vmj1rro"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Garc\u00eda Harfuch warns CJNG remains dangerous despite death of 'El Mencho'",
-      "summary": "Security Secretary Garc\u00eda Harfuch acknowledged that while the CJNG was weakened by the death of its leader 'El Mencho', the cartel remains active and highly dangerous with presence in several states.",
-      "actors_involved": [
-        "Garc\u00eda Harfuch"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 7,
+      "source_count": 8,
       "sources": [
         "yucatan.com.mx",
         "enblancoynegro.com.mx",
         "eluniversal.com.mx",
+        "nmas.com.mx",
         "jornada.com.mx",
         "sdpnoticias.com",
-        "nmas.com.mx",
+        "adn40.mx",
         "elimparcial.com"
       ],
       "date_range": "2026-03-20 to 2026-03-21",
       "articles": [
         {
-          "title": "Cay\u00f3 'El Mencho', pero el CNJG sigue vigente, reconoce Garc\u00eda Harfuch",
+          "title": "Cay\u00f3 El Mencho, pero el CNJG sigue vigente, reconoce Garc\u00eda Harfuch",
           "source": "yucatan.com.mx",
           "url": "https://www.yucatan.com.mx/mexico/2026/03/21/cayo-el-mencho-pero-el-cnjg-sigue-vigente-reconoce-garcia-harfuch.html",
           "date": "2026-03-21"
         },
         {
-          "title": "Harfuch: Tras la ca\u00edda de 'El Mencho', el CJNG sigue activo y es altamente peligroso",
+          "title": "Pese a muerte de El Mencho, el CJNG mantiene poder\u00edo y peligrosidad: Omar Garc\u00eda Harfuch",
+          "source": "enblancoynegro.com.mx",
+          "url": "https://enblancoynegro.com.mx/2026/03/20/pese-a-muerte-de-el-mencho-el-cjng-mantiene-poderio-y-peligrosidad-omar-garcia-harfuch/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Harfuch: Tras la ca\u00edda de El Mencho, el CJNG sigue activo y es altamente peligroso",
           "source": "eluniversal.com.mx",
           "url": "https://www.eluniversal.com.mx/nacion/harfuch-el-cjng-no-ha-desaparecido-tras-caida-de-el-mencho-sigue-activo-y-es-altamente-peligroso-informa/",
           "date": "2026-03-20"
         },
         {
-          "title": "La Jornada: Garc\u00eda Harfuch: el CJNG mantiene su poder\u00edo",
+          "title": "CJNG No Ha Desaparecido: Garc\u00eda Harfuch Advierte Peligrosidad del C\u00e1rtel",
+          "source": "nmas.com.mx",
+          "url": "https://www.nmas.com.mx/nacional/seguridad/cjng-no-ha-desaparecido-garcia-harfuch-advierte-peligrosidad-del-cartel-pese-a-muerte-de-el-mencho/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Garc\u00eda Harfuch: el CJNG mantiene su poder\u00edo",
           "source": "jornada.com.mx",
-          "url": "https://www.jornada.com.mx/2026/03/21/politica/011n1pol?partner=rss",
+          "url": "https://jornada.com.mx/2026/03/21/politica/011n1pol?partner=rss",
           "date": "2026-03-21"
         }
       ],
@@ -511,277 +403,384 @@
       ]
     },
     {
-      "story_id": 11,
-      "headline": "SEDENA deploys military forces and prepares World Cup 2026 security operations",
-      "summary": "SEDENA deployed 1,170 military personnel to Tijuana, Ju\u00e1rez, and Le\u00f3n to reinforce security against criminal groups, while also conducting security exercises in preparation for the 2026 World Cup.",
-      "actors_involved": [
-        "SEDENA"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 6,
-      "sources": [
-        "publimetro.com.mx",
-        "milenio.com",
-        "lajornadaestadodemexico.com",
-        "elhorizonte.mx",
-        "quadratin.com.mx",
-        "cronista.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Sedena despliega 1,170 militares en Tijuana, Ju\u00e1rez y Le\u00f3n para reforzar seguridad",
-          "source": "publimetro.com.mx",
-          "url": "https://www.publimetro.com.mx/nacional/2026/03/19/sedena-despliega-1170-militares-en-tijuana-juarez-y-leon-para-reforzar-seguridad/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Ej\u00e9rcito refuerza vigilancia contra el crimen organizado",
-          "source": "milenio.com",
-          "url": "https://www.milenio.com/videos/policia/busca-sedena-frenar-violencia-ciudad-juarez-leon",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Sedena afina plan de seguridad para el Mundial 2026 con escenarios de alto riesgo",
-          "source": "lajornadaestadodemexico.com",
-          "url": "https://lajornadaestadodemexico.com/sedena-afina-plan-de-seguridad-mundial-2026/",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.publimetro.com.mx/nacional/2026/03/19/sedena-despliega-1170-militares-en-tijuana-juarez-y-leon-para-reforzar-seguridad/",
-        "https://lajornadaestadodemexico.com/sedena-afina-plan-de-seguridad-mundial-2026/"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Canciller de la Fuente reaffirms Mexico's humanitarian aid to Cuba at CELAC meeting",
-      "summary": "Foreign Minister Juan Ram\u00f3n de la Fuente participated in the CELAC-Africa Forum in Colombia, where he reiterated Mexico's commitment to continue providing humanitarian aid to Cuba and strengthened diplomatic ties with Latin American and African countries.",
+      "story_id": 7,
+      "headline": "Mexico maintains humanitarian aid to Cuba as AMLO promotes donation campaign",
+      "summary": "Foreign Minister de la Fuente reaffirmed Mexico's commitment to continue humanitarian aid to Cuba during international forums. President Sheinbaum endorsed former president AMLO's call for voluntary donations to help Cuba, saying she would make a personal contribution. Morena senators also agreed to donate part of their salaries.",
       "actors_involved": [
         "de la Fuente",
-        "SRE"
+        "SRE",
+        "Sheinbaum",
+        "Morena"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
+      "source_count": 9,
       "sources": [
-        "milenio.com",
         "noticias.imer.mx",
-        "entornoinformativo.com.mx",
-        "elporvenir.mx"
+        "milenio.com",
+        "jornada.com.mx",
+        "elfinanciero.com.mx",
+        "proceso.com.mx",
+        "polemon.mx",
+        "heraldodemexico.com.mx",
+        "eluniversal.com.mx",
+        "entornoinformativo.com.mx"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-15 to 2026-03-20",
       "articles": [
-        {
-          "title": "SRE: M\u00e9xico mantendr\u00e1 ayuda humanitaria a Cuba y reforzar\u00e1 la relaci\u00f3n",
-          "source": "milenio.com",
-          "url": "https://www.milenio.com/politica/sre-mexico-mantendra-ayuda-humanitaria-a-cuba-y-reforzara-relacion",
-          "date": "2026-03-19"
-        },
         {
           "title": "De la Fuente: M\u00e9xico seguir\u00e1 ayudando a Cuba",
           "source": "noticias.imer.mx",
           "url": "https://noticias.imer.mx/blog/el-canciller-juan-ramon-de-la-fuente-aseguro-en-la-celac-que-mexico-seguira-brindado-ayuda-humanitaria-a-cuba/",
-          "date": "2026-03-19"
+          "date": "2026-03-16"
         },
         {
-          "title": "Canciller de la Fuente refuerza lazos con \u00c1frica y Am\u00e9rica Latina",
-          "source": "entornoinformativo.com.mx",
-          "url": "https://entornoinformativo.com.mx/canciller-de-la-fuente-refuerza-lazos",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.milenio.com/politica/sre-mexico-mantendra-ayuda-humanitaria-a-cuba-y-reforzara-relacion",
-        "https://noticias.imer.mx/blog/el-canciller-juan-ramon-de-la-fuente-aseguro-en-la-celac-que-mexico-seguira-brindado-ayuda-humanitaria-a-cuba/"
-      ]
-    },
-    {
-      "story_id": 13,
-      "headline": "Banxico announces digital payment system reforms at Banking Convention",
-      "summary": "During the 89th Banking Convention in Canc\u00fan, Banxico Governor Victoria Rodr\u00edguez announced reforms to electronic transfer regulations to make digital payments more intuitive and efficient, while addressing gender gaps in the financial sector.",
-      "actors_involved": [
-        "Banxico"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 15,
-      "sources": [
-        "elfinanciero.com.mx",
-        "heraldodemexico.com.mx",
-        "eleconomista.com.mx",
-        "forbes.com.mx",
-        "elceo.com",
-        "aristeguinoticias.com",
-        "codigoqro.mx"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Banxico planea disminuir el efectivo y promover los pagos digitales en comercios",
+          "title": "'Yo creo que s\u00ed': Sheinbaum responde si har\u00e1 donaci\u00f3n personal a Cuba",
           "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/economia/2026/03/20/banxico-planea-agilizar-los-pagos-digitales/",
+          "url": "https://elfinanciero.com.mx/nacional/2026/03/16/claudia-sheinbaum-mananera-temas-hoy-16-de-marzo-de-2026-en-vivo",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "SRE: M\u00e9xico mantendr\u00e1 ayuda humanitaria a Cuba y reforzar\u00e1 la relaci\u00f3n",
+          "source": "milenio.com",
+          "url": "https://www.milenio.com/politica/sre-mexico-mantendra-ayuda-humanitaria-a-cuba-y-reforzara-relacion",
           "date": "2026-03-20"
         },
         {
-          "title": "Banxico facilita el uso digital para hacer m\u00e1s eficientes las transferencias electr\u00f3nicas",
-          "source": "heraldodemexico.com.mx",
-          "url": "https://heraldodemexico.com.mx/economia/2026/3/20/banxico-facilita-el-uso-digital-para-hacer-mas-eficientes-las-transferencias-electronicas-782397.html",
+          "title": "M\u00e9xico mantendr\u00e1 la ayuda humanitaria a Cuba, reitera SRE al canciller Bruno Rodr\u00edguez",
+          "source": "jornada.com.mx",
+          "url": "https://www.jornada.com.mx/noticia/2026/03/20/politica/mexico-mantendra-la-ayuda-humanitaria-a-cuba-reitera-sre-al-canciller-bruno-rodriguez",
           "date": "2026-03-20"
         },
         {
-          "title": "Fuerza laboral femenina impulsar\u00eda la actividad econ\u00f3mica: Banxico",
-          "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/economia/2026/03/18/fuerza-laboral-femenina-impulsaria-la-actividad-economica-banxico/",
+          "title": "Senadores de Morena acuerdan donar apoyo econ\u00f3mico a Cuba",
+          "source": "eluniversal.com.mx",
+          "url": "https://www.eluniversal.com.mx/nacion/senadores-de-morena-acuerdan-donar-apoyo-economico-a-cuba-hay-que-enviarles-petroleo-que-es-lo-que-les-urge-norona/",
           "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://www.elfinanciero.com.mx/economia/2026/03/20/banxico-planea-agilizar-los-pagos-digitales/",
-        "https://heraldodemexico.com.mx/economia/2026/3/20/banxico-facilita-el-uso-digital-para-hacer-mas-eficientes-las-transferencias-electronicas-782397.html"
+        "https://noticias.imer.mx/blog/el-canciller-juan-ramon-de-la-fuente-aseguro-en-la-celac-que-mexico-seguira-brindado-ayuda-humanitaria-a-cuba/",
+        "https://www.milenio.com/politica/sre-mexico-mantendra-ayuda-humanitaria-a-cuba-y-reforzara-relacion"
       ]
     },
     {
-      "story_id": 14,
-      "headline": "Lula proposes Petrobras-PEMEX alliance for Gulf of Mexico exploration",
-      "summary": "Brazilian President Lula da Silva announced he proposed to President Sheinbaum a strategic alliance between Petrobras and PEMEX for oil exploration in the Gulf of Mexico, highlighting Brazil's deep-water drilling expertise.",
+      "story_id": 8,
+      "headline": "Sheinbaum participates in Banking Convention in Canc\u00fan, calls for increased credit",
+      "summary": "President Sheinbaum addressed the 89th Banking Convention in Canc\u00fan, asking banks to increase credit lending while acknowledging Mexico needs economic growth with social welfare. She announced agreements with Banxico to modernize digital payments and eliminate cash payments at gas stations and toll booths.",
+      "actors_involved": [
+        "Sheinbaum",
+        "Banxico"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 6,
+      "sources": [
+        "eleconomista.com.mx",
+        "jornada.com.mx",
+        "eluniversal.com.mx",
+        "proceso.com.mx",
+        "oem.com.mx"
+      ],
+      "date_range": "2026-03-18 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Convenci\u00f3n Bancaria 2026: Seis temas clave que dominaron el encuentro",
+          "source": "eleconomista.com.mx",
+          "url": "https://eleconomista.com.mx/sectorfinanciero/convencion-bancaria-2026-seis-temas-clave-dominaron-encuentro-edicion-20260321-805261.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Sheinbaum: nos falta crecer, pero con bienestar y sustentabilidad",
+          "source": "jornada.com.mx",
+          "url": "https://jornada.com.mx/2026/03/20/economia/013n1eco?partner=rss",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Les pedimos que aumenten el cr\u00e9dito: Sheinbaum a banqueros",
+          "source": "eluniversal.com.mx",
+          "url": "https://www.eluniversal.com.mx/nacion/les-pedimos-que-aumenten-el-credito-sheinbaum-a-banqueros-necesitamos-que-den-todavia-mas/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Sheinbaum busca hacer obligatorio el pago digital en gasolineras y casetas este a\u00f1o",
+          "source": "proceso.com.mx",
+          "url": "https://www.proceso.com.mx/economia/2026/3/19/sheinbaum-busca-hacer-obligatorio-el-pago-digital-en-gasolineras-casetas-este-ano-370602.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Sheinbaum busca eliminar los pagos en efectivo en casetas y gasolineras",
+          "source": "oem.com.mx",
+          "url": "https://oem.com.mx/elsoldemexico/finanzas/sheinbaum-busca-eliminar-los-pagos-en-efectivo-en-casetas-y-gasolineras-29074520",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://jornada.com.mx/2026/03/20/economia/013n1eco?partner=rss",
+        "https://www.eluniversal.com.mx/nacion/les-pedimos-que-aumenten-el-credito-sheinbaum-a-banqueros-necesitamos-que-den-todavia-mas/"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "CFE advances technological modernization with smart grids and virtual reality training",
+      "summary": "The Federal Electricity Commission announced major technological innovations including the SISNAE system for natural disaster response, automated distribution networks with Bluetooth-enabled smart meters, and virtual reality training for workers. The initiatives aim to improve service reliability and efficiency.",
+      "actors_involved": [
+        "CFE"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 8,
+      "sources": [
+        "globalenergy.mx",
+        "eleconomista.com.mx",
+        "cronica.com.mx",
+        "infobae.com",
+        "ejecentral.com.mx",
+        "lja.mx",
+        "adn40.mx"
+      ],
+      "date_range": "2026-03-15 to 2026-03-20",
+      "articles": [
+        {
+          "title": "CFE impulsa modernizaci\u00f3n en distribuci\u00f3n y capacitaci\u00f3n",
+          "source": "globalenergy.mx",
+          "url": "https://globalenergy.mx/noticias/cfe-impulsa-modernizacion-en-distribucion-y-capacitacion/",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "La CFE desarrolla innovaciones tecnol\u00f3gicas para fortalecer la confiabilidad del servicio el\u00e9ctrico",
+          "source": "eleconomista.com.mx",
+          "url": "https://eleconomista.com.mx/politica/cfe-desarrolla-innovaciones-tecnologicas-fortalecer-confiabilidad-servicio-electrico-20260316-804416.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "CFE implementa innovaciones tecnol\u00f3gicas para mejorar el servicio energ\u00e9tico",
+          "source": "cronica.com.mx",
+          "url": "https://cronica.com.mx/nacional/2026/03/16/cfe-implementa-innovaciones-tecnologicas-para-mejorar-el-servicio-energetico-en-el-pais",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "La CFE moderniza la gesti\u00f3n y distribuci\u00f3n de energ\u00eda el\u00e9ctrica en M\u00e9xico",
+          "source": "infobae.com",
+          "url": "https://infobae.com/mexico/2026/03/16/la-cfe-moderniza-la-gestion-y-distribucion-de-energia-electrica-en-mexico",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "CFE: Usuarios con este tipo de medidores podr\u00edan sufrir cortes de luz a cualquier hora",
+          "source": "adn40.mx",
+          "url": "https://adn40.mx/mexico/2026-03-18/cfe-usuarios-este-tipo-medidores-podrian-sufrir-cortes-luz-a-cualquier-hora",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://eleconomista.com.mx/politica/cfe-desarrolla-innovaciones-tecnologicas-fortalecer-confiabilidad-servicio-electrico-20260316-804416.html",
+        "https://infobae.com/mexico/2026/03/16/la-cfe-moderniza-la-gestion-y-distribucion-de-energia-electrica-en-mexico"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "SEDENA conducts security exercises ahead of 2026 World Cup",
+      "summary": "The Defense Ministry held strategic security drills at Military Camp 37-A in Estado de M\u00e9xico, with participation from the Mexican Football Federation. The exercises are part of preparations for the 2026 FIFA World Cup security operations.",
+      "actors_involved": [
+        "SEDENA"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
+      "sources": [
+        "elhorizonte.mx",
+        "quadratin.com.mx"
+      ],
+      "date_range": "2026-03-20 to 2026-03-20",
+      "articles": [
+        {
+          "title": "SEDENA ensaya blindaje total rumbo al Mundial 2026 en M\u00e9xico",
+          "source": "elhorizonte.mx",
+          "url": "https://www.elhorizonte.mx/nacional/sedena-ensaya-blindaje-total-rumbo-al-mundial-2026-en-mexico/5165315284",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Realiza SEDENA ejercicio de seguridad rumbo al Mundial",
+          "source": "quadratin.com.mx",
+          "url": "https://www.quadratin.com.mx/deportes/realiza-sedena-ejercicio-de-seguridad-rumbo-al-mundial/",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://www.elhorizonte.mx/nacional/sedena-ensaya-blindaje-total-rumbo-al-mundial-2026-en-mexico/5165315284",
+        "https://www.quadratin.com.mx/deportes/realiza-sedena-ejercicio-de-seguridad-rumbo-al-mundial/"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Pemex incident at Dos Bocas refinery kills five people",
+      "summary": "Five people died in a fire outside Pemex's Olmeca refinery in Dos Bocas, Tabasco, caused by oily water ignition due to heavy rains. One victim was a Pemex worker. The company stated refinery operations continued normally without damage to infrastructure.",
       "actors_involved": [
         "PEMEX"
       ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 5,
+      "signal_category_hint": "economic_tech",
+      "source_count": 6,
       "sources": [
-        "infobae.com",
-        "elfinanciero.com.mx",
         "eleconomista.com.mx",
-        "elceo.com",
-        "eluniversal.com.mx"
+        "heraldodemexico.com.mx",
+        "proceso.com.mx",
+        "forbes.com.mx",
+        "reuters.com",
+        "cnnespanol.cnn.com",
+        "nmas.com.mx"
       ],
-      "date_range": "2026-03-20 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-17",
       "articles": [
         {
-          "title": "Pemex y Petrobras juntas: esta es la alianza que Lula da Silva propone a Sheinbaum",
-          "source": "infobae.com",
-          "url": "https://www.infobae.com/mexico/2026/03/21/pemex-y-petrobras-juntas-esta-es-la-alianza-que-lula-da-silva-propone-a-sheinbaum/",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Pemex podr\u00eda aliarse con Petrobras para exploraci\u00f3n en Golfo de M\u00e9xico: Lula aborda tema con Sheinbaum",
-          "source": "elfinanciero.com.mx",
-          "url": "https://www.elfinanciero.com.mx/economia/2026/03/21/pemex-podria-aliarse-con-petrobras-para-exploracion-en-golfo-de-mexico-lula-propone-alianza-a-sheinbaum/",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Lula propone a Sheinbaum alianza entre Petrobras y Pemex para explorar crudo en el Golfo de M\u00e9xico",
+          "title": "Pemex detiene incendio en la refiner\u00eda de Dos Bocas",
           "source": "eleconomista.com.mx",
-          "url": "https://www.eleconomista.com.mx/internacionales/lula-propone-sheinbaum-alianza-petrobras-pemex-explorar-crudo-golfo-mexico-20260320-805154.html",
-          "date": "2026-03-20"
+          "url": "https://eleconomista.com.mx/empresas/pemex-detiene-incendio-refineria-dos-bocas-20260317-804548.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Pemex confirma la muerte de 5 personas durante incendio en Refiner\u00eda Olmeca",
+          "source": "heraldodemexico.com.mx",
+          "url": "https://heraldodemexico.com.mx/nacional/2026/3/17/pemex-confirma-la-muerte-de-personas-durante-incendio-en-refineria-olmeca-781072.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Incendio en Dos Bocas moviliza a cuerpos de emergencia; Pemex reporta control del siniestro",
+          "source": "proceso.com.mx",
+          "url": "https://proceso.com.mx/nacional/estados/2026/3/17/incendio-en-dos-bocas-moviliza-cuerpos-de-emergencia-pemex-reporta-control-del-siniestro-370416.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Five people die in fire outside Pemex's Olmeca refinery in Mexico",
+          "source": "reuters.com",
+          "url": "https://reuters.com/business/energy/five-people-dead-fire-outside-pemexs-olmeca-refinery-2026-03-17",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Incendio en refiner\u00eda de Pemex en el sureste de M\u00e9xico deja cinco muertos",
+          "source": "cnnespanol.cnn.com",
+          "url": "https://cnnespanol.cnn.com/2026/03/17/mexico/muertos-incendio-refineria-pemex-efe",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "\u00bfQui\u00e9nes Son las V\u00edctimas del Incendio Ocurrido en el Exterior de la Refiner\u00eda Olmeca de Pemex?",
+          "source": "nmas.com.mx",
+          "url": "https://www.nmas.com.mx/nacional/quienes-son-las-victimas-del-incendio-ocurrido-en-el-exterior-de-la-refineria-olmeca-de-pemex/",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://www.infobae.com/mexico/2026/03/21/pemex-y-petrobras-juntas-esta-es-la-alianza-que-lula-da-silva-propone-a-sheinbaum/",
-        "https://www.elfinanciero.com.mx/economia/2026/03/21/pemex-podria-aliarse-con-petrobras-para-exploracion-en-golfo-de-mexico-lula-propone-alianza-a-sheinbaum/"
+        "https://heraldodemexico.com.mx/nacional/2026/3/17/pemex-confirma-la-muerte-de-personas-durante-incendio-en-refineria-olmeca-781072.html",
+        "https://reuters.com/business/energy/five-people-dead-fire-outside-pemexs-olmeca-refinery-2026-03-17"
       ]
     },
     {
-      "story_id": 15,
-      "headline": "SEMAR graduates 58 medical specialists and expands maritime healthcare programs",
-      "summary": "The Navy graduated 58 medical specialists in naval health across 33 medical areas and announced expanded medical brigade operations in isolated areas of Campeche, strengthening maritime healthcare infrastructure.",
+      "story_id": 12,
+      "headline": "Brazil's Lula proposes Petrobras-Pemex alliance for Gulf of Mexico exploration",
+      "summary": "Brazilian President Lula da Silva announced he proposed to President Sheinbaum a strategic partnership between Petrobras and Pemex for oil exploration in the Gulf of Mexico. Lula emphasized Brazil's deep-water expertise could significantly help Mexico's state oil company boost production.",
       "actors_involved": [
-        "SEMAR"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 4,
-      "sources": [
-        "excelsior.com.mx",
-        "eluniversal.com.mx",
-        "mvsnoticias.com",
-        "lja.mx"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Semar fortalece su sistema m\u00e9dico con 58 egresados de posgrado en sanidad naval",
-          "source": "excelsior.com.mx",
-          "url": "https://www.excelsior.com.mx/nacional/semar-fortalece-sistema-medico-con-58-egresados-posgrado-sanidad-naval",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Se grad\u00faan 58 m\u00e9dicos y enfermeras de la Semar",
-          "source": "eluniversal.com.mx",
-          "url": "https://www.eluniversal.com.mx/nacion/se-graduan-58-medicos-y-enfermeras-de-la-semar-almirante-escamilla-cazares-reconoce-importancia-de-los-especialistas/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Semar despliega brigadas m\u00e9dicas en zonas aisladas de Campeche",
-          "source": "mvsnoticias.com",
-          "url": "https://mvsnoticias.com/nacional/estados/2026/3/21/semar-despliega-brigadas-medicas-en-zonas-aisladas-de-campeche-734136.html",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.excelsior.com.mx/nacional/semar-fortalece-sistema-medico-con-58-egresados-posgrado-sanidad-naval",
-        "https://mvsnoticias.com/nacional/estados/2026/3/21/semar-despliega-brigadas-medicas-en-zonas-aisladas-de-campeche-734136.html"
-      ]
-    },
-    {
-      "story_id": 16,
-      "headline": "Sheinbaum responds to Trump on sovereignty amid US intervention proposals",
-      "summary": "President Sheinbaum reiterated Mexico's position that cooperation with the US on security will continue but emphasized that national sovereignty is not negotiable, responding to Trump's proposals for US intervention against cartels.",
-      "actors_involved": [
+        "PEMEX",
         "Sheinbaum"
       ],
-      "signal_category_hint": "alignment_diplomatic",
+      "signal_category_hint": "economic_tech",
       "source_count": 5,
       "sources": [
-        "polemon.mx",
-        "eleconomista.com.mx",
-        "infobae.com",
-        "codigoqro.mx"
+        "elfinanciero.com.mx",
+        "elceo.com",
+        "mexicosolidarity.com",
+        "diario.mx",
+        "bloomberg.com",
+        "reuters.com",
+        "ljz.mx"
       ],
-      "date_range": "2026-03-13 to 2026-03-15",
+      "date_range": "2026-03-20 to 2026-03-21",
       "articles": [
         {
-          "title": "Sheinbaum responde a Trump: la soberan\u00eda nacional no se negocia",
-          "source": "polemon.mx",
-          "url": "https://polemon.mx/sheinbaum-responde-a-trump-la-soberania-nacional-no-se-negocia/",
-          "date": "2026-03-14"
+          "title": "Pemex podr\u00eda aliarse con Petrobras para exploraci\u00f3n en Golfo de M\u00e9xico",
+          "source": "elfinanciero.com.mx",
+          "url": "https://elfinanciero.com.mx/economia/2026/03/21/pemex-podria-aliarse-con-petrobras-para-exploracion-en-golfo-de-mexico-lula-propone-alianza-a-sheinbaum",
+          "date": "2026-03-21"
         },
         {
-          "title": "Sheinbaum responde a Trump sobre combate al narco",
-          "source": "eleconomista.com.mx",
-          "url": "https://eleconomista.com.mx/videos/sheinbaum-responde-trump-sobre-combate-narco-20260314-804248.html",
-          "date": "2026-03-14"
+          "title": "Pemex y Petrobras podr\u00edan trabajar juntas en el Golfo de M\u00e9xico",
+          "source": "elceo.com",
+          "url": "https://elceo.com/negocios/pemex-petrobras-trabajar-juntas-golfo-de-mexico",
+          "date": "2026-03-21"
         },
         {
-          "title": "'Nos guste o no, los c\u00e1rteles controlan M\u00e9xico': Trump lamenta que Sheinbaum rechace ayuda de EEUU",
-          "source": "infobae.com",
-          "url": "https://www.infobae.com/mexico/2026/03/14/nos-guste-o-no-los-carteles-controlan-mexico-trump-lamenta-que-sheinbaum-rechace-ayuda-de-eeuu/",
-          "date": "2026-03-14"
+          "title": "Propone Lula alianza entre Petrobras y Pemex",
+          "source": "diario.mx",
+          "url": "https://diario.mx/internacional/2026/mar/20/propone-lula-alianza-entre-petrobras-y-pemex-1110523.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Brazil's Lula Says Petrobras, Pemex Could Partner on Oil Exploration",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-03-20/lula-says-petrobras-pemex-could-partner-on-oil-exploration",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Ofrece Lula alianza Petrobras-Pemex para explorar el Golfo",
+          "source": "ljz.mx",
+          "url": "https://ljz.mx/21/03/2026/ofrece-lula-alianza-petrobras-pemex-para-explorar-el-golfo",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://polemon.mx/sheinbaum-responde-a-trump-la-soberania-nacional-no-se-negocia/",
-        "https://www.infobae.com/mexico/2026/03/14/nos-guste-o-no-los-carteles-controlan-mexico-trump-lamenta-que-sheinbaum-rechace-ayuda-de-eeuu/"
+        "https://elfinanciero.com.mx/economia/2026/03/21/pemex-podria-aliarse-con-petrobras-para-exploracion-en-golfo-de-mexico-lula-propone-alianza-a-sheinbaum",
+        "https://bloomberg.com/news/articles/2026-03-20/lula-says-petrobras-pemex-could-partner-on-oil-exploration"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Journalist predicts Juan Ram\u00f3n de la Fuente's departure from SRE",
+      "headline": "Anti-Corruption Secretary corrects amounts of six Pemex 'golden pensions'",
+      "source": "eluniversal.com.mx",
+      "url": "https://www.eluniversal.com.mx/nacion/anticorrupcion-corrige-monto-de-seis-pensiones-doradas-de-extrabajadores-de-pemex-petrolera-ajusta-registros/",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Sheinbaum commemorates 88th anniversary of oil expropriation in Veracruz",
+      "source": "nmas.com.mx",
+      "url": "https://nmas.com.mx/nacional/politica/sheinbaum-encabeza-88-aniversario-de-la-expropiacion-petrolera-en-veracruz",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "SEMAR graduates 58 specialists in naval health in 33 medical areas",
+      "source": "excelsior.com.mx",
+      "url": "https://www.excelsior.com.mx/nacional/semar-fortalece-sistema-medico-con-58-egresados-posgrado-sanidad-naval",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Senate to train 60 SEMAR members in United States",
+      "source": "jornada.com.mx",
+      "url": "https://jornada.com.mx/2026/03/16/politica/011n3pol?partner=rss",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "SEMAR allocates over 3 billion for Pacific surveillance reinforcement",
+      "source": "lja.mx",
+      "url": "https://lja.mx/2026/03/marina-destina-mas-de-3-mil-millones-para-reforzar-vigilancia-en-el-pacifico",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Banxico starts new communication manager hiring",
+      "source": "eluniversal.com.mx",
+      "url": "https://www.eluniversal.com.mx/opinion/desbalance/banxico-estrena-gerente/",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Sheinbaum suffers minor incident at Nayarit event",
+      "source": "eluniversal.com.mx",
+      "url": "https://eluniversal.com.mx/nacion/sheinbaum-sufre-incidente-menor-al-llegar-a-evento-en-nayarit-solo-me-picaron-el-ojo-dice",
+      "signal_category_hint": "unclear"
+    },
+    {
+      "headline": "Foreign Minister de la Fuente resignation speculation according to journalist",
       "source": "elsiglodetorreon.com.mx",
       "url": "https://elsiglodetorreon.com.mx/noticia/2026/preven-salida-de-juan-ramon-de-la-fuente-de-relaciones-exteriores-segun-periodista.html",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "CNTE blocks Paseo de la Reforma demanding meeting with Sheinbaum",
-      "source": "eluniversal.com.mx",
-      "url": "https://www.eluniversal.com.mx/nacion/cnte-bloquea-paseo-de-la-reforma-y-exige-reunion-con-sheinbaum-rechaza-dialogo-con-la-sep-y-segob/",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Sheinbaum reaches 82% positive media coverage in February",
-      "source": "eluniversal.com.mx",
-      "url": "https://www.eluniversal.com.mx/nacion/sheinbaum-alcanza-82-de-cobertura-positiva-impacta-reforma-electoral-y-el-mencho/",
-      "signal_category_hint": "domestic_regime"
+      "headline": "Government clarifies relationship between Sheinbaum and actress Adela Noriega",
+      "source": "nacion321.com",
+      "url": "https://nacion321.com/gobierno/2026/03/18/sheinbaum-y-adela-noriega-son-hermanas-gobierno-federal-responde-al-escandalo-en-redes",
+      "signal_category_hint": "unclear"
     }
   ]
 }

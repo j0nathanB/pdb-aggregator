@@ -3,52 +3,53 @@
   "code": "it",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 473,
-  "stories_identified": 6,
-  "off_topic_filtered": 58,
-  "noise_summary": "58 off-topic results filtered: 15 sports stories (Formula 1 race wins, football transfers), 12 TV show recaps (Chicago P.D. episodes), 8 entertainment/celebrity news, 7 technology product reviews (MacBook, BMW models), 6 weather reports, 5 obituaries of non-political figures, 5 classified ads/business listings.",
+  "search_results_total": 385,
+  "stories_identified": 9,
+  "off_topic_filtered": 23,
+  "noise_summary": "23 off-topic results filtered: 12 technology articles about Apple M5 chips and MacBook reviews, 8 automotive articles about BMW models, 3 miscellaneous commercial content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Justice reform referendum campaign intensifies ahead of March 22-23 vote",
-      "summary": "Italy's constitutional referendum on judicial reform takes place this weekend, with PM Meloni campaigning for 'Yes' and opposition parties pushing 'No'. The reform would separate prosecutor and judge careers, create a new disciplinary body, and reform the CSM. Polls show a tight race.",
+      "headline": "Justice reform referendum campaign reaches final days ahead of March 22-23 vote",
+      "summary": "Italy's constitutional referendum on judicial reform dominates political coverage, with Meloni campaigning for 'Yes' through podcasts and rallies while opposition parties PD and M5S push for 'No.' Campaign violations and last-minute controversies intensify debate.",
       "actors_involved": [
         "Giorgia Meloni",
         "Fratelli d'Italia",
         "PD",
-        "Movimento 5 Stelle"
+        "Movimento 5 Stelle",
+        "Matteo Salvini",
+        "Antonio Tajani"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 118,
+      "source_count": 89,
       "sources": [
-        "repubblica.it",
-        "tg24.sky.it",
         "fratelli-italia.it",
-        "ilsole24ore.com",
+        "tg24.sky.it",
         "politico.eu",
         "governo.it",
-        "laverita.info",
-        "reuters.com",
-        "it.euronews.com",
-        "thelocal.it",
-        "foreignpolicy.com",
-        "ilfattoquotidiano.it",
+        "repubblica.it",
         "corriere.it",
-        "ansa.it"
+        "ilfattoquotidiano.it",
+        "ilsole24ore.com",
+        "ansa.it",
+        "reuters.com",
+        "ilgiornale.it",
+        "fanpage.it",
+        "editorialedomani.it"
       ],
-      "date_range": "2026-03-14 to 2026-03-21",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
+        {
+          "title": "Meloni agli italiani: \"Al referendum votate s\u00ec per aprire una pagina nuova\"",
+          "source": "fratelli-italia.it",
+          "url": "https://fratelli-italia.it/meloni-agli-italiani-al-referendum-votate-si-per-aprire-una-pagina-nuova",
+          "date": "2026-02-22"
+        },
         {
           "title": "Referendum Giustizia, Meloni: \"Sfida tra chi vuole cambiare e chi no\"",
           "source": "tg24.sky.it",
           "url": "https://tg24.sky.it/politica/2026/03/20/referendum-giustizia-giorgia-meloni",
           "date": "2026-03-20"
-        },
-        {
-          "title": "Meloni agli italiani: \"Al referendum votate s\u00ec per aprire una pagina nuova\"",
-          "source": "fratelli-italia.it",
-          "url": "https://fratelli-italia.it/meloni-agli-italiani-al-referendum-votate-si-per-aprire-una-pagina-nuova",
-          "date": "2026-03-15"
         },
         {
           "title": "Italy's justice referendum tests PM Meloni and divided opposition",
@@ -57,10 +58,10 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Giorgia Meloni is on a winning streak in Rome and Brussels. The referendum can end it.",
-          "source": "politico.eu",
-          "url": "https://politico.eu/article/giorgia-meloni-eu-influence-italy-referendum-judicial-reform",
-          "date": "2026-03-18"
+          "title": "Salvini viola il silenzio elettorale e pubblica su X un post con scritto \"S\u00ec\"",
+          "source": "repubblica.it",
+          "url": "https://repubblica.it/politica/2026/03/21/news/salvini_referendum_giustizia_si_silenzio_elettorale-425236705",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
@@ -70,187 +71,209 @@
     },
     {
       "story_id": 2,
-      "headline": "Iranian attacks on Italian military bases prompt security review and troop repositioning",
-      "summary": "Iranian forces have attacked multiple bases housing Italian military personnel in Kuwait and Iraq. A drone strike destroyed an Italian MQ-9 Predator at Ali Al Salem base in Kuwait. Italy is withdrawing some troops and debating its role in the US-Israeli conflict with Iran.",
-      "actors_involved": [
-        "Guido Crosetto",
-        "Antonio Tajani",
-        "Italian Armed Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 87,
-      "sources": [
-        "ansa.it",
-        "ilsole24ore.com",
-        "lastampa.it",
-        "repubblica.it",
-        "corriere.it",
-        "quotidiano.net",
-        "rainews.it",
-        "infodifesa.it",
-        "ilgiornale.it",
-        "today.it"
-      ],
-      "date_range": "2026-03-15 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Drone contro base italiana in Kuwait: distrutto un velivolo",
-          "source": "ansa.it",
-          "url": "https://www.ansa.it/sito/notizie/mondo/2026/03/15/drone-contro-base-italiana-in-kuwait-distrutto-un-velivolo_76814f38-e745-4a1c-ae78-4d361e2d679d.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Crosetto: 'Cellule dormienti iraniane, centinaia nel mondo'",
-          "source": "ilsole24ore.com",
-          "url": "https://www.ilsole24ore.com/art/crosetto-cellule-dormienti-iraniane-centinaia-nel-mondo-AIlY9R2B",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Iran, rischio terrorismo. Crosetto: 'Centinaia di cellule dormienti'",
-          "source": "tg24.sky.it",
-          "url": "https://tg24.sky.it/politica/2026/03/19/terrorismo-italia-ministro-crosetto",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.ansa.it/sito/notizie/mondo/2026/03/15/drone-contro-base-italiana-in-kuwait-distrutto-un-velivolo_76814f38-e745-4a1c-ae78-4d361e2d679d.html",
-        "https://tg24.sky.it/politica/2026/03/19/terrorismo-italia-ministro-crosetto"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Lega founder Umberto Bossi dies at 84, triggering political tributes and reflection",
-      "summary": "Umberto Bossi, founder of the Lega Nord party, died at 84 in Varese. Political figures across the spectrum paid tribute, with his funeral scheduled for Pontida. His death highlighted tensions within Lega about the party's transformation under Salvini.",
+      "headline": "Umberto Bossi, founder of Lega Nord, dies at 84",
+      "summary": "The death of Umberto Bossi, founder of Italy's Lega Nord party, prompts widespread political tributes. Funeral scheduled for Pontida with attendance by Meloni, Salvini and other political leaders. Reflections on his complex relationship with current Lega leadership.",
       "actors_involved": [
         "Matteo Salvini",
-        "Sergio Mattarella",
-        "Antonio Tajani"
+        "Giorgia Meloni",
+        "Antonio Tajani",
+        "Sergio Mattarella"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 24,
+      "source_count": 34,
       "sources": [
         "ansa.it",
-        "ilsole24ore.com",
-        "tg24.sky.it",
         "repubblica.it",
         "corriere.it",
+        "tg24.sky.it",
+        "lastampa.it",
         "ilgiornale.it",
-        "askanews.it"
+        "ilmessaggero.it",
+        "huffingtonpost.it",
+        "vanityfair.it",
+        "laverita.info"
       ],
-      "date_range": "2026-03-19 to 2026-03-22",
+      "date_range": "2026-03-19 to 2026-03-21",
       "articles": [
         {
-          "title": "Morto Umberto Bossi, fondatore della Lega. Mattarella: l'Italia perde un sincero democratico",
-          "source": "ilsole24ore.com",
-          "url": "https://www.ilsole24ore.com/art/morto-umberto-bossi-leader-storico-lega-AInjiZ3B",
+          "title": "\u00c8 morto Umberto Bossi. Addio al Senat\u00f9r, fondatore della Lega. Salvini: \"Mi ha cambiato la vita\"",
+          "source": "repubblica.it",
+          "url": "https://repubblica.it/politica/2026/03/19/diretta/umberto_bossi_morto_lega-425233273",
           "date": "2026-03-19"
         },
         {
-          "title": "Salvini: 'Tutti qui grazie all'idea di Bossi'. Domenica a Pontida i funerali",
+          "title": "Mattarella, con Bossi l'Italia perde un sincero democratico",
           "source": "ansa.it",
-          "url": "https://www.ansa.it/sito/notizie/politica/2026/03/20/salvini-tutti-qui-grazie-allidea-di-bossi-lascia-una-grande-eredita_7a34ba2a-1b0a-4183-8b75-8298b0ed2ac2.html",
+          "url": "https://ansa.it/sito/notizie/topnews/2026/03/19/mattarella-con-bossi-litalia-perde-un-sincero-democratico_dcb9fe0c-dac6-4717-983d-0781c1f9e8bc.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Funerali di Bossi a Pontida domenica. Ci saranno Meloni e Tajani",
+          "source": "ansa.it",
+          "url": "https://ansa.it/sito/notizie/cronaca/2026/03/20/funerali-di-bossi-a-pontida-domenica-22.-il-figlio-renzo-il-funerale-con-il-popolo_8713e823-8db9-40f4-8b1f-a18fcad0edb5.html",
           "date": "2026-03-20"
         }
       ],
       "representative_urls": [
-        "https://www.ilsole24ore.com/art/morto-umberto-bossi-leader-storico-lega-AInjiZ3B",
-        "https://www.ansa.it/sito/notizie/politica/2026/03/20/salvini-tutti-qui-grazie-allidea-di-bossi-lascia-una-grande-eredita_7a34ba2a-1b0a-4183-8b75-8298b0ed2ac2.html"
+        "https://repubblica.it/politica/2026/03/19/diretta/umberto_bossi_morto_lega-425233273",
+        "https://ansa.it/sito/notizie/topnews/2026/03/19/mattarella-con-bossi-litalia-perde-un-sincero-democratico_dcb9fe0c-dac6-4717-983d-0781c1f9e8bc.html"
       ]
     },
     {
-      "story_id": 4,
-      "headline": "Justice undersecretary Delmastro faces scandal over business ties to organized crime family",
-      "summary": "Andrea Delmastro, undersecretary for justice and FdI member, was revealed to have business connections with the family of Mauro Caroccia, convicted for mafia-related crimes. Opposition parties demand his resignation while Meloni calls him 'careless' but keeps him in post.",
+      "story_id": 3,
+      "headline": "Sottosegretario Delmastro under fire for business links to mafia-connected family",
+      "summary": "Justice Undersecretary Andrea Delmastro faces calls for resignation over his investment in a Rome restaurant with the daughter of Mauro Caroccia, convicted for mafia connections. Other FdI officials also involved in the business venture.",
       "actors_involved": [
-        "Giorgia Meloni",
-        "Fratelli d'Italia"
+        "Fratelli d'Italia",
+        "Giorgia Meloni"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 31,
+      "source_count": 28,
       "sources": [
         "ilfattoquotidiano.it",
         "repubblica.it",
         "corriere.it",
         "lastampa.it",
-        "quotidiano.net",
-        "today.it",
+        "ilmanifesto.it",
+        "ilpost.it",
         "torinotoday.it",
-        "ilpost.it"
+        "editorialedomani.it",
+        "quotidiano.net",
+        "tg.la7.it"
       ],
       "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
         {
-          "title": "Delmastro in affari con un condannato per mafia: bufera su FdI",
-          "source": "lastampa.it",
-          "url": "https://lastampa.it/biella/2026/03/18/news/delmastro_senese_mafia_societa_ristorante_carocciachiorino-15549890",
+          "title": "Delmastro in affari con un condannato per mafia legato ai Senese: l'inchiesta che mette in difficolt\u00e0 il governo",
+          "source": "editorialedomani.it",
+          "url": "https://editorialedomani.it/politica/italia/delmastro-inchiesta-affari-mauro-caroccia-condannato-mafia-clan-senese-roma-governo-meloni-difficolta-h5qaavfs",
           "date": "2026-03-18"
         },
         {
-          "title": "Caso Delmastro, l'imbarazzo di FdI: Arianna Meloni parla di 'gogna mediatica'",
-          "source": "ilfattoquotidiano.it",
-          "url": "https://www.ilfattoquotidiano.it/2026/03/19/caso-delmastro-limbarazzo-dei-vertici-fdi-per-arianna-meloni-dribbla-i-cronisti-e-parla-di-gogna-mediatica-alfredo-mantovano-non-rispondo/8329850",
-          "date": "2026-03-19"
+          "title": "Caso Delmastro, Caroccia padre e figlia indagati dalla Procura di Roma. Le ultime novit\u00e0",
+          "source": "tg.la7.it",
+          "url": "https://tg.la7.it/cronaca/delmastro-caroccia-procura-roma-riciclaggio-21-03-2026-254406",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Delmastro e il clan, le nuove foto al ristorante di Caroccia. Meloni: \u00abC'\u00e8 dietro una \"manina\"\u00bb",
+          "source": "ilmessaggero.it",
+          "url": "https://ilmessaggero.it/politica/delmastro_clan_foto_ristorante_mauro_caroccia_chi_e-9428415.html",
+          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
-        "https://lastampa.it/biella/2026/03/18/news/delmastro_senese_mafia_societa_ristorante_carocciachiorino-15549890",
-        "https://www.ilfattoquotidiano.it/2026/03/19/caso-delmastro-limbarazzo-dei-vertici-fdi-per-arianna-meloni-dribbla-i-cronisti-e-parla-di-gogna-mediatica-alfredo-mantovano-non-rispondo/8329850"
+        "https://editorialedomani.it/politica/italia/delmastro-inchiesta-affari-mauro-caroccia-condannato-mafia-clan-senese-roma-governo-meloni-difficolta-h5qaavfs",
+        "https://ilfattoquotidiano.it/2026/03/19/caso-delmastro-limbarazzo-dei-vertici-fdi-per-arianna-meloni-dribbla-i-cronisti-e-parla-di-gogna-mediatica-alfredo-mantovano-non-rispondo/8329850"
       ]
     },
     {
-      "story_id": 5,
-      "headline": "President Mattarella receives honorary doctorate in Salamanca, delivers speech on European values",
-      "summary": "President Sergio Mattarella traveled to Salamanca, Spain where he received an honorary doctorate and delivered a speech emphasizing Europe's role in defending multilateralism and rejecting absolute sovereignty. He met with Spanish King Felipe VI and called for Europe to say no to conflicts.",
+      "story_id": 4,
+      "headline": "President Mattarella receives honorary doctorate in Salamanca, delivers European unity speech",
+      "summary": "President Mattarella travels to Spain to receive honorary doctorate from University of Salamanca, delivering speech on European unity and multilateralism. Warns against sovereignist threats and calls for EU to reject conflict expansion.",
       "actors_involved": [
         "Sergio Mattarella"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 23,
+      "source_count": 25,
       "sources": [
         "ansa.it",
-        "repubblica.it",
         "corriere.it",
-        "askanews.it",
-        "tg.la7.it",
-        "video.corriere.it",
-        "stream24.ilsole24ore.com"
+        "repubblica.it",
+        "lapresse.it",
+        "affaritaliani.it",
+        "rainews.it",
+        "ilsole24ore.com",
+        "tg24.sky.it",
+        "ilfoglio.it",
+        "ildifforme.it"
       ],
-      "date_range": "2026-03-18 to 2026-03-20",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
         {
-          "title": "Mattarella: 'Tocca alla Ue dire No ai conflitti e al sovranismo assoluto'",
-          "source": "ansa.it",
-          "url": "https://www.ansa.it/sito/notizie/politica/2026/03/19/mattarella-a-salamanca-leuropa-indispensabile-per-la-pace.-sappia-dire-di-no-a-conflitti-e-instabilita_7596716e-bc21-4a57-b5a6-850ea41158f7.html",
+          "title": "Mattarella a Salamanca: \"No a sovranismi assoluti e all'uso della forza fuori dalle regole. L'Europa dica no all'ampliamento dei conflitti\"",
+          "source": "roma.corriere.it",
+          "url": "https://roma.corriere.it/notizie/politica/26_marzo_19/mattarella-discorso-salamanca-0aa4d466-d162-4019-8fa9-22ff59029xlk.shtml",
           "date": "2026-03-19"
         },
         {
-          "title": "Mattarella a Salamanca: \"L'Europa dica no all'ampliamento dei conflitti\"",
-          "source": "tg24.sky.it",
-          "url": "https://tg24.sky.it/mondo/2026/03/19/mattarella-spagna-laurea-honoris-causa-salamanca",
+          "title": "Mattarella: 'Tocca alla Ue dire No ai conflitti e al sovranismo assoluto'",
+          "source": "ansa.it",
+          "url": "https://ansa.it/sito/notizie/politica/2026/03/19/mattarella-a-salamanca-leuropa-indispensabile-per-la-pace.-sappia-dire-di-no-a-conflitti-e-instabilita_7596716e-bc21-4a57-b5a6-850ea41158f7.html",
           "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.ansa.it/sito/notizie/politica/2026/03/19/mattarella-a-salamanca-leuropa-indispensabile-per-la-pace.-sappia-dire-di-no-a-conflitti-e-instabilita_7596716e-bc21-4a57-b5a6-850ea41158f7.html",
-        "https://tg24.sky.it/mondo/2026/03/19/mattarella-spagna-laurea-honoris-causa-salamanca"
+        "https://roma.corriere.it/notizie/politica/26_marzo_19/mattarella-discorso-salamanca-0aa4d466-d162-4019-8fa9-22ff59029xlk.shtml",
+        "https://ansa.it/sito/notizie/politica/2026/03/19/mattarella-a-salamanca-leuropa-indispensabile-per-la-pace.-sappia-dire-di-no-a-conflitti-e-instabilita_7596716e-bc21-4a57-b5a6-850ea41158f7.html"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Iran conflict impacts Italian military bases and foreign policy decisions",
+      "summary": "Italian military bases in Kuwait and Iraq face attacks amid Middle East conflict. Government debates participation in Strait of Hormuz security mission while maintaining NATO commitments and protecting Italian forces.",
+      "actors_involved": [
+        "Guido Crosetto",
+        "Antonio Tajani",
+        "Giorgia Meloni",
+        "Italian Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 47,
+      "sources": [
+        "ansa.it",
+        "tg24.sky.it",
+        "corriere.it",
+        "lastampa.it",
+        "quotidiano.net",
+        "today.it",
+        "ilfoglio.it",
+        "infodifesa.it",
+        "adnkronos.com",
+        "ilsole24ore.com"
+      ],
+      "date_range": "2026-03-15 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Iran, rischio terrorismo. Crosetto: 'Centinaia di cellule dormienti'",
+          "source": "tg24.sky.it",
+          "url": "https://tg24.sky.it/politica/2026/03/19/terrorismo-italia-ministro-crosetto",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Drone contro base italiana in Kuwait: distrutto un velivolo. Tajani: \"Non ci facciamo intimidire\"",
+          "source": "today.it",
+          "url": "https://today.it/mondo/attacco-drone-base-italiana-kuwait.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Guerra Iran, no di Londra e Berlino a richieste Usa su Stretto Hormuz",
+          "source": "tg24.sky.it",
+          "url": "https://tg24.sky.it/mondo/2026/03/16/consiglio-affari-esteri-ue-oggi",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://tg24.sky.it/politica/2026/03/19/terrorismo-italia-ministro-crosetto",
+        "https://today.it/mondo/attacco-drone-base-italiana-kuwait.html"
       ]
     },
     {
       "story_id": 6,
-      "headline": "Government implements fuel excise cuts to counter energy price increases from Iran conflict",
-      "summary": "The Italian government approved a decree cutting fuel excise taxes for 20 days to help families and businesses cope with energy price rises linked to the Iran conflict. The measure reduces taxes by about 25 cents per liter, costing hundreds of millions of euros.",
+      "headline": "Government announces fuel excise duty cuts to combat energy price increases",
+      "summary": "Italian government approves temporary cuts to fuel excise duties as emergency measure to help families and businesses cope with energy cost increases triggered by Middle East war.",
       "actors_involved": [
         "Giorgia Meloni",
         "Matteo Salvini"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "source_count": 8,
       "sources": [
         "ansa.it",
         "reuters.com",
-        "tg24.sky.it",
-        "ilgiornale.it",
-        "fratelli-italia.it"
+        "fratelli-italia.it",
+        "lanazione.it",
+        "laverita.info"
       ],
       "date_range": "2026-03-18 to 2026-03-20",
       "articles": [
@@ -263,31 +286,130 @@
         {
           "title": "Il governo taglia le accise per 20 giorni contro il caro carburante",
           "source": "ansa.it",
-          "url": "https://www.ansa.it/sito/notizie/economia/2026/03/18/via-libera-del-cdm-al-decreto-legge-per-tagliare-il-prezzo-dei_e80d053a-881b-4e3a-8883-1a144b6cff43.html",
+          "url": "https://ansa.it/sito/notizie/economia/2026/03/18/via-libera-del-cdm-al-decreto-legge-per-tagliare-il-prezzo-dei_e80d053a-881b-4e3a-8883-1a144b6cff43.html",
           "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://reuters.com/sustainability/boards-policy-regulation/italy-drafting-urgent-measures-cut-fuel-prices-deputy-pm-says-2026-03-18",
-        "https://www.ansa.it/sito/notizie/economia/2026/03/18/via-libera-del-cdm-al-decreto-legge-per-tagliare-il-prezzo-dei_e80d053a-881b-4e3a-8883-1a144b6cff43.html"
+        "https://ansa.it/sito/notizie/economia/2026/03/18/via-libera-del-cdm-al-decreto-legge-per-tagliare-il-prezzo-dei_e80d053a-881b-4e3a-8883-1a144b6cff43.html"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "EU migration policy discussions and border control measures",
+      "summary": "Meloni and Danish PM Frederiksen call for EU emergency measures against potential new migration wave from Middle East crisis. Joint letter warns of repeating 2015 migration crisis.",
+      "actors_involved": [
+        "Giorgia Meloni",
+        "Antonio Tajani"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 4,
+      "sources": [
+        "jungefreiheit.de",
+        "europeanconservative.com"
+      ],
+      "date_range": "2026-03-18 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Meloni und Frederiksen fordern EU-Notbremse gegen neue Migrationswelle",
+          "source": "jungefreiheit.de",
+          "url": "https://jungefreiheit.de/politik/ausland/2026/meloni-und-frederiksen-fordern-eu-notbremse-gegen-neue-migrationswelle",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Meloni Leads Efforts To Control European Borders Amid Chaos in the Middle East",
+          "source": "europeanconservative.com",
+          "url": "https://europeanconservative.com/articles/news/eu-summit-meloni-migration-hungary-germany-sweden-frederiksen-jetten",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://jungefreiheit.de/politik/ausland/2026/meloni-und-frederiksen-fordern-eu-notbremse-gegen-neue-migrationswelle",
+        "https://europeanconservative.com/articles/news/eu-summit-meloni-migration-hungary-germany-sweden-frederiksen-jetten"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Bank of Italy routine operations and policy announcements",
+      "summary": "Various routine Bank of Italy activities including exchange rate publications, regulatory updates, and initiatives like the EuroSteps Walking Challenge for financial education.",
+      "actors_involved": [
+        "Banca d'Italia"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 12,
+      "sources": [
+        "bancaditalia.it",
+        "teleborsa.it",
+        "it.marketscreener.com",
+        "ilgiornale.it",
+        "gazzettamatin.com",
+        "milanofinanza.it"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Banca d'Italia presenta l'iniziativa EuroSteps Walking Challenge",
+          "source": "teleborsa.it",
+          "url": "https://teleborsa.it/News/2026/03/19/banca-d-italia-presenta-l-iniziativa-eurosteps-walking-challenge-115.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Banca d'Italia - Cambi di riferimento del 19 marzo 2026",
+          "source": "bancaditalia.it",
+          "url": "https://bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20260319",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://teleborsa.it/News/2026/03/19/banca-d-italia-presenta-l-iniziativa-eurosteps-walking-challenge-115.html",
+        "https://bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20260319"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Two anarchists die in explosion while allegedly preparing bomb in Rome",
+      "summary": "Two suspected anarchists die in explosion at Rome park while allegedly preparing homemade explosive device. Interior Ministry convenes anti-terrorism meeting amid concerns about anarchist networks.",
+      "actors_involved": [
+        "Italian Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
+      "sources": [
+        "ilpost.it",
+        "rainews.it",
+        "corriere.it"
+      ],
+      "date_range": "2026-03-20 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Cosa sappiamo dell'esplosione in cui sono morti due anarchici a Roma",
+          "source": "ilpost.it",
+          "url": "https://ilpost.it/2026/03/21/esplosione-casale-roma-parco-acquedotti-anarchici-bomba",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Anarchici morti in esplosione, verifiche su obiettivo. Piantedosi riunisce l'antiterrorismo",
+          "source": "rainews.it",
+          "url": "https://rainews.it/articoli/2026/03/anarchici-saltati-in-aria-verifiche-su-esplosivo-e-obiettivo-piantedosi-riunisce-antiterrorismo-edc68141-fadf-45d6-856e-96d60082daba.html",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://ilpost.it/2026/03/21/esplosione-casale-roma-parco-acquedotti-anarchici-bomba",
+        "https://rainews.it/articoli/2026/03/anarchici-saltati-in-aria-verifiche-su-esplosivo-e-obiettivo-piantedosi-riunisce-antiterrorismo-edc68141-fadf-45d6-856e-96d60082daba.html"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Banca d'Italia launches EuroSteps Walking Challenge for financial education",
-      "source": "teleborsa.it",
-      "url": "https://www.teleborsa.it/News/2026/03/19/banca-d-italia-presenta-l-iniziativa-eurosteps-walking-challenge-115.html",
-      "signal_category_hint": "economic_tech"
+      "headline": "Cirielli meets with Russian ambassador, clarifies Farnesina was informed",
+      "source": "adnkronos.com",
+      "url": "https://adnkronos.com/politica/cirielli-incontro-con-ambasciatore-russo-farnesina-sapeva-due-funzionari-con-me_3NrHhaY2TF6zpOOTNUiJJT",
+      "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "Deutsche Bank opens first flagship branch in Rome",
-      "source": "romatoday.it",
-      "url": "https://romatoday.it/economia/deutsche-bank-apre-flagship-roma.html",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Equita investment bank acquires Xenon Private Equity",
+      "headline": "Equita acquires Xenon Private Equity in banking sector consolidation",
       "source": "financecommunity.it",
       "url": "https://financecommunity.it/la-banca-di-investimento-italiana-equita-rileva-xenon-private-equity/",
       "signal_category_hint": "economic_tech"

@@ -3,113 +3,58 @@
   "code": "ca",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 439,
-  "stories_identified": 12,
+  "search_results_total": 372,
+  "stories_identified": 8,
   "off_topic_filtered": 89,
-  "noise_summary": "89 off-topic results filtered: 28 AFCON/football coverage, 15 Quebec provincial politics unrelated to federal dynamics, 12 NATO/Iran war stories without specific Canadian angle, 8 technical/administrative items, 7 international stories without Canadian connection, 6 Quebec budget items with minimal federal relevance, 5 French local politics, 4 fantasy football content, 4 miscellaneous items.",
+  "noise_summary": "89 off-topic results filtered: 45 African football (CAF/AFCON stories about Morocco/Senegal), 18 general NATO/international stories not specifically about Canada, 12 French domestic politics, 8 sports/entertainment, 4 technical/academic articles, 2 gaming content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Mark Carney completes first year as Prime Minister with high approval but mixed results",
-      "summary": "Multiple outlets analyze Prime Minister Mark Carney's first year in office since becoming Liberal leader and PM in March 2025. Coverage focuses on his international travel, policy approach, and sustained high approval ratings around 60%, while noting challenges in delivering on major promises like housing.",
+      "headline": "Carney's unprecedented international travel blitz draws scrutiny and praise",
+      "summary": "Prime Minister Mark Carney has made 47 international trips in his first 100 days in office, triple the usual rate for Canadian PMs. His travels included Nordic summits, meetings with UK PM Starmer, appearances at Davos, and visits to China, India, and other nations as part of a strategy to reduce Canada's dependence on the US.",
       "actors_involved": [
         "Mark Carney",
-        "Liberal Party"
+        "M\u00e9lanie Joly"
       ],
-      "signal_category_hint": "domestic_regime",
+      "signal_category_hint": "alignment_diplomatic",
       "source_count": 28,
       "sources": [
-        "globalnews.ca",
-        "policymagazine.ca",
-        "cbc.ca",
-        "theglobeandmail.com",
-        "nationalpost.com",
-        "thestar.com",
-        "narcity.com",
-        "nowtoronto.com",
-        "thewalrusca.substack.com",
-        "bloomberg.com",
-        "nytimes.com",
-        "aljazeera.com",
         "thehub.ca",
-        "lapresse.ca",
-        "ledevoir.com",
-        "spectator.com",
-        "newswire.ca"
+        "cbc.ca",
+        "globalnews.ca",
+        "theglobeandmail.com",
+        "policymagazine.ca",
+        "nytimes.com",
+        "thestar.com",
+        "policyoptions.irpp.org",
+        "france24.com",
+        "radio-canada.ca"
       ],
-      "date_range": "2026-03-14 to 2026-03-21",
+      "date_range": "2026-02-15 to 2026-03-21",
       "articles": [
-        {
-          "title": "ANALYSIS: Carney promised spending cuts \u2014 but not all cuts are equal",
-          "source": "globalnews.ca",
-          "url": "https://globalnews.ca/news/11740469/analysis-carney-spending-cuts-budget-2026",
-          "date": "2026-03-07"
-        },
-        {
-          "title": "The Carney Government and Alberta's Quest for a New Pipeline",
-          "source": "policymagazine.ca",
-          "url": "https://www.policymagazine.ca/the-carney-government-and-albertas-quest-for-a-new-pipeline/",
-          "date": "2026-03-07"
-        },
-        {
-          "title": "He's useful in a crisis \u2013 but is he any good at politics? A look at Mark Carney's first year",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/politics/opinion/article-hes-useful-in-a-crisis-but-is-he-any-good-at-politics-a-look-at-mark",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "'One elbow up, one down': The Carney government after its first year",
-          "source": "toronto.citynews.ca",
-          "url": "https://toronto.citynews.ca/2026/03/14/one-elbow-up-one-down-the-carney-government-after-its-first-year",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "After one year in office, Carney's grades are mixed with a lot of 'waiting for results'",
-          "source": "nationalpost.com",
-          "url": "https://nationalpost.com/news/politics/after-one-year-in-office-carneys-grades-are-mixed-with-a-lot-of-waiting-for-results",
-          "date": "2026-03-05"
-        },
         {
           "title": "Mark Carney is travelling much more than other prime ministers\u2014here's why it matters",
           "source": "thehub.ca",
           "url": "https://thehub.ca/2026/03/17/mark-carney-is-travelling-more-than-any-other-prime-minister-heres-why-it-really-matters",
-          "date": "2026-03-10"
+          "date": "2026-03-17"
         },
         {
           "title": "ANALYSIS | Carney meets world: Is prime minister a more international job now?",
           "source": "cbc.ca",
           "url": "https://www.cbc.ca/news/politics/mark-carney-international-travel-9.7136513",
-          "date": "2026-03-10"
+          "date": "2026-03-18"
         },
         {
-          "title": "An analysis of Mark Carney's first year as Prime Minister",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/podcasts/the-decibel/article-an-analysis-of-mark-carneys-first-year-as-prime-minister",
-          "date": "2026-03-05"
+          "title": "Nordic leaders meet in Oslo with Carney as Arctic tensions sharpen over Greenland, Russia",
+          "source": "cbc.ca",
+          "url": "https://cbc.ca/news/politics/carney-norway-nordic-summit-defence-russia-greenland-9.7129246",
+          "date": "2026-02-20"
         },
         {
-          "title": "Carney was the adult in Davos. Canada needs that at home, too",
-          "source": "policyoptions.irpp.org",
-          "url": "https://policyoptions.irpp.org/2026/03/carney-davos-canada-hard-choices",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Carney Rallies Allies as Canada Faces Economic Strains From US Tariffs",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-03-14/globe-trotting-carney-turns-to-allies-as-economic-pressures-build-in-canada",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "'One elbow up, one down': A look back at Mark Carney's first year in office",
-          "source": "narcity.com",
-          "url": "https://narcity.com/mark-carney-government-anniversary",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "'He's doing the best he can,' Here's what Canadians think about Mark Carney's first year in office",
-          "source": "nowtoronto.com",
-          "url": "https://nowtoronto.com/news/hes-doing-the-best-he-can-heres-what-canadians-think-about-mark-carneys-first-year-in-office",
-          "date": "2026-03-14"
+          "title": "Carney, Starmer meet amid deepening Middle East crisis",
+          "source": "cbc.ca",
+          "url": "https://www.cbc.ca/news/world/carney-canada-iran-oil-blockade-starmer-uk-9.7130065",
+          "date": "2026-02-19"
         },
         {
           "title": "As Carney Seeks Canadian Alliances with China, India and Qatar, He Looks Away on Human Rights",
@@ -118,133 +63,48 @@
           "date": "2026-03-17"
         },
         {
-          "title": "How Carney's 'build fast' push divides Canada's Indigenous peoples",
-          "source": "aljazeera.com",
-          "url": "https://www.aljazeera.com/economy/2026/3/14/carneys-build-big-and-build-fast-push-is-dividing-canadas-indigenous",
-          "date": "2026-03-14"
+          "title": "Carney's Canada-Australia Upgrade: From Strategic Cousins to Strategic Partners",
+          "source": "policymagazine.ca",
+          "url": "https://policymagazine.ca/carneys-canada-australia-upgrade-from-strategic-cousins-to-strategic-partners",
+          "date": "2026-02-16"
         },
         {
-          "title": "Carneymania Sweeps the Country. Yes, Even Quebec and Alberta",
-          "source": "thewalrusca.substack.com",
-          "url": "https://thewalrusca.substack.com/p/carneymania-sweeps-the-country-yes?action=share",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Les ambitions du premier ministre lib\u00e9ral Mark Carney \u00e0 l'\u00e9preuve du pr\u00e9sident am\u00e9ricain, Donald Trump",
-          "source": "ledevoir.com",
-          "url": "https://ledevoir.com/politique/canada/963786/ambitions-mark-carney-epreuve-donald-trump",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Carney n'aura pas vol\u00e9 sa majorit\u00e9",
-          "source": "lapresse.ca",
-          "url": "https://www.lapresse.ca/actualites/editoriaux/2026-03-14/carney-n-aura-pas-vole-sa-majorite.php",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "How Mark Carney sold Canada to China",
-          "source": "spectator.com",
-          "url": "https://spectator.com/article/how-mark-carney-sold-canada-to-china",
-          "date": "2026-03-10"
-        },
-        {
-          "title": "Carney plans to spend even more on Privy Council Office than Trudeau did, records show",
-          "source": "nationalpost.com",
-          "url": "https://nationalpost.com/news/canada/carneys-planned-privy-council-office-budget-tops-that-of-trudeau",
-          "date": "2026-03-10"
-        },
-        {
-          "title": "PM Carney's first budget outspends Trudeau's plan by $67.6 billion over next four years; runs deficits twice as large",
-          "source": "newswire.ca",
-          "url": "https://newswire.ca/news-releases/pm-carney-s-first-budget-outspends-trudeau-s-plan-by-67-6-billion-over-next-four-years-runs-deficits-twice-as-large-856173268.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "The two faces of Mark Carney show a leader skirting a fine line",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/opinion/article-the-two-faces-of-mark-carney-show-a-leader-skirting-a-fine-line",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Carney climate plan at risk as Canadian oil companies stress need to boost production",
-          "source": "reuters.com",
-          "url": "https://reuters.com/sustainability/climate-energy/carney-climate-plan-risk-canadian-oil-companies-stress-need-boost-production-2026-03-18",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Carney is letting his country implode just to 'score points' against Trump...",
-          "source": "r.zry.net",
-          "url": "https://r.zry.net/2026/03/carney-is-letting-his-country-implode-just-to-score-points-against-trump/",
-          "date": "2026-03-10"
-        },
-        {
-          "title": "Les reculs de Carney",
-          "source": "lesoleil.com",
-          "url": "https://www.lesoleil.com/chroniques/helene-buzzetti/2026/03/20/les-reculs-de-carney-VOCTLPKQAZGLZHWGDYNKFBWCKY/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Quelle est la vision de Carney pour le Canada\ufeff?",
-          "source": "ledevoir.com",
-          "url": "https://www.ledevoir.com/politique/canada/963777/quelle-est-vision-carney-canada",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Libre opinion | La plan\u00e8te Ottawa appelle le premier ministre Carney",
-          "source": "ledevoir.com",
-          "url": "https://www.ledevoir.com/opinion/libre-opinion/964947/planete-ottawa-appelle-premier-ministre-carney",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Carney defends his economic record after one year in office",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/world/article-mark-carney-one-year-in-office-economic-record-norway",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Carney's first year defined by 'polished' appeal, but 'new-government shine' won't last forever, say pollsters",
-          "source": "hilltimes.com",
-          "url": "https://www.hilltimes.com/2026/03/18/carneys-first-year-defined-by-polished-appeal-but-new-government-shine-wont-last-forever-say-pollsters/495816/",
-          "date": "2026-03-18"
+          "title": "Carney was the adult in Davos. Canada needs that at home, too",
+          "source": "policyoptions.irpp.org",
+          "url": "https://policyoptions.irpp.org/2026/03/carney-davos-canada-hard-choices",
+          "date": "2026-02-28"
         }
       ],
       "representative_urls": [
-        "https://theglobeandmail.com/politics/opinion/article-hes-useful-in-a-crisis-but-is-he-any-good-at-politics-a-look-at-mark",
+        "https://thehub.ca/2026/03/17/mark-carney-is-travelling-more-than-any-other-prime-minister-heres-why-it-really-matters",
         "https://www.cbc.ca/news/politics/mark-carney-international-travel-9.7136513"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Pierre Poilievre appears on Joe Rogan podcast during U.S. trip to advocate for Canada",
-      "summary": "Conservative Leader Pierre Poilievre sat down for a 2.5-hour interview with Joe Rogan on 'The Joe Rogan Experience,' using the platform to argue against U.S. tariffs on Canada and defend Canadian sovereignty. The appearance was part of a broader U.S. trip where Poilievre met with governors and business leaders to advocate for Canadian interests.",
+      "headline": "Poilievre conducts high-profile US tour, appears on Joe Rogan podcast",
+      "summary": "Conservative Leader Pierre Poilievre completed his first official US trip, including a widely-watched 2.5-hour appearance on Joe Rogan's podcast, meetings with Texas Governor Greg Abbott, and presentations of his auto sector plan. He used the platform to argue against US tariffs on Canada and defend Canadian sovereignty.",
       "actors_involved": [
         "Pierre Poilievre",
         "Conservative Party"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 24,
+      "source_count": 35,
       "sources": [
         "cbc.ca",
-        "bbc.com",
         "thestar.com",
         "nationalpost.com",
-        "theglobeandmail.com",
-        "ipolitics.ca",
-        "lapresse.ca",
-        "ici.radio-canada.ca",
         "globalnews.ca",
-        "timescolonist.com",
-        "torontosun.com",
-        "nytimes.com",
-        "journaldequebec.com",
-        "985fm.ca",
-        "plant.ca",
-        "financialpost.com",
-        "calgaryherald.ca",
+        "theglobeandmail.com",
         "conservative.ca",
-        "ctvnews.ca"
+        "bbc.com",
+        "nytimes.com",
+        "thehub.ca",
+        "torontosun.com",
+        "lapresse.ca",
+        "radio-canada.ca"
       ],
-      "date_range": "2026-03-17 to 2026-03-21",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
         {
           "title": "7 key takeaways from Poilievre's Joe Rogan interview",
@@ -253,142 +113,28 @@
           "date": "2026-03-20"
         },
         {
-          "title": "Canada Conservative leader Pierre Poilievre talks tariffs and martial arts with Joe Rogan",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/czx9l84v0j9o",
-          "date": "2026-03-20"
-        },
-        {
           "title": "Pierre Poilievre frames himself as prime-minister-in-waiting on whirlwind U.S. tour",
           "source": "thestar.com",
           "url": "https://www.thestar.com/politics/federal/ive-been-texting-mark-carney-during-my-us-trip-pierre-poilievre-tells-joe-rogan/article_225b44e1-4e12-4b44-b6a7-024973b7f68a.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Canada Conservative leader Pierre Poilievre talks tariffs and martial arts with Joe Rogan",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/news/articles/czx9l84v0j9o",
           "date": "2026-03-19"
         },
         {
-          "title": "'How the hell did you lose?': Poilievre talks fitness, wishing Trump would 'knock that s--t off' on 51st state talk with Joe Rogan",
-          "source": "nationalpost.com",
-          "url": "https://nationalpost.com/news/canada/pierre-poilievre-joe-rogan-podcast",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Poilievre pushes back on Joe Rogan's comments about oil sands during podcast appearance",
-          "source": "theglobeandmail.com",
-          "url": "https://www.theglobeandmail.com/politics/article-pierre-poilievre-joe-rogan-experience-podcast-thursday/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "'Knock that s*** off' \u2014 Poilievre uses appearance on Joe Rogan's podcast to slam Trump's 51st state comments",
-          "source": "ipolitics.ca",
-          "url": "https://www.ipolitics.ca/2026/03/19/pierre-poilievre-joe-rogan-podcast-trump-canada/",
+          "title": "Conservative Leader Fights for Canada in the Lone Star State",
+          "source": "conservative.ca",
+          "url": "https://www.conservative.ca/conservative-leader-fights-for-canada-in-the-lone-star-state/",
           "date": "2026-03-19"
-        },
-        {
-          "title": "Poilievre says he used Joe Rogan podcast to argue against U.S. tariffs and 'fight for Canada'",
-          "source": "cbc.ca",
-          "url": "https://www.cbc.ca/news/politics/poilievre-joe-rogan-podcast-9.7134185",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Pierre Poilievre au balado de Joe Rogan | \u00ab Nous ne serons jamais le 51e \u00c9tat \u00bb",
-          "source": "lapresse.ca",
-          "url": "https://www.lapresse.ca/actualites/politique/2026-03-19/pierre-poilievre-au-balado-de-joe-rogan/nous-ne-serons-jamais-le-51e-etat.php",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Pierre Poilievre \u00e9gr\u00e8ne ses id\u00e9es politiques au balado de Joe Rogan",
-          "source": "ici.radio-canada.ca",
-          "url": "https://ici.radio-canada.ca/nouvelle/2240378/pierre-poilievre-balado-joe-rogan",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "From oil and tariffs to kettlebells: Five highlights from Pierre Poilievre on Joe Rogan",
-          "source": "thestar.com",
-          "url": "https://www.thestar.com/politics/federal/from-oil-and-tariffs-to-kettlebells-five-highlights-from-pierre-poilievre-on-joe-rogan/article_aabfc8ea-217c-44aa-a12f-a88eb05ac75e.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Six main takeaways from Pierre Poilievre's appearance on the Joe Rogan Experience podcast",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/politics/article-joe-rogan-pierre-poilievre-podcast-takeaways-canada-us/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Poilievre, Rogan chat MMA, exercise and trade: 'Knock the tariffs down'",
-          "source": "globalnews.ca",
-          "url": "https://globalnews.ca/news/11737554/pierre-poilievre-joe-rogan-podcast",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Poilievre pitches Canadian kindness on 'The Joe Rogan Experience' podcast",
-          "source": "timescolonist.com",
-          "url": "https://www.timescolonist.com/national-business/poilievre-pitches-canadian-kindness-on-the-joe-rogan-experience-podcast-12027490",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Poilievre makes Canada's case to Joe Rogan's massive audience",
-          "source": "torontosun.com",
-          "url": "https://torontosun.com/opinion/columnists/poilievre-politics-51st-state-joe-rogan",
-          "date": "2026-03-20"
         },
         {
           "title": "On Joe Rogan, Pierre Poilievre Talks Trump, Canada Tariffs and Bruce Lee",
           "source": "nytimes.com",
           "url": "https://www.nytimes.com/2026/03/19/world/canada/joe-rogan-pierre-poilievre-canada-trump.html",
           "date": "2026-03-19"
-        },
-        {
-          "title": "En tourn\u00e9e aux \u00c9tats-Unis, Pierre Poilievre fait un saut au populaire balado de Joe Rogan",
-          "source": "journaldequebec.com",
-          "url": "https://www.journaldequebec.com/2026/03/18/en-tournee-aux-etats-unis-pierre-poilievre-fait-un-saut-au-populaire-balado-de-joe-rogan",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "5 choses \u00e0 retenir du passage de Pierre Poilievre",
-          "source": "journaldequebec.com",
-          "url": "https://journaldequebec.com/2026/03/19/5-choses-a-retenir-du-passage-de-pierre-poilievre-au-joe-rogan-experience",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Le chef conservateur \u00e0 l'aise chez Joe Rogan | \u00abSi c'\u00e9tait le Poilievre du quotidien, les sondages seraient tr\u00e8s diff\u00e9rents\u00bb",
-          "source": "985fm.ca",
-          "url": "https://www.985fm.ca/audio/764614/si-c-etait-le-poilievre-du-quotidien-les-sondages-seraient-tres-differents",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Conservative Leader Fights for Canada in the Lone Star State",
-          "source": "conservative.ca",
-          "url": "https://www.conservative.ca/conservative-leader-fights-for-canada-in-the-lone-star-state/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Calgary's Black Box Customs behind Pierre Poilievre's 70-pound gift to Joe Rogan",
-          "source": "calgaryherald.com",
-          "url": "https://calgaryherald.com/news/calgary-black-box-customs-kettlebell-gift-pierre-poilievre-joe-rogan",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Poilievre says Canada can use resources to sway Trump",
-          "source": "financialpost.com",
-          "url": "https://financialpost.com/news/economy/poilievre-canada-use-oil-minerals-sway-trump",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Pierre Poilievre tells Joe Rogan he wants to take Canada in a different direction than Carney: As America's resource partner and ally",
-          "source": "thehub.ca",
-          "url": "https://thehub.ca/2026/03/20/pierre-poilievre-tells-joe-rogan-he-wants-to-take-canada-in-a-different-direction-than-carney-as-americas-resource-partner-and-ally",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Poilievre unveils auto plan aiming for tariff-free access to U.S. market",
-          "source": "cbc.ca",
-          "url": "https://www.cbc.ca/news/canada/windsor/poilievre-auto-windsor-9.7129471",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "The story behind that apple video and 9 key moments from Pierre Poilievre's Joe Rogan episode",
-          "source": "nationalpost.com",
-          "url": "https://nationalpost.com/news/canada/pierre-poilievre-joe-rogan-podcast-episode",
-          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
@@ -398,50 +144,36 @@
     },
     {
       "story_id": 3,
-      "headline": "Bank of Canada holds key rate at 2.25% as Iran war clouds economic outlook",
-      "summary": "The Bank of Canada held its benchmark interest rate steady at 2.25% for the third consecutive time, with Governor Tiff Macklem citing acute uncertainty from the Iran war driving oil prices higher and ongoing trade tensions with the U.S. The central bank said it would 'look through' near-term inflation from energy costs but warned it could hike rates if inflation becomes persistent.",
+      "headline": "Bank of Canada holds interest rates steady amid Iran war and oil price concerns",
+      "summary": "The Bank of Canada maintained its key interest rate at 2.25% on March 18, citing the need to assess the economic impact of the Iran war and rising oil prices. Governor Tiff Macklem warned the bank would act if energy price increases become persistent inflation, while also noting weaker-than-expected economic growth.",
       "actors_involved": [
-        "Bank of Canada",
-        "Tiff Macklem"
+        "Bank of Canada"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 22,
+      "source_count": 24,
       "sources": [
-        "ca.finance.yahoo.com",
         "globalnews.ca",
-        "thestar.com",
         "theglobeandmail.com",
         "bnnbloomberg.ca",
-        "toronto.citynews.ca",
-        "canadianmortgagetrends.com",
-        "vocm.com",
-        "rbc.com",
-        "nesto.ca",
-        "ctvnews.ca",
-        "cp24.com",
-        "investmentexecutive.com",
+        "thestar.com",
+        "reuters.com",
         "financialpost.com",
-        "fool.ca",
-        "moneysense.ca",
-        "dailyhive.com",
-        "rbcroyalbank.com",
-        "energynow.ca",
-        "crea.ca",
-        "policymagazine.ca",
-        "bloomberg.com"
+        "cbc.ca",
+        "bloomberg.com",
+        "castanet.net"
       ],
-      "date_range": "2026-03-14 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-20",
       "articles": [
-        {
-          "title": "Bank of Canada holds key interest rate at 2.25%, caught between inflation risks and growth amid war-driven oil spike",
-          "source": "ca.finance.yahoo.com",
-          "url": "https://ca.finance.yahoo.com/news/bank-of-canada-holds-key-interest-rate-at-225-with-iran-war-inflation-risks-and-trade-tensions-in-sharp-focus-110026464.html",
-          "date": "2026-03-18"
-        },
         {
           "title": "Bank of Canada holds interest rates as Iran war rattles global economies",
           "source": "globalnews.ca",
-          "url": "https://globalnews.ca/news/11735955/bank-of-canada-rate-announcement-march-2026",
+          "url": "https://globalnews.ca/news/11735955/bank-of-canada-rate-announcement-march-2026/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "BoC holds benchmark rate at 2.25% amid oil price shock",
+          "source": "theglobeandmail.com",
+          "url": "https://theglobeandmail.com/business/economy/article-bank-of-canada-holds-benchmark-rate-oil-prices-inflation",
           "date": "2026-03-18"
         },
         {
@@ -451,155 +183,98 @@
           "date": "2026-03-18"
         },
         {
-          "title": "U.S. Federal Reserve, Bank of Canada keep key interest rates unchanged amid oil-driven inflation risks",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/business/article-bank-of-canada-federal-reserve-interest-rates-march-18-live-updates",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Bank of Canada holds key rate steady as Middle East war clouds outlook",
-          "source": "toronto.citynews.ca",
-          "url": "https://toronto.citynews.ca/2026/03/18/bank-of-canada-interest-rate-announcement-2/",
-          "date": "2026-03-18"
-        },
-        {
           "title": "Money markets raise Bank of Canada 2026 rate hike bets by 75 basis points",
           "source": "bnnbloomberg.ca",
-          "url": "https://www.bnnbloomberg.ca/business/2026/03/20/money-markets-raise-bank-of-canada-2026-rate-hike-bets-by-75-basis-points",
+          "url": "https://bnnbloomberg.ca/business/2026/03/20/money-markets-raise-bank-of-canada-2026-rate-hike-bets-by-75-basis-points",
           "date": "2026-03-20"
         },
         {
-          "title": "Iran war is 'a dark cloud' over Bank of Canada and the spring fiscal update",
-          "source": "globalnews.ca",
-          "url": "https://globalnews.ca/news/11734350/bank-of-canada-iran",
+          "title": "Bank of Canada assessing high oil price, would hike rates if needed, says Macklem",
+          "source": "reuters.com",
+          "url": "https://reuters.com/world/americas/bank-canada-holds-rates-says-it-would-hike-them-prevent-persistent-inflation-2026-03-18",
           "date": "2026-03-18"
-        },
-        {
-          "title": "Markets raise bets on Bank of Canada hikes as oil fears mount",
-          "source": "canadianmortgagetrends.com",
-          "url": "https://www.canadianmortgagetrends.com/2026/03/markets-raise-bets-on-bank-of-canada-hikes-as-oil-fears-mount/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Bank of Canada Governor Warns of Potential Impact from Volatile Economy",
-          "source": "vocm.com",
-          "url": "https://vocm.com/2026/03/19/bank-of-canada-governor-warns-of-potential-impact-from-volatile-economy/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Iran war adds new uncertainty to the Bank of Canada's already clouded lens",
-          "source": "bnnbloomberg.ca",
-          "url": "https://www.bnnbloomberg.ca/business/economics/2026/03/14/iran-war-adds-new-uncertainty-to-the-bank-of-canadas-already-clouded-lens",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Bank of Canada meeting recap: One supply shock after another",
-          "source": "rbc.com",
-          "url": "https://rbc.com/en/economics/canadian-analysis/data-flashes/bank-of-canada-meeting-recap-one-supply-shock-after-another",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Bank of Canada Policy Interest Rate Schedule 2026",
-          "source": "nesto.ca",
-          "url": "https://www.nesto.ca/mortgage-basics/bank-of-canada-interest-rate-schedule/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Bank of Canada to make interest rate announcement amid clouded outlook",
-          "source": "cp24.com",
-          "url": "https://www.cp24.com/news/money/2026/03/18/bank-of-canada-to-make-interest-rate-announcement-amid-clouded-outlook",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Posthaste: Is the Bank of Canada at risk of letting inflation get the upper hand again?",
-          "source": "financialpost.com",
-          "url": "https://financialpost.com/news/bank-of-canada-risk-blowing-inflation",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Bank of Canada Hold: 1 TSX Stock I'd Buy Now",
-          "source": "fool.ca",
-          "url": "https://www.fool.ca/2026/03/20/bank-of-canada-hold-1-tsx-stock-id-buy-now-2/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Making sense of the Bank of Canada interest rate decision on March 18, 2026",
-          "source": "moneysense.ca",
-          "url": "https://moneysense.ca/spend/real-estate/mortgages/boc-interest-rate-decision-mar18",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "What the Bank of Canada interest rate hold means for you",
-          "source": "dailyhive.com",
-          "url": "https://dailyhive.com/vancouver/bank-of-canada-rate-hold-march-2026",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Bank of Canada interest rate update (March 18, 2026) \u2013 My Money Matters",
-          "source": "rbcroyalbank.com",
-          "url": "https://www.rbcroyalbank.com/en-ca/my-money-matters/money-academy/economics-101/understanding-interest-rates/bank-of-canada-interest-rate-announcement/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Bank of Canada Holds Key Rate Steady as Middle East War Clouds Outlook",
-          "source": "energynow.ca",
-          "url": "https://energynow.ca/2026/03/bank-of-canada-holds-key-rate-steady-as-middle-east-war-clouds-outlook/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "CREA | Bank of Canada Maintains Policy Rate at 2.25%",
-          "source": "crea.ca",
-          "url": "https://crea.ca/media-hub/news/bank-of-canada-maintains-policy-rate-at-2-25-3",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Whole Lotta Hold",
-          "source": "policymagazine.ca",
-          "url": "https://www.policymagazine.ca/whole-lotta-hold/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Markets Boost Bets on Bank of Canada Rate Hikes as Oil Prices Surge",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/news/articles/2026-03-20/markets-raise-bets-on-bank-of-canada-hikes-as-oil-fears-mount",
-          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
-        "https://globalnews.ca/news/11735955/bank-of-canada-rate-announcement-march-2026",
-        "https://theglobeandmail.com/business/article-bank-of-canada-federal-reserve-interest-rates-march-18-live-updates"
+        "https://globalnews.ca/news/11735955/bank-of-canada-rate-announcement-march-2026/",
+        "https://theglobeandmail.com/business/economy/article-bank-of-canada-holds-benchmark-rate-oil-prices-inflation"
       ]
     },
     {
       "story_id": 4,
-      "headline": "NDP leadership race heats up with Avi Lewis as frontrunner ahead of convention vote",
-      "summary": "Five candidates are vying to lead the federal NDP after its devastating election loss, with filmmaker Avi Lewis leading in fundraising and appearing as the frontrunner. Edmonton MP Heather McPherson, labour leader Rob Ashton, and others compete ahead of the March 29 convention vote to rebuild the party from six remaining seats.",
+      "headline": "Carney government releases first budget with significant spending cuts and deficit targets",
+      "summary": "Prime Minister Carney's first budget outspends the previous Trudeau plan by $67.6 billion over four years while running larger deficits. The budget includes cuts to science, tourism, and foreign aid programs, with plans to reduce waste and government operations spending.",
       "actors_involved": [
-        "NDP",
-        "Avi Lewis",
-        "Heather McPherson",
-        "Rob Ashton"
+        "Mark Carney",
+        "Liberal Party"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 8,
+      "sources": [
+        "newswire.ca",
+        "globalnews.ca",
+        "nationalpost.com",
+        "thehub.ca"
+      ],
+      "date_range": "2026-03-17 to 2026-03-19",
+      "articles": [
+        {
+          "title": "PM Carney's first budget outspends Trudeau's plan by $67.6 billion over next four years",
+          "source": "newswire.ca",
+          "url": "https://newswire.ca/news-releases/pm-carney-s-first-budget-outspends-trudeau-s-plan-by-67-6-billion-over-next-four-years-runs-deficits-twice-as-large-856173268.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "To chop spending, Ottawa will cut science, tourism, foreign aid programs",
+          "source": "globalnews.ca",
+          "url": "https://globalnews.ca/news/11737460/mark-carney-spending-plans-cuts/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "ANALYSIS: Carney promised spending cuts \u2014 but not all cuts are equal",
+          "source": "globalnews.ca",
+          "url": "https://globalnews.ca/news/11740469/analysis-carney-spending-cuts-budget-2026",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Carney plans to spend even more on Privy Council Office than Trudeau did, records show",
+          "source": "nationalpost.com",
+          "url": "https://nationalpost.com/news/canada/carneys-planned-privy-council-office-budget-tops-that-of-trudeau",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://newswire.ca/news-releases/pm-carney-s-first-budget-outspends-trudeau-s-plan-by-67-6-billion-over-next-four-years-runs-deficits-twice-as-large-856173268.html",
+        "https://globalnews.ca/news/11737460/mark-carney-spending-plans-cuts/"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Federal NDP leadership race enters final week with Lewis as perceived frontrunner",
+      "summary": "The federal NDP leadership contest is in its final week before the March 29 convention vote, with Avi Lewis leading in fundraising among candidates including Heather McPherson, Rob Ashton, Tony McQuail, and Tanille Johnston. The party faces rebuilding challenges after losing seats and MPs to floor-crossing.",
+      "actors_involved": [
+        "NDP"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 14,
+      "source_count": 18,
       "sources": [
-        "thetyee.ca",
-        "breachmedia.ca",
-        "calgary.citynews.ca",
-        "nationalpost.com",
         "cbc.ca",
-        "readtheline.ca",
-        "edmontonjournal.com",
-        "cupe.ca",
-        "acadiabroadcasting.ca",
+        "thestar.com",
+        "nationalpost.com",
+        "thetyee.ca",
         "cultmtl.com",
         "torontosun.com",
-        "alberta.cupe.ca",
-        "wellandtribune.ca",
-        "surge105.ca"
+        "breachmedia.ca",
+        "globalnews.ca"
       ],
-      "date_range": "2026-03-14 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
+        {
+          "title": "NDP leadership hopefuls make final push ahead of convention vote",
+          "source": "cbc.ca",
+          "url": "https://www.cbc.ca/news/politics/ndp-leadership-race-final-week-avi-lewis-heather-mcpherson-rob-ashton-9.7136678",
+          "date": "2026-03-20"
+        },
         {
           "title": "Front-Runners Emerge in the NDP Leadership Race",
           "source": "thetyee.ca",
@@ -607,52 +282,10 @@
           "date": "2026-03-17"
         },
         {
-          "title": "This NDP MP believes 'unapologetic socialism' can revive the party",
-          "source": "breachmedia.ca",
-          "url": "https://breachmedia.ca/this-ndp-mp-believes-unapologetic-socialism-can-revive-the-party/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Most NDP leadership candidates say they're in no hurry to become MPs",
-          "source": "calgary.citynews.ca",
-          "url": "https://calgary.citynews.ca/2026/03/21/most-ndp-leadership-candidates-say-theyre-in-no-hurry-to-become-mps",
-          "date": "2026-03-21"
-        },
-        {
           "title": "Avi Lewis may be next NDP leader, but his party will remain irrelevant",
           "source": "nationalpost.com",
           "url": "https://nationalpost.com/opinion/michael-taube-avi-lewis-may-be-next-ndp-leader-but-his-party-will-remain-irrelevant",
           "date": "2026-03-18"
-        },
-        {
-          "title": "NDP leadership hopefuls make final push ahead of convention vote",
-          "source": "cbc.ca",
-          "url": "https://www.cbc.ca/news/politics/ndp-leadership-race-final-week-avi-lewis-heather-mcpherson-rob-ashton-9.7136678",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Tammy Robert: The federal NDP's would-be leaders wrestle with a familiar question",
-          "source": "readtheline.ca",
-          "url": "https://www.readtheline.ca/p/tammy-robert-the-federal-ndps-would",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Despite recent floor-crossing, McPherson still optimistic NDP can 'rebuild'",
-          "source": "edmontonjournal.com",
-          "url": "https://edmontonjournal.com/news/local-news/despite-recent-floor-crossing-mcpherson-still-optimistic-ndp-can-rebuild",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Political Action Team: Building power together",
-          "source": "cupe.ca",
-          "url": "https://cupe.ca/political-action-team-building-power-together",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "The NDP Leadership Race: Our interview with Tony McQuail",
-          "source": "acadiabroadcasting.ca",
-          "url": "https://acadiabroadcasting.ca/the-ndp-leadership-race-our-interview-with-tony-mcquail-2",
-          "date": "2026-03-16"
         },
         {
           "title": "Does the NDP have a future? Avi Lewis thinks so",
@@ -665,24 +298,6 @@
           "source": "torontosun.com",
           "url": "https://torontosun.com/opinion/editorials/federal-ndp-facing-existential-threat",
           "date": "2026-03-18"
-        },
-        {
-          "title": "Nenshi pledges to make Alberta education the best funded in Canada",
-          "source": "alberta.cupe.ca",
-          "url": "https://alberta.cupe.ca/2026/03/20/nenshi-pledges-to-make-alberta-education-the-best-funded-in-canada/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "NDP leadership hopeful rebuffed opponent's offer of second-ballot support",
-          "source": "wellandtribune.ca",
-          "url": "https://wellandtribune.ca/politics/federal/ndp-leadership-hopeful-rebuffed-opponents-offer-of-second-ballot-support/article_78564db3-4778-5820-a749-86b4f6d9d6e1.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "The NDP leadership race: our interview with Rob Ashton",
-          "source": "surge105.ca",
-          "url": "https://surge105.ca/2026/03/17/the-ndp-leadership-race-our-interview-with-rob-ashton",
-          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -691,220 +306,44 @@
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Canadian Armed Forces receives $307M rifle contract amid other military procurement and personnel issues",
-      "summary": "The Defence Investment Agency awarded Colt Canada a $307 million contract to manufacture over 65,000 new rifles to replace aging C7 and C8 weapons that have been in service for 35 years. Separately, dozens of CAF soldiers suffered frostbite during training exercises in Alaska, and questions arose about CAF involvement in Iran operations.",
-      "actors_involved": [
-        "Canadian Armed Forces",
-        "Defence Investment Agency"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 10,
-      "sources": [
-        "nationalpost.com",
-        "canada.ca",
-        "canadianmanufacturing.com",
-        "ca.news.yahoo.com",
-        "bloomberg.com",
-        "capitalhillgroup.ca",
-        "simpleflying.com",
-        "junonews.com",
-        "globalnews.ca",
-        "thestar.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Government awards $307-million contract to Colt Canada to manufacture over 65,000 rifles for the Canadian Armed Forces",
-          "source": "nationalpost.com",
-          "url": "https://nationalpost.com/news/politics/government-awards-307m-contract-to-colt-canada-to-manufacture-over-65000-rifles-for-the-canadian-armed-forces",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Defence Investment Agency awards contract to replace current Canadian Armed Forces assault rifles",
-          "source": "canada.ca",
-          "url": "https://www.canada.ca/en/defence-investment-agency/news/2026/03/defence-investment-agency-awards-contract-to-replace-current-canadian-armed-forces-assault-rifles.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Colt Canada Awarded Contract To Replace Canadian Armed Forces Assault Rifles",
-          "source": "canadianmanufacturing.com",
-          "url": "https://canadianmanufacturing.com/financing/defence-investment-agency-awards-contract-to-replace-canadian-armed-forces-assault-rifles-317237",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Government awards $307M contract to Colt Canada to manufacture over 65,000 rifles for the Canadian Armed Forces",
-          "source": "ca.news.yahoo.com",
-          "url": "https://ca.news.yahoo.com/government-awards-307m-contract-colt-151603339.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "NORAD Cheyenne Mountain: Where Americans and Canadians Are Still Tight",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/opinion/articles/2026-03-19/norad-cheyenne-mountain-where-americans-and-canadians-are-still-tight",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "2026-27 Departmental Plans Highlights For The National Defence And The Canadian Armed Forces",
-          "source": "capitalhillgroup.ca",
-          "url": "https://capitalhillgroup.ca/2026-27-departmental-plans-highlights-for-the-national-defence-and-the-canadian-armed-forces",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Air Canada Intercept: Stolen Aeroplan Miles Trigger NORAD Fighter Jet Response",
-          "source": "simpleflying.com",
-          "url": "https://simpleflying.com/air-canada-aeroplan-fraud-norad-fighter-jet-intercept/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Dozens of CAF soldiers suffered frostbite during Alaskan training exercise",
-          "source": "junonews.com",
-          "url": "https://www.junonews.com/p/dozens-of-caf-soldiers-suffered-frostbite",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Canada knew 'from the beginning' CAF wouldn't help attack Iran: minister",
-          "source": "globalnews.ca",
-          "url": "https://globalnews.ca/news/11734728/iran-canada-caf-mcguinty",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Minister says CAF 'not engaged' in Iran war as questions are asked about support role",
-          "source": "thestar.com",
-          "url": "https://www.thestar.com/politics/federal/caf-not-engaged-in-prosecution-of-iran-war-defence-minister/article_2a6e7cda-4940-5df9-8eb2-972863bd9886.html",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://nationalpost.com/news/politics/government-awards-307m-contract-to-colt-canada-to-manufacture-over-65000-rifles-for-the-canadian-armed-forces",
-        "https://www.canada.ca/en/defence-investment-agency/news/2026/03/defence-investment-agency-awards-contract-to-replace-current-canadian-armed-forces-assault-rifles.html"
-      ]
-    },
-    {
       "story_id": 6,
-      "headline": "Carney government navigates foreign policy amid Nordic summit and Iran war tensions",
-      "summary": "Prime Minister Carney held meetings with Nordic leaders in Oslo focusing on Arctic security amid rising tensions over Greenland and Russia. Separately, Carney met with UK PM Keir Starmer to discuss the Middle East war and Iran's closure of the Strait of Hormuz, while maintaining Canada's position of not formally joining military operations against Iran.",
+      "headline": "Carney government faces political challenges as polls show strong Liberal lead",
+      "summary": "Recent polling shows the Carney Liberals maintaining a commanding lead over the Conservatives, with some polls showing Liberal support near 50% while Conservative support slips toward 30%. The government has attracted floor-crossers and faces upcoming byelections that could secure a majority.",
       "actors_involved": [
         "Mark Carney",
-        "M\u00e9lanie Joly"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
-      "sources": [
-        "cbc.ca",
-        "montreal.citynews.ca",
-        "edmonton.citynews.ca",
-        "policymagazine.ca",
-        "ici.radio-canada.ca",
-        "ctvnews.ca",
-        "hilltimes.com",
-        "theglobeandmail.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Nordic leaders meet in Oslo with Carney as Arctic tensions sharpen over Greenland, Russia",
-          "source": "cbc.ca",
-          "url": "https://cbc.ca/news/politics/carney-norway-nordic-summit-defence-russia-greenland-9.7129246",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Carney, Nordic leaders pledge to deepen ties in world economic coercion",
-          "source": "montreal.citynews.ca",
-          "url": "https://montreal.citynews.ca/2026/03/15/carney-nordic-leaders-pledge-to-deepen-ties-in-world-economic-coercion",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Carney's trip shifts from defence to Nordic skiing before meeting with Norway's PM",
-          "source": "edmonton.citynews.ca",
-          "url": "https://edmonton.citynews.ca/2026/03/14/carneys-trip-shifts-from-defence-to-nordic-skiing-before-meeting-with-norways-pm",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Carney's Canada-Australia Upgrade: From Strategic Cousins to Strategic Partners",
-          "source": "policymagazine.ca",
-          "url": "https://policymagazine.ca/carneys-canada-australia-upgrade-from-strategic-cousins-to-strategic-partners",
-          "date": "2026-03-05"
-        },
-        {
-          "title": "Carney, Starmer meet amid deepening Middle East crisis",
-          "source": "cbc.ca",
-          "url": "https://www.cbc.ca/news/world/carney-canada-iran-oil-blockade-starmer-uk-9.7130065",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Carney rencontre Starmer alors que la guerre au Moyen-Orient s'aggrave",
-          "source": "ici.radio-canada.ca",
-          "url": "https://ici.radio-canada.ca/nouvelle/2239283/visite-mark-carney-rencontre-keir-starmer-roi-charles-londres-otan",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Protesters in Montreal urge Carney to keep Canada out of Middle East conflicts",
-          "source": "ctvnews.ca",
-          "url": "https://ctvnews.ca/montreal/article/protesters-in-montreal-urge-carney-to-keep-canada-out-of-middle-east-conflicts",
-          "date": "2026-03-10"
-        },
-        {
-          "title": "NATO not formally discussing sending help to Strait of Hormuz, Anand says",
-          "source": "theglobeandmail.com",
-          "url": "https://theglobeandmail.com/politics/article-nato-anita-anand-canada-strait-of-hormuz-trump-iran",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://cbc.ca/news/politics/carney-norway-nordic-summit-defence-russia-greenland-9.7129246",
-        "https://www.cbc.ca/news/world/carney-canada-iran-oil-blockade-starmer-uk-9.7130065"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Carney government approaches potential majority through floor-crossers ahead of April byelections",
-      "summary": "The Liberal government moved closer to a majority after NDP MP Lori Idlout crossed the floor to join the Liberals, bringing them to 170 seats. With three byelections scheduled for April 13, including the crucial Terrebonne rematch, Carney could secure an outright majority in the House of Commons.",
-      "actors_involved": [
-        "Mark Carney",
-        "Liberal Party"
+        "Pierre Poilievre",
+        "Liberal Party",
+        "Conservative Party"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 7,
+      "source_count": 12,
       "sources": [
-        "nationalobserver.com",
-        "hilltimes.com",
-        "ipolitics.ca",
+        "torontosun.com",
+        "abacusdata.ca",
+        "thewrit.ca",
         "nationalpost.com",
-        "cfjctoday.com",
-        "pentictonherald.ca",
-        "press.liaisonstrategies.ca"
+        "ipolitics.ca",
+        "hilltimes.com",
+        "nationalobserver.com"
       ],
-      "date_range": "2026-03-15 to 2026-03-18",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
-          "title": "Critics of Idlout's floor-crossing should offer Canadians something better",
-          "source": "nationalobserver.com",
-          "url": "https://www.nationalobserver.com/2026/03/16/opinion/lori-idlout-ndp-liberal-floor-crossing",
-          "date": "2026-03-16"
+          "title": "Carney Liberals continue to outpace struggling Tories in polls",
+          "source": "torontosun.com",
+          "url": "https://torontosun.com/news/mark-carney-liberals-continue-to-outpace-struggling-tories-polls",
+          "date": "2026-03-17"
         },
         {
-          "title": "Why party insiders believe a Liberal sweep on April 13 won't necessarily stop new floor-crossings or push off an election call",
-          "source": "ipolitics.ca",
-          "url": "https://www.ipolitics.ca/2026/03/18/why-party-insiders-believe-a-liberal-sweep-on-april-13-wont-necessarily-stop-new-floor-crossings-or-push-off-an-election-call/",
-          "date": "2026-03-18"
+          "title": "New Abacus Poll: Liberal Lead Widens to 11 as Government Approval Hits New High",
+          "source": "abacusdata.ca",
+          "url": "https://abacusdata.ca/new-abacus-poll-liberal-lead-widens-to-11-as-government-approval-hits-new-high/",
+          "date": "2026-03-11"
         },
         {
-          "title": "Liberals are almost guaranteed a majority \u2014 but 172 seats would be a 'poison pill'",
-          "source": "nationalpost.com",
-          "url": "https://nationalpost.com/news/liberals-are-almost-guaranteed-a-majority-but-172-seats-would-be-a-poison-pill",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Carney's potential majority 'creates distrust in the political institutions': TRU Professor",
-          "source": "cfjctoday.com",
-          "url": "https://cfjctoday.com/2026/03/15/carneys-potential-majority-creates-distrust-in-the-political-institutions-tru-professor/",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Liberals, Tories neck-and-neck in local support",
-          "source": "pentictonherald.ca",
-          "url": "https://pentictonherald.ca/news/article_2b604738-de18-4ca4-b746-79436d39fc70.html",
+          "title": "The Numbers: Have we hit Carney's ceiling and Poilievre's floor?",
+          "source": "thewrit.ca",
+          "url": "https://www.thewrit.ca/p/the-numbers-have-we-hit-carneys-ceiling",
           "date": "2026-03-18"
         },
         {
@@ -914,81 +353,74 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Lobbying under Carney: 'it is a very different Liberal government'",
-          "source": "hilltimes.com",
-          "url": "https://www.hilltimes.com/2026/03/16/lobbying-under-the-carney-government/495158/",
-          "date": "2026-03-16"
+          "title": "Liberals are almost guaranteed a majority \u2014 but 172 seats would be a 'poison pill'",
+          "source": "nationalpost.com",
+          "url": "https://nationalpost.com/news/liberals-are-almost-guaranteed-a-majority-but-172-seats-would-be-a-poison-pill",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://www.ipolitics.ca/2026/03/18/why-party-insiders-believe-a-liberal-sweep-on-april-13-wont-necessarily-stop-new-floor-crossings-or-push-off-an-election-call/",
-        "https://nationalpost.com/news/liberals-are-almost-guaranteed-a-majority-but-172-seats-would-be-a-poison-pill"
+        "https://abacusdata.ca/new-abacus-poll-liberal-lead-widens-to-11-as-government-approval-hits-new-high/",
+        "https://www.thewrit.ca/p/the-numbers-have-we-hit-carneys-ceiling"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Canadian Armed Forces awarded $307 million contract for new assault rifles",
+      "summary": "The Defence Investment Agency awarded Colt Canada a $307 million contract to manufacture over 65,000 new rifles to replace the aging C7/C8 assault rifle fleet. The contract is part of the first wave of high-priority defence procurements and will unfold in two phases.",
+      "actors_involved": [
+        "Canadian Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
+      "sources": [
+        "nationalpost.com",
+        "newswire.ca",
+        "canadianmanufacturing.com",
+        "canadiandefencereview.com",
+        "canada.ca"
+      ],
+      "date_range": "2026-03-19 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Government awards $307-million contract to Colt Canada to manufacture over 65,000 rifles for the Canadian Armed Forces",
+          "source": "nationalpost.com",
+          "url": "https://nationalpost.com/news/politics/government-awards-307m-contract-to-colt-canada-to-manufacture-over-65000-rifles-for-the-canadian-armed-forces",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Defence Investment Agency awards contract to replace current Canadian Armed Forces assault rifles",
+          "source": "newswire.ca",
+          "url": "https://newswire.ca/news-releases/defence-investment-agency-awards-contract-to-replace-current-canadian-armed-forces-assault-rifles-809900061.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Colt Canada Awarded Contract To Replace Canadian Armed Forces Assault Rifles",
+          "source": "canadianmanufacturing.com",
+          "url": "https://canadianmanufacturing.com/financing/defence-investment-agency-awards-contract-to-replace-canadian-armed-forces-assault-rifles-317237",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://nationalpost.com/news/politics/government-awards-307m-contract-to-colt-canada-to-manufacture-over-65000-rifles-for-the-canadian-armed-forces",
+        "https://newswire.ca/news-releases/defence-investment-agency-awards-contract-to-replace-current-canadian-armed-forces-assault-rifles-809900061.html"
       ]
     },
     {
       "story_id": 8,
-      "headline": "Carney and Poilievre coordinate messaging while traveling abroad despite domestic rivalry",
-      "summary": "Despite their bitter rivalry in the House of Commons, Prime Minister Carney and Conservative Leader Poilievre have been texting regularly to present a united front while traveling separately abroad. Both have emphasized the importance of showing Canadian unity, particularly in the face of U.S. pressure.",
-      "actors_involved": [
-        "Mark Carney",
-        "Pierre Poilievre"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "cbc.ca",
-        "thestar.com",
-        "hilltimes.com",
-        "thehub.ca"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Carney and Poilievre find rare common ground on the global stage",
-          "source": "cbc.ca",
-          "url": "https://www.cbc.ca/news/politics/poilievre-carney-texting-respectful-9.7136865",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Susan Delacourt: Pierre Poilievre is playing for Team Canada \u2014 with Mark Carney as captain",
-          "source": "thestar.com",
-          "url": "https://www.thestar.com/politics/political-opinion/pierre-poilievre-is-playing-for-team-canada--with-mark-carney-as-captain/article_6cea5578-cdbc-482e-aa71-f594fc87188e.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Poilievre's call for better economic ties with U.S. is out of step with Canadians",
-          "source": "hilltimes.com",
-          "url": "https://www.hilltimes.com/2026/03/16/pierre-poilievre-looks-more-prime-ministerial-these-days-but-his-call-for-better-economic-ties-with-u-s-is-out-of-step-with-canadians/495432/",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Pierre Poilievre is doing his best to repair Canada\u2013U.S. relations: The Weekly Wrap",
-          "source": "thehub.ca",
-          "url": "https://thehub.ca/2026/03/21/pierre-poilievre-is-doing-his-best-to-repair-canada-u-s-relations-the-weekly-wrap",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.cbc.ca/news/politics/poilievre-carney-texting-respectful-9.7136865",
-        "https://www.thestar.com/politics/political-opinion/pierre-poilievre-is-playing-for-team-canada--with-mark-carney-as-captain/article_6cea5578-cdbc-482e-aa71-f594fc87188e.html"
-      ]
-    },
-    {
-      "story_id": 9,
-      "headline": "Former Bloc Qu\u00e9b\u00e9cois MP arrested on sexual assault charges involving minors",
-      "summary": "Pascal-Pierre Paill\u00e9, who represented Louis-H\u00e9bert for the Bloc Qu\u00e9b\u00e9cois from 2008-2011, was arrested by Quebec City police on charges of sexual assault involving minors. The alleged incidents date back to 2006 and as recently as August 2024. Paill\u00e9 is a teacher and former MP.",
+      "headline": "Former Bloc Qu\u00e9b\u00e9cois MP charged with sexual offenses involving minors",
+      "summary": "Pascal-Pierre Paill\u00e9, who represented Louis-H\u00e9bert for the Bloc Qu\u00e9b\u00e9cois from 2008 to 2011, was arrested and charged with sexual assault and sexual contact with minors. The alleged incidents date from 2006 to as recently as August 2024.",
       "actors_involved": [
         "Bloc Qu\u00e9b\u00e9cois"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 7,
+      "source_count": 5,
       "sources": [
         "cbc.ca",
-        "ici.radio-canada.ca",
         "ctvnews.ca",
         "lapresse.ca",
         "ledevoir.com",
-        "lavoixdelest.ca"
+        "radio-canada.ca"
       ],
       "date_range": "2026-03-17 to 2026-03-17",
       "articles": [
@@ -999,297 +431,42 @@
           "date": "2026-03-17"
         },
         {
-          "title": "Un ancien d\u00e9put\u00e9 bloquiste arr\u00eat\u00e9 pour crimes sexuels sur des mineurs",
-          "source": "ici.radio-canada.ca",
-          "url": "https://ici.radio-canada.ca/nouvelle/2239808/pascal-pierre-paille-bloc-arrestation",
-          "date": "2026-03-17"
-        },
-        {
           "title": "Ex-Bloc Qu\u00e9b\u00e9cois MP Pascal-Pierre Paill\u00e9 arrested on sexual assault charges",
           "source": "ctvnews.ca",
-          "url": "https://www.ctvnews.ca/montreal/article/former-bloc-quebecois-mp-arrested-on-sexual-assault-charges/",
+          "url": "https://ctvnews.ca/montreal/article/former-bloc-quebecois-mp-arrested-on-sexual-assault-charges",
           "date": "2026-03-17"
         },
         {
           "title": "Un ex-d\u00e9put\u00e9 bloquiste arr\u00eat\u00e9 pour agressions sexuelles all\u00e9gu\u00e9es",
           "source": "lapresse.ca",
-          "url": "https://www.lapresse.ca/actualites/justice-et-faits-divers/2026-03-17/un-ex-depute-bloquiste-arrete-pour-agressions-sexuelles-alleguees.php",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "L'ancien d\u00e9put\u00e9 du Bloc qu\u00e9b\u00e9cois Pascal-Pierre Paill\u00e9 a \u00e9t\u00e9 arr\u00eat\u00e9 pour agressions sexuelles sur des mineurs",
-          "source": "ledevoir.com",
-          "url": "https://www.ledevoir.com/actualites/justice/964467/ex-depute-bloc-quebecois-ete-arrete-agressions-sexuelles-mineurs",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Un ancien d\u00e9put\u00e9 du Bloc qu\u00e9b\u00e9cois arr\u00eat\u00e9 pour agression sexuelle",
-          "source": "lavoixdelest.ca",
-          "url": "https://www.lavoixdelest.ca/actualites/justice-et-faits-divers/2026/03/17/un-ancien-depute-du-bloc-quebecois-arrete-pour-agression-sexuelle-WSO7KQQQWVEJNPRGO43UYA2BCU/",
+          "url": "https://lapresse.ca/actualites/justice-et-faits-divers/2026-03-17/un-ex-depute-bloquiste-arrete-pour-agressions-sexuelles-alleguees.php",
           "date": "2026-03-17"
         }
       ],
       "representative_urls": [
         "https://www.cbc.ca/news/canada/montreal/former-mp-arrested-sex-crimes-9.7132203",
-        "https://ici.radio-canada.ca/nouvelle/2239808/pascal-pierre-paille-bloc-arrestation"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Terrebonne by-election rematch set for April 13 after Supreme Court invalidates result",
-      "summary": "Liberal candidate Tatiana Auguste launches her campaign for the Terrebonne by-election rematch on April 13, after the Supreme Court invalidated her one-vote victory over Bloc candidate Nathalie Sinclair-Desgagn\u00e9 due to an Elections Canada mailing error. The contest is crucial for Carney's path to majority government.",
-      "actors_involved": [
-        "Liberal Party",
-        "Bloc Qu\u00e9b\u00e9cois"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 6,
-      "sources": [
-        "ici.radio-canada.ca",
-        "lapresse.ca",
-        "ledevoir.com",
-        "lapresse.ca"
-      ],
-      "date_range": "2026-03-14 to 2026-03-20",
-      "articles": [
-        {
-          "title": "\u00c9lection partielle dans Terrebonne : la lib\u00e9rale Tatiana Auguste lance sa campagne",
-          "source": "ici.radio-canada.ca",
-          "url": "https://ici.radio-canada.ca/nouvelle/2238956/liberal-election-partielle-terrebonne",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "\u00c9lection partielle | Le match revanche est lanc\u00e9 dans Terrebonne",
-          "source": "lapresse.ca",
-          "url": "https://lapresse.ca/actualites/politique/2026-03-14/election-partielle/le-match-revanche-est-lance-dans-terrebonne.php",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Le match revanche est lanc\u00e9 pour l'\u00e9lection partielle dans Terrebonne",
-          "source": "ledevoir.com",
-          "url": "https://ledevoir.com/politique/canada/963909/match-revanche-est-lance-election-partielle-terrebonne",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Terrebonne face au m\u00eame choix, mais dans un nouveau contexte \u00e0 Ottawa",
-          "source": "ledevoir.com",
-          "url": "https://ledevoir.com/politique/canada/965637/terrebonne-face-meme-choix-mais-nouveau-contexte-ottawa",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "\u00c9lection partielle \u00e0 Terrebonne | Tatiana Auguste pr\u00e9f\u00e8re le terrain au Parlement",
-          "source": "ledevoir.com",
-          "url": "https://ledevoir.com/politique/canada/965634/tatiana-auguste-prefere-terrain-parlement",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Le Comit\u00e9 du bulletin de vote le plus long vise Terrebonne",
-          "source": "lapresse.ca",
-          "url": "https://www.lapresse.ca/actualites/politique/2026-03-17/le-comite-du-bulletin-de-vote-le-plus-long-vise-terrebonne.php",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://ledevoir.com/politique/canada/963909/match-revanche-est-lance-election-partielle-terrebonne",
-        "https://lapresse.ca/actualites/politique/2026-03-14/election-partielle/le-match-revanche-est-lance-dans-terrebonne.php"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "CAF Appeals Board declares Morocco winner of 2025 AFCON after stripping Senegal of title",
-      "summary": "In a controversial decision, the Confederation of African Football's Appeals Board ruled that Senegal forfeited the 2025 Africa Cup of Nations final and declared Morocco the champions with a 3-0 victory. The ruling overturned Senegal's 1-0 victory on the pitch after their players walked off during the match in protest of a refereeing decision.",
-      "actors_involved": [],
-      "signal_category_hint": "unclear",
-      "source_count": 28,
-      "sources": [
-        "cafonline.com",
-        "france24.com",
-        "bbc.com",
-        "reuters.com",
-        "aljazeera.com",
-        "moroccoworldnews.com",
-        "rfi.fr",
-        "20minutes.fr",
-        "lemonde.fr",
-        "lequipe.fr",
-        "footmercato.net",
-        "beinsports.com",
-        "dw.com",
-        "tf1info.fr",
-        "foot-africa.com",
-        "theguardian.com",
-        "ca.sports.yahoo.com",
-        "goal.com",
-        "geo.tv"
-      ],
-      "date_range": "2026-03-17 to 2026-03-22",
-      "articles": [
-        {
-          "title": "CAF Appeal Board Media Statement",
-          "source": "cafonline.com",
-          "url": "https://www.cafonline.com/news/caf-appeal-board-media-statement/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "CAN 2025 : le jury d'appel de la CAF d\u00e9clare le Maroc vainqueur de la finale",
-          "source": "france24.com",
-          "url": "https://www.france24.com/fr/sports/20260317-can-2025-le-jury-d-appel-de-la-caf-d%C3%A9clare-le-maroc-vainqueur-de-la-finale",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Afcon 2025: Morocco declared the winners after Caf overturns final defeat by Senegal",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/sport/football/articles/ce949glzzglo",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Morocco declared African champions after Senegal stripped of title",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/sports/soccer/morocco-awarded-africa-cup-nations-after-caf-strips-senegal-title-2026-03-17/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "CAF strips Senegal of AFCON title, Morocco declared African champions",
-          "source": "aljazeera.com",
-          "url": "https://www.aljazeera.com/sports/2026/3/17/caf-strips-senegal-of-afcon-title-morocco-declared-african-champions",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://www.bbc.com/sport/football/articles/ce949glzzglo",
-        "https://www.reuters.com/sports/soccer/morocco-awarded-africa-cup-nations-after-caf-strips-senegal-title-2026-03-17/"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Quebec budget 2026 focuses on economic transformation amid fiscal constraints",
-      "summary": "Quebec Finance Minister Eric Girard presented his eighth budget projecting a $9.9 billion deficit while investing $1.7 billion in economic transformation, particularly in critical minerals and technology sectors. The budget includes modest support for vulnerable populations but no broad tax relief, as the government prepares for the CAQ leadership transition.",
-      "actors_involved": [],
-      "signal_category_hint": "economic_tech",
-      "source_count": 15,
-      "sources": [
-        "ici.radio-canada.ca",
-        "lapresse.ca",
-        "quebec.ca",
-        "ledevoir.com",
-        "985fm.ca",
-        "iris-recherche.qc.ca",
-        "m105.ca",
-        "rimq.qc.ca",
-        "newswire.ca",
-        "magaspesie.ca"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Les finances du Qu\u00e9bec s'am\u00e9liorent malgr\u00e9 l'incertitude",
-          "source": "ici.radio-canada.ca",
-          "url": "https://ici.radio-canada.ca/nouvelle/2240201/budget-quebec-girard-2026-2027",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Budget du Qu\u00e9bec 2026-2027 : les faits saillants",
-          "source": "ici.radio-canada.ca",
-          "url": "https://ici.radio-canada.ca/info/en-direct/1013598/budget-quebec-caq-girard-2026-2027",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Budget 2026-2027 - Un budget responsable, centr\u00e9 sur les priorit\u00e9s des Qu\u00e9b\u00e9cois",
-          "source": "quebec.ca",
-          "url": "https://quebec.ca/nouvelles/actualites/details/budget-2026-2027-communique-no-1-de-3-un-budget-responsable-centre-sur-les-priorites-des-quebecois-69181",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Le budget du Qu\u00e9bec 2026 pr\u00e9voit peu de mesures d'aide directe aux contribuables. Voici ce qui touche votre portefeuille.",
-          "source": "ledevoir.com",
-          "url": "https://www.ledevoir.com/politique/quebec/964890/voici-ce-touche-votre-portefeuille-budget-quebec",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "D\u00e9ficit de 9,9 milliards | Un huiti\u00e8me budget Girard sans artifice",
-          "source": "985fm.ca",
-          "url": "https://985fm.ca/nouvelles/764164/un-huitieme-budget-girard-sans-artifice",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Budget 2026 : le Qu\u00e9bec s'engage de plain-pied dans l'aust\u00e9rit\u00e9",
-          "source": "iris-recherche.qc.ca",
-          "url": "https://iris-recherche.qc.ca/blogue/etat-finances-publiques-et-secteur-public/budget-quebec-2026",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Budget provincial: les r\u00e9gions laiss\u00e9es de c\u00f4t\u00e9 selon la Centrale des syndicats d\u00e9mocratiques",
-          "source": "m105.ca",
-          "url": "https://m105.ca/nouvelle/budget-provincial-les-regions-laissees-de-cote-selon-la-centrale-des-syndicats-democratiques",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://ici.radio-canada.ca/nouvelle/2240201/budget-quebec-girard-2026-2027",
-        "https://quebec.ca/nouvelles/actualites/details/budget-2026-2027-communique-no-1-de-3-un-budget-responsable-centre-sur-les-priorites-des-quebecois-69181"
+        "https://ctvnews.ca/montreal/article/former-bloc-quebecois-mp-arrested-on-sexual-assault-charges"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Carney government asks Supreme Court to overturn Emergencies Act ruling",
-      "source": "theccf.ca",
-      "url": "https://theccf.ca/carney-asks-scc-to-overturn-emergencies-act-ruling/",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Mayor calls out Carney Liberals' response to antisemitic violence",
-      "source": "nationalpost.com",
-      "url": "https://nationalpost.com/news/mayor-calls-out-carney-liberals-response-to-antisemitic-violence",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Carney offers an NDP revival, if it's shrewd enough to take it: Ivison",
-      "source": "nationalpost.com",
-      "url": "https://nationalpost.com/opinion/ivison-carney-offers-ndp-chance-at-revival",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "The Numbers: Have we hit Carney's ceiling and Poilievre's floor?",
-      "source": "thewrit.ca",
-      "url": "https://www.thewrit.ca/p/the-numbers-have-we-hit-carneys-ceiling",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "The Liberal Party's evolution",
-      "source": "hilltimes.com",
-      "url": "https://www.hilltimes.com/2026/03/19/the-liberal-partys-evolution/496053/",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "New Abacus Poll: Liberal Lead Widens to 11 as Government Approval Hits New High",
-      "source": "abacusdata.ca",
-      "url": "https://abacusdata.ca/new-abacus-poll-liberal-lead-widens-to-11-as-government-approval-hits-new-high/",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Two in three people say Canada should remain neutral in Iran war: poll",
-      "source": "thecanadianpressnews.ca",
-      "url": "https://www.thecanadianpressnews.ca/national/two-in-three-people-say-canada-should-remain-neutral-in-iran-war-poll/article_e927fda7-0f81-537a-8039-32976aebd272.html",
-      "signal_category_hint": "alignment_diplomatic"
-    },
-    {
-      "headline": "Canadian banks are ramping up lending to non-bank financial firms",
-      "source": "thelogic.co",
-      "url": "https://thelogic.co/news/analysis/canadian-banks-ramping-up-lending-non-bank-firms/",
+      "headline": "Quebec budget 2026-2027 focuses on infrastructure and deficit reduction",
+      "source": "ici.radio-canada.ca",
+      "url": "https://ici.radio-canada.ca/nouvelle/2240201/budget-quebec-girard-2026-2027",
       "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "She made history as the first trans CEO of a Canadian bank \u2014 then she left, suddenly. Here's why",
-      "source": "thestar.com",
-      "url": "https://www.thestar.com/business/she-made-history-as-the-first-trans-ceo-of-a-canadian-bank--then-she-left-suddenly-heres-why/article_df5c8255-c45e-47ae-8e15-db836b82cf06.html",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Finding credible online threats a 'needle in a haystack,' former CSIS analyst says",
+      "headline": "CSIS analyst discusses online threat detection challenges",
       "source": "globalnews.ca",
-      "url": "https://globalnews.ca/news/11738512/finding-credible-online-threats/",
+      "url": "https://globalnews.ca/news/11738512/finding-credible-online-threats",
       "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "NDP MP Lori Idlout crosses floor to join Liberal caucus",
+      "source": "nationalobserver.com",
+      "url": "https://www.nationalobserver.com/2026/03/16/opinion/lori-idlout-ndp-liberal-floor-crossing",
+      "signal_category_hint": "domestic_regime"
     }
   ]
 }

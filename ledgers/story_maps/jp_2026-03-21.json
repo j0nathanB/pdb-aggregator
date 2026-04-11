@@ -3,49 +3,54 @@
   "code": "jp",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 205,
+  "search_results_total": 173,
   "stories_identified": 5,
-  "off_topic_filtered": 47,
-  "noise_summary": "47 off-topic results filtered: 23 sports coverage (Ayase Ueda football player at Feyenoord), 8 anime/entertainment (Naruto references), 9 unrelated business/tech news, 4 foreign political parties named LDP, 3 lifestyle/consumer products.",
+  "off_topic_filtered": 81,
+  "noise_summary": "81 off-topic results filtered: 12 Naruto anime/manga entries, 10 Lidl supermarket articles (European retail), 15 Feyenoord football/Ayase Ueda sports stories, 3 LDAP technical articles, 25 international military stories not specifically involving Japan, 16 other miscellaneous off-topic content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Prime Minister Takaichi meets Trump at White House summit amid Iran tensions",
-      "summary": "PM Takaichi visited Washington March 19-21 for her first White House summit with President Trump. Discussions focused on Iran/Strait of Hormuz security, economic cooperation including a $40B nuclear project, and Japan's constitutional limits on military involvement. Trump made a controversial Pearl Harbor reference during the meeting.",
+      "headline": "Prime Minister Takaichi conducts first Washington summit with Trump amid Iran tensions",
+      "summary": "PM Sanae Takaichi visited Washington March 18-21 for her first White House meeting with President Trump. The summit focused on Iran/Strait of Hormuz tensions, with Trump pressing Japan for military support. The leaders announced a $40 billion nuclear power project, but the visit was overshadowed by Trump's Pearl Harbor joke and disagreements over Japan's military role.",
       "actors_involved": [
-        "Sanae Takaichi"
+        "Takaichi",
+        "Naruhito",
+        "MOFA"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 42,
+      "source_count": 68,
       "sources": [
         "www3.nhk.or.jp",
-        "japantimes.co.jp",
         "asahi.com",
+        "japantimes.co.jp",
         "bloomberg.com",
         "nytimes.com",
-        "cnn.com",
-        "reuters.com",
         "bbc.com",
-        "asia.nikkei.com",
+        "reuters.com",
+        "cnn.com",
         "politico.com",
-        "cnbc.com",
-        "mainichi.jp",
-        "arabnews.jp",
-        "pbs.org",
-        "japantoday.com",
-        "uschamber.com",
-        "news.cgtn.com",
-        "tokyoweekender.com",
-        "rawstory.com",
-        "theguardian.com",
-        "chosun.com",
+        "thediplomat.com",
         "foreignaffairs.com",
         "cfr.org",
+        "dawn.com",
+        "rawstory.com",
+        "japantoday.com",
+        "asia.nikkei.com",
+        "mainichi.jp",
+        "arabnews.jp",
+        "theguardian.com",
         "ft.com",
+        "uschamber.com",
+        "pbs.org",
         "nwaonline.com",
+        "cnbc.com",
+        "openthemagazine.com",
+        "japan-forward.com",
+        "news.cgtn.com",
+        "nippon.com",
         "whitehouse.gov"
       ],
-      "date_range": "2026-03-14 to 2026-03-21",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
         {
           "title": "Takaichi and Trump talk Iran, economy at summit",
@@ -54,10 +59,34 @@
           "date": "2026-03-20"
         },
         {
+          "title": "Japan PM Takaichi heads to Washington for summit with Trump",
+          "source": "www3.nhk.or.jp",
+          "url": "https://www3.nhk.or.jp/nhkworld/en/news/20260319_02/",
+          "date": "2026-03-19"
+        },
+        {
           "title": "Takaichi returns home to tough issues after Trump summit",
           "source": "asahi.com",
           "url": "https://www.asahi.com/ajw/articles/16438176",
           "date": "2026-03-20"
+        },
+        {
+          "title": "Takaichi wraps up US trip",
+          "source": "www3.nhk.or.jp",
+          "url": "https://www3.nhk.or.jp/nhkworld/en/news/20260321_02/",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Iran conflict looms large over Trump's meeting with Japan PM",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/news/articles/cde4e2xyelpo",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Japan rejects U.S. report calling PM's remarks over Taiwan 'a significant shift'",
+          "source": "japantimes.co.jp",
+          "url": "https://www.japantimes.co.jp/news/2026/03/19/japan/politics/japan-takaichi-taiwan-us-report/",
+          "date": "2026-03-19"
         },
         {
           "title": "Trump, Japan's Takaichi to Announce $40B US Nuclear Power Project",
@@ -66,10 +95,10 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Iran conflict looms large over Trump's meeting with Japan PM",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/cde4e2xyelpo",
-          "date": "2026-03-19"
+          "title": "At summit, Takaichi avoids rift with Trump on Iran \u2014 for now",
+          "source": "japantimes.co.jp",
+          "url": "https://japantimes.co.jp/news/2026/03/20/japan/politics/us-japan-summit-takaichi-trump-iran-analysis",
+          "date": "2026-03-20"
         },
         {
           "title": "Using Charm and Restraint, Japan's Leader Mostly Avoids Trump's Wrath",
@@ -78,10 +107,40 @@
           "date": "2026-03-20"
         },
         {
+          "title": "Takaichi's crisis averted",
+          "source": "politico.com",
+          "url": "https://www.politico.com/newsletters/national-security-daily/2026/03/19/takaichis-crisis-averted-00836607",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Trump Jokes About Pearl Harbor in Meeting With Japan's Prime Minister",
+          "source": "nytimes.com",
+          "url": "https://www.nytimes.com/2026/03/19/us/politics/trump-japan-pearl-harbor-oval-office-takaichi.html",
+          "date": "2026-03-19"
+        },
+        {
           "title": "How Japan Reacted to Trump's Pearl Harbor Joke",
           "source": "nytimes.com",
           "url": "https://www.nytimes.com/2026/03/20/world/asia/japan-trump-pearl-harbor.html",
           "date": "2026-03-20"
+        },
+        {
+          "title": "Trump presses Takaichi on Hormuz security, says Japan 'unlike NATO'",
+          "source": "asia.nikkei.com",
+          "url": "https://asia.nikkei.com/politics/international-relations/trump-presses-takaichi-on-hormuz-security-says-japan-unlike-nato",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Trump's Friendship With Japan's Leader Takaichi Faces Test Over Iran",
+          "source": "nytimes.com",
+          "url": "https://www.nytimes.com/2026/03/18/world/asia/trump-japan-takaichi-iran-hormuz.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Trump and Takaichi are close. Iran puts their relationship to the test",
+          "source": "cnn.com",
+          "url": "https://www.cnn.com/2026/03/19/asia/iran-war-japan-us-stress-test-intl-hnk",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -91,18 +150,17 @@
     },
     {
       "story_id": 2,
-      "headline": "Bank of Japan holds rates steady citing Middle East risks",
-      "summary": "The Bank of Japan maintained its policy interest rate at 0.75% on March 19, with Governor Ueda citing rising oil prices and uncertainty from the Iran conflict as key factors in the decision to remain cautious on monetary tightening.",
+      "headline": "Bank of Japan maintains policy rate at 0.75% citing Middle East uncertainty",
+      "summary": "BOJ Governor Kazuo Ueda kept the benchmark interest rate unchanged at 0.75% on Thursday, citing rising oil prices and uncertainty from the Middle East conflict as reasons for maintaining a cautious stance on monetary policy.",
       "actors_involved": [
         "Kazuo Ueda"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 4,
+      "source_count": 3,
       "sources": [
         "asia.nikkei.com",
         "japantimes.co.jp",
-        "reuters.com",
-        "investing.com"
+        "reuters.com"
       ],
       "date_range": "2026-03-19 to 2026-03-19",
       "articles": [
@@ -123,12 +181,6 @@
           "source": "reuters.com",
           "url": "https://reuters.com/business/finance/boj-governor-uedas-comments-news-conference-2026-03-19",
           "date": "2026-03-19"
-        },
-        {
-          "title": "BOJ Governor Ueda's comments at news conference By Reuters",
-          "source": "investing.com",
-          "url": "https://investing.com/news/economy-news/boj-governor-uedas-comments-at-news-conference-4569817",
-          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -138,104 +190,116 @@
     },
     {
       "story_id": 3,
-      "headline": "Emperor Naruhito's 66th birthday celebrated globally at diplomatic events",
-      "summary": "Diplomatic missions worldwide held receptions celebrating Emperor Naruhito's 66th birthday in March 2026. Events were hosted in Paraguay, the Philippines, and other countries, highlighting Japan's diplomatic outreach and bilateral relationships.",
+      "headline": "Major Japanese companies offer substantial wage hikes in spring negotiations",
+      "summary": "Major Japanese firms including Toyota fully met labor union demands for wage increases of 5-7% in annual spring negotiations. Keidanren chairman cited progress toward a 'virtuous cycle of growth and wealth distribution' amid persistent inflation.",
       "actors_involved": [
-        "Emperor Naruhito"
+        "Keidanren"
       ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 3,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
       "sources": [
-        "lanacion.com.py",
-        "philstar.com",
-        "japan-forward.com"
+        "japantoday.com"
       ],
-      "date_range": "2026-03-08 to 2026-03-19",
+      "date_range": "2026-03-21 to 2026-03-21",
       "articles": [
         {
-          "title": "Embajador japon\u00e9s destaca v\u00ednculos diplom\u00e1ticos y econ\u00f3micos con Paraguay",
-          "source": "lanacion.com.py",
-          "url": "https://www.lanacion.com.py/politica/2026/03/13/embajador-japones-destaca-vinculos-diplomaticos-y-economicos-con-paraguay/",
-          "date": "2026-03-13"
-        },
-        {
-          "title": "Ambassador Endo Kazuya leads Japan emperor's 66th birthday celebration",
-          "source": "philstar.com",
-          "url": "https://www.philstar.com/lifestyle/2026/03/19/2515219/ambassador-endo-kazuya-leads-japan-emperors-66th-birthday-celebration",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "An Imperial Week in Photos: Baseball, Remembrance, and Hokkaido Trip",
-          "source": "japan-forward.com",
-          "url": "https://japan-forward.com/an-imperial-week-in-photos-baseball-remembrance-and-hokkaido-trip",
-          "date": "2026-03-15"
+          "title": "Major Japanese firms offer large pay hikes in spring negotiations",
+          "source": "japantoday.com",
+          "url": "https://japantoday.com/category/business/major-japan-firms-offer-large-pay-hikes-in-spring-negotiations",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://www.philstar.com/lifestyle/2026/03/19/2515219/ambassador-endo-kazuya-leads-japan-emperors-66th-birthday-celebration",
-        "https://japan-forward.com/an-imperial-week-in-photos-baseball-remembrance-and-hokkaido-trip"
+        "https://japantoday.com/category/business/major-japan-firms-offer-large-pay-hikes-in-spring-negotiations"
       ]
     },
     {
       "story_id": 4,
-      "headline": "Takaichi vows major defense capability upgrade at military academy",
-      "summary": "Prime Minister Takaichi delivered remarks at the National Defense Academy graduation ceremony on March 14, pledging to 'drastically strengthen' Japan's defense capabilities without excluding any options, ahead of planned revisions to key security documents.",
+      "headline": "Takaichi says she respects imperial succession panel proposals",
+      "summary": "PM Takaichi stated she 'respects' expert panel proposals on imperial succession, including allowing female imperial family members to retain their status after marriage and adopting male members from former imperial family branches.",
       "actors_involved": [
-        "Sanae Takaichi",
-        "Japan Self-Defense Forces",
-        "Ministry of Defense"
+        "Takaichi",
+        "LDP",
+        "Nippon Ishin no Kai"
       ],
-      "signal_category_hint": "security_defense",
-      "source_count": 2,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
       "sources": [
-        "japantimes.co.jp",
-        "meyka.com"
+        "japantimes.co.jp"
       ],
-      "date_range": "2026-03-14 to 2026-03-15",
+      "date_range": "2026-03-17 to 2026-03-17",
       "articles": [
         {
-          "title": "Takaichi vows to bolster Japan's defense capabilities",
+          "title": "Takaichi says she 'respects' panel proposals regarding imperial succession",
           "source": "japantimes.co.jp",
-          "url": "https://japantimes.co.jp/news/2026/03/14/japan/takaichi-defense-academy-speech",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Japan Defense Policy March 15: PM Takaichi Signals All-Options Buildup",
-          "source": "meyka.com",
-          "url": "https://meyka.com/blog/japan-defense-policy-march-15-pm-takaichi-signals-all-options-buildup-1403/",
-          "date": "2026-03-15"
+          "url": "https://www.japantimes.co.jp/news/2026/03/17/japan/takaichi-panel-imperial-succession/",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://japantimes.co.jp/news/2026/03/14/japan/takaichi-defense-academy-speech",
-        "https://meyka.com/blog/japan-defense-policy-march-15-pm-takaichi-signals-all-options-buildup-1403/"
+        "https://www.japantimes.co.jp/news/2026/03/17/japan/takaichi-panel-imperial-succession/"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Japan considers stockpiling US crude oil for energy security",
+      "summary": "Japan is weighing plans to stockpile US crude oil to diversify supply sources and strengthen energy security amid rising disruption risks in the Middle East. The country has already tapped emergency reserves due to Strait of Hormuz tensions.",
+      "actors_involved": [],
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
+      "sources": [
+        "oilprice.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Japan Taps Emergency Oil Reserves",
+          "source": "oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Japan-Taps-Emergency-Oil-Reserves.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Japan Weighs Stockpiling U.S. Crude to Strengthen Energy Security",
+          "source": "oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Japan-Weighs-Stockpiling-US-Crude-to-Strengthen-Energy-Security.html",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://oilprice.com/Latest-Energy-News/World-News/Japan-Weighs-Stockpiling-US-Crude-to-Strengthen-Energy-Security.html"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "LDP rushes fiscal 2026 budget through Lower House on expedited timeline",
-      "source": "asahi.com",
-      "url": "https://asahi.com/ajw/articles/16422527",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Major Japanese firms offer large wage hikes in spring negotiations",
-      "source": "japantoday.com",
-      "url": "https://japantoday.com/category/business/major-japan-firms-offer-large-pay-hikes-in-spring-negotiations",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "JSDF plans new medical information system for frontline casualties by 2028",
+      "headline": "JSDF plans new medical information-sharing system for frontline casualties",
       "source": "asianmilitaryreview.com",
-      "url": "https://www.asianmilitaryreview.com/2026/03/jsdf-set-to-launch-new-medical-information-sharing-system-for-frontline-casualties-nsbt/",
+      "url": "https://asianmilitaryreview.com/2026/03/jsdf-set-to-launch-new-medical-information-sharing-system-for-frontline-casualties-nsbt",
       "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Japan deploys upgraded Type-12 anti-ship missiles to Kyushu",
+      "headline": "Japan Maritime Self-Defense Force receives new vessels before fiscal year ends",
+      "source": "asianmilitaryreview.com",
+      "url": "https://asianmilitaryreview.com/2026/03/flurry-of-launches-boosts-jmsdf-fleet-before-fiscal-year-ends-foc",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Japan deploys new Type 12 anti-ship missiles to Kyushu",
       "source": "asianmilitaryreview.com",
       "url": "https://www.asianmilitaryreview.com/2026/03/japan-deploys-new-island-defence-missiles-foc/",
       "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Japan Finance Minister flags readiness for decisive forex steps as yen weakens",
+      "source": "reuters.com",
+      "url": "https://reuters.com/world/asia-pacific/japan-finance-minister-flags-readiness-take-decisive-steps-forex-2026-03-16",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Cherry blossom season 2026 first and full bloom forecasts across Japan",
+      "source": "nippon.com",
+      "url": "https://nippon.com/en/japan-data/h02731",
+      "signal_category_hint": "unclear"
     }
   ]
 }

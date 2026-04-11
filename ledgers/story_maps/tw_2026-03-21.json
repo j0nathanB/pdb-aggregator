@@ -3,178 +3,68 @@
   "code": "tw",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 341,
-  "stories_identified": 12,
-  "off_topic_filtered": 89,
-  "noise_summary": "89 off-topic results filtered: 31 sports (Barcelona vs Newcastle football matches, NBA expansion, baseball player updates), 24 entertainment/celebrity (K-pop stories, TV show reviews, reality TV scandals including Joseph Duggar arrest coverage), 18 international news unrelated to Taiwan (European politics, Middle East coverage, other countries' domestic affairs), 11 technology/business stories not Taiwan-specific, 5 miscellaneous (weather, lifestyle, human interest)",
+  "search_results_total": 233,
+  "stories_identified": 9,
+  "off_topic_filtered": 147,
+  "noise_summary": "147 off-topic results filtered: 89 international news (Czech public transport, British military, CBS News layoffs, Iran war coverage, Joseph Duggar arrest stories), 32 sports (Barcelona-Newcastle Champions League, various sporting events), 18 entertainment/lifestyle, 8 business/finance unrelated to Taiwan actors.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Beijing condemns Lai Ching-te over remarks praising Japanese colonial rule",
-      "summary": "Chinese officials harshly criticized President Lai Ching-te after he suggested early KMT rule was worse than Japanese colonial administration. Beijing accused Lai of 'glorifying Japanese colonial rule' and distorting history to promote independence.",
+      "headline": "Beijing condemns Lai Ching-te for 'glorifying Japanese colonial rule' in speech",
+      "summary": "Chinese officials accused Taiwan President Lai Ching-te of 'glorifying Japanese colonial rule' after he made comparisons between early KMT rule and the Japanese colonial period, calling it worse than colonial rule. Beijing denounced this as an attempt to distort history and seek Taiwan independence.",
       "actors_involved": [
-        "Lai Ching-te",
-        "DPP"
+        "Lai Ching-te"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
+      "source_count": 3,
       "sources": [
-        "english.news.cn",
         "scmp.com",
-        "agenzianova.com",
-        "portuguese.news.cn",
-        "spanish.xinhuanet.com",
-        "substack.com",
-        "bloomberg.com",
-        "washingtontimes.com"
+        "english.news.cn",
+        "brookings.edu"
       ],
-      "date_range": "2026-03-14 to 2026-03-20",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
         {
-          "title": "Lai Ching-te's attempt to reverse process of China's reunification by distorting history doomed to fail: spokesperson",
+          "title": "Taiwan leader William Lai 'glorifying Japanese colonial rule', Beijing says",
+          "source": "scmp.com",
+          "url": "https://scmp.com/news/china/diplomacy/article/3347164/taiwan-leader-william-lai-glorifying-japanese-colonial-rule-beijing-says",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Lai Ching-te's attempt to reverse process of China's reunification by distorting history doomed to fail: spokesperson-Xinhua",
           "source": "english.news.cn",
           "url": "https://english.news.cn/20260318/cb76489ee90a47319eaa0e3512d8e145/c.html",
           "date": "2026-03-18"
         },
         {
-          "title": "Taiwan leader William Lai 'glorifying Japanese colonial rule', Beijing says",
-          "source": "scmp.com",
-          "url": "https://www.scmp.com/news/china/diplomacy/article/3347164/taiwan-leader-william-lai-glorifying-japanese-colonial-rule-beijing-says",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Taiwan: Pechino accusa Lai di glorificare il colonialismo giapponese",
-          "source": "agenzianova.com",
-          "url": "https://www.agenzianova.com/news/taiwan-pechino-accusa-lai-di-glorificare-il-colonialismo-giapponese-intensificate-le-sortite-aeree/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "A tentativa de Lai Ching-te de reverter o processo de reunifica\u00e7\u00e3o da China distorcendo a hist\u00f3ria est\u00e1 fadada ao fracasso",
-          "source": "portuguese.news.cn",
-          "url": "https://portuguese.news.cn/20260319/6c19c7fa2f4a4782a0838a6a7522917a/c.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "(Multimedia) Intento de Lai Ching-te de revertir proceso de reunificaci\u00f3n de China distorsionando la historia est\u00e1 condenado a fracasar",
-          "source": "spanish.xinhuanet.com",
-          "url": "https://spanish.xinhuanet.com/20260318/23e61bba36434a539ffa8d44d7b19fea/c.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "That's easily the most insanely provocative statement that Taiwan's Lai Ching-Te has ever made",
-          "source": "substack.com",
-          "url": "https://substack.com/@arnaudbertrand/note/c-228419394",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "China Rejects Lai Remarks Linking Democracy With Sovereignty",
-          "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-03-14/china-rejects-lai-remarks-linking-democracy-with-sovereignty",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Lee Tung-hui and the Taiwan alternative",
-          "source": "washingtontimes.com",
-          "url": "https://washingtontimes.com/news/2026/mar/20/lee-tung-hui-taiwan-alternative",
-          "date": "2026-03-20"
+          "title": "The case for greater clarity and less ambiguity in the Taiwan Strait",
+          "source": "brookings.edu",
+          "url": "https://brookings.edu/articles/the-case-for-greater-clarity-and-less-ambiguity-in-the-taiwan-strait",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://english.news.cn/20260318/cb76489ee90a47319eaa0e3512d8e145/c.html",
-        "https://www.scmp.com/news/china/diplomacy/article/3347164/taiwan-leader-william-lai-glorifying-japanese-colonial-rule-beijing-says"
+        "https://scmp.com/news/china/diplomacy/article/3347164/taiwan-leader-william-lai-glorifying-japanese-colonial-rule-beijing-says",
+        "https://english.news.cn/20260318/cb76489ee90a47319eaa0e3512d8e145/c.html"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Lai Ching-te proposes $40 billion defense budget citing Taiwan's strong economy",
-      "summary": "President Lai announced a special US$40 billion defense budget proposal, arguing Taiwan's booming economy can afford increased military spending. The proposal comes amid rising threats from China and U.S. emphasis on collective burden-sharing.",
-      "actors_involved": [
-        "Lai Ching-te"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 6,
-      "sources": [
-        "channelnewsasia.com",
-        "brookings.edu",
-        "taipeitimes.com",
-        "straitstimes.com",
-        "sightlineu3o8.com",
-        "tmuhprc.tmu.edu.tw"
-      ],
-      "date_range": "2026-03-14 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Booming Taiwan can well afford more military spending, president says",
-          "source": "channelnewsasia.com",
-          "url": "https://channelnewsasia.com/east-asia/taiwan-budget-military-defence-spending-lai-ching-te-5993236",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "The case for greater clarity and less ambiguity in the Taiwan Strait",
-          "source": "brookings.edu",
-          "url": "https://brookings.edu/articles/the-case-for-greater-clarity-and-less-ambiguity-in-the-taiwan-strait",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Taiwan leader says two nuclear power plants 'meet conditions' to restart",
-          "source": "straitstimes.com",
-          "url": "https://www.straitstimes.com/asia/east-asia/taiwan-leader-says-two-nuclear-power-plants-meet-conditions-to-restart",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Lai signals openness to nuclear energy for AI development",
-          "source": "sightlineu3o8.com",
-          "url": "https://sightlineu3o8.com/2026/03/lai-signals-openness-to-nuclear-energy-for-ai-development/",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Lai reveals nuclear power revival plan",
-          "source": "taipeitimes.com",
-          "url": "https://taipeitimes.com/News/front/archives/2026/03/22/2003854247",
-          "date": "2026-03-22"
-        },
-        {
-          "title": "President Lai Ching-te recently proposed suspending drug price adjustments for three years",
-          "source": "tmuhprc.tmu.edu.tw",
-          "url": "https://tmuhprc.tmu.edu.tw/en/%E3%80%90media-reportpresident-lai-ching-te-recently-proposed-suspending-drug-price-adjustments-for-three-years-sparking-heated-discussion-within-the-medical-and-pharmaceutical-sectors-lee-po-chang/",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://channelnewsasia.com/east-asia/taiwan-budget-military-defence-spending-lai-ching-te-5993236",
-        "https://www.straitstimes.com/asia/east-asia/taiwan-leader-says-two-nuclear-power-plants-meet-conditions-to-restart"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Premier Cho Jung-tai's private Japan baseball trip draws diplomatic criticism",
-      "summary": "Premier Cho Jung-tai attended a World Baseball Classic game in Tokyo, claiming it was privately funded. Beijing criticized the visit while domestic critics questioned the appropriateness of the trip amid political tensions.",
+      "headline": "Premier Cho Jung-tai's Japan baseball trip sparks political controversy",
+      "summary": "Premier Cho Jung-tai's personally-funded trip to Tokyo to watch Taiwan's World Baseball Classic game drew criticism and scrutiny from political opponents. Cho defended the trip as 'baseball diplomacy' and paid for personally, marking the first such visit by Taiwan leadership since 1972.",
       "actors_involved": [
         "Cho Jung-tai"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 5,
+      "source_count": 4,
       "sources": [
-        "scmp.com",
-        "tcn.tw",
         "taipeitimes.com",
-        "taiwannews.com.tw",
-        "nbcnews.com"
+        "tcn.tw",
+        "legalinsurrection.com",
+        "taiwannews.com.tw"
       ],
-      "date_range": "2026-03-07 to 2026-03-22",
+      "date_range": "2026-03-19 to 2026-03-22",
       "articles": [
-        {
-          "title": "Swing and a miss? Taiwan's premier under fire over baseball trip to Tokyo",
-          "source": "scmp.com",
-          "url": "https://www.scmp.com/news/china/politics/article/3346546/swing-and-miss-taiwans-premier-under-fire-over-baseball-trip-tokyo",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Taiwan premier's Japan WBC trip sparks diplomatic ripples and domestic scrutiny",
-          "source": "tcn.tw",
-          "url": "https://tcn.tw/news/6797313",
-          "date": "2026-03-18"
-        },
         {
           "title": "Attacks on premier's Japan trip infuriating",
           "source": "taipeitimes.com",
@@ -182,181 +72,44 @@
           "date": "2026-03-22"
         },
         {
+          "title": "Taiwan premier's Japan WBC trip sparks diplomatic ripples and domestic scrutiny",
+          "source": "tcn.tw",
+          "url": "https://tcn.tw/news/6797313",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "China's Air Displays Fail to Deter Emerging Taiwan\u2013Japan Alignment",
+          "source": "legalinsurrection.com",
+          "url": "https://legalinsurrection.com/2026/03/chinas-air-displays-fail-to-deter-emerging-taiwan-japan-alignment",
+          "date": "2026-03-20"
+        },
+        {
           "title": "KMT questions Cho's stance on NT$71.8 billion budget",
           "source": "taiwannews.com.tw",
           "url": "https://www.taiwannews.com.tw/en/news/6324078",
           "date": "2026-03-19"
-        },
-        {
-          "title": "Taiwan rejects Beijing's sovereignty claims, saying only the island's 23 million people can decide its future",
-          "source": "nbcnews.com",
-          "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-war-energy-prices-trump-gas-field-israel-qatar-rcna264010",
-          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.scmp.com/news/china/politics/article/3346546/swing-and-miss-taiwans-premier-under-fire-over-baseball-trip-tokyo",
-        "https://tcn.tw/news/6797313"
+        "https://tcn.tw/news/6797313",
+        "https://www.taipeitimes.com/News/editorials/archives/2026/03/22/2003854241"
       ]
     },
     {
-      "story_id": 4,
-      "headline": "President Lai hosts 2026 Yushan Forum promoting Indo-Pacific cooperation",
-      "summary": "President Lai delivered opening remarks at the annual Yushan Forum, emphasizing democratic partnerships and Taiwan's role in Indo-Pacific supply chain cooperation. The forum focused on Taiwan's technology strengths and regional resilience.",
-      "actors_involved": [
-        "Lai Ching-te"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
-      "sources": [
-        "taipeitimes.com",
-        "focustaiwan.tw",
-        "aninews.in",
-        "tribuneindia.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Lai promotes unity, democracy at 2026 Yushan Forum",
-          "source": "taipeitimes.com",
-          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/16/2003853919",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "President Lai urges supply chain cooperation among democracies",
-          "source": "focustaiwan.tw",
-          "url": "https://focustaiwan.tw/politics/202603160012",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Lai pushes democratic partnership at Yushan forum",
-          "source": "taipeitimes.com",
-          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/17/2003853962",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Taiwan hosts APEC Workshop Highlights Innovative Technologies for Low-Carbon Food Supply Chains",
-          "source": "aninews.in",
-          "url": "https://www.aninews.in/news/business/taiwan-hosts-apec-workshop-highlights-innovative-technologies-for-low-carbon-food-supply-chains20260320100854?amp=1",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://taipeitimes.com/News/taiwan/archives/2026/03/16/2003853919",
-        "https://focustaiwan.tw/politics/202603160012"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Defense Minister Wellington Koo warns of pressing China military threat",
-      "summary": "Defense Minister Wellington Koo said China poses a pressing threat with continued military buildup and emphasized need for effective deterrence. He dismissed reports of MQ-9B drone delivery delays and confirmed U.S. weapons schedules remain on track.",
-      "actors_involved": [
-        "Wellington Koo"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 4,
-      "sources": [
-        "focustaiwan.tw",
-        "reuters.com",
-        "sg.news.yahoo.com",
-        "mirror.co.uk"
-      ],
-      "date_range": "2026-03-15 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Taiwan military official denies delay in delivery of MQ-9Bs",
-          "source": "focustaiwan.tw",
-          "url": "https://focustaiwan.tw/politics/202603150006",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "China poses pressing threat, deterrence needed to avert invasion, Taiwan says",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/world/china/china-poses-pressing-threat-deterrence-needed-avert-invasion-taiwan-says-2026-03-20/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Taiwan's Defence Minister Wellington Koo emphasised that Chinese naval vessels remained active",
-          "source": "sg.news.yahoo.com",
-          "url": "https://sg.news.yahoo.com/live/tan-see-leng-reassures-singapores-energy-security-amid-global-tensions-2026-degree-ranking-reveals-top-jobs-for-fresh-grads-singapore-live-news-013557739.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Taiwan under threat from Chinese planes ahead of major Donald Trump visit",
-          "source": "mirror.co.uk",
-          "url": "https://www.mirror.co.uk/news/world-news/taiwan-under-threat-chinese-planes-36873623",
-          "date": "2026-03-15"
-        }
-      ],
-      "representative_urls": [
-        "https://www.reuters.com/world/china/china-poses-pressing-threat-deterrence-needed-avert-invasion-taiwan-says-2026-03-20/",
-        "https://focustaiwan.tw/politics/202603150006"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "KMT and TPP agree cooperation pact for 2026 local elections",
-      "summary": "Taiwan's main opposition KMT and the smaller TPP approved a cooperation agreement for local elections, agreeing to jointly field candidates and coordinate in areas where both parties have nominees. Leaders emphasized shared governance goals beyond mere electoral alliance.",
-      "actors_involved": [
-        "KMT",
-        "Taiwan People's Party"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "focustaiwan.tw",
-        "taipeitimes.com",
-        "taiwannews.com.tw",
-        "en.namu.wiki"
-      ],
-      "date_range": "2026-03-14 to 2026-03-20",
-      "articles": [
-        {
-          "title": "KMT, TPP approve cooperation pact for local elections",
-          "source": "focustaiwan.tw",
-          "url": "https://focustaiwan.tw/politics/202603180022",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "KMT, TPP to collaborate for presidential election",
-          "source": "taipeitimes.com",
-          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/15/2003853847",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "KMT, TPP team up for November local elections",
-          "source": "focustaiwan.tw",
-          "url": "https://focustaiwan.tw/politics/202603140008",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "DPP's Lin Kuo-chang leads in Yilan County magistrate race",
-          "source": "taiwannews.com.tw",
-          "url": "https://taiwannews.com.tw/news/6324809",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://focustaiwan.tw/politics/202603180022",
-        "https://taipeitimes.com/News/taiwan/archives/2026/03/15/2003853847"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "TSMC chairman dismisses Chinese robotics capabilities in tech speech",
-      "summary": "TSMC Chairman C.C. Wei said Chinese robots are 'useless' without advanced semiconductor 'brains,' noting that 95% of robot processors are manufactured by TSMC. Wei spoke at Asia University about Taiwan's technological advantages in AI development.",
+      "story_id": 3,
+      "headline": "TSMC chairman dismisses Chinese robotics capabilities, touts chip dominance",
+      "summary": "TSMC Chairman C.C. Wei dismissed Chinese robots as 'useless' and emphasized Taiwan's dominance in manufacturing AI chips, stating that 95% of robot 'brains' are manufactured by TSMC. Wei made these comments while receiving an honorary degree and discussing Taiwan's technological leadership.",
       "actors_involved": [
         "TSMC"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 4,
+      "source_count": 3,
       "sources": [
         "taiwannews.com.tw",
         "digitimes.com",
-        "news.ltn.com.tw",
-        "ec.ltn.com.tw"
+        "news.ltn.com.tw"
       ],
-      "date_range": "2026-03-21 to 2026-03-22",
+      "date_range": "2026-03-20 to 2026-03-22",
       "articles": [
         {
           "title": "TSMC chair dismisses Chinese robots as useless",
@@ -374,13 +127,7 @@
           "title": "\u300aTAIPEI TIMES\u300bTSMC chair gets honorary degree",
           "source": "news.ltn.com.tw",
           "url": "https://news.ltn.com.tw/news/focus/breakingnews/5378284",
-          "date": "2026-03-22"
-        },
-        {
-          "title": "\u5225\u518d\u7336\u8c6b\uff01\u53f0\u7a4d\u96fb\u662f\u5927\u91cf\u8cb7\u5165\u7684\u660e\u78ba\u9078\u64c7 \u5916\u5a92\u5168\u8aaa\u4e86",
-          "source": "ec.ltn.com.tw",
-          "url": "https://ec.ltn.com.tw/article/breakingnews/5373412",
-          "date": "2026-03-18"
+          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
@@ -389,117 +136,169 @@
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Taiwan detects multiple Chinese military aircraft and naval vessels near territory",
-      "summary": "Taiwan's Ministry of Defense reported detecting various numbers of Chinese PLA aircraft and PLAN vessels operating around Taiwan's territory, with many crossing the median line of the Taiwan Strait and entering Taiwan's air defense identification zone.",
+      "story_id": 4,
+      "headline": "KMT faces internal tensions over leadership and attendance issues",
+      "summary": "Nearly one-third of KMT lawmakers skipped a lunch with party chairwoman Cheng Li-wun, highlighting growing discontent within the party over leadership decisions regarding defense budget and local elections. The poor attendance coincided with rumors of rising internal disputes.",
       "actors_involved": [
-        "Republic of China Armed Forces"
+        "KMT"
       ],
-      "signal_category_hint": "security_defense",
-      "source_count": 3,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
       "sources": [
-        "aninews.in",
-        "newsable.asianetnews.com",
-        "reuters.com"
+        "taipeitimes.com",
+        "kmt.org.tw"
       ],
-      "date_range": "2026-03-16 to 2026-03-20",
+      "date_range": "2026-03-18 to 2026-03-20",
       "articles": [
         {
-          "title": "Taiwan detects 2 sorties of PLA aircraft, 7 PLAN vessels around its territory",
-          "source": "aninews.in",
-          "url": "https://aninews.in/news/world/asia/taiwan-detects-2-sorties-of-pla-aircraft-7-plan-vessels-around-its-territory20260316071017/",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Taiwan detects 28 Chinese jets; 21 cross median line, enter ADIZ",
-          "source": "newsable.asianetnews.com",
-          "url": "https://newsable.asianetnews.com/world/taiwan-detects-28-chinese-jets-21-cross-median-line-enter-adiz-articleshow-1fowzg8",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Taiwan detects 36 Chinese aircraft, 8 vessels, ship around itself",
-          "source": "aninews.in",
-          "url": "https://aninews.in/news/world/asia/taiwan-detects-36-chinese-aircraft-8-vessels-ship-around-itself20260318161547/",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://aninews.in/news/world/asia/taiwan-detects-2-sorties-of-pla-aircraft-7-plan-vessels-around-its-territory20260316071017/",
-        "https://newsable.asianetnews.com/world/taiwan-detects-28-chinese-jets-21-cross-median-line-enter-adiz-articleshow-1fowzg8"
-      ]
-    },
-    {
-      "story_id": 9,
-      "headline": "Taiwan military conducts urban warfare drone strike exercises",
-      "summary": "The Republic of China Army conducted its first urban warfare drone strike exercises, with units from the 58th Artillery Command operating FPV drones to locate and engage simulated hostile forces in buildings and vehicles.",
-      "actors_involved": [
-        "Republic of China Armed Forces"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 2,
-      "sources": [
-        "militarywatchmagazine.com",
-        "taipeitimes.com"
-      ],
-      "date_range": "2026-03-10 to 2026-03-22",
-      "articles": [
-        {
-          "title": "Republic of China Army Conducts First Urban Warfare Drone Strike Exercises",
-          "source": "militarywatchmagazine.com",
-          "url": "https://militarywatchmagazine.com/article/republic-china-army-urban-warfare-drone-strike",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Lai reveals nuclear power revival plan - Premier discusses drone industry development",
+          "title": "Many no-shows at lunch with KMT chair",
           "source": "taipeitimes.com",
-          "url": "https://taipeitimes.com/News/front/archives/2026/03/22/2003854247",
-          "date": "2026-03-22"
+          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/20/2003854150",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Donovan's Deep Dives: KMT heavyweights clash in Taichung",
+          "source": "taipeitimes.com",
+          "url": "https://taipeitimes.com/News/feat/archives/2026/03/19/2003854072",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "\u912d\u9e97\u6587\u4e3b\u5e2d\u671f\u8a31\u85cd\u767d\u5408\u4f5c\u300c\u4efb\u91cd\u9053\u9060\u300d \u70ba2028 \u653f\u9ee8\u8f2a\u66ff\u5960\u5b9a\u5805\u4e0d\u53ef\u6467\u7684\u5408\u4f5c\u57fa\u77f3",
+          "source": "kmt.org.tw",
+          "url": "https://www.kmt.org.tw/2026/03/2028.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "\u4e2d\u5e38\u6703\u901a\u904e\u5c39\u4e43\u83c1\u64d4\u4efb\u6587\u50b3\u6703\u4e3b\u59d4\u6848",
+          "source": "kmt.org.tw",
+          "url": "https://www.kmt.org.tw/2026/03/blog-post_18.html",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://militarywatchmagazine.com/article/republic-china-army-urban-warfare-drone-strike",
-        "https://taipeitimes.com/News/front/archives/2026/03/22/2003854247"
+        "https://taipeitimes.com/News/taiwan/archives/2026/03/20/2003854150",
+        "https://taipeitimes.com/News/feat/archives/2026/03/19/2003854072"
       ]
     },
     {
-      "story_id": 10,
-      "headline": "President Lai meets with St. Vincent deputy prime minister",
-      "summary": "President Lai Ching-te met with St. Vincent and the Grenadines Deputy Prime Minister Hon. St. Clair Leacock to discuss the 45-year diplomatic relationship between the two countries.",
+      "story_id": 5,
+      "headline": "Lai Ching-te conducts diplomatic meetings with foreign officials",
+      "summary": "President Lai Ching-te met with multiple foreign dignitaries including St. Vincent's deputy prime minister and Japan's Keiji Furuya to discuss cooperation on AI, cybersecurity, and energy. Lai also spoke at the Yushan Forum promoting democratic partnerships and supply chain cooperation.",
       "actors_involved": [
         "Lai Ching-te"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 1,
+      "source_count": 4,
       "sources": [
-        "rti.org.tw"
+        "rti.org.tw",
+        "focustaiwan.tw",
+        "taipeitimes.com",
+        "news.tvbs.com.tw"
       ],
-      "date_range": "2026-03-05",
+      "date_range": "2026-03-15 to 2026-03-16",
       "articles": [
         {
-          "title": "President Lai highlights 45 years of ties with St. Vincent",
+          "title": "President Lai highlights 45 years of ties with St. Vincent-News-Radio Taiwan International",
           "source": "rti.org.tw",
           "url": "https://rti.org.tw/en/news?pid=198122&uid=3",
-          "date": "2026-03-05"
+          "date": "2026-03-15"
+        },
+        {
+          "title": "President Lai urges supply chain cooperation among democracies",
+          "source": "focustaiwan.tw",
+          "url": "https://focustaiwan.tw/politics/202603160012",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Lai promotes unity, democracy at 2026 Yushan Forum",
+          "source": "taipeitimes.com",
+          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/16/2003853919",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Taiwan President Lai Ching-te meets Japan's Keiji Furuya\u2502TVBS\u65b0\u805e\u7db2",
+          "source": "news.tvbs.com.tw",
+          "url": "https://news.tvbs.com.tw/english/3152754",
+          "date": "2026-03-16"
         }
       ],
       "representative_urls": [
-        "https://rti.org.tw/en/news?pid=198122&uid=3"
+        "https://focustaiwan.tw/politics/202603160012",
+        "https://taipeitimes.com/News/taiwan/archives/2026/03/16/2003853919"
       ]
     },
     {
-      "story_id": 11,
-      "headline": "Premier approves expansion of migrant domestic helper eligibility",
-      "summary": "Premier Cho Jung-tai approved expanding eligibility for hiring migrant domestic helpers, with employers required to pay monthly fees of NT$2,000-NT$10,000 to fund Ministry of Labor measures aimed at protecting Taiwanese workers.",
+      "story_id": 6,
+      "headline": "KMT-TPP approve cooperation pact for local elections",
+      "summary": "Taiwan's main opposition KMT and the smaller TPP approved a cooperation agreement for local elections, agreeing to jointly field candidates and coordinate in areas where both parties have nominees including New Taipei, Yilan County and other constituencies.",
       "actors_involved": [
-        "Cho Jung-tai"
+        "KMT",
+        "Taiwan People's Party"
       ],
-      "signal_category_hint": "economic_tech",
+      "signal_category_hint": "domestic_regime",
       "source_count": 1,
       "sources": [
         "focustaiwan.tw"
       ],
-      "date_range": "2026-03-19",
+      "date_range": "2026-03-18",
       "articles": [
+        {
+          "title": "KMT, TPP approve cooperation pact for local elections",
+          "source": "focustaiwan.tw",
+          "url": "https://focustaiwan.tw/politics/202603180022",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://focustaiwan.tw/politics/202603180022"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Prosecutors raid KMT councilor's office in corruption probe",
+      "summary": "Taipei prosecutors searched the office and residence of KMT Taipei City Councilor Lee Fu Chung-wu over alleged corruption tied to fraudulent assistant expense claims. Lee is a fourth-term councilor and former police officer who previously served on the KMT Central Standing Committee.",
+      "actors_involved": [
+        "KMT"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 1,
+      "sources": [
+        "taipeitimes.com"
+      ],
+      "date_range": "2026-03-20",
+      "articles": [
+        {
+          "title": "Prosecutors raid KMT Taipei councilor's office",
+          "source": "taipeitimes.com",
+          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/20/2003854182",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://taipeitimes.com/News/taiwan/archives/2026/03/20/2003854182"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Premier announces UAV industry development and migrant worker expansion",
+      "summary": "Premier Cho Jung-tai announced plans to cultivate Taiwan's drone industry over five years with NT$44.2 billion in funding to create a non-red supply chain. He also approved expanding eligibility for migrant domestic helpers with new monthly fees for employers.",
+      "actors_involved": [
+        "Cho Jung-tai"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
+      "sources": [
+        "taipeitimes.com",
+        "focustaiwan.tw"
+      ],
+      "date_range": "2026-03-19 to 2026-03-22",
+      "articles": [
+        {
+          "title": "Lai reveals nuclear power revival plan",
+          "source": "taipeitimes.com",
+          "url": "https://taipeitimes.com/News/front/archives/2026/03/22/2003854247",
+          "date": "2026-03-22"
+        },
         {
           "title": "Premier greenlights migrant domestic helper eligibility expansion",
           "source": "focustaiwan.tw",
@@ -508,65 +307,62 @@
         }
       ],
       "representative_urls": [
+        "https://taipeitimes.com/News/front/archives/2026/03/22/2003854247",
         "https://focustaiwan.tw/society/202603190017"
       ]
     },
     {
-      "story_id": 12,
-      "headline": "DPP lawmakers form alliance to prioritize child and family legislation",
-      "summary": "Three DPP lawmakers formed the 'Fight for the Next Generation Alliance' to push 11 bills supporting families, children and childcare during the current legislative session, focusing on accessible childcare and employment protections for working parents.",
+      "story_id": 9,
+      "headline": "Defense Minister addresses MQ-9B drone delivery timeline amid regional tensions",
+      "summary": "Defense Minister Wellington Koo questioned the credibility of reports suggesting delays in MQ-9B drone deliveries from the US, stating no weapons deliveries have been affected by Middle East conflicts. China resumed Taiwan overflights after a two-week lull, prompting continued military vigilance.",
       "actors_involved": [
-        "DPP"
+        "Wellington Koo"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
       "sources": [
-        "taipeitimes.com"
+        "focustaiwan.tw",
+        "firstpost.com"
       ],
-      "date_range": "2026-03-17",
+      "date_range": "2026-03-15 to 2026-03-16",
       "articles": [
         {
-          "title": "DPP prioritizes child and family bills",
-          "source": "taipeitimes.com",
-          "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/17/2003853968",
-          "date": "2026-03-17"
+          "title": "Taiwan military official denies delay in delivery of MQ-9Bs",
+          "source": "focustaiwan.tw",
+          "url": "https://focustaiwan.tw/politics/202603150006",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "China resumes Taiwan overflights ahead of Trump's Beijing visit \u2014 is it a warning or a warm-up?",
+          "source": "firstpost.com",
+          "url": "https://www.firstpost.com/world/china-resumes-taiwan-overflights-ahead-of-trumps-beijing-visit-is-it-a-warning-or-a-warm-up-13989923.html",
+          "date": "2026-03-16"
         }
       ],
       "representative_urls": [
-        "https://taipeitimes.com/News/taiwan/archives/2026/03/17/2003853968"
+        "https://focustaiwan.tw/politics/202603150006",
+        "https://www.firstpost.com/world/china-resumes-taiwan-overflights-ahead-of-trumps-beijing-visit-is-it-a-warning-or-a-warm-up-13989923.html"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Taiwan-Japan meeting on AI and cybersecurity cooperation",
-      "source": "news.tvbs.com.tw",
-      "url": "https://news.tvbs.com.tw/english/3152754",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "President Lai proposes suspending drug price adjustments for three years",
+      "source": "tmuhprc.tmu.edu.tw",
+      "url": "https://tmuhprc.tmu.edu.tw/en/%E3%80%90media-reportpresident-lai-ching-te-recently-proposed-suspending-drug-price-adjustments-for-three-years-sparking-heated-discussion-within-the-medical-and-pharmaceutical-sectors-lee-po-chang/",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Kaohsiung signs semiconductor MOU with Kumamoto and Arizona",
-      "source": "focustaiwan.tw",
-      "url": "https://focustaiwan.tw/business/202603140005",
+      "headline": "KMT procedure committee faces legislative dispute over prosecutor-general vote",
+      "source": "taipeitimes.com",
+      "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/18/2003854023",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "TSMC senior vice president Ho Li-mei announces retirement after 27 years",
+      "source": "bnext.com.tw",
+      "url": "https://www.bnext.com.tw/article/90373/tsmc-lora-ho-retire",
       "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "KMT lawmakers skip lunch with party chairwoman amid internal tensions",
-      "source": "taipeitimes.com",
-      "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/20/2003854150",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Taichung KMT factions clash over mayoral primary candidate selection",
-      "source": "taipeitimes.com",
-      "url": "https://taipeitimes.com/News/feat/archives/2026/03/19/2003854072",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Legislative Yuan procedure committee vote sparks political controversy",
-      "source": "taipeitimes.com",
-      "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/18/2003854023",
-      "signal_category_hint": "domestic_regime"
     }
   ]
 }

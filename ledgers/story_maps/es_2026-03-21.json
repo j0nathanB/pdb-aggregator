@@ -3,35 +3,34 @@
   "code": "es",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 506,
-  "stories_identified": 23,
-  "off_topic_filtered": 89,
-  "noise_summary": "89 off-topic results filtered: 34 football/sports stories (Hugo S\u00e1nchez events, Real Madrid matches, player transfers, league standings), 18 entertainment/celebrity news, 15 human interest stories, 12 regional/local government items, 6 lifestyle articles, 4 obituaries/death notices.",
+  "search_results_total": 360,
+  "stories_identified": 11,
+  "off_topic_filtered": 52,
+  "noise_summary": "52 off-topic results filtered: 28 sports (Hugo S\u00e1nchez football content, Cristopher S\u00e1nchez baseball, Robert S\u00e1nchez Chelsea goalkeeper, Formula E racing), 15 entertainment (actor Rodolfo Sancho, TV shows, music artists like Quevedo), 6 international business/finance news without Spanish political relevance, 3 miscellaneous lifestyle content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Felipe VI acknowledges colonial 'abuses' in America, triggering political debate and Mexican response",
-      "summary": "King Felipe VI admitted there was 'much abuse' during Spanish colonization of America while visiting a Mexican exhibition in Madrid, sparking political controversy in Spain and a positive response from Mexican President Sheinbaum who called it a 'gesture of rapprochement.'",
+      "headline": "King Felipe VI acknowledges 'much abuse' during Spanish conquest of America",
+      "summary": "King Felipe VI publicly recognized abuses and ethical controversies during Spain's colonization of America in comments made during a visit to an exhibition on indigenous Mexican women, marking a significant diplomatic gesture toward Mexico and drawing international attention including from The Times.",
       "actors_involved": [
-        "Felipe VI",
-        "King Felipe"
+        "Felipe VI"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 32,
+      "source_count": 18,
       "sources": [
         "elmundo.es",
-        "abc.es",
+        "theobjective.com",
+        "20minutos.es",
+        "rtve.es",
+        "diariovasco.com",
         "huffingtonpost.es",
         "publico.es",
         "elespanol.com",
-        "rtve.es",
-        "theobjective.com",
-        "eldebate.com",
-        "reuters.com",
-        "aa.com.tr",
-        "bbc.com",
-        "theolivepress.es",
-        "elconfidencial.com"
+        "ara.cat",
+        "infobae.com",
+        "elpais.com.uy",
+        "eluniversal.com.mx",
+        "xataka.com"
       ],
       "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
@@ -42,15 +41,45 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Felipe VI admite 'abusos' en la conquista de Am\u00e9rica y se l\u00eda en las redes: 'Reconoce que el agua moja'",
-          "source": "publico.es",
-          "url": "https://www.publico.es/tremending/felipe-vi-admite-abusos-conquista-america-lia-redes-reconoce-agua-moja.html",
+          "title": "Felipe VI reconoce que hubo 'mucho abuso' durante la conquista de Am\u00e9rica",
+          "source": "elmundo.es",
+          "url": "https://elmundo.es/espana/2026/03/16/69b80fb321efa0cf388b4573.html",
           "date": "2026-03-16"
         },
         {
           "title": "Felipe VI reconoce 'mucho abuso' en la conquista de Am\u00e9rica, un gesto de acercamiento a M\u00e9xico",
           "source": "rtve.es",
           "url": "https://www.rtve.es/noticias/20260316/felipe-vi-reconoce-mucho-abuso-conquista-america-gesto-acercamiento-a-mexico/16982932.shtml",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Felipe VI, ante el embajador mexicano: 'Hubo af\u00e1n protector, leyes... pero luego la realidad no es como se quiere y hay mucho abuso'",
+          "source": "20minutos.es",
+          "url": "https://20minutos.es/nacional/felipe-vi-ante-embajador-mexicano-hubo-afan-proteccion-leyes-indias-pero-realidad-no-es-como-se-quiere-hay-abuso_6946631_0.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Felipe VI reconoce ante el embajador mexicano que hubo 'mucho abuso' durante la Conquista",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/2026-03-16/felipe-vi-reconoce-abuso-conquista-america",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Hasta 'The Times' llega lo que dijo Felipe VI de la Conquista de Am\u00e9rica: ojo a la palabra que usan",
+          "source": "huffingtonpost.es",
+          "url": "https://huffingtonpost.es/virales/uno-medios-mas-leidos-reino-unido-define-asi-dijo-felipe-vi-conquista-america-f202603.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Felipe VI admite 'abusos' en la conquista de Am\u00e9rica y se l\u00eda en las redes: 'Reconoce que el agua moja'",
+          "source": "publico.es",
+          "url": "https://www.publico.es/tremending/felipe-vi-admite-abusos-conquista-america-lia-redes-reconoce-agua-moja.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Felipe VI reconoce ante el embajador de M\u00e9xico que hubo 'muchos abusos' durante la Conquista de Am\u00e9rica",
+          "source": "elespanol.com",
+          "url": "https://elespanol.com/espana/20260316/felipe-vi-reconoce-embajador-mexico-abusos-conquista-america/1003744171775_0.html",
           "date": "2026-03-16"
         }
       ],
@@ -61,116 +90,81 @@
     },
     {
       "story_id": 2,
-      "headline": "PP wins Castilla y Le\u00f3n elections with increased margin, PSOE holds ground, Vox reaches ceiling below 20%",
-      "summary": "Alfonso Fern\u00e1ndez Ma\u00f1ueco's PP wins regional elections in Castilla y Le\u00f3n with 33 seats, gaining ground over 2022. PSOE candidate Carlos Mart\u00ednez adds two seats to 28 total, while Vox achieves 18.9% but falls short of the 20% threshold, highlighting a potential electoral ceiling.",
-      "actors_involved": [
-        "Feij\u00f3o",
-        "PSOE"
-      ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 28,
-      "sources": [
-        "elmundo.es",
-        "20minutos.es",
-        "ondacero.es",
-        "huffingtonpost.es",
-        "rtve.es",
-        "elprogreso.es",
-        "lasprovincias.es",
-        "elespanol.com",
-        "abc.es"
-      ],
-      "date_range": "2026-03-15 to 2026-03-16",
-      "articles": [
-        {
-          "title": "El PP recupera terreno, el PSOE frena su ca\u00edda y Vox toca techo: radiograf\u00eda de las elecciones de Castilla y Le\u00f3n 2026",
-          "source": "elmundo.es",
-          "url": "https://www.elmundo.es/elecciones/elecciones-castilla-y-leon/2026/03/16/69b8129ce9cf4ad6648b4587.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Resultados Elecciones Castilla y Le\u00f3n en directo: el PP gana, el PSOE se refuerza y Vox se estanca",
-          "source": "ondacero.es",
-          "url": "https://www.ondacero.es/elecciones/castilla-leon/elecciones-castilla-leon-directo-escrutinio-resultados-participacion-psoe-vox_2026031569b657cae1ff634075e88940.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Mart\u00ednez rompe la mala racha electoral del PSOE y sube dos esca\u00f1os: 'Nos daban por amortizados. No lo est\u00e1bamos tanto'",
-          "source": "rtve.es",
-          "url": "https://www.rtve.es/noticias/20260315/elecciones-castilla-leon-2026-psoe-cronica/16981543.shtml",
-          "date": "2026-03-15"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elmundo.es/elecciones/elecciones-castilla-y-leon/2026/03/16/69b8129ce9cf4ad6648b4587.html",
-        "https://www.rtve.es/noticias/20260315/elecciones-castilla-leon-2026-psoe-cronica/16981543.shtml"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "S\u00e1nchez leads EU 'No to War' position on Iran conflict, approves emergency decree against economic effects",
-      "summary": "Pedro S\u00e1nchez maintains Spain's opposition to the US-Israel war against Iran, gaining EU support for his position. The government approves a 5-billion euro emergency decree with 80 measures to counter economic effects of the conflict, including energy subsidies and tax cuts.",
+      "headline": "S\u00e1nchez leads 'No to War' position on Iran conflict, gains European support",
+      "summary": "Pedro S\u00e1nchez positioned Spain against US-Israel military operations in Iran with a 'No to War' stance, eventually gaining support from other EU leaders at the European Council. The position created initial diplomatic tensions with the US but was later seen as successful Spanish leadership in Europe.",
       "actors_involved": [
         "S\u00e1nchez",
-        "Pedro S\u00e1nchez"
+        "PSOE"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 26,
+      "source_count": 12,
       "sources": [
-        "politico.eu",
         "euronews.com",
-        "eldiario.es",
-        "20minutos.es",
+        "politico.eu",
         "huffingtonpost.es",
-        "psoe.es",
+        "20minutos.es",
         "elespanol.com",
-        "lne.es"
+        "elmundo.es",
+        "eldiario.es",
+        "psoe.es"
       ],
       "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
+          "title": "S\u00e1nchez lleva su 'No a la guerra' a Bruselas y alerta del impacto energ\u00e9tico del conflicto en Ir\u00e1n",
+          "source": "es.euronews.com",
+          "url": "https://es.euronews.com/2026/03/19/sanchez-lleva-su-no-a-la-guerra-a-bruselas-y-alerta-del-impacto-energetico-del-conflicto-e",
+          "date": "2026-03-19"
+        },
+        {
           "title": "Spain takes victory lap as EU coalesces around S\u00e1nchez's anti-war position",
           "source": "politico.eu",
           "url": "https://politico.eu/article/spain-takes-victory-lap-as-rest-of-the-eu-coalesces-around-pedro-sanchez-anti-war-position",
-          "date": "2026-03-16"
+          "date": "2026-03-19"
         },
         {
-          "title": "S\u00e1nchez lleva su 'No a la guerra' a Bruselas y alerta del impacto energ\u00e9tico del conflicto en Ir\u00e1n",
-          "source": "euronews.com",
-          "url": "https://es.euronews.com/2026/03/19/sanchez-lleva-su-no-a-la-guerra-a-bruselas-y-alerta-del-impacto-energetico-del-conflicto-e",
+          "title": "S\u00e1nchez ense\u00f1a la carta que le ha escrito una mujer de Estados Unidos: destacan cinco palabras que lo dicen todo",
+          "source": "huffingtonpost.es",
+          "url": "https://huffingtonpost.es/virales/sanchez-ensena-carta-le-escrito-mujer-estados-unidos-unica-f202603.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Los 13 segundos de S\u00e1nchez antes de llegar al canciller Merz est\u00e1n dando la vuelta al mundo por esto que hace",
+          "source": "huffingtonpost.es",
+          "url": "https://huffingtonpost.es/virales/los-13-segundos-sanchez-llegar-canciller-merz-dando-vuelta-mundo-esto-f202603.html",
           "date": "2026-03-19"
         },
         {
           "title": "El Gobierno aprueba el mayor escudo social de la UE para responder a los efectos de la guerra de Ir\u00e1n",
           "source": "psoe.es",
           "url": "https://www.psoe.es/actualidad/noticias-actualidad/el-gobierno-aprueba-el-mayor-escudo-social-de-la-ue-para-responder-a-los-efectos-de-la-guerra-de-iran/",
-          "date": "2026-03-20"
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://politico.eu/article/spain-takes-victory-lap-as-rest-of-the-eu-coalesces-around-pedro-sanchez-anti-war-position",
-        "https://www.psoe.es/actualidad/noticias-actualidad/el-gobierno-aprueba-el-mayor-escudo-social-de-la-ue-para-responder-a-los-efectos-de-la-guerra-de-iran/"
+        "https://es.euronews.com/2026/03/19/sanchez-lleva-su-no-a-la-guerra-a-bruselas-y-alerta-del-impacto-energetico-del-conflicto-e",
+        "https://politico.eu/article/spain-takes-victory-lap-as-rest-of-the-eu-coalesces-around-pedro-sanchez-anti-war-position"
       ]
     },
     {
-      "story_id": 4,
-      "headline": "Government coalition crisis as Sumar blocks ministerial council over Iran emergency decree disagreements",
-      "summary": "Yolanda D\u00edaz's Sumar ministers briefly blocked the start of the extraordinary ministerial council over disagreements with PSOE about the Iran crisis decree, demanding housing measures and higher spending before reaching an agreement after two hours of tension.",
+      "story_id": 3,
+      "headline": "Government coalition crisis as Sumar ministers block cabinet meeting",
+      "summary": "Yolanda D\u00edaz and Sumar ministers staged an unprecedented blockade of a Council of Ministers meeting to force changes to the government's anti-crisis measures related to the Iran war. The crisis was resolved after tense negotiations that delayed the meeting for hours.",
       "actors_involved": [
+        "Yolanda D\u00edaz",
         "S\u00e1nchez",
-        "Pedro S\u00e1nchez",
-        "Yolanda D\u00edaz"
+        "PSOE"
       ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 18,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 15,
       "sources": [
         "20minutos.es",
         "huffingtonpost.es",
         "eldiario.es",
+        "ondacero.es",
         "vozpopuli.com",
         "elespanol.com",
-        "elsaltodiario.com",
-        "democrata.es"
+        "elsaltodiario.com"
       ],
       "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
@@ -178,19 +172,31 @@
           "title": "El cisma in\u00e9dito con Sumar fuerza a S\u00e1nchez a ceder y ensombrece su estrategia de rentabilizar el plan ante la guerra de Ir\u00e1n",
           "source": "20minutos.es",
           "url": "https://www.20minutos.es/nacional/cisma-inedito-con-sumar-fuerza-sanchez-ceder-ensombrece-su-estrategia-rentabilizar-plan-ante-guerra-iran_6948746_0.html",
-          "date": "2026-03-18"
+          "date": "2026-03-21"
         },
         {
           "title": "'\u00a1Ya est\u00e1 bien!': as\u00ed se plant\u00f3 Yolanda D\u00edaz ante Pedro S\u00e1nchez",
           "source": "huffingtonpost.es",
           "url": "https://www.huffingtonpost.es/politica/ya-esta-asi-planto-yolanda-diaz-pedro-sanchezbr-f202603.html",
-          "date": "2026-03-20"
+          "date": "2026-03-21"
         },
         {
           "title": "S\u00e1nchez salva el cisma con Sumar, arrastra a la UE al 'no a la guerra' y deja a Feij\u00f3o en una posici\u00f3n imposible",
           "source": "eldiario.es",
           "url": "https://www.eldiario.es/politica/sanchez-salva-cisma-sumar-arrastra-ue-no-guerra-deja-feijoo-posicion-imposible_129_13085991.html",
-          "date": "2026-03-20"
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Viernes negro en Moncloa: S\u00e1nchez, contra las cuerdas entre el pulso de Yolanda D\u00edaz y el \u00f3rdago de Escribano",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/espana/politica/viernes-negro-en-moncloa-sanchez-contra-las-cuerdas-entre-el-pulso-de-yolanda-diaz-y-el-ordago-de-escribano.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "PSOE y Sumar acuerdan incluir la pr\u00f3rroga de los alquileres en un segundo decreto",
+          "source": "elsaltodiario.com",
+          "url": "https://www.elsaltodiario.com/gobierno-coalicion/psoe-se-alinea-pp-medidas-anticrisis-guerra-iran",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
@@ -199,32 +205,37 @@
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Yolanda D\u00edaz faces criticism over expensive Oscar trip while stepping back from Sumar leadership",
-      "summary": "Labor Minister Yolanda D\u00edaz traveled to the Oscars costing over 7,000 euros in business class tickets to support filmmaker Oliver Laxe, drawing criticism from opposition while she prepares to step down from leading Sumar coalition for future elections.",
+      "story_id": 4,
+      "headline": "Yolanda D\u00edaz faces criticism over publicly-funded trip to Oscar ceremony",
+      "summary": "Yolanda D\u00edaz attended the Oscar ceremony in Los Angeles at public expense to support Spanish film 'Sirat', generating controversy over the cost (over 7,000 euros) and appropriateness of the trip amid electoral defeats for her party Sumar.",
       "actors_involved": [
         "Yolanda D\u00edaz"
       ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 25,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 24,
       "sources": [
+        "okdiario.com",
         "abc.es",
         "elmundo.es",
-        "okdiario.com",
+        "eleconomista.es",
         "vozpopuli.com",
         "huffingtonpost.es",
         "libertaddigital.com",
-        "eldebate.com",
-        "eleconomista.es",
         "theobjective.com"
       ],
       "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
         {
-          "title": "Yolanda D\u00edaz viaja a Estados Unidos para asistir a la ceremonia de los Oscar",
-          "source": "abc.es",
-          "url": "https://www.abc.es/espana/yolanda-diaz-viaja-estados-unidos-asistir-ceremonia-20260315123057-nt.html",
+          "title": "Yolanda D\u00edaz viaja a la gala de los Oscar en Los \u00c1ngeles con dinero p\u00fablico: acude como 'ministra de Trabajo'",
+          "source": "okdiario.com",
+          "url": "https://okdiario.com/espana/yolanda-diaz-acude-oscar-como-ministra-trabajo-viaje-pagado-dinero-publico-16420168",
           "date": "2026-03-15"
+        },
+        {
+          "title": "Yolanda D\u00edaz se gast\u00f3 m\u00e1s de 7.000 en un billete en business para ir a los Oscar",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/yolanda-diaz-viajo-business-billete-3000-euros-20260316124027-nt.html",
+          "date": "2026-03-16"
         },
         {
           "title": "La cifra que retrata a Yolanda D\u00edaz: su vuelo de ida en 'business' a los Oscar cost\u00f3 7.701,64 euros",
@@ -233,45 +244,49 @@
           "date": "2026-03-16"
         },
         {
-          "title": "IU propone a sus aliados 'acelerar' el relevo de Yolanda D\u00edaz y tener candidato para las generales antes de mayo",
-          "source": "elmundo.es",
-          "url": "https://www.elmundo.es/espana/2026/03/17/69b95287e4d4d8875e8b4579.html",
+          "title": "Yolanda D\u00edaz dice sin sonrojarse que fue a los Oscar con dinero p\u00fablico para 'defender la creaci\u00f3n art\u00edstica'",
+          "source": "okdiario.com",
+          "url": "https://okdiario.com/espana/yolanda-diaz-dice-sin-sonrojarse-que-fue-oscar-dinero-publico-defender-creacion-artistica-16435268",
           "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://www.vozpopuli.com/espana/politica/la-cifra-que-retrata-a-yolanda-diaz-su-vuelo-de-ida-en-bussines-a-los-oscar-costo-770164-euros.html",
-        "https://www.elmundo.es/espana/2026/03/17/69b95287e4d4d8875e8b4579.html"
+        "https://okdiario.com/espana/yolanda-diaz-acude-oscar-como-ministra-trabajo-viaje-pagado-dinero-publico-16420168",
+        "https://www.abc.es/espana/yolanda-diaz-viajo-business-billete-3000-euros-20260316124027-nt.html"
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Vox faces internal rebellion as critics demand extraordinary congress and question Abascal's leadership",
-      "summary": "Former Vox leaders including Iv\u00e1n Espinosa de los Monteros and Juan Garc\u00eda-Gallardo challenge Santiago Abascal's leadership, demanding an extraordinary party congress and questioning financial management. Garc\u00eda-Gallardo accuses Abascal of profiting through his wife's consulting contracts.",
+      "story_id": 5,
+      "headline": "Vox faces internal crisis as critics challenge Abascal's leadership",
+      "summary": "Santiago Abascal faces unprecedented internal criticism from former and current Vox leaders, including Espinosa de los Monteros and Garc\u00eda-Gallardo, who accuse him of financial irregularities, authoritarian leadership, and surrounding himself with a corrupt inner circle.",
       "actors_involved": [
-        "Santiago Abascal",
         "Abascal"
       ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 22,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 19,
       "sources": [
-        "elmundo.es",
-        "publico.es",
-        "elindependiente.com",
         "eldiario.es",
-        "lasexta.com",
+        "elmundo.es",
+        "elindependiente.com",
+        "publico.es",
         "canalsur.es",
-        "elconfidencial.com",
-        "antena3.com",
-        "theobjective.com"
+        "elperiodico.com",
+        "lasexta.com",
+        "deia.eus"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
         {
-          "title": "La revuelta de los cuatro notables de Vox se desata tras perder Abascal tir\u00f3n en el 39% de sus visitas en la \u00faltima campa\u00f1a",
-          "source": "elmundo.es",
-          "url": "https://www.elmundo.es/espana/2026/03/19/69bc4e83fc6c83137e8b4579.html",
+          "title": "\u00bfQu\u00e9 esconden las cuentas de Vox? Sobresueldos, multas y una facturaci\u00f3n opaca cercan al partido de Santiago Abascal",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/politica/esconden-cuentas-vox-sobresueldos-multas-facturacion-opaca-cercan-partido-santiago-abascal_1_13083732.html",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Juan Garc\u00eda-Gallardo: 'A este paso, Vox quedar\u00e1 como el plan de pensiones de Abascal'",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/espana/2026/03/17/69b9a4f1fdddff87528b459b.html",
+          "date": "2026-03-17"
         },
         {
           "title": "Objetivo Abascal: Espinosa de los Monteros y Ortega Smith lideran la rebeli\u00f3n en Vox",
@@ -280,92 +295,85 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Garc\u00eda-Gallardo reprocha a Abascal que su mujer cobre de un proveedor de Vox por consultor\u00eda",
-          "source": "elconfidencial.com",
-          "url": "https://www.elconfidencial.com/espana/2026-03-18/vox-abascal-sueldo-consultoria-1tps_4322787/",
-          "date": "2026-03-18"
+          "title": "Expulsados y cr\u00edticos de Vox piden a Abascal que convoque un congreso extraordinario",
+          "source": "canalsur.es",
+          "url": "https://www.canalsur.es/noticias/expulsados-y-criticos-de-vox-piden-a-abascal-que-convoque-un-congreso-extraordinario/2255923.html",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.elmundo.es/espana/2026/03/19/69bc4e83fc6c83137e8b4579.html",
-        "https://www.publico.es/politica/objetivo-abascal-espinosa-monteros-ortega-smith-lideran-rebelion-vox.html"
+        "https://www.eldiario.es/politica/esconden-cuentas-vox-sobresueldos-multas-facturacion-opaca-cercan-partido-santiago-abascal_1_13083732.html",
+        "https://www.elmundo.es/espana/2026/03/17/69b9a4f1fdddff87528b459b.html"
       ]
     },
     {
-      "story_id": 7,
-      "headline": "Feij\u00f3o pressures Vox for regional government agreements while criticizing S\u00e1nchez's Iran war response",
-      "summary": "PP leader Alberto N\u00fa\u00f1ez Feij\u00f3o demands Vox finalize government agreements in Extremadura, Arag\u00f3n and Castilla y Le\u00f3n before April, calling their delays 'adolescent behavior.' He also attacks S\u00e1nchez's handling of the Iran crisis and demands early elections.",
+      "story_id": 6,
+      "headline": "PP-Vox coalition negotiations stall after Castilla y Le\u00f3n election results",
+      "summary": "Tensions between Alberto N\u00fa\u00f1ez Feij\u00f3o and Santiago Abascal intensify over regional government coalition agreements in Extremadura, Arag\u00f3n and Castilla y Le\u00f3n, with Vox demanding entry into government while PP prefers external support arrangements.",
       "actors_involved": [
         "Feij\u00f3o",
-        "Alberto N\u00fa\u00f1ez Feij\u00f3o",
-        "Abascal",
-        "Santiago Abascal"
+        "Abascal"
       ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 19,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 14,
       "sources": [
         "elmundo.es",
-        "20minutos.es",
-        "eldiario.es",
-        "theobjective.com",
-        "europapress.es",
-        "esdiario.com",
+        "elindependiente.com",
+        "elespanol.com",
         "rtve.es",
-        "elconfidencial.com"
+        "europapress.es"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
-        {
-          "title": "Feij\u00f3o exige a Vox que deje de poner 'excusas' y cumpla su 'obligaci\u00f3n' de desbloquear los gobiernos auton\u00f3micos: '\u00a1Ya est\u00e1 bien!'",
-          "source": "elmundo.es",
-          "url": "https://elmundo.es/espana/2026/03/16/69b7f906fc6c83be2b8b4596.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Feij\u00f3o advierte a Vox: \u00ab\u00a1Ya est\u00e1 bien! Fallamos a la gente en julio de 2023, ahora no podemos\u00bb",
-          "source": "theobjective.com",
-          "url": "https://theobjective.com/espana/politica/2026-03-16/feijoo-vox-fallamos-gente-julio-2023",
-          "date": "2026-03-16"
-        },
         {
           "title": "Feij\u00f3o carga desde Bruselas contra S\u00e1nchez y lo tacha de 'obst\u00e1culo' para la UE: 'Su Gobierno es un problema'",
           "source": "rtve.es",
           "url": "https://www.rtve.es/noticias/20260319/feijoo-carga-desde-bruselas-contra-sanchez-gobierno-problema/16987756.shtml",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Abascal asegura que Vox entrar\u00e1 en los gobiernos auton\u00f3micos si hay 'acuerdo program\u00e1tico' con el PP",
+          "source": "elmundo.es",
+          "url": "https://elmundo.es/espana/2026/03/16/69b7e713e4d4d888648b459c.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Vox sugiere que el primer pacto con el PP puede llegar en Arag\u00f3n",
+          "source": "elindependiente.com",
+          "url": "https://www.elindependiente.com/espana/2026/03/17/vox-sugiere-que-el-primer-pacto-con-el-pp-puede-llegar-en-aragon/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Abascal exige al PP formar coaliciones con Vox en Castilla y Le\u00f3n, Extremadura y Arag\u00f3n: 'Vamos a gobernar en las tres'",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/politica/abascal-exige-pp-formar-coaliciones-vox-castilla-leon-extremadura-aragon-gobernar-tres_1_13071736.html",
+          "date": "2026-03-16"
         }
       ],
       "representative_urls": [
-        "https://elmundo.es/espana/2026/03/16/69b7f906fc6c83be2b8b4596.html",
-        "https://www.rtve.es/noticias/20260319/feijoo-carga-desde-bruselas-contra-sanchez-gobierno-problema/16987756.shtml"
+        "https://www.rtve.es/noticias/20260319/feijoo-carga-desde-bruselas-contra-sanchez-gobierno-problema/16987756.shtml",
+        "https://elmundo.es/espana/2026/03/16/69b7e713e4d4d888648b459c.html"
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Catalan budget crisis as ERC withdraws support over IRPF tax collection demands from Madrid",
-      "summary": "Esquerra Republicana blocks Salvador Illa's 2026 Catalan budget, demanding the central government allow Catalonia to collect income tax (IRPF). After negotiations, both parties agree to withdraw the budget and extend talks, with ERC dropping the IRPF as a red line.",
+      "story_id": 7,
+      "headline": "Catalan budget crisis as PSC-ERC negotiations reach impasse over taxation powers",
+      "summary": "The Catalan government's budget faces collapse as ERC demands control over personal income tax (IRPF) collection while PSC refuses to cede fiscal powers. Both parties eventually agree to withdraw the budget for renegotiation.",
       "actors_involved": [
-        "ERC",
         "Catalan parties"
       ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 17,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 26,
       "sources": [
-        "lavanguardia.com",
         "cronicaglobal.elespanol.com",
         "elperiodico.com",
+        "lavanguardia.com",
+        "vilaweb.cat",
         "europapress.es",
-        "efe.com",
-        "catalunyapress.es",
-        "elnacional.cat"
+        "eldiario.es"
       ],
       "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
-        {
-          "title": "Guerra de nervios entre Govern y ERC a cinco d\u00edas del debate clave sobre los presupuestos",
-          "source": "efe.com",
-          "url": "https://efe.com/cataluna/guerra-nervios-govern-erc-debate-presupuestos/",
-          "date": "2026-03-15"
-        },
         {
           "title": "Illa retira los presupuestos y ERC se compromete a aprobarlos antes del verano",
           "source": "cronicaglobal.elespanol.com",
@@ -373,213 +381,40 @@
           "date": "2026-03-18"
         },
         {
-          "title": "Del bloqueo presupuestario al pragmatismo: ERC ya no se aferra al IRPF",
-          "source": "larazon.es",
-          "url": "https://larazon.es/cataluna/bloqueo-presupuestario-pragmatismo-erc-aferra-irpf_2026032169be814c3156ba241d5fbde6.html",
-          "date": "2026-03-21"
+          "title": "El Govern y ERC entran en la fase decisiva para salvar los presupuestos",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/politica/20260315/negociacion-presupuestos-govern-erc-fase-final-salvar-irpf-salvador-illa-oriol-junqueras-127914099",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "As\u00ed se desencall\u00f3 el acuerdo entre el PSC y ERC para dar margen a la negociaci\u00f3n presupuestaria",
+          "source": "lavanguardia.com",
+          "url": "https://lavanguardia.com/politica/20260319/11493389/asi-desencallo-acuerdo-psc-erc-dar-margen-negociacion-presupuestaria.html",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://efe.com/cataluna/guerra-nervios-govern-erc-debate-presupuestos/",
-        "https://cronicaglobal.elespanol.com/politica/20260318/illa-retira-presupuestos-enroque-erc/1003742742662_0.html"
+        "https://cronicaglobal.elespanol.com/politica/20260318/illa-retira-presupuestos-enroque-erc/1003742742662_0.html",
+        "https://www.elperiodico.com/es/politica/20260315/negociacion-presupuestos-govern-erc-fase-final-salvar-irpf-salvador-illa-oriol-junqueras-127914099"
       ]
     },
     {
-      "story_id": 9,
-      "headline": "Trump pressures NATO allies to intervene in Strait of Hormuz, European allies refuse participation",
-      "summary": "US President Donald Trump threatens NATO with a 'very bad future' if allies don't help reopen the Strait of Hormuz blocked by Iran. European leaders including Spain's Albares reject military intervention, stating the region is outside NATO's scope and demanding UN-backed solutions.",
-      "actors_involved": [
-        "Spanish Armed Forces"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 14,
-      "sources": [
-        "bbc.com",
-        "informacion.es",
-        "eldiario.es",
-        "canalsur.es",
-        "mundiario.com",
-        "theobjective.com",
-        "forbes.com.mx",
-        "eleconomista.com.mx"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "'Esta no es nuestra guerra': pese a las amenazas de Trump sobre la OTAN, Reino Unido, Alemania y otros pa\u00edses rechazan involucrarse en el conflicto contra Ir\u00e1n",
-          "source": "bbc.com",
-          "url": "https://bbc.com/mundo/articles/c39wgz9jpvzo",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "DONALD TRUMP | Trump se queda solo tras presionar a la OTAN para que se involucre militarmente en la reapertura del estrecho de Ormuz",
-          "source": "informacion.es",
-          "url": "https://informacion.es/internacional/2026/03/16/trump-demandas-otan-implicacion-militar-reabrir-estrecho-de-ormuz-128044255.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "La UE responde a Trump que Ormuz queda fuera del \u00e1mbito de la OTAN",
-          "source": "eldiario.es",
-          "url": "https://www.eldiario.es/internacional/guerra-iran-ultima-hora-ataque-eeuu-e-israel-directo_6_13070791_1120210.html",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://bbc.com/mundo/articles/c39wgz9jpvzo",
-        "https://informacion.es/internacional/2026/03/16/trump-demandas-otan-implicacion-militar-reabrir-estrecho-de-ormuz-128044255.html"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Zelensky visits Spain to sign cooperation agreements with S\u00e1nchez and meet King Felipe VI",
-      "summary": "Ukrainian President Volodymyr Zelensky makes his fourth visit to Spain since the Russian invasion, signing bilateral cooperation agreements with Pedro S\u00e1nchez at La Moncloa and holding an audience with King Felipe VI at Zarzuela Palace before traveling to Brussels for a European Council meeting.",
-      "actors_involved": [
-        "S\u00e1nchez",
-        "Pedro S\u00e1nchez",
-        "Felipe VI",
-        "King Felipe"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
-      "sources": [
-        "swissinfo.ch",
-        "elespanol.com",
-        "20minutos.es"
-      ],
-      "date_range": "2026-03-18 to 2026-03-18",
-      "articles": [
-        {
-          "title": "S\u00e1nchez y Zelenski presiden hoy una firma de acuerdos que ratificar\u00e1n el apoyo a Ucrania",
-          "source": "swissinfo.ch",
-          "url": "https://www.swissinfo.ch/spa/s%C3%A1nchez-y-zelenski-presiden-hoy-una-firma-de-acuerdos-que-ratificar%C3%A1n-el-apoyo-a-ucrania/91116458",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "S\u00e1nchez utilizar\u00e1 la foto con Zelenski, 24 horas antes de la cumbre de la UE, para avalar su 'no a la guerra' ante los socios",
-          "source": "elespanol.com",
-          "url": "https://elespanol.com/espana/politica/20260318/sanchez-utilizara-foto-zelenski-horas-cumbre-ue-avalar-no-guerra-socios/1003744173613_0.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "El rey Felipe VI recibe a Zelenski en el cierre de su cuarta visita a Espa\u00f1a desde el inicio de la invasi\u00f3n rusa",
-          "source": "20minutos.es",
-          "url": "https://www.20minutos.es/internacional/rey-recibe-zelenski-que-cierra-su-cuarta-visita-espana-desde-invasion-rusa_6947849_0.html",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.swissinfo.ch/spa/s%C3%A1nchez-y-zelenski-presiden-hoy-una-firma-de-acuerdos-que-ratificar%C3%A1n-el-apoyo-a-ucrania/91116458",
-        "https://www.20minutos.es/internacional/rey-recibe-zelenski-que-cierre-su-cuarta-visita-espana-desde-invasion-rusa_6947849_0.html"
-      ]
-    },
-    {
-      "story_id": 11,
-      "headline": "Felipe VI visits Vatican, meets Pope Leo XIV and takes position as proto-canon of Santa Mar\u00eda la Mayor",
-      "summary": "King Felipe VI and Queen Letizia visit Vatican for 50-minute private audience with Pope Leo XIV, three months before the pontiff's planned visit to Spain. Felipe VI formally takes the honorary hereditary title of proto-canon of the Papal Basilica of Santa Mar\u00eda la Mayor in Rome.",
-      "actors_involved": [
-        "Felipe VI",
-        "King Felipe"
-      ],
-      "signal_category_hint": "unclear",
-      "source_count": 7,
-      "sources": [
-        "abc.es",
-        "eldebate.com",
-        "religiondigital.org",
-        "revistavanityfair.es",
-        "aleteia.org",
-        "hellomagazine.com",
-        "ewtnnews.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Felipe VI asume este viernes el t\u00edtulo de protocan\u00f3nigo de la bas\u00edlica de Santa Mar\u00eda la Mayor",
-          "source": "abc.es",
-          "url": "https://www.abc.es/sociedad/felipe-asume-viernes-titulo-protocanonigo-basilica-santa-20260318194819-nt.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Felipe VI toma posesi\u00f3n como protocan\u00f3nigo de Santa Mar\u00eda la Mayor: \u00abNecesitamos claridad de obra y de palabra en estos d\u00edas\u00bb",
-          "source": "eldebate.com",
-          "url": "https://www.eldebate.com/religion/vaticano/20260320/felipe-vi-toma-posesion-como-protocanonigo-santa-maria-mayor-necesitamos-claridad-obra-palabra-estos-dias_398166.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Felipe VI, Letizia y Prevost: 50 minutos de 'conversaci\u00f3n privada' entre los Reyes de Espa\u00f1a y el Papa",
-          "source": "religiondigital.org",
-          "url": "https://religiondigital.org/espana/felipe-vi-letizia-prevost-50_1_1446971.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.abc.es/sociedad/felipe-asume-viernes-titulo-protocanonigo-basilica-santa-20260318194819-nt.html",
-        "https://religiondigital.org/espana/felipe-vi-letizia-prevost-50_1_1446971.html"
-      ]
-    },
-    {
-      "story_id": 12,
-      "headline": "Banco de Espa\u00f1a implements new supervisory priorities focused on responsible lending and consumer protection",
-      "summary": "Bank of Spain Governor Jos\u00e9 Luis Escriv\u00e1 announces 2026 supervisory priorities will focus on responsible credit principles and pre-contractual information requirements for consumer loans, aligning with European Central Bank guidelines for the 2026-2028 period.",
-      "actors_involved": [
-        "Banco de Espa\u00f1a"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 8,
-      "sources": [
-        "capital.es",
-        "forbes.es",
-        "abc.es",
-        "democrata.es",
-        "pressdigital.es",
-        "eldiariodemadrid.es",
-        "ondacero.es"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "El Banco de Espa\u00f1a centrar\u00e1 su supervisi\u00f3n en 2026 en los principios de concesi\u00f3n de cr\u00e9dito responsable",
-          "source": "capital.es",
-          "url": "https://capital.es/economia/el-banco-de-espana-se-centrara-en-2026-en-supervisar-el-credito-responsable-y-la-informacion-previa/172346",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "El FMI insta al Banco de Espa\u00f1a a restringir las hipotecas por detectar riesgos en el mercado",
-          "source": "abc.es",
-          "url": "https://www.abc.es/economia/fmi-insta-banco-espana-restringir-hipotecas-riesgos-20260320180120-nt.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "El Banco de Espa\u00f1a desmiente el bulo de que haya cambiado las normas sobre el impuesto de sucesiones",
-          "source": "ondacero.es",
-          "url": "https://www.ondacero.es/ibercheck/banco-espana-desmiente-bulo-que-haya-cambiado-normas-impuesto-sucesiones_2026031669b7f5e4e89622081d3a2878.html",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://capital.es/economia/el-banco-de-espana-se-centrara-en-2026-en-supervisar-el-credito-responsable-y-la-informacion-previa/172346",
-        "https://www.abc.es/economia/fmi-insta-banco-espana-restringir-hipotecas-riesgos-20260320180120-nt.html"
-      ]
-    },
-    {
-      "story_id": 13,
-      "headline": "Spanish Armed Forces receive salary increases and boost defense capabilities amid international tensions",
-      "summary": "Spanish military personnel receive a 200-euro monthly salary increase approved by the government with retroactive effects. Defense Ministry announces significant investment growth for 2026, maintaining the 2% of GDP target while developing new anti-drone systems for naval vessels.",
+      "story_id": 8,
+      "headline": "Spanish Armed Forces receive salary increases and modernization investments",
+      "summary": "The Government approved salary increases for military personnel and announced significant defense spending growth for 2026, while also opening military service registration for those born in 2008.",
       "actors_involved": [
         "Spanish Armed Forces"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 12,
+      "source_count": 11,
       "sources": [
         "elmundo.es",
         "cronista.com",
-        "eldebate.com",
+        "hoy.es",
         "infodefensa.com",
-        "elconfidencialdigital.com",
-        "lavozdegalicia.es",
-        "lne.es"
+        "businessinsider.es"
       ],
-      "date_range": "2026-03-17 to 2026-03-21",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
         {
           "title": "Cu\u00e1nto dinero cobra al mes un comandante del ej\u00e9rcito en Espa\u00f1a: as\u00ed queda su sueldo en 2026 tras la subida",
@@ -588,10 +423,10 @@
           "date": "2026-03-20"
         },
         {
-          "title": "Confirmado por el Gobierno | Las fuerzas armadas recibir\u00e1n un aumento de sueldo para abril de 2026: cu\u00e1nto cobrar\u00e1n ahora",
+          "title": "Confirmado por las Fuerzas Armadas | Se abre el Servicio Militar para los nacidos en 2008: cu\u00e1les son los requisitos",
           "source": "cronista.com",
-          "url": "https://www.cronista.com/espana/economia-finanzas/confirmado-por-el-gobierno-las-fuerzas-armadas-recibiran-un-aumento-de-sueldo-para-abril-de-2026-cuanto-cobraran-ahora/",
-          "date": "2026-03-18"
+          "url": "https://cronista.com/informacion-gral/confirmado-por-las-fuerzas-armadas-se-abre-el-servicio-militar-para-los-nacidos-en-2008-cuales-son-los-requisitos",
+          "date": "2026-03-21"
         },
         {
           "title": "Defensa prev\u00e9 un crecimiento 'muy importante' de la inversi\u00f3n en 2026 manteniendo el 2% del PIB",
@@ -606,19 +441,101 @@
       ]
     },
     {
-      "story_id": 14,
-      "headline": "Foreign investment in Spain plunges 22% in 2025 to lowest level in four years",
-      "summary": "Foreign direct investment in Spain fell to 30.764 billion euros in 2025, with Madrid suffering a 40% drop despite maintaining over half of total investment. Catalonia shows resilience with only a 14% decline, while the overall drop reflects declining international investor confidence.",
+      "story_id": 9,
+      "headline": "Banking sector developments including Banco de Espa\u00f1a policy changes and new account offerings",
+      "summary": "Banco de Espa\u00f1a announced new supervisory priorities focusing on responsible lending, while banks launched new competitive account offerings and the sector saw regulatory updates.",
+      "actors_involved": [
+        "Banco de Espa\u00f1a"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 15,
+      "sources": [
+        "abc.es",
+        "democrata.es",
+        "capital.es",
+        "expansion.com",
+        "elconfidencial.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Banco de Espa\u00f1a: supervisi\u00f3n en 2026 centrada en cr\u00e9dito responsable",
+          "source": "democrata.es",
+          "url": "https://www.democrata.es/economia/el-banco-de-espana-pondra-el-foco-supervisor-en-2026-en-el-credito-responsable/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "El FMI insta al Banco de Espa\u00f1a a restringir las hipotecas por detectar riesgos en el mercado",
+          "source": "abc.es",
+          "url": "https://www.abc.es/economia/fmi-insta-banco-espana-restringir-hipotecas-riesgos-20260320180120-nt.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Bankinter eleva al 2% TAE la rentabilidad de su cuenta digital",
+          "source": "elconfidencial.com",
+          "url": "https://elconfidencial.com/mercados/2026-03-17/bankinter-cuenta-ahorro-digital-rentabilidad_4321894",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.democrata.es/economia/el-banco-de-espana-pondra-el-foco-supervisor-en-2026-en-el-credito-responsable/",
+        "https://www.abc.es/economia/fmi-insta-banco-espana-restringir-hipotecas-riesgos-20260320180120-nt.html"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "CNI seeks new recruitment and faces budget questions over intelligence operations",
+      "summary": "Spain's National Intelligence Center launched recruitment campaigns for new field agents while facing questions about adequate funding for reserved expenditures.",
+      "actors_involved": [
+        "CNI"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "economiadigital.es",
+        "theobjective.com",
+        "murciaplaza.com",
+        "vozpopuli.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "El CNI busca reclutar nuevos agentes de campo para reforzar sus capacidades",
+          "source": "economiadigital.es",
+          "url": "https://www.economiadigital.es/sociedad/cni-busca-reclutar-nuevos-agentes.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Sin dinero suficiente, \u00bfc\u00f3mo paga el CNI sus gastos reservados?",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/2026-03-21/dinero-suficiente-cni-gastos-reservados/",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "De APT 42 a MuddyWater: la guardia pretoriana de hackers iran\u00edes monitorizados por el CNI",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/defensa/de-apt-42-a-muddywater-la-guardia-pretoriana-de-hackers-iranies-monitorizados-por-el-cni.html",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://www.economiadigital.es/sociedad/cni-busca-reclutar-nuevos-agentes.html",
+        "https://theobjective.com/espana/2026-03-21/dinero-suficiente-cni-gastos-reservados/"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Spanish foreign investment drops significantly amid global economic uncertainty",
+      "summary": "Foreign direct investment in Spain fell 22% in 2025 to 30.7 billion euros, with Madrid still attracting over half of total investment despite a 40% drop, while Catalonia showed more resilience with only a 14% decline.",
       "actors_involved": [],
       "signal_category_hint": "economic_tech",
-      "source_count": 8,
+      "source_count": 5,
       "sources": [
         "expansion.com",
         "elespanol.com",
+        "cronicaglobal.elespanol.com",
         "moncloa.com",
-        "esdiario.com",
-        "larepublica.co",
-        "cronicaglobal.elespanol.com"
+        "larepublica.co"
       ],
       "date_range": "2026-03-20 to 2026-03-21",
       "articles": [
@@ -629,10 +546,10 @@
           "date": "2026-03-21"
         },
         {
-          "title": "Madrid atrae m\u00e1s de la mitad de toda la inversi\u00f3n extranjera recibida en Espa\u00f1a",
-          "source": "moncloa.com",
-          "url": "https://moncloa.com/2026/03/21/madrid-inversion-espana-3367029",
-          "date": "2026-03-21"
+          "title": "La inversi\u00f3n extranjera en Espa\u00f1a cae un 21% en 2025 con su dato m\u00e1s bajo en cuatro a\u00f1os",
+          "source": "elespanol.com",
+          "url": "https://elespanol.com/invertia/economia/macroeconomia/20260320/inversion-extranjera-espana-cae-dato-anos/1003744177134_0.html",
+          "date": "2026-03-20"
         },
         {
           "title": "Catalu\u00f1a eleva al 15% su peso en inversi\u00f3n extranjera y atrae 10.000 millones en dos a\u00f1os",
@@ -643,388 +560,34 @@
       ],
       "representative_urls": [
         "https://expansion.com/economia/2026/03/21/69bdc00b468aeb5a0a8b458b.html",
-        "https://moncloa.com/2026/03/21/madrid-inversion-espana-3367029"
-      ]
-    },
-    {
-      "story_id": 15,
-      "headline": "CNI recruitment drive and cybersecurity operations as Iran war escalates digital threats",
-      "summary": "Spain's National Intelligence Center launches recruitment for new field agents and HUMINT technicians while monitoring Iranian hacker groups targeting Spanish strategic sectors. Interior Ministry gains new powers to request CNI data for vetting critical infrastructure employees.",
-      "actors_involved": [
-        "CNI"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 6,
-      "sources": [
-        "economiadigital.es",
-        "vozpopuli.com",
-        "elespanol.com",
-        "interior.gob.es",
-        "murciaplaza.com",
-        "elcorreo.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-20",
-      "articles": [
-        {
-          "title": "El CNI busca reclutar nuevos agentes de campo para reforzar sus capacidades",
-          "source": "economiadigital.es",
-          "url": "https://www.economiadigital.es/sociedad/cni-busca-reclutar-nuevos-agentes.html",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "De APT 42 a MuddyWater: la guardia pretoriana de hackers iran\u00edes monitorizados por el CNI",
-          "source": "vozpopuli.com",
-          "url": "https://www.vozpopuli.com/defensa/de-apt-42-a-muddywater-la-guardia-pretoriana-de-hackers-iranies-monitorizados-por-el-cni.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Interior podr\u00e1 pedir datos al CNI para garantizar la 'idoneidad' de los empleados de infraestructuras estrat\u00e9gicas",
-          "source": "elespanol.com",
-          "url": "https://www.elespanol.com/espana/politica/20260320/interior-podra-pedir-datos-cni-garantizar-idoneidad-empleados-infraestructuras-estrategicas/1003744175303_0.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.economiadigital.es/sociedad/cni-busca-reclutar-nuevos-agentes.html",
-        "https://www.elespanol.com/espana/politica/20260320/interior-podra-pedir-datos-cni-garantizar-idoneidad-empleados-infraestructuras-estrategicas/1003744175303_0.html"
-      ]
-    },
-    {
-      "story_id": 16,
-      "headline": "Gabriel Rufi\u00e1n proposes left-wing electoral alliance, faces resistance from ERC leadership",
-      "summary": "ERC's congressional spokesman Gabriel Rufi\u00e1n announces an event with Podemos's Irene Montero to explore a left-wing front for future elections, despite opposition from party president Oriol Junqueras who insists ERC will maintain its own identity and run independently under its historic brand.",
-      "actors_involved": [
-        "ERC",
-        "Catalan parties"
-      ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 8,
-      "sources": [
-        "elperiodico.com",
-        "elmundo.es",
-        "publico.es",
-        "abc.es",
-        "elindependiente.com",
-        "larazon.es",
-        "huffingtonpost.es"
-      ],
-      "date_range": "2026-03-19 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Junqueras ratifica su rechazo al frente de izquierdas de Rufi\u00e1n: 'ERC se presentar\u00e1 como ERC en todas partes'",
-          "source": "elperiodico.com",
-          "url": "https://www.elperiodico.com/es/politica/20260320/oriol-junqueras-gabriel-rufian-frente-izquierdas-siglas-erc-discrepancias-128201853",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "ERC rechaza el 'circo' de Rufi\u00e1n y Junqueras descarta una alianza 'imposible' con Podemos",
-          "source": "elmundo.es",
-          "url": "https://www.elmundo.es/cataluna/2026/03/20/69bd27d021efa0d8178b459a.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "ERC fijar\u00e1 la pol\u00edtica de alianzas electorales en el Consell Nacional con un debate que deja el futuro pol\u00edtico de Rufi\u00e1n en el aire",
-          "source": "publico.es",
-          "url": "https://www.publico.es/politica/erc-fijara-politica-alianzas-electorales-consell-nacional-debate-deja-futuro-politico-rufian-aire.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elperiodico.com/es/politica/20260320/oriol-junqueras-gabriel-rufian-frente-izquierdas-siglas-erc-discrepancias-128201853",
-        "https://www.publico.es/politica/erc-fijara-politica-alianzas-electorales-consell-nacional-debate-deja-futuro-politico-rufian-aire.html"
-      ]
-    },
-    {
-      "story_id": 17,
-      "headline": "V\u00edctor de Aldama delivers envelope to judge with alleged PSOE financing information",
-      "summary": "Businessman V\u00edctor de Aldama testifies before judge Ismael Moreno for two hours and delivers an envelope allegedly containing information about irregular PSOE financing linked to Venezuelan oil dealings, following the death of investigated Venezuelan banker Francisco Flores.",
-      "actors_involved": [
-        "PSOE"
-      ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 4,
-      "sources": [
-        "elconfidencial.com",
-        "elespanol.com",
-        "cuatro.com",
-        "libertaddigital.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-19",
-      "articles": [
-        {
-          "title": "El sobre de Aldama con informaci\u00f3n sensible del PSOE ya est\u00e1 en poder del juez tras una declaraci\u00f3n de dos horas",
-          "source": "elconfidencial.com",
-          "url": "https://www.elconfidencial.com/espana/2026-03-18/sobre-aldama-financiacion-irregular-psoe_4322757/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "La UCO investiga a Francisco Flores, venezolano ligado al narco, por el petr\u00f3leo que seg\u00fan Aldama financi\u00f3 a ZP y al PSOE",
-          "source": "elespanol.com",
-          "url": "https://www.elespanol.com/espana/20260318/uco-investiga-francisco-flores-venezolano-ligado-narco-petroleo-aldama-financio-zp-psoe/1003744175422_0.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Muere Francisco Flores, el banquero chavista investigado por la presunta financiaci\u00f3n del PSOE",
-          "source": "libertaddigital.com",
-          "url": "https://www.libertaddigital.com/espana/2026-03-19/muere-francisco-flores-el-banquero-chavista-investigado-por-la-presunta-financiacion-del-psoe-7377315/",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elconfidencial.com/espana/2026-03-18/sobre-aldama-financiacion-irregular-psoe_4322757/",
-        "https://www.elespanol.com/espana/20260318/uco-investiga-francisco-flores-venezolano-ligado-narco-petroleo-aldama-financio-zp-psoe/1003744175422_0.html"
-      ]
-    },
-    {
-      "story_id": 18,
-      "headline": "Argentina's Milei meets with Vox's Abascal wearing YPF oil company overalls during Madrid visit",
-      "summary": "Argentine President Javier Milei meets with Vox leader Santiago Abascal while wearing overalls from YPF, the oil company Argentina expropriated from Spanish firm Repsol. Critics highlight the irony given Abascal's previous protests against the nationalization, calling it contradictory to his patriotic rhetoric.",
-      "actors_involved": [
-        "Santiago Abascal",
-        "Abascal"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
-      "sources": [
-        "mundodeportivo.com",
-        "eldiario.es",
-        "elplural.com",
-        "informacion.es"
-      ],
-      "date_range": "2026-03-14 to 2026-03-16",
-      "articles": [
-        {
-          "title": "Milei se re\u00fane con Abascal en Madrid vestido con un mono de trabajo de una petrolera, y sale a la luz este regalo para Pedro S\u00e1nchez",
-          "source": "mundodeportivo.com",
-          "url": "https://www.mundodeportivo.com/actualidad/20260314/1004152349/milei-reune-abascal-vestido-mono-trabajo-petrolera-sale-luz-regalo-pedro-sanchez-dct.html",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Milei visita a Abascal en Madrid vestido con un mono de YPF, la empresa que Argentina expropi\u00f3 a la espa\u00f1ola Repsol",
-          "source": "eldiario.es",
-          "url": "https://www.eldiario.es/rastreador/milei-visita-abascal-madrid-vestido-mono-ypf-argentina-expropio-espanola-repsol_132_13068900.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Patriota, pero no mucho: Abascal pasa de protestar contra la expropiaci\u00f3n de YPF a fotografiarse con Milei y su mono de YPF",
-          "source": "elplural.com",
-          "url": "https://www.elplural.com/politica/espana/patriota-no-mucho-abascal-pasa-protestar-contra-expropiacion-ypf-fotografiarse-milei-mono-ypf_384225102",
-          "date": "2026-03-14"
-        }
-      ],
-      "representative_urls": [
-        "https://www.eldiario.es/rastreador/milei-visita-abascal-madrid-vestido-mono-ypf-argentina-expropio-espanola-repsol_132_13068900.html",
-        "https://www.elplural.com/politica/espana/patriota-no-mucho-abascal-pasa-protestar-contra-expropiacion-ypf-fotografiarse-milei-mono-ypf_384225102"
-      ]
-    },
-    {
-      "story_id": 19,
-      "headline": "Santiago Abascal watches 'Torrente Presidente' film that parodies Vox as fictional party Nox",
-      "summary": "Vox leader Santiago Abascal attends screening of Santiago Segura's latest Torrente film, which features a far-right party called 'Nox' that parodies Vox. Abascal responds positively, saying 'fiction surpasses reality' and defending artistic freedom while the film becomes a box office hit.",
-      "actors_involved": [
-        "Santiago Abascal",
-        "Abascal"
-      ],
-      "signal_category_hint": "unclear",
-      "source_count": 5,
-      "sources": [
-        "elconfidencial.com",
-        "abc.es",
-        "okdiario.com",
-        "larazon.es",
-        "ara.cat"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Santiago Abascal, tras ver 'Torrente Presidente': 'Siempre es bueno saber re\u00edrse de uno mismo'",
-          "source": "elconfidencial.com",
-          "url": "https://www.elconfidencial.com/cultura/cine/2026-03-20/torrente-presidente-reaccion-santiago-abascal-1qrt_4324146/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Santiago Abascal va al cine a ver 'Torrente, presidente' y es tajante con su opini\u00f3n: \u00abLa ficci\u00f3n supera a la realidad\u00bb",
-          "source": "abc.es",
-          "url": "https://www.abc.es/recreo/santiago-abascal-cine-ver-torrente-presidente-tajante-20260321163000-nt.html",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "La reacci\u00f3n de Abascal tras ver 'Torrente presidente': 'Me he re\u00eddo, los artistas tienen que ser libres'",
-          "source": "okdiario.com",
-          "url": "https://okdiario.com/espana/okdiario-sorprende-abascal-viendo-torrente-presidente-parodia-nox-este-caso-ficcion-supera-realidad-16451461",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elconfidencial.com/cultura/cine/2026-03-20/torrente-presidente-reaccion-santiago-abascal-1qrt_4324146/",
-        "https://www.abc.es/recreo/santiago-abascal-cine-ver-torrente-presidente-tajante-20260321163000-nt.html"
-      ]
-    },
-    {
-      "story_id": 20,
-      "headline": "S\u00e1nchez increases government image and styling services budget with two-year 83,000 euro contract",
-      "summary": "La Moncloa presidential palace puts out tender for President Pedro S\u00e1nchez's image services including makeup and hairstyling, with an initial 12-month contract extendable for another year at an estimated cost of 83,000 euros over two years.",
-      "actors_involved": [
-        "S\u00e1nchez",
-        "Pedro S\u00e1nchez"
-      ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 2,
-      "sources": [
-        "theobjective.com",
-        "periodistadigital.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "S\u00e1nchez refuerza su servicio de maquillaje y peluquer\u00eda con un contrato de dos a\u00f1os",
-          "source": "theobjective.com",
-          "url": "https://theobjective.com/espana/politica/2026-03-18/sanchez-contrato-imagen-moncloa-83000-dos-anos",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "El caradura S\u00e1nchez se gast\u00f3 159.699 euros extra en vacaciones 'por el papo' en La Mareta",
-          "source": "periodistadigital.com",
-          "url": "https://periodistadigital.com/politica/20260321/caradura-sanchez-gasto-159-699-euros-extra-vacaciones-papo-mareta-noticia-689405193275",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://theobjective.com/espana/politica/2026-03-18/sanchez-contrato-imagen-moncloa-83000-dos-anos",
-        "https://periodistadigital.com/politica/20260321/caradura-sanchez-gasto-159-699-euros-extra-vacaciones-papo-mareta-noticia-689405193275"
-      ]
-    },
-    {
-      "story_id": 21,
-      "headline": "PP loses vote on expanding permanent reviewable prison to killers who hide victims' bodies",
-      "summary": "Congress rejects Popular Party proposal to extend permanent reviewable prison sentences to repeat killers and those who conceal victims' bodies. PSOE, its partners, ERC and UPN vote against the measure despite emotional testimony from Marta Calvo's mother about her daughter's murder case.",
-      "actors_involved": [
-        "PSOE"
-      ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 3,
-      "sources": [
-        "elespanol.com",
-        "laregion.es",
-        "cordobabn.com"
-      ],
-      "date_range": "2026-03-17 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Llorar en el Congreso: la madre de Marta Calvo emociona a los diputados, pero su causa fracasa por el voto del PSOE y sus socios",
-          "source": "elespanol.com",
-          "url": "https://www.elespanol.com/espana/politica/20260317/llorar-congreso-madre-marta-calvo-emociona-diputados-causa-fracasa-voto-psoe-socios/1003744173668_0.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "El Partido Popular lleva al Congreso el endurecimiento de la prisi\u00f3n permanente revisable",
-          "source": "laregion.es",
-          "url": "https://laregion.es/espana/partido-popular-congreso-endurecimiento-prision-permanente_1_20260317-4202050.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "El PP cuestiona fiesta con coca\u00edna de exdiputado PSOE y Marlaska lo rechaza",
-          "source": "cordobabn.com",
-          "url": "https://cordobabn.com/articulo/nacional/pp-cuestiona-fiesta-cocaina-exdiputado-psoe-marlaska-rechaza/20260318120508253307.html",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.elespanol.com/espana/politica/20260317/llorar-congreso-madre-marta-calvo-emociona-diputados-causa-fracasa-voto-psoe-socios/1003744173668_0.html",
-        "https://laregion.es/espana/partido-popular-congreso-endurecimiento-prision-permanente_1_20260317-4202050.html"
-      ]
-    },
-    {
-      "story_id": 22,
-      "headline": "Felipe VI attends Formula E inauguration in Madrid at Jarama circuit",
-      "summary": "King Felipe VI presides over the first Formula E ePrix held in Madrid at the Madrid Jarama-RACE circuit, accompanied by Madrid regional president Isabel D\u00edaz Ayuso and Formula E co-founder Alberto Longo for the capital's debut in the electric racing championship.",
-      "actors_involved": [
-        "Felipe VI",
-        "King Felipe"
-      ],
-      "signal_category_hint": "unclear",
-      "source_count": 2,
-      "sources": [
-        "abc.es"
-      ],
-      "date_range": "2026-03-21 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Felipe VI preside en el Jarama el estreno de Madrid en el Mundial de F\u00f3rmula E",
-          "source": "abc.es",
-          "url": "https://www.abc.es/deportes/felipe-preside-jarama-estreno-madrid-mundial-formula-20260321154723-nt.html",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Felipe VI, en el primer e-Prix de la F\u00f3rmula E en Madrid",
-          "source": "abc.es",
-          "url": "https://abc.es/deportes/felipe-primer-eprix-formula-madrid-20260321220029-nt.html",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.abc.es/deportes/felipe-preside-jarama-estreno-madrid-mundial-formula-20260321154723-nt.html",
-        "https://abc.es/deportes/felipe-primer-eprix-formula-madrid-20260321220029-nt.html"
-      ]
-    },
-    {
-      "story_id": 23,
-      "headline": "PSOE member in Zamora suffers assault allegedly by Vox supporter in T\u00e1bara",
-      "summary": "PSOE militant Pedro Monteso is allegedly attacked and kicked on the ground in T\u00e1bara, Zamora, by a person linked to Vox according to socialist party sources. PSOE calls rally for Sunday to condemn the incident and denounce rising political tension and violence.",
-      "actors_involved": [
-        "PSOE"
-      ],
-      "signal_category_hint": "domestic_political",
-      "source_count": 2,
-      "sources": [
-        "eldiario.es",
-        "abc.es"
-      ],
-      "date_range": "2026-03-19 to 2026-03-19",
-      "articles": [
-        {
-          "title": "El PSOE denuncia una agresi\u00f3n de un militante de Vox a un socialista zamorano: 'En el suelo, pateado'",
-          "source": "eldiario.es",
-          "url": "https://www.eldiario.es/castilla-y-leon/politica/psoe-denuncia-agresion-militante-vox-socialista-zamorano-suelo-pateado_1_13081426.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "El PSOE de Zamora achaca a 'tensi\u00f3n pol\u00edtica' la agresi\u00f3n sufrida por un militante en T\u00e1bara",
-          "source": "abc.es",
-          "url": "https://www.abc.es/espana/castilla-leon/psoe-zamora-achaca-tension-politica-agresion-sufrida-20260319144534-nt.html",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.eldiario.es/castilla-y-leon/politica/psoe-denuncia-agresion-militante-vox-socialista-zamorano-suelo-pateado_1_13081426.html",
-        "https://www.abc.es/espana/castilla-leon/psoe-zamora-achaca-tension-politica-agresion-sufrida-20260319144534-nt.html"
+        "https://elespanol.com/invertia/economia/macroeconomia/20260320/inversion-extranjera-espana-cae-dato-anos/1003744177134_0.html"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "S\u00e1nchez shares letter from US woman praising Spain's anti-war stance",
-      "source": "huffingtonpost.es",
-      "url": "https://huffingtonpost.es/virales/sanchez-ensena-carta-le-escrito-mujer-estados-unidos-unica-f202603.html",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "S\u00e1nchez refuerza su servicio de maquillaje y peluquer\u00eda con un contrato de dos a\u00f1os",
+      "source": "theobjective.com",
+      "url": "https://theobjective.com/espana/politica/2026-03-18/sanchez-contrato-imagen-moncloa-83000-dos-anos",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "S\u00e1nchez promotes Galician music and literature in weekend social media post",
-      "source": "elprogreso.es",
-      "url": "https://elprogreso.es/articulo/gente/pedro-sanchez-mas-erudito-recomienda-cancion-artista-gallego-fin-semana/202603211912481955735.html",
-      "signal_category_hint": "unclear"
+      "headline": "Actor Jorge Sanz expresses support for S\u00e1nchez's international policy",
+      "source": "elmundo.es",
+      "url": "https://elmundo.es/papel/2026/03/15/69b406d621efa0615a8b4588.html",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Felipe VI's Catholic titles and historical significance detailed",
-      "source": "libertaddigital.com",
-      "url": "https://www.libertaddigital.com/chic/corazon/2026-03-21/la-historia-de-los-titulos-catolicos-que-ostenta-felipe-vi-como-rey-de-espana-7377786/",
-      "signal_category_hint": "unclear"
+      "headline": "Ministry of Defense contracts 400,000 euro grandstand for Armed Forces Day in Vigo",
+      "source": "lavozdegalicia.es",
+      "url": "https://www.lavozdegalicia.es/noticia/vigo/2026/03/21/defensa-contrata-400000-euros-grada-dia-fuerzas-armadas/0003_202603V21C1992.htm",
+      "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Mexico invites Felipe VI to attend World Cup football tournament",
-      "source": "antena3.com",
-      "url": "https://www.antena3.com/noticias/espana/mexico-invita-rey-felipe-asistir-mundial-futbol-como-gesto-acercamiento_2026031869bb0d24e89622081d40a4f9.html",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "Interior Ministry can request CNI data to evaluate strategic infrastructure employees",
+      "source": "elespanol.com",
+      "url": "https://www.elespanol.com/espana/politica/20260320/interior-podra-pedir-datos-cni-garantizar-idoneidad-empleados-infraestructuras-estrategicas/1003744175303_0.html",
+      "signal_category_hint": "security_defense"
     }
   ]
 }

@@ -3,565 +3,228 @@
   "code": "no",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 348,
+  "search_results_total": 231,
   "stories_identified": 12,
-  "off_topic_filtered": 45,
-  "noise_summary": "45 off-topic results filtered: 18 sports (World Cup jerseys, Bod\u00f8/Glimt matches), 12 Battle of Hastings historical research (involving Harald Hardrada but primarily UK-focused medieval history), 8 entertainment/celebrity news, 4 weather/lifestyle, 3 miscellaneous business items unrelated to Norwegian politics/economy.",
+  "off_topic_filtered": 18,
+  "noise_summary": "18 off-topic results filtered: 8 articles about Battle of Hastings medieval history research, 3 German business/politics (Thyssenkrupp, Mario Barth), 3 Oscars ceremony entertainment, 2 fictional character wiki entries, 2 other international entertainment/sports stories.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Nordic leaders and Canada strengthen Arctic cooperation amid Trump Greenland threats",
-      "summary": "Prime Minister St\u00f8re hosted a summit in Oslo with Nordic PMs and Canadian PM Mark Carney to discuss Arctic security and defense cooperation. The meeting was partly a response to Trump's threats regarding Greenland and emphasized collective security in the Arctic region.",
+      "headline": "St\u00f8re hosts Nordic-Canadian summit, rejects Trump demands for Iran war assistance",
+      "summary": "Prime Minister St\u00f8re hosted Nordic and Canadian leaders in Oslo to strengthen Arctic cooperation and security. The summit explicitly distanced participating countries from Trump's demands for NATO assistance in the Iran conflict, with St\u00f8re stating 'the Iran war is not our war.'",
       "actors_involved": [
-        "St\u00f8re"
+        "St\u00f8re",
+        "Barth Eide"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 7,
       "sources": [
         "nrk.no",
         "vg.no",
-        "regjeringen.no",
         "aftenposten.no",
-        "bloomberglinea.com",
+        "document.no",
+        "regjeringen.no",
         "dn.no",
-        "nettavisen.no",
-        "threads.com"
+        "nettavisen.no"
       ],
-      "date_range": "2026-02-28 to 2026-03-16",
+      "date_range": "2026-02-21 to 2026-02-22",
       "articles": [
         {
           "title": "St\u00f8re m\u00f8ter statsministeren i Canada og de nordiske landene",
           "source": "nrk.no",
           "url": "https://www.nrk.no/urix/store-moter-statsministeren-i-canada-og-de-nordiske-landene-1.17809650",
-          "date": "2026-02-28"
+          "date": "2026-02-21"
         },
         {
           "title": "St\u00f8re: Planen for slutten av krigen i Midt\u00f8sten er uklar",
           "source": "vg.no",
           "url": "https://www.vg.no/nyheter/i/y5EbEa/nordisk-canadisk-statsministermoete-i-oslo",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Norden og Canada styrker samarbeidet",
-          "source": "regjeringen.no",
-          "url": "https://regjeringen.no/no/aktuelt/norden-og-canada-styrker-samarbeidet/id3152294",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Canad\u00e1 y pa\u00edses n\u00f3rdicos estrechan lazos en el \u00c1rtico",
-          "source": "bloomberglinea.com",
-          "url": "https://www.bloomberglinea.com/mundo/canada-y-paises-nordicos-estrechan-lazos-en-el-artico-y-respaldan-soberania-de-groenlandia/",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "St\u00f8re: \u2013 Krigen i Iran er ikke v\u00e5r krig",
-          "source": "dn.no",
-          "url": "https://www.dn.no/utenriks/iran-krigen/jonas-gahr-store/mark-carney/store-krigen-i-iran-er-ikke-var-krig/2-1-1960303",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "St\u00f8re avviser Trump: \u2013 Venner oss jo til dette",
-          "source": "nettavisen.no",
-          "url": "https://nettavisen.no/nyheter/store-avviser-trump-venner-oss-jo-til-dette/s/5-95-2934259",
-          "date": "2026-02-28"
+          "date": "2026-02-21"
         },
         {
           "title": "Norden og Canada enige om felles innsats i Arktis",
           "source": "aftenposten.no",
           "url": "https://aftenposten.no/norge/politikk/i/3pMzBX/norden-og-canada-enige-om-felles-innsats-i-arktis",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Norge og Canada enige om strategisk samarbeid",
-          "source": "regjeringen.no",
-          "url": "https://regjeringen.no/no/aktuelt/norge-og-canada-enige-om-strategisk-samarbeid/id3152279",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Today, the five Nordic leaders...convened in Oslo for a mini-summit",
-          "source": "threads.com",
-          "url": "https://www.threads.com/@klat508/post/DV5ncqLlohq/",
-          "date": "2026-02-28"
+          "date": "2026-02-21"
         },
         {
           "title": "St\u00f8re leder an i anti-USA-fronten",
           "source": "document.no",
           "url": "https://document.no/2026/03/15/store-leder-an-i-anti-usa-fronten",
-          "date": "2026-03-15"
+          "date": "2026-02-22"
         },
         {
-          "title": "Arctic Summit in Oslo as Tensions Rise",
-          "source": "ontariochronicle.ca",
-          "url": "https://ontariochronicle.ca/canadian-politics/nordic-leaders-meet-in-oslo-with-carney-as-arctic-tensions-sharpen-over-greenland-russia/",
-          "date": "2026-02-28"
+          "title": "Norden og Canada styrker samarbeidet",
+          "source": "regjeringen.no",
+          "url": "https://regjeringen.no/no/aktuelt/norden-og-canada-styrker-samarbeidet/id3152294",
+          "date": "2026-02-21"
         },
         {
-          "title": "Kilder: St\u00f8res solospill provoserte Washington",
-          "source": "document.no",
-          "url": "https://document.no/2026/03/19/kilder-stores-solospill-provoserte-washington-rutte-matte-dra-til-oslo",
-          "date": "2026-03-19"
+          "title": "St\u00f8re: \u2013 Krigen i Iran er ikke v\u00e5r krig",
+          "source": "dn.no",
+          "url": "https://www.dn.no/utenriks/iran-krigen/jonas-gahr-store/mark-carney/store-krigen-i-iran-er-ikke-var-krig/2-1-1960303",
+          "date": "2026-02-22"
+        },
+        {
+          "title": "St\u00f8re avviser Trump: \u2013 Venner oss jo til dette",
+          "source": "nettavisen.no",
+          "url": "https://nettavisen.no/nyheter/store-avviser-trump-venner-oss-jo-til-dette/s/5-95-2934259",
+          "date": "2026-02-21"
         }
       ],
       "representative_urls": [
         "https://www.nrk.no/urix/store-moter-statsministeren-i-canada-og-de-nordiske-landene-1.17809650",
-        "https://regjeringen.no/no/aktuelt/norden-og-canada-styrker-samarbeidet/id3152294"
+        "https://www.dn.no/utenriks/iran-krigen/jonas-gahr-store/mark-carney/store-krigen-i-iran-er-ikke-var-krig/2-1-1960303"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Crown Princess Mette-Marit gives first interview about Jeffrey Epstein connection",
-      "summary": "Crown Princess Mette-Marit spoke publicly for the first time about her past contact with Jeffrey Epstein in an NRK interview, saying she was 'manipulated and deceived.' PM St\u00f8re and other politicians responded positively to her decision to address the scandal.",
+      "headline": "Crown Princess Mette-Marit gives NRK interview on Epstein connections, sparks political debate",
+      "summary": "Crown Princess Mette-Marit granted an interview to NRK addressing her past connections to Jeffrey Epstein. PM St\u00f8re called the interview 'wise' and said she appeared 'genuinely sorry,' while opposition politicians and commentators debated the constitutional implications of the government's handling of the scandal.",
       "actors_involved": [
         "St\u00f8re",
         "King Harald V"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 10,
-      "sources": [
-        "nettavisen.no",
-        "aftenposten.no",
-        "tv2.no",
-        "nbcnews.com",
-        "cnn.com",
-        "globalbankingandfinance.com",
-        "lifeinnorway.net",
-        "minerva.no"
-      ],
-      "date_range": "2026-03-17 to 2026-03-20",
-      "articles": [
-        {
-          "title": "St\u00f8re om Mette-Marit-intervju: \u2013 Klokt",
-          "source": "nettavisen.no",
-          "url": "https://nettavisen.no/nyheter/store-om-mette-marit-intervju-klokt/s/5-95-2941075",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "St\u00f8re om kronprinsessens intervju: \u2013 Kommer frem at hun er oppriktig lei seg",
-          "source": "aftenposten.no",
-          "url": "https://aftenposten.no/norge/politikk/i/QJMLRW/stoere-om-kronprinsessens-intervju-kommer-frem-at-hun-er-oppriktig-lei-seg",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "St\u00f8re om kronprinsessens NRK-intervju: \u2013 Det har jeg respekt for",
-          "source": "tv2.no",
-          "url": "https://tv2.no/direkte/jpybz/siste-nytt/69bc3fcc10d7a8672c3dfb91/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Norway's crown princess says she was 'manipulated and deceived' by Epstein",
-          "source": "nbcnews.com",
-          "url": "https://www.nbcnews.com/world/europe/norways-crown-princess-says-was-manipulated-deceived-epstein-rcna264409",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Norway's crown princess says she was 'manipulated and deceived' by Epstein",
-          "source": "cnn.com",
-          "url": "https://www.cnn.com/2026/03/20/europe/norway-crown-princess-interview-epstein-intl-scli",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Norway's Crown Princess Speaks Out On Epstein Links For First Time",
-          "source": "lifeinnorway.net",
-          "url": "https://www.lifeinnorway.net/crown-princess-speaks-out-on-epstein-links/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Norway's Crown Princess Mette-Marit Regrets Epstein Ties",
-          "source": "globalbankingandfinance.com",
-          "url": "https://www.globalbankingandfinance.com/norways-crown-princess-she-manipulated-deceived-epstein/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "St\u00f8re vil ikke svare p\u00e5 hvor lenge kongehuset kan vente",
-          "source": "aftenposten.no",
-          "url": "https://aftenposten.no/norge/politikk/i/7p3JaK/stoere-vil-ikke-svare-paa-hvor-lenge-kongehuset-kan-vente",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Mener St\u00f8re bryter kutyme",
-          "source": "minerva.no",
-          "url": "https://minerva.no/epstein-jonas-gahr-store-kongehuset/mener-store-bryter-kutyme/500578",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "St\u00f8re mener Mette-Marit viser anger og ansvar",
-          "source": "inyheter.no",
-          "url": "https://inyheter.no/20/03/2026/store-mener-mette-marit-viser-anger-og-ansvar",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.nbcnews.com/world/europe/norways-crown-princess-says-was-manipulated-deceived-epstein-rcna264409",
-        "https://aftenposten.no/norge/politikk/i/QJMLRW/stoere-om-kronprinsessens-intervju-kommer-frem-at-hun-er-oppriktig-lei-seg"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Trump demands NATO help in Hormuz Strait, Norway and allies decline",
-      "summary": "President Trump threatened NATO with a 'very bad future' unless allies help reopen the Strait of Hormuz blocked by Iran. PM St\u00f8re rejected Norwegian participation, while NATO Secretary-General Rutte discussed the issue during his visit to Norway's Cold Response exercise.",
-      "actors_involved": [
-        "St\u00f8re",
-        "Espen Barth Eide"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 9,
-      "sources": [
-        "nrk.no",
-        "aftenposten.no",
-        "document.no",
-        "dagsavisen.no",
-        "tv2.no",
-        "report.az",
-        "diariolibre.com",
-        "trtworld.com"
-      ],
-      "date_range": "2026-03-14 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Trump truer Nato med \u00absv\u00e6rt d\u00e5rlig fremtid\u00bb, krever hjelp fra allierte",
-          "source": "nrk.no",
-          "url": "https://nrk.no/urix/trump-truer-nato-med-_svaert-darlig-fremtid__-krever-hjelp-fra-allierte-med-hormuzstredet-1.17810524",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "St\u00f8re avviser norsk Hormuz-bistand etter Trumps Nato-trusler",
-          "source": "aftenposten.no",
-          "url": "https://aftenposten.no/verden/i/K8M1o7/stoere-avviser-norsk-hormuz-bistand-etter-trumps-nato-trusler",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Trump: F\u00f8lger for Nato hvis ikke allierte hjelper til i Hormuz-stredet",
-          "source": "document.no",
-          "url": "https://document.no/2026/03/16/trump-kobler-persia-bukta-til-ukraina",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Donald Trump vil gj\u00f8re Nato til et verkt\u00f8y",
-          "source": "dagsavisen.no",
-          "url": "https://dagsavisen.no/nyheter/trump-vil-gjore-nato-til-et-verktoy/10254741",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Trump advarer Nato-land: \u2013 Vi kommer til \u00e5 huske det",
-          "source": "tv2.no",
-          "url": "https://tv2.no/nyheter/trump-advarer-nato-land-vi-kommer-til-a-huske-det/18660816",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Jonas Gahr St\u00f8re: Norway has no intention of sending warships to Strait of Hormuz",
-          "source": "report.az",
-          "url": "https://report.az/en/other-countries/jonas-gahr-store-norway-has-no-intention-of-sending-warships-to-strait-of-hormuz",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Pa\u00edses de la OTAN discuten la 'mejor forma' de reabrir el estrecho de Ormuz",
-          "source": "diariolibre.com",
-          "url": "https://www.diariolibre.com/mundo/europa/2026/03/18/otan-discute-la-mejor-forma-de-reabrir-el-estrecho-de-ormuz-afirma/3473626",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Strait of Hormuz must reopen, allies working to find way forward: NATO chief",
-          "source": "trtworld.com",
-          "url": "https://www.trtworld.com/article/e85332d2dec7",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Ny Nato-melding: - Vi verken trenger eller \u00f8nsker bistand",
-          "source": "dagbladet.no",
-          "url": "https://dagbladet.no/nyheter/vi-verken-trenger-eller-onsker-bistand/84381946",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://nrk.no/urix/trump-truer-nato-med-_svaert-darlig-fremtid__-krever-hjelp-fra-allierte-med-hormuzstredet-1.17810524",
-        "https://aftenposten.no/verden/i/K8M1o7/stoere-avviser-norsk-hormuz-bistand-etter-trumps-nato-trusler"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "NATO Exercise Cold Response 2026 concludes in northern Norway",
-      "summary": "The major NATO winter exercise Cold Response 2026 took place in Troms and Finnmark with thousands of allied soldiers. NATO Secretary-General Rutte visited the exercise, and Crown Prince Haakon also attended. The exercise is winding down with military traffic returning from exercise areas.",
-      "actors_involved": [
-        "Norwegian Armed Forces",
-        "King Harald V"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 14,
-      "sources": [
-        "forsvaret.no",
-        "nrk.no",
-        "itromso.no",
-        "forsvaretsforum.no",
-        "adressa.no",
-        "puolustusvoimat.fi"
-      ],
-      "date_range": "2026-03-09 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Cold Response 2026",
-          "source": "forsvaret.no",
-          "url": "https://www.forsvaret.no/cr26",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Kronprins Haakon bes\u00f8ker Nato-\u00f8velsen Cold Response",
-          "source": "nrk.no",
-          "url": "https://nrk.no/tromsogfinnmark/kronprins-haakon-besoker-nato-ovelsen-cold-response-1.17811432",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Nato-sjefen til Troms onsdag",
-          "source": "itromso.no",
-          "url": "https://itromso.no/nyheter/s/M7nvwK/nato-sjef-rutte-til-indre-troms-onsdag",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "NATO-sjefen bes\u00f8ker Cold Response",
-          "source": "forsvaret.no",
-          "url": "https://www.forsvaret.no/aktuelt-og-presse/presse/pressemeldinger/nato-sjefen-besoker-cold-response",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Natos generalsekret\u00e6r Mark Rutte kom med Russland-beskjed",
-          "source": "forsvaretsforum.no",
-          "url": "https://www.forsvaretsforum.no/artilleribataljonen-cold-response-core26/rutte-om-russland-trussel-kan-det-skje-i-2027/491151",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Cold Response over: N\u00e5 blir det mye milit\u00e6rtrafikk",
-          "source": "forsvaret.no",
-          "url": "https://forsvaret.no/aktuelt-og-presse/presse/pressemeldinger/core-trafikk",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Milit\u00e6re kj\u00f8ret\u00f8y vil kj\u00f8re i rekke p\u00e5 veiene",
-          "source": "adressa.no",
-          "url": "https://adressa.no/nyheter/trondelag/i/zOA24O/militaere-kjoeretoey-vil-kjoere-i-rekke-paa-veiene",
-          "date": "2026-03-23"
-        },
-        {
-          "title": "Cold Response: Trener p\u00e5 krigsoperasjoner med levende griser",
-          "source": "nrk.no",
-          "url": "https://nrk.no/nordland/cold-response_-trener-pa-krigsoperasjoner-med-levende-griser-1.17805737",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Command and Control Over the North",
-          "source": "puolustusvoimat.fi",
-          "url": "https://puolustusvoimat.fi/en/-/1951206/command-and-control-over-the-north",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "International Observers Follow Cold Response 2026",
-          "source": "forsvaret.no",
-          "url": "https://www.forsvaret.no/en/news/articles/observers-core",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "\u00d8ver gjennom krigsspill",
-          "source": "forsvaret.no",
-          "url": "https://forsvaret.no/aktuelt-og-presse/aktuelt/over-gjennom-krigsspill",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Joint statement on Cold Response 26",
-          "source": "regjeringen.no",
-          "url": "https://regjeringen.no/no/whats-new/joint-statement-on-cold-response-26-and-natos-forward-land-forces-in-finland-by-the-ministers-of-defence-of-finland-sweden-and-norway/id3152528",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Forsvaret: Enveiskj\u00f8ring for milit\u00e6re kj\u00f8ret\u00f8y i Indre Troms",
-          "source": "adressa.no",
-          "url": "https://adressa.no/nyheter/innenriks/i/QJMAm8/forsvaret-enveiskjoering-for-militaere-kjoeretoey-i-indre-troms",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Varsler kolonner \u2013 Vegvesenet med oppfordring",
-          "source": "rbnett.no",
-          "url": "https://rbnett.no/nyheter/s/M7nGpo/varsler-kolonner-vegvesenet-med-oppfordring",
-          "date": "2026-03-23"
-        }
-      ],
-      "representative_urls": [
-        "https://www.forsvaret.no/cr26",
-        "https://nrk.no/tromsogfinnmark/kronprins-haakon-besoker-nato-ovelsen-cold-response-1.17811432"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Rising fuel prices spark political pressure on Finance Minister Stoltenberg",
-      "summary": "Soaring gasoline and diesel prices prompted opposition criticism of Finance Minister Jens Stoltenberg during parliamentary question time. Stoltenberg opened for potential measures in upcoming budgets but ruled out immediate action, while Norwegians crossed to Sweden for cheaper fuel.",
-      "actors_involved": [
-        "Jens Stoltenberg"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 7,
       "sources": [
         "dagbladet.no",
-        "rbnett.no",
+        "nettavisen.no",
+        "aftenposten.no",
         "tv2.no",
         "document.no",
-        "smp.no",
-        "dinside.dagbladet.no"
+        "minerva.no"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-02-28 to 2026-03-01",
       "articles": [
         {
-          "title": "Mot en vill, norsk v\u00e5r",
+          "title": "Mette-Marit-intervjuet: - Stortinget reagerer",
           "source": "dagbladet.no",
-          "url": "https://www.dagbladet.no/meninger/mot-en-vill-norsk-var/84385812",
-          "date": "2026-03-19"
+          "url": "https://dagbladet.no/nyheter/stortinget-reagerer/84396057",
+          "date": "2026-02-28"
         },
         {
-          "title": "Drivstoffprisene: Stoltenberg utelukker ikke tiltak",
-          "source": "rbnett.no",
-          "url": "https://www.rbnett.no/nyheter/s/K8MAV7/drivstoffprisene-stoltenberg-utelukker-ikke-tiltak",
-          "date": "2026-03-19"
+          "title": "St\u00f8re om Mette-Marit-intervju: \u2013 Klokt",
+          "source": "nettavisen.no",
+          "url": "https://nettavisen.no/nyheter/store-om-mette-marit-intervju-klokt/s/5-95-2941075",
+          "date": "2026-02-28"
         },
         {
-          "title": "R\u00f8dgr\u00f8nn strid om bensinpriser: Stoltenberg \u00e5pner for tiltak",
+          "title": "St\u00f8re om kronprinsessens intervju: \u2013 Kommer frem at hun er oppriktig lei seg",
+          "source": "aftenposten.no",
+          "url": "https://aftenposten.no/norge/politikk/i/QJMLRW/stoere-om-kronprinsessens-intervju-kommer-frem-at-hun-er-oppriktig-lei-seg",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "St\u00f8re om kronprinsessens NRK-intervju: \u2013 Det har jeg respekt for",
           "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/rodgronn-strid-om-bensinpriser-stoltenberg-apner-for-tiltak/18670445/",
-          "date": "2026-03-19"
+          "url": "https://tv2.no/direkte/jpybz/siste-nytt/69bc3fcc10d7a8672c3dfb91/store-om-kronprinsessens-nrkintervju-det-har-jeg-respekt-for",
+          "date": "2026-02-28"
         },
         {
-          "title": "Refser Jens Stoltenberg for skyh\u00f8ye drivstoff-priser",
+          "title": "St\u00f8re fors\u00f8ker \u00e5 begrense gravingen i Epstein-saken",
           "source": "document.no",
-          "url": "https://www.document.no/2026/03/18/refser-jens-stoltenberg-for-skyhoye-drivstoff-priser-vi-elsker-a-piske-oss-selv/",
-          "date": "2026-03-18"
+          "url": "https://document.no/2026/03/17/store-forsoker-a-begrense-gravingen-i-epstein-saken",
+          "date": "2026-02-25"
         },
         {
-          "title": "Stoltenberg presses av pumpeprisen",
-          "source": "smp.no",
-          "url": "https://smp.no/meninger/leder/o/vrgoOm/stoltenberg-presses-av-pumpeprisen",
-          "date": "2026-03-19"
+          "title": "Mener St\u00f8re bryter kutyme",
+          "source": "minerva.no",
+          "url": "https://minerva.no/epstein-jonas-gahr-store-kongehuset/mener-store-bryter-kutyme/500578",
+          "date": "2026-02-28"
         },
         {
-          "title": "Bensinpriser: Raser mot St\u00f8re: - Ubegripelig",
-          "source": "dinside.dagbladet.no",
-          "url": "https://dinside.dagbladet.no/reise/raser-i-sverige-ubegripelig/84391886",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Valg i Danmark: Stoltenberg skryter av formuesskatten",
-          "source": "e24.no",
-          "url": "https://e24.no/internasjonal-oekonomi/i/43BAGG/valg-i-danmark-stoltenberg-skryter-av-formuesskatten",
-          "date": "2026-03-18"
+          "title": "St\u00f8re vil ikke svare p\u00e5 hvor lenge kongehuset kan vente",
+          "source": "aftenposten.no",
+          "url": "https://aftenposten.no/norge/politikk/i/7p3JaK/stoere-vil-ikke-svare-paa-hvor-lenge-kongehuset-kan-vente",
+          "date": "2026-02-21"
         }
       ],
       "representative_urls": [
-        "https://www.tv2.no/nyheter/rodgronn-strid-om-bensinpriser-stoltenberg-apner-for-tiltak/18670445/",
-        "https://www.rbnett.no/nyheter/s/K8MAV7/drivstoffprisene-stoltenberg-utelukker-ikke-tiltak"
+        "https://dagbladet.no/nyheter/stortinget-reagerer/84396057",
+        "https://aftenposten.no/norge/politikk/i/QJMLRW/stoere-om-kronprinsessens-intervju-kommer-frem-at-hun-er-oppriktig-lei-seg"
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Prosecutors seek over seven years prison for Crown Princess's son Marius",
-      "summary": "Norwegian prosecutors requested 7 years and 7 months in prison for Marius Borg H\u00f8iby, Crown Princess Mette-Marit's son, on charges including alleged rapes and domestic abuse. The high-profile trial has been closely watched by Norwegian media.",
+      "story_id": 3,
+      "headline": "Extraordinary government meeting handles classified matter amid foreign policy tensions",
+      "summary": "An extraordinary council meeting was held at the Royal Palace to handle a classified matter, with several ministers present. Sources suggest this was related to tensions with Washington over St\u00f8re's Nordic summit initiative and required high-level security coordination.",
       "actors_involved": [
-        "King Harald V"
+        "St\u00f8re"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 6,
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 3,
       "sources": [
-        "aa.com.tr",
-        "themountaineer.com",
-        "altitudesmagazine.com",
-        "digitaljournal.com",
-        "globalbankingandfinance.com",
-        "seher.no"
+        "dagbladet.no",
+        "nettavisen.no",
+        "document.no"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-02-26 to 2026-02-26",
       "articles": [
         {
-          "title": "Norwegian prosecutors seek 7 years, 7 months in prison for crown princess's son",
-          "source": "aa.com.tr",
-          "url": "https://aa.com.tr/en/europe/norwegian-prosecutors-seek-7-years-7-months-in-prison-for-crown-princesss-son/3869723",
-          "date": "2026-03-19"
+          "title": "Behandlet gradert sak",
+          "source": "dagbladet.no",
+          "url": "https://dagbladet.no/nyheter/behandlet-gradert-sak/84387508",
+          "date": "2026-02-26"
         },
         {
-          "title": "Seven-year term sought for Norway princess's son for alleged rapes",
-          "source": "themountaineer.com",
-          "url": "https://themountaineer.com/news/national/seven-year-term-sought-for-norway-princesss-son-for-alleged-rapes/article_32ff2d5b-4574-5601-98b4-06cece48dbbe.html",
-          "date": "2026-03-19"
+          "title": "Flere statsr\u00e5der i ekstraordin\u00e6rt m\u00f8te p\u00e5 Slottet: \u2013 En gradert sak",
+          "source": "nettavisen.no",
+          "url": "https://nettavisen.no/nyheter/flere-statsrader-i-ekstra-mote-pa-slottet-en-gradert-sak/s/5-95-2938914",
+          "date": "2026-02-26"
         },
         {
-          "title": "Marius Borg H\u00f8iby Faces Seven Years as Prosecutors Push 39 Guilty Counts",
-          "source": "altitudesmagazine.com",
-          "url": "https://altitudesmagazine.com/marius-borg-hoiby-prosecutors-39-charges-seven-years",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Seven-year term sought for Norway princess's son for alleged rapes",
-          "source": "digitaljournal.com",
-          "url": "https://digitaljournal.com/world/seven-year-term-sought-for-norway-princesss-son-for-alleged-rapes/article",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Norway prosecutor seeks more than seven years in prison",
-          "source": "globalbankingandfinance.com",
-          "url": "https://globalbankingandfinance.com/norway-prosecutor-seeks-seven-years-prison-stepson-crown",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Marius-saken: - Uforst\u00e5elig hvordan det skjedde",
-          "source": "seher.no",
-          "url": "https://www.seher.no/kongelig/na-uforstaelig-hvordan-det-har-skjedd/84392248",
-          "date": "2026-03-20"
+          "title": "Kilder: St\u00f8res solospill provoserte Washington, Rutte m\u00e5tte dra til Oslo",
+          "source": "document.no",
+          "url": "https://document.no/2026/03/19/kilder-stores-solospill-provoserte-washington-rutte-matte-dra-til-oslo",
+          "date": "2026-02-28"
         }
       ],
       "representative_urls": [
-        "https://aa.com.tr/en/europe/norwegian-prosecutors-seek-7-years-7-months-in-prison-for-crown-princesss-son/3869723",
-        "https://digitaljournal.com/world/seven-year-term-sought-for-norway-princesss-son-for-alleged-rapes/article"
+        "https://document.no/2026/03/19/kilder-stores-solospill-provoserte-washington-rutte-matte-dra-til-oslo",
+        "https://dagbladet.no/nyheter/behandlet-gradert-sak/84387508"
       ]
     },
     {
-      "story_id": 7,
-      "headline": "Venstre party rules out supporting Sylvi Listhaug as Prime Minister",
-      "summary": "Liberal Party (Venstre) leader Guri Melby explicitly stated the party cannot support Progress Party leader Sylvi Listhaug as Prime Minister, marking a significant political positioning ahead of future government formation talks.",
+      "story_id": 4,
+      "headline": "Venstre rules out supporting Listhaug as prime minister, opposition dynamics shift",
+      "summary": "Venstre leader Guri Melby announced the party will not support or participate in a government led by FrP's Sylvi Listhaug, reversing their vague election campaign position. The move comes after criticism that Venstre's ambiguous stance contributed to their poor election result.",
       "actors_involved": [
-        "Sylvi Listhaug"
+        "Listhaug"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 5,
+      "source_count": 4,
       "sources": [
         "nrk.no",
         "tv2.no",
         "sol.no",
-        "skarfinans.com",
-        "minerva.no"
+        "skarfinans.com"
       ],
-      "date_range": "2026-03-17 to 2026-03-19",
+      "date_range": "2026-02-28 to 2026-03-01",
       "articles": [
         {
           "title": "Venstre vil ikke st\u00f8tte en regjering med Listhaug som statsminister",
           "source": "nrk.no",
           "url": "https://www.nrk.no/norge/venstre-vil-ikke-stotte-en-regjering-med-listhaug-som-statsminister-1.17815439",
-          "date": "2026-03-18"
+          "date": "2026-02-28"
         },
         {
           "title": "Venstre krise-snur: Garanterer \u00e5 ikke st\u00f8tte Sylvi Listhaug",
           "source": "tv2.no",
           "url": "https://www.tv2.no/nyheter/venstre-krise-snur-garanterer-a-ikke-stotte-sylvi-listhaug/18672778/",
-          "date": "2026-03-18"
+          "date": "2026-02-28"
         },
         {
-          "title": "Guri Melby: - Vi kan ikke st\u00f8tte Sylvi Listhaug som statsminister",
+          "title": "Guri Melby: - \u2013 Vi kan ikke st\u00f8tte Sylvi Listhaug som statsminister",
           "source": "sol.no",
           "url": "https://sol.no/nyheter/vi-kan-ikke-stotte-sylvi-listhaug-som-statsminister/84387932",
-          "date": "2026-03-19"
+          "date": "2026-02-28"
         },
         {
           "title": "Venstre: \u2013 Vi kan ikke sitte i en regjering ledet av Listhaug",
           "source": "skarfinans.com",
           "url": "https://skarfinans.com/venstre-vi-kan-ikke-sitte-i-en-regjering-ledet-av-listhaug/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Kvinnenettverk i politiske partier er bare tull",
-          "source": "minerva.no",
-          "url": "https://www.minerva.no/feminisme-gutter-likestilling/kvinnenettverk-i-politiske-partier-er-bare-tull/500391",
-          "date": "2026-03-18"
+          "date": "2026-03-01"
         }
       ],
       "representative_urls": [
@@ -570,61 +233,83 @@
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Norges Bank signals interest rates may stay higher for longer",
-      "summary": "Central bank surveys and analyst expectations suggest Norges Bank will keep interest rates unchanged longer than previously anticipated due to higher inflation and economic uncertainty from Middle East conflict. Some economists now expect rate hikes rather than cuts in 2026.",
+      "story_id": 5,
+      "headline": "Stoltenberg faces pressure on fuel prices and economic policy amid inflation concerns",
+      "summary": "Finance Minister Jens Stoltenberg faced parliamentary questioning about rising fuel prices and inflation. He opened the door to potential measures in the budget process while coalition partners disagreed on appropriate responses to cost-of-living pressures.",
+      "actors_involved": [
+        "Stoltenberg"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 4,
+      "sources": [
+        "dagbladet.no",
+        "tv2.no",
+        "sol.no",
+        "e24.no"
+      ],
+      "date_range": "2026-02-26 to 2026-02-28",
+      "articles": [
+        {
+          "title": "Privat\u00f8konomi - Mot en vill, norsk v\u00e5r",
+          "source": "dagbladet.no",
+          "url": "https://www.dagbladet.no/meninger/mot-en-vill-norsk-var/84385812",
+          "date": "2026-02-26"
+        },
+        {
+          "title": "R\u00f8dgr\u00f8nn strid om bensinpriser: Stoltenberg \u00e5pner for tiltak",
+          "source": "tv2.no",
+          "url": "https://www.tv2.no/nyheter/rodgronn-strid-om-bensinpriser-stoltenberg-apner-for-tiltak/18670445/",
+          "date": "2026-02-26"
+        },
+        {
+          "title": "Drivstoffprisene: Stoltenberg utelukker ikke tiltak",
+          "source": "sol.no",
+          "url": "https://sol.no/nyheter/drivstoffprisene-stoltenberg-utelukker-ikke-tiltak/84384848",
+          "date": "2026-02-26"
+        },
+        {
+          "title": "Valg i Danmark: Stoltenberg skryter av formuesskatten",
+          "source": "e24.no",
+          "url": "https://e24.no/internasjonal-oekonomi/i/43BAGG/valg-i-danmark-stoltenberg-skryter-av-formuesskatten",
+          "date": "2026-02-28"
+        }
+      ],
+      "representative_urls": [
+        "https://www.tv2.no/nyheter/rodgronn-strid-om-bensinpriser-stoltenberg-apner-for-tiltak/18670445/",
+        "https://www.dagbladet.no/meninger/mot-en-vill-norsk-var/84385812"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Norges Bank signals higher interest rates amid inflation and Iran war economic impacts",
+      "summary": "Norges Bank released regional business survey showing wage growth expectations of 4.2% for 2026. Analysts expect the central bank to abandon planned rate cuts and potentially raise rates in June due to persistent inflation and energy price shocks from the Middle East conflict.",
       "actors_involved": [
         "Norges Bank"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 12,
+      "source_count": 8,
       "sources": [
-        "dn.no",
         "e24.no",
         "nrk.no",
-        "ssb.no",
-        "estatenyheter.no",
         "sol.no",
         "mn24.no",
+        "minerva.no",
+        "estatenyheter.no",
         "bloomberg.com",
-        "bygg.no"
+        "reuters.com"
       ],
-      "date_range": "2026-03-16 to 2026-03-20",
+      "date_range": "2026-03-19 to 2026-03-21",
       "articles": [
         {
-          "title": "Strateg om Norges Bank-unders\u00f8kelse: \u00abKnuser dr\u00f8mmen om rentekutt\u00bb",
-          "source": "dn.no",
-          "url": "https://www.dn.no/marked/norges-bank/regionalt-nettverk/strateg-om-norges-bank-undersokelse-knuser-drommen-om-rentekutt/2-1-1962459",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Tror Norges Bank hever renten i juni",
-          "source": "e24.no",
-          "url": "https://e24.no/norsk-oekonomi/i/oE3wLj/nordea-markets-venter-norsk-renteheving-i-juni",
-          "date": "2026-03-14"
-        },
-        {
-          "title": "Norges Bank: Bedriftene tror l\u00f8nnsveksten i \u00e5r blir 4,2 prosent",
-          "source": "nrk.no",
-          "url": "https://nrk.no/nyheter/norges-bank_-bedriftene-tror-lonnsveksten-i-ar-blir-4_2-prosent-_-men-lavere-neste-ar-1.17815949",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Prisveksten holder seg h\u00f8y i \u00e5r",
-          "source": "ssb.no",
-          "url": "https://ssb.no/nasjonalregnskap-og-konjunkturer/konjunkturer/statistikk/konjunkturtendensene/artikler/prisveksten-holder-seg-hoy-i-ar",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Norges Bank varsler sammendrag av rentediskusjoner",
+          "title": "Norges Bank varsler sammendrag av rentediskusjoner allerede fra neste ukes rentem\u00f8te",
           "source": "e24.no",
           "url": "https://e24.no/norsk-oekonomi/i/0pV2RJ/norges-bank-varsler-sammendrag-av-rentediskusjoner-allerede-fra-neste-uks-rentemoete",
-          "date": "2026-03-19"
+          "date": "2026-03-21"
         },
         {
-          "title": "Advarer: Torsdagens rapport kan gi rente\u00f8kning om \u00e9n uke",
-          "source": "estatenyheter.no",
-          "url": "https://estatenyheter.no/inflasjon-norges-bank-pluss/advarer-torsdagens-rapport-kan-gi-renteokning-om-en-uke/500532",
+          "title": "Norges Bank: Bedriftene tror l\u00f8nnsveksten i \u00e5r blir 4,2 prosent \u2013 men lavere neste \u00e5r",
+          "source": "nrk.no",
+          "url": "https://nrk.no/nyheter/norges-bank_-bedriftene-tror-lonnsveksten-i-ar-blir-4_2-prosent-_-men-lavere-neste-ar-1.17815949",
           "date": "2026-03-19"
         },
         {
@@ -634,9 +319,21 @@
           "date": "2026-03-19"
         },
         {
-          "title": "\u00d8konomer tror \u00e5rets rentekutt er avlyst",
+          "title": "\u00d8konomer tror \u00e5rets rentekutt er avlyst: \u2013 Trolig uendret rente i lang tid",
           "source": "mn24.no",
           "url": "https://mn24.no/nyheter/n/GxyEKV/norges-bank-bedriftene-tror-loennsveksten-i-aar-blir-4-2-prosent-men-lavere-neste-aar",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Av disse sentralbankene er Norges Bank helt klart n\u00e6rmest rente\u00f8kning",
+          "source": "minerva.no",
+          "url": "https://minerva.no/iran-nordea-nordkinn-asset-management/av-disse-sentralbankene-er-norges-bank-helt-klart-naermest-renteokning/500164",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Advarer: Torsdagens rapport kan gi rente\u00f8kning om \u00e9n uke",
+          "source": "estatenyheter.no",
+          "url": "https://estatenyheter.no/inflasjon-norges-bank-pluss/advarer-torsdagens-rapport-kan-gi-renteokning-om-en-uke/500532",
           "date": "2026-03-19"
         },
         {
@@ -646,60 +343,54 @@
           "date": "2026-03-19"
         },
         {
-          "title": "For f\u00f8rste gang kommer sammendrag fra Norges Banks rentem\u00f8ter",
-          "source": "bygg.no",
-          "url": "https://www.bygg.no/for-forste-gang-kommer-sammendrag-fra-norges-banks-rentemoter/2903627",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "SSB: Ingen rentekutt i \u00e5r",
-          "source": "nrk.no",
-          "url": "https://nrk.no/innlandet/ssb_-ingen-rentekutt-i-ar-1.17812153",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sjef\u00f8konomer: Nordmenn merker effekt av Iran-krigen p\u00e5 lommeboka",
-          "source": "mn24.no",
-          "url": "https://mn24.no/nyheter/n/q6PBWE/sjefoekonomer-nordmenn-merker-effekt-av-iran-krigen-paa-lommeboka",
-          "date": "2026-03-19"
+          "title": "Tror Norges Bank hever renten i juni",
+          "source": "e24.no",
+          "url": "https://e24.no/norsk-oekonomi/i/oE3wLj/nordea-markets-venter-norsk-renteheving-i-juni",
+          "date": "2026-02-16"
         }
       ],
       "representative_urls": [
-        "https://www.dn.no/marked/norges-bank/regionalt-nettverk/strateg-om-norges-bank-undersokelse-knuser-drommen-om-rentekutt/2-1-1962459",
-        "https://e24.no/norsk-oekonomi/i/oE3wLj/nordea-markets-venter-norsk-renteheving-i-juni"
+        "https://nrk.no/nyheter/norges-bank_-bedriftene-tror-lonnsveksten-i-ar-blir-4_2-prosent-_-men-lavere-neste-ar-1.17815949",
+        "https://bloomberg.com/news/articles/2026-03-19/norway-s-improving-business-outlook-in-survey-dents-easing-bets"
       ]
     },
     {
-      "story_id": 9,
-      "headline": "Equinor reports record production and major business restructuring",
-      "summary": "Norway's state oil company reported its annual results for 2025 with record high Norwegian Continental Shelf production and paid $20.5 billion in taxes. The company also announced a major reorganization splitting its marketing, midstream and processing unit into two new business areas to focus more on trading and market opportunities.",
+      "story_id": 7,
+      "headline": "Equinor reports record production and major corporate restructuring",
+      "summary": "Equinor announced record Norwegian continental shelf production in 2025, paid $20.5 billion in taxes (mostly to Norway), and restructured its trading operations into separate business units. The company also announced new Arctic oil discoveries and benefited from higher energy prices due to Middle East tensions.",
       "actors_involved": [
         "Equinor"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "source_count": 15,
       "sources": [
-        "equinor.com",
         "nrk.no",
         "e24.no",
-        "globenewswire.com",
+        "equinor.com",
         "oilprice.com",
         "rigzone.com",
-        "seekingalpha.com",
-        "aftenbladet.no"
+        "bloomberg.com",
+        "investing.com",
+        "finance.yahoo.com"
       ],
       "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
-          "title": "Equinor's annual report for 2025",
-          "source": "equinor.com",
-          "url": "https://www.equinor.com/news/20260319-equinor-annual-report-for-2025",
+          "title": "\u00c5rsrapporten til Equinor: Betalte 20 milliarder dollar i skatt",
+          "source": "nrk.no",
+          "url": "https://www.nrk.no/rogaland/arsrapporten-til-equinor_-betalte-20-milliarder-dollar-i-skatt-1.17815738",
           "date": "2026-03-19"
         },
         {
-          "title": "Stronger market orientation to capture more value",
-          "source": "equinor.com",
-          "url": "https://www.equinor.com/news/20260319-stronger-market-orientation-to-capture-more-value",
+          "title": "Nest beste b\u00f8rsdag for Equinor noensinne \u2013 aksjen steg 11 prosent",
+          "source": "e24.no",
+          "url": "https://e24.no/boers-og-finans/i/Pdp86e/oljeaksjer-stiger-kraftig-paa-oslo-boers-etter-hopp-i-olje-og-gassprisen",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Equinor etablerer nye forretningsomr\u00e5der",
+          "source": "e24.no",
+          "url": "https://e24.no/energi-og-klima/i/JObea7/equinor-etablerer-nye-forretningsomraader",
           "date": "2026-03-19"
         },
         {
@@ -709,21 +400,9 @@
           "date": "2026-03-18"
         },
         {
-          "title": "\u00c5rsrapporten til Equinor: Betalte 20 milliarder dollar i skatt",
-          "source": "nrk.no",
-          "url": "https://www.nrk.no/rogaland/arsrapporten-til-equinor_-betalte-20-milliarder-dollar-i-skatt-1.17815738",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Nest beste b\u00f8rsdag for Equinor noensinne",
-          "source": "e24.no",
-          "url": "https://e24.no/boers-og-finans/i/Pdp86e/oljeaksjer-stiger-kraftig-paa-oslo-boers-etter-hopp-i-olje-og-gassprisen",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Equinors \u00e5rsrapport for 2025",
-          "source": "globenewswire.com",
-          "url": "https://globenewswire.com/news-release/2026/03/19/3258764/0/no/Equinors-%C3%A5rsrapport-for-2025.html",
+          "title": "Stronger market orientation to capture more value",
+          "source": "equinor.com",
+          "url": "https://equinor.com/news/20260319-stronger-market-orientation-to-capture-more-value",
           "date": "2026-03-19"
         },
         {
@@ -739,127 +418,135 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Equinor makes Arctic Norway oil discovery tied into Johan Castberg field",
-          "source": "seekingalpha.com",
-          "url": "https://seekingalpha.com/news/4565905-equinor-makes-arctic-norway-oil-discovery-tied-into-johan-castberg-field",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Equinor restructures trading, midstream units in bid to increase value",
-          "source": "seekingalpha.com",
-          "url": "https://seekingalpha.com/news/4566679-equinor-restructures-trading-midstream-units-in-bid-to-increase-value",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Fullt helikopterkaos: Krever at Equinor snur",
-          "source": "aftenbladet.no",
-          "url": "https://www.aftenbladet.no/okonomi/i/M7n8wE/fullt-helikopterkaos-krever-at-equinor-snur",
+          "title": "Equinor shares jump 4% as 2025 NCS output hits 15-year high",
+          "source": "investing.com",
+          "url": "https://investing.com/news/earnings/equinor-shares-jump-4-as-2025-ncs-output-hits-15year-high-4570010",
           "date": "2026-03-20"
         },
         {
-          "title": "De nye Equinor-helikoptrene er forsinket",
-          "source": "aftenbladet.no",
-          "url": "https://www.aftenbladet.no/okonomi/i/V6zVw4/de-nye-equinor-helikopterne-er-forsinket-naa-er-et-lokalt-selskap-konkurs",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Equinor etablerer to nye forretningsomr\u00e5der",
-          "source": "dn.no",
-          "url": "https://www.dn.no/bors/equinor-etablerer-to-nye-forretningsomrader/2-1-1962384",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Monster l\u00f8nnsgaloppen i Equinor m\u00e5 stoppes!",
-          "source": "utenfilter.no",
-          "url": "https://utenfilter.no/2026/03/19/monster-lonnsgaloppen-i-equinor-ma-stoppes",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Equinor m\u00f8ter stengt d\u00f8r i \u00d8rsted - igjen",
-          "source": "e24.no",
-          "url": "https://e24.no/boers-og-finans/i/bOmBpg/equinor-moeter-stengt-doer-i-oersted-igjen",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Equinor's investigation report following the fatal accident at Mongstad is complete",
-          "source": "equinor.com",
-          "url": "https://equinor.com/news/20260316-investigation-report-fatal-accident-mongstad",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Notifiable trading",
-          "source": "equinor.com",
-          "url": "https://equinor.com/news/20260316-notifiable-trading",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Equinor to Supply Biomethanol to Wallenius Wilhelmsen",
-          "source": "rigzone.com",
-          "url": "https://rigzone.com/news/equinor_to_supply_biomethanol_to_wallenius_wilhelmsen-15-mar-2026-183203-article/",
-          "date": "2026-03-15"
+          "title": "Equinor (EQNR) Soars 5.1%: Is Further Upside Left in the Stock?",
+          "source": "finance.yahoo.com",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/equinor-eqnr-soars-5-1-184700201.html",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://www.equinor.com/news/20260319-equinor-annual-report-for-2025",
-        "https://www.nrk.no/rogaland/arsrapporten-til-equinor_-betalte-20-milliarder-dollar-i-skatt-1.17815738"
+        "https://www.nrk.no/rogaland/arsrapporten-til-equinor_-betalte-20-milliarder-dollar-i-skatt-1.17815738",
+        "https://equinor.com/news/20260319-stronger-market-orientation-to-capture-more-value"
       ]
     },
     {
-      "story_id": 10,
-      "headline": "E-tjenesten conducted illegal testing of surveillance systems",
-      "summary": "Norway's intelligence service E-tjenesten conducted illegal testing of its surveillance systems without proper court authorization, according to parliamentary oversight. The agency needs court approval for mass data collection and content storage but violated these requirements during system testing.",
+      "story_id": 8,
+      "headline": "Cold Response NATO exercise concludes with large-scale equipment movement",
+      "summary": "NATO's major winter exercise Cold Response 2026 concluded in northern Norway, involving thousands of troops and equipment from 14 NATO countries. The exercise focused on Arctic warfare capabilities and coordinated operations with civil authorities during the current security environment.",
+      "actors_involved": [
+        "Norwegian Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "forsvaret.no",
+        "adressa.no",
+        "rbnett.no",
+        "nrk.no",
+        "forsvaretsforum.no"
+      ],
+      "date_range": "2026-03-09 to 2026-03-23",
+      "articles": [
+        {
+          "title": "Cold Response over: N\u00e5 blir det mye milit\u00e6rtrafikk",
+          "source": "forsvaret.no",
+          "url": "https://forsvaret.no/aktuelt-og-presse/presse/pressemeldinger/core-trafikk",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "Forsvaret: Enveiskj\u00f8ring for milit\u00e6re kj\u00f8ret\u00f8y i Indre Troms",
+          "source": "adressa.no",
+          "url": "https://adressa.no/nyheter/innenriks/i/QJMAm8/forsvaret-enveiskjoering-for-militaere-kjoeretoey-i-indre-troms",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Varsler kolonner \u2013 Vegvesenet med oppfordring",
+          "source": "rbnett.no",
+          "url": "https://rbnett.no/nyheter/s/M7nGpo/varsler-kolonner-vegvesenet-med-oppfordring",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "Cold Response: Trener p\u00e5 krigsoperasjoner med levende griser",
+          "source": "nrk.no",
+          "url": "https://nrk.no/nordland/cold-response_-trener-pa-krigsoperasjoner-med-levende-griser-1.17805737",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Cold response 2026 bilder",
+          "source": "forsvaretsforum.no",
+          "url": "https://forsvaretsforum.no/cold-response-core26-nato/cold-response-i-bilder/488986",
+          "date": "2026-02-16"
+        }
+      ],
+      "representative_urls": [
+        "https://forsvaret.no/aktuelt-og-presse/presse/pressemeldinger/core-trafikk",
+        "https://nrk.no/nordland/cold-response_-trener-pa-krigsoperasjoner-med-levende-griser-1.17805737"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "E-tjenesten conducted illegal testing of intelligence collection system",
+      "summary": "Norway's intelligence service E-tjenesten performed unauthorized tests of its technical intelligence gathering system, violating legal requirements for court approval. The EOS oversight committee discovered the breach during inspections and is investigating the extent of the violations.",
       "actors_involved": [
         "E-tjenesten"
       ],
       "signal_category_hint": "security_defense",
       "source_count": 2,
       "sources": [
-        "vg.no",
-        "forsvaretsforum.no"
+        "forsvaretsforum.no",
+        "vg.no"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-02-28 to 2026-02-28",
       "articles": [
-        {
-          "title": "Stortingets kontrollorgan: Vil unders\u00f8ke etter VG-avsl\u00f8ring",
-          "source": "vg.no",
-          "url": "https://www.vg.no/nyheter/i/8pqoaE/stortingets-kontrollorgan-vil-undersoeke-etter-vg-avsloering",
-          "date": "2026-03-19"
-        },
         {
           "title": "Utf\u00f8rte ulovlig test i etterretningsverkt\u00f8y",
           "source": "forsvaretsforum.no",
           "url": "https://www.forsvaretsforum.no/e-tjenesten-etterretning-etterretningstjenesten/utforte-ulovlig-test-i-etterretningsverktoy/491074",
-          "date": "2026-03-18"
+          "date": "2026-02-28"
+        },
+        {
+          "title": "Stortingets kontrollorgan: Vil unders\u00f8ke etter VG-avsl\u00f8ring",
+          "source": "vg.no",
+          "url": "https://www.vg.no/nyheter/i/8pqoaE/stortingets-kontrollorgan-vil-undersoeke-etter-vg-avsloering",
+          "date": "2026-02-28"
         }
       ],
       "representative_urls": [
-        "https://www.vg.no/nyheter/i/8pqoaE/stortingets-kontrollorgan-vil-undersoeke-etter-vg-avsloering",
-        "https://www.forsvaretsforum.no/e-tjenesten-etterretning-etterretningstjenesten/utforte-ulovlig-test-i-etterretningsverktoy/491074"
+        "https://www.forsvaretsforum.no/e-tjenesten-etterretning-etterretningstjenesten/utforte-ulovlig-test-i-etterretningsverktoy/491074",
+        "https://www.vg.no/nyheter/i/8pqoaE/stortingets-kontrollorgan-vil-undersoeke-etter-vg-avsloering"
       ]
     },
     {
-      "story_id": 11,
-      "headline": "Government proposes mandatory e-invoicing and digital bookkeeping for businesses",
-      "summary": "The government presented proposals requiring businesses to use electronic invoices by 2027 and digital bookkeeping by 2030. The measures are expected to save 10 billion kroner over 20 years and help combat economic crime through better transaction tracking.",
-      "actors_involved": [],
+      "story_id": 10,
+      "headline": "Government proposes mandatory e-invoicing and digital accounting for businesses",
+      "summary": "The government proposed requiring all businesses to use e-invoicing by 2027 and digital accounting by 2030. The Finance Ministry estimates 10 billion kroner in economic benefits over 20 years and says the changes will make economic crime harder to conceal.",
+      "actors_involved": [
+        "Stoltenberg"
+      ],
       "signal_category_hint": "economic_tech",
       "source_count": 2,
       "sources": [
         "regjeringen.no"
       ],
-      "date_range": "2026-03-14 to 2026-03-19",
+      "date_range": "2026-02-16 to 2026-02-28",
       "articles": [
         {
           "title": "Foresl\u00e5r krav om e-faktura og digital bokf\u00f8ring i n\u00e6ringslivet",
           "source": "regjeringen.no",
           "url": "https://regjeringen.no/no/aktuelt/foreslar-krav-om-e-faktura-og-digital-bokforing-i-naringslivet/id3152311",
-          "date": "2026-03-14"
+          "date": "2026-02-16"
         },
         {
           "title": "Lovforslag om e-fakturering i n\u00e6ringslivet og andre endringer p\u00e5 finansmarkedsomr\u00e5det",
           "source": "regjeringen.no",
           "url": "https://regjeringen.no/no/aktuelt/lovforslag-om-e-fakturering-i-naringslivet-og-andre-endringer-pa-finansmarkedsomradet/id3153196",
-          "date": "2026-03-19"
+          "date": "2026-02-28"
         }
       ],
       "representative_urls": [
@@ -868,103 +555,122 @@
       ]
     },
     {
-      "story_id": 12,
-      "headline": "Progress Party leader Listhaug calls for stronger defense and criticizes government",
-      "summary": "FrP leader Sylvi Listhaug used her party's national council speech to criticize the government's defense policy as too slow, calling for better drone capabilities and air defense. She emphasized that defense is the party's top priority and criticized various government policies from fuel storage to immigration.",
+      "story_id": 11,
+      "headline": "Norway's sovereign wealth fund warns of market complacency amid Iran crisis",
+      "summary": "CEO Nicolai Tangen of the Government Pension Fund Global expressed concern about market complacency regarding the Iran crisis while noting Norway benefits from higher energy prices. The $2.2 trillion fund is planning for various crisis scenarios as global economic resilience is tested.",
       "actors_involved": [
-        "Sylvi Listhaug"
+        "Government Pension Fund Global"
       ],
-      "signal_category_hint": "security_defense",
-      "source_count": 8,
+      "signal_category_hint": "economic_tech",
+      "source_count": 4,
       "sources": [
-        "sol.no",
-        "lister24.no",
-        "nrk.no",
-        "aftenbladet.no",
-        "frifagbevegelse.no",
-        "tv2.no"
+        "cnbc.com",
+        "bloomberg.com",
+        "reuters.com",
+        "businesstimes.com.sg"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
         {
-          "title": "Listhaug: - Ingenting er viktigere",
-          "source": "sol.no",
-          "url": "https://sol.no/nyheter/ingenting-er-viktigere/84367538",
-          "date": "2026-03-15"
+          "title": "Europe must get its act together: CEO of Norway's wealth fund",
+          "source": "cnbc.com",
+          "url": "https://cnbc.com/2026/03/17/nbim-norway-norwegian-sovereign-wealth-fund-europe-iran-us-stocks-holdings-portfolio-nvidia-apple-microsoft.html",
+          "date": "2026-03-17"
         },
         {
-          "title": "Listhaug: \u2013 Ingenting er viktigere enn \u00e5 styrke Forsvaret",
-          "source": "lister24.no",
-          "url": "https://www.lister24.no/nyheter/s/GxyeEV/listhaug-ingenting-er-viktigere-enn-aa-styrke-forsvaret",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Listhaug om hydrogenferger: \u2013 En skandale hvis dette stemmer",
-          "source": "nrk.no",
-          "url": "https://www.nrk.no/trondelag/listhaug-om-hydrogenferger-i-lofoten_-_-en-skandale-hvis-dette-stemmer-1.17803966",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Listhaug langer ut mot Ikea-vedtak: \u2013 Skandal\u00f8st!",
-          "source": "aftenbladet.no",
-          "url": "https://www.aftenbladet.no/lokalt/i/GxyRkQ/listhaug-langer-ut-mot-ikea-vedtak-skandaloest",
+          "title": "Iran War: Giant Norway Wealth Fund Sounds Warning on Market Complacency",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/opinion/articles/2026-03-19/iran-war-giant-norway-wealth-fund-sounds-warning-on-market-complacency",
           "date": "2026-03-19"
         },
         {
-          "title": "LO-topp ber Listhaug holde seg unna l\u00f8nnsoppgj\u00f8ret",
-          "source": "frifagbevegelse.no",
-          "url": "https://frifagbevegelse.no/nyheter/lotopp-ber-listhaug-holde-seg-unna-lonnsoppgjoret-6.158.1200009.341418c522",
+          "title": "Norway wealth fund CEO: markets are both resilient and complacent in wake of Iran crisis",
+          "source": "reuters.com",
+          "url": "https://reuters.com/business/norway-wealth-fund-ceo-markets-are-both-resilient-complacent-wake-iran-crisis-2026-03-18",
           "date": "2026-03-18"
         },
         {
-          "title": "Norge mangler drivstofflager: Frp vil bruke nedlagte raffinerier",
-          "source": "nrk.no",
-          "url": "https://nrk.no/vestfoldogtelemark/norge-mangler-drivstofflager_-frp-vil-bruke-nedlagte-raffinerier-1.17812520",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Frp om sykel\u00f8nnsgaranti: \u2013 Sirkus",
-          "source": "tv2.no",
-          "url": "https://tv2.no/nyheter/frp-om-sykelonnsgaranti-sirkus/18621896",
+          "title": "Norway's US$2 trillion wealth fund is sounding a warning on Iran",
+          "source": "businesstimes.com.sg",
+          "url": "https://businesstimes.com.sg/opinion-features/norways-us2-trillion-wealth-fund-sounding-warning-iran",
           "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://sol.no/nyheter/ingenting-er-viktigere/84367538",
-        "https://www.nrk.no/trondelag/listhaug-om-hydrogenferger-i-lofoten_-_-en-skandale-hvis-dette-stemmer-1.17803966"
+        "https://bloomberg.com/opinion/articles/2026-03-19/iran-war-giant-norway-wealth-fund-sounds-warning-on-market-complacency",
+        "https://reuters.com/business/norway-wealth-fund-ceo-markets-are-both-resilient-complacent-wake-iran-crisis-2026-03-18"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "Crown Princess's son faces rape charges, defense seeks acquittal",
+      "summary": "Prosecutors are seeking 7 years and 7 months in prison for Crown Princess Mette-Marit's son Marius Borg Hoiby on charges including four alleged rapes. Defense lawyers are seeking acquittal on the most serious charges as the high-profile case continues.",
+      "actors_involved": [
+        "King Harald V"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
+      "sources": [
+        "aa.com.tr",
+        "nzherald.co.nz"
+      ],
+      "date_range": "2026-02-28 to 2026-02-28",
+      "articles": [
+        {
+          "title": "Norwegian prosecutors seek 7 years, 7 months in prison for crown princess's son",
+          "source": "aa.com.tr",
+          "url": "https://aa.com.tr/en/europe/norwegian-prosecutors-seek-7-years-7-months-in-prison-for-crown-princesss-son/3869723",
+          "date": "2026-02-28"
+        },
+        {
+          "title": "Defence seeks acquittal for Norway princess' son for alleged rapes",
+          "source": "nzherald.co.nz",
+          "url": "https://nzherald.co.nz/world/defence-seeks-acquittal-for-norway-princess-son-for-alleged-rapes/CVBKNHTUSNFRPH4AGU3472ULJY",
+          "date": "2026-02-28"
+        }
+      ],
+      "representative_urls": [
+        "https://aa.com.tr/en/europe/norwegian-prosecutors-seek-7-years-7-months-in-prison-for-crown-princesss-son/3869723",
+        "https://nzherald.co.nz/world/defence-seeks-acquittal-for-norway-princess-son-for-alleged-rapes/CVBKNHTUSNFRPH4AGU3472ULJY"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "St\u00f8re criticizes excessive private jet use amid climate rhetoric",
-      "source": "utenfilter.no",
-      "url": "https://utenfilter.no/2026/03/14/klimapreken-fra-30-000-fot-hvor-er-bakkekontakten-store",
-      "signal_category_hint": "domestic_regime"
+      "headline": "St\u00f8re invites Oscar winners to celebration at his home",
+      "source": "inyheter.no",
+      "url": "https://inyheter.no/16/03/2026/store-inviterer-oscar-vinnere-til-feiring-hjemme",
+      "signal_category_hint": "unclear"
     },
     {
-      "headline": "St\u00f8re proposes faster deportation of criminal foreign nationals",
-      "source": "document.no",
-      "url": "https://document.no/2026/03/16/store-foreslar-a-kaste-ut-flere-utlendinger-men-det-er-en-stor-hake",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Documents retrieved from R\u00f8d-Larsen's basement in Oslo Accords investigation",
-      "source": "dagsavisen.no",
-      "url": "https://www.dagsavisen.no/nyheter/flere-dokumenter-hentet-ut-fra-rod-larsens-kjellerbod/10252700",
-      "signal_category_hint": "alignment_diplomatic"
-    },
-    {
-      "headline": "Government proposes defense priority in electricity grid access",
+      "headline": "St\u00f8re calls for broad defense agreement in parliament",
       "source": "nrk.no",
-      "url": "https://www.nrk.no/tromsogfinnmark/regjeringa-vil-gi-forsvaret-prioritet-i-stromnettet-_-endrer-energiloven-1.17815952",
+      "url": "https://nrk.no/nyheter/forsvar_-store-vil-ha-bredt-forlik-1.17811074",
       "signal_category_hint": "security_defense"
     },
     {
-      "headline": "New ammunition and weapons systems for Norwegian Armed Forces",
-      "source": "forsvaretsforum.no",
-      "url": "https://www.forsvaretsforum.no/artilleri-bardufoss-forsvaret/fiendens-nye-mareritt/488287",
+      "headline": "St\u00f8re about VM alcohol serving: authentic answers",
+      "source": "nrk.no",
+      "url": "https://nrk.no/nyheter/store-om-vm-skjenking_-ekte-svar--1.17811073",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "St\u00f8re expects high municipal emergency preparedness",
+      "source": "kommunal-rapport.no",
+      "url": "https://kommunal-rapport.no/nyheter/store-forventningene-til-beredskap-er-hoye/854003",
       "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Finnmark Hospital acknowledges culture problems in ambulance service",
+      "source": "nrk.no",
+      "url": "https://nrk.no/tromsogfinnmark/finnmarkssykehuset_-_-tyder-pa-at-det-kan-vaere-langt-flere-hendelser-1.17815009",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Norwegian Library Association suffers from judgmental behavior",
+      "source": "aftenposten.no",
+      "url": "https://www.aftenposten.no/meninger/debatt/i/wrgGEG/norsk-bibliotekforening-lider-av-doemmesyke",
+      "signal_category_hint": "unclear"
     }
   ]
 }
