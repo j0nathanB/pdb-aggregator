@@ -239,9 +239,9 @@ def _extract_regional_lead(report: Optional[RegionalReport]) -> tuple[str, list[
     if not report:
         return "", []
 
-    # Regional lead is now produced by the regional writer after
-    # country summaries are edited. Set to empty placeholder.
-    lead = ""
+    # Seed the lead with the regional synthesis overview — the editor
+    # rewrites it into narrative prose using cross_cutting_dynamics.
+    lead = report.regional_overview or ""
 
     # Extract gaps as separate paragraphs
     gaps = []

@@ -222,8 +222,8 @@ class TestBuildAllPages:
         codes = [c.code for c in americas.countries]
         assert "mx" in codes
 
-    def test_regional_lead_placeholder(self):
-        """Regional lead is empty after build — the regional writer fills it later."""
+    def test_regional_lead_seeded_from_overview(self):
+        """Regional lead is seeded from the synthesis overview for the editor."""
         gl = _test_global_ledger()
         reports = {Region.AMERICAS: _test_regional_report()}
         ledgers = {"mx": _test_ledger()}
@@ -234,7 +234,7 @@ class TestBuildAllPages:
         )
 
         americas = region_pages[Region.AMERICAS]
-        assert americas.regional_lead == ""
+        assert americas.regional_lead == "The Americas region saw diplomatic shifts."
 
     def test_card_summary_placeholder(self):
         """Card summary is empty after build — the regional writer fills it later."""

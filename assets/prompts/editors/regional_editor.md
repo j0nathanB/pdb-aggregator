@@ -11,6 +11,7 @@ You receive a JSON object with:
 
 - `regional_lead` — the analyst's condensed overview (use as a starting point, not the whole story)
 - `cross_cutting_dynamics` — the FULL analytical detail for each cross-regional pattern, each containing: title, countries_involved, assessment, significance, trend, confidence, weakest_link, evidence_against_linkage, competing_interpretation. USE THIS DEPTH — it gives you the material the condensed `regional_lead` may have compressed.
+- `country_summaries` — edited prose summaries for each country in the region. Use these to ground your narrative in concrete developments, especially when cross_cutting_dynamics are sparse or absent. Find the thread that connects the countries — what they share, how they differ, what pattern the week reveals.
 - `gap_paragraphs` — notable absences to polish
 - `card_summary_seed` — starting point for the navigation card summary
 </inputs>

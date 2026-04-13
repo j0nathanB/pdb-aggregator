@@ -361,13 +361,20 @@ async def edit_regional(
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
-    if not page.regional_lead and not page.raw_dynamics:
+    if not page.regional_lead and not page.raw_dynamics and not page.countries:
         return page
+
+    # Country summaries give the editor material even when dynamics are sparse
+    country_summaries = [
+        {"country": c.country, "summary": c.narrative_body}
+        for c in page.countries if c.narrative_body
+    ]
 
     input_data = {
         "region": page.display_name,
-        "regional_lead": page.regional_lead or "(No lead yet — write from the cross_cutting_dynamics below.)",
+        "regional_lead": page.regional_lead or "(No lead yet — write from the analytical material below.)",
         "cross_cutting_dynamics": page.raw_dynamics or [],
+        "country_summaries": country_summaries,
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary_seed": page.card_summary,
     }
