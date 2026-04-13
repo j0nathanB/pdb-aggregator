@@ -206,12 +206,4 @@ def render_pages(
             countries=page_content.countries,
         ))
 
-    # Watchlist page
-    watchlist_tmpl = env.get_template("watchlist.mdx.j2")
-    pages["watchlist"] = _escape_mdx(watchlist_tmpl.render(
-        date_range=date_range,
-        items=watchlist.items,
-        edited_narrative=watchlist.edited_narrative,
-    ))
-
     return pages
