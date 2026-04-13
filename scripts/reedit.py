@@ -436,6 +436,28 @@ async def reedit_regions(
     effective_stage = "editor" if from_stage == "country" else from_stage
     stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
+    # Load existing country narratives from traces so the regional editor
+    # has country_summaries to draw from.
+    traces_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "traces"
+    for _region, page in region_pages.items():
+        for country in page.countries:
+            if country.narrative_body:
+                continue
+            # Try style_editor trace first, then editor, then copyeditor
+            for prefix in ("style_editor_", "copyeditor_", "editor_"):
+                trace_path = traces_dir / f"{prefix}{country.code}.json"
+                if trace_path.exists():
+                    try:
+                        with open(trace_path) as f:
+                            trace = json.load(f)
+                        parsed = trace.get("output", {}).get("parsed", {})
+                        body = parsed.get("narrative_body", "")
+                        if body:
+                            country.narrative_body = body
+                            break
+                    except (json.JSONDecodeError, KeyError):
+                        continue
+
     for region, page in region_pages.items():
         if region.value not in region_values:
             continue
