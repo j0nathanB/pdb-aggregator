@@ -64,8 +64,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger("reedit")
 
-STAGES = ["country", "editor", "copyeditor", "style_editor"]
-EDITORIAL_STAGES = ["editor", "copyeditor", "style_editor"]
+STAGES = ["country", "writer", "editor", "copyeditor", "style_editor"]
+EDITORIAL_STAGES = ["writer", "editor", "copyeditor", "style_editor"]
 
 
 # =============================================================================
@@ -214,6 +214,11 @@ async def run_style_editor_country(country: CountryContent, end_date: date) -> C
     return country
 
 
+async def run_regional_writer(page: RegionPageContent, end_date: date) -> RegionPageContent:
+    from src.monitor.newsletter.regional_writer import write_regional_essay
+    return await write_regional_essay(page)
+
+
 async def run_regional_editor(page: RegionPageContent, end_date: date) -> RegionPageContent:
     from src.monitor.newsletter.structured_editor import edit_regional
     return await edit_regional(page, analysis_date=end_date)
@@ -236,6 +241,11 @@ async def run_regional_style_editor(page: RegionPageContent, end_date: date) -> 
     if "card_summary" in result:
         page.card_summary = result["card_summary"]
     return page
+
+
+async def run_global_writer(overview, region_pages, end_date: date):
+    from src.monitor.newsletter.global_writer import write_global_essay
+    return await write_global_essay(overview, region_pages)
 
 
 async def run_executive_editor(overview, end_date: date):
@@ -432,8 +442,8 @@ async def reedit_regions(
     output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "reedits"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # "country" stage doesn't apply to regional reedits — normalize to "editor"
-    effective_stage = "editor" if from_stage == "country" else from_stage
+    # "country" stage doesn't apply to regional reedits — normalize to "writer"
+    effective_stage = "writer" if from_stage == "country" else from_stage
     stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
     # Load existing country narratives from traces so the regional editor
@@ -480,11 +490,13 @@ async def reedit_regions(
 
         logger.info("Re-editing regional lead: %s from %s", page.display_name, from_stage)
 
-        if stage_idx <= 0:
+        if stage_idx <= 0:  # writer
+            page = await run_regional_writer(page, end_date)
+        if stage_idx <= 1:  # editor
             page = await run_regional_editor(page, end_date)
-        if stage_idx <= 1:
+        if stage_idx <= 2:  # copyeditor
             page = await run_regional_copyeditor(page, end_date)
-        if stage_idx <= 2:
+        if stage_idx <= 3:  # style_editor
             page = await run_regional_style_editor(page, end_date)
 
         # Write markdown
@@ -510,17 +522,19 @@ async def reedit_executive(
     output_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "reedits"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # "country" stage doesn't apply to executive reedits — normalize to "editor"
-    effective_stage = "editor" if from_stage == "country" else from_stage
+    # "country" stage doesn't apply to executive reedits — normalize to "writer"
+    effective_stage = "writer" if from_stage == "country" else from_stage
     stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
     logger.info("Re-editing executive brief from %s", from_stage)
 
-    if stage_idx <= 0:
+    if stage_idx <= 0:  # writer
+        overview = await run_global_writer(overview, region_pages, end_date)
+    if stage_idx <= 1:  # editor
         overview = await run_executive_editor(overview, end_date)
-    if stage_idx <= 1:
+    if stage_idx <= 2:  # copyeditor
         overview = await run_executive_copyeditor(overview, end_date)
-    if stage_idx <= 2:
+    if stage_idx <= 3:  # style_editor
         overview = await run_executive_style_editor(overview, end_date)
 
     essay = overview.executive_brief.edited_essay or ""
