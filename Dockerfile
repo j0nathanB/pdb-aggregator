@@ -15,6 +15,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir boto3 python-dotenv
 
+# Playwright needs its driver + system deps for CDP connections to Browserbase
+RUN playwright install --with-deps chromium
+
 # Pre-download sentence-transformer models (~500MB, avoids download per run)
 RUN python -c "\
 from sentence_transformers import SentenceTransformer, CrossEncoder; \

@@ -640,6 +640,7 @@ class BrowserbaseExtractor(Extractor):
             )
 
         except Exception as e:
+            logger.warning("Browserbase extraction failed for %s: %s", url, e)
             return ExtractionResult(
                 url=url, method=self.method_name, success=False,
                 error=str(e),
