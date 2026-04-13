@@ -388,7 +388,7 @@ async def edit_regional(
     async with anthropic_limiter():
         async with client.messages.stream(
             model=model or EDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 4096,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
             temperature=1,
             thinking={
                 "type": "enabled",
