@@ -23,7 +23,9 @@ resource "aws_iam_role" "github_actions_ecr_push" {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
         }
         StringLike = {
-          "token.actions.githubusercontent.com:sub" = "repo:${var.content_repo}:ref:refs/heads/main"
+          # GitHub OIDC uses canonical casing (j0nathanB, not j0nathanb).
+          # Hardcode to avoid tfvars casing mismatch.
+          "token.actions.githubusercontent.com:sub" = "repo:j0nathanB/pdb-aggregator:ref:refs/heads/main"
         }
       }
     }]
