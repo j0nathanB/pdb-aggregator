@@ -373,8 +373,6 @@ def patch_mdx_regional(mdx_path: Path, new_lead: str, new_gaps: list[str],
     if headline:
         parts.append(f"\n**{headline}**")
     parts.append(new_lead if headline else "\n" + new_lead)
-    for gap in new_gaps:
-        parts.append(gap)
     replacement = "\n\n".join(parts) + "\n\n"
 
     new_content = content[:lead_start] + replacement + content[first_separator:]
