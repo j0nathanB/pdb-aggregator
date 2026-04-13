@@ -367,6 +367,7 @@ async def edit_regional(
     input_data = {
         "region": page.display_name,
         "regional_lead": page.regional_lead,
+        "cross_cutting_dynamics": page.raw_dynamics or [],
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary_seed": page.card_summary,
     }
@@ -436,14 +437,9 @@ async def edit_executive(
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
-    # If the writer has already produced an essay, send it for polishing
-    if brief.edited_essay:
-        items_json = json.dumps(
-            {"edited_essay": brief.edited_essay},
-            indent=2, ensure_ascii=False,
-        )
-    elif brief.items:
-        # Legacy path: weave structured items into an essay
+    # Always send structured briefing items — the editor weaves them into
+    # a unified essay (not just polishing a pre-written one).
+    if brief.items:
         items_json = json.dumps([
             {
                 "title": item.title,
