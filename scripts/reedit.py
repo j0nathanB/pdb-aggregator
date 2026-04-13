@@ -528,6 +528,23 @@ async def reedit_executive(
     effective_stage = "writer" if from_stage == "country" else from_stage
     stage_idx = EDITORIAL_STAGES.index(effective_stage)
 
+    # Load global writer output from trace so the editor gets the
+    # writer's draft (matching production pipeline).
+    if stage_idx > 0 and not overview.executive_brief.edited_essay:
+        traces_dir = PROJECT_ROOT / "briefs" / end_date.strftime("%Y%m%d") / "traces"
+        writer_trace = traces_dir / "global_writer_executive.json"
+        if writer_trace.exists():
+            try:
+                with open(writer_trace) as f:
+                    trace = json.load(f)
+                parsed = trace.get("output", {}).get("parsed", {})
+                essay = parsed.get("edited_essay", "")
+                if essay:
+                    overview.executive_brief.edited_essay = essay
+                    logger.info("Loaded global writer draft (%d chars)", len(essay))
+            except (json.JSONDecodeError, KeyError):
+                pass
+
     logger.info("Re-editing executive brief from %s", from_stage)
 
     if stage_idx <= 0:  # writer
