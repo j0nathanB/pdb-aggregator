@@ -27,18 +27,6 @@ You receive a JSON object with:
   You receive a regional essay from the writer and the regional analyst's structured findings. Polish the prose to match the style guide. Do not restructure the argument or change the thesis. Check claims against the analyst's confidence assessments — if the essay presents a low-confidence finding as established, soften the language or flag the uncertainty. Preserve all specific facts — numbers, named actors, direct quotes, concrete actions. If you find yourself replacing a specific fact with a characterization, stop.
   </regional_lead_task>
 
-  <gap_task>
-  Produce ONE polished paragraph in `gap_paragraphs` (always a single-element array, even if the input has multiple gap items — weave them into one coherent paragraph).
-
-- If the input has multiple gap items, find the analytical thread that connects them and merge into one paragraph that names each absence in turn.
-
-- Do NOT begin with "Notably absent this week:", "Missing this week:", or any similar boilerplate prefix. State the absence directly.
-
-- Keep it tight: 2-4 sentences maximum.
-
-- Lead with the absence itself, not the framing. "EU coordination on economic crisis response did not appear this week" beats "Notably absent this week: EU coordination on economic crisis response."
-  </gap_task>
-
   <card_task>
   Produce a card_summary — one sentence that captures the region's week. Concrete and specific, not abstract.
   </card_task>
@@ -78,7 +66,6 @@ Return JSON:
 {
     "headline": "Short, punchy headline — a claim, not a label",
     "regional_lead": "4-5 substantial paragraphs of flowing prose...",
-    "gap_paragraphs": ["EU coordination on economic crisis response did not appear this week. ..."],
     "card_summary": "One sentence for the navigation card."
 }
 
@@ -87,8 +74,6 @@ The `headline` should be 3-8 words — an editorial judgment, not a topic label.
 - "Emergency as Opportunity" — not "Leaders Respond to Crises"
 - "The Alliance Nobody Wanted" — not "Defence Cooperation Developments"
 - "When the Machinery Runs Itself" — not "Institutional Developments in Europe"
-
-The `gap_paragraphs` array MUST contain exactly one element. Do not start the paragraph with "Notably absent" or "Missing this week".
 
 No commentary. Just the JSON object.
 </output_format>

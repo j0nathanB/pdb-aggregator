@@ -351,7 +351,8 @@ def patch_mdx_country(mdx_path: Path, code: str, country_name: str, new_section:
     return True
 
 
-def patch_mdx_regional(mdx_path: Path, new_lead: str, new_gaps: list[str]) -> bool:
+def patch_mdx_regional(mdx_path: Path, new_lead: str, new_gaps: list[str],
+                       headline: str = "") -> bool:
     """Replace the regional lead in an MDX file."""
     content = mdx_path.read_text()
 
@@ -368,7 +369,10 @@ def patch_mdx_regional(mdx_path: Path, new_lead: str, new_gaps: list[str]) -> bo
         first_separator = len(content)
 
     # Build replacement
-    parts = ["\n" + new_lead]
+    parts = []
+    if headline:
+        parts.append(f"\n**{headline}**")
+    parts.append(new_lead if headline else "\n" + new_lead)
     for gap in new_gaps:
         parts.append(gap)
     replacement = "\n\n".join(parts) + "\n\n"
@@ -509,7 +513,7 @@ async def reedit_regions(
         if slug:
             mdx_path = PROJECT_ROOT / "site" / "briefs" / end_date.isoformat() / f"{slug}.mdx"
             if mdx_path.exists():
-                if patch_mdx_regional(mdx_path, page.regional_lead, page.gap_paragraphs):
+                if patch_mdx_regional(mdx_path, page.regional_lead, page.gap_paragraphs, page.headline):
                     logger.info("  Patched: %s", mdx_path)
 
 
@@ -552,8 +556,10 @@ async def reedit_executive(
         week_match = re.search(r'(## Week of [^\n]+)\n', content)
         regions_match = re.search(r'\n---\n\n## Regions', content)
         if week_match and regions_match:
+            headline = overview.executive_brief.headline or ""
+            headline_block = f"**{headline}**\n\n" if headline else ""
             new_content = (
-                content[:week_match.end()] + "\n\n" + essay + "\n\n"
+                content[:week_match.end()] + "\n\n" + headline_block + essay + "\n\n"
                 + content[regions_match.start():]
             )
             mdx_path.write_text(new_content)
