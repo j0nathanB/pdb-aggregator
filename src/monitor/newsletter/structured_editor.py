@@ -372,8 +372,8 @@ async def edit_regional(
 
     input_data = {
         "region": page.display_name,
-        "regional_lead": page.regional_lead or "(No lead yet — write from the analytical material below.)",
-        "cross_cutting_dynamics": page.raw_dynamics or [],
+        "regional_lead": page.regional_lead or "",
+        "regional_analyst_output": page.raw_dynamics or [],
         "country_summaries": country_summaries,
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary_seed": page.card_summary,

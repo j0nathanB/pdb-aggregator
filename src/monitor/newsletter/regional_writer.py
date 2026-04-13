@@ -121,7 +121,7 @@ async def write_regional_essay(
     async with anthropic_limiter():
         async with client.messages.stream(
             model=use_model,
-            max_tokens=THINKING_BUDGET_TOKENS + 4096,
+            max_tokens=THINKING_BUDGET_TOKENS + 8192,
             temperature=1,
             thinking={
                 "type": "enabled",
@@ -145,11 +145,23 @@ async def write_regional_essay(
         response.usage.output_tokens,
     )
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    run_date = page.week_end
+    save_raw_response(
+        "regional_writer", page.region.value, run_date,
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     data = extract_json(response_text, context=f"regional_writer_{page.region.value}")
     if "regional_lead" in data:
         page.regional_lead = data["regional_lead"]
     if "headline" in data:
         page.card_summary = data["headline"]
+    update_trace_parsed("regional_writer", page.region.value, run_date, parsed_output=data)
 
     return page
 

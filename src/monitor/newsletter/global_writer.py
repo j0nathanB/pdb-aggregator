@@ -137,8 +137,20 @@ async def write_global_essay(
         response.usage.output_tokens,
     )
 
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    run_date = overview.week_end
+    save_raw_response(
+        "global_writer", "executive", run_date,
+        system_prompt=system_prompt,
+        user_message=user_message,
+        response_text=response_text,
+        thinking_text=extract_thinking(response),
+        usage=extract_usage(response),
+    )
+
     data = extract_json(response_text, context="global_writer")
     if "edited_essay" in data:
         overview.executive_brief.edited_essay = data["edited_essay"]
+    update_trace_parsed("global_writer", "executive", run_date, parsed_output=data)
 
     return overview

@@ -458,6 +458,22 @@ async def reedit_regions(
                     except (json.JSONDecodeError, KeyError):
                         continue
 
+    # Load regional writer output from traces so the editor gets the
+    # writer's draft as regional_lead (matching production pipeline).
+    for _region, page in region_pages.items():
+        writer_trace = traces_dir / f"regional_writer_{_region.value}.json"
+        if writer_trace.exists() and not page.regional_lead:
+            try:
+                with open(writer_trace) as f:
+                    trace = json.load(f)
+                parsed = trace.get("output", {}).get("parsed", {})
+                lead = parsed.get("regional_lead", "")
+                if lead:
+                    page.regional_lead = lead
+                    logger.info("Loaded writer draft for %s (%d chars)", page.display_name, len(lead))
+            except (json.JSONDecodeError, KeyError):
+                pass
+
     for region, page in region_pages.items():
         if region.value not in region_values:
             continue
