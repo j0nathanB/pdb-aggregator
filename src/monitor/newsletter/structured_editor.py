@@ -442,14 +442,17 @@ async def edit_executive(
     analysis_date: date | None = None,
     model: str | None = None,
 ) -> ExecutiveBriefContent:
-    """Edit the executive brief — polish a pre-written essay or weave items into one."""
+    """Edit the executive brief — polish the writer's essay against briefing items."""
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
-    # Always send structured briefing items — the editor weaves them into
-    # a unified essay (not just polishing a pre-written one).
-    if brief.items:
-        items_json = json.dumps([
+    if not brief.edited_essay and not brief.items:
+        return brief
+
+    # Send writer's essay as primary, briefing items as constraint
+    input_data = {
+        "edited_essay": brief.edited_essay or "",
+        "briefing_items": [
             {
                 "title": item.title,
                 "regions_involved": item.regions_involved,
@@ -459,9 +462,9 @@ async def edit_executive(
                 "confidence": item.confidence,
             }
             for item in brief.items
-        ], indent=2, ensure_ascii=False)
-    else:
-        return brief
+        ],
+    }
+    items_json = json.dumps(input_data, indent=2, ensure_ascii=False)
 
     system_prompt = _build_system_prompt(EXECUTIVE_EDITOR_SYSTEM)
 
