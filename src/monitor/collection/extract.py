@@ -293,6 +293,7 @@ class CurlTrafilaturaExtractor(Extractor):
             )
 
         except Exception as e:
+            logger.debug("curl extraction failed for %s: %s", url, e)
             return ExtractionResult(
                 url=url, method=self.method_name, success=False,
                 error=str(e),
@@ -537,6 +538,7 @@ class PlaywrightExtractor(Extractor):
             )
 
         except Exception as e:
+            logger.warning("Playwright extraction failed for %s: %s", url, e)
             return ExtractionResult(
                 url=url, method=self.method_name, success=False,
                 error=str(e),
@@ -595,9 +597,11 @@ class BrowserbaseExtractor(Extractor):
             session = await asyncio.to_thread(
                 bb.sessions.create, project_id=self._project_id,
             )
+            logger.debug("Browserbase session %s created for %s", session.id, url)
 
             async with async_playwright() as p:
                 browser = await p.chromium.connect_over_cdp(session.connect_url)
+                logger.debug("CDP connected for %s (session %s)", url, session.id)
                 try:
                     context = browser.contexts[0]
                     page = context.pages[0]
