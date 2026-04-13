@@ -773,11 +773,15 @@ async def style_edit_all(
         if not page.regional_lead:
             return
         async with semaphore.acquire(f"regional_{page.region.value}"):
+            fields = {"regional_lead": page.regional_lead, "card_summary": page.card_summary}
+            if page.headline:
+                fields["headline"] = page.headline
             result = await style_edit_prose(
-                {"regional_lead": page.regional_lead, "card_summary": page.card_summary},
-                f"regional_{page.region.value}", analysis_date,
+                fields, f"regional_{page.region.value}", analysis_date,
             )
             page.regional_lead = result.get("regional_lead", page.regional_lead)
+            if "headline" in result:
+                page.headline = result["headline"]
             if "card_summary" in result:
                 page.card_summary = result["card_summary"]
 
@@ -787,13 +791,17 @@ async def style_edit_all(
     if scope in ("all", "executive") and overview.executive_brief.edited_essay:
         async def _se_exec():
             async with semaphore.acquire("executive"):
+                fields = {"edited_essay": overview.executive_brief.edited_essay}
+                if overview.executive_brief.headline:
+                    fields["headline"] = overview.executive_brief.headline
                 result = await style_edit_prose(
-                    {"edited_essay": overview.executive_brief.edited_essay},
-                    "executive", analysis_date,
+                    fields, "executive", analysis_date,
                 )
                 overview.executive_brief.edited_essay = result.get(
                     "edited_essay", overview.executive_brief.edited_essay,
                 )
+                if "headline" in result:
+                    overview.executive_brief.headline = result["headline"]
         tasks.append(_se_exec())
 
     # Regional leads

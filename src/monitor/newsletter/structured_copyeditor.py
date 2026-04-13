@@ -203,6 +203,7 @@ async def copyedit_regional(
         return page
 
     fields = {
+        "headline": page.headline,
         "regional_lead": page.regional_lead,
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary": page.card_summary,
@@ -211,6 +212,8 @@ async def copyedit_regional(
     region_codes = [c.code for c in page.countries]
     result = await _copyedit_prose(fields, f"regional_{page.region.value}", analysis_date, country_codes=region_codes)
 
+    if "headline" in result:
+        page.headline = result["headline"]
     page.regional_lead = result.get("regional_lead", page.regional_lead)
     if "gap_paragraphs" in result:
         page.gap_paragraphs = result["gap_paragraphs"]
@@ -229,9 +232,13 @@ async def copyedit_executive(
         return brief
 
     fields = {"edited_essay": brief.edited_essay}
+    if brief.headline:
+        fields["headline"] = brief.headline
     all_codes = [cfg.stem for cfg in sorted((PROJECT_ROOT / "assets" / "country_configs" / "countries").glob("*.yaml"))]
     result = await _copyedit_prose(fields, "executive", analysis_date, country_codes=all_codes)
     brief.edited_essay = result.get("edited_essay", brief.edited_essay)
+    if "headline" in result:
+        brief.headline = result["headline"]
     return brief
 
 
