@@ -1,0 +1,3 @@
+
+
+Notably absent this week: Given the level of domestic political stress in three of four countries, regional framework would predict reduced appetite for international cooperation or more inward-looking policies. Countries appear capable of maintaining external engagement despite internal political constraints, suggesting institutional separation between domestic political dynamics and foreign policy apparatus

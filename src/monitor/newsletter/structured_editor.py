@@ -361,12 +361,12 @@ async def edit_regional(
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
-    if not page.regional_lead:
+    if not page.regional_lead and not page.raw_dynamics:
         return page
 
     input_data = {
         "region": page.display_name,
-        "regional_lead": page.regional_lead,
+        "regional_lead": page.regional_lead or "(No lead yet — write from the cross_cutting_dynamics below.)",
         "cross_cutting_dynamics": page.raw_dynamics or [],
         "gap_paragraphs": page.gap_paragraphs,
         "card_summary_seed": page.card_summary,

@@ -1,0 +1,9 @@
+Three Asia-Pacific powers are tackling the Middle East oil crisis separately, each going its own way rather than working together. Australia is using its gas exports to win influence across Southeast Asia. Japan has secured oil supplies through 2027 by buying from new sources, including four times more from America. Indonesia's president is cutting energy deals directly with Russia.
+
+Each approach shows skill, but the complete lack of coordination exposes the limits of regional cooperation in a crisis. Australia's fuel security efforts run through bilateral deals with Southeast Asian partners. Japan's buying strategy works through commercial networks and government contracts. Indonesia's Russian outreach relies on presidential diplomacy. None of these efforts connect.
+
+This shows the region has learned to manage energy risks without depending on neighbours. All three countries are adapting quickly to Middle East disruptions, but through different methods that cut their own risk rather than building joint protection. Each response reveals abilities to secure energy that were hidden before the crisis hit.
+
+The timing suggests more than coincidence—three powers recognising that energy security in a crisis requires speed and national control. Each country appears to be accelerating existing plans to diversify suppliers rather than developing new ways to work together. But when the crisis hit, all three chose to act alone.
+
+Regional institutions like ASEAN and the Quad did nothing visible in response to Middle East energy disruptions, suggesting these frameworks either lack the ability to handle crises or countries prefer bilateral deals when urgent problems need quick action.
