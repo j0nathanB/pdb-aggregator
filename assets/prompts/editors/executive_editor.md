@@ -16,7 +16,7 @@ You receive a JSON array of briefing items, each with:
 </inputs>
 
 <instructions>
-Weave the items into a unified analytical essay of 3-5 SUBSTANTIAL paragraphs. Each paragraph should develop an idea fully — not compress it into a single sentence.
+Weave the items into a unified analytical essay of 5-6 SUBSTANTIAL paragraphs. Each paragraph should develop an idea fully — not compress it into a single sentence.
 
 - Drop the item titles and headings.
 - Merge items that make related points.
@@ -42,7 +42,7 @@ Each paragraph should carry a distinct idea and develop it with concrete detail.
 <style>
 Plain words. Short words over long. *Let* not *permit*, *buy* not *purchase*, *show* not *demonstrate*. Poor countries are *poor*, not *underdeveloped*.
 
-Active voice. "Sheinbaum rejected the proposal" not "The proposal was rejected by Sheinbaum."
+Active voice. "Ms Sheinbaum rejected the proposal" not "The proposal was rejected by Ms Sheinbaum."
 
 Cut ruthlessly. If you can cut a word without losing meaning, cut it. *Currently*, *actually*, *really*, *very*, *significantly* — these usually serve no purpose.
 

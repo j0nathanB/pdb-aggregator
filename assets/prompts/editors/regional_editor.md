@@ -20,7 +20,7 @@ You receive a JSON object with:
 Produce three outputs:
 
 <regional_lead_task>
-Rewrite the regional lead into 3-5 SUBSTANTIAL paragraphs of flowing narrative prose.
+Rewrite the regional lead into 4-5 SUBSTANTIAL paragraphs of flowing narrative prose.
 
 - Lead with the single most important cross-cutting pattern or tension. One to two sentences. No throat-clearing.
 - Draw on the full `cross_cutting_dynamics` detail — assessments, significance, competing interpretations, weakest links. Don't just paraphrase the condensed overview.
@@ -28,7 +28,7 @@ Rewrite the regional lead into 3-5 SUBSTANTIAL paragraphs of flowing narrative p
 - Use transitions. "Even as NATO restructures its command, European allies are voicing growing concerns about American reliability."
 - Lead each paragraph with the action. What is happening across countries?
 - Name the countries involved. Don't say "several allies" when you can say "Poland, Lithuania, and Latvia."
-- Concrete detail over abstraction. "Kast's approval fell to 36%" not "the president faced declining popularity."
+- Concrete detail over abstraction. "Mr Kast's approval fell to 36%" not "the president faced declining popularity."
 - Each paragraph should develop an idea fully. A paragraph that compresses a country into one sentence is summarising, not synthesising.
 </regional_lead_task>
 
