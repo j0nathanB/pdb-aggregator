@@ -257,7 +257,20 @@ The next scheduled run picks it up automatically.
 
 ### `run_pipeline.py`, `requirements.txt`, or `Dockerfile` changes
 
-Rebuild and push the image (same as step 3 above). Fargate pulls the latest tag on each run, so no Terraform change is needed.
+A GitHub Actions workflow (`.github/workflows/ecr-build.yml`) automatically rebuilds and pushes the Docker image to ECR when any of these files change on `main`. The workflow uses OIDC to authenticate to AWS (no stored credentials). Each build is tagged both `:latest` and `:<git-sha>` for rollback.
+
+If the workflow isn't set up yet (OIDC provider not provisioned), rebuild manually:
+
+```bash
+aws ecr get-login-password --region us-east-1 \
+  | docker login --username AWS --password-stdin \
+    $(terraform -chdir=infra output -raw ecr_repository_url | cut -d/ -f1)
+
+docker buildx build --platform linux/arm64 \
+  -t $(terraform -chdir=infra output -raw ecr_repository_url):latest --push .
+```
+
+Fargate pulls the latest tag on each run, so no Terraform change is needed.
 
 If you want versioned images (e.g., `:v2`), update `pipeline_image_tag` in `infra/terraform.tfvars` and `terraform apply` to update the task definition.
 

@@ -485,6 +485,10 @@ class PlaywrightExtractor(Extractor):
     method_name = "playwright"
 
     def __init__(self, timeout: int = 30000):
+        try:
+            import playwright.async_api  # noqa: F401
+        except ImportError:
+            raise ValueError("playwright package required (pip install playwright)")
         self._timeout = timeout  # Playwright uses milliseconds
 
     async def extract(self, url: str) -> ExtractionResult:
@@ -566,6 +570,10 @@ class BrowserbaseExtractor(Extractor):
         timeout: int = 30000,
         challenge_wait: int = 8000,
     ):
+        try:
+            import playwright.async_api  # noqa: F401
+        except ImportError:
+            raise ValueError("playwright package required for Browserbase extraction (pip install playwright)")
         self._api_key = api_key or os.getenv("BROWSERBASE_API_KEY")
         self._project_id = project_id or os.getenv("BROWSERBASE_PROJECT_ID")
         if not self._api_key:
@@ -859,7 +867,11 @@ class ExtractionOrchestrator:
 
         # Initialize extractors
         self._extractors["curl"] = CurlTrafilaturaExtractor()
-        self._extractors["playwright"] = PlaywrightExtractor()
+
+        try:
+            self._extractors["playwright"] = PlaywrightExtractor()
+        except ValueError:
+            logger.warning("playwright package not installed — Playwright extractor unavailable")
 
         # Claude web_fetch extractor disabled — curl/trafilatura covers all domains
         # and has higher success rates (81% vs 51%).
@@ -881,6 +893,14 @@ class ExtractionOrchestrator:
             self._extractors["browserbase"] = ext
         except ValueError:
             logger.warning("BROWSERBASE_API_KEY/PROJECT_ID not set — Browserbase extractor unavailable")
+
+        # Log extractor availability
+        available = sorted(self._extractors.keys())
+        chain = self._config.default_fallback_chain
+        missing = [m for m in chain if m not in self._extractors and m != "snippet_only"]
+        logger.info("Extractors available: %s", ", ".join(available))
+        if missing:
+            logger.warning("Extractors in fallback chain but unavailable: %s", ", ".join(missing))
 
         # Initialize semaphores from concurrency config
         for method, limit in self._config.concurrency.items():
@@ -1110,6 +1130,13 @@ class ExtractionOrchestrator:
                     url, result.method, result.error,
                 )
 
+        # ── Phase 1 summary ───────────────────────────────────────────
+        phase1_succeeded = len(filtered_urls) - len(failed_urls)
+        logger.info(
+            "Phase 1 (primary): %d/%d succeeded, %d entering fallback chain",
+            phase1_succeeded, len(filtered_urls), len(failed_urls),
+        )
+
         # ── Phase 2: Fallback batch ────────────────────────────────────
         # Collect all primary failures. For each, try fallback methods
         # from its routing table in order. All fallback attempts for all
@@ -1142,6 +1169,13 @@ class ExtractionOrchestrator:
                 if not fallback_tasks:
                     break
 
+                # Identify which methods are being tried at this depth
+                depth_methods = set()
+                for url in fallback_urls:
+                    route = self._config.route_for_url(url)
+                    if depth < len(route.fallbacks):
+                        depth_methods.add(route.fallbacks[depth])
+
                 fallback_results = await asyncio.gather(
                     *fallback_tasks, return_exceptions=True
                 )
@@ -1162,6 +1196,13 @@ class ExtractionOrchestrator:
                             result.method, url, result.error,
                         )
                         still_failing.append(url)
+
+                rescued = len(fallback_urls) - len(still_failing)
+                logger.info(
+                    "Phase 2 depth %d (%s): %d/%d rescued, %d still failing",
+                    depth, "+".join(sorted(depth_methods)),
+                    rescued, len(fallback_urls), len(still_failing),
+                )
 
                 # URLs not attempted at this depth stay in remaining
                 not_attempted = [u for u in remaining if u not in fallback_urls]
@@ -1200,5 +1241,18 @@ class ExtractionOrchestrator:
                     url=url, method="error", success=False,
                     error="URL not found in results",
                 ))
+
+        # ── Method breakdown summary ──────────────────────────────────
+        from collections import Counter
+        method_counts = Counter(r.method for r in ordered if r.success)
+        fail_counts = Counter(r.method for r in ordered if not r.success)
+        parts = [f"{m}={c}" for m, c in sorted(method_counts.items())]
+        snippet_n = method_counts.get("snippet_only", 0)
+        extracted_n = sum(c for m, c in method_counts.items() if m != "snippet_only")
+        failed_n = sum(fail_counts.values())
+        logger.info(
+            "Batch complete: %d extracted, %d snippet_only, %d failed (%s)",
+            extracted_n, snippet_n, failed_n, ", ".join(parts) if parts else "none",
+        )
 
         return ordered
