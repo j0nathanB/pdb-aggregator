@@ -84,7 +84,13 @@ The bad version compresses everything into topic sentences — each idea gets on
 
 <output_format>
 Return JSON:
-{"edited_essay": "Your unified essay here..."}
+{"headline": "Short, punchy headline", "edited_essay": "Your unified essay here..."}
+
+The `headline` should be 3-8 words — an editorial judgment, not a topic label. Good headlines make a claim the reader could disagree with:
+- "Emergency as Opportunity" — not "Global Developments This Week"
+- "The World Order Splits by Crisis Type" — not "International Responses Vary"
+- "Alliances Hold, Economies Don't" — not "Mixed Results Across Regions"
+- "When Every Government Turns Inward" — not "National Responses to Global Crises"
 
 No commentary. Just the JSON object.
 </output_format>

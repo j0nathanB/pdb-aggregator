@@ -11,6 +11,10 @@ Summaries in The Middle Powers Monitor are AI-generated. We review for accuracy,
 
 ## Week of {{ date_range }}
 
+{% if executive_brief.headline %}
+**{{ executive_brief.headline }}**
+
+{% endif %}
 {% if executive_brief.edited_essay %}
 {{ executive_brief.edited_essay }}
 {% elif executive_brief.items %}

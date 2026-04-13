@@ -200,6 +200,7 @@ def render_pages(
         pages[slug] = _escape_mdx(region_tmpl.render(
             display_name=page_content.display_name,
             date_range=date_range,
+            headline=page_content.headline,
             regional_lead=page_content.regional_lead,
             gap_paragraphs=_sanitize_gap_paragraphs(page_content.gap_paragraphs),
             countries=page_content.countries,

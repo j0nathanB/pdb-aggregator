@@ -72,10 +72,17 @@ Translate foreign-language quotes into English.
 <output_format>
 Return JSON:
 {
+    "headline": "Short, punchy headline — a claim, not a label",
     "regional_lead": "3-5 substantial paragraphs of flowing prose...",
     "gap_paragraphs": ["EU coordination on economic crisis response did not appear this week. ..."],
     "card_summary": "One sentence for the navigation card."
 }
+
+The `headline` should be 3-8 words — an editorial judgment, not a topic label. Good headlines make a claim the reader could disagree with:
+- "The Centre Cannot Hold" — not "Western Europe This Week"
+- "Emergency as Opportunity" — not "Leaders Respond to Crises"
+- "The Alliance Nobody Wanted" — not "Defence Cooperation Developments"
+- "When the Machinery Runs Itself" — not "Institutional Developments in Europe"
 
 The `gap_paragraphs` array MUST contain exactly one element. Do not start the paragraph with "Notably absent" or "Missing this week".
 

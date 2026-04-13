@@ -417,6 +417,8 @@ async def edit_regional(
     try:
         data = extract_json(response_text, context=f"editor_regional_{page.region.value}")
         page.regional_lead = data.get("regional_lead", page.regional_lead)
+        if "headline" in data:
+            page.headline = data["headline"]
         if "gap_paragraphs" in data:
             page.gap_paragraphs = data["gap_paragraphs"]
         if "card_summary" in data:
@@ -498,6 +500,8 @@ async def edit_executive(
     try:
         data = extract_json(response_text, context="editor_executive")
         brief.edited_essay = data.get("edited_essay", response_text)
+        if "headline" in data:
+            brief.headline = data["headline"]
         update_trace_parsed("editor", "executive", run_date, parsed_output=data)
     except (ValueError, KeyError):
         logger.warning("Editor [executive]: JSON parse failed, using raw response")

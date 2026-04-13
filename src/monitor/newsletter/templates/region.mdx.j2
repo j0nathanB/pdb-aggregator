@@ -6,6 +6,10 @@ sidebarTitle: "{{ display_name }}"
 
 ## Regional Summary
 
+{% if headline %}
+**{{ headline }}**
+
+{% endif %}
 {% if regional_lead %}
 {{ regional_lead }}
 {% else %}

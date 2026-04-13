@@ -143,6 +143,7 @@ class ExecutiveBriefContent:
 
     # Editor output — unified essay, plain prose. None until editor runs.
     edited_essay: Optional[str] = None
+    headline: Optional[str] = None
 
 
 # =============================================================================
@@ -189,6 +190,7 @@ class RegionPageContent:
 
     # Editor rewrites these
     regional_lead: str = ""
+    headline: str = ""
     gap_paragraphs: list[str] = field(default_factory=list)
     card_summary: str = ""
 
