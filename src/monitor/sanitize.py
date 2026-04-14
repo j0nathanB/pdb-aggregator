@@ -9,7 +9,6 @@ gracefully instead of crashing the pipeline.
 import json
 import logging
 import re
-from dataclasses import dataclass, field
 from datetime import date
 from enum import Enum
 from typing import TypeVar
@@ -187,54 +186,3 @@ def extract_json(text: str, context: str = "") -> dict:
 
     ctx = f" [{context}]" if context else ""
     raise ValueError(f"Could not parse JSON from LLM response{ctx}")
-
-
-# =============================================================================
-# Parse diagnostics
-# =============================================================================
-
-@dataclass
-class FallbackRecord:
-    field: str
-    raw_value: str
-    resolved_to: str
-    context: str = ""
-
-
-@dataclass
-class SkipRecord:
-    item_type: str
-    reason: str
-    context: str = ""
-
-
-@dataclass
-class ParseDiagnostics:
-    """Accumulates coercions and skips during a single parse operation."""
-
-    fallbacks: list[FallbackRecord] = field(default_factory=list)
-    skipped: list[SkipRecord] = field(default_factory=list)
-
-    def record_fallback(
-        self, field_name: str, raw_value: str, resolved_to: str, context: str = "",
-    ) -> None:
-        self.fallbacks.append(FallbackRecord(field_name, raw_value, resolved_to, context))
-
-    def record_skip(self, item_type: str, reason: str, context: str = "") -> None:
-        self.skipped.append(SkipRecord(item_type, reason, context))
-
-    @property
-    def fallback_count(self) -> int:
-        return len(self.fallbacks)
-
-    @property
-    def skip_count(self) -> int:
-        return len(self.skipped)
-
-    def escalate_if_needed(self, threshold: int = 5) -> None:
-        """Raise if too many fallbacks fired, indicating severe parse degradation."""
-        if self.fallback_count >= threshold:
-            raise ValueError(
-                f"Parse quality too low: {self.fallback_count} fallbacks, "
-                f"{self.skip_count} skipped items"
-            )

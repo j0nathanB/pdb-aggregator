@@ -14,7 +14,6 @@ from src.monitor.config import (
     SignalCategory,
 )
 from src.monitor.sanitize import (
-    ParseDiagnostics,
     extract_json,
     get_fallback_summary,
     reset_fallback_counts,
@@ -172,40 +171,6 @@ def test_extract_json_with_context():
     with pytest.raises(ValueError, match="executive"):
         extract_json("no json here", context="executive")
 
-
-# =============================================================================
-# ParseDiagnostics
-# =============================================================================
-
-def test_diagnostics_empty():
-    d = ParseDiagnostics()
-    assert d.fallback_count == 0
-    assert d.skip_count == 0
-    d.escalate_if_needed()  # should not raise
-
-
-def test_diagnostics_accumulation():
-    d = ParseDiagnostics()
-    d.record_fallback("status", "bogus", "emerging")
-    d.record_fallback("category", "invalid", "alignment_diplomatic")
-    d.record_skip("development", "malformed date")
-    assert d.fallback_count == 2
-    assert d.skip_count == 1
-
-
-def test_diagnostics_escalation():
-    d = ParseDiagnostics()
-    for i in range(5):
-        d.record_fallback(f"field_{i}", "bad", "default")
-    with pytest.raises(ValueError, match="5 fallbacks"):
-        d.escalate_if_needed(threshold=5)
-
-
-def test_diagnostics_no_escalation_below_threshold():
-    d = ParseDiagnostics()
-    for i in range(4):
-        d.record_fallback(f"field_{i}", "bad", "default")
-    d.escalate_if_needed(threshold=5)  # should not raise
 
 
 # =============================================================================

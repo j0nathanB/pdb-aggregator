@@ -208,19 +208,6 @@ class RunRecorder:
         )
         self._write_manifest()
 
-    def aggregate_usage_from_traces(self, stage: str, run_date: date) -> None:
-        """Scan trace files and aggregate usage into the manifest."""
-        from .trace import list_traces
-        traces = list_traces(run_date)
-        total_in = 0
-        total_out = 0
-        for trace in traces:
-            usage = trace.get("usage", {})
-            total_in += usage.get("input_tokens", 0)
-            total_out += usage.get("output_tokens", 0)
-        if total_in or total_out:
-            self.record_usage(stage, total_in, total_out)
-
     # =========================================================================
     # Prompt hashing — detect changes between runs
     # =========================================================================
