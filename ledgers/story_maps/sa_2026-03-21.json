@@ -3,36 +3,47 @@
   "code": "sa",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 215,
-  "stories_identified": 8,
-  "off_topic_filtered": 48,
-  "noise_summary": "48 off-topic results filtered: 15 Bollywood/entertainment items about actor Salman Khan, 12 PlayStation/gaming technology articles, 8 unrelated financial/medical content, 6 items about other countries' officials named Salman, 4 mathematical articles about the number pi, 3 general sports/entertainment items.",
+  "search_results_total": 207,
+  "stories_identified": 9,
+  "off_topic_filtered": 47,
+  "noise_summary": "47 off-topic results filtered: 23 Bollywood/Salman Khan actor stories (film titles, health, family events), 8 gaming/tech stories (PS5 Pro PSSR updates), 6 sports stories (rugby, football), 5 entertainment/celebrity news, 3 business/finance unrelated to Saudi actors, 2 various other topics.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Saudi defense forces intercept hundreds of Iranian drones and missiles in sustained attacks",
-      "summary": "Saudi Arabia's Ministry of Defense reported intercepting at least 438 drones and 36 ballistic missiles since Iran began retaliatory strikes against Gulf states in late February. The kingdom's air defenses engaged multiple waves of attacks targeting the Eastern Province, Riyadh, and critical infrastructure.",
+      "headline": "Iran launches sustained drone and missile attacks on Saudi Arabia, kingdom intercepts hundreds",
+      "summary": "Iran has conducted extensive drone and missile attacks against Saudi Arabia since late February 2026, targeting military bases, oil facilities, and Riyadh. Saudi air defenses have intercepted over 438 drones and 36 missiles according to Defense Ministry tallies, with debris causing some injuries.",
       "actors_involved": [
-        "Ministry of Defense"
+        "Ministry of Defense",
+        "Khalid bin Salman"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 45,
+      "source_count": 89,
       "sources": [
         "arabnews.com",
         "aa.com.tr",
+        "english.aawsat.com",
+        "reuters.com",
+        "nytimes.com",
         "timesofisrael.com",
-        "aawsat.com",
-        "urdupoint.com",
+        "gulfnews.com",
         "sharjah24.ae",
-        "elbalad.news",
-        "soutalomma.com",
-        "nabd.com",
         "voiceofemirates.com",
-        "ekhbary.com",
-        "marketscreener.com",
-        "news.cgtn.com",
+        "urdupoint.com",
+        "news18.com",
+        "hindustantimes.com",
+        "bostonglobe.com",
+        "cbsnews.com",
         "ts-post.net",
-        "elwatannews.com"
+        "nabd.com",
+        "asharq.com",
+        "arabic.rt.com",
+        "elnashra.com",
+        "tesaaworld.com",
+        "madhyamamonline.com",
+        "investinglive.com",
+        "news.cgtn.com",
+        "usa.news-pravda.com",
+        "english.pravda.ru"
       ],
       "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
@@ -40,7 +51,7 @@
           "title": "439 drones, 36 missiles: The staggering toll of Iran's 3-week strike on Saudi Arabia",
           "source": "arabnews.com",
           "url": "https://www.arabnews.com/node/2636765/saudi-arabia",
-          "date": "2026-03-19"
+          "date": "2026-03-18"
         },
         {
           "title": "Saudi Arabia intercepted 36 drones, 3 ballistic missiles since early Thursday: Defense Ministry",
@@ -49,43 +60,116 @@
           "date": "2026-03-19"
         },
         {
+          "title": "Saudi Arabia intercepts dozens of drones as Iran escalates Gulf strikes",
+          "source": "arabnews.com",
+          "url": "https://www.arabnews.com/node/2637112/saudi-arabia",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Saudi Arabia intercepts 51 drones in Eastern Province: Defense Ministry",
+          "source": "aa.com.tr",
+          "url": "https://www.aa.com.tr/en/middle-east/saudi-arabia-intercepts-51-drones-in-eastern-province-defense-ministry/3873630",
+          "date": "2026-03-21"
+        },
+        {
           "title": "Saudi Arabia says it intercepted at least 20 Iranian drones in east of country",
           "source": "timesofisrael.com",
           "url": "https://www.timesofisrael.com/liveblog_entry/saudi-arabia-says-it-intercepted-at-least-20-iranian-drones-in-east-of-country/",
-          "date": "2026-03-19"
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Missiles and drones target Saudi Arabia, injuring 4 in Riyadh",
+          "source": "arabnews.com",
+          "url": "https://arabnews.com/node/2636826/saudi-arabia",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://www.arabnews.com/node/2636765/saudi-arabia",
-        "https://www.aa.com.tr/en/middle-east/saudi-arabia-intercepted-36-drones-3-ballistic-missiles-since-early-thursday-defense-ministry/3872315"
+        "https://www.nytimes.com/2026/03/19/world/middleeast/iran-missiles-saudi-arabia-riyadh-yanbu.html"
       ]
     },
     {
       "story_id": 2,
-      "headline": "Saudi Foreign Minister warns Iran that kingdom reserves right to military action",
-      "summary": "Foreign Minister Prince Faisal bin Farhan said trust with Tehran has been 'completely shattered' after Iranian attacks and warned Saudi Arabia reserves the right to take military action if necessary. He called Iran's behavior a dangerous escalation threatening regional security.",
+      "headline": "Crown Prince MBS privately urges Trump to 'keep hitting Iran hard' amid ongoing war",
+      "summary": "Saudi Crown Prince Mohammed bin Salman has been regularly speaking with President Trump, encouraging him to continue military strikes against Iran and adopt harsh measures. MBS reportedly echoed advice from late King Abdullah to 'cut off the head of the snake.'",
+      "actors_involved": [
+        "Mohammed bin Salman"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 12,
+      "sources": [
+        "timesofisrael.com",
+        "jfeed.com",
+        "jpost.com",
+        "iranintl.com",
+        "theweek.in",
+        "houseofsaud.com",
+        "noticias-latinas.net"
+      ],
+      "date_range": "2026-03-16 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Saudi Arabia's MBS speaking regularly with Trump, urging harsh action against Iran \u2014 NYT",
+          "source": "timesofisrael.com",
+          "url": "https://www.timesofisrael.com/liveblog_entry/saudi-arabias-mbs-speaking-regularly-with-trump-urging-harsh-action-against-iran-nyt/",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "MBS Calls on Trump to \"Keep Hitting\" Iran",
+          "source": "jfeed.com",
+          "url": "https://www.jfeed.com/news-world/mbs-trump-iran-strikes",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Saudi Crown Prince urges Donald Trump to keep hitting Iran",
+          "source": "jpost.com",
+          "url": "https://www.jpost.com/middle-east/article-890075",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "$16 Billion Iran War Cost Makes MBS Indispensable",
+          "source": "houseofsaud.com",
+          "url": "https://houseofsaud.com/iran-war-cost-mbs-leverage/",
+          "date": "2026-02-20"
+        }
+      ],
+      "representative_urls": [
+        "https://www.timesofisrael.com/liveblog_entry/saudi-arabias-mbs-speaking-regularly-with-trump-urging-harsh-action-against-iran-nyt/",
+        "https://houseofsaud.com/iran-war-cost-mbs-leverage/"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Saudi Foreign Minister threatens military action against Iran, says trust 'completely shattered'",
+      "summary": "Foreign Minister Prince Faisal bin Farhan warned that Saudi Arabia reserves the right to take military action against Iran and that trust between the countries has been 'completely shattered.' He said Saudi patience with Iranian attacks is limited.",
       "actors_involved": [
         "Prince Faisal bin Farhan"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 28,
+      "source_count": 25,
       "sources": [
         "nytimes.com",
-        "reuters.com",
-        "aljazeera.com",
         "jpost.com",
         "cnbc.com",
-        "middleeasteye.net",
+        "aljazeera.com",
+        "timesofisrael.com",
+        "israelhayom.com",
         "gulfnews.com",
-        "aawsat.com",
-        "hindustantimes.com",
+        "nationalheraldindia.com",
+        "english.aawsat.com",
+        "ynetnews.com",
         "economictimes.indiatimes.com",
+        "aninews.in",
+        "india.com",
+        "elmundo.es",
         "tribune.com.pk",
+        "thestar.com",
+        "hindustantimes.com",
         "haaretz.com",
-        "dailynewsegypt.com",
-        "elmundo.es"
+        "rtl.be"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-19 to 2026-03-20",
       "articles": [
         {
           "title": "Saudi Official Warns Patience Is Limited as Iranian Attacks Barrage Kingdom",
@@ -94,53 +178,54 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Saudi Arabia has the right to take military action against Iran, foreign minister says",
-          "source": "reuters.com",
-          "url": "https://reuters.com/world/middle-east/riyadh-residents-receive-phone-alerts-first-time-warning-hostile-threat-2026-03-18",
+          "title": "Prince Faisal bin Farhan threatens response following Iran strikes",
+          "source": "jpost.com",
+          "url": "https://www.jpost.com/middle-east/iran-news/article-890485",
           "date": "2026-03-18"
         },
         {
-          "title": "Saudi FM warns Iran that patience in Gulf not 'unlimited' amid attacks",
-          "source": "aljazeera.com",
-          "url": "https://aljazeera.com/news/2026/3/19/saudi-fm-warns-iran-that-patience-in-gulf-not-unlimited-amid-attacks",
+          "title": "Gulf states have tolerated Iranian strikes so far \u2014 but their 'defensive' stance won't last forever",
+          "source": "cnbc.com",
+          "url": "https://cnbc.com/2026/03/19/gulf-states-iran-attacks-retaliation-strikes-energy-oil-gas-water-strait-of-hormuz.html",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Saudi Arabia reserves right to take military action against Iran, foreign minister says",
+          "source": "timesofisrael.com",
+          "url": "https://www.timesofisrael.com/saudi-arabia-reserves-right-to-take-military-action-against-iran-foreign-minister-says/",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
         "https://www.nytimes.com/2026/03/19/world/middleeast/iran-missiles-saudi-arabia-riyadh-yanbu.html",
-        "https://reuters.com/world/middle-east/riyadh-residents-receive-phone-alerts-first-time-warning-hostile-threat-2026-03-18"
+        "https://www.jpost.com/middle-east/iran-news/article-890485"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Iranian attacks target Saudi Aramco oil facilities including Yanbu and Ras Tanura",
-      "summary": "Iran struck multiple Saudi oil facilities including the SAMREF refinery in Yanbu and targeted the Ras Tanura facility, which had recently restarted operations after an earlier attack. The strikes disrupted global oil markets and prompted temporary loading halts.",
+      "story_id": 4,
+      "headline": "Iranian attacks target Aramco oil facilities, causing shutdowns and restarts",
+      "summary": "Iran has attacked several Saudi Aramco facilities including Ras Tanura refinery and SAMREF refinery in Yanbu. Ras Tanura was shut down March 2 but restarted March 13, while SAMREF was targeted with limited damage. Yanbu port loadings were briefly suspended.",
       "actors_involved": [
         "Saudi Aramco"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 22,
+      "source_count": 18,
       "sources": [
-        "bloomberg.com",
         "reuters.com",
+        "bloomberg.com",
+        "worldoil.com",
+        "marineinsight.com",
+        "aa.com.tr",
         "ynetnews.com",
         "middleeasteye.net",
-        "timesofisrael.com",
-        "worldoil.com",
-        "timesnownews.com",
         "news.abplive.com",
         "timesofindia.indiatimes.com",
-        "tass.com",
-        "maritime-executive.com"
+        "timesnownews.com",
+        "maritime-executive.com",
+        "agbi.com"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-18 to 2026-03-20",
       "articles": [
-        {
-          "title": "Saudi Aramco Briefly Halts Loadings at Yanbu After Strike",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/news/articles/2026-03-19/saudi-aramco-briefly-halted-loadings-at-yanbu-before-resuming",
-          "date": "2026-03-19"
-        },
         {
           "title": "Saudi Aramco restarted Ras Tanura oil refinery on March 13, IIR says",
           "source": "reuters.com",
@@ -148,66 +233,33 @@
           "date": "2026-03-18"
         },
         {
-          "title": "Saudi Aramco-Exxon refinery in Yanbu targeted by Iran in aerial attack; source says impact minimal",
-          "source": "timesofisrael.com",
-          "url": "https://www.timesofisrael.com/liveblog_entry/saudi-aramco-exxon-refinery-in-yanbu-targeted-by-iran-in-aerial-attack-source-says-impact-minimal/",
+          "title": "Saudi Aramco Briefly Halts Loadings at Yanbu After Strike",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-03-19/saudi-aramco-briefly-halted-loadings-at-yanbu-before-resuming",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Iran Targets Saudi Aramco-Exxon SAMREF Refinery In Yanbu, Briefly Disrupting Red Sea Oil Flows",
+          "source": "marineinsight.com",
+          "url": "https://www.marineinsight.com/iran-targets-saudi-aramco-exxon-samref-refinery-in-yanbu-briefly-disrupting-red-sea-oil-flows/",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Iranian drone hits Saudi Aramco's Ras Tanura refinery: Reports",
+          "source": "aa.com.tr",
+          "url": "https://aa.com.tr/en/energy/general/iranian-drone-hits-saudi-aramcos-ras-tanura-refinery-reports/55061",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
-        "https://www.bloomberg.com/news/articles/2026-03-19/saudi-aramco-briefly-halted-loadings-at-yanbu-before-resuming",
-        "https://www.reuters.com/business/energy/saudi-aramco-restarted-ras-tanura-oil-refinery-march-13-iir-says-2026-03-18/"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "MBS privately urges Trump to 'keep hitting Iran hard' in regular phone calls",
-      "summary": "Crown Prince Mohammed bin Salman has been speaking regularly with President Trump, urging him to continue military strikes against Iran and advising to 'cut off the head of the snake,' according to New York Times reporting citing White House officials.",
-      "actors_involved": [
-        "Mohammed bin Salman"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
-      "sources": [
-        "timesofisrael.com",
-        "theweek.in",
-        "jfeed.com",
-        "jpost.com",
-        "iranintl.com",
-        "middleeasteye.net",
-        "financialpost.com",
-        "noticias-latinas.net"
-      ],
-      "date_range": "2026-02-16 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Saudi Arabia's MBS speaking regularly with Trump, urging harsh action against Iran \u2014 NYT",
-          "source": "timesofisrael.com",
-          "url": "https://www.timesofisrael.com/liveblog_entry/saudi-arabias-mbs-speaking-regularly-with-trump-urging-harsh-action-against-iran-nyt/",
-          "date": "2026-02-16"
-        },
-        {
-          "title": "MBS Calls on Trump to \"Keep Hitting\" Iran",
-          "source": "jfeed.com",
-          "url": "https://www.jfeed.com/news-world/mbs-trump-iran-strikes",
-          "date": "2026-02-16"
-        },
-        {
-          "title": "Saudi Crown Prince urges Donald Trump to keep hitting Iran",
-          "source": "jpost.com",
-          "url": "https://www.jpost.com/middle-east/article-890075",
-          "date": "2026-02-16"
-        }
-      ],
-      "representative_urls": [
-        "https://www.timesofisrael.com/liveblog_entry/saudi-arabias-mbs-speaking-regularly-with-trump-urging-harsh-action-against-iran-nyt/",
-        "https://www.jpost.com/middle-east/article-890075"
+        "https://www.reuters.com/business/energy/saudi-aramco-restarted-ras-tanura-oil-refinery-march-13-iir-says-2026-03-18/",
+        "https://www.marineinsight.com/iran-targets-saudi-aramco-exxon-samref-refinery-in-yanbu-briefly-disrupting-red-sea-oil-flows/"
       ]
     },
     {
       "story_id": 5,
-      "headline": "NEOM scales back mega-project with tunnel contract cancellations",
-      "summary": "Saudi Arabia's NEOM project cancelled major tunnel contracts worth $1 billion for The Line infrastructure, signaling a strategic shift toward data centers and industrial development rather than the original linear city vision. Hyundai E&C confirmed contract termination.",
+      "headline": "NEOM megaproject scaled back with tunnel contracts cancelled",
+      "summary": "Saudi Arabia has cancelled major construction contracts for NEOM's The Line project, including a $1 billion tunnel contract with Hyundai. The megaproject is being repositioned toward industrial development and data centers rather than the original linear city vision.",
       "actors_involved": [
         "NEOM"
       ],
@@ -216,34 +268,40 @@
       "sources": [
         "meed.com",
         "oilprice.com",
-        "luxurylaunches.com",
         "tradearabia.com",
+        "luxurylaunches.com",
         "houseofsaud.com",
         "eturbonews.com",
         "oilandgasmiddleeast.com",
-        "middleeastbriefing.com",
         "indexbox.io",
-        "agbi.com"
+        "agbi.com",
+        "middleeastbriefing.com"
       ],
-      "date_range": "2026-03-13 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
           "title": "Neom cancels The Line tunnels contracts",
           "source": "meed.com",
           "url": "https://www.meed.com/neom-officially-cancels-the-line-tunnels-contracts",
-          "date": "2026-03-13"
+          "date": "2026-03-18"
         },
         {
           "title": "Saudi Arabia's Dream of a Futuristic Mega-City Collides With Reality",
           "source": "oilprice.com",
           "url": "https://oilprice.com/Energy/Energy-General/Saudi-Arabias-Dream-of-a-Futuristic-Mega-City-Collides-With-Reality.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "In another setback, Saudi Crown Prince MBS has quietly cancelled the $1 billion tunnel",
+          "source": "luxurylaunches.com",
+          "url": "https://luxurylaunches.com/travel/the-line-tunnel-cancelled-03162026.php",
           "date": "2026-03-16"
         },
         {
-          "title": "Hyundai E&C says NEOM tunnel work contract terminated",
-          "source": "tradearabia.com",
-          "url": "https://tradearabia.com/News/390345/Hyundai-EandC-says-NEOM-tunnel-work-contract-terminated",
-          "date": "2026-03-17"
+          "title": "Neom terminates $1bn tunnel contract at heart of The Line",
+          "source": "agbi.com",
+          "url": "https://www.agbi.com/giga-projects/2026/03/neom-terminates-1bn-tunnel-contract-at-heart-of-the-line/",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
@@ -253,29 +311,55 @@
     },
     {
       "story_id": 6,
-      "headline": "Saudi Arabia expels Iranian military attache and embassy staff",
-      "summary": "Saudi Arabia declared five Iranian embassy staff including the military attache personae non gratae, ordering them to leave within 24 hours. The expulsion followed attacks on Saudi territory and came amid escalating diplomatic tensions.",
+      "headline": "King Salman delivers Eid message emphasizing Saudi Arabia's peace efforts",
+      "summary": "King Salman issued an Eid Al-Fitr message stressing Saudi Arabia's persistent efforts to support global peace and maintain security and stability through its firm approach to containing crises. He emphasized the kingdom's continued commitment to peace despite regional challenges.",
+      "actors_involved": [
+        "King Salman"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 3,
+      "sources": [
+        "english.aawsat.com",
+        "saudigazette.com.sa"
+      ],
+      "date_range": "2026-03-18 to 2026-03-19",
+      "articles": [
+        {
+          "title": "King Salman: Saudi Arabia Has Worked Tirelessly to Support Peace in the World",
+          "source": "english.aawsat.com",
+          "url": "https://english.aawsat.com/gulf/5253189-king-salman-saudi-arabia-has-worked-tirelessly-support-peace-world",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "King Salman: Saudi Arabia will continue efforts to support global peace and stability",
+          "source": "saudigazette.com.sa",
+          "url": "https://saudigazette.com.sa/article/659886",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://english.aawsat.com/gulf/5253189-king-salman-saudi-arabia-has-worked-tirelessly-support-peace-world",
+        "https://saudigazette.com.sa/article/659886"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Saudi Arabia expels Iranian military attach\u00e9 and embassy staff",
+      "summary": "Saudi Arabia declared Iran's military attach\u00e9 and four embassy staff members 'persona non grata' and ordered their expulsion. The move followed Iranian attacks on Saudi territory and marked a further deterioration in diplomatic relations.",
       "actors_involved": [
         "Prince Faisal bin Farhan"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 3,
+      "source_count": 2,
       "sources": [
-        "aljazeera.com",
-        "mid-day.com"
+        "aljazeera.com"
       ],
-      "date_range": "2026-03-21 to 2026-03-21",
+      "date_range": "2026-03-21",
       "articles": [
         {
           "title": "Saudi Arabia expels Iran military attache, four embassy staff",
           "source": "aljazeera.com",
           "url": "https://aljazeera.com/news/2026/3/21/saudi-arabia-expels-iran-military-attache-and-four-team-members",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "US Israel attack Iran: Saudi Arabia shoots down drones and missile, expels Iranian diplomats",
-          "source": "mid-day.com",
-          "url": "https://mid-day.com/news/world-news/article/us-israel-attack-iran-saudi-arabia-shoots-down-drones-and-missile-expels-iranian-diplomats-23621999",
           "date": "2026-03-21"
         }
       ],
@@ -284,41 +368,9 @@
       ]
     },
     {
-      "story_id": 7,
-      "headline": "King Salman emphasizes Saudi Arabia's peace efforts in Eid message",
-      "summary": "King Salman delivered an Eid Al-Fitr message emphasizing Saudi Arabia's persistent efforts to support global peace and maintain security and stability, particularly amid current regional challenges. The message was delivered by Media Minister Salman Al-Dosari.",
-      "actors_involved": [
-        "King Salman"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 3,
-      "sources": [
-        "aawsat.com",
-        "saudigazette.com.sa"
-      ],
-      "date_range": "2026-03-20 to 2026-03-20",
-      "articles": [
-        {
-          "title": "King Salman: Saudi Arabia Has Worked Tirelessly to Support Peace in the World",
-          "source": "aawsat.com",
-          "url": "https://english.aawsat.com/gulf/5253189-king-salman-saudi-arabia-has-worked-tirelessly-support-peace-world",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "King Salman: Saudi Arabia will continue efforts to support global peace and stability",
-          "source": "saudigazette.com.sa",
-          "url": "https://saudigazette.com.sa/article/659886",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://english.aawsat.com/gulf/5253189-king-salman-saudi-arabia-has-worked-tirelessly-support-peace-world"
-      ]
-    },
-    {
       "story_id": 8,
-      "headline": "Crown Prince Mohammed bin Salman meets Egyptian President Sisi on regional developments",
-      "summary": "Crown Prince Mohammed bin Salman received Egyptian President Abdel Fattah al-Sisi in Jeddah to discuss regional developments and Iranian attacks on Gulf states. The meeting emphasized that Iranian attacks on GCC countries constitute a dangerous escalation threatening regional stability.",
+      "headline": "Crown Prince MBS meets Egyptian President Sisi on regional developments",
+      "summary": "Saudi Crown Prince Mohammed bin Salman met with Egyptian President Abdel Fattah el-Sisi in Jeddah to discuss regional developments and Iranian attacks on Gulf states. They affirmed that Iran's hostile attacks threaten regional security and stability.",
       "actors_involved": [
         "Mohammed bin Salman"
       ],
@@ -326,37 +378,66 @@
       "source_count": 8,
       "sources": [
         "aleqtsad.org",
-        "urdupoint.com",
+        "shafaq-e.sa",
         "elsahmeg.com",
-        "soutalomam.net",
-        "a7walegypt.com"
+        "a7walegypt.com",
+        "soutalomam.net"
       ],
-      "date_range": "2026-03-21 to 2026-03-21",
+      "date_range": "2026-03-21",
       "articles": [
         {
           "title": "\u0648\u0644\u064a \u0627\u0644\u0639\u0647\u062f \u0648\u0627\u0644\u0631\u0626\u064a\u0633 \u0627\u0644\u0645\u0635\u0631\u064a: \u0627\u0644\u0647\u062c\u0645\u0627\u062a \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a\u0629 \u0639\u0644\u0649 \u062f\u0648\u0644 \u0645\u062c\u0644\u0633 \u0627\u0644\u062a\u0639\u0627\u0648\u0646 \u062a\u0647\u062f\u062f \u0623\u0645\u0646 \u0648\u0627\u0633\u062a\u0642\u0631\u0627\u0631 \u0627\u0644\u0645\u0646\u0637\u0642\u0629",
           "source": "aleqtsad.org",
           "url": "https://www.aleqtsad.org/%D9%88%D9%84%D9%8A-%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D9%88%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%A7%D9%84%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%8A/",
           "date": "2026-03-21"
-        },
-        {
-          "title": "\u0633\u0645\u0648 \u0648\u0644\u064a \u0627\u0644\u0639\u0647\u062f \u0648\u0627\u0644\u0631\u0626\u064a\u0633 \u0627\u0644\u0645\u0635\u0631\u064a \u064a\u0628\u062d\u062b\u0627\u0646 \u062a\u0637\u0648\u0631\u0627\u062a \u0627\u0644\u0623\u0648\u0636\u0627\u0639 \u0627\u0644\u0625\u0642\u0644\u064a\u0645\u064a\u0629",
-          "source": "urdupoint.com",
-          "url": "https://www.urdupoint.com/arabic/story/2157710.html",
-          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
         "https://www.aleqtsad.org/%D9%88%D9%84%D9%8A-%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D9%88%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%A7%D9%84%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%8A/"
       ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Defense Minister Khalid bin Salman conveys leadership praise to armed forces",
+      "summary": "Saudi Defense Minister Prince Khalid bin Salman conveyed greetings and praise from King Salman and Crown Prince Mohammed bin Salman to the armed forces for their 'heroic role' in defending the kingdom and confronting threats during Eid celebrations.",
+      "actors_involved": [
+        "Khalid bin Salman",
+        "King Salman",
+        "Mohammed bin Salman"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 4,
+      "sources": [
+        "english.aawsat.com",
+        "arabnews.pk",
+        "houseofsaud.com"
+      ],
+      "date_range": "2026-03-21",
+      "articles": [
+        {
+          "title": "Saudi Minister of Defense Relays Leadership's Praise for Armed Forces' Heroic Role",
+          "source": "english.aawsat.com",
+          "url": "https://english.aawsat.com/gulf/5253399-saudi-minister-defense-relays-leadership%E2%80%99s-praise-armed-forces%E2%80%99-heroic-role",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Saudi defense minister conveys leadership's praise to armed forces during Eid meeting",
+          "source": "arabnews.pk",
+          "url": "https://www.arabnews.pk/node/2637069/saudi-arabia",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://english.aawsat.com/gulf/5253399-saudi-minister-defense-relays-leadership%E2%80%99s-praise-armed-forces%E2%80%99-heroic-role"
+      ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Saudi Defense Minister conveys leadership's praise to armed forces during Eid",
-      "source": "aawsat.com",
-      "url": "https://english.aawsat.com/gulf/5253399-saudi-minister-defense-relays-leadership%E2%80%99s-praise-armed-forces%E2%80%99-heroic-role",
-      "signal_category_hint": "domestic_regime"
+      "headline": "ByteDance sells gaming unit Moonton to Saudi PIF-owned firm",
+      "source": "reuters.com",
+      "url": "https://www.reuters.com/world/asia-pacific/bytedance-sell-gaming-unit-moonton-saudi-pif-owned-firm-2026-03-20/",
+      "signal_category_hint": "economic_tech"
     },
     {
       "headline": "Former Wall Street Journal publisher discusses book on MBS at GWU event",
@@ -365,28 +446,22 @@
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "ByteDance sells gaming unit Moonton to Saudi PIF-owned firm",
-      "source": "reuters.com",
-      "url": "https://www.reuters.com/world/asia-pacific/bytedance-sell-gaming-unit-moonton-saudi-pif-owned-firm-2026-03-20/",
-      "signal_category_hint": "economic_tech"
+      "headline": "How Does Saudi Arabia See the War with Iran? - CSIS analysis",
+      "source": "csis.org",
+      "url": "https://csis.org/analysis/how-does-saudi-arabia-see-war-iran",
+      "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "OMS Energy unit wins $11M Saudi Aramco supply order",
-      "source": "stocktitan.net",
-      "url": "https://www.stocktitan.net/news/OMSE/oms-energy-technologies-nasdaq-omse-saudi-arabia-subsidiary-receives-g9zf3oulndmi.html",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Aramco's venture arm invests in US AI voice startup Resemble AI",
-      "source": "fastcompanyme.com",
-      "url": "https://fastcompanyme.com/news/aramcos-venture-arm-expands-global-ai-bets-with-backing-for-us-deepfake-and-voice-startup",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Saudi-Egyptian Foreign Ministers sign mutual visa waiver agreement",
+      "headline": "Saudi-Egypt visa waiver agreement signed",
       "source": "egyptindependent.com",
       "url": "https://egyptindependent.com/saudi-arabia-and-egypt-sign-mutual-visa-waiver-agreement-for-specific-passport-holders/1773889570-98fc3dce-681a-4047-9516-b39a46132a56/",
       "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Aramco's venture arm invests in US AI deepfake startup Resemble AI",
+      "source": "fastcompanyme.com",
+      "url": "https://fastcompanyme.com/news/aramcos-venture-arm-expands-global-ai-bets-with-backing-for-us-deepfake-and-voice-startup",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }

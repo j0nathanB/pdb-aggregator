@@ -3,187 +3,39 @@
   "code": "ee",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 268,
-  "stories_identified": 6,
-  "off_topic_filtered": 201,
-  "noise_summary": "201 off-topic results filtered: 89 about people named 'Michal' unrelated to Estonian PM, 47 UK Reform Party political coverage, 21 European Defence Fund administrative content, 18 sports coverage, 12 entertainment/celebrity content, 8 French EDF energy company coverage, 6 domestic Estonian issues unrelated to foreign/security policy.",
+  "search_results_total": 250,
+  "stories_identified": 7,
+  "off_topic_filtered": 89,
+  "noise_summary": "89 off-topic results filtered: 62 entertainment/celebrity news (Michael Jackson movie, Michael B. Jordan, Polish celebrities), 15 sports (cycling, football, gaming), 8 unrelated international news, 4 technology/consumer products",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Estonia offers support for US Strait of Hormuz mission amid Trump pressure on NATO allies",
-      "summary": "Estonian Defence Minister Hanno Pevkur and Foreign Minister Margus Tsahkna expressed Estonia's readiness to discuss contributing forces to help secure the Strait of Hormuz, while calling for unity among allies. Trump has pressured NATO members to assist but no formal request has been made to Estonia.",
-      "actors_involved": [
-        "Pevkur",
-        "Tsahkna"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 19,
-      "sources": [
-        "politico.com",
-        "rferl.org",
-        "lrt.lt",
-        "nbcnews.com",
-        "news.err.ee",
-        "timesofisrael.com",
-        "yahoo.com",
-        "delfi.ee",
-        "err.ee",
-        "estonia.news-pravda.com",
-        "ms.now",
-        "usa.news-pravda.com",
-        "latvia.news-pravda.com",
-        "independentespanol.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Estonia 'ready to talk' on Strait of Hormuz backup",
-          "source": "politico.com",
-          "url": "https://www.politico.com/news/2026/03/18/estonia-strait-of-hormuz-iran-00834179",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Estonia Calls For Unity As US-Allied Divide Grows Over Hormuz Crisis",
-          "source": "rferl.org",
-          "url": "https://www.rferl.org/a/estonia-unity-us-allies-divide-hormuz-nato-russia-trump/33709832.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Estonia calls for unity as US-allied divide grows over Hormuz crisis",
-          "source": "lrt.lt",
-          "url": "https://www.lrt.lt/en/news-in-english/19/2872107/estonia-calls-for-unity-as-us-allied-divide-grows-over-hormuz-crisis",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "U.S. allies respond to Trump's Strait of Hormuz demands with caution",
-          "source": "nbcnews.com",
-          "url": "https://nbcnews.com/world/iran/us-allies-respond-trump-strait-of-hormuz-demands-nato-iran-war-rcna263650",
-          "date": "2026-02-26"
-        },
-        {
-          "title": "Defense minister: US has made no concrete Strait of Hormuz request to allies",
-          "source": "news.err.ee",
-          "url": "https://news.err.ee/1609970837/defense-minister-us-has-made-no-concrete-strait-of-hormuz-request-to-allies",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "FM: Estonia prepared to discuss sending forces to Hormuz Strait with US",
-          "source": "news.err.ee",
-          "url": "https://news.err.ee/1609969862/fm-estonia-prepared-to-discuss-sending-forces-to-hormuz-strait-with-us",
-          "date": "2026-02-26"
-        },
-        {
-          "title": "Estonia is ready to discuss Hormuz mission with US, foreign minister tells ToI",
-          "source": "timesofisrael.com",
-          "url": "https://timesofisrael.com/estonia-is-ready-to-discuss-hormuz-mission-with-us-foreign-minister-tells-toi",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Estonia open to protecting ships in Strait of Hormuz, minister says",
-          "source": "yahoo.com",
-          "url": "https://www.yahoo.com/news/articles/estonia-open-protecting-ships-strait-165921145.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Tsahkna: Eesti on valmis arutama v\u00e4gede saatmist Hormuzi v\u00e4ina",
-          "source": "err.ee",
-          "url": "https://www.err.ee/1609969811/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina",
-          "date": "2026-02-26"
-        },
-        {
-          "title": "Pevkur: USA-lt ei ole liitlastele tulnud \u00fchtegi konkreetset palvet",
-          "source": "err.ee",
-          "url": "https://www.err.ee/1609970714/pevkur-usa-lt-ei-ole-liitlastele-tulnud-uhtegi-konkreetset-palvet",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Tsahkna: ei saa \u00f6elda, et s\u00f5da Iraanis pole ka meie s\u00f5da",
-          "source": "err.ee",
-          "url": "https://www.err.ee/1609971938/tsahkna-ei-saa-oelda-et-soda-iraanis-pole-ka-meie-soda",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Tsahkna: You cannot say that the war in Iran is not our war too",
-          "source": "news.err.ee",
-          "url": "https://news.err.ee/1609972103/tsahkna-you-cannot-say-that-the-war-in-iran-is-not-our-war-too",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Eesti on valmis minema USA-le appi Hormuzi v\u00e4ina avamiseks: Iraani s\u00f5da on ka meie s\u00f5da",
-          "source": "lounaeestlane.ee",
-          "url": "https://lounaeestlane.ee/eesti-on-valmis-minema-usa-le-appi-hormuzi-vaina-avamiseks-iraani-soda-on-ka-meie-soda/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Estonia defense minister reacts to Trump pressuring NATO on Strait of Hormuz",
-          "source": "ms.now",
-          "url": "https://www.ms.now/katy-tur/watch/estonia-defense-minister-reacts-to-trump-pressuring-nato-on-strait-of-hormuz-2492301379981",
-          "date": "2026-02-22"
-        },
-        {
-          "title": "The crisis in the Strait of Hormuz: Estonia is ready to discuss sending military personnel to help the United States",
-          "source": "estonia.news-pravda.com",
-          "url": "https://estonia.news-pravda.com/en/russia/2026/03/18/26657.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Nobody is calling Estonia to war",
-          "source": "usa.news-pravda.com",
-          "url": "https://usa.news-pravda.com/russia/2026/03/18/702556.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sergey Mardan: Estonia has reminded for the fourth time that it is ready to help the United States in the war with Iran",
-          "source": "estonia.news-pravda.com",
-          "url": "https://estonia.news-pravda.com/en/russia/2026/03/20/26746.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Supreme Leader: Iran Has Dealt A 'Dizzying Blow' To Its Enemies",
-          "source": "rferl.org",
-          "url": "https://www.rferl.org/a/iran-protests-live-blog-trump-khamenei/33640284/lbl0lbi444538.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Trump Warns Of Dire Consequences As Iran Hits Qatari Gas Hub Again",
-          "source": "rferl.org",
-          "url": "https://www.rferl.org/a/iran-protests-live-blog-trump-khamenei/33640284/lbl0lbi444543.html",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.politico.com/news/2026/03/18/estonia-strait-of-hormuz-iran-00834179",
-        "https://www.rferl.org/a/estonia-unity-us-allies-divide-hormuz-nato-russia-trump/33709832.html"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "Lockheed Martin to establish HIMARS maintenance center in Estonia for Baltic defense cooperation",
-      "summary": "US defense contractor Lockheed Martin will build a HIMARS sustainment center in Estonia following an agreement with Defence Minister Hanno Pevkur in Washington. The facility will serve all three Baltic states and represents a $10 million investment in regional defense capabilities.",
+      "headline": "Lockheed Martin to establish HIMARS sustainment center in Estonia for Baltic defense",
+      "summary": "US defense contractor Lockheed Martin will build a maintenance center for HIMARS missile systems in Estonia following agreement with Defense Minister Hanno Pevkur during his Washington visit. The facility will serve all three Baltic states with $10 million investment over two years.",
       "actors_involved": [
         "Pevkur"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 11,
+      "source_count": 12,
       "sources": [
         "defence-industry.eu",
-        "postimees.ee",
+        "news-pravda.com",
+        "latvia.news-pravda.com",
         "estonia.news-pravda.com",
-        "usa.news-pravda.com",
-        "latvia.news-pravda.com"
+        "uudis.net"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-19 to 2026-03-21",
       "articles": [
         {
           "title": "Lockheed Martin to establish HIMARS sustainment centre in Estonia to support Baltic defence cooperation",
           "source": "defence-industry.eu",
           "url": "https://defence-industry.eu/lockheed-martin-to-establish-himars-sustainment-centre-in-estonia-to-support-baltic-defence-cooperation/",
-          "date": "2026-03-19"
+          "date": "2026-03-21"
         },
         {
-          "title": "USA ettev\u00f5te rajab Balti riikide teenindamiseks Eestisse relvas\u00fcsteemide hoolduskeskuse",
-          "source": "postimees.ee",
-          "url": "https://www.postimees.ee/8436205/usa-ettevote-rajab-balti-riikide-teenindamiseks-eestisse-relvasusteemide-hoolduskeskuse",
+          "title": "Lockheed Martin to build maintenance center for HIMARS in Estonia",
+          "source": "latvia.news-pravda.com",
+          "url": "https://latvia.news-pravda.com/en/world/2026/03/19/32108.html",
           "date": "2026-03-19"
         },
         {
@@ -193,21 +45,15 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Lockheed Martin to build maintenance center for HIMARS in Estonia",
-          "source": "estonia.news-pravda.com",
-          "url": "https://estonia.news-pravda.com/en/russia/2026/03/19/26720.html",
+          "title": "Lockheed Martin rajab Eestisse HIMARSi relvas\u00fcsteemide hoolduskeskuse",
+          "source": "uudis.net",
+          "url": "https://uudis.net/12144456",
           "date": "2026-03-19"
         },
         {
-          "title": "In addition to Latvia, the Himars service center will be established in Estonia",
-          "source": "usa.news-pravda.com",
-          "url": "https://usa.news-pravda.com/russia/2026/03/20/705282.html",
-          "date": "2026-03-20"
-        },
-        {
           "title": "A maintenance center for M142 HIMARS missile systems for the Baltic states will be established in Estonia",
-          "source": "latvia.news-pravda.com",
-          "url": "https://latvia.news-pravda.com/en/world/2026/03/19/32091.html",
+          "source": "news-pravda.com",
+          "url": "https://news-pravda.com/world/2026/03/19/2164365.html",
           "date": "2026-03-19"
         },
         {
@@ -223,43 +69,137 @@
           "date": "2026-03-20"
         },
         {
-          "title": "Ameerika kaitsehiiglane Lockheed Martin ehitab Eestisse himarsi teeninduskeskuse",
-          "source": "estonia.news-pravda.com",
-          "url": "https://estonia.news-pravda.com/russia/2026/03/19/37361.html",
-          "date": "2026-03-19"
+          "title": "In addition to Latvia, the Himars service center will be established in Estonia",
+          "source": "usa.news-pravda.com",
+          "url": "https://usa.news-pravda.com/russia/2026/03/20/705282.html",
+          "date": "2026-03-20"
         },
         {
           "title": "Eesti territooriumil luuakse raketis\u00fcsteemide teeninduskeskus M142 HIMARS Balti riikidele",
           "source": "estonia.news-pravda.com",
           "url": "https://estonia.news-pravda.com/world/2026/03/19/37348.html",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Ameerika kaitsehiiglane Lockheed Martin ehitab Eestisse himarsi teeninduskeskuse",
+          "source": "estonia.news-pravda.com",
+          "url": "https://estonia.news-pravda.com/russia/2026/03/19/37361.html",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://defence-industry.eu/lockheed-martin-to-establish-himars-sustainment-centre-in-estonia-to-support-baltic-defence-cooperation/",
-        "https://www.postimees.ee/8436205/usa-ettevote-rajab-balti-riikide-teenindamiseks-eestisse-relvasusteemide-hoolduskeskuse"
+        "https://uudis.net/12144456"
+      ]
+    },
+    {
+      "story_id": 2,
+      "headline": "Estonia expresses readiness to support US operations in Strait of Hormuz and Iran conflict",
+      "summary": "Foreign Minister Margus Tsahkna stated Estonia is ready to discuss sending forces to help secure the Strait of Hormuz if the US makes an official request. During his Israel visit, Tsahkna declared the US-Israeli war against Iran should also be considered 'Estonia's war' and expressed firm support for operations reducing Iranian regime capabilities.",
+      "actors_involved": [
+        "Tsahkna"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 15,
+      "sources": [
+        "err.ee",
+        "timesofisrael.com",
+        "israel.com",
+        "yahoo.com",
+        "clevelandjewishnews.com",
+        "lounaeestlane.ee",
+        "diario-octubre.com",
+        "defonline.com.ar"
+      ],
+      "date_range": "2026-03-16 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Tsahkna: Eesti on valmis arutama v\u00e4gede saatmist Hormuzi v\u00e4ina",
+          "source": "err.ee",
+          "url": "https://www.err.ee/1609969811/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "FM: Estonia prepared to discuss sending forces to Hormuz Strait with US",
+          "source": "news.err.ee",
+          "url": "https://news.err.ee/1609969862/fm-estonia-prepared-to-discuss-sending-forces-to-hormuz-strait-with-us",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Estonia is ready to discuss Hormuz mission with US, foreign minister tells ToI",
+          "source": "timesofisrael.com",
+          "url": "https://timesofisrael.com/estonia-is-ready-to-discuss-hormuz-mission-with-us-foreign-minister-tells-toi",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Visiting Estonian Foreign Minister Margus Tsahkna Declares His Country's Support for Israel",
+          "source": "israel.com",
+          "url": "https://israel.com/politics/visiting-estonian-foreign-minister-margus-tsahkna-declares-his-countrys-support-for-israel",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Estonia open to protecting ships in Strait of Hormuz, minister says",
+          "source": "yahoo.com",
+          "url": "https://www.yahoo.com/news/articles/estonia-open-protecting-ships-strait-165921145.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Sa'ar praises Estonia for support as FM visits, warns Iran threatens all",
+          "source": "clevelandjewishnews.com",
+          "url": "https://clevelandjewishnews.com/jns/sa-ar-praises-estonia-for-support-as-fm-visits-warns-iran-threatens-all/article_526f8cfc-807a-59ca-a13e-e82ac3e1e936.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Tsahkna: ei saa \u00f6elda, et s\u00f5da Iraanis pole ka meie s\u00f5da",
+          "source": "err.ee",
+          "url": "https://www.err.ee/1609971938/tsahkna-ei-saa-oelda-et-soda-iraanis-pole-ka-meie-soda",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Tsahkna: You cannot say that the war in Iran is not our war too",
+          "source": "news.err.ee",
+          "url": "https://news.err.ee/1609972103/tsahkna-you-cannot-say-that-the-war-in-iran-is-not-our-war-too",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Eesti on valmis minema USA-le appi Hormuzi v\u00e4ina avamiseks: Iraani s\u00f5da on ka meie s\u00f5da",
+          "source": "lounaeestlane.ee",
+          "url": "https://lounaeestlane.ee/eesti-on-valmis-minema-usa-le-appi-hormuzi-vaina-avamiseks-iraani-soda-on-ka-meie-soda/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Estonia se ha declarado c\u00f3mplice de la agresi\u00f3n de EE. UU. e Israel contra Ir\u00e1n",
+          "source": "diario-octubre.com",
+          "url": "https://diario-octubre.com/2026/03/20/estonia-se-ha-declarado-complice-de-la-agresion-de-ee-uu-e-israel-contra-iran/",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://www.err.ee/1609969811/tsahkna-eesti-on-valmis-arutama-vagede-saatmist-hormuzi-vaina",
+        "https://timesofisrael.com/estonia-is-ready-to-discuss-hormuz-mission-with-us-foreign-minister-tells-toi"
       ]
     },
     {
       "story_id": 3,
-      "headline": "Russian fighter jet violates Estonian airspace, diplomatic protest filed",
-      "summary": "A Russian SU-30 fighter aircraft spent approximately one minute in Estonian airspace on March 18th, marking the first such violation this year. Estonian Foreign Minister Margus Tsahkna summoned the Russian embassy's charg\u00e9 d'affaires and delivered a formal diplomatic protest note.",
+      "headline": "Russian fighter jet violates Estonian airspace, prompting diplomatic protest",
+      "summary": "A Russian Su-30 fighter aircraft violated Estonian airspace for approximately one minute on March 18. Foreign Minister Tsahkna called it the first airspace violation of 2026 and said Estonia summoned the Russian charge d'affaires to deliver a formal protest note.",
       "actors_involved": [
         "Tsahkna"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 5,
+      "source_count": 4,
       "sources": [
         "delfi.ee",
-        "infobae.com"
+        "infobae.com",
+        "postimees.ee"
       ],
-      "date_range": "2026-03-19 to 2026-03-19",
+      "date_range": "2026-03-18 to 2026-03-19",
       "articles": [
         {
           "title": "VIDEO ja BLOGI | Tsahkna: Venemaa h\u00e4vituslennuk rikkus Eesti \u00f5huruumi piiri",
           "source": "delfi.ee",
           "url": "https://www.delfi.ee/artikkel/120443260/otsepilt-ja-blogi-valitsus-tegi-riigikogule-ettepaneku-tuhistada-aktsiisitousud-kutustele-maagaasile-ja-elektrienergiale",
-          "date": "2026-03-19"
+          "date": "2026-03-18"
         },
         {
           "title": "Estonia protesta ante Rusia por la primera violaci\u00f3n de su espacio a\u00e9reo de este a\u00f1o",
@@ -272,6 +212,12 @@
           "source": "infobae.com",
           "url": "https://infobae.com/america/agencias/2026/03/19/estonia-convoca-al-encargado-de-negocios-ruso-tras-una-violacion-de-su-espacio-aereo-por-parte-de-un-caza",
           "date": "2026-03-19"
+        },
+        {
+          "title": "VIDEO | Valitsuse pressikonverentsil osalesid Tsahkna, Keldo, Sutt ja Taro",
+          "source": "postimees.ee",
+          "url": "https://www.postimees.ee/8436530/video-valitsuse-pressikonverentsil-osalesid-tsahkna-keldo-sutt-ja-taro",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -281,13 +227,83 @@
     },
     {
       "story_id": 4,
-      "headline": "Explosion at Russian military base near Estonian border identified as fuel depot",
-      "summary": "Defence Minister Hanno Pevkur confirmed that Ukrainian forces likely struck a fuel depot at a Russian military facility in Pskov, located 32 kilometers from Estonia. The explosion occurred at what appears to be a fuel storage facility rather than military equipment.",
+      "headline": "EU adopts Estonian proposal to restrict visas for Russian fighters",
+      "summary": "The European Union took up Estonia's proposal to restrict visas for Russian men who fought in Ukraine as potential security threats. EU leaders from 25 countries agreed to work on the initiative first raised by Foreign Minister Tsahkna in January, targeting combat-tested Russians who could be recruitment targets for Russian intelligence.",
+      "actors_involved": [
+        "Tsahkna"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 2,
+      "sources": [
+        "news.err.ee",
+        "err.ee"
+      ],
+      "date_range": "2026-03-20 to 2026-03-21",
+      "articles": [
+        {
+          "title": "EU takes up Estonia's proposal to restrict visas for Russian fighters",
+          "source": "news.err.ee",
+          "url": "https://news.err.ee/1609974102/eu-takes-up-estonia-s-proposal-to-restrict-visas-for-russian-fighters",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Euroopa Liit v\u00f5ttis t\u00f6\u00f6sse Eesti algatatud Vene v\u00f5itlejate viisakeelu",
+          "source": "err.ee",
+          "url": "https://www.err.ee/1609974027/euroopa-liit-vottis-toosse-eesti-algatatud-vene-voitlejate-viisakeelu",
+          "date": "2026-03-20"
+        }
+      ],
+      "representative_urls": [
+        "https://news.err.ee/1609974102/eu-takes-up-estonia-s-proposal-to-restrict-visas-for-russian-fighters",
+        "https://www.err.ee/1609974027/euroopa-liit-vottis-toosse-eesti-algatatud-vene-voitlejate-viisakeelu"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Estonian blogger Mallukas creates controversial sex offender database",
+      "summary": "Estonian blogger Mallukas launched a website compiling names of convicted sex offenders, sparking criticism from the Justice Minister who said Estonia has proper courts and authorities for such matters. The database became one of the most searched terms in Estonia and generated significant social media attention.",
+      "actors_involved": [],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 3,
+      "sources": [
+        "elu24.postimees.ee",
+        "ohtuleht.ee"
+      ],
+      "date_range": "2026-03-18 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Mallukas pani p\u00fcsti pedofiilide ja seksuaalkurjategijate andmebaasi, justiitsminister takka ei kiida",
+          "source": "elu24.postimees.ee",
+          "url": "https://elu24.postimees.ee/8436116/mallukas-pani-pusti-pedofiilide-ja-seksuaalkurjategijate-andmebaasi-justiitsminister-takka-ei-kiida",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Malluka s\u00f5num pedofiilidele: minu soovitus on, et tapke ennast \u00e4ra siis",
+          "source": "elu24.postimees.ee",
+          "url": "https://elu24.postimees.ee/8436957/malluka-sonum-pedofiilidele-minu-soovitus-on-et-tapke-ennast-ara-siis",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Mallukas ja tema loodud veebileht on Eestis k\u00f5ige enam guugeldatud m\u00e4rks\u00f5nad",
+          "source": "ohtuleht.ee",
+          "url": "https://ohtuleht.ee/1153719/mallukas-ja-tema-loodud-veebileht-on-eestis-koige-enam-guugeldatud-marksonad",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://elu24.postimees.ee/8436116/mallukas-pani-pusti-pedofiilide-ja-seksuaalkurjategijate-andmebaasi-justiitsminister-takka-ei-kiida",
+        "https://ohtuleht.ee/1153719/mallukas-ja-tema-loodud-veebileht-on-eestis-koige-enam-guugeldatud-marksonad"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Defense Minister confirms explosion at Russian military base near Estonian border",
+      "summary": "Defense Minister Hanno Pevkur confirmed that a large explosion occurred at a Russian military base in Pskov, 32 kilometers from the Estonian border. Pevkur said it was most likely a fuel depot that was hit, and that while it was a military object, there was no direct threat to Estonian security.",
       "actors_involved": [
         "Pevkur"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 3,
+      "source_count": 2,
       "sources": [
         "err.ee",
         "delfi.ee"
@@ -313,9 +329,9 @@
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Estonian border guards injured in Mediterranean accident during Frontex operation",
-      "summary": "Four Estonians and one Greek were injured when an Estonian Border Guard vessel sank during a Frontex operation near Megisti island. Two Estonian border guards are in serious condition and were hospitalized following the Monday afternoon incident.",
+      "story_id": 7,
+      "headline": "Estonian border guards injured in serious accident during Frontex operation in Greece",
+      "summary": "Estonian border guards were involved in a serious accident during a Frontex joint operation near Megisti island in the Mediterranean. Five people were on board the Estonian border guard vessel M-80 when it sank, with four taken to hospital including two Estonian border guards in serious condition.",
       "actors_involved": [],
       "signal_category_hint": "security_defense",
       "source_count": 2,
@@ -342,51 +358,32 @@
         "https://ohtuleht.ee/1153397/vahemerel-laks-pohja-ppa-kaater-mitu-eestlast-sai-viga",
         "https://err.ee/1609969271/eesti-piirivalvurid-sattusid-kreekas-frontexi-operatsioonil-raskesse-onnetusse"
       ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Russian citizen expelled from Estonia over national security concerns",
-      "summary": "Kirill Kudriavtsev, a Russian citizen with ties to Russian intelligence services, was expelled from Estonia days after entering the country. The Internal Security Service (KAPO) cited national security threats and issued him a Schengen entry ban.",
-      "actors_involved": [
-        "KAPO"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 1,
-      "sources": [
-        "news.err.ee"
-      ],
-      "date_range": "2026-03-19 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Russian citizen expelled from Estonia days after entering country",
-          "source": "news.err.ee",
-          "url": "https://news.err.ee/1609971125/russian-citizen-expelled-from-estonia-days-after-entering-country",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://news.err.ee/1609971125/russian-citizen-expelled-from-estonia-days-after-entering-country"
-      ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Estonia takes up EU visa restriction proposal for Russian fighters",
-      "source": "news.err.ee",
-      "url": "https://news.err.ee/1609974102/eu-takes-up-estonia-s-proposal-to-restrict-visas-for-russian-fighters",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "Defense Minister questioned about reduced national defense camps for students",
+      "source": "haridus.postimees.ee",
+      "url": "https://haridus.postimees.ee/8433999/harku-vald-kaitseminister-pevkur-miks-jatab-riik-tuhanded-opilased-tanavu-riigikaitselaagrita",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Defense minister says US will continue Ukraine peace mediation efforts",
+      "headline": "Russian citizen expelled from Estonia over security concerns",
       "source": "news.err.ee",
-      "url": "https://news.err.ee/1609971659/defense-minister-us-will-continue-to-mediate-peace-in-ukraine",
-      "signal_category_hint": "alignment_diplomatic"
+      "url": "https://news.err.ee/1609971125/russian-citizen-expelled-from-estonia-days-after-entering-country",
+      "signal_category_hint": "security_defense"
     },
     {
-      "headline": "Tsahkna visits Israel, declares support during Iran war",
-      "source": "israel.com",
-      "url": "https://israel.com/politics/visiting-estonian-foreign-minister-margus-tsahkna-declares-his-countrys-support-for-israel",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "Coop Pank announces public offering of subordinated bonds",
+      "source": "majandus.postimees.ee",
+      "url": "https://majandus.postimees.ee/8434946/coop-pank-pakub-tavatu-pikkusega-volakirju",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "EKRE proposes transparency measures for public officials",
+      "source": "riigikogu.ee",
+      "url": "https://riigikogu.ee/fraktsioonide-teated/eesti-konservatiivse-rahvaerakonna-fraktsioon/ekre-soovib-suurendada-avaliku-v-imu-teostamise-l-bipaistvust",
+      "signal_category_hint": "domestic_regime"
     }
   ]
 }

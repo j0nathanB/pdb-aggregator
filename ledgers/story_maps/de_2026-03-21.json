@@ -3,37 +3,48 @@
   "code": "de",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 375,
+  "search_results_total": 367,
   "stories_identified": 12,
-  "off_topic_filtered": 8,
-  "noise_summary": "8 off-topic results filtered: 4 sports/entertainment (Pokemon Wiki, Belleville news, Spider-Man references), 2 technical/software documentation (bnd.bndtools.org), 1 international news unrelated to German politics (UN cooperation with Trump's peace council), 1 academic/research content.",
+  "off_topic_filtered": 15,
+  "noise_summary": "15 off-topic results filtered: 5 sports articles (Formula 1, motorsport), 3 technical/financial definitions, 2 local crime reports, 2 entertainment/cultural stories, 2 obituary-related articles, 1 weather report.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Germany rejects Trump's demand for NATO support in Iran War",
-      "summary": "Chancellor Merz, Defense Minister Pistorius, and Foreign Minister Wadephul unanimously rejected US President Trump's demands for German and NATO military support in securing the Strait of Hormuz during the Iran war. German officials stated 'this is not our war' and emphasized NATO is a defensive alliance for member territories only.",
+      "headline": "Germany rejects US request for military support in Iran War",
+      "summary": "Chancellor Merz, Defense Minister Pistorius, and Foreign Minister Wadephul unanimously rejected Trump's demands for German military support in securing the Strait of Hormuz during the Iran conflict. They stated 'this is not our war' and emphasized NATO is a defensive alliance for member territory only.",
       "actors_involved": [
         "Merz",
         "Pistorius",
         "Wadephul"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 89,
+      "source_count": 28,
       "sources": [
         "tagesschau.de",
         "n-tv.de",
         "spiegel.de",
         "welt.de",
-        "zeit.de",
-        "deutschlandfunk.de",
-        "sueddeutsche.de",
-        "tagesspiegel.de",
         "t-online.de",
+        "zeit.de",
+        "tagesspiegel.de",
         "fr.de",
         "merkur.de",
+        "deutschlandfunk.de",
         "rp-online.de",
-        "focus.de",
-        "politico.eu"
+        "zdfheute.de",
+        "ndr.de",
+        "morgenpost.de",
+        "augsburger-allgemeine.de",
+        "esut.de",
+        "web.de",
+        "volksfreund.de",
+        "fnp.de",
+        "nw.de",
+        "ksta.de",
+        "antenneac.de",
+        "reuters.com",
+        "politico.eu",
+        "boerse.de"
       ],
       "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
@@ -41,19 +52,37 @@
           "title": "Wadephul schlie\u00dft deutsche Beteiligung an Hormus-Mission aus",
           "source": "tagesschau.de",
           "url": "https://www.tagesschau.de/inland/wadephul-iran-hormus-100.html",
-          "date": "2026-03-15"
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Pistorius: Keine deutschen Kriegsschiffe in die Stra\u00dfe von Hormus",
+          "source": "deutschlandfunk.de",
+          "url": "https://www.deutschlandfunk.de/pistorius-keine-deutschen-kriegsschiffe-in-die-strasse-von-hormus-100.html",
+          "date": "2026-03-17"
         },
         {
           "title": "Merz und Minister: Nato \"nicht zust\u00e4ndig\" f\u00fcr Stra\u00dfe von Hormus",
           "source": "zdfheute.de",
           "url": "https://zdfheute.de/politik/ausland/wadephul-pistorius-hormus-eu-nato-100.html",
-          "date": "2026-03-15"
+          "date": "2026-03-17"
         },
         {
-          "title": "Iran-Krieg - Pistorius: Keine deutschen Kriegsschiffe in die Stra\u00dfe von Hormus",
-          "source": "deutschlandfunk.de",
-          "url": "https://www.deutschlandfunk.de/pistorius-keine-deutschen-kriegsschiffe-in-die-strasse-von-hormus-100.html",
-          "date": "2026-03-16"
+          "title": "Wadephul: Deutschland wird sich nicht aktiv an Iran-Krieg beteiligen",
+          "source": "n-tv.de",
+          "url": "https://n-tv.de/politik/Wadephul-Deutschland-wird-sich-nicht-aktiv-an-Iran-Krieg-beteiligen-id30473505.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Iran-Krieg: Die Bundeswehr ist nicht Donald Trumps Putzkolonne",
+          "source": "spiegel.de",
+          "url": "https://spiegel.de/politik/deutschland/iran-krieg-die-bundeswehr-ist-nicht-donald-trumps-putzkolonne-kommentar-a-e9fb515d-0645-40c9-a5a7-25002bd250f0",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Trump fordert Nato-Hilfe in der Stra\u00dfe von Hormus: US-Pr\u00e4sident kassiert Absagen",
+          "source": "t-online.de",
+          "url": "https://t-online.de/nachrichten/ausland/krisen/id_101171812/strasse-von-hormus-im-iran-krieg-trump-stoesst-auf-ablehnung-in-berlin.html",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -63,273 +92,101 @@
     },
     {
       "story_id": 2,
-      "headline": "Government faces criticism over misuse of 500 billion euro special infrastructure fund",
-      "summary": "Economic institutes found that 95% of Germany's special infrastructure budget was used for purposes other than investment, leading to accusations of mismanagement by Finance Minister Klingbeil. Opposition and former CDU officials call for constitutional challenges and investigations.",
+      "headline": "Merz calls for stronger European self-confidence in government statement",
+      "summary": "Chancellor Merz delivered a government statement to the Bundestag calling for greater European self-confidence and unity, while taking a more distant stance toward the US. He emphasized Europe should not 'sell itself short' and needs to reform to be strong in a multipolar world.",
       "actors_involved": [
-        "Klingbeil",
         "Merz"
       ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 47,
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 12,
       "sources": [
-        "handelsblatt.com",
+        "tagesschau.de",
+        "deutschlandfunk.de",
         "bild.de",
-        "tagesspiegel.de",
-        "stern.de",
-        "spiegel.de",
-        "focus.de",
+        "morgenpost.de",
+        "br.de",
+        "zdfheute.de",
         "zeit.de",
-        "manager-magazin.de",
-        "apollo-news.net"
+        "bundestag.de"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
         {
-          "title": "Zweifelhafte Verwendung des Sonderverm\u00f6gens: Klingbeils Investitions-Milliarden versickern",
-          "source": "tagesspiegel.de",
-          "url": "https://www.tagesspiegel.de/politik/zweifelhafte-verwendung-des-sondervermogens-klingbeils-investitions-milliarden-versickern-15368661.html",
-          "date": "2026-03-19"
+          "title": "Regierungserkl\u00e4rung zur Au\u00dfenpolitik: Nicht ohne Europa",
+          "source": "tagesschau.de",
+          "url": "https://www.tagesschau.de/inland/innenpolitik/regierungserklaerung-merz-aussenpolitik-102.html",
+          "date": "2026-02-18"
         },
         {
-          "title": "Kommentar: F\u00fcr Klingbeil sind die Zahlen zum Sonderverm\u00f6gen verheerend",
-          "source": "handelsblatt.com",
-          "url": "https://www.handelsblatt.com/meinung/kommentare/kommentar-fuer-klingbeil-sind-die-zahlen-zum-sondervermoegen-verheerend/100209110.html",
-          "date": "2026-03-19"
+          "title": "Regierungserkl\u00e4rung - Bundeskanzler Merz zum Iran-Krieg: \"Wir h\u00e4tten abgeraten\"",
+          "source": "deutschlandfunk.de",
+          "url": "https://deutschlandfunk.de/bundeskanzler-merz-zum-iran-krieg-wir-haetten-abgeraten-100.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Merz-Ansage an EU: \u201eWas wir an Regulierung nicht brauchen, muss weg!\"",
+          "source": "bild.de",
+          "url": "https://bild.de/politik/inland/merz-ansage-an-eu-was-wir-an-regulierung-nicht-brauchen-muss-weg-69baa2afd3cf984a3adb63af",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Regierungserkl\u00e4rung von Merz: \"Nicht l\u00e4nger unter Wert verkaufen\"",
+          "source": "tagesschau.de",
+          "url": "https://www.tagesschau.de/inland/innenpolitik/merz-regierungserklaerung-114.html",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://www.tagesspiegel.de/politik/zweifelhafte-verwendung-des-sondervermogens-klingbeils-investitions-milliarden-versickern-15368661.html",
-        "https://www.handelsblatt.com/meinung/kommentare/kommentar-fuer-klingbeil-sind-die-zahlen-zum-sondervermoegen-verheerend/100209110.html"
+        "https://www.tagesschau.de/inland/innenpolitik/regierungserklaerung-merz-aussenpolitik-102.html",
+        "https://deutschlandfunk.de/bundeskanzler-merz-zum-iran-krieg-wir-haetten-abgeraten-100.html"
       ]
     },
     {
       "story_id": 3,
-      "headline": "Federal President Steinmeier visits Latin America and promotes democracy",
-      "summary": "President Steinmeier conducted visits to Panama, Guatemala, and Mexico to strengthen ties with Latin America. He criticized Trump's policies toward the region and emphasized the importance of democratic values, while also launching Germany's first 'Democracy History Day' initiative.",
-      "actors_involved": [
-        "Steinmeier"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 34,
-      "sources": [
-        "welt.de",
-        "amerika21.de",
-        "zeit.de",
-        "stern.de",
-        "bundespraesident.de",
-        "deutschlandfunk.de",
-        "news.de",
-        "der-farang.com"
-      ],
-      "date_range": "2026-03-17 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Kritik an Trump: \u201eLateinamerika ist kein Hinterhof von irgendjemandem",
-          "source": "",
-          "url": "https://www.welt.de/politik/ausland/article69b84c2c17184da7cffdbe8c/kritik-an-trump-lateinamerika-ist-kein-hinterhof-von-irgendjemandem-sagt-steinmeier-in-panama.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Steinmeier besucht als erster Bundespr\u00e4sident seit 40 Jahren Guatemala",
-          "source": "amerika21.de",
-          "url": "https://amerika21.de/2026/03/283861/steinmeier-besucht-guatemala",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.welt.de/politik/ausland/article69b84c2c17184da7cffdbe8c/kritik-an-trump-lateinamerika-ist-kein-hinterhof-von-irgendjemandem-sagt-steinmeier-in-panama.html",
-        "https://amerika21.de/2026/03/283861/steinmeier-besucht-guatemala"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "CDU wins Rhineland-Palatinate state election, ending 35 years of SPD rule",
-      "summary": "The CDU won the Rhineland-Palatinate state election with 31% versus SPD's 26%, marking the first time since 1991 that the SPD lost control of the state. Chancellor Merz campaigned actively while SPD leaders kept a low profile. The result strengthens Merz's position nationally.",
-      "actors_involved": [
-        "CDU/CSU",
-        "Merz",
-        "Klingbeil"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 28,
-      "sources": [
-        "dw.com",
-        "n-tv.de",
-        "merkur.de",
-        "morgenpost.de",
-        "zeit.de",
-        "fr.de",
-        "ksta.de",
-        "focus.de"
-      ],
-      "date_range": "2026-03-20 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Germany news: CDU wins Rhineland-Palatinate election",
-          "source": "dw.com",
-          "url": "https://www.dw.com/en/germany-news-cdu-wins-rhineland-palatinate-election/live-76465368",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "CDU-Kandidat Schnieder: Dunkelrot-Gr\u00fcn \"w\u00e4re Niedergang von Rheinland-Pfalz\"",
-          "source": "n-tv.de",
-          "url": "https://www.n-tv.de/mediathek/videos/politik/Dunkelrot-Gruen-waere-Niedergang-von-Rheinland-Pfalz-id30495999.html",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.dw.com/en/germany-news-cdu-wins-rhineland-palatinate-election/live-76465368",
-        "https://www.n-tv.de/mediathek/videos/politik/Dunkelrot-Gruen-waere-Niedergang-von-Rheinland-Pfalz-id30495999.html"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Revelations of CDU/CSU cooperation with AfD in EU Parliament spark controversy",
-      "summary": "Reports emerged that CDU/CSU members of the European People's Party collaborated with AfD and other far-right parties in EU Parliament chat groups and meetings on migration policy. Party leaders Merz and S\u00f6der distanced themselves and demanded the practice stop.",
-      "actors_involved": [
-        "CDU/CSU",
-        "AfD"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 23,
-      "sources": [
-        "spiegel.de",
-        "zeit.de",
-        "dw.com",
-        "br.de",
-        "www1.wdr.de",
-        "tagesschau.de",
-        "derwesten.de",
-        "merkur.de",
-        "t-online.de"
-      ],
-      "date_range": "2026-03-16 to 2026-03-20",
-      "articles": [
-        {
-          "title": "EVP-Kooperation mit AfD im EU-Parlament: Die Union macht sich selbst kaputt \u2013 Kommentar",
-          "source": "spiegel.de",
-          "url": "https://www.spiegel.de/politik/deutschland/evp-kooperation-mit-afd-im-eu-parlament-die-union-macht-sich-selbst-kaputt-kommentar-a-1b3628c3-551c-4ef3-adc4-4acf7133f726",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "CDU/CSU und AfD: Risse in der Brandmauer",
-          "source": "dw.com",
-          "url": "https://dw.com/de/cdu-csu-und-afd-risse-in-der-brandmauer/a-76385758",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.spiegel.de/politik/deutschland/evp-kooperation-mit-afd-im-eu-parlament-die-union-macht-sich-selbst-kaputt-kommentar-a-1b3628c3-551c-4ef3-adc4-4acf7133f726",
-        "https://dw.com/de/cdu-csu-und-afd-risse-in-der-brandmauer/a-76385758"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "AfD member admits to burning own car and falsely blaming leftists",
-      "summary": "An AfD member in Bavaria confessed to setting fire to his own vehicle and forging an Antifa threat letter to make it appear like a political attack. The case emerged after handwriting analysis revealed the deception. AfD leadership distanced itself from the incident.",
-      "actors_involved": [
-        "AfD"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 19,
-      "sources": [
-        "zeit.de",
-        "pnp.de",
-        "t-online.de",
-        "welt.de",
-        "faz.net",
-        "jungefreiheit.de"
-      ],
-      "date_range": "2026-03-18 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Falscher Brandanschlag: AfD-Mitglied z\u00fcndet eigenes Auto an - und beschuldigt Linke",
-          "source": "zeit.de",
-          "url": "https://zeit.de/news/2026-03/19/afd-mitglied-zuendet-eigenes-auto-an-und-beschuldigt-linke",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Uffenheim: AfD-Mitglied z\u00fcndet eigenes Auto an \u2013 und beschuldigt Linke",
-          "source": "welt.de",
-          "url": "https://welt.de/politik/deutschland/article69bc1562237e0549ea06061d/uffenheim-afd-mitglied-zuendet-eigenes-auto-an-und-beschuldigt-linke.html",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://zeit.de/news/2026-03/19/afd-mitglied-zuendet-eigenes-auto-an-und-beschuldigt-linke",
-        "https://welt.de/politik/deutschland/article69bc1562237e0549ea06061d/uffenheim-afd-mitglied-zuendet-eigenes-auto-an-und-beschuldigt-linke.html"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Defense Minister Pistorius visits Asia to strengthen Indo-Pacific partnerships",
-      "summary": "Defense Minister Pistorius traveled to Japan, Singapore, and Australia to expand security cooperation and arms industry ties in the Indo-Pacific region. The visit included discussions on rules-based international order and securing maritime routes, with German arms companies accompanying the delegation.",
-      "actors_involved": [
-        "Pistorius"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 17,
-      "sources": [
-        "tagesschau.de",
-        "deutschland.de",
-        "reuters.com",
-        "politico.eu",
-        "news.de",
-        "de.investing.com",
-        "deutschland.de"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Sicherheit, R\u00fcstung, Iran-Krieg: Pistorius besucht Japan",
-          "source": "tagesschau.de",
-          "url": "https://www.tagesschau.de/ausland/asien/pistorius-asien-reise-100.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "German defence minister to visit Indo-Pacific with arms firms",
-          "source": "reuters.com",
-          "url": "https://reuters.com/business/aerospace-defense/german-defence-minister-visit-indo-pacific-with-arms-firms-2026-03-18",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.tagesschau.de/ausland/asien/pistorius-asien-reise-100.html",
-        "https://reuters.com/business/aerospace-defense/german-defence-minister-visit-indo-pacific-with-arms-firms-2026-03-18"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "Bundeswehr reports significant increase in recruitment applications",
-      "summary": "The German military reported a 20% increase in applications through February 2026, with 16,100 people applying for military careers. The increase is attributed to the new military service law and growing security concerns, with active personnel now at 186,200 soldiers.",
+      "headline": "Bundeswehr reports surge in recruitment applications",
+      "summary": "The German military reported a 20% increase in applications, with 16,100 people applying for military service by February 2026. The growth is particularly strong among voluntary service members, as the new military service law shows early positive results.",
       "actors_involved": [
         "Bundeswehr"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 16,
+      "source_count": 11,
       "sources": [
-        "spiegel.de",
         "tagesschau.de",
-        "tagesspiegel.de",
+        "spiegel.de",
         "zeit.de",
+        "merkur.de",
+        "tagesspiegel.de",
         "euronews.com",
-        "deutschlandfunk.de",
-        "united24media.com",
-        "euractiv.de"
+        "euractiv.de",
+        "mdr.de",
+        "deutschland.de",
+        "united24media.com"
       ],
-      "date_range": "2026-03-17 to 2026-03-20",
+      "date_range": "2026-03-15 to 2026-03-17",
       "articles": [
         {
           "title": "Plus von 20 Prozent: Bewerbungen bei Bundeswehr nehmen deutlich zu",
           "source": "tagesschau.de",
           "url": "https://www.tagesschau.de/inland/gesellschaft/bundeswehr-mehr-bewerber-100.html",
-          "date": "2026-03-19"
+          "date": "2026-03-17"
         },
         {
           "title": "Bundeswehr meldet deutliches Plus an Bewerbungen",
           "source": "spiegel.de",
           "url": "https://spiegel.de/politik/deutschland/bundeswehr-meldet-deutliches-plus-an-bewerbungen-a-947eebe0-8d45-4341-b654-7a87f887f15b",
-          "date": "2026-03-18"
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Wehrdienst: Deutlich mehr Menschen bewerben sich bei der Bundeswehr",
+          "source": "zeit.de",
+          "url": "https://zeit.de/politik/2026-03/wehrdienst-bundeswehr-anstieg-bewerbungen-einstellungen",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Ansturm auf die Bundeswehr: 16.100 Bewerbungen in zwei Monaten",
+          "source": "merkur.de",
+          "url": "https://merkur.de/politik/ansturm-auf-die-bundeswehr-16-100-bewerbungen-in-zwei-monaten-zr-94224023.html",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -338,23 +195,335 @@
       ]
     },
     {
+      "story_id": 4,
+      "headline": "Sonderverm\u00f6gen infrastructure fund accused of widespread misuse",
+      "summary": "Economic institutes revealed that 95% of the 500 billion euro 'special assets' infrastructure fund was allegedly misused for purposes other than intended investments. Finance Minister Klingbeil faces criticism from opposition parties and calls for constitutional challenges.",
+      "actors_involved": [
+        "Klingbeil"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 19,
+      "sources": [
+        "spiegel.de",
+        "handelsblatt.com",
+        "tagesspiegel.de",
+        "stern.de",
+        "deutschlandfunk.de",
+        "manager-magazin.de",
+        "zeit.de",
+        "welt.de",
+        "focus.de",
+        "bild.de",
+        "apollo-news.net",
+        "dw.com",
+        "politico.eu"
+      ],
+      "date_range": "2026-03-14 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Zweifelhafte Verwendung des Sonderverm\u00f6gens: Klingbeils Investitions-Milliarden versickern",
+          "source": "tagesspiegel.de",
+          "url": "https://www.tagesspiegel.de/politik/zweifelhafte-verwendung-des-sondervermogens-klingbeils-investitions-milliarden-versickern-15368661.html",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "Kommentar: F\u00fcr Klingbeil sind die Zahlen zum Sonderverm\u00f6gen verheerend",
+          "source": "handelsblatt.com",
+          "url": "https://www.handelsblatt.com/meinung/kommentare/kommentar-fuer-klingbeil-sind-die-zahlen-zum-sondervermoegen-verheerend/100209110.html",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "Sonderverm\u00f6gen - Finanzminister Klingbeil weist Vorw\u00fcrfe der Zweckentfremdung zur\u00fcck",
+          "source": "deutschlandfunk.de",
+          "url": "https://deutschlandfunk.de/finanzminister-klingbeil-weist-vorwuerfe-der-zweckentfremdung-zurueck-100.html",
+          "date": "2026-03-15"
+        }
+      ],
+      "representative_urls": [
+        "https://www.tagesspiegel.de/politik/zweifelhafte-verwendung-des-sondervermogens-klingbeils-investitions-milliarden-versickern-15368661.html",
+        "https://www.handelsblatt.com/meinung/kommentare/kommentar-fuer-klingbeil-sind-die-zahlen-zum-sondervermoegen-verheerend/100209110.html"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Speculation grows over Steinmeier's successor as Federal President",
+      "summary": "With Federal President Steinmeier's term ending in 2027, speculation intensifies about potential successors. Names mentioned include Monika Gr\u00fctters, Ilse Aigner, and calls for the first female Federal President. Steinmeier continues his democracy promotion activities and international visits.",
+      "actors_involved": [
+        "Steinmeier"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 16,
+      "sources": [
+        "spiegel.de",
+        "taz.de",
+        "fr.de",
+        "sueddeutsche.de",
+        "faz.net",
+        "stern.de",
+        "deutschlandfunk.de",
+        "bundespraesident.de",
+        "welt.de",
+        "zeit.de",
+        "tagesspiegel.de",
+        "hungarianconservative.com"
+      ],
+      "date_range": "2026-02-19 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Nachfolge von Frank-Walter Steinmeier: Geheimplan Monika Gr\u00fctters?",
+          "source": "spiegel.de",
+          "url": "https://www.spiegel.de/politik/deutschland/nachfolge-von-frank-walter-steinmeier-geheimplan-monika-gruetters-a-9a5a7a39-9588-4ceb-af17-3f38604ca4fe",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "K\u00fcnftig eine Bundespr\u00e4sidentin? Fr\u00f6hliches Ratespiel um die Steinmeier-Nachfolge",
+          "source": "sueddeutsche.de",
+          "url": "https://www.sueddeutsche.de/politik/bundespraesident-nachfolge-steinmeier-kandidatinnen-spekulationen-monika-gruetters-li.3454682",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Bundespr\u00e4sident Steinmeier ruft zur Verteidigung der Demokratie auf",
+          "source": "tagesschau.de",
+          "url": "https://www.tagesschau.de/inland/innenpolitik/steinmeier-demokratie-stolz-100.html",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.spiegel.de/politik/deutschland/nachfolge-von-frank-walter-steinmeier-geheimplan-monika-gruetters-a-9a5a7a39-9588-4ceb-af17-3f38604ca4fe",
+        "https://www.sueddeutsche.de/politik/bundespraesident-nachfolge-steinmeier-kandidatinnen-spekulationen-monika-gruetters-li.3454682"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "AfD member sets own car on fire and blames political opponents",
+      "summary": "An AfD member in Bavaria burned his own car and forged an antifa threatening letter to blame left-wing groups for a political attack. The 44-year-old confessed after handwriting analysis exposed the fraud, embarrassing the party which had initially claimed it was a 'cowardly attack.'",
+      "actors_involved": [
+        "AfD"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 8,
+      "sources": [
+        "zeit.de",
+        "pnp.de",
+        "t-online.de",
+        "welt.de",
+        "faz.net",
+        "jungefreiheit.de"
+      ],
+      "date_range": "2026-03-19 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Falscher Brandanschlag: AfD-Mitglied z\u00fcndet eigenes Auto an - und beschuldigt Linke",
+          "source": "zeit.de",
+          "url": "https://zeit.de/news/2026-03/19/afd-mitglied-zuendet-eigenes-auto-an-und-beschuldigt-linke",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "AfD-Mitglied (44) z\u00fcndet eigenes Auto an und beschuldigt Linke \u2013 Drohbrief der Antifa gef\u00e4lscht",
+          "source": "pnp.de",
+          "url": "https://pnp.de/nachrichten/bayern/afd-mitglied-44-zuendet-eigenes-auto-an-und-beschuldigt-linke-drohbrief-der-antifa-gefaelscht-20754958",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "T\u00e4uschung fliegt auf: AfD-Mitglied gesteht Brandstiftung",
+          "source": "t-online.de",
+          "url": "https://t-online.de/nachrichten/deutschland/innenpolitik/id_101178108/taeuschung-fliegt-auf-afd-mitglied-gesteht-brandstiftung.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "AfD-Mitglied z\u00fcndet eigenes Auto an und f\u00e4lscht Antifa-Drohbrief",
+          "source": "faz.net",
+          "url": "https://faz.net/aktuell/politik/inland/afd-mitglied-zuendet-eigenes-auto-an-und-faelscht-antifa-drohbrief-200651540.html",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://zeit.de/news/2026-03/19/afd-mitglied-zuendet-eigenes-auto-an-und-beschuldigt-linke",
+        "https://faz.net/aktuell/politik/inland/afd-mitglied-zuendet-eigenes-auto-an-und-faelscht-antifa-drohbrief-200651540.html"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "CDU/CSU accused of cooperating with AfD in European Parliament",
+      "summary": "Investigations revealed that the conservative EVP faction in the European Parliament, led by CSU's Manfred Weber, worked closely with far-right parties including the AfD through WhatsApp groups and direct meetings on migration policy. This contradicts the Union's firewall policy against the AfD.",
+      "actors_involved": [
+        "CDU/CSU",
+        "AfD"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 14,
+      "sources": [
+        "tagesschau.de",
+        "wdr.de",
+        "spiegel.de",
+        "zeit.de",
+        "focus.de",
+        "derwesten.de",
+        "br.de",
+        "t-online.de",
+        "merkur.de",
+        "morgenpost.de",
+        "euractiv.de",
+        "dw.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-18",
+      "articles": [
+        {
+          "title": "EU-Abgeordnete kritisieren EVP nach Medienbericht \u00fcber Absprachen mit AfD",
+          "source": "tagesschau.de",
+          "url": "https://www.tagesschau.de/ausland/europa/europaparlament-evp-brandmauer-100.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Recherche zu Chatgruppe: CDU ringt um Haltung zur AfD",
+          "source": "wdr.de",
+          "url": "https://www1.wdr.de/nachrichten/landespolitik/cdu-chats-evp-afd-europaparlament-100.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "EVP-Kooperation mit AfD im EU-Parlament: Die Union macht sich selbst kaputt",
+          "source": "spiegel.de",
+          "url": "https://www.spiegel.de/politik/deutschland/evp-kooperation-mit-afd-im-eu-parlament-die-union-macht-sich-selbst-kaputt-kommentar-a-1b3628c3-551c-4ef3-adc4-4acf7133f726",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.tagesschau.de/ausland/europa/europaparlament-evp-brandmauer-100.html",
+        "https://www.spiegel.de/politik/deutschland/evp-kooperation-mit-afd-im-eu-parlament-die-union-macht-sich-selbst-kaputt-kommentar-a-1b3628c3-551c-4ef3-adc4-4acf7133f726"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Pistorius visits Indo-Pacific partners to strengthen defense cooperation",
+      "summary": "Defense Minister Pistorius traveled to Japan, Singapore, and Australia to expand security cooperation in the Indo-Pacific region. The trip focuses on rules-based international order, maritime security, and defense industry partnerships as Germany seeks to counter Chinese influence.",
+      "actors_involved": [
+        "Pistorius"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 9,
+      "sources": [
+        "welt.de",
+        "deutschland.de",
+        "politico.eu",
+        "tagesschau.de",
+        "radiorst.de",
+        "news.de",
+        "reuters.com"
+      ],
+      "date_range": "2026-03-18 to 2026-03-22",
+      "articles": [
+        {
+          "title": "Sicherheitspolitik: Der Pistorius-Plan f\u00fcr den Indo-Pazifik",
+          "source": "welt.de",
+          "url": "https://www.welt.de/politik/deutschland/article69bb968bd3cf984a3adb6fcf/sicherheitspolitik-der-pistorius-plan-fuer-den-indo-pazifik.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Pistorius besucht Partner im Indopazifik",
+          "source": "deutschland.de",
+          "url": "https://deutschland.de/de/news/pistorius-besucht-partner-im-indopazifik",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Berlin's Indo-Pacific strategy blends arms deals and alliances",
+          "source": "politico.eu",
+          "url": "https://politico.eu/article/germany-indo-pacific-strategy-arms-deals-alliances",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Sicherheit, R\u00fcstung, Iran-Krieg: Pistorius besucht Japan",
+          "source": "tagesschau.de",
+          "url": "https://www.tagesschau.de/ausland/asien/pistorius-asien-reise-100.html",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://www.welt.de/politik/deutschland/article69bb968bd3cf984a3adb6fcf/sicherheitspolitik-der-pistorius-plan-fuer-den-indo-pazifik.html",
+        "https://www.tagesschau.de/ausland/asien/pistorius-asien-reise-100.html"
+      ]
+    },
+    {
       "story_id": 9,
-      "headline": "BND plans new cyber-intelligence center in Bonn",
-      "summary": "Germany's foreign intelligence service BND plans to expand its Bonn facility into a major Crypto-Cyber-Technology Center focused on artificial intelligence, quantum computing, and hacking capabilities. The expansion reflects Germany's push to modernize its intelligence capabilities.",
+      "headline": "Bundesbank calls for pension reforms and defends digital euro plans",
+      "summary": "The German central bank proposed raising the retirement age and ending early pension benefits while defending plans for a digital euro. Bundesbank President Nagel expects a political decision on the digital currency this year, while the bank also announced plans for new headquarters in Frankfurt.",
+      "actors_involved": [
+        "Bundesbank"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 8,
+      "sources": [
+        "t-online.de",
+        "merkur.de",
+        "welt.de",
+        "entwicklungsstadt.de",
+        "goslarsche.de",
+        "de.rt.com",
+        "iz.de",
+        "apollo-news.net"
+      ],
+      "date_range": "2026-03-17 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Bundesbank fordert Renten-Reformen: Aus f\u00fcr Rente mit 63 und h\u00f6heres Alter",
+          "source": "t-online.de",
+          "url": "https://www.t-online.de/finanzen/ratgeber/altersvorsorge/gesetzlicherente/id_101175334/bundesbank-fordert-renten-reformen-aus-fuer-rente-mit-63-und-hoeheres-alter.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Rente mit 63 soll weg, Rentenalter soll steigen \u2013 Bundesbank legt brisante Reform-Forderungen vor",
+          "source": "merkur.de",
+          "url": "https://www.merkur.de/wirtschaft/renteneintrittsalter-erhoehen-bundesbank-will-rente-mit-63-abschaffen-und-94226752.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Deutsche Bundesbank dr\u00e4ngt auf rasche Einf\u00fchrung des digitalen Euro",
+          "source": "de.rt.com",
+          "url": "https://de.rt.com/inland/274232-deutsche-bundesbank-draengt-auf-rasche/",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Neuer Standort: Bundesbank plant Kauf einer neuen Hauptzentrale",
+          "source": "entwicklungsstadt.de",
+          "url": "https://www.entwicklungsstadt.de/neuer-standort-bundesbank-plant-umzug-in-eine-neue-hauptzentrale/",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.t-online.de/finanzen/ratgeber/altersvorsorge/gesetzlicherente/id_101175334/bundesbank-fordert-renten-reformen-aus-fuer-rente-mit-63-und-hoeheres-alter.html",
+        "https://www.merkur.de/wirtschaft/renteneintrittsalter-erhoehen-bundesbank-will-rente-mit-63-abschaffen-und-94226752.html"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "BND plans new cyber-technology center in Bonn",
+      "summary": "The German foreign intelligence service BND wants to expand its existing facility in Bonn-Mehlem into a major Crypto-Cyber-Technology Center for artificial intelligence, quantum computing, and advanced espionage technologies. The expansion would create what some call a 'German mini-NSA.'",
       "actors_involved": [
         "BND"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 12,
+      "source_count": 6,
       "sources": [
-        "sueddeutsche.de",
-        "www1.wdr.de",
+        "wdr.de",
         "tagesschau.de",
+        "sueddeutsche.de",
         "ga.de",
+        "netzpolitik.org",
         "bayerische-staatszeitung.de"
       ],
-      "date_range": "2026-03-18 to 2026-03-20",
+      "date_range": "2026-03-19 to 2026-03-19",
       "articles": [
+        {
+          "title": "Deutsche \"Mini-NSA\" am Rhein? Neues BND-Zentrum in Bonn",
+          "source": "wdr.de",
+          "url": "https://www1.wdr.de/nachrichten/bnd-bonn-spionage-wdr-sz-recherche-100.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Neues BND-Zentrum in Bonn: Eine deutsche \"Mini-NSA\" am Rhein?",
+          "source": "tagesschau.de",
+          "url": "https://tagesschau.de/inland/regional/nordrheinwestfalen/wdr-neues-bnd-zentrum-in-bonn-eine-deutsche-mini-nsa-am-rhein-100.html",
+          "date": "2026-03-19"
+        },
         {
           "title": "Digital-Spione: Der BND will ein neues Zentrum f\u00fcr Cyberspionage aufbauen",
           "source": "sueddeutsche.de",
@@ -362,147 +531,133 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Deutsche \"Mini-NSA\" am Rhein? Neues BND-Zentrum in Bonn",
-          "source": "www1.wdr.de",
-          "url": "https://www1.wdr.de/nachrichten/bnd-bonn-spionage-wdr-sz-recherche-100.html",
-          "date": "2026-03-19"
+          "title": "BND in Bonn: Geheimdienst will Hacking-Zentrum in Mehlem aufbauen",
+          "source": "ga.de",
+          "url": "https://ga.de/bonn/stadt-bonn/bnd-in-bonn-hacking-zentrum-in-mehlem-geplant_aid-145605821",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://www.sueddeutsche.de/politik/bnd-bonn-krypto-cyber-technologiezentrum-cybersicherheit-spionagetechnik-li.3455414",
-        "https://www1.wdr.de/nachrichten/bnd-bonn-spionage-wdr-sz-recherche-100.html"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "Bundesbank calls for pension reforms and promotes digital euro",
-      "summary": "The German central bank proposed ending early retirement at 63 and gradually raising retirement age, while also pushing for quick introduction of the digital euro. Bundesbank officials defended keeping German gold reserves stored abroad despite criticism.",
-      "actors_involved": [
-        "Bundesbank"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 11,
-      "sources": [
-        "t-online.de",
-        "merkur.de",
-        "welt.de",
-        "apollo-news.net",
-        "de.rt.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Bundesbank fordert Renten-Reformen: Aus f\u00fcr Rente mit 63 und h\u00f6heres Alter",
-          "source": "t-online.de",
-          "url": "https://www.t-online.de/finanzen/ratgeber/altersvorsorge/gesetzlicherente/id_101175334/bundesbank-fordert-renten-reformen-aus-fuer-rente-mit-63-und-hoeheres-alter.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Digitales Geld und Gold: Bundesbank dr\u00e4ngt auf digitalen Euro und verteidigt Goldreserven im Ausland",
-          "source": "welt.de",
-          "url": "https://www.welt.de/finanzen/weltplus/article69bd32dfea8bf301e4ae22fb/digitales-geld-und-gold-bundesbank-draengt-auf-digitalen-euro-und-verteidigt-goldreserven-im-ausland.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.t-online.de/finanzen/ratgeber/altersvorsorge/gesetzlicherente/id_101175334/bundesbank-fordert-renten-reformen-aus-fuer-rente-mit-63-und-hoeheres-alter.html",
-        "https://www.welt.de/finanzen/weltplus/article69bd32dfea8bf301e4ae22fb/digitales-geld-und-gold-bundesbank-draengt-auf-digitalen-euro-und-verteidigt-goldreserven-im-ausland.html"
+        "https://www1.wdr.de/nachrichten/bnd-bonn-spionage-wdr-sz-recherche-100.html",
+        "https://www.sueddeutsche.de/politik/bnd-bonn-krypto-cyber-technologiezentrum-cybersicherheit-spionagetechnik-li.3455414"
       ]
     },
     {
       "story_id": 11,
-      "headline": "Secret reform negotiations between Chancellor Merz and Vice Chancellor Klingbeil revealed",
-      "summary": "Reports emerged of secret meetings between Chancellor Merz and Finance Minister Klingbeil to prepare major reforms on taxes, pensions, and social systems. The 'Merz-Klingbeil pact' aims to address Germany's fiscal challenges but faces political risks ahead of eastern state elections.",
+      "headline": "Ukrainian drone teams outperform NATO forces in military exercises",
+      "summary": "Ukrainian drone specialists defeated NATO teams in maritime exercises off Portugal, 'sinking' at least one allied frigate and exposing vulnerabilities in NATO naval defenses. The exercises demonstrated the effectiveness of Ukrainian combat-tested drone tactics against conventional naval forces.",
       "actors_involved": [
-        "Merz",
-        "Klingbeil"
+        "Bundeswehr"
       ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 9,
+      "signal_category_hint": "security_defense",
+      "source_count": 4,
       "sources": [
-        "bild.de",
-        "zeit.de",
-        "business-punk.com",
-        "hersfelder-zeitung.de",
-        "cicero.de",
-        "news.de"
+        "merkur.de",
+        "welt.de",
+        "militaeraktuell.at",
+        "pravda.com.ua"
       ],
-      "date_range": "2026-03-20 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-16",
       "articles": [
         {
-          "title": "BILD kennt die Details: Der geheime Merz-Klingbeil-Pakt",
-          "source": "bild.de",
-          "url": "https://bild.de/politik/inland/bild-kennt-die-details-der-geheime-merz-klingbeil-pakt-69bc1992a716fe1231b22815",
-          "date": "2026-03-20"
+          "title": "Ukraine zeigt der NATO Grenzen auf: Auch die Bundeswehr ist bei Milit\u00e4r\u00fcbungen chancenlos",
+          "source": "merkur.de",
+          "url": "https://www.merkur.de/politik/ukraine-zeigt-der-nato-grenzen-auf-auch-die-bundeswehr-ist-bei-militaeruebungen-chancenlos-zr-94221960.html",
+          "date": "2026-03-16"
         },
         {
-          "title": "XXL-Reformen der Bundesregierung: Was Friedrich Merz und Lars Klingbeil kommende Woche verk\u00fcnden wollen",
-          "source": "zeit.de",
-          "url": "https://zeit.de/politik/deutschland/2026-03/xxl-reformen-bundesregierung-friedrich-merz-lars-klingbeil",
-          "date": "2026-03-20"
+          "title": "Ukrainer besiegen Nato-Team bei \u00dcbung \u2013 alliierte Fregatte \u201eversenkt\"",
+          "source": "welt.de",
+          "url": "https://welt.de/politik/ausland/article69b8083c9c373f2aabf304b9/ukrainer-besiegen-nato-team-bei-uebung-alliierte-fregatte-versenkt.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Ukrainische Drohnen zeigen erneut Wirkung bei NATO-\u00dcbungen",
+          "source": "militaeraktuell.at",
+          "url": "https://militaeraktuell.at/ukrainische-drohnen-zeigen-wirkung-nato-uebung",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "How Ukraine \"sank\" NATO frigate with drones during military exercises: details revealed",
+          "source": "pravda.com.ua",
+          "url": "https://pravda.com.ua/eng/news/2026/03/16/8025793",
+          "date": "2026-03-16"
         }
       ],
       "representative_urls": [
-        "https://bild.de/politik/inland/bild-kennt-die-details-der-geheime-merz-klingbeil-pakt-69bc1992a716fe1231b22815",
-        "https://zeit.de/politik/deutschland/2026-03/xxl-reformen-bundesregierung-friedrich-merz-lars-klingbeil"
+        "https://www.merkur.de/politik/ukraine-zeigt-der-nato-grenzen-auf-auch-die-bundeswehr-ist-bei-militaeruebungen-chancenlos-zr-94221960.html",
+        "https://welt.de/politik/ausland/article69b8083c9c373f2aabf304b9/ukrainer-besiegen-nato-team-bei-uebung-alliierte-fregatte-versenkt.html"
       ]
     },
     {
       "story_id": 12,
-      "headline": "Finance Minister Klingbeil considers windfall tax on oil companies amid high fuel prices",
-      "summary": "Finance Minister Klingbeil announced he is examining a windfall tax on oil companies' crisis profits to fund relief for commuters facing high fuel prices due to the Iran war. The proposal includes potentially raising the commuting allowance using revenues from the special tax.",
+      "headline": "CDU wins Rhineland-Palatinate state election, ending SPD control",
+      "summary": "The CDU defeated the SPD in the Rhineland-Palatinate state election, ending 35 years of Social Democratic rule in the western German state. The victory provides relief for Chancellor Merz but raises questions about coalition formation and the SPD leadership's future.",
       "actors_involved": [
-        "Klingbeil"
+        "CDU/CSU"
       ],
-      "signal_category_hint": "economic_tech",
+      "signal_category_hint": "domestic_regime",
       "source_count": 8,
       "sources": [
-        "spiegel.de",
+        "dw.com",
+        "n-tv.de",
+        "tagesschau.de",
         "merkur.de",
-        "fr.de",
-        "fnp.de",
-        "deutschlandfunk.de",
-        "teltarif.de"
+        "zeit.de",
+        "morgenpost.de",
+        "fr.de"
       ],
-      "date_range": "2026-03-19 to 2026-03-21",
+      "date_range": "2026-03-22 to 2026-03-23",
       "articles": [
         {
-          "title": "Spritpreise: Lars Klingbeil pr\u00fcft \u00dcbergewinnsteuer f\u00fcr Energieunternehmen",
-          "source": "spiegel.de",
-          "url": "https://spiegel.de/wirtschaft/service/spritpreise-klingbeil-prueft-uebergewinnsteuer-fuer-energieunternehmen-a-cd859567-ee6a-4c7a-ab0b-9521d64bca73",
-          "date": "2026-03-19"
+          "title": "Germany news: CDU wins Rhineland-Palatinate election",
+          "source": "dw.com",
+          "url": "https://dw.com/en/germany-news-cdu-wins-rhineland-palatinate-election/live-76465368",
+          "date": "2026-03-23"
         },
         {
-          "title": "Entlastung f\u00fcr Millionen Pendler? Klingbeil pr\u00fcft \u00dcbergewinnsteuer f\u00fcr \u00d6lkonzerne",
-          "source": "merkur.de",
-          "url": "https://merkur.de/wirtschaft/entlastung-fuer-millionen-pendler-klingbeil-prueft-uebergewinnsteuer-fuer-oelkonzerne-94225790.html",
-          "date": "2026-03-20"
+          "title": "CDU-Kandidat Schnieder: Dunkelrot-Gr\u00fcn \"w\u00e4re Niedergang von Rheinland-Pfalz\"",
+          "source": "n-tv.de",
+          "url": "https://www.n-tv.de/mediathek/videos/politik/Dunkelrot-Gruen-waere-Niedergang-von-Rheinland-Pfalz-id30495999.html",
+          "date": "2026-03-22"
+        },
+        {
+          "title": "Wahl in Rheinland-Pfalz: Merz will ab Montag mit der SPD \u00fcber Reformen sprechen",
+          "source": "zeit.de",
+          "url": "https://zeit.de/politik/deutschland/2026-03/friedrich-merz-gespraeche-spd-reformen-landtagswahl-gxe",
+          "date": "2026-03-21"
         }
       ],
       "representative_urls": [
-        "https://spiegel.de/wirtschaft/service/spritpreise-klingbeil-prueft-uebergewinnsteuer-fuer-energieunternehmen-a-cd859567-ee6a-4c7a-ab0b-9521d64bca73",
-        "https://merkur.de/wirtschaft/entlastung-fuer-millionen-pendler-klingbeil-prueft-uebergewinnsteuer-fuer-oelkonzerne-94225790.html"
+        "https://dw.com/en/germany-news-cdu-wins-rhineland-palatinate-election/live-76465368",
+        "https://zeit.de/politik/deutschland/2026-03/friedrich-merz-gespraeche-spd-reformen-landtagswahl-gxe"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Pistorius proposes satellite constellation project with Norway",
-      "source": "hartpunkt.de",
-      "url": "https://www.hartpunkt.de/pistorius-schlaegt-satellitenkonstellation-mit-norwegen-vor/",
-      "signal_category_hint": "security_defense"
-    },
-    {
-      "headline": "Bundesbank plans move from Frankfurt campus to city center location",
-      "source": "iz.de",
-      "url": "https://www.iz.de/projekte/news/-bundesbank-will-in-der-city-kaufen-2000042201",
+      "headline": "Klingbeil and Merz plan secret reform package after Rhineland-Palatinate election",
+      "source": "bild.de",
+      "url": "https://bild.de/politik/inland/bild-kennt-die-details-der-geheime-merz-klingbeil-pakt-69bc1992a716fe1231b22815",
       "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "German applications to join armed forces surge as Bundeswehr expands",
-      "source": "united24media.com",
-      "url": "https://united24media.com/latest-news/applications-to-join-germanys-armed-forces-surge-as-bundeswehr-expands-17044",
+      "headline": "Pistorius criticized for withholding Bundeswehr digital radio report",
+      "source": "spiegel.de",
+      "url": "https://www.spiegel.de/politik/deutschland/gruene-werfen-boris-pistorius-vertuschung-bei-bei-bundeswehr-projekt-vor-a-d7936b4e-a2ce-4465-a4b6-217f4f74f86c",
       "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Merz criticized for unclear position on Iran war participation",
+      "source": "augsburger-allgemeine.de",
+      "url": "https://augsburger-allgemeine.de/politik/wie-steht-merz-zu-einer-moeglichen-deutschen-beteiligung-am-iran-krieg-113779478",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Klingbeil considering windfall tax on oil companies due to high fuel prices",
+      "source": "spiegel.de",
+      "url": "https://spiegel.de/wirtschaft/service/spritpreise-klingbeil-prueft-uebergewinnsteuer-fuer-energieunternehmen-a-cd859567-ee6a-4c7a-ab0b-9521d64bca73",
+      "signal_category_hint": "economic_tech"
     }
   ]
 }

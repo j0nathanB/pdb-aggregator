@@ -3,39 +3,38 @@
   "code": "cl",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 318,
-  "stories_identified": 8,
-  "off_topic_filtered": 45,
-  "noise_summary": "45 off-topic results filtered: 22 sports (football matches, Copa Sudamericana, World Cup content, Chilean team activities), 8 entertainment/lifestyle, 6 weather reports, 4 general technology/AI content not specific to Chile, 3 unrelated international news, 2 general business content",
+  "search_results_total": 293,
+  "stories_identified": 14,
+  "off_topic_filtered": 89,
+  "noise_summary": "89 off-topic results filtered: 34 sports (World Baseball Classic, Chilean football leagues, match schedules), 23 international politics unrelated to Chile (US Republican Party, European politics, Middle East conflicts), 15 general economic/financial news from other countries, 8 technology/AI stories, 5 entertainment, 4 weather reports.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Kast launches border security plan with trenches and walls on northern frontier",
-      "summary": "President Jos\u00e9 Antonio Kast inaugurated the 'Plan Escudo Fronterizo' (Border Shield Plan) involving construction of trenches, walls up to 5 meters high, and military deployment along Chile's northern borders with Peru and Bolivia to combat illegal immigration and organized crime.",
+      "headline": "Kast launches 'Border Shield Plan' with trenches and barriers on northern frontier",
+      "summary": "President Jos\u00e9 Antonio Kast began construction of trenches and physical barriers along Chile's northern border with Peru and Bolivia as part of his 'Plan Escudo Fronterizo' (Border Shield Plan). The military is deploying heavy machinery to dig 3-meter trenches and build walls up to 5 meters high to deter irregular migration.",
       "actors_involved": [
         "Kast",
         "Chilean Armed Forces"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 28,
+      "source_count": 18,
       "sources": [
         "bbc.com",
         "reuters.com",
         "france24.com",
-        "bloomberg.com",
         "newsweek.com",
+        "ambito.com",
         "elmundo.es",
-        "defensa.com",
         "infodefensa.com",
+        "defensa.com",
+        "eldesconcierto.cl",
+        "pucara.org",
         "lanacion.com.ar",
-        "elmostrador.cl",
-        "emol.com",
-        "latercera.com",
-        "biobiochile.cl",
-        "t13.cl",
-        "24horas.cl"
+        "theconversation.com",
+        "zona-militar.com",
+        "radio.uchile.cl"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-20",
       "articles": [
         {
           "title": "Chile's president begins building border barrier less than week into term",
@@ -50,9 +49,21 @@
           "date": "2026-03-17"
         },
         {
+          "title": "Chile's new president launches border barrier plan to curb illegal immigration",
+          "source": "france24.com",
+          "url": "https://www.france24.com/en/americas/20260316-chile-president-launches-border-barrier-illegal-immigration",
+          "date": "2026-03-16"
+        },
+        {
           "title": "Chile Building Border Shield to Stop Migrants Entering Country",
           "source": "newsweek.com",
           "url": "https://newsweek.com/chile-building-border-shield-to-stop-migrants-entering-country-11686561",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Chile: Jos\u00e9 Antonio Kast inicia la construcci\u00f3n de una zanja antimigrantes en la frontera con Per\u00fa",
+          "source": "ambito.com",
+          "url": "https://ambito.com/mundo/chile-jose-antonio-kast-inicia-la-construccion-una-zanja-antimigrantes-la-frontera-peru-n6256498",
           "date": "2026-03-16"
         },
         {
@@ -60,6 +71,78 @@
           "source": "elmundo.es",
           "url": "https://elmundo.es/internacional/2026/03/16/69b87160e9cf4adb348b459c.html",
           "date": "2026-03-16"
+        },
+        {
+          "title": "Kast inspecciona la zanja de seguridad que el Ej\u00e9rcito de Chile comienza a construir en la frontera con Per\u00fa",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5811839/kast-inspecciona-zanja-seguridad-ejercito-chile-comienza-construir-frontera-peru",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Ej\u00e9rcito de Chile despliega un centenar de efectivos y equipos de ingenieros al altiplano para avanzar en las barreras f\u00edsicas fronterizas en Colchane",
+          "source": "defensa.com",
+          "url": "https://defensa.com/chile/ejercito-chile-despliega-centenar-efectivos-equipos-ingenieros",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Comienza primera etapa del Plan Escudo Fronterizo: Los 30 km de zanja que Kast promete construir en 90 d\u00edas",
+          "source": "eldesconcierto.cl",
+          "url": "https://eldesconcierto.cl/2026/03/16/comienza-primera-etapa-del-plan-escudo-fronterizo-los-30-km-de-zanja-que-kast-promete-construir-en-90-dias",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Kast blinda la frontera norte de Chile con zanjas, muros y el mayor despliegue militar del 'Plan Escudo Fronterizo'",
+          "source": "pucara.org",
+          "url": "https://pucara.org/post/kast-blinda-la-frontera-norte-de-chile-con-zanjas-muros-y-el-mayor-despliegue-militar-del-plan-esc",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Una pol\u00e9mica zanja antimigraci\u00f3n en la frontera marca la primera semana de Kast en el poder",
+          "source": "lanacion.com.ar",
+          "url": "https://www.lanacion.com.ar/el-mundo/una-polemica-zanja-antimigracion-en-la-frontera-marca-la-primera-semana-de-kast-en-el-poder-nid17032026/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Kast devuelve a Chile a la derecha y arranca su mandato con muros fronterizos y medidas contra la inmigraci\u00f3n",
+          "source": "theconversation.com",
+          "url": "https://theconversation.com/kast-devuelve-a-chile-a-la-derecha-y-arranca-su-mandato-con-muros-fronterizos-y-medidas-contra-la-inmigracion-272207",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "El Ej\u00e9rcito de Chile despliega maquinaria de Ingenieros de Monta\u00f1a para construir zanjas en frontera con Bolivia",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5813207/ejercito-chile-despliega-maquinaria-ingenieros-montana-construir-zanjas-frontera-bolivia",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "\"Escudo Fronterizo\" de Kast divide a la oposici\u00f3n: FA lo critica y sectores del Socialismo Democr\u00e1tico lo respaldan",
+          "source": "latercera.com",
+          "url": "https://latercera.com/politica/noticia/escudo-fronterizo-de-kast-divide-a-la-oposicion-fa-lo-critica-y-sectores-del-socialismo-democratico-lo-respaldan",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Zanjas en nuestras fronteras: \u00bfmedidas millonarias y efectistas?",
+          "source": "radio.uchile.cl",
+          "url": "https://radio.uchile.cl/2026/03/20/zanjas-en-nuestras-fronteras-medidas-millonarias-y-efectistas",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "El Ej\u00e9rcito de Chile despliega maquinaria pesada para construir zanjas en frontera",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5815784/ejercito-chile-despliega-maquinaria-pesada-construir-za",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Con el foco en la seguridad perimetral de la frontera norte de Chile, Hesco llevar\u00e1 sus barreras a FIDAE 2026",
+          "source": "defensa.com",
+          "url": "https://defensa.com/chile/foco-seguridad-perimetral-frontera-norte-chile-hesco-llevara",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "El Ej\u00e9rcito de Chile despliega maquinaria pesada para construir za",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5815784/patrullero-isla-pinto-ejecuta-misiones-presencia-disuasion-aguas-interes-nacional-entorno-melilla",
+          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
@@ -69,21 +152,261 @@
     },
     {
       "story_id": 2,
-      "headline": "Kast administration withdraws 43 environmental decrees from Boric era",
-      "summary": "The new government withdrew 43 environmental decrees from the Contralor\u00eda that were pending from the Gabriel Boric administration, including measures for national parks, protected areas, and environmental regulations.",
+      "headline": "Kast debuts with high approval ratings and sweeping first-week policy changes",
+      "summary": "President Jos\u00e9 Antonio Kast began his term with approval ratings between 46-57% according to different polls, while implementing multiple early measures including security operations that detained nearly 3,000 fugitives in the first three days and withdrawing legislative projects from the previous government.",
       "actors_involved": [
-        "Kast",
-        "Boric"
+        "Kast"
       ],
       "signal_category_hint": "domestic_regime",
+      "source_count": 16,
+      "sources": [
+        "emol.com",
+        "latercera.com",
+        "cnnchile.com",
+        "df.cl",
+        "elmostrador.cl",
+        "theweek.com",
+        "ex-ante.cl",
+        "cooperativa.cl"
+      ],
+      "date_range": "2026-03-15 to 2026-03-19",
+      "articles": [
+        {
+          "title": "Encuesta Cadem: Kast inicia su Gobierno con 57% de aprobaci\u00f3n y 41% apoya idea de indultar a uniformados",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/15/1194359/cadem-kast-inicia-alta-aprobacion.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Pulso Ciudadano: Jos\u00e9 Antonio Kast debuta como Presidente con un 47,5% de aprobaci\u00f3n",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/15/1194332/pulso-ciudadano-kast-aprobacion-encuesta.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Cadem muestra in\u00e9dito arranque de Kast: supera en apoyo y desaprobaci\u00f3n inicial a gobiernos de Pi\u00f1era, Bachelet y Boric",
+          "source": "latercera.com",
+          "url": "https://www.latercera.com/nacional/noticia/cadem-muestra-inedito-arranque-de-kast-supera-en-apoyo-y-desaprobacion-inicial-a-gobiernos-de-pinera-bachelet-y-boric/",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Encuesta Criteria: Kast inicia su gobierno con 46% de aprobaci\u00f3n, cuatro puntos m\u00e1s que Boric al asumir",
+          "source": "df.cl",
+          "url": "https://www.df.cl/economia-y-politica/encuesta-criteria-kast-inicia-su-gobierno-con-46-de-aprobacion-cuatro",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Criteria: Presidente Kast inicia su gobierno con un 46% de aprobaci\u00f3n, mientras que un 30% lo desaprueba",
+          "source": "latercera.com",
+          "url": "https://latercera.com/politica/noticia/criteria-presidente-kast-inicia-su-gobierno-con-un-46-de-aprobacion-mientras-que-un-30-lo-desaprueba",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Kast debuta con un 47% de aprobaci\u00f3n y su gabinete con un 36%, seg\u00fan encuesta Pulso Ciudadano",
+          "source": "cnnchile.com",
+          "url": "https://cnnchile.com/pais/kast-debuta-con-un-47-de-aprobacion-y-su-gabinete-con-un-36-segun-encuesta-pulso-ciudadano_20260315",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "3 mil pr\u00f3fugos detenidos en 3 d\u00edas con Kast: Las cifras de los apresados en el gobierno anterior y la cr\u00edtica de Elizalde",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/17/1194491/redadas-detenidos-gobierno-kast-boric.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Homicidio, secuestro y abuso sexual: Casi 3 mil pr\u00f3fugos fueron detenidos en primeros d\u00edas del Gobierno de Kast",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/16/1194437/detenidos-operativos-comite-seguridad-kast.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Jos\u00e9 Antonio Kast debuta en La Moneda tirando toda la carne a la parrilla",
+          "source": "elmostrador.cl",
+          "url": "https://elmostrador.cl/el-semanal/2026/03/19/jose-antonio-kast-debuta-en-la-moneda-tirando-toda-la-carne-a-la-parrilla",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Behind Chile's pivot back to the hard-right",
+          "source": "theweek.com",
+          "url": "https://theweek.com/world-news/chile-new-president-right-wing-jose-kast-pinochet",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Lo que hay detr\u00e1s de la avalancha de medidas de Kast y su copamiento de la agenda",
+          "source": "ex-ante.cl",
+          "url": "https://ex-ante.cl/lo-que-hay-detras-de-la-avalancha-de-medidas-de-kast-y-su-copamiento-de-la-agenda",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "\"El gobierno est\u00e1 provocando\": Parte de la oposici\u00f3n vaticina escenarios de protestas a una semana de que Kast asumiera",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/19/1194713/oposicion-advierte-protestas-medidas-kast.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Far-right Jos\u00e9 Antonio Kast sworn in as president of Chile",
+          "source": "peoplesdispatch.org",
+          "url": "https://peoplesdispatch.org/2026/03/16/far-right-jose-antonio-kast-sworn-in-as-president-of-chile/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "A una semana de haber asumido: Las renuncias de autoridades que ha pedido el gobierno de Kast",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/19/1194734/autoridades-removidasde-boric-en-gobiernokast.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "M\u00e1s de 2.900 detenidos en 72 horas: comit\u00e9 de seguridad recibe datos de Carabineros y PDI sobre operativos de los \u00faltimos d\u00edas",
+          "source": "latercera.com",
+          "url": "https://www.latercera.com/politica/noticia/mas-de-2900-detenidos-en-tres-dias-comite-de-seguridad-recibe-datos-de-carabineros-y-pdi-sobre-operativos-de-los-ultimos-dias/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Gobierno de Kast activa las \"balas de plata\": Estos son lo servicios donde cambiar\u00e1 altos directivos",
+          "source": "cnnchile.com",
+          "url": "https://cnnchile.com/pais/gobierno-de-kast-activa-las-balas-de-plata-estos-son-lo-servicios-donde-cambiara-altos-directivos_20260321",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://www.emol.com/noticias/Nacional/2026/03/15/1194359/cadem-kast-inicia-alta-aprobacion.html",
+        "https://www.latercera.com/nacional/noticia/cadem-muestra-inedito-arranque-de-kast-supera-en-apoyo-y-desaprobacion-inicial-a-gobiernos-de-pinera-bachelet-y-boric/"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Death of Carabinero Javier Figueroa sparks national mourning and security debate",
+      "summary": "Sergeant Javier Figueroa died after being shot in the head during a police operation in Puerto Varas on March 11. President Kast declared three days of national mourning for the 36-year-old officer who had 15 years of service. The investigation continues without arrests.",
+      "actors_involved": [
+        "Kast",
+        "Carabineros"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 15,
+      "sources": [
+        "emol.com",
+        "t13.cl",
+        "biobiochile.cl",
+        "latercera.com",
+        "24horas.cl",
+        "chilevision.cl",
+        "soychile.cl",
+        "adnradio.cl",
+        "publimetro.cl"
+      ],
+      "date_range": "2026-03-18 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Carabineros aclara que funcionario baleado en Puerto Varas no ha fallecido: Sigue hospitalizado",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/19/1194725/carabineros-funcionario-baleado-puerto-varas.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "\"Cada vez que muere un carabinero, se muere una parte de Chile\": Presidente Kast lamenta deceso de sargento Figueroa",
+          "source": "emol.com",
+          "url": "https://emol.com/noticias/Nacional/2026/03/19/1194843/kast-lamenta-muerte-carabinero-puertovaras.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "A 8 d\u00edas del ataque: Carabineros confirma muerte de sargento que fue baleado en la cabeza en Puerto Varas",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/19/1194838/carabineros-confirma-muerte-javier-figueroa.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Muere carabinero que se encontraba grave tras ser baleado en la cabeza en Puerto Varas",
+          "source": "emol.com",
+          "url": "https://emol.com/noticias/Nacional/2026/03/19/1194720/muere-carabinero-baleado-puerto-varas.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Carabinero baleado en Puerto Varas: instituci\u00f3n no confirma su muerte pese a informaci\u00f3n de fiscal\u00eda",
+          "source": "t13.cl",
+          "url": "https://www.t13.cl/noticia/nacional/muere-sargento-javier-figueroa-carabinero-baleado-procedimiento-puerto-varas-18-3-2026",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Confirman muerte de carabinero Javier Figueroa, sargento segundo baleado en la cabeza en Puerto Varas",
+          "source": "biobiochile.cl",
+          "url": "https://biobiochile.cl/noticias/nacional/region-de-los-lagos/2026/03/19/confirman-muerte-de-carabinero-javier-figueroa-sargento-segundo-baleado-en-la-cabeza-en-puerto-varas.shtml",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Investigaci\u00f3n por carabinero asesinado en Puerto Varas se complejiza tras descartar versi\u00f3n de testigo clave",
+          "source": "latercera.com",
+          "url": "https://latercera.com/nacional/noticia/investigacion-por-carabinero-asesinado-en-puerto-varas-se-complejiza-tras-descartar-version-de-testigo-clave",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Presidente Kast decreta tres d\u00edas de duelo nacional por carabinero asesinado en Puerto Varas",
+          "source": "24horas.cl",
+          "url": "https://24horas.cl/actualidad/nacional/presidente-kast-duelo-nacional-muerte-carabinero",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Kast: \"Cada vez que atentan contra la vida de un carabinero, atentan contra la vida de Chile\"",
+          "source": "24horas.cl",
+          "url": "https://24horas.cl/actualidad/nacional/presidente-kast-homenaje-carabinero-javier-figueroa",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Qui\u00e9n fue Javier Figueroa, el nuevo m\u00e1rtir de Carabineros que muri\u00f3 tras ataque en Puerto Varas",
+          "source": "chilevision.cl",
+          "url": "https://chilevision.cl/noticias/nacional/quien-es-el-carabinero-baleado-en-puerto-varas-que-se-mantiene-en-riesgo-vital-tiene-35-anos-y-un-hijo",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Carabinero baleado en Puerto Varas cumpli\u00f3 una semana en riesgo vital",
+          "source": "soychile.cl",
+          "url": "https://soychile.cl/puerto-montt/policial/2026/03/18/943866/carabinero-puerto-varas-riesgo-vital.html",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Confirman muerte de carabinero baleado en Puerto Varas tras desconexi\u00f3n de soporte vital",
+          "source": "adnradio.cl",
+          "url": "https://www.adnradio.cl/2026/03/19/confirman-muerte-de-carabinero-baleado-en-puerto-varas-tras-desconexion-de-soporte-vital/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "M\u00e1rtir Javier Figueroa es ascendido a Suboficial Mayor y comisar\u00eda donde trabajaba llevar\u00e1 su nombre",
+          "source": "biobiochile.cl",
+          "url": "https://biobiochile.cl/noticias/nacional/region-de-los-lagos/2026/03/21/martir-javier-figueroa-es-ascendido-a-suboficial-mayor-y-comisaria-donde-trabajaba-llevara-su-nombre.shtml",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Revelan im\u00e1genes claves de momento antes y despu\u00e9s de ataque a tiros contra carabinero en Puerto Varas",
+          "source": "biobiochile.cl",
+          "url": "https://www.biobiochile.cl/noticias/nacional/region-de-los-lagos/2026/03/18/revelan-imagenes-claves-de-momento-antes-y-despues-de-ataque-a-tiros-contra-carabinero-en-puerto-varas.shtml",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Registros exclusivos del hecho y momentos posteriores: Las im\u00e1genes claves del ataque a carabinero en Puerto Varas",
+          "source": "chilevision.cl",
+          "url": "https://chilevision.cl/noticias/nacional/video/registros-exclusivos-del-hecho-y-momentos-posteriores-las-imagenes",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://www.emol.com/noticias/Nacional/2026/03/19/1194838/carabineros-confirma-muerte-javier-figueroa.html",
+        "https://24horas.cl/actualidad/nacional/presidente-kast-duelo-nacional-muerte-carabinero"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Kast government withdraws 43 environmental decrees from Boric administration",
+      "summary": "The Environment Ministry withdrew 43 environmental decrees from the previous Boric government from the Comptroller General's review process, including measures for national parks and environmental regulations. The government said this was part of an internal audit.",
+      "actors_involved": [
+        "Kast"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
       "source_count": 8,
       "sources": [
         "aljazeera.com",
         "bloomberg.com",
-        "ex-ante.cl",
         "latercera.com",
-        "df.cl",
-        "aconcaguaaldia.cl"
+        "ex-ante.cl",
+        "df.cl"
       ],
       "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
@@ -100,68 +423,51 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Medio Ambiente retira 43 decretos de Contralor\u00eda de la era Boric",
+          "title": "Sedini defiende retiro de decretos medioambientales: \"Es importante revisarlos porque pueden tener problemas\"",
+          "source": "latercera.com",
+          "url": "https://www.latercera.com/politica/noticia/sedini-defiende-retiro-de-decretos-medioambientales-es-importante-revisarlos-porque-pueden-tener-problemas/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Gobierno retira 43 decretos ambientales heredados de la administraci\u00f3n de Boric",
+          "source": "ex-ante.cl",
+          "url": "https://www.ex-ante.cl/gobierno-retira-43-decretos-ambientales-heredados-de-la-administracion-de-boric/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Medio Ambiente retira 43 decretos de Contralor\u00eda de la era Boric y pone en pausa zonas protegidas, mientras Energ\u00eda frena 5 escritos",
           "source": "df.cl",
           "url": "https://www.df.cl/empresas/medio-ambiente/nuevo-golpe-de-timon-de-medio-ambiente-retira-43-decretos-de-contraloria",
-          "date": "2026-03-18"
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Kast defiende proyecto que busca ajustar la gratuidad y refuerza que la negociaci\u00f3n ramal \"no es urgente\"",
+          "source": "latercera.com",
+          "url": "https://latercera.com/politica/noticia/kast-defiende-proyecto-que-busca-ajustar-la-gratuidad-y-refuerza-que-la-negociacion-ramal-no-es-urgente",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Qu\u00e9 implica el proyecto de Kast que elimina temporalmente el IVA a la venta de viviendas",
+          "source": "ex-ante.cl",
+          "url": "https://ex-ante.cl/que-implica-el-proyecto-de-kast-que-elimina-temporalmente-el-iva-a-la-venta-de-viviendas",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Presidente Kast retira del Congreso el proyecto de negociaci\u00f3n ramal impulsado por la administraci\u00f3n Boric",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Economia/2026/03/17/1194511/negociacion-ramal-kast-retira.html",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
         "https://www.aljazeera.com/news/2026/3/17/chiles-president-kast-tosses-out-dozens-of-environmental-protections",
-        "https://www.bloomberg.com/news/articles/2026-03-19/chile-cools-on-climate-penguin-defense-in-risk-to-green-credits"
+        "https://www.ex-ante.cl/gobierno-retira-43-decretos-ambientales-heredados-de-la-administracion-de-boric/"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Death of police sergeant sparks national mourning and presidential response",
-      "summary": "Sergeant Javier Figueroa of Carabineros died after being shot in the head during a police operation in Puerto Varas. President Kast decreed three days of national mourning and attended the funeral, while the investigation continues without arrests.",
-      "actors_involved": [
-        "Kast",
-        "Carabineros"
-      ],
-      "signal_category_hint": "security_defense",
-      "source_count": 24,
-      "sources": [
-        "emol.com",
-        "t13.cl",
-        "24horas.cl",
-        "biobiochile.cl",
-        "latercera.com",
-        "chilevision.cl",
-        "soychile.cl",
-        "adnradio.cl",
-        "tvn.cl"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "A 8 d\u00edas del ataque: Carabineros confirma muerte de sargento que fue baleado en la cabeza en Puerto Varas",
-          "source": "emol.com",
-          "url": "https://www.emol.com/noticias/Nacional/2026/03/19/1194838/carabineros-confirma-muerte-javier-figueroa.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Presidente Kast decreta tres d\u00edas de duelo nacional por carabinero asesinado en Puerto Varas",
-          "source": "24horas.cl",
-          "url": "https://24horas.cl/actualidad/nacional/presidente-kast-duelo-nacional-muerte-carabinero",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Presidente Kast asiste a misa f\u00fanebre del sargento de Carabineros Javier Figueroa en Puerto Varas",
-          "source": "latercera.com",
-          "url": "https://www.latercera.com/nacional/noticia/presidente-kast-asiste-a-misa-funebre-del-sargento-de-carabineros-javier-figueroa-en-puerto-varas/",
-          "date": "2026-03-21"
-        }
-      ],
-      "representative_urls": [
-        "https://www.emol.com/noticias/Nacional/2026/03/19/1194838/carabineros-confirma-muerte-javier-figueroa.html",
-        "https://24horas.cl/actualidad/nacional/presidente-kast-duelo-nacional-muerte-carabinero"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Kast presents economic reconstruction plan with tax cuts and fiscal measures",
-      "summary": "President Kast unveiled a 'National Reconstruction Plan' featuring corporate tax reduction from 27% to 23%, elimination of inheritance taxes, temporary VAT exemption on housing sales, and other economic stimulus measures totaling $400 billion pesos in investment.",
+      "story_id": 5,
+      "headline": "Kast announces economic reconstruction plan with tax cuts and investment incentives",
+      "summary": "President Kast unveiled his 'National Reconstruction Plan' featuring over 40 measures including reducing corporate taxes from 27% to 23%, eliminating VAT on housing sales, and injecting $400 billion pesos into the economy. The plan aims for economic reactivation but faces fiscal concerns.",
       "actors_involved": [
         "Kast"
       ],
@@ -170,10 +476,10 @@
       "sources": [
         "bloomberg.com",
         "emol.com",
-        "latercera.com",
         "biobiochile.cl",
-        "ex-ante.cl",
-        "24horas.cl"
+        "24horas.cl",
+        "latercera.com",
+        "adnradio.cl"
       ],
       "date_range": "2026-03-16 to 2026-03-17",
       "articles": [
@@ -194,92 +500,124 @@
           "source": "biobiochile.cl",
           "url": "https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/03/16/la-bateria-de-medidas-economicas-propuestas-por-kast-incluye-baja-al-impuesto-corporativo-y-herencias.shtml",
           "date": "2026-03-16"
+        },
+        {
+          "title": "Inyecci\u00f3n de $400 mil millones y rebaja al impuesto corporativo: detalles de proyecto Reconstrucci\u00f3n Nacional de Kast",
+          "source": "24horas.cl",
+          "url": "https://24horas.cl/actualidad/economia/detalles-proyecto-reconstruccion-kast",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Reintegraci\u00f3n del sistema tributario que propone Kast implica una menor recaudaci\u00f3n fiscal de US$700 a US$800 millones",
+          "source": "latercera.com",
+          "url": "https://latercera.com/pulso/noticia/reintegracion-del-sistema-tributario-que-propone-kast-implica-una-menor-recaudacion-fiscal-de-us700-a-us800-millones",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Kast entra a debate por caja fiscal y afirma que Chile tiene que gastar bien lo que tiene",
+          "source": "latercera.com",
+          "url": "https://latercera.com/pulso/noticia/kast-entra-a-debate-por-caja-fiscal-y-afirma-que-chile-tiene-que-gastar-bien-lo-que-tiene",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Presidente Kast defiende fin del Mepco: \"Mantener una ilusi\u00f3n tiene consecuencias que pagamos todos los chilenos\"",
+          "source": "adnradio.cl",
+          "url": "https://adnradio.cl/2026/03/17/presidente-kast-defiende-fin-del-mepco-mantener-una-ilusion-tiene-consecuencias-que-pagamos-todos-los-chilenos",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Cifras de deudores del CAE: Cu\u00e1ntos son los morosos del cr\u00e9dito que el Gobierno de Kast busca que paguen",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/16/1194378/deudores-cae-revision-beneficios-kast.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Kast emplaz\u00f3 a deudores del CAE a \"ponerse al d\u00eda\": \"\u00bfQuieren aparecer publicados?\"",
+          "source": "cooperativa.cl",
+          "url": "https://cooperativa.cl/noticias/pais/educacion/beneficios/kast-emplazo-a-deudores-del-cae-a-ponerse-al-dia-quieren-aparecer/2026-03-17/200126.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Qu\u00e9 implica el proyecto de Kast que elimina temporalmente el IVA a la venta de viviendas",
+          "source": "ex-ante.cl",
+          "url": "https://ex-ante.cl/que-implica-el-proyecto-de-kast-que-elimina-temporalmente-el-iva-a-la-venta-de-viviendas",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "De candidato a Presidente: los cambios de Kast sobre la gratuidad y los fondos para financiar la expulsi\u00f3n de migrantes",
+          "source": "ciperchile.cl",
+          "url": "https://ciperchile.cl/2026/03/19/de-candidato-a-presidente-los-cambios-de-kast-sobre-la-gratuidad-y-los-fondos-para-financiar-la-expulsion-de-migrantes",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "\u00bfQu\u00e9 es la negociaci\u00f3n colectiva ramal? El proyecto que el Gobierno decidi\u00f3 retirar del Congreso",
+          "source": "biobiochile.cl",
+          "url": "https://www.biobiochile.cl/noticias/bbcl-explica/bbcl-explica-notas/2026/03/17/que-es-la-negociacion-colectiva-ramal-el-proyecto-que-el-gobierno-decidio-retirar-del-congreso.shtml",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
         "https://www.bloomberg.com/news/articles/2026-03-16/chile-s-kast-races-to-harden-border-cut-taxes-slash-red-tape",
-        "https://www.emol.com/noticias/Economia/2026/03/17/1194460/kast-impuesto-corporativo-chile.html"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Kast begins presidency with high approval ratings and rapid policy implementation",
-      "summary": "President Kast started his administration with approval ratings between 46-57% according to various polls, implementing multiple decrees and policy changes in his first days while generating both support and opposition reactions.",
-      "actors_involved": [
-        "Kast",
-        "Boric"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 18,
-      "sources": [
-        "emol.com",
-        "latercera.com",
-        "cnnchile.com",
-        "elmostrador.cl",
-        "ex-ante.cl",
-        "theweek.com",
-        "peoplesdispatch.org"
-      ],
-      "date_range": "2026-03-15 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Encuesta Cadem: Kast inicia su Gobierno con 57% de aprobaci\u00f3n",
-          "source": "emol.com",
-          "url": "https://www.emol.com/noticias/Nacional/2026/03/15/1194359/cadem-kast-inicia-alta-aprobacion.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Cadem muestra in\u00e9dito arranque de Kast: supera en apoyo y desaprobaci\u00f3n inicial a gobiernos de Pi\u00f1era, Bachelet y Boric",
-          "source": "latercera.com",
-          "url": "https://www.latercera.com/nacional/noticia/cadem-muestra-inedito-arranque-de-kast-supera-en-apoyo-y-desaprobacion-inicial-a-gobiernos-de-pinera-bachelet-y-boric/",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Jos\u00e9 Antonio Kast debuta en La Moneda tirando toda la carne a la parrilla",
-          "source": "elmostrador.cl",
-          "url": "https://elmostrador.cl/el-semanal/2026/03/19/jose-antonio-kast-debuta-en-la-moneda-tirando-toda-la-carne-a-la-parrilla",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.emol.com/noticias/Nacional/2026/03/15/1194359/cadem-kast-inicia-alta-aprobacion.html",
-        "https://elmostrador.cl/el-semanal/2026/03/19/jose-antonio-kast-debuta-en-la-moneda-tirando-toda-la-carne-a-la-parrilla"
+        "https://24horas.cl/actualidad/economia/detalles-proyecto-reconstruccion-kast"
       ]
     },
     {
       "story_id": 6,
-      "headline": "Government launches comprehensive audit of previous Boric administration",
-      "summary": "The Kast administration established a Strategic Audit and Fiscal Review Committee to conduct a 'total audit' of the state apparatus during Gabriel Boric's term, with special focus on controversial cases like Convenios and ProCultura.",
+      "headline": "Kast establishes audit committee to review Boric administration spending",
+      "summary": "President Kast created a Strategic Audit and Fiscal Review Committee to conduct a 'total audit' of the state during the Boric government. The committee will review programs like 'Streets Without Violence' and examine cases including Convenios and ProCultura scandals.",
       "actors_involved": [
-        "Kast",
-        "Boric"
+        "Kast"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 6,
+      "source_count": 7,
       "sources": [
         "latercera.com",
         "malaespinacheck.cl",
         "24horas.cl"
       ],
-      "date_range": "2026-03-19 to 2026-03-21",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
         {
           "title": "Comit\u00e9 de auditor\u00eda de Kast se constituye y acuerda revisi\u00f3n especial por caso Convenios y ProCultura",
           "source": "latercera.com",
           "url": "https://latercera.com/politica/noticia/comite-de-auditoria-de-kast-se-constituye-y-acuerda-revision-especial-por-caso-convenios-y-procultura",
-          "date": "2026-03-20"
+          "date": "2026-03-21"
         },
         {
           "title": "Comit\u00e9 estrat\u00e9gico de auditor\u00eda de Kast fija para este viernes primera cita y da inicio a revisi\u00f3n del Estado",
           "source": "latercera.com",
           "url": "https://latercera.com/politica/noticia/comite-estrategico-de-auditoria-de-kast-fija-para-este-viernes-primera-cita-y-da-inicio-a-revision-del-estado",
-          "date": "2026-03-19"
+          "date": "2026-03-18"
         },
         {
           "title": "En qu\u00e9 consiste y c\u00f3mo funcionar\u00e1 la auditor\u00eda al gobierno de Boric",
           "source": "malaespinacheck.cl",
           "url": "https://www.malaespinacheck.cl/politica/2026/03/19/en-que-consiste-y-como-funcionara-la-auditoria-al-gobierno-de-boric/",
           "date": "2026-03-19"
+        },
+        {
+          "title": "El desconocido informe de la Dipres que acusa \"deficiencias estructurales\" en los planes estrella de Boric en seguridad",
+          "source": "latercera.com",
+          "url": "https://latercera.com/nacional/noticia/dipres-de-boric-califico-negativamente-sus-propios-planes-de-seguridad-calles-sin-violencia-y-contra-el-crimen-organizado",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "\"\u00bfD\u00f3nde est\u00e1n las lucas?\": Diputados RN anuncian plan de fiscalizaci\u00f3n contra exgobierno de Boric",
+          "source": "24horas.cl",
+          "url": "https://www.24horas.cl/actualidad/politica/donde-estan-las-lucas-diputados-rn-anuncian-plan-de-fiscalizacion-contra-ex-gobierno-de-boric",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Squella defiende medidas anunciadas por Kast y acusa que Boric \"se llev\u00f3 hasta los seguidores de las redes sociales\"",
+          "source": "puranoticia.pnt.cl",
+          "url": "https://puranoticia.pnt.cl/nacional/squella-defiende-medidas-anunciadas-por-kast-y-acusa-que-boric-se-llevo",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "\u00bfPor qu\u00e9 el gobierno del Presidente Boric dej\u00f3 una caja \u00ednfima a su sucesor?",
+          "source": "ellibero.cl",
+          "url": "https://ellibero.cl/columnas-de-opinion/por-que-el-gobierno-del-presidente-boric-dejo-una-caja-infima-a-su-sucesor/",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -289,29 +627,201 @@
     },
     {
       "story_id": 7,
-      "headline": "Chilean Air Force celebrates 96th anniversary with presidential participation",
-      "summary": "The Chilean Air Force commemorated its 96th anniversary with ceremonies, air shows over Santiago, and President Kast's attendance. The events included military exercises (ADEX X) and tributes to the fallen police sergeant Javier Figueroa.",
+      "headline": "Kast holds meetings with military leadership to discuss capabilities and projects",
+      "summary": "President Kast conducted official meetings with the high commands of all three branches of the Armed Forces - Army, Navy, and Air Force - to learn about their capabilities, ongoing projects, and institutional needs. The meetings lasted over three hours each.",
+      "actors_involved": [
+        "Kast",
+        "Chilean Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 6,
+      "sources": [
+        "infodefensa.com",
+        "latercera.com"
+      ],
+      "date_range": "2026-03-18 to 2026-03-21",
+      "articles": [
+        {
+          "title": "El Ej\u00e9rcito de Chile exhibe al presidente Kast sus capacidades operativas en visita oficial al cuartel general",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5814659/ejercito-chile-exhibe-presidente-kast-capacidades-operativas-visita-oficial-cuartel-general",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "La Armada de Chile presenta al presidente Kast sus principales proyectos y necesidades",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5816033/armada-chile-presenta-presidente-kast-principales-proyectos-necesidades",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "El presidente Kast conoce las capacidades, los proyectos y los desaf\u00edos de la Fuerza A\u00e9rea de Chile",
+          "source": "infodefensa.com",
+          "url": "https://infodefensa.com/texto-diario/mostrar/5817247/presidente-kast-conoce-capacidades-proyectos-desafios-fuerza-aerea-chile",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Desembarco de ex altos oficiales de la Armada en el Gobierno de Kast: La \"se\u00f1al\" y eventuales peligros",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/21/1194904/ex-funcionarios-armada-gobierno-kast.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "C\u00f3mo opera el \"coraz\u00f3n\" del gobierno de Kast",
+          "source": "latercera.com",
+          "url": "https://latercera.com/politica/noticia/como-opera-el-corazon-del-gobierno-de-kast",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "El reordenamiento en los think tanks de derecha tras la \"gr\u00faa\" del gobierno de Kast",
+          "source": "emol.com",
+          "url": "https://www.emol.com/noticias/Nacional/2026/03/15/1194339/gobierno-kast-reordena-movimientos-derecha.html",
+          "date": "2026-03-15"
+        }
+      ],
+      "representative_urls": [
+        "https://infodefensa.com/texto-diario/mostrar/5816033/armada-chile-presenta-presidente-kast-principales-proyectos-necesidades",
+        "https://infodefensa.com/texto-diario/mostrar/5817247/presidente-kast-conoce-capacidades-proyectos-desafios-fuerza-aerea-chile"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Former President Boric establishes post-presidency office in Bellavista",
+      "summary": "Gabriel Boric opened his post-presidency office in the Bellavista neighborhood and made his first public appearance since leaving office at a Frente Amplio congress. He appointed Antonia Illanes as executive director and Nicole Vergara as communications director.",
+      "actors_involved": [
+        "Boric",
+        "Frente Amplio"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 11,
+      "sources": [
+        "emol.com",
+        "24horas.cl",
+        "elmostrador.cl",
+        "latercera.com",
+        "biobiochile.cl",
+        "t13.cl"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Boric abre nueva oficina en Bellavista y comienza a conformar su equipo con excolaboradores de La Moneda",
+          "source": "emol.com",
+          "url": "https://emol.com/noticias/Nacional/2026/03/16/1194411/boric-nueva-oficina-y-equipo.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Cuesta $680 millones: casa donde vivi\u00f3 expresidente Boric en Yungay est\u00e1 en venta",
+          "source": "24horas.cl",
+          "url": "https://www.24horas.cl/actualidad/nacional/casa-expresidente-boric-yungay",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Boric ya tiene oficina para ejercer labor de expresidente: estar\u00e1 en Bellavista",
+          "source": "elmostrador.cl",
+          "url": "https://elmostrador.cl/noticias/pais/2026/03/16/boric-ya-tiene-oficina-para-ejercer-labor-de-expresidente-estara-en-bellavista",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Nuevo hogar, nueva oficina, pero asesores conocidos: los primeros d\u00edas de Boric fuera del poder",
+          "source": "latercera.com",
+          "url": "https://latercera.com/politica/noticia/nuevo-hogar-nueva-oficina-pero-asesores-conocidos-los-primeros-dias-de-boric-fuera-del-poder",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Nueva oficina de Boric toma forma: funcionar\u00e1 en edificio de Bellavista y Antonia Illanes ser\u00e1 su directora ejecutiva",
+          "source": "latercera.com",
+          "url": "https://latercera.com/politica/noticia/nueva-oficina-de-boric-toma-forma-funcionara-en-edificio-de-bellavista-y-antonia-illanes-sera-su-directora-ejecutiva",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Boric inicia nueva etapa: abre su propia oficina y suma a excolaboradoras de La Moneda a su equipo",
+          "source": "biobiochile.cl",
+          "url": "https://biobiochile.cl/noticias/nacional/chile/2026/03/16/boric-inicia-nueva-etapa-abre-su-propia-oficina-y-suma-a-excolaboradoras-de-la-moneda-a-su-equipo.shtml",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "VIDEO: Expresidente Boric reaparece en congreso ideol\u00f3gico del Frente Amplio",
+          "source": "24horas.cl",
+          "url": "https://www.24horas.cl/actualidad/politica/video-expresidente-boric-reaparece-en-congreso-del-frente-amplio",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Expresidente Boric reaparece tras dejar La Moneda: Lleg\u00f3 junto a su pareja e hija a congreso del Frente Amplio",
+          "source": "t13.cl",
+          "url": "https://t13.cl/noticia/politica/expresidente-boric-reaparece-por-primera-vez-tras-dejar-moneda-llego-junto-su-p-21-3-2026",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Boric deja la caja fiscal chilena casi a cero: la herencia t\u00f3xica que lastra a Kast",
+          "source": "libertaddigital.com",
+          "url": "https://libertaddigital.com/libremercado/2026-03-17/boric-deja-la-caja-fiscal-chilena-casi-a-cero-la-herencia-toxica-que-lastra-a-kast-7375007",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Econom\u00eda chilena crece 2,5% en 2025 y gobierno de Boric cierra con alza promedio de 2%",
+          "source": "latercera.com",
+          "url": "https://www.latercera.com/pulso/noticia/economia-chilena-crece-25-en-2025-y-gobierno-de-boric-cierra-con-alza-promedio-de-2/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "\"El rol de Boric en la ofensiva neofascista en el Wallmapu\": An\u00e1lisis de H\u00e9ctor Llaitul",
+          "source": "elciudadano.com",
+          "url": "https://elciudadano.com/actualidad/el-rol-de-boric-en-la-ofensiva-neofascista-en-el-wallmapu-analisis-de-hector-llaitul/03/15",
+          "date": "2026-03-15"
+        }
+      ],
+      "representative_urls": [
+        "https://emol.com/noticias/Nacional/2026/03/16/1194411/boric-nueva-oficina-y-equipo.html",
+        "https://t13.cl/noticia/politica/expresidente-boric-reaparece-por-primera-vez-tras-dejar-moneda-llego-junto-su-p-21-3-2026"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Chilean Air Force celebrates 96th anniversary with presidential ceremony and flyovers",
+      "summary": "The Chilean Air Force (FACh) commemorated its 96th anniversary on March 21 with President Kast attending the ceremony at El Bosque Air Base. F-16 and F-5 aircraft conducted flyovers over Santiago as part of both anniversary celebrations and ADEX X military exercises.",
       "actors_involved": [
         "Kast",
         "Chilean Armed Forces"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 12,
+      "source_count": 14,
       "sources": [
         "fach.mil.cl",
-        "t13.cl",
+        "tvn.cl",
         "24horas.cl",
+        "13.cl",
+        "t13.cl",
         "biobiochile.cl",
-        "infodefensa.com",
-        "13.cl"
+        "rockandpop.cl",
+        "meganoticias.cl",
+        "tallyho.cl",
+        "lahora.cl"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
+        {
+          "title": "\"Fuerza A\u00e9rea inicia pr\u00e1cticas para ceremonia del 96\u00b0 aniversario en Base El Bosque\"",
+          "source": "fach.mil.cl",
+          "url": "https://fach.mil.cl/inician-practicas-para-ceremonia-aniversario-2026",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "TVN transmitir\u00e1 en exclusiva el 96\u00b0 aniversario de la Fuerza A\u00e9rea de Chile",
+          "source": "tvn.cl",
+          "url": "https://tvn.cl/mas-de-tvn/tvn-transmitira-en-exclusiva-el-96-aniversario-de-la-fuerza-aerea-de-chile",
+          "date": "2026-03-17"
+        },
         {
           "title": "VIDEO: Sigue EN VIVO el aniversario de la Fuerza A\u00e9rea de Chile con la asistencia del Presidente Kast",
           "source": "24horas.cl",
           "url": "https://24horas.cl/actualidad/nacional/video-sigue-en-vivo-el-aniversario-de-la-fuerza-aerea-de-chile-",
           "date": "2026-03-21"
+        },
+        {
+          "title": "\u00bfLo sentiste? FACh explica por qu\u00e9 aviones de la Fuerza A\u00e9rea sobrevolaron algunas comunas de Santiago",
+          "source": "t13.cl",
+          "url": "https://t13.cl/noticia/nacional/lo-sentiste-fach-explica-por-aviones-fuerza-aerea-sobrevolaron-algunas-comunas-18-3-2026",
+          "date": "2026-03-18"
         },
         {
           "title": "Fuertes ruidos en Santiago: FACh detalla por qu\u00e9 aviones militares sobrevolaron la capital",
@@ -320,88 +830,409 @@
           "date": "2026-03-21"
         },
         {
-          "title": "El presidente Kast conoce las capacidades, los proyectos y los desaf\u00edos de la Fuerza A\u00e9rea de Chile",
-          "source": "infodefensa.com",
-          "url": "https://infodefensa.com/texto-diario/mostrar/5817247/presidente-kast-conoce-capacidades-proyectos-desafios-fuerza-aerea-chile",
+          "title": "Fuerza A\u00e9rea de Chile realiza sobrevuelos en la Regi\u00f3n Metropolitana por Ejercicio ADEX X y aniversario institucional",
+          "source": "fach.mil.cl",
+          "url": "https://fach.mil.cl/aeronaves-de-la-fuerza-aerea-de-chile-sobrevuelan-la-region-metropolitana",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Aeronaves de la FACH sobrevuelan Santiago este jueves: d\u00f3nde y a qu\u00e9 hora mirar el cielo",
+          "source": "biobiochile.cl",
+          "url": "https://biobiochile.cl/noticias/servicios/toma-nota/2026/03/19/aeronaves-de-la-fach-sobrevuelan-santiago-hoy-donde-y-a-que-hora-mirar-el-cielo.shtml",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "FIDAE 2026: Fecha, venta de entradas, lugar y detalles del evento a\u00e9reo nacional",
+          "source": "rockandpop.cl",
+          "url": "https://rockandpop.cl/2026/03/fidae-2026-fecha-venta-de-entradas-lugar-y-detalles-del-evento-aereo-nacional",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "F-16 de la FACh viajar\u00e1n hasta Santiago desde bases en el norte: \u00bfCu\u00e1l es la raz\u00f3n?",
+          "source": "meganoticias.cl",
+          "url": "https://meganoticias.cl/nacional/517229-aviones-combate-f16-viajan-santiago-razones-fach-17-03-2026.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Ejercicio A\u00e9reo ADEX X y sobrevuelos de la FACH sobre zona central y sur",
+          "source": "tallyho.cl",
+          "url": "https://tallyho.cl/ejercicio-aereo-adex-x-y-sobrevuelos-de-la-fach-sobre-zona-central-y-sur",
           "date": "2026-03-20"
+        },
+        {
+          "title": "Aviones F-16 y F5 sobrevolar\u00e1n Santiago por aniversario FACH este s\u00e1bado: d\u00f3nde y a qu\u00e9 hora verlos",
+          "source": "biobiochile.cl",
+          "url": "https://biobiochile.cl/noticias/servicios/toma-nota/2026/03/20/aviones-f-16-y-f5-sobrevolaran-santiago-por-aniversario-fach-este-sabado-donde-y-a-que-hora-verlos.shtml",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Aviones de la FACh causan fuerte estruendo en Santiago: esta es la raz\u00f3n",
+          "source": "13.cl",
+          "url": "https://13.cl/programas/noticias-13/actualidad/aviones-de-la-fach-causan-fuerte-estruendo-en-santiago-esta-es-la",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "CEREMONIA INTERNA EN HONOR AL 96\u00b0 ANIVERSARIO DE LA FUERZA A\u00c9REA DE CHILE",
+          "source": "fach.mil.cl",
+          "url": "https://fach.mil.cl/ceremonia-interna-en-honor-al-96-aniversario-de-la-fuerza-aerea-de-chile",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "\u00bfPor qu\u00e9 andan aviones de guerra de la FACh sobre Santiago?",
+          "source": "lahora.cl",
+          "url": "https://lahora.cl/cronica/2026/03/18/por-que-andan-aviones-de-guerra-de-la-fach-sobre-santiago",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://24horas.cl/actualidad/nacional/video-sigue-en-vivo-el-aniversario-de-la-fuerza-aerea-de-chile-",
-        "https://infodefensa.com/texto-diario/mostrar/5817247/presidente-kast-conoce-capacidades-proyectos-desafios-fuerza-aerea-chile"
+        "https://fach.mil.cl/aeronaves-de-la-fuerza-aerea-de-chile-sobrevuelan-la-region-metropolitana"
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Kast appoints new ambassadors to international organizations",
-      "summary": "President Kast designated new Chilean ambassadors to major international organizations, including Roberto Ampuero to the UN, Jos\u00e9 Miguel Castro to the OAS, and Juan Manuel Santa Cruz to the OECD, marking a diplomatic reshuffling.",
+      "story_id": 10,
+      "headline": "Codelco copper production figures questioned after sharp January decline",
+      "summary": "Chile's state copper company Codelco faced scrutiny over its production figures after reporting a sharp drop to 91,000 tons in January 2026, leading analysts to question the validity of its massive December 2025 production spike of 172,300 tons that helped meet annual targets.",
       "actors_involved": [
-        "Kast"
+        "CODELCO"
       ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
+      "signal_category_hint": "economic_tech",
+      "source_count": 8,
       "sources": [
-        "biobiochile.cl",
-        "t13.cl",
-        "theclinic.cl",
-        "pauta.cl"
+        "miningweekly.com",
+        "mining.com",
+        "sustainableminingsystems.com",
+        "mineriaenlinea.com",
+        "24horas.cl",
+        "elrancaguino.cl",
+        "bnamericas.com"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-03-15 to 2026-03-20",
       "articles": [
         {
-          "title": "Presidente Kast designa a embajadores de Chile ante organismos internacionales",
-          "source": "biobiochile.cl",
-          "url": "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/18/presidente-kast-designa-a-embajadores-de-chile-ante-organismos-internacionales.shtml",
+          "title": "Codelco monthly output dives, sowing doubts about validity of end-2025 production spike",
+          "source": "miningweekly.com",
+          "url": "https://miningweekly.com/article/codelco-monthly-output-dives-sowing-doubts-about-validity-of-end-2025-production-spike-2026-03-18",
           "date": "2026-03-18"
         },
         {
-          "title": "Presidente Kast designa a embajadores en la ONU, OEA, OCDE y OMC: Revisa el listado",
-          "source": "t13.cl",
-          "url": "https://www.t13.cl/noticia/politica/presidente-kast-designa-embajadores-onu-oea-ocde-omc-revisa-listado-19-3-2026",
+          "title": "Codelco output drop casts doubt on 2025 year-end spike",
+          "source": "mining.com",
+          "url": "https://mining.com/web/codelco-monthly-output-dives-sowing-doubts-about-validity-of-end-2025-production-spike",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Chile's Codelco Faces Scrutiny After Sudden Copper Production Drop",
+          "source": "sustainableminingsystems.com",
+          "url": "https://sustainableminingsystems.com/codelco-copper-production-drop-2026",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Producci\u00f3n de Codelco cae en enero y complica su meta de cobre para 2026",
+          "source": "mineriaenlinea.com",
+          "url": "https://mineriaenlinea.com/2026/03/produccion-de-codelco-cae-en-enero-y-complica-su-meta-de-cobre-para-2026",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "\"Panel Invariante no se puede nombrar\": las omisiones clave de Codelco tras fatal derrumbe en El Teniente",
+          "source": "24horas.cl",
+          "url": "https://24horas.cl/informe-especial/investigacion/panel-invariante-no-se-puede-nombrar-las-omisiones-clave-de-codelco-el-teniente",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Familiares de v\u00edctimas del derrumbe de El Teniente se re\u00fanen con Fiscal Regional y equipo investigador",
+          "source": "elrancaguino.cl",
+          "url": "https://elrancaguino.cl/2026/03/15/familiares-de-victimas-del-derrumbe-de-el-teniente-se-reunen-con-fiscal-regional-y-equipo-investigador",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Codelco impulsa di\u00e1logos para extender producci\u00f3n en Radomiro Tomic con proyecto de US$1.300 millones",
+          "source": "bnamericas.com",
+          "url": "https://www.bnamericas.com/es/reportajes/codelco-promueve-dialogos-para-impulsar-proyecto-de-us1300mn-que-extendera-produccion-de-cobre-en-radomiro-tomic-hasta-2058",
           "date": "2026-03-19"
         },
         {
-          "title": "A qui\u00e9nes design\u00f3 Kast como embajadores: Ampuero en la ONU, Castro en la OEA y Santa Cruz en la OCDE",
-          "source": "pauta.cl",
-          "url": "https://www.pauta.cl/actualidad/2026/03/19/kast-designa-a-cinco-embajadores-en-organismos-internacionales-roberto-ampuero-asume-en-la-onu-y-jose-miguel-castro-en-la-oea.html",
+          "title": "SQM-Codelco tie-up to submit environmental study for Salar Futuro lithium project in June",
+          "source": "mining.com",
+          "url": "https://mining.com/web/sqm-codelco-tie-up-to-submit-environmental-study-for-salar-futuro-lithium-project-in-june",
           "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.t13.cl/noticia/politica/presidente-kast-designa-embajadores-onu-oea-ocde-omc-revisa-listado-19-3-2026",
-        "https://www.pauta.cl/actualidad/2026/03/19/kast-designa-a-cinco-embajadores-en-organismos-internacionales-roberto-ampuero-asume-en-la-onu-y-jose-miguel-castro-en-la-oea.html"
+        "https://miningweekly.com/article/codelco-monthly-output-dives-sowing-doubts-about-validity-of-end-2025-production-spike-2026-03-18",
+        "https://mining.com/web/codelco-monthly-output-dives-sowing-doubts-about-validity-of-end-2025-production-spike"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Chile national football team prepares for friendlies against Cape Verde and New Zealand",
+      "summary": "Chile's national team will play two FIFA Series friendly matches - against Cape Verde on March 27 and New Zealand on March 30, both at Eden Park in Auckland. Coach Nicol\u00e1s C\u00f3rdova announced the squad list as part of preparations during the FIFA international break.",
+      "actors_involved": [],
+      "signal_category_hint": "unclear",
+      "source_count": 7,
+      "sources": [
+        "redgol.cl",
+        "chile.as.com",
+        "24horas.cl",
+        "latercera.com",
+        "t13.cl",
+        "meganoticias.cl"
+      ],
+      "date_range": "2026-03-16 to 2026-03-17",
+      "articles": [
+        {
+          "title": "D\u00f3nde ver Chile vs Cabo Verde y Nueva Zelanda: canal y qui\u00e9n transmite a La Roja",
+          "source": "redgol.cl",
+          "url": "https://redgol.cl/seleccionchilena/donde-ver-a-chile-vs-cabo-verde-y-nueva-zelanda-cuando-juega-la-roja-y-que-canal-transmite",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "N\u00f3mina de Chile para los amistosos frente a Cabo Verde y Nueva Zelanda: fecha FIFA",
+          "source": "chile.as.com",
+          "url": "https://chile.as.com/futbol/nomina-de-chile-para-los-amistosos-frente-a-cabo-verde-y-nueva-zelanda-fecha-fifa-f202603-n",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Los amistosos de La Roja: Fecha, hora y d\u00f3nde ver los pr\u00f3ximos partidos de Chile",
+          "source": "24horas.cl",
+          "url": "https://24horas.cl/deportes/la-roja/los-amistosos-de-la-roja-fecha-hora-y-donde-ver-los-partidos-chile",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "\u00bfCu\u00e1ndo son los pr\u00f3ximos partidos de Chile? Las fechas confirmadas para la Roja en marzo",
+          "source": "latercera.com",
+          "url": "https://latercera.com/servicios/noticia/cuando-son-los-proximos-partidos-de-chile-las-fechas-confirmadas-para-la-roja-en-marzo",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Vuelve La Roja: Cu\u00e1ndo y a qu\u00e9 hora juega Chile vs. Cabo Verde por la Fecha FIFA",
+          "source": "t13.cl",
+          "url": "https://t13.cl/noticia/deportes13/vuelve-roja-cuando-hora-juega-chile-vs-cabo-verde-por-fecha-fifa-17-3-2026",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "\u00daltimas noticias de Selecci\u00f3n Chilena",
+          "source": "meganoticias.cl",
+          "url": "https://meganoticias.cl/temas/seleccion-chilena",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Posibles rivales de la U de Chile en la Copa Libertadores 2026",
+          "source": "365scores.com",
+          "url": "https://365scores.com/es/news/posibles-rivales-u-de-chile-libertadores",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://redgol.cl/seleccionchilena/donde-ver-a-chile-vs-cabo-verde-y-nueva-zelanda-cuando-juega-la-roja-y-que-canal-transmite",
+        "https://24horas.cl/deportes/la-roja/los-amistosos-de-la-roja-fecha-hora-y-donde-ver-los-partidos-chile"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "Chile's 2025 economic growth reaches 2.5% driven by investment and consumption",
+      "summary": "Chile's economy grew 2.5% in 2025 according to Central Bank data, driven by domestic demand growth of 4.2%, with investment rising 7% and consumption 2.8%. The Boric administration closed with an average 2% growth during its term, the second-worst performance since democracy returned.",
+      "actors_involved": [
+        "Banco Central de Chile"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 6,
+      "sources": [
+        "reuters.com",
+        "elciudadano.com",
+        "latercera.com",
+        "biobiochile.cl",
+        "radio.uchile.cl"
+      ],
+      "date_range": "2026-03-16 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Chile's economic growth slows in 2025 despite fourth-quarter rebound",
+          "source": "reuters.com",
+          "url": "https://reuters.com/world/americas/chiles-economic-growth-slows-2025-despite-fourth-quarter-rebound-2026-03-18",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Chile's Economy Grows by 2.5% in 2025 Driven by Investment and Consumer Spending",
+          "source": "elciudadano.com",
+          "url": "https://elciudadano.com/en/chiles-economy-grows-by-2-5-in-2025-driven-by-investment-and-consumer-spending/03/18",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Econom\u00eda chilena crece 2,5% en 2025 y gobierno de Boric cierra con alza promedio de 2%",
+          "source": "latercera.com",
+          "url": "https://www.latercera.com/pulso/noticia/economia-chilena-crece-25-en-2025-y-gobierno-de-boric-cierra-con-alza-promedio-de-2/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "La inversi\u00f3n extranjera en Chile cerr\u00f3 2025 al alza y super\u00f3 los US$14.000 millones",
+          "source": "biobiochile.cl",
+          "url": "https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/03/16/la-inversion-extranjera-en-chile-cerro-2025-al-alza-y-supero-los-us14-000-millones.shtml",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Super\u00f3 el promedio hist\u00f3rico: inversi\u00f3n extranjera en Chile creci\u00f3 un 13% en 2025",
+          "source": "radio.uchile.cl",
+          "url": "https://radio.uchile.cl/2026/03/16/supero-el-promedio-historico-inversion-extranjera-en-chile-crecio-un-13-en-2025/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Inversi\u00f3n extranjera parte 2026 con ingreso de US$ 1.815 millones en enero",
+          "source": "economia.gob.cl",
+          "url": "https://economia.gob.cl/2026/03/16/inversion-extranjera-parte-2026-con-ingreso-de-us-1-815-millones-en-enero.htm",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://reuters.com/world/americas/chiles-economic-growth-slows-2025-despite-fourth-quarter-rebound-2026-03-18",
+        "https://www.latercera.com/pulso/noticia/economia-chilena-crece-25-en-2025-y-gobierno-de-boric-cierra-con-alza-promedio-de-2/"
+      ]
+    },
+    {
+      "story_id": 13,
+      "headline": "Central Bank announces dollar intervention strategy for March 23-27",
+      "summary": "Chile's Central Bank announced it will conduct daily market interventions from March 23-27, 2026, aimed at influencing the dollar and managing inflation while maintaining financial stability. The bank historically follows US Federal Reserve monetary policy cycles.",
+      "actors_involved": [
+        "Banco Central de Chile"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 3,
+      "sources": [
+        "elciudadano.com",
+        "tasas.cl"
+      ],
+      "date_range": "2026-03-21 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Central Bank of Chile's Strategy to Influence the Dollar from March 23 to 27, 2026",
+          "source": "elciudadano.com",
+          "url": "https://elciudadano.com/en/central-bank-of-chiles-strategy-to-influence-the-dollar-from-march-23-to-27-2026/03/21",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Banca Empresas Chile: Gu\u00eda Completa 2025",
+          "source": "tasas.cl",
+          "url": "https://tasas.cl/banco-de-chile-empresas",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "PH-Chile trade deal to conclude by April",
+          "source": "manilatimes.net",
+          "url": "https://manilatimes.net/2026/03/16/business/top-business/ph-chile-trade-deal-to-conclude-by-april/2300271",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://elciudadano.com/en/central-bank-of-chiles-strategy-to-influence-the-dollar-from-march-23-to-27-2026/03/21",
+        "https://tasas.cl/banco-de-chile-empresas"
+      ]
+    },
+    {
+      "story_id": 14,
+      "headline": "Copa de la Liga 2026 tournament launches with 16 Chilean teams",
+      "summary": "Chilean football launched its new Copa de la Liga tournament featuring all 16 First Division clubs. The inaugural match was between Universidad de Chile and Deportes La Serena at Estadio Nacional. The winner qualifies for Copa Libertadores 2027 as Chile's third representative.",
+      "actors_involved": [],
+      "signal_category_hint": "unclear",
+      "source_count": 8,
+      "sources": [
+        "t13.cl",
+        "espn.com.ar",
+        "swissinfo.ch",
+        "redgol.cl",
+        "chilevision.cl"
+      ],
+      "date_range": "2026-03-16 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Copa de la Liga 2026: As\u00ed son los grupos del nuevo torneo del f\u00fatbol chileno",
+          "source": "t13.cl",
+          "url": "https://t13.cl/noticia/deportes13/copa-liga-2026-asi-son-grupos-del-nuevo-torneo-del-futbol-chileno-16-3-2026",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "El fixture de la Copa de la Liga 2026: fecha, hora y resultados de los partidos",
+          "source": "espn.com.ar",
+          "url": "https://espn.com.ar/futbol/chile/nota/_/id/16461086/copa-de-la-liga-2026-fixture-dia-hora-resultados-partidos",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Chile estrena su Copa de la Liga con los 16 clubes de Primera",
+          "source": "swissinfo.ch",
+          "url": "https://swissinfo.ch/spa/chile-estrena-su-copa-de-la-liga-con-los-16-clubes-de-primera/91134799",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Arranca la Copa de la Liga 2026: partidos, horarios y d\u00f3nde ver en Chile el nuevo torneo de la ANFP",
+          "source": "redgol.cl",
+          "url": "https://redgol.cl/chile/copa-de-la-liga-2026-partidos-horarios-y-donde-ver-la-nueva-competicion-oficial-de-la-anfp",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Los chilenos esperan rivales: Cu\u00e1ndo es el sorteo de la Copa Sudamericana 2026 y d\u00f3nde ver",
+          "source": "redgol.cl",
+          "url": "https://redgol.cl/copa-sudamericana/sorteo-copa-sudamericana-2026-cuando-es-bombos-rivales-de-los-chilenos-y-donde-verlo",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Copa de la Liga 2026: C\u00f3mo se juega, qu\u00e9 equipos se enfrentar\u00e1n y cu\u00e1l es el gran premio",
+          "source": "chilevision.cl",
+          "url": "https://chilevision.cl/chv-deportes/futbol-chileno/copa-de-la-liga-2026-como-se-juega-que-equipos-se-enfrentaran-y-cual-es-el-gran-premio",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "D\u00f3nde ver EN VIVO la Copa de la Liga 2026: Canal confirmado por TV y ONLINE, agenda de partidos",
+          "source": "redgol.cl",
+          "url": "https://redgol.cl/chile/donde-ver-la-copa-de-la-liga-horarios-y-transmision-en-vivo-de-todos-los-partidos",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "U.S. Approaches Chile for Critical Mineral Supply",
+          "source": "oilprice.com",
+          "url": "https://oilprice.com/Energy/Energy-General/US-Approaches-Chile-for-Critical-Mineral-Supply.html",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://t13.cl/noticia/deportes13/copa-liga-2026-asi-son-grupos-del-nuevo-torneo-del-futbol-chileno-16-3-2026",
+        "https://redgol.cl/chile/copa-de-la-liga-2026-partidos-horarios-y-donde-ver-la-nueva-competicion-oficial-de-la-anfp"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Codelco copper production drops sharply in early 2026, raising questions about 2025 spike",
-      "source": "mining.com",
-      "url": "https://mining.com/web/codelco-monthly-output-dives-sowing-doubts-about-validity-of-end-2025-production-spike",
-      "signal_category_hint": "economic_tech"
-    },
-    {
-      "headline": "Gabriel Boric establishes new office in Bellavista neighborhood with former government staff",
-      "source": "emol.com",
-      "url": "https://emol.com/noticias/Nacional/2026/03/16/1194411/boric-nueva-oficina-y-equipo.html",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "US approaches Chile for critical mineral supply agreement for rhenium",
-      "source": "oilprice.com",
-      "url": "https://oilprice.com/Energy/Energy-General/US-Approaches-Chile-for-Critical-Mineral-Supply.html",
+      "headline": "Kast designa embajadores en organismos internacionales",
+      "source": "biobiochile.cl",
+      "url": "https://www.biobiochile.cl/noticias/nacional/chile/2026/03/18/presidente-kast-designa-a-embajadores-de-chile-ante-organismos-internacionales.shtml",
       "signal_category_hint": "alignment_diplomatic"
     },
     {
-      "headline": "Chile's economy grew 2.5% in 2025 according to Central Bank data",
-      "source": "reuters.com",
-      "url": "https://reuters.com/world/americas/chiles-economic-growth-slows-2025-despite-fourth-quarter-rebound-2026-03-18",
-      "signal_category_hint": "economic_tech"
+      "headline": "Revelan que delegado de Rapa Nui nombrado por Kast posee negocio en ocupaci\u00f3n ilegal",
+      "source": "biobiochile.cl",
+      "url": "https://www.biobiochile.cl/noticias/nacional/region-de-valparaiso/2026/03/16/revelan-que-delegado-de-rapa-nui-nombrado-por-kast-posee-negocio-en-ocupacion-ilegal-desde-2021.shtml",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Philippines-Chile trade agreement negotiations conclude by April",
-      "source": "manilatimes.net",
-      "url": "https://manilatimes.net/2026/03/16/business/top-business/ph-chile-trade-deal-to-conclude-by-april/2300271",
+      "headline": "Ministro Alvarado y opci\u00f3n que Kast indulte a uniformados condenados por el estallido",
+      "source": "latercera.com",
+      "url": "https://www.latercera.com/politica/noticia/ministro-alvarado-y-opcion-que-kast-indulte-a-uniformados-condenados-por-el-estallido-es-una-evaluacion-caso-a-caso/",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Schalper le pide a Kast ser \"m\u00e1s Meloni, menos Milei\"",
+      "source": "cnnchile.com",
+      "url": "https://www.cnnchile.com/pais/schalper-le-pide-a-kast-ser-mas-meloni-menos-milei-y-advierte-que-indulto-a-maturana-generaria-mucha-efervescencia-en-el-pais_20260318/",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Kast demorar\u00e1 nominaciones de embajadores pol\u00edticos por factor econ\u00f3mico",
+      "source": "latercera.com",
+      "url": "https://latercera.com/politica/noticia/kast-demorara-nominaciones-de-embajadores-politicos-por-factor-economico",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Understanding the Economic Neoliberalism of the Kast Government",
+      "source": "elciudadano.com",
+      "url": "https://elciudadano.com/en/understanding-the-economic-neoliberalism-of-the-kast-government-social-silence-and-authoritarian-governance/03/16",
       "signal_category_hint": "economic_tech"
     }
   ]

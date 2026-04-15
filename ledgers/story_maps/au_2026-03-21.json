@@ -3,46 +3,40 @@
   "code": "au",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 235,
-  "stories_identified": 6,
-  "off_topic_filtered": 78,
-  "noise_summary": "78 off-topic results filtered: 32 sports (baseball players, running shoes, fitness gear), 18 entertainment/celebrity content, 12 Albanian language/accent articles (not about Australian PM), 8 US labor movement stories, 4 WNBA content, 4 cooking recipes and lifestyle content",
+  "search_results_total": 217,
+  "stories_identified": 7,
+  "off_topic_filtered": 89,
+  "noise_summary": "89 off-topic results filtered: 25 US labor movement stories (Cesar Chavez abuse allegations, WNBA labor agreement), 20 sports/entertainment (Made in Chelsea, Taylor Swift, MLB, NFL), 15 cooking/lifestyle content, 12 archaeological/cultural stories (Parthenon marbles), 10 technology/business stories unrelated to Australia, 7 general language/education content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Albanese heckled at Sydney mosque over Gaza war stance during Eid prayers",
-      "summary": "Prime Minister Anthony Albanese was heckled and booed by protesters at Lakemba Mosque on March 20 during Eid al-Fitr prayers, with demonstrators calling him 'genocide supporter' and 'putrid dog' over his government's stance on Israel's offensive in Gaza. Albanese claimed the protest was partly due to his government outlawing extremist organizations like Hizb ut-Tahrir.",
+      "headline": "Prime Minister Albanese heckled at Sydney mosque over Gaza war stance",
+      "summary": "PM Anthony Albanese faced angry protesters during Eid prayers at Lakemba Mosque who called him a 'genocide supporter' and 'putrid dog' over his government's Israel-Gaza policy. The confrontation occurred during an official visit to mark the end of Ramadan.",
       "actors_involved": [
         "Anthony Albanese"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 16,
+      "source_count": 20,
       "sources": [
-        "bbc.com",
         "foxnews.com",
+        "bbc.com",
         "reuters.com",
         "timesofisrael.com",
-        "abc.net.au",
-        "theguardian.com",
         "jpost.com",
         "dailymail.co.uk",
-        "yahoo.com",
-        "indianexpress.com",
+        "theguardian.com",
         "independent.co.uk",
         "gbnews.com",
-        "sbs.com.au",
         "indiatoday.in",
+        "timesofindia.indiatimes.com",
+        "sbs.com.au",
         "thewest.com.au",
+        "hotair.com",
+        "blogs.timesofisrael.com",
         "legalinsurrection.com"
       ],
       "date_range": "2026-03-20 to 2026-03-21",
       "articles": [
-        {
-          "title": "Australia PM heckled at Sydney mosque Ramadan event",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/cz90wy2190go",
-          "date": "2026-02-28"
-        },
         {
           "title": "Anthony Albanese heckled at Lakemba Mosque over Gaza war stance",
           "source": "foxnews.com",
@@ -50,10 +44,16 @@
           "date": "2026-02-28"
         },
         {
+          "title": "Anthony Albanese: Australia PM heckled at Sydney mosque Ramadan event",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/news/articles/cz90wy2190go",
+          "date": "2026-02-25"
+        },
+        {
           "title": "Australian mosque protesters heckle PM Albanese over Israel stance",
           "source": "reuters.com",
           "url": "https://www.reuters.com/world/asia-pacific/australian-mosque-protesters-heckle-pm-albanese-over-israel-stance-2026-03-20/",
-          "date": "2026-02-28"
+          "date": "2026-02-25"
         },
         {
           "title": "At Australia's biggest mosque, Albanese heckled as 'putrid dog, genocide supporter' for Israel stance",
@@ -65,31 +65,19 @@
           "title": "PM Albanese faces protests at Eid prayers, anger over Israeli offensive in Gaza",
           "source": "jpost.com",
           "url": "https://www.jpost.com/international/article-890626",
-          "date": "2026-02-28"
+          "date": "2026-02-25"
         },
         {
           "title": "Tense moment as Anthony Albanese is heckled at Sydney mosque and branded a 'genocide supporter'",
           "source": "dailymail.co.uk",
           "url": "https://dailymail.co.uk/news/article-15662997/anthony-albanese-mosque.html",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Australian PM Albanese heckled during visit to mosque",
-          "source": "yahoo.com",
-          "url": "https://www.yahoo.com/news/videos/australian-pm-albanese-heckled-during-202231036.html",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "'Genocide supporters': Why was Australia's PM Anthony Albanese heckled, booed at Sydney's largest mosque",
-          "source": "indianexpress.com",
-          "url": "https://indianexpress.com/article/world/anthony-albanese-heckled-eid-prayers-sydney-gaza-protest-10592486/",
-          "date": "2026-02-28"
+          "date": "2026-02-25"
         },
         {
           "title": "Anthony Albanese claims hecklers at Lakemba mosque unhappy Labor outlawed 'extremist organisations'",
           "source": "theguardian.com",
           "url": "https://theguardian.com/australia-news/2026/mar/20/anthony-albanese-tony-burke-heckled-lakemba-mosque-protestors-ntwnfb",
-          "date": "2026-02-28"
+          "date": "2026-02-25"
         },
         {
           "title": "Australian PM Anthony Albanese called 'genocide supporter' by Gaza protesters at mosque visit",
@@ -101,6 +89,42 @@
           "title": "Anthony Albanese branded 'putrid dog' and chased out of mosque as furious worshippers swarm Australian PM",
           "source": "gbnews.com",
           "url": "https://gbnews.com/news/world/anthony-albanese-australia-pm-mosque-worshippers-heckled",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Australian Prime Minister Anthony Albanese booed at Sydney mosque",
+          "source": "indiatoday.in",
+          "url": "https://indiatoday.in/world/story/australian-prime-minister-booed-sydney-mosque-gaza-conflict-tensions-2884517-2026-03-20",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "'Genocide supporters': Why was Australia's PM Anthony Albanese heckled, booed at Sydney's largest mosque",
+          "source": "indianexpress.com",
+          "url": "https://indianexpress.com/article/world/anthony-albanese-heckled-eid-prayers-sydney-gaza-protest-10592486/",
+          "date": "2026-02-28"
+        },
+        {
+          "title": "Mosque defends Albanese visit, as PM claims hecklers upset over hate group outlawing",
+          "source": "sbs.com.au",
+          "url": "https://sbs.com.au/news/article/anthony-albanese-heckled-eid-prayers-lakemba-mosque/f4hyhw870",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Aaron Patrick: Paying respect to Islam, Anthony Albanese receives abuse, not praise",
+          "source": "thewest.com.au",
+          "url": "https://thewest.com.au/politics/federal-politics/aaron-patrick-paying-respect-to-islam-anthony-albanese-receives-abuse-not-praise-c-22010434",
+          "date": "2026-02-28"
+        },
+        {
+          "title": "Albanese Finds Out Appeasement Doesn't Always Equal Popular",
+          "source": "hotair.com",
+          "url": "https://hotair.com/tree-hugging-sister/2026/03/20/albanese-finds-out-appeasement-doesnt-always-equal-popularity-n3813064",
+          "date": "2026-02-28"
+        },
+        {
+          "title": "Anthony Albanese: 'Get them out of here': Australian PM Anthony Albanese, Tony Burke heckled at Eid prayers in Sydney over support for Israel",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/world/rest-of-world/get-them-out-of-here-australian-pm-anthony-albanese-tony-burke-heckled-at-eid-prayers-in-sydney-over-support-for-israel-watch/articleshow/129696709.cms",
           "date": "2026-02-28"
         },
         {
@@ -110,120 +134,307 @@
           "date": "2026-02-28"
         },
         {
-          "title": "Mosque defends Albanese visit, as PM claims hecklers upset over hate group outlawing",
-          "source": "sbs.com.au",
-          "url": "https://sbs.com.au/news/article/anthony-albanese-heckled-eid-prayers-lakemba-mosque/f4hyhw870",
-          "date": "2026-02-28"
-        },
-        {
           "title": "Australia's PM called a 'putrid dog' and chased out of mosque",
           "source": "independent.co.uk",
           "url": "https://independent.co.uk/tv/news/anthony-albanese-lakemba-mosque-gaza-video-b2942405.html",
           "date": "2026-02-28"
         },
         {
-          "title": "Australian Prime Minister Anthony Albanese booed at Sydney mosque",
-          "source": "indiatoday.in",
-          "url": "https://indiatoday.in/world/story/australian-prime-minister-booed-sydney-mosque-gaza-conflict-tensions-2884517-2026-03-20",
+          "title": "The Blogs: The Starmerization of Anthony Albanese",
+          "source": "blogs.timesofisrael.com",
+          "url": "https://blogs.timesofisrael.com/the-starmerization-of-anthony-albanese",
           "date": "2026-02-28"
         },
         {
-          "title": "Aaron Patrick: Paying respect to Islam, Anthony Albanese receives abuse, not praise",
-          "source": "thewest.com.au",
-          "url": "https://thewest.com.au/politics/federal-politics/aaron-patrick-paying-respect-to-islam-anthony-albanese-receives-abuse-not-praise-c-22010434",
+          "title": "'Putrid Dog': Chaos Ensues When Australian PM Visits Mosque",
+          "source": "legalinsurrection.com",
+          "url": "https://legalinsurrection.com/2026/03/putrid-dog-chaos-ensues-when-australian-pm-visits-mosque",
           "date": "2026-02-28"
+        },
+        {
+          "title": "How Anthony Albanese 'suffered an embarrassing snub' before joining footy fans' pitch invasion",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/sport/nrl/article-15648637/Footy-club-heavyweights-throw-Albo-lift-PM-took-field-invasion-Anthony-Albanese-Sydney-Roosters-South-Sydney-Rabbitohs.html",
+          "date": "2026-02-18"
         }
       ],
       "representative_urls": [
         "https://www.reuters.com/world/asia-pacific/australian-mosque-protesters-heckle-pm-albanese-over-israel-stance-2026-03-20/",
-        "https://www.bbc.com/news/articles/cz90wy2190go"
+        "https://theguardian.com/australia-news/2026/mar/20/anthony-albanese-tony-burke-heckled-lakemba-mosque-protestors-ntwnfb"
       ]
     },
     {
       "story_id": 2,
-      "headline": "RBA raises interest rates to 4.1% in split decision amid inflation concerns",
-      "summary": "The Reserve Bank of Australia hiked the cash rate by 0.25 percentage points to 4.1% on March 17 in a narrow 5-4 split board decision, citing persistent inflation pressures and the Middle East war's impact on fuel prices. This marked the second consecutive rate rise and brought rates back to their February 2025 level.",
+      "headline": "Reserve Bank of Australia raises interest rates to 4.1% amid inflation concerns",
+      "summary": "The RBA hiked rates by 0.25 percentage points for the second consecutive month in a split 5-4 board decision, citing domestic inflation pressures and risks from the Middle East war affecting energy prices. The decision sparked debate about timing and economic impacts.",
       "actors_involved": [
         "Reserve Bank of Australia"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 25,
+      "source_count": 35,
       "sources": [
         "rba.gov.au",
         "bloomberg.com",
-        "abc.net.au",
         "afr.com",
+        "abc.net.au",
         "theguardian.com",
         "forex.com",
-        "9news.com.au",
-        "forbes.com.au",
-        "commbank.com.au",
-        "discoveryalert.com.au",
-        "theconversation.com",
-        "crikey.com.au",
-        "fool.com.au",
-        "fxstreet.com",
-        "macrobusiness.com.au",
         "investinglive.com",
+        "commbank.com.au",
+        "9news.com.au",
+        "fool.com.au",
+        "crikey.com.au",
+        "au.finance.yahoo.com",
+        "forbes.com.au",
+        "discoveryalert.com.au",
+        "nytimes.com",
+        "financialpost.com",
         "mpamag.com",
         "michaelwest.com.au",
-        "varria.com.au",
         "marketpulse.com",
+        "theconversation.com",
         "sbs.com.au",
-        "natlawreview.com",
+        "fxstreet.com",
+        "fxstreet.es",
+        "dailymail.co.uk",
         "news.bloomberglaw.com"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
         {
           "title": "Statement by the Monetary Policy Board: Monetary Policy Decision",
           "source": "rba.gov.au",
           "url": "https://www.rba.gov.au/media-releases/2026/mr-26-08.html",
-          "date": "2026-03-17"
+          "date": "2026-02-18"
         },
         {
-          "title": "Australia Raises Rates for Second Straight Meeting to Curb Inflation",
+          "title": "RBA Rate Hike: The Iran War Forces the First Central Bank's Hand",
           "source": "bloomberg.com",
-          "url": "https://bloomberg.com/news/articles/2026-03-17/australia-delivers-first-back-to-back-rate-hikes-since-mid-2023",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "RBA lifts interest rates by 0.25pc for second time this year",
-          "source": "abc.net.au",
-          "url": "https://abc.net.au/news/2026-03-17/rba-lifts-interest-rates-for-second-time-in-2026/106463146",
-          "date": "2026-03-17"
+          "url": "https://bloomberg.com/opinion/articles/2026-03-17/rba-rate-hike-the-iran-war-claims-its-first-central-bank-scalp",
+          "date": "2026-02-18"
         },
         {
           "title": "'If we have to change tack, we will': RBA hikes rates but not aiming to put Australia into recession, Bullock says",
           "source": "theguardian.com",
           "url": "https://theguardian.com/australia-news/2026/mar/17/rba-interest-rate-australia-increase-fuel-petrol-prices",
-          "date": "2026-03-17"
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA lifts interest rates by 0.25pc for second time this year",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-17/rba-lifts-interest-rates-for-second-time-in-2026/106463146",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "AUD/USD, EUR/AUD Outlook: RBA Hikes Again as Inflation Pressures Build",
+          "source": "forex.com",
+          "url": "https://www.forex.com/en-us/news-and-analysis/aud-usd-eur-aud-outlook-rba-hikes-again-as-inflation-pressures-build/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Australian Dollar Outlook: RBA Rate Decision and AUD/USD Pullback Risks",
+          "source": "forex.com",
+          "url": "https://www.forex.com/en-us/news-and-analysis/australian-dollar-outlook-rba-rate-decision-and-aud-usd-pullback-risks/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "The RBA has made one of its most controversial calls in recent years - and this rate rise may not age well",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/australia-news/2026/mar/17/the-rba-has-made-one-of-its-most-controversial-calls-in-recent-years-and-this-rate-rise-may-not-age-well",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Why did the RBA raise interest rates? Will higher petrol prices have same effect?",
+          "source": "abc.net.au",
+          "url": "https://www.abc.net.au/news/2026-03-19/rba-interest-rates-inflation-demand-petrol-prices-explainer/106468646",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "The RBA is asking Australians to show restraint. They may want to take their own advice",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/commentisfree/2026/mar/17/rba-interest-rate-hike-australia-inflation-economy",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Here's what experts think will happen with the RBA interest rate this year",
+          "source": "fool.com.au",
+          "url": "https://fool.com.au/2026/03/19/heres-what-experts-think-will-happen-with-the-rba-interest-rate-this-year",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "RBA's Rate-Hike Split Raises Questions Over Timing of Tightening",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-03-18/rba-s-rate-hike-split-raises-questions-over-timing-of-tightening",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "RBA mulls rate rise today as global economy plunges into chaos",
+          "source": "crikey.com.au",
+          "url": "https://www.crikey.com.au/2026/03/17/rba-interest-rates-donald-trump-iran-war-matt-canavan-coalition",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA interest rate: Millions dealt back-to-back blows as Australia set to be lone mover amid Iran war",
+          "source": "au.finance.yahoo.com",
+          "url": "https://au.finance.yahoo.com/news/rba-interest-rate-decision-big-banks-predict-painful-blow-not-seen-in-three-years-as-possible-2026-lifeline-identified-224418108.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Major banks announce interest rate increase after Reserve Bank lifts cash rate by 0.25 per cent",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-17/australian-banks-rba-interest-rates-response/106462942",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA Interest Rate Decision Today: Live Tracker",
+          "source": "forbes.com.au",
+          "url": "https://forbes.com.au/news/investing/rba-interest-rate-decision-live-tracker",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA warns Middle East conflict could trigger global shock and market repricing",
+          "source": "investinglive.com",
+          "url": "https://investinglive.com/centralbank/rba-warns-middle-east-conflict-could-trigger-global-shock-and-market-repricing-20260319",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "RBA's only question was when, not if",
+          "source": "commbank.com.au",
+          "url": "https://commbank.com.au/articles/newsroom/2026/03/rba-rates-increase-analysis.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA interest rates: Reserve Bank lifts cash rate to 4.1 per cent amid Middle East conflict, inflation fears",
+          "source": "afr.com",
+          "url": "https://afr.com/policy/economy/rba-warns-australia-is-at-risk-of-recession-20260316-p5ob0d",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "RBA Interest Rate Hikes 2026: Market Expectations & Impact",
+          "source": "discoveryalert.com.au",
+          "url": "https://discoveryalert.com.au/monetary-policy-transmission-rba-interest-rate-2026/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "What are the chances the RBA will raise interest rates today?",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-17/will-rba-increase-rates-today/106452926",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA hikes cash rate to 4.1 per cent in a split decision \u2014 as it happened",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-17/asx-markets-business-live-news-march17-2026/106460458",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA can't rule out recession despite lifting interest rates",
+          "source": "afr.com",
+          "url": "https://afr.com/policy/economy/rba-can-t-rule-out-recession-despite-raising-rates-20260317-p5od8p",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA Delivers Back-to-Back Rate Hikes in Split Decision",
+          "source": "news.bloomberglaw.com",
+          "url": "https://news.bloomberglaw.com/securities-law/australia-delivers-first-back-to-back-rate-hikes-since-mid-2023",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "$A surges with the RBA poised to raise rates and flag more to come",
+          "source": "afr.com",
+          "url": "https://www.afr.com/markets/debt-markets/rba-set-to-pull-the-rates-trigger-while-others-hold-firm-20260316-p5oary",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "RBA lifts interest rates now, to avoid recession later",
+          "source": "afr.com",
+          "url": "https://afr.com/policy/economy/rba-lifts-interest-rates-now-to-avoid-recession-later-20260317-p5ob4a",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA Set for Another Rate Hike as Iran War Refuels Inflation",
+          "source": "financialpost.com",
+          "url": "https://financialpost.com/pmn/business-pmn/rba-to-deliver-back-to-back-hikes-as-iran-war-refuels-inflation",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA Interest rates: Big four banks pass on rate rises to mortgage holders after RBA decision",
+          "source": "9news.com.au",
+          "url": "https://9news.com.au/national/australia-interest-rates-rba-banks-response/e91beb9a-3be4-491a-9b0c-10869b6878d0",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Households can handle higher mortgage repayments, reckons RBA, but not everyone convinced",
+          "source": "mpamag.com",
+          "url": "https://www.mpamag.com/au/news/general/households-can-handle-higher-mortgage-repayments-reckons-rba-but-not-everyone-convinced/569080",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA frets over severe global shock from Middle East war",
+          "source": "michaelwest.com.au",
+          "url": "https://michaelwest.com.au/rba-frets-over-severe-global-shock-from-middle-east-war/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA was right to raise interest rates but the Middle East crisis and its impact on inflation will be painful",
+          "source": "afr.com",
+          "url": "https://www.afr.com/policy/economy/rba-did-the-right-thing-but-the-real-pain-is-just-beginning-20260316-p5oavh",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "RBA Preview: Why a 25bps hike to 4.1% is the most likely outcome",
+          "source": "marketpulse.com",
+          "url": "https://marketpulse.com/markets/rba-preview-why-a-25bps-hike-to-41-is-the-most-likely-outcome",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Release of Financial Stability Review \u2013 March 2026",
+          "source": "rba.gov.au",
+          "url": "https://rba.gov.au/media-releases/2026/mr-26-09.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "The RBA faces its 'most complicated' rates call in years. What could it mean for you?",
+          "source": "sbs.com.au",
+          "url": "https://sbs.com.au/news/article/reserve-bank-complicated-march-interest-rates-decision/pvgeq2hs6",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA narrowly votes to lift interest rates. The Middle East war may determine if there's more to come",
+          "source": "theconversation.com",
+          "url": "https://theconversation.com/rba-narrowly-votes-to-lift-interest-rates-the-middle-east-war-may-determine-if-theres-more-to-come-278205",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Reserve Bank lifts official cash rate to 4.1% at March meeting",
+          "source": "commbank.com.au",
+          "url": "https://commbank.com.au/articles/newsroom/2026/03/rba-increases-interest-rates-in-march-meeting-decision.html",
+          "date": "2026-02-18"
         }
       ],
       "representative_urls": [
         "https://www.rba.gov.au/media-releases/2026/mr-26-08.html",
-        "https://bloomberg.com/news/articles/2026-03-17/australia-delivers-first-back-to-back-rate-hikes-since-mid-2023"
+        "https://theguardian.com/australia-news/2026/mar/17/rba-interest-rate-australia-increase-fuel-petrol-prices"
       ]
     },
     {
       "story_id": 3,
-      "headline": "Australia responds to Iran war with fuel emergency measures and calls for de-escalation",
-      "summary": "As the US-Israel war with Iran disrupted global oil supplies through the Strait of Hormuz, Prime Minister Albanese announced emergency fuel measures including a national cabinet meeting and appointment of a supply chain coordinator. Australia also urged for an end to the conflict while joining international calls to keep the strait open.",
+      "headline": "Australia responds to Iran war with emergency fuel measures and diplomatic calls",
+      "summary": "PM Albanese announced emergency measures to address fuel shortages caused by Iran closing the Strait of Hormuz, including appointing a supply chain coordinator and urging against panic buying. Australia joined international calls for the strait to remain open while distancing from US military action.",
       "actors_involved": [
         "Anthony Albanese",
         "Penny Wong"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 15,
       "sources": [
         "abc.net.au",
         "afr.com",
-        "bloomberg.com",
         "dailymail.co.uk",
         "9news.com.au",
         "sbs.com.au",
         "theguardian.com",
-        "tribuneindia.com"
+        "bloomberg.com"
       ],
       "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
@@ -231,13 +442,7 @@
           "title": "Iran war updates: Albanese denies Australia out of step with allies after release of joint statement",
           "source": "abc.net.au",
           "url": "https://www.abc.net.au/news/2026-03-20/iran-israel-us-war-live-updates/106475836",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Trump has made it clear Australia is a friend in name only. For Albanese, the pressure at home is rising",
-          "source": "theguardian.com",
-          "url": "https://www.theguardian.com/world/commentisfree/2026/mar/21/trump-has-made-it-clear-australia-is-a-friend-in-name-only-for-albanese-the-pressure-at-home-is-rising",
-          "date": "2026-02-28"
+          "date": "2026-02-25"
         },
         {
           "title": "Albanese government's 'don't panic buy' fuel message doesn't work",
@@ -246,40 +451,34 @@
           "date": "2026-03-01"
         },
         {
-          "title": "Albanese hopeful about end of war against Iran as budget looms",
-          "source": "abc.net.au",
-          "url": "https://abc.net.au/news/2026-03-19/anthony-albanese-iran-fuel-prices-budget-jim-chalmers/106464080",
-          "date": "2026-02-28"
-        },
-        {
           "title": "Anthony Albanese to announce emergency measures amid global crisis as war drags on",
           "source": "dailymail.co.uk",
           "url": "https://dailymail.co.uk/news/article-15655977/Anthony-Albanese-announce-emergency-measures-amid-global-crisis-war-drags-on.html",
-          "date": "2026-02-28"
+          "date": "2026-02-19"
         },
         {
           "title": "Anthony Albanese to appoint fuel tsar as petrol price soars",
           "source": "afr.com",
           "url": "https://afr.com/politics/federal/it-s-a-different-world-now-albanese-calls-in-national-cabinet-20260318-p5okij",
-          "date": "2026-02-28"
+          "date": "2026-02-19"
         },
         {
           "title": "National cabinet meeting, fuel shortage Australia: Anthony Albanese's blunt message for hoarders during oil supply shock",
           "source": "9news.com.au",
           "url": "https://9news.com.au/national/national-cabinet-meeting-oil-supply-shock-war-iran-anthony-albanese/82395f65-e5ca-402b-a627-4e4fe8e41db1",
-          "date": "2026-02-28"
+          "date": "2026-02-19"
         },
         {
           "title": "Anthony Albanese urges US and Israel to end war with Iran, releases emergency fuel plan",
           "source": "afr.com",
           "url": "https://afr.com/politics/federal/albanese-urges-us-to-end-war-releases-emergency-fuel-plan-20260318-p5oki2",
-          "date": "2026-02-28"
+          "date": "2026-02-19"
         },
         {
           "title": "Fuel crisis Australia: Anthony Albanese urges Australians not to hoard petrol as new task force announced",
           "source": "9news.com.au",
           "url": "https://9news.com.au/national/fuel-crisis-australia-anthony-albanese-urges-not-to-hoard-petrol-new-task-force-announced/49e2594f-6dfa-4e92-a5b9-325066d8b085",
-          "date": "2026-02-28"
+          "date": "2026-02-25"
         },
         {
           "title": "Albo pushes back after Donald Trump accuses Australia of 'not getting involved' in his war in Iran",
@@ -291,85 +490,174 @@
           "title": "Wong urges against escalation of war in call with US counterpart Marco Rubio",
           "source": "sbs.com.au",
           "url": "https://www.sbs.com.au/news/article/penny-wong-speaks-to-us-counterpart-urging-middle-east-war-not-escalate/81733ma2b",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Trump has made it clear Australia is a friend in name only. For Albanese, the pressure at home is rising",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/world/commentisfree/2026/mar/21/trump-has-made-it-clear-australia-is-a-friend-in-name-only-for-albanese-the-pressure-at-home-is-rising",
           "date": "2026-02-28"
         },
         {
-          "title": "EAM Jaishankar, Australian Foreign Minister Penny Wong share assessments of West Asia conflict as hostilities enter 21st day",
-          "source": "tribuneindia.com",
-          "url": "https://tribuneindia.com/news/world/eam-jaishankar-australian-foreign-minister-penny-wong-share-assessments-of-west-asia-conflict-as-hostilities-enter-21st-day",
-          "date": "2026-02-28"
+          "title": "Albanese hopeful about end of war against Iran as budget looms",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-19/anthony-albanese-iran-fuel-prices-budget-jim-chalmers/106464080",
+          "date": "2026-02-21"
+        },
+        {
+          "title": "Fiery moment Liberal MP slams Anthony Albanese for 'not saying a word' when two of Australia's oil refineries were shut down",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/news/article-15657375/Anthony-Albanese-refinery-oil-fuel.html",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "Albo may not have started the war - but Labor helped create the economic firestorm now smashing households",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/news/article-15652819/rba-rate-rise-middle-east-blamed-government-spending-inflation.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "RBA, Inflation, Iran War: Australia Briefing",
+          "source": "bloomberg.com",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-03-15/rba-inflation-iran-war-australia-briefing",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Middle East crisis: Email Foreign Minister Penny Wong",
+          "source": "amnesty.org.au",
+          "url": "https://amnesty.org.au/act-now/middle-east-crisis-protect-civilians",
+          "date": "2026-02-18"
         }
       ],
       "representative_urls": [
-        "https://www.abc.net.au/news/2026-03-20/iran-israel-us-war-live-updates/106475836",
-        "https://afr.com/politics/federal/albanese-urges-us-to-end-war-releases-emergency-fuel-plan-20260318-p5oki2"
+        "https://afr.com/politics/federal/albanese-urges-us-to-end-war-releases-emergency-fuel-plan-20260318-p5oki2",
+        "https://www.sbs.com.au/news/article/penny-wong-speaks-to-us-counterpart-urging-middle-east-war-not-escalate/81733ma2b"
       ]
     },
     {
       "story_id": 4,
-      "headline": "Labor wins South Australian election in landslide as One Nation surges past Liberals",
-      "summary": "South Australian Premier Peter Malinauskas led Labor to a decisive second-term victory on March 21, capturing around 38% of the primary vote. In a historic result, Pauline Hanson's One Nation party achieved its best state result in nearly 30 years with 22% of the primary vote, overtaking the collapsed Liberal Party which fell to just 19%.",
+      "headline": "Labor wins South Australia election in landslide as One Nation surges past Liberals",
+      "summary": "Peter Malinauskas led Labor to a decisive second-term victory in the SA election, while One Nation achieved its best result in decades with over 20% of primary votes, outpolling the Liberals who suffered historic losses. The result signals major political realignment in Australia.",
       "actors_involved": [
         "Australian Labor Party"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 15,
+      "source_count": 20,
       "sources": [
         "abc.net.au",
         "theconversation.com",
         "smh.com.au",
         "theguardian.com",
-        "dailymail.co.uk",
-        "9news.com.au",
-        "sbs.com.au",
         "ibtimes.com.au",
-        "crikey.com.au",
-        "indailysa.com.au",
-        "pollbludger.net"
+        "9news.com.au",
+        "dailymail.co.uk",
+        "sbs.com.au",
+        "pollbludger.net",
+        "dailydeclaration.org.au"
       ],
-      "date_range": "2026-03-15 to 2026-03-22",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
           "title": "Labor Party retains power in South Australia, as One Nation vote surges",
           "source": "abc.net.au",
           "url": "https://abc.net.au/news/2026-03-21/labor-party-projected-to-win-sa-election/106482248",
-          "date": "2026-02-28"
+          "date": "2026-03-21"
         },
         {
           "title": "Labor easily wins South Australian election with One Nation beating Liberals into second on primary votes",
           "source": "theconversation.com",
           "url": "https://theconversation.com/labor-easily-wins-south-australian-election-with-one-nation-beating-liberals-into-second-on-primary-votes-278423",
-          "date": "2026-02-28"
+          "date": "2026-03-21"
         },
         {
           "title": "One Nation taking votes off Labor after overtaking Coalition: Resolve Political Monitor",
           "source": "smh.com.au",
           "url": "https://smh.com.au/politics/federal/one-nation-now-wrenching-votes-from-labor-as-it-overtakes-coalition-20260315-p5oakr.html",
-          "date": "2026-03-15"
+          "date": "2026-02-16"
         },
         {
           "title": "South Australia election 2026: Labor heads for a win, the Liberals a battering and One Nation a test of surging support",
           "source": "theguardian.com",
           "url": "https://www.theguardian.com/australia-news/2026/mar/21/south-australia-election-labor-leading-liberals-one-nation-surge-ntwnfb",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Staggering new poll shows One Nation is nipping at the heels of Labor after leaving the Coalition in the dust",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15647709/poll-Australia-politics-Coalition-Labor-One-Nation.html",
-          "date": "2026-03-15"
+          "date": "2026-03-21"
         },
         {
           "title": "Labor set for landslide in final South Australian polls with One Nation ahead of Liberals",
           "source": "theconversation.com",
           "url": "https://theconversation.com/labor-set-for-landslide-in-final-south-australian-polls-with-one-nation-ahead-of-liberals-278426",
-          "date": "2026-02-28"
+          "date": "2026-02-18"
+        },
+        {
+          "title": "SA Liberals and Labor differ wildly on how much they say election promises will cost",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-19/sa-election-costings-released/106474002",
+          "date": "2026-02-20"
         },
         {
           "title": "South Australia 2026 State Election Result: Labor Secures Landslide Victory as One Nation Surges Past Liberals",
           "source": "ibtimes.com.au",
           "url": "https://ibtimes.com.au/south-australia-2026-state-election-result-labor-secures-landslide-victory-one-nation-surges-past-1863936",
-          "date": "2026-02-28"
+          "date": "2026-03-21"
+        },
+        {
+          "title": "SA Election 2026: One Nation could be about to give Labor and the Coalition a 'major scare' at the polls in South Australia",
+          "source": "9news.com.au",
+          "url": "https://9news.com.au/national/sa-election-2026-why-politicians-will-be-watching-result-closely-big-test-for-one-nation/737a6185-3b95-48b7-8e84-7c23c78253f4",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Labor victorious as One Nation claw Liberal vote away",
+          "source": "sbs.com.au",
+          "url": "https://www.sbs.com.au/news/article/labor-victorious-as-one-nation-claw-liberal-vote-away/o3h01aiss",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Christian Voters Sidelined as SA Labor Nears Election Victory",
+          "source": "dailydeclaration.org.au",
+          "url": "https://dailydeclaration.org.au/2026/03/18/sa-labor-nears-election-victory",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "One Nation's surge and Liberal Party's collapse in SA election reveal tectonic shifts in Australian politics",
+          "source": "theconversation.com",
+          "url": "https://theconversation.com/one-nations-surge-and-liberal-partys-collapse-in-sa-election-reveal-tectonic-shifts-in-australian-politics-278317",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Labor wins South Australian election in a landslide as One Nation vote surges and the Liberal Party prepares for embarrassing new low",
+          "source": "dailymail.co.uk",
+          "url": "https://www.dailymail.co.uk/news/article-15666829/Labor-win-South-Australia-election.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "The count is on! One Nation expected to make a major breakthrough in South Australian election",
+          "source": "dailymail.co.uk",
+          "url": "https://www.dailymail.co.uk/news/article-15666657/One-Nation-South-Australia-Labor-election.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Fox & Hedgehog: Labor 38, One Nation 21, Liberal 19 in South Australia",
+          "source": "pollbludger.net",
+          "url": "https://www.pollbludger.net/2026/03/17/fox-hedgehog-labor-38-one-nation-21-liberal-19-in-south-australia/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "South Australian election: Labor cruises to record victory in South Australia as One Nation vote surges",
+          "source": "9news.com.au",
+          "url": "https://9news.com.au/national/labor-cruises-to-record-victory-in-south-australia-as-one-nation-vote-surges/60cf7078-307f-4c4c-a7cf-60b1c283e605",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Pauline Hanson's bold three-word response after One Nation's extraordinary election result in South Australia",
+          "source": "dailymail.co.uk",
+          "url": "https://www.dailymail.co.uk/news/article-15667097/Pauline-Hanson-South-Australia-election.html",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "YouGov: Labor 38, One Nation 22, Liberal 19 in South Australia",
+          "source": "pollbludger.net",
+          "url": "https://www.pollbludger.net/2026/03/19/yougov-labor-38-one-nation-22-liberal-19-in-south-australia/",
+          "date": "2026-02-20"
         }
       ],
       "representative_urls": [
@@ -379,66 +667,72 @@
     },
     {
       "story_id": 5,
-      "headline": "Opposition Leader Angus Taylor campaigns on cost of living and energy policy",
-      "summary": "Liberal Opposition Leader Angus Taylor made campaign visits including to the Sutherland Shire, highlighting small business struggles with rising costs. Taylor also criticized the government's energy policies and preparation for the upcoming Farrer by-election on May 9.",
+      "headline": "Liberal Party struggles as Angus Taylor leads opposition amid poor polling",
+      "summary": "Opposition leader Angus Taylor faces challenges as Coalition polling continues to decline, with the party trailing One Nation in some polls. Taylor has been making local visits and criticizing government policies but the Coalition remains at historic lows.",
       "actors_involved": [
         "Angus Taylor"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 4,
+      "source_count": 5,
       "sources": [
         "2gb.com",
         "theleader.com.au",
-        "thenewdaily.com.au",
-        "liberal.org.au"
+        "thenewdaily.com.au"
       ],
-      "date_range": "2026-03-15 to 2026-03-17",
+      "date_range": "2026-03-16 to 2026-03-18",
       "articles": [
         {
           "title": "'Absurd' - Angus Taylor calls Bowen out over broken promises",
           "source": "2gb.com",
           "url": "https://2gb.com/absurd-angus-taylor-calls-bowen-out-over-broken-promises",
-          "date": "2026-03-15"
+          "date": "2026-02-18"
         },
         {
           "title": "Angus Taylor: Sutherland Shire businesses face tough times",
           "source": "theleader.com.au",
           "url": "https://theleader.com.au/story/9202791/angus-taylor-sutherland-shire-businesses-face-tough-times",
-          "date": "2026-02-28"
+          "date": "2026-02-18"
         },
         {
           "title": "Liberals pledge revival as Taylor oversees historic low",
           "source": "thenewdaily.com.au",
           "url": "https://thenewdaily.com.au/news/politics/australian-politics/2026/03/16/angus-taylor-coalition-polling",
-          "date": "2026-03-16"
+          "date": "2026-02-17"
         },
         {
-          "title": "Coalition stands firm against CGT changes",
-          "source": "liberal.org.au",
-          "url": "https://www.liberal.org.au/2026/03/17/coalition-stands-firm-against-cgt-changes",
-          "date": "2026-03-17"
+          "title": "Orange You Just a Bit Confused?",
+          "source": "quadrant.org.au",
+          "url": "https://quadrant.org.au/news-opinions/whimsy/orange-you-just-a-bit-confused",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "NSW snubs Albanese Government's housing bonus scheme",
+          "source": "cathnews.com",
+          "url": "https://cathnews.com/2026/03/16/nsw-snubs-albanese-governments-housing-bonus-scheme",
+          "date": "2026-02-17"
         }
       ],
       "representative_urls": [
-        "https://theleader.com.au/story/9202791/angus-taylor-sutherland-shire-businesses-face-tough-times",
-        "https://thenewdaily.com.au/news/politics/australian-politics/2026/03/16/angus-taylor-coalition-polling"
+        "https://thenewdaily.com.au/news/politics/australian-politics/2026/03/16/angus-taylor-coalition-polling",
+        "https://theleader.com.au/story/9202791/angus-taylor-sutherland-shire-businesses-face-tough-times"
       ]
     },
     {
       "story_id": 6,
-      "headline": "AUKUS partnership advances with UK nuclear submarine maintenance and workforce development",
-      "summary": "The AUKUS agreement progressed with HMS Anson conducting the first UK nuclear submarine maintenance period in Australia, while Western Australia strengthened the partnership through workforce development agreements with UK institutions. The UK also requested up to $1 billion in US support for submarine combat systems.",
+      "headline": "AUKUS submarine program advances with UK partnerships and US support deals",
+      "summary": "Western Australia strengthens AUKUS workforce development through partnerships with UK institutions, while the UK seeks up to $1 billion in US support for submarine combat systems. The program continues progressing despite ongoing cost and capability questions.",
       "actors_involved": [
         "Australian Defence Force"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 3,
+      "source_count": 4,
       "sources": [
         "ukdefencejournal.org.uk",
         "mining.com.au",
-        "johnmenadue.com"
+        "johnmenadue.com",
+        "canberratimes.com.au"
       ],
-      "date_range": "2026-03-16 to 2026-03-18",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
           "title": "UK seeks US support deal worth up to 1bn for new AUKUS subs",
@@ -450,39 +744,84 @@
           "title": "Western Australia strengthens AUKUS via UK partnership",
           "source": "mining.com.au",
           "url": "https://mining.com.au/western-australia-strengthens-aukus-via-uk-partnership/",
-          "date": "2026-03-16"
+          "date": "2026-02-18"
         },
         {
           "title": "AUKUS: So many questions, so few answers",
           "source": "johnmenadue.com",
           "url": "https://johnmenadue.com/post/2026/03/aukus-so-many-questions-so-few-answers",
-          "date": "2026-03-16"
+          "date": "2026-02-18"
+        },
+        {
+          "title": "MOG changes won't fix ADF capability, Paterson says",
+          "source": "canberratimes.com.au",
+          "url": "https://canberratimes.com.au/story/9196634/mog-changes-wont-fix-adf-capability-paterson-says",
+          "date": "2026-02-18"
         }
       ],
       "representative_urls": [
-        "https://mining.com.au/western-australia-strengthens-aukus-via-uk-partnership/",
-        "https://ukdefencejournal.org.uk/uk-seeks-us-support-deal-worth-up-to-1bn-for-new-aukus-subs"
+        "https://ukdefencejournal.org.uk/uk-seeks-us-support-deal-worth-up-to-1bn-for-new-aukus-subs",
+        "https://mining.com.au/western-australia-strengthens-aukus-via-uk-partnership/"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Economic risks from AI investments and Middle East conflict identified by RBA",
+      "summary": "The Reserve Bank warned that prolonged Middle East war and potential AI profitability downgrades pose major risks to Australia's economy and financial stability. The bank highlighted concerns about high valuations of AI-related investments and market vulnerabilities.",
+      "actors_involved": [
+        "Reserve Bank of Australia"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 3,
+      "sources": [
+        "abc.net.au",
+        "rba.gov.au"
+      ],
+      "date_range": "2026-03-17 to 2026-03-19",
+      "articles": [
+        {
+          "title": "Prolonged Middle East war and AI profitability 'downgrades' are major risks for economy, RBA says",
+          "source": "abc.net.au",
+          "url": "https://www.abc.net.au/news/2026-03-19/financial-stability-review-reserve-bank-australia/106471810",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Statement by the Monetary Policy Board: Monetary Policy Decision",
+          "source": "rba.gov.au",
+          "url": "https://rba.gov.au/media-releases/2026/mr-26-08.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "EU Says It's Nearing a Free-Trade Agreement With Australia",
+          "source": "bloomberg.com",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-16/eu-says-it-s-nearing-a-free-trade-agreement-with-australia",
+          "date": "2026-02-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.abc.net.au/news/2026-03-19/financial-stability-review-reserve-bank-australia/106471810",
+        "https://rba.gov.au/media-releases/2026/mr-26-08.html"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "NSW rejects Albanese Government's housing bonus scheme",
-      "source": "cathnews.com",
-      "url": "https://cathnews.com/2026/03/16/nsw-snubs-albanese-governments-housing-bonus-scheme",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Australian official says Iranian soccer players were persuaded to leave",
-      "source": "kimatv.com",
-      "url": "https://kimatv.com/news/nation-world/australian-official-tina-kordrostami-says-iranian-soccer-players-were-persuaded-to-leave-tournament-war",
-      "signal_category_hint": "alignment_diplomatic"
-    },
-    {
-      "headline": "RBA frets over severe global shock from Middle East war",
-      "source": "michaelwest.com.au",
-      "url": "https://michaelwest.com.au/rba-frets-over-severe-global-shock-from-middle-east-war/",
+      "headline": "Australia and EU nearing free trade agreement",
+      "source": "bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-03-16/eu-says-it-s-nearing-a-free-trade-agreement-with-australia",
       "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "ASX market movements amid global uncertainty",
+      "source": "abc.net.au",
+      "url": "https://abc.net.au/news/2026-03-18/asx-markets-business-live-news-march-18/106466908",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "UN reform hearing featuring Australian representatives",
+      "source": "usun.usmission.gov",
+      "url": "https://usun.usmission.gov/testimony-of-ambassador-mike-waltz-u-s-representative-to-the-united-nations-at-a-congressional-field-hearing-on-un-reform",
+      "signal_category_hint": "alignment_diplomatic"
     }
   ]
 }

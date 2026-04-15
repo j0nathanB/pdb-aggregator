@@ -3,59 +3,66 @@
   "code": "se",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 265,
-  "stories_identified": 8,
-  "off_topic_filtered": 45,
-  "noise_summary": "45 off-topic results filtered: 18 sports stories (hockey playoffs, football transfers, player movements), 8 entertainment articles, 7 business/stock market stories unrelated to politics, 5 weather/traffic reports, 4 obituaries of non-political figures, 3 lifestyle/fashion articles.",
+  "search_results_total": 253,
+  "stories_identified": 12,
+  "off_topic_filtered": 67,
+  "noise_summary": "67 off-topic results filtered: 31 sports (hockey players named Anderson, football transfers, game results), 18 international politics unrelated to Sweden (US Democratic Party, Dutch elections, European far-right parties), 12 entertainment/celebrity content, 6 business/medical content unrelated to Swedish politics.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Liberal Party crisis as Mohamsson strikes deal with Sweden Democrats",
-      "summary": "Liberal leader Simona Mohamsson signed 'Sverigel\u00f6ftet' agreement with SD leader Jimmie \u00c5kesson, ending L's red lines against SD ministers. The controversial embrace between the two leaders sparked internal party revolt, with key figures resigning and calls for Mohamsson's removal ahead of Sunday's confidence vote.",
+      "headline": "Liberal leader Mohamsson drops red lines against Sweden Democrats, embraces \u00c5kesson at joint press conference",
+      "summary": "Liberal Party leader Simona Mohamsson announced the 'Sweden Promise' agreement allowing SD ministers in a future government, dramatically reversing her party's position. The announcement was symbolized by an unexpected hug between Mohamsson and SD leader Jimmie \u00c5kesson at their joint press conference.",
       "actors_involved": [
-        "Mohamsson",
         "Jimmie \u00c5kesson",
-        "Kristersson"
+        "Simona Mohamsson"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 18,
+      "source_count": 28,
       "sources": [
-        "aftonbladet.se",
-        "tv4.se",
         "svd.se",
-        "dn.se",
         "expressen.se",
+        "dn.se",
+        "tv4.se",
+        "aftonbladet.se",
         "thelocal.se",
-        "arbetet.se",
+        "sverigesradio.se",
+        "swedenherald.com",
+        "aip.nu",
         "hd.se",
+        "arbetet.se",
+        "jp.se",
+        "omeuropa.se",
+        "kvartal.se",
         "gp.se",
-        "dalademokraten.se"
+        "marcusoscarsson.se",
+        "dalademokraten.se",
+        "sydsvenskan.se"
       ],
-      "date_range": "2026-03-13 to 2026-03-20",
+      "date_range": "2026-03-13 to 2026-03-21",
       "articles": [
         {
-          "title": "Kristersson om 'Sverigel\u00f6ftet': Inte bunden",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452140",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Ulf Kristersson inte orolig f\u00f6r regeringskris: 'Absolut inte'",
-          "source": "aftonbladet.se",
-          "url": "https://aftonbladet.se/nyheter/a/K8MAm5/kristersson-om-sverigeloftet-inte-bunden",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Ulf Kristerssons f\u00f6rsta ord om uppg\u00f6relsen mellan SD och L",
-          "source": "tv4.se",
-          "url": "https://tv4.se/artikel/2Nfv8hbwXkStNIGv3kBRnN/kristerssons-foersta-ord-om-uppgoerelsen-mellan-sd-och-l",
-          "date": "2026-03-18"
+          "title": "Simona Mohamsson om SD: \"Jimmie \u00c5kesson har st\u00e4da upp i sitt parti\"",
+          "source": "svd.se",
+          "url": "https://www.svd.se/a/vrg1lp/simona-mohamsson-om-sd-jimmie-akesson-har-stada-upp-i-sitt-parti",
+          "date": "2026-03-13"
         },
         {
           "title": "Simona Mohamssons kram med \u00c5kesson v\u00e4cker revolt i Liberalerna",
           "source": "aftonbladet.se",
           "url": "https://aftonbladet.se/ledare/a/V6zLrV/simona-mohamssons-kram-med-akesson-vacker-revolt-i-liberalerna",
-          "date": "2026-03-17"
+          "date": "2026-03-14"
+        },
+        {
+          "title": "Alex Schulman: Jimmie \u00c5kesson framst\u00e5r nu som den mest sympatiske partiledaren",
+          "source": "dn.se",
+          "url": "https://dn.se/sverige/alex-schulman-jimmie-akesson-framstar-nu-som-den-mest-sympatiske-partiledaren",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "\u00c5kesson efter L-beskedet: Gjorde inga eftergifter",
+          "source": "tv4.se",
+          "url": "https://www.tv4.se/artikel/2XtyIx4iwO0NLopIjcX9iG/akesson-efter-l-beskedet-gjorde-inga-eftergifter",
+          "date": "2026-03-15"
         },
         {
           "title": "Politics in Sweden: Hugging \u00c5kesson close could be the kiss of death for Liberals",
@@ -64,34 +71,52 @@
           "date": "2026-03-18"
         },
         {
+          "title": "Kramen som skakar L: \"Blir en symbol f\u00f6r succ\u00e9 eller nederlag\"",
+          "source": "sverigesradio.se",
+          "url": "https://sverigesradio.se/artikel/kramen-som-skakar-l-blir-en-symbol-for-succe-eller-nederlag",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "L i Sk\u00e5ne inte eniga inf\u00f6r \u00f6desvalet: \"K\u00e4nns som Nordkorea\"",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/2p5A2v/l-i-skane-inte-eniga-infor-odesvalet-kanns-som-nordkorea",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Likt en drunknande kl\u00e4ngde Mohamsson p\u00e5 livbojen \u00c5kesson",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/kolumnister/a/j0Q1ob/simona-mohamsson-klangde-pa-livbojen-jimmie-akesson",
+          "date": "2026-03-16"
+        },
+        {
           "title": "Simona Mohamsson ger dig anledning att hata politiker",
           "source": "arbetet.se",
           "url": "https://arbetet.se/2026/03/16/simona-mohamsson-ger-dig-anledning-att-hata-politiker",
           "date": "2026-03-16"
         },
         {
-          "title": "KR\u00d6NIKA: Ett problem i L-ekvationen \u00e4r s\u00e5dana som jag",
-          "source": "hd.se",
-          "url": "https://hd.se/kultur/ett-problem-i-l-ekvationen-ar-sadana-som-jag",
+          "title": "Hoppar av och rasar: \"Ett \u00f6vergrepp\"",
+          "source": "jp.se",
+          "url": "https://jp.se/2026-03-16/forre-lansbasen-ett-overgrepp-pa-manniskor",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Jimmie \u00c5kessons EU-partner vill ge upp och f\u00f6rhandla med Putin om Ukraina",
+          "source": "omeuropa.se",
+          "url": "https://omeuropa.se/jimmie-akessons-eu-partner-vill-ge-upp-och-forhandla-med-putin-om-ukraina",
           "date": "2026-03-17"
         },
         {
-          "title": "Mohamsson pressas om rasismanklagelser \u2013 v\u00e4grar svara",
-          "source": "tv4.se",
-          "url": "https://tv4.se/artikel/7x0osXpz4ozNWrtO6PVwyc/kallade-akesson-rasist-nu-duckar-l-ledaren-fragan-i-tv4",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "L i Sk\u00e5ne inte eniga inf\u00f6r \u00f6desvalet: 'K\u00e4nns som Nordkorea'",
-          "source": "aftonbladet.se",
-          "url": "https://aftonbladet.se/nyheter/a/2p5A2v/l-i-skane-inte-eniga-infor-odesvalet-kanns-som-nordkorea",
+          "title": "Jomshof (SD) g\u00e5r emot \u00c5kesson om omsk\u00e4relse",
+          "source": "kvartal.se",
+          "url": "https://kvartal.se/nyheter/artiklar/jomshof-sd-gar-emot-akesson-om-omskarelse/cG9zdDo4MjkwNw",
           "date": "2026-03-18"
         },
         {
-          "title": "G\u00e5 inte p\u00e5 myten om Liberalerna",
-          "source": "expressen.se",
-          "url": "https://www.expressen.se/ledare/linda-jerneck/ga-inte-pa-myten-om-liberalerna/",
-          "date": "2026-03-18"
+          "title": "Susanna Birgersson: Sluta l\u00e5tsas att den svenska demokratin \u00e4r i fara",
+          "source": "gp.se",
+          "url": "https://www.gp.se/ledare/sluta-latsas-att-den-svenska-demokratin-ar-i-fara.a3d84881-67e6-4064-81d5-eef6386dd9a0",
+          "date": "2026-03-19"
         },
         {
           "title": "Vilka ministerposter ger Kristersson till \u00c5kesson?",
@@ -100,84 +125,39 @@
           "date": "2026-03-17"
         },
         {
-          "title": "Susanna Birgersson: Sluta l\u00e5tsas att den svenska demokratin \u00e4r i fara",
-          "source": "gp.se",
-          "url": "https://www.gp.se/ledare/sluta-latsas-att-den-svenska-demokratin-ar-i-fara.a3d84881-67e6-4064-81d5-eef6386dd9a0",
+          "title": "KR\u00d6NIKA: Ett problem i L-ekvationen \u00e4r s\u00e5dana som jag",
+          "source": "hd.se",
+          "url": "https://hd.se/kultur/ett-problem-i-l-ekvationen-ar-sadana-som-jag",
           "date": "2026-03-18"
         },
         {
-          "title": "Kommer n\u00e5gon liberal att st\u00e5 upp f\u00f6r Jan J\u00f6nsson?",
-          "source": "arbetet.se",
-          "url": "https://arbetet.se/2026/03/16/vagar-simona-mohamsson-bemota-hatet-av-jan-jonsson/",
+          "title": "\u00c5kesson after Liberals' announcement: No concessions",
+          "source": "swedenherald.com",
+          "url": "https://swedenherald.com/article/sweden-democrats-leader-akesson-after-l-announcement-no-concessions",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Jimmie \u00c5kesson hyllar Simona Mohamssons SD-sv\u00e4ngning",
+          "source": "expressen.se",
+          "url": "https://expressen.se/nyheter/politik/akesson-simona-har-vuxit-i-sdares-ogon",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Mohamsson pressas om rasismanklagelser \u2013 v\u00e4grar svara",
+          "source": "tv4.se",
+          "url": "https://tv4.se/artikel/7x0osXpz4ozNWrtO6PVwyc/kallade-akesson-rasist-nu-duckar-l-ledaren-fragan-i-tv4",
           "date": "2026-03-16"
         },
         {
-          "title": "Hoppar av och rasar: 'Ett \u00f6vergrepp'",
-          "source": "jp.se",
-          "url": "https://jp.se/2026-03-16/forre-lansbasen-ett-overgrepp-pa-manniskor",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "S\u00e5 m\u00e5nga g\u00e5nger tog Mohamsson 'ansvar'",
+          "title": "S\u00e5 m\u00e5nga g\u00e5nger tog Mohamsson \"ansvar\"",
           "source": "aftonbladet.se",
           "url": "https://aftonbladet.se/nyheter/kolumnister/a/lnwLJL/sa-manga-ganger-tog-mohamsson-ansvar",
-          "date": "2026-03-16"
+          "date": "2026-03-17"
         },
         {
           "title": "Ins\u00e4ndare. Mohamssons ordval \u00e4r riktigt obehagligt",
           "source": "dn.se",
           "url": "https://dn.se/insandare/mohamssons-ordval-ar-riktigt-obehagligt",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Luf kommer att st\u00e4lla in valkampanjen om landsm\u00f6tet s\u00e4ger ja till Sverigedemokraterna i regering",
-          "source": "dn.se",
-          "url": "https://www.dn.se/sverige/luf-kraver-ny-partiledare-vem-som-helst-forutom-simona/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Efter skandalerna: Lars Leijonborg vill tillbaka till riksdagen",
-          "source": "aftonbladet.se",
-          "url": "https://aftonbladet.se/ledare/a/lnwdMA/efter-skandalerna-lars-leijonborg-vill-tillbaka-till-riksdagen",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://thelocal.se/20260318/politics-in-sweden-hugging-akesson-close-could-be-the-kiss-of-death-for-liberals",
-        "https://aftonbladet.se/nyheter/a/K8MAm5/kristersson-om-sverigeloftet-inte-bunden"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "Jimmie \u00c5kesson declares himself prime ministerial candidate",
-      "summary": "Sweden Democrats leader Jimmie \u00c5kesson announced he is a candidate for prime minister, stating voters expect him to make a claim for power. He also sparked internal party division by suggesting Jews could be exempted from SD's proposed ban on religious circumcision while maintaining the ban for Muslims.",
-      "actors_involved": [
-        "Jimmie \u00c5kesson"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 9,
-      "sources": [
-        "svd.se",
-        "expressen.se",
-        "dn.se",
-        "tv4.se",
-        "omni.se",
-        "kvartal.se",
-        "marcusoscarsson.se",
-        "swedenherald.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Sverigedemokraternas partiledare Jimmie \u00c5kesson: Jag \u00e4r statsministerkandidat",
-          "source": "svd.se",
-          "url": "https://www.svd.se/a/JObgmR/jimmie-akesson-jag-ar-statsministerkandidat-finns-forvantningar-fran-mina-valjare",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Jimmie \u00c5kesson: Judar kan undantas fr\u00e5n omsk\u00e4relsef\u00f6rbud",
-          "source": "expressen.se",
-          "url": "https://expressen.se/nyheter/politik/akesson-judar-kan-undantas-fran-omskarelseforbud",
           "date": "2026-03-18"
         },
         {
@@ -187,79 +167,81 @@
           "date": "2026-03-18"
         },
         {
-          "title": "\u00c5kesson efter L-beskedet: Gjorde inga eftergifter",
-          "source": "tv4.se",
-          "url": "https://www.tv4.se/artikel/2XtyIx4iwO0NLopIjcX9iG/akesson-efter-l-beskedet-gjorde-inga-eftergifter",
-          "date": "2026-03-18"
-        },
-        {
           "title": "\u00c5kesson: L\u00e5t judar omsk\u00e4ras \u2013 men inte muslimer",
           "source": "omni.se",
           "url": "https://omni.se/akesson-lat-judar-omskara-men-inte-muslimer/a/16M9EM",
           "date": "2026-03-18"
         },
         {
-          "title": "Jimmie \u00c5kesson v\u00e4grar dyka upp: 'Jag kommer aldrig g\u00e5 dit'",
-          "source": "marcusoscarsson.se",
-          "url": "https://marcusoscarsson.se/jimmie-akesson-vagrar-dyka-upp-jag-kommer-aldrig-ga-dit/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Jomshof (SD) g\u00e5r emot \u00c5kesson om omsk\u00e4relse",
-          "source": "kvartal.se",
-          "url": "https://kvartal.se/nyheter/artiklar/jomshof-sd-gar-emot-akesson-om-omskarelse/cG9zdDo4MjkwNw",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Jimmie \u00c5kesson hyllar Simona Mohamssons SD-sv\u00e4ngning",
+          "title": "Jimmie \u00c5kesson: Judar kan undantas fr\u00e5n omsk\u00e4relsef\u00f6rbud",
           "source": "expressen.se",
-          "url": "https://expressen.se/nyheter/politik/akesson-simona-har-vuxit-i-sdares-ogon",
+          "url": "https://expressen.se/nyheter/politik/akesson-judar-kan-undantas-fran-omskarelseforbud",
           "date": "2026-03-18"
         },
         {
-          "title": "\u00c5kesson after Liberals' announcement: No concessions",
-          "source": "swedenherald.com",
-          "url": "https://swedenherald.com/article/sweden-democrats-leader-akesson-after-l-announcement-no-concessions",
+          "title": "Kritiken mot utvisningarna \u2013 ljuset i ett m\u00f6rkt politiskt spel",
+          "source": "aip.nu",
+          "url": "https://aip.nu/kritiken-mot-utvisningarna-ljuset-i-ett-morkt-politiskt-spel/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Sverige inleder historiskt rymdprojekt",
+          "source": "marcusoscarsson.se",
+          "url": "https://marcusoscarsson.se/just-nu-sverige-inleder-historiskt-rymdprojekt",
           "date": "2026-03-18"
+        },
+        {
+          "title": "Karin Pettersson om Liberalerna och Sverigedemokraterna",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/kultur/a/oE3eej/karin-pettersson-om-liberalerna-och-sverigedemokraterna",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Luf kommer att st\u00e4lla in valkampanjen om landsm\u00f6tet s\u00e4ger ja till Sverigedemokraterna i regering",
+          "source": "dn.se",
+          "url": "https://www.dn.se/sverige/luf-kraver-ny-partiledare-vem-som-helst-forutom-simona/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Kristersson om \"Sverigel\u00f6ftet\": Inte bunden",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452140",
+          "date": "2026-03-14"
         }
       ],
       "representative_urls": [
-        "https://www.svd.se/a/JObgmR/jimmie-akesson-jag-ar-statsministerkandidat-finns-forvantningar-fran-mina-valjare",
-        "https://expressen.se/nyheter/politik/akesson-judar-kan-undantas-fran-omskarelseforbud"
+        "https://www.svd.se/a/vrg1lp/simona-mohamsson-om-sd-jimmie-akesson-har-stada-upp-i-sitt-parti",
+        "https://aftonbladet.se/ledare/a/V6zLrV/simona-mohamssons-kram-med-akesson-vacker-revolt-i-liberalerna"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Swedish citizen executed in Iran prompts diplomatic crisis",
-      "summary": "Iran executed a Swedish citizen on Wednesday, prompting Foreign Minister Maria Malmer Stenergard to condemn the action as an 'inhumane, cruel and irreversible punishment.' Sweden moved embassy personnel from Iran to Azerbaijan due to deteriorating security situation. The execution has raised concerns about other detained Swedish citizens including Ahmadreza Djalali.",
+      "story_id": 2,
+      "headline": "Swedish citizen executed in Iran; Malmer Stenergard condemns action and moves embassy staff",
+      "summary": "Iran executed a Swedish citizen on Wednesday, prompting strong condemnation from Foreign Minister Maria Malmer Stenergard. Sweden subsequently moved embassy staff from Iran to Azerbaijan citing security concerns.",
       "actors_involved": [
         "Maria Malmer Stenergard"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 15,
       "sources": [
         "reuters.com",
-        "svd.se",
         "omni.se",
+        "svd.se",
         "edition.cnn.com",
         "aftonbladet.se",
         "tv4.se",
-        "thenationalnews.com",
         "zambianobserver.com",
-        "thenews.pk"
+        "thenationalnews.com",
+        "news55.se",
+        "thenews.pk",
+        "afr.com"
       ],
-      "date_range": "2026-03-16 to 2026-03-19",
+      "date_range": "2026-03-18 to 2026-03-21",
       "articles": [
         {
           "title": "Sweden says Iran has executed a Swedish citizen",
           "source": "reuters.com",
           "url": "https://www.reuters.com/world/europe/swedish-citizen-executed-iran-swedens-foreign-minister-says-2026-03-18/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Svensk medborgare har avr\u00e4ttats i Iran",
-          "source": "svd.se",
-          "url": "https://www.svd.se/a/3pMbQX/svensk-avrattad-i-iran",
           "date": "2026-03-18"
         },
         {
@@ -269,33 +251,51 @@
           "date": "2026-03-18"
         },
         {
+          "title": "Svensk medborgare har avr\u00e4ttats i Iran",
+          "source": "svd.se",
+          "url": "https://www.svd.se/a/3pMbQX/svensk-avrattad-i-iran",
+          "date": "2026-03-18"
+        },
+        {
           "title": "Tehran sends a message with execution of young wrestler and others, say experts",
           "source": "edition.cnn.com",
           "url": "https://edition.cnn.com/2026/03/20/middleeast/tehran-sends-clear-warning-with-execution-of-protest-linked-men-analysts-say-latam-intl",
           "date": "2026-03-20"
         },
         {
-          "title": "Svensk avr\u00e4ttad i Iran \u2013 Djalalis fru starkt kritisk mot UD",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/nyheter/a/0pV6ao/svensk-avrattad-i-iran-djalalis-fru-starkt-kritisk-mot-ud",
-          "date": "2026-03-18"
-        },
-        {
           "title": "Sverige flyttar ambassadpersonal fr\u00e5n Iran",
           "source": "aftonbladet.se",
           "url": "https://www.aftonbladet.se/nyheter/a/7p3JWw/sverige-flyttar-ambassadpersonal",
-          "date": "2026-03-16"
+          "date": "2026-03-19"
         },
         {
-          "title": "Svensk medborgare avr\u00e4ttad i Iran: 'Vederv\u00e4rdigt'",
+          "title": "Svensk avr\u00e4ttad i Iran \u2013 Djalalis fru starkt kritisk mot UD",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/0pV6ao/svensk-avrattad-i-iran-djalalis-fru-starkt-kritisk-mot-ud",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Svensk medborgare avr\u00e4ttad i Iran: \"Vederv\u00e4rdigt\"",
           "source": "aftonbladet.se",
           "url": "https://aftonbladet.se/nyheter/a/3pMbXM/svensk-medborgare-avrattad-i-iran",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Iran Executes Swedish Citizen Over Alleged Espionage for Israel",
+          "source": "zambianobserver.com",
+          "url": "https://zambianobserver.com/iran-executes-swedish-citizen-over-alleged-espionage-for-israel/",
           "date": "2026-03-18"
         },
         {
           "title": "Djalalis fru: St\u00e4ng Irans ambassad i Sverige",
           "source": "tv4.se",
           "url": "https://tv4.se/artikel/XSD7KMCdDNiNkRcTRIc8U/ilskan-mot-ud-efter-dagens-avraettning-de-goer-ingenting",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Day 19 of Middle East conflict \u2014 Trump threatens Iran's gas fields, Gulf energy sites come under attack",
+          "source": "edition.cnn.com",
+          "url": "https://edition.cnn.com/world/live-news/iran-war-us-israel-trump-03-18-26?post-id=cmmw4wtjt000k3b6p4nxg9jmr",
           "date": "2026-03-18"
         },
         {
@@ -308,70 +308,215 @@
           "title": "Svensk avr\u00e4ttad i Iran \u2013 sm\u00e5barnspappan var hemmah\u00f6rande i V\u00e4stsverige",
           "source": "svd.se",
           "url": "https://svd.se/a/gkw270/svensk-avrattad-i-iran-smabarnspappan-var-hemmahorande-i-vastsverige",
-          "date": "2026-03-18"
+          "date": "2026-03-19"
         },
         {
-          "title": "Iran Executes Swedish Citizen Over Alleged Espionage for Israel",
-          "source": "zambianobserver.com",
-          "url": "https://zambianobserver.com/iran-executes-swedish-citizen-over-alleged-espionage-for-israel/",
-          "date": "2026-03-18"
+          "title": "Sveriges utrikesminister tecknar avtal med USA",
+          "source": "news55.se",
+          "url": "https://www.news55.se/samhalle/sveriges-utrikesminister-tecknar-avtal-med-usa/",
+          "date": "2026-03-17"
         },
         {
           "title": "Iran executed Swedish citizen over spying: FM",
           "source": "thenews.pk",
           "url": "https://www.thenews.pk/print/1405377-iran-executed-swedish-citizen-over-spying-fm",
           "date": "2026-03-18"
+        },
+        {
+          "title": "Iran war LIVE updates: Trump threatens to destroy Iranian gasfield if attacks on Qatari gas continue",
+          "source": "afr.com",
+          "url": "https://www.afr.com/politics/federal/us-iran-war-live-updates-iran-executes-swedish-citizen-20260318-p5pqvx",
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://www.reuters.com/world/europe/swedish-citizen-executed-iran-swedens-foreign-minister-says-2026-03-18/",
-        "https://www.aftonbladet.se/nyheter/a/0pV6ao/svensk-avrattad-i-iran-djalalis-fru-starkt-kritisk-mot-ud"
+        "https://www.svd.se/a/3pMbQX/svensk-avrattad-i-iran"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Kristersson secures Sweden's bottleneck revenues at EU summit",
+      "summary": "Prime Minister Ulf Kristersson announced at the EU summit in Brussels that Sweden successfully secured its right to keep bottleneck electricity revenues, rejecting a proposal that would have given the EU 25% of such revenues.",
+      "actors_involved": [
+        "Kristersson"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 3,
+      "sources": [
+        "aftonbladet.se"
+      ],
+      "date_range": "2026-02-22 to 2026-02-22",
+      "articles": [
+        {
+          "title": "Flaskhalsint\u00e4kter kvar i Sverige",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452782",
+          "date": "2026-02-22"
+        },
+        {
+          "title": "\u00d6kad vinst f\u00f6r Skistar",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452104",
+          "date": "2026-02-22"
+        },
+        {
+          "title": "Arbetsplatsolycka Hallsberg",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452488",
+          "date": "2026-02-25"
+        }
+      ],
+      "representative_urls": [
+        "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452782"
       ]
     },
     {
       "story_id": 4,
-      "headline": "Riksbank holds interest rates steady amid Iran war uncertainty",
-      "summary": "Sweden's central bank kept the policy rate unchanged at 1.75% for the fourth consecutive meeting, citing uncertainty from the Iran war. The Riksbank warned that broader inflation impacts could force rate hikes, while also noting negative demand effects might require cuts. The central bank downgraded growth forecasts but expects rates to remain stable through 2026.",
+      "headline": "Sweden rejects Trump's requests for Hormuz strait assistance",
+      "summary": "Prime Minister Kristersson and Defense Minister P\u00e5l Jonson stated that Sweden will not participate in US operations to secure traffic through the Hormuz strait, despite Trump's indirect threats about NATO's future if allies don't help.",
+      "actors_involved": [
+        "Kristersson",
+        "P\u00e5l Jonson"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 12,
+      "sources": [
+        "di.se",
+        "nyheter24.se",
+        "as.com",
+        "sss.fi",
+        "lavanguardia.com",
+        "valtioneuvosto.fi",
+        "yle.fi",
+        "vozpopuli.com",
+        "antena3.com",
+        "publico.es"
+      ],
+      "date_range": "2026-03-16 to 2026-03-16",
+      "articles": [
+        {
+          "title": "Kristersson efter Trumps Natohot: Inte aktuellt att delta",
+          "source": "di.se",
+          "url": "https://www.di.se/nyheter/kristersson-efter-trumps-natohot-inte-aktuellt-att-delta/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Trumps Natohot \u2013 statsministerns svar: \"Inte aktuellt\"",
+          "source": "nyheter24.se",
+          "url": "https://nyheter24.se/nyheter/inrikes/1467834-trumps-natohot-svar-fran-kristersson-inte-aktuellt",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Ataque de Israel y EEUU contra Ir\u00e1n: Noticias del 16 de marzo",
+          "source": "as.com",
+          "url": "https://as.com/actualidad/politica/ataque-de-israel-y-eeuu-contra-iran-en-directo-aseguran-que-mojtaba-jamenei-ha-sido-trasladado-a-rusia-f202603-d/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Pohjois-Suomen puolustamiseen osallistuminen on my\u00f6s Ruotsin puolustusta",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/pohjois-suomen-puolustamiseen-osallistuminen-on-myos-ruotsin-puolustusta-sanoo-puolustusministeri-pal-jonson/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Guerra en Ir\u00e1n y los ataques de EE.UU. e Israel hoy, en directo",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/internacional/20260316/11490810/guerra-iran-ataques-eeuu-israel-oriente-medio-bombardeos-trump-en-directo.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Finlands, Sveriges och Norges f\u00f6rsvarsministrar vid \u00f6vningen Code Response 26",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/sv/-/236553176/finlands-sveriges-och-norges-forsvarsministrar-vid-ovningen-code-response-26-genomforandet-av-de-framskjutna-markstyrkorna-flf-finland-framskrider-snabbt",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "H\u00e4kk\u00e4nen om Trumps krav p\u00e5 hj\u00e4lp i Hormuzsundet: \"Vi utv\u00e4rderar i lugn och ro\"",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/7-10095138?origin=rss",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Defence Ministers of Finland, Sweden and Norway at Cold Response 26",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/en/-/236553176/defence-ministers-of-finland-sweden-and-norway-at-cold-response-26-implementation-of-flf-finland-progressing-rapidly",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "\u00daltima hora de la guerra de Ir\u00e1n, en directo: tercera semana de conflicto",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/internacional/ultima-hora-de-la-guerra-de-iran-en-directo-tercera-semana-de-conflicto.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Trump defiende una coalici\u00f3n militar para reabrir el estrecho de Ormuz",
+          "source": "antena3.com",
+          "url": "https://www.antena3.com/noticias/mundo/ultima-hora-guerra-iran-ataques-eeuu-israel-trump-augura-muy-mal-futuro-otan-aliados-ayudan-eeuu_2026031669b7bb87e89622081d39d2d5.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "As\u00ed te hemos contado en directo la \u00faltima hora de la guerra de Israel y EEUU contra Ir\u00e1n",
+          "source": "publico.es",
+          "url": "https://www.publico.es/internacional/ultima-hora-guerra-israel-eeuu-iran-directo-7_1250.html?via=publico_es",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://www.di.se/nyheter/kristersson-efter-trumps-natohot-inte-aktuellt-att-delta/",
+        "https://nyheter24.se/nyheter/inrikes/1467834-trumps-natohot-svar-fran-kristersson-inte-aktuellt"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Riksbank holds interest rates at 1.75% amid Iran war uncertainty",
+      "summary": "Sweden's central bank kept its policy rate unchanged at 1.75% for the fourth consecutive meeting, citing high uncertainty due to the Iran conflict. The bank warned it may need to raise rates if energy price impacts become more persistent.",
       "actors_involved": [
         "Riksbank"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 15,
+      "source_count": 31,
       "sources": [
-        "aftonbladet.se",
-        "svt.se",
-        "riksbank.se",
         "cnbc.com",
-        "bloomberg.com",
         "fxstreet.com",
+        "bloomberg.com",
+        "aftonbladet.se",
+        "financialpost.com",
+        "svt.se",
+        "manilatimes.net",
+        "tradingpedia.com",
+        "investing.com",
         "cornucopia.se",
+        "globalbankingandfinance.com",
+        "riksbank.se",
+        "svd.se",
+        "gp.se",
         "dn.se",
-        "tv4.se"
+        "expressen.se",
+        "ekonomifakta.se",
+        "marcusoscarsson.se",
+        "tv4.se",
+        "di.se",
+        "efn.se",
+        "placera.se",
+        "fastighetsnytt.se",
+        "privataaffarer.se",
+        "peachwire.com",
+        "sbab.se",
+        "news55.se"
       ],
-      "date_range": "2026-03-19 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
-        {
-          "title": "R\u00e4ntebesked Riksbanken \u2013 l\u00e4mnar r\u00e4ntan p\u00e5 1,75 procent",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/minekonomi/a/pBPRGV/riksbanken-ror-inte-rantan",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Riksbanken: R\u00e4ntan l\u00e4mnas of\u00f6r\u00e4ndrad",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/ekonomi/riksbanken-rantan-lamnas-oforandrad",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Monetary policy decision: Policy rate unchanged at 1.75 per cent",
-          "source": "riksbank.se",
-          "url": "https://www.riksbank.se/en-gb/press-and-published/notices-and-press-releases/press-releases/2026/policy-rate-unchanged-at-12.75-per-cent",
-          "date": "2026-03-19"
-        },
         {
           "title": "ECB, BOE, Swiss National Bank, Riksbank interest rate decisions",
           "source": "cnbc.com",
           "url": "https://www.cnbc.com/2026/03/19/ecb-boe-swiss-national-bank-riksbank-interest-rate-decisions.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "SEK: Riksbank seen on hold \u2013 Danske Bank",
+          "source": "fxstreet.com",
+          "url": "https://www.fxstreet.com/news/sek-riksbank-seen-on-hold-danske-bank-202603190659",
           "date": "2026-03-19"
         },
         {
@@ -381,39 +526,9 @@
           "date": "2026-03-18"
         },
         {
-          "title": "SEK: Riksbank seen on hold \u2013 Danske Bank",
-          "source": "fxstreet.com",
-          "url": "https://www.fxstreet.com/news/sek-riksbank-seen-on-hold-danske-bank-202603190659",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "R\u00f6d b\u00f6rsfredag i Asien, \u00e5rsst\u00f6rsta ras p\u00e5 Stockholmsb\u00f6rsen - Riksbanken s\u00e4nker sin prognos",
-          "source": "cornucopia.se",
-          "url": "https://cornucopia.se/2026/03/rod-borsfredag-i-asien-arsstorsta-ras-pa-stockholmsborsen-riksbanken-sanker-sin-prognos-peak-oil-tillbaka-i-nyheterna/",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "Riksbanken: Mycket os\u00e4kert l\u00e4ge",
-          "source": "dn.se",
-          "url": "https://www.dn.se/ekonomi/riksbanken-mycket-osakert-lage/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Penningpolitiskt beslut: Styrr\u00e4ntan of\u00f6r\u00e4ndrad p\u00e5 1,75 procent",
-          "source": "riksbank.se",
-          "url": "https://www.riksbank.se/sv/press-och-publicerat/nyheter-och-pressmeddelanden/pressmeddelanden/2026/styrrantan-oforandrad-pa-175-procent2/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Riksbanken r\u00e4ntebesked mars 2026",
-          "source": "tv4.se",
-          "url": "https://www.tv4.se/artikel/7Bq9Fd6rjEXtzSUl2jmPv9/raentan-laemnas-ofoeraendrad",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Styrr\u00e4ntan l\u00e4mnar of\u00f6r\u00e4ndrad \u2013 Riksbankens oro f\u00f6r kriget",
-          "source": "svd.se",
-          "url": "https://www.svd.se/a/V6z7Gr/styrrantan-lamnar-oforandrad-riksbankens-oro-for-kriget",
+          "title": "R\u00e4ntebesked Riksbanken \u2013 l\u00e4mnar r\u00e4ntan p\u00e5 1,75 procent",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/minekonomi/a/pBPRGV/riksbanken-ror-inte-rantan",
           "date": "2026-03-19"
         },
         {
@@ -423,9 +538,123 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Riksbankschefen: 'Mycket allvarligt l\u00e4ge'",
+          "title": "Riksbanken: R\u00e4ntan l\u00e4mnas of\u00f6r\u00e4ndrad",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/ekonomi/riksbanken-rantan-lamnas-oforandrad",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "CONDITIONS FOR RIKSBANK AUCTIONS GOVERNMENT BONDS",
+          "source": "manilatimes.net",
+          "url": "https://manilatimes.net/2026/03/20/tmt-newswire/globenewswire/conditions-for-riksbank-auctions-government-bonds/2304600",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Riksbank Expected to Hold Rates Amid Energy Shock Risk",
+          "source": "tradingpedia.com",
+          "url": "https://tradingpedia.com/2026/03/18/riksbank-expected-to-hold-rates-amid-energy-shock-risk",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Sweden's Riksbank seen looking past energy shock more than European peers",
+          "source": "investing.com",
+          "url": "https://investing.com/news/economy-news/swedens-riksbank-seen-looking-past-energy-shock-more-than-european-peers-4567698",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "SEK: Riksbank to stay patient through energy shock \u2013 TD Securities",
+          "source": "fxstreet.com",
+          "url": "https://fxstreet.com/news/sek-riksbank-to-stay-patient-through-energy-shock-td-securities-202603181401",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "R\u00f6d b\u00f6rsfredag i Asien, \u00e5rsst\u00f6rsta ras p\u00e5 Stockholmsb\u00f6rsen",
+          "source": "cornucopia.se",
+          "url": "https://cornucopia.se/2026/03/rod-borsfredag-i-asien-arsstorsta-ras-pa-stockholmsborsen-riksbanken-sanker-sin-prognos-peak-oil-tillbaka-i-nyheterna/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "CONDITIONS FOR SALE OF RIKSBANK CERTIFICATES",
+          "source": "manilatimes.net",
+          "url": "https://manilatimes.net/2026/03/17/tmt-newswire/globenewswire/conditions-for-sale-of-riksbank-certificates/2301454",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Fed, BoC Signal Hawkish Stance Amid Surging Energy Prices",
+          "source": "globalbankingandfinance.com",
+          "url": "https://www.globalbankingandfinance.com/fed-boc-strike-hawkish-tones-top-central-banks-convene-wars/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Monetary policy decision: Policy rate unchanged at 1.75 per cent",
+          "source": "riksbank.se",
+          "url": "https://www.riksbank.se/en-gb/press-and-published/notices-and-press-releases/press-releases/2026/policy-rate-unchanged-at-12.75-per-cent",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Penningpolitiskt beslut: Styrr\u00e4ntan of\u00f6r\u00e4ndrad p\u00e5 1,75 procent",
+          "source": "riksbank.se",
+          "url": "https://www.riksbank.se/sv/press-och-publicerat/nyheter-och-pressmeddelanden/pressmeddelanden/2026/styrrantan-oforandrad-pa-175-procent2/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Styrr\u00e4ntan l\u00e4mnar of\u00f6r\u00e4ndrad \u2013 Riksbankens oro f\u00f6r kriget",
+          "source": "svd.se",
+          "url": "https://www.svd.se/a/V6z7Gr/styrrantan-lamnar-oforandrad-riksbankens-oro-for-kriget",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Riksbankschefen: \"Mycket allvarligt l\u00e4ge\"",
           "source": "gp.se",
           "url": "https://www.gp.se/ekonomi/riksbanken-mycket-osakert-lage.fb03c54e-bbc6-5dc9-a1d8-76571d30e4dd",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Riksbanken: Mycket os\u00e4kert l\u00e4ge",
+          "source": "dn.se",
+          "url": "https://www.dn.se/ekonomi/riksbanken-mycket-osakert-lage/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "De stora bankerna \u00e4r bortsk\u00e4mda fat cats",
+          "source": "expressen.se",
+          "url": "https://expressen.se/ledare/de-stora-bankerna-ar-bortskamda-fat-cats",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Styrr\u00e4ntan",
+          "source": "ekonomifakta.se",
+          "url": "https://www.ekonomifakta.se/sakomraden/makroekonomi/inflation-och-styrrantor/styrrantan_1208883.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Riksbank: Rates steady as energy risks build \u2013 Nomura",
+          "source": "fxstreet.com",
+          "url": "https://fxstreet.com/news/riksbank-rates-steady-as-energy-risks-build-nomura-202603161209",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Storbank h\u00f6jer r\u00e4ntan",
+          "source": "marcusoscarsson.se",
+          "url": "https://marcusoscarsson.se/just-nu-storbank-hojer-rantan-3/",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Riksbanken r\u00e4ntebesked mars 2026",
+          "source": "tv4.se",
+          "url": "https://www.tv4.se/artikel/7Bq9Fd6rjEXtzSUl2jmPv9/raentan-laemnas-ofoeraendrad",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "CERVENKA: Kriget s\u00e4tter Riksbanken i en r\u00e4vsax",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/minekonomi/a/Arvwdr/cervenka-kriget-satter-riksbanken-i-en-ravsax",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "N\u00e4r h\u00f6js r\u00e4ntan? | F\u00f6rv\u00e4ntade h\u00f6jningar under 2026",
+          "source": "ekonomifokus.se",
+          "url": "https://ekonomifokus.se/bostad/lan/nar-hojs-rantan",
           "date": "2026-03-19"
         },
         {
@@ -435,109 +664,210 @@
           "date": "2026-03-19"
         },
         {
+          "title": "B\u00f6r man binda eller inte binda bol\u00e5net? Experten reder ut!",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/minekonomi/a/7p3o59/bor-man-bind-bolanet-mars-2026",
+          "date": "2026-03-19"
+        },
+        {
           "title": "Os\u00e4kert l\u00e4ge efter Riksbankens besked \u2013 s\u00e5 ska du t\u00e4nka nu",
           "source": "di.se",
           "url": "https://www.di.se/nyheter/osakert-lage-efter-riksbankens-besked-sa-ska-du-tanka-nu/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Riksbankens huvudscenario: Inflation upp \u2013 men begr\u00e4nsade effekter",
+          "source": "efn.se",
+          "url": "https://efn.se/riksbankens-huvudscenario-inflation-upp-men-begransade-effekter",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Nordea kapar kostnader \u2013 1 500 drabbas",
+          "source": "placera.se",
+          "url": "https://placera.se/nyheter/nordea-tar-omstruktureringskostnader--1-500-anstallda-paverkas-2026-03-17",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Riksbanken etablerar kontor p\u00e5 Sveav\u00e4gen i Stockholm",
+          "source": "fastighetsnytt.se",
+          "url": "https://fastighetsnytt.se/karnverksamhet/uthyrning/riksbanken-hyr-10-000-kvm-av-skandia-fastigheter",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Riksbanken r\u00f6r inte bor\u00e4ntor \u2013 men bor\u00e4ntor kan stiga",
+          "source": "privataaffarer.se",
+          "url": "https://www.privataaffarer.se/alla-nyheter/makroekonomi/borantor-kan-stiga-trots-att-riksbanken-ligger-still/",
           "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://www.riksbank.se/en-gb/press-and-published/notices-and-press-releases/press-releases/2026/policy-rate-unchanged-at-12.75-per-cent",
-        "https://www.svt.se/nyheter/ekonomi/riksbanken-rantan-lamnas-oforandrad"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Sweden joins US-led Pax Silica technology initiative",
-      "summary": "Foreign Minister Maria Malmer Stenergard signed Sweden's membership in the Pax Silica semiconductor and AI cooperation initiative during a visit to Texas. The agreement aims to strengthen innovation, secure critical technologies, and enhance Sweden's competitiveness in emerging technologies. Sweden becomes the 13th member nation of the US-led initiative.",
-      "actors_involved": [
-        "Maria Malmer Stenergard"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 4,
-      "sources": [
-        "news55.se",
-        "evertiq.se",
-        "semi14.se",
-        "govconexec.com"
-      ],
-      "date_range": "2026-03-17 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Sveriges utrikesminister tecknar avtal med USA",
-          "source": "news55.se",
-          "url": "https://www.news55.se/samhalle/sveriges-utrikesminister-tecknar-avtal-med-usa/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sverige ansluter sig till Pax Silica",
-          "source": "evertiq.se",
-          "url": "https://evertiq.se/news/2026-03-18-sverige-ansluter-sig-till-pax-silica",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sverige 'f\u00f6rsta EU-land' i Pax Silica",
-          "source": "semi14.se",
-          "url": "https://semi14.se/sverige-forsta-eu-land-i-pax-silica/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Sweden Joins US-Led Pax Silica Initiative to Strengthen Technology Cooperation",
-          "source": "govconexec.com",
-          "url": "https://www.govconexec.com/2026/03/sweden-pax-silica-technology-cooperation/",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://www.news55.se/samhalle/sveriges-utrikesminister-tecknar-avtal-med-usa/",
-        "https://www.govconexec.com/2026/03/sweden-pax-silica-technology-cooperation/"
+        "https://www.aftonbladet.se/minekonomi/a/pBPRGV/riksbanken-ror-inte-rantan"
       ]
     },
     {
       "story_id": 6,
-      "headline": "Swedish Armed Forces expand capabilities with satellite program and NATO exercises",
-      "summary": "Defense Minister P\u00e5l Jonson announced Sweden's military satellite program from Esrange Space Center, with FMV signing a 209 million SEK contract. Swedish forces participated in NATO Cold Response exercises and expanded recruitment by 100 personnel annually in Kalmar county. Several infrastructure and equipment projects are underway.",
+      "headline": "\u00c5kesson declares himself prime minister candidate amid circumcision policy dispute",
+      "summary": "Sweden Democrat leader Jimmie \u00c5kesson stated he is a prime minister candidate, saying voters expect him to seek power. Meanwhile, internal party tensions emerged over circumcision policy, with \u00c5kesson opening for Jewish exemptions while deputy Jomshof disagreed.",
       "actors_involved": [
-        "P\u00e5l Jonson",
+        "Jimmie \u00c5kesson"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 7,
+      "sources": [
+        "svd.se",
+        "expressen.se",
+        "marcusoscarsson.se",
+        "kvartal.se",
+        "omni.se"
+      ],
+      "date_range": "2026-03-15 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Sverigedemokraternas partiledare Jimmie \u00c5kesson: Jag \u00e4r statsministerkandidat",
+          "source": "svd.se",
+          "url": "https://www.svd.se/a/JObgmR/jimmie-akesson-jag-ar-statsministerkandidat-finns-forvantningar-fran-mina-valjare",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Jimmie \u00c5kesson: Judar kan undantas fr\u00e5n omsk\u00e4relsef\u00f6rbud",
+          "source": "expressen.se",
+          "url": "https://expressen.se/nyheter/politik/akesson-judar-kan-undantas-fran-omskarelseforbud",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Jimmie \u00c5kesson v\u00e4grar dyka upp: \"Jag kommer aldrig g\u00e5 dit\"",
+          "source": "marcusoscarsson.se",
+          "url": "https://marcusoscarsson.se/jimmie-akesson-vagrar-dyka-upp-jag-kommer-aldrig-ga-dit/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Jomshof (SD) g\u00e5r emot \u00c5kesson om omsk\u00e4relse",
+          "source": "kvartal.se",
+          "url": "https://kvartal.se/nyheter/artiklar/jomshof-sd-gar-emot-akesson-om-omskarelse/cG9zdDo4MjkwNw",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Birgitta Ohlsson: \u00c5kesson kan bli Sveriges Trump",
+          "source": "kvartal.se",
+          "url": "https://kvartal.se/nyheter/artiklar/birgitta-ohlsson-akesson-kan-bli-sveriges-trump/cG9zdDo4NDg1Mg",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Skrek \"sieg heil\" under \u00c5kessons sommartal \u2013 kvinna \u00e5talas",
+          "source": "sverigesradio.se",
+          "url": "https://sverigesradio.se/artikel/skrek-sieg-heil-under-akessons-sommartal-kvinna-atalas",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "\u00c5kesson: L\u00e5t judar omsk\u00e4ras \u2013 men inte muslimer",
+          "source": "omni.se",
+          "url": "https://omni.se/akesson-lat-judar-omskara-men-inte-muslimer/a/16M9EM",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://www.svd.se/a/JObgmR/jimmie-akesson-jag-ar-statsministerkandidat-finns-forvantningar-fran-mina-valjare",
+        "https://expressen.se/nyheter/politik/akesson-judar-kan-undantas-fran-omskarelseforbud"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Andersson's approval ratings decline as Kristersson gains ground",
+      "summary": "Social Democrat leader Magdalena Andersson's voter confidence has fallen significantly during the parliamentary term, with the gap to Prime Minister Ulf Kristersson narrowing to just four percentage points. Andersson also called for fuel tax cuts amid rising energy prices.",
+      "actors_involved": [
+        "Magdalena Andersson",
+        "Kristersson"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 7,
+      "sources": [
+        "svt.se",
+        "aftonbladet.se",
+        "svd.se",
+        "dn.se"
+      ],
+      "date_range": "2026-02-22 to 2026-03-20",
+      "articles": [
+        {
+          "title": "Analys: \"Andersson svagare som S trumfkort n\u00e4r Kristersson knappar in\"",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/inrikes/andersson-svagare-som-s-trumfkort-nar-kristersson-knappar-in",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Magdalena Andersson (S) tappar i v\u00e4ljarf\u00f6rtroende",
+          "source": "svt.se",
+          "url": "https://www.svt.se/nyheter/inrikes/magdalena-andersson-s-tappar-i-valjarfortroende",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Magdalena Andersson: S\u00e4nk priset p\u00e5 bensin och diesel h\u00e4r och nu",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/debatt/a/7p3exv/magdalena-andersson-sank-priset-pa-bensin-och-diesel-har-och-nu",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Magdalena Andersson har bevisat sig ol\u00e4mplig",
+          "source": "svd.se",
+          "url": "https://www.svd.se/a/2p5224/magdalena-andersson-har-bevisat-sig-olamplig",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Ludvig K\u00f6hler: Vi borde ha k-m\u00e4rkt Folkpartiet innan det var f\u00f6r sent",
+          "source": "dn.se",
+          "url": "https://www.dn.se/kultur/ludvig-kohler-vi-borde-ha-k-markt-folkpartiet-innan-det-var-for-sent/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Birgitta Ohlsson: \"Magdalena Andersson absolut en statsministerkandidat\"",
+          "source": "dn.se",
+          "url": "https://www.dn.se/sverige/magdalena-andersson-absolut-en-statsministerkandidat/",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "\"Ulf Kristersson och Jimmie \u00c5kesson m\u00e5ste be v\u00e5rdpersonalen om urs\u00e4kt.\"",
+          "source": "sydsvenskan.se",
+          "url": "https://sydsvenskan.se/opinion/ulf-kristersson-och-jimmie-akesson-maste-be-vardpersonalen-om-ursakt",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.svt.se/nyheter/inrikes/magdalena-andersson-s-tappar-i-valjarfortroende",
+        "https://www.svt.se/nyheter/inrikes/andersson-svagare-som-s-trumfkort-nar-kristersson-knappar-in"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Sweden establishes military satellite capabilities from Esrange",
+      "summary": "Sweden's Defense Material Administration (FMV) signed a 209 million kronor agreement with SSC Space to establish satellite launch capabilities from Esrange Space Center. The initiative aims to give Sweden independence in space and improve military space situational awareness.",
+      "actors_involved": [
         "Swedish Armed Forces"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 12,
+      "source_count": 7,
       "sources": [
         "fof.se",
-        "defence-industry.eu",
-        "publikt.se",
-        "svt.se",
-        "fmv.se",
         "nyheter24.se",
+        "fmv.se",
         "marcusoscarsson.se",
-        "mynewsdesk.com"
+        "svt.se",
+        "evertiq.se",
+        "semi14.se"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-18",
       "articles": [
         {
           "title": "F\u00f6rsvarsmakten rustar milit\u00e4rt i rymden",
           "source": "fof.se",
           "url": "https://fof.se/artikel/forsvarsmakten-rustar-militart-i-rymden",
-          "date": "2026-03-18"
+          "date": "2026-03-20"
         },
         {
-          "title": "Swedish Defence Minister visits HMS Uppland in Poland",
-          "source": "defence-industry.eu",
-          "url": "https://defence-industry.eu/swedish-defence-minister-visits-hms-uppland-in-poland/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "FMV kan \u00f6ppna nytt kontor i Ukraina",
-          "source": "publikt.se",
-          "url": "https://www.publikt.se/nyhet/fmv-kan-oppna-nytt-kontor-i-ukraina-27733",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "P\u00e5l Jonson: Svensk-finsk Natostyrka klar redan i juli",
-          "source": "sverigesradio.se",
-          "url": "https://www.sverigesradio.se/artikel/sverige-leder-natostyrkan-flf-finland-fran-juli",
-          "date": "2026-03-17"
+          "title": "Klart: F\u00f6rsvaret s\u00e4nder upp egna satelliter fr\u00e5n Esrange",
+          "source": "nyheter24.se",
+          "url": "https://nyheter24.se/nyheter/inrikes/1467939-klart-forsvaret-sander-upp-egna-satelliter-fran-esrange",
+          "date": "2026-03-16"
         },
         {
           "title": "FMV tecknar avtal om satellitupps\u00e4ndningsf\u00f6rm\u00e5ga fr\u00e5n Esrange",
@@ -546,193 +876,407 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Klart: F\u00f6rsvaret s\u00e4nder upp egna satelliter fr\u00e5n Esrange",
-          "source": "nyheter24.se",
-          "url": "https://nyheter24.se/nyheter/inrikes/1467939-klart-forsvaret-sander-upp-egna-satelliter-fran-esrange",
-          "date": "2026-03-17"
-        },
-        {
           "title": "Sverige inleder historiskt rymdprojekt",
           "source": "marcusoscarsson.se",
           "url": "https://marcusoscarsson.se/just-nu-sverige-inleder-historiskt-rymdprojekt",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "F\u00f6rsvarsmakten expanderar: 'M\u00e4nniskor vill bidra civilt'",
-          "source": "barometern.se",
-          "url": "https://www.barometern.se/oskarshamn/forsvarsmakten-expanderar-manniskor-vill-bidra-civilt/",
-          "date": "2026-03-16"
+          "date": "2026-03-18"
         },
         {
           "title": "F\u00f6rsvaret ska skicka upp egna satelliter fr\u00e5n Esrange",
           "source": "svt.se",
           "url": "https://svt.se/nyheter/lokalt/norrbotten/forsvaret-ska-skicka-upp-egna-satelliter-fran-esrange",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Sverige ansluter sig till Pax Silica",
+          "source": "evertiq.se",
+          "url": "https://evertiq.se/news/2026-03-18-sverige-ansluter-sig-till-pax-silica",
           "date": "2026-03-18"
         },
         {
-          "title": "F\u00f6rsvarsmakten t\u00e4cker \u00f6ver tidigare brand\u00f6vningsplats f\u00f6r att skydda grundvattnet",
-          "source": "mynewsdesk.com",
-          "url": "https://www.mynewsdesk.com/se/forsvarsmakten/pressreleases/foersvarsmakten-taecker-oever-tidigare-brandoevningsplats-foer-att-skydda-grundvattnet-3438111",
+          "title": "Sverige \"f\u00f6rsta EU-land\" i Pax Silica",
+          "source": "semi14.se",
+          "url": "https://semi14.se/sverige-forsta-eu-land-i-pax-silica/",
           "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://www.fmv.se/aktuellt--press/aktuella-handelser/fmv-tecknar-avtal-om-satellituppsandningsformaga-fran-esrange/",
+        "https://fof.se/artikel/forsvarsmakten-rustar-militart-i-rymden"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Finland-Sweden NATO Forward Land Forces progressing rapidly",
+      "summary": "Defense ministers from Finland, Sweden and Norway announced that implementation of the FLF Finland multinational NATO force is progressing rapidly, with the Swedish-led force expected to be operational by July 2026.",
+      "actors_involved": [
+        "P\u00e5l Jonson",
+        "Swedish Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 8,
+      "sources": [
+        "sverigesradio.se",
+        "defence-industry.eu",
+        "sss.fi",
+        "valtioneuvosto.fi",
+        "yle.fi"
+      ],
+      "date_range": "2026-03-16 to 2026-03-16",
+      "articles": [
+        {
+          "title": "P\u00e5l Jonson: Svensk-finsk Natostyrka klar redan i juli",
+          "source": "sverigesradio.se",
+          "url": "https://www.sverigesradio.se/artikel/sverige-leder-natostyrkan-flf-finland-fran-juli",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Swedish Defence Minister visits HMS Uppland in Poland",
+          "source": "defence-industry.eu",
+          "url": "https://defence-industry.eu/swedish-defence-minister-visits-hms-uppland-in-poland/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Pohjois-Suomen puolustamiseen osallistuminen on my\u00f6s Ruotsin puolustusta",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/pohjois-suomen-puolustamiseen-osallistuminen-on-myos-ruotsin-puolustusta-sanoo-puolustusministeri-pal-jonson/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Suomen ja Ruotsin puolustusministerit vierailevat Nato-harjoituksessa Rovaj\u00e4rvell\u00e4",
+          "source": "sss.fi",
+          "url": "https://www.sss.fi/2026/03/suomen-ja-ruotsin-puolustusministerit-vierailevat-nato-harjoituksessa-rovajarvella/",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Finlands, Sveriges och Norges f\u00f6rsvarsministrar vid \u00f6vningen Code Response 26",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/sv/-/236553176/finlands-sveriges-och-norges-forsvarsministrar-vid-ovningen-code-response-26-genomforandet-av-de-framskjutna-markstyrkorna-flf-finland-framskrider-snabbt",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "H\u00e4kk\u00e4nen om Trumps krav p\u00e5 hj\u00e4lp i Hormuzsundet: \"Vi utv\u00e4rderar i lugn och ro\"",
+          "source": "yle.fi",
+          "url": "https://yle.fi/a/7-10095138?origin=rss",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Defence Ministers of Finland, Sweden and Norway at Cold Response 26",
+          "source": "valtioneuvosto.fi",
+          "url": "https://valtioneuvosto.fi/en/-/236553176/defence-ministers-of-finland-sweden-and-norway-at-cold-response-26-implementation-of-flf-finland-progressing-rapidly",
+          "date": "2026-03-16"
         },
         {
           "title": "P\u00e5l Jonson: Svenskarna inte p\u00e5 Gr\u00f6nland f\u00f6r att avskr\u00e4cka",
           "source": "aftonbladet.se",
           "url": "https://www.aftonbladet.se/nyheter/a/JObdPm/pal-jonson-svenskarna-inte-pa-gronland-for-att-avskracka",
+          "date": "2026-02-25"
+        }
+      ],
+      "representative_urls": [
+        "https://www.sverigesradio.se/artikel/sverige-leder-natostyrkan-flf-finland-fran-juli",
+        "https://valtioneuvosto.fi/en/-/236553176/defence-ministers-of-finland-sweden-and-norway-at-cold-response-26-implementation-of-flf-finland-progressing-rapidly"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Sweden joins US-led Pax Silica technology initiative",
+      "summary": "Foreign Minister Maria Malmer Stenergard signed a declaration in Houston joining the US-led Pax Silica cooperation initiative on semiconductors and emerging technologies, making Sweden reportedly the first EU country to join.",
+      "actors_involved": [
+        "Maria Malmer Stenergard"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 4,
+      "sources": [
+        "news55.se",
+        "evertiq.se",
+        "semi14.se"
+      ],
+      "date_range": "2026-03-17 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Sveriges utrikesminister tecknar avtal med USA",
+          "source": "news55.se",
+          "url": "https://www.news55.se/samhalle/sveriges-utrikesminister-tecknar-avtal-med-usa/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Sverige ansluter sig till Pax Silica",
+          "source": "evertiq.se",
+          "url": "https://evertiq.se/news/2026-03-18-sverige-ansluter-sig-till-pax-silica",
           "date": "2026-03-18"
+        },
+        {
+          "title": "Sverige \"f\u00f6rsta EU-land\" i Pax Silica",
+          "source": "semi14.se",
+          "url": "https://semi14.se/sverige-forsta-eu-land-i-pax-silica/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Maria Malmer Stenergard \u00f6ppnar f\u00f6r utredning om Epstein",
+          "source": "expressen.se",
+          "url": "https://www.expressen.se/nyheter/politik/maria-malmer-stenergard-oppnar-for-utredning-om-epstein/",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://evertiq.se/news/2026-03-18-sverige-ansluter-sig-till-pax-silica",
+        "https://www.news55.se/samhalle/sveriges-utrikesminister-tecknar-avtal-med-usa/"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Kristersson takes positions on domestic policy issues including railway projects and euro referendum",
+      "summary": "Prime Minister Kristersson addressed several domestic issues this week: backing away from promises to fully build the Ostkust railway by 2035, rejecting proposals for local tourism taxes, and expressing skepticism about holding a euro referendum despite Liberal-SD agreement calling for one.",
+      "actors_involved": [
+        "Kristersson"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 8,
+      "sources": [
+        "svt.se",
+        "sverigesradio.se",
+        "efn.se",
+        "aftonbladet.se"
+      ],
+      "date_range": "2026-02-20 to 2026-03-18",
+      "articles": [
+        {
+          "title": "Statsministern om Ostkustbanan: \"Alla projekt kan inte rymmas\"",
+          "source": "svt.se",
+          "url": "https://svt.se/nyheter/lokalt/vasternorrland/statsministerns-brutna-vallofte-ingen-satsning-pa-ostkustbanan",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Turistskatt f\u00e5r tummen ner av Kristersson: \"Nae \u2013 d\u00e5lig id\u00e9\"",
+          "source": "sverigesradio.se",
+          "url": "https://www.sverigesradio.se/artikel/darfor-tror-ulf-kristersson-inte-pa-lokal-turistskatt",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Ulf Kristersson om euron: \"Tror inte p\u00e5 en folkomr\u00f6stning nu\"",
+          "source": "efn.se",
+          "url": "https://efn.se/ulf-kristersson-om-euron-tror-inte-pa-en-folkomrostning-nu",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Kristersson om L: St\u00f6dr\u00f6stande funkar inte",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1451176",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "Ulf Kristersson inte orolig f\u00f6r regeringskris: \"Absolut inte\"",
+          "source": "aftonbladet.se",
+          "url": "https://aftonbladet.se/nyheter/a/K8MAm5/kristersson-om-sverigeloftet-inte-bunden",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "En statsministers kanske viktigaste roll",
+          "source": "svd.se",
+          "url": "https://www.svd.se/a/QJM0qx/ulf-kristersson-detta-ar-statsministerns-viktigaste-roll",
+          "date": "2026-02-23"
+        },
+        {
+          "title": "Kristersson inf\u00f6r EU-toppm\u00f6tet: Orb\u00e1n g\u00f6r allt f\u00f6r att sabotera f\u00f6r Ukraina",
+          "source": "europaportalen.se",
+          "url": "http://www.europaportalen.se/2026/03/kristersson-infor-eu-toppmotet-orban-gor-allt-att-sabotera-ukraina",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Ins\u00e4ndare. J\u00e4garna Kristersson och Busch borde v\u00e4rna om naturen",
+          "source": "dn.se",
+          "url": "https://www.dn.se/insandare/jagarna-kristersson-och-busch-borde-varna-om-naturen/",
+          "date": "2026-02-22"
+        }
+      ],
+      "representative_urls": [
+        "https://svt.se/nyheter/lokalt/vasternorrland/statsministerns-brutna-vallofte-ingen-satsning-pa-ostkustbanan",
+        "https://efn.se/ulf-kristersson-om-euron-tror-inte-pa-en-folkomrostning-nu"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "F\u00f6rsvarsmakten expansion and infrastructure projects proceed amid security buildup",
+      "summary": "Sweden's Armed Forces continued expansion activities including recruitment drives, infrastructure development projects, and training exercises. Notable developments include Cold Response training problems leading to frostbite injuries and various construction projects to support military growth.",
+      "actors_involved": [
+        "Swedish Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 19,
+      "sources": [
+        "sverigesradio.se",
+        "barometern.se",
+        "fmv.se",
+        "vilarare.se",
+        "svt.se",
+        "nsd.se",
+        "transportochlogistik.se",
+        "militardebatt.com",
+        "mynewsdesk.com",
+        "aftonbladet.se",
+        "blt.se",
+        "nlt.se",
+        "sla.se",
+        "jobbland.se",
+        "helagotland.se",
+        "metal-supply.se",
+        "vk.se",
+        "sydostran.se"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Soldaternas mardr\u00f6msnatt \u2013 13 v\u00e4rnpliktiga fick k\u00f6ldskador",
+          "source": "sverigesradio.se",
+          "url": "https://www.sverigesradio.se/artikel/koldskador-vid-forsvarsmaktens-ovning-varsol-2026",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "F\u00f6rsvarsmakten expanderar: \"M\u00e4nniskor vill bidra civilt\"",
+          "source": "barometern.se",
+          "url": "https://www.barometern.se/oskarshamn/forsvarsmakten-expanderar-manniskor-vill-bidra-civilt/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Ny tung b\u00e4rgningsbil till F\u00f6rsvarsmakten",
+          "source": "fmv.se",
+          "url": "https://www.fmv.se/aktuellt--press/aktuella-handelser/ny-tung-bargningsbil-till-forsvarsmakten/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Efter domarna \u2013 Skolverket backar om meritering",
+          "source": "vilarare.se",
+          "url": "https://vilarare.se/nyheter/lararutbildning/efter-domarna-skolverket-backar-om-meritering",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Unika milit\u00e4r\u00f6vningen: 100 dagar ensamma i arktisk milj\u00f6",
+          "source": "svt.se",
+          "url": "https://svt.se/nyheter/utrikes/unika-militarovningen-100-dagar-ensamma-i-arktisk-miljo",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "D\u00e4rf\u00f6r kan milit\u00e4rfordon synas i V\u00e4sterbotten",
+          "source": "svt.se",
+          "url": "https://svt.se/nyheter/lokalt/vasterbotten/darfor-kan-militarfordon-synas-i-vasterbotten",
+          "date": "2026-03-17"
         },
         {
           "title": "F\u00f6rsvarets j\u00e4ttesatsning i g\u00e5ng \u2013 se skisserna h\u00e4r!",
           "source": "sydostran.se",
           "url": "https://sydostran.se/karlskrona/nu-ar-forsvarsmaktens-jattesatsning-pa-rosenholm-i-gang",
           "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://fof.se/artikel/forsvarsmakten-rustar-militart-i-rymden",
-        "https://www.fmv.se/aktuellt--press/aktuella-handelser/fmv-tecknar-avtal-om-satellituppsandningsformaga-fran-esrange/"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "Magdalena Andersson's approval ratings decline as Kristersson gains ground",
-      "summary": "Social Democratic leader Magdalena Andersson's voter confidence has fallen significantly since the 2022 election, with the gap narrowing to just four percentage points ahead of Moderate leader Ulf Kristersson. SVT analysis suggests Andersson is weakening as the party's main electoral asset, complicating the Social Democrats' strategy for the upcoming election.",
-      "actors_involved": [
-        "Magdalena Andersson",
-        "Kristersson"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 4,
-      "sources": [
-        "svt.se",
-        "dn.se",
-        "aftonbladet.se"
-      ],
-      "date_range": "2026-03-17 to 2026-03-18",
-      "articles": [
-        {
-          "title": "Analys: 'Andersson svagare som S trumfkort n\u00e4r Kristersson knappar in'",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/inrikes/andersson-svagare-som-s-trumfkort-nar-kristersson-knappar-in",
-          "date": "2026-03-18"
         },
         {
-          "title": "Magdalena Andersson (S) tappar i v\u00e4ljarf\u00f6rtroende",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/inrikes/magdalena-andersson-s-tappar-i-valjarfortroende",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Birgitta Ohlsson: 'Magdalena Andersson absolut en statsministerkandidat'",
-          "source": "dn.se",
-          "url": "https://www.dn.se/sverige/magdalena-andersson-absolut-en-statsministerkandidat/",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Analys: 'Mohamssons (L) man\u00f6ver ger Andersson (S) huvudv\u00e4rk'",
-          "source": "svt.se",
-          "url": "https://www.svt.se/nyheter/inrikes/mohamssons-l-manover-ger-andersson-s-huvudvark",
+          "title": "F\u00f6rsvarsmakten varnar f\u00f6r mycket milit\u00e4rtrafik i slutet av veckan",
+          "source": "nsd.se",
+          "url": "https://www.nsd.se/nyheter/norrbotten/artikel/forsvarsmakten-varnar-for-trafik-i-norrbotten/r4pme90r",
           "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://www.svt.se/nyheter/inrikes/andersson-svagare-som-s-trumfkort-nar-kristersson-knappar-in",
-        "https://www.svt.se/nyheter/inrikes/magdalena-andersson-s-tappar-i-valjarfortroende"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "Kristersson addresses EU energy revenues and domestic policy issues",
-      "summary": "Prime Minister Ulf Kristersson announced at the EU summit in Brussels that Sweden will retain control over its bottleneck revenues, with no requirement to share 25% with Europe. He also rejected proposals for tourist taxes and discussed infrastructure projects including the East Coast Railway. The PM dismissed Trump's NATO demands regarding the Strait of Hormuz.",
-      "actors_involved": [
-        "Kristersson"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 8,
-      "sources": [
-        "aftonbladet.se",
-        "svt.se",
-        "di.se",
-        "nyheter24.se",
-        "sverigesradio.se",
-        "europaportalen.se",
-        "efn.se"
-      ],
-      "date_range": "2026-02-28 to 2026-03-18",
-      "articles": [
+        },
         {
-          "title": "Kristersson: Flaskhalsint\u00e4kter kvar i Sverige",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452782",
+          "title": "Trafikverket deltog i totalf\u00f6rsvars\u00f6vningen Birger Jarl",
+          "source": "transportochlogistik.se",
+          "url": "https://www.transportochlogistik.se/20260318/22715/birger-jarl-testade-totalforsvar-pa-malaren",
           "date": "2026-03-18"
         },
         {
-          "title": "Kristersson om L: St\u00f6dr\u00f6stande funkar inte",
-          "source": "aftonbladet.se",
-          "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1451176",
-          "date": "2026-02-28"
+          "title": "Ge makten till krigsf\u00f6rbanden",
+          "source": "militardebatt.com",
+          "url": "https://militardebatt.com/2026/03/21/ge-makten-till-krigsforbanden",
+          "date": "2026-03-21"
         },
         {
-          "title": "Statsministern om Ostkustbanan: 'Alla projekt kan inte rymmas'",
+          "title": "F\u00f6rsvarsmakten t\u00e4cker \u00f6ver tidigare brand\u00f6vningsplats f\u00f6r att skydda grundvattnet",
+          "source": "mynewsdesk.com",
+          "url": "https://www.mynewsdesk.com/se/forsvarsmakten/pressreleases/foersvarsmakten-taecker-oever-tidigare-brandoevningsplats-foer-att-skydda-grundvattnet-3438111",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Vill t\u00e4cka \u00f6ver PFAS-f\u00f6rorenad \u00f6vningsplats",
+          "source": "aftonbladet.se",
+          "url": "https://www.aftonbladet.se/nyheter/a/n1y2EQ/vill-tacka-over-pfas-fororenad-ovningsplats",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Marinen v\u00e4xer \u2013 bygger nytt i stort skogsomr\u00e5de",
+          "source": "blt.se",
+          "url": "https://blt.se/karlskrona/marinen-vaxer-exploaterar-stort-skogsomrade",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Bygge f\u00f6rbereds p\u00e5 tomt intill flygplatsen \u2013 ska bli f\u00f6rr\u00e5d \u00e5t F\u00f6rsvarsmakten",
+          "source": "nlt.se",
+          "url": "https://www.nlt.se/2026/03/21/bygge-forbereds-pa-tomt-intill-hovby-flygplats-ska-bli-forrad-at-forsvarsmakten-1a130",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "\u00c5terupptas \u2013 \u00f6ver 20 \u00e5r sedan: \"Hellre h\u00e4r \u00e4n hemma i soffan\"",
+          "source": "sla.se",
+          "url": "https://sla.se/2026/03/18/plutonbefalsutbildning-ateruppstar-i-karlsborg-15-manader-lang-for-att-mota-efterfragan-pa-plutonb-a1975",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "N\u00e4tverksspecialist vid Must - F\u00f6rsvarsmakten",
+          "source": "jobbland.se",
+          "url": "https://jobbland.se/jobb/natverksspecialist-vid-must-sasrb-20100980",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Finns egentligen inget f\u00f6rsvar f\u00f6r att f\u00f6rsvaret stoppar skolan",
+          "source": "helagotland.se",
+          "url": "https://www.helagotland.se/ledare/artikel/finns-egentligen-inget-forsvar-for-forsvarets-skol-stopp-/r5103pnj",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "F\u00f6rsvarsboomen pressar industrin: \"Hela v\u00e4rdekedjan \u00e4r anstr\u00e4ngd\"",
+          "source": "metal-supply.se",
+          "url": "https://metal-supply.se/article/view/1218108/forsvarsboomen_pressar_industrin_hela_vardekedjan_ar_anstrangd",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Totalf\u00f6rsvaret \u00f6vade i Farsta: \"J\u00e4tteviktigt \u2013 m\u00e5ste f\u00f6rbereda oss\"",
           "source": "svt.se",
-          "url": "https://svt.se/nyheter/lokalt/vasternorrland/statsministerns-brutna-vallofte-ingen-satsning-pa-ostkustbanan",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Kristersson efter Trumps Natohot: Inte aktuellt att delta",
-          "source": "di.se",
-          "url": "https://www.di.se/nyheter/kristersson-efter-trumps-natohot-inte-aktuellt-att-delta/",
-          "date": "2026-02-28"
-        },
-        {
-          "title": "Turistskatt f\u00e5r tummen ner av Kristersson: 'Nae \u2013 d\u00e5lig id\u00e9'",
-          "source": "sverigesradio.se",
-          "url": "https://www.sverigesradio.se/artikel/darfor-tror-ulf-kristersson-inte-pa-lokal-turistskatt",
+          "url": "https://svt.se/nyheter/lokalt/stockholm/totalforsvaret-ovade-i-farsta-jatteviktigt-maste-forbereda-oss",
           "date": "2026-03-18"
         },
         {
-          "title": "Kristersson inf\u00f6r EU-toppm\u00f6tet: Orb\u00e1n g\u00f6r allt f\u00f6r att sabotera f\u00f6r Ukraina",
-          "source": "europaportalen.se",
-          "url": "http://www.europaportalen.se/2026/03/kristersson-infor-eu-toppmotet-orban-gor-allt-att-sabotera-ukraina",
+          "title": "D\u00e4rf\u00f6r kan milit\u00e4ra fordon synas p\u00e5 v\u00e4garna",
+          "source": "vk.se",
+          "url": "https://vk.se/2026-03-18/militara-fordon-kan-synas-i-vasterbotten-30e55",
           "date": "2026-03-18"
-        },
-        {
-          "title": "Ulf Kristersson om euron: 'Tror inte p\u00e5 en folkomr\u00f6stning nu'",
-          "source": "efn.se",
-          "url": "https://efn.se/ulf-kristersson-om-euron-tror-inte-pa-en-folkomrostning-nu",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Trumps Natohot \u2013 statsministerns svar: 'Inte aktuellt'",
-          "source": "nyheter24.se",
-          "url": "https://nyheter24.se/nyheter/inrikes/1467834-trumps-natohot-svar-fran-kristersson-inte-aktuellt",
-          "date": "2026-02-28"
         }
       ],
       "representative_urls": [
-        "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1452782",
-        "http://www.europaportalen.se/2026/03/kristersson-infor-eu-toppmotet-orban-gor-allt-att-sabotera-ukraina"
+        "https://www.barometern.se/oskarshamn/forsvarsmakten-expanderar-manniskor-vill-bidra-civilt/",
+        "https://www.fmv.se/aktuellt--press/aktuella-handelser/ny-tung-bargningsbil-till-forsvarsmakten/"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Foreign Minister opens potential investigation into Epstein connections",
-      "source": "expressen.se",
-      "url": "https://www.expressen.se/nyheter/politik/maria-malmer-stenergard-oppnar-for-utredning-om-epstein/",
+      "headline": "FMV kan \u00f6ppna nytt kontor i Ukraina",
+      "source": "publikt.se",
+      "url": "https://www.publikt.se/nyhet/fmv-kan-oppna-nytt-kontor-i-ukraina-27733",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "S\u00e5 svarar ministern om stramare migrationspolitiken",
+      "source": "unt.se",
+      "url": "https://unt.se/nyheter/uppsala/artikel/forssell-migrationsforslag-utreds-vidare/r90gw9or",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Moderate Party faces internal splits in Eskilstuna",
+      "headline": "Efter skandalerna: Lars Leijonborg vill tillbaka till riksdagen",
+      "source": "aftonbladet.se",
+      "url": "https://aftonbladet.se/ledare/a/lnwdMA/efter-skandalerna-lars-leijonborg-vill-tillbaka-till-riksdagen",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Puustinen och Gredfors l\u00e4mnar Moderaterna i Eskilstuna \u2013 startar nytt parti",
       "source": "svt.se",
       "url": "https://svt.se/nyheter/lokalt/sormland/jari-puustinen-lamnar-moderaterna",
       "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Cold Response NATO exercise concludes with military vehicle movements",
-      "source": "svt.se",
-      "url": "https://svt.se/nyheter/lokalt/vasterbotten/darfor-kan-militarfordon-synas-i-vasterbotten",
-      "signal_category_hint": "security_defense"
     }
   ]
 }

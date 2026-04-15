@@ -3,393 +3,810 @@
   "code": "ro",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 236,
-  "stories_identified": 8,
+  "search_results_total": 192,
+  "stories_identified": 6,
   "off_topic_filtered": 78,
-  "noise_summary": "78 off-topic results filtered: 23 sports stories (football, basketball, handball), 18 international politics not involving Romania (Hungary elections, Brazil, etc.), 12 entertainment/celebrity news, 10 travel/lifestyle articles, 8 technology/business stories, 4 historical articles, 3 weather/environment stories",
+  "noise_summary": "78 off-topic results filtered: 32 sports coverage (IPL cricket teams, football matches, March Madness basketball), 19 international politics unrelated to Romania (Brazilian elections, Hungarian politics, French municipal elections, various other countries), 12 technology/business (general corporate news, software, real estate), 8 entertainment/lifestyle (movies, celebrities), 7 miscellaneous (academic topics, general interest).",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Coalition government crisis over 2026 budget passage threatens stability",
-      "summary": "PSD threatens to leave government over budget amendment disputes, creating parliamentary voting controversies and coalition tensions with PNL. Social Democrats demand passage of social spending packages while liberals warn against budget modifications outside agreed framework.",
+      "headline": "Government coalition crisis deepens over 2026 budget amendments and social spending",
+      "summary": "Major tensions erupted between PSD and PNL over the 2026 budget, with PSD pushing for a 'solidarity package' of social benefits while PNL warns of political crisis. AUR emerged as kingmaker, initially supporting then abandoning PSD amendments. Both PSD and PNL threaten to leave government.",
       "actors_involved": [
-        "Marcel Ciolacu",
+        "Ciolacu",
         "PSD",
         "PNL"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 47,
       "sources": [
+        "cotidianul.ro",
         "g4media.ro",
         "stiripesurse.ro",
+        "romaniatv.net",
         "digi24.ro",
         "hotnews.ro",
+        "economedia.ro",
         "mediafax.ro",
         "adevarul.ro",
-        "cotidianul.ro",
-        "romaniatv.net",
-        "antena3.ro",
-        "observatornews.ro",
-        "profit.ro",
-        "economedia.ro",
-        "newsweek.ro",
-        "cursdeguvernare.ro",
+        "dcnews.ro",
         "jurnalul.ro",
         "money.ro",
+        "stirileprotv.ro",
+        "radioromania.ro",
+        "tvrinfo.ro",
+        "cursdeguvernare.ro",
+        "radiomures.ro",
+        "newsweek.ro",
         "psnews.ro",
+        "dw.com",
         "aktual24.ro"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
-        {
-          "title": "PNL, avertizeaz\u0103 PSD: Rom\u00e2nia, \u00eempins\u0103 spre o nou\u0103 criz\u0103 politic\u0103",
-          "source": "g4media.ro",
-          "url": "https://g4media.ro/pnl-avertisment-pentru-psd-dupa-criza-bugetara-creata-in-anii-trecuti-romania-risca-sa-fie-impinsa-spre-o-noua-criza-politica.html",
-          "date": "2026-02-15"
-        },
         {
           "title": "ANALIZ\u0102 Totul sau nimic pentru Bolojan. Ie\u0219irea de la guvernare, pariul riscant al PNL \u00een r\u0103zboiul cu PSD",
           "source": "cotidianul.ro",
           "url": "https://cotidianul.ro/analiza-totul-sau-nimic-pentru-bolojan-iesirea-de-la-guvernare-pariul-riscant-al-pnl-in-razboiul-cu-psd",
-          "date": "2026-03-19"
+          "date": "2026-02-25"
+        },
+        {
+          "title": "PNL, avertizeaz\u0103 PSD: Rom\u00e2nia, \u00eempins\u0103 spre o nou\u0103 criz\u0103 politic\u0103",
+          "source": "g4media.ro",
+          "url": "https://g4media.ro/pnl-avertisment-pentru-psd-dupa-criza-bugetara-creata-in-anii-trecuti-romania-risca-sa-fie-impinsa-spre-o-noua-criza-politica.html",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "SURSE PNL se \u00eencoloneaz\u0103 \u00een spatele lui Ilie Bolojan: \u00cencepe marele meci \u00eempotriva PSD-ului \u00een Parlament",
+          "source": "stiripesurse.ro",
+          "url": "https://stiripesurse.ro/surse-pnl-se-incoloneaza-in-spatele-lui-ilie-bolojan-incepe-marele-meci-impotriva-psd-ului-in-parlament_3868397",
+          "date": "2026-02-20"
         },
         {
           "title": "CUTIA NEAGR\u0102 EXCLUSIV. Nicu\u0219or Dan \u0219i-ar fi dat acordul tacit pentru debarcarea lui Ilie Bolojan",
           "source": "romaniatv.net",
           "url": "https://romaniatv.net/cutia-neagra-exclusiv-nicusor-dan-si-ar-fi-dat-acordul-tacit-pentru-debarcarea-lui-ilie-bolojan-intelegerea-secreta-dintre-psd-si-pnl-pentru-destituirea-premierului_9472174.html",
-          "date": "2026-03-19"
+          "date": "2026-03-01"
         },
         {
-          "title": "Continu\u0103 circul pe bani publici din Parlament. PSD amenin\u021b\u0103 c\u0103 nu voteaz\u0103 bugetul Finan\u021belor",
+          "title": "Ce poate determina PNL s\u0103 ias\u0103 de la guvernare. Un deputat liberal spune care este scenariul \u201einacceptabil\" pentru Bolojan",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/ce-poate-determina-pnl-sa-iasa-de-la-guvernare-un-deputat-liberal-spune-care-este-scenariul-inacceptabil-pentru-bolojan-3680681",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Dup\u0103 PSD, \u0219i PNL analizeaz\u0103 ie\u0219irea de la guvernare. C\u00e2nd vor liberalii s\u0103 ia o decizie",
+          "source": "hotnews.ro",
+          "url": "https://hotnews.ro/dupa-psd-si-pnl-ameninta-ca-iese-de-la-guvernare-cand-vor-liberalii-sa-ia-o-decizie-2195294",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "SURSE: PSD a amenin\u021b\u0103 PNL c\u0103 respinge \u00een Parlament bugetul Ministerului Finan\u021belor dac\u0103 nu reia votul la amendamentul cu ajutoare pentru pensionari",
+          "source": "economedia.ro",
+          "url": "https://economedia.ro/surse-psd-a-ameninta-pnl-ca-respinge-in-parlament-bugetul-ministerului-finantelor-daca-nu-reia-votul-la-amendamentul-cu-ajutoare-pentru-pensionari.html",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "Amendament PSD trecut cu ajutorul AUR. Ajutoare unice pentru pensionarii militari cu venituri sub 3.000 de lei, aprobate \u00een comisii",
+          "source": "mediafax.ro",
+          "url": "https://mediafax.ro/politic/amendament-psd-trecut-cu-ajutorul-aur-ajutoare-unice-pentru-pensionarii-militari-cu-venituri-sub-3-000-de-lei-aprobate-in-comisii-23704637",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "Mesaj dur din PNL: \u201eLiderul arogant al PSD nu va mai fi premier la rotativ\u0103",
+          "source": "",
+          "url": "https://adevarul.ro/politica/mesaj-dur-din-pnl-liderul-arogant-al-psd-nu-va-2516405.html",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Marii c\u00e2\u0219tig\u0103tori ai \u00eencr\u00e2ncen\u0103rii PSD - PNL pe buget",
+          "source": "dcnews.ro",
+          "url": "https://www.dcnews.ro/marii-castigatori-ai-incrancenarii-psd-pnl-pe-buget_1041057.html",
+          "date": "2026-02-20"
+        },
+        {
+          "title": "Scandal \u00een coali\u021bie: PNL acuz\u0103 PSD c\u0103 se apropie de AUR, SOS \u0219i POT",
+          "source": "jurnalul.ro",
+          "url": "https://jurnalul.ro/stiri/politica/scandal-coalitie-pnl-acuzatie-psd-apropiere-de-aur-sos-pot-1027025.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Sighiart\u0103u (PNL): PSD a acceptat \u00een final s\u0103 taie din bugetul Ministerului Justi\u0163iei, pe care tot PSD \u00eel conduce, pentru a muta banii c\u0103tre Ministerul Muncii condus tot de PSD",
+          "source": "money.ro",
+          "url": "https://money.ro/sighiartau-pnl-psd-a-acceptat-in-final-sa-taie-din-bugetul-ministerului-justitiei-pe-care-tot-psd-il-conduce-pentru-a-muta-banii-catre-ministerul-muncii-condus-tot-de-psd-apare-intrebarea-fireas",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "'Fisur\u0103' \u00een Parlament! PSD, PNL, UDMR au f\u0103cut front comun - USR, acuzat c\u0103 se comport\u0103 ca \u0219i cum ar fi \u00een afara Coali\u021biei",
+          "source": "stiripesurse.ro",
+          "url": "https://www.stiripesurse.ro/fisura-psd-pnl-udmr-usr_3868799",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Continu\u0103 circul pe bani publici din Parlament. PSD amenin\u021b\u0103 c\u0103 nu voteaz\u0103 bugetul Finan\u021belor. \u0218edin\u021ba a fost suspendat\u0103",
           "source": "stirileprotv.ro",
           "url": "https://stirileprotv.ro/stiri/politic/scandal-in-parlament-psd-blocheaza-votul-pe-buget-dupa-ce-pachetul-cu-ajutoare-pentru-pensionari-a-picat.html",
-          "date": "2026-03-18"
+          "date": "2026-02-18"
         },
         {
-          "title": "Olgu\u021ba Vasilescu ceart\u0103 pensionarii pentru c\u0103 nu au votat cu PSD",
+          "title": "Tensiuni \u00een coali\u021bie pe tema bugetului: PSD anun\u021b\u0103 amendamente pentru \u201ePachetul de Solidaritate",
+          "source": "",
+          "url": "https://radioromania.ro/Actualitate/tensiuni-in-coalitie-pe-tema-bugetului-psd-anunta-amendamente-pentru-pachetul-de-solidaritate-iar-pnl-avertizeaza-asupra-riscului-unei-crize-politice-id161079.html",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "Olgu\u021ba Vasilescu ceart\u0103 pensionarii pentru c\u0103 nu au votat cu PSD: \u201eVezi ce votezi c\u0103 poate \u021bi se taie pensia\"",
           "source": "digi24.ro",
           "url": "https://www.digi24.ro/stiri/actualitate/politica/olguta-vasilescu-cearta-pensionarii-pentru-ca-nu-au-votat-cu-psd-vezi-ce-votezi-ca-poate-ti-se-taie-pensia-3684419",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://g4media.ro/pnl-avertisment-pentru-psd-dupa-criza-bugetara-creata-in-anii-trecuti-romania-risca-sa-fie-impinsa-spre-o-noua-criza-politica.html",
-        "https://cotidianul.ro/analiza-totul-sau-nimic-pentru-bolojan-iesirea-de-la-guvernare-pariul-riscant-al-pnl-in-razboiul-cu-psd"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "AUR maintains polling lead at 35% but shows decline from previous surveys",
-      "summary": "Avangarde poll shows AUR leading voter intentions at 35% for parliamentary elections, but declining from 38-41% in previous surveys. PSD follows at 22%, while PNL at 14% and USR at 11%. Government approval ratings remain low.",
-      "actors_involved": [
-        "AUR",
-        "George Simion",
-        "PSD",
-        "PNL"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 12,
-      "sources": [
-        "hotnews.ro",
-        "digi24.ro",
-        "antena3.ro",
-        "ziare.com",
-        "turdanews.net",
-        "tvrinfo.ro"
-      ],
-      "date_range": "2026-03-17 to 2026-03-19",
-      "articles": [
+          "date": "2026-02-25"
+        },
         {
-          "title": "Sondaj Avangarde: AUR e pe primul loc, dar \u00een sc\u0103dere fa\u021b\u0103 de precedentele sondaje",
-          "source": "hotnews.ro",
-          "url": "https://hotnews.ro/sondaj-avangarde-aur-e-pe-primul-loc-dar-in-scadere-fata-de-precedentele-sondaje-cat-au-partidele-care-se-afla-acum-la-guvernare-2199737",
+          "title": "PNL a avertizat PSD s\u0103 nu \u00eencalce protocolul de guvernare: Nicio ini\u021biativ\u0103 sau vot care presupune cre\u0219teri de cheltuieli bugetare nu poate avea loc f\u0103r\u0103 acordul prealabil al conducerii Coali\u021biei",
+          "source": "tvrinfo.ro",
+          "url": "https://tvrinfo.ro/pnl-a-avertizat-psd-sa-nu-incalce-protocolul-de-guvernare-nicio-initiativa-sau-vot-care-presupune-cresteri-de-cheltuieli-bugetare-nu-poate-avea-loc-fara-acordul-prealabil-al-conducerii-coalitiei/",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "PSD, vot al\u0103turi de AUR, \u00een Parlament, pentru pachetul social. Reapare \u00een discu\u021bie ruperea Coali\u021biei \u2013 \u0218edin\u021be la PNL \u0219i PSD privind soarta Guvernului Bolojan, la final de s\u0103pt\u0103m\u00e2n\u0103",
+          "source": "cursdeguvernare.ro",
+          "url": "https://cursdeguvernare.ro/psd-vot-aur-parlament-amendamente-buget-iesire-guvernare-amenintari.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Filmul scandalului \u201ePrezent, nu votez\" din Parlament: '23 e mai mic dec\u00e2t 26' VS '23 e mai mare dec\u00e2t 19'. Miliardul pentru s\u0103raci a fost RESPINS \u00een comisii. PSD a p\u0103r\u0103sit \u0219edin\u021ba",
+          "source": "stiripesurse.ro",
+          "url": "https://stiripesurse.ro/buget-comisii-psd-pnl-regulament-amendament-scandal_3869171",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "\u201eR\u0103sturn\u0103m democra\u021bia!",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/rasturnam-democratia-haos-la-votul-ajutoarelor-pentru-pensionari-masura-a-fost-respinsa-desi-initial-trecuse-psd-a-parasit-sala-3682523",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Conducerea PSD se reune\u0219te \u00eentr-o \u0219edin\u021b\u0103 special\u0103 a Consiliului Politic Na\u021bional",
+          "source": "radiomures.ro",
+          "url": "https://radiomures.ro/stiri/conducerea-psd-se-reuneste-intr-o-sedinta-speciala-a-consiliului-politic-national.html",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Bugetul ad\u00e2nce\u0219te tensiunile din Coali\u021bie. PSD insist\u0103 cu \u201epachetul de solidaritate",
+          "source": "",
+          "url": "https://romania.europalibera.org/amp/bugetul-adanceste-tensiunile-din-coalitie-psd-insista-pe-pachetul-de-solidaritate-pnl-critica-amendamentele/33708827.html",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "PNL solicit\u0103 public PSD s\u0103 renun\u021be la amenin\u021barea de a bloca votul pe legea bugetului pe 2026",
+          "source": "g4media.ro",
+          "url": "https://g4media.ro/pnl-solicita-public-psd-sa-renunte-la-amenintarea-de-a-bloca-votul-pe-legea-bugetului-pe-2026.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Deputat USR, atac dur la adresa PSD: Bugetul Rom\u00e2niei nu e blocat din gre\u0219eal\u0103. E blocat de PSD",
+          "source": "mediafax.ro",
+          "url": "https://mediafax.ro/politic/deputat-usr-atac-dur-la-adresa-psd-bugetul-romaniei-nu-e-blocat-din-greseala-e-blocat-de-psd-23706009",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Sorin Grindeanu: \u201ePSD merge p\u00e2n\u0103 la cap\u0103t. Nu ced\u0103m \u0219antajului",
+          "source": "",
+          "url": "https://hotnews.ro/sorin-grindeanu-psd-merge-pana-la-capat-nu-cedam-santajului-blocarea-bugetului-nu-este-normala-sustine-abrudean-pnl-2197434",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "Critic cu ALP: Cum se joac\u0103 mofturosul PSD de-a rebelul cu Bolojan \u0219i de-a virgina c\u00e2nd se h\u00e2rjone\u0219te cu AUR",
+          "source": "andreilucapopescu.substack.com",
+          "url": "https://andreilucapopescu.substack.com/p/psd-mofturos-negocieri-aur-guvern",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Tensiuni \u00een Parlament: PSD, PNL \u0219i UDMR voteaz\u0103 \u00eempreun\u0103, USR acuzat c\u0103 se comport\u0103 ca \u00een opozi\u021bie",
+          "source": "psnews.ro",
+          "url": "https://psnews.ro/fisura-in-parlament-psd-pnl-si-udmr-fac-front-comun-iar-usr-este-criticat-in-coalitie/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Analiz\u0103: Punctul \u00een care s-ar putea \u00eent\u00e2lni PSD cu AUR",
+          "source": "dw.com",
+          "url": "https://dw.com/ro/analiz%C4%83-punctul-%C3%AEn-care-s-ar-putea-%C3%AEnt%C3%A2lni-psd-cu-aur/a-76373379",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "PNL a aflat ce pune la cale PSD \u00een Parlament: \"Rom\u00e2nia nu \u00ee\u015fi mai permite jocuri politice f\u0103cute pe banii publici\"",
+          "source": "aktual24.ro",
+          "url": "https://www.aktual24.ro/pnl-a-aflat-ce-pune-la-cale-psd-in-parlament-romania-nu-isi-mai-permite-jocuri-politice-facute-pe-banii-publici/",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "4 zile de foc pentru pensionari. Strategia in 2 pa\u0219i prin care PSD vrea s\u0103 creasc\u0103 pensiile. Pleac\u0103 Bolojan?",
+          "source": "newsweek.ro",
+          "url": "https://newsweek.ro/social/psd-vrea-sa-creasca-pensie-pleaca-bolojan-4-zile-de-foc-pentru-pensionari",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Lia Olgu\u021ba Vasilescu explic\u0103 e\u0219ecul PSD \u00een impunerea de ajutoare sociale: \"Cu 25 la sut\u0103 PSD \u00een parlament, at\u00e2t s-a putut! Doar 16 la sut\u0103 dintre pensionari au votat PSD\"",
+          "source": "g4media.ro",
+          "url": "https://www.g4media.ro/lia-olguta-vasilescu-explica-esecul-psd-in-impunerea-de-ajutoare-sociale-cu-25-la-suta-psd-in-parlament-atat-s-a-putut-doar-16-la-suta-dintre-pensionari-au-votat-psd.html",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "PNL invoc\u0103 acordul Coali\u021biei \u0219i amenin\u021b\u0103 PSD s\u0103 nu modifice bugetul \u201eprin combina\u021bii\" \u00een Parlament: \u201eVa genera o criz\u0103 politic\u0103\"",
+          "source": "antena3.ro",
+          "url": "https://www.antena3.ro/politica/pnl-invoca-acordul-coalitiei-si-ameninta-psd-sa-nu-modifice-bugetul-prin-combinatii-in-parlament-va-genera-o-criza-politica-780746.html",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Schimb dur de replici \u00een Parlament: PNL acuz\u0103 PSD c\u0103 blocheaz\u0103 totul din motive politice",
+          "source": "newsweek.ro",
+          "url": "https://newsweek.ro/politica/schimb-dur-de-replici-in-parlament-pnl-acuza-psd-ca-blocheaza-totul-din-motive-politice",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "R\u0103zboi \u00een Coali\u021bie. USR \u0219i PNL nu vor sus\u021bine amendamentele PSD la buget. Ce spune Grindeanu despre o interven\u021bie a pre\u0219edintelui",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/razboi-deschis-in-coalitie-inaintea-votarii-bugetului-un-lider-pnl-spune-ca-psd-oficializeaza-astazi-colaborarea-cu-aur-sos-si-pot-3678191",
+          "date": "2026-02-15"
+        },
+        {
+          "title": "PSD a depus amendamentele la proiectul bugetului de stat pe 2026. Printre ele, PSD cere eliminarea CASS pentru unele categorii",
+          "source": "mediafax.ro",
+          "url": "https://mediafax.ro/politic/psd-a-depus-amendamentele-la-proiectul-bugetului-de-stat-pe-2026-printre-ele-psd-cere-eliminarea-cass-pentru-unele-categorii-23703946",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Fostul lider liberal George Laz\u0103r a fost condamnat. Dosarul scoate la lumin\u0103 \u201enegocierile nescrise\" dintre PNL \u0219i PSD pentru func\u021bii",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/fost-lider-liberal-condamnat-la-un-an-de-inchisoare-dosarul-scoate-la-lumina-negocierile-nescrise-dintre-pnl-si-psd-pentru-functii-3687251",
           "date": "2026-03-19"
+        },
+        {
+          "title": "Moment st\u00e2njenitor \u00een Parlament: deputat PNL surprins rostind o expresie vulgar\u0103 la microfon",
+          "source": "adevarul.ro",
+          "url": "https://adevarul.ro/politica/moment-stanjenitor-in-parlament-deputat-pnl-2516579.html",
+          "date": "2026-03-01"
         },
         {
           "title": "Sondaj. Ce partide ar vota rom\u00e2nii la parlamentare: AUR continu\u0103 s\u0103 scad\u0103, PSD cre\u0219te",
           "source": "digi24.ro",
           "url": "https://digi24.ro/stiri/actualitate/politica/sondaj-ce-partide-ar-vota-romanii-la-parlamentare-aur-continua-sa-scada-psd-creste-3688553",
-          "date": "2026-03-19"
+          "date": "2026-03-01"
         },
         {
-          "title": "Sondaj Avangarde: Partidul AUR, \u00een sc\u0103dere la inten\u0163ia de vot a rom\u00e2nilor",
-          "source": "antena3.ro",
-          "url": "https://antena3.ro/politica/sondaj-avangarde-partidul-aur-in-scadere-la-intentia-de-vot-a-romanilor-cum-stau-partidele-din-coalitie-in-preferintele-oamenilor-781548.html",
-          "date": "2026-03-19"
+          "title": "Sondaj Avangarde: AUR - 35%, PSD - 22%, PNL - 14%, USR - 11%",
+          "source": "tvrinfo.ro",
+          "url": "https://tvrinfo.ro/sondaj-avangarde-aur-35-psd-22-pnl-14-usr-11/",
+          "date": "2026-03-01"
         },
         {
-          "title": "AUR \u00eenregistreaz\u0103 o sc\u0103dere puternic\u0103 \u00een preferin\u021bele rom\u00e2nilor",
-          "source": "ziare.com",
-          "url": "https://ziare.com/sondaj/aur-scade-in-sondaje-dar-ramane-partidul-favorit-al-romanilor-2001634",
-          "date": "2026-03-19"
+          "title": "\u00cencep dezbaterile \u00een Parlament pe legea bugetului. PSD depune amendamente pentru tot pachetul de solidaritate",
+          "source": "observatornews.ro",
+          "url": "https://observatornews.ro/politic/incep-dezbaterile-in-parlament-pe-legea-bugetului-psd-depune-amendamente-pentru-tot-pachetul-de-solidaritate-648871.html",
+          "date": "2026-02-16"
         },
         {
-          "title": "DECLIN LA V\u00c2RF: AUR pierde vitez\u0103 \u00een sondaje",
-          "source": "turdanews.net",
-          "url": "https://turdanews.net/declin-la-varf-aur-pierde-viteza-in-sondaje-in-timp-ce-nemultumirea-fata-de-guvernul-bolojan-atinge-cote-de-avarie",
-          "date": "2026-03-19"
+          "title": "PNL copiaz\u0103 modelul PSD \u015fi amenin\u0163\u0103 cu ie\u015firea de la guvernare. \u015eedin\u0163\u0103 crucial\u0103 \u00een weekend, la Sibiu",
+          "source": "romaniatv.net",
+          "url": "https://www.romaniatv.net/pnl-copiaza-modelul-psd-si-ameninta-cu-iesirea-de-la-guvernare-sedinta-cruciala-in-weekend-la-sibiu_9460819.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "PSD a ob\u021binut ajutoare pentru pensionarii militari cu votul AUR, dar a pierdut sprijinul Opozi\u021biei c\u00e2nd a fost vorba de SRI",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/scandal-la-dezbaterea-bugetului-mapn-un-ales-al-opozitiei-a-dat-buzna-in-sedinta-miruta-a-facut-armata-atacuri-intre-pnl-si-psd-3680529",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "Profe\u021bie lansat\u0103 de senatorul Ninel Peia: \u201ePNL \u00eel va sacrifica pe Bolojan pentru a-\u0219i salva rela\u021bia cu PSD\"",
+          "source": "stiripesurse.ro",
+          "url": "https://stiripesurse.ro/profetie-lansata-de-senatorul-ninel-peia-pnl-il-va-sacrifica-pe-bolojan-pentru-a-si-salva-relatia-cu-psd_3869583",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "\\\"Capul lui Bolojan vrem!\" PSD nu renun\u0163\u0103 la debarcarea premierului PNL. Analist politic: \"Rom\u00e2nii vor s\u0103-\u00ee\u0219i dea foc la cas\u0103 singuri\"",
+          "source": "romaniatv.net",
+          "url": "https://romaniatv.net/capul-lui-bolojan-vrem-psd-nu-renunta-la-debarcarea-premierului-pnl-analist-politic-romanii-vor-sa-si-dea-foc-la-casa-singuri_9471259.html",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Premierul, atacat din interiorul PNL: \u021aine-te bine, \u201edrag\" Guvern! / Dac\u0103 vrei, drag\u0103 Ilie, pot s\u0103 \u00eemprumut competen\u021ba \u0219i altor jude\u021be",
+          "source": "stiripesurse.ro",
+          "url": "https://stiripesurse.ro/premierul-atacat-din-interiorul-pnl-tine-te-bine-drag-guvern-daca-vrei-draga-ilie-pot-sa-imprumut-competenta-si-altor-judete_3868643",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Silviu M\u0103n\u0103stire: Bolojan l-a \u0219antajat pe Iohannis, ca s\u0103 ajung\u0103 pre\u0219edinte interimar",
+          "source": "evz.ro",
+          "url": "https://evz.ro/silviu-manastire-bolojan-l-a-santajat-pe-iohannis-ca-sa-ajunga-presedinte-interimar.html",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Presiunea pus\u0103 de Ilie Bolojan pe Klaus Iohannis",
+          "source": "evz.ro",
+          "url": "https://evz.ro/presiunea-pusa-de-ilie-bolojan-pe-klaus-iohannis.html",
+          "date": "2026-03-01"
         }
       ],
       "representative_urls": [
-        "https://hotnews.ro/sondaj-avangarde-aur-e-pe-primul-loc-dar-in-scadere-fata-de-precedentele-sondaje-cat-au-partidele-care-se-afla-acum-la-guvernare-2199737",
-        "https://digi24.ro/stiri/actualitate/politica/sondaj-ce-partide-ar-vota-romanii-la-parlamentare-aur-continua-sa-scada-psd-creste-3688553"
+        "https://cotidianul.ro/analiza-totul-sau-nimic-pentru-bolojan-iesirea-de-la-guvernare-pariul-riscant-al-pnl-in-razboiul-cu-psd",
+        "https://g4media.ro/pnl-avertisment-pentru-psd-dupa-criza-bugetara-creata-in-anii-trecuti-romania-risca-sa-fie-impinsa-spre-o-noua-criza-politica.html"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "President Dan holds security talks with NATO Secretary General Rutte",
-      "summary": "President Nicu\u0219or Dan met with NATO Secretary General Mark Rutte in Brussels on March 19 to discuss Romania's strategic role on NATO's eastern flank, regional security challenges, and support for Ukraine. Rutte praised Romania as a key strategic pillar of the alliance.",
+      "story_id": 2,
+      "headline": "NATO relations strain as Trump criticizes allies while Romania reaffirms alliance commitment",
+      "summary": "President Trump launched unprecedented attacks on NATO allies for refusing to support US operations against Iran, calling them 'cowards' and threatening to reconsider US participation. Romanian President Nicu\u0219or Dan met with NATO Secretary-General Mark Rutte, reaffirming Romania's alliance commitment.",
       "actors_involved": [
-        "Klaus Iohannis"
+        "Iohannis"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
+      "source_count": 22,
       "sources": [
-        "digi24.ro",
         "observatornews.ro",
+        "digi24.ro",
         "caleaeuropeana.ro",
         "romania.europalibera.org",
+        "antena3.ro",
         "hotnews.ro",
-        "tvrinfo.ro",
-        "presshub.ro"
+        "presshub.ro",
+        "profit.ro",
+        "agerpres.ro",
+        "realitatea.net",
+        "ziare.com",
+        "libertatea.ro",
+        "capital.ro",
+        "mediafax.ro",
+        "stiripesurse.ro",
+        "defenseromania.ro",
+        "tvrinfo.ro"
       ],
-      "date_range": "2026-03-19 to 2026-03-20",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
         {
-          "title": "Nicu\u0219or Dan se \u00eent\u00e2lne\u0219te joi cu \u0219eful NATO Mark Rutte la Bruxelles",
+          "title": "Reac\u0163ia NATO dup\u0103 ce Iranul a amenin\u0163at Rom\u00e2nia: Vom ap\u0103ra fiecare centimetru din teritoriul aliat",
+          "source": "observatornews.ro",
+          "url": "https://observatornews.ro/politic/nicusor-dan-se-intalneste-de-la-1000-cu-seful-nato-la-bruxelles-ce-teme-sunt-pe-agenda-649219.html",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Nicu\u0219or Dan se \u00eent\u00e2lne\u0219te joi cu \u0219eful NATO Mark Rutte la Bruxelles. Ce teme sunt pe agend\u0103",
           "source": "digi24.ro",
           "url": "https://digi24.ro/stiri/actualitate/politica/nicusor-dan-se-intalneste-joi-cu-seful-nato-mark-rutte-la-bruxelles-ce-teme-sunt-pe-agenda-3681499",
-          "date": "2026-03-19"
+          "date": "2026-03-18"
         },
         {
           "title": "Secretarul general al NATO va participa la summitul Bucure\u0219ti 9, anun\u021b\u0103 Nicu\u0219or Dan",
           "source": "caleaeuropeana.ro",
           "url": "https://caleaeuropeana.ro/secretarul-general-al-nato-va-participa-la-summitul-bucuresti-9-anunta-nicusor-dan-surse-in-jur-de-15-lideri-aliati-sunt-asteptati-la-reuniunea-b9",
-          "date": "2026-03-19"
+          "date": "2026-02-25"
         },
         {
-          "title": "Secretarul general al NATO, Mark Rutte: \u201eRom\u00e2nia \u2013 pilon strategic al Alian\u021bei\"",
+          "title": "Secretarul general al NATO, Mark Rutte: \u201eRom\u00e2nia \u2013 pilon strategic al Alian\u021bei\". Nicu\u0219or Dan: \u201eRom\u00e2nia este sigur\u0103\"",
           "source": "romania.europalibera.org",
           "url": "https://romania.europalibera.org/a/nicusor-dan-intalnire-la-nato-cu-mark-rutte-securitatea-regionala-criza-din-orientul-mijlociu-si-relatia-cu-sua-in-centrul-discutiilor/33710491.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Mark Rutte: Rom\u00e2nia este \u00een siguran\u021b\u0103, vom ap\u0103ra fiecare centimetru de teritoriu NATO",
-          "source": "tvrinfo.ro",
-          "url": "https://tvrinfo.ro/mark-rutte-romania-este-in-siguranta-vom-apara-fiecare-centimetru-de-teritoriu-nato",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://romania.europalibera.org/a/nicusor-dan-intalnire-la-nato-cu-mark-rutte-securitatea-regionala-criza-din-orientul-mijlociu-si-relatia-cu-sua-in-centrul-discutiilor/33710491.html",
-        "https://digi24.ro/stiri/actualitate/politica/nicusor-dan-se-intalneste-joi-cu-seful-nato-mark-rutte-la-bruxelles-ce-teme-sunt-pe-agenda-3681499"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Trump launches unprecedented attack on NATO allies calling them 'cowards'",
-      "summary": "President Trump harshly criticized NATO allies as 'cowards' and called the alliance a 'paper tiger without the US' after most European partners refused to support American operations against Iran. Trump threatened to reconsider US participation in NATO and described the relationship as a 'one-way street'.",
-      "actors_involved": [],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 15,
-      "sources": [
-        "profit.ro",
-        "romania.news-pravda.com",
-        "antena3.ro",
-        "hotnews.ro",
-        "romaniatv.net",
-        "libertatea.ro",
-        "agerpres.ro",
-        "mediafax.ro"
-      ],
-      "date_range": "2026-03-17 to 2026-03-20",
-      "articles": [
-        {
-          "title": "Trump se dezl\u0103n\u021buie: Alia\u021bii din NATO, ni\u0219te la\u0219i, ne vom aduce aminte!",
-          "source": "profit.ro",
-          "url": "https://profit.ro/perspective/trump-se-dezlantuie-aliatii-din-nato-niste-lasi-ne-vom-aduce-aminte-un-tigru-de-hartie-fara-sua-22385082",
-          "date": "2026-03-18"
+          "date": "2026-02-25"
         },
         {
           "title": "Donald Trump atac\u0103 NATO \u00eentr-un mod f\u0103r\u0103 precedent: \u201eNi\u0219te la\u0219i! Un tigru de h\u00e2rtie\"",
           "source": "antena3.ro",
           "url": "https://antena3.ro/externe/donald-trump-ataca-nato-intr-un-mod-fara-precedent-niste-lasi-un-tigru-de-hartie-781478.html",
-          "date": "2026-03-20"
+          "date": "2026-03-01"
         },
         {
-          "title": "Donald Trump, noi critici la adresa NATO pentru lipsa de sprijin \u00een r\u0103zboiul din Iran",
+          "title": "Donald Trump, noi critici la adresa NATO pentru lipsa de sprijin \u00een r\u0103zboiul din Iran: \u201eNu mai dorim asisten\u021ba \u021b\u0103rilor NATO\"",
           "source": "hotnews.ro",
           "url": "https://hotnews.ro/donald-trump-noi-critici-la-adresa-nato-pentru-lipsa-de-sprijin-in-razboiul-din-iran-nu-mai-dorim-asistenta-tarilor-nato-2196363",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "\u0218pagatul lui Rutte \u00eentre Statele Unite \u0219i principalii alia\u021bi europeni. Joi, la sediul NATO este a\u0219teptat pre\u0219edintele Nicu\u0219or Dan",
+          "source": "presshub.ro",
+          "url": "https://presshub.ro/spagatul-lui-rutte-intre-statele-unite-si-principalii-aliati-europeni-joi-la-sediul-nato-este-asteptat-presedintele-nicusor-dan-404115",
           "date": "2026-03-18"
         },
         {
-          "title": "\u201eVom \u021bine minte!",
-          "source": "",
-          "url": "https://libertatea.ro/stiri/donald-trump-atac-fara-precedent-nato-lasitate-nato-tigru-hartie-vom-tine-minte-5669646",
-          "date": "2026-03-20"
+          "title": "Rom\u00e2nia este \u00een continuare \u021bara cu cea mai ridicat\u0103 infla\u021bie din Uniunea European\u0103",
+          "source": "profit.ro",
+          "url": "https://www.profit.ro/stiri/economie/romania-este-in-continuare-tara-cu-cea-mai-ridicata-inflatie-din-uniunea-europeana-22382262",
+          "date": "2026-02-18"
         },
         {
           "title": "Donald Trump: NATO, ''un tigru de h\u00e2rtie f\u0103r\u0103 SUA''; alia\u021bii din NATO, ''la\u0219i''",
           "source": "agerpres.ro",
           "url": "https://agerpres.ro/politic-extern/2026/03/20/donald-trump-nato-un-tigru-de-hartie-fara-sua-aliatii-din-nato-lasi--1539621",
           "date": "2026-03-20"
+        },
+        {
+          "title": "Pozi\u0163ie inedit\u0103 \u00een r\u00e2ndul alia\u0163ilor din NATO. \u021aara europen\u0103 care merge al\u0103turi de SUA ca s\u0103 apere Str\u00e2mtoarea Ormuz",
+          "source": "realitatea.net",
+          "url": "https://realitatea.net/stiri/actual/pozitie-inedita-in-randul-aliatilor-din-nato-tara-europena-care-merge-alaturi-de-sua-ca-sa-apere-stramtoarea-ormuz_69b98287dbfb5d0dc17ec9d2",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Miting uria\u0219 al opozi\u021biei, la Budapesta. \u201ePatria noastr\u0103 face parte din comunitatea european\u0103, din NATO\", a spus oponentul lui Orban",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/externe/miting-urias-al-opozitiei-la-budapesta-patria-noastra-face-parte-din-comunitatea-europeana-din-nato-a-spus-oponentul-lui-orban-3678019",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Ministerul de Externe de la Moscova \u201etun\u0103\" la adresa NATO: \u201eDore\u0219te \u00eenfr\u00e2ngerea strategic\u0103 a Rusiei\"",
+          "source": "ziare.com",
+          "url": "https://ziare.com/nato/rusia-atac-zaharova-2001042",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "\u201eVom \u021bine minte!\". Donald Trump, atac f\u0103r\u0103 precedent la NATO, care sunt acuza\u021bi de la\u0219itate \u00een cazul Iranului",
+          "source": "libertatea.ro",
+          "url": "https://libertatea.ro/stiri/donald-trump-atac-fara-precedent-nato-lasitate-nato-tigru-hartie-vom-tine-minte-5669646",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Sondaj INSCOP. C\u00e2\u021bi rom\u00e2ni vor ie\u0219irea din NATO \u0219i UE. Doar 17,9% dintre rom\u00e2ni consider\u0103 Rom\u00e2nia o \u021bara foarte sigur\u0103",
+          "source": "capital.ro",
+          "url": "https://www.capital.ro/sondaj-inscop-cati-romani-vor-iesirea-din-nato-si-ue-doar-179-dintre-romani-considera-romania-o-tara-foarte-sigura.html",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Mark Rutte: \"NATO discut\u0103 despre cea mai bun\u0103 modalitate de a redeschide Str\u00e2mtoarea Ormuz\"",
+          "source": "mediafax.ro",
+          "url": "https://mediafax.ro/stirile-zilei/mark-rutte-nato-discuta-despre-cea-mai-buna-modalitate-de-a-redeschide-stramtoarea-ormuz-23705590",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Ruptur\u0103 istoric\u0103 \u00een NATO - UE \u00eel refuz\u0103 categoric pe Trump: \u201eStr\u00e2mtoarea Ormuz se afl\u0103 \u00een afara sferei de competen\u0163\u0103 a NATO. Discut\u0103m op\u021biuni cu ONU\"",
+          "source": "stiripesurse.ro",
+          "url": "https://www.stiripesurse.ro/ruptura-nato-ue-trump-ormuz_3868280",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "Logistica de supravie\u021buire a NATO: Rom\u00e2nia, al\u0103turi de Polonia, pe lista statelor care ar trebui s\u0103 fie conectate la un sistem de conducte militare",
+          "source": "defenseromania.ro",
+          "url": "https://defenseromania.ro/logistica-de-supravietuire-a-nato-romania-alaturi-de-polonia-pe-lista-statelor-care-ar-trebui-sa-fie-conectate-la-un-sistem-de-conducte-militare_642168.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Trump ia \u00een calcul ie\u0219irea SUA din NATO, furios c\u0103 nu a fost ajutat cu Iranul: \"Ei nu vor s\u0103 ne ajute\"",
+          "source": "observatornews.ro",
+          "url": "https://observatornews.ro/extern/trump-ia-in-calcul-iesirea-sua-din-nato-furios-ca-nu-a-fost-ajutat-cu-iranul-ei-nu-vor-sa-ne-ajute-649061.html",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "Mark Rutte: Rom\u00e2nia este \u00een siguran\u021b\u0103, vom ap\u0103ra fiecare centimetru de teritoriu NATO",
+          "source": "tvrinfo.ro",
+          "url": "https://tvrinfo.ro/mark-rutte-romania-este-in-siguranta-vom-apara-fiecare-centimetru-de-teritoriu-nato",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Ucraina pune NATO \u00een dificultate \u00een cadrul unor exerci\u021bii navale. Cum au reu\u0219it ucrainenii s\u0103 \u201escufunde\" o fregat\u0103 f\u0103r\u0103 s\u0103 fie detecta\u021bi",
+          "source": "ziare.com",
+          "url": "https://ziare.com/nato/exercitii-navale-ucraina-2000743",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "VIDEO Nicu\u0219or Dan, declara\u021bii despre rela\u021bia cu SUA la sediul NATO: \u201eSuntem alia\u021bi atunci c\u00e2nd partenerul nostru are nevoie\". Mark Rutte: \u201eRom\u00e2nia se poate baza pe NATO\"",
+          "source": "hotnews.ro",
+          "url": "https://hotnews.ro/nicusor-dan-primit-la-sediul-nato-de-mark-rutte-relatia-cu-sua-pe-agenda-discutiilor-trump-a-criticat-alianta-2197380",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "Donald Trump avertizeaz\u0103 c\u0103 NATO va avea un \u201eviitor foarte r\u0103u\" dac\u0103 alia\u021bii nu ajut\u0103 SUA \u00een Iran",
+          "source": "hotnews.ro",
+          "url": "https://hotnews.ro/donald-trump-avertizeaza-ca-nato-va-avea-un-viitor-foarte-rau-daca-aliatii-nu-ajuta-sua-in-iran-2194649",
+          "date": "2026-02-16"
         }
       ],
       "representative_urls": [
-        "https://profit.ro/perspective/trump-se-dezlantuie-aliatii-din-nato-niste-lasi-ne-vom-aduce-aminte-un-tigru-de-hartie-fara-sua-22385082",
-        "https://antena3.ro/externe/donald-trump-ataca-nato-intr-un-mod-fara-precedent-niste-lasi-un-tigru-de-hartie-781478.html"
+        "https://romania.europalibera.org/a/nicusor-dan-intalnire-la-nato-cu-mark-rutte-securitatea-regionala-criza-din-orientul-mijlociu-si-relatia-cu-sua-in-centrul-discutiilor/33710491.html",
+        "https://hotnews.ro/donald-trump-noi-critici-la-adresa-nato-pentru-lipsa-de-sprijin-in-razboiul-din-iran-nu-mai-dorim-asistenta-tarilor-nato-2196363"
       ]
     },
     {
-      "story_id": 5,
-      "headline": "Central bank issues economic warnings and announces exchange rates",
-      "summary": "BNR announced daily exchange rates with euro declining to 5.0951 lei and issued warnings about fraudulent lending companies claiming false BNR licenses. Central bank officials warned about Romania's economic fragility and rising external debt reaching 229.3 billion euros.",
+      "story_id": 3,
+      "headline": "BNR reports Romania's external debt grows to 229 billion euros, warns of fraud schemes",
+      "summary": "Romania's National Bank announced external debt reached 229.3 billion euros in January, up 1.986 billion from December. BNR also issued fraud warnings about fake lending websites using the central bank's name, and forecasts continued economic pressures through 2028.",
       "actors_involved": [
         "National Bank of Romania"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "source_count": 11,
       "sources": [
-        "zf.ro",
         "digi24.ro",
-        "profit.ro",
-        "libertatea.ro",
-        "observatornews.ro",
-        "oficiuldestiri.ro",
-        "national.ro",
-        "hotnews.ro",
-        "juridice.ro",
-        "bankingnews.ro",
         "revistabiz.ro",
-        "ziare.com"
+        "ziare.com",
+        "zf.ro",
+        "libertatea.ro",
+        "profit.ro",
+        "juridice.ro",
+        "national.ro",
+        "observatornews.ro",
+        "oficiuldestiri.ro"
       ],
       "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
-          "title": "Ce a declarat Mugur Is\u0103rescu guvernatorul BNR la \u00eencheierea discursului de ast\u0103zi",
-          "source": "zf.ro",
-          "url": "https://www.zf.ro/banci-si-asigurari/ce-a-declarat-mugur-isarescu-guvernatorul-bnr-la-incheierea-23093992",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Curs BNR: Euro scade",
+          "title": "BNR: Datoria extern\u0103 a Rom\u00e2niei a crescut la 229 de miliarde de euro \u00een ianuarie. Ce arat\u0103 datele despre capacitatea de plat\u0103 a \u021b\u0103rii",
           "source": "digi24.ro",
-          "url": "https://www.digi24.ro/digieconomic/financiar/curs-bnr-euro-scade-12-92975",
-          "date": "2026-03-20"
+          "url": "https://digi24.ro/stiri/economie/bnr-datoria-externa-a-romaniei-a-crescut-la-229-de-miliarde-de-euro-in-ianuarie-ce-arata-datele-despre-capacitatea-de-plata-a-tarii-3680663",
+          "date": "2026-03-18"
         },
         {
-          "title": "Avertismentul unui consilier BNR pentru to\u021bi rom\u00e2nii",
-          "source": "libertatea.ro",
-          "url": "https://libertatea.ro/stiri/avertisment-eugen-radulescu-consilier-bnr-romania-criza-politica-reteta-dezastru-5669074",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "O firm\u0103 promite credite \u00een baza unei licen\u021be BNR. Banca Central\u0103 spune c\u0103 n-a auzit de ea",
-          "source": "hotnews.ro",
-          "url": "https://hotnews.ro/o-firma-promite-credite-in-baza-unei-licente-bnr-banca-centrala-spune-ca-n-a-auzit-de-ea-si-ca-nu-i-a-acordat-licenta-2194989",
+          "title": "Fraud\u0103 folosind numele BNR. Un site anun\u021b\u0103 fals c\u0103 ofer\u0103 credite",
+          "source": "revistabiz.ro",
+          "url": "https://revistabiz.ro/frauda-folosind-numele-bnr-un-site-anunta-fals-ca-ofera-credite",
           "date": "2026-03-16"
         },
         {
-          "title": "Date de la BNR: Datoria extern\u0103 a crescut \u015fi a ajuns la 229,3 mld. euro \u00een ianuarie",
+          "title": "BNR avertizeaz\u0103 asupra unui IFN care ofer\u0103 credite f\u0103r\u0103 licen\u021b\u0103. Lista entit\u0103\u021bilor bancare din registrele oficiale",
+          "source": "ziare.com",
+          "url": "https://ziare.com/bnr/frauda-online-creditare-ifn-fara-licenta-2000549",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Date de la BNR: Datoria extern\u0103 a crescut \u015fi a ajuns la 229,3 mld. euro \u00een ianuarie, cu un avans de 1,9 mld. euro fa\u0163\u0103 de decembrie 2025",
           "source": "zf.ro",
           "url": "https://zf.ro/banci-si-asigurari/date-de-la-bnr-datoria-externa-a-crescut-si-a-ajuns-la-229-3-mld-23090757",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "BNR avertizeaz\u0103 asupra unei tentative de fraud\u0103 online: platforma credora-romania.com pretinde \u00een mod fals c\u0103 ofer\u0103 credite \u00een baza unei licen\u0163e a b\u0103ncii centrale",
+          "source": "zf.ro",
+          "url": "https://zf.ro/banci-si-asigurari/bnr-avertizeaza-asupra-unei-tentative-de-frauda-online-platforma-23089259",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Avertismentul unui consilier BNR pentru to\u021bi rom\u00e2nii: \u201eCea mai bun\u0103 re\u021bet\u0103 care duce la dezastru\"",
+          "source": "libertatea.ro",
+          "url": "https://libertatea.ro/stiri/avertisment-eugen-radulescu-consilier-bnr-romania-criza-politica-reteta-dezastru-5669074",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Cursul valutar anun\u021bat de BNR. Euro scade",
+          "source": "profit.ro",
+          "url": "https://profit.ro/povesti-cu-profit/financiar/cursul-valutar-anuntat-de-bnr-euro-scade-22384844",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "CREDORA nu opereaz\u0103 \u00een baza unei licen\u021be BNR",
+          "source": "juridice.ro",
+          "url": "https://juridice.ro/820278/credora-nu-opereaza-in-baza-unei-licente-bnr.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Verdict BNR. Pr\u0103bu\u0219irea nivelului de trai nu se termin\u0103 nici \u00een 2028",
+          "source": "national.ro",
+          "url": "https://national.ro/economie/verdict-bnr-prabusirea-nivelului-de-trai-nu-se-termina-nici-in-2028-869083.html",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Curs BNR, 20 martie 2026. Leul rom\u00e2nesc c\u00e2\u015ftig\u0103 mai mult de 3 bani \u00een raport cu dolarul american",
+          "source": "observatornews.ro",
+          "url": "https://observatornews.ro/economic/curs-bnr-20-martie-2026-leul-romanesc-castiga-mai-mult-de-3-bani-in-raport-cu-dolarul-american-649366.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Curs valutar BNR, joi, 19 martie 2026",
+          "source": "oficiuldestiri.ro",
+          "url": "https://oficiuldestiri.ro/curs-valutar-bnr-joi-19-martie-2026",
           "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.zf.ro/banci-si-asigurari/ce-a-declarat-mugur-isarescu-guvernatorul-bnr-la-incheierea-23093992",
-        "https://libertatea.ro/stiri/avertisment-eugen-radulescu-consilier-bnr-romania-criza-politica-reteta-dezastru-5669074"
+        "https://digi24.ro/stiri/economie/bnr-datoria-externa-a-romaniei-a-crescut-la-229-de-miliarde-de-euro-in-ianuarie-ce-arata-datele-despre-capacitatea-de-plata-a-tarii-3680663",
+        "https://revistabiz.ro/frauda-folosind-numele-bnr-un-site-anunta-fals-ca-ofera-credite"
       ]
     },
     {
-      "story_id": 6,
-      "headline": "AUR to challenge 2026 state budget at Constitutional Court",
-      "summary": "AUR leader George Simion announced the party will contest the 2026 state budget law at the Constitutional Court after parliament adopted it. The party declared 'total opposition' to the current government and criticized the budget as lacking clear targets for Romania.",
+      "story_id": 4,
+      "headline": "AUR maintains polling lead despite decline, faces internal tensions and controversial amendments",
+      "summary": "AUR continues to lead Romanian polls at 35% but shows declining trend from previous 38-41%. The party played kingmaker role in budget votes, initially supporting then abandoning PSD. George Simion attended international events and faced legal challenges, while the party pushed controversial amendments including funding for anti-abortion groups.",
       "actors_involved": [
         "AUR",
         "George Simion"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 8,
+      "source_count": 23,
       "sources": [
-        "digi24.ro",
-        "hotnews.ro",
-        "cotidianul.ro",
         "ziare.com",
-        "stiripesurse.ro"
+        "hotnews.ro",
+        "botosaneanul.ro",
+        "cotidianul.ro",
+        "digi24.ro",
+        "romaniatv.net",
+        "edupedu.ro",
+        "gsp.ro",
+        "stiripesurse.ro",
+        "semdays.ro",
+        "thelook.ro",
+        "golazo.ro",
+        "aktual24.ro",
+        "libertatea.ro"
       ],
-      "date_range": "2026-03-19 to 2026-03-21",
+      "date_range": "2026-02-20 to 2026-03-21",
       "articles": [
+        {
+          "title": "AUR \u00eenregistreaz\u0103 o sc\u0103dere puternic\u0103 \u00een preferin\u021bele rom\u00e2nilor, chiar dac\u0103 se afl\u0103 \u00een opozi\u021bie. Cum arat\u0103 procentele partidelor aflate la guvernare, potrivit Avangarde SONDAJ",
+          "source": "ziare.com",
+          "url": "https://ziare.com/sondaj/aur-scade-in-sondaje-dar-ramane-partidul-favorit-al-romanilor-2001634",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Polemica amendamentului AUR votat cu majoritate: Ce spune ONG-ul numit \u201eanti-avort\" \u0219i mesajul dat de Parlament. \u201eCe a\u0219teptare mai avem de la cet\u0103\u021beni s\u0103 voteze informat?\"",
+          "source": "hotnews.ro",
+          "url": "https://hotnews.ro/polemica-dupa-ce-alesii-au-votat-sa-dea-bani-de-la-buget-unei-asociatii-pro-viata-ce-spune-ong-ul-numit-anti-avort-si-mesajul-dat-de-parlament-2199683",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Simion, despre amendamentul AUR care d\u0103 bani de la stat c\u0103tre o asocia\u021bie anti-avort: \u201eSus\u021binem dreptul femeilor de a alege, dar nu suntem de partea mor\u021bii\"",
+          "source": "hotnews.ro",
+          "url": "https://hotnews.ro/simion-despre-amendamentul-aur-care-da-bani-de-la-stat-un-asociatii-anti-avort-sustinem-dreptul-femeilor-de-a-alege-dar-nu-suntem-de-partea-mortii-2199202",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Scandal \u00een Parlament: Amendamentul AUR pentru o asocia\u021bie \u201epro-via\u021b\u0103\", votat cu majoritate. ONG-ul neag\u0103 eticheta \u201eanti-avort\"",
+          "source": "botosaneanul.ro",
+          "url": "https://botosaneanul.ro/scandal-in-parlament-amendamentul-aur-pentru-o-asociatie-pro-viata-votat-cu-majoritate-ong-ul-neaga-eticheta-anti-avort",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Nou scandal \u00eentre AUR \u0219i coali\u021bie. Motivul: banii pentru mineri",
+          "source": "cotidianul.ro",
+          "url": "https://cotidianul.ro/nou-scandal-intre-aur-si-coalitie-banii-pentru-mineri-motivul-clinciului",
+          "date": "2026-03-01"
+        },
         {
           "title": "AUR va contesta la CCR legea bugetului de stat pentru 2026. George Simion: \u201eOpozi\u021bie total\u0103\"",
           "source": "digi24.ro",
           "url": "https://digi24.ro/stiri/actualitate/politica/aur-va-contesta-la-ccr-legea-bugetului-de-stat-pentru-2026-george-simion-opozitie-totala-3686945",
-          "date": "2026-03-20"
+          "date": "2026-03-01"
         },
         {
-          "title": "Simion, despre amendamentul AUR care d\u0103 bani de la stat c\u0103tre o asocia\u021bie anti-avort",
-          "source": "hotnews.ro",
-          "url": "https://hotnews.ro/simion-despre-amendamentul-aur-care-da-bani-de-la-stat-un-asociatii-anti-avort-sustinem-dreptul-femeilor-de-a-alege-dar-nu-suntem-de-partea-mortii-2199202",
-          "date": "2026-03-19"
+          "title": "Membru fondator al partidului AUR, anun\u0163-\u015foc, cutremur pe scena politic\u0103: Eu cred c\u0103 George Simion deja este pe cale de a ie\u015fi din acest joc",
+          "source": "romaniatv.net",
+          "url": "https://romaniatv.net/membru-fondator-al-partidului-aur-anunt-soc-ccuremur-pe-scena-politica-eu-cred-ca-george-simion-deja-este-pe-cale-de-a-iesi-din-acest-joc_9460444.html",
+          "date": "2026-02-20"
         },
         {
-          "title": "AUR vrea s\u0103 \u00eent\u00e2rzie bugetul. \u00cel va contesta la CCR",
-          "source": "cotidianul.ro",
-          "url": "https://www.cotidianul.ro/aur-vrea-sa-intarzie-bugetul-il-va-contesta-la-ccr/",
-          "date": "2026-03-20"
+          "title": "Edupedu.ro a c\u00e2\u0219tigat definitiv procesul cu extremistul George Simion. Fostul candidat la pre\u0219edin\u021bie a pierdut ac\u021biunea intentat\u0103 \u00een instan\u021b\u0103 dup\u0103 ce publica\u021bia a ar\u0103tat c\u0103 el a folosit elevi \u00een propaganda politic\u0103 \u0219i c\u0103 a luat modelul legionarului Zelea Codreanu",
+          "source": "edupedu.ro",
+          "url": "https://www.edupedu.ro/edupedu-ro-a-castigat-definitiv-procesul-cu-extremistul-george-simion-fostul-candidat-la-presedintie-a-pierdut-actiunea-intentata-in-instanta-dupa-ce-publicatia-a-aratat-ca-el-a-folosit-elevi-in-prop/",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Fostul \u0219ef de galerie George Simion, surprins la meci al\u0103turi de pre\u0219edintele Poloniei",
+          "source": "gsp.ro",
+          "url": "https://www.gsp.ro/international/campionate/george-simion-karol-nawrocki-meci-polonia-rakow-gornik-zabrze-917383.html",
+          "date": "2026-02-16"
         },
         {
           "title": "George Simion (AUR): 'Repar\u0103m o mare gre\u0219eal\u0103 a guvernului Bolojan'",
           "source": "stiripesurse.ro",
           "url": "https://www.stiripesurse.ro/george-simion-aur-reparam-o-mare-greseala-a-guvernului-bolojan_3867967",
           "date": "2026-02-15"
+        },
+        {
+          "title": "George Simion explic\u0103 de ce AUR nu a votat amendamentul PSD: Nu ne cere\u0163i s\u0103 fim complici la transformarea rom\u00e2nilor \u00een cer\u015fetori",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/george-simion-explica-de-ce-aur-nu-a-votat-amendamentul-psd-nu-ne-cereti-sa-fim-complici-la-transformarea-romanilor-in-cersetori-3683531",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "George Simion - biografie",
+          "source": "semdays.ro",
+          "url": "https://www.semdays.ro/george-simion-biografie/",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Cine este George Simion",
+          "source": "thelook.ro",
+          "url": "https://thelook.ro/cine-este-george-simion/",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "VIDEO Daniel Zamfir, \u00eentrebare de 1000 de puncte pentru George Simion, \u00een Parlament: Sunte\u021bi Antonio Giordano sau George Simion?",
+          "source": "stiripesurse.ro",
+          "url": "https://www.stiripesurse.ro/video-daniel-zamfir-intrebare-de-1000-de-puncte-pentru-george-simion-in-parlament-sunteti-antonio-giordano-sau-george-simion_3869777",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "George Simion, atac la Grindeanu, la dezbaterea bugetului: nu mai \u0219tie dac\u0103 este \u00een opozi\u021bie sau la putere \u0219i pretinde c\u0103 e Robin Hood",
+          "source": "digi24.ro",
+          "url": "https://digi24.ro/stiri/actualitate/politica/george-simion-atac-la-grindeanu-la-dezbaterea-bugetului-nu-mai-stie-daca-este-in-opozitie-sau-la-putere-si-pretinde-ca-e-robin-hood-3685881",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Ce a spus Crin Antonescu c\u00e2nd a fost \u00eentrebat dac\u0103 s-a g\u00e2ndit s\u0103-i ia locul lui George Simion \u00een fruntea AUR",
+          "source": "stiripesurse.ro",
+          "url": "https://stiripesurse.ro/ce-a-spus-crin-antonescu-cand-a-fost-intrebat-daca-s-a-gandit-sa-i-ia-locul-lui-george-simion_3869528",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "George Simion \u0219i pre\u0219edintele Poloniei, la meci. Pre\u0219edintele AUR, fotografiat la \u201eoficial\u0103\", urm\u0103rind unul dintre posibilii titulari ai lui Lucescu. Ce s-a \u00eent\u00e2mplat pe stadion",
+          "source": "golazo.ro",
+          "url": "https://golazo.ro/george-simion-karol-nawrocki-polonia-gornik-zabrze-rakow-czestochowa-167887",
+          "date": "2026-02-16"
+        },
+        {
+          "title": "Glon\u021bul din aer: AUR compar\u0103 votul pe buget cu mo\u021biunea de cenzur\u0103. \u0218ansele ca proiectul s\u0103 pice: \u201eFaptul c\u0103 pre\u0219edintele tace este \u0219i el un semnal\"",
+          "source": "ziare.com",
+          "url": "https://ziare.com/parlament/aur-compara-votul-pe-buget-cu-motiunea-de-cenzura-sansele-ca-proiectul-sa-pice-2001040",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "\u201eDac\u0103 AUR vine la putere, \u00een maxim dou\u0103 luni suntem \u00een faliment complet, euro ar ajunge la 9 lei\", avertizeaz\u0103 economistul Andrei Caramitru",
+          "source": "aktual24.ro",
+          "url": "https://aktual24.ro/daca-aur-vine-la-putere-in-maxim-doua-luni-suntem-in-faliment-complet-euro-ar-ajunge-la-9-lei-avertizeaza-economistul-andrei-caramitru",
+          "date": "2026-02-19"
+        },
+        {
+          "title": "Probleme de \u00eencredere \u00eentre AUR \u0219i PSD. Mai este posibil\u0103 o coali\u021bie \u00eentre social-democra\u021bi \u0219i suverani\u0219ti dup\u0103 episodul din Comisia de Buget?",
+          "source": "ziare.com",
+          "url": "https://ziare.com/psd/probleme-incredere-aur-posibilitate-coalitie-suveranisti-2001346",
+          "date": "2026-02-25"
+        },
+        {
+          "title": "Pescuitul de \u0219al\u0103u \u0219i biban, pus pe pauz\u0103 \u00een Delt\u0103. \u00cencepe sezonul protec\u021biei speciilor r\u0103pitoare",
+          "source": "ziare.com",
+          "url": "https://ziare.com/pescuit-delta-dunarii/salau-biban-pus-pauza-incepe-sezon-protectii-specii-rapitoare-2001382",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Na\u015ful din Delta Dun\u0103rii al lui George Simion, un mare afacerist cu cereale apropiat de politicieni locali PSD \u015fi PNL",
+          "source": "libertatea.ro",
+          "url": "https://www.libertatea.ro/stiri/nasul-din-delta-dunarii-al-lui-george-simion-unul-dintre-cei-mai-mari-traderi-de-cereale-din-tara-este-apropiat-de-politicieni-locali-psd-si-pnl-5659136",
+          "date": "2026-02-16"
         }
       ],
       "representative_urls": [
-        "https://digi24.ro/stiri/actualitate/politica/aur-va-contesta-la-ccr-legea-bugetului-de-stat-pentru-2026-george-simion-opozitie-totala-3686945",
-        "https://hotnews.ro/simion-despre-amendamentul-aur-care-da-bani-de-la-stat-un-asociatii-anti-avort-sustinem-dreptul-femeilor-de-a-alege-dar-nu-suntem-de-partea-mortii-2199202"
+        "https://ziare.com/sondaj/aur-scade-in-sondaje-dar-ramane-partidul-favorit-al-romanilor-2001634",
+        "https://hotnews.ro/polemica-dupa-ce-alesii-au-votat-sa-dea-bani-de-la-buget-unei-asociatii-pro-viata-ce-spune-ong-ul-numit-anti-avort-si-mesajul-dat-de-parlament-2199683"
       ]
     },
     {
-      "story_id": 7,
-      "headline": "George Simion wins defamation lawsuit against journalism publication",
-      "summary": "AUR leader George Simion definitively won a court case against Edupedu.ro after more than 3 years, with the court ruling that the publication's articles about his use of students in political propaganda and connections to legionnaire Zelea Codreanu constituted defamation.",
+      "story_id": 5,
+      "headline": "Iran formally warns Romania against allowing US military operations from its bases",
+      "summary": "Iran issued a formal diplomatic warning to Romania, threatening political and legal responses if Romania allows the US to use its military bases for operations against Iran. Romanian officials reaffirmed the defensive nature of NATO facilities on Romanian territory.",
       "actors_involved": [
-        "George Simion",
-        "AUR"
+        "Romanian Armed Forces"
       ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 1,
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 2,
       "sources": [
-        "edupedu.ro"
+        "europeaninterest.eu",
+        "romania.news-pravda.com"
       ],
-      "date_range": "2026-03-19",
+      "date_range": "2026-03-17 to 2026-03-17",
       "articles": [
         {
-          "title": "Edupedu.ro a c\u00e2\u0219tigat definitiv procesul cu extremistul George Simion",
-          "source": "edupedu.ro",
-          "url": "https://www.edupedu.ro/edupedu-ro-a-castigat-definitiv-procesul-cu-extremistul-george-simion-fostul-candidat-la-presedintie-a-pierdut-actiunea-intentata-in-instanta-dupa-ce-publicatia-a-aratat-ca-el-a-folosit-elevi-in-prop/",
-          "date": "2026-03-19"
+          "title": "Iran threatens Romania for the US use of military bases",
+          "source": "europeaninterest.eu",
+          "url": "https://europeaninterest.eu/iran-threatens-romania-for-the-us-use-of-military-bases",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Trump a numit NATO o strad\u0103 cu sens unic dup\u0103 refuzul alia\u021bilor",
+          "source": "romania.news-pravda.com",
+          "url": "https://romania.news-pravda.com/romania/2026/03/17/100325.html",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://www.edupedu.ro/edupedu-ro-a-castigat-definitiv-procesul-cu-extremistul-george-simion-fostul-candidat-la-presedintie-a-pierdut-actiunea-intentata-in-instanta-dupa-ce-publicatia-a-aratat-ca-el-a-folosit-elevi-in-prop/"
+        "https://europeaninterest.eu/iran-threatens-romania-for-the-us-use-of-military-bases"
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Romanian woman charged with Iranian man for UK nuclear base breach attempt",
-      "summary": "A 31-year-old Romanian woman and 34-year-old Iranian man were arrested and charged after attempting to enter HM Naval Base Clyde, the UK's nuclear submarine base in Scotland. Police Scotland announced the charges following the security incident.",
+      "story_id": 6,
+      "headline": "Iranian and Romanian nationals charged for attempting to enter UK nuclear submarine base",
+      "summary": "A 34-year-old Iranian man and 31-year-old Romanian woman were arrested and charged after allegedly attempting to enter HM Naval Base Clyde, the UK's nuclear submarine base in Scotland, according to Police Scotland.",
       "actors_involved": [],
       "signal_category_hint": "security_defense",
       "source_count": 1,
       "sources": [
         "foxnews.com"
       ],
-      "date_range": "2026-03-19",
+      "date_range": "2026-03-19 to 2026-03-19",
       "articles": [
         {
-          "title": "Iranian man, Romanian woman charged after allegedly trying to enter UK nuclear missile base",
+          "title": "Iranian man, Romanian woman charged after allegedly trying to enter UK nuclear missile base, officials say",
           "source": "foxnews.com",
           "url": "https://foxnews.com/world/iranian-man-romanian-woman-charged-allegedly-trying-enter-uk-nuclear-missile-base-officials-say",
           "date": "2026-03-19"
@@ -402,21 +819,21 @@
   ],
   "single_source_items": [
     {
-      "headline": "Romanian paramilitaries join Russian forces and Africa Corps",
+      "headline": "Romanian paramilitaries join Russian forces and Africa Corps after boss arrested",
       "source": "intelligenceonline.com",
       "url": "https://www.intelligenceonline.com/europe-russia/2026/03/17/romanian-paramilitaries-swell-ranks-of-russian-army-and-africa-corps,110681807-art",
       "signal_category_hint": "security_defense"
     },
     {
-      "headline": "RAF Typhoons deploy to Romania for NATO air policing mission",
-      "source": "raf.mod.uk",
-      "url": "https://raf.mod.uk/news/articles/raf-typhoons-deploy-to-romania-to-lead-nato-air-policing-mission-under-operation-biloxi-26",
-      "signal_category_hint": "security_defense"
+      "headline": "ANAF anti-fraud unit confiscates 32 kg of gold and silver jewelry worth 12 million lei",
+      "source": "agerpres.ro",
+      "url": "https://agerpres.ro/economic/2026/03/17/anaf-antifrauda-a-confiscat-peste-32-kg-de-bijuterii-de-aur-si-argint-in-valoare-de-12-milioane-lei--1538243",
+      "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "Iran threatens Romania over US use of military bases",
-      "source": "europeaninterest.eu",
-      "url": "https://europeaninterest.eu/iran-threatens-romania-for-the-us-use-of-military-bases",
+      "headline": "RAF Typhoons deploy to Romania for NATO air policing mission under Operation Biloxi 2026",
+      "source": "raf.mod.uk",
+      "url": "https://raf.mod.uk/news/articles/raf-typhoons-deploy-to-romania-to-lead-nato-air-policing-mission-under-operation-biloxi-26",
       "signal_category_hint": "security_defense"
     }
   ]

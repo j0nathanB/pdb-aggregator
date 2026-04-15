@@ -3,32 +3,30 @@
   "code": "in",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 330,
+  "search_results_total": 306,
   "stories_identified": 12,
-  "off_topic_filtered": 89,
-  "noise_summary": "89 off-topic results filtered: 42 WWE Raw wrestling coverage and results, 12 raw milk/cheese E.coli outbreak stories, 8 England football squad announcements, 6 RBI banking exam and recruitment notices, 4 Congress legislative procedure stories, 3 sports betting/IPL stories, 14 miscellaneous entertainment, lifestyle, and non-political content.",
+  "off_topic_filtered": 47,
+  "noise_summary": "47 off-topic results filtered: 23 US domestic politics/Congress articles, 15 WWE Raw wrestling content, 4 raw food/E.coli outbreak stories, 3 baseball/sports content, 2 entertainment articles",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Modi conducts phone diplomacy with Iran amid Middle East conflict over energy infrastructure attacks",
-      "summary": "PM Modi held multiple phone conversations with Iranian President Pezeshkian and other regional leaders, condemning attacks on critical energy infrastructure while discussing regional stability. Modi stressed the importance of keeping shipping lanes open through the Strait of Hormuz.",
+      "headline": "Modi holds phone call with Iran President on Middle East crisis",
+      "summary": "Prime Minister Modi spoke with Iran's President Pezeshkian on March 21, condemning attacks on critical infrastructure in the Middle East and stressing the need for secure shipping lanes. Iran called for BRICS role in halting regional aggressions.",
       "actors_involved": [
         "Narendra Modi"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 15,
+      "source_count": 9,
       "sources": [
         "reuters.com",
         "bloomberg.com",
-        "politico.com",
         "timesofindia.indiatimes.com",
+        "hindustantimes.com",
         "moneycontrol.com",
-        "indianewsnetwork.com",
-        "onmanorama.com",
-        "aa.com.tr",
-        "hindustantimes.com"
+        "politico.com",
+        "indianexpress.com"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-21 to 2026-03-21",
       "articles": [
         {
           "title": "Iran's president says immediate cessation of US-Israeli aggression needed to end war",
@@ -43,16 +41,16 @@
           "date": "2026-03-21"
         },
         {
+          "title": "'Did not initiate war': In call with PM Modi, Iran President Pezeshkian calls on India-chaired Brics to play role in halting aggressions",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/india/did-not-initiate-war-in-call-with-pm-modi-iran-president-pezeshkian-calls-on-india-chaired-brics-to-play-role-in-halting-aggressions/articleshow/129721126.cms",
+          "date": "2026-03-21"
+        },
+        {
           "title": "Modi's exercise in needle-threading",
           "source": "politico.com",
           "url": "https://www.politico.com/newsletters/forecast/2026/03/20/modis-exercise-in-needle-threading-00838284",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "PM Modi's key dialogue with Qatar, Oman, Jordan, France amid Iran-US war",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/india-news/pm-modi-calls-qatar-jordan-france-leaders-oman-dialogue-and-diplomacy-peace-middle-east-iran-us-war-strait-of-hormuz-101773974880393.html",
-          "date": "2026-03-19"
+          "date": "2026-03-21"
         },
         {
           "title": "Iran lists conditions for ending war with US, Israel in call with PM Modi",
@@ -61,22 +59,16 @@
           "date": "2026-03-21"
         },
         {
-          "title": "PM Modi Discusses Regional Stability with Iran's President",
-          "source": "indianewsnetwork.com",
-          "url": "https://indianewsnetwork.com/en/pm-modi-discusses-regional-stability-iran-president-20260322",
-          "date": "2026-03-22"
-        },
-        {
-          "title": "Free navigation via Strait of Hormuz 'foremost priority': Indian Premier Modi",
-          "source": "aa.com.tr",
-          "url": "https://www.aa.com.tr/en/asia-pacific/free-navigation-via-strait-of-hormuz-foremost-priority-indian-premier-modi/3869773",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "'Did not initiate war': In call with PM Modi, Iran President Pezeshkian calls on India-chaired Brics to play role",
+          "title": "Modi As Mediator?",
           "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/india/did-not-initiate-war-in-call-with-pm-modi-iran-president-pezeshkian-calls-on-india-chaired-brics-to-play-role-in-halting-aggressions/articleshow/129721126.cms",
+          "url": "https://timesofindia.indiatimes.com/blogs/toi-edit-page/modi-as-mediator",
           "date": "2026-03-21"
+        },
+        {
+          "title": "PM Modi's key dialogue with Qatar, Oman, Jordan, France amid Iran-US war",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/india-news/pm-modi-calls-qatar-jordan-france-leaders-oman-dialogue-and-diplomacy-peace-middle-east-iran-us-war-strait-of-hormuz-101773974880393.html",
+          "date": "2026-03-19"
         },
         {
           "title": "Amidst latest flare-up, Modi says attacks on energy sites condemnable",
@@ -89,36 +81,6 @@
           "source": "bloomberg.com",
           "url": "https://www.bloomberg.com/news/articles/2026-03-15/modi-walks-fine-line-between-iran-and-us-as-war-hits-economy",
           "date": "2026-03-15"
-        },
-        {
-          "title": "India's Global Standing Under Strain as Foreign Policy Shifts and Domestic Tensions Converge",
-          "source": "frontline.thehindu.com",
-          "url": "https://frontline.thehindu.com/columns/india-global-image-decline-modi-foreign-policy-israel/article70761010.ece",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Modi As Mediator?",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/blogs/toi-edit-page/modi-as-mediator",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Fact Check: Viral Video Does Not Show Indians Burning PM Modi's Effigy For 'Creating Tensions With Iran'",
-          "source": "newschecker.in",
-          "url": "https://newschecker.in/fact-check/viral-video-does-not-show-indians-burning-pm-modis-effigy-for-creating-tensions-with-iran",
-          "date": "2026-02-26"
-        },
-        {
-          "title": "Fact-Check: Did PM Modi Call Iran a 'Terrorist State,' in A Recent Public Gathering? No, Video is AI-Generated!",
-          "source": "thequint.com",
-          "url": "https://thequint.com/news/webqoof/pm-modi-ai-generated-video-nxt-summit-fact-check",
-          "date": "2026-02-23"
-        },
-        {
-          "title": "'India Doing The Right Thing': Congress Backs Modi Govt On Iran War",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/videos/news/india-doing-the-right-thing-congress-backs-modi-govt-on-iran-war-tewari-says-not-our-war/videoshow/129674403.cms",
-          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
@@ -128,236 +90,8 @@
     },
     {
       "story_id": 2,
-      "headline": "PM Modi's cameo in Dhurandhar 2 sparks theater eruptions and social media buzz",
-      "summary": "PM Modi's unexpected appearance in the film Dhurandhar: The Revenge caused widespread audience reactions in theaters, with viewers cheering, whistling and chanting slogans. The cameo scenes featuring Modi's oath-taking ceremony became viral on social media.",
-      "actors_involved": [
-        "Narendra Modi"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 6,
-      "sources": [
-        "indiatoday.in",
-        "theprint.in",
-        "cnbctv18.com",
-        "onmanorama.com",
-        "mangalorean.com"
-      ],
-      "date_range": "2026-03-18 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Theatres erupt as PM Modi appears in Dhurandhar 2, internet can't keep calm",
-          "source": "indiatoday.in",
-          "url": "https://www.indiatoday.in/movies/bollywood/story/theatres-erupt-as-pm-modi-appears-in-dhurandhar-2-internet-cant-keep-calm-2884132-2026-03-19",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Whistles, claps, hooting\u2014Reactions after PM Modi's cameo in Dhurandhar 2 steals the spotlight",
-          "source": "theprint.in",
-          "url": "https://theprint.in/entertainment/modi-dhurandhar-2-aditya-dhar/2883306",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "What happened when PM Narendra Modi made an unexpected cameo in Dhurandhar: The Revenge",
-          "source": "cnbctv18.com",
-          "url": "https://cnbctv18.com/entertainment/what-happened-when-pm-modi-made-an-unexpected-cameo-in-dhurandhar-the-revenge-ws-l-19871721.htm",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Who is the malayali toddler in Prime Minister Narendra Modi's latest photo on social media?",
-          "source": "onmanorama.com",
-          "url": "https://onmanorama.com/entertainment/entertainment-news/2026/03/21/pm-modi-family-meeting-child-photo-krishnakumar-ahaana-krishna.html",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "PM Modi Photo With Child Goes Viral: Who Is Neeom 'Omy' Krishna?",
-          "source": "indianexpress.com",
-          "url": "https://indianexpress.com/article/india/pm-modi-viral-photo-child-neoom-omy-krishna-identity-10594435",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "PM Modi cradles little Omy, melts hearts across social media",
-          "source": "mangalorean.com",
-          "url": "https://mangalorean.com/pm-modi-cradles-little-omy-melts-hearts-across-social-media",
-          "date": "2026-03-19"
-        }
-      ],
-      "representative_urls": [
-        "https://www.indiatoday.in/movies/bollywood/story/theatres-erupt-as-pm-modi-appears-in-dhurandhar-2-internet-cant-keep-calm-2884132-2026-03-19",
-        "https://theprint.in/entertainment/modi-dhurandhar-2-aditya-dhar/2883306"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "Amit Shah campaigns across states with attacks on Congress over infiltration and healthcare corruption",
-      "summary": "Home Minister Amit Shah conducted rallies and inaugurations in Assam and Punjab, accusing Congress of allowing Bangladeshi infiltration and siphoning healthcare funds. He promised anti-conversion laws in Punjab and claimed BJP would remove all infiltrators from Assam.",
-      "actors_involved": [
-        "Amit Shah",
-        "BJP"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 23,
-      "sources": [
-        "timesofindia.indiatimes.com",
-        "indiatoday.in",
-        "economictimes.com",
-        "theprint.in",
-        "hindustantimes.com",
-        "tribuneindia.com",
-        "indianexpress.com",
-        "thehindu.com",
-        "newkerala.com",
-        "nagalandpost.com"
-      ],
-      "date_range": "2026-03-15 to 2026-03-20",
-      "articles": [
-        {
-          "title": "'Rahul Gandhi defaming India': Amit Shah on Youth Congress' shirtless protest at Delhi AI summit",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/india/rahul-gandhi-defaming-india-amit-shah-on-youth-congress-shirtless-protest-at-delhi-ai-summit/articleshow/129586890.cms",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Rahul Gandhi sips tea, eats pakoras on Parliament steps: Amit Shah's big attack",
-          "source": "indiatoday.in",
-          "url": "https://www.indiatoday.in/elections/assembly/story/amit-shah-rahul-rahul-gandhi-tea-pakora-parliament-defaming-india-guwahati-assam-2882293-2026-03-15",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Amit Shah hits out at Rahul Gandhi, accuses Congress of 'normalising infiltration'",
-          "source": "economictimes.com",
-          "url": "https://m.economictimes.com/news/elections/assembly-elections/assam/amit-shah-accuses-rahul-gandhi-of-normalizing-illegal-infiltration-in-assam-healthcare-revolution-speech/articleshow/129589644.cms",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Amit Shah to present bill on CAPFs in Rajya Sabha on Monday",
-          "source": "theprint.in",
-          "url": "https://theprint.in/india/amit-shah-to-present-bill-on-capfs-in-rajya-sabha-on-monday/2885110",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Amit Shah's claim to make Punjab drug-free a hollow slogan: Bajwa",
-          "source": "hindustantimes.com",
-          "url": "https://www.hindustantimes.com/cities/chandigarh-news/amit-shah-s-claim-to-make-punjab-drug-free-a-hollow-slogan-bajwa-101773518747239.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "EPS: Edappadi K Palaniswami's Why I Visit Delhi Reply To Opposition After Meeting Amit Shah",
-          "source": "ndtv.com",
-          "url": "https://www.ndtv.com/india-news/eps-edappadi-k-palaniswamis-why-i-visit-delhi-reply-to-opposition-after-meeting-amit-shah-before-2026-tamil-nadu-assembly-polls-11241176",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "'Anti-Conversion Laws and Drug-Free Deadlines': Amit Shah Sounds the 2027 Poll Bugle",
-          "source": "indianexpress.com",
-          "url": "https://indianexpress.com/article/cities/chandigarh/amit-shah-rally-moga-bjp-punjab-10583592/",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Amit Shah reviews security situation in Manipur",
-          "source": "thehindu.com",
-          "url": "https://thehindu.com/news/national/manipur/amit-shah-reviews-security-situation-in-manipur/article70767050.ece",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Congress siphoned \u20b9150 crore every year from Assam's health budget for 15 years: Amit Shah",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/india-news/congress-siphoned-150-crore-every-year-from-assam-s-health-budget-for-15-years-amit-shah-101773602415470.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Congress 'pocketed' Rs 150 crore per annum from Assam healthcare budget during 15 years of rule: Shah",
-          "source": "tribuneindia.com",
-          "url": "https://www.tribuneindia.com/news/india/congress-pocketed-rs-150-crore-per-annum-from-assam-healthcare-budget-during-15-years-of-rule-shah/",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "In poll-bound Assam, Shah plays Bangladesh infiltrators card",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/india/in-poll-bound-assam-shah-plays-bangladesh-infiltrators-card/articleshow/129595047.cms",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Congress legalised & normalised illegal infiltrators: Amit Shah",
-          "source": "economictimes.indiatimes.com",
-          "url": "https://economictimes.indiatimes.com/news/elections/assembly-elections/assam/amit-shah-accuses-congress-of-legalising-illegal-infiltrators-during-assam-visit/articleshow/129594376.cms",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Congress gave shelter to infiltrators: Amit Shah",
-          "source": "nagalandpost.com",
-          "url": "https://nagalandpost.com/congress-gave-shelter-to-infiltrators-amit-shah",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Amit Shah says Congress siphoned off Rs 150 crore annually from Assam's health budget",
-          "source": "thehansindia.com",
-          "url": "https://thehansindia.com/news/national/amit-shah-says-congress-siphoned-off-rs-150-crore-annually-from-assams-health-budget-1056796",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Congress made Assam a haven for infiltrators: Amit Shah in Guwahati",
-          "source": "newsable.asianetnews.com",
-          "url": "https://newsable.asianetnews.com/india/congress-made-assam-a-haven-for-infiltrators-amit-shah-in-guwahati-articleshow-rgbcxnp",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Shah's anti-conversion law pitch causes stir in Punjab political circles",
-          "source": "tribuneindia.com",
-          "url": "https://tribuneindia.com/news/punjab/shahs-anti-conversion-law-pitch-causes-stir-in-punjab-political-circles",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Amit Shah Inaugurates Assam Medical College, Modi Attacks Congress",
-          "source": "newkerala.com",
-          "url": "https://newkerala.com/news/a/amit-shah-inaugurates-pragjyotishpur-medical-college-hospital-guwahati-711.htm",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "In turban, Shah invokes sacrifices of Gurus, Nanakshahi Calendar to woo Sikhs",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/cities/chandigarh-news/in-turban-shah-invokes-sacrifices-of-gurus-nanakshahi-calendar-to-woo-sikhs-101773512202474.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Congress normalised infiltration, says HM Amit Shah in Assam",
-          "source": "newindianexpress.com",
-          "url": "https://newindianexpress.com/nation/2026/Mar/15/congress-normalised-infiltration-says-hm-amit-shah-in-assam",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "'We Will Inspect Every House': Amit Shah Issues Bold 2026 Election Promise",
-          "source": "indianexpress.com",
-          "url": "https://indianexpress.com/article/india/amit-shah-assam-visit-illegal-immigration-infiltrators-medical-college-inauguration-10583654",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "At BJYM convention, Shah vows to drive out infiltrators; seeks record mandate",
-          "source": "assamtribune.com",
-          "url": "https://assamtribune.com/assam/at-bjym-convention-shah-vows-to-drive-out-infiltrators-seeks-record-mandate-1609477",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Ahead of Assam poll schedule, Amit Shah says BJP will return with record numbers",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/india-news/ahead-of-assam-poll-schedule-amit-shah-says-bjp-will-return-with-record-numbers-101773569703037.html",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Students should be able to study medicine in India, needn't go abroad: Amit Shah",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/india-news/students-should-be-able-to-study-medicine-in-india-needn-t-go-abroad-amit-shah-101773561961482.html",
-          "date": "2026-03-15"
-        }
-      ],
-      "representative_urls": [
-        "https://timesofindia.indiatimes.com/india/rahul-gandhi-defaming-india-amit-shah-on-youth-congress-shirtless-protest-at-delhi-ai-summit/articleshow/129586890.cms",
-        "https://hindustantimes.com/india-news/congress-siphoned-150-crore-every-year-from-assam-s-health-budget-for-15-years-amit-shah-101773602415470.html"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "External Affairs Minister Jaishankar conducts Iran diplomacy to reopen Strait of Hormuz for shipping",
-      "summary": "External Affairs Minister S. Jaishankar held talks with Iranian counterparts and other regional leaders to negotiate passage for Indian ships through the Strait of Hormuz. He clarified there was no 'blanket arrangement' but ongoing discussions were yielding results for case-by-case ship clearances.",
+      "headline": "Jaishankar hails direct talks with Iran as most effective way to reopen Strait of Hormuz",
+      "summary": "External Affairs Minister S. Jaishankar said India's diplomatic talks with Iran have proven effective for securing passage of Indian vessels through the Strait of Hormuz, with two LPG carriers successfully transiting the waterway. He clarified there is no 'blanket arrangement' with Iran.",
       "actors_involved": [
         "S. Jaishankar"
       ],
@@ -366,16 +100,14 @@
       "sources": [
         "hindustantimes.com",
         "bbc.com",
-        "thehindu.com",
-        "timesofindia.indiatimes.com",
         "reuters.com",
-        "news18.com",
-        "tribuneindia.com",
-        "upstox.com",
+        "thehindu.com",
+        "moneycontrol.com",
         "mathrubhumi.com",
-        "moneycontrol.com"
+        "upstox.com",
+        "news18.com"
       ],
-      "date_range": "2026-03-15 to 2026-03-22",
+      "date_range": "2026-03-15 to 2026-03-19",
       "articles": [
         {
           "title": "Iran talks yielding results, but 'many more' India ships yet to cross: EAM Jaishankar",
@@ -390,28 +122,46 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Jaishankar hails talks with Iran to open Strait of Hormuz, says no 'blanket arrangement'",
-          "source": "thehindu.com",
-          "url": "https://www.thehindu.com/news/national/jaishankar-hails-talks-with-iran-to-open-strait-of-hormuz-says-no-blanket-arrangement-for-indian-flagged-ships-report/article70747649.ece",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "In Brussels, Jaishankar discusses Iran with EU counterparts",
-          "source": "thehindu.com",
-          "url": "https://www.thehindu.com/news/national/in-brussels-jaishankar-discusses-iran-with-eu-counterparts/article70750626.ece",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "'Reason and coordinate': Jaishankar reveals how India secured passage for 2 tankers",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/india/reason-and-coordinate-jaishankar-reveals-how-india-secured-passage-for-2-tankers-in-strait-of-hormuz-amid-iran-war/articleshow/129600563.cms",
-          "date": "2026-03-16"
-        },
-        {
           "title": "Indian foreign minister hails talks with Iran to open Strait of Hormuz, FT reports",
           "source": "reuters.com",
-          "url": "https://reuters.com/world/india/indian-foreign-minister-hails-talks-with-iran-open-strait-hormuz-ft-reports-2026-03-15",
+          "url": "https://reuters.com/world/india/indian-foreign-minister-hails-talks-with-iran-open-strait-of-hormuz-ft-reports-2026-03-15",
           "date": "2026-03-15"
+        },
+        {
+          "title": "'Reason and coordinate': Jaishankar reveals how India secured passage for 2 tankers in Strait of Hormuz amid Iran war",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/india/reason-and-coordinate-jaishankar-reveals-how-india-secured-passage-for-2-tankers-in-strait-of-hormuz-amid-iran-war/articleshow/129600563.cms",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Jaishankar hails talks with Iran to open Strait of Hormuz, says no 'blanket arrangement' for Indian-flagged ships: report",
+          "source": "thehindu.com",
+          "url": "https://www.thehindu.com/news/national/jaishankar-hails-talks-with-iran-to-open-strait-of-hormuz-says-no-blanket-arrangement-for-indian-flagged-ships-report/article70747649.ece",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Jaishankar says India in talks with Iran to reopen Strait of Hormuz amid energy supply concerns",
+          "source": "moneycontrol.com",
+          "url": "https://moneycontrol.com/news/india/jaishankar-says-india-in-talks-with-iran-to-reopen-strait-of-hormuz-amid-energy-supply-concerns-13861015.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "S Jaishankar: India's Quiet Diplomacy with Iran Eases LPG Shipping Pressure",
+          "source": "mathrubhumi.com",
+          "url": "https://www.mathrubhumi.com/news/india/external-affairs-minister-s-jaishankar-iran-diplomacy-lpg-shipping-strait-of-hormuz-m3tj3bwv",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Finland PM suggests India could broker Iran-US ceasefire: 'We saw Jaishankar calling for it'",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/india-news/iran-us-war-ceasefire-india-intervention-finland-pm-alexander-stubb-s-jaishankar-strait-of-hormuz-101773727199480.html",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Free navigation via Strait of Hormuz 'foremost priority': Indian Premier Modi",
+          "source": "aa.com.tr",
+          "url": "https://www.aa.com.tr/en/asia-pacific/free-navigation-via-strait-of-hormuz-foremost-priority-indian-premier-modi/3869773",
+          "date": "2026-03-19"
         },
         {
           "title": "UAE FM Speaks To EAM Jaishankar On West Asia Tensions Amid Iran Missile Threats",
@@ -420,102 +170,259 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Modi, Jaishankar work the phones, call for dialogue as strikes on energy infrastructure escalate",
+          "title": "In Brussels, Jaishankar discusses Iran with EU counterparts",
           "source": "thehindu.com",
-          "url": "https://www.thehindu.com/news/national/modi-jaishankar-work-the-phones-call-for-dialogue-as-strikes-on-energy-infrastructure-escalate/article70762567.ece",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Finland PM suggests India could broker Iran-US ceasefire",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/india-news/iran-us-war-ceasefire-india-intervention-finland-pm-alexander-stubb-s-jaishankar-strait-of-hormuz-101773727199480.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Jaishankar discusses West Asia crisis with Saudi, UAE ministers",
-          "source": "tribuneindia.com",
-          "url": "https://tribuneindia.com/news/india/jaishankar-discusses-west-asia-crisis-with-saudi-uae-ministers",
+          "url": "https://www.thehindu.com/news/national/in-brussels-jaishankar-discusses-iran-with-eu-counterparts/article70750626.ece",
           "date": "2026-03-16"
         },
         {
-          "title": "Jaishankar extends Eid greetings to Iran FM Araghchi; discusses situation in West Asia",
-          "source": "tribuneindia.com",
-          "url": "https://tribuneindia.com/news/eam-jaishankar/jaishankar-extends-eid-greetings-to-iran-fm-araghchi-discusses-situation-in-west-asia",
-          "date": "2026-03-22"
-        },
-        {
-          "title": "Jaishankar says India in talks with Iran to reopen Strait of Hormuz amid energy supply concerns",
-          "source": "moneycontrol.com",
-          "url": "https://moneycontrol.com/news/india/jaishankar-says-india-in-talks-with-iran-to-reopen-strait-of-hormuz-amid-energy-supply-concerns-13861015.html",
-          "date": "2026-03-16"
+          "title": "Strait of Hormuz crisis: Jaishankar says talks with Iran 'yielded results', but 'no blanket arrangement'",
+          "source": "upstox.com",
+          "url": "https://upstox.com/news/business-news/latest-updates/strait-of-hormuz-crisis-jaishankar-says-talks-with-iran-yielded-results-but-no-blanket-arrangement/article-190723",
+          "date": "2026-03-15"
         }
       ],
       "representative_urls": [
         "https://www.hindustantimes.com/india-news/no-blanket-arrangement-with-iran-for-indian-flagged-ships-says-jaishankar-strait-of-hormuz-us-iran-war-101773628563461.html",
-        "https://bbc.com/news/articles/ckg2m8zp2n3o"
+        "https://reuters.com/world/india/indian-foreign-minister-hails-talks-with-iran-open-strait-of-hormuz-ft-reports-2026-03-15"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "PM Modi's cameo appearance in 'Dhurandhar 2' triggers theatre frenzy",
+      "summary": "Prime Minister Modi's appearances in scenes from 'Dhurandhar: The Revenge' sequel sparked loud cheers and applause in theatres during preview screenings. Social media was flooded with clips of audiences whistling and chanting slogans during Modi's oath-taking scene in the film.",
+      "actors_involved": [
+        "Narendra Modi"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "indiatoday.in",
+        "theprint.in",
+        "indiablooms.com"
+      ],
+      "date_range": "2026-03-18 to 2026-03-19",
+      "articles": [
+        {
+          "title": "Theatres erupt as PM Modi appears in Dhurandhar 2, internet can't keep calm",
+          "source": "indiatoday.in",
+          "url": "https://www.indiatoday.in/movies/bollywood/story/theatres-erupt-as-pm-modi-appears-in-dhurandhar-2-internet-cant-keep-calm-2884132-2026-03-19",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Whistles, claps, hooting\u2014Reactions after PM Modi's cameo in Dhurandhar 2 steals the spotlight",
+          "source": "theprint.in",
+          "url": "https://theprint.in/entertainment/modi-dhurandhar-2-aditya-dhar/2883306",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Theatres erupt as PM Modi appears in Dhurandhar: The Revenge",
+          "source": "indiablooms.com",
+          "url": "https://indiablooms.com/showbiz/theatres-erupt-as-pm-modi-appears-in-dhurandhar-the-revenge/details",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "PM Modi Photo With Child Goes Viral: Who Is Neeom 'Omy' Krishna?",
+          "source": "indianexpress.com",
+          "url": "https://indianexpress.com/article/india/pm-modi-viral-photo-child-neoom-omy-krishna-identity-10594435",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://www.indiatoday.in/movies/bollywood/story/theatres-erupt-as-pm-modi-appears-in-dhurandhar-2-internet-cant-keep-calm-2884132-2026-03-19",
+        "https://theprint.in/entertainment/modi-dhurandhar-2-aditya-dhar/2883306"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "Amit Shah campaigns in Assam, attacks Congress over infiltration allegations",
+      "summary": "Home Minister Amit Shah addressed rallies and inaugurated medical facilities in Assam, accusing Congress of normalizing illegal infiltration from Bangladesh. He promised to remove all infiltrators and criticized Rahul Gandhi over youth wing protests, while launching healthcare projects worth Rs 2,092 crore.",
+      "actors_involved": [
+        "Amit Shah"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 18,
+      "sources": [
+        "hindustantimes.com",
+        "economictimes.indiatimes.com",
+        "thehansindia.com",
+        "nagalandpost.com",
+        "tribuneindia.com",
+        "moneycontrol.com",
+        "newindianexpress.com",
+        "cnbctv18.com",
+        "indianexpress.com"
+      ],
+      "date_range": "2026-03-15 to 2026-03-20",
+      "articles": [
+        {
+          "title": "'Rahul Gandhi defaming India': Amit Shah on Youth Congress' shirtless protest at Delhi AI summit",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/india/rahul-gandhi-defaming-india-amit-shah-on-youth-congress-shirtless-protest-at-delhi-ai-summit/articleshow/129586890.cms",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Congress siphoned \u20b9150 crore every year from Assam's health budget for 15 years: Amit Shah",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/india-news/congress-siphoned-150-crore-every-year-from-assam-s-health-budget-for-15-years-amit-shah-101773602415470.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "In poll-bound Assam, Shah plays Bangladesh infiltrators card",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/india/in-poll-bound-assam-shah-plays-bangladesh-infiltrators-card/articleshow/129595047.cms",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Amit Shah to present bill on CAPFs in Rajya Sabha on Monday",
+          "source": "theprint.in",
+          "url": "https://theprint.in/india/amit-shah-to-present-bill-on-capfs-in-rajya-sabha-on-monday/2885110",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Amit Shah reviews security situation in Manipur",
+          "source": "thehindu.com",
+          "url": "https://thehindu.com/news/national/manipur/amit-shah-reviews-security-situation-in-manipur/article70767050.ece",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Congress legalised & normalised illegal infiltrators: Amit Shah",
+          "source": "economictimes.indiatimes.com",
+          "url": "https://economictimes.indiatimes.com/news/elections/assembly-elections/assam/amit-shah-accuses-congress-of-legalising-illegal-infiltrators-during-assam-visit/articleshow/129594376.cms",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Confident that BJP will form govt in Assam with largest ever mandate: Amit Shah",
+          "source": "moneycontrol.com",
+          "url": "https://moneycontrol.com/news/india/confident-that-bjp-will-form-govt-in-assam-with-largest-ever-mandate-amit-shah-13860930.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Shah inaugurates, lays foundation for \u20b92,092 crore health projects in Assam",
+          "source": "cnbctv18.com",
+          "url": "https://cnbctv18.com/india/shah-inaugurates-lays-foundation-for-%E2%82%B92092-crore-health-projects-in-assam-ws-l-19868609.htm",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Students should be able to study medicine in India, needn't go abroad: Amit Shah",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/india-news/students-should-be-able-to-study-medicine-in-india-needn-t-go-abroad-amit-shah-101773561961482.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "'We Will Inspect Every House': Amit Shah Issues Bold 2026 Election Promise to Purge Infiltrators From Assam",
+          "source": "indianexpress.com",
+          "url": "https://indianexpress.com/article/india/amit-shah-assam-visit-illegal-immigration-infiltrators-medical-college-inauguration-10583654",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Congress normalised infiltration, says HM Amit Shah in Assam",
+          "source": "newindianexpress.com",
+          "url": "https://newindianexpress.com/nation/2026/Mar/15/congress-normalised-infiltration-says-hm-amit-shah-in-assam",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Ahead of Assam poll schedule, Amit Shah says BJP will return with record numbers",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/india-news/ahead-of-assam-poll-schedule-amit-shah-says-bjp-will-return-with-record-numbers-101773569703037.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Amit Shah says Congress siphoned off Rs 150 crore annually from Assam's health budget",
+          "source": "thehansindia.com",
+          "url": "https://thehansindia.com/news/national/amit-shah-says-congress-siphoned-off-rs-150-crore-annually-from-assams-health-budget-1056796",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Congress gave shelter to infiltrators: Amit Shah",
+          "source": "nagalandpost.com",
+          "url": "https://nagalandpost.com/congress-gave-shelter-to-infiltrators-amit-shah",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Congress 'pocketed' Rs 150 crore per annum from Assam healthcare budget during 15 years of rule: Shah",
+          "source": "tribuneindia.com",
+          "url": "https://www.tribuneindia.com/news/india/congress-pocketed-rs-150-crore-per-annum-from-assam-healthcare-budget-during-15-years-of-rule-shah/",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "In turban, Shah invokes sacrifices of Gurus, Nanakshahi Calendar to woo Sikhs",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/cities/chandigarh-news/in-turban-shah-invokes-sacrifices-of-gurus-nanakshahi-calendar-to-woo-sikhs-101773512202474.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "'Anti-Conversion Laws and Drug-Free Deadlines': Amit Shah Sounds the 2027 Poll Bugle at Punjab's 'Badlav' Rally",
+          "source": "indianexpress.com",
+          "url": "https://indianexpress.com/article/cities/chandigarh/amit-shah-rally-moga-bjp-punjab-10583592/",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Capt Amarinder skips Amit Shah's rally in Punjab due to health reasons",
+          "source": "tribuneindia.com",
+          "url": "https://www.tribuneindia.com/news/punjab/capt-amarinder-skips-rally-due-to-health-reasons/",
+          "date": "2026-03-15"
+        }
+      ],
+      "representative_urls": [
+        "https://hindustantimes.com/india-news/congress-siphoned-150-crore-every-year-from-assam-s-health-budget-for-15-years-amit-shah-101773602415470.html",
+        "https://indianexpress.com/article/india/amit-shah-assam-visit-illegal-immigration-infiltrators-medical-college-inauguration-10583654"
       ]
     },
     {
       "story_id": 5,
-      "headline": "BJP releases candidate lists for assembly elections across West Bengal, Kerala, and Puducherry",
-      "summary": "BJP announced multiple candidate lists for upcoming assembly elections, fielding Suvendu Adhikari against Mamata Banerjee in West Bengal's Bhabanipur, Rajeev Chandrasekhar in Kerala's Nemom, and announcing candidates for Puducherry. The party aims to challenge regional strongholds.",
+      "headline": "Assembly Elections 2026: BJP releases candidate lists for West Bengal, Kerala",
+      "summary": "BJP announced candidate lists for upcoming assembly elections in West Bengal and Kerala. The party fielded Suvendu Adhikari against Mamata Banerjee in Bhabanipur constituency and released lists totaling 255 candidates for West Bengal and 47 for Kerala, including state president Rajeev Chandrasekhar.",
       "actors_involved": [
         "BJP"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 11,
+      "source_count": 13,
       "sources": [
         "timesofindia.indiatimes.com",
-        "livemint.com",
         "hindustantimes.com",
-        "rediff.com",
-        "thehindu.com",
-        "economictimes.indiatimes.com",
-        "thefederal.com"
+        "livemint.com",
+        "thefederal.com",
+        "cnbctv18.com",
+        "economictimes.indiatimes.com"
       ],
       "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
-          "title": "West Bengal polls 2026: BJP releases candidates for 144 seats in 1st list",
+          "title": "West Bengal polls 2026: BJP releases candidates for 144 seats in 1st list, fields Suvendu Adhikari in Mamata's Bhabanipur",
           "source": "timesofindia.indiatimes.com",
           "url": "https://timesofindia.indiatimes.com/india/west-bengal-polls-2026-bjp-releases-candidates-for-144-seats-in-1st-list-fields-suvendu-adhikari-in-mamatas-bhabanipur/articleshow/129608686.cms",
           "date": "2026-03-16"
         },
         {
-          "title": "West Bengal Election: BJP releases second list of 111 candidates",
-          "source": "livemint.com",
-          "url": "https://livemint.com/elections/assembly-elections/west-bengal-election-bjp-releases-second-list-of-111-candidates-check-names-tmc-mamata-banerjee-11773920788512.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "BJP releases 2nd list of 111 candidates for West Bengal polls, fields Rekha Patra",
+          "title": "BJP releases 2nd list of 111 candidates for West Bengal polls, fields Rekha Patra from Hingalganj",
           "source": "hindustantimes.com",
           "url": "https://hindustantimes.com/india-news/bjp-second-list-of-111-candidates-for-bengal-polls-with-rekha-patra-kalyan-chakraborty-roopa-ganguly-101773923271422.html",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Kerala BJP chief Rajeev Chandrasekhar declares assets worth Rs 93 crore",
-          "source": "rediff.com",
-          "url": "https://www.rediff.com/news/report/kerala-bjp-chief-rajeev-chandrasekhar-declares-assets-worth-rs-93-crore/20260321.htm",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "BJP announces nine candidates for Puducherry polls",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/india/bjp-announces-nine-candidates-for-puducherry-polls/articleshow/129723446.cms",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "West Bengal Assembly polls: BJP announces second list of candidates",
-          "source": "thehindu.com",
-          "url": "https://thehindu.com/elections/west-bengal-assembly/bjp-announces-second-list-candidates-for-west-bengal-assembly-polls/article70762134.ece",
           "date": "2026-03-19"
         },
         {
-          "title": "Puducherry Assembly election 2026: BJP announces candidates for nine seats",
-          "source": "thehindu.com",
-          "url": "https://thehindu.com/elections/puducherry-assembly/bjp-announces-candidates-for-nine-seats-in-puducherry-union-territory/article70769470.ece",
-          "date": "2026-03-21"
+          "title": "Kerala elections 2026: BJP releases first list of 47 candidates; fields Rajeev Chandrasekhar, K Surendran",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/india/kerala-elections-2026-bjp-releases-first-list-of-47-candidates-fields-rajeev-chandrasekhar-k-surendran/amp_articleshow/129608012.cms",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "West Bengal Election: BJP releases second list of 111 candidates. Check names",
+          "source": "livemint.com",
+          "url": "https://livemint.com/elections/assembly-elections/west-bengal-election-bjp-releases-second-list-of-111-candidates-check-names-tmc-mamata-banerjee-11773920788512.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Bengal elections | BJP lists 111 faces more, includes star power, former Union minister",
+          "source": "thefederal.com",
+          "url": "https://thefederal.com/elections-2026/west-bengal-elections-2026-bj-second-list-111-candidates-actors-former-union-minister-235026",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Suvendu Adhikari to Rekha Patra: Key BJP leaders in West Bengal assembly elections",
+          "source": "cnbctv18.com",
+          "url": "https://cnbctv18.com/photos/india/politics/west-bengal-assembly-elections-key-bjp-leaders-suvendu-adhikari-to-rekha-patra-ws-l-19868693.htm",
+          "date": "2026-03-16"
         },
         {
           "title": "West Bengal 2026 assembly elections: List of key BJP leaders in battlefield",
@@ -524,16 +431,34 @@
           "date": "2026-03-16"
         },
         {
-          "title": "Kerala elections 2026: BJP releases first list of 47 candidates",
+          "title": "Puducherry Assembly election 2026: BJP announces candidates for nine seats in Union Territory",
+          "source": "thehindu.com",
+          "url": "https://thehindu.com/elections/puducherry-assembly/bjp-announces-candidates-for-nine-seats-in-puducherry-union-territory/article70769470.ece",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Kerala BJP chief Rajeev Chandrasekhar declares assets worth Rs 93 crore",
+          "source": "rediff.com",
+          "url": "https://www.rediff.com/news/report/kerala-bjp-chief-rajeev-chandrasekhar-declares-assets-worth-rs-93-crore/20260321.htm",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "West Bengal Assembly Election Date 2026: Full schedule, voting date, Result, and all you need to know",
           "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/india/kerala-elections-2026-bjp-releases-first-list-of-47-candidates-fields-rajeev-chandrasekhar-k-surendran/amp_articleshow/129608012.cms",
+          "url": "https://timesofindia.indiatimes.com/india/west-bengal-assembly-election-2026-schedule-date-voting-phase-result-counting-polls-full-details-election-commission/articleshow/129588136.cms",
           "date": "2026-03-16"
         },
         {
-          "title": "Bengal elections | BJP lists 111 faces more, includes star power",
-          "source": "thefederal.com",
-          "url": "https://thefederal.com/elections-2026/west-bengal-elections-2026-bj-second-list-111-candidates-actors-former-union-minister-235026",
-          "date": "2026-03-19"
+          "title": "Retain Assam, Conquer Bengal: Inside BJP's High-Stakes 2026 Map as 'Demographic Hurdles' Threaten Expansion",
+          "source": "indianexpress.com",
+          "url": "https://indianexpress.com/article/political-pulse/bjps-assembly-poll-battle-plan-hold-assam-win-bengal-expand-in-the-south-10583357",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "West Bengal assembly elections on April 23 and 29, results on May 4",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/india-news/west-bengal-assembly-election-voting-date-nominations-results-date-time-phases-full-schedule-101773569374988.html",
+          "date": "2026-03-16"
         },
         {
           "title": "BJP Bengal 2nd list: Backs old hands, ditches GNLF",
@@ -544,34 +469,28 @@
       ],
       "representative_urls": [
         "https://timesofindia.indiatimes.com/india/west-bengal-polls-2026-bjp-releases-candidates-for-144-seats-in-1st-list-fields-suvendu-adhikari-in-mamatas-bhabanipur/articleshow/129608686.cms",
-        "https://livemint.com/elections/assembly-elections/west-bengal-election-bjp-releases-second-list-of-111-candidates-check-names-tmc-mamata-banerjee-11773920788512.html"
+        "https://timesofindia.indiatimes.com/india/kerala-elections-2026-bjp-releases-first-list-of-47-candidates-fields-rajeev-chandrasekhar-k-surendran/amp_articleshow/129608012.cms"
       ]
     },
     {
       "story_id": 6,
-      "headline": "Congress MP Pradyut Bordoloi joins BJP ahead of Assam assembly elections",
-      "summary": "Congress MP Pradyut Bordoloi resigned from Congress and joined BJP in a significant pre-election defection. The Nagaon MP cited lack of support and insults within Assam Congress leadership as reasons for the switch, dealing a blow to the opposition party ahead of April polls.",
+      "headline": "Congress MP Pradyut Bordoloi quits party to join BJP ahead of Assam polls",
+      "summary": "Congress Lok Sabha MP Pradyut Bordoloi resigned from the party and joined BJP on March 17-18, dealing a significant blow to Congress ahead of Assam assembly elections. The two-term MP from Nagaon cited lack of support and humiliation within Congress for his decision.",
       "actors_involved": [
-        "BJP",
-        "Indian National Congress"
+        "Indian National Congress",
+        "BJP"
       ],
       "signal_category_hint": "domestic_regime",
       "source_count": 5,
       "sources": [
-        "english.hindusthansamachar.in",
         "indiatoday.in",
         "ahmedabadmirror.com",
         "deccanherald.com",
-        "opindia.com"
+        "opindia.com",
+        "timesofindia.indiatimes.com"
       ],
-      "date_range": "2026-03-18 to 2026-03-19",
+      "date_range": "2026-03-17 to 2026-03-18",
       "articles": [
-        {
-          "title": "Congress MP Pradyut Joins BJP Ahead of Assam Polls",
-          "source": "english.hindusthansamachar.in",
-          "url": "https://english.hindusthansamachar.in/Encyc/2026/3/18/Congress-MP-Pradyut-Joins-BJP.php",
-          "date": "2026-03-18"
-        },
         {
           "title": "MP Pradyut Bordoloi joins BJP in poll-bound Assam day after quitting Congress",
           "source": "indiatoday.in",
@@ -591,53 +510,64 @@
           "date": "2026-03-18"
         },
         {
-          "title": "After quitting the Congress, Pradyut Bordoloi resigns from Lok Sabha",
+          "title": "After quitting the Congress, Pradyut Bordoloi resigns from Lok Sabha, will contest Assam Assembly election from the BJP",
           "source": "opindia.com",
           "url": "https://www.opindia.com/news-updates/major-setback-for-congress-in-assam-pradyut-bordoloi-quits-resigns-from-lok-sabha-joins-bjp-to-contest-assembly-elections/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Assembly elections 2026 Highlights: Assam MP Pradyut Bordoloi joins BJP",
+          "source": "thehindu.com",
+          "url": "https://www.thehindu.com/elections/assembly-elections-kerala-tamil-nadu-west-bengal-assam-puducherry-live-udpates-march-18-2026/article70756553.ece",
           "date": "2026-03-18"
         }
       ],
       "representative_urls": [
         "https://www.indiatoday.in/elections/assembly/story/mp-pradyut-bordoloi-joins-bjp-in-poll-bound-assam-day-after-quitting-congress-2883611-2026-03-18",
-        "https://english.hindusthansamachar.in/Encyc/2026/3/18/Congress-MP-Pradyut-Joins-BJP.php"
+        "https://www.deccanherald.com/elections/assam/assam-assembly-elections-2026-big-blow-for-congress-as-lok-sabha-mp-pradyut-bordoloi-joins-bjp-3936092"
       ]
     },
     {
       "story_id": 7,
-      "headline": "US Ambassador Sergio Gor holds security talks with NSA Ajit Doval",
-      "summary": "US Ambassador to India Sergio Gor met with National Security Advisor Ajit Doval for discussions on critical security and geopolitical issues. The meeting was described as 'extremely fruitful' and focused on advancing US-India strategic cooperation.",
+      "headline": "NSA Ajit Doval holds 'fruitful' meeting with US Ambassador on security issues",
+      "summary": "National Security Advisor Ajit Doval met with US Ambassador Sergio Gor on March 18-19 to discuss critical security and geopolitical issues, with both sides highlighting ongoing US-India strategic cooperation and shared interests in regional stability.",
       "actors_involved": [
         "Ajit Doval"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 7,
+      "source_count": 6,
       "sources": [
         "firstpost.com",
-        "economictimes.com",
+        "economictimes.indiatimes.com",
         "freepressjournal.in",
-        "cnbctv18.com",
         "theindianeye.com",
-        "meyka.com",
+        "cnbctv18.com",
         "newsable.asianetnews.com"
       ],
       "date_range": "2026-03-18 to 2026-03-19",
       "articles": [
         {
-          "title": "Sergio Gor holds 'fruitful' meeting with NSA Ajit Doval on security, geopolitical issues",
+          "title": "Sergio Gor holds 'fruitful' meeting with NSA Ajit Doval on security, geopolitical issuess",
           "source": "firstpost.com",
           "url": "https://www.firstpost.com/world/sergio-gor-holds-fruitful-meeting-with-nsa-ajit-doval-on-security-geopolitical-issues-13990972.html",
           "date": "2026-03-19"
         },
         {
           "title": "NSA Doval, Sergio Gor discuss geopolitical issues in 'extremely fruitful' meeting",
-          "source": "economictimes.com",
+          "source": "economictimes.indiatimes.com",
           "url": "https://m.economictimes.com/news/defence/nsa-ajit-doval-sergio-gor-discuss-geopolitical-issues-in-extremely-fruitful-meeting/articleshow/129672401.cms",
           "date": "2026-03-19"
         },
         {
-          "title": "US Ambassador Sergio Gor, NSA Ajit Doval Discuss India-US Strategic Partnership",
+          "title": "US Ambassador Sergio Gor, NSA Ajit Doval Discuss India-US Strategic Partnership, Defence Cooperation",
           "source": "freepressjournal.in",
           "url": "https://www.freepressjournal.in/india/us-ambassador-sergio-gor-nsa-ajit-doval-discuss-india-us-strategic-partnership-defence-cooperation",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Sergio Gor meets NSA Ajit Doval discussing geopolitical issues",
+          "source": "theindianeye.com",
+          "url": "https://theindianeye.com/2026/03/19/sergio-gor-meets-nsa-ajit-doval-discussing-geopolitical-issues/",
           "date": "2026-03-19"
         },
         {
@@ -647,22 +577,10 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Sergio Gor meets NSA Ajit Doval discussing geopolitical issues",
-          "source": "theindianeye.com",
-          "url": "https://theindianeye.com/2026/03/19/sergio-gor-meets-nsa-ajit-doval-discussing-geopolitical-issues/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Ajit Doval March 19: US-India Security Talks Put Hormuz, Oil in Focus",
-          "source": "meyka.com",
-          "url": "https://meyka.com/blog/ajit-doval-march-19-us-india-security-talks-put-hormuz-oil-in-focus-1903/",
-          "date": "2026-03-19"
-        },
-        {
           "title": "US Envoy, Ajit Doval hold 'fruitful' meet on security cooperation",
           "source": "newsable.asianetnews.com",
           "url": "https://newsable.asianetnews.com/world/us-envoy-ajit-doval-hold-fruitful-meet-on-security-cooperation-articleshow-agamdz0",
-          "date": "2026-03-19"
+          "date": "2026-03-18"
         }
       ],
       "representative_urls": [
@@ -672,26 +590,67 @@
     },
     {
       "story_id": 8,
-      "headline": "Indian Navy deploys additional warships to Gulf of Oman for tanker escort operations",
-      "summary": "The Indian Navy is sending more warships to the Gulf of Oman and Arabian Sea to escort Indian-flagged vessels amid ongoing tensions in the Strait of Hormuz. The deployment aims to ensure safe passage for fuel tankers and merchant vessels following successful transit of some Indian ships.",
+      "headline": "India rejects US commission report seeking sanctions on RAW and RSS",
+      "summary": "India categorically rejected a US Commission on International Religious Freedom (USCIRF) report recommending sanctions on RAW and RSS, calling it 'biased' and 'selective targeting'. BJP accused Congress of standing against India by endorsing the report.",
+      "actors_involved": [
+        "BJP",
+        "RAW"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 3,
+      "sources": [
+        "indiatoday.in",
+        "dailypioneer.com",
+        "deccanherald.com"
+      ],
+      "date_range": "2026-03-15 to 2026-03-16",
+      "articles": [
+        {
+          "title": "Biased: India slams 'selective targeting' as US body seeks sanctions on RAW, RSS",
+          "source": "indiatoday.in",
+          "url": "https://www.indiatoday.in/india/story/biased-india-slams-selective-targeting-as-us-body-seeks-sanctions-on-raw-rss-2882920-2026-03-16",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "BJP rejects US body's call to ban RSS, RAW",
+          "source": "dailypioneer.com",
+          "url": "https://dailypioneer.com/news/bjp-rejects-us-bodys-call-to-ban-rss-raw",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Rahul Gandhi USCIRF: BJP attacks LoP over report on RAW, RSS row",
+          "source": "deccanherald.com",
+          "url": "https://www.deccanherald.com/india/india-deserves-a-better-lop-bjp-slams-rahul-for-endorsing-uscirf-report-seeking-to-ban-raw-rss-3936572",
+          "date": "2026-03-15"
+        }
+      ],
+      "representative_urls": [
+        "https://www.indiatoday.in/india/story/biased-india-slams-selective-targeting-as-us-body-seeks-sanctions-on-raw-rss-2882920-2026-03-16",
+        "https://dailypioneer.com/news/bjp-rejects-us-bodys-call-to-ban-rss-raw"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Indian Navy deploys additional warships to Gulf region for merchant vessel escort",
+      "summary": "India deployed additional naval vessels to the Gulf of Oman and Arabian Sea to escort fuel tankers and ensure safe passage through regional waters amid Middle East tensions. The deployment increases Indian warships in the region to six or seven vessels.",
       "actors_involved": [
         "Indian Armed Forces"
       ],
-      "signal_category_hint": "alignment_diplomatic",
+      "signal_category_hint": "security_defense",
       "source_count": 4,
       "sources": [
         "hindustantimes.com",
         "bloomberg.com",
-        "thehindu.com",
-        "thehindubusinessline.com"
+        "thehindubusinessline.com",
+        "thehindu.com"
       ],
-      "date_range": "2026-03-16 to 2026-03-19",
+      "date_range": "2026-03-17 to 2026-03-18",
       "articles": [
         {
           "title": "Indian Navy to send more warships to help vessels cross battle-hit Strait of Hormuz",
           "source": "hindustantimes.com",
           "url": "https://hindustantimes.com/india-news/indian-navy-ups-gulf-of-oman-presence-as-us-iran-war-rages-on-strait-of-hormuz-101773881977067.html",
-          "date": "2026-03-19"
+          "date": "2026-03-17"
         },
         {
           "title": "India Deploys Warships Near Gulf of Oman to Escort Fuel Tankers",
@@ -700,16 +659,16 @@
           "date": "2026-03-18"
         },
         {
-          "title": "Indian Navy joins U.S.-led drill 'Sea Dragon' in Guam",
-          "source": "thehindu.com",
-          "url": "https://thehindu.com/news/national/indian-navy-joins-us-led-drill-sea-dragon-in-guam/article70754608.ece",
-          "date": "2026-03-18"
-        },
-        {
           "title": "Indian Navy ramps up escort for oil tankers, unlikely to join US coalition in Hormuz",
           "source": "thehindubusinessline.com",
           "url": "https://thehindubusinessline.com/news/indian-navy-steps-up-vigil-to-escort-oil-tankers-unlikely-to-join-us-coalition/article70754459.ece",
-          "date": "2026-03-18"
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Indian Navy joins U.S.-led drill 'Sea Dragon' in Guam",
+          "source": "thehindu.com",
+          "url": "https://thehindu.com/news/national/indian-navy-joins-us-led-drill-sea-dragon-in-guam/article70754608.ece",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -718,178 +677,79 @@
       ]
     },
     {
-      "story_id": 9,
-      "headline": "Fugitive diamantaire Nirav Modi makes final attempt to block UK extradition to India",
-      "summary": "Nirav Modi moved the UK High Court to reopen his extradition appeal, arguing fresh developments and risk of illegal detention. His counsel claimed there remained a risk of being moved from Arthur Road jail and subjected to coercive interrogation, while India's representatives defended the sovereign assurances given.",
-      "actors_involved": [],
-      "signal_category_hint": "unclear",
+      "story_id": 10,
+      "headline": "RBI working on avenues for Russian trade counterparts to use accumulated INR",
+      "summary": "The Reserve Bank of India is developing mechanisms for Russian trade partners to utilize their accumulated Indian rupees for imports into India or capital investments, as part of efforts to boost bilateral trade in local currencies and reduce dollar dependence.",
+      "actors_involved": [
+        "Reserve Bank of India"
+      ],
+      "signal_category_hint": "economic_tech",
       "source_count": 2,
       "sources": [
-        "hindustantimes.com",
-        "dw.com"
+        "money.rediff.com",
+        "economictimes.indiatimes.com"
       ],
-      "date_range": "2026-03-16 to 2026-03-17",
+      "date_range": "2026-03-19 to 2026-03-19",
       "articles": [
         {
-          "title": "Fugitive diamantaire Nirav Modi moves London court in last try to stall extradition to India",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/india-news/fugitive-diamantaire-nirav-modi-moves-london-court-in-last-try-to-stall-extradition-to-india-101773799366307.html",
-          "date": "2026-03-16"
+          "title": "RBI: INR Use for Russian Trade & Investments",
+          "source": "money.rediff.com",
+          "url": "https://money.rediff.com/news/market/rbi-inr-use-for-russian-trade-investments/43852720260319",
+          "date": "2026-03-19"
         },
         {
-          "title": "India news: Crude tanker Jag Laadki reaches Gujarat",
-          "source": "dw.com",
-          "url": "https://dw.com/en/india-news-nirav-modi-seeks-to-block-extradition-reports/live-76403539",
-          "date": "2026-03-17"
+          "title": "RBI working to provide avenues to Russian trade counterparts for INR use",
+          "source": "economictimes.indiatimes.com",
+          "url": "https://m.economictimes.com/news/economy/foreign-trade/rbi-working-to-provide-avenues-to-russian-trade-counterparts-for-inr-use/amp_articleshow/129675320.cms",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://hindustantimes.com/india-news/fugitive-diamantaire-nirav-modi-moves-london-court-in-last-try-to-stall-extradition-to-india-101773799366307.html",
-        "https://dw.com/en/india-news-nirav-modi-seeks-to-block-extradition-reports/live-76403539"
-      ]
-    },
-    {
-      "story_id": 10,
-      "headline": "BJP rejects US religious freedom commission report calling for sanctions on RSS and RAW",
-      "summary": "The BJP strongly criticized a US Commission on International Religious Freedom (USCIRF) report that recommended sanctions on the RSS and RAW. The party accused Congress of backing the report and alleged it was standing against India. India's External Affairs Ministry rejected the report as 'motivated and biased.'",
-      "actors_involved": [
-        "BJP",
-        "RAW"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 3,
-      "sources": [
-        "dailypioneer.com",
-        "indiatoday.in",
-        "menafn.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-17",
-      "articles": [
-        {
-          "title": "BJP rejects US body's call to ban RSS, RAW",
-          "source": "dailypioneer.com",
-          "url": "https://dailypioneer.com/news/bjp-rejects-us-bodys-call-to-ban-rss-raw",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Biased: India slams 'selective targeting' as US body seeks sanctions on RAW, RSS",
-          "source": "indiatoday.in",
-          "url": "https://www.indiatoday.in/india/story/biased-india-slams-selective-targeting-as-us-body-seeks-sanctions-on-raw-rss-2882920-2026-03-16",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "BJP Slams Congress Over USCIRF Report Remarks On RSS, RAW",
-          "source": "menafn.com",
-          "url": "https://menafn.com/1110871757/BJP-Slams-Congress-Over-USCIRF-Report-Remarks-On-RSS-RAW",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://www.indiatoday.in/india/story/biased-india-slams-selective-targeting-as-us-body-seeks-sanctions-on-raw-rss-2882920-2026-03-16",
-        "https://menafn.com/1110871757/BJP-Slams-Congress-Over-USCIRF-Report-Remarks-On-RSS-RAW"
+        "https://money.rediff.com/news/market/rbi-inr-use-for-russian-trade-investments/43852720260319",
+        "https://m.economictimes.com/news/economy/foreign-trade/rbi-working-to-provide-avenues-to-russian-trade-counterparts-for-inr-use/amp_articleshow/129675320.cms"
       ]
     },
     {
       "story_id": 11,
-      "headline": "Adani Group announces Rs 2 lakh crore annual investment plan and wins major business deals",
-      "summary": "The Adani Group outlined a massive infrastructure expansion plan committing Rs 2 lakh crore annually over five years. Separately, Adani Enterprises secured NCLT approval for its Rs 14,535 crore acquisition of Jaiprakash Associates, while Adani Power won a 1,600 MW electricity supply contract from Maharashtra.",
+      "headline": "Adani Group plans Rs 2 lakh crore annual infrastructure investment for five years",
+      "summary": "The Adani Group announced plans to invest approximately Rs 2 lakh crore annually over the next five years in infrastructure development, focusing on energy security, renewable capacity expansion to 50 GW by 2030, and strengthening trade networks amid global uncertainty.",
       "actors_involved": [
         "Gautam Adani"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 15,
+      "source_count": 7,
       "sources": [
-        "prnewswire.com",
-        "ft.com",
-        "financialexpress.com",
-        "thehindubusinessline.com",
-        "hindustantimes.com",
-        "livemint.com",
         "economictimes.indiatimes.com",
         "timesofindia.indiatimes.com",
-        "republicworld.com",
-        "latestly.com",
-        "moneycontrol.com"
+        "livemint.com",
+        "moneycontrol.com",
+        "business-standard.com"
       ],
-      "date_range": "2026-03-15 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-19",
       "articles": [
         {
-          "title": "Skylark Labs Secures Adani Group Contracts to Expand Adaptive Drone Perception",
-          "source": "prnewswire.com",
-          "url": "https://www.prnewswire.com/news-releases/skylark-labs-secures-adani-group-contracts-to-expand-adaptive-drone-perception-across-infrastructure-operations-302713291.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Adani's win against Vedanta in takeover fight leaves shareholders with nothing",
-          "source": "ft.com",
-          "url": "https://www.ft.com/content/24d429f5-c054-419e-ba43-16ef4d55c342?syn-25a6b1a6=1",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Adani Ports shows interest in acquiring select JAL assets; Stock up 2%",
-          "source": "financialexpress.com",
-          "url": "https://www.financialexpress.com/business/industry-adani-ports-shows-interest-in-acquiring-select-jal-assets-stock-up-2-4178653/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Stock to buy today: Adani Power (\u20b9154.10) \u2013 BUY",
-          "source": "thehindubusinessline.com",
-          "url": "https://thehindubusinessline.com/portfolio/technical-analysis/stock-to-buy-today-adani-power-15410-buy/article70749846.ece",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Adani secures $1.7-bn takeover of bankrupt Jaypee Group in major infra win",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/business/adani-secures-1-7-bn-takeover-of-bankrupt-jaypee-group-in-major-infra-win-101773800889642.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Adani Group stock Adani Power share rallies 7.5% in 2 days on big order win",
-          "source": "livemint.com",
-          "url": "https://livemint.com/market/stock-market-news/adani-group-stock-adani-power-share-rallies-7-5-in-2-days-on-big-order-win-do-you-own-11773729100847.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Adani commits Rs 2 lakh crore to fortify India's energy, trade networks",
+          "title": "Adani commits Rs 2 lakh crore to fortify India's energy, trade networks against global shocks",
           "source": "economictimes.indiatimes.com",
           "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/adani-commits-rs-2-lakh-crore-to-fortify-indias-energy-trade-networks-against-global-shocks/articleshow/129631646.cms",
-          "date": "2026-03-17"
+          "date": "2026-03-18"
         },
         {
-          "title": "Adani Power Wins 1,600 MW Supply Contract from Maharashtra State Electricity Distribution Company",
-          "source": "republicworld.com",
-          "url": "https://www.republicworld.com/initiatives/adani-power-wins-1600-mw-supply-contract-from-maharashtra-state-electricity-distribution-company-limited",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "NCLT clears Adani Enterprises resolution plan, but legal hurdles remain for buyers",
+          "title": "NCLT clears Adani Enterprises resolution plan, but legal hurdles remain for buyers of Jaypee Sports City",
           "source": "timesofindia.indiatimes.com",
           "url": "https://timesofindia.indiatimes.com/city/noida/nclt-clears-adani-enterprises-resolution-plan-but-legal-hurdles-remain-for-buyers-of-jaypee-sports-city/articleshow/129640942.cms",
           "date": "2026-03-18"
         },
         {
-          "title": "Adani Total Gas Share Price Today, March 16, 2026: Stocks of Adani Total Gas Limited Fall by 3.31%",
-          "source": "latestly.com",
-          "url": "https://www.latestly.com/socially/business/adani-total-gas-share-price-today-march-16-2026-stocks-of-adani-total-gas-limited-fall-by-3-31-in-early-trade-7355711.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Adani Power shares jumps 5% after MSEDCL awards 1,600 MW long-term supply contract",
-          "source": "economictimes.indiatimes.com",
-          "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-power-shares-jumps-5-after-msedcl-awards-1600-mw-long-term-supply-contract/articleshow/129601575.cms",
-          "date": "2026-03-15"
+          "title": "Adani Group stock Adani Power share rallies 7.5% in 2 days on big order win; do you own?",
+          "source": "livemint.com",
+          "url": "https://livemint.com/market/stock-market-news/adani-group-stock-adani-power-share-rallies-7-5-in-2-days-on-big-order-win-do-you-own-11773729100847.html",
+          "date": "2026-03-17"
         },
         {
           "title": "Adani Group's Rs 2 lakh crore per year greenfield infra capex to cover renewables, ports, airports",
           "source": "moneycontrol.com",
           "url": "https://moneycontrol.com/news/business/adani-group-s-rs-2-lakh-crore-per-year-greenfield-infra-capex-to-cover-renewables-ports-airports-13862994.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Adani Electricity Mumbai Limited retains top spot in India's power distribution utility rankings",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/city/mumbai/adani-electricity-mumbai-limited-retains-top-spot-in-indias-power-distribution-utility-rankings-for-the-second-consecutive-year/articleshow/129723202.cms",
-          "date": "2026-03-21"
+          "date": "2026-03-17"
         },
         {
           "title": "Adani group stocks in focus amid \u20b92-trn annual capex plan; long-term buys?",
@@ -898,50 +758,64 @@
           "date": "2026-03-18"
         },
         {
-          "title": "Adani Power extends gains, rise 13% in one week: What lies ahead?",
-          "source": "economictimes.indiatimes.com",
-          "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-power-shares-extend-gains-rise-13-in-one-week-what-lies-ahead/articleshow/129624372.cms",
-          "date": "2026-03-18"
+          "title": "Adani secures $1.7-bn takeover of bankrupt Jaypee Group in major infra win",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/business/adani-secures-1-7-bn-takeover-of-bankrupt-jaypee-group-in-major-infra-win-101773800889642.html",
+          "date": "2026-03-17"
         },
         {
-          "title": "Power Mech wins \u20b9710 crore contract to run Adani's Maharashtra power plant",
-          "source": "cnbctv18.com",
-          "url": "https://cnbctv18.com/market/power-mech-bags-rs-709-6-cr-o-and-m-contract-from-adani-group-for-tiroda-thermal-plant-ws-l-19869455.htm",
+          "title": "Adani Power shares jumps 5% after MSEDCL awards 1,600 MW long-term supply contract",
+          "source": "economictimes.indiatimes.com",
+          "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-power-shares-jumps-5-after-msedcl-awards-1600-mw-long-term-supply-contract/articleshow/129601575.cms",
           "date": "2026-03-17"
         }
       ],
       "representative_urls": [
         "https://economictimes.indiatimes.com/news/company/corporate-trends/adani-commits-rs-2-lakh-crore-to-fortify-indias-energy-trade-networks-against-global-shocks/articleshow/129631646.cms",
-        "https://hindustantimes.com/business/adani-secures-1-7-bn-takeover-of-bankrupt-jaypee-group-in-major-infra-win-101773800889642.html"
+        "https://moneycontrol.com/news/business/adani-group-s-rs-2-lakh-crore-per-year-greenfield-infra-capex-to-cover-renewables-ports-airports-13862994.html"
       ]
     },
     {
       "story_id": 12,
-      "headline": "PM Modi launches Rs 23,550 crore infrastructure projects in Assam's Silchar",
-      "summary": "Prime Minister Modi launched infrastructure projects worth Rs 23,550 crore in Silchar, Assam, aimed at transforming the Barak Valley into a major trade and logistics gateway. He also laid the foundation stone for a new College of Agriculture at Patharkandi.",
+      "headline": "Rajya Sabha elections 2026: BJP wins seats in Bihar and Odisha",
+      "summary": "In the Rajya Sabha elections held across 10 states for 37 seats, BJP secured all five seats in Bihar and two in Odisha. The elections saw some delays in Haryana over ballot paper disputes, while NDA maintained its strong performance in key states.",
       "actors_involved": [
-        "Narendra Modi"
+        "BJP"
       ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 1,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
       "sources": [
-        "gktoday.in"
+        "hindustantimes.com",
+        "timesofindia.indiatimes.com"
       ],
-      "date_range": "2026-03-15 to 2026-03-15",
+      "date_range": "2026-03-17 to 2026-03-17",
       "articles": [
         {
-          "title": "PM Modi Launches \u20b923,550 Crore Projects in Assam's Silchar",
-          "source": "gktoday.in",
-          "url": "https://gktoday.in/pm-modi-launches-%E2%82%B923550-crore-projects-in-assams-silchar",
-          "date": "2026-03-15"
+          "title": "Rajya Sabha elections 2026 LIVE: BJP wins all five seats in Bihar, two in Odisha; counting in Haryana delayed",
+          "source": "hindustantimes.com",
+          "url": "https://www.hindustantimes.com/india-news/rajya-sabha-election-2026-live-updates-bjp-congress-rjd-aimim-jdu-nitish-kumar-nitin-nabin-results-election-commission-101773631680705.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Parliament Session Live Updates: Lok Sabha adopts motion for revoking suspension of eight Opposition members",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/india/parliament-rajya-sabha-elections-live-updates-parliament-budget-session-cross-voting-today-nitish-kumar-sharad-pawar-nitin-nabin-for-37-seats-across-10-states-results-latest-news/liveblog/129600002.cms",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://gktoday.in/pm-modi-launches-%E2%82%B923550-crore-projects-in-assams-silchar"
+        "https://www.hindustantimes.com/india-news/rajya-sabha-election-2026-live-updates-bjp-congress-rjd-aimim-jdu-nitish-kumar-nitin-nabin-results-election-commission-101773631680705.html",
+        "https://timesofindia.indiatimes.com/india/parliament-rajya-sabha-elections-live-updates-parliament-budget-session-cross-voting-today-nitish-kumar-sharad-pawar-nitin-nabin-for-37-seats-across-10-states-results-latest-news/liveblog/129600002.cms"
       ]
     }
   ],
   "single_source_items": [
+    {
+      "headline": "Why did Modi share this Instagram reel?",
+      "source": "gulte.com",
+      "url": "https://gulte.com/political-news/401940/why-did-modi-share-this-instagram-reel",
+      "signal_category_hint": "domestic_regime"
+    },
     {
       "headline": "FIR filed against Mani Shankar Aiyar in Jaipur over remarks on PM Modi",
       "source": "newindianexpress.com",
@@ -949,16 +823,22 @@
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Lalit Modi enters Abrar Ahmed storm, reaches out to Kavya Maran",
-      "source": "hindustantimes.com",
-      "url": "https://hindustantimes.com/cricket/call-me-lalit-modi-enters-abrar-ahmed-storm-reaches-out-to-kavya-maran-101773818394218.html",
+      "headline": "PM Modi Launches \u20b923,550 Crore Projects in Assam's Silchar",
+      "source": "gktoday.in",
+      "url": "https://gktoday.in/pm-modi-launches-%E2%82%B923550-crore-projects-in-assams-silchar",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Fact-Check: Did PM Modi Call Iran a 'Terrorist State'? No, Video is AI-Generated",
+      "source": "thequint.com",
+      "url": "https://thequint.com/news/webqoof/pm-modi-ai-generated-video-nxt-summit-fact-check",
       "signal_category_hint": "unclear"
     },
     {
-      "headline": "Former judges, civil servants, Armed Forces officers condemn USCIRF report on India",
-      "source": "tribuneindia.com",
-      "url": "https://www.tribuneindia.com/news/india/former-judges-civil-servants-armed-forces-officers-condemn-uscirf-report-on-india/",
-      "signal_category_hint": "alignment_diplomatic"
+      "headline": "Fugitive diamantaire Nirav Modi moves London court in last try to stall extradition to India",
+      "source": "hindustantimes.com",
+      "url": "https://hindustantimes.com/india-news/fugitive-diamantaire-nirav-modi-moves-london-court-in-last-try-to-stall-extradition-to-india-101773799366307.html",
+      "signal_category_hint": "security_defense"
     }
   ]
 }

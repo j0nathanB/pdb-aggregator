@@ -3,54 +3,50 @@
   "code": "ae",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 223,
-  "stories_identified": 8,
-  "off_topic_filtered": 156,
-  "noise_summary": "156 off-topic results filtered: 45 German automotive/sports articles (ZF company, Bayern Munich), 38 Brazilian food company (MBRF) financial news, 25 computer technical articles (MBR = Master Boot Record), 18 Spanish postponement articles (adia = postpone), 12 mountain biking magazine articles, 8 entertainment/TV content, 6 Glock pistol advertisements, 4 unrelated business news.",
+  "search_results_total": 215,
+  "stories_identified": 5,
+  "off_topic_filtered": 65,
+  "noise_summary": "65 off-topic results filtered: 20 Brazilian company MBRF/Marfrig earnings and business news, 8 German sports/football content, 7 Brazilian politics ('Lula adia' stories), 6 Spanish language content unrelated to UAE, 8 automotive/technical content (BMW G42, Glock pistol, Master Boot Record), 5 entertainment/TV shows, 11 miscellaneous unrelated content.",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Iran launches sustained missile and drone attacks against UAE as regional war escalates",
-      "summary": "Iran has conducted extensive missile and drone attacks on UAE facilities since late February, targeting oil infrastructure, airports, and military sites. UAE air defenses have intercepted over 2,000 projectiles but attacks have killed 8 people including 2 military personnel and 6 civilians, and damaged energy facilities including Fujairah port and Shah gas field.",
+      "headline": "Iran launches sustained missile and drone attacks on UAE as regional war escalates",
+      "summary": "Iran has conducted extensive missile and drone attacks on the UAE since late February as part of the broader US-Israeli-Iran conflict. UAE air defenses have intercepted over 340 ballistic missiles, 15 cruise missiles, and 1,700+ drones. At least 8 people have been killed including 2 UAE armed forces personnel and 6 civilians. Critical infrastructure including energy facilities, airports, and military bases have been targeted.",
       "actors_involved": [
         "Mohammed bin Zayed Al Nahyan",
         "UAE Armed Forces",
         "Abdullah bin Zayed"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 35,
+      "source_count": 42,
       "sources": [
-        "gulfnews.com",
         "thenationalnews.com",
+        "gulfnews.com",
         "reuters.com",
         "aljazeera.com",
         "aa.com.tr",
-        "timesofisrael.com",
-        "hindustantimes.com",
-        "economictimes.indiatimes.com",
-        "dubaieye1038.com",
-        "livemint.com",
         "timesofindia.indiatimes.com",
+        "hindustantimes.com",
         "foxnews.com",
-        "bbc.com",
-        "euronews.com",
         "abc.net.au",
-        "kurdistan24.net",
+        "bbc.com",
         "cnbc.com",
-        "dailymail.co.uk",
+        "euronews.com",
         "middleeasteye.net",
+        "dubaieye1038.com",
+        "emirates247.com",
+        "economictimes.indiatimes.com",
+        "kurdistan24.net",
+        "militarywatchmagazine.com",
+        "livemint.com",
+        "english.aawsat.com",
+        "theweek.in",
+        "dailymail.co.uk",
         "smh.com.au",
-        "newkerala.com",
         "sana.sy"
       ],
-      "date_range": "2026-03-16 to 2026-03-21",
+      "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
-        {
-          "title": "UAE President and King of Jordan discuss regional developments and implications for security and stability",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability-2-1.500476685",
-          "date": "2026-03-16"
-        },
         {
           "title": "President Sheikh Mohamed and Turkish Foreign Minister discuss Iran war in Abu Dhabi",
           "source": "thenationalnews.com",
@@ -61,6 +57,18 @@
           "title": "UAE reports 304 ballistic missiles engagement amid ongoing Iran strikes",
           "source": "airforce-technology.com",
           "url": "https://www.airforce-technology.com/news/uae-mod-iran-missile-engagement/",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "UAE intercepts new wave of 4 ballistic missiles, 26 drones launched from Iran",
+          "source": "aa.com.tr",
+          "url": "https://aa.com.tr/en/middle-east/uae-intercepts-new-wave-of-4-ballistic-missiles-26-drones-launched-from-iran/3872821",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "UAE's civilian victims of Iran missile attacks named",
+          "source": "thenationalnews.com",
+          "url": "https://thenationalnews.com/news/uae/2026/03/18/names-released-of-civilian-victims-of-iran-missile-attacks-in-uae",
           "date": "2026-03-18"
         },
         {
@@ -76,46 +84,22 @@
           "date": "2026-03-17"
         },
         {
-          "title": "UAE says it dismantled terrorist network funded by Iran and Hezbollah",
-          "source": "timesofisrael.com",
-          "url": "https://timesofisrael.com/uae-says-it-dismantled-terrorist-network-funded-by-iran-and-hezbollah",
-          "date": "2026-03-18"
+          "title": "UAE's Fujairah oil trading hub targeted by a drone attack, causing large fire",
+          "source": "cnbc.com",
+          "url": "https://cnbc.com/2026/03/16/uae-fujairah-oil-hub-drone-fire-iran-war-us-israel-middle-east.html",
+          "date": "2026-03-16"
         },
         {
-          "title": "Flight Disruption Warning at Abu Dhabi's Zayed International",
-          "source": "thetraveler.org",
-          "url": "https://thetraveler.org/flight-disruption-warning-at-abu-dhabis-zayed-international",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "UAE intercepts new wave of 4 ballistic missiles, 26 drones launched from Iran",
-          "source": "aa.com.tr",
-          "url": "https://aa.com.tr/en/middle-east/uae-intercepts-new-wave-of-4-ballistic-missiles-26-drones-launched-from-iran/3872821",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Iran military warns UAE over attacks on disputed Gulf islands",
-          "source": "timesofisrael.com",
-          "url": "https://www.timesofisrael.com/liveblog_entry/iran-military-warns-uae-over-attacks-on-disputed-gulf-islands/",
-          "date": "2026-03-21"
+          "title": "Iran hits key UAE oil port and Dubai airport",
+          "source": "bbc.com",
+          "url": "https://bbc.com/news/articles/crl4gxgkkylo",
+          "date": "2026-03-16"
         },
         {
           "title": "UAE Air Defences Intercept 10 Ballistic Missiles and 45 Drones Amid Ongoing Attacks",
           "source": "gulfnews.com",
           "url": "https://gulfnews.com/uae/uae-air-defences-intercept-10-ballistic-missiles-and-45-drones-on-tuesday-1.500477481",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "UAE's civilian victims of Iran missile attacks named",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/uae/2026/03/18/names-released-of-civilian-victims-of-iran-missile-attacks-in-uae",
           "date": "2026-03-18"
-        },
-        {
-          "title": "UAE Arrests More Than 100 to Keep Iran War Attacks Off Camera",
-          "source": "time.com",
-          "url": "https://time.com/article/2026/03/20/uae-arrests-more-than-100-as-crackdown-on-filming-iran-s-attacks-ramps-up",
-          "date": "2026-03-20"
         },
         {
           "title": "UAE reveals names of 6 civilians killed in Iranian missile and drone attacks so far",
@@ -124,22 +108,46 @@
           "date": "2026-03-18"
         },
         {
-          "title": "Its seven emirates united 50 years ago. Now the UAE faces its biggest challenge yet",
-          "source": "smh.com.au",
-          "url": "https://smh.com.au/national/its-seven-emirates-united-50-years-ago-now-the-uae-faces-its-biggest-challenge-yet-20260319-p5py6j.html",
-          "date": "2026-03-19"
+          "title": "UAE Air Defenses Down 314 Ballistic Missiles, 1,672 Drones Since Attacks Began",
+          "source": "kurdistan24.net",
+          "url": "https://kurdistan24.net/en/story/901285/uae-air-defenses-down-314-ballistic-missiles-1672-drones-since-attacks-began",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "UAE holds firm under Iranian missile attacks in Operation Epic Fury",
+          "source": "foxnews.com",
+          "url": "https://foxnews.com/opinion/united-arab-emirates-no-fragile-mirage-its-fortress-oasis",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Iranian Strike Destroys the Emirates' Most Valuable Military Aircraft at Largest Airbase",
+          "source": "militarywatchmagazine.com",
+          "url": "https://militarywatchmagazine.com/article/iranian-strike-emirates-top-aircraft",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "In UAE, life goes on amid Iran's attacks but the future is uncertain",
+          "source": "abc.net.au",
+          "url": "https://abc.net.au/news/2026-03-17/in-uae-iran-attacks-bring-a-new-normal/106461914",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Flight Disruption Warning at Abu Dhabi's Zayed International",
+          "source": "thetraveler.org",
+          "url": "https://thetraveler.org/flight-disruption-warning-at-abu-dhabis-zayed-international",
+          "date": "2026-03-17"
         },
         {
           "title": "Abu Dhabi's Zayed International Airport Cuts Capacity Amid Airspace Tensions",
           "source": "thetraveler.org",
           "url": "https://thetraveler.org/abu-dhabis-zayed-international-airport-cuts-capacity-amid-airspace-tensions",
-          "date": "2026-03-18"
+          "date": "2026-03-17"
         },
         {
-          "title": "Dubai, Abu Dhabi news LIVE: UAE air defences neutralise 30 aerial threats; Abu Dhabi's Habshan gas facility shut",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/world-news/abu-dhabi-dubai-news-live-updates-uae-war-news-march-20-drone-missile-attack-qatar-strait-of-hormuz-iran-israel-us-101773969074036.html",
-          "date": "2026-03-20"
+          "title": "UAE briefly closes airspace after reporting new wave of attacks as Iran war rolls into its 18th day",
+          "source": "euronews.com",
+          "url": "https://euronews.com/2026/03/17/uae-briefly-closes-airspace-after-reporting-new-wave-of-attacks-as-iran-war-rolls-into-its",
+          "date": "2026-03-17"
         },
         {
           "title": "How Dubai and UAE are being affected by Iran attacks and US-Israeli war",
@@ -154,33 +162,21 @@
           "date": "2026-03-18"
         },
         {
-          "title": "Iranian Strike Destroys the Emirates' Most Valuable Military Aircraft at Largest Airbase",
-          "source": "militarywatchmagazine.com",
-          "url": "https://militarywatchmagazine.com/article/iranian-strike-emirates-top-aircraft",
-          "date": "2026-03-16"
+          "title": "Its seven emirates united 50 years ago. Now the UAE faces its biggest challenge yet",
+          "source": "smh.com.au",
+          "url": "https://smh.com.au/national/its-seven-emirates-united-50-years-ago-now-the-uae-faces-its-biggest-challenge-yet-20260319-p5py6j.html",
+          "date": "2026-03-19"
         },
         {
-          "title": "In UAE, life goes on amid Iran's attacks but the future is uncertain",
-          "source": "abc.net.au",
-          "url": "https://abc.net.au/news/2026-03-17/in-uae-iran-attacks-bring-a-new-normal/106461914",
-          "date": "2026-03-17"
+          "title": "UAE Intercepts Iranian Missiles and Drones: Latest Defence Update",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/uae/uae-air-defences-intercept-3-ballistic-missiles-8-drones-from-iran-today-1.500481899",
+          "date": "2026-03-20"
         },
         {
-          "title": "UAE Air Defenses Down 314 Ballistic Missiles, 1,672 Drones Since Attacks Began",
-          "source": "kurdistan24.net",
-          "url": "https://kurdistan24.net/en/story/901285/uae-air-defenses-down-314-ballistic-missiles-1672-drones-since-attacks-began",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "UAE briefly closes airspace after reporting new wave of attacks as Iran war rolls into its 18th day",
-          "source": "euronews.com",
-          "url": "https://euronews.com/2026/03/17/uae-briefly-closes-airspace-after-reporting-new-wave-of-attacks-as-iran-war-rolls-into-its",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "UAE air defences responding to 'incoming missile and drone threats' from Iran",
-          "source": "economictimes.indiatimes.com",
-          "url": "https://economictimes.indiatimes.com/news/defence/dubai-air-defences-responding-to-incoming-missile-and-drone-threats-from-iran/articleshow/129646371.cms",
+          "title": "Dubai, Abu Dhabi, UAE News Highlights: Iran's South Pars field 'targeted' in Israeli attack; IndiGo to run 26 flights",
+          "source": "livemint.com",
+          "url": "https://www.livemint.com/news/world/dubai-abu-dhabi-uae-news-live-updates-missile-abu-dhabi-iran-israel-war-us-march-18-strait-of-hormuz-crude-oil-pric-11773790596825.html",
           "date": "2026-03-18"
         },
         {
@@ -190,34 +186,58 @@
           "date": "2026-03-18"
         },
         {
+          "title": "UAE air defences responding to 'incoming missile and drone threats' from Iran",
+          "source": "economictimes.indiatimes.com",
+          "url": "https://economictimes.indiatimes.com/news/defence/dubai-air-defences-responding-to-incoming-missile-and-drone-threats-from-iran/articleshow/129646371.cms",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Al Bahyah District: UAE on alert after missile hits civilian car in Abu Dhabi, 1 killed as Iran vs US-Israel war escalates",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/uae-on-alert-after-missile-hits-civilian-car-in-abu-dhabi-1-killed-as-iran-vs-us-israel-war-escalates/articleshow/129617187.cms",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Kuwait, UAE say their air defenses are confronting missile attacks",
+          "source": "aa.com.tr",
+          "url": "https://aa.com.tr/en/middle-east/kuwait-uae-say-their-air-defenses-are-confronting-missile-attacks/3872399",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "UAE sends emergency missile alert: Dubai confirms sounds heard across emirate were successful air defence interception amid Iran vs US-Israel war",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/uae-sends-emergency-missile-alert-dubai-confirms-sounds-heard-across-emirate-were-successful-air-defence-interception-amid-iran-vs-us-israel-war/articleshow/129644374.cms",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Dubai-Abu Dhabi highlights: Saudi orders Iranian military attache to leave; UAE intercepts missiles",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/world-news/dubai-abu-dhabi-news-live-updates-uae-iran-us-israel-war-middle-east-crisis-qatar-saudi-airports-flights-missile-attacks-101774053741364.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Dubai, Abu Dhabi news LIVE: UAE air defences neutralise 30 aerial threats; Abu Dhabi's Habshan gas facility shut",
+          "source": "hindustantimes.com",
+          "url": "https://hindustantimes.com/world-news/abu-dhabi-dubai-news-live-updates-uae-war-news-march-20-drone-missile-attack-qatar-strait-of-hormuz-iran-israel-us-101773969074036.html",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Dubai, Abu Dhabi News Highlights: UAE warns residents of fraudulent messages",
+          "source": "indianexpress.com",
+          "url": "https://indianexpress.com/article/world/uae-dubai-us-iran-israel-middle-east-drones-dubai-airport-fire-10584222",
+          "date": "2026-03-18"
+        },
+        {
           "title": "UAE intercepts 13 ballistic missiles and 27 drones on Wednesday",
           "source": "dubaieye1038.com",
           "url": "https://dubaieye1038.com/news/local/uae-intercepts-13-ballistic-missiles-and-27-drones-on-wednesday",
           "date": "2026-03-19"
         },
         {
-          "title": "Iran hits key UAE oil port and Dubai airport",
-          "source": "bbc.com",
-          "url": "https://bbc.com/news/articles/crl4gxgkkylo",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "UAE holds firm under Iranian missile attacks in Operation Epic Fury",
-          "source": "foxnews.com",
-          "url": "https://foxnews.com/opinion/united-arab-emirates-no-fragile-mirage-its-fortress-oasis",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "UAE arrests 25 for spreading misleading content on defence, military acts",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/uae-arrests-25-for-spreading-misleading-content-on-defence-military-acts-1.500474849",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "UAE's Fujairah oil trading hub targeted by a drone attack, causing large fire",
-          "source": "cnbc.com",
-          "url": "https://cnbc.com/2026/03/16/uae-fujairah-oil-hub-drone-fire-iran-war-us-israel-middle-east.html",
-          "date": "2026-03-16"
+          "title": "UAE Air Defenses and fighter jets neutralize multi-vector aerial assault",
+          "source": "sana.sy",
+          "url": "https://sana.sy/en/international/2304651/",
+          "date": "2026-03-21"
         },
         {
           "title": "Attacks on UAE's Fujairah port and Shah gas field add to energy disruption",
@@ -229,86 +249,255 @@
           "title": "UAE joins 21 nations in condemning Iranian attacks, closure of Strait of Hormuz",
           "source": "dubaieye1038.com",
           "url": "https://dubaieye1038.com/news/local/uae-joins-21-nations-in-condemning-irans-closure-of-strait-of-hormuz",
-          "date": "2026-03-21"
+          "date": "2026-03-20"
         },
         {
-          "title": "Al Bahyah District: UAE on alert after missile hits civilian car in Abu Dhabi, 1 killed as Iran vs US-Israel war escalates",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/world/middle-east/uae-on-alert-after-missile-hits-civilian-car-in-abu-dhabi-1-killed-as-iran-vs-us-israel-war-escalates/articleshow/129617187.cms",
-          "date": "2026-03-16"
+          "title": "Iran military warns UAE over attacks on disputed Gulf islands",
+          "source": "timesofisrael.com",
+          "url": "https://www.timesofisrael.com/liveblog_entry/iran-military-warns-uae-over-attacks-on-disputed-gulf-islands/",
+          "date": "2026-03-20"
         },
         {
-          "title": "UAE sends emergency missile alert: Dubai confirms sounds heard across emirate were successful air defence interception amid Iran vs US-Israel war",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/world/middle-east/uae-sends-emergency-missile-alert-dubai-confirms-sounds-heard-across-emirate-were-successful-air-defence-interception-amid-iran-vs-us-israel-war/articleshow/129644374.cms",
+          "title": "Senior UAE official says Iranian attacks will drive Gulf countries into Israeli arms",
+          "source": "timesofisrael.com",
+          "url": "https://timesofisrael.com/senior-uae-official-says-iranian-attacks-will-drive-gulf-countries-into-israeli-arms",
           "date": "2026-03-18"
         },
         {
-          "title": "Iran Warns UAE Against Hosting Attacks on Its Islands",
-          "source": "newkerala.com",
-          "url": "https://newkerala.com/news/a/iran-warns-uae-against-allowing-its-soil-used-418.htm",
-          "date": "2026-03-21"
+          "title": "UAE arrests 35 for posts related to Iran's aggression: Who are they and what did they do?",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/uae/uae-arrests-35-for-misinformation-related-to-irans-aggression-who-are-they-what-did-they-post-1.500476220",
+          "date": "2026-03-18"
         },
         {
-          "title": "Dubai-Abu Dhabi highlights: Saudi orders Iranian military attache to leave; UAE intercepts missiles",
-          "source": "hindustantimes.com",
-          "url": "https://hindustantimes.com/world-news/dubai-abu-dhabi-news-live-updates-uae-iran-us-israel-war-middle-east-crisis-qatar-saudi-airports-flights-missile-attacks-101774053741364.html",
-          "date": "2026-03-21"
+          "title": "UAE Arrests More Than 100 to Keep Iran War Attacks Off Camera",
+          "source": "time.com",
+          "url": "https://time.com/article/2026/03/20/uae-arrests-more-than-100-as-crackdown-on-filming-iran-s-attacks-ramps-up",
+          "date": "2026-03-20"
         },
         {
-          "title": "UAE Air Defenses and fighter jets neutralize multi-vector aerial assault",
-          "source": "sana.sy",
-          "url": "https://sana.sy/en/international/2304651/",
-          "date": "2026-03-21"
+          "title": "UAE says it dismantled terrorist network funded by Iran and Hezbollah",
+          "source": "timesofisrael.com",
+          "url": "https://timesofisrael.com/uae-says-it-dismantled-terrorist-network-funded-by-iran-and-hezbollah",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "UAE Media: A Crucial Line of Defense in Modern Information Warfare",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/opinion/op-eds/uae-media-on-the-frontline-defending-truth-in-times-of-crisis-1.500476286",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "The UAE Will Not Be Bullied by Iran \u2014 Nor Derailed From Peace",
+          "source": "gatestoneinstitute.org",
+          "url": "https://gatestoneinstitute.org/22361/the-uae-will-not-be-bullied-by-iran",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Did US forces use UAE territory to attack Iran's Kharg Island? Tehran vows retaliation",
+          "source": "theweek.in",
+          "url": "https://theweek.in/news/middle-east/2026/03/15/did-us-use-uae-territory-to-attack-irans-kharg-island-iran-vows-retaliation.html",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "Devoted father killed in Iranian air strike in Dubai 'had dreams for his family'",
+          "source": "thenationalnews.com",
+          "url": "https://thenationalnews.com/news/uae/2026/03/19/devoted-father-killed-in-iranian-air-strike-in-dubai-had-dreams-for-his-family",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://thenationalnews.com/news/uae/2026/03/20/president-sheikh-mohamed-and-turkish-foreign-minister-discuss-iran-war-in-abu-dhabi",
-        "https://www.aljazeera.com/news/2026/3/18/iran-fires-missiles-drones-across-gulf-region-remains-in-war-crosshairs"
+        "https://www.airforce-technology.com/news/uae-mod-iran-missile-engagement/"
       ]
     },
     {
       "story_id": 2,
-      "headline": "UAE Central Bank approves AED 1 trillion financial resilience package to support banking sector",
-      "summary": "Central Bank of the UAE board, chaired by Mansour bin Zayed, approved a comprehensive financial resilience package worth AED 1 trillion to strengthen the banking sector amid regional tensions. The package includes enhanced liquidity access and support measures backed by foreign exchange reserves.",
+      "headline": "UAE leadership conducts intensive regional diplomacy amid Iran crisis",
+      "summary": "UAE President Sheikh Mohamed bin Zayed and Foreign Minister Abdullah bin Zayed have held extensive diplomatic consultations with regional and international leaders regarding the Iranian attacks. This includes meetings with Jordan's King Abdullah, calls with Turkish, Egyptian, and other foreign ministers, and coordination with international partners on regional de-escalation efforts.",
       "actors_involved": [
-        "Mansour bin Zayed",
-        "Central Bank of the UAE"
+        "Mohammed bin Zayed Al Nahyan",
+        "Abdullah bin Zayed",
+        "Mohammed bin Rashid Al Maktoum"
       ],
-      "signal_category_hint": "economic_tech",
+      "signal_category_hint": "alignment_diplomatic",
       "source_count": 18,
       "sources": [
-        "emirates247.com",
-        "gulfnews.com",
         "thenationalnews.com",
+        "gulfnews.com",
+        "mofa.gov.ae",
+        "emirates247.com",
+        "dubaieye1038.com",
+        "state.gov",
+        "english.news.cn",
+        "mediaoffice.abudhabi",
+        "arabnews.com",
+        "sharjah24.ae",
+        "wam.ae",
+        "middleeastmonitor.com",
+        "aa.com.tr",
+        "timesofindia.indiatimes.com"
+      ],
+      "date_range": "2026-03-15 to 2026-03-21",
+      "articles": [
+        {
+          "title": "President Sheikh Mohamed holds talks on Iran war with Jordan's King Abdullah in Dubai",
+          "source": "thenationalnews.com",
+          "url": "https://thenationalnews.com/news/uae/2026/03/16/sheikh-mohamed-holds-talks-in-dubai-with-jordans-king-abdullah-on-iran-war",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "UAE President and King of Jordan discuss regional developments and implications for security and stability",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability-2-1.500476685",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Abdullah bin Zayed holds phone calls with Foreign Ministers, Officials to discuss regional developments",
+          "source": "mofa.gov.ae",
+          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/3/19/UAE-ABDZAYED",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Secretary Rubio's Call with UAE Deputy Prime Minister and Minister of Foreign Affairs Sheikh Abdullah bin Zayed Al Nahyan",
+          "source": "state.gov",
+          "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/03/secretary-rubios-call-with-uae-deputy-prime-minister-and-minster-of-foreign-affairs-sheikh-abdullah-bin-zayed-al-nahyan",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "UAE President Receives King Of Jordan In Dubai, In The Presence Of Mohammed Bin Rashid And Mansour Bin Zayed",
+          "source": "emirates247.com",
+          "url": "https://www.emirates247.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability/303",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "UAE president, Jordan's king discuss regional escalation-Xinhua",
+          "source": "english.news.cn",
+          "url": "https://english.news.cn/20260317/24da0c69c5b94590bacfb759cdeda00b/c.html",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "King of Jordan concludes visit to UAE after meeting with leaders",
+          "source": "dubaieye1038.com",
+          "url": "https://dubaieye1038.com/news/local/king-of-jordan-concludes-visit-to-uae-after-meeting-with-leaders",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Abdullah bin Zayed holds phone calls with several officials, foreign ministers to discuss repercussions of unprovoked, terrorist Iranian missile attacks on UAE, brotherly nations",
+          "source": "mofa.gov.ae",
+          "url": "https://www.mofa.gov.ae/en/MediaHub/News/2026/3/17/UAE-ABDZAYED",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Abdullah bin Zayed strongly condemns unprovoked, terrorist Iranian missile attack on West Bank in call with Hussein Al-Sheikh",
+          "source": "mofa.gov.ae",
+          "url": "https://www.mofa.gov.ae/en/MediaHub/News/2026/3/19/uae-phalastine",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Abdullah bin Zayed receives Egyptian Foreign Minister",
+          "source": "mofa.gov.ae",
+          "url": "https://www.mofa.gov.ae/en/MediaHub/News/2026/3/15/UAE-Egypt",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "UAE leaders condole Georgia over Catholicos-Patriarch Ilia II",
+          "source": "sharjah24.ae",
+          "url": "https://sharjah24.ae/en/Articles/2026/03/18/Ma29",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Theyab bin Mohamed bin Zayed bids farewell to King of Jordan as he concludes visit to UAE",
+          "source": "mediaoffice.abudhabi",
+          "url": "https://www.mediaoffice.abudhabi/en/government-affairs/theyab-bin-mohamed-bin-zayed-bids-farewell-to-king-of-jordan-as-he-concludes-visit-to-uae",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Arab countries are not part of US-Israeli war against Iran, Jordan's",
+          "source": "arabnews.com",
+          "url": "https://www.arabnews.com/node/2636626/middle-east",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Saudi crown prince, UAE president warn of dangerous escalation as Iranian attacks continue",
+          "source": "arabnews.com",
+          "url": "https://www.arabnews.com/node/2636547/saudi-arabia",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Sheikh Saif bin Zayed and Prince Abdulaziz Discuss Regional Security Amid Iranian Threats",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/uae/saif-bin-zayed-receives-phone-call-from-prince-abdulaziz-bin-saud-1.500477951",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Jaishankar Dials UAE FM As Iran Strikes Escalate And India Pushes To Stabilise West Asia Amid War",
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/videos/news/jaishankar-dials-uae-fm-as-iran-strikes-escalate-and-india-pushes-to-stabilise-west-asia-amid-war/videoshow/129673970.cms",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Joint Statement on the Strait of Hormuz",
+          "source": "mofa.gov.ae",
+          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/3/21/UAE-Strait-of-Hormuz",
+          "date": "2026-03-21"
+        },
+        {
+          "title": "Saudi, Egyptian FMs Discuss Regional De-Escalation Efforts",
+          "source": "english.aawsat.com",
+          "url": "https://english.aawsat.com/gulf/5252115-saudi-egyptian-fms-discuss-regional-de-escalation-efforts",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://thenationalnews.com/news/uae/2026/03/16/sheikh-mohamed-holds-talks-in-dubai-with-jordans-king-abdullah-on-iran-war",
+        "https://mofa.gov.ae/en/MediaHub/News/2026/3/19/UAE-ABDZAYED"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "UAE Central Bank launches AED 1 trillion financial resilience package amid Iran crisis",
+      "summary": "The Central Bank of the UAE (CBUAE), chaired by Sheikh Mansour bin Zayed, approved a comprehensive financial resilience package worth over AED 1 trillion to support the banking sector during the Iran crisis. The package includes enhanced liquidity access, reserve requirement adjustments, and emergency funding facilities. CBUAE also maintained the base interest rate at 3.65%, following the US Federal Reserve's decision.",
+      "actors_involved": [
+        "Central Bank of the UAE",
+        "Mohammed bin Rashid Al Maktoum"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 25,
+      "sources": [
         "reuters.com",
-        "english.aawsat.com",
+        "gulfnews.com",
+        "emirates247.com",
         "zawya.com",
+        "ibsintelligence.com",
+        "gulfbusiness.com",
+        "alvarezandmarsal.com",
         "economymiddleeast.com",
-        "mena-fintech.org",
+        "khaleejtimes.com",
         "gccbusinessnews.com",
+        "mena-fintech.org",
         "sharjah24.ae",
         "bignewsnetwork.com",
         "turkiyetoday.com",
-        "khaleejtimes.com",
+        "dubaieye1038.com",
         "today.lorientlejour.com",
         "arabianbusiness.com",
-        "dubaieye1038.com",
-        "livemint.com",
-        "alvarezandmarsal.com"
+        "thearabweekly.com",
+        "askthelaw.ae",
+        "uaeexperthub.com"
       ],
-      "date_range": "2026-03-17 to 2026-03-19",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
-        {
-          "title": "Mansour bin Zayed Chairs CBUAE Meeting, Approves AED1 Trillion Financial Resilience Package",
-          "source": "emirates247.com",
-          "url": "https://emirates247.com/uae/mansour-bin-zayed-chairs-cbuae-meeting-approves-aed1-trillion-financial-resilience-package/329",
-          "date": "2026-03-17"
-        },
         {
           "title": "UAE central bank support package lifts lenders shaken by Iran war",
           "source": "reuters.com",
           "url": "https://www.reuters.com/world/middle-east/uae-central-bank-launches-resilience-package-amid-iran-crisis-2026-03-17/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Mansour bin Zayed Chairs CBUAE Meeting, Approves AED1 Trillion Financial Resilience Package",
+          "source": "emirates247.com",
+          "url": "https://www.emirates247.com/uae/mansour-bin-zayed-chairs-cbuae-meeting-approves-aed1-trillion-financial-resilience-package/329",
           "date": "2026-03-17"
         },
         {
@@ -318,28 +507,16 @@
           "date": "2026-03-19"
         },
         {
-          "title": "UAE keeps key interest rate unchanged amid Iran war, mirroring US Fed move",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/world/americas/uae-keeps-key-interest-rate-unchanged-amid-iran-war-mirroring-us-fed-move-1.500479150",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Dubai, Abu Dhabi, UAE News Highlights: Iran's South Pars field 'targeted' in Israeli attack; IndiGo to run 26 flights",
-          "source": "livemint.com",
-          "url": "https://www.livemint.com/news/world/dubai-abu-dhabi-uae-news-live-updates-missile-abu-dhabi-iran-israel-war-us-march-18-strait-of-hormuz-crude-oil-pric-11773790596825.html",
-          "date": "2026-03-18"
+          "title": "Central Bank of the UAE launches financial resilience package",
+          "source": "ibsintelligence.com",
+          "url": "https://ibsintelligence.com/ibsi-news/central-bank-of-the-uae-launches-financial-resilience-package/",
+          "date": "2026-03-17"
         },
         {
           "title": "CBUAE approves resilience package, says banking sector remains stable",
           "source": "gulfbusiness.com",
           "url": "https://gulfbusiness.com/en/2026/finance/cbuae-approves-resilience-financial-package/",
           "date": "2026-03-17"
-        },
-        {
-          "title": "UAE Central Bank launches 'resilience package' for lenders",
-          "source": "thenationalnews.com",
-          "url": "https://www.thenationalnews.com/business/banking/2026/03/18/uae-central-bank-rolls-out-resilience-package-for-lenders-amid-iran-war/",
-          "date": "2026-03-18"
         },
         {
           "title": "CBUAE Resilience Package: A Familiar Playbook for an Unfamiliar Situation",
@@ -354,39 +531,9 @@
           "date": "2026-03-17"
         },
         {
-          "title": "UAE Bank Stocks Jump after Central Bank Launches Resilience Package",
-          "source": "english.aawsat.com",
-          "url": "https://english.aawsat.com/business/5252618-uae-bank-stocks-jump-after-central-bank-launches-resilience-package",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "UAE denounces 'false reports' of investors prevented from withdrawing funds",
-          "source": "thenationalnews.com",
-          "url": "https://www.thenationalnews.com/business/economy/2026/03/19/uae-strongly-denies-false-reports-of-investors-being-prevented-from-withdrawing-funds/",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "CBUAE Approves AED 1 Trillion Financial Resilience Package to Strengthen UAE Banking Sector",
-          "source": "mena-fintech.org",
-          "url": "https://mena-fintech.org/news/cbuae-approves-aed-1-trillion-financial-resilience-package-to-strengthen-uae-banking-sector/",
-          "date": "2026-03-17"
-        },
-        {
           "title": "CBUAE Board confirms financial system strength; $272.3 billion asset-backed resilience package approved",
           "source": "economymiddleeast.com",
           "url": "https://economymiddleeast.com/news/central-bank-of-the-uae-cbuae-board-confirms-financial-system-strength-272-3-billion-asset-backed-resilience-package-approved",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "CBUAE approves Financial Institution Resilience Package",
-          "source": "gccbusinessnews.com",
-          "url": "https://www.gccbusinessnews.com/cbuae-approves-resilience-package",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "CBUAE Board reviews resilience of UAE's financial system",
-          "source": "sharjah24.ae",
-          "url": "https://sharjah24.ae/en/Articles/2026/03/17/Ma22",
           "date": "2026-03-17"
         },
         {
@@ -396,27 +543,111 @@
           "date": "2026-03-19"
         },
         {
+          "title": "CBUAE approves Financial Institution Resilience Package",
+          "source": "gccbusinessnews.com",
+          "url": "https://www.gccbusinessnews.com/cbuae-approves-resilience-package",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "CBUAE Approves AED 1 Trillion Financial Resilience Package to Strengthen UAE Banking Sector",
+          "source": "mena-fintech.org",
+          "url": "https://mena-fintech.org/news/cbuae-approves-aed-1-trillion-financial-resilience-package-to-strengthen-uae-banking-sector/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "CBUAE measures strengthen financial stability, resilience: Group CEO of ADIB",
+          "source": "mena-fintech.org",
+          "url": "https://mena-fintech.org/news/cbuae-measures-strengthen-financial-stability-resilience-group-ceo-of-adib",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "CBUAE Board reviews resilience of UAE's financial system",
+          "source": "sharjah24.ae",
+          "url": "https://sharjah24.ae/en/Articles/2026/03/17/Ma22",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "CBUAE Board reviews strength, resilience of UAE's financial system, banking sector",
+          "source": "zawya.com",
+          "url": "https://www.zawya.com/en/economy/gcc/cbuae-board-reviews-strength-resilience-of-uaes-financial-system-banking-sector-bpkcfojt",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "CBUAE Board reviews strength, resilience of UAE's financial system, banking sector; approves proactive financial institution resilience package backed by CBUAE's assets of AED1 trillion",
+          "source": "bignewsnetwork.com",
+          "url": "https://www.bignewsnetwork.com/news/278928141/cbuae-board-reviews-strength-resilience-of-uae-financial-system-banking-sector-approves-proactive-financial-institution-resilience-package-backed-by-cbuae-assets-of-aed1-trillion",
+          "date": "2026-03-17"
+        },
+        {
           "title": "UAE central bank launches 'resilience package' to support banks amid Iran war",
           "source": "turkiyetoday.com",
           "url": "https://www.turkiyetoday.com/region/uae-central-bank-launches-resilience-package-to-support-banks-amid-iran-war-3216465",
           "date": "2026-03-17"
         },
         {
+          "title": "UAE Central Bank approves resilience package to support banking sector",
+          "source": "dubaieye1038.com",
+          "url": "https://www.dubaieye1038.com/news/business/uae-central-bank-approves-resilience-package-to-support-banking-sector/",
+          "date": "2026-03-17"
+        },
+        {
           "title": "UAE denies rumors of capital controls",
           "source": "today.lorientlejour.com",
           "url": "https://today.lorientlejour.com/article/1499981/uae-denies-rumors-of-capital-controls.html",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "CBUAE maintains Base Rate, echoing Fed move amid war uncertainty",
+          "source": "arabianbusiness.com",
+          "url": "https://www.arabianbusiness.com/finance/cbuae-maintains-base-rate-echoing-fed-move-amid-war-uncertainty",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "UAE Central Bank 'resilience' package lifts shares of banks amid war crisis",
+          "source": "thearabweekly.com",
+          "url": "http://thearabweekly.com/uae-central-bank-resilience-package-lifts-shares-banks-amid-war-crisis",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "UAE keeps key interest rate unchanged amid Iran war, mirroring US Fed move",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/world/americas/uae-keeps-key-interest-rate-unchanged-amid-iran-war-mirroring-us-fed-move-1.500479150",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "UAE Bank Stocks Jump after Central Bank Launches Resilience Package",
+          "source": "english.aawsat.com",
+          "url": "https://english.aawsat.com/business/5252618-uae-bank-stocks-jump-after-central-bank-launches-resilience-package",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "UAE denounces 'false reports' of investors prevented from withdrawing funds",
+          "source": "thenationalnews.com",
+          "url": "https://www.thenationalnews.com/business/economy/2026/03/19/uae-strongly-denies-false-reports-of-investors-being-prevented-from-withdrawing-funds/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "US\u2011Israel war with Iran, Day 20: What you need to know",
+          "source": "gulfnews.com",
+          "url": "https://gulfnews.com/uae/usisrael-war-with-iran-day-20-what-you-need-to-know-1.500479460",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "UAE Banks Federation affirms Central Bank's resilience package strengthens sector stability",
+          "source": "emirates247.com",
+          "url": "https://www.emirates247.com/business/uae-banks-federation-affirms-central-banks-resilience-package-strengthens-sector-stability/358",
           "date": "2026-03-17"
         }
       ],
       "representative_urls": [
         "https://www.reuters.com/world/middle-east/uae-central-bank-launches-resilience-package-amid-iran-crisis-2026-03-17/",
-        "https://emirates247.com/uae/mansour-bin-zayed-chairs-cbuae-meeting-approves-aed1-trillion-financial-resilience-package/329"
+        "https://www.emirates247.com/uae/mansour-bin-zayed-chairs-cbuae-meeting-approves-aed1-trillion-financial-resilience-package/329"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "US approves emergency arms sales worth over $8 billion to UAE amid Iran war",
-      "summary": "The US State Department approved multiple emergency weapons sales to UAE worth over $8 billion, including F-16 munitions, THAAD air defense systems, AMRAAM missiles, and counter-drone systems. The sales were expedited under emergency provisions citing Iranian threats to Gulf security.",
+      "story_id": 4,
+      "headline": "US approves emergency $8+ billion arms packages for UAE defense against Iranian attacks",
+      "summary": "The US State Department has approved multiple emergency weapons packages for the UAE totaling over $8 billion, including THAAD air defense systems, anti-drone systems, F-16 munitions, and advanced radar systems. The packages are designed to bolster UAE's defense capabilities against Iranian missile and drone attacks, with emergency authorization allowing accelerated delivery.",
       "actors_involved": [
         "UAE Armed Forces"
       ],
@@ -427,39 +658,38 @@
         "thenationalnews.com",
         "janes.com",
         "reuters.com",
-        "turdef.com",
-        "arabnews.com"
+        "turdef.com"
       ],
-      "date_range": "2026-03-19 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-20",
       "articles": [
         {
           "title": "United Arab Emirates \u2013 Advanced Medium-Range Air-to-Air Missiles (AMRAAMs)",
           "source": "state.gov",
           "url": "https://www.state.gov/united-arab-emirates-advanced-medium-range-air-to-air-missiles-amraams/",
-          "date": "2026-03-20"
+          "date": "2026-03-18"
         },
         {
           "title": "United Arab Emirates \u2013 Fixed Site-Low, Slow, Small Unmanned Aircraft Integrated Defeat System",
           "source": "state.gov",
           "url": "https://state.gov/releases/bureau-of-political-military-affairs/2026/03/united-arab-emirates-fixed-site-low-slow-small-unmanned-aircraft-integrated-defeat-system",
-          "date": "2026-03-20"
+          "date": "2026-03-18"
         },
         {
           "title": "United Arab Emirates \u2013 Long-Range Discrimination Radar with Terminal High Altitude Area Defense Integration",
           "source": "state.gov",
           "url": "https://state.gov/united-arab-emirates-long-range-discrimination-radar-with-terminal-high-altitude-area-defense-integration",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "What's in the major $8bn US arms package bolstering UAE defences?",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences",
-          "date": "2026-03-20"
+          "date": "2026-03-18"
         },
         {
           "title": "United Arab Emirates \u2013 F-16 Munitions and Upgrades",
           "source": "state.gov",
           "url": "https://state.gov/releases/bureau-of-political-military-affairs/2026/03/united-arab-emirates-f-16-munitions-and-upgrades",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "What's in the major $8bn US arms package bolstering UAE defences?",
+          "source": "thenationalnews.com",
+          "url": "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences",
           "date": "2026-03-20"
         },
         {
@@ -469,16 +699,16 @@
           "date": "2026-03-20"
         },
         {
+          "title": "US approves emergency F-16 weapons for UAE",
+          "source": "janes.com",
+          "url": "https://janes.com/osint-insights/defence-news/defence/us-approves-emergency-f-16-weapons-for-uae",
+          "date": "2026-03-19"
+        },
+        {
           "title": "US approves air defence radars for Kuwait, UAE",
           "source": "janes.com",
           "url": "https://janes.com/osint-insights/defence-news/weapons/us-approves-air-defence-radars-for-kuwait-uae",
           "date": "2026-03-19"
-        },
-        {
-          "title": "US approves emergency F-16 weapons for UAE",
-          "source": "janes.com",
-          "url": "https://janes.com/osint-insights/defence-news/defence/us-approves-emergency-f-16-weapons-for-uae",
-          "date": "2026-03-20"
         },
         {
           "title": "US approves $7 billion more in weapons for UAE, WSJ reports",
@@ -490,41 +720,39 @@
           "title": "US Department of State Approves FS-LIDS Sale to UAE",
           "source": "turdef.com",
           "url": "https://turdef.com/article/us-department-of-state-approves-fs-lids-sale-to-uae",
-          "date": "2026-03-20"
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
         "https://thenationalnews.com/news/mena/2026/03/20/whats-in-the-major-8bn-us-arms-package-bolstering-uae-defences",
-        "https://www.state.gov/united-arab-emirates-advanced-medium-range-air-to-air-missiles-amraams/"
+        "https://state.gov/united-arab-emirates-long-range-discrimination-radar-with-terminal-high-altitude-area-defense-integration"
       ]
     },
     {
-      "story_id": 4,
-      "headline": "ADNOC operations disrupted by Iran attacks while advancing OMV merger",
-      "summary": "ADNOC facilities including Fujairah port and production sites came under Iranian attack, forcing production cuts exceeding 50% and suspension of loading operations. Simultaneously, ADNOC and Austria's OMV are advancing their Borouge Group International merger despite adjusting investment plans due to market volatility.",
+      "story_id": 5,
+      "headline": "ADNOC operations disrupted by Iranian attacks as energy infrastructure becomes target",
+      "summary": "Iranian attacks have significantly disrupted ADNOC operations, with crude oil production dropping by over 50% and loading operations suspended at key facilities including Fujairah port. The Habshan gas facility and other energy infrastructure have been targeted. ADNOC CEO Sultan Al Jaber condemned the attacks as 'global economic warfare.' Meanwhile, ADNOC continues advancing its merger with Austria's OMV to create Borouge Group International.",
       "actors_involved": [
         "ADNOC"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "source_count": 16,
       "sources": [
         "reuters.com",
-        "tradearabia.com",
+        "thenationalnews.com",
+        "bizjournals.com",
         "ogj.com",
-        "gulfbusiness.com",
+        "tradearabia.com",
+        "arabianbusiness.com",
         "maritimeprofessional.com",
         "rigzone.com",
-        "arabianbusiness.com",
-        "macfarlanes.com",
+        "gulfbusiness.com",
         "agbi.com",
+        "macfarlanes.com",
         "iranintl.com",
-        "news.cgtn.com",
-        "tradingview.com",
         "scanx.trade",
-        "bizjournals.com",
-        "thenationalnews.com",
-        "seekingalpha.com",
-        "gulfnews.com"
+        "news.cgtn.com",
+        "seekingalpha.com"
       ],
       "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
@@ -535,10 +763,10 @@
           "date": "2026-03-19"
         },
         {
-          "title": "ADNOC, OMV to delay listing co-owned petrochemical venture until next year",
-          "source": "seekingalpha.com",
-          "url": "https://seekingalpha.com/news/4566826-adnoc-omv-to-delay-listing-co-owned-petrochemical-venture-until-next-year",
-          "date": "2026-03-19"
+          "title": "ADNOC oil loading still halted at UAE's Fujairah, other loadings resume, sources say",
+          "source": "reuters.com",
+          "url": "https://reuters.com/business/energy/oil-loading-operations-suspended-uaes-fujairah-port-sources-say-2026-03-16",
+          "date": "2026-03-16"
         },
         {
           "title": "Occidental-, Adnoc-run gas field shuts down after drone attack",
@@ -553,28 +781,22 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Adnoc, OMV forge ahead with big Borouge Group International merger",
-          "source": "tradearabia.com",
-          "url": "https://www.tradearabia.com/News/390479/Adnoc,-OMV-forge-ahead-with-big-Borouge-Group-International-merger",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "ADNOC oil loading still halted at UAE's Fujairah, other loadings resume, sources say",
-          "source": "reuters.com",
-          "url": "https://reuters.com/business/energy/oil-loading-operations-suspended-uaes-fujairah-port-sources-say-2026-03-16",
-          "date": "2026-03-16"
-        },
-        {
           "title": "ADNOC, OMV advance formation of Borouge Group International",
           "source": "ogj.com",
           "url": "https://www.ogj.com/refining-processing/news/55365463/adnoc-omv-advance-formation-of-borouge-group-international",
           "date": "2026-03-19"
         },
         {
-          "title": "ADNOC chairman Al Jaber says energy infrastructure should never be a target",
-          "source": "gulfbusiness.com",
-          "url": "https://gulfbusiness.com/en/2026/energy/adnoc-chairman-al-jaber-says-energy-infrastructure-should-never-be-a-target/",
-          "date": "2026-03-19"
+          "title": "Adnoc, OMV forge ahead with big Borouge Group International merger",
+          "source": "tradearabia.com",
+          "url": "https://www.tradearabia.com/News/390479/Adnoc,-OMV-forge-ahead-with-big-Borouge-Group-International-merger",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "ADNOC and OMV push ahead with Borouge mega-merger, $400m profit uplift expected",
+          "source": "arabianbusiness.com",
+          "url": "https://www.arabianbusiness.com/business/energy/adnoc-and-omv-push-ahead-with-borouge-mega-merger-400m-profit-uplift-expected",
+          "date": "2026-03-20"
         },
         {
           "title": "ADNOC Suspends Crude Loading at Fujairah Port After Drone Attack",
@@ -585,19 +807,13 @@
         {
           "title": "ADNOC, OMV Tweak Investment Plans for Polyolefins JV",
           "source": "rigzone.com",
-          "url": "https://rigzone.com/news/adnoc_omv_tweak_investment_plans_for_polyolefins_jv-20-mar-2026-183257-article/",
+          "url": "https://rigzone.com/news/adnoc_omv_tweak_investment_plans_for_polyolefins_jv-20-mar-2026-183257-article",
           "date": "2026-03-20"
         },
         {
-          "title": "ADNOC and OMV push ahead with Borouge mega-merger, $400m profit uplift expected",
-          "source": "arabianbusiness.com",
-          "url": "https://www.arabianbusiness.com/business/energy/adnoc-and-omv-push-ahead-with-borouge-mega-merger-400m-profit-uplift-expected",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "The Foreign Subsidies Regulation in action part two: learnings from the ADNOC/Covestro decision",
-          "source": "macfarlanes.com",
-          "url": "https://macfarlanes.com/insights/102mn6n/the-foreign-subsidies-regulation-in-action-part-two-learnings-from-the-adnoc-cov",
+          "title": "ADNOC chairman Al Jaber says energy infrastructure should never be a target",
+          "source": "gulfbusiness.com",
+          "url": "https://gulfbusiness.com/en/2026/energy/adnoc-chairman-al-jaber-says-energy-infrastructure-should-never-be-a-target/",
           "date": "2026-03-19"
         },
         {
@@ -607,317 +823,49 @@
           "date": "2026-03-19"
         },
         {
-          "title": "ADNOC GROUP CEO SULTAN AL JABER ON LINKEDIN",
+          "title": "The Foreign Subsidies Regulation in action part two: learnings from the ADNOC/Covestro decision",
+          "source": "macfarlanes.com",
+          "url": "https://macfarlanes.com/insights/102mn6n/the-foreign-subsidies-regulation-in-action-part-two-learnings-from-the-adnoc-cov",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "ADNOC Chief Executive Sultan Al Jaber said on Thursday that energy infrastructure across the region has been targeted",
           "source": "iranintl.com",
           "url": "https://www.iranintl.com/en/202603195450",
           "date": "2026-03-19"
         },
         {
-          "title": "ADNOC GROUP CEO SULTAN AL JABER ON LINKEDIN: CRITICAL ENERGY INFRASTRUCTURE ACROSS OUR REGION HAS COME UNDER ATTACK",
+          "title": "ADNOC Reports Crude Oil Production Drop Exceeding 50%",
+          "source": "scanx.trade",
+          "url": "https://scanx.trade/stock-market-news/commodities/adnoc-reports-crude-oil-production-drop-exceeding-50/35205262",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "ADNOC GROUP CEO SULTAN AL JABER ON LINKEDIN: CRITICAL ENERGY INFRASTRUCTURE ACROSS OUR REGION HAS COME UNDER ATTACK, INCLUDING ADNOC'S",
           "source": "news.cgtn.com",
           "url": "https://news.cgtn.com/news/2026-03-19/news-1LDVynLPbuo/p.html",
           "date": "2026-03-19"
         },
         {
-          "title": "ZAWYA-PRESSR: ADNOC and OMV advance formation of Borouge Group International AG",
-          "source": "tradingview.com",
-          "url": "https://www.tradingview.com/news/reuters.com,2026-03-21:newsml_Zaw9j5Zh9:0-zawya-pressr-adnoc-and-omv-advance-formation-of-borouge-group-international-ag/",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "ADNOC Reports Crude Oil Production Drop Exceeding 50%",
-          "source": "scanx.trade",
-          "url": "https://scanx.trade/stock-market-news/commodities/adnoc-reports-crude-oil-production-drop-exceeding-50/35205262",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "ADNOC, OMV advance plans for forming Borouge Group with new agreement",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/business/energy/adnoc-omv-advance-plans-for-forming-borouge-group-with-new-agreement-1.500480686",
-          "date": "2026-03-21"
+          "title": "ADNOC, OMV to delay listing co-owned petrochemical venture until next year",
+          "source": "seekingalpha.com",
+          "url": "https://seekingalpha.com/news/4566826-adnoc-omv-to-delay-listing-co-owned-petrochemical-venture-until-next-year",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://www.reuters.com/business/energy/adnoc-omv-are-set-complete-chemicals-mega-merger-by-end-march-2026-03-19/",
-        "https://www.thenationalnews.com/business/energy/2026/03/19/adnoc-ceo-says-irans-attacks-on-gulf-energy-sites-are-acts-of-global-economic-warfare/"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "King Abdullah of Jordan visits UAE for talks with Mohammed bin Zayed on regional crisis",
-      "summary": "Jordan's King Abdullah II visited UAE to meet with President Mohammed bin Zayed and other senior leaders in Dubai and Abu Dhabi. The talks focused on regional developments amid the escalating Iran crisis and its security implications for the Gulf region.",
-      "actors_involved": [
-        "Mohammed bin Zayed Al Nahyan",
-        "Mohammed bin Rashid Al Maktoum"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 7,
-      "sources": [
-        "gulfnews.com",
-        "emirates247.com",
-        "english.news.cn",
-        "dubaieye1038.com",
-        "middleeastmonitor.com",
-        "thenationalnews.com",
-        "mediaoffice.abudhabi",
-        "sheikhmohammed.ae",
-        "arabnews.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-18",
-      "articles": [
-        {
-          "title": "UAE President and King of Jordan discuss regional developments and implications for security and stability",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability-2-1.500476685",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "UAE President Receives King Of Jordan In Dubai, In The Presence Of Mohammed Bin Rashid And Mansour Bin Zayed",
-          "source": "emirates247.com",
-          "url": "https://www.emirates247.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability/303",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "UAE president, Jordan's king discuss regional escalation",
-          "source": "english.news.cn",
-          "url": "https://english.news.cn/20260317/24da0c69c5b94590bacfb759cdeda00b/c.html",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "King of Jordan concludes visit to UAE after meeting with leaders",
-          "source": "dubaieye1038.com",
-          "url": "https://dubaieye1038.com/news/local/king-of-jordan-concludes-visit-to-uae-after-meeting-with-leaders",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Jordan's king arrives in Doha, meets Qatar's emir amid regional escalation",
-          "source": "middleeastmonitor.com",
-          "url": "https://middleeastmonitor.com/20260317-jordans-king-arrives-in-doha-meets-qatars-emir-amid-regional-escalation",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "President Sheikh Mohamed holds talks on Iran war with Jordan's King Abdullah in Dubai",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/uae/2026/03/16/sheikh-mohamed-holds-talks-in-dubai-with-jordans-king-abdullah-on-iran-war",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Theyab bin Mohamed bin Zayed bids farewell to King of Jordan as he concludes visit to UAE",
-          "source": "mediaoffice.abudhabi",
-          "url": "https://www.mediaoffice.abudhabi/en/government-affairs/theyab-bin-mohamed-bin-zayed-bids-farewell-to-king-of-jordan-as-he-concludes-visit-to-uae/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "UAE President receives King of Jordan in Dubai in the presence of Mohammed bin Rashid and Mansour bin Zayed",
-          "source": "sheikhmohammed.ae",
-          "url": "https://sheikhmohammed.ae/en-us/News/Details?nid=30635",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Arab countries are not part of US-Israeli war against Iran, Jordan's",
-          "source": "arabnews.com",
-          "url": "https://www.arabnews.com/node/2636626/middle-east",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://thenationalnews.com/news/uae/2026/03/16/sheikh-mohamed-holds-talks-in-dubai-with-jordans-king-abdullah-on-iran-war",
-        "https://gulfnews.com/uae/uae-president-and-king-of-jordan-discuss-regional-developments-and-implications-for-security-and-stability-2-1.500476685"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Abdullah bin Zayed conducts diplomatic outreach over Iranian attacks on UAE",
-      "summary": "UAE Foreign Minister Abdullah bin Zayed held phone calls with multiple foreign ministers and officials to discuss Iranian missile attacks on UAE and coordinate international response. He strongly condemned the attacks and discussed regional security implications with counterparts globally.",
-      "actors_involved": [
-        "Abdullah bin Zayed"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 8,
-      "sources": [
-        "mofa.gov.ae",
-        "state.gov",
-        "timesofindia.indiatimes.com",
-        "thenationalnews.com",
-        "emirates247.com",
-        "english.aawsat.com"
-      ],
-      "date_range": "2026-03-17 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Abdullah bin Zayed Strongly Condemns Continued Iranian Terrorist Attacks on the UAE and Extends Sincere Condolences to Victims' Families",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/mediahub/news/2026/3/18/bin-zayed-iran",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Abdullah bin Zayed holds phone calls with Foreign Ministers, Officials to discuss regional developments",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/3/19/UAE-ABDZAYED",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Secretary Rubio's Call with UAE Deputy Prime Minister and Minister of Foreign Affairs Sheikh Abdullah bin Zayed Al Nahyan",
-          "source": "state.gov",
-          "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/03/secretary-rubios-call-with-uae-deputy-prime-minister-and-minster-of-foreign-affairs-sheikh-abdullah-bin-zayed-al-nahyan",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Abdullah bin Zayed receives Egyptian Foreign Minister",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/3/15/UAE-Egypt",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Abdullah bin Zayed strongly condemns unprovoked, terrorist Iranian missile attack on West Bank in call with Hussein Al-Sheikh",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/3/19/uae-phalastine",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Devoted father killed in Iranian air strike in Dubai 'had dreams for his family'",
-          "source": "thenationalnews.com",
-          "url": "https://thenationalnews.com/news/uae/2026/03/19/devoted-father-killed-in-iranian-air-strike-in-dubai-had-dreams-for-his-family",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Jaishankar Dials UAE FM As Iran Strikes Escalate And India Pushes To Stabilise West Asia Amid War",
-          "source": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/videos/news/jaishankar-dials-uae-fm-as-iran-strikes-escalate-and-india-pushes-to-stabilise-west-asia-amid-war/videoshow/129673970.cms",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Abdullah bin Zayed Receives Egyptian Foreign Minister",
-          "source": "emirates247.com",
-          "url": "https://www.emirates247.com/uae/abdullah-bin-zayed-receives-egyptian-foreign-minister/280",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Joint Statement on the Strait of Hormuz",
-          "source": "mofa.gov.ae",
-          "url": "https://mofa.gov.ae/en/MediaHub/News/2026/3/21/UAE-Strait-of-Hormuz",
-          "date": "2026-03-21"
-        },
-        {
-          "title": "UAE Condemns Iran's Terrorist Attack on Habshan Gas Facility and Bab Field",
-          "source": "mofa.gov.ae",
-          "url": "https://www.mofa.gov.ae/en/MediaHub/News/2026/3/19/uae-iran",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Saudi, Egyptian FMs Discuss Regional De-Escalation Efforts",
-          "source": "english.aawsat.com",
-          "url": "https://english.aawsat.com/gulf/5252115-saudi-egyptian-fms-discuss-regional-de-escalation-efforts",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://mofa.gov.ae/en/MediaHub/News/2026/3/19/UAE-ABDZAYED",
-        "https://www.state.gov/releases/office-of-the-spokesperson/2026/03/secretary-rubios-call-with-uae-deputy-prime-minister-and-minster-of-foreign-affairs-sheikh-abdullah-bin-zayed-al-nahyan"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "ADIA commits up to $500 million to Hong Kong private credit fund",
-      "summary": "Abu Dhabi Investment Authority committed up to $500 million to Dignari Capital Partners, a Hong Kong-based private credit manager focused on real estate financing in Asia-Pacific developed markets. The investment represents ADIA's continued expansion into alternative asset strategies.",
-      "actors_involved": [
-        "ADIA"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 4,
-      "sources": [
-        "perenews.com",
-        "fundsglobalmena.com",
-        "agbi.com",
-        "mingtiandi.com"
-      ],
-      "date_range": "2026-03-15 to 2026-03-18",
-      "articles": [
-        {
-          "title": "ADIA commits up to $500m to Dignari Capital in private credit push",
-          "source": "perenews.com",
-          "url": "https://perenews.com/adia-commits-up-to-500m-to-dignari-capital-in-private-credit-push",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "ADIA unit backs Dignari Capital private credit strategy",
-          "source": "fundsglobalmena.com",
-          "url": "https://www.fundsglobalmena.com/adia-unit-backs-dignari-capital-private-credit-strategy/",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Adia backs Hong Kong-based private real estate fund",
-          "source": "agbi.com",
-          "url": "https://agbi.com/finance/2026/03/adia-backs-hong-kong-based-private-real-estate-fund",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "ADIA Backs Dignari's APAC Real Estate Credit Fund",
-          "source": "mingtiandi.com",
-          "url": "https://mingtiandi.com/real-estate/finance/adia-backs-dignaris-apac-real-estate-credit-fund-with-hong-kong-focus",
-          "date": "2026-03-18"
-        }
-      ],
-      "representative_urls": [
-        "https://perenews.com/adia-commits-up-to-500m-to-dignari-capital-in-private-credit-push",
-        "https://mingtiandi.com/real-estate/finance/adia-backs-dignaris-apac-real-estate-credit-fund-with-hong-kong-focus"
-      ]
-    },
-    {
-      "story_id": 8,
-      "headline": "UAE celebrates Emirati Children's Day with commemorative coin and government initiatives",
-      "summary": "UAE marked Emirati Children's Day on March 15 with President Mohammed bin Zayed emphasizing child welfare as a top priority. Central Bank issued special silver commemorative coins, and various government initiatives highlighted focus on children's safety and development.",
-      "actors_involved": [
-        "Mohammed bin Zayed Al Nahyan",
-        "Central Bank of the UAE"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 3,
-      "sources": [
-        "gulfnews.com",
-        "zawya.com",
-        "gccbusinessnews.com"
-      ],
-      "date_range": "2026-03-15 to 2026-03-20",
-      "articles": [
-        {
-          "title": "UAE Central Bank Celebrates Emirati Children's Day with Special Silver Coin",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/uaes-central-bank-issues-silver-coin-on-emirati-childrens-day-1.500475344",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "UAE marks Emirati Children's Day with focus on safety, digital knowledge and future generations",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/government/uae-president-happiness-and-wellbeing-of-all-children-remain-a-top-priority-1.500475102",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "CBUAE issues silver commemorative coin in celebration of Emirati Children's Day",
-          "source": "zawya.com",
-          "url": "https://www.zawya.com/en/press-release/government-news/cbuae-issues-silver-commemorative-coin-in-celebration-of-emirati-childrens-day-xarxedmw",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "Emirati Children's Day 2026: CBUAE issues special silver coin",
-          "source": "gccbusinessnews.com",
-          "url": "https://www.gccbusinessnews.com/emirati-childrens-day-cbuae-silver-coin",
-          "date": "2026-03-15"
-        },
-        {
-          "title": "'Eid Mubarak to all who call the UAE home': President's SMS to residents wins hearts, inspires unity",
-          "source": "gulfnews.com",
-          "url": "https://gulfnews.com/uae/eid-mubarak-to-all-who-call-the-uae-home-sheikh-mohameds-sms-wins-hearts-inspires-unity-1.500480720",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://gulfnews.com/uae/government/uae-president-happiness-and-wellbeing-of-all-children-remain-a-top-priority-1.500475102",
-        "https://www.zawya.com/en/press-release/government-news/cbuae-issues-silver-commemorative-coin-in-celebration-of-emirati-childrens-day-xarxedmw"
+        "https://www.thenationalnews.com/business/energy/2026/03/19/adnoc-ceo-says-irans-attacks-on-gulf-energy-sites-are-acts-of-global-economic-warfare/",
+        "https://reuters.com/business/energy/oil-loading-operations-suspended-uaes-fujairah-port-sources-say-2026-03-16"
       ]
     }
   ],
   "single_source_items": [
+    {
+      "headline": "ADIA commits up to $500m to Dignari Capital in private credit push",
+      "source": "perenews.com",
+      "url": "https://perenews.com/adia-commits-up-to-500m-to-dignari-capital-in-private-credit-push",
+      "signal_category_hint": "economic_tech"
+    },
     {
       "headline": "G42 and Publicis Sapient explore AI-first services joint venture",
       "source": "campaignme.com",
@@ -925,21 +873,21 @@
       "signal_category_hint": "economic_tech"
     },
     {
-      "headline": "Mubadala executives active in global investment conferences seeking external capital",
-      "source": "impactalpha.com",
-      "url": "https://impactalpha.com/middle-east-sovereign-wealth-financed-massive-green-infrastructure-investments-now-what/",
-      "signal_category_hint": "economic_tech"
+      "headline": "UAE Central Bank issues silver commemorative coin for Emirati Children's Day",
+      "source": "gulfnews.com",
+      "url": "https://gulfnews.com/uae/uaes-central-bank-issues-silver-coin-on-emirati-childrens-day-1.500475344",
+      "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "Zayed National Museum opens showcasing UAE design voices",
+      "headline": "The Zayed National Museum opens as stage for UAE's design voices",
       "source": "wallpaper.com",
       "url": "https://wallpaper.com/design-interiors/the-zayed-national-museum-abu-dhabi-design",
       "signal_category_hint": "domestic_regime"
     },
     {
-      "headline": "UAE Military Training Cooperation Corps details in South Korea wiki",
-      "source": "en.namu.wiki",
-      "url": "https://en.namu.wiki/w/UAE%20%EA%B5%B0%EC%82%AC%ED%9B%88%EB%A0%A8%20%ED%98%91%EB%A0%A5%EB%8B%A8",
+      "headline": "Britain's military interest in UAE examined regarding Yemen and Sudan conflicts",
+      "source": "aoav.org.uk",
+      "url": "https://aoav.org.uk/2026/britains-military-interest-in-uae-examined",
       "signal_category_hint": "security_defense"
     }
   ]

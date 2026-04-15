@@ -3,35 +3,33 @@
   "code": "gb",
   "week": "2026-03-21",
   "analysis_date": "2026-03-21",
-  "search_results_total": 395,
-  "stories_identified": 10,
+  "search_results_total": 396,
+  "stories_identified": 12,
   "off_topic_filtered": 47,
-  "noise_summary": "47 off-topic results filtered: 15 entertainment/celebrity stories (Keanu Reeves movies, royal family gossip), 12 sports coverage (Austin Reaves Lakers stories, rugby commentary), 8 technology/business stories unrelated to government policy, 7 international stories about other countries' domestic politics, 5 lifestyle/human interest pieces",
+  "noise_summary": "47 off-topic results filtered: 18 sports (football, tennis, rugby coverage), 12 entertainment/celebrity news, 8 automotive reviews and announcements (Mazda, Honda, Audi), 4 technology/gaming content (MacBook, Sonic movie, video games), 3 foreign language content not relevant to UK politics, 2 unrelated historical content",
   "stories": [
     {
       "story_id": 1,
-      "headline": "UK refuses Trump's demands to join Iran war as Starmer limits support to defensive measures",
-      "summary": "Prime Minister Starmer rejected Trump's calls for UK ships to patrol the Strait of Hormuz, saying Britain will not be drawn into the wider Iran war. The UK allowed US use of bases for defensive strikes only, causing tensions with Trump who criticized Starmer's response.",
+      "headline": "Starmer allows US use of UK bases for defensive Iran strikes amid Trump criticism",
+      "summary": "Prime Minister Keir Starmer faced sustained criticism from Donald Trump over UK's limited support for the Iran war, with Trump calling him 'no Winston Churchill.' Starmer eventually allowed US forces to use UK bases for defensive strikes on Iranian missile sites while refusing broader military involvement.",
       "actors_involved": [
-        "Starmer",
-        "Lammy",
-        "Healey"
+        "Keir Starmer"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 67,
+      "source_count": 42,
       "sources": [
         "bbc.com",
         "nytimes.com",
-        "apnews.com",
-        "reuters.com",
-        "telegraph.co.uk",
-        "cnbc.com",
         "theguardian.com",
+        "telegraph.co.uk",
         "independent.co.uk",
+        "reuters.com",
+        "cnbc.com",
+        "apnews.com",
+        "bloomberg.com",
         "dailymail.co.uk",
-        "ft.com",
         "politico.eu",
-        "bloomberg.com"
+        "freebeacon.com"
       ],
       "date_range": "2026-03-15 to 2026-03-21",
       "articles": [
@@ -48,34 +46,16 @@
           "date": "2026-03-20"
         },
         {
-          "title": "Zelenskyy and Starmer urge continuing support for Ukraine against Russia as Iran war steals focus",
-          "source": "apnews.com",
-          "url": "https://apnews.com/article/russia-ukraine-war-zelenskyy-london-talks-nato-4dbc214cc670c4a8e12ab6d45275e2c4",
-          "date": "2026-02-25"
-        },
-        {
-          "title": "Rising gas petrol prices causes UK government Keir Starmer problems",
-          "source": "cnbc.com",
-          "url": "https://www.cnbc.com/2026/03/18/gas-petrol-prices-rising-iran-war-uk-government-keir-starmer-rachel-reeves.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Why Starmer thinks he's called it right on war despite Trump barbs",
+          "title": "Donald Trump 'not happy' with UK over Iran conflict",
           "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/cn9e0zr5qy2o",
-          "date": "2026-02-25"
+          "url": "https://www.bbc.com/news/articles/cp816jwg411o",
+          "date": "2026-02-21"
         },
         {
-          "title": "Starmer distances UK from Iran war as EU leaders rule out sending warships",
-          "source": "theguardian.com",
-          "url": "https://www.theguardian.com/world/2026/mar/16/starmer-distances-uk-from-iran-war-as-eu-leaders-rule-out-sending-warships",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "UK will not be drawn into wider war in Middle East, says Keir Starmer",
-          "source": "theguardian.com",
-          "url": "https://www.theguardian.com/world/2026/mar/16/uk-will-not-be-drawn-into-wider-war-in-middle-east-says-keir-starmer",
-          "date": "2026-03-16"
+          "title": "Trump: UK relationship was the best until Starmer came along",
+          "source": "telegraph.co.uk",
+          "url": "https://www.telegraph.co.uk/us/politics/2026/03/17/trump-uk-relationship-was-best-until-starmer-came-along/",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -85,189 +65,31 @@
     },
     {
       "story_id": 2,
-      "headline": "Trump repeatedly attacks Starmer as 'no Winston Churchill' amid Iran war tensions",
-      "summary": "President Trump escalated personal criticism of PM Starmer over UK's limited support for the Iran war, repeatedly saying he is 'not Winston Churchill.' Irish PM Miche\u00e1l Martin defended Starmer during White House visit, while Conservative leader Badenoch called Trump's comments 'childish.'",
-      "actors_involved": [
-        "Starmer",
-        "Badenoch"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 23,
-      "sources": [
-        "telegraph.co.uk",
-        "apnews.com",
-        "bbc.com",
-        "bloomberg.com",
-        "freebeacon.com",
-        "theguardian.com",
-        "independent.co.uk",
-        "politico.eu",
-        "dailymail.co.uk"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Trump: UK relationship was the best until Starmer came along",
-          "source": "telegraph.co.uk",
-          "url": "https://www.telegraph.co.uk/us/politics/2026/03/17/trump-uk-relationship-was-best-until-starmer-came-along/",
-          "date": "2026-03-17"
-        },
-        {
-          "title": "Trump's failed strong-arming of allies on Iran shows that pressure is losing its effect",
-          "source": "apnews.com",
-          "url": "https://apnews.com/article/iran-us-war-trump-starmer-macron-germany-caff1073f932ddb88c3d75c7c356ebc7",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "BEASTMODE: Trump Declares That UK Prime Minister Keir Starmer 'Is Not Winston Churchill'",
-          "source": "freebeacon.com",
-          "url": "https://freebeacon.com/latest-news/beastmode-trump-declares-that-uk-prime-minister-keir-starmer-is-not-winston-churchill/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Irish PM Comes to Starmer's Defense During White House Visit",
-          "source": "bloomberg.com",
-          "url": "https://www.bloomberg.com/news/articles/2026-03-17/irish-pm-comes-to-starmer-s-defense-during-white-house-visit",
-          "date": "2026-03-17"
-        }
-      ],
-      "representative_urls": [
-        "https://www.telegraph.co.uk/us/politics/2026/03/17/trump-uk-relationship-was-best-until-starmer-came-along/",
-        "https://apnews.com/article/iran-us-war-trump-starmer-macron-germany-caff1073f932ddb88c3d75c7c356ebc7"
-      ]
-    },
-    {
-      "story_id": 3,
-      "headline": "King Charles US state visit questioned as Trump-UK tensions rise over Iran war",
-      "summary": "Growing calls to postpone or cancel King Charles's planned US state visit due to deteriorating US-UK relations over the Iran conflict. Trump confirmed the King would visit 'very shortly' despite diplomatic tensions, with critics warning it could embarrass the monarchy.",
-      "actors_involved": [
-        "King Charles III"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 19,
-      "sources": [
-        "theweek.com",
-        "cnn.com",
-        "express.co.uk",
-        "independent.co.uk",
-        "dailymail.co.uk",
-        "mirror.co.uk",
-        "foxnews.com",
-        "townandcountrymag.com"
-      ],
-      "date_range": "2026-03-16 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Should King Charles postpone his US state visit?",
-          "source": "theweek.com",
-          "url": "https://theweek.com/world-news/king-charles-state-visit-us-america-trump",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "King Charles visit in question as Trump berates UK over Iran war position",
-          "source": "cnn.com",
-          "url": "https://www.cnn.com/2026/03/18/europe/trump-king-charles-visit-iran-intl",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "GB News paused for King Charles bombshell and it's huge blow for Trump",
-          "source": "express.co.uk",
-          "url": "https://www.express.co.uk/showbiz/tv-radio/2183943/gb-news-king-charles-alert-trump",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Postpone King Charles' US state visit or risk embarrassing monarchy, senior Labour MP urges Starmer",
-          "source": "independent.co.uk",
-          "url": "https://independent.co.uk/news/uk/politics/king-charles-us-visit-trump-delay-emily-thornberry-b2939984.html",
-          "date": "2026-03-20"
-        }
-      ],
-      "representative_urls": [
-        "https://www.cnn.com/2026/03/18/europe/trump-king-charles-visit-iran-intl",
-        "https://independent.co.uk/news/uk/politics/king-charles-us-visit-trump-delay-emily-thornberry-b2939984.html"
-      ]
-    },
-    {
-      "story_id": 4,
-      "headline": "Rachel Reeves calls for closer EU alignment and admits Brexit damage in major economic speech",
-      "summary": "Chancellor Reeves delivered her Mais lecture declaring Brexit caused up to 8% GDP damage and calling for 'deeper relationship' with EU. She announced \u00a32.3bn city investment funds for regional mayors and plans for fiscal devolution, marking significant shift toward EU alignment.",
-      "actors_involved": [
-        "Rachel Reeves"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 31,
-      "sources": [
-        "economist.com",
-        "theguardian.com",
-        "dailymail.co.uk",
-        "ft.com",
-        "news.sky.com",
-        "mirror.co.uk",
-        "express.co.uk",
-        "gbnews.com",
-        "cityam.com",
-        "inews.co.uk",
-        "newstatesman.com",
-        "scotsman.com",
-        "independent.co.uk"
-      ],
-      "date_range": "2026-03-16 to 2026-03-19",
-      "articles": [
-        {
-          "title": "Britain's chancellor starts a tilt towards Europe",
-          "source": "economist.com",
-          "url": "https://www.economist.com/britain/2026/03/18/britains-chancellor-starts-a-tilt-towards-europe",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Fury at Rachel Reeves' Brexit reversal as she calls for the UK to follow EU rules again",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15655777/Fury-Rachel-Reeves-Brexit-reversal.html",
-          "date": "2026-03-18"
-        },
-        {
-          "title": "Rachel Reeves admits she wishes Brexit had never happened as she begins new drive to bring the UK closer to EU again with trip to Spain",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15658533/Rachel-Reeves-admits-wishes-Brexit-never-happened-begins-new-drive-bring-UK-closer-EU-trip-Spain.html",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Stop blaming Brexit for economic woes, Reeves told",
-          "source": "news.sky.com",
-          "url": "https://news.sky.com/story/deeper-ties-to-europe-and-ai-the-best-ways-to-boost-economic-growth-chancellor-to-say-13520561",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://www.economist.com/britain/2026/03/18/britains-chancellor-starts-a-tilt-towards-europe",
-        "https://dailymail.co.uk/news/article-15658533/Rachel-Reeves-admits-wishes-Brexit-never-happened-begins-new-drive-bring-UK-closer-EU-trip-Spain.html"
-      ]
-    },
-    {
-      "story_id": 5,
-      "headline": "Bank of England holds interest rates at 3.75% due to Iran war inflation fears",
-      "summary": "The Bank of England unanimously voted to keep interest rates unchanged at 3.75% amid concerns that the Iran war could drive inflation higher. Governor Bailey warned the Bank 'stands ready to act' if energy price rises persist, effectively ruling out rate cuts in the near term.",
+      "headline": "Bank of England holds rates at 3.75% citing Iran war inflation risks",
+      "summary": "The Bank of England unanimously voted to maintain interest rates at 3.75% and warned it may need to raise them if the Iran conflict continues driving up energy prices and inflation. Governor Andrew Bailey said the bank 'stands ready to act' against rising prices.",
       "actors_involved": [
         "Bank of England"
       ],
       "signal_category_hint": "economic_tech",
-      "source_count": 31,
+      "source_count": 28,
       "sources": [
-        "theguardian.com",
-        "independent.co.uk",
+        "bbc.com",
         "reuters.com",
         "bloomberg.com",
-        "apnews.com",
-        "ksat.com",
-        "bbc.com",
-        "lbc.co.uk",
-        "moneyweek.com",
-        "itv.com",
-        "politico.eu",
-        "ft.com"
+        "theguardian.com",
+        "independent.co.uk",
+        "ft.com",
+        "bankofengland.co.uk",
+        "lbc.co.uk"
       ],
-      "date_range": "2026-03-16 to 2026-03-20",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
+        {
+          "title": "Interest rates held at 3.75% as Bank of England warns Iran war 'shock' will push up inflation",
+          "source": "bbc.com",
+          "url": "https://bbc.com/news/live/cm2r295p8p9t",
+          "date": "2026-03-19"
+        },
         {
           "title": "Bank of England holds interest rates at 3.75% and signals rise is possible within months",
           "source": "theguardian.com",
@@ -275,21 +97,9 @@
           "date": "2026-03-19"
         },
         {
-          "title": "Bank of England unanimously votes to press pause on interest rates as Iran worries grow",
-          "source": "independent.co.uk",
-          "url": "https://www.independent.co.uk/news/business/interest-rates-inflation-bank-of-england-iran-war-oil-mortgages-b2940288.html",
-          "date": "2026-03-19"
-        },
-        {
           "title": "BoE policymakers vote 9-0 to keep rates on hold in face of war risks",
           "source": "reuters.com",
           "url": "https://reuters.com/business/finance/bank-england-policymakers-unanimously-keep-rates-hold-face-war-risks-2026-03-19",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Bank of England holds main interest rate at 3.75% as Iran war jolts inflation expectations",
-          "source": "apnews.com",
-          "url": "https://apnews.com/article/britain-economy-iran-oil-prices-interest-rates-a9fdbdf21313f103e1c6490fb66dd218",
           "date": "2026-03-19"
         }
       ],
@@ -299,127 +109,113 @@
       ]
     },
     {
-      "story_id": 6,
-      "headline": "Bank of England faces backlash over plan to replace Churchill with wildlife on banknotes",
-      "summary": "The Bank of England announced it will replace historical figures including Winston Churchill with British wildlife on the next generation of banknotes. The decision sparked political criticism and public opposition, with the RSPCA suggesting rats should be featured.",
+      "story_id": 3,
+      "headline": "King Charles US state visit questioned amid Iran war tensions",
+      "summary": "Calls grew to postpone or cancel King Charles's planned April state visit to the US due to deteriorating UK-US relations over the Iran conflict. Trump confirmed the King would visit 'very shortly' despite political tensions, but MPs warned it could embarrass the monarchy.",
       "actors_involved": [
-        "Bank of England",
-        "Badenoch"
-      ],
-      "signal_category_hint": "domestic_regime",
-      "source_count": 14,
-      "sources": [
-        "bbc.com",
-        "lbc.co.uk",
-        "countryfile.com",
-        "gbnews.com",
-        "dailymail.co.uk",
-        "bylinesupplement.com",
-        "monocle.com"
-      ],
-      "date_range": "2026-03-11 to 2026-03-21",
-      "articles": [
-        {
-          "title": "Banknotes, beavers and a very British backlash",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/cy03zy1lr8go",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Bank of England governor defends replacing Winston Churchill with wildlife on banknotes",
-          "source": "lbc.co.uk",
-          "url": "https://www.lbc.co.uk/article/bank-of-england-governor-defends-axeing-winston-churchill-from-banknotes-5HjdWd2_2/",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Bank of England should replace Winston Churchill by RATS on new banknotes says RSPCA",
-          "source": "gbnews.com",
-          "url": "https://www.gbnews.com/money/bank-of-england-winston-churchill-rat-banknotes-rspca",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "Four former Tory chancellors hit out at Bank of England for ditching Winston Churchill from banknotes",
-          "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15647941/Four-former-Tory-chancellors-hit-Bank-England-ditching-Winston-Churchill-banknotes.html",
-          "date": "2026-03-16"
-        }
-      ],
-      "representative_urls": [
-        "https://www.bbc.com/news/articles/cy03zy1lr8go",
-        "https://dailymail.co.uk/news/article-15647941/Four-former-Tory-chancellors-hit-Bank-England-ditching-Winston-Churchill-banknotes.html"
-      ]
-    },
-    {
-      "story_id": 7,
-      "headline": "King Charles hosts Nigeria's first state visit to UK in 37 years during Ramadan",
-      "summary": "King Charles and Queen Camilla welcomed Nigerian President Bola Tinubu for a historic two-day state visit, the first by a West African leader in nearly four decades. The visit coincided with Ramadan, prompting changes to traditional banquet scheduling, and included trade and migration agreements.",
-      "actors_involved": [
-        "King Charles III",
-        "Starmer"
+        "King Charles III"
       ],
       "signal_category_hint": "alignment_diplomatic",
-      "source_count": 12,
+      "source_count": 15,
       "sources": [
-        "bbc.com",
-        "people.com",
-        "themirror.com",
-        "reuters.com",
-        "hellomagazine.com",
+        "theweek.com",
+        "cnn.com",
+        "express.co.uk",
         "independent.co.uk",
-        "marieclaire.com",
-        "gbnews.com",
-        "punchng.com"
+        "dailymail.co.uk",
+        "mirror.co.uk",
+        "townandcountrymag.com"
       ],
-      "date_range": "2026-03-18 to 2026-03-21",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
         {
-          "title": "UK agrees deal to ease migrant returns to Nigeria",
-          "source": "bbc.com",
-          "url": "https://www.bbc.com/news/articles/crm1w24p8p7o",
-          "date": "2026-03-20"
+          "title": "Should King Charles postpone his US state visit?",
+          "source": "theweek.com",
+          "url": "https://theweek.com/world-news/king-charles-state-visit-us-america-trump",
+          "date": "2026-03-17"
         },
         {
-          "title": "King Charles Wears a Top Hat to Welcome Nigeria's President in Surprise Move",
-          "source": "people.com",
-          "url": "https://people.com/king-charles-wears-top-hat-welcome-nigeria-president-surprise-move-11928832",
-          "date": "2026-03-20"
+          "title": "King Charles visit in question as Trump berates UK over Iran war position",
+          "source": "cnn.com",
+          "url": "https://www.cnn.com/2026/03/18/europe/trump-king-charles-visit-iran-intl",
+          "date": "2026-03-18"
         },
         {
-          "title": "Sky News interrupts show for major King Charles and Prince William breaking news",
-          "source": "themirror.com",
-          "url": "https://themirror.com/entertainment/celebrity-news/sky-news-charles-william-nigeria-1746460",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "King Charles to host state banquet for Nigeria's first state visit since 1989",
+          "title": "Postpone King Charles' US state visit or risk embarrassing monarchy, senior Labour MP urges Starmer",
           "source": "independent.co.uk",
-          "url": "https://independent.co.uk/news/uk/home-news/nigeria-state-visit-king-charles-windsor-b2940746.html",
-          "date": "2026-03-20"
+          "url": "https://independent.co.uk/news/uk/politics/king-charles-us-visit-trump-delay-emily-thornberry-b2939984.html",
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
-        "https://www.bbc.com/news/articles/crm1w24p8p7o",
-        "https://independent.co.uk/news/uk/home-news/nigeria-state-visit-king-charles-windsor-b2940746.html"
+        "https://www.cnn.com/2026/03/18/europe/trump-king-charles-visit-iran-intl",
+        "https://independent.co.uk/news/uk/politics/king-charles-us-visit-trump-delay-emily-thornberry-b2939984.html"
       ]
     },
     {
-      "story_id": 8,
-      "headline": "Nigel Farage stops making Cameo videos after revelations of extremist content",
-      "summary": "Reform UK leader Nigel Farage ceased using the Cameo platform after Guardian investigation revealed he had recorded videos supporting a neo-Nazi event, using extremist slogans, and making offensive comments. The investigation analyzed over 4,000 videos and raised questions about his far-right connections.",
+      "story_id": 4,
+      "headline": "Rachel Reeves calls for closer EU alignment in major economic speech",
+      "summary": "Chancellor Rachel Reeves delivered her Mais lecture calling for a 'deeper relationship' with the EU and greater regulatory alignment as key to economic growth. She announced \u00a32.3bn in regional investment funds and plans to give mayors control over tax revenues while acknowledging Brexit caused 'deep damage.'",
+      "actors_involved": [
+        "Rachel Reeves"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 25,
+      "sources": [
+        "theguardian.com",
+        "bbc.com",
+        "ft.com",
+        "independent.co.uk",
+        "dailymail.co.uk",
+        "economist.com",
+        "cityam.com",
+        "politico.eu",
+        "gbnews.com"
+      ],
+      "date_range": "2026-03-17 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Britain's chancellor starts a tilt towards Europe",
+          "source": "economist.com",
+          "url": "https://www.economist.com/britain/2026/03/18/britains-chancellor-starts-a-tilt-towards-europe",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Rachel Reeves reveals push for fiscal devolution to English regions, says Brexit caused damage, and admits student loan system is 'broken'",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/business/live/2026/mar/17/rachel-reeves-mais-lecture-ai-adoption-deeper-eu-ties-regional-growth-business-live-news-updates",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Reeves plans to give England's regional leaders a share of national tax revenues",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/business/2026/mar/17/rachel-reeves-plans-regional-national-tax-revenues-mais-lecture",
+          "date": "2026-03-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.economist.com/britain/2026/03/18/britains-chancellor-starts-a-tilt-towards-europe",
+        "https://www.theguardian.com/business/live/2026/mar/17/rachel-reeves-mais-lecture-ai-adoption-deeper-eu-ties-regional-growth-business-live-news-updates"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "Nigel Farage suspends Cameo videos after extremist content investigation",
+      "summary": "Reform UK leader Nigel Farage stopped making paid Cameo videos following a Guardian investigation revealing he had promoted neo-Nazi events, repeated extremist slogans, and made offensive remarks. The party defended the videos as made 'in good faith' but Farage became 'unavailable' on the platform.",
       "actors_involved": [
         "Nigel Farage"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 28,
+      "source_count": 22,
       "sources": [
         "theguardian.com",
         "bbc.com",
         "independent.co.uk",
         "metro.co.uk",
+        "dailymail.co.uk",
+        "inews.co.uk",
         "thenational.scot",
-        "leftfootforward.org",
-        "middleeasteye.net",
-        "altitudesmagazine.com"
+        "leftfootforward.org"
       ],
       "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
@@ -439,13 +235,7 @@
           "title": "Nigel Farage pauses Cameo account for security reasons, says Reform UK",
           "source": "bbc.com",
           "url": "https://www.bbc.com/news/articles/c79jwxypp1ro",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Nigel Farage halts Cameo appearances after making 'racist and sexist' videos for money",
-          "source": "independent.co.uk",
-          "url": "https://independent.co.uk/news/uk/home-news/nigel-farage-cameo-videos-b2942525.html",
-          "date": "2026-03-19"
+          "date": "2026-03-20"
         }
       ],
       "representative_urls": [
@@ -454,9 +244,142 @@
       ]
     },
     {
+      "story_id": 6,
+      "headline": "Kemi Badenoch launches Conservative local election campaign",
+      "summary": "Conservative leader Kemi Badenoch launched her party's local election campaign saying Tories are 'coming back' and are the only party 'with a plan.' She backed shadow minister Nick Timothy's criticism of Muslim prayers in Trafalgar Square, calling it an 'act of domination,' prompting accusations of Islamophobia.",
+      "actors_involved": [
+        "Kemi Badenoch"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 18,
+      "sources": [
+        "bbc.com",
+        "theguardian.com",
+        "gbnews.com",
+        "dailymail.co.uk",
+        "channel4.com",
+        "mirror.co.uk",
+        "nation.cymru",
+        "thejc.com"
+      ],
+      "date_range": "2026-03-18 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Tories only party with a plan, says Badenoch as she launches election campaign",
+          "source": "bbc.com",
+          "url": "https://bbc.com/news/articles/c7959959r00o",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Kemi Badenoch backs Nick Timothy after he calls Islamic public prayers 'act of domination'",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/politics/2026/mar/19/badenoch-nick-timothy-islamic-prayer-act-of-domination",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Kemi Badenoch says the Tories 'are coming back' as she launches party's local elections campaign",
+          "source": "dailymail.co.uk",
+          "url": "https://dailymail.co.uk/news/article-15660811/Kemi-Badenoch-says-Tories-coming-launches-partys-local-elections-campaign-swipe-Nigel-Farage-boob-hypnotist-Zack-Polanski.html",
+          "date": "2026-03-19"
+        }
+      ],
+      "representative_urls": [
+        "https://www.theguardian.com/politics/2026/mar/19/badenoch-nick-timothy-islamic-prayer-act-of-domination",
+        "https://bbc.com/news/articles/c7959959r00o"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Angela Rayner challenges Starmer over immigration policies",
+      "summary": "Former deputy PM Angela Rayner criticized Starmer's immigration reforms as 'un-British' and warned Labour is 'running out of time.' The intervention sparked speculation about leadership tensions and a possible challenge to Starmer's authority within the party.",
+      "actors_involved": [
+        "Keir Starmer"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 12,
+      "sources": [
+        "theguardian.com",
+        "independent.co.uk",
+        "gbnews.com",
+        "politico.eu",
+        "dailymail.co.uk",
+        "sky.com"
+      ],
+      "date_range": "2026-03-18 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Starmer plans to ease impact of immigration policy changes after backlash from Labour MPs",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/politics/2026/mar/18/starmer-immigration-policy-labour-backlash",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "Politics latest: Angela Rayner warns Sir Keir Starmer that Labour is 'running out of time'",
+          "source": "sky.com",
+          "url": "https://news.sky.com/story/politics-latest-angela-rayner-starmer-labour-badenoch-farage-reform-12593360",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "Kemi Badenoch mocks Keir Starmer as she celebrates Angela Rayner 'firing starting gun' on leadership challenge",
+          "source": "gbnews.com",
+          "url": "https://gbnews.com/politics/video-kemi-badenoch-mocks-keir-starmer-as-she-celebrates-angela-rayner-firing-starting-gun-on-leadership-challenge",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://theguardian.com/politics/2026/mar/18/starmer-immigration-policy-labour-backlash",
+        "https://news.sky.com/story/politics-latest-angela-rayner-starmer-labour-badenoch-farage-reform-12593360"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "King Charles hosts Nigerian state visit and tries DJing in Manchester",
+      "summary": "King Charles welcomed Nigerian President Bola Tinubu for the first state visit by an African leader in 37 years, making historic protocol changes for Ramadan. The King also visited Manchester where he tried his hand at DJing, earning the nickname 'DJ KC3.'",
+      "actors_involved": [
+        "King Charles III"
+      ],
+      "signal_category_hint": "unclear",
+      "source_count": 14,
+      "sources": [
+        "reuters.com",
+        "bbc.co.uk",
+        "independent.co.uk",
+        "hellomagazine.com",
+        "people.com",
+        "gbnews.com",
+        "marieclaire.com",
+        "dailymail.co.uk"
+      ],
+      "date_range": "2026-03-17 to 2026-03-21",
+      "articles": [
+        {
+          "title": "King Charles welcomes Nigerian president to UK for state visit",
+          "source": "reuters.com",
+          "url": "https://reuters.com/world/uk/king-charles-welcome-nigerian-president-uk-state-visit-2026-03-18",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "King Charles hits the DJ decks during Manchester arts venue visit",
+          "source": "bbc.co.uk",
+          "url": "https://www.bbc.co.uk/news/articles/c9q58x3vxp3o",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "King Charles Makes Historic Break in Royal Tradition for Nigerian State Visit",
+          "source": "marieclaire.com",
+          "url": "https://marieclaire.com/celebrity/royals/king-charles-historic-break-tradition-nigerian-visit-lunch-ramadan",
+          "date": "2026-03-18"
+        }
+      ],
+      "representative_urls": [
+        "https://reuters.com/world/uk/king-charles-welcome-nigerian-president-uk-state-visit-2026-03-18",
+        "https://www.bbc.co.uk/news/articles/c9q58x3vxp3o"
+      ]
+    },
+    {
       "story_id": 9,
-      "headline": "David Lammy faces opposition over jury trial reforms and judge security concerns",
-      "summary": "Justice Secretary David Lammy's plans to end jury trials for thousands of cases faced criticism from the judiciary and legal community. Lady Chief Justice warned of 'grave security concerns' for judges, while women's rights groups said reforms would undermine justice for abuse victims.",
+      "headline": "David Lammy's jury trial reforms face opposition from judiciary",
+      "summary": "Justice Secretary David Lammy's proposals to end jury trials in thousands of cases annually faced criticism from the Lady Chief Justice who voiced 'grave security concerns' about judges becoming targets. Women's rights groups also warned the reforms could undermine justice for abuse victims.",
       "actors_involved": [
         "David Lammy"
       ],
@@ -468,7 +391,7 @@
         "dailymail.co.uk",
         "communitycare.co.uk"
       ],
-      "date_range": "2026-03-16 to 2026-03-20",
+      "date_range": "2026-03-17 to 2026-03-21",
       "articles": [
         {
           "title": "Cutting jury trials risks 'undermining justice' for abused women and girls, Lammy warned",
@@ -480,19 +403,13 @@
           "title": "Lammy's jury reforms could increase security threat to judges, head of judiciary warns",
           "source": "independent.co.uk",
           "url": "https://www.independent.co.uk/news/uk/home-news/lammy-jury-trials-judges-security-courts-baroness-carr-b2940054.html",
-          "date": "2026-03-19"
+          "date": "2026-03-17"
         },
         {
-          "title": "Lady Chief Justice voices 'grave security concerns' over Labour's controversial jury reforms, as judges risk becoming targets for criminal revenge",
+          "title": "Lady Chief Justice voices 'grave security concerns' over Labour's controversial jury reforms",
           "source": "dailymail.co.uk",
           "url": "https://dailymail.co.uk/news/article-15653753/Lady-Chief-Justice-voices-grave-security-concerns-Labours-controversial-jury-reforms-judges-risk-targets-criminal-revenge.html",
-          "date": "2026-03-16"
-        },
-        {
-          "title": "David Lammy's jury reforms will 'deepen mistrust of justice system among women and girls'",
-          "source": "independent.co.uk",
-          "url": "https://www.independent.co.uk/news/uk/crime/jury-trial-reforms-violence-women-girls-vawg-b2940933.html",
-          "date": "2026-03-19"
+          "date": "2026-03-17"
         }
       ],
       "representative_urls": [
@@ -502,87 +419,137 @@
     },
     {
       "story_id": 10,
-      "headline": "Kemi Badenoch launches Conservative local election campaign while backing controversial Muslim prayer comments",
-      "summary": "Conservative leader Badenoch launched her party's local election campaign promising to 'get Britain working,' while defending shadow justice secretary Nick Timothy's criticism of Muslim prayers in Trafalgar Square as 'act of domination.' Labour accused the Tories of embracing prejudice.",
+      "headline": "Bank of England faces backlash over banknote wildlife plans",
+      "summary": "The Bank of England's decision to replace historical figures including Winston Churchill with British wildlife on future banknotes triggered political criticism. Four former Tory chancellors and Conservative leader Kemi Badenoch condemned the move, while Governor Andrew Bailey defended following public consultation results.",
       "actors_involved": [
-        "Kemi Badenoch"
+        "Bank of England"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 25,
+      "source_count": 9,
       "sources": [
-        "bbc.com",
-        "theguardian.com",
-        "dailymail.co.uk",
+        "bbc.co.uk",
         "gbnews.com",
-        "mirror.co.uk",
-        "nation.cymru",
-        "channel4.com",
-        "news.sky.com",
-        "thejc.com"
+        "dailymail.co.uk",
+        "lbc.co.uk",
+        "reuters.com",
+        "monocle.com"
       ],
-      "date_range": "2026-03-17 to 2026-03-21",
+      "date_range": "2026-03-16 to 2026-03-21",
       "articles": [
         {
-          "title": "Tories only party with a plan, says Badenoch as she launches election campaign",
-          "source": "bbc.com",
-          "url": "https://bbc.com/news/articles/c7959959r00o",
-          "date": "2026-03-20"
+          "title": "Banknotes, beavers and a very British backlash",
+          "source": "bbc.co.uk",
+          "url": "https://www.bbc.co.uk/news/articles/cy03zy1lr8go",
+          "date": "2026-03-17"
         },
         {
-          "title": "Kemi Badenoch backs Nick Timothy after he calls Islamic public prayers 'act of domination'",
-          "source": "theguardian.com",
-          "url": "https://www.theguardian.com/politics/2026/mar/19/badenoch-nick-timothy-islamic-prayer-act-of-domination",
-          "date": "2026-03-19"
-        },
-        {
-          "title": "Kemi Badenoch says the Tories 'are coming back' as she launches party's local elections campaign with swipe at Nigel Farage and 'boob hypnotist' Zack Polanski",
+          "title": "Four former Tory chancellors hit out at Bank of England for ditching Winston Churchill from banknotes",
           "source": "dailymail.co.uk",
-          "url": "https://dailymail.co.uk/news/article-15660811/Kemi-Badenoch-says-Tories-coming-launches-partys-local-elections-campaign-swipe-Nigel-Farage-boob-hypnotist-Zack-Polanski.html",
-          "date": "2026-03-20"
+          "url": "https://dailymail.co.uk/news/article-15647941/Four-former-Tory-chancellors-hit-Bank-England-ditching-Winston-Churchill-banknotes.html",
+          "date": "2026-03-16"
         },
         {
-          "title": "Kemi Badenoch dragging Tories 'further into gutter' after backing attack on Muslim event",
-          "source": "mirror.co.uk",
-          "url": "https://mirror.co.uk/news/politics/kemi-badenoch-dragging-tories-further-36903500",
-          "date": "2026-03-20"
+          "title": "Bank of England governor defends replacing Winston Churchill with wildlife on banknotes",
+          "source": "lbc.co.uk",
+          "url": "https://www.lbc.co.uk/article/bank-of-england-governor-defends-axeing-winston-churchill-from-banknotes-5HjdWd2_2/",
+          "date": "2026-03-19"
         }
       ],
       "representative_urls": [
-        "https://bbc.com/news/articles/c7959959r00o",
-        "https://www.theguardian.com/politics/2026/mar/19/badenoch-nick-timothy-islamic-prayer-act-of-domination"
+        "https://www.bbc.co.uk/news/articles/cy03zy1lr8go",
+        "https://dailymail.co.uk/news/article-15647941/Four-former-Tory-chancellors-hit-Bank-England-ditching-Winston-Churchill-banknotes.html"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Maura Healey proposes lifting Massachusetts Sunday hunting ban",
+      "summary": "Massachusetts Governor Maura Healey announced plans to file legislation ending the state's centuries-old ban on Sunday hunting, citing tick-borne disease concerns and supporting local economies. The proposal would also expand crossbow use and reduce minimum distances for bowhunting.",
+      "actors_involved": [
+        "Maura Healey"
+      ],
+      "signal_category_hint": "unclear",
+      "source_count": 11,
+      "sources": [
+        "wbur.org",
+        "boston25news.com",
+        "bostonherald.com",
+        "wwlp.com",
+        "cbsnews.com",
+        "capeandislands.org",
+        "bizjournals.com"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "Gov. Maura Healey wants to lift Massachusetts' centuries-old Sunday hunting ban",
+          "source": "wbur.org",
+          "url": "https://www.wbur.org/news/2026/03/20/healey-massachusetts-sunday-hunting-ban-deer-blue-laws",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "Mass. Gov. Healey proposes major hunting law changes",
+          "source": "boston25news.com",
+          "url": "https://www.boston25news.com/news/local/mass-gov-healey-proposes-major-hunting-law-changes/MXEVQSWJTFBMFOEEMTMELDL6GY/",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Battenfeld: Maura Healey's blatant political pandering backfires",
+          "source": "bostonherald.com",
+          "url": "https://bostonherald.com/2026/03/21/battenfeld-maura-healeys-blatant-political-pandering-backfires",
+          "date": "2026-03-21"
+        }
+      ],
+      "representative_urls": [
+        "https://www.wbur.org/news/2026/03/20/healey-massachusetts-sunday-hunting-ban-deer-blue-laws",
+        "https://www.boston25news.com/news/local/mass-gov-healey-proposes-major-hunting-law-changes/MXEVQSWJTFBMFOEEMTMELDL6GY/"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "Labour MPs pressure Starmer over assisted dying bill",
+      "summary": "More than 100 Labour MPs wrote to Keir Starmer demanding he prevent the House of Lords from blocking the assisted dying bill and guarantee parliamentary time for its completion. The MPs warned that failure to pass the legislation would undermine trust in politics and democratic principles.",
+      "actors_involved": [
+        "Keir Starmer"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 4,
+      "sources": [
+        "theguardian.com",
+        "bbc.co.uk"
+      ],
+      "date_range": "2026-03-16 to 2026-03-21",
+      "articles": [
+        {
+          "title": "More than 100 Labour MPs call on PM to stop assisted dying bill being blocked",
+          "source": "theguardian.com",
+          "url": "https://theguardian.com/society/2026/mar/16/assisted-dying-bill-labour-mps-starmer-letter",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "Starmer warned over assisted dying bill by more than 100 Labour MPs",
+          "source": "bbc.co.uk",
+          "url": "https://bbc.co.uk/news/articles/cy8lzn05w46o",
+          "date": "2026-03-16"
+        }
+      ],
+      "representative_urls": [
+        "https://theguardian.com/society/2026/mar/16/assisted-dying-bill-labour-mps-starmer-letter",
+        "https://bbc.co.uk/news/articles/cy8lzn05w46o"
       ]
     }
   ],
   "single_source_items": [
     {
-      "headline": "Starmer most popular PM in Toby Jug sales",
+      "headline": "UK agrees deal to ease migrant returns to Nigeria",
+      "source": "bbc.com",
+      "url": "https://www.bbc.com/news/articles/crm1w24p8p7o",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Starmer most popular PM - in Toby Jug sales",
       "source": "bbc.com",
       "url": "https://www.bbc.com/news/articles/cp385808jk2o",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "King Charles hits the DJ decks during Manchester arts venue visit",
-      "source": "bbc.co.uk",
-      "url": "https://www.bbc.co.uk/news/articles/c9q58x3vxp3o",
       "signal_category_hint": "unclear"
-    },
-    {
-      "headline": "King Charles sends message to Paralympians following their success at Winter Games",
-      "source": "gbnews.com",
-      "url": "https://www.gbnews.com/royal/king-charles-paralympics-winter-games-message",
-      "signal_category_hint": "unclear"
-    },
-    {
-      "headline": "King Charles praised for 'vital' action in stripping 9 people of their MBEs and OBEs",
-      "source": "heraldscotland.com",
-      "url": "https://heraldscotland.com/news/national/uk-today/25940916.king-charles-praised-stripping-9-people-honours",
-      "signal_category_hint": "domestic_regime"
-    },
-    {
-      "headline": "Royal news: Bishop issues public plea to King Charles amid 'erosion of Britain's Christian inheritance'",
-      "source": "gbnews.com",
-      "url": "https://gbnews.com/royal/royal-news-king-charles-bishop-christian-erosion",
-      "signal_category_hint": "domestic_regime"
     }
   ]
 }
