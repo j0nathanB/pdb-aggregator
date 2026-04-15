@@ -92,6 +92,10 @@ resource "aws_ecs_task_definition" "pipeline" {
           name      = "THE_GUARDIAN_API_KEY"
           valueFrom = aws_secretsmanager_secret.guardian_api_key.arn
         },
+        {
+          name      = "SENTRY_DSN"
+          valueFrom = aws_secretsmanager_secret.sentry_dsn.arn
+        },
       ]
 
       logConfiguration = {

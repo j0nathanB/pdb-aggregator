@@ -92,6 +92,18 @@ resource "aws_secretsmanager_secret" "browserbase_project_id" {
 }
 
 # -----------------------------------------------------------------------------
+# Sentry: error monitoring and tracing
+# -----------------------------------------------------------------------------
+resource "aws_secretsmanager_secret" "sentry_dsn" {
+  name        = "${local.name_prefix}-sentry-dsn"
+  description = "Sentry DSN for error monitoring and tracing"
+
+  tags = {
+    Name = "${local.name_prefix}-sentry-dsn"
+  }
+}
+
+# -----------------------------------------------------------------------------
 # Guardian: Guardian-specific extractor (used when extracting Guardian articles)
 # -----------------------------------------------------------------------------
 resource "aws_secretsmanager_secret" "guardian_api_key" {
