@@ -5,6 +5,9 @@ browserbase>=1.7.0
 playwright>=1.40.0
 json-repair>=0.25.0  # auto-repair LLM JSON output (missing commas, trailing commas, etc.)
 
+# Error monitoring
+sentry-sdk>=2.0.0
+
 # Tracing (Arize AX)
 openinference-instrumentation-anthropic>=0.1.0
 arize-otel>=0.7.0

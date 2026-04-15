@@ -16,10 +16,13 @@ import argparse
 import asyncio
 import json
 import logging
+import os
 import re
 import sys
 from datetime import date, timedelta
 from pathlib import Path
+
+import sentry_sdk
 
 from .config import (
     COUNTRY_LEDGERS_DIR,
@@ -709,6 +712,14 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
+    sentry_sdk.init(
+        dsn=os.environ.get("SENTRY_DSN", ""),
+        send_default_pii=True,
+        enable_logs=True,
+        traces_sample_rate=1.0,
+        profile_session_sample_rate=1.0,
+    )
+
     parser = build_parser()
     args = parser.parse_args()
 
