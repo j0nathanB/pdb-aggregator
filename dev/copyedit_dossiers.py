@@ -26,7 +26,7 @@ DOSSIERS_DIR = PROJECT_ROOT / "site" / "dossiers"
 PROMPTS_DIR = PROJECT_ROOT / "assets" / "prompts"
 
 API_KEY = os.getenv("ANTHROPIC_API_KEY")
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-sonnet-4-6"
 MAX_CONCURRENT = 3
 
 

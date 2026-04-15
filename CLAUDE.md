@@ -26,7 +26,7 @@ Gov Source Discovery → Triage (depth decisions) → Search Expansion → Story
 
 ### Model & Specs
 
-- Model: claude-sonnet-4-20250514 (thinking_budget: 16000)
+- Model: claude-sonnet-4-6 (thinking_budget: 16000)
 - 5 signal categories: alignment_diplomatic, security_defense, economic_tech, institutional, domestic_regime
 - Python env: `.venv/bin/python`
 

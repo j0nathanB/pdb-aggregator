@@ -669,7 +669,7 @@ class ClaudeExtractor(Extractor):
     def __init__(
         self,
         api_key: str | None = None,
-        model: str = "claude-sonnet-4-20250514",
+        model: str = "claude-sonnet-4-6",
     ):
         self._api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
         if not self._api_key:
