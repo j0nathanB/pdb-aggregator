@@ -1,0 +1,75 @@
+---
+title: "Changelog"
+description: "Notable changes to the Middle Powers Monitor"
+sidebarTitle: "Changelog"
+---
+
+This page records reader-facing changes to the Monitor — coverage, format, and how the analysis is produced. Fixes and infrastructure work are omitted.
+
+<Update label="April 13, 2026" tags={["Writing"]}>
+  ## A new editorial chain for regional and executive essays
+
+  Regional leads and the global overview now pass through a full writer → editor → copyeditor → style editor chain, with each country's narrative available as concrete source material for the regional writer. Editorial headlines are threaded from the editor through to the published page, so each regional and executive essay now leads with a headline that reflects its argument rather than a generic label.
+
+  The **Watchlist** section has been retired. Items previously listed as watchlist bullets are now woven into each country's narrative where they carry explanatory weight, and dropped where they do not. The same change applies retroactively to backfilled briefs.
+</Update>
+
+<Update label="April 10, 2026" tags={["Design"]}>
+  ## At a Glance is now the front page
+
+  Each brief now opens with an **At a Glance** page: one card per country, each surfacing the single most consequential development of the week, with a flag icon and a link through to the full regional page. The page is generated deterministically from the country analyses rather than by a separate synthesis step, so the top-line item for each country is always the one the pipeline judged most consequential.
+
+  The former **Overview** has been renamed **Global Overview** and now sits second in the tab. At a Glance pages have been backfilled for every brief from February 1 onward.
+</Update>
+
+<Update label="April 7, 2026" tags={["Platform"]}>
+  ## Analytics and a machine-readable index
+
+  The site now serves [Plausible](https://plausible.io) analytics — privacy-preserving, no cookies, no cross-site tracking. An `llms.txt` file has also been added at the site root so language models indexing the Monitor get a canonical description of coverage, framework, and brief structure rather than inferring it from HTML.
+</Update>
+
+<Update label="April 6, 2026" tags={["Coverage"]}>
+  ## Pakistan joins the coverage list
+
+  Pakistan is now the 29th country covered by the Monitor, added to the **Near East and South Asia** region alongside Turkey, Saudi Arabia, the UAE and India. The region was renamed from "Middle East, Turkey and South Asia" to reflect the expanded scope.
+
+  Pakistan was added because its hedging behaviour — between Washington, Beijing and the Gulf, against the backdrop of civil-military contestation — sits squarely inside the question the Monitor exists to track.
+</Update>
+
+<Update label="April 5, 2026" tags={["Writing"]}>
+  ## Expanded About page
+
+  The [About](/about) page has been rewritten to spell out the Monitor's analytical framework, methodology, and coverage decisions — which countries are in, which are excluded, and why. The five signal categories (diplomatic alignment, security and defence, economic statecraft, institutional engagement, domestic constraints) are now described in full on the same page, rather than implicit in the briefs.
+</Update>
+
+<Update label="April 4, 2026" tags={["Writing"]}>
+  ## Narrative prose replaces watchlist bullets
+
+  Watchlist items previously rendered as terse bullets are now woven into each country's narrative where they carry explanatory weight. The change is part of a broader shift from list-style output to continuous prose that explains why each development matters.
+</Update>
+
+<Update label="April 2, 2026" tags={["Design"]}>
+  ## Archives reorganised, Dossiers tab removed
+
+  The top-level tabs are now **Latest Brief**, **Archives**, and **About**. Past briefs live in Archives under collapsible week-by-week groups, each expandable to the seven regional pages for that week. The **Dossiers** tab has been removed; structural context for each country is now carried inside the weekly analysis rather than in separate reference pages.
+</Update>
+
+<Update label="March 22, 2026" tags={["Platform"]}>
+  ## New home on Mintlify
+
+  The Monitor moved from a Jekyll site (Just the Docs theme) to [Mintlify](https://mintlify.com). The new site adds a proper tabbed navigation, collapsible accordions for country notes and secondary stories, dark mode, and Atkinson Hyperlegible Next as the default typeface. Regional briefs are now split into separate pages with card-based navigation from the overview, rather than one long scroll per week.
+
+  All prior briefs were ported; nothing has been deleted.
+</Update>
+
+<Update label="March 22, 2026" tags={["Coverage"]}>
+  ## Coverage expands to 28 countries
+
+  The roster grows from 15 to 28, adding Asia-Pacific (Taiwan, Japan, South Korea, Australia, Indonesia), the Near East and South Asia (Turkey, Saudi Arabia, UAE, India), Czech Republic, Romania, Norway, Sweden, Spain, and Chile. Uruguay and Moldova are dropped as coverage shifts from individual leader tracking toward structural analysis of middle-power behaviour across five regions.
+</Update>
+
+<Update label="February 14, 2026" tags={["Coverage"]}>
+  ## First public brief
+
+  The Middle Powers Monitor publishes its first weekly brief, covering 15 countries: Brazil, Canada, Estonia, Finland, France, Germany, Italy, Latvia, Lithuania, Mexico, Moldova, Poland, Ukraine, United Kingdom, and Uruguay. The publication is free, has no paywall, and will publish every Monday.
+</Update>
