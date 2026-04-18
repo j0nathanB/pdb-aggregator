@@ -31,15 +31,3 @@ Summaries in The Middle Powers Monitor are AI-generated. We review for accuracy,
 {% else %}
 *No system-level dynamics identified this week.*
 {% endif %}
-
----
-
-## Regions
-
-<Columns cols={2}>
-{% for card in region_cards %}
-  <Card title="{{ card.display_name }}" icon="{{ card.icon }}" href="/briefs/{{ end_date_str }}/{{ card.slug }}">
-    {{ card.summary }}
-  </Card>
-{% endfor %}
-</Columns>

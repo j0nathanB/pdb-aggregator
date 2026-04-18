@@ -183,6 +183,10 @@ def render_pages(
 
     # At-a-glance page
     if at_a_glance and at_a_glance.regions:
+        for region in at_a_glance.regions:
+            page = region_pages.get(region.region)
+            if page and page.card_summary:
+                region.card_summary = page.card_summary
         glance_tmpl = env.get_template("at-a-glance.mdx.j2")
         pages["at-a-glance"] = _escape_mdx(glance_tmpl.render(
             date_range=date_range,

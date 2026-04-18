@@ -232,6 +232,7 @@ class AtAGlanceRegion:
     region: Region
     display_name: str
     slug: str
+    card_summary: str = ""
     countries: list[AtAGlanceCountry] = field(default_factory=list)
 
 

@@ -13,6 +13,10 @@ Top story per country this week, ranked by coverage volume. Select a story to vi
 
 ## [{{ region.display_name }}](/briefs/{{ end_date_str }}/{{ region.slug }})
 
+{% if region.card_summary %}
+_{{ region.card_summary }}_
+
+{% endif %}
 {% for c in region.countries %}
 <Card title="{{ c.name }}" icon="https://flagcdn.com/w40/{{ c.code }}.png" href="/briefs/{{ end_date_str }}/{{ region.slug }}#{{ c.name | lower | replace(' ', '-') }}" horizontal>
 {{ c.headline }}
