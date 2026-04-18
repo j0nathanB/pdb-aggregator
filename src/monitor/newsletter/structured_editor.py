@@ -659,13 +659,6 @@ async def edit_all(
     if tasks:
         await asyncio.gather(*tasks)
 
-    # Update overview card summaries from edited regional leads
-    if scope in ("all", "regional"):
-        for card in overview.region_cards:
-            page = region_pages.get(card.region)
-            if page and page.card_summary:
-                card.summary = page.card_summary
-
     return overview, region_pages, watchlist
 
 
@@ -827,12 +820,5 @@ async def style_edit_all(
 
     if tasks:
         await asyncio.gather(*tasks)
-
-    # Update overview cards
-    if scope in ("all", "regional"):
-        for card in overview.region_cards:
-            page = region_pages.get(card.region)
-            if page and page.card_summary:
-                card.summary = page.card_summary
 
     return overview, region_pages, watchlist

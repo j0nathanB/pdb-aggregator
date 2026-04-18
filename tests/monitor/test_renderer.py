@@ -10,7 +10,6 @@ from src.monitor.newsletter.content_models import (
     DevelopmentContent,
     ExecutiveBriefContent,
     OverviewPageContent,
-    RegionCardContent,
     RegionPageContent,
     StoryClusterContent,
     WatchlistItemContent,
@@ -34,13 +33,6 @@ def _test_overview() -> OverviewPageContent:
                 confidence=3,
             )],
         ),
-        region_cards=[RegionCardContent(
-            region=Region.AMERICAS,
-            display_name="The Americas",
-            slug="the-americas",
-            icon="scroll-text",
-            summary="Regional summary here.",
-        )],
         watchlist_card_summary="2 items on watch.",
         watchlist_count=2,
     )
@@ -124,16 +116,6 @@ class TestRenderPages:
         )
         assert "Something happened." in pages["overview"]
         assert "It matters." in pages["overview"]
-
-    def test_overview_has_region_cards(self):
-        pages = render_pages(
-            _test_overview(),
-            {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
-        )
-        assert "<Card" in pages["overview"]
-        assert "The Americas" in pages["overview"]
-        assert "Regional summary here." in pages["overview"]
 
     def test_region_page_has_country(self):
         pages = render_pages(

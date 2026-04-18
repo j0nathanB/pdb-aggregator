@@ -12,7 +12,6 @@ from src.monitor.newsletter.content_models import (
     ExecutiveBriefContent,
     BriefingItemInput,
     OverviewPageContent,
-    RegionCardContent,
     RegionPageContent,
     WatchlistPageContent,
 )
@@ -51,10 +50,6 @@ def _make_overview(essay: str | None = None) -> OverviewPageContent:
         week_end=date(2026, 4, 9),
         country_count=5,
         executive_brief=brief,
-        region_cards=[RegionCardContent(
-            region=Region.AMERICAS, display_name="The Americas",
-            slug="the-americas", icon="americas",
-        )],
     )
 
 

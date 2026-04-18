@@ -147,19 +147,6 @@ class ExecutiveBriefContent:
 
 
 # =============================================================================
-# Region card (overview page)
-# =============================================================================
-
-@dataclass
-class RegionCardContent:
-    """Summary card for a region on the overview page."""
-    region: Region
-    display_name: str
-    slug: str
-    icon: str
-    summary: str = ""
-
-
 # =============================================================================
 # Page content types
 # =============================================================================
@@ -173,7 +160,6 @@ class OverviewPageContent:
     country_count: int
 
     executive_brief: ExecutiveBriefContent = field(default_factory=ExecutiveBriefContent)
-    region_cards: list[RegionCardContent] = field(default_factory=list)
 
     watchlist_card_summary: str = ""
     watchlist_count: int = 0

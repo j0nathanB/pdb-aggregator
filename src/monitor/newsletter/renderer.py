@@ -177,7 +177,6 @@ def render_pages(
         end_date_str=end_date_str,
         country_count=overview.country_count,
         executive_brief=overview.executive_brief,
-        region_cards=overview.region_cards,
         watchlist_card_summary=overview.watchlist_card_summary,
     ))
 

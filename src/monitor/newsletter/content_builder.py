@@ -20,7 +20,6 @@ from ..models import (
 from .assembly import (
     CONFIDENCE_LABELS,
     REGION_DISPLAY_NAMES,
-    REGION_ICONS,
     REGION_ORDER,
     REGION_SLUGS,
     SIGNAL_CATEGORY_DISPLAY,
@@ -35,7 +34,6 @@ from .content_models import (
     DevelopmentContent,
     ExecutiveBriefContent,
     OverviewPageContent,
-    RegionCardContent,
     RegionPageContent,
     SourceRef,
     StoryClusterContent,
@@ -376,8 +374,6 @@ def build_all_pages(
         lead, gaps = _extract_regional_lead(report)
         card_summary = _extract_card_summary(report)
         display_name = REGION_DISPLAY_NAMES.get(region, region.value)
-        slug = REGION_SLUGS.get(region, region.value)
-        icon = REGION_ICONS.get(region, "globe")
 
         # Build country content for this region
         region_codes = REGION_COUNTRIES.get(region, [])
@@ -424,15 +420,6 @@ def build_all_pages(
             countries=countries,
         )
         region_pages[region] = page
-
-        # Add card to overview
-        overview.region_cards.append(RegionCardContent(
-            region=region,
-            display_name=display_name,
-            slug=slug,
-            icon=icon,
-            summary=card_summary,
-        ))
 
     # --- Watchlist page ---
     watchlist_items = []

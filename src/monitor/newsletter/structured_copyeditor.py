@@ -426,11 +426,4 @@ async def copyedit_all(
     if tasks:
         await asyncio.gather(*tasks)
 
-    # Update overview cards from copyedited regional summaries
-    if scope in ("all", "regional"):
-        for card in overview.region_cards:
-            page = region_pages.get(card.region)
-            if page and page.card_summary:
-                card.summary = page.card_summary
-
     return overview, region_pages, watchlist, at_a_glance

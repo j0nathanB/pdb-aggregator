@@ -204,7 +204,6 @@ class TestBuildAllPages:
 
         assert overview.country_count == 1
         assert len(overview.executive_brief.items) == 1
-        assert len(overview.region_cards) == 6  # all 6 regions
         assert Region.AMERICAS in region_pages
         assert len(watchlist.items) == 1
 
@@ -243,12 +242,11 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        overview, _, _, _ = build_all_pages(
+        _, region_pages, _, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
-        americas_card = next(c for c in overview.region_cards if c.region == Region.AMERICAS)
-        assert americas_card.summary == ""  # writer fills this later
+        assert region_pages[Region.AMERICAS].card_summary == ""  # writer fills this later
 
     def test_country_content_has_developments(self):
         gl = _test_global_ledger()
