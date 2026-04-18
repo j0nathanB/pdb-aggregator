@@ -63,7 +63,7 @@ class TestIsBoilerplate:
 SAMPLE_NEWSLETTER = (
     "# The Middle Powers Monitor\n"
     "## Week of March 10 to March 16, 2026\n\n"
-    "*Covering 28 countries.*\n\n"
+    "*Covering 30 countries.*\n\n"
     "### Americas pushback crystallizes\n\n"
     "Several Latin American states pushed back against US tariff proposals.\n\n"
     "*High confidence. Based on multiple diplomatic sources.*\n\n"

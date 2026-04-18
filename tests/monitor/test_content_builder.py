@@ -204,7 +204,7 @@ class TestBuildAllPages:
 
         assert overview.country_count == 1
         assert len(overview.executive_brief.items) == 1
-        assert len(overview.region_cards) == 5  # all 5 regions
+        assert len(overview.region_cards) == 6  # all 6 regions
         assert Region.AMERICAS in region_pages
         assert len(watchlist.items) == 1
 

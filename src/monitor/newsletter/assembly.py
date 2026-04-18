@@ -27,7 +27,8 @@ from ..models import (
 # =============================================================================
 
 REGION_DISPLAY_NAMES: dict[Region, str] = {
-    Region.FRONTLINE_EASTERN_EUROPE: "Frontline and Eastern Europe",
+    Region.CENTRAL_EASTERN_EUROPE: "Central-Eastern Europe",
+    Region.NORDIC_BALTIC: "Nordic-Baltic",
     Region.WESTERN_EUROPE: "Western Europe",
     Region.ASIA_PACIFIC: "Asia-Pacific",
     Region.NEAR_EAST_SOUTH_ASIA: "Near East and South Asia",
@@ -36,7 +37,8 @@ REGION_DISPLAY_NAMES: dict[Region, str] = {
 
 # Fixed editorial order per spec: highest-stakes first
 REGION_ORDER = [
-    Region.FRONTLINE_EASTERN_EUROPE,
+    Region.CENTRAL_EASTERN_EUROPE,
+    Region.NORDIC_BALTIC,
     Region.WESTERN_EUROPE,
     Region.ASIA_PACIFIC,
     Region.NEAR_EAST_SOUTH_ASIA,
@@ -61,7 +63,8 @@ CONFIDENCE_LABELS: dict[int, str] = {
 
 # URL-safe slugs for region page filenames
 REGION_SLUGS: dict[Region, str] = {
-    Region.FRONTLINE_EASTERN_EUROPE: "frontline-eastern-europe",
+    Region.CENTRAL_EASTERN_EUROPE: "central-eastern-europe",
+    Region.NORDIC_BALTIC: "nordic-baltic",
     Region.WESTERN_EUROPE: "western-europe",
     Region.ASIA_PACIFIC: "asia-pacific",
     Region.NEAR_EAST_SOUTH_ASIA: "near-east-south-asia",
@@ -436,7 +439,7 @@ def _render_watchlist(watchlist: list[WatchlistItem]) -> str:
 def _render_footer(end_date: date) -> str:
     return (
         "---\n\n"
-        "*The Middle Powers Monitor tracks 28 countries across five regions, "
+        "*The Middle Powers Monitor tracks 30 countries across six regions,"
         "analyzing state positioning through five analytical dimensions: "
         "diplomatic alignment, security posture, economic statecraft, "
         "institutional engagement, and domestic constraints. Published weekly.*\n\n"
@@ -566,7 +569,8 @@ def _mdx_frontmatter(title: str, description: str, sidebar_title: str, **extra: 
 
 
 REGION_ICONS: dict[Region, str] = {
-    Region.FRONTLINE_EASTERN_EUROPE: "shield",
+    Region.CENTRAL_EASTERN_EUROPE: "shield",
+    Region.NORDIC_BALTIC: "anchor",
     Region.WESTERN_EUROPE: "landmark",
     Region.ASIA_PACIFIC: "ship",
     Region.NEAR_EAST_SOUTH_ASIA: "compass",
@@ -598,7 +602,7 @@ def _render_overview_page(
     sections = [
         _mdx_frontmatter(
             "The Middle Powers Monitor",
-            "Weekly intelligence brief covering 28 middle powers across five regions",
+            "Weekly intelligence brief covering 30 middle powers across six regions",
             "Overview",
             mode="wide",
         ),
@@ -741,7 +745,7 @@ def _render_watchlist_page(
     sections.append("---")
     sections.append("")
     sections.append(
-        "*The Middle Powers Monitor tracks 28 countries across five regions, "
+        "*The Middle Powers Monitor tracks 30 countries across six regions,"
         "analyzing state positioning through five analytical dimensions: "
         "diplomatic alignment, security posture, economic statecraft, "
         "institutional engagement, and domestic constraints. Published weekly.*"
@@ -765,7 +769,8 @@ def assemble_newsletter_pages(
 
     Returns a dict mapping filename (without extension) to MDX content:
         "overview" -> overview page
-        "frontline-eastern-europe" -> region page
+        "central-eastern-europe" -> region page
+        "nordic-baltic" -> region page
         "western-europe" -> region page
         ...
         "watchlist" -> watchlist page

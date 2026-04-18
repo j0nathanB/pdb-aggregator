@@ -6,7 +6,7 @@ Usage:
     python scripts/reedit.py --date 2026-02-22 --country pl cz no --from editor
 
     # Re-edit two regions from the copyeditor stage
-    python scripts/reedit.py --date 2026-02-22 --region frontline_eastern_europe western_europe --from copyeditor
+    python scripts/reedit.py --date 2026-02-22 --region central_eastern_europe western_europe --from copyeditor
 
     # Re-edit the executive brief from the editor stage
     python scripts/reedit.py --date 2026-02-22 --executive --from editor
@@ -585,7 +585,7 @@ async def main():
     parser = argparse.ArgumentParser(description="Targeted re-edit pipeline")
     parser.add_argument("--date", required=True, help="Brief date (YYYY-MM-DD)")
     parser.add_argument("--country", nargs="+", help="Country codes to re-edit (e.g. pl cz no)")
-    parser.add_argument("--region", nargs="+", help="Region values to re-edit (e.g. frontline_eastern_europe)")
+    parser.add_argument("--region", nargs="+", help="Region values to re-edit (e.g. central_eastern_europe)")
     parser.add_argument("--executive", action="store_true", help="Re-edit executive brief")
     parser.add_argument("--from", dest="from_stage", default="editor",
                         choices=STAGES, help="Start from this stage (default: editor)")

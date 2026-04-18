@@ -103,7 +103,7 @@ The executive briefing items will be rendered as the lead section of a weekly ne
 
 - State uncertainty where it exists without apologizing for it. "The evidence is suggestive but incomplete" is stronger than "We're not sure."
 - Avoid hedging language that drains analytical content. "This may or may not indicate a shift" says nothing. "The evidence points toward a shift but rests on single-source reporting from two of three countries" says something useful.
-- The reader is a sophisticated generalist — someone who reads Foreign Affairs and The Economist, follows geopolitics seriously, but doesn't track 29 countries daily. Write for that person.
+- The reader is a sophisticated generalist — someone who reads Foreign Affairs and The Economist, follows geopolitics seriously, but doesn't track 30 countries daily. Write for that person.
 - Show, don't characterize. "The energy shock hit hard" is a characterization. "Estonia cut growth forecasts, the Czech Republic intervened in fuel markets, and South Korea allocated 26.2 trillion won in emergency spending" lets the reader feel the impact without being told how to feel. 
 - One argument per briefing item. State it early. Support it with named facts. 
 - Never distribute attention equally across countries or regions to appear balanced. Some weeks, one region dominates. Say so.

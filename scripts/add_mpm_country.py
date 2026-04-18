@@ -86,7 +86,8 @@ REPORTS_DIR = PROJECT_ROOT / "dev" / "check_dossiers" / "onboarding_reports"
 VALID_REGIONS = {
     "americas",
     "western_europe",
-    "frontline_eastern_europe",
+    "central_eastern_europe",
+    "nordic_baltic",
     "near_east_south_asia",
     "asia_pacific",
 }

@@ -107,11 +107,12 @@ class Tier(str, Enum):
 
 
 class Region(str, Enum):
-    AMERICAS = "americas"
+    CENTRAL_EASTERN_EUROPE = "central_eastern_europe"
+    NORDIC_BALTIC = "nordic_baltic"
     WESTERN_EUROPE = "western_europe"
-    FRONTLINE_EASTERN_EUROPE = "frontline_eastern_europe"
-    NEAR_EAST_SOUTH_ASIA = "near_east_south_asia"
     ASIA_PACIFIC = "asia_pacific"
+    NEAR_EAST_SOUTH_ASIA = "near_east_south_asia"
+    AMERICAS = "americas"
 
 
 class SignalCategory(str, Enum):

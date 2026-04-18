@@ -113,7 +113,7 @@ class TestRegionCountries:
         all_codes = set()
         for codes in REGION_COUNTRIES.values():
             all_codes.update(codes)
-        assert len(all_codes) == 28
+        assert len(all_codes) == 30
 
 
 # ---- System prompt ----

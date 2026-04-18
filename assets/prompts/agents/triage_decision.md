@@ -12,7 +12,7 @@ You receive three blocks of information:
 
 ### Wire and Domestic Scan Results
 
-For each of the 28 countries, a compact packet:
+For each of the 30 countries, a compact packet:
 - **Wire headlines:** 0-5 recent headlines from Reuters, AP, and AFP mentioning this country's tracked actors or institutions. May be empty for quiet countries.
 - **Domestic headlines:** 0-3 recent headlines from the country's top domestic outlets (those marked `triage_source: true` in the config). May be empty.
 

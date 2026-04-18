@@ -21,7 +21,8 @@ DOCS_JSON = SITE_DIR / "docs.json"
 PAGE_ORDER = [
     "at-a-glance",
     "overview",
-    "frontline-eastern-europe",
+    "central-eastern-europe",
+    "nordic-baltic",
     "western-europe",
     "asia-pacific",
     "near-east-south-asia",
@@ -101,7 +102,7 @@ def _stamp_archived(brief_date_str: str) -> None:
 
         # Description (renders below the title): keep original content
         new_desc = (
-            "A weekly survey of 29 middle powers across five regions"
+            "A weekly survey of 30 middle powers across six regions"
             if is_overview else week_label
         )
         text = desc_pattern.sub(rf'\g<1>{new_desc}\3', text)

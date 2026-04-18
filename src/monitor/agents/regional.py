@@ -107,19 +107,21 @@ class RegionalReport:
 # =============================================================================
 
 REGION_COUNTRIES: dict[Region, list[str]] = {
-    Region.AMERICAS: ["ca", "mx", "br", "cl"],
-    Region.WESTERN_EUROPE: ["fr", "de", "gb", "it", "es", "no", "se"],
-    Region.FRONTLINE_EASTERN_EUROPE: ["ua", "pl", "fi", "ee", "lt", "lv", "cz", "ro"],
-    Region.NEAR_EAST_SOUTH_ASIA: ["tr", "sa", "ae", "in", "pk"],
+    Region.CENTRAL_EASTERN_EUROPE: ["ua", "pl", "cz", "ro", "hu"],
+    Region.NORDIC_BALTIC: ["fi", "ee", "lt", "lv", "no", "se"],
+    Region.WESTERN_EUROPE: ["fr", "de", "gb", "it", "es"],
     Region.ASIA_PACIFIC: ["tw", "jp", "kr", "au", "id"],
+    Region.NEAR_EAST_SOUTH_ASIA: ["tr", "sa", "ae", "in", "pk"],
+    Region.AMERICAS: ["ca", "mx", "br", "cl"],
 }
 
 REGION_DISPLAY_NAMES: dict[Region, str] = {
-    Region.AMERICAS: "Americas",
+    Region.CENTRAL_EASTERN_EUROPE: "Central-Eastern Europe",
+    Region.NORDIC_BALTIC: "Nordic-Baltic",
     Region.WESTERN_EUROPE: "Western Europe",
-    Region.FRONTLINE_EASTERN_EUROPE: "Frontline and Eastern Europe",
-    Region.NEAR_EAST_SOUTH_ASIA: "Near East and South Asia",
     Region.ASIA_PACIFIC: "Asia-Pacific",
+    Region.NEAR_EAST_SOUTH_ASIA: "Near East and South Asia",
+    Region.AMERICAS: "Americas",
 }
 
 
@@ -407,7 +409,7 @@ async def run_all_regional_syntheses(
     week: date | None = None,
     max_concurrent: int = 5,
 ) -> dict[Region, RegionalReport]:
-    """Run regional synthesis for all 5 regions in parallel."""
+    """Run regional synthesis for all 6 regions in parallel."""
     import asyncio
 
     from ..timing import TrackedSemaphore

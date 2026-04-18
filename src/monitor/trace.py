@@ -43,7 +43,7 @@ def save_trace(
 
     Args:
         agent: Agent name (e.g. "regional", "executive", "country").
-        label: Instance label (e.g. "frontline_eastern_europe", "mx").
+        label: Instance label (e.g. "central_eastern_europe", "mx").
         run_date: Pipeline run date.
         system_prompt: The system prompt sent to the model.
         user_message: The user message sent to the model.

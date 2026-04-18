@@ -543,8 +543,8 @@ class TestRenderWatchlist:
 class TestRenderFooter:
     def test_includes_description(self):
         result = _render_footer(date(2026, 3, 14))
-        assert "28 countries" in result
-        assert "five regions" in result
+        assert "30 countries" in result
+        assert "six regions" in result
 
     def test_includes_date(self):
         result = _render_footer(date(2026, 3, 14))
@@ -554,8 +554,8 @@ class TestRenderFooter:
 # ---- Region Order ----
 
 class TestRegionOrder:
-    def test_frontline_first(self):
-        assert REGION_ORDER[0] == Region.FRONTLINE_EASTERN_EUROPE
+    def test_central_eastern_europe_first(self):
+        assert REGION_ORDER[0] == Region.CENTRAL_EASTERN_EUROPE
 
     def test_americas_last(self):
         assert REGION_ORDER[-1] == Region.AMERICAS
@@ -609,9 +609,9 @@ class TestAssembleNewsletter:
     def test_region_order_in_output(self):
         gl = _test_global_ledger()
         newsletter = assemble_newsletter(gl, {}, {}, {}, date(2026, 3, 14))
-        frontline_pos = newsletter.find("Frontline and Eastern Europe")
+        cee_pos = newsletter.find("Central-Eastern Europe")
         americas_pos = newsletter.find("The Americas")
-        assert frontline_pos < americas_pos
+        assert cee_pos < americas_pos
 
     def test_coverage_stats_not_in_newsletter(self):
         """Coverage stats were removed from the newsletter header."""
@@ -623,7 +623,7 @@ class TestAssembleNewsletter:
     def test_includes_footer(self):
         gl = _test_global_ledger()
         newsletter = assemble_newsletter(gl, {}, {}, {}, date(2026, 3, 14))
-        assert "28 countries across five regions" in newsletter
+        assert "30 countries across six regions" in newsletter
         assert "2026-03-14" in newsletter
 
     def test_empty_watchlist_omitted(self):
@@ -651,5 +651,5 @@ class TestAssembleNewsletter:
     def test_h2_for_regions(self):
         gl = _test_global_ledger()
         newsletter = assemble_newsletter(gl, {}, {}, {}, date(2026, 3, 14))
-        assert "## Frontline and Eastern Europe" in newsletter
+        assert "## Central-Eastern Europe" in newsletter
         assert "## The Americas" in newsletter
