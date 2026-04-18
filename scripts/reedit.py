@@ -353,10 +353,10 @@ def patch_mdx_country(mdx_path: Path, code: str, country_name: str, new_section:
 
 def patch_mdx_regional(mdx_path: Path, new_lead: str, new_gaps: list[str],
                        headline: str = "") -> bool:
-    """Replace the regional lead in an MDX file."""
+    """Replace the regional lead in an MDX file, preserving the
+    '## Country Summaries' heading that follows."""
     content = mdx_path.read_text()
 
-    # Find between "## Regional Summary\n" and first "\n---\n"
     lead_start = content.find("## Regional Summary")
     if lead_start == -1:
         logger.error("Could not find '## Regional Summary' in %s", mdx_path)
@@ -364,18 +364,21 @@ def patch_mdx_regional(mdx_path: Path, new_lead: str, new_gaps: list[str],
 
     lead_start = content.index("\n", lead_start) + 1  # after the heading line
 
-    first_separator = content.find("\n---\n", lead_start)
-    if first_separator == -1:
-        first_separator = len(content)
+    # End boundary is the Country Summaries heading if present; otherwise the
+    # first country divider. Using the heading preserves it through reedits.
+    lead_end = content.find("## Country Summaries", lead_start)
+    if lead_end == -1:
+        lead_end = content.find("\n---\n", lead_start)
+        if lead_end == -1:
+            lead_end = len(content)
 
-    # Build replacement
     parts = []
     if headline:
         parts.append(f"\n**{headline}**")
     parts.append(new_lead if headline else "\n" + new_lead)
     replacement = "\n\n".join(parts) + "\n\n"
 
-    new_content = content[:lead_start] + replacement + content[first_separator:]
+    new_content = content[:lead_start] + replacement + content[lead_end:]
     mdx_path.write_text(new_content)
     return True
 
