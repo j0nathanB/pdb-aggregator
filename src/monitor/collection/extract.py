@@ -46,7 +46,15 @@ _BINARY_EXTENSIONS = frozenset({
     ".png", ".jpg", ".jpeg", ".gif", ".svg", ".bmp", ".webp",
     ".mp3", ".mp4", ".wav", ".avi", ".mov",
 })
-_PDF_URL_PATTERNS = ("_to_pdf.php", "/nota_to_pdf", "/export/pdf")
+_PDF_URL_PATTERNS = (
+    "_to_pdf.php",
+    "/nota_to_pdf",
+    "/export/pdf",
+    "/downloadkozzetetel",  # MNB regulatory disclosure PDFs
+    "/letoltes",            # Hungarian "download" endpoint (magyarkozlony.hu, etc.)
+    "/megtekintes",         # Hungarian PDF viewer endpoint (magyarkozlony.hu)
+    "/archiv-csatolmany",   # njt.hu archive attachments (PDF)
+)
 
 
 def _is_binary_url(url: str) -> bool:

@@ -1,0 +1,49 @@
+! name: MPM Hungary
+! description: MPM pipeline source prioritization for Hungary
+! public: false
+! author: MPM Pipeline
+
+! --- Tier 1: Essential (boost=10) ---
+$boost=10,site=telex.hu
+$boost=10,site=hvg.hu
+$boost=10,site=direkt36.hu
+$boost=10,site=kormany.hu
+
+! --- Tier 2: Important (boost=5) ---
+$boost=5,site=444.hu
+$boost=5,site=atlatszo.hu
+$boost=5,site=rtl.hu
+$boost=5,site=bbj.hu
+$boost=5,site=honvedelem.hu
+$boost=5,site=portfolio.hu
+$boost=5,site=origo.hu
+$boost=5,site=vsquare.org
+$boost=5,site=akk.hu
+$boost=5,site=kormany.hu
+$boost=5,site=magyarkozlony.hu
+$boost=5,site=mekh.hu
+$boost=5,site=mnb.hu
+$boost=5,site=njt.hu
+$boost=5,site=parlament.hu
+$boost=5,site=sandorpalota.hu
+
+! --- Tier 3: Supplementary (boost=3) ---
+$boost=3,site=hungarytoday.hu
+$boost=3,site=nepszava.hu
+$boost=3,site=24.hu
+$boost=3,site=euractiv.com
+$boost=3,site=hirado.hu
+$boost=3,site=valaszonline.hu
+$boost=3,site=hungarianconservative.com
+$boost=3,site=hrw.org
+$boost=3,site=amnesty.org
+$boost=3,site=fas.org
+$boost=3,site=carnegieendowment.org
+
+! --- Discard: Noise ---
+$discard,site=blikk.hu
+$discard,site=bors.hu
+$discard,site=ripost.hu
+$discard,site=888.hu
+$discard,site=pestisracok.hu
+$discard,site=propeller.hu

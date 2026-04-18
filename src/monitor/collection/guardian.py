@@ -42,6 +42,7 @@ GUARDIAN_COUNTRIES: dict[str, dict] = {
     "kr": {"tag": "world/south-korea", "production_office": None},
     "tw": {"tag": "world/taiwan", "production_office": None},
     "id": {"tag": "world/indonesia", "production_office": None},
+    "hu": {"tag": "world/hungary", "production_office": None},
 }
 
 

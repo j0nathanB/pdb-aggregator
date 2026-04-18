@@ -1,0 +1,202 @@
+country: Hungary
+code: hu
+tier: pivot
+region: central_eastern_europe
+actors:
+- name: Péter Magyar
+  role: Incoming Prime Minister (Tisza Party), won 2026 election
+  primary: true
+  search_terms:
+  - Péter Magyar
+  - Peter Magyar
+  - PM Magyar
+  - Magyar Tisza
+- name: Viktor Orbán
+  role: Outgoing Prime Minister (Fidesz), ruled 2010–2026
+  primary: false
+  search_terms:
+  - Viktor Orbán
+  - Viktor Orban
+  - Orbán
+- name: Tamás Sulyok
+  role: President of the Republic (Fidesz-appointed)
+  primary: false
+  search_terms:
+  - Tamás Sulyok
+  - Tamas Sulyok
+  - President Sulyok
+- name: Mihály Varga
+  role: Governor of the Hungarian National Bank (term to 2031)
+  primary: false
+  search_terms:
+  - Mihály Varga
+  - Mihaly Varga
+  - MNB Varga
+- name: Péter Polt
+  role: Prosecutor General (term to 2028)
+  primary: false
+  search_terms:
+  - Péter Polt
+  - Peter Polt
+  - Polt prosecutor
+- name: Tisza Party
+  role: Incoming governing party (Respect and Freedom Party, EPP member)
+  primary: false
+  search_terms:
+  - Tisza Party
+  - TISZA
+  - Tisztelet és Szabadság
+- name: Fidesz
+  role: Outgoing ruling party (Fidesz–KDNP), now in opposition
+  primary: false
+  search_terms:
+  - Fidesz
+  - Fidesz-KDNP
+  - KDNP
+- name: Mi Hazánk Mozgalom
+  role: Far-right Our Homeland Movement
+  primary: false
+  search_terms:
+  - Mi Hazánk
+  - Our Homeland Movement
+- name: Hungarian Defence Forces
+  role: Magyar Honvédség, NATO member military
+  primary: false
+  search_terms:
+  - Magyar Honvédség
+  - Hungarian Defence Forces
+  - HDF
+  - Zrínyi program
+- name: Hungarian National Bank
+  role: MNB, central bank
+  primary: false
+  search_terms:
+  - Magyar Nemzeti Bank
+  - MNB
+  - Hungarian National Bank
+- name: Sovereignty Protection Office
+  role: SPO (Szuverenitásvédelmi Hivatal) — regime-era media/NGO watchdog
+  primary: false
+  search_terms:
+  - Sovereignty Protection Office
+  - Szuverenitásvédelmi Hivatal
+  - SPO Hungary
+- name: Lőrinc Mészáros
+  role: NER oligarch, richest person in Hungary, Orbán ally
+  primary: false
+  search_terms:
+  - Lőrinc Mészáros
+  - Lorinc Meszaros
+  - Mészáros
+  - NER oligarch
+- name: MOL Group
+  role: Dominant Hungarian oil and gas company (Duna refinery)
+  primary: false
+  search_terms:
+  - MOL Group
+  - MOL Nyrt
+  - Duna refinery
+- name: OTP Bank
+  role: Largest Hungarian bank
+  primary: false
+  search_terms:
+  - OTP Bank
+  - OTP
+languages:
+  primary: hu
+  additional:
+  - en
+  metadata: en
+blind_spots:
+- domain: NER oligarch network finances and asset concealment
+  reason: Mészáros, Tiborcz, Garancsi holdings are opaque; regime-era procurement records
+    selectively available; transition incentives create risk of politically selective exposure
+  where_signal_lives: Átlátszó and Direkt36 investigations, Transparency International
+    Hungary, EU OLAF reports, Commercial Court filings, leaked procurement databases
+- domain: Intelligence service operations (IH, KNBSZ, SPO)
+  reason: Civilian Information Office and Military National Security Service operate
+    under classified mandates; SPO investigations were opaque and politically targeted
+  where_signal_lives: Parliamentary oversight committee filings, Direkt36 Pegasus
+    reporting, EU Parliament LIBE committee inquiries, diaspora reporting on domestic surveillance
+- domain: Judicial capture and informal influence networks
+  reason: Fidesz-packed Constitutional Court and Kúria operate with fixed terms extending
+    past transition; informal patronal networks between executive and judiciary largely
+    undocumented
+  where_signal_lives: Hungarian Helsinki Committee case tracking, European Commission
+    rule-of-law reports, CEPEJ judicial independence assessments, Venice Commission opinions
+- domain: Russian influence operations (energy, information, intelligence)
+  reason: Paks II project and Druzhba/TurkStream dependency create structural leverage;
+    Russian intelligence reportedly received EU discussion contents from Orbán-era
+    officials; influence channels often move via informal networks
+  where_signal_lives: Direkt36 investigations, Reuters and Bellingcat OSINT, EU sanctions
+    monitoring, VSquare regional investigative journalism, US Treasury OFAC designations
+- domain: KESMA coordinated editorial direction
+  reason: Central European Press and Media Foundation pools ~500 outlets under single
+    editorial control; formally exempt from competition review; coordination between
+    outlets undocumented
+  where_signal_lives: Mérték Media Monitor reports, Atlatszo KESMA investigations,
+    RSF Hungary press freedom reporting, IPI and ECPMF bulletins
+news_discovery:
+  goggle_file: assets/country_goggles/hu.goggle
+  extraction_config: assets/country_configs/extraction_routing.yaml
+  brave_params:
+    country: HU
+    search_lang: en
+    freshness: pw
+  query_vocabulary:
+    diplomatic_alignment:
+    - Hungary EU
+    - Hungary NATO
+    - Hungary Ukraine
+    - Hungary Russia
+    - Hungary China
+    - Paks II
+    - Eastern Opening
+    - Brussels Hungary
+    - EPP Magyar
+    - Trianon diaspora
+    security_defense:
+    - Magyar Honvédség
+    - Zrínyi program
+    - NATO battlegroup Hungary
+    - JAS Gripen
+    - Hungary defence spending
+    - Paks II nuclear
+    - border fence Serbia
+    - Sovereignty Protection Office
+    economic_tech:
+    - Magyar Nemzeti Bank
+    - forint
+    - EU frozen funds Hungary
+    - CATL Debrecen
+    - BYD Szeged
+    - MOL Duna refinery
+    - Druzhba pipeline
+    - Hungary automotive
+    - Hungary inflation
+    - supply chain
+    institutional:
+    - Constitutional Court Hungary
+    - Kúria
+    - Sovereignty Protection Office
+    - European Commission Hungary
+    - EPPO Hungary
+    - Venice Commission Hungary
+    - rule of law Hungary
+    - judicial independence Hungary
+    domestic_constraints:
+    - NER
+    - Lőrinc Mészáros
+    - KESMA
+    - Átlátszó
+    - Direkt36
+    - Transparency International Hungary
+    - press freedom Hungary
+    - Tisza Islands
+    - Fidesz opposition
+government_discovery:
+  config_file: assets/government/hu.yaml
+interpretive_context_file: assets/context/hu_sources.md
+search:
+  triage_queries_max: 2
+  deep_dive_queries_max: 20

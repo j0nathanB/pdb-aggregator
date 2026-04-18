@@ -1,0 +1,56 @@
+{
+  "country": {
+    "name": "Hungary",
+    "code": "hu",
+    "region": "frontline_eastern_europe",
+    "language": "en",
+    "today": "2026-04-17"
+  },
+  "phase_results": {
+    "1": {
+      "phase": 1,
+      "name": "dossier_generation",
+      "status": "ok",
+      "outputs": {
+        "pass1": "/Users/zen/dev/src/pdb/assets/country_dossiers/_pass1/hungary_pass1_2026-04-17.md",
+        "pass2": "/Users/zen/dev/src/pdb/assets/country_dossiers/_pass2/hungary_pass2_2026-04-17.md",
+        "pass3": "/Users/zen/dev/src/pdb/assets/country_dossiers/_pass3/hungary_pass3_2026-04-17.md",
+        "merged_dossier": "/Users/zen/dev/src/pdb/assets/country_dossiers/hungary_dossier_2026-04-17.md"
+      },
+      "errors": []
+    },
+    "2": {
+      "phase": 2,
+      "name": "source_discovery",
+      "status": "ok",
+      "outputs": {
+        "curation": "/Users/zen/dev/src/pdb/dev/source_maps/media/source_maps/_drafts/hungary_curation.md",
+        "audit": "/Users/zen/dev/src/pdb/dev/source_maps/media/source_maps/_drafts/hungary_audit.md",
+        "gov": "/Users/zen/dev/src/pdb/dev/source_maps/gov/_drafts/hungary_gov.md",
+        "source_map": "/Users/zen/dev/src/pdb/dev/source_maps/media/source_maps/hungary.md",
+        "verification": "/Users/zen/dev/src/pdb/dev/onboarding/hu/verification.json"
+      },
+      "errors": []
+    },
+    "3": {
+      "phase": 3,
+      "name": "extraction_routing",
+      "status": "ok",
+      "outputs": {
+        "extraction_routing_note": "/Users/zen/dev/src/pdb/dev/onboarding/hu/extraction_routing_note.md"
+      },
+      "errors": []
+    },
+    "4": {
+      "phase": 4,
+      "name": "config_generation",
+      "status": "ok",
+      "outputs": {
+        "goggle": "/Users/zen/dev/src/pdb/assets/country_goggles/hu.goggle",
+        "country_config": "/Users/zen/dev/src/pdb/assets/country_configs/countries/hu.yaml",
+        "government_config": "/Users/zen/dev/src/pdb/assets/government/hu.yaml"
+      },
+      "errors": []
+    }
+  }
+}
