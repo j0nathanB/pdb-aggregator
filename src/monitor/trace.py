@@ -19,9 +19,17 @@ logger = logging.getLogger(__name__)
 TRACES_DIR_NAME = "traces"
 
 
-def _traces_dir(run_date: date) -> Path:
-    """Return the traces directory for a given run date, creating it if needed."""
-    d = PROJECT_ROOT / "briefs" / run_date.strftime("%Y%m%d") / TRACES_DIR_NAME
+def _traces_dir(run_date: date, trace_root: Path | None = None) -> Path:
+    """Return the traces directory for a given run date, creating it if needed.
+
+    If trace_root is provided, traces are written under that directory instead
+    of the production briefs/ tree. Used by evaluation harnesses to avoid
+    clobbering production traces.
+    """
+    if trace_root is not None:
+        d = trace_root / run_date.strftime("%Y%m%d") / TRACES_DIR_NAME
+    else:
+        d = PROJECT_ROOT / "briefs" / run_date.strftime("%Y%m%d") / TRACES_DIR_NAME
     d.mkdir(parents=True, exist_ok=True)
     return d
 
@@ -85,11 +93,11 @@ def save_trace(
     return path
 
 
-def _trace_path(agent: str, label: str, run_date: date) -> Path:
+def _trace_path(agent: str, label: str, run_date: date, trace_root: Path | None = None) -> Path:
     """Return the path for a trace file (does not create it)."""
     safe_label = label.replace(" ", "_").replace("/", "_").lower()
     filename = f"{agent}_{safe_label}.json"
-    return _traces_dir(run_date) / filename
+    return _traces_dir(run_date, trace_root) / filename
 
 
 def _default_serializer(obj):
@@ -109,6 +117,7 @@ def save_raw_response(
     thinking_text: str = "",
     usage: dict | None = None,
     extra: dict | None = None,
+    trace_root: Path | None = None,
 ) -> Path:
     """Save raw API response IMMEDIATELY after the call, BEFORE parsing.
 
@@ -134,7 +143,7 @@ def save_raw_response(
     if extra:
         trace["extra"] = extra
 
-    path = _trace_path(agent, label, run_date)
+    path = _trace_path(agent, label, run_date, trace_root)
     try:
         path.write_text(json.dumps(trace, indent=2, ensure_ascii=False, default=_default_serializer))
         logger.debug("Raw trace saved: %s", path)
@@ -150,13 +159,14 @@ def update_trace_parsed(
     run_date: date,
     parsed_output: Any,
     diagnostics: dict | None = None,
+    trace_root: Path | None = None,
 ) -> Path:
     """Update an existing trace with parsed output after successful parsing.
 
     If this is never called (because parsing crashed), the trace file
     still exists with status="raw" and the full response_text.
     """
-    path = _trace_path(agent, label, run_date)
+    path = _trace_path(agent, label, run_date, trace_root)
     try:
         trace = json.loads(path.read_text())
         trace["status"] = "parsed"

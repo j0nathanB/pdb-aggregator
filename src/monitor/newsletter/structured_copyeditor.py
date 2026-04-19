@@ -9,6 +9,7 @@ import asyncio
 import json
 import logging
 from datetime import date
+from pathlib import Path
 
 import anthropic
 
@@ -82,13 +83,25 @@ async def _copyedit_prose(
     analysis_date: date | None = None,
     model: str | None = None,
     country_codes: list[str] | None = None,
+    system_prompt_text: str | None = None,
+    trace_root: Path | None = None,
 ) -> dict:
-    """Send prose fields to the copyeditor and return polished versions."""
+    """Send prose fields to the copyeditor and return polished versions.
+
+    If system_prompt_text is provided, it is used verbatim as the copyeditor
+    system prompt (after the style_guide block is appended by
+    _build_system_prompt). This lets evaluation harnesses swap in alternative
+    copyeditor prompts without fighting the load_prompt cache.
+
+    If trace_root is provided, trace files are written under that directory
+    instead of briefs/, so harness runs don't clobber production traces.
+    """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
     from .structured_editor import _build_system_prompt
-    system_prompt = _build_system_prompt(COPYEDITOR_SYSTEM)
+    base_prompt = system_prompt_text if system_prompt_text is not None else COPYEDITOR_SYSTEM
+    system_prompt = _build_system_prompt(base_prompt)
 
     if country_codes:
         system_prompt += _build_leader_reference(country_codes)
@@ -132,13 +145,14 @@ async def _copyedit_prose(
         response_text=response_text,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
+        trace_root=trace_root,
     )
 
     try:
         data = extract_json(response_text, context=f"copyeditor_{label}")
         from .structured_editor import _unwrap_double_json
         data = _unwrap_double_json(data)
-        update_trace_parsed("copyeditor", label, run_date, parsed_output=data)
+        update_trace_parsed("copyeditor", label, run_date, parsed_output=data, trace_root=trace_root)
         return data
     except (ValueError, KeyError):
         # LLM returned prose instead of JSON — use as polished version
@@ -151,7 +165,7 @@ async def _copyedit_prose(
                 result = dict(prose_fields)
                 main_key = next((k for k in keys if k in ("narrative_body", "regional_lead", "edited_essay")), keys[0])
                 result[main_key] = response_text.strip()
-            update_trace_parsed("copyeditor", label, run_date, parsed_output=result)
+            update_trace_parsed("copyeditor", label, run_date, parsed_output=result, trace_root=trace_root)
             return result
         logger.warning("Copyeditor [%s]: empty response, keeping original", label)
         return prose_fields

@@ -10,6 +10,7 @@ import json
 import logging
 import re
 from datetime import date
+from pathlib import Path
 
 import anthropic
 
@@ -674,8 +675,13 @@ async def style_edit_prose(
     label: str,
     analysis_date: date | None = None,
     model: str | None = None,
+    trace_root: Path | None = None,
 ) -> dict:
-    """Run style editor on prose fields. Returns polished JSON."""
+    """Run style editor on prose fields. Returns polished JSON.
+
+    If trace_root is provided, trace files are written under that directory
+    instead of briefs/, so harness runs don't clobber production traces.
+    """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
 
@@ -720,12 +726,13 @@ async def style_edit_prose(
         response_text=response_text,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
+        trace_root=trace_root,
     )
 
     try:
         data = extract_json(response_text, context=f"style_editor_{label}")
         data = _unwrap_double_json(data)
-        update_trace_parsed("style_editor", label, run_date, parsed_output=data)
+        update_trace_parsed("style_editor", label, run_date, parsed_output=data, trace_root=trace_root)
         return data
     except (ValueError, KeyError):
         # LLM returned prose instead of JSON — use it as the polished version
@@ -741,7 +748,7 @@ async def style_edit_prose(
                 result = dict(prose_fields)
                 main_key = next((k for k in keys if k in ("narrative_body", "regional_lead", "edited_essay")), keys[0])
                 result[main_key] = response_text.strip()
-            update_trace_parsed("style_editor", label, run_date, parsed_output=result)
+            update_trace_parsed("style_editor", label, run_date, parsed_output=result, trace_root=trace_root)
             return result
         logger.warning("Style editor [%s]: empty response, keeping original", label)
         return prose_fields
