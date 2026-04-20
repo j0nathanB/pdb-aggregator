@@ -438,6 +438,49 @@ class TestParseCountryResponse:
         output = parse_country_response(response, date(2026, 3, 14), "w1", _test_ledger())
         assert output.posture_summary.as_of == date(2026, 3, 14)
 
+    def test_claim_check_with_invalid_enum_status_maps_to_confirmed(self):
+        """LLM returning 'unchanged' / 'maintained' for status used to throw
+        ValidationError and drop the claim; now coerces to CONFIRMED."""
+        data = _valid_agent_response()
+        data["weekly_entry"]["structural_claim_checks"] = [{
+            "claim_ref": "STRUC-01",
+            "claim_text": "Test claim",
+            "status": "unchanged",       # invalid enum value
+            "confidence_in_claim": 4,
+        }]
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        from src.monitor.config import ClaimStatus
+        assert len(output.weekly_entry.structural_claim_checks) == 1
+        assert output.weekly_entry.structural_claim_checks[0].status == ClaimStatus.CONFIRMED
+
+    def test_claim_check_with_word_confidence_coerced_to_int(self):
+        """LLM returning 'high' / 'medium' / 'low' for confidence_in_claim used
+        to throw ValidationError; now coerces to 5/3/1."""
+        data = _valid_agent_response()
+        data["weekly_entry"]["structural_claim_checks"] = [{
+            "claim_ref": "STRUC-02",
+            "claim_text": "Test",
+            "status": "confirmed",
+            "confidence_in_claim": "high",
+        }]
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        assert len(output.weekly_entry.structural_claim_checks) == 1
+        assert output.weekly_entry.structural_claim_checks[0].confidence_in_claim == 5
+
+    def test_missing_signal_category_carries_forward_from_ledger(self):
+        """If LLM omits a category in updated_signal_categories, fall back
+        to the prior ledger assessment instead of throwing KeyError."""
+        data = _valid_agent_response()
+        # Drop alignment_diplomatic from the LLM's response
+        del data["updated_signal_categories"]["alignment_diplomatic"]
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        # Ledger baseline should be preserved
+        ad = output.signal_categories[SignalCategory.ALIGNMENT_DIPLOMATIC]
+        assert ad is not None  # not a placeholder
+        # Ledger's assessment came through
+        ledger = _test_ledger()
+        assert ad.current_assessment == ledger.signal_categories[SignalCategory.ALIGNMENT_DIPLOMATIC].current_assessment
+
 
 # ---- System Prompt ----
 

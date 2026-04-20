@@ -38,7 +38,7 @@ from ..models import (
     UnexpectedDevelopment,
     WeeklyEntry,
 )
-from ..sanitize import extract_json, safe_date, safe_enum
+from ..sanitize import extract_json, safe_date, safe_enum, safe_int
 
 if TYPE_CHECKING:
     from ..collection.extract import ExtractionResult
@@ -449,6 +449,28 @@ def _parse_source_tier(val: object) -> int:
         return 2
 
 
+_CONFIDENCE_WORD_MAP = {
+    "very high": 5, "very_high": 5,
+    "high": 5, "strong": 5,
+    "medium-high": 4, "medium_high": 4, "moderately high": 4,
+    "medium": 3, "moderate": 3, "mid": 3,
+    "medium-low": 2, "medium_low": 2, "moderately low": 2,
+    "low": 1, "weak": 1, "very low": 1, "very_low": 1,
+}
+
+
+def _coerce_confidence(val, default: int = 3) -> int:
+    """Coerce LLM confidence to int 1-5. Handles 'high'/'medium'/'low', 3, '3'."""
+    if isinstance(val, int):
+        return max(1, min(val, 5))
+    if isinstance(val, str):
+        s = val.strip().lower()
+        if s in _CONFIDENCE_WORD_MAP:
+            return _CONFIDENCE_WORD_MAP[s]
+        return safe_int(s, default, min_val=1, max_val=5, context="confidence")
+    return default
+
+
 def parse_country_response(
     response_text: str,
     week_date: date,
@@ -570,12 +592,19 @@ def parse_country_response(
     claim_checks = []
     for c in entry_data.get("structural_claim_checks", []):
         try:
+            raw_conf = c.get("confidence_in_claim", c.get("confidence", 3))
             claim_checks.append(StructuralClaimCheck(
                 claim_ref=c.get("claim_ref", c.get("ref", c.get("id", "unknown"))),
                 claim_text=c.get("claim_text", c.get("claim", c.get("text", ""))),
-                status=c.get("status", "unchanged"),
+                # LLM sometimes returns e.g. "unchanged"/"maintained" (semantically
+                # reasonable but outside the enum) — map to CONFIRMED baseline.
+                status=safe_enum(
+                    ClaimStatus, c.get("status", "confirmed"),
+                    ClaimStatus.CONFIRMED, context="claim_check.status",
+                ),
                 evidence=c.get("evidence", ""),
-                confidence_in_claim=c.get("confidence_in_claim", c.get("confidence", 3)),
+                # LLM sometimes returns "high"/"medium"/"low" instead of 1-5.
+                confidence_in_claim=_coerce_confidence(raw_conf, default=3),
             ))
         except Exception as e:
             logger.warning("Skipping malformed claim check: %s", e)
