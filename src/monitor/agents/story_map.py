@@ -585,53 +585,84 @@ async def run_story_map_agent(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
-    # Use streaming to avoid SDK timeout for large requests
-    text_content = ""
-    input_tokens = 0
-    output_tokens = 0
-
-    stream_kwargs: dict = dict(
-        model=model or MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 8192,
-        temperature=1,  # required for extended thinking
-        thinking={
-            "type": "enabled",
-            "budget_tokens": THINKING_BUDGET_TOKENS,
-        },
-        system=[{"type": "text", "text": system_prompt}],
-        messages=[{"role": "user", "content": user_message}],
-    )
-    if USE_TOOL_SCHEMA:
-        stream_kwargs["tools"] = [RECORD_STORY_MAP_TOOL]
+    # max_tokens is the COMBINED ceiling (thinking + visible output). With
+    # 16k thinking budget, leave 16k for visible output so the tool_use
+    # block has room to serialize for large countries. Prior value (+8192)
+    # left only 8k, which truncated mid-tool_use on clustering outputs >
+    # ~55k chars — the same failure mode as the fr/it truncation from
+    # 2026-04-12, and the reason LV fell back to json_repair on the
+    # 2026-04-20 run despite MPM_USE_TOOL_SCHEMA=1.
+    MAX_TOKENS = THINKING_BUDGET_TOKENS + 16384
 
     from ..timing import with_heartbeat
-    async with anthropic_limiter():
-        async with client.messages.stream(**stream_kwargs) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                f"Story map {config.code}: streaming API call",
-            )
 
-    tool_input: dict | None = None
-    for block in response.content:
-        if block.type == "text" and not text_content:
-            text_content = block.text
-        elif (
-            block.type == "tool_use"
-            and getattr(block, "name", None) == RECORD_STORY_MAP_TOOL_NAME
-        ):
-            tool_input = getattr(block, "input", None)
+    async def _call(use_tool: bool) -> tuple[object, dict | None, str]:
+        """Make one story_map API call and collect text + tool_use blocks."""
+        stream_kwargs: dict = dict(
+            model=model or MODEL,
+            max_tokens=MAX_TOKENS,
+            temperature=1,  # required for extended thinking
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": user_message}],
+        )
+        if use_tool:
+            stream_kwargs["tools"] = [RECORD_STORY_MAP_TOOL]
+
+        async with anthropic_limiter():
+            async with client.messages.stream(**stream_kwargs) as stream:
+                resp = await with_heartbeat(
+                    stream.get_final_message(),
+                    f"Story map {config.code}: streaming API call"
+                    + (" [no-tool fallback]" if not use_tool else ""),
+                )
+
+        t_input: dict | None = None
+        t_text = ""
+        for block in resp.content:
+            if block.type == "text" and not t_text:
+                t_text = block.text
+            elif (
+                block.type == "tool_use"
+                and getattr(block, "name", None) == RECORD_STORY_MAP_TOOL_NAME
+            ):
+                t_input = getattr(block, "input", None)
+        return resp, t_input, t_text
+
+    response, tool_input, text_content = await _call(use_tool=USE_TOOL_SCHEMA)
+
+    used_fallback = False
+    if USE_TOOL_SCHEMA and tool_input is None:
+        # Tool_use was enabled but the API didn't return a tool_use block —
+        # almost always because the tool_use serialization got truncated by
+        # max_tokens. Instead of silently text-parsing whatever fragment
+        # remained, explicitly re-invoke WITHOUT the tool so the model can
+        # emit free-form JSON that json_repair can rescue. Fail loudly in
+        # the log so the fallback rate is visible.
+        logger.warning(
+            "Story map %s: tool_use enabled but no tool_use block returned "
+            "(input=%d, output=%d tokens); retrying without tool as fallback",
+            config.code, response.usage.input_tokens, response.usage.output_tokens,
+        )
+        response, tool_input, text_content = await _call(use_tool=False)
+        used_fallback = True
+        # After the fallback, tool_input is expected to be None; text_content
+        # drives parsing via parse_story_map_response + json_repair.
 
     input_tokens = response.usage.input_tokens
     output_tokens = response.usage.output_tokens
 
     logger.info(
-        "Story map %s: API response — input=%d, output=%d tokens",
+        "Story map %s: API response — input=%d, output=%d tokens%s",
         config.code, input_tokens, output_tokens,
+        " [fallback]" if used_fallback else "",
     )
 
     # Pick the source of truth for the trace: tool_input if present, else text
-    if USE_TOOL_SCHEMA and tool_input is not None:
+    if tool_input is not None:
         trace_response_text = json.dumps(tool_input, indent=2, ensure_ascii=False)
     else:
         trace_response_text = text_content
@@ -650,7 +681,7 @@ async def run_story_map_agent(
         usage=extract_usage(response),
     )
 
-    if USE_TOOL_SCHEMA and tool_input is not None:
+    if tool_input is not None:
         output = hydrate_story_map(tool_input)
     else:
         output = parse_story_map_response(text_content)
