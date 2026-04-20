@@ -128,6 +128,8 @@ class CountrySearchConfig:
 
 _DISCARD_LINE_RE = re.compile(r"^\$discard,\s*site=([\w\.\-]+)\s*$")
 
+GLOBAL_DISCARDS_PATH = GOGGLES_DIR / "_global_discards.txt"
+
 
 def _parse_goggle_discards(goggle_path: Path) -> frozenset[str]:
     """Extract domains marked with $discard from a goggle file."""
@@ -138,6 +140,30 @@ def _parse_goggle_discards(goggle_path: Path) -> frozenset[str]:
         m = _DISCARD_LINE_RE.match(line.strip())
         if m:
             discards.add(m.group(1).lower())
+    return frozenset(discards)
+
+
+def _parse_global_discards(path: Path) -> frozenset[str]:
+    """Load the cross-country discard list (plain text, one domain per line).
+
+    Format: `#` starts a comment. Blank lines and comments ignored.
+    Applied to every country via union with per-country goggle $discards.
+    """
+    if not path.exists():
+        return frozenset()
+    discards: set[str] = set()
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        # Accept goggle syntax too, for flexibility.
+        m = _DISCARD_LINE_RE.match(line)
+        if m:
+            discards.add(m.group(1).lower())
+            continue
+        # Bare domain — basic sanity check, must contain a dot
+        if "." in line and " " not in line:
+            discards.add(line.lower())
     return frozenset(discards)
 
 
@@ -173,6 +199,13 @@ def load_brave_sources() -> dict[str, CountrySearchConfig]:
     with open(BRAVE_SOURCES_PATH) as f:
         data = yaml.safe_load(f)
 
+    global_discards = _parse_global_discards(GLOBAL_DISCARDS_PATH)
+    if global_discards:
+        logger.info(
+            "Loaded %d cross-country discard domains from %s",
+            len(global_discards), GLOBAL_DISCARDS_PATH.name,
+        )
+
     configs = {}
     for code, entry in data.get("countries", {}).items():
         sources = [
@@ -183,12 +216,13 @@ def load_brave_sources() -> dict[str, CountrySearchConfig]:
             )
             for s in entry.get("sources", [])
         ]
+        country_discards = _parse_goggle_discards(GOGGLES_DIR / f"{code}.goggle")
         configs[code] = CountrySearchConfig(
             code=code,
             use_local_params=entry.get("use_local_params", False),
             local_params=entry.get("local_params"),
             sources=sources,
-            discard_domains=_parse_goggle_discards(GOGGLES_DIR / f"{code}.goggle"),
+            discard_domains=country_discards | global_discards,
         )
 
     return configs

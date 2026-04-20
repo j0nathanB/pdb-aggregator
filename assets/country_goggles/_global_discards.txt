@@ -1,0 +1,33 @@
+# Global discard list — applied to every country's Brave search results.
+#
+# Format: one domain per line. Lines starting with `#` are comments.
+# Matching is exact + subdomain (after stripping `www.`). For example,
+# listing `news-pravda.com` discards every `*.news-pravda.com` subdomain.
+#
+# These merge with the per-country `$discard` directives in
+# `{code}.goggle`. Union is applied at load time in brave.py.
+#
+# Rationale and data source: dev/off_topic_filter_proposal.md
+# (derived from the 2026-04-12 story_map traces, 29 countries).
+
+# --- Propaganda network (Russian-linked disinformation) ---
+# Parent match covers all 34 subdomain variants observed
+# (deutsch.news-pravda.com, estonia.news-pravda.com, nato.news-pravda.com, etc.)
+news-pravda.com
+
+# --- SEO / blog spam ---
+battinews.com
+onaquietday.org
+dailypolitical.com
+marketbeat.com
+it-boltwise.de
+cryptoverselawyers.io
+britbrief.co.uk
+tclira.com
+
+# --- Sports / entertainment aggregators (off-topic per pipeline design) ---
+nbssport.co.ug
+sagat.no
+starnewskorea.com
+goal.com
+dosisfutbolera.com

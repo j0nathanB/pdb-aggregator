@@ -19,6 +19,7 @@ from src.monitor.collection.brave import (
     CountrySearchConfig,
     IndexedSource,
     _is_discarded,
+    _parse_global_discards,
     _parse_goggle_discards,
     load_brave_sources,
 )
@@ -687,3 +688,49 @@ class TestDiscardEnforcement:
         # fr.goggle has these $discard entries today
         assert "cnews.fr" in fr.discard_domains
         assert "valeursactuelles.com" in fr.discard_domains
+
+    def test_parse_global_discards(self, tmp_path):
+        path = tmp_path / "_global_discards.txt"
+        path.write_text(
+            "# Comment at top\n"
+            "\n"  # blank line
+            "news-pravda.com\n"
+            "# inline comment line\n"
+            "battinews.com\n"
+            "$discard,site=marketbeat.com\n"  # goggle syntax also accepted
+            "not_a_domain_no_dot\n"  # rejected — no dot
+            "has space.com\n"  # rejected — has space
+            "onaquietday.org\n"
+        )
+        discards = _parse_global_discards(path)
+        assert discards == frozenset({
+            "news-pravda.com", "battinews.com", "marketbeat.com", "onaquietday.org",
+        })
+
+    def test_parse_global_discards_missing_file(self, tmp_path):
+        assert _parse_global_discards(tmp_path / "missing.txt") == frozenset()
+
+    def test_load_brave_sources_unions_global_discards(self):
+        """Global discard list should merge into every country's discard_domains."""
+        configs = load_brave_sources()
+        # Global file adds news-pravda.com (parent match) and several spam domains
+        for code, cfg in configs.items():
+            assert "news-pravda.com" in cfg.discard_domains, (
+                f"{code} missing global discard news-pravda.com"
+            )
+            assert "battinews.com" in cfg.discard_domains, (
+                f"{code} missing global discard battinews.com"
+            )
+
+    def test_global_discard_matches_all_pravda_subdomains(self):
+        """Because _is_discarded matches subdomains, listing `news-pravda.com`
+        in the global file blocks every `*.news-pravda.com` variant."""
+        discards = frozenset({"news-pravda.com"})
+        for subdomain in [
+            "deutsch.news-pravda.com",
+            "estonia.news-pravda.com",
+            "nato.news-pravda.com",
+            "ua.news-pravda.com",
+            "italy.news-pravda.com",
+        ]:
+            assert _is_discarded(subdomain, discards) is True, subdomain
