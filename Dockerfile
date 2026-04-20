@@ -24,6 +24,9 @@ from sentence_transformers import SentenceTransformer, CrossEncoder; \
 SentenceTransformer('intfloat/multilingual-e5-small'); \
 CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')"
 
+# spaCy NER model used by validation.validate_source_attribution
+RUN python -m spacy download en_core_web_md
+
 # Only the entrypoint script — everything else comes from the clone at runtime
 COPY scripts/__init__.py scripts/__init__.py
 COPY scripts/run_pipeline.py scripts/run_pipeline.py
