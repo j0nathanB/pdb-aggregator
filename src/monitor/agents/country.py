@@ -1036,10 +1036,12 @@ async def run_country_agent(
 
     response_text = "\n".join(text_parts)
 
+    via_tool_use = USE_TOOL_SCHEMA and record_tool_input is not None
     logger.info(
-        "Country agent %s: API complete — input=%d, output=%d tokens, stop=%s",
+        "Country agent %s: API complete — input=%d, output=%d tokens, stop=%s%s",
         config.code, response.usage.input_tokens, response.usage.output_tokens,
         response.stop_reason,
+        " [tool_use]" if via_tool_use else "",
     )
     logger.debug(
         "Country agent %s: block_types=%s, text_length=%d",
@@ -1056,7 +1058,11 @@ async def run_country_agent(
                 "Country agent %s: search %d result — %s (%s)",
                 config.code, i, r["title"][:120], r["url"],
             )
-    if len(response_text) < 100:
+    # "Response text very short" is only a warning signal in the free-form
+    # JSON path. When tool_use delivered a structured response, empty text
+    # is the expected shape — the model put its output in the tool_use
+    # block, not the text block.
+    if len(response_text) < 100 and not via_tool_use:
         logger.warning("Country agent %s: response text very short: %r", config.code, response_text[:500])
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
