@@ -32,3 +32,9 @@ $boost=3,site=carnegieendowment.org
 $discard,site=sputniknews.lt
 $discard,site=baltnews.lt
 $discard,site=vakarozinios.lt
+
+! --- Audit 2026-04-20 additions ---
+$boost=10,site=delfi.lt
+$boost=5,site=tv3.lt
+$boost=3,site=vz.lt
+$discard,site=respublika.lt

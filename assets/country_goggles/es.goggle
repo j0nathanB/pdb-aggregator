@@ -35,3 +35,11 @@ $discard,site=okdiario.com
 $discard,site=casoaislado.com
 $discard,site=periodistadigital.com
 $discard,site=hispanidad.com
+
+! --- Audit 2026-04-20 additions ---
+$boost=5,site=abc.es
+$boost=3,site=larazon.es
+$boost=3,site=publico.es
+$boost=3,site=elplural.com
+$boost=3,site=20minutos.es
+$boost=3,site=huffingtonpost.es

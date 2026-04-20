@@ -36,3 +36,8 @@ $discard,site=dailymail.co.uk
 $discard,site=thesun.co.uk
 $discard,site=mirror.co.uk
 $discard,site=gbnews.com
+
+! --- Audit 2026-04-20 additions ---
+$boost=5,site=independent.co.uk
+$discard,site=express.co.uk
+$discard,site=people.com

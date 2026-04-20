@@ -34,3 +34,12 @@ $boost=3,site=carnegieendowment.org
 $discard,site=michaelwest.com.au
 $discard,site=crikey.com.au
 $discard,site=themonthly.com.au
+
+! --- Audit 2026-04-20 additions ---
+$boost=10,site=abc.net.au
+$boost=10,site=smh.com.au
+$boost=10,site=theguardian.com
+$boost=5,site=9news.com.au
+$boost=5,site=thewest.com.au
+$boost=3,site=thenightly.com.au
+$discard,site=dailymail.co.uk

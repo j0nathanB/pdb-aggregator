@@ -38,3 +38,15 @@ $discard,site=jungefreiheit.de
 $discard,site=compact-online.de
 $discard,site=snanews.de
 $discard,site=de.sputniknews.com
+
+! --- Audit 2026-04-20 additions ---
+$boost=10,site=tagesschau.de
+$boost=10,site=deutschlandfunk.de
+$boost=5,site=n-tv.de
+$boost=5,site=focus.de
+$boost=5,site=ndr.de
+$boost=5,site=fr.de
+$boost=3,site=t-online.de
+$boost=3,site=merkur.de
+$boost=3,site=rp-online.de
+$discard,site=bild.de

@@ -39,3 +39,9 @@ $discard,site=newsone.ua
 $discard,site=rt.com
 $discard,site=tass.com
 $discard,site=ria.ru
+
+! --- Audit 2026-04-20 additions ---
+$boost=5,site=kyivpost.com
+$boost=5,site=newsukraine.rbc.ua
+$boost=3,site=unn.ua
+$boost=3,site=mezha.net

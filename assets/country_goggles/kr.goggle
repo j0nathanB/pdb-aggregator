@@ -38,3 +38,10 @@ $boost=3,site=carnegieendowment.org
 ! --- Discard: Noise ---
 $discard,site=keia.org
 $discard,site=koreaobserver.com
+
+! --- Audit 2026-04-20 additions ---
+$boost=10,site=reuters.com
+$boost=10,site=bloomberg.com
+$boost=5,site=mk.co.kr
+$boost=5,site=khan.co.kr
+$boost=3,site=upi.com

@@ -36,3 +36,9 @@ $discard,site=dailyhive.com
 $discard,site=narcity.com
 $discard,site=torontosun.com
 $discard,site=ottawasun.com
+
+! --- Audit 2026-04-20 additions ---
+$boost=5,site=thestar.com
+$boost=5,site=nationalpost.com
+$boost=3,site=montreal.citynews.ca
+$discard,site=winnipegsun.com

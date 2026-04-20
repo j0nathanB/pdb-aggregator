@@ -36,3 +36,15 @@ $boost=3,site=carnegieendowment.org
 $discard,site=cnews.fr
 $discard,site=valeursactuelles.com
 $discard,site=francais.rt.com
+
+! --- Audit 2026-04-20 additions ---
+$boost=10,site=franceinfo.fr
+$boost=5,site=bfmtv.com
+$boost=5,site=leparisien.fr
+$boost=5,site=lepoint.fr
+$boost=3,site=20minutes.fr
+$boost=3,site=ladepeche.fr
+$boost=3,site=humanite.fr
+$boost=3,site=letelegramme.fr
+$discard,site=closermag.fr
+$discard,site=gala.fr
