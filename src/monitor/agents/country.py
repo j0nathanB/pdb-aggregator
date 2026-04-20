@@ -599,7 +599,19 @@ def parse_country_response(
     assessments_data = data.get("updated_signal_categories", data.get("updated_assessments", {}))
     updated_assessments = {}
     for cat in SignalCategory:
-        ua = assessments_data[cat.value]
+        ua = assessments_data.get(cat.value)
+        if ua is None:
+            # LLM omitted this category — carry forward the prior assessment
+            # from the ledger rather than killing the whole country's output.
+            # CountryLedger.all_categories_present guarantees every category
+            # is present in ledger.signal_categories.
+            logger.warning(
+                "Country agent %s: response missing signal category %r; "
+                "carrying forward prior ledger assessment",
+                ledger.code, cat.value,
+            )
+            updated_assessments[cat] = ledger.signal_categories[cat]
+            continue
         updated_assessments[cat] = SignalCategoryAssessment(
             current_assessment=ua["current_assessment"],
             confidence=ua["confidence"],
