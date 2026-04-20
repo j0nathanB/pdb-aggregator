@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+import re
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
@@ -19,6 +20,8 @@ from src.monitor.collection.brave import (
     CountrySearchConfig,
     IndexedSource,
     _is_discarded,
+    _is_off_topic_url,
+    _load_off_topic_filters,
     _parse_global_discards,
     _parse_goggle_discards,
     load_brave_sources,
@@ -734,3 +737,109 @@ class TestDiscardEnforcement:
             "italy.news-pravda.com",
         ]:
             assert _is_discarded(subdomain, discards) is True, subdomain
+
+
+# =============================================================================
+# Off-topic URL filter tests
+# =============================================================================
+
+
+class TestOffTopicFilter:
+    def test_load_off_topic_filters(self, tmp_path):
+        path = tmp_path / "off_topic_filters.csv"
+        path.write_text(
+            "# leading comment\n"
+            "# another comment\n"
+            "domain,filter_type,filter_pattern,country\n"
+            "bbc.com,path,/sport/,Multiple\n"
+            "express.co.uk,path,/showbiz/,United Kingdom\n"
+            "# inline comment mid-file\n"
+            r"example.com,regex,/\d{4}/sports/,Multiple" "\n"
+            "blogs.example.com,subdomain,blogs.example.com,Multiple\n"
+        )
+        rules = _load_off_topic_filters(path)
+        assert len(rules) == 4
+        assert rules[0]["domain"] == "bbc.com"
+        assert rules[0]["type"] == "path"
+        assert rules[0]["pattern"] == "/sport/"
+        # Regex precompiled
+        assert "_compiled" in rules[2]
+
+    def test_load_off_topic_filters_missing_file(self, tmp_path):
+        assert _load_off_topic_filters(tmp_path / "missing.csv") == []
+
+    def test_is_off_topic_path_match(self):
+        rules = [{"domain": "bbc.com", "type": "path", "pattern": "/sport/"}]
+        assert _is_off_topic_url("https://www.bbc.com/sport/football/123", rules) is True
+
+    def test_is_off_topic_path_no_match(self):
+        rules = [{"domain": "bbc.com", "type": "path", "pattern": "/sport/"}]
+        assert _is_off_topic_url("https://www.bbc.com/news/politics/123", rules) is False
+
+    def test_is_off_topic_domain_scoped(self):
+        """A /sport/ rule for bbc.com should not affect guardian.com."""
+        rules = [{"domain": "bbc.com", "type": "path", "pattern": "/sport/"}]
+        assert _is_off_topic_url("https://www.theguardian.com/sport/x", rules) is False
+
+    def test_is_off_topic_subdomain_match(self):
+        rules = [{"domain": "example.com", "type": "subdomain", "pattern": "blogs.example.com"}]
+        assert _is_off_topic_url("https://blogs.example.com/foo", rules) is True
+        assert _is_off_topic_url("https://example.com/foo", rules) is False
+
+    def test_is_off_topic_regex_match(self):
+        compiled = re.compile(r"/\d{4}/sports/")
+        rules = [{"domain": "example.com", "type": "regex",
+                  "pattern": r"/\d{4}/sports/", "_compiled": compiled}]
+        assert _is_off_topic_url("https://example.com/2026/sports/x", rules) is True
+        assert _is_off_topic_url("https://example.com/sports/x", rules) is False
+
+    def test_is_off_topic_empty_rules(self):
+        assert _is_off_topic_url("https://www.bbc.com/sport/x", []) is False
+
+    def test_real_file_loads_and_covers_known_cases(self):
+        """Integration check: the real off_topic_filters.csv loads and
+        matches at least the core seed cases from the audit."""
+        rules = _load_off_topic_filters()
+        assert len(rules) > 0
+        assert _is_off_topic_url("https://www.bbc.com/sport/football/123", rules) is True
+        assert _is_off_topic_url("https://www.express.co.uk/showbiz/foo", rules) is True
+        assert _is_off_topic_url("https://www.dailymail.co.uk/tvshowbiz/foo", rules) is True
+        # Legitimate news paths should pass
+        assert _is_off_topic_url("https://www.bbc.com/news/politics/x", rules) is False
+
+    @pytest.mark.asyncio
+    async def test_search_news_drops_off_topic_urls(self, tmp_path):
+        """End-to-end: off-topic filter runs post-fetch in search_news."""
+        import src.monitor.collection.brave as brave_mod
+
+        client = BraveNewsClient(api_key="test-key", rate_limit_delay=0)
+        mock_response = MagicMock()
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "title": "Sport story", "url": "https://www.bbc.com/sport/football/123",
+                    "meta_url": {"netloc": "bbc.com", "hostname": "www.bbc.com"},
+                },
+                {
+                    "title": "Political story", "url": "https://www.bbc.com/news/politics/456",
+                    "meta_url": {"netloc": "bbc.com", "hostname": "www.bbc.com"},
+                },
+            ]
+        }
+        mock_response.raise_for_status = MagicMock()
+        client._client.get = AsyncMock(return_value=mock_response)
+
+        # Inject a minimal rule set so behavior is deterministic regardless
+        # of what's in the real off_topic_filters.csv
+        original_rules = brave_mod._OFF_TOPIC_RULES
+        brave_mod._OFF_TOPIC_RULES = [
+            {"domain": "bbc.com", "type": "path", "pattern": "/sport/"},
+        ]
+        try:
+            response = await client.search_news("test")
+        finally:
+            brave_mod._OFF_TOPIC_RULES = original_rules
+
+        assert response.total_count == 1
+        assert response.results[0].url.endswith("/news/politics/456")
+        await client.close()

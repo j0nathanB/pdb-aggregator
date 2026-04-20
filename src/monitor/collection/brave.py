@@ -10,12 +10,14 @@ API reference: https://api-dashboard.search.brave.com/api-reference/news/news_se
 from __future__ import annotations
 
 import asyncio
+import csv
 import logging
 import os
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
+from urllib.parse import urlparse
 
 import httpx
 import yaml
@@ -181,6 +183,74 @@ def _is_discarded(source_domain: str | None, discards: frozenset[str]) -> bool:
     if d in discards:
         return True
     return any(d.endswith("." + dd) for dd in discards)
+
+
+# =============================================================================
+# Off-topic URL filter (path/subdomain/regex rules loaded from CSV)
+# =============================================================================
+#
+# Drops sports/entertainment/lifestyle URLs at the search-result boundary
+# before they reach story_map. story_map was already dropping ~70-90% of
+# these as noise — filtering upstream saves tokens without changing what
+# the LLM sees for the URLs that remain. Schema mirrors opinion_filters.csv.
+
+OFF_TOPIC_FILTERS_PATH = PROJECT_ROOT / "off_topic_filters.csv"
+
+
+def _load_off_topic_filters(path: Path = OFF_TOPIC_FILTERS_PATH) -> list[dict]:
+    """Load off-topic filter rules from CSV.
+
+    Lines starting with `#` are skipped (allows header comments).
+    Returns list of {domain, type, pattern} dicts. Regex patterns are
+    precompiled under `_compiled`.
+    """
+    if not path.exists():
+        logger.warning("off_topic_filters.csv not found at %s", path)
+        return []
+    rules: list[dict] = []
+    with open(path, newline="", encoding="utf-8") as f:
+        non_comment = (line for line in f if not line.lstrip().startswith("#"))
+        for row in csv.DictReader(non_comment):
+            rule = {
+                "domain": row["domain"].strip().lower(),
+                "type": row["filter_type"].strip(),
+                "pattern": row["filter_pattern"].strip(),
+            }
+            if rule["type"] == "regex":
+                rule["_compiled"] = re.compile(rule["pattern"])
+            rules.append(rule)
+    return rules
+
+
+_OFF_TOPIC_RULES: list[dict] = _load_off_topic_filters()
+
+
+def _is_off_topic_url(url: str, rules: list[dict] | None = None) -> bool:
+    """Check if a URL matches an off-topic filter rule.
+
+    Matching rules mirror opinion_filters in extract.py:
+      - path: URL path starts with pattern
+      - subdomain: hostname exactly matches pattern
+      - regex: precompiled pattern searches the full URL
+    """
+    rules = rules if rules is not None else _OFF_TOPIC_RULES
+    if not rules:
+        return False
+    parsed = urlparse(url)
+    hostname = parsed.netloc.lower()
+    if hostname.startswith("www."):
+        hostname = hostname[4:]
+    path = parsed.path.lower()
+    for rule in rules:
+        if rule["domain"] not in hostname:
+            continue
+        if rule["type"] == "path" and path.startswith(rule["pattern"].lower()):
+            return True
+        if rule["type"] == "subdomain" and hostname == rule["pattern"].lower():
+            return True
+        if rule["type"] == "regex" and rule["_compiled"].search(url):
+            return True
+    return False
 
 
 # =============================================================================
@@ -375,6 +445,19 @@ class BraveNewsClient:
                         "Brave [%s]: dropped %d/%d results matching goggle $discard",
                         country_code, dropped, pre,
                     )
+
+        # Off-topic URL-path filter (sports/entertainment/lifestyle).
+        # Applied globally since rules match on (domain, path) rather than
+        # country — a /sport/ path on bbc.com is off-topic everywhere.
+        if _OFF_TOPIC_RULES:
+            pre = len(results)
+            results = [r for r in results if not _is_off_topic_url(r.url)]
+            dropped = pre - len(results)
+            if dropped:
+                logger.info(
+                    "Brave [%s]: dropped %d/%d off-topic URLs",
+                    country_code or "-", dropped, pre,
+                )
 
         logger.debug("Brave News: q=%r → %d results", query, len(results))
 

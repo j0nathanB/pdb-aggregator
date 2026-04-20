@@ -1,0 +1,28 @@
+# URL-path filters applied to Brave search results before they reach story_map.
+# Schema mirrors opinion_filters.csv. Matching is:
+#   domain-substring match + filter_type comparison
+#   (path = URL path startswith, subdomain = exact match, regex = search)
+# Rules seeded from 2026-04-12 story_map trace analysis — per-(domain, path)
+# where noise>=3 and kept<=1. See dev/off_topic_filter_proposal.md.
+domain,filter_type,filter_pattern,country
+closermag.fr,path,/people/,France
+timesofindia.indiatimes.com,path,/sports/,Multiple
+timesofindia.indiatimes.com,path,/entertainment/,Multiple
+yahoo.com,path,/entertainment/,United Kingdom
+starnewskorea.com,path,/music/,Taiwan
+alairelibre.cl,path,/futbol/,Chile
+dailymail.co.uk,path,/tvshowbiz/,Multiple
+heavy.com,path,/sports/,Multiple
+ohtuleht.ee,path,/sport/,Estonia
+bbc.com,path,/sport/,Multiple
+heraldo.es,path,/deportes/,Finland
+express.co.uk,path,/showbiz/,United Kingdom
+gmanetwork.com,path,/showbiz/,Indonesia
+rotowire.com,path,/baseball/,Multiple
+telegraaf.nl,path,/sport/,Japan
+indiatoday.in,path,/sports/,Lithuania
+elnacional.cat,path,/deportes/,Mexico
+bunte.de,path,/entertainment/,Multiple
+hindustantimes.com,path,/entertainment/,Saudi Arabia
+shieldsgazette.com,path,/sport/,Saudi Arabia
+expressen.se,path,/sport/,Sweden
