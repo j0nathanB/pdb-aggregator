@@ -169,8 +169,14 @@ async def write_regional_essay(
 async def write_all_regional_essays(
     region_pages: dict,
     max_concurrent: int = 5,
+    regions: list | None = None,
 ) -> dict:
-    """Write regional essays for all regions in parallel."""
+    """Write regional essays for all regions in parallel.
+
+    Args:
+        regions: Optional filter — only write essays for these regions
+            (list of Region enum members). Default None processes all.
+    """
 
     semaphore = TrackedSemaphore(max_concurrent, "regional_writer")
 
@@ -178,8 +184,11 @@ async def write_all_regional_essays(
         async with semaphore.acquire(f"regional_writer_{page.region.value}"):
             return await write_regional_essay(page)
 
+    target = set(regions) if regions is not None else None
     tasks = []
     for region, page in region_pages.items():
+        if target is not None and region not in target:
+            continue
         # Only write if there are countries with edited prose
         has_prose = any(c.narrative_body for c in page.countries)
         if has_prose:

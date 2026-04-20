@@ -408,8 +408,14 @@ async def run_all_regional_syntheses(
     entries: dict[str, Optional[WeeklyEntry]],
     week: date | None = None,
     max_concurrent: int = 5,
+    regions: list[Region] | None = None,
 ) -> dict[Region, RegionalReport]:
-    """Run regional synthesis for all 6 regions in parallel."""
+    """Run regional synthesis for all 6 regions in parallel.
+
+    Args:
+        regions: Optional filter — only synthesize these regions. Default
+            (None) processes every member of the Region enum.
+    """
     import asyncio
 
     from ..timing import TrackedSemaphore
@@ -420,6 +426,7 @@ async def run_all_regional_syntheses(
             report = await run_regional_synthesis(region, ledgers, entries, week)
             return region, report
 
-    tasks = [_run(region) for region in Region]
+    target_regions = regions if regions is not None else list(Region)
+    tasks = [_run(region) for region in target_regions]
     results = await asyncio.gather(*tasks)
     return dict(results)

@@ -440,6 +440,188 @@ async def cmd_run(args: argparse.Namespace) -> None:
     print("Done.")
 
 
+async def cmd_recover(args: argparse.Namespace) -> None:
+    """Targeted single-country recovery.
+
+    Re-runs just one country's deep dive, its region's regional synthesis,
+    the executive synthesis, and re-renders only the pages whose content
+    actually changed (overview, at-a-glance, the affected region). Other
+    regions' published MDX files are left untouched.
+
+    Intended use: one country failed mid-run and needs to be recovered
+    without burning tokens re-running the other 29 countries or the other
+    5 regions.
+    """
+    from .orchestrator import run_desk_pipeline
+    from .agents.regional import (
+        REGION_COUNTRIES, run_all_regional_syntheses,
+    )
+    from .agents.executive import run_executive_agent
+    from .newsletter.content_builder import build_all_pages
+    from .newsletter.structured_editor import edit_all, style_edit_all
+    from .newsletter.structured_copyeditor import copyedit_all
+    from .newsletter.regional_writer import write_all_regional_essays
+    from .newsletter.global_writer import write_global_essay
+    from .newsletter.renderer import render_pages
+    from .newsletter.assembly import REGION_SLUGS
+    from .newsletter.publish import publish_brief
+    from .ledger.storage import save_regional_report, load_story_map
+    from .run_recorder import RunRecorder
+
+    country_code = args.country
+    if not country_code:
+        print("Error: --country is required for recover.")
+        return
+
+    # Find the target region for this country
+    target_region = next(
+        (r for r, codes in REGION_COUNTRIES.items() if country_code in codes),
+        None,
+    )
+    if target_region is None:
+        print(f"Error: country {country_code!r} is not mapped to any region.")
+        return
+
+    end_date = date.fromisoformat(args.date) if args.date else date.today()
+    print(f"Recovery: {country_code} (region: {target_region.value}), end_date={end_date}")
+
+    recorder = RunRecorder()
+    _add_log_handler(recorder.log_path)
+    recorder.init_manifest(end_date, [country_code])
+    from .sanitize import reset_fallback_counts
+    reset_fallback_counts()
+
+    # --- 1. Desk for the single country ---
+    print(f"Running desk pipeline for {country_code}...")
+    desk_result = await run_desk_pipeline(
+        country_codes=[country_code],
+        end_date=end_date,
+        max_concurrent=args.concurrency,
+        recorder=recorder,
+    )
+    if desk_result.failed_results:
+        for r in desk_result.failed_results:
+            print(f"  FAILED: {r.code} — {r.error}")
+        if not desk_result.deep_dive_results:
+            print("  No successful deep dive — aborting recovery.")
+            return
+    print(f"  Desk done: {len(desk_result.deep_dive_results)} deep dive(s)")
+
+    # --- 2. Load full state from disk (now with updated country ledger) ---
+    country_ledgers, country_entries, regional_reports, global_ledger = (
+        _load_pipeline_state(end_date)
+    )
+    if global_ledger is None:
+        global_ledger = load_global_ledger()
+
+    # --- 3. Regional synthesis for just the target region ---
+    print(f"Running regional synthesis for {target_region.value}...")
+    new_regional = await run_all_regional_syntheses(
+        country_ledgers, country_entries, end_date, args.concurrency,
+        regions=[target_region],
+    )
+    for region, report in new_regional.items():
+        save_regional_report(report)
+        regional_reports[region] = report
+        print(f"  {region.value}: {len(report.cross_cutting_dynamics)} cross-cutting dynamics")
+
+    # --- 4. Executive synthesis (always — reads all regional reports) ---
+    print("Running executive synthesis...")
+    global_ledger = await run_executive_agent(regional_reports, global_ledger, end_date)
+    save_global_ledger(global_ledger)
+
+    # --- 5. Newsletter stage with filters ---
+    print("Building structured content...")
+    story_maps_data: dict[str, dict] = {}
+    for code in country_ledgers:
+        try:
+            story_maps_data[code] = load_story_map(code, end_date)
+        except FileNotFoundError:
+            pass
+
+    overview_content, region_page_contents, watchlist_content, at_a_glance_content = (
+        build_all_pages(
+            global_ledger, regional_reports, country_ledgers, country_entries,
+            end_date, story_maps=story_maps_data or None,
+        )
+    )
+
+    target_regions = [target_region]
+
+    print(f"Round 1: Editing {country_code} country summary...")
+    overview_content, region_page_contents, watchlist_content = await edit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency,
+        scope="countries", target_country=country_code,
+    )
+    overview_content, region_page_contents, watchlist_content, at_a_glance_content = (
+        await copyedit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency,
+            scope="countries", target_country=country_code,
+            at_a_glance=at_a_glance_content,
+        )
+    )
+    overview_content, region_page_contents, watchlist_content = await style_edit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency,
+        scope="countries", target_country=country_code,
+    )
+
+    print(f"Writing {target_region.value} regional essay...")
+    region_page_contents = await write_all_regional_essays(
+        region_page_contents, max_concurrent=args.concurrency,
+        regions=target_regions,
+    )
+
+    print(f"Round 2: Editing {target_region.value} regional essay...")
+    overview_content, region_page_contents, watchlist_content = await edit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency,
+        scope="regional", target_regions=target_regions,
+    )
+    overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency,
+        scope="regional", target_regions=target_regions,
+    )
+    overview_content, region_page_contents, watchlist_content = await style_edit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency,
+        scope="regional", target_regions=target_regions,
+    )
+
+    print("Writing global executive essay...")
+    overview_content = await write_global_essay(overview_content, regional_reports, end_date)
+
+    print("Round 3: Editing executive brief...")
+    overview_content, region_page_contents, watchlist_content = await edit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+    )
+    overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+    )
+    overview_content, region_page_contents, watchlist_content = await style_edit_all(
+        overview_content, region_page_contents, watchlist_content,
+        analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+    )
+
+    # --- 6. Render + publish: write ONLY the affected pages ---
+    print("Rendering and publishing affected pages only...")
+    pages = render_pages(
+        overview_content, region_page_contents, watchlist_content, at_a_glance_content,
+    )
+    region_slug = REGION_SLUGS.get(target_region, target_region.value)
+    changed_slugs = {"overview", "at-a-glance", region_slug}
+    filtered_pages = {slug: content for slug, content in pages.items() if slug in changed_slugs}
+    brief_dir = publish_brief(filtered_pages, end_date)
+    print(f"  Updated {len(filtered_pages)} page(s) in {brief_dir}: {sorted(filtered_pages)}")
+
+    print("Recovery complete.")
+
+
 async def cmd_triage(args: argparse.Namespace) -> None:
     """Run triage only."""
     from .agents.triage import run_triage
@@ -684,6 +866,15 @@ def build_parser() -> argparse.ArgumentParser:
                         choices=["regional", "executive", "newsletter", "publishing"],
                         help="Resume from this stage (skips prior stages, loads state from disk)")
 
+    # recover — targeted single-country recovery
+    p_recover = subparsers.add_parser(
+        "recover",
+        help="Recover one country: re-runs the country, its region, executive, and only the affected pages",
+    )
+    p_recover.add_argument("--country", required=True, help="Country code to recover (e.g. it)")
+    p_recover.add_argument("--date", help="End date (YYYY-MM-DD)")
+    p_recover.add_argument("--concurrency", type=int, default=5)
+
     # triage
     p_triage = subparsers.add_parser("triage", help="Run triage only")
     p_triage.add_argument("--date", help="End date (YYYY-MM-DD)")
@@ -735,6 +926,8 @@ def main() -> None:
         asyncio.run(cmd_init(args))
     elif args.command == "run":
         asyncio.run(cmd_run(args))
+    elif args.command == "recover":
+        asyncio.run(cmd_recover(args))
     elif args.command == "triage":
         asyncio.run(cmd_triage(args))
     elif args.command == "assemble":

@@ -384,8 +384,15 @@ async def copyedit_all(
     max_concurrent: int = 5,
     scope: str = "all",
     at_a_glance: AtAGlancePageContent | None = None,
+    target_country: str | None = None,
+    target_regions: list | None = None,
 ) -> tuple[OverviewPageContent, dict, WatchlistPageContent, AtAGlancePageContent | None]:
-    """Copyedit content models. scope: 'all' | 'countries' | 'regional' | 'executive'."""
+    """Copyedit content models. scope: 'all' | 'countries' | 'regional' | 'executive'.
+
+    Optional filters for targeted-recovery flows:
+        target_country: only copyedit this country code.
+        target_regions: only copyedit these regions' leads.
+    """
 
     semaphore = TrackedSemaphore(max_concurrent, "structured_copyeditor")
 
@@ -397,6 +404,7 @@ async def copyedit_all(
         async with semaphore.acquire(f"regional_{page.region.value}"):
             return await copyedit_regional(page, analysis_date)
 
+    target_region_set = set(target_regions) if target_regions is not None else None
     tasks = []
 
     # Executive brief
@@ -408,16 +416,18 @@ async def copyedit_all(
                 )
         tasks.append(_ce_exec())
 
-    # Watchlist
-    if scope in ("all", "countries") and watchlist.items:
+    # Watchlist — skip when scoped to a single country
+    if (scope in ("all", "countries") and watchlist.items
+            and target_country is None):
         async def _ce_wl():
             async with semaphore.acquire("watchlist"):
                 nonlocal watchlist
                 watchlist = await copyedit_watchlist(watchlist, analysis_date)
         tasks.append(_ce_wl())
 
-    # At-a-glance headlines
-    if scope in ("all", "countries") and at_a_glance and at_a_glance.regions:
+    # At-a-glance headlines — skip when scoped to a single country
+    if (scope in ("all", "countries") and at_a_glance and at_a_glance.regions
+            and target_country is None):
         async def _ce_glance():
             async with semaphore.acquire("at_a_glance"):
                 nonlocal at_a_glance
@@ -427,6 +437,8 @@ async def copyedit_all(
     # Regional leads
     if scope in ("all", "regional"):
         for region, page in region_pages.items():
+            if target_region_set is not None and region not in target_region_set:
+                continue
             if page.regional_lead:
                 tasks.append(_ce_regional(page))
 
@@ -434,6 +446,8 @@ async def copyedit_all(
     if scope in ("all", "countries"):
         for region, page in region_pages.items():
             for country in page.countries:
+                if target_country is not None and country.code != target_country:
+                    continue
                 if country.narrative_body:
                     tasks.append(_ce_country(country))
 

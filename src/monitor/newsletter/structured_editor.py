@@ -609,8 +609,15 @@ async def edit_all(
     analysis_date: date | None = None,
     max_concurrent: int = 5,
     scope: str = "all",
+    target_country: str | None = None,
+    target_regions: list | None = None,
 ) -> tuple[OverviewPageContent, dict, "WatchlistPageContent | None"]:
-    """Edit content. scope: 'all' | 'countries' | 'regional' | 'executive'."""
+    """Edit content. scope: 'all' | 'countries' | 'regional' | 'executive'.
+
+    Optional filters for targeted-recovery flows:
+        target_country: only edit this country code (within its region).
+        target_regions: only edit regional leads for these regions.
+    """
 
     semaphore = TrackedSemaphore(max_concurrent, "structured_editor")
 
@@ -634,12 +641,16 @@ async def edit_all(
         async with semaphore.acquire(f"regional_{page.region.value}"):
             return await edit_regional(page, analysis_date=analysis_date)
 
+    target_region_set = set(target_regions) if target_regions is not None else None
+
     # Collect all tasks
     tasks = []
 
     # Regional leads
     if scope in ("all", "regional"):
         for region, page in region_pages.items():
+            if target_region_set is not None and region not in target_region_set:
+                continue
             if page.regional_lead:
                 tasks.append(_edit_regional(page))
 
@@ -647,11 +658,14 @@ async def edit_all(
     if scope in ("all", "countries"):
         for region, page in region_pages.items():
             for country in page.countries:
+                if target_country is not None and country.code != target_country:
+                    continue
                 if country.developments or country.posture_summary:
                     tasks.append(_edit_country(country))
 
-    # Watchlist
-    if scope in ("all", "countries") and watchlist and watchlist.items:
+    # Watchlist — only run unfiltered ("all countries") edits
+    if (scope in ("all", "countries") and watchlist and watchlist.items
+            and target_country is None):
         async def _edit_watchlist():
             async with semaphore.acquire("watchlist"):
                 return await edit_watchlist(watchlist, analysis_date=analysis_date)
@@ -761,8 +775,13 @@ async def style_edit_all(
     analysis_date: date | None = None,
     max_concurrent: int = 5,
     scope: str = "all",
+    target_country: str | None = None,
+    target_regions: list | None = None,
 ) -> tuple[OverviewPageContent, dict, WatchlistPageContent]:
-    """Run style editor on prose content. scope: 'all' | 'countries' | 'regional' | 'executive'."""
+    """Run style editor on prose content. scope: 'all' | 'countries' | 'regional' | 'executive'.
+
+    See edit_all for target_country / target_regions semantics.
+    """
 
     semaphore = TrackedSemaphore(max_concurrent, "style_editor")
 
@@ -814,15 +833,21 @@ async def style_edit_all(
                     overview.executive_brief.headline = result["headline"]
         tasks.append(_se_exec())
 
+    target_region_set = set(target_regions) if target_regions is not None else None
+
     # Regional leads
     if scope in ("all", "regional"):
         for region, page in region_pages.items():
+            if target_region_set is not None and region not in target_region_set:
+                continue
             tasks.append(_se_regional(page))
 
     # Country sections
     if scope in ("all", "countries"):
         for region, page in region_pages.items():
             for country in page.countries:
+                if target_country is not None and country.code != target_country:
+                    continue
                 tasks.append(_se_country(country))
 
     if tasks:
