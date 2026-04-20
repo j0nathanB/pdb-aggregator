@@ -152,7 +152,9 @@ You do not need to check every structural claim every week. Focus on claims rela
 
 ## Output Format
 
-Return valid JSON conforming to the schema below. All metadata and assessments in English. Preserve source text quotes in their original language where relevant.
+When your analysis is complete, call the `record_country_analysis` tool exactly once with your findings. The tool's input schema enforces the structure below — provide every field, and the API will validate your input before returning it. All metadata and assessments in English. Preserve source text quotes in their original language where relevant.
+
+If the `record_country_analysis` tool is not available in this session, return valid JSON conforming to the schema below as your sole text output, with no prose before or after it.
 
 ```json
 {

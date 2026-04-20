@@ -7,6 +7,7 @@ Output: WeeklyEntry (without devils_advocate) + updated signal categories + post
 """
 
 import logging
+import os
 from datetime import date, timedelta
 from typing import TYPE_CHECKING, Optional
 
@@ -39,6 +40,7 @@ from ..models import (
     WeeklyEntry,
 )
 from ..sanitize import extract_json, safe_date, safe_enum, safe_int
+from ..schema_helpers import pydantic_to_tool_schema
 
 if TYPE_CHECKING:
     from ..collection.extract import ExtractionResult
@@ -63,6 +65,178 @@ class CountryAgentOutput:
         self.weekly_entry = weekly_entry
         self.signal_categories = signal_categories
         self.posture_summary = posture_summary
+
+
+# =============================================================================
+# Tool-use schema (MPM_USE_TOOL_SCHEMA=1)
+# =============================================================================
+#
+# Structured output via an Anthropic tool_use call. The tool's input_schema
+# is validated server-side before the response is returned to us, so shape
+# drift ("unchanged" instead of a ClaimStatus enum value, missing signal
+# category, "high" instead of integer confidence) is caught at the API
+# boundary rather than surfacing as a parse failure that loses the country.
+#
+# Feature-flagged behind MPM_USE_TOOL_SCHEMA so we can A/B on real runs
+# without a code revert. See dev/country_agent_tool_use_plan.md.
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+RECORD_TOOL_NAME = "record_country_analysis"
+
+
+def _build_record_country_schema() -> dict:
+    """Compose the top-level tool input_schema from the three output models.
+
+    Hard-codes the five signal-category keys as required properties rather
+    than relying on `additionalProperties` — forces the model to address
+    every category (a value we want structurally guaranteed).
+    """
+    return {
+        "type": "object",
+        "required": [
+            "weekly_entry",
+            "updated_signal_categories",
+            "updated_posture_summary",
+        ],
+        "properties": {
+            "weekly_entry": pydantic_to_tool_schema(WeeklyEntry),
+            "updated_signal_categories": {
+                "type": "object",
+                "required": [c.value for c in SignalCategory],
+                "properties": {
+                    c.value: pydantic_to_tool_schema(SignalCategoryAssessment)
+                    for c in SignalCategory
+                },
+            },
+            "updated_posture_summary": pydantic_to_tool_schema(PostureSummary),
+        },
+    }
+
+
+RECORD_COUNTRY_ANALYSIS_TOOL = {
+    "name": RECORD_TOOL_NAME,
+    "description": (
+        "Record the complete weekly deep-dive analysis for this country. "
+        "Call exactly once when your analysis is finished. Provide every "
+        "field — the schema enforces the structure, so omissions will be "
+        "rejected by the API."
+    ),
+    "input_schema": _build_record_country_schema(),
+}
+
+
+def hydrate_country_output(
+    tool_input: dict,
+    week_date: date,
+    date_range: str,
+    ledger: CountryLedger,
+) -> CountryAgentOutput:
+    """Build CountryAgentOutput from a schema-validated tool_use.input dict.
+
+    The API has already validated the shape against input_schema, so this
+    is a thin constructor. We still parse ISO dates and coerce enums to
+    Python values, and we retain `.get()` on optional fields as belt-and-
+    suspenders against any Anthropic schema-enforcement gap.
+    """
+    we = tool_input["weekly_entry"]
+
+    # Category movements — all five required by the schema
+    category_movements: dict[SignalCategory, CategoryMovement] = {}
+    for cat in SignalCategory:
+        cm = we["category_movements"].get(cat.value, {})
+        developments = [
+            Development(**{
+                **d,
+                "date": safe_date(d.get("date"), week_date, context="dev.date"),
+            })
+            for d in cm.get("developments", [])
+        ]
+        conf_change = cm.get("confidence_change")
+        if conf_change:
+            conf_change = ConfidenceChange(**conf_change)
+        category_movements[cat] = CategoryMovement(
+            movement=Movement(cm["movement"]),
+            developments=developments,
+            prior_assessment=cm.get("prior_assessment", ""),
+            updated_assessment=cm.get("updated_assessment", ""),
+            confidence_change=conf_change,
+        )
+
+    unexpected = [
+        UnexpectedDevelopment(**{
+            **u,
+            "date": safe_date(u.get("date"), week_date, context="unexpected.date"),
+            "signal_category": SignalCategory(u["signal_category"]),
+        })
+        for u in we.get("unexpected_developments", [])
+    ]
+    absence_checks = [
+        AbsenceCheck(**{
+            **a,
+            "signal_category": SignalCategory(a["signal_category"]),
+        })
+        for a in we.get("absence_check", [])
+    ]
+    self_corrections = [
+        SelfCorrection(**{
+            **s,
+            "category": SignalCategory(s["category"]),
+            "prior_week": safe_date(s.get("prior_week"), week_date, context="sc.prior_week"),
+        })
+        for s in we.get("self_corrections", [])
+    ]
+    claim_checks = [
+        StructuralClaimCheck(**{
+            **c,
+            "status": ClaimStatus(c["status"]),
+        })
+        for c in we.get("structural_claim_checks", [])
+    ]
+
+    weekly_entry = WeeklyEntry(
+        week=week_date,
+        date_range=date_range,
+        depth=Depth.DEEP_DIVE,
+        activity_level=we.get("activity_level", {"rating": "unknown", "rationale": ""}),
+        category_movements=category_movements,
+        unexpected_developments=unexpected,
+        absence_check=absence_checks,
+        self_corrections=self_corrections,
+        structural_claim_checks=claim_checks,
+        devils_advocate=None,
+    )
+
+    # Signal category assessments — all five required by the schema
+    updated_assessments: dict[SignalCategory, SignalCategoryAssessment] = {}
+    for cat in SignalCategory:
+        ua = tool_input["updated_signal_categories"][cat.value]
+        updated_assessments[cat] = SignalCategoryAssessment(
+            current_assessment=ua["current_assessment"],
+            confidence=ua.get("confidence", 3),
+            confidence_rationale=ua.get("confidence_rationale", ""),
+            key_actors=ua.get("key_actors", []),
+            dossier_sections_referenced=ua.get("dossier_sections_referenced", []),
+            last_updated=safe_date(ua.get("last_updated"), week_date, context="assessment.last_updated"),
+        )
+
+    up = tool_input["updated_posture_summary"]
+    posture_summary = PostureSummary(
+        as_of=safe_date(up.get("as_of"), week_date, context="posture.as_of"),
+        text=up["text"],
+        category_status={
+            SignalCategory(k): CategoryStatus(v)
+            for k, v in up.get("category_status", {}).items()
+            if k in {c.value for c in SignalCategory}
+        },
+        last_deep_dive=safe_date(up.get("last_deep_dive"), week_date, context="posture.last_deep_dive"),
+        consecutive_maintenance_weeks=up.get("consecutive_maintenance_weeks", 0),
+    )
+
+    return CountryAgentOutput(
+        weekly_entry=weekly_entry,
+        signal_categories=updated_assessments,
+        posture_summary=posture_summary,
+    )
 
 
 # =============================================================================
@@ -799,13 +973,19 @@ async def run_country_agent(
         "timeout": 600.0,
     }
 
+    tools: list[dict] = []
     if not use_story_map:
         # Fallback: let the agent search the web itself
-        api_kwargs["tools"] = [{
+        tools.append({
             "type": "web_search_20250305",
             "name": "web_search",
             "max_uses": config.search.deep_dive_queries_max,
-        }]
+        })
+    if USE_TOOL_SCHEMA:
+        # Structured-output tool — the API validates input against schema
+        tools.append(RECORD_COUNTRY_ANALYSIS_TOOL)
+    if tools:
+        api_kwargs["tools"] = tools
 
     from ..timing import with_heartbeat
     async with anthropic_limiter():
@@ -814,15 +994,18 @@ async def run_country_agent(
             f"Country agent {config.code}: API call",
         )
 
-    # Extract text blocks and log web searches
+    # Extract text blocks, tool-use block (if MPM_USE_TOOL_SCHEMA), and log web searches
     block_types = [block.type for block in response.content]
     text_parts = []
+    record_tool_input: dict | None = None
     search_log: list[dict] = []
     current_query: str | None = None
 
     for block in response.content:
         if block.type == "text":
             text_parts.append(block.text)
+        elif block.type == "tool_use" and getattr(block, "name", None) == RECORD_TOOL_NAME:
+            record_tool_input = getattr(block, "input", None)
         elif block.type == "server_tool_use":
             current_query = getattr(block, "input", {}).get("query", "?")
         elif block.type == "web_search_tool_result":
@@ -877,17 +1060,34 @@ async def run_country_agent(
         logger.warning("Country agent %s: response text very short: %r", config.code, response_text[:500])
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+
+    # For trace continuity: if the response came via tool_use, dump its
+    # input as pretty JSON so existing trace analyzers keep working.
+    if USE_TOOL_SCHEMA and record_tool_input is not None:
+        import json as _json
+        trace_response_text = _json.dumps(record_tool_input, indent=2, default=str)
+    else:
+        trace_response_text = response_text
+
     save_raw_response(
         "country", config.code, end_date,
         system_prompt=system_prompt,
         user_message=prompt,
-        response_text=response_text,
+        response_text=trace_response_text,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
         extra={"search_log": search_log} if search_log else None,
     )
 
-    result = parse_country_response(response_text, end_date, date_range, ledger)
+    if USE_TOOL_SCHEMA:
+        if record_tool_input is None:
+            raise ValueError(
+                f"Country agent {config.code}: no {RECORD_TOOL_NAME} tool_use "
+                f"block found in response (block types: {block_types})"
+            )
+        result = hydrate_country_output(record_tool_input, end_date, date_range, ledger)
+    else:
+        result = parse_country_response(response_text, end_date, date_range, ledger)
     active_cats = [
         c.value for c, m in result.weekly_entry.category_movements.items()
         if m.movement != Movement.NONE

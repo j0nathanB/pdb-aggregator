@@ -537,6 +537,48 @@ class TestParseCountryResponse:
         assert output.weekly_entry.self_corrections == []
 
 
+# ---- Tool-use hydration ----
+
+
+class TestHydrateCountryOutput:
+    def test_hydrates_valid_tool_input(self):
+        from src.monitor.agents.country import hydrate_country_output
+        tool_input = _valid_agent_response()
+        output = hydrate_country_output(
+            tool_input, date(2026, 3, 14), "2026-03-07 to 2026-03-14", _test_ledger(),
+        )
+        assert isinstance(output, CountryAgentOutput)
+        assert set(output.signal_categories.keys()) == set(SignalCategory)
+        assert output.posture_summary.text  # non-empty
+
+    def test_hydrated_claim_check_uses_enum(self):
+        from src.monitor.agents.country import hydrate_country_output
+        from src.monitor.config import ClaimStatus
+        tool_input = _valid_agent_response()
+        output = hydrate_country_output(
+            tool_input, date(2026, 3, 14), "w1", _test_ledger(),
+        )
+        # The valid-response fixture has STRUC-05 at confirmed
+        checks = output.weekly_entry.structural_claim_checks
+        if checks:
+            assert isinstance(checks[0].status, ClaimStatus)
+
+    def test_record_country_analysis_tool_schema_has_no_refs(self):
+        """Belt-and-suspenders: the tool's input_schema must be fully inlined."""
+        import json as _json
+        from src.monitor.agents.country import RECORD_COUNTRY_ANALYSIS_TOOL
+        j = _json.dumps(RECORD_COUNTRY_ANALYSIS_TOOL)
+        assert "$ref" not in j
+        assert "$defs" not in j
+
+    def test_record_country_analysis_requires_all_signal_categories(self):
+        """The schema must require all 5 signal categories as explicit keys."""
+        from src.monitor.agents.country import RECORD_COUNTRY_ANALYSIS_TOOL
+        schema = RECORD_COUNTRY_ANALYSIS_TOOL["input_schema"]
+        sig_cats = schema["properties"]["updated_signal_categories"]
+        assert set(sig_cats["required"]) == {c.value for c in SignalCategory}
+
+
 # ---- System Prompt ----
 
 class TestBuildSystemPrompt:
