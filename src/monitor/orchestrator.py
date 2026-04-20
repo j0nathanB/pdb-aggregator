@@ -404,27 +404,33 @@ async def process_deep_dive(
         if errors:
             logger.warning(f"Validation warnings for {config.code}: {errors}")
 
-        # Source attribution check
-        attribution = validate_source_attribution(
-            config.code, output.weekly_entry, extracted_articles,
-        )
-        if recorder and not attribution.clean:
-            recorder.write("07c_attribution_flags", {
-                "code": config.code,
-                "developments_checked": attribution.developments_checked,
-                "developments_flagged": attribution.developments_flagged,
-                "flags": [
-                    {
-                        "category": f.category,
-                        "headline": f.headline,
-                        "unattributed_entities": f.unattributed_entities,
-                        "unattributed_figures": f.unattributed_figures,
-                        "cited_source_urls": f.cited_source_urls,
-                        "severity": f.severity,
-                    }
-                    for f in attribution.flags
-                ],
-            }, suffix=f"_{config.code}")
+        # Source attribution check (non-blocking — a validation failure
+        # should not discard an entire country's agent work).
+        try:
+            attribution = validate_source_attribution(
+                config.code, output.weekly_entry, extracted_articles,
+            )
+            if recorder and not attribution.clean:
+                recorder.write("07c_attribution_flags", {
+                    "code": config.code,
+                    "developments_checked": attribution.developments_checked,
+                    "developments_flagged": attribution.developments_flagged,
+                    "flags": [
+                        {
+                            "category": f.category,
+                            "headline": f.headline,
+                            "unattributed_entities": f.unattributed_entities,
+                            "unattributed_figures": f.unattributed_figures,
+                            "cited_source_urls": f.cited_source_urls,
+                            "severity": f.severity,
+                        }
+                        for f in attribution.flags
+                    ],
+                }, suffix=f"_{config.code}")
+        except Exception as attr_err:
+            logger.warning(
+                f"Source attribution check failed for {config.code}, proceeding without: {attr_err}"
+            )
 
         return CountryResult(
             code=config.code,
