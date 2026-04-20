@@ -4,11 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - Dockerfile
-      - requirements.txt
-      - "scripts/run_pipeline.py"
-      - "scripts/__init__.py"
+    # Rebuild on every push to main so the :latest ECR image always
+    # matches HEAD — protects against the "Fargate task launches, clones
+    # old code from a stale image entrypoint" class of drift. Docker
+    # layer cache makes non-dep-changing rebuilds fast (~3-4 min).
+    # Auto-restart of running tasks is intentionally NOT wired up; pushes
+    # should never kill an in-progress run. Launch new tasks manually.
 
 env:
   AWS_REGION: us-east-1
