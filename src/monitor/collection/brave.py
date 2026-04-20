@@ -12,6 +12,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -95,6 +96,7 @@ class CountrySearchConfig:
     use_local_params: bool
     local_params: dict[str, str] | None
     sources: list[IndexedSource]
+    discard_domains: frozenset[str] = field(default_factory=frozenset)
 
     @property
     def search_params(self) -> dict[str, str]:
@@ -113,6 +115,46 @@ class CountrySearchConfig:
         if self.goggle_path() is None:
             return None
         return f"{GOGGLES_BASE_URL}/{self.code}.goggle"
+
+
+# =============================================================================
+# Discard enforcement (hard filter for $discard directives from goggle files)
+# =============================================================================
+#
+# Brave's $discard directive in a goggle deranks matching results but does not
+# reliably exclude them — politically-loaded sources still surface on highly-
+# relevant queries. We enforce discards in the pipeline post-fetch so exclusion
+# is deterministic. Source of truth is the goggle file itself.
+
+_DISCARD_LINE_RE = re.compile(r"^\$discard,\s*site=([\w\.\-]+)\s*$")
+
+
+def _parse_goggle_discards(goggle_path: Path) -> frozenset[str]:
+    """Extract domains marked with $discard from a goggle file."""
+    if not goggle_path.exists():
+        return frozenset()
+    discards: set[str] = set()
+    for line in goggle_path.read_text().splitlines():
+        m = _DISCARD_LINE_RE.match(line.strip())
+        if m:
+            discards.add(m.group(1).lower())
+    return frozenset(discards)
+
+
+def _is_discarded(source_domain: str | None, discards: frozenset[str]) -> bool:
+    """Check if a result's source domain matches the discard list.
+
+    Matches exact (cnews.fr == cnews.fr) and subdomain (x.cnews.fr blocked by
+    cnews.fr). Strips www. prefix. Safe on None.
+    """
+    if not source_domain or not discards:
+        return False
+    d = source_domain.lower()
+    if d.startswith("www."):
+        d = d[4:]
+    if d in discards:
+        return True
+    return any(d.endswith("." + dd) for dd in discards)
 
 
 # =============================================================================
@@ -146,6 +188,7 @@ def load_brave_sources() -> dict[str, CountrySearchConfig]:
             use_local_params=entry.get("use_local_params", False),
             local_params=entry.get("local_params"),
             sources=sources,
+            discard_domains=_parse_goggle_discards(GOGGLES_DIR / f"{code}.goggle"),
         )
 
     return configs
@@ -280,6 +323,24 @@ class BraveNewsClient:
         results = [
             BraveNewsResult.from_api(item) for item in data.get("results", [])
         ]
+
+        # Enforce $discard from the country's goggle. Brave's built-in
+        # discard is soft (deranks but still surfaces on relevant queries);
+        # this makes exclusion deterministic.
+        if country_code:
+            cc = self.country_configs.get(country_code)
+            if cc and cc.discard_domains:
+                pre = len(results)
+                results = [
+                    r for r in results
+                    if not _is_discarded(r.source_domain, cc.discard_domains)
+                ]
+                dropped = pre - len(results)
+                if dropped:
+                    logger.info(
+                        "Brave [%s]: dropped %d/%d results matching goggle $discard",
+                        country_code, dropped, pre,
+                    )
 
         logger.debug("Brave News: q=%r → %d results", query, len(results))
 

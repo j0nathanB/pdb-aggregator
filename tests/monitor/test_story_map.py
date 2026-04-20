@@ -6,6 +6,7 @@ from datetime import date
 import pytest
 from src.monitor.config import load_country_config
 from src.monitor.agents.story_map import (
+    PER_DOMAIN_CAP,
     StoryCluster,
     StoryMapOutput,
     SingleSourceItem,
@@ -186,6 +187,85 @@ class TestBuildStoryMapPrompt:
         expansion = _sample_expansion()
         prompt, _ = build_story_map_prompt(config, expansion, date(2026, 3, 14))
         assert "2026-03-14" in prompt
+
+    def test_per_domain_cap_truncates_overflow(self):
+        """If one domain exceeds PER_DOMAIN_CAP, extra results are dropped."""
+        # 12 results from same domain (exceeds cap of 10 by 2)
+        n = PER_DOMAIN_CAP + 2
+        actor = [
+            _make_brave_result(f"Title {i}", f"https://ansa.it/{i}", "ansa.it")
+            for i in range(n)
+        ]
+        expansion = ExpansionResult(
+            code="mx", country="Mexico",
+            actor_results=actor,
+        )
+        config = _mexico_config()
+        prompt, dedup = build_story_map_prompt(config, expansion, date(2026, 3, 14))
+
+        # First 10 should be kept, items 10 and 11 dropped by cap
+        assert "ansa.it/0" in prompt
+        assert f"ansa.it/{PER_DOMAIN_CAP - 1}" in prompt
+        assert f"ansa.it/{PER_DOMAIN_CAP}" not in prompt
+        assert f"ansa.it/{PER_DOMAIN_CAP + 1}" not in prompt
+        assert dedup["capped_per_domain"] == 2
+        assert dedup["per_source"]["actor"]["skipped_by_domain_cap"] == 2
+        assert dedup["per_source"]["actor"]["included"] == PER_DOMAIN_CAP
+
+    def test_per_domain_cap_shared_across_labels(self):
+        """Cap is global across labels — wire + actor from same domain count together."""
+        # 7 wire results + 7 actor results from same domain = 14 total; cap at 10.
+        wire = [
+            _make_brave_result(f"Wire {i}", f"https://welt.de/w{i}", "welt.de")
+            for i in range(7)
+        ]
+        actor = [
+            _make_brave_result(f"Actor {i}", f"https://welt.de/a{i}", "welt.de")
+            for i in range(7)
+        ]
+        expansion = ExpansionResult(
+            code="de", country="Germany",
+            triage_wire=wire,
+            actor_results=actor,
+        )
+        config = _mexico_config()  # config just for actor list; domain cap doesn't depend on it
+        _, dedup = build_story_map_prompt(config, expansion, date(2026, 3, 14))
+
+        total_included = (
+            dedup["per_source"]["wire"]["included"]
+            + dedup["per_source"]["actor"]["included"]
+        )
+        assert total_included == PER_DOMAIN_CAP
+        assert dedup["capped_per_domain"] == 14 - PER_DOMAIN_CAP
+
+    def test_per_domain_cap_strips_www(self):
+        """www.ansa.it and ansa.it should share the same per-domain counter."""
+        mix = [
+            _make_brave_result(f"A {i}", f"https://ansa.it/a{i}", "ansa.it")
+            for i in range(6)
+        ] + [
+            _make_brave_result(f"B {i}", f"https://www.ansa.it/b{i}", "www.ansa.it")
+            for i in range(6)
+        ]
+        expansion = ExpansionResult(
+            code="it", country="Italy", actor_results=mix,
+        )
+        config = _mexico_config()
+        _, dedup = build_story_map_prompt(config, expansion, date(2026, 3, 14))
+        assert dedup["per_source"]["actor"]["included"] == PER_DOMAIN_CAP
+        assert dedup["capped_per_domain"] == 2
+
+    def test_per_domain_cap_no_effect_under_cap(self):
+        """Under the cap, cap is a no-op."""
+        actor = [
+            _make_brave_result(f"T {i}", f"https://foo.com/{i}", "foo.com")
+            for i in range(PER_DOMAIN_CAP - 2)
+        ]
+        expansion = ExpansionResult(code="mx", country="Mexico", actor_results=actor)
+        config = _mexico_config()
+        _, dedup = build_story_map_prompt(config, expansion, date(2026, 3, 14))
+        assert dedup["capped_per_domain"] == 0
+        assert dedup["per_source"]["actor"]["included"] == PER_DOMAIN_CAP - 2
 
 
 # ---- Response Parsing ----

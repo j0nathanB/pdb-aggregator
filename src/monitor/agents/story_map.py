@@ -141,6 +141,16 @@ class StoryMapOutput:
 # discards low-priority vocab matches, then low-relevance actor matches.
 MAX_SEARCH_TEXT_CHARS = 350_000
 
+# Per-domain cap on how many results from a single outlet can enter the
+# story_map prompt. Applied globally across all source_labels (shared counter).
+#
+# Rationale (from 2026-04-12 run analysis): individual outlets were producing
+# 80-90 near-duplicate URLs per country (aftonbladet.se 93, yle.fi 92). Most
+# are off-topic noise the LLM drops anyway. Cap=10 drops <1% of output stories
+# best-case while preventing single-domain bloat. Brave returns by relevance,
+# so the first N results are the most-relevant N for the query.
+PER_DOMAIN_CAP = 10
+
 
 def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
     """Format raw Brave results into a text block for the LLM.
@@ -154,16 +164,27 @@ def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
     """
     lines = []
     seen_urls: set[str] = set()
+    domain_counts: dict[str, int] = {}
     label_counts: dict[str, dict[str, int]] = {}
 
     def _add_results(results: list[BraveNewsResult], source_label: str) -> None:
         included = 0
         skipped_urls: list[str] = []
+        skipped_by_cap = 0
         for r in results:
             if r.url in seen_urls:
                 skipped_urls.append(r.url)
                 continue
+            # Per-domain cap (shared across labels)
+            domain_key = (r.source_domain or "").lower()
+            if domain_key.startswith("www."):
+                domain_key = domain_key[4:]
+            if domain_key and domain_counts.get(domain_key, 0) >= PER_DOMAIN_CAP:
+                skipped_by_cap += 1
+                continue
             seen_urls.add(r.url)
+            if domain_key:
+                domain_counts[domain_key] = domain_counts.get(domain_key, 0) + 1
             included += 1
             line = f"- [{source_label}] {r.title}"
             if r.source_domain:
@@ -181,6 +202,7 @@ def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
             "input": len(results),
             "included": included,
             "deduped_at_format": len(skipped_urls),
+            "skipped_by_domain_cap": skipped_by_cap,
         }
 
     _add_results(expansion.triage_wire, "wire")
@@ -190,6 +212,14 @@ def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
 
     total_input = sum(lc["input"] for lc in label_counts.values())
     total_deduped = sum(lc["deduped_at_format"] for lc in label_counts.values())
+    total_capped = sum(lc["skipped_by_domain_cap"] for lc in label_counts.values())
+    if total_capped:
+        over_cap_domains = [d for d, n in domain_counts.items() if n >= PER_DOMAIN_CAP]
+        logger.info(
+            "Story map: per-domain cap (%d) dropped %d results across %d domain(s): %s",
+            PER_DOMAIN_CAP, total_capped, len(over_cap_domains),
+            ", ".join(sorted(over_cap_domains)[:10]),
+        )
     pre_cap_count = len(lines)
 
     # Apply context-budget cap by dropping from the tail
@@ -216,6 +246,7 @@ def _format_search_results(expansion: ExpansionResult) -> tuple[str, dict]:
         "raw_input": total_input,
         "unique_in_prompt": len(lines),
         "deduped_at_format": total_deduped,
+        "capped_per_domain": total_capped,
         "truncated_for_context": truncated,
         "per_source": label_counts,
     }

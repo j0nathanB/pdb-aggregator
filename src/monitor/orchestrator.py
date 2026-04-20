@@ -21,7 +21,7 @@ from .agents.devils_advocate import run_devils_advocate
 from .agents.expansion import ExpansionResult, expand_all_countries
 from .agents.government import GovernmentAgentOutput, run_government_agent
 from .agents.story_map import StoryMapOutput, run_story_map_agent
-from .agents.triage import TriageOutput, run_triage, ScanResult
+from .agents.triage import TriageOutput, run_triage, scan_all_countries, ScanResult
 from .collection.brave import BraveNewsClient
 from .collection.extract import ExtractionOrchestrator, ExtractionResult
 from .collection.searchapi import SearchAPIClient, SearchAPIResponse
@@ -696,13 +696,40 @@ async def run_desk_pipeline(
         })
 
     # --- Step 3: Triage ---
-    if skip_triage or force_deep_dive:
+    # The triage SCAN (wire + domestic Brave sweeps) populates scan_map for
+    # story_map downstream. The LLM-based depth DECISION runs on top of the
+    # scan only when neither force_deep_dive nor skip_triage is set.
+    scan_map: dict[str, ScanResult] = {}
+
+    if skip_triage:
+        logger.info("skip_triage=True — skipping triage scan")
         depth_map = {code: Depth.DEEP_DIVE for code in configs}
-        scan_map: dict[str, ScanResult] = {}
     elif brave_client is None:
-        logger.warning("Brave client unavailable — skipping triage, all deep dives")
+        logger.warning("Brave client unavailable — skipping triage scan, all deep dives")
         depth_map = {code: Depth.DEEP_DIVE for code in configs}
-        scan_map = {}
+    elif force_deep_dive:
+        # Scan to feed story_map, but skip the LLM decision.
+        scan_results = await scan_all_countries(
+            list(configs.values()), brave_client, end_date, max_concurrent,
+        )
+        scan_map = {s.code: s for s in scan_results}
+        scan_ok = sum(1 for s in scan_results if not s.error)
+        logger.info(
+            "Triage scan (force_deep_dive): %d/%d successful",
+            scan_ok, len(scan_results),
+        )
+        depth_map = {code: Depth.DEEP_DIVE for code in configs}
+        if recorder:
+            recorder.write("03b_triage_scans", {
+                s.code: {
+                    "wire_headlines": s.wire_headlines,
+                    "domestic_headlines": s.domestic_headlines,
+                    "wire_result_count": len(s.wire_results),
+                    "domestic_result_count": len(s.domestic_results),
+                    "error": s.error,
+                }
+                for s in scan_results
+            })
     else:
         triage = await run_triage(
             list(configs.values()),

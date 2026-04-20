@@ -18,6 +18,8 @@ from src.monitor.collection.brave import (
     BraveSearchResponse,
     CountrySearchConfig,
     IndexedSource,
+    _is_discarded,
+    _parse_goggle_discards,
     load_brave_sources,
 )
 
@@ -394,6 +396,74 @@ class TestBraveNewsClient:
         await mock_client.close()
 
     @pytest.mark.asyncio
+    async def test_discard_filter_drops_matching_results(self, mock_client):
+        """Results from $discard domains should be filtered out post-fetch."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "title": "Keep this", "url": "https://lemonde.fr/a",
+                    "meta_url": {"netloc": "lemonde.fr", "hostname": "www.lemonde.fr"},
+                },
+                {
+                    "title": "Drop this", "url": "https://cnews.fr/a",
+                    "meta_url": {"netloc": "cnews.fr", "hostname": "www.cnews.fr"},
+                },
+                {
+                    "title": "Drop subdomain", "url": "https://francais.rt.com/a",
+                    "meta_url": {"netloc": "francais.rt.com", "hostname": "francais.rt.com"},
+                },
+            ]
+        }
+        mock_response.raise_for_status = MagicMock()
+        mock_client._client.get = AsyncMock(return_value=mock_response)
+
+        mock_client._country_configs = {
+            "fr": CountrySearchConfig(
+                code="fr",
+                use_local_params=False,
+                local_params=None,
+                sources=[],
+                discard_domains=frozenset({"cnews.fr", "rt.com"}),
+            )
+        }
+
+        response = await mock_client.search_news("Macron", country_code="fr")
+
+        assert response.total_count == 1
+        assert response.results[0].source_domain == "lemonde.fr"
+
+        await mock_client.close()
+
+    @pytest.mark.asyncio
+    async def test_discard_filter_skipped_without_country_code(self, mock_client):
+        """Without country_code, no discard filter is applied."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "title": "x", "url": "https://cnews.fr/a",
+                    "meta_url": {"netloc": "cnews.fr", "hostname": "www.cnews.fr"},
+                },
+            ]
+        }
+        mock_response.raise_for_status = MagicMock()
+        mock_client._client.get = AsyncMock(return_value=mock_response)
+
+        mock_client._country_configs = {
+            "fr": CountrySearchConfig(
+                code="fr", use_local_params=False, local_params=None, sources=[],
+                discard_domains=frozenset({"cnews.fr"}),
+            )
+        }
+
+        response = await mock_client.search_news("Macron")  # no country_code
+
+        assert response.total_count == 1
+        await mock_client.close()
+
+
+    @pytest.mark.asyncio
     async def test_search_country_sources(self, mock_client):
         """search_country_sources should run one query per term."""
         mock_response = MagicMock()
@@ -559,3 +629,61 @@ class TestIntegration:
         total = sum(len(c.sources) for c in configs.values())
         # 390 sources as reported by generate_brave_config.py
         assert total == 390
+
+
+# =============================================================================
+# Discard enforcement tests
+# =============================================================================
+
+
+class TestDiscardEnforcement:
+    def test_parse_goggle_discards(self, tmp_path):
+        goggle = tmp_path / "test.goggle"
+        goggle.write_text(
+            "! header comment\n"
+            "$boost=10,site=lemonde.fr\n"
+            "$discard,site=cnews.fr\n"
+            "$discard, site=valeursactuelles.com\n"  # space after comma
+            "$discard,site=francais.rt.com\n"
+            "$boost=5,site=mediapart.fr\n"
+        )
+        discards = _parse_goggle_discards(goggle)
+        assert discards == frozenset({"cnews.fr", "valeursactuelles.com", "francais.rt.com"})
+
+    def test_parse_goggle_discards_missing_file(self, tmp_path):
+        assert _parse_goggle_discards(tmp_path / "does_not_exist.goggle") == frozenset()
+
+    def test_is_discarded_exact_match(self):
+        assert _is_discarded("cnews.fr", frozenset({"cnews.fr"})) is True
+
+    def test_is_discarded_strips_www(self):
+        assert _is_discarded("www.cnews.fr", frozenset({"cnews.fr"})) is True
+
+    def test_is_discarded_subdomain(self):
+        assert _is_discarded("francais.rt.com", frozenset({"rt.com"})) is True
+        assert _is_discarded("de.rt.com", frozenset({"rt.com"})) is True
+
+    def test_is_discarded_case_insensitive(self):
+        assert _is_discarded("CNews.FR", frozenset({"cnews.fr"})) is True
+
+    def test_is_discarded_miss(self):
+        assert _is_discarded("lemonde.fr", frozenset({"cnews.fr"})) is False
+
+    def test_is_discarded_partial_name_not_subdomain(self):
+        """rt.com should NOT match fake-rt.com (not a true subdomain)."""
+        assert _is_discarded("fake-rt.com", frozenset({"rt.com"})) is False
+
+    def test_is_discarded_none_safe(self):
+        assert _is_discarded(None, frozenset({"cnews.fr"})) is False
+
+    def test_is_discarded_empty_discards(self):
+        assert _is_discarded("cnews.fr", frozenset()) is False
+
+    def test_load_brave_sources_populates_discards_from_goggle(self):
+        """Real loaded configs carry discard_domains from their goggle files."""
+        configs = load_brave_sources()
+        fr = configs.get("fr")
+        assert fr is not None
+        # fr.goggle has these $discard entries today
+        assert "cnews.fr" in fr.discard_domains
+        assert "valeursactuelles.com" in fr.discard_domains
