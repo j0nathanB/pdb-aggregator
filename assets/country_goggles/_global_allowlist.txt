@@ -1,0 +1,79 @@
+# Global allowlist — cross-country trusted sources.
+#
+# When MPM_DOMAIN_ALLOWLIST=1 is set, every country's effective allowlist =
+# union of (this file) + (that country's `$boost` entries in {code}.goggle).
+# Results from any other domain are filtered out post-fetch in
+# brave.search_news, before they reach story_map.
+#
+# Format: one domain per line. `#` starts a comment. Matching is exact +
+# subdomain (after stripping `www.`) — e.g., `bbc.com` also matches
+# `news.bbc.com`.
+#
+# This list should stay small and intentional. It's for genuinely
+# cross-country sources (wire services, international broadcasters, major
+# policy journals). Country-specific papers belong in that country's
+# goggle, not here.
+
+# --- International wire services ---
+reuters.com
+apnews.com
+afp.com
+bbc.com
+bbc.co.uk
+dw.com
+france24.com
+euronews.com
+aljazeera.com
+aljazeera.net
+voanews.com
+rfi.fr
+
+# --- Global financial and business press ---
+bloomberg.com
+ft.com
+wsj.com
+economist.com
+nikkei.com
+
+# --- International papers and magazines of record ---
+nytimes.com
+washingtonpost.com
+theguardian.com
+lemonde.fr
+spiegel.de
+newyorker.com
+theatlantic.com
+
+# --- Policy journals, think tanks, and research orgs ---
+foreignaffairs.com
+foreignpolicy.com
+politico.com
+politico.eu
+axios.com
+defenseone.com
+warontherocks.com
+brookings.edu
+csis.org
+chathamhouse.org
+cfr.org
+rand.org
+iiss.org
+stimson.org
+atlanticcouncil.org
+
+# --- Human-rights and multilateral sources ---
+hrw.org
+amnesty.org
+fas.org
+un.org
+nato.int
+europa.eu
+europarl.europa.eu
+ec.europa.eu
+
+# --- Regional cross-cutting ---
+middleeasteye.net
+al-monitor.com
+thediplomat.com
+americasquarterly.org
+channelnewsasia.com

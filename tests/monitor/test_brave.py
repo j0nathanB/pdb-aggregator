@@ -19,10 +19,13 @@ from src.monitor.collection.brave import (
     BraveSearchResponse,
     CountrySearchConfig,
     IndexedSource,
+    _is_allowlisted,
     _is_discarded,
     _is_off_topic_url,
     _load_off_topic_filters,
+    _parse_global_allowlist,
     _parse_global_discards,
+    _parse_goggle_boosts,
     _parse_goggle_discards,
     load_brave_sources,
 )
@@ -842,4 +845,132 @@ class TestOffTopicFilter:
 
         assert response.total_count == 1
         assert response.results[0].url.endswith("/news/politics/456")
+        await client.close()
+
+
+# =============================================================================
+# Inverted-allowlist tests
+# =============================================================================
+
+
+class TestAllowlistFilter:
+    def test_parse_goggle_boosts(self, tmp_path):
+        goggle = tmp_path / "test.goggle"
+        goggle.write_text(
+            "! header comment\n"
+            "$boost=10,site=lemonde.fr\n"
+            "$boost=5,site=mediapart.fr\n"
+            "$boost=3,site=publicsenat.fr\n"
+            "$discard,site=cnews.fr\n"  # discards must NOT be captured here
+        )
+        boosts = _parse_goggle_boosts(goggle)
+        assert boosts == frozenset({"lemonde.fr", "mediapart.fr", "publicsenat.fr"})
+
+    def test_parse_global_allowlist(self, tmp_path):
+        path = tmp_path / "_global_allowlist.txt"
+        path.write_text(
+            "# header comment\n"
+            "reuters.com\n"
+            "bbc.com\n"
+            "$boost=5,site=bloomberg.com\n"  # goggle boost syntax accepted
+            "\n"  # blank line
+            "# inline comment\n"
+            "ft.com\n"
+        )
+        allowlist = _parse_global_allowlist(path)
+        assert allowlist == frozenset({"reuters.com", "bbc.com", "bloomberg.com", "ft.com"})
+
+    def test_is_allowlisted_exact(self):
+        assert _is_allowlisted("reuters.com", frozenset({"reuters.com"})) is True
+
+    def test_is_allowlisted_subdomain(self):
+        allowlist = frozenset({"bbc.com"})
+        assert _is_allowlisted("news.bbc.com", allowlist) is True
+        assert _is_allowlisted("www.bbc.com", allowlist) is True
+
+    def test_is_allowlisted_miss(self):
+        assert _is_allowlisted("rijnmond.nl", frozenset({"reuters.com"})) is False
+
+    def test_is_allowlisted_none_safe(self):
+        assert _is_allowlisted(None, frozenset({"reuters.com"})) is False
+
+    def test_is_allowlisted_empty_set(self):
+        assert _is_allowlisted("reuters.com", frozenset()) is False
+
+    def test_load_brave_sources_populates_allowed_domains(self):
+        """Real goggle boosts + global allowlist merge into each country's allowed_domains."""
+        configs = load_brave_sources()
+        fr = configs.get("fr")
+        assert fr is not None
+        # fr.goggle has lemonde.fr at tier 10
+        assert "lemonde.fr" in fr.allowed_domains
+        # global allowlist always present
+        assert "reuters.com" in fr.allowed_domains
+        assert "bbc.com" in fr.allowed_domains
+
+    @pytest.mark.asyncio
+    async def test_search_news_drops_off_allowlist_when_flag_on(self, monkeypatch):
+        """With MPM_DOMAIN_ALLOWLIST=1, only allowlisted results pass through."""
+        import src.monitor.collection.brave as brave_mod
+        monkeypatch.setattr(brave_mod, "USE_DOMAIN_ALLOWLIST", True)
+
+        client = BraveNewsClient(api_key="test-key", rate_limit_delay=0)
+        mock_response = MagicMock()
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "title": "Keep — allowlisted", "url": "https://reuters.com/a",
+                    "meta_url": {"netloc": "reuters.com", "hostname": "www.reuters.com"},
+                },
+                {
+                    "title": "Drop — keyword collision", "url": "https://rijnmond.nl/foo",
+                    "meta_url": {"netloc": "rijnmond.nl", "hostname": "rijnmond.nl"},
+                },
+                {
+                    "title": "Drop — another collision", "url": "https://telegrafi.com/x",
+                    "meta_url": {"netloc": "telegrafi.com", "hostname": "telegrafi.com"},
+                },
+            ]
+        }
+        mock_response.raise_for_status = MagicMock()
+        client._client.get = AsyncMock(return_value=mock_response)
+
+        client._country_configs = {
+            "jp": CountrySearchConfig(
+                code="jp", use_local_params=False, local_params=None, sources=[],
+                allowed_domains=frozenset({"reuters.com", "japantimes.co.jp"}),
+            )
+        }
+        response = await client.search_news("Takaichi", country_code="jp")
+        assert response.total_count == 1
+        assert response.results[0].url == "https://reuters.com/a"
+        await client.close()
+
+    @pytest.mark.asyncio
+    async def test_search_news_skips_allowlist_when_flag_off(self, monkeypatch):
+        """Default behavior (flag off): allowlist filter doesn't apply."""
+        import src.monitor.collection.brave as brave_mod
+        monkeypatch.setattr(brave_mod, "USE_DOMAIN_ALLOWLIST", False)
+
+        client = BraveNewsClient(api_key="test-key", rate_limit_delay=0)
+        mock_response = MagicMock()
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "title": "x", "url": "https://rijnmond.nl/foo",
+                    "meta_url": {"netloc": "rijnmond.nl", "hostname": "rijnmond.nl"},
+                },
+            ]
+        }
+        mock_response.raise_for_status = MagicMock()
+        client._client.get = AsyncMock(return_value=mock_response)
+
+        client._country_configs = {
+            "jp": CountrySearchConfig(
+                code="jp", use_local_params=False, local_params=None, sources=[],
+                allowed_domains=frozenset({"reuters.com"}),
+            )
+        }
+        response = await client.search_news("Takaichi", country_code="jp")
+        assert response.total_count == 1  # not filtered
         await client.close()

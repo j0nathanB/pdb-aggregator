@@ -99,6 +99,7 @@ class CountrySearchConfig:
     local_params: dict[str, str] | None
     sources: list[IndexedSource]
     discard_domains: frozenset[str] = field(default_factory=frozenset)
+    allowed_domains: frozenset[str] = field(default_factory=frozenset)
 
     @property
     def search_params(self) -> dict[str, str]:
@@ -129,8 +130,16 @@ class CountrySearchConfig:
 # is deterministic. Source of truth is the goggle file itself.
 
 _DISCARD_LINE_RE = re.compile(r"^\$discard,\s*site=([\w\.\-]+)\s*$")
+_BOOST_LINE_RE = re.compile(r"^\$boost=\d+,\s*site=([\w\.\-]+)\s*$")
 
 GLOBAL_DISCARDS_PATH = GOGGLES_DIR / "_global_discards.txt"
+GLOBAL_ALLOWLIST_PATH = GOGGLES_DIR / "_global_allowlist.txt"
+
+# Feature flag: inverted-allowlist mode. When set, only results whose domain
+# is in the per-country effective allowlist (goggle $boost union + global
+# allowlist) pass through. Off by default — current behavior is allow-all-
+# except-blocklist. See dev notes from 2026-04-20 for rationale.
+USE_DOMAIN_ALLOWLIST = os.getenv("MPM_DOMAIN_ALLOWLIST", "0") == "1"
 
 
 def _parse_goggle_discards(goggle_path: Path) -> frozenset[str]:
@@ -151,22 +160,69 @@ def _parse_global_discards(path: Path) -> frozenset[str]:
     Format: `#` starts a comment. Blank lines and comments ignored.
     Applied to every country via union with per-country goggle $discards.
     """
+    return _parse_plain_domain_list(path, allow_goggle_syntax="discard")
+
+
+def _parse_global_allowlist(path: Path) -> frozenset[str]:
+    """Load the cross-country trusted-sources allowlist (same format as discards)."""
+    return _parse_plain_domain_list(path, allow_goggle_syntax="boost")
+
+
+def _parse_plain_domain_list(path: Path, allow_goggle_syntax: str = "") -> frozenset[str]:
+    """Parse a plain-text file of one-domain-per-line.
+
+    Shared helper for discard and allowlist files. `#` starts a comment.
+    If `allow_goggle_syntax="discard"` or `"boost"`, goggle lines like
+    `$discard,site=X` or `$boost=N,site=X` are accepted too.
+    """
     if not path.exists():
         return frozenset()
-    discards: set[str] = set()
+    domains: set[str] = set()
     for line in path.read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        # Accept goggle syntax too, for flexibility.
-        m = _DISCARD_LINE_RE.match(line)
-        if m:
-            discards.add(m.group(1).lower())
-            continue
-        # Bare domain — basic sanity check, must contain a dot
+        if allow_goggle_syntax == "discard":
+            m = _DISCARD_LINE_RE.match(line)
+            if m:
+                domains.add(m.group(1).lower())
+                continue
+        elif allow_goggle_syntax == "boost":
+            m = _BOOST_LINE_RE.match(line)
+            if m:
+                domains.add(m.group(1).lower())
+                continue
+        # Bare domain — basic sanity check, must contain a dot, no spaces
         if "." in line and " " not in line:
-            discards.add(line.lower())
-    return frozenset(discards)
+            domains.add(line.lower())
+    return frozenset(domains)
+
+
+def _parse_goggle_boosts(goggle_path: Path) -> frozenset[str]:
+    """Extract domains marked with $boost=... from a goggle file."""
+    if not goggle_path.exists():
+        return frozenset()
+    boosts: set[str] = set()
+    for line in goggle_path.read_text().splitlines():
+        m = _BOOST_LINE_RE.match(line.strip())
+        if m:
+            boosts.add(m.group(1).lower())
+    return frozenset(boosts)
+
+
+def _is_allowlisted(source_domain: str | None, allowlist: frozenset[str]) -> bool:
+    """Check if a result's source domain is in the allowlist.
+
+    Same matching semantics as _is_discarded: exact + subdomain, www. stripped.
+    """
+    if not source_domain or not allowlist:
+        return False
+    d = source_domain.lower()
+    if d.startswith("www."):
+        d = d[4:]
+    if d in allowlist:
+        return True
+    return any(d.endswith("." + ad) for ad in allowlist)
 
 
 def _is_discarded(source_domain: str | None, discards: frozenset[str]) -> bool:
@@ -275,6 +331,12 @@ def load_brave_sources() -> dict[str, CountrySearchConfig]:
             "Loaded %d cross-country discard domains from %s",
             len(global_discards), GLOBAL_DISCARDS_PATH.name,
         )
+    global_allowlist = _parse_global_allowlist(GLOBAL_ALLOWLIST_PATH)
+    if global_allowlist:
+        logger.info(
+            "Loaded %d cross-country allowlist domains from %s",
+            len(global_allowlist), GLOBAL_ALLOWLIST_PATH.name,
+        )
 
     configs = {}
     for code, entry in data.get("countries", {}).items():
@@ -286,13 +348,16 @@ def load_brave_sources() -> dict[str, CountrySearchConfig]:
             )
             for s in entry.get("sources", [])
         ]
-        country_discards = _parse_goggle_discards(GOGGLES_DIR / f"{code}.goggle")
+        goggle_path = GOGGLES_DIR / f"{code}.goggle"
+        country_discards = _parse_goggle_discards(goggle_path)
+        country_boosts = _parse_goggle_boosts(goggle_path)
         configs[code] = CountrySearchConfig(
             code=code,
             use_local_params=entry.get("use_local_params", False),
             local_params=entry.get("local_params"),
             sources=sources,
             discard_domains=country_discards | global_discards,
+            allowed_domains=country_boosts | global_allowlist,
         )
 
     return configs
@@ -458,6 +523,25 @@ class BraveNewsClient:
                     "Brave [%s]: dropped %d/%d off-topic URLs",
                     country_code or "-", dropped, pre,
                 )
+
+        # Inverted-allowlist filter (opt-in via MPM_DOMAIN_ALLOWLIST=1).
+        # Drops any result whose domain isn't in the country's effective
+        # allowlist (goggle $boost ∪ global allowlist). Eliminates keyword-
+        # collision noise that neither $discard nor path filters can catch.
+        if USE_DOMAIN_ALLOWLIST and country_code:
+            cc = self.country_configs.get(country_code)
+            if cc and cc.allowed_domains:
+                pre = len(results)
+                results = [
+                    r for r in results
+                    if _is_allowlisted(r.source_domain, cc.allowed_domains)
+                ]
+                dropped = pre - len(results)
+                if dropped:
+                    logger.info(
+                        "Brave [%s]: dropped %d/%d off-allowlist URLs",
+                        country_code, dropped, pre,
+                    )
 
         logger.debug("Brave News: q=%r → %d results", query, len(results))
 
