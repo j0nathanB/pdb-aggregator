@@ -32,6 +32,7 @@ import csv
 import re
 
 import httpx
+import trafilatura
 import yaml
 from dotenv import load_dotenv
 
@@ -255,8 +256,6 @@ class CurlTrafilaturaExtractor(Extractor):
                     error="Empty response from curl",
                     latency_ms=int((time.monotonic() - start) * 1000),
                 )
-
-            import trafilatura
 
             result = trafilatura.extract(
                 html,
@@ -522,8 +521,6 @@ class PlaywrightExtractor(Extractor):
                     latency_ms=int((time.monotonic() - start) * 1000),
                 )
 
-            import trafilatura
-
             text = trafilatura.extract(
                 html,
                 include_comments=False,
@@ -627,8 +624,6 @@ class BrowserbaseExtractor(Extractor):
                     error="Browserbase returned empty page",
                     latency_ms=int((time.monotonic() - start) * 1000),
                 )
-
-            import trafilatura
 
             text = trafilatura.extract(
                 html,
