@@ -189,6 +189,17 @@ class TestCurlTrafilaturaExtractor:
 # =============================================================================
 
 
+@pytest.fixture(autouse=True)
+def _reset_diffbot_bucket():
+    """Diffbot's rate-limit state is class-level (shared across instances
+    in-process). Clear it before every test so tests don't leak state."""
+    DiffbotExtractor._call_times.clear()
+    DiffbotExtractor._rate_lock = None
+    yield
+    DiffbotExtractor._call_times.clear()
+    DiffbotExtractor._rate_lock = None
+
+
 class TestDiffbotExtractor:
     @pytest.mark.asyncio
     async def test_extract_success(self):

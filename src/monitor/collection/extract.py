@@ -345,10 +345,20 @@ class DiffbotExtractor(Extractor):
     method_name = "diffbot"
     API_URL = "https://api.diffbot.com/v3/article"
 
-    # Diffbot plan limit: 5 calls per rolling minute.
+    # Diffbot plan limit: 5 calls per rolling minute. This token-bucket state
+    # is GLOBAL (class-level) rather than per-instance — the pipeline creates
+    # multiple ExtractionOrchestrator instances (one for Layer 2 gov
+    # collection, one for selective extraction), each with their own
+    # DiffbotExtractor. A per-instance bucket would let them collectively
+    # exceed 5/min and trigger Diffbot 429s. Class-level state makes the
+    # limit process-wide.
     RATE_LIMIT_CALLS = 5
     RATE_LIMIT_WINDOW_SEC = 60.0
     DEFAULT_MAX_WAIT_SEC = 90.0
+
+    # Shared across every DiffbotExtractor instance in the process.
+    _call_times: deque[float] = deque()
+    _rate_lock: asyncio.Lock | None = None  # lazy-init on first async call
 
     def __init__(
         self,
@@ -361,9 +371,13 @@ class DiffbotExtractor(Extractor):
             raise ValueError("DIFFBOT_TOKEN not found in environment or constructor")
         self._client = httpx.AsyncClient(timeout=timeout)
         self._max_wait = max_wait_seconds
-        # Token-bucket state: monotonic timestamps of recent successful reservations.
-        self._call_times: deque[float] = deque()
-        self._rate_lock = asyncio.Lock()
+
+    @classmethod
+    def _get_rate_lock(cls) -> asyncio.Lock:
+        """Lazy-init the class-level lock so it binds to the running loop."""
+        if cls._rate_lock is None:
+            cls._rate_lock = asyncio.Lock()
+        return cls._rate_lock
 
     async def _reserve_slot(self) -> bool:
         """Reserve a rate-limit slot, waiting up to ``max_wait_seconds``.
@@ -371,7 +385,8 @@ class DiffbotExtractor(Extractor):
         Returns True if the slot was reserved and the caller may proceed,
         False if the required wait would exceed the budget.
         """
-        async with self._rate_lock:
+        lock = self._get_rate_lock()
+        async with lock:
             now = time.monotonic()
             # Drop any slots outside the sliding window.
             while self._call_times and now - self._call_times[0] >= self.RATE_LIMIT_WINDOW_SEC:
