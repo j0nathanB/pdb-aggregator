@@ -481,6 +481,61 @@ class TestParseCountryResponse:
         ledger = _test_ledger()
         assert ad.current_assessment == ledger.signal_categories[SignalCategory.ALIGNMENT_DIPLOMATIC].current_assessment
 
+    def test_assessment_missing_required_field_falls_back_to_ledger(self):
+        """If LLM returns an assessment entry but omits current_assessment,
+        fall back to ledger rather than throwing KeyError."""
+        data = _valid_agent_response()
+        # Keep the key but strip the required field
+        data["updated_signal_categories"]["alignment_diplomatic"] = {"confidence": 3}
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        ad = output.signal_categories[SignalCategory.ALIGNMENT_DIPLOMATIC]
+        ledger = _test_ledger()
+        # current_assessment carried forward from ledger
+        assert ad.current_assessment == ledger.signal_categories[SignalCategory.ALIGNMENT_DIPLOMATIC].current_assessment
+
+    def test_posture_missing_category_status_falls_back_to_ledger(self):
+        """If LLM posture omits category_status, fall back to ledger's."""
+        data = _valid_agent_response()
+        up_key = "updated_posture_summary" if "updated_posture_summary" in data else "updated_posture"
+        del data[up_key]["category_status"]
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        ledger = _test_ledger()
+        # All categories present from ledger
+        assert set(output.posture_summary.category_status.keys()) == set(SignalCategory)
+
+    def test_posture_missing_text_falls_back_to_ledger(self):
+        """If LLM posture omits text, fall back to ledger's posture text."""
+        data = _valid_agent_response()
+        up_key = "updated_posture_summary" if "updated_posture_summary" in data else "updated_posture"
+        del data[up_key]["text"]
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        ledger = _test_ledger()
+        assert output.posture_summary.text == ledger.posture_summary.text
+
+    def test_posture_entirely_missing_falls_back_to_ledger(self):
+        """If LLM omits the updated_posture_summary entirely, carry forward
+        ledger rather than throwing."""
+        data = _valid_agent_response()
+        for key in ("updated_posture_summary", "updated_posture"):
+            data.pop(key, None)
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        ledger = _test_ledger()
+        assert output.posture_summary.text == ledger.posture_summary.text
+
+    def test_malformed_self_correction_skipped(self):
+        """A self_correction entry that fails construction shouldn't kill
+        the country — other corrections (and the rest of parsing) survive."""
+        data = _valid_agent_response()
+        # Inject one bad entry (missing dict fields entirely; could fail
+        # if the schema gets tighter; we use a non-dict to force Exception)
+        data["weekly_entry"]["self_corrections"] = [
+            "not a dict — will throw",
+        ]
+        # Should not raise — bad entry skipped
+        output = parse_country_response(json.dumps(data), date(2026, 3, 14), "w1", _test_ledger())
+        assert isinstance(output, CountryAgentOutput)
+        assert output.weekly_entry.self_corrections == []
+
 
 # ---- System Prompt ----
 

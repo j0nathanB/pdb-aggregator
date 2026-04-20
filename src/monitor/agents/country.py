@@ -529,13 +529,23 @@ def parse_country_response(
 
         movement = safe_enum(Movement, cat_data.get("movement", "none"), Movement.NONE, context="category_movement")
 
-        category_movements[cat] = CategoryMovement(
-            movement=movement,
-            developments=developments,
-            prior_assessment=cat_data.get("prior_assessment", ""),
-            updated_assessment=cat_data.get("updated_assessment", ""),
-            confidence_change=conf_change,
-        )
+        try:
+            category_movements[cat] = CategoryMovement(
+                movement=movement,
+                developments=developments,
+                prior_assessment=str(cat_data.get("prior_assessment", "") or ""),
+                updated_assessment=str(cat_data.get("updated_assessment", "") or ""),
+                confidence_change=conf_change,
+            )
+        except Exception as e:
+            logger.warning(
+                "Country agent %s: malformed CategoryMovement for %s, using empty: %s",
+                ledger.code, cat.value, e,
+            )
+            category_movements[cat] = CategoryMovement(
+                movement=Movement.NONE, developments=developments,
+                prior_assessment="", updated_assessment="",
+            )
 
     # Parse unexpected developments (resilient to LLM field name variations)
     unexpected = []
@@ -578,15 +588,18 @@ def parse_country_response(
     # Parse self-corrections
     self_corrections = []
     for s in entry_data.get("self_corrections", []):
-        cat = safe_enum(SignalCategory, s.get("category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="self_correction")
-        pw = safe_date(s.get("prior_week"), week_date, context="self_correction.prior_week")
-        self_corrections.append(SelfCorrection(
-            category=cat,
-            prior_week=pw,
-            original_claim=s.get("original_claim", ""),
-            correction=s.get("correction", ""),
-            root_cause=s.get("root_cause", ""),
-        ))
+        try:
+            cat = safe_enum(SignalCategory, s.get("category", "alignment_diplomatic"), SignalCategory.ALIGNMENT_DIPLOMATIC, context="self_correction")
+            pw = safe_date(s.get("prior_week"), week_date, context="self_correction.prior_week")
+            self_corrections.append(SelfCorrection(
+                category=cat,
+                prior_week=pw,
+                original_claim=s.get("original_claim", ""),
+                correction=s.get("correction", ""),
+                root_cause=s.get("root_cause", ""),
+            ))
+        except Exception as e:
+            logger.warning("Skipping malformed self_correction: %s", e)
 
     # Parse structural claim checks
     claim_checks = []
@@ -641,32 +654,49 @@ def parse_country_response(
             )
             updated_assessments[cat] = ledger.signal_categories[cat]
             continue
-        updated_assessments[cat] = SignalCategoryAssessment(
-            current_assessment=ua["current_assessment"],
-            confidence=ua["confidence"],
-            confidence_rationale=ua.get("confidence_rationale", ""),
-            key_actors=ua.get("key_actors", []),
-            dossier_sections_referenced=ua.get("dossier_sections_referenced", []),
-            last_updated=safe_date(ua.get("last_updated"), week_date, context="assessment.last_updated"),
-        )
+        try:
+            updated_assessments[cat] = SignalCategoryAssessment(
+                current_assessment=ua.get("current_assessment", "")
+                    or ledger.signal_categories[cat].current_assessment,
+                confidence=_coerce_confidence(ua.get("confidence"), default=3),
+                confidence_rationale=ua.get("confidence_rationale", ""),
+                key_actors=ua.get("key_actors", []),
+                dossier_sections_referenced=ua.get("dossier_sections_referenced", []),
+                last_updated=safe_date(ua.get("last_updated"), week_date, context="assessment.last_updated"),
+            )
+        except Exception as e:
+            logger.warning(
+                "Country agent %s: malformed assessment for %s, carrying forward ledger: %s",
+                ledger.code, cat.value, e,
+            )
+            updated_assessments[cat] = ledger.signal_categories[cat]
 
     # Parse updated posture summary
     # Support both key names
-    up = data.get("updated_posture_summary", data.get("updated_posture", {}))
+    up = data.get("updated_posture_summary", data.get("updated_posture", {})) or {}
     category_status = {}
     valid_categories = {c.value for c in SignalCategory}
-    for k, v in up["category_status"].items():
+    for k, v in (up.get("category_status") or {}).items():
         if k not in valid_categories:
             logger.warning("Skipping invalid SignalCategory key %r in posture.category_status", k)
             continue
         category_status[SignalCategory(k)] = safe_enum(CategoryStatus, v, CategoryStatus.ROUTINE, context="posture.category_status")
-    posture_summary = PostureSummary(
-        as_of=safe_date(up.get("as_of"), week_date, context="posture.as_of"),
-        text=up["text"],
-        category_status=category_status,
-        last_deep_dive=safe_date(up.get("last_deep_dive"), week_date, context="posture.last_deep_dive"),
-        consecutive_maintenance_weeks=up.get("consecutive_maintenance_weeks", 0),
-    )
+    try:
+        posture_summary = PostureSummary(
+            as_of=safe_date(up.get("as_of"), week_date, context="posture.as_of"),
+            text=up.get("text") or ledger.posture_summary.text,
+            category_status=category_status or dict(ledger.posture_summary.category_status),
+            last_deep_dive=safe_date(up.get("last_deep_dive"), week_date, context="posture.last_deep_dive"),
+            consecutive_maintenance_weeks=up.get("consecutive_maintenance_weeks", 0),
+        )
+    except Exception as e:
+        logger.warning(
+            "Country agent %s: malformed posture_summary, carrying forward ledger: %s",
+            ledger.code, e,
+        )
+        posture_summary = ledger.posture_summary.model_copy(
+            update={"as_of": week_date, "last_deep_dive": week_date}
+        )
 
     return CountryAgentOutput(
         weekly_entry=weekly_entry,
