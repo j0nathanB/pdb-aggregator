@@ -21,9 +21,9 @@ from ..config import (
     load_country_config,
     load_prompt,
 )
-from ..rate_limit import anthropic_limiter
 from ..sanitize import extract_json
-from ..timing import TrackedSemaphore, with_heartbeat
+from ..timing import TrackedSemaphore
+from ._streaming import stream_with_retry
 from .content_models import (
     AtAGlancePageContent,
     CountryContent,
@@ -111,22 +111,20 @@ async def _copyedit_prose(
     logger.info("Copyeditor [%s]: starting", label)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or COPYEDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                f"Copyeditor {label}: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        f"Copyeditor {label}: streaming API call",
+        f"copyeditor_{label}",
+        model=model or COPYEDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -318,22 +316,20 @@ async def copyedit_at_a_glance(
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
 
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=COPYEDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                "Copyeditor at_a_glance: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        "Copyeditor at_a_glance: streaming API call",
+        "copyeditor_at_a_glance",
+        model=COPYEDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)

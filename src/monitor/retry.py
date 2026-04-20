@@ -11,6 +11,7 @@ from functools import wraps
 from typing import Callable, TypeVar
 
 import anthropic
+import httpx
 
 logger = logging.getLogger(__name__)
 
@@ -39,6 +40,10 @@ def _is_retryable(exc: Exception) -> bool:
     if isinstance(exc, anthropic.APIStatusError):
         return exc.status_code in RETRYABLE_STATUS_CODES
     if isinstance(exc, (anthropic.APIConnectionError, anthropic.APITimeoutError)):
+        return True
+    # Mid-stream network drops: the Anthropic SDK re-raises raw httpx errors
+    # (e.g. peer-closed chunked reads) instead of wrapping them in APIConnectionError.
+    if isinstance(exc, (httpx.RemoteProtocolError, httpx.ReadError, httpx.ReadTimeout)):
         return True
     return False
 

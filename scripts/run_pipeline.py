@@ -99,16 +99,23 @@ def run_pipeline(end_date: str, project_root: Path, extra_args: list[str] | None
 # Git operations
 # =============================================================================
 
-def commit_results(end_date: str, project_root: Path) -> bool:
-    """Git add ledgers/ + site/briefs/ + briefs/ and commit if there are changes.
+def commit_results(end_date: str, project_root: Path, pipeline_succeeded: bool) -> bool:
+    """Git add partial-run artifacts and commit if there are changes.
 
-    Includes briefs/ (the trace + manifest directory) so debugging context
-    survives a Fargate run — the user can `git pull` and inspect traces
-    locally without needing CloudWatch.
+    On success, commits ledgers/ + site/briefs/ + briefs/ — the full published
+    brief. On failure, commits only ledgers/ + briefs/ (traces + partial ledgers)
+    so the next run can resume from what survived, without publishing a
+    half-finished site/briefs/. Commit message is marked FAILED on failure so
+    the non-publishing commit is visible in `git log`.
     """
-    paths_to_commit = ["ledgers/", "site/briefs/", "briefs/"]
+    if pipeline_succeeded:
+        paths_to_commit = ["ledgers/", "site/briefs/", "briefs/"]
+        commit_msg = f"Brief: {end_date}"
+    else:
+        paths_to_commit = ["ledgers/", "briefs/"]
+        commit_msg = f"Brief: {end_date} (FAILED — partial traces + ledgers)"
+
     try:
-        # Check for changes in the paths we care about
         status = subprocess.run(
             ["git", "status", "--porcelain", *paths_to_commit],
             cwd=project_root, capture_output=True, text=True, check=True,
@@ -122,10 +129,10 @@ def commit_results(end_date: str, project_root: Path) -> bool:
             cwd=project_root, check=True, capture_output=True,
         )
         subprocess.run(
-            ["git", "commit", "-m", f"Brief: {end_date}"],
+            ["git", "commit", "-m", commit_msg],
             cwd=project_root, check=True, capture_output=True, text=True,
         )
-        logger.info("Committed results for %s", end_date)
+        logger.info("Committed %s for %s", "results" if pipeline_succeeded else "partial state", end_date)
         return True
 
     except subprocess.CalledProcessError as e:
@@ -221,15 +228,17 @@ def main():
 
     # Step 1: Run the pipeline
     success = run_pipeline(end_date, project_root)
-    if not success:
-        sys.exit(1)
 
-    # Step 2: Commit results
+    # Step 2: Commit whatever artifacts survived — even on failure, so Fargate
+    # runs leave traces + partial ledgers in the repo for later resumption via
+    # scripts/reedit.py. The container is ephemeral; if we skip the commit on
+    # failure, the state dies with it.
     committed = False
     if not args.no_commit:
-        committed = commit_results(end_date, project_root)
+        committed = commit_results(end_date, project_root, pipeline_succeeded=success)
 
-    # Step 3: Push to remote — this triggers Mintlify Cloud deployment
+    # Step 3: Push to remote — triggers Mintlify deployment on success, or just
+    # preserves debug state on failure.
     pushed = False
     if committed and not args.no_push:
         pushed = push_to_remote(project_root)
@@ -237,11 +246,15 @@ def main():
     logger.info("=" * 60)
     logger.info("Done!")
     logger.info("  Brief: %s", end_date)
+    logger.info("  Pipeline: %s", "succeeded" if success else "FAILED")
     logger.info("  Committed: %s", committed)
     logger.info("  Pushed: %s", pushed)
-    if pushed:
+    if pushed and success:
         logger.info("  Mintlify will rebuild the site automatically.")
     logger.info("=" * 60)
+
+    if not success:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -86,8 +86,8 @@ def _patch_writer(module_path: str, response_json: dict):
     return (
         patch(f"{module_path}.anthropic.AsyncAnthropic", return_value=mock_client),
         patch(f"{module_path}.ANTHROPIC_API_KEY", "test-key"),
-        patch(f"{module_path}.anthropic_limiter", return_value=mock_limiter_ctx),
-        patch(f"{module_path}.with_heartbeat", side_effect=mock_heartbeat),
+        patch("src.monitor.newsletter._streaming.anthropic_limiter", return_value=mock_limiter_ctx),
+        patch("src.monitor.newsletter._streaming.with_heartbeat", side_effect=mock_heartbeat),
     )
 
 

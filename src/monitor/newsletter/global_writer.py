@@ -18,9 +18,8 @@ from ..config import (
     THINKING_BUDGET_TOKENS,
     load_prompt,
 )
-from ..rate_limit import anthropic_limiter
 from ..sanitize import extract_json
-from ..timing import with_heartbeat
+from ._streaming import stream_with_retry
 from .content_models import OverviewPageContent, RegionPageContent
 
 logger = logging.getLogger(__name__)
@@ -111,22 +110,20 @@ async def write_global_essay(
     logger.info("Global writer: starting, %d regional essays", len(essays))
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=use_model,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                "Global writer: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        "Global writer: streaming API call",
+        "global_writer",
+        model=use_model,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)

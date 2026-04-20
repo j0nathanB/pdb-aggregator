@@ -20,9 +20,9 @@ from ..config import (
     THINKING_BUDGET_TOKENS,
     load_prompt,
 )
-from ..rate_limit import anthropic_limiter
 from ..sanitize import _record_fallback, extract_json
-from ..timing import TrackedSemaphore, with_heartbeat
+from ..timing import TrackedSemaphore
+from ._streaming import stream_with_retry
 from .content_models import (
     CountryContent,
     ExecutiveBriefContent,
@@ -227,22 +227,20 @@ async def _call_editor_once(
     model: str,
 ) -> tuple[str, anthropic.types.Message]:
     """Single API call for the country editor. Returns (response_text, response)."""
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                f"Editor {label}: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        f"Editor {label}: streaming API call",
+        f"editor_{label}",
+        model=model,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
     text_parts = [b.text for b in response.content if b.type == "text"]
     return "\n".join(text_parts), response
 
@@ -386,22 +384,20 @@ async def edit_regional(
     logger.info("Editor [regional/%s]: starting", page.region.value)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or EDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                f"Editor regional/{page.region.value}: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        f"Editor regional/{page.region.value}: streaming API call",
+        f"editor_regional_{page.region.value}",
+        model=model or EDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -472,22 +468,20 @@ async def edit_executive(
     logger.info("Editor [executive]: starting, %d items", len(brief.items))
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or EDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": items_json}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                "Editor executive: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        "Editor executive: streaming API call",
+        "editor_executive",
+        model=model or EDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": items_json}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -551,22 +545,20 @@ async def edit_watchlist(
     logger.info("Editor [watchlist]: starting, %d items", len(watchlist.items))
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or EDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 4096,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": items_json}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                "Editor watchlist: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        "Editor watchlist: streaming API call",
+        "editor_watchlist",
+        model=model or EDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 4096,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": items_json}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
@@ -706,22 +698,20 @@ async def style_edit_prose(
     logger.info("Style editor [%s]: starting", label)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or EDITOR_MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
-            response = await with_heartbeat(
-                stream.get_final_message(),
-                f"Style editor {label}: streaming API call",
-            )
+    response = await stream_with_retry(
+        client,
+        f"Style editor {label}: streaming API call",
+        f"style_editor_{label}",
+        model=model or EDITOR_MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
