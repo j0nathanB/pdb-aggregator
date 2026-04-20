@@ -7,11 +7,14 @@ import pytest
 from src.monitor.config import load_country_config
 from src.monitor.agents.story_map import (
     PER_DOMAIN_CAP,
+    RECORD_STORY_MAP_TOOL,
+    RECORD_STORY_MAP_TOOL_NAME,
     StoryCluster,
     StoryMapOutput,
     SingleSourceItem,
     UnassignedItem,
     build_story_map_prompt,
+    hydrate_story_map,
     parse_story_map_response,
 )
 from src.monitor.agents.expansion import ExpansionResult
@@ -341,6 +344,67 @@ class TestParseStoryMapResponse:
         output = parse_story_map_response(data)
         assert len(output.stories) == 1
         assert output.stories[0].signal_category_hint == "unclear"
+
+
+# ---- Tool-use hydration ----
+
+
+class TestHydrateStoryMap:
+    def test_hydrates_valid_tool_input(self):
+        tool_input = json.loads(VALID_RESPONSE)
+        output = hydrate_story_map(tool_input)
+        assert isinstance(output, StoryMapOutput)
+        assert output.stories_identified == tool_input["stories_identified"]
+        assert len(output.stories) == len(tool_input["stories"])
+        assert output.stories[0].headline == tool_input["stories"][0]["headline"]
+
+    def test_hydrates_single_source_and_unassigned(self):
+        tool_input = json.loads(VALID_RESPONSE)
+        output = hydrate_story_map(tool_input)
+        assert len(output.single_source_items) == len(tool_input["single_source_items"])
+        assert len(output.unassigned) == len(tool_input["unassigned"])
+
+    def test_hydrates_missing_optional_fields(self):
+        """Belt-and-suspenders — dict without optional keys should still hydrate."""
+        tool_input = {
+            "country": "mx",
+            "analysis_date": "2026-04-19",
+            "search_results_total": 0,
+            "stories_identified": 0,
+            "off_topic_filtered": 0,
+            # No stories / single_source_items / unassigned
+            "noise_summary": "",
+        }
+        output = hydrate_story_map(tool_input)
+        assert isinstance(output, StoryMapOutput)
+        assert output.stories == []
+        assert output.single_source_items == []
+
+    def test_tool_schema_has_all_required_top_level_fields(self):
+        schema = RECORD_STORY_MAP_TOOL["input_schema"]
+        assert set(schema["required"]) >= {
+            "country", "analysis_date", "search_results_total",
+            "stories_identified", "off_topic_filtered",
+            "stories", "single_source_items", "unassigned", "noise_summary",
+        }
+
+    def test_tool_schema_signal_category_hint_enum(self):
+        """Enum-constrained signal_category_hint prevents the free-form 'unclear'
+        drift we've seen in text-output JSON."""
+        schema = RECORD_STORY_MAP_TOOL["input_schema"]
+        story_schema = schema["properties"]["stories"]["items"]
+        enum = story_schema["properties"]["signal_category_hint"]["enum"]
+        assert "alignment_diplomatic" in enum
+        assert "unclear" in enum
+
+    def test_tool_schema_has_no_ref_or_defs(self):
+        """Schema must be inlined — Anthropic accepts $ref but inlining is safer."""
+        j = json.dumps(RECORD_STORY_MAP_TOOL)
+        assert "$ref" not in j
+        assert "$defs" not in j
+
+    def test_tool_name_matches_constant(self):
+        assert RECORD_STORY_MAP_TOOL["name"] == RECORD_STORY_MAP_TOOL_NAME
 
 
 # ---- StoryMapOutput Properties ----

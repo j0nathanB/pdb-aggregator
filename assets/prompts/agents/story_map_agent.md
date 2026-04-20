@@ -71,6 +71,10 @@ If after your best effort the numbers still don't balance, list any remaining un
 
 ## Your Output
 
+When your clustering is complete, call the `record_story_map` tool exactly once with the full structure below. The tool's input schema enforces the structure — provide every field, and the API will validate your input before returning it.
+
+If the `record_story_map` tool is not available in this session, return valid JSON conforming to the schema below as your sole text output, with no prose before or after it.
+
 ```json
 {
   "country": "{{COUNTRY_CODE}}",

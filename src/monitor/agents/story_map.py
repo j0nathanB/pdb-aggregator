@@ -11,6 +11,7 @@ can see what was covered this week at a glance.
 
 import json
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import date
 
@@ -291,6 +292,174 @@ def build_story_map_prompt(
 
 
 # =============================================================================
+# Tool-use schema (MPM_USE_TOOL_SCHEMA=1)
+# =============================================================================
+#
+# Structured output via an Anthropic tool_use call. The tool's input_schema
+# is validated server-side so malformed-JSON failures (~38% of the time
+# historically — missing commas, unterminated strings, prose preamble)
+# can't reach parse_story_map_response. Feature-flagged behind the same
+# MPM_USE_TOOL_SCHEMA env var as the country agent.
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+RECORD_STORY_MAP_TOOL_NAME = "record_story_map"
+
+_SIGNAL_CATEGORY_HINT_ENUM = [
+    "alignment_diplomatic", "security_defense", "economic_tech",
+    "institutional", "domestic_regime", "unclear",
+]
+
+_ARTICLE_SCHEMA = {
+    "type": "object",
+    "required": ["title", "source", "url", "date"],
+    "properties": {
+        "title": {"type": "string"},
+        "source": {"type": "string"},
+        "url": {"type": "string"},
+        "date": {"type": "string", "description": "YYYY-MM-DD or empty string"},
+    },
+}
+
+_STORY_CLUSTER_SCHEMA = {
+    "type": "object",
+    "required": [
+        "story_id", "headline", "summary", "actors_involved",
+        "signal_category_hint", "source_count", "sources",
+        "date_range", "articles", "representative_urls",
+    ],
+    "properties": {
+        "story_id": {"type": "integer"},
+        "headline": {"type": "string"},
+        "summary": {"type": "string"},
+        "actors_involved": {"type": "array", "items": {"type": "string"}},
+        "signal_category_hint": {
+            "type": "string",
+            "enum": _SIGNAL_CATEGORY_HINT_ENUM,
+        },
+        "source_count": {"type": "integer"},
+        "sources": {"type": "array", "items": {"type": "string"}},
+        "date_range": {"type": "string"},
+        "articles": {"type": "array", "items": _ARTICLE_SCHEMA},
+        "representative_urls": {"type": "array", "items": {"type": "string"}},
+    },
+}
+
+_SINGLE_SOURCE_SCHEMA = {
+    "type": "object",
+    "required": ["headline", "source", "url", "signal_category_hint"],
+    "properties": {
+        "headline": {"type": "string"},
+        "source": {"type": "string"},
+        "url": {"type": "string"},
+        "signal_category_hint": {
+            "type": "string",
+            "enum": _SIGNAL_CATEGORY_HINT_ENUM,
+        },
+    },
+}
+
+_UNASSIGNED_SCHEMA = {
+    "type": "object",
+    "required": ["url", "description", "extra_snippets"],
+    "properties": {
+        "url": {"type": "string"},
+        "description": {"type": "string"},
+        "extra_snippets": {"type": "array", "items": {"type": "string"}},
+    },
+}
+
+RECORD_STORY_MAP_TOOL = {
+    "name": RECORD_STORY_MAP_TOOL_NAME,
+    "description": (
+        "Record the complete clustered story map for this country's week "
+        "of news coverage. Call exactly once when clustering is complete. "
+        "Provide every field — the schema enforces the structure."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": [
+            "country", "analysis_date", "search_results_total",
+            "stories_identified", "off_topic_filtered",
+            "stories", "single_source_items", "unassigned", "noise_summary",
+        ],
+        "properties": {
+            "country": {"type": "string"},
+            "analysis_date": {"type": "string", "description": "YYYY-MM-DD"},
+            "search_results_total": {"type": "integer"},
+            "stories_identified": {"type": "integer"},
+            "off_topic_filtered": {"type": "integer"},
+            "stories": {"type": "array", "items": _STORY_CLUSTER_SCHEMA},
+            "single_source_items": {"type": "array", "items": _SINGLE_SOURCE_SCHEMA},
+            "unassigned": {"type": "array", "items": _UNASSIGNED_SCHEMA},
+            "noise_summary": {"type": "string"},
+        },
+    },
+}
+
+
+def hydrate_story_map(data: dict) -> StoryMapOutput:
+    """Build StoryMapOutput from a schema-validated tool_use.input dict.
+
+    The API has already validated the shape, so this is a thin constructor.
+    Retains .get() on optional fields as belt-and-suspenders.
+    """
+    stories = []
+    for s in data.get("stories", []):
+        articles = [
+            ArticleRef(
+                title=a.get("title", ""),
+                source=a.get("source", ""),
+                url=a.get("url", ""),
+                date=a.get("date", ""),
+            )
+            for a in s.get("articles", [])
+        ]
+        stories.append(StoryCluster(
+            story_id=s.get("story_id", 0),
+            headline=s.get("headline", ""),
+            summary=s.get("summary", ""),
+            actors_involved=s.get("actors_involved", []),
+            signal_category_hint=s.get("signal_category_hint", "unclear"),
+            source_count=s.get("source_count", 0),
+            sources=s.get("sources", []),
+            date_range=s.get("date_range", ""),
+            articles=articles,
+            representative_urls=s.get("representative_urls", []),
+        ))
+
+    single_source = [
+        SingleSourceItem(
+            headline=item.get("headline", ""),
+            source=item.get("source", ""),
+            url=item.get("url", ""),
+            signal_category_hint=item.get("signal_category_hint", "unclear"),
+        )
+        for item in data.get("single_source_items", [])
+    ]
+    unassigned = [
+        UnassignedItem(
+            url=item.get("url", ""),
+            description=item.get("description", ""),
+            extra_snippets=item.get("extra_snippets", []),
+        )
+        for item in data.get("unassigned", [])
+    ]
+
+    return StoryMapOutput(
+        country=data.get("country", ""),
+        code=data.get("country", ""),  # prompt uses country name in this field
+        analysis_date=data.get("analysis_date", ""),
+        search_results_total=data.get("search_results_total", 0),
+        stories_identified=data.get("stories_identified", 0),
+        off_topic_filtered=data.get("off_topic_filtered", 0),
+        stories=stories,
+        single_source_items=single_source,
+        unassigned=unassigned,
+        noise_summary=data.get("noise_summary", ""),
+    )
+
+
+# =============================================================================
 # Response parsing
 # =============================================================================
 
@@ -421,28 +590,37 @@ async def run_story_map_agent(
     input_tokens = 0
     output_tokens = 0
 
+    stream_kwargs: dict = dict(
+        model=model or MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 8192,
+        temperature=1,  # required for extended thinking
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": user_message}],
+    )
+    if USE_TOOL_SCHEMA:
+        stream_kwargs["tools"] = [RECORD_STORY_MAP_TOOL]
+
     from ..timing import with_heartbeat
     async with anthropic_limiter():
-        async with client.messages.stream(
-            model=model or MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 8192,
-            temperature=1,  # required for extended thinking
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        ) as stream:
+        async with client.messages.stream(**stream_kwargs) as stream:
             response = await with_heartbeat(
                 stream.get_final_message(),
                 f"Story map {config.code}: streaming API call",
             )
 
+    tool_input: dict | None = None
     for block in response.content:
-        if block.type == "text":
+        if block.type == "text" and not text_content:
             text_content = block.text
-            break
+        elif (
+            block.type == "tool_use"
+            and getattr(block, "name", None) == RECORD_STORY_MAP_TOOL_NAME
+        ):
+            tool_input = getattr(block, "input", None)
 
     input_tokens = response.usage.input_tokens
     output_tokens = response.usage.output_tokens
@@ -452,21 +630,30 @@ async def run_story_map_agent(
         config.code, input_tokens, output_tokens,
     )
 
-    if not text_content:
-        logger.error("Story map %s: no text in LLM response", config.code)
-        raise ValueError(f"Story map agent returned no text for {config.code}")
+    # Pick the source of truth for the trace: tool_input if present, else text
+    if USE_TOOL_SCHEMA and tool_input is not None:
+        trace_response_text = json.dumps(tool_input, indent=2, ensure_ascii=False)
+    else:
+        trace_response_text = text_content
+
+    if not trace_response_text and tool_input is None:
+        logger.error("Story map %s: no text or tool_use in LLM response", config.code)
+        raise ValueError(f"Story map agent returned no output for {config.code}")
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     save_raw_response(
         "story_map", config.code, analysis_date,
         system_prompt=system_prompt,
         user_message=user_message,
-        response_text=text_content,
+        response_text=trace_response_text,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
     )
 
-    output = parse_story_map_response(text_content)
+    if USE_TOOL_SCHEMA and tool_input is not None:
+        output = hydrate_story_map(tool_input)
+    else:
+        output = parse_story_map_response(text_content)
 
     output.prompt_dedup = prompt_dedup
 
