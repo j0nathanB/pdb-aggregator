@@ -43,3 +43,12 @@ NEVER run `git checkout`, `publish`, or any operation that overwrites `site/brie
 ### Always commit briefs after pipeline runs
 
 After any pipeline run that produces site output (including partial re-runs for individual countries), commit the `site/briefs/` directory along with any code changes. The pipeline's editor and copyeditor stages produce polished prose that costs significant API tokens to regenerate. Don't treat brief output as disposable.
+
+## Working Principles
+
+Read `docs/engineering_principles.md` before making non-trivial changes. Ten concrete principles extracted from the 2026-04-20 debugging session, each anchored to a specific failure we paid for. The two highest-leverage:
+
+- **Validate at the boundary, not in the parser.** When you've added more than 2-3 `except` blocks at the same boundary (especially an LLM response), stop patching and fix the boundary. Anthropic tool_use with a typed `input_schema` is the structural fix for shape drift; see `src/monitor/schema_helpers.py` and `dev/country_agent_tool_use_plan.md`.
+- **Fail loudly at the lowest reasonable layer.** Infrastructure failures (missing deps, missing models) belong at process startup via module-level imports — not caught-and-logged per-invocation. Data-shape failures can be soft IF they're loudly logged and telemetered.
+
+Also applies to working with Claude in this repo: **verify, don't infer.** Before claiming "X does Y," read the code. Before acting on inferred state, check actual state via `grep`, `git log`, or a small exploratory script. Multiple mistakes in the 2026-04-20 session were preventable by 30 seconds of verification.
