@@ -3,55 +3,49 @@
   "code": "no",
   "week": "2026-04-19",
   "analysis_date": "2026-04-19",
-  "search_results_total": 366,
-  "stories_identified": 21,
-  "off_topic_filtered": 116,
+  "search_results_total": 355,
+  "stories_identified": 20,
+  "off_topic_filtered": 102,
   "noise_summary": "",
   "stories": [
     {
       "story_id": 1,
-      "headline": "Norway warns of fuel shortage risk linked to Hormuz closure, Listhaug calls response 'absurd'",
-      "summary": "Prime Minister St\u00f8re issued warnings about a potential diesel and aviation fuel shortage in Norway caused by the Middle East war's disruption of Hormuz Strait transit, noting Norway holds only 20 days of reserves compared to Sweden and Finland's 90. He suggested voluntary measures such as working from home, prompting sharp criticism from FrP leader Listhaug who called the response a 'total bankrupt declaration'; the government also faced calls to investigate extreme diesel price variations.",
+      "headline": "Hormuz Strait closure triggers Norwegian fuel shortage warnings and maritime response",
+      "summary": "PM St\u00f8re warned of potential fuel shortages linked to the Iran war's disruption of Strait of Hormuz shipping, stating Norway's reserves (20 days vs. 90 days for Sweden/Finland) were insufficient, and that measures including work-from-home and rationing could be considered. Norway simultaneously joined an international initiative led by France and the UK with 49 countries to secure free navigation through the strait, exploring a Norwegian contribution to a maritime operation.",
       "actors_involved": [
         "St\u00f8re",
-        "Listhaug"
+        "Barth Eide",
+        "Stoltenberg"
       ],
       "signal_category_hint": "security_defense",
       "source_count": 28,
       "sources": [
-        "fackel.substack.com",
-        "borsen.dagbladet.no",
         "nrk.no",
         "vg.no",
-        "ba.no",
+        "borsen.dagbladet.no",
         "bygdeposten.no",
-        "steigan.no",
         "nettavisen.no",
-        "tv2.no",
-        "bygg.no",
         "e24.no",
+        "steigan.no",
+        "folkebladet.no",
+        "sol.no",
+        "fackel.substack.com",
+        "regjeringen.no",
         "dagsavisen.no",
-        "abcnyheter.no",
+        "ba.no",
+        "tv2.no",
         "sognavis.no",
         "firdaposten.no",
-        "mojanorwegia.pl",
         "forskning.no",
-        "dagsavisen.no"
+        "mojanorwegia.pl",
+        "aftenposten.no",
+        "aftenbladet.no",
+        "fvn.no",
+        "sot.com.al",
+        "inyheter.no"
       ],
-      "date_range": "2026-04-14 to 2026-04-19",
+      "date_range": "2026-04-13 to 2026-04-17",
       "articles": [
-        {
-          "title": "Norway's Powers-that-Be on the Oil/Fuel Crisis",
-          "source": "fackel.substack.com",
-          "url": "https://fackel.substack.com/p/norways-powers-that-be-on-the-oilfuel",
-          "date": "2026-04-17"
-        },
-        {
-          "title": "Om St\u00f8res advarsel: - Har lagret 10 000 liter",
-          "source": "borsen.dagbladet.no",
-          "url": "https://borsen.dagbladet.no/nyheter/har-lagret-10-000-liter/84513240",
-          "date": "2026-04-18"
-        },
         {
           "title": "St\u00f8re vurderer tiltak ved drivstoffmangel: \u2013 Veldig alvorlig",
           "source": "nrk.no",
@@ -62,25 +56,31 @@
           "title": "St\u00f8re: Kan bli aktuelt med drivstoffsparing",
           "source": "vg.no",
           "url": "https://www.vg.no/nyheter/i/9pkA49/stoere-kan-bli-aktuelt-med-drivstoffsparing",
-          "date": "2026-04-16"
+          "date": "2026-04-15"
         },
         {
-          "title": "St\u00f8re: Kan bli aktuelt med drivstoffsparing \u2013 i f\u00f8rste omgang frivillig",
-          "source": "ba.no",
-          "url": "https://www.ba.no/store-kan-bli-aktuelt-med-drivstoffsparing-i-forste-omgang-frivillig/s/5-8-3376406",
-          "date": "2026-04-16"
+          "title": "Om St\u00f8res advarsel: - Har lagret 10 000 liter",
+          "source": "borsen.dagbladet.no",
+          "url": "https://borsen.dagbladet.no/nyheter/har-lagret-10-000-liter/84513240",
+          "date": "2026-04-17"
         },
         {
           "title": "St\u00f8re ber b\u00f8nder forberede seg p\u00e5 drivstoffmangel",
           "source": "bygdeposten.no",
           "url": "https://www.bygdeposten.no/store-ber-bonder-forberede-seg-pa-drivstoffmangel/s/5-10-803011",
-          "date": "2026-04-18"
+          "date": "2026-04-17"
         },
         {
-          "title": "Regjeringa St\u00f8re har klart det umulige: Str\u00f8mprisene skyh\u00f8yt over resten av Europa",
-          "source": "steigan.no",
-          "url": "https://steigan.no/2026/04/regjeringa-store-har-klart-det-umulige-stromprisene-skyhoyt-over-resten-av-europa/",
-          "date": "2026-04-17"
+          "title": "Krever St\u00f8re gransker ekstreme dieselpriser i Norge",
+          "source": "nettavisen.no",
+          "url": "https://www.nettavisen.no/norsk-debatt/krever-store-gransker-ekstreme-dieselpriser-i-norge/o/5-95-2988180",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "St\u00f8re \u00e5pner for tiltak ved drivstoffmangel",
+          "source": "e24.no",
+          "url": "https://e24.no/energi-og-klima/i/M7A88E/stoere-aapner-for-tiltak-ved-drivstoffmangel",
+          "date": "2026-04-15"
         },
         {
           "title": "St\u00f8re truer med rasjonering i oljenasjonen Norge",
@@ -89,52 +89,10 @@
           "date": "2026-04-16"
         },
         {
-          "title": "Krever St\u00f8re gransker ekstreme dieselpriser i Norge",
-          "source": "nettavisen.no",
-          "url": "https://www.nettavisen.no/norsk-debatt/krever-store-gransker-ekstreme-dieselpriser-i-norge/o/5-95-2988180",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Listhaug slakter St\u00f8res drivstoff-grep: \u2013 Absurd",
-          "source": "nettavisen.no",
-          "url": "https://www.nettavisen.no/nyheter/listhaug-slakter-stores-drivstoff-grep-absurd/s/5-95-2988895",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "St\u00f8re om muligheten for drivstoffmangel: \u2013 Kan bli behov for tiltak",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/direkte/jpybz/siste-nytt/69e1ede38da5e065b0672df5/store-om-muligheten-for-drivstoffmangel-kan-bli-behov-for-tiltak",
+          "title": "St\u00f8re om beredskap i Norden: \u2013 Vi lever p\u00e5 en illusjon",
+          "source": "folkebladet.no",
+          "url": "https://www.folkebladet.no/norgeogverden/i/n19j4n/stoere-om-beredskap-vi-lever-paa-en-illusjon",
           "date": "2026-04-15"
-        },
-        {
-          "title": "St\u00f8re om norsk drivstoffberedskap: \u2013 Vi har full kontroll",
-          "source": "bygg.no",
-          "url": "https://www.bygg.no/store-om-norsk-drivstoffberedskap-vi-har-full-kontroll/2912114",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "St\u00f8re \u00e5pner for tiltak ved drivstoffmangel",
-          "source": "e24.no",
-          "url": "https://e24.no/energi-og-klima/i/M7A88E/stoere-aapner-for-tiltak-ved-drivstoffmangel",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Reagerer: \u2013 En total falitterkl\u00e6ring",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/reagerer-en-total-falitterklaering/18760306/",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Drivstoffkrise: \u2013 Ikke aktuelt \u00e5 innf\u00f8re tiltak n\u00e5",
-          "source": "tv2.no",
-          "url": "https://tv2.no/nyheter/ikke-aktuelt-a-innfore-tiltak-na/18760717",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "N\u00e6ringsministeren: Regjeringen klar til \u00e5 gripe inn ved flydrivstoffmangel",
-          "source": "dagsavisen.no",
-          "url": "https://dagsavisen.no/nyheter/naeringsministeren-regjeringen-klar-til-a-gripe-inn-ved-flydrivstoffmangel/10304068",
-          "date": "2026-04-16"
         },
         {
           "title": "\u2013 Vi lever p\u00e5 en illusjon",
@@ -143,57 +101,87 @@
           "date": "2026-04-15"
         },
         {
-          "title": "St\u00f8re om beredskap i Norden: \u2013 Vi lever p\u00e5 en illusjon",
-          "source": "folkebladet.no",
-          "url": "https://www.folkebladet.no/norgeogverden/i/n19j4n/stoere-om-beredskap-vi-lever-paa-en-illusjon",
+          "title": "Norway's Powers-that-Be on the Oil/Fuel Crisis",
+          "source": "fackel.substack.com",
+          "url": "https://fackel.substack.com/p/norways-powers-that-be-on-the-oilfuel",
+          "date": "2026-04-17"
+        },
+        {
+          "title": "Iransk nyhetsbyr\u00e5: Truer med \u00e5 stenge Hormuzstredet igjen",
+          "source": "vg.no",
+          "url": "https://www.vg.no/nyheter/i/JOr5ab/statsministeren-om-aapningen-av-hormuzstredet-viktig-for-norge-som-sjoefartsnasjon",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "St\u00f8re: Norge kan bidra i maritim operasjon i Hormuzstredet",
+          "source": "nettavisen.no",
+          "url": "https://www.nettavisen.no/nyheter/store-norge-kan-bidra-i-maritim-operasjon-i-hormuzstredet/s/5-95-2989392",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Statsministeren deltok p\u00e5 internasjonalt m\u00f8te om Hormuz-stredet",
+          "source": "regjeringen.no",
+          "url": "https://www.regjeringen.no/no/aktuelt/statsministeren-deltok-pa-internasjonalt-mote-om-hormuz-stredet/id3156634/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "St\u00f8re: Norge vil delta i internasjonalt initiativ for fritt leide gjennom Hormuzstredet",
+          "source": "dagsavisen.no",
+          "url": "https://www.dagsavisen.no/nyheter/store-norge-vil-delta-i-internasjonalt-initiativ-for-fritt-leide-gjennom-hormuzstredet/10304361",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Reagerer: \u2013 En total falitterkl\u00e6ring",
+          "source": "tv2.no",
+          "url": "https://www.tv2.no/nyheter/reagerer-en-total-falitterklaering/18760306/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "N\u00e6ringsministeren: Regjeringen klar til \u00e5 gripe inn ved flydrivstoffmangel",
+          "source": "dagsavisen.no",
+          "url": "https://dagsavisen.no/nyheter/naeringsministeren-regjeringen-klar-til-a-gripe-inn-ved-flydrivstoffmangel/10304068",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "St\u00f8re: Kan bli aktuelt med drivstoffsparing \u2013 i f\u00f8rste omgang frivillig",
+          "source": "ba.no",
+          "url": "https://www.ba.no/store-kan-bli-aktuelt-med-drivstoffsparing-i-forste-omgang-frivillig/s/5-8-3376406",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Drivstoffkrise: \u2013 Ikke aktuelt \u00e5 innf\u00f8re tiltak n\u00e5",
+          "source": "tv2.no",
+          "url": "https://tv2.no/nyheter/ikke-aktuelt-a-innfore-tiltak-na/18760717",
           "date": "2026-04-15"
         },
         {
           "title": "Kan bli aktuelt med drivstoffsparing",
           "source": "sognavis.no",
           "url": "https://www.sognavis.no/kan-bli-aktuelt-med-drivstoffsparing/s/5-115-1430110",
-          "date": "2026-04-16"
+          "date": "2026-04-15"
         },
         {
           "title": "Kan bli aktuelt med drivstoffsparing",
           "source": "dagsavisen.no",
           "url": "https://dagsavisen.no/notice/10303715",
-          "date": "2026-04-16"
+          "date": "2026-04-15"
         },
         {
           "title": "St\u00f8re om norsk drivstoffberedskap: \u2013 Vi har full kontroll no",
           "source": "firdaposten.no",
           "url": "https://www.firdaposten.no/store-om-norsk-drivstoffberedskap-vi-har-full-kontroll-no/s/5-16-986627",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "St\u00f8re: Kan bli aktuelt med drivstoffsparing \u2013 i f\u00f8rste omgang frivillig",
-          "source": "abcnyheter.no",
-          "url": "https://abcnyheter.no/nyheter/store-kan-bli-aktuelt-med-drivstoffsparing-i-forste-omgang-frivillig/1509229",
           "date": "2026-04-15"
-        },
-        {
-          "title": "Er Norge en olje- og gassgigant? N\u00e5r det gjelder drivstoff, er landet ikke selvforsynt",
-          "source": "mojanorwegia.pl",
-          "url": "https://mojanorwegia.pl/no/er-norge-en-olje-og-gassgigant-nar-det-gjelder-drivstoff-er-landet-ikke-selvforsynt-28163.html",
-          "date": "2026-04-13"
         },
         {
           "title": "Hvordan kan vi unng\u00e5 tomme hyller i matbutikken og stengte drivstoffpumper hvis det blir krig?",
           "source": "forskning.no",
           "url": "https://forskning.no/forsvarets-forskningsinstitutt-krig-og-fred-mat/hvordan-kan-vi-unnga-tomme-hyller-i-matbutikken-og-stengte-drivstoffpumper-hvis-det-blir-krig/2642163",
-          "date": "2026-04-17"
+          "date": "2026-04-16"
         },
         {
-          "title": "AfD igjen st\u00f8rste parti i Tyskland [snippet includes Listhaug drivstoff quote]",
-          "source": "dagsavisen.no",
-          "url": "https://dagsavisen.no/notice/10303082",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Vil Listhaug at norske skattebetalere skal ta regningen for kriger i Midt\u00f8sten?",
-          "source": "dagsavisen.no",
-          "url": "https://www.dagsavisen.no/kommentar/vil-listhaug-at-norske-skattebetalere-skal-ta-regningen-for-kriger-i-midtosten/10297054",
+          "title": "Er Norge en olje- og gassgigant? N\u00e5r det gjelder drivstoff, er landet ikke selvforsynt",
+          "source": "mojanorwegia.pl",
+          "url": "https://mojanorwegia.pl/no/er-norge-en-olje-og-gassgigant-nar-det-gjelder-drivstoff-er-landet-ikke-selvforsynt-28163.html",
           "date": "2026-04-13"
         },
         {
@@ -203,79 +191,9 @@
           "date": "2026-04-13"
         },
         {
-          "title": "Svensk alarm: Forbereder seg p\u00e5 angrep",
-          "source": "dagbladet.no",
-          "url": "https://dagbladet.no/nyheter/svensk-alarm-forbereder-seg-pa-angrep/84509089",
-          "date": "2026-04-16"
-        }
-      ],
-      "representative_urls": [
-        "https://www.nrk.no/norge/store-vurderer-tiltak-ved-drivstoffmangel_-_-veldig-alvorlig-1.17850570",
-        "https://www.tv2.no/nyheter/reagerer-en-total-falitterklaering/18760306/"
-      ]
-    },
-    {
-      "story_id": 2,
-      "headline": "Norway joins Hormuz maritime initiative as Iran temporarily reopens strait to commercial shipping",
-      "summary": "Prime Minister St\u00f8re participated in a digital meeting of 49-51 nations co-hosted by France and Britain to coordinate free passage through the Hormuz Strait, saying Norway would explore contributing to a maritime operation. The meeting coincided with Iran's announcement that the strait was open to commercial ships, though Iran separately threatened to close it again. Foreign Minister Barth Eide also discussed Hormuz security with French counterpart Barrot.",
-      "actors_involved": [
-        "St\u00f8re",
-        "Barth Eide"
-      ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 10,
-      "sources": [
-        "vg.no",
-        "nettavisen.no",
-        "regjeringen.no",
-        "dagsavisen.no",
-        "tv2.no",
-        "sot.com.al",
-        "marketscreener.com",
-        "nyheder.tv2.dk"
-      ],
-      "date_range": "2026-04-13 to 2026-04-17",
-      "articles": [
-        {
-          "title": "Iransk nyhetsbyr\u00e5: Truer med \u00e5 stenge Hormuzstredet igjen",
-          "source": "vg.no",
-          "url": "https://www.vg.no/nyheter/i/JOr5ab/statsministeren-om-aapningen-av-hormuzstredet-viktig-for-norge-som-sjoefartsnasjon",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "St\u00f8re: Norge kan bidra i maritim operasjon i Hormuzstredet",
-          "source": "nettavisen.no",
-          "url": "https://www.nettavisen.no/nyheter/store-norge-kan-bidra-i-maritim-operasjon-i-hormuzstredet/s/5-95-2989392",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Minerydding i Hormuzstredet: \u2013 Trusselen er stor",
-          "source": "nettavisen.no",
-          "url": "https://nettavisen.no/nyheter/minerydding-i-hormuzstredet-trusselen-er-stor/s/5-95-2988893",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Statsministeren deltok p\u00e5 internasjonalt m\u00f8te om Hormuz-stredet",
-          "source": "regjeringen.no",
-          "url": "https://www.regjeringen.no/no/aktuelt/statsministeren-deltok-pa-internasjonalt-mote-om-hormuz-stredet/id3156634/",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "St\u00f8re: Norge vil delta i internasjonalt initiativ for fritt leide gjennom Hormuzstredet",
-          "source": "dagsavisen.no",
-          "url": "https://www.dagsavisen.no/nyheter/store-norge-vil-delta-i-internasjonalt-initiativ-for-fritt-leide-gjennom-hormuzstredet/10304361",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Hormuzstredet: 40 land m\u00f8tes \u2013 St\u00f8re sier Norge vil bidra",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/40-land-motes-store-sier-norge-vil-bidra/18758850/",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Franca dhe Norvegjia k\u00ebrkojn\u00eb siguri n\u00eb Ngushtic\u00ebn e Hormuzit",
-          "source": "sot.com.al",
-          "url": "https://sot.com.al/bota/franca-dhe-norvegjia-kerkojne-siguri-ne-ngushticen-e-hormuzit-cfare-diskutuan-palet/",
+          "title": "Espen Barth Eide svarer Trump: \u2013 Ingen diskusjon om \u00e5 sette inn Nato-styrker i omr\u00e5det",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/13/04/2026/espen-barth-eide-svarer-trump-ingen-diskusjon-om-a-sette-inn-nato-styrker-i-omradet/",
           "date": "2026-04-13"
         },
         {
@@ -285,41 +203,48 @@
           "date": "2026-04-13"
         },
         {
-          "title": "Iran announces reopening of Strait of Hormuz, financial markets surge",
-          "source": "marketscreener.com",
-          "url": "https://www.marketscreener.com/news/iran-announces-reopening-of-strait-of-hormuz-financial-markets-surge-ce7e50d2d18cf420",
-          "date": "2026-04-16"
+          "title": "Franca dhe Norvegjia k\u00ebrkojn\u00eb siguri n\u00eb Ngushtic\u00ebn e Hormuzit",
+          "source": "sot.com.al",
+          "url": "https://sot.com.al/bota/franca-dhe-norvegjia-kerkojne-siguri-ne-ngushticen-e-hormuzit-cfare-diskutuan-palet/",
+          "date": "2026-04-14"
         },
         {
-          "title": "Espen Barth Eide svarer Trump: \u2013 Ingen diskusjon om \u00e5 sette inn Nato-styrker i omr\u00e5det",
-          "source": "inyheter.no",
-          "url": "https://inyheter.no/13/04/2026/espen-barth-eide-svarer-trump-ingen-diskusjon-om-a-sette-inn-nato-styrker-i-omradet/",
-          "date": "2026-04-13"
+          "title": "\u00d8konom: Hormuz-\u00e5pning kan utsette norsk renteheving",
+          "source": "aftenbladet.no",
+          "url": "https://www.aftenbladet.no/okonomi/i/m0K2el/oekonom-hormuz-aapning-kan-utsette-norsk-renteheving",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "\u00d8konom: Hormuz-\u00e5pning kan utsette norsk renteheving",
+          "source": "fvn.no",
+          "url": "https://www.fvn.no/nyheter/okonomi/i/d47eEO/oekonom-hormuz-aapning-kan-utsette-norsk-renteheving",
+          "date": "2026-04-15"
         }
       ],
       "representative_urls": [
-        "https://www.regjeringen.no/no/aktuelt/statsministeren-deltok-pa-internasjonalt-mote-om-hormuz-stredet/id3156634/",
-        "https://www.dagsavisen.no/nyheter/store-norge-vil-delta-i-internasjonalt-initiativ-for-fritt-leide-gjennom-hormuzstredet/10304361"
+        "https://www.nrk.no/norge/store-vurderer-tiltak-ved-drivstoffmangel_-_-veldig-alvorlig-1.17850570",
+        "https://www.regjeringen.no/no/aktuelt/statsministeren-deltok-pa-internasjonalt-mote-om-hormuz-stredet/id3156634/"
       ]
     },
     {
-      "story_id": 3,
-      "headline": "Zelenskyy visits Oslo; Norway-Ukraine sign joint defense declaration and drone production deal",
-      "summary": "Ukrainian President Zelenskyy met Prime Minister St\u00f8re in Oslo on April 14, signing a Joint Declaration on Enhanced Defense and Security Cooperation that includes Norway supporting drone production in Ukraine and Ukraine sharing data and knowledge with Norway. The visit also raised questions about the status of previously donated Norwegian F-16s, some of which had parts removed before transfer, with test flights planned for autumn 2026.",
+      "story_id": 2,
+      "headline": "Zelenskyy visits Oslo: Norway and Ukraine sign defense declaration, launch drone deal",
+      "summary": "Ukrainian President Zelenskyy visited Oslo on April 14, meeting PM St\u00f8re and Crown Prince Haakon. The two countries signed a Joint Declaration on Enhanced Defense and Security Cooperation, including a drone production arrangement whereby Ukraine will produce drones in Norway while sharing data with Oslo. The visit also surfaced controversy over parts removed from donated Norwegian F-16s before transfer.",
       "actors_involved": [
         "St\u00f8re",
-        "Norwegian Armed Forces"
+        "King Harald V"
       ],
       "signal_category_hint": "security_defense",
-      "source_count": 7,
+      "source_count": 8,
       "sources": [
         "reuters.com",
         "eurasiareview.com",
-        "odessa-journal.com",
         "english.nv.ua",
-        "tv2.no",
+        "odessa-journal.com",
+        "nettavisen.no",
+        "president.gov.ua",
         "an.no",
-        "forsvaretsforum.no"
+        "tv2.no"
       ],
       "date_range": "2026-04-13 to 2026-04-16",
       "articles": [
@@ -336,144 +261,375 @@
           "date": "2026-04-15"
         },
         {
-          "title": "Ukraine and Norway Deepen Defense Cooperation in Oslo Talks",
-          "source": "odessa-journal.com",
-          "url": "https://odessa-journal.com/jonas-gahr-stre-ukraine-remains-a-key-priority-of-norwegian-foreign-policy",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "Norway's F-16 donation to Ukraine came after parts were pulled from some aircraft \u2014 PM St\u00f8re",
+          "title": "Norway's F-16 donation to Ukraine came after parts were pulled from some aircraft",
           "source": "english.nv.ua",
           "url": "https://english.nv.ua/nation/norway-removed-parts-from-some-f-16s-before-donating-jets-to-ukraine-pm-reveals-50600283.html",
           "date": "2026-04-15"
         },
         {
-          "title": "Her takker Zelenskyj for norske F-16 som beskytter Ukrainas luftrom",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/her-takker-zelenskyj-for-norske-f-16-som-beskytter-ukrainas-luftrom/18755741/",
-          "date": "2026-04-15"
+          "title": "Ukraine and Norway Deepen Defense Cooperation in Oslo Talks",
+          "source": "odessa-journal.com",
+          "url": "https://odessa-journal.com/jonas-gahr-stre-ukraine-remains-a-key-priority-of-norwegian-foreign-policy",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Norge og Ukraina signerer avtale: \u2013 For v\u00e5r felles sikkerhet",
+          "source": "nettavisen.no",
+          "url": "https://nettavisen.no/nyheter/norge-og-ukraina-signerer-avtale-for-var-felles-sikkerhet/s/5-95-2983339",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Meeting Between the President of Ukraine and the Crown Prince of Norway Took Place in Oslo",
+          "source": "president.gov.ua",
+          "url": "https://www.president.gov.ua/en/news/v-oslo-vidbulasya-zustrich-prezidenta-ukrayini-ta-kronprinca-103881",
+          "date": "2026-04-14"
         },
         {
           "title": "St\u00f8re avviser Bod\u00f8 som alternativ: \u2013 M\u00e5 bli vedlikeholdt i Belgia",
           "source": "an.no",
           "url": "https://www.an.no/store-avviser-bodo-som-alternativ-ma-bli-vedlikeholdt-i-belgia/s/5-4-2356786",
-          "date": "2026-04-14"
+          "date": "2026-04-13"
         },
         {
-          "title": "Norske granater i Ukraina: Effektive eller begrenset brukbare?",
-          "source": "forsvaretsforum.no",
-          "url": "https://www.forsvaretsforum.no/donasjon-forsvaret-granat/norske-granater-gikk-ikke-av-i-strid/494918",
-          "date": "2026-04-14"
+          "title": "Her takker Zelenskyj for norske F-16 som beskytter Ukrainas luftrom",
+          "source": "tv2.no",
+          "url": "https://www.tv2.no/nyheter/her-takker-zelenskyj-for-norske-f-16-som-beskytter-ukrainas-luftrom/18755741/",
+          "date": "2026-04-16"
         }
       ],
       "representative_urls": [
         "https://www.reuters.com/world/europe/ukraine-produce-drones-norway-oslo-says-2026-04-14/",
-        "https://english.nv.ua/nation/norway-removed-parts-from-some-f-16s-before-donating-jets-to-ukraine-pm-reveals-50600283.html"
+        "https://nettavisen.no/nyheter/norge-og-ukraina-signerer-avtale-for-var-felles-sikkerhet/s/5-95-2983339"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Stoltenberg in Washington: defends NATO, GPFG stays in US markets, co-hosts Ukraine donors meeting",
+      "summary": "Finance Minister and former NATO Secretary General Jens Stoltenberg made a high-profile Washington visit during IMF/World Bank spring meetings, visiting the oil fund's New York office, defending NATO's value to the US amid Trump threats, stating the GPFG has no plans to divest from US assets, and co-hosting with German FM Klingbeil a Ukraine donor support meeting. Stoltenberg also warned that NATO's survival over the next ten years is not guaranteed.",
+      "actors_involved": [
+        "Stoltenberg",
+        "Government Pension Fund Global"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 15,
+      "sources": [
+        "foxnews.com",
+        "ekhbary.com",
+        "cbsnews.com",
+        "blabber.buzz",
+        "nettavisen.no",
+        "vg.no",
+        "1010wcsi.com",
+        "news.futunn.com",
+        "nationen.no",
+        "finanzen.net",
+        "faz.net",
+        "table.media",
+        "caleaeuropeana.ro",
+        "nettavisen.no"
+      ],
+      "date_range": "2026-04-13 to 2026-04-16",
+      "articles": [
+        {
+          "title": "US, Denmark, Greenland talks 'on good trajectory' amid Trump push for control",
+          "source": "foxnews.com",
+          "url": "https://www.foxnews.com/politics/greenland-talks-good-trajectory-white-house-says-amid-trump-takeover-push",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Former NATO Chief Defends Alliance Amid Trump's Criticism: US Stronger with Allies",
+          "source": "ekhbary.com",
+          "url": "https://www.ekhbary.com/news/former-nato-chief-defends-alliance-amid-trumps-criticism-us-stronger-with-allies-1776561740-2.html",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Former NATO leader Jens Stoltenberg: U.S. is 'safer with NATO than without NATO'",
+          "source": "cbsnews.com",
+          "url": "https://www.cbsnews.com/video/former-nato-leader-jens-stoltenberg-us-safer-with-nato-than-without-nato/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Greenland Talks Moving Forward As Trump's Ambitions Loom Large",
+          "source": "blabber.buzz",
+          "url": "https://www.blabber.buzz/conservative-news/1074924-white-house-says-greenland-talks-on-track-as-trump-s-takeover-push-raises-eyebrows",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Stoltenberg: \u2013 Ikke skrevet i stein at Nato vil overleve de neste ti \u00e5rene",
+          "source": "nettavisen.no",
+          "url": "https://www.nettavisen.no/nyheter/stoltenberg-ikke-skrevet-i-stein-at-nato-vil-overleve-de-neste-ti-arene/s/5-95-2983582",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Stoltenberg om Trumps Nato-trussel: \u2013 M\u00e5 ta det p\u00e5 alvor",
+          "source": "vg.no",
+          "url": "https://www.vg.no/nyheter/i/3p1zee/stoltenberg-om-trumps-nato-trussel-maa-ta-det-paa-alvor",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "WATCH: Ex-NATO chief draws red line as Trump fumes alliance abandoned US during Iran war",
+          "source": "1010wcsi.com",
+          "url": "https://1010wcsi.com/fox-politics/watch-ex-nato-chief-draws-red-line-as-trump-fumes-alliance-abandoned-us-during-iran-war/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "The world's largest sovereign wealth fund has no intention of withdrawing from the United States",
+          "source": "news.futunn.com",
+          "url": "https://news.futunn.com/en/post/71593434/the-world-s-largest-sovereign-wealth-fund-has-no-intention",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Har Stoltenberg meldt overgang til Finanspartiet?",
+          "source": "nationen.no",
+          "url": "https://www.nationen.no/har-stoltenberg-meldt-overgang-til-finanspartiet/o/5-148-892056",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Klingbeil: Russland darf nicht Gewinner des Ukraine-Kriegs sein",
+          "source": "finanzen.net",
+          "url": "https://www.finanzen.net/nachricht/aktien/klingbeil-russland-darf-nicht-gewinner-des-ukraine-kriegs-sein-15615581",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Krisenminister Klingbeil: Der Finanzminister pr\u00e4sentiert sich gern als Macher",
+          "source": "faz.net",
+          "url": "https://www.faz.net/aktuell/wirtschaft/mehr-wirtschaft/krisenminister-klingbeil-der-finanzminister-praesentiert-sich-gern-als-macher-200735348.html",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "KORREKTUR/Klingbeil: Russland darf nicht Gewinner des Iran-Kriegs sein",
+          "source": "finanzen.net",
+          "url": "https://www.finanzen.net/nachricht/aktien/korrektur-klingbeil-russland-darf-nicht-gewinner-des-iran-kriegs-sein-15615617",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Fr\u00fchjahrstagung: Klingbeil und Stoltenberg laden zu Krisentreffen",
+          "source": "table.media",
+          "url": "https://table.media/berlin/news/fruehjahrstagung-klingbeil-und-stoltenberg-laden-zu-krisentreffen",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Stoltenberg \u00eei reaminte\u0219te lui Trump importan\u021ba alia\u021bilor din NATO",
+          "source": "caleaeuropeana.ro",
+          "url": "https://caleaeuropeana.ro/stoltenberg-ii-reaminteste-lui-trump-importanta-aliatilor-din-nato-norvegia-ajuta-la-monitorizarea-armelor-nucleare-rusesti-indreptate-spre-new-york-si-washington",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Finansminister Jens Stoltenberg om Trumps blokade: \u2013 Presser opp prisene i Norge",
+          "source": "vg.no",
+          "url": "https://www.vg.no/nyheter/i/xrl9Ap/finansminister-jens-stoltenberg-om-trumps-blokade-presser-opp-prisene-i-norge",
+          "date": "2026-04-13"
+        }
+      ],
+      "representative_urls": [
+        "https://www.nettavisen.no/nyheter/stoltenberg-ikke-skrevet-i-stein-at-nato-vil-overleve-de-neste-ti-arene/s/5-95-2983582",
+        "https://www.cbsnews.com/video/former-nato-leader-jens-stoltenberg-us-safer-with-nato-than-without-nato/"
       ]
     },
     {
       "story_id": 4,
-      "headline": "Epstein files shake Norwegian foreign ministry; investigation launched, E-tjenesten access disputed",
-      "summary": "The release of the Epstein files triggered a parliamentary inquiry in Norway after figures from the foreign ministry and royal family were named. PM St\u00f8re said the files show it is possible to 'buy and abuse influence.' Foreign Minister Barth Eide confirmed the foreign ministry would continue mapping diplomat Mona Juul's contacts with Epstein even after her departure from service. Separately, parliamentarians expressed concern that E-tjenesten could control what information the review commission receives.",
+      "headline": "FrP reaches 17-year polling high as Listhaug positions as alternative PM",
+      "summary": "Sylvi Listhaug's Fremskrittspartiet reached nearly 30 percent in multiple April polls \u2014 the party's best result in 17 years \u2014 driven in part by the fuel price and Hormuz debates where Listhaug attacked the government's preparedness. Sp's Toppe said her party fears a Listhaug premiership, while commentary discussed the parliamentary arithmetic that could topple St\u00f8re.",
       "actors_involved": [
-        "St\u00f8re",
-        "Barth Eide",
-        "E-tjenesten"
+        "Listhaug"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 6,
+      "source_count": 11,
       "sources": [
-        "theguardian.com",
-        "vg.no",
-        "ytringsforum.no",
+        "tv2.no",
+        "document.no",
         "dagsavisen.no",
-        "abcnyheter.no",
-        "panoramanyheter.no"
+        "inyheter.no",
+        "idag.no",
+        "nettavisen.no",
+        "vg.no",
+        "aftenposten.no",
+        "sol.no",
+        "dagen.no",
+        "frifagbevegelse.no"
       ],
-      "date_range": "2026-04-14 to 2026-04-18",
+      "date_range": "2026-04-13 to 2026-04-16",
       "articles": [
         {
-          "title": "Norwegian politicians hope Epstein files inquiry will restore faith in democracy",
-          "source": "theguardian.com",
-          "url": "https://www.theguardian.com/world/2026/apr/18/jeffrey-epstein-files-shaken-norway-faith-in-democracy-oversight-committee",
-          "date": "2026-04-18"
+          "title": "Fersk TV 2-m\u00e5ling: Super-Sylvi: N\u00e5 vasker hun g\u00f8lvet med St\u00f8re og S\u00f8reide",
+          "source": "tv2.no",
+          "url": "https://www.tv2.no/nyheter/super-sylvi-na-vasker-hun-golvet-med-store-og-soreide/18744503/",
+          "date": "2026-04-13"
         },
         {
-          "title": "Frykter e-tjenesten kan styre Epstein-granskingen",
-          "source": "vg.no",
-          "url": "https://www.vg.no/nyheter/i/lnKlVA/frykter-e-tjenesten-kan-styre-epstein-granskingen",
-          "date": "2026-04-14"
+          "title": "FrP dundrer frem til historisk rekordm\u00e5ling",
+          "source": "document.no",
+          "url": "https://document.no/2026/04/15/frp-dundrer-frem-til-historisk-rekordmaling",
+          "date": "2026-04-15"
         },
         {
-          "title": "Hvem styrer Epstein-granskingen?",
-          "source": "ytringsforum.no",
-          "url": "https://www.ytringsforum.no/p/hvem-styrer-epstein-granskingen",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Eide: Fortsetter Epstein-kartlegging",
+          "title": "Ny jubelm\u00e5ling for Frp: \u00c9n ting har endret seg",
           "source": "dagsavisen.no",
-          "url": "https://www.dagsavisen.no/notice/10305607",
-          "date": "2026-04-18"
+          "url": "https://www.dagsavisen.no/nyheter/ny-jubelmaling-for-frp-en-ting-har-endret-seg/10298012",
+          "date": "2026-04-15"
         },
         {
-          "title": "\u2013 Jonas Gahr St\u00f8re snakker fremdeles ikke sant",
-          "source": "abcnyheter.no",
-          "url": "https://www.abcnyheter.no/nyheter/jeg-liker-svaert-darlig-at-norges-statsminister-ikke-snakker-sant-om-meg/1511037",
-          "date": "2026-04-17"
+          "title": "Jubel i FrP \u2013 MDG raser p\u00e5 meningsm\u00e5lingene",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/15/04/2026/jubel-i-frp-mdg-raser-pa-meningsmalingene",
+          "date": "2026-04-15"
         },
         {
-          "title": "Portrett-intervju med Midt\u00f8sten-forsker Hilde Henriksen Waage om hva som driver henne",
-          "source": "panoramanyheter.no",
-          "url": "https://www.panoramanyheter.no/hilde-henriksen-waage-innsyn-jonas-gahr-store/jeg-liker-svaert-darlig-at-norges-statsminister-ikke-snakker-sant-om-meg/420036",
+          "title": "Sylvi Listhaug p\u00e5 topp igjen",
+          "source": "idag.no",
+          "url": "https://idag.no/sylvi-listhaug-pa-topp-igjen/19.52468",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "M\u00e5ling av verdensledere: Trump mer popul\u00e6r enn St\u00f8re",
+          "source": "nettavisen.no",
+          "url": "https://www.nettavisen.no/nyheter/maling-av-verdensledere-trump-mer-popular-enn-store/s/5-95-2988388",
           "date": "2026-04-16"
+        },
+        {
+          "title": "Ny VG-m\u00e5ling: Folket splittet om St\u00f8re-gjenvalg",
+          "source": "vg.no",
+          "url": "https://vg.no/nyheter/i/L43mXR/ny-vg-maaling-folket-splittet-om-stoere-gjenvalg",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "St\u00f8re om 2029-valget: M\u00e5l \u00e5 v\u00e6re statsministerkandidat p\u00e5 nytt",
+          "source": "aftenposten.no",
+          "url": "https://www.aftenposten.no/norge/politikk/i/PdgGye/stoere-om-2029-valget-maal-aa-vaere-statsministerkandidat-paa-nytt",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Sp-Toppe sl\u00e5r ring om St\u00f8re: Frykter Listhaug som statsminister",
+          "source": "sol.no",
+          "url": "https://sol.no/nyheter/frykter-listhaug-som-statsminister/84492771",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Sp-Toppe avviser sideskifte: \u2013 Vi frykter Sylvi Listhaug",
+          "source": "dagen.no",
+          "url": "https://www.dagen.no/nyheter/sp-toppe-avviser-sideskifte-vi-frykter-sylvi-listhaug/1576919",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Fest setebeltet. Det blir turbulens",
+          "source": "frifagbevegelse.no",
+          "url": "https://frifagbevegelse.no/debatt/fest-setebeltet-det-blir-turbulens-6.490.1206000.5648d8fbed",
+          "date": "2026-04-13"
         }
       ],
       "representative_urls": [
-        "https://www.theguardian.com/world/2026/apr/18/jeffrey-epstein-files-shaken-norway-faith-in-democracy-oversight-committee",
-        "https://www.vg.no/nyheter/i/lnKlVA/frykter-e-tjenesten-kan-styre-epstein-granskingen"
+        "https://www.tv2.no/nyheter/super-sylvi-na-vasker-hun-golvet-med-store-og-soreide/18744503/",
+        "https://document.no/2026/04/15/frp-dundrer-frem-til-historisk-rekordmaling"
       ]
     },
     {
       "story_id": 5,
-      "headline": "Norges Bank signals rate hike, triggering political dispute between government, LO, and central bank",
-      "summary": "Norges Bank's hawkish pivot\u2014signalling a likely rate increase in June at 4%\u2014sparked a political row in which LO leader Kine Asper Vistnes accused the bank of undermining wage agreements, Finance Minister Stoltenberg said there must be room for debate but ruled out political interference, and PM St\u00f8re said he hoped Norwegians would avoid even higher rates. FrP's Listhaug and H\u00f8yre both criticised the government's earlier campaign-era rhetoric on rates. Governor Ida Wolden Bache said she was aware high rates are unpopular.",
+      "headline": "Government coalition on the edge: MDG threatens to topple St\u00f8re, Sp warned against further budget breaches",
+      "summary": "MDG leader Arild Hermstad said publicly he is willing to let the St\u00f8re government fall if the upcoming revised budget fails to deliver on climate commitments. Simultaneously, St\u00f8re warned Senterpartiet against repeating its earlier breach of the multi-party budget agreement, and confirmed holding bilateral meetings with both Sp and MDG leaders that week.",
       "actors_involved": [
         "St\u00f8re",
-        "Stoltenberg",
-        "Norges Bank",
         "Listhaug"
       ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 18,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 8,
       "sources": [
-        "frifagbevegelse.no",
-        "nettavisen.no",
-        "nrk.no",
         "tv2.no",
-        "aftenbladet.no",
-        "dn.no",
-        "norges-bank.no",
-        "tradingpedia.com",
-        "minerva.no",
-        "borsen.dagbladet.no",
-        "mn24.no",
-        "e24.no",
-        "dagsavisen.no",
-        "abcnyheter.no"
+        "dagbladet.no",
+        "aftenposten.no",
+        "nrk.no",
+        "inyheter.no",
+        "nettavisen.no",
+        "finansavisen.no",
+        "vg.no"
       ],
-      "date_range": "2026-04-13 to 2026-04-18",
+      "date_range": "2026-04-13 to 2026-04-16",
       "articles": [
         {
-          "title": "St\u00f8re: \u2013 Jeg h\u00e5per nordmenn slipper enda h\u00f8yere renter",
-          "source": "frifagbevegelse.no",
-          "url": "https://frifagbevegelse.no/nyheter/store--jeg-haper-nordmenn-slipper-enda-hoyere-renter-6.158.1206264.0713222c78",
+          "title": "Arild Hermstad (MDG) er klar til \u00e5 felle St\u00f8re: \u2013 Vanskelig \u00e5 kalle dette et samarbeid",
+          "source": "tv2.no",
+          "url": "https://www.tv2.no/nyheter/vanskelig-a-kalle-dette-et-samarbeid/18759684/",
           "date": "2026-04-16"
         },
         {
-          "title": "Listhaug freser mot LO: \u2013 Hold dere unna renta",
+          "title": "Villig til \u00e5 la St\u00f8re falle",
+          "source": "dagbladet.no",
+          "url": "https://www.dagbladet.no/nyheter/villig-til-a-la-store-falle/84512535",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "MDG: Villig til \u00e5 la Ap-regjeringen falle",
+          "source": "aftenposten.no",
+          "url": "https://www.aftenposten.no/norge/politikk/i/3p1GdP/mdg-villig-til-aa-la-ap-regjeringen-falle",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "St\u00f8re bekrefter m\u00f8ter med partilederne i MDG og Sp denne uken",
+          "source": "nrk.no",
+          "url": "https://nrk.no/nyheter/store-bekrefter-moter-med-partilederne-i-mdg-og-sp-denne-uken-1.17849377",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "St\u00f8re advarer Sp mot nye brudd",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/16/04/2026/store-advarer-sp-mot-nye-brudd/",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "St\u00f8re advarer urokr\u00e5ker i eget reir: \u2013 Jeg har selvsagt grenser",
           "source": "nettavisen.no",
-          "url": "https://www.nettavisen.no/nyheter/listhaug-freser-mot-lo-hold-dere-unna-renta/s/5-95-2983649",
+          "url": "https://nettavisen.no/nyheter/store-advarer-urokraker-i-eget-reir-jeg-har-selvsagt-grenser/s/5-95-2972480",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Presser St\u00f8re p\u00e5 skattegrep i mai",
+          "source": "finansavisen.no",
+          "url": "https://www.finansavisen.no/politikk/2026/04/16/8344331/presser-store-pa-skattegrep-i-mai",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "St\u00f8re bekrefter: - Et godt m\u00f8te",
+          "source": "dagbladet.no",
+          "url": "https://dagbladet.no/nyheter/store-bekrefter-et-godt-mote/84504041",
+          "date": "2026-04-16"
+        }
+      ],
+      "representative_urls": [
+        "https://www.tv2.no/nyheter/vanskelig-a-kalle-dette-et-samarbeid/18759684/",
+        "https://www.aftenposten.no/norge/politikk/i/3p1GdP/mdg-villig-til-aa-la-ap-regjeringen-falle"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Norges Bank rate hike controversy: LO attacks central bank independence, political parties pile in",
+      "summary": "LO chief Kine Asper Vistnes publicly warned Norges Bank not to raise interest rates, arguing it would undermine wage settlements \u2014 triggering a multi-party political melee. Norges Bank governor Ida Wolden Bache said the bank would not be swayed, Stoltenberg defended central bank independence, PM St\u00f8re declined to back the LO's criticism, and FrP attacked the government from the other direction. Norges Bank has signalled one or two rate hikes in 2026.",
+      "actors_involved": [
+        "St\u00f8re",
+        "Stoltenberg",
+        "Listhaug",
+        "Norges Bank"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 14,
+      "sources": [
+        "frifagbevegelse.no",
+        "nrk.no",
+        "nettavisen.no",
+        "borsen.dagbladet.no",
+        "abcnyheter.no",
+        "e24.no",
+        "mn24.no",
+        "minerva.no",
+        "norges-bank.no",
+        "tradingpedia.com",
+        "dagsavisen.no",
+        "dn.no"
+      ],
+      "date_range": "2026-04-13 to 2026-04-17",
+      "articles": [
+        {
+          "title": "LO-lederen advarer Norges Bank mot \u00e5 \u00f8ke renta",
+          "source": "frifagbevegelse.no",
+          "url": "https://frifagbevegelse.no/nyheter/lolederen-advarer-norges-bank-mot-a-oke-renta-6.158.1205741.0b13a4a9ee",
           "date": "2026-04-13"
         },
         {
@@ -483,40 +639,64 @@
           "date": "2026-04-13"
         },
         {
-          "title": "Stoltenberg om rente-debatt: \u2013 Trump er ikke mitt forbilde",
-          "source": "nrk.no",
-          "url": "https://www.nrk.no/urix/stoltenberg-om-rente-debatt_-_-trump-er-ikke-mitt-forbilde-1.17848834",
+          "title": "St\u00f8re: \u2013 Jeg h\u00e5per nordmenn slipper enda h\u00f8yere renter",
+          "source": "frifagbevegelse.no",
+          "url": "https://frifagbevegelse.no/nyheter/store--jeg-haper-nordmenn-slipper-enda-hoyere-renter-6.158.1206264.0713222c78",
           "date": "2026-04-15"
         },
         {
-          "title": "Stoltenberg: \u2013 M\u00e5 t\u00e5le at det er diskusjon om pengepolitikken",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/stoltenberg-ma-tale-at-det-er-diskusjon-om-pengepolitikken/18753490/",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "St\u00f8re ser ingen grunn til \u00e5 beklage LOs renteutspill",
-          "source": "nrk.no",
-          "url": "https://www.nrk.no/norge/store-ser-ingen-grunn-til-a-beklage-los-renteutspill-1.17845990",
+          "title": "Finansminister Jens Stoltenberg vil ikke bestemme over Norges Bank og rentekutt",
+          "source": "nettavisen.no",
+          "url": "https://www.nettavisen.no/jens-stoltenberg/norges-bank/marthe-hammer/finansminister-jens-stoltenberg-vil-ikke-bestemme-over-norges-bank-og-rentekutt/s/5-95-2981271",
           "date": "2026-04-13"
         },
         {
           "title": "Avviser Frps rente-kritikk mot LO-lederen",
           "source": "frifagbevegelse.no",
           "url": "https://frifagbevegelse.no/nyheter/avviser-frps-rentekritikk-mot-lolederen-6.158.1206024.be450c6895",
-          "date": "2026-04-14"
+          "date": "2026-04-13"
         },
         {
-          "title": "Rentekutt: SV burde vite bedre",
-          "source": "aftenbladet.no",
-          "url": "https://www.aftenbladet.no/meninger/kommentar/i/L43dAP/rentekutt-sv-burde-vite-bedre",
+          "title": "St\u00f8re ser ingen grunn til \u00e5 beklage LOs renteutspill",
+          "source": "nrk.no",
+          "url": "https://nrk.no/norge/store-ser-ingen-grunn-til-a-beklage-los-renteutspill-1.17845990",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Renta: \u2013 Kommer med rente-advarsel",
+          "source": "borsen.dagbladet.no",
+          "url": "https://borsen.dagbladet.no/nyheter/kommer-med-rente-advarsel/84497923",
           "date": "2026-04-15"
         },
         {
-          "title": "Renteanklage fra H\u00f8yre-topper: \u2013 St\u00f8re og Stoltenberg har ledet oss ned en farlig vei",
-          "source": "dn.no",
-          "url": "https://www.dn.no/politikk/renteanklage-fra-hoyre-topper-store-og-stoltenberg-har-ledet-oss-ned-en-farlig-vei/2-1-1974101",
-          "date": "2026-04-14"
+          "title": "Norges Bank skader \u00f8konomien til folk flest",
+          "source": "abcnyheter.no",
+          "url": "https://www.abcnyheter.no/stemmer/norges-bank-skader-okonomien-til-folk-flest/1508800",
+          "date": "2026-04-17"
+        },
+        {
+          "title": "Sentralbanksjefen: \u2013 Vet at h\u00f8y rente ikke er popul\u00e6rt",
+          "source": "e24.no",
+          "url": "https://e24.no/boers-og-finans/i/L43LQQ/sentralbanksjefen-vet-at-hoey-rente-ikke-er-populaert-men-noen-ganger-er-det-noedvendig",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "\u00d8konomene om renteheving: Ingen vei utenom",
+          "source": "mn24.no",
+          "url": "https://www.mn24.no/nyheter/n/oEKGJ7/oekonomene-om-renteheving-ingen-vei-utenom",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "\u2013 Jeg ville ha senket renten, ikke \u00f8kt den",
+          "source": "frifagbevegelse.no",
+          "url": "https://frifagbevegelse.no/nyheter/-jeg-ville-ha-senket-renten-ikke-okt-den-6.158.1205727.d4d0ffb116",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Tror Norges Bank-hevinger l\u00f8fter husleier og inflasjon",
+          "source": "minerva.no",
+          "url": "https://minerva.no/inflasjon-jan-andreassen-nordea/tror-norges-bank-hevinger-lofter-husleier-og-inflasjon/502996",
+          "date": "2026-04-13"
         },
         {
           "title": "Nei, vi f\u00e5r ikke ned inflasjonen ved \u00e5 senke renten",
@@ -528,382 +708,836 @@
           "title": "Norges Bank's Hawkish Turn Puts Focus on NOK and Oil Risks",
           "source": "tradingpedia.com",
           "url": "https://www.tradingpedia.com/2026/04/15/norges-banks-hawkish-turn-puts-focus-on-nok-and-oil-risks/",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "Tror Norges Bank-hevinger l\u00f8fter husleier og inflasjon",
-          "source": "minerva.no",
-          "url": "https://www.minerva.no/inflasjon-jan-andreassen-nordea/tror-norges-bank-hevinger-lofter-husleier-og-inflasjon/502996",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "Tror Norges Bank-hevinger l\u00f8fter husleier og inflasjon [duplicate query]",
-          "source": "minerva.no",
-          "url": "https://www.minerva.no/inflasjon-jan-andreassen-nordea/tror-norges-bank-hevinger-lofter-husleier-og-inflasjon/502996",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "Renta: - Kommer med rente-advarsel",
-          "source": "borsen.dagbladet.no",
-          "url": "https://borsen.dagbladet.no/nyheter/kommer-med-rente-advarsel/84497923",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "\u00d8konomene om renteheving: Ingen vei utenom",
-          "source": "mn24.no",
-          "url": "https://www.mn24.no/nyheter/n/oEKGJ7/oekonomene-om-renteheving-ingen-vei-utenom",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Sentralbanksjefen: \u2013 Vet at h\u00f8y rente ikke er popul\u00e6rt",
-          "source": "e24.no",
-          "url": "https://e24.no/boers-og-finans/i/L43LQQ/sentralbanksjefen-vet-at-hoey-rente-ikke-er-populaert-men-noen-ganger-er-det-noedvendig",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "\u00d8kt rente og \u00f8kt ulikhet",
-          "source": "dagsavisen.no",
-          "url": "https://www.dagsavisen.no/kommentar/okt-rente-og-okt-ulikhet/10303648",
-          "date": "2026-04-17"
-        },
-        {
-          "title": "Norges Bank skader \u00f8konomien til folk flest",
-          "source": "abcnyheter.no",
-          "url": "https://www.abcnyheter.no/stemmer/norges-bank-skader-okonomien-til-folk-flest/1508800",
-          "date": "2026-04-18"
-        },
-        {
-          "title": "Ikke vanstyre fra Norges Bank i pengepolitikken",
-          "source": "dn.no",
-          "url": "https://www.dn.no/innlegg/ikke-vanstyre-fra-norges-bank-i-pengepolitikken/2-1-1974119",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "\u00d8konom: Hormuz-\u00e5pning kan utsette norsk renteheving",
-          "source": "aftenbladet.no",
-          "url": "https://www.aftenbladet.no/okonomi/i/m0K2el/oekonom-hormuz-aapning-kan-utsette-norsk-renteheving",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "\u00d8konom: Hormuz-\u00e5pning kan utsette norsk renteheving",
-          "source": "adressa.no",
-          "url": "https://www.adressa.no/nyheter/innenriks/i/GxrRe6/oekonom-hormuz-aapning-kan-utsette-norsk-renteheving",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Stoltenberg om LO-kritikk: \u2013 M\u00e5 v\u00e6re rom for debatt",
-          "source": "nrk.no",
-          "url": "https://nrk.no/nyheter/stoltenberg-om-lo-kritikk_-_-ma-vaere-rom-for-debatt-1.17845648",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "Nordea Markets: \u2013 Kronen blir sterkere",
-          "source": "e24.no",
-          "url": "https://e24.no/boers-og-finans/i/QJgbLW/nordea-markets-kronen-blir-sterkere",
-          "date": "2026-04-17"
-        }
-      ],
-      "representative_urls": [
-        "https://e24.no/boers-og-finans/i/L43LQQ/sentralbanksjefen-vet-at-hoey-rente-ikke-er-populaert-men-noen-ganger-er-det-noedvendig",
-        "https://www.nrk.no/urix/stoltenberg-om-rente-debatt_-_-trump-er-ikke-mitt-forbilde-1.17848834"
-      ]
-    },
-    {
-      "story_id": 6,
-      "headline": "Finance Minister Stoltenberg makes Washington trip: GPFG to maintain US exposure, informal Ukraine finance meeting",
-      "summary": "Finance Minister Stoltenberg visited Washington for the IMF/World Bank spring meetings, where he co-hosted an informal finance ministers' meeting on Ukraine support with Germany's Lars Klingbeil and stated Norway's $2.1 trillion sovereign wealth fund has no plans to reduce US asset exposure. He also met with congressional figures, spoke at Semafor and Bilderberg-linked events, and visited the GPFG's New York offices. Norway separately pledged NOK 50 million to Ukraine anti-corruption work.",
-      "actors_involved": [
-        "Stoltenberg",
-        "Government Pension Fund Global",
-        "Norges Bank"
-      ],
-      "signal_category_hint": "economic_tech",
-      "source_count": 11,
-      "sources": [
-        "borsen.dagbladet.no",
-        "reuters.com",
-        "news.futunn.com",
-        "aftenposten.no",
-        "nrk.no",
-        "regjeringen.no",
-        "panoramanyheter.no",
-        "rights.no"
-      ],
-      "date_range": "2026-04-13 to 2026-04-18",
-      "articles": [
-        {
-          "title": "Jens Stoltenberg - Det kan g\u00e5 veldig galt",
-          "source": "borsen.dagbladet.no",
-          "url": "https://borsen.dagbladet.no/nyheter/det-kan-ga-veldig-galt/84501773",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Norway's sovereign wealth fund has no plans to reduce US assets, finance minister tells FT",
-          "source": "reuters.com",
-          "url": "https://www.reuters.com/business/norways-sovereign-wealth-fund-has-no-plans-reduce-us-assets-finance-minister-2026-04-15/",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "The world's largest sovereign wealth fund has no intention of withdrawing from the United States",
-          "source": "news.futunn.com",
-          "url": "https://news.futunn.com/en/post/71593434/the-world-s-largest-sovereign-wealth-fund-has-no-intention",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Kan noen stjele Oljefondet?",
-          "source": "aftenposten.no",
-          "url": "https://www.aftenposten.no/meninger/kommentar/i/wr39Ao/kan-noen-stjele-oljefondet",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Stoltenberg: Russland sliter \u00f8konomisk",
-          "source": "nrk.no",
-          "url": "https://nrk.no/nyheter/stoltenberg_-russland-sliter-okonomisk-1.17850268",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Uformelt finansministerm\u00f8te om st\u00f8tte til Ukraina",
-          "source": "regjeringen.no",
-          "url": "https://www.regjeringen.no/no/aktuelt/informal-meeting-of-finance-ministers-on-support-to-ukraine/id3156478/",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Norge gir 50 millioner til antikorrupsjonsarbeid i Ukraina",
-          "source": "panoramanyheter.no",
-          "url": "https://www.panoramanyheter.no/nyhetsmelding/norge-gir-50-millioner-til-antikorrupsjonsarbeid-i-ukraina/420159",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "Bekrefter Stoltenberg-m\u00f8te",
-          "source": "borsen.dagbladet.no",
-          "url": "https://borsen.dagbladet.no/nyheter/bekrefter-stoltenberg-mote/84494519",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "Stoltenberg i New York: - Mystisk milliard\u00e6r dukket opp",
-          "source": "borsen.dagbladet.no",
-          "url": "https://borsen.dagbladet.no/nyheter/mystisk-milliardaer-dukket-opp/84491751",
-          "date": "2026-04-13"
-        },
-        {
-          "title": "For mye hemmelighold \u2013 for mange elitenettverk",
-          "source": "rights.no",
-          "url": "https://rights.no/2026/04/for-mye-hemmelighold-for-mange-elitenettverk",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "Kommentar: Norge tjener p\u00e5 krigen",
-          "source": "vg.no",
-          "url": "https://www.vg.no/nyheter/i/k0v10k/norge-tjener-paa-krigen",
           "date": "2026-04-15"
         }
       ],
       "representative_urls": [
-        "https://www.reuters.com/business/norways-sovereign-wealth-fund-has-no-plans-reduce-us-assets-finance-minister-2026-04-15/",
-        "https://borsen.dagbladet.no/nyheter/det-kan-ga-veldig-galt/84501773"
+        "https://nrk.no/norge/rentekritikk_-sentralbanksjefen-lar-seg-ikke-pavirke-1.17847246",
+        "https://e24.no/boers-og-finans/i/L43LQQ/sentralbanksjefen-vet-at-hoey-rente-ikke-er-populaert-men-noen-ganger-er-det-noedvendig"
       ]
     },
     {
       "story_id": 7,
-      "headline": "Stoltenberg defends NATO cohesion against Trump pressure, draws red line on Iran war",
-      "summary": "Finance Minister and former NATO Secretary General Stoltenberg made a series of high-profile statements during his Washington visit defending NATO's value, asserting the US is 'safer with NATO than without,' warning that NATO's survival is not guaranteed, and drawing a clear line against NATO involvement in the US-led Iran war. He also reassured on Greenland's defense under NATO's collective framework, while pushing back on claims Europe had abandoned the US.",
+      "headline": "Epstein files shake Norway: parliamentary investigation launched into foreign office connections",
+      "summary": "The release of the Epstein files has prompted a Norwegian parliamentary investigation into the foreign ministry's connections to Jeffrey Epstein, after senior diplomatic figures including Mona Juul were named. The Guardian reported Norway's parliament oversight committee head said the files had shaken faith in democracy. FM Barth Eide said UD will continue mapping Juul's contacts even after her departure. Separately, researcher Hilde Henriksen Waage accused PM St\u00f8re of lying about her and the suppressed Oslo Process documents.",
       "actors_involved": [
-        "Stoltenberg"
+        "St\u00f8re",
+        "Barth Eide",
+        "E-tjenesten"
       ],
-      "signal_category_hint": "alignment_diplomatic",
-      "source_count": 10,
+      "signal_category_hint": "domestic_regime",
+      "source_count": 5,
       "sources": [
-        "foxnews.com",
-        "ekhbary.com",
-        "cbsnews.com",
-        "islamtimes.com",
-        "trtworld.com",
-        "1010wcsi.com",
-        "thenationalnews.com",
-        "wowo.com",
-        "blabber.buzz",
-        "caleaeuropeana.ro"
+        "theguardian.com",
+        "dagsavisen.no",
+        "ytringsforum.no",
+        "abcnyheter.no",
+        "panoramanyheter.no"
       ],
-      "date_range": "2026-04-14 to 2026-04-18",
+      "date_range": "2026-04-15 to 2026-04-18",
       "articles": [
         {
-          "title": "US, Denmark, Greenland talks 'on good trajectory' amid Trump push for control",
-          "source": "foxnews.com",
-          "url": "https://www.foxnews.com/politics/greenland-talks-good-trajectory-white-house-says-amid-trump-takeover-push",
-          "date": "2026-04-16"
+          "title": "Norwegian politicians hope Epstein files inquiry will restore faith in democracy",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/world/2026/apr/18/jeffrey-epstein-files-shaken-norway-faith-in-democracy-oversight-committee",
+          "date": "2026-04-18"
         },
         {
-          "title": "Former NATO Chief Defends Alliance Amid Trump's Criticism: US Stronger with Allies",
-          "source": "ekhbary.com",
-          "url": "https://www.ekhbary.com/news/former-nato-chief-defends-alliance-amid-trumps-criticism-us-stronger-with-allies-1776561740-2.html",
+          "title": "Eide: Fortsetter Epstein-kartlegging",
+          "source": "dagsavisen.no",
+          "url": "https://www.dagsavisen.no/notice/10305607",
           "date": "2026-04-17"
         },
         {
-          "title": "Former NATO leader Jens Stoltenberg: U.S. is 'safer with NATO than without NATO'",
-          "source": "cbsnews.com",
-          "url": "https://www.cbsnews.com/video/former-nato-leader-jens-stoltenberg-us-safer-with-nato-than-without-nato/",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "NATO's Survival over Next Decade Not Guaranteed: Stoltenberg",
-          "source": "islamtimes.com",
-          "url": "https://www.islamtimes.com/en/news/1274967/nato-s-survival-over-next-decade-not-guaranteed-stoltenberg",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "TRT World - 'Not our war': European allies break with Washington over its war on Iran",
-          "source": "trtworld.com",
-          "url": "https://www.trtworld.com/article/a638d6bc29a2",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "WATCH: Ex-NATO chief draws red line as Trump fumes alliance abandoned US during Iran war",
-          "source": "1010wcsi.com",
-          "url": "https://1010wcsi.com/fox-politics/watch-ex-nato-chief-draws-red-line-as-trump-fumes-alliance-abandoned-us-during-iran-war/",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "US exit from Nato would make America and Europe less safe, says former alliance head",
-          "source": "thenationalnews.com",
-          "url": "https://www.thenationalnews.com/news/europe/2026/04/16/nato-jens-stolentenberg-hadley-gamble-on-the-record/",
+          "title": "Hvem styrer Epstein-granskingen?",
+          "source": "ytringsforum.no",
+          "url": "https://www.ytringsforum.no/p/hvem-styrer-epstein-granskingen",
           "date": "2026-04-16"
         },
         {
-          "title": "Leavitt Praises Pakistani Mediators In Iran Talks, Denies Other Countries Are Involved",
-          "source": "wowo.com",
-          "url": "https://wowo.com/leavitt-praises-pakistani-mediators-in-iran-talks-denies-other-countries-are-involved/",
-          "date": "2026-04-14"
-        },
-        {
-          "title": "Greenland Talks Moving Forward As Trump's Ambitions Loom Large",
-          "source": "blabber.buzz",
-          "url": "https://www.blabber.buzz/conservative-news/1074924-white-house-says-greenland-talks-on-track-as-trump-s-takeover-push-raises-eyebrows",
+          "title": "\u2013 Jonas Gahr St\u00f8re snakker fremdeles ikke sant",
+          "source": "abcnyheter.no",
+          "url": "https://www.abcnyheter.no/nyheter/jeg-liker-svaert-darlig-at-norges-statsminister-ikke-snakker-sant-om-meg/1511037",
           "date": "2026-04-16"
         },
         {
-          "title": "Stoltenberg \u00eei reaminte\u0219te lui Trump importan\u021ba alia\u021bilor din NATO",
-          "source": "caleaeuropeana.ro",
-          "url": "https://caleaeuropeana.ro/stoltenberg-ii-reaminteste-lui-trump-importanta-aliatilor-din-nato-norvegia-ajuta-la-monitorizarea-armelor-nucleare-rusesti-indreptate-spre-new-york-si-washington",
-          "date": "2026-04-14"
+          "title": "Portrett-intervju med Midt\u00f8sten-forsker Hilde Henriksen Waage",
+          "source": "panoramanyheter.no",
+          "url": "https://www.panoramanyheter.no/hilde-henriksen-waage-innsyn-jonas-gahr-store/jeg-liker-svaert-darlig-at-norges-statsminister-ikke-snakker-sant-om-meg/420036",
+          "date": "2026-04-15"
         }
       ],
       "representative_urls": [
-        "https://www.thenationalnews.com/news/europe/2026/04/16/nato-jens-stolentenberg-hadley-gamble-on-the-record/",
-        "https://www.cbsnews.com/video/former-nato-leader-jens-stoltenberg-us-safer-with-nato-than-without-nato/"
+        "https://www.theguardian.com/world/2026/apr/18/jeffrey-epstein-files-shaken-norway-faith-in-democracy-oversight-committee",
+        "https://www.dagsavisen.no/notice/10305607"
       ]
     },
     {
       "story_id": 8,
-      "headline": "MDG threatens to bring down St\u00f8re government in budget negotiations",
-      "summary": "MDG leader Arild Hermstad said publicly that PM St\u00f8re cannot take MDG's parliamentary support for granted and that he is willing to let the Labour-led government fall if his party's climate demands are not met in the summer budget revision. St\u00f8re confirmed he had held separate meetings with MDG's Hermstad and Senterpartiet's Vedum to manage coalition tensions, while Sp's deputy leader Toppe said Sp fears a Listhaug-led government.",
+      "headline": "Norway nominates Iran to UN human rights committee, drawing FrP outrage",
+      "summary": "It emerged that Norway quietly co-nominated Iran to a UN Committee for Economic and Social Rights, which advises on human rights, women's rights, disarmament, and counter-terrorism. FrP leader Listhaug described it as unbelievable and demanded answers from St\u00f8re. The government defended the nomination as procedural, noting no other candidate ran.",
       "actors_involved": [
+        "Listhaug",
         "St\u00f8re",
-        "Listhaug"
+        "Barth Eide"
       ],
-      "signal_category_hint": "domestic_regime",
+      "signal_category_hint": "alignment_diplomatic",
       "source_count": 8,
       "sources": [
-        "dagbladet.no",
-        "tv2.no",
-        "aftenposten.no",
-        "dagbladet.no",
-        "finansavisen.no",
-        "dagensperspektiv.no",
+        "vg.no",
+        "inyheter.no",
+        "document.no",
+        "rights.no",
+        "miff.no",
+        "idag.no",
         "dagen.no",
-        "sol.no"
+        "aftenposten.no"
       ],
-      "date_range": "2026-04-13 to 2026-04-17",
+      "date_range": "2026-04-13 to 2026-04-15",
       "articles": [
         {
-          "title": "Villig til \u00e5 la St\u00f8re falle",
-          "source": "dagbladet.no",
-          "url": "https://www.dagbladet.no/nyheter/villig-til-a-la-store-falle/84512535",
-          "date": "2026-04-17"
-        },
-        {
-          "title": "Arild Hermstad (MDG) er klar til \u00e5 felle St\u00f8re: \u2013 Vanskelig \u00e5 kalle dette et samarbeid",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/vanskelig-a-kalle-dette-et-samarbeid/18759684/",
-          "date": "2026-04-16"
-        },
-        {
-          "title": "MDG: Villig til \u00e5 la Ap-regjeringen falle",
-          "source": "aftenposten.no",
-          "url": "https://www.aftenposten.no/norge/politikk/i/3p1GdP/mdg-villig-til-aa-la-ap-regjeringen-falle",
-          "date": "2026-04-17"
-        },
-        {
-          "title": "St\u00f8re bekrefter: - Et godt m\u00f8te",
-          "source": "dagbladet.no",
-          "url": "https://dagbladet.no/nyheter/store-bekrefter-et-godt-mote/84504041",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "Presser St\u00f8re p\u00e5 skattegrep i mai",
-          "source": "finansavisen.no",
-          "url": "https://www.finansavisen.no/politikk/2026/04/16/8344331/presser-store-pa-skattegrep-i-mai",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "St\u00f8re venter med \u00e5 sette ned foten: Senterpartiets strategiske posisjon",
-          "source": "dagensperspektiv.no",
-          "url": "https://dagensperspektiv.no/leder/store-venter-klokelig-med-a-sette-ned-foten/1415689",
+          "title": "Sylvi Listhaug sjokkert over at Norge nominerte Iran til menneskerettighets-komit\u00e9",
+          "source": "vg.no",
+          "url": "https://www.vg.no/nyheter/i/n19B1d/sylvi-listhaug-sjokkert-over-at-norge-nominerte-iran-til-menneskerettighets-komite",
           "date": "2026-04-13"
         },
         {
-          "title": "Sp-Toppe avviser sideskifte: \u2013 Vi frykter Sylvi Listhaug",
+          "title": "Norge gir Iran n\u00f8kkelrolle i FN: \u2013 Ikke til \u00e5 tro",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/15/04/2026/norge-gir-iran-nokkelrolle-i-fn-ikke-til-a-tro/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Norge har stemt inn Iran i menneskerettskomit\u00e9. Listhaug steiler",
+          "source": "document.no",
+          "url": "https://document.no/2026/04/14/norge-har-stemt-inn-iran-i-menneskerettskomite-listhaug-steiler",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Norges skandal\u00f8se st\u00f8tte til Iran i FN",
+          "source": "rights.no",
+          "url": "https://www.rights.no/2026/04/norges-skandalose-stotte-til-iran-i-fn/",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Frp-leder krever svar fra St\u00f8re p\u00e5 norsk Iran-st\u00f8tte",
+          "source": "miff.no",
+          "url": "https://miff.no/iran-kategori/2026/04/15frp-leder-krever-svar-fra-store-pa-norsk-stotte-til-iran.htm",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Sylvi Listhaug: Sjokkert over Iran-st\u00f8tte",
+          "source": "idag.no",
+          "url": "https://idag.no/nyheter/samfunn/sjokkert-over-iran-stotte/19.52472",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Sylvi Listhaug reagerer p\u00e5 norsk nominasjon av Iran",
           "source": "dagen.no",
-          "url": "https://www.dagen.no/nyheter/sp-toppe-avviser-sideskifte-vi-frykter-sylvi-listhaug/1576919",
-          "date": "2026-04-13"
+          "url": "https://www.dagen.no/nyheter/sylvi-listhaug-reagerer-pa-norsk-nominasjon-av-iran/1577273",
+          "date": "2026-04-15"
         },
         {
-          "title": "Sp-Toppe sl\u00e5r ring om St\u00f8re: \u2013 Frykter Listhaug som statsminister",
-          "source": "sol.no",
-          "url": "https://sol.no/nyheter/frykter-listhaug-som-statsminister/84492771",
-          "date": "2026-04-13"
+          "title": "Erlend Wiborg og Sylvi Listhaug: Frp fikk rett. N\u00e5 haster det.",
+          "source": "aftenposten.no",
+          "url": "https://www.aftenposten.no/meninger/debatt/i/n19ORL/erlend-wiborg-og-sylvi-listhaug-frp-fikk-rett-naa-haster-det",
+          "date": "2026-04-15"
         }
       ],
       "representative_urls": [
-        "https://www.tv2.no/nyheter/vanskelig-a-kalle-dette-et-samarbeid/18759684/",
-        "https://www.aftenposten.no/norge/politikk/i/3p1GdP/mdg-villig-til-aa-la-ap-regjeringen-falle"
+        "https://www.vg.no/nyheter/i/n19B1d/sylvi-listhaug-sjokkert-over-at-norge-nominerte-iran-til-menneskerettighets-komite",
+        "https://document.no/2026/04/14/norge-har-stemt-inn-iran-i-menneskerettskomite-listhaug-steiler"
       ]
     },
     {
       "story_id": 9,
-      "headline": "FrP records best poll result in 17 years following diesel tax dispute",
-      "summary": "Multiple polls published this week showed FrP under Sylvi Listhaug reaching its highest support in 17 years\u2014up to 29.9% in one survey\u2014driven largely by the diesel tax cut controversy in parliament. Listhaug was described as outpacing both the ruling Ap and the main opposition H\u00f8yre party. MDG simultaneously fell close to or below the 4% parliamentary threshold.",
+      "headline": "Norway endorses Lebanon ceasefire as Barth Eide praises US-brokered deal, draws criticism for omitting Lebanon's role",
+      "summary": "Foreign Minister Barth Eide publicly praised US President Trump's announcement of a Lebanon-Israel ceasefire, calling it an important and necessary step. He was subsequently criticised domestically for failing to mention Israel's role in the statement, with some calling it predictably one-sided.",
       "actors_involved": [
-        "Listhaug"
+        "Barth Eide"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 5,
+      "sources": [
+        "dagbladet.no",
+        "nrk.no",
+        "sol.no",
+        "aftenbladet.no",
+        "inyheter.no"
+      ],
+      "date_range": "2026-04-15 to 2026-04-18",
+      "articles": [
+        {
+          "title": "Angrepet p\u00e5 Iran: \u2013 Norge roser Trumps nei",
+          "source": "dagbladet.no",
+          "url": "https://www.dagbladet.no/nyheter/norge-roser-trumps-nei/84510578",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Espen Barth Eide roser USAs diplomati",
+          "source": "nrk.no",
+          "url": "https://www.nrk.no/nyheter/espen-barth-eide-roser-usas-diplomati-1.17851605",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Norge roser Trump",
+          "source": "sol.no",
+          "url": "https://sol.no/nyheter/norge-roser-trump/84511255",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Eide roser USAs president for Libanon-diplomatiet",
+          "source": "aftenbladet.no",
+          "url": "https://www.aftenbladet.no/utenriks/i/M7AGvm/eide-roser-usas-president-for-libanon-diplomatiet",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Kritikk mot Barth Eides uttalelse om v\u00e5penhvile: \u2013 Imponerende forutsigbart",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/18/04/2026/kritikk-mot-barth-eides-uttalelse-om-vapenhvile-imponerende-forutsigbart/",
+          "date": "2026-04-18"
+        }
+      ],
+      "representative_urls": [
+        "https://www.nrk.no/nyheter/espen-barth-eide-roser-usas-diplomati-1.17851605",
+        "https://inyheter.no/18/04/2026/kritikk-mot-barth-eides-uttalelse-om-vapenhvile-imponerende-forutsigbart/"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "Equinor sells Scatec solar stake, signalling continued pullback from renewables",
+      "summary": "Equinor sold an 8.07 percent stake in Norwegian solar developer Scatec for approximately NOK 1.6 billion, halving its holding to just over 8 percent. The move was widely interpreted as part of Equinor's ongoing capital discipline pivot away from renewables toward higher-return oil and gas, prompting analyst speculation about whether a similar sale of its Orsted stake could follow.",
+      "actors_involved": [
+        "Equinor"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 17,
+      "sources": [
+        "reuters.com",
+        "equinor.com",
+        "finance.yahoo.com",
+        "renewablesnow.com",
+        "rigzone.com",
+        "gurufocus.com",
+        "rechargenews.com",
+        "worldoil.com",
+        "4coffshore.com",
+        "offshore-mag.com",
+        "oilprice.com",
+        "solarbytes.info",
+        "stocktitan.net",
+        "offshore-energy.biz"
+      ],
+      "date_range": "2026-04-13 to 2026-04-16",
+      "articles": [
+        {
+          "title": "Equinor aims to sell 8% stake in solar energy firm Scatec",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/energy/equinor-aims-sell-8-stake-solar-energy-firm-scatec-2026-04-13/",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Equinor sells $169 million stake in solar firm Scatec",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/energy/equinor-sells-169-million-stake-solar-firm-scatec-2026-04-14/",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor partially divests shareholding in Scatec",
+          "source": "equinor.com",
+          "url": "https://www.equinor.com/news/20260414-partially-divests-scatec-shareholding",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor sells 8.07% stake in Scatec for $169m",
+          "source": "finance.yahoo.com",
+          "url": "https://finance.yahoo.com/sectors/energy/articles/equinor-sells-8-07-stake-133544947.html",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor sells 8.07% stake in Scatec via block trade for USD 169.5m",
+          "source": "renewablesnow.com",
+          "url": "https://renewablesnow.com/news/equinor-sells-8-07-percent-stake-in-scatec-via-block-trade-for-usd-169-5m-1292981/",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor to Exit RE Producer Scatec",
+          "source": "rigzone.com",
+          "url": "https://www.rigzone.com/news/equinor_to_exit_re_producer_scatec-15-apr-2026-183452-article/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Equinor (EQNR) Reduces Stake in Scatec (STECF) by $169M",
+          "source": "gurufocus.com",
+          "url": "https://www.gurufocus.com/news/8791485/equinor-eqnr-reduces-stake-in-scatec-stecf-by-169m",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Is Orsted next on the block as Equinor sells renewables stake?",
+          "source": "rechargenews.com",
+          "url": "https://www.rechargenews.com/analysis/is-orsted-next-on-the-block-as-equinor-sells-renewables-stake-/2-1-1974227",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Deals of the Week: Equinor, Amazon, RWE and Envision",
+          "source": "rechargenews.com",
+          "url": "https://rechargenews.com/analysis/deals-of-the-week-equinor-amazon-rwe-and-envision/2-1-1975924",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Equinor sells 8% stake in Scatec for $150 million, reduces shareholding",
+          "source": "worldoil.com",
+          "url": "https://worldoil.com/news/2026/4/14/equinor-sells-8-stake-in-scatec-for-150-million-reduces-shareholding",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor reduces Scatec stake amid broader reassessment of renewables exposure",
+          "source": "4coffshore.com",
+          "url": "https://www.4coffshore.com/news/equinor-reduces-scatec-stake-amid-broader-reassessment-of-renewables-exposure-nid32681.html",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor continues to scale back its renewables portfolio",
+          "source": "offshore-mag.com",
+          "url": "https://www.offshore-mag.com/renewable-energy/news/55370963/equinor-continues-to-scale-back-its-renewables-portfolio",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor Cuts Scatec Stake as Capital Discipline Trumps Renewables Expansion",
+          "source": "oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Equinor-Cuts-Scatec-Stake-as-Capital-Discipline-Trumps-Renewables-Expansion.html",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor plans sale of 8% Scatec stake",
+          "source": "solarbytes.info",
+          "url": "https://solarbytes.info/americas/equinor-plans-sale-of-8-percent-scatec-stake-accelerated-bookbuilding-norway-11724474",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Equinor board proposes NOK 415m capital reduction",
+          "source": "stocktitan.net",
+          "url": "https://stocktitan.net/sec-filings/EQNR/6-k-equinor-asa-current-report-foreign-issuer-a00c113c2c05.html",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Equinor sells stake in renewables developer amid shift away from wind and solar",
+          "source": "rechargenews.com",
+          "url": "https://www.rechargenews.com/finance/equinor-sells-stake-in-renewables-developer-amid-shift-away-from-wind-and-solar/2-1-1973411",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "New item added to Axess' Norwegian oil & gas assignment with Equinor",
+          "source": "offshore-energy.biz",
+          "url": "https://www.offshore-energy.biz/new-tech-item-added-to-axess-norwegian-assignment-with-equinor/",
+          "date": "2026-04-16"
+        }
+      ],
+      "representative_urls": [
+        "https://www.reuters.com/business/energy/equinor-sells-169-million-stake-solar-firm-scatec-2026-04-14/",
+        "https://www.equinor.com/news/20260414-partially-divests-scatec-shareholding"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Equinor Q1 trading profit to exceed guidance on Iran war energy volatility; shares swing on Hormuz ceasefire",
+      "summary": "Equinor announced its Q1 Marketing, Midstream and Processing division profit would exceed the $400 million guidance, partly driven by Middle East war-linked energy price volatility and European gas optimisation. Shares then fell sharply \u2014 over 7\u201310 percent \u2014 when the Hormuz Strait ceasefire was announced and crude prices dropped, reducing the geopolitical premium.",
+      "actors_involved": [
+        "Equinor"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 9,
+      "sources": [
+        "reuters.com",
+        "oilprice.com",
+        "oedigital.com",
+        "globalbankingandfinance.com",
+        "marketscreener.com",
+        "simplywall.st",
+        "tipranks.com",
+        "quiverquant.com",
+        "morningstar.com"
+      ],
+      "date_range": "2026-04-15 to 2026-04-18",
+      "articles": [
+        {
+          "title": "Equinor says trading profit to top guidance, partly on Iran war windfall",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/energy/equinor-says-mmp-energy-trading-units-profit-exceeds-guidance-2026-04-16/",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Equinor Signals Trading Windfall as War-Driven Volatility Lifts Results",
+          "source": "oilprice.com",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Equinor-Signals-Trading-Windfall-as-War-Driven-Volatility-Lifts-Results.html",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Equinor Expects Trading Profit to Top Guidance on Volatility",
+          "source": "oedigital.com",
+          "url": "https://oedigital.com/news/538126-equinor-expects-trading-profit-to-top-guidance-on-volatility",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Equinor MMP Energy Trading Unit Reports Profit Above guidance",
+          "source": "globalbankingandfinance.com",
+          "url": "https://www.globalbankingandfinance.com/equinor-mmp-energy-trading-units-profit-exceeds-guidance/",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "European oil majors outshine US rivals with Iran war trading bonanza",
+          "source": "marketscreener.com",
+          "url": "https://www.marketscreener.com/news/european-oil-majors-outshine-us-rivals-with-iran-war-trading-bonanza-ce7e50d2d188f62c",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Equinor (OB:EQNR) Valuation In Focus After Upgraded First Quarter Earnings Outlook",
+          "source": "simplywall.st",
+          "url": "https://simplywall.st/stocks/no/energy/ob-eqnr/equinor-shares/news/equinor-obeqnr-valuation-in-focus-after-upgraded-first-quart",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Why Equinor Shares Are Sliding Despite Upbeat Guidance",
+          "source": "tipranks.com",
+          "url": "https://www.tipranks.com/news/catalyst/why-equinor-shares-are-sliding-despite-upbeat-guidance",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Equinor slides as oil prices tumble on reduced Middle East supply fears",
+          "source": "quiverquant.com",
+          "url": "https://www.quiverquant.com/news/Equinor+slides+as+oil+prices+tumble+on+reduced+Middle+East+supply+fears",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Equinor Exerts Capital Discipline With Less Spending; Increasing Valuation on Higher Oil Prices",
+          "source": "morningstar.com",
+          "url": "https://morningstar.com/company-reports/1466365-equinor-exerts-capital-discipline-with-less-spending-increasing-valuation-on-higher-oil-prices",
+          "date": "2026-04-15"
+        }
+      ],
+      "representative_urls": [
+        "https://www.reuters.com/business/energy/equinor-says-mmp-energy-trading-units-profit-exceeds-guidance-2026-04-16/",
+        "https://oilprice.com/Latest-Energy-News/World-News/Equinor-Signals-Trading-Windfall-as-War-Driven-Volatility-Lifts-Results.html"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "GPFG lifts Syria bond ban; backs BP chair against shareholder climate resolutions",
+      "summary": "Norway's $2.2 trillion Government Pension Fund Global made two notable investment decisions this week: it lifted a longstanding ban on investments in Syrian government bonds, marking Syria's further re-entry into global finance; and it announced it will vote to re-elect BP Chair Albert Manifold and support the board's move to withdraw earlier climate reporting resolutions at the April 23 BP AGM, drawing climate criticism.",
+      "actors_involved": [
+        "Government Pension Fund Global",
+        "Norges Bank"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 6,
+      "sources": [
+        "reuters.com",
+        "sana.sy",
+        "bloomberg.com",
+        "borsen.dagbladet.no",
+        "news.futunn.com",
+        "marketsgroup.org"
+      ],
+      "date_range": "2026-04-14 to 2026-04-18",
+      "articles": [
+        {
+          "title": "Exclusive: Norway to lift ban on wealth fund investments in Syrian bonds",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/world/middle-east/norway-lift-ban-wealth-fund-investments-syrian-bonds-document-shows-2026-04-14/",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Norway to lift ban on Syria bond investments, signaling economic support",
+          "source": "sana.sy",
+          "url": "https://sana.sy/en/economic/2310538",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "Norway's sovereign wealth fund supports BP chair's election",
+          "source": "reuters.com",
+          "url": "https://reuters.com/sustainability/sustainable-finance-reporting/norways-sovereign-wealth-fund-supports-bp-chairs-re-election-2026-04-18",
+          "date": "2026-04-18"
+        },
+        {
+          "title": "Norway Sovereign Wealth Fund Backs BP Management Ahead of AGM",
+          "source": "bloomberg.com",
+          "url": "https://bloomberg.com/news/articles/2026-04-18/norway-sovereign-wealth-fund-backs-bp-management-ahead-of-agm",
+          "date": "2026-04-18"
+        },
+        {
+          "title": "Sier nei til omstridte klimaforslag",
+          "source": "borsen.dagbladet.no",
+          "url": "https://borsen.dagbladet.no/nyheter/sier-nei-til-omstridte-klimaforslag/84512102",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "NBIM names Patrick du Plessis chief risk officer",
+          "source": "marketsgroup.org",
+          "url": "https://www.marketsgroup.org/news/nbim-names-patrick-du-plessis-chief-risk-officer",
+          "date": "2026-04-13"
+        }
+      ],
+      "representative_urls": [
+        "https://www.reuters.com/world/middle-east/norway-lift-ban-wealth-fund-investments-syrian-bonds-document-shows-2026-04-14/",
+        "https://bloomberg.com/news/articles/2026-04-18/norway-sovereign-wealth-fund-backs-bp-management-ahead-of-agm"
+      ]
+    },
+    {
+      "story_id": 13,
+      "headline": "Telenor sued for allegedly handing Myanmar military data used to arrest 1,200 activists",
+      "summary": "A lawsuit filed in Norway alleges that state-linked telecoms firm Telenor passed subscriber data to Myanmar's military junta following the 2021 coup, enabling the arrest of approximately 1,200 activists including some in safe houses. Calls for government accountability are growing, with the government acknowledging 27 meetings with Telenor officials between the coup and the company's exit.",
+      "actors_involved": [
+        "Barth Eide"
       ],
       "signal_category_hint": "domestic_regime",
-      "source_count": 8,
+      "source_count": 1,
       "sources": [
-        "nettavisen.no",
-        "tv2.no",
-        "dagsavisen.no",
-        "document.no",
-        "inyheter.no",
-        "idag.no",
-        "nettavisen.no",
-        "aftenbladet.no"
+        "theguardian.com"
+      ],
+      "date_range": "2026-04-16 to 2026-04-16",
+      "articles": [
+        {
+          "title": "Norway's state telecoms firm accused of helping Myanmar regime seize activists",
+          "source": "theguardian.com",
+          "url": "https://www.theguardian.com/global-development/2026/apr/16/norways-state-telecoms-firm-accused-of-helping-myanmar-regime-seize-activists",
+          "date": "2026-04-16"
+        }
+      ],
+      "representative_urls": [
+        "https://www.theguardian.com/global-development/2026/apr/16/norways-state-telecoms-firm-accused-of-helping-myanmar-regime-seize-activists"
+      ]
+    },
+    {
+      "story_id": 14,
+      "headline": "Norwegian defence official and company director charged by \u00d8kokrim over Ukraine supply contracts",
+      "summary": "Norway's financial crimes authority \u00d8kokrim charged a Norwegian Armed Forces officer and a company director in connection with alleged misuse of public authority related to Nansen Programme payments for equipment destined for Ukraine. Separately, VG won the Skup prize for its earlier investigation exposing defective gas masks bought for Ukraine under a 100 million kroner contract.",
+      "actors_involved": [
+        "Norwegian Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 4,
+      "sources": [
+        "nrk.no",
+        "dn.no",
+        "forsvaretsforum.no",
+        "kampanje.com"
+      ],
+      "date_range": "2026-04-14 to 2026-04-17",
+      "articles": [
+        {
+          "title": "Offiser i Forsvaret og daglig leder siktet av \u00d8kokrim etter utbetaling av Ukraina-st\u00f8tte",
+          "source": "nrk.no",
+          "url": "https://www.nrk.no/norge/offiser-i-forsvaret-og-daglig-leder-siktet-av-okokrim-etter-utbetaling-av-ukraina-stotte-1.17846620",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "Slik mener \u00d8kokrim at forsvarslederen hjalp til med \u00e5 sikre Ukraina-kontrakt",
+          "source": "dn.no",
+          "url": "https://www.dn.no/forsvar-og-sikkerhet/okokrim/forsvaret/ukraina/slik-mener-okokrim-at-forsvarslederen-hjalp-til-med-a-sikre-ukraina-kontrakt/2-1-1974632",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "VG: Offiser siktet av \u00d8kokrim",
+          "source": "forsvaretsforum.no",
+          "url": "https://www.forsvaretsforum.no/forsvaret-krim-nansen-programmet/vg-offiser-siktet-av-okokrim/495374",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "VG vant Skup-prisen: - Sviktende kontrollmekanismer",
+          "source": "kampanje.com",
+          "url": "https://www.kampanje.com/medier/vg-vant-skup-prisen-sviktende-kontrollmekanismer/996189",
+          "date": "2026-04-17"
+        }
+      ],
+      "representative_urls": [
+        "https://www.nrk.no/norge/offiser-i-forsvaret-og-daglig-leder-siktet-av-okokrim-etter-utbetaling-av-ukraina-stotte-1.17846620",
+        "https://www.dn.no/forsvar-og-sikkerhet/okokrim/forsvaret/ukraina/slik-mener-okokrim-at-forsvarslederen-hjalp-til-med-a-sikre-ukraina-kontrakt/2-1-1974632"
+      ]
+    },
+    {
+      "story_id": 15,
+      "headline": "Government quarter reopens 15 years after Breivik bombing",
+      "summary": "PM St\u00f8re and government ministers marked the return to the rebuilt government quarter on April 13, fifteen years after Anders Behring Breivik's bomb destroyed much of the area. Six ministries and approximately 2,200 employees moved back in; minor logistical complaints about missing coffee machines and sparkling water attracted satirical coverage.",
+      "actors_involved": [
+        "St\u00f8re"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
+      "sources": [
+        "reuters.com",
+        "nettavisen.no"
       ],
       "date_range": "2026-04-13 to 2026-04-17",
       "articles": [
         {
-          "title": "Dobbel knockout for Listhaug p\u00e5 ferske m\u00e5linger",
-          "source": "nettavisen.no",
-          "url": "https://www.nettavisen.no/nyheter/dobbel-knockout-for-listhaug-pa-ferske-malinger/s/5-95-2983703",
+          "title": "Norway government back to old quarters 15 years after Breivik bomb",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/world/we-have-been-exile-norway-government-back-old-quarters-15-years-after-breivik-2026-04-13/",
           "date": "2026-04-13"
         },
         {
-          "title": "Fersk TV 2-m\u00e5ling: Super-Sylvi: N\u00e5 vasker hun g\u00f8lvet med St\u00f8re og S\u00f8reide",
-          "source": "tv2.no",
-          "url": "https://www.tv2.no/nyheter/super-sylvi-na-vas",
-          "date": ""
+          "title": "Regjeringskvartalet mangler kaffemaskiner og boblevann: \u2013 Har v\u00e6rt noen misforst\u00e5elser",
+          "source": "nettavisen.no",
+          "url": "https://www.nettavisen.no/nyheter/regjeringskvartalet-mangler-kaffemaskiner-og-boblevann-har-vart-noen-misforstaelser/s/5-95-2990915",
+          "date": "2026-04-17"
         }
       ],
-      "representative_urls": []
+      "representative_urls": [
+        "https://www.reuters.com/world/we-have-been-exile-norway-government-back-old-quarters-15-years-after-breivik-2026-04-13/"
+      ]
+    },
+    {
+      "story_id": 16,
+      "headline": "Norway pledges 470 million kroner in humanitarian aid to Sudan; Barth Eide attends Berlin conference",
+      "summary": "FM Barth Eide attended an international ministerial conference on Sudan in Berlin on the third anniversary of the war's outbreak and announced Norway would provide NOK 470 million in humanitarian and long-term assistance to Sudan in 2026. Norway also expressed support for a ceasefire process.",
+      "actors_involved": [
+        "Barth Eide"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 2,
+      "sources": [
+        "inyheter.no",
+        "panoramanyheter.no"
+      ],
+      "date_range": "2026-04-15 to 2026-04-15",
+      "articles": [
+        {
+          "title": "Sender hundrevis av millioner til Sudan",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/15/04/2026/sender-flere-hundre-millioner-til-sudan/",
+          "date": "2026-04-15"
+        },
+        {
+          "title": "70 prosent av befolkningen lever i fattigdom \u2013 n\u00e5 lover Norge 470 millioner kroner til Sudan",
+          "source": "panoramanyheter.no",
+          "url": "https://www.panoramanyheter.no/afrika-humanitaere-kriser-krig-og-konflikt/70-prosent-av-befolkningen-lever-i-fattigdom-na-lover-norge-470-millioner-kroner-til-sudan/419750",
+          "date": "2026-04-13"
+        }
+      ],
+      "representative_urls": [
+        "https://inyheter.no/15/04/2026/sender-flere-hundre-millioner-til-sudan/"
+      ]
+    },
+    {
+      "story_id": 17,
+      "headline": "Norwegian Armed Forces contain Israeli-made components in key weapons systems",
+      "summary": "Forsvarets forum reported that several of Norway's most important weapons systems \u2014 including F-35 fighter jets, tanks, and frigates \u2014 contain sub-systems and parts from Israeli companies. Defence Minister Tore O. Sandvik said Norway neither buys standalone Israeli weapons systems nor sells weapons to Israel, but removing Israeli components would make building up Forsvaret and NATO integration impossible.",
+      "actors_involved": [
+        "Norwegian Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 2,
+      "sources": [
+        "tv2.no",
+        "tu.no"
+      ],
+      "date_range": "2026-04-16 to 2026-04-16",
+      "articles": [
+        {
+          "title": "Israelske deler i noen av Forsvarets viktigste v\u00e5pen",
+          "source": "tv2.no",
+          "url": "https://tv2.no/nyheter/israelske-deler-i-noen-av-forsvarets-viktigste-vapen/18762483",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Det er israelske deler i noen av Forsvarets viktigste v\u00e5pen",
+          "source": "tu.no",
+          "url": "https://www.tu.no/artikler/det-er-israelske-deler-i-noen-av-forsvarets-viktigste-vapen/571012",
+          "date": "2026-04-16"
+        }
+      ],
+      "representative_urls": [
+        "https://tv2.no/nyheter/israelske-deler-i-noen-av-forsvarets-viktigste-vapen/18762483"
+      ]
+    },
+    {
+      "story_id": 18,
+      "headline": "Norwegian Armed Forces: new naval vessel design contract awarded; Parliament scrutinising spending overruns",
+      "summary": "The Forsvarsmateriell agency awarded a design contract for Norway's new standardised naval vessel class \u2014 described as one of the largest maritime investments in Norwegian history \u2014 to the Salt/Kongsberg consortium. Separately, Stortinget's control committee opened a formal scrutiny into defence procurement rules compliance, and H\u00f8yre pressed the government over its decision to delay long-range air defence procurement from 2029 to 2033.",
+      "actors_involved": [
+        "Norwegian Armed Forces",
+        "St\u00f8re"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "forsvaretsforum.no",
+        "blv.no",
+        "dn.no",
+        "vg.no",
+        "politiforum.no"
+      ],
+      "date_range": "2026-04-13 to 2026-04-16",
+      "articles": [
+        {
+          "title": "Forsvarets nye fart\u00f8y kan f\u00e5 maksfart p\u00e5 20 knop",
+          "source": "forsvaretsforum.no",
+          "url": "https://www.forsvaretsforum.no/fma-forsvarsmateriell-marinefartoy/storsatsing-far-kritikk-taktisk-uklokt/494417",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "F\u00e5r en n\u00f8kkelrolle i nord: Slik blir Norges nye superfl\u00e5te",
+          "source": "blv.no",
+          "url": "https://www.blv.no/far-en-nokkelrolle-i-nord-slik-blir-norges-nye-superflate/s/5-9-930217",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "N\u00e5 skal Stortinget granske Forsvarets overskridelser",
+          "source": "dn.no",
+          "url": "https://www.dn.no/forsvar-og-sikkerhet/na-skal-stortinget-granske-forsvarets-overskridelser/2-1-1961300",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Etterlyser luftvern: H\u00f8yre presser regjeringen",
+          "source": "vg.no",
+          "url": "https://www.vg.no/nyheter/i/5p8dqX/etterlyser-luftvern-hoeyre-presser-regjeringen",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Ny avtale mellom politiet og Forsvaret",
+          "source": "politiforum.no",
+          "url": "https://www.politiforum.no/ny-avtale-mellom-politiet-og-forsvaret/294885",
+          "date": "2026-04-15"
+        }
+      ],
+      "representative_urls": [
+        "https://www.dn.no/forsvar-og-sikkerhet/na-skal-stortinget-granske-forsvarets-overskridelser/2-1-1961300",
+        "https://www.vg.no/nyheter/i/5p8dqX/etterlyser-luftvern-hoeyre-presser-regjeringen"
+      ]
+    },
+    {
+      "story_id": 19,
+      "headline": "St\u00f8re's food queue comment triggers criticism from Salvation Army and KrF",
+      "summary": "During a parliamentary question session, PM St\u00f8re said that food distribution queues do not necessarily indicate social distress, drawing sharp reactions from the Salvation Army and KrF, who said the remark did not reflect what they see in practice. St\u00f8re subsequently sought to nuance his statement.",
+      "actors_involved": [
+        "St\u00f8re"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 2,
+      "sources": [
+        "inyheter.no",
+        "tv2.no"
+      ],
+      "date_range": "2026-04-15 to 2026-04-16",
+      "articles": [
+        {
+          "title": "\u2013 Jeg vil ikke umiddelbart si at det at det finnes utdeling av mat er et uttrykk for at det er sosial n\u00f8d",
+          "source": "inyheter.no",
+          "url": "https://inyheter.no/18/04/2026/jeg-vil-ikke-umiddelbart-si-at-det-at-det-finnes-utdeling-av-mat-er-et-uttrykk-for-at-det-er-sosial-nod/",
+          "date": "2026-04-18"
+        },
+        {
+          "title": "Frelsesarmeen kritiserer St\u00f8re: Matk\u00f8er som uttrykk for sosial n\u00f8d",
+          "source": "tv2.no",
+          "url": "https://www.tv2.no/nyheter/frelsesarmeen-ut-mot-store-ikke-riktig-bilde/18634738/",
+          "date": "2026-04-15"
+        }
+      ],
+      "representative_urls": [
+        "https://www.tv2.no/nyheter/frelsesarmeen-ut-mot-store-ikke-riktig-bilde/18634738/"
+      ]
+    },
+    {
+      "story_id": 20,
+      "headline": "V\u00e5r Energi and Equinor file revised development plan for Goliat gas export project in Barents Sea",
+      "summary": "V\u00e5r Energi (65% operator stake) and Equinor (35%) submitted a revised Plan for Development and Operation for the Goliat Gas Export project to the Norwegian Ministry of Energy. The $360 million investment aims to boost oil output from the Goliat field from 2029 and extend productive life by approximately ten years, with gas to be piped to Equinor's Hammerfest LNG facility.",
+      "actors_involved": [
+        "Equinor"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 3,
+      "sources": [
+        "finance.yahoo.com",
+        "energynews.pro",
+        "lngprime.com"
+      ],
+      "date_range": "2026-04-15 to 2026-04-16",
+      "articles": [
+        {
+          "title": "V\u00e5r Energi, Equinor file amended PDO for GGE project",
+          "source": "finance.yahoo.com",
+          "url": "https://finance.yahoo.com/sectors/energy/articles/v-r-energi-equinor-file-085016893.html",
+          "date": "2026-04-16"
+        },
+        {
+          "title": "Vaar Energi Invests $360 Million to Boost Output from Arctic Goliat Field",
+          "source": "energynews.pro",
+          "url": "https://energynews.pro/en/vaar-energi-invests-360-million-to-boost-output-from-arctic-goliat-field",
+          "date": "2026-04-13"
+        },
+        {
+          "title": "Equinor's Hammerfest LNG plant to get gas from Barents Sea project",
+          "source": "lngprime.com",
+          "url": "https://lngprime.com/europe/equinors-hammerfest-lng-plant-to-get-gas-from-barents-sea-project/183573",
+          "date": "2026-04-16"
+        }
+      ],
+      "representative_urls": [
+        "https://finance.yahoo.com/sectors/energy/articles/v-r-energi-equinor-file-085016893.html",
+        "https://lngprime.com/europe/equinors-hammerfest-lng-plant-to-get-gas-from-barents-sea-project/183573"
+      ]
     }
   ],
-  "single_source_items": []
+  "single_source_items": [
+    {
+      "headline": "Handelsbanken Norway cited for 'serious deficiencies' in AML controls",
+      "source": "bloomberg.com",
+      "url": "https://bloomberg.com/news/articles/2026-04-16/norway-finds-handelsbanken-failures-in-money-laundering-controls",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "St\u00f8re comments on Pope's 'tyrant' speech: 'He is onto something'",
+      "source": "aftenposten.no",
+      "url": "https://www.aftenposten.no/norge/i/pB1jg1/stoere-om-pavens-tyrannuttalelse-han-er-inne-paa-noe",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Barth Eide op-ed: Norway's northern areas policy is serious, not empty talk",
+      "source": "dagsavisen.no",
+      "url": "https://www.dagsavisen.no/debatt/nordomradene-dette-er-ikke-tomt-snakk/10298561",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Norwegian Forsvaret confirms donated shells to Ukraine had 'limited usability' in combat conditions",
+      "source": "forsvaretsforum.no",
+      "url": "https://www.forsvaretsforum.no/donasjon-forsvaret-granat/norske-granater-gikk-ikke-av-i-strid/494918",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Maktskifte i Ungarn: Barth Eide welcomes Hungary election result as democratic victory",
+      "source": "rights.no",
+      "url": "https://www.rights.no/2026/04/maktskifte-i-ungarn-etter-eus-pavirkning/",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Listhaug and FrP call for new company to compete with Bane Nor on railway",
+      "source": "dagsavisen.no",
+      "url": "https://www.dagsavisen.no/nyheter/frp-vil-gi-bane-nor-konkurranse-foreslar-nytt-selskap/10296148",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "FrP leader: R\u00f8dt opening for cross-aisle cooperation is welcome",
+      "source": "dagbladet.no",
+      "url": "https://www.dagbladet.no/nyheter/apner-opp-for-samarbeid-flott/84499189",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Norsk Industri pushes back on coalition government's defence of LO criticism of Norges Bank",
+      "source": "nettavisen.no",
+      "url": "https://www.nettavisen.no/norsk-debatt/staten-er-var-tjener-ikke-var-herre/o/5-95-2988973",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "VG commentary: Norway profits from the Iran war \u2014 and Listhaug risks getting it wrong",
+      "source": "vg.no",
+      "url": "https://www.vg.no/nyheter/i/k0v10k/norge-tjener-paa-krigen",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "Norway \u2013 integration of immigrants: public demonstration outside Stortinget, political debate on policy",
+      "source": "",
+      "url": "",
+      "signal_category_hint": "unclear"
+    }
+  ]
 }
