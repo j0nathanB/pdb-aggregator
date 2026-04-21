@@ -440,17 +440,40 @@ async def cmd_run(args: argparse.Namespace) -> None:
     print("Done.")
 
 
+def _extract_regional_summary_from_mdx(mdx_path: Path) -> str:
+    """Extract the text between '## Regional Summary' and '## Country Summaries'.
+
+    Returns the block as-is (including any bold headline). Caller injects it
+    back into RegionPageContent.regional_lead so the existing essay survives a
+    country-only recovery untouched.
+    """
+    if not mdx_path.exists():
+        return ""
+    text = mdx_path.read_text()
+    import re
+    match = re.search(
+        r"## Regional Summary\s*\n+(.*?)\n+## Country Summaries",
+        text, re.DOTALL,
+    )
+    if not match:
+        return ""
+    return match.group(1).strip()
+
+
 async def cmd_recover(args: argparse.Namespace) -> None:
-    """Targeted single-country recovery.
+    """Targeted country recovery for one or more countries.
 
-    Re-runs just one country's deep dive, its region's regional synthesis,
-    the executive synthesis, and re-renders only the pages whose content
-    actually changed (overview, at-a-glance, the affected region). Other
-    regions' published MDX files are left untouched.
+    Default mode: re-runs each country's deep dive, its region's regional
+    synthesis, executive synthesis, and re-renders affected pages.
 
-    Intended use: one country failed mid-run and needs to be recovered
-    without burning tokens re-running the other 29 countries or the other
-    5 regions.
+    With --skip-regional: country scope only. Re-runs the country desk and
+    the country-level editors, preserves the prior regional essays and
+    at-a-glance cards by copying them from the existing on-disk MDX, and
+    publishes only the affected region page(s).
+
+    Intended use: one or more countries failed mid-run and need recovery
+    without burning tokens re-running the other countries or the regional/
+    executive stages.
     """
     from .orchestrator import run_desk_pipeline
     from .agents.regional import (
@@ -468,33 +491,41 @@ async def cmd_recover(args: argparse.Namespace) -> None:
     from .ledger.storage import save_regional_report, load_story_map
     from .run_recorder import RunRecorder
 
-    country_code = args.country
-    if not country_code:
-        print("Error: --country is required for recover.")
+    country_codes: list[str] = list(args.country or [])
+    if not country_codes:
+        print("Error: at least one --country is required for recover.")
         return
 
-    # Find the target region for this country
-    target_region = next(
-        (r for r, codes in REGION_COUNTRIES.items() if country_code in codes),
-        None,
-    )
-    if target_region is None:
-        print(f"Error: country {country_code!r} is not mapped to any region.")
-        return
+    # Map each country to its region; dedupe affected regions.
+    country_region_map: dict[str, object] = {}
+    for code in country_codes:
+        region = next(
+            (r for r, codes in REGION_COUNTRIES.items() if code in codes),
+            None,
+        )
+        if region is None:
+            print(f"Error: country {code!r} is not mapped to any region.")
+            return
+        country_region_map[code] = region
 
+    affected_regions = list({r for r in country_region_map.values()})
     end_date = date.fromisoformat(args.date) if args.date else date.today()
-    print(f"Recovery: {country_code} (region: {target_region.value}), end_date={end_date}")
+    mode = "country-only" if args.skip_regional else "full"
+    print(
+        f"Recovery ({mode}): countries={country_codes}, "
+        f"regions={[r.value for r in affected_regions]}, end_date={end_date}"
+    )
 
     recorder = RunRecorder()
     _add_log_handler(recorder.log_path)
-    recorder.init_manifest(end_date, [country_code])
+    recorder.init_manifest(end_date, country_codes)
     from .sanitize import reset_fallback_counts
     reset_fallback_counts()
 
-    # --- 1. Desk for the single country ---
-    print(f"Running desk pipeline for {country_code}...")
+    # --- 1. Desk for each country (parallel within the shared pipeline) ---
+    print(f"Running desk pipeline for {country_codes}...")
     desk_result = await run_desk_pipeline(
-        country_codes=[country_code],
+        country_codes=country_codes,
         end_date=end_date,
         max_concurrent=args.concurrency,
         recorder=recorder,
@@ -503,34 +534,36 @@ async def cmd_recover(args: argparse.Namespace) -> None:
         for r in desk_result.failed_results:
             print(f"  FAILED: {r.code} — {r.error}")
         if not desk_result.deep_dive_results:
-            print("  No successful deep dive — aborting recovery.")
+            print("  No successful deep dives — aborting recovery.")
             return
     print(f"  Desk done: {len(desk_result.deep_dive_results)} deep dive(s)")
 
-    # --- 2. Load full state from disk (now with updated country ledger) ---
+    # --- 2. Load full state from disk (now with updated country ledgers) ---
     country_ledgers, country_entries, regional_reports, global_ledger = (
         _load_pipeline_state(end_date)
     )
     if global_ledger is None:
         global_ledger = load_global_ledger()
 
-    # --- 3. Regional synthesis for just the target region ---
-    print(f"Running regional synthesis for {target_region.value}...")
-    new_regional = await run_all_regional_syntheses(
-        country_ledgers, country_entries, end_date, args.concurrency,
-        regions=[target_region],
-    )
-    for region, report in new_regional.items():
-        save_regional_report(report)
-        regional_reports[region] = report
-        print(f"  {region.value}: {len(report.cross_cutting_dynamics)} cross-cutting dynamics")
+    # --- 3. Regional + executive synthesis (skipped in country-only mode) ---
+    if not args.skip_regional:
+        print(f"Running regional synthesis for {[r.value for r in affected_regions]}...")
+        new_regional = await run_all_regional_syntheses(
+            country_ledgers, country_entries, end_date, args.concurrency,
+            regions=affected_regions,
+        )
+        for region, report in new_regional.items():
+            save_regional_report(report)
+            regional_reports[region] = report
+            print(f"  {region.value}: {len(report.cross_cutting_dynamics)} cross-cutting dynamics")
 
-    # --- 4. Executive synthesis (always — reads all regional reports) ---
-    print("Running executive synthesis...")
-    global_ledger = await run_executive_agent(regional_reports, global_ledger, end_date)
-    save_global_ledger(global_ledger)
+        print("Running executive synthesis...")
+        global_ledger = await run_executive_agent(regional_reports, global_ledger, end_date)
+        save_global_ledger(global_ledger)
+    else:
+        print("Skipping regional + executive synthesis (--skip-regional).")
 
-    # --- 5. Newsletter stage with filters ---
+    # --- 4. Build structured content ---
     print("Building structured content...")
     story_maps_data: dict[str, dict] = {}
     for code in country_ledgers:
@@ -546,75 +579,97 @@ async def cmd_recover(args: argparse.Namespace) -> None:
         )
     )
 
-    target_regions = [target_region]
+    # In country-only mode, preserve prior regional essays by reading them out
+    # of the existing MDX and injecting into regional_lead. card_summary stays
+    # empty so the template's headline block is suppressed — the extracted
+    # text already contains any bold headline verbatim.
+    if args.skip_regional:
+        from .newsletter.publish import SITE_DIR
+        for region in affected_regions:
+            region_slug = REGION_SLUGS.get(region, region.value)
+            mdx_path = SITE_DIR / "briefs" / end_date.isoformat() / f"{region_slug}.mdx"
+            preserved = _extract_regional_summary_from_mdx(mdx_path)
+            if preserved and region in region_page_contents:
+                region_page_contents[region].regional_lead = preserved
+                region_page_contents[region].card_summary = ""
+                print(f"  Preserved regional essay for {region.value} from {mdx_path.name}")
+            else:
+                print(f"  WARNING: no prior regional essay found for {region.value}")
 
-    print(f"Round 1: Editing {country_code} country summary...")
-    overview_content, region_page_contents, watchlist_content = await edit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency,
-        scope="countries", target_country=country_code,
-    )
-    overview_content, region_page_contents, watchlist_content, at_a_glance_content = (
-        await copyedit_all(
+    # --- 5. Country-scope editors per recovered country ---
+    for country_code in country_codes:
+        print(f"Round 1: Editing {country_code} country summary...")
+        overview_content, region_page_contents, watchlist_content = await edit_all(
             overview_content, region_page_contents, watchlist_content,
             analysis_date=end_date, max_concurrent=args.concurrency,
             scope="countries", target_country=country_code,
-            at_a_glance=at_a_glance_content,
         )
-    )
-    overview_content, region_page_contents, watchlist_content = await style_edit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency,
-        scope="countries", target_country=country_code,
-    )
+        overview_content, region_page_contents, watchlist_content, at_a_glance_content = (
+            await copyedit_all(
+                overview_content, region_page_contents, watchlist_content,
+                analysis_date=end_date, max_concurrent=args.concurrency,
+                scope="countries", target_country=country_code,
+                at_a_glance=at_a_glance_content,
+            )
+        )
+        overview_content, region_page_contents, watchlist_content = await style_edit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency,
+            scope="countries", target_country=country_code,
+        )
 
-    print(f"Writing {target_region.value} regional essay...")
-    region_page_contents = await write_all_regional_essays(
-        region_page_contents, max_concurrent=args.concurrency,
-        regions=target_regions,
-    )
+    # --- 6. Regional/executive editorial stages (skipped in country-only) ---
+    if not args.skip_regional:
+        print(f"Writing regional essays for {[r.value for r in affected_regions]}...")
+        region_page_contents = await write_all_regional_essays(
+            region_page_contents, max_concurrent=args.concurrency,
+            regions=affected_regions,
+        )
 
-    print(f"Round 2: Editing {target_region.value} regional essay...")
-    overview_content, region_page_contents, watchlist_content = await edit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency,
-        scope="regional", target_regions=target_regions,
-    )
-    overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency,
-        scope="regional", target_regions=target_regions,
-    )
-    overview_content, region_page_contents, watchlist_content = await style_edit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency,
-        scope="regional", target_regions=target_regions,
-    )
+        print("Round 2: Editing regional essays...")
+        overview_content, region_page_contents, watchlist_content = await edit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency,
+            scope="regional", target_regions=affected_regions,
+        )
+        overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency,
+            scope="regional", target_regions=affected_regions,
+        )
+        overview_content, region_page_contents, watchlist_content = await style_edit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency,
+            scope="regional", target_regions=affected_regions,
+        )
 
-    print("Writing global executive essay...")
-    overview_content = await write_global_essay(overview_content, regional_reports, end_date)
+        print("Writing global executive essay...")
+        overview_content = await write_global_essay(overview_content, regional_reports, end_date)
 
-    print("Round 3: Editing executive brief...")
-    overview_content, region_page_contents, watchlist_content = await edit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
-    )
-    overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
-    )
-    overview_content, region_page_contents, watchlist_content = await style_edit_all(
-        overview_content, region_page_contents, watchlist_content,
-        analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
-    )
+        print("Round 3: Editing executive brief...")
+        overview_content, region_page_contents, watchlist_content = await edit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+        )
+        overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+        )
+        overview_content, region_page_contents, watchlist_content = await style_edit_all(
+            overview_content, region_page_contents, watchlist_content,
+            analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
+        )
 
-    # --- 6. Render + publish: write ONLY the affected pages ---
+    # --- 7. Render + publish: write ONLY the affected pages ---
     print("Rendering and publishing affected pages only...")
     pages = render_pages(
         overview_content, region_page_contents, watchlist_content, at_a_glance_content,
     )
-    region_slug = REGION_SLUGS.get(target_region, target_region.value)
-    changed_slugs = {"overview", "at-a-glance", region_slug}
+    region_slugs_affected = {REGION_SLUGS.get(r, r.value) for r in affected_regions}
+    if args.skip_regional:
+        changed_slugs = region_slugs_affected
+    else:
+        changed_slugs = {"overview", "at-a-glance"} | region_slugs_affected
     filtered_pages = {slug: content for slug, content in pages.items() if slug in changed_slugs}
     brief_dir = publish_brief(filtered_pages, end_date)
     print(f"  Updated {len(filtered_pages)} page(s) in {brief_dir}: {sorted(filtered_pages)}")
@@ -866,14 +921,22 @@ def build_parser() -> argparse.ArgumentParser:
                         choices=["regional", "executive", "newsletter", "publishing"],
                         help="Resume from this stage (skips prior stages, loads state from disk)")
 
-    # recover — targeted single-country recovery
+    # recover — targeted country recovery (one or more countries)
     p_recover = subparsers.add_parser(
         "recover",
-        help="Recover one country: re-runs the country, its region, executive, and only the affected pages",
+        help="Recover one or more countries: re-runs them, their regions, executive, and only the affected pages",
     )
-    p_recover.add_argument("--country", required=True, help="Country code to recover (e.g. it)")
+    p_recover.add_argument(
+        "--country", required=True, action="append",
+        help="Country code to recover (repeatable, e.g. --country pl --country ro)",
+    )
     p_recover.add_argument("--date", help="End date (YYYY-MM-DD)")
     p_recover.add_argument("--concurrency", type=int, default=5)
+    p_recover.add_argument(
+        "--skip-regional", action="store_true",
+        help="Country scope only: skip regional synthesis, executive, regional/executive "
+             "essays and editing. Preserves existing regional essays and at-a-glance cards.",
+    )
 
     # triage
     p_triage = subparsers.add_parser("triage", help="Run triage only")
