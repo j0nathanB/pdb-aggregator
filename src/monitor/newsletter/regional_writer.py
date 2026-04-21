@@ -9,6 +9,7 @@ analytical essay with a thesis-driven through-line.
 import asyncio
 import json
 import logging
+import os
 from datetime import date
 
 import anthropic
@@ -19,7 +20,7 @@ from ..config import (
     THINKING_BUDGET_TOKENS,
     load_prompt,
 )
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 from ..timing import TrackedSemaphore
 from ._streaming import stream_with_retry
 from .content_models import RegionPageContent
@@ -27,6 +28,25 @@ from .content_models import RegionPageContent
 logger = logging.getLogger(__name__)
 
 WRITER_MODEL = MODEL
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+REGIONAL_ESSAY_TOOL_NAME = "record_regional_essay"
+REGIONAL_ESSAY_TOOL = {
+    "name": REGIONAL_ESSAY_TOOL_NAME,
+    "description": (
+        "Record the finished regional essay. Call exactly once when the "
+        "essay is complete. Both fields are required."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["headline", "regional_lead"],
+        "properties": {
+            "headline": {"type": "string"},
+            "regional_lead": {"type": "string"},
+        },
+    },
+}
 
 # System prompt built once per process
 _system_prompt: str | None = None
@@ -113,15 +133,12 @@ async def write_regional_essay(
     use_model = model or WRITER_MODEL
 
     logger.info(
-        "Regional writer [%s]: starting, %d country summaries",
-        page.region.value, len(summaries),
+        "Regional writer [%s]: starting, %d country summaries%s",
+        page.region.value, len(summaries), " [tool_use]" if USE_TOOL_SCHEMA else "",
     )
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    response = await stream_with_retry(
-        client,
-        f"Regional writer {page.region.value}: streaming API call",
-        f"regional_writer_{page.region.value}",
+    stream_kwargs: dict = dict(
         model=use_model,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
         temperature=1,
@@ -132,19 +149,61 @@ async def write_regional_essay(
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
     )
+    if USE_TOOL_SCHEMA:
+        stream_kwargs["tools"] = [REGIONAL_ESSAY_TOOL]
+
+    response = await stream_with_retry(
+        client,
+        f"Regional writer {page.region.value}: streaming API call",
+        f"regional_writer_{page.region.value}",
+        **stream_kwargs,
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == REGIONAL_ESSAY_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
-        "Regional writer [%s]: done — input=%d, output=%d tokens",
+        "Regional writer [%s]: done — input=%d, output=%d tokens%s",
         page.region.value,
         response.usage.input_tokens,
         response.usage.output_tokens,
+        " [tool_use]" if tool_input else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     run_date = page.week_end
+
+    if tool_input is not None:
+        save_raw_response(
+            "regional_writer", page.region.value, run_date,
+            system_prompt=system_prompt,
+            user_message=user_message,
+            response_text=json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        page.regional_lead = tool_input.get("regional_lead", page.regional_lead)
+        if "headline" in tool_input:
+            page.card_summary = tool_input["headline"]
+        update_trace_parsed("regional_writer", page.region.value, run_date,
+                            parsed_output=tool_input)
+        return page
+
+    if USE_TOOL_SCHEMA:
+        logger.warning(
+            "Regional writer [%s]: tool_use enabled but no valid block; falling back",
+            page.region.value,
+        )
+        _record_fallback("regional_writer_tool_use_fallback")
+
     save_raw_response(
         "regional_writer", page.region.value, run_date,
         system_prompt=system_prompt,

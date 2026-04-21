@@ -8,6 +8,7 @@ thesis-driven through-line about what the week reveals globally.
 
 import json
 import logging
+import os
 from datetime import date
 
 import anthropic
@@ -18,13 +19,32 @@ from ..config import (
     THINKING_BUDGET_TOKENS,
     load_prompt,
 )
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 from ._streaming import stream_with_retry
 from .content_models import OverviewPageContent, RegionPageContent
 
 logger = logging.getLogger(__name__)
 
 WRITER_MODEL = MODEL
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+GLOBAL_ESSAY_TOOL_NAME = "record_global_essay"
+GLOBAL_ESSAY_TOOL = {
+    "name": GLOBAL_ESSAY_TOOL_NAME,
+    "description": (
+        "Record the finished global executive essay. Call exactly once when "
+        "the essay is complete. Both fields are required."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["headline", "edited_essay"],
+        "properties": {
+            "headline": {"type": "string"},
+            "edited_essay": {"type": "string"},
+        },
+    },
+}
 
 # System prompt built once per process
 _system_prompt: str | None = None
@@ -107,13 +127,11 @@ async def write_global_essay(
     system_prompt = _build_system_prompt()
     use_model = model or WRITER_MODEL
 
-    logger.info("Global writer: starting, %d regional essays", len(essays))
+    logger.info("Global writer: starting, %d regional essays%s",
+                len(essays), " [tool_use]" if USE_TOOL_SCHEMA else "")
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    response = await stream_with_retry(
-        client,
-        "Global writer: streaming API call",
-        "global_writer",
+    stream_kwargs: dict = dict(
         model=use_model,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
         temperature=1,
@@ -124,18 +142,54 @@ async def write_global_essay(
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
     )
+    if USE_TOOL_SCHEMA:
+        stream_kwargs["tools"] = [GLOBAL_ESSAY_TOOL]
+
+    response = await stream_with_retry(
+        client, "Global writer: streaming API call", "global_writer",
+        **stream_kwargs,
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    # Prefer tool_use block when present
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == GLOBAL_ESSAY_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
-        "Global writer: done — input=%d, output=%d tokens",
-        response.usage.input_tokens,
-        response.usage.output_tokens,
+        "Global writer: done — input=%d, output=%d tokens%s",
+        response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if tool_input else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     run_date = overview.week_end
+
+    if tool_input is not None:
+        save_raw_response(
+            "global_writer", "executive", run_date,
+            system_prompt=system_prompt,
+            user_message=user_message,
+            response_text=json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        overview.executive_brief.edited_essay = tool_input.get("edited_essay", "")
+        if "headline" in tool_input:
+            overview.executive_brief.headline = tool_input["headline"]
+        update_trace_parsed("global_writer", "executive", run_date, parsed_output=tool_input)
+        return overview
+
+    if USE_TOOL_SCHEMA:
+        logger.warning("Global writer: tool_use enabled but no valid block; falling back")
+        _record_fallback("global_writer_tool_use_fallback")
+
     save_raw_response(
         "global_writer", "executive", run_date,
         system_prompt=system_prompt,
