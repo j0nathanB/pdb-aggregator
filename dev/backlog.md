@@ -125,3 +125,15 @@ that a story_map-path country has no sources block.
 signal when a country went through the fallback. Even for auditing
 purposes, there's no in-brief marker. Adding this makes the fallback
 path transparent to readers and preserves our provenance story.
+
+**Related gap** (fold into same PR): the at-a-glance page
+(`at-a-glance.mdx`) pulls top-story headlines from `story_map` data.
+When story_map fails and the country falls back to web_search, the
+at-a-glance card for that country is simply absent — the country
+appears in the region page but is missing from the regional
+at-a-glance section. JP on the 2026-04-19 brief demonstrates this
+(fixed manually in commit 10778a2 as a one-off). The fix belongs
+here: when story_map isn't available, derive the at-a-glance card
+from the country agent's own top-development headline (or the
+web_search results' summary) rather than skipping the country
+entirely.
