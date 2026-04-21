@@ -44,6 +44,26 @@ NEVER run `git checkout`, `publish`, or any operation that overwrites `site/brie
 
 After any pipeline run that produces site output (including partial re-runs for individual countries), commit the `site/briefs/` directory along with any code changes. The pipeline's editor and copyeditor stages produce polished prose that costs significant API tokens to regenerate. Don't treat brief output as disposable.
 
+### Test recovery / partial-scope paths before running them
+
+`cmd_recover` and any other subcommand that rebuilds a subset of countries or regions MUST have an end-to-end test that asserts non-target content is preserved. The `recover` subcommand (commit `3806936`, 2026-04-20) silently wiped non-target country prose for six months because it was added without a test and never exercised until 2026-04-21, when a PL/RO/NO/DE recovery regressed twelve other countries to the bulleted fallback branch. The regression root cause is documented in commit `9c72ca4`.
+
+When adding or modifying any scoped-write path, add a test under `tests/monitor/` that:
+1. Sets up a fixture with prior content in `site/briefs/{date}/` and prior ledgers.
+2. Runs the scoped operation.
+3. Asserts every file the operation shouldn't touch is byte-identical afterward.
+4. Asserts every file the operation *does* touch has the new content.
+
+### Editor outputs are persisted to traces — use them
+
+Editor / copyeditor / style_editor outputs are written to `briefs/{date}/traces/{stage}_{code}.json` with the full polished JSON in `output.response_text`. This means:
+
+- **Narrative_body is recoverable from traces** — a recovery that skips the editor for non-target countries can still read prior prose back from `editor_{code}.json` (or `copyeditor_{code}.json` / `style_editor_{code}.json` for the most-polished version).
+- **`CountryContent.narrative_body` lives in memory only between `edit_country` and `render_pages`** — the renderer writes MDX, the editor's in-memory field is GC'd. But the trace on disk is durable.
+- **If you claim "X isn't persisted," check the trace directory first.** Don't infer from the in-memory data model; confirm with the file system.
+
+Currently `build_all_pages` rebuilds `CountryContent` from the ledger with `narrative_body=None` on every run. A future improvement is to have it read prior narrative_body back from the latest relevant trace (preferring `style_editor` → `copyeditor` → `editor`) when no fresh edit will run for that country. Until that lands, recoveries extract from the on-disk MDX (see `_extract_country_narratives_from_mdx` in `cli.py`).
+
 ## Working Principles
 
 Read `docs/engineering_principles.md` before making non-trivial changes. Ten concrete principles extracted from the 2026-04-20 debugging session, each anchored to a specific failure we paid for. The two highest-leverage:
