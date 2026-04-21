@@ -61,3 +61,67 @@ reviewed and any other work has stabilized.
 **Watchlist state in the ledger is NOT being deleted** by this work —
 `global_ledger.watchlist` stays as an analytical tracking field; only
 the rendering path is removed.
+
+---
+
+## Web_search fallback — surface source URLs in brief output
+
+**Status**: noted 2026-04-20. Not urgent for 2026-04-19 (user accepted
+the gap for this run) but needed before regular use.
+
+**Problem**: when story_map fails (e.g., truncation at max_tokens,
+server-side streaming drops), the country agent falls back to
+Anthropic's `web_search_20250305` tool and does its own research. The
+content that lands in the brief doesn't distinguish itself from the
+normal-pipeline path — there's no "sources: [...]" list, no Notes
+block, nothing indicating that the URLs read weren't from the normal
+Brave+extraction audit trail.
+
+Observed on the 2026-04-19 run: JP went through the web_search fallback
+after two story_map failures. The resulting country content in
+`site/briefs/2026-04-19/asia-pacific.mdx` reads like any other
+country's content — but the reader has no way to know the sources
+Claude consulted or evaluate their credibility.
+
+**What we already have**: the country agent code at
+`src/monitor/agents/country.py` already captures each web_search call's
+`query + results_count + results[]` into `search_log: list[dict]` and
+persists it into the trace via `extra={"search_log": search_log}`. So
+the data is saved — it just doesn't propagate to the ledger or the
+rendered page.
+
+**Policy question** (decide before implementing): should the Notes/
+Sources section appear:
+- Only when web_search was used (fallback signal)?
+- Always for every country (parity + transparency)?
+- Only when *most* developments came from web_search rather than
+  pre-built content?
+
+The user's framing suggests option 1: "if we exclusively use web
+search" → attach a Notes/sources footer.
+
+**Scope sketch** (~50-100 lines):
+- `CountryAgentOutput`: add a `search_log: list[dict] | None = None`
+  field.
+- `country.py run_country_agent`: populate it from the web_search
+  branch (leave None for story_map-driven runs).
+- `models.CountryLedger.weekly_entries[i]`: add an optional
+  `research_sources: list[SourceAttribution] | None` field populated
+  from search_log so the ledger has an audit trail.
+- `content_builder.build_all_pages`: when populating `CountryContent`
+  for the region page, copy the sources across.
+- `content_models.CountryContent`: add `research_sources` field.
+- `templates/region.mdx.j2`: if `country.research_sources`, emit a
+  "Sources" block (distinct from the normal per-development citations).
+- `structured_editor.edit_country` / copyeditor / style_editor: pass
+  the sources through unchanged (they're a factual block, not prose to
+  edit).
+
+**Tests**: a fixture with a `search_log` populated, asserting the
+rendered region page includes the sources block; and parallel assertion
+that a story_map-path country has no sources block.
+
+**Why this matters operationally**: right now we have *zero* visible
+signal when a country went through the fallback. Even for auditing
+purposes, there's no in-brief marker. Adding this makes the fallback
+path transparent to readers and preserves our provenance story.
