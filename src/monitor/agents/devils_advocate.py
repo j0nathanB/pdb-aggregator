@@ -7,6 +7,7 @@ Output is the devils_advocate section appended to the entry.
 """
 
 import logging
+import os
 from datetime import date
 from typing import Optional
 
@@ -22,9 +23,28 @@ from ..config import (
     load_prompt,
 )
 from ..models import CountryLedger, DevilsAdvocate, WeeklyEntry
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 
 logger = logging.getLogger(__name__)
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+DEVILS_ADVOCATE_TOOL_NAME = "record_devils_advocate"
+DEVILS_ADVOCATE_TOOL = {
+    "name": DEVILS_ADVOCATE_TOOL_NAME,
+    "description": (
+        "Record the devil's advocate challenges and recommended adjustments. "
+        "Call exactly once when the review is complete."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["challenges"],
+        "properties": {
+            "challenges": {"type": "array", "items": {"type": "string"}},
+            "recommended_adjustments": {"type": "array", "items": {"type": "string"}},
+        },
+    },
+}
 
 
 # =============================================================================
@@ -204,18 +224,22 @@ async def run_devils_advocate(
         len(prompt),
     )
 
+    create_kwargs: dict = dict(
+        model=MODEL,
+        max_tokens=12096,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": 8000,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": prompt}],
+    )
+    if USE_TOOL_SCHEMA:
+        create_kwargs["tools"] = [DEVILS_ADVOCATE_TOOL]
+
     async with anthropic_limiter():
-        response = await client.messages.create(
-            model=MODEL,
-            max_tokens=12096,
-            temperature=1,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": 8000,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": prompt}],
-        )
+        response = await client.messages.create(**create_kwargs)
 
     text_parts = [
         block.text for block in response.content
@@ -223,23 +247,54 @@ async def run_devils_advocate(
     ]
     response_text = "\n".join(text_parts)
 
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == DEVILS_ADVOCATE_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
-        "Devil's advocate %s: API complete — input=%d, output=%d tokens",
+        "Devil's advocate %s: API complete — input=%d, output=%d tokens%s",
         country, response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if tool_input else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     trace_label = country.lower().replace(" ", "_")
-    save_raw_response(
-        "devils_advocate", trace_label, entry.week,
-        system_prompt=system_prompt,
-        user_message=prompt,
-        response_text=response_text,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
 
-    result = parse_devils_advocate_response(response_text)
+    if tool_input is not None:
+        import json as _json
+        save_raw_response(
+            "devils_advocate", trace_label, entry.week,
+            system_prompt=system_prompt,
+            user_message=prompt,
+            response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        result = DevilsAdvocate(
+            challenges=tool_input.get("challenges", []),
+            recommended_adjustments=tool_input.get("recommended_adjustments", []),
+        )
+    else:
+        if USE_TOOL_SCHEMA:
+            logger.warning(
+                "Devil's advocate %s: tool_use enabled but no valid block; falling back",
+                country,
+            )
+            _record_fallback("devils_advocate_tool_use_fallback")
+        save_raw_response(
+            "devils_advocate", trace_label, entry.week,
+            system_prompt=system_prompt,
+            user_message=prompt,
+            response_text=response_text,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        result = parse_devils_advocate_response(response_text)
+
     logger.info(
         "Devil's advocate %s: %d challenges, %d adjustments",
         country, len(result.challenges), len(result.recommended_adjustments),

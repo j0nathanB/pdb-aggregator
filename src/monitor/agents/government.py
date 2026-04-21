@@ -11,6 +11,7 @@ Runs every week for all 28 countries, before triage.
 from __future__ import annotations
 
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Optional
@@ -28,9 +29,73 @@ from ..config import (
     load_prompt,
 )
 
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 
 logger = logging.getLogger(__name__)
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+GOVERNMENT_AGENT_TOOL_NAME = "record_government_findings"
+GOVERNMENT_AGENT_TOOL = {
+    "name": GOVERNMENT_AGENT_TOOL_NAME,
+    "description": (
+        "Record the government source agent's classified findings, "
+        "discovery gaps, and extraction failures. Call exactly once when "
+        "analysis is complete."
+    ),
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "information_culture": {"type": "string"},
+            "items_processed": {"type": "integer"},
+            "items_with_findings": {"type": "integer"},
+            "findings": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "source_institution": {"type": "string"},
+                        "source_category": {"type": "string"},
+                        "source_url": {"type": "string"},
+                        "publication_date": {"type": "string"},
+                        "content_type": {"type": "string"},
+                        "signal_categories": {"type": "array", "items": {"type": "string"}},
+                        "what_happened": {"type": "string"},
+                        "structural_significance": {"type": "string"},
+                        "framing_note": {"type": "string"},
+                        "information_culture_note": {"type": "string"},
+                        "cross_reference": {"type": "string"},
+                    },
+                },
+            },
+            "discovery_gaps": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "domain": {"type": "string"},
+                        "institution": {"type": "string"},
+                        "priority": {"type": "string"},
+                        "assessment": {"type": "string"},
+                    },
+                },
+            },
+            "extraction_failures": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "source_institution": {"type": "string"},
+                        "url": {"type": "string"},
+                        "error": {"type": "string"},
+                        "content_available": {"type": "string"},
+                        "note": {"type": "string"},
+                    },
+                },
+            },
+        },
+    },
+}
 
 
 # =============================================================================
@@ -353,25 +418,24 @@ async def run_government_agent(
 
     try:
         from ..timing import with_heartbeat
+        create_kwargs: dict = dict(
+            model=model or MODEL,
+            max_tokens=THINKING_BUDGET_TOKENS + 4096,
+            thinking={
+                "type": "enabled",
+                "budget_tokens": THINKING_BUDGET_TOKENS,
+            },
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_message}],
+        )
+        if USE_TOOL_SCHEMA:
+            create_kwargs["tools"] = [GOVERNMENT_AGENT_TOOL]
+
         async with anthropic_limiter():
             response = await with_heartbeat(
-                client.messages.create(
-                    model=model or MODEL,
-                    max_tokens=THINKING_BUDGET_TOKENS + 4096,
-                    thinking={
-                        "type": "enabled",
-                        "budget_tokens": THINKING_BUDGET_TOKENS,
-                    },
-                    system=system_prompt,
-                    messages=[{"role": "user", "content": user_message}],
-                ),
+                client.messages.create(**create_kwargs),
                 f"Government agent {country_config.code}: API call",
             )
-
-        logger.debug(
-            "Gov agent %s: API response — input=%d, output=%d tokens",
-            country_config.code, response.usage.input_tokens, response.usage.output_tokens,
-        )
 
         # Extract text from response
         text_content = ""
@@ -380,18 +444,49 @@ async def run_government_agent(
                 text_content = block.text
                 break
 
-        from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
-        save_raw_response(
-            "government", country_config.code, processing_date,
-            system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
-            user_message=user_message,
-            response_text=text_content,
-            thinking_text=extract_thinking(response),
-            usage=extract_usage(response),
+        tool_input: dict | None = None
+        if USE_TOOL_SCHEMA:
+            for block in response.content:
+                if (getattr(block, "type", None) == "tool_use"
+                        and getattr(block, "name", None) == GOVERNMENT_AGENT_TOOL_NAME):
+                    tool_input = getattr(block, "input", None)
+                    break
+
+        logger.debug(
+            "Gov agent %s: API response — input=%d, output=%d tokens%s",
+            country_config.code, response.usage.input_tokens, response.usage.output_tokens,
+            " [tool_use]" if tool_input else "",
         )
 
-        # Parse JSON from response
-        parsed = _parse_response(text_content)
+        from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+
+        if tool_input is not None:
+            import json as _json
+            save_raw_response(
+                "government", country_config.code, processing_date,
+                system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
+                user_message=user_message,
+                response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
+                thinking_text=extract_thinking(response),
+                usage=extract_usage(response),
+            )
+            parsed = tool_input
+        else:
+            if USE_TOOL_SCHEMA:
+                logger.warning(
+                    "Gov agent %s: tool_use enabled but no valid block; falling back",
+                    country_config.code,
+                )
+                _record_fallback("government_tool_use_fallback")
+            save_raw_response(
+                "government", country_config.code, processing_date,
+                system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
+                user_message=user_message,
+                response_text=text_content,
+                thinking_text=extract_thinking(response),
+                usage=extract_usage(response),
+            )
+            parsed = _parse_response(text_content)
 
         # Build findings
         findings = []
