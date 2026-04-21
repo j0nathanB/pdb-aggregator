@@ -97,7 +97,8 @@ class TestRenderPages:
         )
         assert "overview" in pages
         assert "the-americas" in pages
-        assert "watchlist" in pages
+        # watchlist.mdx is no longer rendered as of 015a040 (2026-04-13)
+        assert "watchlist" not in pages
 
     def test_overview_has_frontmatter(self):
         pages = render_pages(
@@ -146,15 +147,7 @@ class TestRenderPages:
         assert "<Accordion" in region
         assert "Infrastructure deal" in region
 
-    def test_watchlist_page(self):
-        pages = render_pages(
-            _test_overview(),
-            {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
-        )
-        wl = pages["watchlist"]
-        assert "BRICS summit" in wl
-        assert "bloc cohesion" in wl
+    # test_watchlist_page removed — watchlist.mdx rendering dropped in 015a040.
 
     def test_dollar_sign_escaped(self):
         overview = _test_overview()
