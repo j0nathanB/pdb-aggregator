@@ -17,7 +17,10 @@ logger = logging.getLogger(__name__)
 SITE_DIR = PROJECT_ROOT / "site"
 DOCS_JSON = SITE_DIR / "docs.json"
 
-# Stable page order for navigation
+# Stable page order for navigation.
+# Note: "watchlist" was removed in 015a040 (2026-04-13) but persisted here
+# until 2026-04-20, causing every subsequent brief to re-add a dead nav
+# entry pointing at a non-existent watchlist.mdx.
 PAGE_ORDER = [
     "at-a-glance",
     "overview",
@@ -27,7 +30,6 @@ PAGE_ORDER = [
     "asia-pacific",
     "near-east-south-asia",
     "the-americas",
-    "watchlist",
 ]
 
 
