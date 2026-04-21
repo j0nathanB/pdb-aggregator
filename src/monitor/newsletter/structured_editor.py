@@ -8,6 +8,7 @@ analytical data and returns JSON with prose fields. No markdown I/O.
 import asyncio
 import json
 import logging
+import os
 import re
 from datetime import date
 from pathlib import Path
@@ -34,6 +35,76 @@ from .content_models import (
 logger = logging.getLogger(__name__)
 
 EDITOR_MODEL = MODEL
+
+# Feature flag: when set, use Anthropic tool_use with typed input_schema
+# for prose outputs rather than free-form JSON + json_repair fallback.
+# Same flag that gates the country agent and story_map migrations.
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+# =============================================================================
+# Tool definitions for country-scope prose editing
+# =============================================================================
+#
+# edit_country and copyedit_country both emit {"narrative_body": str,
+# "other_stories": [{"headline": str, "summary": str}]}. Style-editor for
+# country emits just {"narrative_body": str}. The schemas are small enough
+# to hand-write; pydantic isn't worth the ceremony for this.
+
+COUNTRY_EDIT_TOOL_NAME = "record_country_narrative"
+COUNTRY_EDIT_TOOL = {
+    "name": COUNTRY_EDIT_TOOL_NAME,
+    "description": (
+        "Record the edited country narrative. Call exactly once when your "
+        "editing is complete. The 'narrative_body' field holds your polished "
+        "prose (use \\n\\n for paragraph breaks). 'other_stories' is "
+        "optional; include it only if the input had other_stories to polish."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["narrative_body"],
+        "properties": {
+            "narrative_body": {"type": "string"},
+            "other_stories": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["headline", "summary"],
+                    "properties": {
+                        "headline": {"type": "string"},
+                        "summary": {"type": "string"},
+                    },
+                },
+            },
+        },
+    },
+}
+
+COUNTRY_STYLE_TOOL_NAME = "record_styled_narrative"
+COUNTRY_STYLE_TOOL = {
+    "name": COUNTRY_STYLE_TOOL_NAME,
+    "description": (
+        "Record the style-edited country narrative. Call exactly once. "
+        "'narrative_body' is the only required field."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["narrative_body"],
+        "properties": {
+            "narrative_body": {"type": "string"},
+        },
+    },
+}
+
+
+def _extract_tool_input(response, tool_name: str) -> dict | None:
+    """Return the tool_use block's input for `tool_name`, or None."""
+    for block in response.content:
+        if (
+            getattr(block, "type", None) == "tool_use"
+            and getattr(block, "name", None) == tool_name
+        ):
+            return getattr(block, "input", None)
+    return None
 
 # Style guide loaded once per process
 _style_guide: str | None = None
@@ -225,12 +296,13 @@ async def _call_editor_once(
     user_message: str,
     label: str,
     model: str,
+    tools: list[dict] | None = None,
 ) -> tuple[str, anthropic.types.Message]:
-    """Single API call for the country editor. Returns (response_text, response)."""
-    response = await stream_with_retry(
-        client,
-        f"Editor {label}: streaming API call",
-        f"editor_{label}",
+    """Single API call for the country editor. Returns (response_text, response).
+
+    If `tools` is provided, registers them (e.g., for tool_use structured output).
+    """
+    kwargs: dict = dict(
         model=model,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
         temperature=1,
@@ -240,6 +312,14 @@ async def _call_editor_once(
         },
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
+    )
+    if tools:
+        kwargs["tools"] = tools
+    response = await stream_with_retry(
+        client,
+        f"Editor {label}: streaming API call",
+        f"editor_{label}",
+        **kwargs,
     )
     text_parts = [b.text for b in response.content if b.type == "text"]
     return "\n".join(text_parts), response
@@ -270,20 +350,43 @@ async def edit_country(
     user_message = _build_country_input(country)
     use_model = model or EDITOR_MODEL
 
-    logger.info("Editor [%s]: starting structured edit", country.code)
+    logger.info("Editor [%s]: starting structured edit%s",
+                country.code, " [tool_use]" if USE_TOOL_SCHEMA else "")
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
+    tools = [COUNTRY_EDIT_TOOL] if USE_TOOL_SCHEMA else None
     response_text, response = await _call_editor_once(
-        client, system_prompt, user_message, country.code, use_model,
+        client, system_prompt, user_message, country.code, use_model, tools=tools,
     )
 
     logger.info(
-        "Editor [%s]: done — input=%d, output=%d tokens",
+        "Editor [%s]: done — input=%d, output=%d tokens%s",
         country.code, response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if USE_TOOL_SCHEMA else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     run_date = analysis_date or date.today()
+
+    def _has_narrative(data) -> bool:
+        return isinstance(data, dict) and "narrative_body" in data and isinstance(data["narrative_body"], str) and data["narrative_body"].strip()
+
+    parsed = None
+
+    # Prefer tool_use block when present — schema-validated, no quote-escape bugs.
+    if USE_TOOL_SCHEMA:
+        tool_input = _extract_tool_input(response, COUNTRY_EDIT_TOOL_NAME)
+        if _has_narrative(tool_input):
+            parsed = tool_input
+            response_text = json.dumps(tool_input, indent=2, ensure_ascii=False)
+        else:
+            logger.warning(
+                "Editor [%s]: tool_use enabled but no valid tool_use block; "
+                "falling back to free-form JSON path",
+                country.code,
+            )
+            _record_fallback("editor_tool_use_fallback")
+
     save_raw_response(
         "editor", country.code, run_date,
         system_prompt=system_prompt,
@@ -293,14 +396,12 @@ async def edit_country(
         usage=extract_usage(response),
     )
 
-    def _has_narrative(data) -> bool:
-        return isinstance(data, dict) and "narrative_body" in data and isinstance(data["narrative_body"], str) and data["narrative_body"].strip()
-
-    parsed = None
-    try:
-        parsed = extract_json(response_text, context=f"editor_{country.code}")
-    except (ValueError, KeyError):
-        pass
+    # Free-form JSON path (and fallback when tool_use didn't deliver)
+    if not _has_narrative(parsed):
+        try:
+            parsed = extract_json(response_text, context=f"editor_{country.code}")
+        except (ValueError, KeyError):
+            pass
 
     # Retry once if the first response is missing narrative_body
     if not _has_narrative(parsed):
@@ -313,8 +414,10 @@ async def edit_country(
             f"{user_message}\n\n---\n\n{_RETRY_INSTRUCTION}"
         )
         try:
+            # Retry WITHOUT the tool — free-form as a last resort
             response_text, response = await _call_editor_once(
                 client, system_prompt, retry_message, f"{country.code}-retry", use_model,
+                tools=None,
             )
             logger.info(
                 "Editor [%s] retry: input=%d, output=%d tokens",
@@ -687,6 +790,11 @@ async def style_edit_prose(
 
     If trace_root is provided, trace files are written under that directory
     instead of briefs/, so harness runs don't clobber production traces.
+
+    Country-scope tool_use: when USE_TOOL_SCHEMA is on and prose_fields is
+    exactly `{"narrative_body": ...}`, register the typed tool so the API
+    validates the output. Regional / executive / other shapes still use the
+    free-form JSON path (migration for those in later phases).
     """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set")
@@ -695,13 +803,18 @@ async def style_edit_prose(
 
     user_message = json.dumps(prose_fields, indent=2, ensure_ascii=False)
 
-    logger.info("Style editor [%s]: starting", label)
+    # Only use tool_use when the caller's prose_fields matches the
+    # country-scope schema (single narrative_body key).
+    use_country_tool = (
+        USE_TOOL_SCHEMA
+        and set(prose_fields.keys()) == {"narrative_body"}
+    )
+
+    logger.info("Style editor [%s]: starting%s", label,
+                " [tool_use]" if use_country_tool else "")
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    response = await stream_with_retry(
-        client,
-        f"Style editor {label}: streaming API call",
-        f"style_editor_{label}",
+    stream_kwargs: dict = dict(
         model=model or EDITOR_MODEL,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
         temperature=1,
@@ -712,17 +825,50 @@ async def style_edit_prose(
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
     )
+    if use_country_tool:
+        stream_kwargs["tools"] = [COUNTRY_STYLE_TOOL]
+
+    response = await stream_with_retry(
+        client,
+        f"Style editor {label}: streaming API call",
+        f"style_editor_{label}",
+        **stream_kwargs,
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
     logger.info(
-        "Style editor [%s]: done — input=%d, output=%d tokens",
+        "Style editor [%s]: done — input=%d, output=%d tokens%s",
         label, response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if use_country_tool else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     run_date = analysis_date or date.today()
+
+    # Prefer tool_use block when present
+    if use_country_tool:
+        tool_input = _extract_tool_input(response, COUNTRY_STYLE_TOOL_NAME)
+        if isinstance(tool_input, dict) and isinstance(tool_input.get("narrative_body"), str):
+            save_raw_response(
+                "style_editor", label, run_date,
+                system_prompt=system_prompt,
+                user_message=user_message,
+                response_text=json.dumps(tool_input, indent=2, ensure_ascii=False),
+                thinking_text=extract_thinking(response),
+                usage=extract_usage(response),
+                trace_root=trace_root,
+            )
+            update_trace_parsed("style_editor", label, run_date,
+                                parsed_output=tool_input, trace_root=trace_root)
+            return tool_input
+        logger.warning(
+            "Style editor [%s]: tool_use enabled but no valid block; falling back",
+            label,
+        )
+        _record_fallback("style_editor_tool_use_fallback")
+
     save_raw_response(
         "style_editor", label, run_date,
         system_prompt=system_prompt,

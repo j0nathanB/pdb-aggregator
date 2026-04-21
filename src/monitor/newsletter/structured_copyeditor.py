@@ -8,6 +8,7 @@ and returns polished versions. No markdown splitting or reassembly.
 import asyncio
 import json
 import logging
+import os
 from datetime import date
 from pathlib import Path
 
@@ -21,9 +22,12 @@ from ..config import (
     load_country_config,
     load_prompt,
 )
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 from ..timing import TrackedSemaphore
 from ._streaming import stream_with_retry
+
+# Feature flag — same as structured_editor.USE_TOOL_SCHEMA
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
 from .content_models import (
     AtAGlancePageContent,
     CountryContent,
@@ -108,13 +112,21 @@ async def _copyedit_prose(
 
     user_message = json.dumps(prose_fields, indent=2, ensure_ascii=False)
 
-    logger.info("Copyeditor [%s]: starting", label)
+    # Country-scope tool_use: when the input matches the country
+    # copyeditor shape (narrative_body ± other_stories), register the
+    # typed tool so the API validates the output.
+    input_keys = set(prose_fields.keys())
+    use_country_tool = (
+        USE_TOOL_SCHEMA
+        and input_keys <= {"narrative_body", "other_stories"}
+        and "narrative_body" in input_keys
+    )
+
+    logger.info("Copyeditor [%s]: starting%s", label,
+                " [tool_use]" if use_country_tool else "")
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    response = await stream_with_retry(
-        client,
-        f"Copyeditor {label}: streaming API call",
-        f"copyeditor_{label}",
+    stream_kwargs: dict = dict(
         model=model or COPYEDITOR_MODEL,
         max_tokens=THINKING_BUDGET_TOKENS + 8192,
         temperature=1,
@@ -125,17 +137,56 @@ async def _copyedit_prose(
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": user_message}],
     )
+    if use_country_tool:
+        from .structured_editor import COUNTRY_EDIT_TOOL
+        stream_kwargs["tools"] = [COUNTRY_EDIT_TOOL]
+
+    response = await stream_with_retry(
+        client,
+        f"Copyeditor {label}: streaming API call",
+        f"copyeditor_{label}",
+        **stream_kwargs,
+    )
 
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
     logger.info(
-        "Copyeditor [%s]: done — input=%d, output=%d tokens",
+        "Copyeditor [%s]: done — input=%d, output=%d tokens%s",
         label, response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if use_country_tool else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     run_date = analysis_date or date.today()
+
+    # Prefer tool_use block when present
+    if use_country_tool:
+        from .structured_editor import _extract_tool_input, COUNTRY_EDIT_TOOL_NAME
+        tool_input = _extract_tool_input(response, COUNTRY_EDIT_TOOL_NAME)
+        if (
+            isinstance(tool_input, dict)
+            and isinstance(tool_input.get("narrative_body"), str)
+            and tool_input["narrative_body"].strip()
+        ):
+            save_raw_response(
+                "copyeditor", label, run_date,
+                system_prompt=system_prompt,
+                user_message=user_message,
+                response_text=json.dumps(tool_input, indent=2, ensure_ascii=False),
+                thinking_text=extract_thinking(response),
+                usage=extract_usage(response),
+                trace_root=trace_root,
+            )
+            update_trace_parsed("copyeditor", label, run_date,
+                                parsed_output=tool_input, trace_root=trace_root)
+            return tool_input
+        logger.warning(
+            "Copyeditor [%s]: tool_use enabled but no valid block; falling back",
+            label,
+        )
+        _record_fallback("copyeditor_tool_use_fallback")
+
     save_raw_response(
         "copyeditor", label, run_date,
         system_prompt=system_prompt,
