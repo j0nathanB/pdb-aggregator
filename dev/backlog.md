@@ -137,3 +137,90 @@ here: when story_map isn't available, derive the at-a-glance card
 from the country agent's own top-development headline (or the
 web_search results' summary) rather than skipping the country
 entirely.
+
+---
+
+## Migrate remaining LLM stages to tool_use
+
+**Status**: noted 2026-04-20. Continues the pattern established for
+country agent (`fa2ec4b`) and story_map (`bce0bdd`).
+
+**Motivation**: the 2026-04-19 run fired `json_repair_used` 45 times:
+  - 28 × `[story_map]` (tool_use max_tokens truncation → free-form fallback)
+  - 17 × `[editor_XX]` (one per country — unescaped quotes in prose JSON)
+
+Romania's brief was sharply truncated (main narrative ~2 short paras
+ending mid-sentence) because the editor emitted `"Momentul
+Adevărului"` inside the JSON's `narrative_body` value without
+escaping the quotes. The JSON parser terminated the string at char
+393; json_repair recovered 791 chars total (ending with a dangling
+comma) plus a few phantom keys like `"puppet premier."` and `"only"`
+— which were actually chunks of prose that got mis-parsed as JSON
+keys. The LLM wrote far more narrative than 791 chars; most was lost.
+
+Every country's editor has this risk. Romania was just where the
+unescaped quote landed earliest. The same failure mode applies to
+every free-form JSON stage that emits prose.
+
+**Stages still on free-form JSON** (all call `extract_json` with
+`json_repair` fallback in `sanitize.py`):
+
+Prose-heavy (highest leverage — internal quotes common):
+- `newsletter/structured_editor.py` — `edit_country`, `edit_regional`,
+  `edit_executive`, `edit_watchlist` (the 17 editor_XX failures above)
+- `newsletter/structured_copyeditor.py` — per-country + regional + executive
+- `newsletter/structured_editor.py:style_edit_prose` — style pass
+- `newsletter/regional_writer.py` — writes regional essays
+- `newsletter/global_writer.py` — writes global executive essay
+
+Structured analytical output (medium leverage):
+- `agents/regional.py` — regional synthesis (6 calls/week)
+- `agents/executive.py` — executive synthesis (1 call/week, large)
+- `agents/devils_advocate.py` — 30 calls/week (one per country)
+- `agents/government.py` — 30 calls/week (one per country)
+
+Lower priority (small output, less drift risk):
+- `agents/triage.py` — depth decisions (1 call/week, short rationales)
+- `ledger/initialize.py` — new-country dossier seed (rare)
+
+**Suggested migration order** (by leverage × risk):
+
+1. **Editor + copyeditor + style_editor** (combined PR). Same content
+   models (`CountryContent`, `RegionPageContent`, `ExecutiveBriefContent`).
+   A single shared tool schema (or a small family) serves all three.
+   Eliminates the 17× editor failures per run. ~200-300 lines.
+
+2. **Regional writer + global writer**. Both produce long prose
+   essays (the most quote-heavy prose in the pipeline). High shape-
+   drift risk, low test coverage today. ~80-120 lines.
+
+3. **Regional + executive synthesis**. Structured JSON output, but
+   `executive` already shows 1 `[executive]` json_repair hit per run.
+   Used downstream by the prose-writing stages — worth locking down.
+   ~100-150 lines.
+
+4. **Devil's advocate + government agent**. Per-country calls, so
+   error rates compound. Output structure is simpler than country
+   agent's so migration is lighter. ~80 lines each.
+
+5. **Triage + initialize** (last). Small output, low failure
+   frequency, no urgency.
+
+**Cleanup debt unlocked by migration**: once each stage is on
+tool_use, most of the defensive patches we've layered on can be
+deleted. `parse_country_response`'s resilience patches from today
+(ledger carry-forward for missing categories in `3170f48`, enum
+coercion in `bca63ae`, `safe_enum`/`safe_int` scaffolding in
+`36f7c12`) become dead code when the schema prevents the shape drift
+at the API boundary. Same applies to stage-by-stage as they migrate.
+
+**Tooling already in place**: `src/monitor/schema_helpers.py`'s
+`pydantic_to_tool_schema` handles schema generation from Pydantic v2
+models. `MPM_USE_TOOL_SCHEMA` env var gate is the A/B mechanism.
+Story_map's text-fallback path (commit `b0404af`) is a template for
+handling the case where tool_use fails mid-stream.
+
+**One wrinkle per stage to watch**: the country agent uses
+`web_search_20250305` alongside its record tool, and that combination
+works. Other stages are simpler — single tool, no web_search. Should
+be less wrinkle to port.
