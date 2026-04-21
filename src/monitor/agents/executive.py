@@ -6,6 +6,7 @@ Output: Updated global ledger (dynamics, watchlist, briefing items, triage impli
 """
 
 import logging
+import os
 from datetime import date
 from typing import Optional
 
@@ -35,9 +36,145 @@ from ..models import (
     TriageImplication,
     WatchlistItem,
 )
-from ..sanitize import extract_json, safe_date, safe_enum, safe_enum_list
+from ..sanitize import _record_fallback, extract_json, safe_date, safe_enum, safe_enum_list
 
 logger = logging.getLogger(__name__)
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+EXECUTIVE_SYNTHESIS_TOOL_NAME = "record_executive_synthesis"
+EXECUTIVE_SYNTHESIS_TOOL = {
+    "name": EXECUTIVE_SYNTHESIS_TOOL_NAME,
+    "description": (
+        "Record the executive synthesis output as a full-state update to the "
+        "global ledger. Call exactly once when analysis is complete."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["global_posture_summary"],
+        "properties": {
+            "global_posture_summary": {
+                "type": "object",
+                "required": ["text"],
+                "properties": {
+                    "as_of": {"type": "string"},
+                    "text": {"type": "string"},
+                    "signal_environment": {
+                        "type": "object",
+                        "properties": {
+                            "most_active_categories": {"type": "array", "items": {"type": "string"}},
+                            "quietest_categories": {"type": "array", "items": {"type": "string"}},
+                            "geographic_hotspots": {"type": "array", "items": {"type": "string"}},
+                            "geographic_quiet_zones": {"type": "array", "items": {"type": "string"}},
+                        },
+                    },
+                },
+            },
+            "active_dynamics": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["dynamic_id", "title", "current_assessment"],
+                    "properties": {
+                        "dynamic_id": {"type": "string"},
+                        "title": {"type": "string"},
+                        "created_week": {"type": "string"},
+                        "last_updated": {"type": "string"},
+                        "status": {"type": "string"},
+                        "current_assessment": {"type": "string"},
+                        "countries_involved": {"type": "array", "items": {"type": "string"}},
+                        "signal_categories_touched": {"type": "array", "items": {"type": "string"}},
+                        "evidence_strength": {
+                            "type": "object",
+                            "properties": {
+                                "confidence": {"type": "integer"},
+                                "supporting_country_confidences": {
+                                    "type": "object",
+                                    "additionalProperties": {"type": "integer"},
+                                },
+                                "weakest_link": {"type": "string"},
+                                "linkage_type": {"type": "string"},
+                                "linkage_assessment": {"type": "string"},
+                            },
+                        },
+                        "competing_interpretation": {"type": "string"},
+                        "what_to_watch": {"type": "string"},
+                        "triage_implications": {
+                            "type": "object",
+                            "properties": {
+                                "countries_to_flag": {"type": "array", "items": {"type": "string"}},
+                                "reason": {"type": "string"},
+                            },
+                        },
+                        "weeks_active": {"type": "integer"},
+                        "consecutive_unchanged_weeks": {"type": "integer"},
+                    },
+                },
+            },
+            "watchlist": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["item"],
+                    "properties": {
+                        "item": {"type": "string"},
+                        "signal_category": {"type": "string"},
+                        "countries": {"type": "array", "items": {"type": "string"}},
+                        "why_it_matters": {"type": "string"},
+                        "trigger": {"type": "string"},
+                        "added_week": {"type": "string"},
+                    },
+                },
+            },
+            "weekly_entry": {
+                "type": "object",
+                "properties": {
+                    "executive_briefing_items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": ["title", "what", "why_it_matters"],
+                            "properties": {
+                                "title": {"type": "string"},
+                                "regions_involved": {"type": "array", "items": {"type": "string"}},
+                                "what": {"type": "string"},
+                                "why_it_matters": {"type": "string"},
+                                "what_to_watch": {"type": "string"},
+                                "confidence": {"type": "integer"},
+                                "confidence_note": {"type": "string"},
+                            },
+                        },
+                    },
+                    "dynamics_created": {"type": "array", "items": {"type": "string"}},
+                    "dynamics_updated": {"type": "array", "items": {"type": "string"}},
+                    "dynamics_archived": {"type": "array", "items": {"type": "string"}},
+                    "items_considered_rejected": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "candidate": {"type": "string"},
+                                "reason_rejected": {"type": "string"},
+                            },
+                        },
+                    },
+                    "self_corrections": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "dynamic_id": {"type": "string"},
+                                "prior_assessment": {"type": "string"},
+                                "correction": {"type": "string"},
+                                "root_cause": {"type": "string"},
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+}
 
 
 # =============================================================================
@@ -544,20 +681,24 @@ async def run_executive_agent(
 
     from ..timing import with_heartbeat
     from ..rate_limit import anthropic_limiter
+    create_kwargs: dict = dict(
+        model=MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 12288,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": load_prompt("agents/executive")}],
+        messages=[{"role": "user", "content": prompt}],
+        timeout=600.0,
+    )
+    if USE_TOOL_SCHEMA:
+        create_kwargs["tools"] = [EXECUTIVE_SYNTHESIS_TOOL]
+
     async with anthropic_limiter():
         response = await with_heartbeat(
-            client.messages.create(
-                model=MODEL,
-                max_tokens=THINKING_BUDGET_TOKENS + 12288,
-                temperature=1,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": THINKING_BUDGET_TOKENS,
-                },
-                system=[{"type": "text", "text": load_prompt("agents/executive")}],
-                messages=[{"role": "user", "content": prompt}],
-                timeout=600.0,
-            ),
+            client.messages.create(**create_kwargs),
             "Executive synthesis: API call",
         )
 
@@ -567,22 +708,46 @@ async def run_executive_agent(
     ]
     response_text = "\n".join(text_parts)
 
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == EXECUTIVE_SYNTHESIS_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
-        "Executive synthesis: API complete — input=%d, output=%d tokens",
+        "Executive synthesis: API complete — input=%d, output=%d tokens%s",
         response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if tool_input else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
-    save_raw_response(
-        "executive", "global", week,
-        system_prompt=load_prompt("agents/executive"),
-        user_message=prompt,
-        response_text=response_text,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
 
-    data = parse_executive_response(response_text)
+    if tool_input is not None:
+        import json as _json
+        save_raw_response(
+            "executive", "global", week,
+            system_prompt=load_prompt("agents/executive"),
+            user_message=prompt,
+            response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        data = tool_input
+    else:
+        if USE_TOOL_SCHEMA:
+            logger.warning("Executive: tool_use enabled but no valid block; falling back")
+            _record_fallback("executive_tool_use_fallback")
+        save_raw_response(
+            "executive", "global", week,
+            system_prompt=load_prompt("agents/executive"),
+            user_message=prompt,
+            response_text=response_text,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        data = parse_executive_response(response_text)
     logger.info(
         "Executive: %d briefing items, %d dynamics created, %d updated, %d archived",
         len(data.get("weekly_entry", {}).get("executive_briefing_items", [])),

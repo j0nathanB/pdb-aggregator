@@ -7,6 +7,7 @@ No regional persistence — runs fresh each week.
 """
 
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Optional
@@ -25,9 +26,104 @@ from ..config import (
     load_prompt,
 )
 from ..models import CountryLedger, WeeklyEntry
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 
 logger = logging.getLogger(__name__)
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+REGIONAL_SYNTHESIS_TOOL_NAME = "record_regional_synthesis"
+REGIONAL_SYNTHESIS_TOOL = {
+    "name": REGIONAL_SYNTHESIS_TOOL_NAME,
+    "description": (
+        "Record the regional synthesis output. Call exactly once when the "
+        "full analysis is complete."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["regional_overview"],
+        "properties": {
+            "regional_overview": {"type": "string"},
+            "regional_highlights": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["country", "headline"],
+                    "properties": {
+                        "country": {"type": "string"},
+                        "headline": {"type": "string"},
+                        "key_facts": {"type": "array", "items": {"type": "string"}},
+                        "signal_categories": {"type": "array", "items": {"type": "string"}},
+                        "tension": {"type": "string"},
+                        "confidence": {"type": "integer"},
+                    },
+                },
+            },
+            "cross_cutting_dynamics": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["title", "countries_involved", "assessment", "confidence"],
+                    "properties": {
+                        "title": {"type": "string"},
+                        "countries_involved": {"type": "array", "items": {"type": "string"}},
+                        "signal_categories": {"type": "array", "items": {"type": "string"}},
+                        "pattern_type": {"type": "string"},
+                        "assessment": {"type": "string"},
+                        "significance": {"type": "string"},
+                        "trend": {"type": "string"},
+                        "confidence": {"type": "integer"},
+                        "confidence_inherited_from": {
+                            "type": "object",
+                            "additionalProperties": {"type": "integer"},
+                        },
+                        "weakest_link": {"type": "string"},
+                        "evidence_against_linkage": {"type": "string"},
+                        "linkage_strength": {"type": "string"},
+                        "linkage_justification": {"type": "string"},
+                        "competing_interpretation": {"type": "string"},
+                    },
+                },
+            },
+            "dynamics_considered_and_rejected": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["reason_rejected"],
+                    "properties": {
+                        "candidate_dynamic": {"type": "string"},
+                        "countries": {"type": "array", "items": {"type": "string"}},
+                        "reason_rejected": {"type": "string"},
+                    },
+                },
+            },
+            "gaps": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["expected_dynamic"],
+                    "properties": {
+                        "expected_dynamic": {"type": "string"},
+                        "observed": {"type": "string"},
+                        "assessment": {"type": "string"},
+                    },
+                },
+            },
+            "low_confidence_items": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "item": {"type": "string"},
+                        "origin": {"type": "string"},
+                        "confidence": {"type": "integer"},
+                        "note": {"type": "string"},
+                    },
+                },
+            },
+        },
+    },
+}
 
 
 # =============================================================================
@@ -244,10 +340,8 @@ assessments, and produce the JSON output as specified in your instructions."""
 # Response parsing
 # =============================================================================
 
-def parse_regional_response(response_text: str, region: Region, week: date) -> RegionalReport:
-    """Parse the regional synthesis JSON response."""
-    data = extract_json(response_text, context=f"regional_{region.value}")
-
+def parse_regional_data(data: dict, region: Region, week: date) -> RegionalReport:
+    """Build a RegionalReport from an already-parsed data dict."""
     dynamics = []
     for d in data.get("cross_cutting_dynamics", []):
         dynamics.append(CrossCuttingDynamic(
@@ -325,6 +419,12 @@ def parse_regional_response(response_text: str, region: Region, week: date) -> R
     )
 
 
+def parse_regional_response(response_text: str, region: Region, week: date) -> RegionalReport:
+    """Parse the regional synthesis JSON response."""
+    data = extract_json(response_text, context=f"regional_{region.value}")
+    return parse_regional_data(data, region, week)
+
+
 # =============================================================================
 # Entry point
 # =============================================================================
@@ -356,19 +456,23 @@ async def run_regional_synthesis(
     logger.debug("Regional %s: countries=%s, prompt=%d chars", region.value, countries_in, len(prompt))
 
     from ..timing import with_heartbeat
+    create_kwargs: dict = dict(
+        model=MODEL,
+        max_tokens=18192,
+        temperature=1,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": 10000,
+        },
+        system=[{"type": "text", "text": system_prompt}],
+        messages=[{"role": "user", "content": prompt}],
+    )
+    if USE_TOOL_SCHEMA:
+        create_kwargs["tools"] = [REGIONAL_SYNTHESIS_TOOL]
+
     async with anthropic_limiter():
         response = await with_heartbeat(
-            client.messages.create(
-                model=MODEL,
-                max_tokens=18192,
-                temperature=1,
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": 10000,
-                },
-                system=[{"type": "text", "text": system_prompt}],
-                messages=[{"role": "user", "content": prompt}],
-            ),
+            client.messages.create(**create_kwargs),
             f"Regional synthesis {region.value}: API call",
         )
 
@@ -378,22 +482,50 @@ async def run_regional_synthesis(
     ]
     response_text = "\n".join(text_parts)
 
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == REGIONAL_SYNTHESIS_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
-        "Regional synthesis %s: API complete — input=%d, output=%d tokens",
+        "Regional synthesis %s: API complete — input=%d, output=%d tokens%s",
         region.value, response.usage.input_tokens, response.usage.output_tokens,
+        " [tool_use]" if tool_input else "",
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
-    save_raw_response(
-        "regional", region.value, week,
-        system_prompt=system_prompt,
-        user_message=prompt,
-        response_text=response_text,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
 
-    result = parse_regional_response(response_text, region, week)
+    if tool_input is not None:
+        import json as _json
+        save_raw_response(
+            "regional", region.value, week,
+            system_prompt=system_prompt,
+            user_message=prompt,
+            response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        result = parse_regional_data(tool_input, region, week)
+    else:
+        if USE_TOOL_SCHEMA:
+            logger.warning(
+                "Regional synthesis %s: tool_use enabled but no valid block; falling back",
+                region.value,
+            )
+            _record_fallback("regional_tool_use_fallback")
+        save_raw_response(
+            "regional", region.value, week,
+            system_prompt=system_prompt,
+            user_message=prompt,
+            response_text=response_text,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        result = parse_regional_response(response_text, region, week)
+
     logger.info(
         "Regional %s: %d cross-cutting dynamics, %d gaps",
         region.value, len(result.cross_cutting_dynamics), len(result.gaps),
