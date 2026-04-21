@@ -8,6 +8,7 @@ Phase 2: Triage decision (single LLM call) — decides deep_dive or maintenance.
 
 import asyncio
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 
@@ -27,9 +28,42 @@ from ..config import (
 )
 from ..collection.brave import BraveNewsClient
 from ..models import CountryLedger, GlobalLedger
-from ..sanitize import extract_json, safe_enum
+from ..sanitize import _record_fallback, extract_json, safe_enum
 
 logger = logging.getLogger(__name__)
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+TRIAGE_TOOL_NAME = "record_triage_decisions"
+TRIAGE_TOOL = {
+    "name": TRIAGE_TOOL_NAME,
+    "description": (
+        "Record depth decisions for every country in the triage scan. "
+        "Call exactly once when all decisions have been made."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["decisions"],
+        "properties": {
+            "decisions": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["country", "code", "depth", "rationale"],
+                    "properties": {
+                        "country": {"type": "string"},
+                        "code": {"type": "string"},
+                        "depth": {"type": "string"},
+                        "rationale": {"type": "string"},
+                        "triggered_by": {"type": "array", "items": {"type": "string"}},
+                        "signal_categories_flagged": {"type": "array", "items": {"type": "string"}},
+                    },
+                },
+            },
+            "summary": {"type": "string"},
+        },
+    },
+}
 
 
 # =============================================================================
@@ -300,13 +334,8 @@ def _build_triage_prompt(
     return "\n".join(sections)
 
 
-def parse_triage_response(response_text: str) -> tuple[list[TriageDecision], str]:
-    """Parse the triage LLM response into TriageDecision objects and summary.
-
-    Returns (decisions, summary_assessment).
-    """
-    data = extract_json(response_text, context="triage")
-
+def parse_triage_data(data: dict) -> tuple[list[TriageDecision], str]:
+    """Build TriageDecision objects from an already-parsed data dict."""
     decisions = []
     for d in data["decisions"]:
         decisions.append(TriageDecision(
@@ -323,6 +352,15 @@ def parse_triage_response(response_text: str) -> tuple[list[TriageDecision], str
         summary = data["summary"].get("assessment", "") if isinstance(data["summary"], dict) else str(data["summary"])
 
     return decisions, summary
+
+
+def parse_triage_response(response_text: str) -> tuple[list[TriageDecision], str]:
+    """Parse the triage LLM response into TriageDecision objects and summary.
+
+    Returns (decisions, summary_assessment).
+    """
+    data = extract_json(response_text, context="triage")
+    return parse_triage_data(data)
 
 
 async def triage_decide(
@@ -342,19 +380,23 @@ async def triage_decide(
 
     from ..timing import with_heartbeat
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    create_kwargs: dict = dict(
+        model=MODEL,
+        max_tokens=12096,
+        temperature=1,  # required for extended thinking
+        thinking={
+            "type": "enabled",
+            "budget_tokens": 8000,
+        },
+        system=[{"type": "text", "text": load_prompt("agents/triage_decision")}],
+        messages=[{"role": "user", "content": prompt}],
+    )
+    if USE_TOOL_SCHEMA:
+        create_kwargs["tools"] = [TRIAGE_TOOL]
+
     async with anthropic_limiter():
         response = await with_heartbeat(
-            client.messages.create(
-                model=MODEL,
-                max_tokens=12096,
-                temperature=1,  # required for extended thinking
-                thinking={
-                    "type": "enabled",
-                    "budget_tokens": 8000,
-                },
-                system=[{"type": "text", "text": load_prompt("agents/triage_decision")}],
-                messages=[{"role": "user", "content": prompt}],
-            ),
+            client.messages.create(**create_kwargs),
             "Triage decision: API call",
         )
 
@@ -364,22 +406,46 @@ async def triage_decide(
     ]
     response_text = "\n".join(text_parts)
 
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == TRIAGE_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
         f"Triage decision: input={response.usage.input_tokens}, "
         f"output={response.usage.output_tokens}"
+        f"{' [tool_use]' if tool_input else ''}"
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
-    save_raw_response(
-        "triage", "decisions", end_date,
-        system_prompt=load_prompt("agents/triage_decision"),
-        user_message=prompt,
-        response_text=response_text,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
 
-    decisions, summary = parse_triage_response(response_text)
+    if tool_input is not None:
+        import json as _json
+        save_raw_response(
+            "triage", "decisions", end_date,
+            system_prompt=load_prompt("agents/triage_decision"),
+            user_message=prompt,
+            response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        decisions, summary = parse_triage_data(tool_input)
+    else:
+        if USE_TOOL_SCHEMA:
+            logger.warning("Triage: tool_use enabled but no valid block; falling back")
+            _record_fallback("triage_tool_use_fallback")
+        save_raw_response(
+            "triage", "decisions", end_date,
+            system_prompt=load_prompt("agents/triage_decision"),
+            user_message=prompt,
+            response_text=response_text,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        decisions, summary = parse_triage_response(response_text)
 
     # Apply staleness overrides that the LLM might have missed
     decided_codes = {d.code for d in decisions}

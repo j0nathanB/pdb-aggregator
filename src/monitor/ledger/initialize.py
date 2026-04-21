@@ -6,6 +6,7 @@ Step 2 (LLM call): Generate initial posture summary and signal category assessme
 """
 
 import logging
+import os
 import re
 from datetime import date
 from pathlib import Path
@@ -28,9 +29,49 @@ from ..models import (
     SignalCategoryAssessment,
     StructuralClaimStatus,
 )
-from ..sanitize import extract_json
+from ..sanitize import _record_fallback, extract_json
 
 logger = logging.getLogger(__name__)
+
+USE_TOOL_SCHEMA = os.getenv("MPM_USE_TOOL_SCHEMA", "0") == "1"
+
+
+def _init_tool_schema() -> dict:
+    """Build the ledger-init tool schema dynamically — one per SignalCategory."""
+    category_props = {
+        cat.value: {
+            "type": "object",
+            "required": ["current_assessment"],
+            "properties": {
+                "current_assessment": {"type": "string"},
+                "confidence_rationale": {"type": "string"},
+            },
+        }
+        for cat in SignalCategory
+    }
+    return {
+        "name": "record_ledger_initialization",
+        "description": (
+            "Record the initial posture summary and per-category baseline "
+            "assessments for a country ledger. Call exactly once."
+        ),
+        "input_schema": {
+            "type": "object",
+            "required": ["posture_text", "categories"],
+            "properties": {
+                "posture_text": {"type": "string"},
+                "categories": {
+                    "type": "object",
+                    "required": list(category_props.keys()),
+                    "properties": category_props,
+                },
+            },
+        },
+    }
+
+
+LEDGER_INIT_TOOL_NAME = "record_ledger_initialization"
+LEDGER_INIT_TOOL = _init_tool_schema()
 
 
 # =============================================================================
@@ -170,10 +211,8 @@ Key actors:
 Produce the JSON object as specified in your instructions."""
 
 
-def parse_init_response(response_text: str) -> dict:
-    """Parse the LLM's JSON response into posture_summary + signal_categories."""
-    data = extract_json(response_text, context="init_response")
-
+def parse_init_data(data: dict) -> dict:
+    """Build posture_summary + signal_categories from an already-parsed dict."""
     today = date.today()
 
     posture_summary = PostureSummary(
@@ -202,6 +241,12 @@ def parse_init_response(response_text: str) -> dict:
     }
 
 
+def parse_init_response(response_text: str) -> dict:
+    """Parse the LLM's JSON response into posture_summary + signal_categories."""
+    data = extract_json(response_text, context="init_response")
+    return parse_init_data(data)
+
+
 async def llm_initialize(config: CountryConfig) -> dict:
     """
     Step 2: Call the LLM to produce initial posture summary and assessments.
@@ -217,18 +262,22 @@ async def llm_initialize(config: CountryConfig) -> dict:
     prompt = _build_init_prompt(config, dossier_text)
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    create_kwargs: dict = dict(
+        model=MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 4096,
+        temperature=1,  # required for extended thinking
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{"type": "text", "text": INIT_SYSTEM_PROMPT}],
+        messages=[{"role": "user", "content": prompt}],
+    )
+    if USE_TOOL_SCHEMA:
+        create_kwargs["tools"] = [LEDGER_INIT_TOOL]
+
     async with anthropic_limiter():
-        response = await client.messages.create(
-            model=MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 4096,
-            temperature=1,  # required for extended thinking
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": INIT_SYSTEM_PROMPT}],
-            messages=[{"role": "user", "content": prompt}],
-        )
+        response = await client.messages.create(**create_kwargs)
 
     # Extract text blocks, skip thinking blocks
     text_parts = [
@@ -237,23 +286,50 @@ async def llm_initialize(config: CountryConfig) -> dict:
     ]
     response_text = "\n".join(text_parts)
 
+    tool_input: dict | None = None
+    if USE_TOOL_SCHEMA:
+        for block in response.content:
+            if (getattr(block, "type", None) == "tool_use"
+                    and getattr(block, "name", None) == LEDGER_INIT_TOOL_NAME):
+                tool_input = getattr(block, "input", None)
+                break
+
     logger.info(
         f"Initialization call for {config.code}: "
         f"input_tokens={response.usage.input_tokens}, "
         f"output_tokens={response.usage.output_tokens}"
+        f"{' [tool_use]' if tool_input else ''}"
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
-    save_raw_response(
-        "initialization", config.code, date.today(),
-        system_prompt=INIT_SYSTEM_PROMPT,
-        user_message=prompt,
-        response_text=response_text,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
 
-    parsed = parse_init_response(response_text)
+    if tool_input is not None:
+        import json as _json
+        save_raw_response(
+            "initialization", config.code, date.today(),
+            system_prompt=INIT_SYSTEM_PROMPT,
+            user_message=prompt,
+            response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        parsed = parse_init_data(tool_input)
+    else:
+        if USE_TOOL_SCHEMA:
+            logger.warning(
+                "Initialize %s: tool_use enabled but no valid block; falling back",
+                config.code,
+            )
+            _record_fallback("initialize_tool_use_fallback")
+        save_raw_response(
+            "initialization", config.code, date.today(),
+            system_prompt=INIT_SYSTEM_PROMPT,
+            user_message=prompt,
+            response_text=response_text,
+            thinking_text=extract_thinking(response),
+            usage=extract_usage(response),
+        )
+        parsed = parse_init_response(response_text)
     update_trace_parsed("initialization", config.code, date.today(), parsed_output=parsed)
 
     return parsed
