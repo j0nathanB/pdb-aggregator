@@ -634,18 +634,39 @@ async def run_story_map_agent(
 
     response, tool_input, text_content = await _call(use_tool=USE_TOOL_SCHEMA)
 
+    def _tool_input_complete(t: dict | None) -> bool:
+        """True iff tool_input has the required arrays populated.
+
+        Anthropic streaming can emit a partial tool_use block if max_tokens
+        hits mid-serialization — the summary scalars arrive first and the
+        `stories` / `single_source_items` / `unassigned` arrays never
+        materialize. Required-field validation only runs at the END of the
+        tool_use, so a truncated call produces a `tool_input` dict that
+        looks valid shape-wise but is missing its content. Treat any
+        tool_input where the three arrays aren't all present as a miss
+        so the text-fallback path runs.
+        """
+        if not isinstance(t, dict):
+            return False
+        for key in ("stories", "single_source_items", "unassigned"):
+            if key not in t or not isinstance(t[key], list):
+                return False
+        return True
+
     used_fallback = False
-    if USE_TOOL_SCHEMA and tool_input is None:
-        # Tool_use was enabled but the API didn't return a tool_use block —
-        # almost always because the tool_use serialization got truncated by
-        # max_tokens. Instead of silently text-parsing whatever fragment
-        # remained, explicitly re-invoke WITHOUT the tool so the model can
-        # emit free-form JSON that json_repair can rescue. Fail loudly in
-        # the log so the fallback rate is visible.
+    if USE_TOOL_SCHEMA and not _tool_input_complete(tool_input):
+        # Tool_use was enabled but either no tool_use block came back, or
+        # the block's `input` was partial (scalars only, missing arrays) —
+        # almost always because streaming hit max_tokens mid-serialization.
+        # Re-invoke WITHOUT the tool so the model can emit free-form JSON
+        # that json_repair can rescue. Fail loudly so the fallback rate
+        # is visible.
+        reason = "no tool_use block" if tool_input is None else "partial tool_input"
         logger.warning(
-            "Story map %s: tool_use enabled but no tool_use block returned "
-            "(input=%d, output=%d tokens); retrying without tool as fallback",
-            config.code, response.usage.input_tokens, response.usage.output_tokens,
+            "Story map %s: %s (input=%d, output=%d tokens); retrying without "
+            "tool as fallback",
+            config.code, reason,
+            response.usage.input_tokens, response.usage.output_tokens,
         )
         response, tool_input, text_content = await _call(use_tool=False)
         used_fallback = True
@@ -696,13 +717,20 @@ async def run_story_map_agent(
     gap_pct = (gap / unique_in_prompt * 100) if unique_in_prompt else 0
 
     logger.info(
-        "Story map %s: %d stories, %d single-source items, %d off-topic filtered, "
-        "%d unassigned, %d URLs for extraction, accounting=%d/%d (gap=%d, %.0f%%)",
-        config.code, output.stories_identified,
+        "Story map %s: %d stories (model claimed %d), %d single-source items, "
+        "%d off-topic filtered, %d unassigned, %d URLs for extraction, "
+        "accounting=%d/%d (gap=%d, %.0f%%)",
+        config.code, len(output.stories), output.stories_identified,
         len(output.single_source_items), output.off_topic_filtered,
         len(output.unassigned), output.extraction_url_count,
         accounted, unique_in_prompt, gap, gap_pct,
     )
+    if output.stories_identified > 0 and not output.stories:
+        logger.warning(
+            "Story map %s: model claimed %d stories but the array is empty — "
+            "likely a truncated tool_use that slipped past the completeness check",
+            config.code, output.stories_identified,
+        )
 
     update_trace_parsed("story_map", config.code, analysis_date, parsed_output=output)
 
