@@ -17,6 +17,7 @@ from ..models import (
     GlobalLedger,
     WeeklyEntry,
 )
+from ._trace_reader import load_prior_editor_output
 from .assembly import (
     CONFIDENCE_LABELS,
     REGION_DISPLAY_NAMES,
@@ -145,8 +146,18 @@ def _build_country_content(
     ledger: CountryLedger,
     entry: Optional[WeeklyEntry],
     story_map_data: Optional[dict] = None,
+    end_date: Optional[date] = None,
 ) -> CountryContent:
-    """Build structured content for a single country."""
+    """Build structured content for a single country.
+
+    When `end_date` is provided, previously-edited narrative_body /
+    other_stories are preloaded from the latest trace in
+    `briefs/{end_date}/traces/`. Subsequent editor passes overwrite for
+    targeted countries; non-targets keep their prior polished prose.
+    This is what makes scoped recoveries safe — without the preload,
+    build_all_pages resets narrative_body to None and any country the
+    editor doesn't re-run falls through to the bulleted template branch.
+    """
     activity_rating = None
     if entry and entry.activity_level:
         activity_rating = entry.activity_level.get("rating")
@@ -162,6 +173,31 @@ def _build_country_content(
     if entry and entry.depth == Depth.DEEP_DIVE:
         content.developments = _collect_developments(entry, ledger)
         content.other_stories = _collect_other_stories(entry)
+
+        if end_date is not None:
+            prior = load_prior_editor_output(
+                end_date,
+                [f"style_editor_{code}", f"copyeditor_{code}", f"editor_{code}"],
+            )
+            narrative = prior.get("narrative_body")
+            if isinstance(narrative, str) and narrative.strip():
+                content.narrative_body = narrative
+            # other_stories: copyeditor returns [{headline, summary}, ...] in
+            # the same order as the input. Map polished values back onto
+            # the StoryClusterContent instances (source_url / source_name
+            # stay as-is since the copyeditor doesn't round-trip them).
+            polished_other = prior.get("other_stories")
+            if isinstance(polished_other, list) and content.other_stories:
+                for i, polished in enumerate(polished_other):
+                    if i >= len(content.other_stories):
+                        break
+                    if isinstance(polished, dict):
+                        h = polished.get("headline")
+                        s = polished.get("summary")
+                        if isinstance(h, str) and h.strip():
+                            content.other_stories[i].headline = h
+                        if isinstance(s, str) and s.strip():
+                            content.other_stories[i].summary = s
 
         # Unexpected developments
         for ud in (entry.unexpected_developments or []):
@@ -359,11 +395,33 @@ def build_all_pages(
                 confidence_note=item.confidence_note,
             ))
 
+    executive_brief = ExecutiveBriefContent(items=briefing_items)
+
+    # Preload prior-run executive essay + headline. Mirror of the regional
+    # preload: a scoped recovery that doesn't re-run the executive stage
+    # keeps its prior polished essay. global_writer emits edited_essay +
+    # headline; style_editor_executive holds the most-polished edited_essay.
+    prior_executive = load_prior_editor_output(
+        end_date,
+        [
+            "style_editor_executive",
+            "copyeditor_executive",
+            "editor_executive",
+            "global_writer_executive",
+        ],
+    )
+    prior_essay = prior_executive.get("edited_essay")
+    if isinstance(prior_essay, str) and prior_essay.strip():
+        executive_brief.edited_essay = prior_essay
+    prior_headline = prior_executive.get("headline")
+    if isinstance(prior_headline, str) and prior_headline.strip():
+        executive_brief.headline = prior_headline
+
     overview = OverviewPageContent(
         week_start=week_start,
         week_end=end_date,
         country_count=len(country_ledgers),
-        executive_brief=ExecutiveBriefContent(items=briefing_items),
+        executive_brief=executive_brief,
     )
 
     # --- Region pages ---
@@ -375,6 +433,40 @@ def build_all_pages(
         card_summary = _extract_card_summary(report)
         display_name = REGION_DISPLAY_NAMES.get(region, region.value)
 
+        # Preload prior-run regional fields from traces so a scoped recovery
+        # that doesn't re-run this region keeps its polished essay instead
+        # of reverting to the raw regional_overview seed. The writer emits
+        # {headline, regional_lead}; the editor polishes {regional_lead,
+        # card_summary, headline, gap_paragraphs}.
+        region_val = region.value
+        prior_regional = load_prior_editor_output(
+            end_date,
+            [
+                f"style_editor_regional_{region_val}",
+                f"copyeditor_regional_{region_val}",
+                f"editor_regional_{region_val}",
+                f"regional_writer_{region_val}",
+            ],
+        )
+        prior_lead = prior_regional.get("regional_lead")
+        if isinstance(prior_lead, str) and prior_lead.strip():
+            lead = prior_lead
+        prior_gaps = prior_regional.get("gap_paragraphs")
+        if isinstance(prior_gaps, list) and prior_gaps:
+            gaps = [g for g in prior_gaps if isinstance(g, str) and g.strip()]
+        prior_card = prior_regional.get("card_summary")
+        prior_headline = prior_regional.get("headline")
+        if isinstance(prior_card, str) and prior_card.strip():
+            card_summary = prior_card
+        elif isinstance(prior_headline, str) and prior_headline.strip():
+            # regional_writer emits `headline` (no `card_summary` yet); the
+            # editor stage moves it to card_summary. Fall back to the
+            # writer's headline when no editor card_summary was produced.
+            card_summary = prior_headline
+        # Also capture the rendered bold title above the essay when present
+        # (editor emits both headline + card_summary; template uses headline).
+        page_headline = prior_headline if isinstance(prior_headline, str) else ""
+
         # Build country content for this region
         region_codes = REGION_COUNTRIES.get(region, [])
         countries: list[CountryContent] = []
@@ -385,7 +477,9 @@ def build_all_pages(
                 continue
             entry = country_entries.get(code)
             sm_data = story_maps.get(code)
-            countries.append(_build_country_content(code, ledger, entry, sm_data))
+            countries.append(
+                _build_country_content(code, ledger, entry, sm_data, end_date=end_date)
+            )
 
         # Sort by activity level (high → moderate → low → none)
         countries.sort(key=lambda c: _ACTIVITY_SORT.get(c.activity_rating or "", 99))
@@ -414,6 +508,7 @@ def build_all_pages(
             week_start=week_start,
             week_end=end_date,
             regional_lead=lead,
+            headline=page_headline,
             gap_paragraphs=gaps,
             card_summary=card_summary,
             raw_dynamics=raw_dynamics,
