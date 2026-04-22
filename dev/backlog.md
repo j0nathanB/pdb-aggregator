@@ -6,7 +6,19 @@ context that a future person can pick it up cold.
 
 ---
 
-## Wasted LLM calls on unrendered watchlist content
+## ~~Wasted LLM calls on unrendered watchlist content~~ (DONE 2026-04-21)
+
+**Status**: complete. Structured watchlist pipeline deleted: removed
+`edit_watchlist` / `copyedit_watchlist` / watchlist branches in
+`style_edit_all`, `WatchlistPageContent` / `WatchlistItemContent`
+dataclasses, `watchlist` param from `render_pages` /
+`build_all_pages`, and the two dead prompt files. Saves 3 LLM calls
+per run. `GlobalLedger.watchlist` remains as an analytical field;
+`assemble_newsletter` still renders a markdown watchlist section in
+the legacy markdown flow (separate path from the structured Mintlify
+pipeline).
+
+Original context retained below.
 
 **Status**: noted 2026-04-20. Not urgent.
 
@@ -140,7 +152,17 @@ entirely.
 
 ---
 
-## Migrate remaining LLM stages to tool_use
+## ~~Migrate remaining LLM stages to tool_use~~ (DONE 2026-04-21)
+
+**Status**: complete. All five phases landed:
+- Phase 1 — editor / copyeditor / style_editor (`78df974`)
+- Phase 2 — regional_writer / global_writer (`a35e51e`)
+- Phase 3 — regional + executive synthesis (`df0d29e`)
+- Phase 4 — devils_advocate + government (`780bb1e`)
+- Phase 5 — triage + initialize (`2592fa2`)
+
+Plus a follow-up fix for partial tool_input on streaming truncation
+(`82d2afd`). Original context retained below for reference.
 
 **Status**: noted 2026-04-20. Continues the pattern established for
 country agent (`fa2ec4b`) and story_map (`bce0bdd`).

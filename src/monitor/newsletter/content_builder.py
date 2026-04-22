@@ -39,8 +39,6 @@ from .content_models import (
     SourceRef,
     StoryClusterContent,
     UnexpectedContent,
-    WatchlistItemContent,
-    WatchlistPageContent,
 )
 
 logger = logging.getLogger(__name__)
@@ -370,7 +368,7 @@ def build_all_pages(
     country_entries: dict[str, Optional[WeeklyEntry]],
     end_date: date,
     story_maps: Optional[dict[str, dict]] = None,
-) -> tuple[OverviewPageContent, dict[Region, RegionPageContent], WatchlistPageContent, AtAGlancePageContent]:
+) -> tuple[OverviewPageContent, dict[Region, RegionPageContent], AtAGlancePageContent]:
     """Build structured content for all pages.
 
     Deterministic, no LLM calls. This is the structured equivalent of
@@ -516,37 +514,9 @@ def build_all_pages(
         )
         region_pages[region] = page
 
-    # --- Watchlist page ---
-    watchlist_items = []
-    if global_ledger.watchlist:
-        sorted_watchlist = sorted(global_ledger.watchlist, key=lambda w: w.added_week, reverse=True)
-        for w in sorted_watchlist[:10]:
-            watchlist_items.append(WatchlistItemContent(
-                item=w.item,
-                countries=w.countries,
-                why_it_matters=w.why_it_matters,
-                trigger=w.trigger,
-                added_week=w.added_week,
-            ))
-
-    watchlist = WatchlistPageContent(
-        week_start=week_start,
-        week_end=end_date,
-        items=watchlist_items,
-    )
-
-    overview.watchlist_count = len(watchlist_items)
-    if watchlist_items:
-        overview.watchlist_card_summary = (
-            f"{len(watchlist_items)} items on watch — "
-            f"{watchlist_items[0].item[:80]}..."
-            if len(watchlist_items[0].item) > 80
-            else f"{len(watchlist_items)} items on watch — {watchlist_items[0].item}"
-        )
-
     # --- At-a-glance page ---
     at_a_glance = _build_at_a_glance(
         story_maps, country_ledgers, week_start, end_date,
     )
 
-    return overview, region_pages, watchlist, at_a_glance
+    return overview, region_pages, at_a_glance

@@ -13,7 +13,6 @@ from src.monitor.newsletter.content_models import (
     BriefingItemInput,
     OverviewPageContent,
     RegionPageContent,
-    WatchlistPageContent,
 )
 
 
@@ -222,17 +221,14 @@ class TestScopedEditing:
         page.regional_lead = "Regional essay here."
         page.card_summary = "Card summary."
         pages = {Region.AMERICAS: page}
-        watchlist = WatchlistPageContent(
-            week_start=date(2026, 4, 3), week_end=date(2026, 4, 9),
-        )
-        return overview, pages, watchlist
+        return overview, pages
 
     @pytest.mark.asyncio
     async def test_scope_countries_skips_regional_and_executive(self):
         """scope='countries' should not edit regional leads or executive brief."""
         from src.monitor.newsletter.structured_editor import edit_all
 
-        overview, pages, watchlist = self._make_fixtures()
+        overview, pages = self._make_fixtures()
         original_lead = pages[Region.AMERICAS].regional_lead
         original_essay = overview.executive_brief.edited_essay
 
@@ -240,8 +236,8 @@ class TestScopedEditing:
             return c
 
         with patch("src.monitor.newsletter.structured_editor.edit_country", side_effect=passthrough_country):
-            result_ov, result_pages, _ = await edit_all(
-                overview, pages, watchlist, scope="countries",
+            result_ov, result_pages = await edit_all(
+                overview, pages, scope="countries",
             )
 
         # Regional and executive should be untouched
@@ -253,7 +249,7 @@ class TestScopedEditing:
         """scope='regional' should not edit countries or executive brief."""
         from src.monitor.newsletter.structured_editor import edit_all
 
-        overview, pages, watchlist = self._make_fixtures()
+        overview, pages = self._make_fixtures()
         original_body = pages[Region.AMERICAS].countries[0].narrative_body
         original_essay = overview.executive_brief.edited_essay
 
@@ -261,8 +257,8 @@ class TestScopedEditing:
             return p
 
         with patch("src.monitor.newsletter.structured_editor.edit_regional", side_effect=passthrough_regional):
-            result_ov, result_pages, _ = await edit_all(
-                overview, pages, watchlist, scope="regional",
+            result_ov, result_pages = await edit_all(
+                overview, pages, scope="regional",
             )
 
         # Country and executive should be untouched
@@ -274,7 +270,7 @@ class TestScopedEditing:
         """scope='executive' should not edit countries or regional leads."""
         from src.monitor.newsletter.structured_editor import edit_all
 
-        overview, pages, watchlist = self._make_fixtures()
+        overview, pages = self._make_fixtures()
         original_body = pages[Region.AMERICAS].countries[0].narrative_body
         original_lead = pages[Region.AMERICAS].regional_lead
 
@@ -282,8 +278,8 @@ class TestScopedEditing:
             return b
 
         with patch("src.monitor.newsletter.structured_editor.edit_executive", side_effect=passthrough_exec):
-            result_ov, result_pages, _ = await edit_all(
-                overview, pages, watchlist, scope="executive",
+            result_ov, result_pages = await edit_all(
+                overview, pages, scope="executive",
             )
 
         # Country and regional should be untouched

@@ -198,14 +198,13 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        overview, region_pages, watchlist, _ = build_all_pages(
+        overview, region_pages, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
         assert overview.country_count == 1
         assert len(overview.executive_brief.items) == 1
         assert Region.AMERICAS in region_pages
-        assert len(watchlist.items) == 1
 
     def test_country_in_correct_region(self):
         gl = _test_global_ledger()
@@ -213,7 +212,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _, _ = build_all_pages(
+        _, region_pages, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -228,7 +227,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _, _ = build_all_pages(
+        _, region_pages, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -242,7 +241,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _, _ = build_all_pages(
+        _, region_pages, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -254,7 +253,7 @@ class TestBuildAllPages:
         ledgers = {"mx": _test_ledger()}
         entries = {"mx": _deep_dive_entry()}
 
-        _, region_pages, _, _ = build_all_pages(
+        _, region_pages, _ = build_all_pages(
             gl, reports, ledgers, entries, date(2026, 3, 14),
         )
 
@@ -308,7 +307,7 @@ class TestBuildAllPagesTracePreload:
     def test_narrative_body_preloaded_from_style_editor(self, fake_project_root):
         self._write_trace(fake_project_root, "style_editor_mx",
                           {"narrative_body": "STYLE-POLISHED PROSE"})
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         mx = region_pages[Region.AMERICAS].countries[0]
         assert mx.narrative_body == "STYLE-POLISHED PROSE"
 
@@ -319,7 +318,7 @@ class TestBuildAllPagesTracePreload:
         self._write_trace(fake_project_root, "editor_mx",
                           {"narrative_body": "FIRST-PASS PROSE"})
         # No style_editor trace — should pick copyeditor.
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         assert region_pages[Region.AMERICAS].countries[0].narrative_body == "COPYEDITED PROSE"
 
     def test_other_stories_preloaded_from_copyeditor(self, fake_project_root):
@@ -334,7 +333,7 @@ class TestBuildAllPagesTracePreload:
                 {"headline": "Polished headline", "summary": "Polished summary"},
             ],
         })
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         mx = region_pages[Region.AMERICAS].countries[0]
         assert mx.narrative_body == "STYLE PROSE"
         assert len(mx.other_stories) == 1
@@ -348,7 +347,7 @@ class TestBuildAllPagesTracePreload:
             "narrative_body": "PROSE",
             "other_stories": [{"headline": "Polished", "summary": "Summary"}],
         })
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         mx = region_pages[Region.AMERICAS].countries[0]
         # source_url / source_name come from _deep_dive_entry.story_clusters
         assert mx.other_stories[0].source_url == "https://reuters.com/infra"
@@ -359,7 +358,7 @@ class TestBuildAllPagesTracePreload:
         With a trace, prior polished essay wins."""
         self._write_trace(fake_project_root, "style_editor_regional_americas",
                           {"regional_lead": "POLISHED ESSAY", "headline": "Hook"})
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         page = region_pages[Region.AMERICAS]
         assert page.regional_lead == "POLISHED ESSAY"
         assert page.headline == "Hook"
@@ -374,14 +373,14 @@ class TestBuildAllPagesTracePreload:
             "headline": "Hook",
             "card_summary": "Distinct card summary for at-a-glance",
         })
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         page = region_pages[Region.AMERICAS]
         assert page.card_summary == "Distinct card summary for at-a-glance"
 
     def test_executive_essay_preloaded(self, fake_project_root):
         self._write_trace(fake_project_root, "style_editor_executive",
                           {"edited_essay": "EXEC ESSAY", "headline": "Exec Hook"})
-        overview, _, _, _ = self._build()
+        overview, _, _ = self._build()
         assert overview.executive_brief.edited_essay == "EXEC ESSAY"
         assert overview.executive_brief.headline == "Exec Hook"
 
@@ -391,7 +390,7 @@ class TestBuildAllPagesTracePreload:
         import src.monitor.newsletter._trace_reader as tr
         monkeypatch.setattr(tr, "PROJECT_ROOT", tmp_path)
         # No traces dir created.
-        overview, region_pages, _, _ = self._build()
+        overview, region_pages, _ = self._build()
         mx = region_pages[Region.AMERICAS].countries[0]
         assert mx.narrative_body is None
         assert overview.executive_brief.edited_essay is None
@@ -403,7 +402,7 @@ class TestBuildAllPagesTracePreload:
             "output": {"response_text": "not valid json {{", "parsed": None},
         }))
         # Should not raise
-        _, region_pages, _, _ = self._build()
+        _, region_pages, _ = self._build()
         mx = region_pages[Region.AMERICAS].countries[0]
         # Falls through to default since no valid trace exists
         assert mx.narrative_body is None
@@ -419,7 +418,7 @@ class TestBuildAllPagesTracePreload:
         from src.monitor.newsletter.renderer import render_pages
         self._write_trace(fake_project_root, "style_editor_mx",
                           {"narrative_body": "Mexico's week in polished prose."})
-        overview, region_pages, _, _ = self._build()
+        overview, region_pages, _ = self._build()
         rendered = render_pages(overview, region_pages)
         americas_mdx = rendered["the-americas"]
         assert "Mexico's week in polished prose." in americas_mdx
@@ -435,7 +434,7 @@ class TestBuildAllPagesTracePreload:
         """
         from src.monitor.newsletter.renderer import render_pages
         # No traces written for mx.
-        overview, region_pages, _, _ = self._build()
+        overview, region_pages, _ = self._build()
         rendered = render_pages(overview, region_pages)
         americas_mdx = rendered["the-americas"]
         assert "**Key developments:**" in americas_mdx

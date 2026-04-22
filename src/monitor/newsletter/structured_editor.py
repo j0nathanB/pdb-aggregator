@@ -29,7 +29,6 @@ from .content_models import (
     ExecutiveBriefContent,
     OverviewPageContent,
     RegionPageContent,
-    WatchlistPageContent,
 )
 
 logger = logging.getLogger(__name__)
@@ -618,81 +617,6 @@ async def edit_executive(
     return brief
 
 
-WATCHLIST_EDITOR_SYSTEM = load_prompt("editors/watchlist_editor_system")
-
-
-async def edit_watchlist(
-    watchlist: "WatchlistPageContent",
-    analysis_date: date | None = None,
-    model: str | None = None,
-) -> "WatchlistPageContent":
-    """Edit watchlist items into a cohesive narrative."""
-    if not ANTHROPIC_API_KEY:
-        raise ValueError("ANTHROPIC_API_KEY not set")
-
-    if not watchlist.items:
-        return watchlist
-
-    items_json = json.dumps([
-        {
-            "item": w.item,
-            "countries": w.countries,
-            "why_it_matters": w.why_it_matters,
-            "trigger": w.trigger,
-        }
-        for w in watchlist.items
-    ], indent=2, ensure_ascii=False)
-
-    system_prompt = _build_system_prompt(WATCHLIST_EDITOR_SYSTEM)
-
-    logger.info("Editor [watchlist]: starting, %d items", len(watchlist.items))
-
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=1200.0)
-    response = await stream_with_retry(
-        client,
-        "Editor watchlist: streaming API call",
-        "editor_watchlist",
-        model=model or EDITOR_MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 4096,
-        temperature=1,
-        thinking={
-            "type": "enabled",
-            "budget_tokens": THINKING_BUDGET_TOKENS,
-        },
-        system=[{"type": "text", "text": system_prompt}],
-        messages=[{"role": "user", "content": items_json}],
-    )
-
-    text_parts = [b.text for b in response.content if b.type == "text"]
-    response_text = "\n".join(text_parts)
-
-    logger.info(
-        "Editor [watchlist]: done — input=%d, output=%d tokens",
-        response.usage.input_tokens, response.usage.output_tokens,
-    )
-
-    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
-    run_date = analysis_date or date.today()
-    save_raw_response(
-        "editor", "watchlist", run_date,
-        system_prompt=system_prompt,
-        user_message=items_json,
-        response_text=response_text,
-        thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
-    )
-
-    try:
-        data = extract_json(response_text, context="editor_watchlist")
-        watchlist.edited_narrative = data.get("edited_narrative", response_text)
-        update_trace_parsed("editor", "watchlist", run_date, parsed_output=data)
-    except (ValueError, KeyError):
-        logger.warning("Editor [watchlist]: JSON parse failed, using raw response")
-        watchlist.edited_narrative = response_text
-
-    return watchlist
-
-
 # =============================================================================
 # Orchestration — edit all content in parallel
 # =============================================================================
@@ -700,13 +624,12 @@ async def edit_watchlist(
 async def edit_all(
     overview: OverviewPageContent,
     region_pages: dict,
-    watchlist: "WatchlistPageContent | None" = None,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
     scope: str = "all",
     target_country: str | None = None,
     target_regions: list | None = None,
-) -> tuple[OverviewPageContent, dict, "WatchlistPageContent | None"]:
+) -> tuple[OverviewPageContent, dict]:
     """Edit content. scope: 'all' | 'countries' | 'regional' | 'executive'.
 
     Optional filters for targeted-recovery flows:
@@ -758,18 +681,10 @@ async def edit_all(
                 if country.developments or country.posture_summary:
                     tasks.append(_edit_country(country))
 
-    # Watchlist — only run unfiltered ("all countries") edits
-    if (scope in ("all", "countries") and watchlist and watchlist.items
-            and target_country is None):
-        async def _edit_watchlist():
-            async with semaphore.acquire("watchlist"):
-                return await edit_watchlist(watchlist, analysis_date=analysis_date)
-        tasks.append(_edit_watchlist())
-
     if tasks:
         await asyncio.gather(*tasks)
 
-    return overview, region_pages, watchlist
+    return overview, region_pages
 
 
 # =============================================================================
@@ -907,13 +822,12 @@ async def style_edit_prose(
 async def style_edit_all(
     overview: OverviewPageContent,
     region_pages: dict,
-    watchlist: WatchlistPageContent,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
     scope: str = "all",
     target_country: str | None = None,
     target_regions: list | None = None,
-) -> tuple[OverviewPageContent, dict, WatchlistPageContent]:
+) -> tuple[OverviewPageContent, dict]:
     """Run style editor on prose content. scope: 'all' | 'countries' | 'regional' | 'executive'.
 
     See edit_all for target_country / target_regions semantics.
@@ -989,4 +903,4 @@ async def style_edit_all(
     if tasks:
         await asyncio.gather(*tasks)
 
-    return overview, region_pages, watchlist
+    return overview, region_pages

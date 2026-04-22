@@ -12,8 +12,6 @@ from src.monitor.newsletter.content_models import (
     OverviewPageContent,
     RegionPageContent,
     StoryClusterContent,
-    WatchlistItemContent,
-    WatchlistPageContent,
 )
 from src.monitor.newsletter.renderer import render_pages
 
@@ -33,8 +31,6 @@ def _test_overview() -> OverviewPageContent:
                 confidence=3,
             )],
         ),
-        watchlist_card_summary="2 items on watch.",
-        watchlist_count=2,
     )
 
 
@@ -74,26 +70,11 @@ def _test_region_page() -> RegionPageContent:
     )
 
 
-def _test_watchlist() -> WatchlistPageContent:
-    return WatchlistPageContent(
-        week_start=date(2026, 3, 8),
-        week_end=date(2026, 3, 14),
-        items=[WatchlistItemContent(
-            item="BRICS summit",
-            countries=["br", "in"],
-            why_it_matters="Tests bloc cohesion.",
-            trigger="Membership announcements.",
-            added_week=date(2026, 3, 7),
-        )],
-    )
-
-
 class TestRenderPages:
     def test_produces_all_slugs(self):
         pages = render_pages(
             _test_overview(),
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         assert "overview" in pages
         assert "the-americas" in pages
@@ -104,7 +85,6 @@ class TestRenderPages:
         pages = render_pages(
             _test_overview(),
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         assert '---' in pages["overview"]
         assert 'title: "The Middle Powers Monitor"' in pages["overview"]
@@ -113,7 +93,6 @@ class TestRenderPages:
         pages = render_pages(
             _test_overview(),
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         assert "Something happened." in pages["overview"]
         assert "It matters." in pages["overview"]
@@ -122,7 +101,6 @@ class TestRenderPages:
         pages = render_pages(
             _test_overview(),
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         region = pages["the-americas"]
         assert "Mexico" in region
@@ -133,7 +111,6 @@ class TestRenderPages:
         pages = render_pages(
             _test_overview(),
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         assert "saw shifts" in pages["the-americas"]
 
@@ -141,7 +118,6 @@ class TestRenderPages:
         pages = render_pages(
             _test_overview(),
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         region = pages["the-americas"]
         assert "<Accordion" in region
@@ -164,7 +140,6 @@ class TestRenderPages:
         pages = render_pages(
             overview,
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         assert "\\$500" in pages["overview"]
 
@@ -174,7 +149,6 @@ class TestRenderPages:
         pages = render_pages(
             overview,
             {Region.AMERICAS: _test_region_page()},
-            _test_watchlist(),
         )
         assert "polished essay" in pages["overview"]
         # Should NOT show the raw item structure

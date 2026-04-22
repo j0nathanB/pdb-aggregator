@@ -70,16 +70,6 @@ class UnexpectedContent:
     assessment: str
 
 
-@dataclass
-class WatchlistItemContent:
-    """A single watchlist item."""
-    item: str
-    countries: list[str]
-    why_it_matters: str
-    trigger: str
-    added_week: date
-
-
 # =============================================================================
 # Country content
 # =============================================================================
@@ -161,9 +151,6 @@ class OverviewPageContent:
 
     executive_brief: ExecutiveBriefContent = field(default_factory=ExecutiveBriefContent)
 
-    watchlist_card_summary: str = ""
-    watchlist_count: int = 0
-
 
 @dataclass
 class RegionPageContent:
@@ -185,18 +172,6 @@ class RegionPageContent:
 
     # Country sections ordered by activity level
     countries: list[CountryContent] = field(default_factory=list)
-
-
-@dataclass
-class WatchlistPageContent:
-    """Structured content for the watchlist page."""
-
-    week_start: date
-    week_end: date
-    items: list[WatchlistItemContent] = field(default_factory=list)
-
-    # Editor output — narrative prose. None until editor runs.
-    edited_narrative: Optional[str] = None
 
 
 # =============================================================================

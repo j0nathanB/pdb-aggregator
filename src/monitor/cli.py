@@ -323,24 +323,24 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 except FileNotFoundError:
                     pass
 
-            overview_content, region_page_contents, watchlist_content, at_a_glance_content = build_all_pages(
+            overview_content, region_page_contents, at_a_glance_content = build_all_pages(
                 global_ledger, regional_reports, country_ledgers, country_entries, end_date,
                 story_maps=story_maps_data or None,
             )
 
-            # Round 1: Edit country summaries + watchlist
+            # Round 1: Edit country summaries
             print("Round 1: Editing country summaries...")
-            overview_content, region_page_contents, watchlist_content = await edit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents = await edit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
             )
-            overview_content, region_page_contents, watchlist_content, at_a_glance_content = await copyedit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents, at_a_glance_content = await copyedit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
                 at_a_glance=at_a_glance_content,
             )
-            overview_content, region_page_contents, watchlist_content = await style_edit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents = await style_edit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="countries",
             )
 
@@ -352,16 +352,16 @@ async def cmd_run(args: argparse.Namespace) -> None:
 
             # Round 2: Edit regional essays
             print("Round 2: Editing regional essays...")
-            overview_content, region_page_contents, watchlist_content = await edit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents = await edit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
             )
-            overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents, _ = await copyedit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
             )
-            overview_content, region_page_contents, watchlist_content = await style_edit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents = await style_edit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="regional",
             )
 
@@ -373,16 +373,16 @@ async def cmd_run(args: argparse.Namespace) -> None:
 
             # Round 3: Edit global essay
             print("Round 3: Editing global essay...")
-            overview_content, region_page_contents, watchlist_content = await edit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents = await edit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
             )
-            overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents, _ = await copyedit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
             )
-            overview_content, region_page_contents, watchlist_content = await style_edit_all(
-                overview_content, region_page_contents, watchlist_content,
+            overview_content, region_page_contents = await style_edit_all(
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
             )
 
@@ -401,7 +401,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
                 _sm[code] = load_story_map(code, end_date)
             except FileNotFoundError:
                 pass
-        overview_content, region_page_contents, watchlist_content, at_a_glance_content = _build(
+        overview_content, region_page_contents, at_a_glance_content = _build(
             global_ledger, regional_reports, country_ledgers, country_entries, end_date,
             story_maps=_sm or None,
         )
@@ -413,7 +413,7 @@ async def cmd_run(args: argparse.Namespace) -> None:
             from .newsletter.renderer import render_pages
 
             print("Rendering templates → MDX...")
-            pages = render_pages(overview_content, region_page_contents, watchlist_content, at_a_glance_content)
+            pages = render_pages(overview_content, region_page_contents, at_a_glance_content)
 
             brief_dir = publish_brief(pages, end_date)
             print(f"  Site published to {brief_dir}")
@@ -552,7 +552,7 @@ async def cmd_recover(args: argparse.Namespace) -> None:
         except FileNotFoundError:
             pass
 
-    overview_content, region_page_contents, watchlist_content, at_a_glance_content = (
+    overview_content, region_page_contents, at_a_glance_content = (
         build_all_pages(
             global_ledger, regional_reports, country_ledgers, country_entries,
             end_date, story_maps=story_maps_data or None,
@@ -568,21 +568,21 @@ async def cmd_recover(args: argparse.Namespace) -> None:
     # --- 5. Country-scope editors per recovered country ---
     for country_code in country_codes:
         print(f"Round 1: Editing {country_code} country summary...")
-        overview_content, region_page_contents, watchlist_content = await edit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents = await edit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency,
             scope="countries", target_country=country_code,
         )
-        overview_content, region_page_contents, watchlist_content, at_a_glance_content = (
+        overview_content, region_page_contents, at_a_glance_content = (
             await copyedit_all(
-                overview_content, region_page_contents, watchlist_content,
+                overview_content, region_page_contents,
                 analysis_date=end_date, max_concurrent=args.concurrency,
                 scope="countries", target_country=country_code,
                 at_a_glance=at_a_glance_content,
             )
         )
-        overview_content, region_page_contents, watchlist_content = await style_edit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents = await style_edit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency,
             scope="countries", target_country=country_code,
         )
@@ -596,18 +596,18 @@ async def cmd_recover(args: argparse.Namespace) -> None:
         )
 
         print("Round 2: Editing regional essays...")
-        overview_content, region_page_contents, watchlist_content = await edit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents = await edit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency,
             scope="regional", target_regions=affected_regions,
         )
-        overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents, _ = await copyedit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency,
             scope="regional", target_regions=affected_regions,
         )
-        overview_content, region_page_contents, watchlist_content = await style_edit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents = await style_edit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency,
             scope="regional", target_regions=affected_regions,
         )
@@ -616,23 +616,23 @@ async def cmd_recover(args: argparse.Namespace) -> None:
         overview_content = await write_global_essay(overview_content, regional_reports, end_date)
 
         print("Round 3: Editing executive brief...")
-        overview_content, region_page_contents, watchlist_content = await edit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents = await edit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
         )
-        overview_content, region_page_contents, watchlist_content, _ = await copyedit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents, _ = await copyedit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
         )
-        overview_content, region_page_contents, watchlist_content = await style_edit_all(
-            overview_content, region_page_contents, watchlist_content,
+        overview_content, region_page_contents = await style_edit_all(
+            overview_content, region_page_contents,
             analysis_date=end_date, max_concurrent=args.concurrency, scope="executive",
         )
 
     # --- 7. Render + publish: write ONLY the affected pages ---
     print("Rendering and publishing affected pages only...")
     pages = render_pages(
-        overview_content, region_page_contents, watchlist_content, at_a_glance_content,
+        overview_content, region_page_contents, at_a_glance_content,
     )
     region_slugs_affected = {REGION_SLUGS.get(r, r.value) for r in affected_regions}
     if args.skip_regional:

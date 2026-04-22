@@ -18,7 +18,6 @@ from .content_models import (
     AtAGlancePageContent,
     OverviewPageContent,
     RegionPageContent,
-    WatchlistPageContent,  # noqa: F401 — kept for backward-compat type hint
 )
 
 logger = logging.getLogger(__name__)
@@ -156,18 +155,11 @@ def _build_env() -> Environment:
 def render_pages(
     overview: OverviewPageContent,
     region_pages: dict[Region, RegionPageContent],
-    watchlist: "WatchlistPageContent | None" = None,  # unused; kept for caller back-compat
     at_a_glance: AtAGlancePageContent | None = None,
 ) -> dict[str, str]:
     """Render all pages from structured content models.
 
     Returns dict[str, str] (slug → MDX content), compatible with publish_brief().
-
-    The `watchlist` parameter is intentionally unused — watchlist page
-    rendering was removed in 015a040 (2026-04-13). Callers still pass it
-    because the build/edit pipeline stages still produce it. That's a
-    separate cleanup: the editor/copyeditor/style-editor still run LLM
-    calls on watchlist content that's never published (wasted API cost).
     """
     env = _build_env()
     pages: dict[str, str] = {}

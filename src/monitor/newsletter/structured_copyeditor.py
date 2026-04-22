@@ -34,7 +34,6 @@ from .content_models import (
     ExecutiveBriefContent,
     OverviewPageContent,
     RegionPageContent,
-    WatchlistPageContent,
 )
 
 logger = logging.getLogger(__name__)
@@ -305,33 +304,6 @@ async def copyedit_executive(
     return brief
 
 
-async def copyedit_watchlist(
-    watchlist: WatchlistPageContent,
-    analysis_date: date | None = None,
-) -> WatchlistPageContent:
-    """Copyedit watchlist item prose."""
-    if not watchlist.items:
-        return watchlist
-
-    fields = {
-        "items": [
-            {"item": w.item, "why_it_matters": w.why_it_matters, "trigger": w.trigger}
-            for w in watchlist.items
-        ],
-    }
-
-    result = await _copyedit_prose(fields, "watchlist", analysis_date)
-
-    if "items" in result:
-        for i, item_data in enumerate(result["items"]):
-            if i < len(watchlist.items):
-                watchlist.items[i].item = item_data.get("item", watchlist.items[i].item)
-                watchlist.items[i].why_it_matters = item_data.get("why_it_matters", watchlist.items[i].why_it_matters)
-                watchlist.items[i].trigger = item_data.get("trigger", watchlist.items[i].trigger)
-
-    return watchlist
-
-
 AT_A_GLANCE_SYSTEM = load_prompt("editors/at_a_glance_copyeditor")
 
 
@@ -426,14 +398,13 @@ async def copyedit_at_a_glance(
 async def copyedit_all(
     overview: OverviewPageContent,
     region_pages: dict,
-    watchlist: WatchlistPageContent,
     analysis_date: date | None = None,
     max_concurrent: int = 5,
     scope: str = "all",
     at_a_glance: AtAGlancePageContent | None = None,
     target_country: str | None = None,
     target_regions: list | None = None,
-) -> tuple[OverviewPageContent, dict, WatchlistPageContent, AtAGlancePageContent | None]:
+) -> tuple[OverviewPageContent, dict, AtAGlancePageContent | None]:
     """Copyedit content models. scope: 'all' | 'countries' | 'regional' | 'executive'.
 
     Optional filters for targeted-recovery flows:
@@ -462,15 +433,6 @@ async def copyedit_all(
                     overview.executive_brief, analysis_date,
                 )
         tasks.append(_ce_exec())
-
-    # Watchlist — skip when scoped to a single country
-    if (scope in ("all", "countries") and watchlist.items
-            and target_country is None):
-        async def _ce_wl():
-            async with semaphore.acquire("watchlist"):
-                nonlocal watchlist
-                watchlist = await copyedit_watchlist(watchlist, analysis_date)
-        tasks.append(_ce_wl())
 
     # At-a-glance headlines — skip when scoped to a single country
     if (scope in ("all", "countries") and at_a_glance and at_a_glance.regions
@@ -501,4 +463,4 @@ async def copyedit_all(
     if tasks:
         await asyncio.gather(*tasks)
 
-    return overview, region_pages, watchlist, at_a_glance
+    return overview, region_pages, at_a_glance
