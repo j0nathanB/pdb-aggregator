@@ -267,23 +267,12 @@ class TestPipelineAll28:
         storage_mod.GLOBAL_LEDGER_PATH = orig["storage_global"]
         storage_mod.LEDGER_ARCHIVE_DIR = orig["storage_archive"]
 
-    @pytest.mark.slow
     @pytest.mark.asyncio
     async def test_pipeline_all_countries(self, tmp_ledger_dirs):
-        """Pipeline processes all 28 countries without errors when agents are mocked.
-
-        NOTE (2026-04-21): This test mocks country_agent / triage /
-        devils_advocate / layer2 / init, but NOT expand_country or
-        run_story_map_agent. The desk pipeline therefore hits real Brave
-        and Anthropic APIs for every country — which took 70 minutes on
-        the 2026-04-21 suite run. Marked `slow` so default pytest runs
-        skip it; run with `pytest -m slow` to exercise. Proper fix is to
-        add patches for expansion + story_map so the test is actually
-        what it claims (mocked). Also the assertion hard-codes 28 but
-        there are 30 countries now (AE+HU added), so this will fail in
-        its current form.
-        """
+        """Pipeline processes all 30 countries without errors when agents are mocked."""
         from src.monitor.agents.country import CountryAgentOutput
+        from src.monitor.agents.expansion import ExpansionResult
+        from src.monitor.agents.story_map import StoryMapOutput
         from src.monitor.agents.triage import TriageDecision, TriageOutput
         from src.monitor.models import (
             CategoryMovement,
@@ -354,10 +343,40 @@ class TestPipelineAll28:
         async def mock_country_agent(config, ledger, *args, **kwargs):
             return _make_output(config.code, config.country)
 
+        # Mock expansion: one empty ExpansionResult per country (no Brave calls).
+        # run_desk_pipeline calls expand_all_countries, so patch at that layer.
+        async def mock_expand_all(configs_list, brave_client, scan_map, end_date_arg, concurrency):
+            return {
+                cfg.code: ExpansionResult(code=cfg.code, country=cfg.country)
+                for cfg in configs_list
+            }
+
+        # Mock story_map: one empty StoryMapOutput per country (no Anthropic calls).
+        async def mock_story_map(config, expansion, analysis_date, model=None):
+            return StoryMapOutput(
+                country=config.country,
+                code=config.code,
+                analysis_date=analysis_date.isoformat(),
+                search_results_total=0,
+                stories_identified=0,
+                off_topic_filtered=0,
+            )
+
         with (
             patch("src.monitor.orchestrator.collect_layer2") as mock_l2,
             patch("src.monitor.orchestrator.run_triage") as mock_triage,
-            patch("src.monitor.orchestrator.run_country_agent", side_effect=mock_country_agent),
+            patch(
+                "src.monitor.orchestrator.expand_all_countries",
+                side_effect=mock_expand_all,
+            ),
+            patch(
+                "src.monitor.orchestrator.run_story_map_agent",
+                side_effect=mock_story_map,
+            ),
+            patch(
+                "src.monitor.orchestrator.run_country_agent",
+                side_effect=mock_country_agent,
+            ),
             patch("src.monitor.orchestrator.run_devils_advocate") as mock_da,
             patch("src.monitor.orchestrator.initialize_country_ledger") as mock_init,
         ):
@@ -408,14 +427,14 @@ class TestPipelineAll28:
                 skip_layer2=True,
             )
 
-        assert len(result.country_results) == 28, (
-            f"Expected 28 results, got {len(result.country_results)}. "
+        assert len(result.country_results) == 30, (
+            f"Expected 30 results, got {len(result.country_results)}. "
             f"Errors: {result.errors}"
         )
         assert len(result.errors) == 0, f"Pipeline errors: {result.errors}"
 
         # All should be successful deep dives
-        assert len(result.deep_dive_results) == 28
+        assert len(result.deep_dive_results) == 30
         assert len(result.failed_results) == 0
 
         # Verify each country code appears exactly once
