@@ -440,77 +440,6 @@ async def cmd_run(args: argparse.Namespace) -> None:
     print("Done.")
 
 
-def _extract_regional_summary_from_mdx(mdx_path: Path) -> str:
-    """Extract the text between '## Regional Summary' and '## Country Summaries'.
-
-    Returns the block as-is (including any bold headline). Caller injects it
-    back into RegionPageContent.regional_lead so the existing essay survives a
-    country-only recovery untouched.
-    """
-    if not mdx_path.exists():
-        return ""
-    text = mdx_path.read_text()
-    import re
-    match = re.search(
-        r"## Regional Summary\s*\n+(.*?)\n+## Country Summaries",
-        text, re.DOTALL,
-    )
-    if not match:
-        return ""
-    return match.group(1).strip()
-
-
-def _extract_country_narratives_from_mdx(mdx_path: Path) -> dict[str, str]:
-    """Extract each country's `narrative_body` prose from a rendered region MDX.
-
-    The region template emits each country block as
-        \\n---\\n\\n### <img ... flagcdn.com/{code}.svg ... /> {CountryName}\\n\\n
-        {narrative_body}
-        {optional <Accordion title="Other Stories">...}
-        {optional ## Notes section}
-    We read the file, split on the country-block boundary, and for each block
-    return the prose segment between the flag heading and the first trailer
-    (Accordion, Notes, or the next block). Keyed by country code (from the
-    flag URL). Caller injects back into CountryContent.narrative_body so
-    non-target countries keep their polished prose across a targeted recovery.
-    """
-    if not mdx_path.exists():
-        return {}
-    import re
-    text = mdx_path.read_text()
-    blocks = re.split(r"\n---\n\n(?=### )", text, flags=re.MULTILINE)
-    out: dict[str, str] = {}
-    # Strip the first block (frontmatter + Regional Summary header).
-    for block in blocks[1:]:
-        code_match = re.search(r"flagcdn\.com/([a-z]{2})\.svg", block)
-        if not code_match:
-            continue
-        code = code_match.group(1)
-        # Body starts after the heading line's newline.
-        heading_end = block.find("\n", block.find("###"))
-        if heading_end < 0:
-            continue
-        body = block[heading_end + 1 :].lstrip("\n")
-        # Cut at the first trailer marker.
-        cut_points = [
-            body.find("<Accordion"),
-            body.find("## Notes"),
-            body.find("{{ render_notes_section"),
-        ]
-        cuts = [c for c in cut_points if c > 0]
-        end = min(cuts) if cuts else len(body)
-        prose = body[:end].rstrip()
-        # Heuristic: bulleted-fallback prose starts with posture text but
-        # includes "**Key developments:**". That's the fallback we're trying
-        # to avoid RE-saving — only carry forward if the block was written
-        # from an editor pass (no Key developments marker).
-        if "**Key developments:**" in prose:
-            continue
-        if prose:
-            out[code] = prose
-    return out
-
-
 async def cmd_recover(args: argparse.Namespace) -> None:
     """Targeted country recovery for one or more countries.
 
@@ -629,54 +558,12 @@ async def cmd_recover(args: argparse.Namespace) -> None:
             end_date, story_maps=story_maps_data or None,
         )
     )
-
-    # Preserve non-target country prose by extracting each country block from
-    # the existing region MDX and injecting into CountryContent.narrative_body.
-    # build_all_pages always produces empty narrative_body; without this step,
-    # any country the per-country editor doesn't touch renders via the
-    # bulleted `{% else %}` fallback in templates/region.mdx.j2 — wiping the
-    # polished prose from the previous run even when the recovery scope
-    # doesn't include that country. Applies in both full-recovery and
-    # --skip-regional modes. The per-country editor downstream still writes
-    # narrative_body for target countries, so the injection only matters for
-    # non-targets.
-    from .newsletter.publish import SITE_DIR
-    target_set = set(country_codes)
-    for region in affected_regions:
-        region_slug = REGION_SLUGS.get(region, region.value)
-        mdx_path = SITE_DIR / "briefs" / end_date.isoformat() / f"{region_slug}.mdx"
-        page = region_page_contents.get(region)
-        if page is None:
-            continue
-        prior_narratives = _extract_country_narratives_from_mdx(mdx_path)
-        preserved_count = 0
-        for country in page.countries:
-            if country.code in target_set:
-                continue  # editor will fill narrative_body for this one
-            prior = prior_narratives.get(country.code)
-            if prior:
-                country.narrative_body = prior
-                preserved_count += 1
-        print(
-            f"  Preserved narrative_body for {preserved_count} non-target "
-            f"country/countries in {region.value}"
-        )
-
-    # In country-only mode, preserve prior regional essays by reading them out
-    # of the existing MDX and injecting into regional_lead. card_summary stays
-    # empty so the template's headline block is suppressed — the extracted
-    # text already contains any bold headline verbatim.
-    if args.skip_regional:
-        for region in affected_regions:
-            region_slug = REGION_SLUGS.get(region, region.value)
-            mdx_path = SITE_DIR / "briefs" / end_date.isoformat() / f"{region_slug}.mdx"
-            preserved = _extract_regional_summary_from_mdx(mdx_path)
-            if preserved and region in region_page_contents:
-                region_page_contents[region].regional_lead = preserved
-                region_page_contents[region].card_summary = ""
-                print(f"  Preserved regional essay for {region.value} from {mdx_path.name}")
-            else:
-                print(f"  WARNING: no prior regional essay found for {region.value}")
+    # build_all_pages preloads prior editor outputs (narrative_body,
+    # regional_lead, card_summary, headline, edited_essay, other_stories)
+    # from briefs/{date}/traces/ so non-target content survives a scoped
+    # recovery. See newsletter._trace_reader. Without that preload, any
+    # country / region / executive the per-scope editor doesn't re-run
+    # would revert to the template's empty-state fallback.
 
     # --- 5. Country-scope editors per recovered country ---
     for country_code in country_codes:
