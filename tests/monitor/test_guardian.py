@@ -426,11 +426,11 @@ class TestGuardianAPI:
 
 class TestGuardianCountries:
     def test_expected_countries(self):
-        expected = {"gb", "au", "in", "fr", "de", "ua", "jp", "br", "tr", "sa", "kr", "tw", "id"}
+        expected = {"gb", "au", "in", "fr", "de", "ua", "jp", "br", "tr", "sa", "kr", "tw", "id", "hu"}
         assert set(GUARDIAN_COUNTRIES.keys()) == expected
 
     def test_count(self):
-        assert len(GUARDIAN_COUNTRIES) == 13
+        assert len(GUARDIAN_COUNTRIES) == 14
 
     def test_australia_has_production_office(self):
         assert GUARDIAN_COUNTRIES["au"]["production_office"] == "aus"
