@@ -91,7 +91,7 @@ def _country_heading(code: str, country: str) -> str:
 
 def _format_date_range(end_date: date) -> str:
     start = end_date - timedelta(days=6)
-    return f"{start.strftime('%B %d, %Y')}"
+    return f"{start.strftime('%B')} {start.day}, {start.year}"
 
 
 def _render_header(
@@ -252,12 +252,12 @@ def _format_date_range_display(dates: list[str]) -> str:
     earliest = min(parsed)
     latest = max(parsed)
     if earliest == latest:
-        return earliest.strftime("%B %d, %Y")
+        return f"{earliest.strftime('%B')} {earliest.day}, {earliest.year}"
     if earliest.month == latest.month and earliest.year == latest.year:
-        return f"{earliest.strftime('%B %d')}-{latest.day}, {latest.year}"
+        return f"{earliest.strftime('%B')} {earliest.day}-{latest.day}, {latest.year}"
     if earliest.year == latest.year:
-        return f"{earliest.strftime('%B %d')} - {latest.strftime('%B %d')}, {latest.year}"
-    return f"{earliest.strftime('%B %d, %Y')} - {latest.strftime('%B %d, %Y')}"
+        return f"{earliest.strftime('%B')} {earliest.day} - {latest.strftime('%B')} {latest.day}, {latest.year}"
+    return f"{earliest.strftime('%B')} {earliest.day}, {earliest.year} - {latest.strftime('%B')} {latest.day}, {latest.year}"
 
 
 def _render_sources_section(story_map_data: dict) -> str:
@@ -597,7 +597,7 @@ def _render_overview_page(
     )
 
     week_start = end_date - timedelta(days=6)
-    title = f"Week of {week_start.strftime('%B %d')}, {end_date.year}"
+    title = f"Week of {week_start.strftime('%B')} {week_start.day}, {end_date.year}"
 
     sections = [
         _mdx_frontmatter(
