@@ -102,14 +102,15 @@ def run_pipeline(end_date: str, project_root: Path, extra_args: list[str] | None
 def commit_results(end_date: str, project_root: Path, pipeline_succeeded: bool) -> bool:
     """Git add partial-run artifacts and commit if there are changes.
 
-    On success, commits ledgers/ + site/briefs/ + briefs/ — the full published
-    brief. On failure, commits only ledgers/ + briefs/ (traces + partial ledgers)
-    so the next run can resume from what survived, without publishing a
-    half-finished site/briefs/. Commit message is marked FAILED on failure so
-    the non-publishing commit is visible in `git log`.
+    On success, commits ledgers/ + site/briefs/ + site/docs.json + briefs/ —
+    the full published brief plus the Mintlify navigation update. On failure,
+    commits only ledgers/ + briefs/ (traces + partial ledgers) so the next run
+    can resume from what survived, without publishing a half-finished
+    site/briefs/. Commit message is marked FAILED on failure so the
+    non-publishing commit is visible in `git log`.
     """
     if pipeline_succeeded:
-        paths_to_commit = ["ledgers/", "site/briefs/", "briefs/"]
+        paths_to_commit = ["ledgers/", "site/briefs/", "site/docs.json", "briefs/"]
         commit_msg = f"Brief: {end_date}"
     else:
         paths_to_commit = ["ledgers/", "briefs/"]
