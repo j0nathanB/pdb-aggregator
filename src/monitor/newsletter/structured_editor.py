@@ -309,7 +309,7 @@ async def _call_editor_once(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_message}],
     )
     if tools:
@@ -497,7 +497,7 @@ async def edit_regional(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_message}],
     )
 
@@ -581,7 +581,7 @@ async def edit_executive(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": items_json}],
     )
 
@@ -737,7 +737,7 @@ async def style_edit_prose(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_message}],
     )
     if use_country_tool:

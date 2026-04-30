@@ -133,7 +133,7 @@ async def _copyedit_prose(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_message}],
     )
     if use_country_tool:
@@ -350,7 +350,7 @@ async def copyedit_at_a_glance(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_message}],
     )
 
