@@ -108,15 +108,31 @@ land the deletion (so the trace data documents the diagnosis).
 
 **Phase 4 — Per-agent rollout (only for agents with structurally shared system)**
 
-- ✅ government: 30 calls/run share 2,451-token system LCP — clean win.
-  ~71K savings/run.
-- ❌ devils_advocate: per-country `{{COUNTRY}}` pattern (cluster #0-29 in
-  data) — same restructure problem as country.py. Defer to Phase 4.5.
-- ✅ regional_writer: 6 calls/run share 10,125-token LCP — ~50K/run.
-- ✅ regional: 6 calls/run, but each is a unique cluster (per-region system
+- ❌ government: ORIGINAL ANALYSIS WAS WRONG. The 2,451-token system LCP
+  is the LCP *within a single n=1 cluster* (i.e., the size of one call's
+  system prompt). Across the 30 calls in a run, government has 30 distinct
+  clusters because `{{COUNTRY}}` interpolates into the system prompt at
+  ~character 83 ("processing official institutional content for Mexico" /
+  "...for Brazil" / etc.). Cross-call LCP across all 60 traces in two
+  weeks is **22 tokens**. Same per-country pattern as country.py — defer
+  to Phase 4.5 with the template restructure.
+- ❌ devils_advocate: per-country `{{COUNTRY}}` pattern. Defer to Phase 4.5.
+- ✅ regional_writer: 12 calls across 2 weeks share **10,122-token cross-call
+  LCP** (verified). Single cluster of n=6 per run. Clean win, ~50K/run.
+- ❌ regional: 6 calls/run, but each is a unique cluster (per-region system
   prompt). Same per-region structural problem as per-country. Skip.
 - ❌ executive, global_writer: n=1 — can't benefit.
 - ❌ story_map: per-country, same as country.py. Phase 4.5.
+
+**Lesson learned:** within-cluster LCP is meaningless for clusters with
+n=1 — it equals the full system prompt size, not the cacheable shared
+content across calls. Always check cross-call LCP across the full agent
+trace set before declaring a Phase 4 candidate. The `leverage_score`
+formula correctly returns 0 for n=1 clusters, but the ranking table
+showing "stable_prefix tokens (top cluster)" can be misread as
+"shareable across all calls" when it's really "size of one cluster's
+system prompt." Confusing, fixed forward by always doing the cross-call
+LCP check separately.
 
 **Phase 4.5 (deferred) — Template restructures**
 

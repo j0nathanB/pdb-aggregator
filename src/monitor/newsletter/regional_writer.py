@@ -146,7 +146,7 @@ async def write_regional_essay(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user_message}],
     )
     if USE_TOOL_SCHEMA:

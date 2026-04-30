@@ -131,6 +131,38 @@ def per_agent_split(traces: list[dict]) -> dict:
     return results
 
 
+def cross_call_system_lcp(traces: list[dict], agent: str) -> dict:
+    """LCP across ALL system prompts for an agent, regardless of cluster.
+
+    This is the actual cacheable shared content for cross-call cache reuse.
+    Distinct from within-cluster LCP, which for n=1 clusters is just the
+    full system prompt size (one call's content) — not shareable across
+    other calls.
+
+    The Phase 4 gate: if cross-call LCP / mean system size < 0.5, the
+    agent has per-call variability (e.g. {{COUNTRY}} interpolation) and
+    cache_control would replicate the country.py "decorative cache" bug.
+    Defer to Phase 4.5 template restructure.
+    """
+    samples = []
+    for t in traces:
+        if t.get("agent") != agent:
+            continue
+        sp = (t.get("input") or {}).get("system_prompt") or ""
+        if sp:
+            samples.append(sp)
+    if len(samples) < 2:
+        return {"n_calls_pooled": len(samples), "lcp_tokens": 0, "mean_system_tokens": 0, "ratio": 0.0}
+    cross_lcp = lcp(samples)
+    mean_size = statistics.mean(len(s) for s in samples)
+    return {
+        "n_calls_pooled": len(samples),
+        "lcp_tokens": to_tokens(cross_lcp),
+        "mean_system_tokens": int(mean_size / CHARS_PER_TOKEN),
+        "ratio": (len(cross_lcp) / mean_size) if mean_size else 0.0,
+    }
+
+
 def leverage_score(splits: list[dict]) -> dict:
     """Per-agent leverage = sum over clusters of stable_prefix * (n_calls - 1).
 
@@ -225,19 +257,43 @@ def render_md(per_week_splits: dict, ranked: list[tuple], post_flip: dict) -> st
         "in that cluster). Leverage = `stable_prefix × (n_calls - 1)` — first call",
         "writes the cache, the next (n-1) read it.",
         "",
-        "## Leverage ranking (savings per single pipeline run)",
+        "## Leverage ranking",
         "",
-        "Note: ranking shows each agent's largest cluster only — agents with multiple",
-        "clusters (e.g. editor: country/regional/executive sub-templates) have additional",
-        "savings from secondary clusters not reflected here. See per-cluster tables below.",
+        "**The load-bearing column is `savings/run`.** It captures whether at least",
+        "one cluster has `n>1` with a sizable within-cluster prefix — i.e., whether",
+        "`cache_control` will produce reads on subsequent calls.",
         "",
-        "| rank | agent | stable prefix tokens (top cluster) | calls (top cluster, per run) | savings per run |",
-        "|---:|---|---:|---:|---:|",
+        "`top-cluster prefix` shows the LCP within the largest cluster. For agents",
+        "with `n=1` (where every call lands in its own cluster), this is just the",
+        "size of one call's system prompt and is NOT shareable across calls — those",
+        "agents need template restructure (Phase 4.5), not `cache_control`.",
+        "",
+        "`cross-call LCP / ratio` is diagnostic for the Phase 4.5 priority: high",
+        "ratio means the agent has structurally shareable content across all calls",
+        "today; low ratio means per-call variability (e.g. `{{COUNTRY}}` in system",
+        "prompt) requires template restructure to unlock cross-call caching.",
+        "",
+        "**Phase 4 gate:** ✅ ship `cache_control` if `savings/run > 0`. ❌ defer",
+        "to Phase 4.5 if `savings/run == 0` and `ratio < 0.5` (per-call clusters).",
+        "⚠️ low-volume (n=1 throughout, but content is structurally stable) — single-call",
+        "agents don't benefit from cache_control regardless.",
+        "",
+        "| rank | agent | top-cluster prefix | top-cluster calls/run | savings/run | cross-call LCP | ratio | gate |",
+        "|---:|---|---:|---:|---:|---:|---:|:---:|",
     ]
-    for rank, (agent, score, top_cluster) in enumerate(ranked, 1):
+    for rank, (agent, score, top_cluster, xcall) in enumerate(ranked, 1):
+        ratio = xcall.get("ratio", 0.0)
+        savings = score["savings_per_run"]
+        if savings > 0:
+            gate = "✅"
+        elif ratio >= 0.5:
+            gate = "⚠️"  # n=1 single-call agent, content stable but no leverage
+        else:
+            gate = "❌"  # per-call clusters — needs Phase 4.5 restructure
         L.append(
             f"| {rank} | {agent} | {top_cluster['stable_prefix_tokens']:,} "
-            f"| {top_cluster['n']} | {score['savings_per_run']:,} |"
+            f"| {top_cluster['n']} | {savings:,} "
+            f"| {xcall.get('lcp_tokens', 0):,} | {ratio:.2f} | {gate} |"
         )
     L.append("")
 
@@ -322,7 +378,8 @@ def main() -> None:
         all_clusters.sort(key=lambda c: -c["n"])
         top = all_clusters[0]
         score = leverage_score([top])
-        ranked.append((agent, score, top))
+        xcall = cross_call_system_lcp(all_traces, agent)
+        ranked.append((agent, score, top, xcall))
     ranked.sort(key=lambda x: -x[1]["savings_per_run"])
 
     post_flip = editor_post_flip_prefix(all_traces)

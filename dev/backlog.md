@@ -6,6 +6,65 @@ context that a future person can pick it up cold.
 
 ---
 
+## Phase 4.5: template restructure for per-call-cluster agents (2026-04-29)
+
+**Status**: noted 2026-04-29. Deferred until Phase 3a + 3b + 4 results land
+and the cache hit-rate measurement is stable (post-Sunday traces with
+Phase 1 instrumentation in place).
+
+**Problem**: country.py, story_map, devils_advocate, government, and regional
+all interpolate per-call values into the system prompt template
+(`{{COUNTRY}}` typically appears in the first paragraph, e.g.
+`country_agent.md:3`, `story_map_agent.md:5`, `government_agent.md` opening
+sentence). Each call lands in its own cluster, so `cache_control` writes
+the cache but never reads it — same "decorative cache" pattern that
+Phase 3b removes from country.py.
+
+To unlock cross-call caching for these agents, push country/region/date
+interpolation to a tail section of the template (after a stable header
+the cache breakpoint can target). Largest absolute potential savings,
+biggest engineering effort. Order by leverage:
+
+1. story_map: 6.4M tokens / 2 weeks input volume (rank 1 raw, rank 11 leverage)
+2. country: 4.0M / 2 weeks (rank 2 raw, rank 5 leverage; cache_control deleted in Phase 3b)
+3. government: 700K / 2 weeks
+4. devils_advocate: 495K / 2 weeks
+5. regional: 163K / 2 weeks
+
+**Verification gate before adding `cache_control` to ANY new agent**:
+
+Run cross-call LCP check on the agent's trace set first. Use
+`dev/optimize_prompts/leverage_split.py` and look at the agent's row in
+the ranking table:
+
+- ✅ ship `cache_control` if `savings/run > 0` (top cluster has n>1 with
+  sizable within-cluster prefix).
+- ❌ defer to Phase 4.5 if `savings/run == 0` and `cross-call ratio < 0.5`
+  (per-call clusters — adding `cache_control` would replicate the country.py
+  decorative-cache bug).
+- ⚠️ low-volume single-call agents (n=1 throughout) — `cache_control`
+  doesn't help regardless.
+
+The gate caught a near-miss on government.py during Phase 4 — within-cluster
+LCP looked impressive (2,451 tokens) but cross-call LCP across all 60 traces
+was 22 tokens, confirming the per-country pattern. Same trap exists for any
+future agent using `{{COUNTRY}}` interpolation in the system prompt.
+
+**Pattern to watch**: every analytical claim that didn't survive verification
+during the Phase 1-4 work was about cluster shape — country.py "caching works"
+(it didn't), story_map "stable system" (per-country), government "shared
+system across 30 calls" (per-country), the editor flip's "additional 1M from
+cross-cluster sharing" (geometrically subsumed by within-cluster). Cross-call
+LCP across pooled traces is the load-bearing measurement; trust it over
+within-cluster LCP, raw input volume, or single-cluster `system_lcp` when
+deciding whether `cache_control` will produce reads.
+
+**Scope estimate**: ~50-100 lines per agent template, plus prompt-engineering
+A/B to confirm the rewritten templates don't regress output quality.
+Interpretation history at `dev/optimize_prompts/leverage_interpretation_2026-04-29.md`.
+
+---
+
 ## ~~Wasted LLM calls on unrendered watchlist content~~ (DONE 2026-04-21)
 
 **Status**: complete. Structured watchlist pipeline deleted: removed

@@ -1,4 +1,4 @@
-# Three-Way Token Split — 2026-04-29
+# Three-Way Token Split — 2026-04-28
 
 Source: 2 weekly Sunday runs (`briefs/20260419` + `briefs/20260426`).
 Token estimate: chars/4 (English-text heuristic; ranking-grade, not billing-grade).
@@ -12,83 +12,24 @@ chars). Within each cluster:
 - `stable prefix` = system LCP + user LCP — the cacheable ceiling per call
 - `system var` / `user var` = mean variable tail per call
 
-**`n` and savings are per single pipeline run** (one week's worth of calls
-in that cluster). Leverage = `stable_prefix × (n_calls - 1)` — first call
-writes the cache, the next (n-1) read it.
+Leverage (savings/run) = `stable prefix × (n_calls - 1)`, since the first
+call writes the cache and the next (n-1) hit it.
 
-## Leverage ranking
+## Leverage ranking (savings per pipeline run, both weeks combined)
 
-**The load-bearing column is `savings/run`.** It captures whether at least
-one cluster has `n>1` with a sizable within-cluster prefix — i.e., whether
-`cache_control` will produce reads on subsequent calls.
-
-`top-cluster prefix` shows the LCP within the largest cluster. For agents
-with `n=1` (where every call lands in its own cluster), this is just the
-size of one call's system prompt and is NOT shareable across calls — those
-agents need template restructure (Phase 4.5), not `cache_control`.
-
-`cross-call LCP / ratio` is diagnostic for the Phase 4.5 priority: high
-ratio means the agent has structurally shareable content across all calls
-today; low ratio means per-call variability (e.g. `{{COUNTRY}}` in system
-prompt) requires template restructure to unlock cross-call caching.
-
-**Phase 4 gate:** ✅ ship `cache_control` if `savings/run > 0`. ❌ defer
-to Phase 4.5 if `savings/run == 0` and `ratio < 0.5` (per-call clusters).
-⚠️ low-volume (n=1 throughout, but content is structurally stable) — single-call
-agents don't benefit from cache_control regardless.
-
-| rank | agent | top-cluster prefix | top-cluster calls/run | savings/run | cross-call LCP | ratio | gate |
-|---:|---|---:|---:|---:|---:|---:|:---:|
-| 1 | copyeditor | 10,622 | 38 | 393,014 | 4 | 0.00 | ✅ |
-| 2 | style_editor | 10,325 | 37 | 371,700 | 10,324 | 1.00 | ✅ |
-| 3 | editor | 12,699 | 30 | 368,271 | 21 | 0.00 | ✅ |
-| 4 | regional_writer | 10,125 | 6 | 50,625 | 10,122 | 1.00 | ✅ |
-| 5 | country | 62,137 | 1 | 0 | 21 | 0.01 | ❌ |
-| 6 | devils_advocate | 10,802 | 1 | 0 | 12 | 0.01 | ❌ |
-| 7 | executive | 46,854 | 1 | 0 | 3,628 | 1.00 | ⚠️ |
-| 8 | global_writer | 18,545 | 1 | 0 | 10,098 | 1.00 | ⚠️ |
-| 9 | government | 8,265 | 1 | 0 | 22 | 0.01 | ❌ |
-| 10 | regional | 12,410 | 1 | 0 | 22 | 0.01 | ❌ |
-| 11 | story_map | 85,565 | 1 | 0 | 26 | 0.01 | ❌ |
-
-## Post-flip prefix verification (the Phase 3a load-bearing claim)
-
-Phase 3a flips `_build_system_prompt` in `newsletter/structured_editor.py`
-to put the style guide FIRST. The leverage estimate depends on what size
-of shared prefix that flip actually unlocks across the editor sites.
-
-We measure today's longest common SUFFIX (LCS) of the system prompts —
-that's the style-guide-tail block, which becomes the prefix after the flip.
-Pooled two ways because copyeditor has a per-country `<leader_reference>`
-tail that breaks LCS when included; the editor + style_editor pool is the
-clean signal.
-
-### editor + style_editor pool (the cleanly cacheable group)
-
-- distinct sub-templates: **5**
-- LCP today (current order): **4 tokens**
-- **LCS today = post-flip prefix size: 9,825 tokens** (39,303 chars)
-
-Suffix preview (head — what becomes the prefix):
-
-> `  <style_guide> #### names and titles — briefing conventions ####  - First mention: forename + surname, with office as appositive or context (*Andrii Sybiha, th…`
-
-Suffix preview (tail):
-
-> `…essary (he gave interviews to broadcasters; of course it was public). "Over Russia strategy" → "over Russia" — the word "strategy" adds nothing.  </style_guide>`
-
-### copyeditor pool (separate code path, but uses same _build_system_prompt)
-
-- distinct sub-templates: **2**
-- LCP today (already cached today within each cluster): **4 tokens**
-- LCS today: **5 tokens** (typically smaller — per-country leader_reference at end)
-
-### all editors pooled (control — confirms the LCS contamination problem)
-
-- LCS across all 7 pooled: **0 tokens**
-
-Pooling all together collapses LCS because copyeditor's variable tail
-doesn't match editor's `</style_guide>` ending. Use the split pools above.
+| rank | agent | stable prefix tokens (max cluster) | calls (max cluster) | savings/run estimate |
+|---:|---|---:|---:|---:|
+| 1 | copyeditor | 10,622 | 38 | 393,014 |
+| 2 | style_editor | 10,325 | 37 | 371,700 |
+| 3 | editor | 12,699 | 30 | 368,271 |
+| 4 | regional_writer | 10,125 | 6 | 50,625 |
+| 5 | country | 62,137 | 1 | 0 |
+| 6 | devils_advocate | 10,802 | 1 | 0 |
+| 7 | executive | 46,854 | 1 | 0 |
+| 8 | global_writer | 18,545 | 1 | 0 |
+| 9 | government | 8,265 | 1 | 0 |
+| 10 | regional | 12,410 | 1 | 0 |
+| 11 | story_map | 85,565 | 1 | 0 |
 
 ## Per-cluster split — week 20260419
 
