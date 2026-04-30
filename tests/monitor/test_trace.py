@@ -3,6 +3,7 @@
 import json
 from datetime import date
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -12,8 +13,15 @@ from src.monitor.trace import (
     update_trace_parsed,
     load_trace,
     list_traces,
+    extract_usage,
+    cache_hit_rate,
     _trace_path,
 )
+
+
+def _mock_response(**usage_fields):
+    """Build a minimal stand-in for an Anthropic response.usage object."""
+    return SimpleNamespace(usage=SimpleNamespace(**usage_fields))
 
 
 @pytest.fixture
@@ -160,6 +168,89 @@ class TestBackwardCompat:
         trace = load_trace("regional", "americas", date(2026, 3, 14))
         assert trace is not None
         assert trace["output"]["response_text"] == "old format"
+
+
+class TestExtractUsage:
+    def test_captures_cache_fields_when_present(self):
+        response = _mock_response(
+            input_tokens=500,
+            output_tokens=200,
+            cache_creation_input_tokens=4000,
+            cache_read_input_tokens=12000,
+        )
+        usage = extract_usage(response)
+        assert usage == {
+            "input_tokens": 500,
+            "output_tokens": 200,
+            "cache_creation_input_tokens": 4000,
+            "cache_read_input_tokens": 12000,
+        }
+
+    def test_defaults_cache_fields_to_zero_when_absent(self):
+        response = _mock_response(input_tokens=500, output_tokens=200)
+        usage = extract_usage(response)
+        assert usage["cache_creation_input_tokens"] == 0
+        assert usage["cache_read_input_tokens"] == 0
+
+    def test_coerces_none_cache_fields_to_zero(self):
+        response = _mock_response(
+            input_tokens=500,
+            output_tokens=200,
+            cache_creation_input_tokens=None,
+            cache_read_input_tokens=None,
+        )
+        usage = extract_usage(response)
+        assert usage["cache_creation_input_tokens"] == 0
+        assert usage["cache_read_input_tokens"] == 0
+
+
+class TestCacheHitRate:
+    def test_empty_usage_returns_zero(self):
+        assert cache_hit_rate({}) == 0.0
+
+    def test_missing_cache_fields_returns_zero(self):
+        assert cache_hit_rate({"input_tokens": 1000, "output_tokens": 500}) == 0.0
+
+    def test_first_call_writing_cache_returns_zero(self):
+        usage = {
+            "input_tokens": 100,
+            "cache_creation_input_tokens": 4000,
+            "cache_read_input_tokens": 0,
+        }
+        assert cache_hit_rate(usage) == 0.0
+
+    def test_pure_cache_hit_returns_one(self):
+        usage = {
+            "input_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 4000,
+        }
+        assert cache_hit_rate(usage) == 1.0
+
+    def test_mixed_returns_read_share(self):
+        usage = {
+            "input_tokens": 100,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 900,
+        }
+        assert cache_hit_rate(usage) == 0.9
+
+    def test_realistic_partial_hit(self):
+        # Re-run after first call: prior 4000 served from cache, 500 new input tokens
+        usage = {
+            "input_tokens": 500,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 4000,
+        }
+        assert cache_hit_rate(usage) == pytest.approx(4000 / 4500)
+
+    def test_handles_none_values(self):
+        usage = {
+            "input_tokens": None,
+            "cache_creation_input_tokens": None,
+            "cache_read_input_tokens": None,
+        }
+        assert cache_hit_rate(usage) == 0.0
 
 
 class TestTwoPhaseFlow:

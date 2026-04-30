@@ -213,9 +213,32 @@ def extract_thinking(response) -> str:
 
 
 def extract_usage(response) -> dict:
-    """Extract token usage from an Anthropic response object."""
+    """Extract token usage from an Anthropic response object.
+
+    Cache fields default to 0 when absent — older trace fixtures and test
+    mocks may not set them, and responses from non-caching call paths omit them.
+    """
     u = response.usage
     return {
         "input_tokens": u.input_tokens,
         "output_tokens": u.output_tokens,
+        "cache_creation_input_tokens": getattr(u, "cache_creation_input_tokens", 0) or 0,
+        "cache_read_input_tokens": getattr(u, "cache_read_input_tokens", 0) or 0,
     }
+
+
+def cache_hit_rate(usage: dict) -> float:
+    """Fraction of prompt tokens served from cache for a single API call.
+
+    Returns cache_read / (cache_read + cache_creation + input). Returns 0.0
+    when the usage dict has no prompt-side tokens (empty/missing/mocked).
+    A first call that writes the cache reports 0.0 — only subsequent reads
+    against an existing entry move the rate above zero.
+    """
+    read = usage.get("cache_read_input_tokens", 0) or 0
+    creation = usage.get("cache_creation_input_tokens", 0) or 0
+    uncached = usage.get("input_tokens", 0) or 0
+    total = read + creation + uncached
+    if total == 0:
+        return 0.0
+    return read / total
