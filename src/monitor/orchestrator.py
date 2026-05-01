@@ -945,11 +945,13 @@ async def run_desk_pipeline(
             logger.warning(f"Quarantined: {cr.code} — {cr.error}")
 
     # Summary
+    brave_calls = brave_client.api_call_count if brave_client else 0
     logger.info(
         f"Desk pipeline complete: "
         f"{len(result.deep_dive_results)} deep dives, "
         f"{len(result.maintenance_results)} maintenance, "
-        f"{len(result.failed_results)} failed"
+        f"{len(result.failed_results)} failed, "
+        f"{brave_calls} Brave API calls"
     )
 
     if recorder:
@@ -960,6 +962,7 @@ async def run_desk_pipeline(
             "maintenance": [r.code for r in result.maintenance_results],
             "failed": [{"code": r.code, "error": r.error} for r in result.failed_results],
             "errors": result.errors,
+            "brave_api_calls": brave_calls,
         })
 
     return result

@@ -284,6 +284,39 @@ class TestBraveNewsClient:
         await mock_client.close()
 
     @pytest.mark.asyncio
+    async def test_api_call_count_increments(self, mock_client):
+        mock_response = MagicMock()
+        mock_response.json.return_value = {"results": []}
+        mock_response.raise_for_status = MagicMock()
+        mock_client._client.get = AsyncMock(return_value=mock_response)
+
+        assert mock_client.api_call_count == 0
+        await mock_client.search_news("foo")
+        assert mock_client.api_call_count == 1
+        await mock_client.search_news("bar")
+        await mock_client.search_news("baz")
+        assert mock_client.api_call_count == 3
+
+        await mock_client.close()
+
+    @pytest.mark.asyncio
+    async def test_api_call_count_includes_http_errors(self, mock_client):
+        """4xx/5xx responses still count — Brave bills them."""
+        mock_response = MagicMock()
+        mock_response.raise_for_status = MagicMock(
+            side_effect=httpx.HTTPStatusError(
+                "rate limited", request=MagicMock(), response=MagicMock(status_code=429)
+            )
+        )
+        mock_client._client.get = AsyncMock(return_value=mock_response)
+
+        with pytest.raises(httpx.HTTPStatusError):
+            await mock_client.search_news("foo")
+        assert mock_client.api_call_count == 1
+
+        await mock_client.close()
+
+    @pytest.mark.asyncio
     async def test_search_with_country_code_local(self, mock_client):
         """Country with local params should include them in the request."""
         mock_response = MagicMock()

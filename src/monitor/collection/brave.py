@@ -389,6 +389,7 @@ class BraveNewsClient:
         self._rate_limit_delay = rate_limit_delay
         self._last_request_time = 0.0
         self._lock = asyncio.Lock()
+        self._api_calls = 0
         self._client = httpx.AsyncClient(
             headers={
                 "Accept": "application/json",
@@ -404,6 +405,16 @@ class BraveNewsClient:
         if self._country_configs is None:
             self._country_configs = load_brave_sources()
         return self._country_configs
+
+    @property
+    def api_call_count(self) -> int:
+        """Number of HTTP requests issued to the Brave API by this client.
+
+        Counts every request that reached the Brave server (including 4xx/5xx
+        responses, which Brave bills). Connection-level failures that raise
+        before the response returns are not counted.
+        """
+        return self._api_calls
 
     async def close(self) -> None:
         await self._client.aclose()
@@ -486,6 +497,7 @@ class BraveNewsClient:
         logger.debug("Brave News API request: q=%r params=%s", query, params)
 
         response = await self._client.get(BRAVE_NEWS_URL, params=params)
+        self._api_calls += 1
         response.raise_for_status()
         data = response.json()
 

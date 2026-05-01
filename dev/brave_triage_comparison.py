@@ -42,6 +42,7 @@ async def main():
                 print(f"      {r.url}")
                 if r.description:
                     print(f"      {r.description[:120]}")
+        print(f"\nBrave API calls: {client.api_call_count}")
 
 
 if __name__ == "__main__":

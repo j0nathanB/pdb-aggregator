@@ -366,6 +366,7 @@ async def verify_brave_indexing(domains: list[str], country_code: str) -> dict[s
             except Exception as e:
                 logger.warning("Brave verify: %s failed: %s", domain, e)
                 counts[domain] = -1  # error
+        logger.info("Brave verify: %d API calls for %s", client.api_call_count, country_code)
     return counts
 
 
