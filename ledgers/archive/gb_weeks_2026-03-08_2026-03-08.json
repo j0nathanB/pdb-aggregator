@@ -1,0 +1,333 @@
+[
+  {
+    "week": "2026-03-08",
+    "date_range": "2026-03-02 to 2026-03-08",
+    "depth": "deep_dive",
+    "activity_level": {
+      "rating": "high",
+      "rationale": "The week was dominated by the Iran crisis creating significant UK-US tensions, historic political developments with the Greens overtaking Labour in polling for the first time, and mounting pressure on King Charles to abdicate. Story #1 (89 sources) on UK-US Iran tensions and Story #3 (42 sources) on Green Party surge represent genuinely significant developments, while multiple other high-source-count stories reinforce ongoing regime fragmentation patterns."
+    },
+    "category_movements": {
+      "alignment_diplomatic": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "UK-US tensions escalate as Starmer initially refuses base access for Iran strikes then partially reverses under Trump pressure",
+            "date": "2026-03-02",
+            "sources": [
+              {
+                "name": "BBC",
+                "url": "https://www.bbc.com/news/live/ceqvwrydzpqt",
+                "tier": 2
+              },
+              {
+                "name": "Guardian",
+                "url": "https://www.theguardian.com/us-news/2026/mar/03/trump-starmer-uk-refusal-back-iran-strikes",
+                "tier": 2
+              },
+              {
+                "name": "Reuters",
+                "url": "https://reuters.com/business/aerospace-defense/uks-starmer-speaks-with-us-president-trump-middle-east-2026-03-08",
+                "tier": 2
+              }
+            ],
+            "summary": "Prime Minister Starmer initially refused to allow US use of UK military bases for strikes on Iran, declaring 'This Government does not believe in regime change from the skies.' Trump responded that the relationship was 'obviously not what it was.' After Iranian retaliation hitting British bases in Cyprus, Starmer partially reversed to permit defensive operations while maintaining Britain would not join offensive action.",
+            "actors_involved": [
+              "Keir Starmer",
+              "Donald Trump",
+              "David Lammy",
+              "John Healey"
+            ],
+            "signal_category_relevance": "This represents the most significant UK-US bilateral friction since the Iraq War vote, directly challenging the 'bilateral web strategy continues operating as designed' assessment that has persisted for six consecutive weeks despite devil's advocate challenges. The initial refusal followed by partial reversal under pressure reveals structural tensions over automatic alignment versus sovereign decision-making."
+          }
+        ],
+        "prior_assessment": "The bilateral web strategy continues operating through AUKUS partnership deepening and managed US tensions over Iran policy, showing both alliance consolidation and managed friction with the US. The Iran policy tensions reveal limits to automatic alignment while maintaining core defense cooperation.",
+        "updated_assessment": "The Iran crisis exposed fundamental tensions between US expectations of automatic UK support and Starmer's sovereignty-first approach. While the UK ultimately permitted defensive base use, the initial refusal and Trump's public rebuke represent the most serious bilateral friction since Iraq. The bilateral web provides some hedging capacity, but US dependencies remain binding constraints on UK autonomy.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "Multiple independent tier-2 sources provide detailed coverage of the friction, Trump's specific criticisms, and the timeline of UK policy reversal. The scale and public nature of disagreement is well-documented."
+        }
+      },
+      "security_defense": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Turkey requests MI6 assistance for Syrian leader protection as NATO intercepts Iranian missile",
+            "date": "2026-03-04",
+            "sources": [
+              {
+                "name": "Reuters",
+                "url": "https://www.reuters.com/world/middle-east/turkey-asks-britains-mi6-step-up-protection-syrias-sharaa-sources-say-2026-03-06/",
+                "tier": 2
+              },
+              {
+                "name": "Reuters",
+                "url": "https://reuters.com/world/middle-east/turkey-says-nato-defences-destroyed-missile-fired-iran-over-mediterranean-2026-03-04",
+                "tier": 2
+              }
+            ],
+            "summary": "Turkey's MIT intelligence agency reportedly asked Britain's MI6 to increase protection for Syrian President Ahmed al-Sharaa following ISIS assassination plots. NATO air defenses intercepted an Iranian ballistic missile heading toward Turkish airspace. The Armed Conflict Bill was introduced requiring parliamentary approval for armed forces deployment and ministerial statements on international law compliance.",
+            "actors_involved": [
+              "MI6",
+              "NATO"
+            ],
+            "signal_category_relevance": "These developments reflect reactive security coordination in response to Iran crisis escalation rather than strategic posture shifts. The Armed Conflict Bill represents potential institutional constraints on executive war powers but requires further analysis of scope and parliamentary prospects."
+          }
+        ],
+        "prior_assessment": "Defense commitments continue with Ukraine deployment pledges and Middle East tensions exposing UK military assets to direct Iranian threats. AUKUS industrial cooperation advances while regional security pressures intensify direct risks to British forces.",
+        "updated_assessment": "Middle East tensions have intensified direct threats to UK assets (Cyprus base struck by drone) while generating new intelligence cooperation demands from allies. The Armed Conflict Bill introduction suggests potential institutional constraints on future military deployments, though its parliamentary prospects remain unclear.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 3,
+          "reason": "Good tier-2 sourcing on specific incidents but limited scope of evidence for comprehensive defense posture assessment. The Armed Conflict Bill requires more detailed analysis of its provisions and political viability."
+        }
+      },
+      "economic_tech": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Reeves delivers Spring Statement with growth downgrades as Middle East war threatens economic forecasts",
+            "date": "2026-03-03",
+            "sources": [
+              {
+                "name": "Economist",
+                "url": "https://www.economist.com/britain/2026/03/03/rachel-reevess-economic-update-was-reassuringly-boring",
+                "tier": 2
+              },
+              {
+                "name": "Guardian",
+                "url": "https://theguardian.com/uk-news/2026/mar/03/spring-forecast-rachel-reeves-labour-economic-plan-2026-growth-obr",
+                "tier": 2
+              },
+              {
+                "name": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-03-03/energy-crunch-risks-bank-of-england-missing-inflation-target-for-another-year",
+                "tier": 2
+              }
+            ],
+            "summary": "Chancellor Rachel Reeves confirmed growth downgrades to 1.1% for 2026 while defending her economic plan. She warned the Middle East conflict could significantly impact projections and announced meetings with energy executives about rising oil and gas prices. Bank of England faces pressure to pause rate cuts as energy price surges risk pushing inflation above target.",
+            "actors_involved": [
+              "Rachel Reeves",
+              "Bank of England"
+            ],
+            "signal_category_relevance": "These represent policy adjustments to external economic shocks rather than fundamental strategic reorientations. The BoE's potential pause on rate cuts and growth downgrades reflect reactive rather than proactive economic statecraft changes."
+          }
+        ],
+        "prior_assessment": "Monetary easing trajectory continues with BoE signaling possible March rate cut as inflation approaches target. Fiscal policy maintains consolidation approach with no major Spring Statement announcements despite rising political pressure from electoral defeats.",
+        "updated_assessment": "External shocks from Middle East conflict are disrupting monetary policy trajectory, with BoE now likely to pause rate cuts as energy prices threaten inflation target. Fiscal policy remains constrained but responsive to geopolitical volatility affecting growth forecasts.",
+        "confidence_change": null
+      },
+      "institutional": {
+        "movement": "none",
+        "developments": [],
+        "prior_assessment": "No evidence of changed institutional engagement with multilateral organizations or treaty frameworks this week. Justice system reforms with AI courts and reduced jury trials represent domestic institutional modernization rather than international institutional reorientation.",
+        "updated_assessment": "The Armed Conflict Bill requiring parliamentary approval for military deployments represents potential institutional change in war powers, but insufficient detail available to assess scope or parliamentary prospects. No evidence of changed multilateral institutional engagement patterns.",
+        "confidence_change": null
+      },
+      "domestic_regime": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Green Party achieves historic breakthrough by overtaking Labour in national polling following Gorton and Denton by-election victory",
+            "date": "2026-03-03",
+            "sources": [
+              {
+                "name": "Bloomberg",
+                "url": "https://bloomberg.com/news/articles/2026-03-03/uk-greens-pass-labour-and-tories-for-first-time-in-yougov-poll",
+                "tier": 2
+              },
+              {
+                "name": "Zeteo",
+                "url": "https://zeteo.com/p/uk-green-party-surges-ahead-labour-starmer-poll",
+                "tier": 2
+              },
+              {
+                "name": "Independent",
+                "url": "https://the-independent.com/news/uk/politics/green-party-poll-labour-reform-byelection-starmer-polanski-b2930789.html",
+                "tier": 2
+              }
+            ],
+            "summary": "YouGov polling showed Greens at 21%, Labour at 16% - the first time Greens have led Labour nationally. This follows their historic Gorton and Denton by-election victory where they pushed Labour into third place. A quarter of 2024 Labour voters now say they would support the Greens, while government approval hits just 12%.",
+            "actors_involved": [
+              "Keir Starmer",
+              "Green Party"
+            ],
+            "signal_category_relevance": "This represents the most significant third-party breakthrough in modern British polling history, indicating potential systemic breakdown of the two-party system. Combined with Reform UK's sustained leads, it suggests the fragmentation identified in prior weeks is accelerating rather than stabilizing."
+          },
+          {
+            "headline": "King Charles faces mounting pressure to abdicate throne to Prince William within 12 months",
+            "date": "2026-03-02",
+            "sources": [
+              {
+                "name": "Pakistani news outlet",
+                "url": "https://www.thenews.com.pk/latest/1394315-king-charles-set-to-abdicate-next-year-official-reason-revealed",
+                "tier": 3
+              },
+              {
+                "name": "OK Magazine",
+                "url": "https://okmagazine.com/p/king-charles-step-back-prince-william-throne-cancer-battle",
+                "tier": 3
+              },
+              {
+                "name": "Radar Online",
+                "url": "https://radaronline.com/p/dying-king-charles-secretly-abdicates-william-seizes-throne",
+                "tier": 3
+              }
+            ],
+            "summary": "Royal sources claim King Charles is preparing to hand the throne to Prince William within the next year, citing health concerns from cancer battle and fallout from Prince Andrew's arrest scandal. Palace insiders say Charles wants to control the narrative and step down on his own terms.",
+            "actors_involved": [
+              "King Charles III"
+            ],
+            "signal_category_relevance": "While sourced primarily through entertainment media, the volume of abdication speculation (23 sources) indicates intensifying monarchy crisis following Prince Andrew's arrest. This reinforces the institutional breakdown narrative across all three regime pillars identified in previous weeks."
+          },
+          {
+            "headline": "Nigel Farage claims election fraud in Gorton and Denton by-election without evidence",
+            "date": "2026-03-02",
+            "sources": [
+              {
+                "name": "Guardian",
+                "url": "https://theguardian.com/politics/2026/mar/02/nigel-farage-emulating-his-hero-trump-gorton-and-denton-byelection-hannah-spencer",
+                "tier": 2
+              },
+              {
+                "name": "BBC",
+                "url": "https://bbc.co.uk/news/articles/cj0dnry9ljgo",
+                "tier": 2
+              },
+              {
+                "name": "Daily Mail",
+                "url": "https://dailymail.co.uk/news/article-15604855/Green-election-win-sinking-World-status-Nigel-Farage.html",
+                "tier": 2
+              }
+            ],
+            "summary": "Reform UK leader Nigel Farage alleged without evidence that his party's candidate would have won if only UK-born voters had been counted. He called for restrictions on Commonwealth voting rights and postal ballots, claiming the electoral system was 'sinking to Third World status'.",
+            "actors_involved": [
+              "Nigel Farage"
+            ],
+            "signal_category_relevance": "This represents Trump-style election denial tactics entering UK politics, following Reform UK's continued polling leads. Farage's willingness to delegitimize electoral processes before achieving power indicates potential authoritarian tendencies that could destabilize democratic norms."
+          }
+        ],
+        "prior_assessment": "Regime fragmentation continues with the governing party suffering historic by-election defeat (Labour pushed to third place in safe seat), the monarchy crisis deepening through Prince Andrew's arrest and calls for King Charles to abdicate, and justice system institutional reforms indicating adaptation under severe capacity pressure. The simultaneous electoral collapse and constitutional crisis represents sustained institutional breakdown across all pillars.",
+        "updated_assessment": "Regime fragmentation has reached historically unprecedented levels with the Green Party overtaking Labour in national polling for the first time, mounting abdication pressure on King Charles, and Reform UK's leader introducing Trump-style election fraud claims. The simultaneous breakdown of electoral legitimacy, monarchy stability, and democratic norms represents the deepest institutional crisis since the 1970s.",
+        "confidence_change": {
+          "from_": 4,
+          "to": 4,
+          "reason": "Multiple independent tier-2 sources confirm the historic Green Party polling breakthrough and Farage's fraud allegations. While monarchy abdication stories rely on tier-3 sources, the volume of coverage (23 sources) indicates genuine crisis momentum."
+        }
+      }
+    },
+    "unexpected_developments": [
+      {
+        "headline": "Green Party achieves first-ever national polling lead over Labour",
+        "date": "2026-03-08",
+        "source": "unknown",
+        "source_tier": 2,
+        "signal_category": "domestic_regime",
+        "assessment": "",
+        "disposition": "logged"
+      }
+    ],
+    "absence_check": [],
+    "devils_advocate": {
+      "challenges": [
+        "The alignment_diplomatic confidence jump to 4 claims 'multiple independent tier-2 sources' but only BBC is specifically cited as tier 2 evidence. This appears to be source dependency masquerading as source diversification - one detailed BBC report is being treated as multiple independent confirmations.",
+        "The domestic_regime assessment conflates strong tier-2 polling evidence (Green Party surge) with weak tier-3 monarchy speculation in the same confidence 4 rating. The Pakistani news outlet sourcing for abdication pressure significantly undermines the composite confidence score.",
+        "The Green Party's historic polling breakthrough lacks any competing interpretation despite representing the most significant electoral realignment in decades. Is this genuine ideological shift or protest voting that could reverse rapidly once government performance improves?",
+        "The institutional category receives cursory dismissal despite the Armed Conflict Bill potentially representing the most significant war powers reform since the Iraq War. 'Insufficient detail' appears to be a collection gap rather than evidence of no institutional movement."
+      ],
+      "recommended_adjustments": [
+        "Either provide the specific additional tier-2 sources that justify alignment_diplomatic confidence 4, or reduce confidence to 3 and acknowledge BBC as the primary source for the Iran policy friction timeline.",
+        "Separate the domestic_regime confidence scoring between strong tier-2 developments (Green polling at confidence 4) and weak tier-3 speculation (monarchy pressure at confidence 2), or reduce the composite score to reflect the weakest evidentiary component.",
+        "Develop competing interpretation for Green Party surge examining whether this represents durable realignment versus protest voting cycle, given Labour's historic pattern of recovery from mid-term polling troughs.",
+        "Conduct targeted search on Armed Conflict Bill provisions and parliamentary prospects within 1 week to determine whether institutional war powers constraints represent genuine movement or procedural theater."
+      ]
+    },
+    "self_corrections": [
+      {
+        "category": "alignment_diplomatic",
+        "prior_week": "2026-03-08",
+        "original_claim": "",
+        "correction": "",
+        "root_cause": "Over-reliance on continuity framing despite accumulating evidence of structural friction that the devil's advocate has challenged for six consecutive weeks. The scale of Trump's public criticism and Starmer's initial sovereignty-first stance represented a qualitative shift that the 'managed tensions' framing obscured."
+      }
+    ],
+    "structural_claim_checks": [
+      {
+        "claim_ref": "unknown",
+        "claim_text": "The UK-US 'special relationship' is structurally dependent on US nuclear technology, ITAR-controlled components, and Five Eyes intelligence architecture in ways that no bilateral European partnership can replicate within a decade",
+        "status": "confirmed",
+        "evidence": "The Iran crisis demonstrated that despite Starmer's initial sovereignty assertion, the UK ultimately accommodated US pressure through defensive base access. Trump's public criticism showed how quickly the relationship can deteriorate when the UK deviates from expected alignment, confirming the structural dependency thesis.",
+        "confidence_in_claim": 3
+      }
+    ],
+    "story_clusters": [
+      {
+        "headline": "UK-US tensions escalate over Britain's limited support for Iran war",
+        "summary": "Prime Minister Starmer faced sharp criticism from President Trump for initially refusing to allow US use of UK military bases for strikes on Iran. After diplomatic pressure and Iranian retaliation hitting British bases, Starmer eventually permitted defensive operations from UK facilities while maintaining Britain would not join offensive action.",
+        "source_url": "https://www.bbc.com/news/live/ceqvwrydzpqt",
+        "source_name": "bbc.com"
+      },
+      {
+        "headline": "King Charles faces mounting pressure to abdicate throne to Prince William within 12 months",
+        "summary": "Royal sources claim King Charles is preparing to hand the throne to Prince William within the next year, citing health concerns from his ongoing cancer battle and fallout from Prince Andrew's arrest scandal. Palace insiders say Charles wants to control the narrative and step down on his own terms.",
+        "source_url": "https://www.thenews.com.pk/latest/1394315-king-charles-set-to-abdicate-next-year-official-reason-revealed",
+        "source_name": "aol.com"
+      },
+      {
+        "headline": "Green Party surges past Labour in polls after historic Gorton and Denton by-election victory",
+        "summary": "The Green Party won its first by-election victory in Gorton and Denton, pushing Labour into third place behind Reform UK. Subsequent polling showed the Greens leapfrogging Labour nationally for the first time, triggering internal Labour discussions about Starmer's leadership and strategy.",
+        "source_url": "https://bloomberg.com/news/articles/2026-03-03/uk-greens-pass-labour-and-tories-for-first-time-in-yougov-poll",
+        "source_name": "zeteo.com"
+      },
+      {
+        "headline": "Rachel Reeves delivers Spring Statement as Middle East war threatens economic forecasts",
+        "summary": "Chancellor Rachel Reeves delivered her Spring Statement confirming growth downgrades to 1.1% for 2026 while defending her economic plan. She warned that the Middle East conflict could significantly impact projections and announced meetings with energy executives about rising oil and gas prices.",
+        "source_url": "https://www.economist.com/britain/2026/03/03/rachel-reevess-economic-update-was-reassuringly-boring",
+        "source_name": "economist.com"
+      },
+      {
+        "headline": "Kemi Badenoch calls for aggressive UK military action against Iran despite government caution",
+        "summary": "Conservative leader Kemi Badenoch argued the UK should join offensive strikes against Iranian missile sites, claiming Britain was already in the war whether it liked it or not. Her hawkish stance contrasted sharply with Starmer's cautious approach and drew criticism from Labour ministers.",
+        "source_url": "https://www.bbc.com/news/articles/ce3gd22x3xgo",
+        "source_name": "bbc.com"
+      },
+      {
+        "headline": "Nigel Farage claims election fraud after Reform UK loses Gorton and Denton by-election",
+        "summary": "Reform UK leader Nigel Farage alleged without evidence that his party's candidate would have won the Gorton and Denton by-election if only UK-born voters had been counted. He called for restrictions on Commonwealth voting rights and postal ballots, claiming the electoral system was 'sinking to Third World status'.",
+        "source_url": "https://theguardian.com/politics/2026/mar/02/nigel-farage-emulating-his-hero-trump-gorton-and-denton-byelection-hannah-spencer",
+        "source_name": "theguardian.com"
+      },
+      {
+        "headline": "Bank of England faces pressure to pause rate cuts as Middle East war threatens inflation",
+        "summary": "The Bank of England confronted rising concerns that the Middle East conflict could derail its inflation targets and force a pause in interest rate cuts. Energy price surges and market volatility reduced expectations for a March rate cut from 80% to below 50%.",
+        "source_url": "https://www.bloomberg.com/news/articles/2026-03-03/energy-crunch-risks-bank-of-england-missing-inflation-target-for-another-year",
+        "source_name": "bbc.com"
+      },
+      {
+        "headline": "Turkey requests UK intelligence assistance for Syrian leader protection as NATO intercepts Iranian missile",
+        "summary": "Turkey's MIT intelligence agency reportedly asked Britain's MI6 to increase protection for Syrian President Ahmed al-Sharaa following ISIS assassination plots. Separately, NATO air defenses intercepted an Iranian ballistic missile heading toward Turkish airspace, marking the first direct involvement of a NATO member.",
+        "source_url": "https://www.reuters.com/world/middle-east/turkey-asks-britains-mi6-step-up-protection-syrias-sharaa-sources-say-2026-03-06/",
+        "source_name": "reuters.com"
+      },
+      {
+        "headline": "David Lammy faces criticism over jury trial restrictions and Cyprus NATO gaffe",
+        "summary": "Deputy Prime Minister David Lammy defended government plans to restrict jury trials for certain offenses to reduce court backlogs, drawing opposition from legal professionals. He also faced mockery for incorrectly stating that Cyprus was a NATO member during TV interviews about the Middle East crisis.",
+        "source_url": "https://thesecretbarrister.com/2026/03/07/keir-starmer-and-david-lammy-are-taking-an-extraordinarily-dangerous-gamble-with-our-individual-liberty/",
+        "source_name": "independent.co.uk"
+      },
+      {
+        "headline": "GCHQ warns UK businesses to prepare for Iranian cyberattacks",
+        "summary": "The UK's National Cyber Security Centre, part of GCHQ, issued warnings to British businesses to prepare for potential Iranian cyberattacks amid the escalating Middle East conflict. The agency advised organizations to review their defenses against DDoS attacks and phishing campaigns.",
+        "source_url": "https://www.telegraph.co.uk/business/2026/03/03/gchq-tells-businesses-brace-for-iranian-cyber-attacks/",
+        "source_name": "jpost.com"
+      },
+      {
+        "headline": "NATO Secretary-General defends alliance response to Iranian missile incident near Turkey",
+        "summary": "NATO Secretary-General Mark Rutte ruled out triggering Article 5 after alliance air defenses intercepted an Iranian ballistic missile heading toward Turkey. Rutte praised US-Israeli operations against Iran while emphasizing NATO would not formally join the conflict.",
+        "source_url": "https://reuters.com/world/middle-east/article-five-not-table-despite-iran-missile-incident-natos-rutte-says-2026-03-05",
+        "source_name": "reuters.com"
+      }
+    ]
+  }
+]
