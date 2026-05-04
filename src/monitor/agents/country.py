@@ -958,7 +958,15 @@ async def run_country_agent(
     # Build API call — with or without web_search tool
     api_kwargs: dict = {
         "model": MODEL,
-        "max_tokens": THINKING_BUDGET_TOKENS + 8192,
+        # max_tokens is the COMBINED ceiling (thinking + visible output). With
+        # 16k thinking budget, leave 16k for visible output so the JSON
+        # response has room when the model thinks beyond its budget. Prior
+        # value (+8192) left only 8k, which truncated cl on the 2026-05-03
+        # run: 114k input pushed thinking past 16k, the model used the entire
+        # 24k on thinking, emitted empty visible text, and
+        # parse_country_response failed with "No JSON object found." Same
+        # failure mode story_map already mitigated in `b0404af`.
+        "max_tokens": THINKING_BUDGET_TOKENS + 16384,
         "temperature": 1,  # required for extended thinking
         "thinking": {
             "type": "enabled",
