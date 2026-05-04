@@ -972,6 +972,14 @@ async def run_country_agent(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
+        # cache_control here doesn't produce cross-country reuse — each
+        # country's system_prompt has {{COUNTRY}} interpolated at the front,
+        # so cache keys differ per country (verified 2026-05-03: 0% hit rate
+        # on 29/30 country calls). It DOES help on retries: when a country
+        # fails and is retried within the 5-min TTL, the second call hits
+        # the cached prefix (verified: fi got 355k cache_read tokens across
+        # retries on the same run). Phase 4.5 template restructure
+        # (dev/backlog.md) is the structural fix for cross-country reuse.
         "system": [{
             "type": "text",
             "text": system_prompt,

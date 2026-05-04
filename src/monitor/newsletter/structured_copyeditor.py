@@ -104,10 +104,19 @@ async def _copyedit_prose(
 
     from .structured_editor import _build_system_prompt
     base_prompt = system_prompt_text if system_prompt_text is not None else COPYEDITOR_SYSTEM
-    system_prompt = _build_system_prompt(base_prompt)
-
-    if country_codes:
-        system_prompt += _build_leader_reference(country_codes)
+    # Two-block system: stable prefix is cached across all copyeditor calls in
+    # a run (~10k token cross-call hit). leader_reference tails differ per
+    # country and live in an uncached second block — concatenating it onto
+    # the cached block (the previous shape) gave each country a unique cache
+    # key and produced 0% hit rate on the 2026-05-03 run.
+    stable_prefix = _build_system_prompt(base_prompt)
+    leader_ref = _build_leader_reference(country_codes) if country_codes else ""
+    system_prompt = stable_prefix + leader_ref  # full text for tracing
+    system_blocks: list[dict] = [
+        {"type": "text", "text": stable_prefix, "cache_control": {"type": "ephemeral"}},
+    ]
+    if leader_ref:
+        system_blocks.append({"type": "text", "text": leader_ref})
 
     user_message = json.dumps(prose_fields, indent=2, ensure_ascii=False)
 
@@ -133,7 +142,7 @@ async def _copyedit_prose(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
+        system=system_blocks,
         messages=[{"role": "user", "content": user_message}],
     )
     if use_country_tool:
@@ -328,10 +337,16 @@ async def copyedit_at_a_glance(
         raise ValueError("ANTHROPIC_API_KEY not set")
 
     from .structured_editor import _build_system_prompt
-    system_prompt = _build_system_prompt(AT_A_GLANCE_SYSTEM)
-
+    # Two-block system: stable prefix cached, per-call leader_reference uncached.
+    # See _copyedit_prose for context on the 2026-05-03 hit-rate finding.
+    stable_prefix = _build_system_prompt(AT_A_GLANCE_SYSTEM)
     codes = [h["country_code"] for h in headlines]
-    system_prompt += _build_leader_reference(codes)
+    leader_ref = _build_leader_reference(codes)
+    system_prompt = stable_prefix + leader_ref  # full text for tracing
+    system_blocks = [
+        {"type": "text", "text": stable_prefix, "cache_control": {"type": "ephemeral"}},
+        {"type": "text", "text": leader_ref},
+    ]
 
     user_message = json.dumps(headlines, indent=2, ensure_ascii=False)
 
@@ -350,7 +365,7 @@ async def copyedit_at_a_glance(
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
+        system=system_blocks,
         messages=[{"role": "user", "content": user_message}],
     )
 
