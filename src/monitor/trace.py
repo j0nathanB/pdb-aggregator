@@ -227,6 +227,28 @@ def extract_usage(response) -> dict:
     }
 
 
+def format_usage_short(response) -> str:
+    """One-line usage summary for stdout logs, including cache hit %.
+
+    Pattern: "in=11217 out=1247 cw=12213 cr=0 hit=0%". Use in agent loggers
+    to make cache health visible during pipeline runs without parsing trace
+    files. Cache fields default to 0 for non-caching response shapes (and
+    for test mocks that don't set them — MagicMock would otherwise return
+    a child mock that breaks numeric formatting).
+    """
+    def _int(v) -> int:
+        return v if isinstance(v, int) else 0
+
+    u = response.usage
+    in_t = _int(u.input_tokens)
+    out_t = _int(u.output_tokens)
+    cw = _int(getattr(u, "cache_creation_input_tokens", 0))
+    cr = _int(getattr(u, "cache_read_input_tokens", 0))
+    total_in = in_t + cw + cr
+    hit_pct = (cr / total_in * 100) if total_in else 0
+    return f"in={in_t} out={out_t} cw={cw} cr={cr} hit={hit_pct:.0f}%"
+
+
 def cache_hit_rate(usage: dict) -> float:
     """Fraction of prompt tokens served from cache for a single API call.
 

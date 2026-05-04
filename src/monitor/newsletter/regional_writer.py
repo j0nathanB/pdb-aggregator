@@ -170,11 +170,11 @@ async def write_regional_essay(
                 tool_input = getattr(block, "input", None)
                 break
 
+    from ..trace import format_usage_short
     logger.info(
-        "Regional writer [%s]: done — input=%d, output=%d tokens%s",
+        "Regional writer [%s]: done — %s%s",
         page.region.value,
-        response.usage.input_tokens,
-        response.usage.output_tokens,
+        format_usage_short(response),
         " [tool_use]" if tool_input else "",
     )
 

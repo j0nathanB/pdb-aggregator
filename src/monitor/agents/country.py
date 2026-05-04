@@ -1053,9 +1053,10 @@ async def run_country_agent(
     response_text = "\n".join(text_parts)
 
     via_tool_use = USE_TOOL_SCHEMA and record_tool_input is not None
+    from ..trace import format_usage_short
     logger.info(
-        "Country agent %s: API complete — input=%d, output=%d tokens, stop=%s%s",
-        config.code, response.usage.input_tokens, response.usage.output_tokens,
+        "Country agent %s: API complete — %s stop=%s%s",
+        config.code, format_usage_short(response),
         response.stop_reason,
         " [tool_use]" if via_tool_use else "",
     )

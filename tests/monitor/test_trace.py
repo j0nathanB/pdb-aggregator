@@ -15,6 +15,7 @@ from src.monitor.trace import (
     list_traces,
     extract_usage,
     cache_hit_rate,
+    format_usage_short,
     _trace_path,
 )
 
@@ -202,6 +203,39 @@ class TestExtractUsage:
         usage = extract_usage(response)
         assert usage["cache_creation_input_tokens"] == 0
         assert usage["cache_read_input_tokens"] == 0
+
+
+class TestFormatUsageShort:
+    def test_includes_all_fields(self):
+        r = _mock_response(
+            input_tokens=11217,
+            output_tokens=1247,
+            cache_creation_input_tokens=12213,
+            cache_read_input_tokens=0,
+        )
+        s = format_usage_short(r)
+        assert "in=11217" in s
+        assert "out=1247" in s
+        assert "cw=12213" in s
+        assert "cr=0" in s
+        assert "hit=0%" in s
+
+    def test_computes_hit_pct(self):
+        r = _mock_response(
+            input_tokens=100,
+            output_tokens=50,
+            cache_creation_input_tokens=0,
+            cache_read_input_tokens=900,
+        )
+        s = format_usage_short(r)
+        assert "hit=90%" in s
+
+    def test_handles_missing_cache_fields(self):
+        r = _mock_response(input_tokens=500, output_tokens=200)
+        s = format_usage_short(r)
+        assert "cw=0" in s
+        assert "cr=0" in s
+        assert "hit=0%" in s
 
 
 class TestCacheHitRate:

@@ -358,9 +358,10 @@ async def edit_country(
         client, system_prompt, user_message, country.code, use_model, tools=tools,
     )
 
+    from ..trace import format_usage_short
     logger.info(
-        "Editor [%s]: done — input=%d, output=%d tokens%s",
-        country.code, response.usage.input_tokens, response.usage.output_tokens,
+        "Editor [%s]: done — %s%s",
+        country.code, format_usage_short(response),
         " [tool_use]" if USE_TOOL_SCHEMA else "",
     )
 
@@ -418,9 +419,10 @@ async def edit_country(
                 client, system_prompt, retry_message, f"{country.code}-retry", use_model,
                 tools=None,
             )
+            from ..trace import format_usage_short
             logger.info(
-                "Editor [%s] retry: input=%d, output=%d tokens",
-                country.code, response.usage.input_tokens, response.usage.output_tokens,
+                "Editor [%s] retry: %s",
+                country.code, format_usage_short(response),
             )
             try:
                 parsed = extract_json(response_text, context=f"editor_{country.code}_retry")
@@ -504,9 +506,10 @@ async def edit_regional(
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    from ..trace import format_usage_short
     logger.info(
-        "Editor [regional/%s]: done — input=%d, output=%d tokens",
-        page.region.value, response.usage.input_tokens, response.usage.output_tokens,
+        "Editor [regional/%s]: done — %s",
+        page.region.value, format_usage_short(response),
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
@@ -588,9 +591,10 @@ async def edit_executive(
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    from ..trace import format_usage_short
     logger.info(
-        "Editor [executive]: done — input=%d, output=%d tokens",
-        response.usage.input_tokens, response.usage.output_tokens,
+        "Editor [executive]: done — %s",
+        format_usage_short(response),
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
@@ -753,9 +757,10 @@ async def style_edit_prose(
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    from ..trace import format_usage_short
     logger.info(
-        "Style editor [%s]: done — input=%d, output=%d tokens%s",
-        label, response.usage.input_tokens, response.usage.output_tokens,
+        "Style editor [%s]: done — %s%s",
+        label, format_usage_short(response),
         " [tool_use]" if use_country_tool else "",
     )
 

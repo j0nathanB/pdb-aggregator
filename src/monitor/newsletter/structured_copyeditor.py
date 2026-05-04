@@ -159,9 +159,10 @@ async def _copyedit_prose(
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    from ..trace import format_usage_short
     logger.info(
-        "Copyeditor [%s]: done — input=%d, output=%d tokens%s",
-        label, response.usage.input_tokens, response.usage.output_tokens,
+        "Copyeditor [%s]: done — %s%s",
+        label, format_usage_short(response),
         " [tool_use]" if use_country_tool else "",
     )
 
@@ -372,9 +373,10 @@ async def copyedit_at_a_glance(
     text_parts = [b.text for b in response.content if b.type == "text"]
     response_text = "\n".join(text_parts)
 
+    from ..trace import format_usage_short
     logger.info(
-        "Copyeditor [at_a_glance]: done — input=%d, output=%d tokens",
-        response.usage.input_tokens, response.usage.output_tokens,
+        "Copyeditor [at_a_glance]: done — %s",
+        format_usage_short(response),
     )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
