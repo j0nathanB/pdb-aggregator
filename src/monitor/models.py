@@ -142,11 +142,49 @@ class CategoryMovement(BaseModel):
 class UnexpectedDevelopment(BaseModel):
     headline: str
     date: date
-    source: str
-    source_tier: int = _source_tier_field()
+    sources: list[SourceAttribution] = Field(default_factory=list)
     signal_category: SignalCategory
     assessment: str = ""
     disposition: str = "logged"  # "logged" | "elevated_to_category"
+
+    # Backward-compat: old ledgers and the LLM both emit a single `source` —
+    # the LLM as a {name, url, tier} dict, old ledgers as a string with a
+    # sibling `source_tier` int. Migrate either into the list shape.
+    @model_validator(mode="before")
+    @classmethod
+    def _migrate_single_source(cls, data: dict) -> dict:
+        if not isinstance(data, dict):
+            return data
+        if "source" in data and "sources" not in data:
+            src = data.pop("source")
+            if isinstance(src, dict):
+                data["sources"] = [src]
+            else:
+                data["sources"] = [{
+                    "name": str(src) if src else "unknown",
+                    "url": data.pop("source_url", ""),
+                    "tier": data.pop("source_tier", 2),
+                }]
+        if "sources" in data:
+            data.pop("source", None)
+            data.pop("source_url", None)
+            data.pop("source_tier", None)
+        return data
+
+    @property
+    def source(self) -> str:
+        """Primary source name (backward compat)."""
+        return self.sources[0].name if self.sources else "unknown"
+
+    @property
+    def source_url(self) -> str:
+        """Primary source URL (backward compat)."""
+        return self.sources[0].url if self.sources else ""
+
+    @property
+    def source_tier(self) -> int:
+        """Best (lowest) source tier."""
+        return min((s.tier for s in self.sources), default=2)
 
 
 class AbsenceCheck(BaseModel):
