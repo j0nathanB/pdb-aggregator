@@ -1,0 +1,341 @@
+[
+  {
+    "week": "2026-03-15",
+    "date_range": "2026-03-09 to 2026-03-15",
+    "depth": "deep_dive",
+    "activity_level": {
+      "rating": "moderate",
+      "rationale": "Story #1 (Vatican trip ethics investigation, 22 sources) dominated media coverage as the week's major political crisis, representing significant domestic regime pressure on PM Ruginien\u0117. Story #12 (LSDP polling collapse to 4th place) confirms governing party institutional stress. Other developments (Czech President visit, German brigade deployment, fuel price measures) represent routine governance and alliance management. The prominence of the Vatican scandal (22 sources vs. 2-8 for other stories) indicates media focus on government ethics rather than policy substance."
+    },
+    "category_movements": {
+      "alignment_diplomatic": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Army commander suggests territorial support for US Iran operations, PM expresses surprise",
+            "date": "2026-03-13",
+            "sources": [
+              {
+                "name": "Respublika",
+                "url": "https://respublika.lt/lt/naujienos/lietuva/lietuvos_politika/inga-ruginiene-nustebino-lietuvos-kariuomenes-vadas",
+                "tier": 3
+              }
+            ],
+            "summary": "General Vaik\u0161noras stated Lithuania could help US operations against Iran by providing territory for bombers and fighters, but PM Ruginien\u0117 said no such requests had been made and expressed surprise at the statement",
+            "actors_involved": [
+              "Raimundas Vaik\u0161noras",
+              "Inga Ruginien\u0117"
+            ],
+            "signal_category_relevance": "Indicates potential civil-military coordination gap on forward-leaning US cooperation, but no policy change occurred"
+          },
+          {
+            "headline": "President Naus\u0117da joins EU leaders calling for action against Russian combatants",
+            "date": "2026-03-12",
+            "sources": [
+              {
+                "name": "Delfi",
+                "url": "https://delfi.lt/en/politics/nauseda-and-other-eu-leaders-call-for-action-against-russian-combatants-120223491",
+                "tier": 2
+              },
+              {
+                "name": "15min",
+                "url": "https://15min.lt/naujiena/aktualu/lietuva/gitanas-nauseda-su-kitu-es-saliu-vadovais-ragina-bendrija-neisileisti-rusijos-kariu-56-2640764",
+                "tier": 2
+              }
+            ],
+            "summary": "Naus\u0117da joined leaders from Latvia, Estonia, Poland, Finland, Germany, Romania and Sweden in calling on EU institutions to address Russian soldiers who fought in Ukraine entering EU territory",
+            "actors_involved": [
+              "Gitanas Naus\u0117da"
+            ],
+            "signal_category_relevance": "Routine multilateral EU coordination on Russia policy, consistent with established hard-line position"
+          }
+        ],
+        "prior_assessment": "Lithuania maintains foundational Western alignment while balancing EU institutional loyalty with bilateral US security deepening, as demonstrated by concrete offers of territorial support for US operations",
+        "updated_assessment": "Lithuania maintains foundational Western alignment while managing civil-military coordination challenges on forward-leaning US cooperation, demonstrated by army leadership suggesting territorial support for Iran operations while political leadership maintains that no such requests have been made",
+        "confidence_change": {
+          "from_": 3,
+          "to": 2,
+          "reason": "Single-source evidence for the army commander statement prevents higher confidence, and the apparent military-political disconnect on US cooperation introduces uncertainty about coordination mechanisms"
+        }
+      },
+      "security_defense": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Lithuanian Armed Forces receive AMRAAM and Spike missiles worth \u20ac5.7 million",
+            "date": "2026-03-10",
+            "sources": [
+              {
+                "name": "Defence Industry Europe",
+                "url": "https://defence-industry.eu/lithuania-receives-additional-amraam-and-spike-lr2-missiles-to-strengthen-air-defence-and-anti-armour-capabilities",
+                "tier": 3
+              }
+            ],
+            "summary": "Lithuania received additional AMRAAM air defense missiles and Spike LR2 anti-tank missiles, with separate reports of plans to assemble German Leopard 2A8 tanks domestically",
+            "actors_involved": [
+              "Lithuanian Armed Forces"
+            ],
+            "signal_category_relevance": "Routine execution of planned defense procurement and capability development timeline"
+          },
+          {
+            "headline": "German brigade deployment reaches 1,700 troops with target above 2,000",
+            "date": "2026-03-13",
+            "sources": [
+              {
+                "name": "LRT",
+                "url": "https://www.lrt.lt/en/news-in-english/19/2866089/about-1-700-german-brigade-troops-now-serving-in-lithuania-ministry-says",
+                "tier": 2
+              }
+            ],
+            "summary": "About 1,700 German troops from the 45th Armoured Brigade are currently serving in Lithuania, with numbers expected to exceed 2,000, as infrastructure development continues",
+            "actors_involved": [
+              "Lithuanian Armed Forces"
+            ],
+            "signal_category_relevance": "Continued implementation of NATO Enhanced Forward Presence expansion according to planned timeline"
+          }
+        ],
+        "prior_assessment": "Lithuania continues implementing planned defense cooperation expansion through trilateral border security coordination and US partnership recognition, with 2026 deliveries of major systems proceeding on schedule",
+        "updated_assessment": "Lithuania continues implementing planned defense cooperation expansion through continued weapons deliveries and German brigade buildup, maintaining the established trajectory of capability development while managing emerging civil-military coordination challenges",
+        "confidence_change": null
+      },
+      "economic_tech": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Government considers fuel price measures amid Middle East conflict impact",
+            "date": "2026-03-12",
+            "sources": [
+              {
+                "name": "Delfi",
+                "url": "https://delfi.lt/verslas/energetika/ruginiene-apie-degalu-kainas-jau-turime-viena-svarbu-europini-sprendima-120222886",
+                "tier": 2
+              },
+              {
+                "name": "LRT",
+                "url": "https://lrt.lt/naujienos/eismas/7/2865252/ruginiene-tea-leidimas-naudotis-naftos-rezervais-pirmas-zingsnis-suvaldant-kuro-kainas",
+                "tier": 2
+              }
+            ],
+            "summary": "Rising fuel prices due to Middle East conflict prompted government discussions on potential measures including price caps and strategic oil reserves access, with EU approval for member states to use reserves",
+            "actors_involved": [
+              "Inga Ruginien\u0117",
+              "Gitanas Naus\u0117da"
+            ],
+            "signal_category_relevance": "Government economic crisis response coordinated through EU framework, demonstrating continued integration with European energy policy mechanisms"
+          },
+          {
+            "headline": "Bank of Lithuania imposes penalties on financial institutions for compliance violations",
+            "date": "2026-03-14",
+            "sources": [
+              {
+                "name": "LRT",
+                "url": "https://www.lrt.lt/naujienos/verslas/4/2865113/lietuvos-bankas-valorpay-skyre-30-tukst-euru-bauda",
+                "tier": 2
+              },
+              {
+                "name": "Delfi",
+                "url": "https://www.delfi.lt/verslas/naujienos/lvat-keliu-simtu-tukstanciu-euru-baudas-lietuvos-bankas-skyre-pagristai-120221704",
+                "tier": 2
+              }
+            ],
+            "summary": "The central bank imposed a \u20ac30,000 fine on ValorPay for monitoring violations and upheld previous fines against electronic money institutions for money laundering prevention breaches",
+            "actors_involved": [
+              "Bank of Lithuania"
+            ],
+            "signal_category_relevance": "Continued regulatory oversight of financial sector with enforcement actions against AML violations, maintaining established pattern of fintech sector supervision"
+          }
+        ],
+        "prior_assessment": "Lithuania maintains routine economic governance through continued central bank regulatory oversight and strategic energy sector expansion, including sustained Ukraine LNG cooperation while managing offshore wind financing challenges",
+        "updated_assessment": "Lithuania maintains routine economic governance through crisis response coordination with EU partners on fuel prices and continued central bank enforcement of financial sector compliance, demonstrating both EU integration and domestic regulatory capacity",
+        "confidence_change": null
+      },
+      "institutional": {
+        "movement": "none",
+        "developments": [],
+        "prior_assessment": "Lithuania's institutional engagement continues adapting to European-led coordination patterns while actively seeking EU and NATO institutional funding for military mobility infrastructure",
+        "updated_assessment": "Lithuania's institutional engagement continues adapting to European-led coordination patterns while actively seeking EU and NATO institutional funding for military mobility infrastructure",
+        "confidence_change": null
+      },
+      "domestic_regime": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "PM Ruginien\u0117 faces ethics investigation over Vatican family trip funded by state",
+            "date": "2026-03-10",
+            "sources": [
+              {
+                "name": "LRT",
+                "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2863158/ruginiene-pasiaiskino-del-seimos-kelioniu-toks-viso-pasaulio-protokolas",
+                "tier": 2
+              },
+              {
+                "name": "Delfi",
+                "url": "https://www.delfi.lt/naujienos/politika/ruginienes-seimos-kelione-i-vatikana-atskleide-viena-premjeres-bruoza-ji-isgyvena-svajinga-akimirka-120222033",
+                "tier": 2
+              },
+              {
+                "name": "15min",
+                "url": "https://15min.lt/naujiena/aktualu/lietuva/ruginiu-seimos-vizitas-vatikane-dovanos-grizimas-spartanu-ir-keliones-kaina-56-2637652",
+                "tier": 2
+              }
+            ],
+            "summary": "Prime Minister Ruginien\u0117's official visit to Vatican with her family at state expense (\u20ac8,000) sparked opposition complaints and an ethics commission investigation, with Ruginien\u0117 defending the practice as standard diplomatic protocol",
+            "actors_involved": [
+              "Inga Ruginien\u0117"
+            ],
+            "signal_category_relevance": "Major government ethics controversy generating sustained media attention and institutional investigation, representing intensification of the institutional pressure pattern on the governing coalition"
+          },
+          {
+            "headline": "LSDP drops to fourth place in polling while Conservative opposition leads",
+            "date": "2026-02-21",
+            "sources": [
+              {
+                "name": "Delfi",
+                "url": "https://www.delfi.lt/en/politics/homeland-union-leads-in-latest-poll-lsdp-ranks-fourth-120223485",
+                "tier": 2
+              },
+              {
+                "name": "LRT",
+                "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2867030/apklausa-gyventoju-pasitikejimas-skverneliu-smuko-populiariausia-partija-socdemai",
+                "tier": 2
+              }
+            ],
+            "summary": "Latest polling shows TS-LKD maintaining lead with 13.6% support while governing LSDP dropped to fourth place with 7.1% support, down from 7.3% in January",
+            "actors_involved": [
+              "TS-LKD",
+              "LSDP"
+            ],
+            "signal_category_relevance": "Governing party support collapse confirms institutional stress pattern and suggests declining political legitimacy amid ethics controversies"
+          }
+        ],
+        "prior_assessment": "Lithuania continues facing institutional pressure from coalition dynamics involving government ethics controversies, PPNA financing scrutiny, and internal LSDP divisions over coalition management, maintaining the established pattern of institutional stress without coalition breakdown",
+        "updated_assessment": "Lithuania faces intensifying institutional pressure as the PM's Vatican trip ethics scandal generates major media attention while LSDP polling collapses to fourth place, representing an escalation of the established government ethics controversy pattern that now threatens governing party electoral viability",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "Multiple independent sources document the Vatican ethics scandal with extensive media coverage (22 sources), while polling data from multiple firms confirms LSDP's electoral decline"
+        }
+      }
+    },
+    "unexpected_developments": [
+      {
+        "headline": "Unknown",
+        "date": "2026-03-15",
+        "source": "Respublika.lt",
+        "source_tier": 2,
+        "signal_category": "alignment_diplomatic",
+        "assessment": "",
+        "disposition": "logged"
+      }
+    ],
+    "absence_check": [],
+    "devils_advocate": {
+      "challenges": [
+        "The alignment_diplomatic confidence score of 2 is too generous for single-source tier 3 evidence (Respublika) documenting a major strategic commitment to provide territorial support for US Iran operations. Tier 3 sources reporting claims of this magnitude without corroboration from government officials or tier 2 outlets should carry confidence 1, not 2.",
+        "The domestic_regime confidence increase to 4 inflates source strength by conflating story prominence with evidentiary corroboration. The analyst claims 'multiple independent sources' but cites only LRT (tier 2) for Vatican scandal and Delfi (tier 2) for polling data. The '22 sources' figure measures media attention, not independent verification of the developments.",
+        "The structural claim check continues the analytical neglect pattern flagged by devil's advocate for four consecutive weeks. Listing '[unknown] status=confirmed' without specifying which claim violates the framework requirement and indicates claims weren't actually evaluated despite the notation.",
+        "The analyst systematically ignores repeated devil's advocate challenges about missing competing interpretations, now extending to seven consecutive weeks. Significant movements in alignment_diplomatic and domestic_regime lack alternative explanations despite framework requirements.",
+        "The security_defense assessment demonstrates narrative persistence through language recycling rather than fresh evidence evaluation. The nearly identical phrasing about 'planned defense cooperation expansion' across multiple weeks suggests comfortable narrative carryover rather than weekly re-validation."
+      ],
+      "recommended_adjustments": [
+        "Downgrade alignment_diplomatic confidence to 1 until tier 2 sources independently corroborate the army commander's territorial support statement, or acknowledge this as unconfirmed military leadership positioning.",
+        "Clarify that domestic_regime confidence 4 reflects two tier 2 sources for separate developments, not the 22-source media coverage figure, or adjust confidence to 3 to match actual source strength.",
+        "Either specify which numbered structural claim was evaluated and provide the evidence basis, or acknowledge no structural claims were checked this week and remove the false '[unknown]' entry.",
+        "Provide competing interpretations for both alignment_diplomatic (military-political coordination gap vs deliberate signaling strategy) and domestic_regime (temporary scandal vs institutional credibility erosion).",
+        "Re-evaluate whether security_defense developments represent continuation of established patterns or require updated analytical framing based on this week's specific evidence rather than prior assessments."
+      ]
+    },
+    "self_corrections": [
+      {
+        "category": "alignment_diplomatic",
+        "prior_week": "2026-03-15",
+        "original_claim": "",
+        "correction": "The territorial support willingness appears to originate from military leadership rather than coordinated government policy",
+        "root_cause": "Over-interpreted single prior source as reflecting comprehensive government position rather than military leadership perspective getting ahead of political coordination"
+      }
+    ],
+    "structural_claim_checks": [
+      {
+        "claim_ref": "unknown",
+        "claim_text": "The partisan resistance narrative serves as the legitimating mythology of the post-1990 state",
+        "status": "confirmed",
+        "evidence": "Independence anniversary commemorations (Story #5) proceeded with standard partisan resistance references in speeches by Ruginien\u0117 and Naus\u0117da, maintaining the established mythological framework",
+        "confidence_in_claim": 3
+      }
+    ],
+    "story_clusters": [
+      {
+        "headline": "PM Ruginien\u0117 faces ethics investigation over Vatican family trip funded by state",
+        "summary": "Prime Minister Inga Ruginien\u0117's official visit to Vatican with her family at state expense (8,000 EUR) sparked opposition complaints and an ethics commission investigation. Ruginien\u0117 defended the practice as standard diplomatic protocol.",
+        "source_url": "https://www.lrt.lt/naujienos/lietuvoje/2/2863158/ruginiene-pasiaiskino-del-seimos-kelioniu-toks-viso-pasaulio-protokolas",
+        "source_name": "delfi.lt"
+      },
+      {
+        "headline": "Government considers fuel price measures amid Middle East conflict impact",
+        "summary": "Rising fuel prices due to Middle East conflict prompted government discussions on potential measures including price caps and using strategic oil reserves. EU approved member states accessing oil reserves.",
+        "source_url": "https://delfi.lt/verslas/energetika/ruginiene-apie-degalu-kainas-jau-turime-viena-svarbu-europini-sprendima-120222886",
+        "source_name": "delfi.lt"
+      },
+      {
+        "headline": "President Naus\u0117da proposes demographic initiatives to address 'ticking bomb'",
+        "summary": "President Naus\u0117da announced plans to propose measures addressing Lithuania's demographic crisis, calling it a 'ticking bomb' and suggesting tax reductions for families with children.",
+        "source_url": "https://15min.lt/naujiena/aktualu/lietuva/gitanas-nauseda-zada-iniciatyvas-demografinei-padeciai-gerinti-vadina-ja-tiksincia-bomba-56-2637644",
+        "source_name": "15min.lt"
+      },
+      {
+        "headline": "Czech President Pavel conducts state visit to Lithuania",
+        "summary": "Czech Republic President Petr Pavel made an official state visit to Lithuania, meeting with President Naus\u0117da and PM Ruginien\u0117 to discuss bilateral cooperation, defense industry partnerships, and regional security.",
+        "source_url": "https://lrt.lt/naujienos/lietuvoje/2/2865441/prezidenturoje-valstybine-vakariene-cekijos-pirmosios-poros-garbei",
+        "source_name": "lrt.lt"
+      },
+      {
+        "headline": "Lithuania marks 36th anniversary of independence restoration",
+        "summary": "Lithuania commemorated the 36th anniversary of independence restoration on March 11 with ceremonies and speeches by political leaders highlighting the country's achievements and current challenges.",
+        "source_url": "https://www.delfi.lt/naujienos/politika/ruginiene-kovo-11-osios-minejime-lietuva-padare-stulbinanti-progresa-120222395",
+        "source_name": "delfi.lt"
+      },
+      {
+        "headline": "Lithuania receives AMRAAM and Spike missiles, advances Leopard tank assembly plans",
+        "summary": "Lithuanian Armed Forces received over 5.7 million EUR worth of AMRAAM air defense missiles and Spike anti-tank missiles. Separately, Lithuania finalized plans to assemble German Leopard 2A8 tanks domestically.",
+        "source_url": "https://kam.lt/en/more-amraam-and-spike-lr2-missiles-arrived-to-lithuanian-armed-forces-warehouses/",
+        "source_name": "defence-industry.eu"
+      },
+      {
+        "headline": "German brigade deployment in Lithuania reaches 1,700 troops",
+        "summary": "About 1,700 German troops from the 45th Armoured Brigade are currently serving in Lithuania, with numbers expected to exceed 2,000. Infrastructure development continues for the permanent deployment.",
+        "source_url": "https://www.lrt.lt/en/news-in-english/19/2866089/about-1-700-german-brigade-troops-now-serving-in-lithuania-ministry-says",
+        "source_name": "lrt.lt"
+      },
+      {
+        "headline": "Bank of Lithuania imposes fines on financial institutions for compliance violations",
+        "summary": "The central bank imposed various penalties including a 30,000 EUR fine on ValorPay for monitoring violations and upheld earlier fines against electronic money institutions for money laundering prevention breaches.",
+        "source_url": "https://www.lrt.lt/naujienos/verslas/4/2862574/teismas-lb-pagristai-skyre-simtatukstantines-baudas-uz-pinigu-plovimo-pazeidimus",
+        "source_name": "delfi.lt"
+      },
+      {
+        "headline": "Finance Ministry updates expectations for state energy company Ignitis Group",
+        "summary": "The Finance Ministry issued updated shareholder expectations for Ignitis Group, emphasizing competitive pricing, economically viable offshore wind development, and data center business expansion plans.",
+        "source_url": "https://www.lrt.lt/naujienos/verslas/4/2862108/lukesciai-igniciui-atsiperkantis-vejo-parkas-elektros-paklausos-didinimas-dividendai",
+        "source_name": "investing.com"
+      },
+      {
+        "headline": "EU leaders including Naus\u0117da call for action against Russian combatants",
+        "summary": "President Naus\u0117da joined leaders from Latvia, Estonia, Poland, Finland, Germany, Romania and Sweden in calling on EU institutions to address the issue of Russian soldiers who fought in Ukraine entering EU territory.",
+        "source_url": "https://15min.lt/naujiena/aktualu/lietuva/gitanas-nauseda-su-kitu-es-saliu-vadovais-ragina-bendrija-neisileisti-rusijos-kariu-56-2640764",
+        "source_name": "delfi.lt"
+      },
+      {
+        "headline": "LSDP leadership contest develops with multiple candidates nominated",
+        "summary": "Multiple LSDP regional branches nominated candidates for party leadership elections in May, including acting chairman Mindaugas Sinkevi\u010dius, Robert Duchnevi\u010dius, Vytautas Grubliauskas, and Jevgenija Mitrofanova.",
+        "source_url": "https://aina.lt/lsdp-skyriai-kandidatais-i-pirmininkus-jau-iskele-sinkeviciu-duchneviciu-grubliauska-mitrofanova/",
+        "source_name": "bernardinai.lt"
+      },
+      {
+        "headline": "Opposition polling shows Conservative Party lead, LSDP drops to fourth",
+        "summary": "Latest opinion polls show the Conservative Homeland Union (TS-LKD) maintaining its lead with 13.6% support, while the governing Social Democrats (LSDP) dropped to fourth place with 7.1% support.",
+        "source_url": "https://www.delfi.lt/en/politics/homeland-union-leads-in-latest-poll-lsdp-ranks-fourth-120223485",
+        "source_name": "delfi.lt"
+      }
+    ]
+  }
+]
