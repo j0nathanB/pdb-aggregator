@@ -57,6 +57,7 @@ resource "aws_ecs_task_definition" "pipeline" {
       environment = [
         { name = "ENVIRONMENT", value = var.environment },
         { name = "REPO", value = var.content_repo },
+        { name = "MPM_USE_TOOL_SCHEMA", value = "1" },
       ]
 
       secrets = [
