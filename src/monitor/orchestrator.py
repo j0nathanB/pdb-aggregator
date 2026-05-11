@@ -19,10 +19,20 @@ from typing import Optional
 
 import anthropic
 
-from .agents.country import CountryAgentOutput, run_country_agent
+from .agents.country import (
+    CountryAgentOutput,
+    build_country_agent_request,
+    process_country_agent_response,
+    run_country_agent,
+)
 from .agents.devils_advocate import run_devils_advocate
 from .agents.expansion import ExpansionResult, expand_all_countries
-from .agents.government import GovernmentAgentOutput, run_government_agent
+from .agents.government import (
+    GovernmentAgentOutput,
+    build_government_agent_request,
+    process_government_agent_response,
+    run_government_agent,
+)
 from .agents.story_map import (
     StoryMapOutput,
     _empty_story_map,
@@ -172,16 +182,39 @@ def assemble_country_domains(
 # Layer 2: Government source collection
 # =============================================================================
 
-async def collect_layer2_country(
+@dataclass
+class _Layer2Inputs:
+    """Inputs prepared for the government source agent — search responses,
+    extracted content, gaps, failures. Built by _collect_layer2_inputs;
+    consumed by run_government_agent in the sync path or batched in the
+    USE_BATCH path."""
+
+    config: CountryConfig
+    gov_config: GovernmentDomainConfig
+    processing_date: date
+    result: Layer2Result  # search_responses + extraction_results, error if any
+    extracted_content: list[dict]
+    discovery_gaps: list[dict]
+    extraction_failures: list[dict]
+    information_culture: str
+
+
+async def _collect_layer2_inputs(
     config: CountryConfig,
     gov_config: GovernmentDomainConfig,
     searchapi_client: SearchAPIClient,
     extractor: ExtractionOrchestrator,
     processing_date: date,
-) -> Layer2Result:
-    """Run Layer 2 pipeline for a single country: SearchAPI → extraction → gov agent."""
+) -> _Layer2Inputs:
+    """Run SearchAPI + extraction for one country and build the gov-agent
+    inputs. Does not invoke the agent. On any failure, returns a
+    _Layer2Inputs whose `result.error` is set and whose content lists are
+    empty — the agent step is skipped downstream."""
     code = config.code
     result = Layer2Result(code=code)
+    extracted_content: list[dict] = []
+    discovery_gaps: list[dict] = []
+    extraction_failures: list[dict] = []
 
     try:
         # Build domain query list from government config
@@ -217,7 +250,6 @@ async def collect_layer2_country(
             result.extraction_results = await extractor.extract_batch(all_urls)
 
         # Build extracted_content for government agent
-        extracted_content = []
         url_to_snippet: dict[str, str] = {}
         for resp in result.search_responses:
             for sr in resp.results:
@@ -239,7 +271,6 @@ async def collect_layer2_country(
             for sr in resp.results:
                 domains_with_results.add(_domain_from_url(sr.url))
 
-        discovery_gaps = []
         for dom in gov_config.domains:
             if dom.domain not in domains_with_results:
                 discovery_gaps.append({
@@ -249,7 +280,6 @@ async def collect_layer2_country(
                 })
 
         # Identify extraction failures
-        extraction_failures = []
         for er in result.extraction_results:
             if not er.success:
                 extraction_failures.append({
@@ -259,23 +289,55 @@ async def collect_layer2_country(
                     "content_available": "snippet" if url_to_snippet.get(er.url) else "none",
                 })
 
-        # Government source agent
-        logger.info(f"Layer 2 agent: {code}")
-        result.gov_output = await run_government_agent(
-            country_config=config,
-            extracted_content=extracted_content,
-            processing_date=processing_date,
-            information_culture=gov_config.information_culture,
-            gov_domain_config=gov_config,
-            discovery_gaps=discovery_gaps or None,
-            extraction_failures=extraction_failures or None,
-        )
-
     except Exception as e:
-        logger.error(f"Layer 2 failed for {code}: {e}", exc_info=True)
+        logger.error(f"Layer 2 inputs failed for {code}: {e}", exc_info=True)
         result.error = str(e)
 
-    return result
+    return _Layer2Inputs(
+        config=config,
+        gov_config=gov_config,
+        processing_date=processing_date,
+        result=result,
+        extracted_content=extracted_content,
+        discovery_gaps=discovery_gaps,
+        extraction_failures=extraction_failures,
+        information_culture=gov_config.information_culture,
+    )
+
+
+async def collect_layer2_country(
+    config: CountryConfig,
+    gov_config: GovernmentDomainConfig,
+    searchapi_client: SearchAPIClient,
+    extractor: ExtractionOrchestrator,
+    processing_date: date,
+) -> Layer2Result:
+    """Sync path: collect inputs and invoke the gov agent for one country."""
+    inputs = await _collect_layer2_inputs(
+        config, gov_config, searchapi_client, extractor, processing_date,
+    )
+    if inputs.result.error:
+        return inputs.result
+
+    try:
+        logger.info(f"Layer 2 agent: {config.code}")
+        inputs.result.gov_output = await run_government_agent(
+            country_config=config,
+            extracted_content=inputs.extracted_content,
+            processing_date=processing_date,
+            information_culture=inputs.information_culture,
+            gov_domain_config=gov_config,
+            discovery_gaps=inputs.discovery_gaps or None,
+            extraction_failures=inputs.extraction_failures or None,
+        )
+    except Exception as e:
+        # run_government_agent itself returns non-blocking on internal
+        # failures; this catches the truly unexpected (e.g. anthropic
+        # transport error before the agent's own try wrapped the call).
+        logger.error(f"Layer 2 agent failed for {config.code}: {e}", exc_info=True)
+        inputs.result.error = str(e)
+
+    return inputs.result
 
 
 async def collect_layer2(
@@ -307,26 +369,31 @@ async def collect_layer2(
     try:
         async with SearchAPIClient() as searchapi_client:
             async with ExtractionOrchestrator() as extractor:
+                if USE_BATCH:
+                    await _collect_layer2_batched(
+                        configs, gov_configs, searchapi_client, extractor,
+                        processing_date, semaphore, results,
+                    )
+                else:
+                    async def _collect(code: str) -> Layer2Result:
+                        async with semaphore.acquire(code):
+                            return await collect_layer2_country(
+                                config=configs[code],
+                                gov_config=gov_configs[code],
+                                searchapi_client=searchapi_client,
+                                extractor=extractor,
+                                processing_date=processing_date,
+                            )
 
-                async def _collect(code: str) -> Layer2Result:
-                    async with semaphore.acquire(code):
-                        return await collect_layer2_country(
-                            config=configs[code],
-                            gov_config=gov_configs[code],
-                            searchapi_client=searchapi_client,
-                            extractor=extractor,
-                            processing_date=processing_date,
-                        )
+                    tasks = [_collect(code) for code in gov_configs]
+                    layer2_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-                tasks = [_collect(code) for code in gov_configs]
-                layer2_results = await asyncio.gather(*tasks, return_exceptions=True)
-
-                for code, lr in zip(gov_configs.keys(), layer2_results):
-                    if isinstance(lr, Exception):
-                        logger.error("Layer 2 exception for %s: %s", code, lr, exc_info=lr)
-                        results[code] = Layer2Result(code=code, error=str(lr))
-                    else:
-                        results[code] = lr
+                    for code, lr in zip(gov_configs.keys(), layer2_results):
+                        if isinstance(lr, Exception):
+                            logger.error("Layer 2 exception for %s: %s", code, lr, exc_info=lr)
+                            results[code] = Layer2Result(code=code, error=str(lr))
+                        else:
+                            results[code] = lr
 
     except ValueError as e:
         # SearchAPI or extraction client initialization failure (missing API key)
@@ -336,6 +403,125 @@ async def collect_layer2(
                 results[code] = Layer2Result(code=code, error=str(e))
 
     return results
+
+
+async def _collect_layer2_batched(
+    configs: dict[str, CountryConfig],
+    gov_configs: dict[str, GovernmentDomainConfig],
+    searchapi_client: SearchAPIClient,
+    extractor: ExtractionOrchestrator,
+    processing_date: date,
+    semaphore: TrackedSemaphore,
+    results: dict[str, Layer2Result],
+) -> None:
+    """Batched Layer 2 path: collect search+extract inputs for all countries
+    in parallel (bounded by semaphore), then batch the gov-agent calls in a
+    single Anthropic Batch API submission. Writes into `results` in place
+    (matches the sync path's contract)."""
+    from .config import ANTHROPIC_API_KEY
+
+    # Phase A: collect inputs for all countries (HTTP I/O parallelism)
+    async def _inputs_for(code: str) -> _Layer2Inputs:
+        async with semaphore.acquire(code):
+            return await _collect_layer2_inputs(
+                config=configs[code],
+                gov_config=gov_configs[code],
+                searchapi_client=searchapi_client,
+                extractor=extractor,
+                processing_date=processing_date,
+            )
+
+    input_tasks = [_inputs_for(code) for code in gov_configs]
+    input_outcomes = await asyncio.gather(*input_tasks, return_exceptions=True)
+
+    inputs_by_code: dict[str, _Layer2Inputs] = {}
+    for code, outcome in zip(gov_configs.keys(), input_outcomes):
+        if isinstance(outcome, Exception):
+            logger.error("Layer 2 inputs exception for %s: %s", code, outcome, exc_info=outcome)
+            results[code] = Layer2Result(code=code, error=str(outcome))
+            continue
+        if outcome.result.error:
+            # _collect_layer2_inputs already logged; record and skip the agent.
+            results[code] = outcome.result
+            continue
+        inputs_by_code[code] = outcome
+
+    if not inputs_by_code:
+        logger.info("Layer 2 batch: no countries with usable inputs")
+        return
+
+    # Phase B: build gov-agent requests; short-circuit empties to their
+    # final Layer2Result without batching.
+    builts: dict[str, object] = {}
+    for code, inputs in inputs_by_code.items():
+        built_or_output = build_government_agent_request(
+            country_config=inputs.config,
+            extracted_content=inputs.extracted_content,
+            processing_date=inputs.processing_date,
+            information_culture=inputs.information_culture,
+            gov_domain_config=inputs.gov_config,
+            discovery_gaps=inputs.discovery_gaps or None,
+            extraction_failures=inputs.extraction_failures or None,
+        )
+        if isinstance(built_or_output, GovernmentAgentOutput):
+            # No content / no gaps / no failures — no API call needed.
+            inputs.result.gov_output = built_or_output
+            results[code] = inputs.result
+        else:
+            builts[code] = built_or_output
+
+    if not builts:
+        return
+
+    # Phase C: submit batch
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+    logger.info(
+        "Layer 2 agent: submitting batch for %d countries (%d short-circuited)",
+        len(builts), len(inputs_by_code) - len(builts),
+    )
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    requests = [BatchRequest(b.custom_id, b.params) for b in builts.values()]
+    batch_results = await run_batch(client, requests, label="government")
+
+    # Phase D: dispatch responses, with sync fallback on batch failures.
+    async def _dispatch(code: str) -> None:
+        built = builts[code]
+        inputs = inputs_by_code[code]
+        br = batch_results.get(code)
+        gov_output: GovernmentAgentOutput | None = None
+        try:
+            if br is not None and br.succeeded:
+                gov_output = process_government_agent_response(built, br.message)
+            else:
+                logger.warning(
+                    "Government agent %s: batch %s — retrying sync",
+                    code, br.error_type if br else "missing",
+                )
+        except Exception as e:
+            logger.warning(
+                "Government agent %s: response processing failed (%s) — retrying sync",
+                code, e,
+            )
+
+        if gov_output is None:
+            # run_government_agent is itself non-blocking (returns
+            # empty-with-failure rather than raising) — match the sync
+            # path's behavior on any further failure.
+            gov_output = await run_government_agent(
+                country_config=inputs.config,
+                extracted_content=inputs.extracted_content,
+                processing_date=inputs.processing_date,
+                information_culture=inputs.information_culture,
+                gov_domain_config=inputs.gov_config,
+                discovery_gaps=inputs.discovery_gaps or None,
+                extraction_failures=inputs.extraction_failures or None,
+            )
+
+        inputs.result.gov_output = gov_output
+        results[code] = inputs.result
+
+    await asyncio.gather(*[_dispatch(code) for code in builts])
 
 
 def _domain_from_url(url: str) -> str:
@@ -476,31 +662,118 @@ async def _run_story_map_batched(
 
 
 # =============================================================================
+# Country agent orchestration (batch path)
+# =============================================================================
+
+async def _run_country_agents_batched(
+    deep_dive_codes: list[str],
+    configs: dict[str, CountryConfig],
+    ledgers: dict[str, CountryLedger],
+    end_date: date,
+    domain_maps: dict[str, dict],
+    story_maps: dict[str, StoryMapOutput],
+    extraction_map: dict[str, list[ExtractionResult]],
+    gov_findings_map: dict[str, str],
+    recorder: RunRecorder | None,
+) -> list[CountryResult]:
+    """Batch the country_agent stage for all deep-dive countries, then run
+    _post_country_agent per country in parallel.
+
+    Per-request batch failures fall back to a full sync run_country_agent
+    (with the existing retry policy). A complete batch failure (raised by
+    the driver, e.g. transport error or timeout) propagates — the caller
+    decides whether to retry or fall back to the sync path.
+    """
+    from .config import ANTHROPIC_API_KEY
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    builts: dict[str, object] = {}
+    for code in deep_dive_codes:
+        domains = domain_maps.get(code, {})
+        builts[code] = build_country_agent_request(
+            configs[code], ledgers[code], end_date,
+            allowed_domains=domains.get("allowed_domains"),
+            story_map=story_maps.get(code),
+            extracted_articles=extraction_map.get(code),
+            gov_findings=gov_findings_map.get(code, ""),
+        )
+
+    logger.info("Country agent: submitting batch for %d deep-dive countries", len(builts))
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    requests = [BatchRequest(b.custom_id, b.params) for b in builts.values()]
+    batch_results = await run_batch(client, requests, label="country")
+
+    async def _dispatch(code: str) -> CountryResult:
+        built = builts[code]
+        br = batch_results.get(code)
+        output: CountryAgentOutput | None = None
+        try:
+            if br is not None and br.succeeded:
+                output = process_country_agent_response(built, br.message)
+            else:
+                logger.warning(
+                    "Country agent %s: batch %s — retrying sync",
+                    code, br.error_type if br else "missing",
+                )
+        except Exception as e:
+            logger.warning(
+                "Country agent %s: response processing failed (%s) — retrying sync",
+                code, e,
+            )
+
+        if output is None:
+            try:
+                domains = domain_maps.get(code, {})
+                output = await with_retry(
+                    run_country_agent,
+                    configs[code], ledgers[code], end_date,
+                    domains.get("allowed_domains"),
+                    story_map=story_maps.get(code),
+                    extracted_articles=extraction_map.get(code),
+                    gov_findings=gov_findings_map.get(code, ""),
+                    context=f"country_agent_{code}",
+                )
+            except Exception as e:
+                logger.error(
+                    f"Country agent failed for {code} (batch + sync fallback): {e}",
+                    exc_info=True,
+                )
+                return CountryResult(
+                    code=code,
+                    country=configs[code].country,
+                    depth=Depth.DEEP_DIVE,
+                    success=False,
+                    error=str(e),
+                )
+
+        return await _post_country_agent(
+            configs[code], ledgers[code], end_date, output,
+            story_maps.get(code), extraction_map.get(code), recorder,
+        )
+
+    return await asyncio.gather(*[_dispatch(code) for code in builts])
+
+
+# =============================================================================
 # Single-country processing
 # =============================================================================
 
-async def process_deep_dive(
+async def _post_country_agent(
     config: CountryConfig,
     ledger: CountryLedger,
     end_date: date,
-    allowed_domains: list[str] | None = None,
-    story_map: Optional[StoryMapOutput] = None,
-    extracted_articles: Optional[list[ExtractionResult]] = None,
-    gov_findings: str = "",
-    recorder: RunRecorder | None = None,
+    output: CountryAgentOutput,
+    story_map: Optional[StoryMapOutput],
+    extracted_articles: Optional[list[ExtractionResult]],
+    recorder: RunRecorder | None,
 ) -> CountryResult:
-    """Run country agent + devil's advocate for a single deep-dive country."""
+    """Per-country pipeline after the country agent has produced its output:
+    story-cluster attachment, story_map sidecar save, recorder write, devil's
+    advocate, validation, source attribution. Called from both the sync
+    process_deep_dive path and the batch country-agent dispatch path so the
+    per-country contract is in one place."""
     try:
-        # Country agent (with retry)
-        logger.info(f"Deep dive: {config.code} ({config.country})")
-        output = await with_retry(
-            run_country_agent, config, ledger, end_date, allowed_domains,
-            story_map=story_map,
-            extracted_articles=extracted_articles,
-            gov_findings=gov_findings,
-            context=f"country_agent_{config.code}",
-        )
-
         # Attach story map clusters to the weekly entry for newsletter rendering
         if story_map and story_map.stories:
             output.weekly_entry.story_clusters = [
@@ -586,7 +859,7 @@ async def process_deep_dive(
         )
 
     except Exception as e:
-        logger.error(f"Deep dive failed for {config.code}: {e}", exc_info=True)
+        logger.error(f"Deep dive post-processing failed for {config.code}: {e}", exc_info=True)
         return CountryResult(
             code=config.code,
             country=config.country,
@@ -594,6 +867,40 @@ async def process_deep_dive(
             success=False,
             error=str(e),
         )
+
+
+async def process_deep_dive(
+    config: CountryConfig,
+    ledger: CountryLedger,
+    end_date: date,
+    allowed_domains: list[str] | None = None,
+    story_map: Optional[StoryMapOutput] = None,
+    extracted_articles: Optional[list[ExtractionResult]] = None,
+    gov_findings: str = "",
+    recorder: RunRecorder | None = None,
+) -> CountryResult:
+    """Run country agent + per-country post-processing for one deep-dive country."""
+    logger.info(f"Deep dive: {config.code} ({config.country})")
+    try:
+        output = await with_retry(
+            run_country_agent, config, ledger, end_date, allowed_domains,
+            story_map=story_map,
+            extracted_articles=extracted_articles,
+            gov_findings=gov_findings,
+            context=f"country_agent_{config.code}",
+        )
+    except Exception as e:
+        logger.error(f"Country agent failed for {config.code}: {e}", exc_info=True)
+        return CountryResult(
+            code=config.code,
+            country=config.country,
+            depth=Depth.DEEP_DIVE,
+            success=False,
+            error=str(e),
+        )
+    return await _post_country_agent(
+        config, ledger, end_date, output, story_map, extracted_articles, recorder,
+    )
 
 
 async def process_maintenance(
@@ -1021,34 +1328,93 @@ async def run_desk_pipeline(
             if findings_text:
                 gov_findings_map[code] = "\n".join(findings_text)
 
-    semaphore = TrackedSemaphore(max_concurrent, "country_agents")
+    deep_dive_codes = [
+        code for code in configs
+        if depth_map.get(code, Depth.DEEP_DIVE) == Depth.DEEP_DIVE
+    ]
+    maintenance_codes = [
+        code for code in configs
+        if depth_map.get(code, Depth.DEEP_DIVE) != Depth.DEEP_DIVE
+    ]
 
-    async def _process(code: str) -> CountryResult:
-        async with semaphore.acquire(code):
-            config = configs[code]
-            ledger = ledgers[code]
-            depth = depth_map.get(code, Depth.DEEP_DIVE)  # default deep dive for unknown
+    if USE_BATCH and deep_dive_codes:
+        # Batch the country_agent stage for all deep-dive countries; run
+        # maintenance countries (no country_agent) through the existing sync
+        # semaphore path so their behavior is unchanged.
+        try:
+            deep_dive_results: list[CountryResult] = await _run_country_agents_batched(
+                deep_dive_codes, configs, ledgers, end_date,
+                domain_maps, story_maps, extraction_map, gov_findings_map,
+                recorder,
+            )
+        except Exception as e:
+            # Whole-batch failure (transport / timeout) — fall back to the
+            # full sync per-country path rather than dropping the run.
+            logger.error(
+                "Country agent batch failed (%s) — falling back to sync for all deep-dives",
+                e, exc_info=True,
+            )
+            deep_dive_results = []  # rebuilt below via the sync loop
+            maintenance_codes = list(configs.keys())  # re-run everything sync
 
-            if depth == Depth.DEEP_DIVE:
-                domains = domain_maps.get(code, {})
-                return await process_deep_dive(
-                    config, ledger, end_date,
-                    allowed_domains=domains.get("allowed_domains"),
-                    story_map=story_maps.get(code),
-                    extracted_articles=extraction_map.get(code),
-                    gov_findings=gov_findings_map.get(code, ""),
-                    recorder=recorder,
-                )
-            else:
+        maint_semaphore = TrackedSemaphore(max_concurrent, "country_agents_maint")
+
+        async def _process_maint(code: str) -> CountryResult:
+            async with maint_semaphore.acquire(code):
+                config = configs[code]
+                ledger = ledgers[code]
+                depth = depth_map.get(code, Depth.DEEP_DIVE)
+                if depth == Depth.DEEP_DIVE:
+                    # Reached only when the batch fell back wholesale (above).
+                    domains = domain_maps.get(code, {})
+                    return await process_deep_dive(
+                        config, ledger, end_date,
+                        allowed_domains=domains.get("allowed_domains"),
+                        story_map=story_maps.get(code),
+                        extracted_articles=extraction_map.get(code),
+                        gov_findings=gov_findings_map.get(code, ""),
+                        recorder=recorder,
+                    )
                 scan = scan_map.get(code)
                 return await process_maintenance(
                     config, ledger, scan, end_date,
                     gov_findings=gov_findings_map.get(code, ""),
                 )
 
-    # Run all countries in parallel (bounded by semaphore)
-    tasks = [_process(code) for code in configs]
-    country_results = await asyncio.gather(*tasks, return_exceptions=True)
+        maint_results = await asyncio.gather(
+            *[_process_maint(code) for code in maintenance_codes],
+            return_exceptions=True,
+        )
+        country_results = list(deep_dive_results) + list(maint_results)
+    else:
+        semaphore = TrackedSemaphore(max_concurrent, "country_agents")
+
+        async def _process(code: str) -> CountryResult:
+            async with semaphore.acquire(code):
+                config = configs[code]
+                ledger = ledgers[code]
+                depth = depth_map.get(code, Depth.DEEP_DIVE)  # default deep dive for unknown
+
+                if depth == Depth.DEEP_DIVE:
+                    domains = domain_maps.get(code, {})
+                    return await process_deep_dive(
+                        config, ledger, end_date,
+                        allowed_domains=domains.get("allowed_domains"),
+                        story_map=story_maps.get(code),
+                        extracted_articles=extraction_map.get(code),
+                        gov_findings=gov_findings_map.get(code, ""),
+                        recorder=recorder,
+                    )
+                else:
+                    scan = scan_map.get(code)
+                    return await process_maintenance(
+                        config, ledger, scan, end_date,
+                        gov_findings=gov_findings_map.get(code, ""),
+                    )
+
+        # Run all countries in parallel (bounded by semaphore)
+        tasks = [_process(code) for code in configs]
+        country_results = await asyncio.gather(*tasks, return_exceptions=True)
 
     # Collect results and write ledgers
     for cr in country_results:
