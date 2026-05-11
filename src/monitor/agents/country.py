@@ -8,8 +8,9 @@ Output: WeeklyEntry (without devils_advocate) + updated signal categories + post
 
 import logging
 import os
+from dataclasses import dataclass
 from datetime import date, timedelta
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING, Any, Optional
 
 import anthropic
 
@@ -243,29 +244,19 @@ def hydrate_country_output(
 # System prompt template
 # =============================================================================
 
-COUNTRY_AGENT_SYSTEM_PROMPT_TEMPLATE = load_prompt("agents/country_agent")
+COUNTRY_AGENT_SYSTEM_PROMPT = load_prompt("agents/country_agent")
 
 
 def _build_system_prompt(config: CountryConfig) -> str:
-    """Fill template variables in the system prompt."""
-    primary_lang = config.languages.primary
+    """Return the country agent system prompt.
 
-    # Map language codes to readable names for the prompt
-    lang_names = {
-        "es": "Spanish", "pt": "Portuguese", "fr": "French", "de": "German",
-        "ja": "Japanese", "ko": "Korean", "zh": "Chinese", "ar": "Arabic",
-        "tr": "Turkish", "uk": "Ukrainian", "pl": "Polish", "cs": "Czech",
-        "ro": "Romanian", "et": "Estonian", "lv": "Latvian", "lt": "Lithuanian",
-        "fi": "Finnish", "sv": "Swedish", "no": "Norwegian", "it": "Italian",
-        "hi": "Hindi", "id": "Indonesian", "en": "English",
-    }
-    source_language = lang_names.get(primary_lang, primary_lang)
-
-    return load_prompt(
-        "agents/country_agent",
-        COUNTRY=config.country,
-        SOURCE_LANGUAGE=source_language,
-    )
+    The template is intentionally country-agnostic so that the same byte
+    string is sent for every country in a weekly run — this is what makes
+    the system block actually cacheable across the parallel x30 country
+    calls. The country, language, and date are all delivered via the user
+    message instead. See the comment near the API call below.
+    """
+    return COUNTRY_AGENT_SYSTEM_PROMPT
 
 
 # =============================================================================
@@ -883,7 +874,28 @@ def parse_country_response(
 # Main entry point
 # =============================================================================
 
-async def run_country_agent(
+@dataclass
+class CountryAgentBuilt:
+    """A built but not-yet-executed country agent request.
+
+    Returned by `build_country_agent_request`, consumed by
+    `process_country_agent_response`. Carries the API params plus the side
+    channels (system_prompt, user_message, end_date, date_range, ledger)
+    needed for trace writing and output hydration after the response arrives.
+    The orchestrator holds these between batch submission and result dispatch.
+    """
+
+    config: CountryConfig
+    ledger: CountryLedger
+    end_date: date
+    date_range: str
+    custom_id: str
+    params: dict[str, Any]
+    system_prompt: str
+    user_message: str
+
+
+def build_country_agent_request(
     config: CountryConfig,
     ledger: CountryLedger,
     end_date: date | None = None,
@@ -891,25 +903,13 @@ async def run_country_agent(
     story_map: Optional["StoryMapOutput"] = None,
     extracted_articles: Optional[list["ExtractionResult"]] = None,
     gov_findings: str = "",
-) -> CountryAgentOutput:
+) -> CountryAgentBuilt:
+    """Build the API params for one country agent call. No I/O.
+
+    Picks story_map mode if a story map with stories is provided, otherwise
+    falls back to web_search mode. The choice determines which user-message
+    builder runs and whether the web_search server tool is attached.
     """
-    Run the country desk deep-dive analysis.
-
-    When story_map and extracted_articles are provided, the agent works from
-    pre-built content (no web_search). Otherwise falls back to web_search mode.
-
-    Args:
-        config: Country configuration.
-        ledger: Current country ledger state.
-        end_date: End of the analysis window.
-        allowed_domains: Domains for web_search tool (fallback mode only).
-        story_map: Pre-built story map from the story map agent.
-        extracted_articles: Extracted full-text articles for representative URLs.
-        gov_findings: Formatted government source findings (Layer 2).
-    """
-    if not ANTHROPIC_API_KEY:
-        raise ValueError("ANTHROPIC_API_KEY not set")
-
     end_date = end_date or date.today()
     start_date = end_date - timedelta(days=6)
     date_range = f"{start_date.isoformat()} to {end_date.isoformat()}"
@@ -953,33 +953,28 @@ async def run_country_agent(
         ledger.posture_summary.as_of.isoformat(),
     )
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
-
-    # Build API call — with or without web_search tool
-    api_kwargs: dict = {
+    # max_tokens is the COMBINED ceiling (thinking + visible output). With
+    # 16k thinking budget, leave 16k for visible output so the JSON response
+    # has room when the model thinks beyond its budget. Prior value (+8192)
+    # left only 8k, which truncated cl on the 2026-05-03 run: 114k input
+    # pushed thinking past 16k, the model used the entire 24k on thinking,
+    # emitted empty visible text, and parse_country_response failed with
+    # "No JSON object found." Same failure mode story_map already mitigated
+    # in `b0404af`.
+    api_kwargs: dict[str, Any] = {
         "model": MODEL,
-        # max_tokens is the COMBINED ceiling (thinking + visible output). With
-        # 16k thinking budget, leave 16k for visible output so the JSON
-        # response has room when the model thinks beyond its budget. Prior
-        # value (+8192) left only 8k, which truncated cl on the 2026-05-03
-        # run: 114k input pushed thinking past 16k, the model used the entire
-        # 24k on thinking, emitted empty visible text, and
-        # parse_country_response failed with "No JSON object found." Same
-        # failure mode story_map already mitigated in `b0404af`.
         "max_tokens": THINKING_BUDGET_TOKENS + 16384,
         "temperature": 1,  # required for extended thinking
         "thinking": {
             "type": "enabled",
             "budget_tokens": THINKING_BUDGET_TOKENS,
         },
-        # cache_control here doesn't produce cross-country reuse — each
-        # country's system_prompt has {{COUNTRY}} interpolated at the front,
-        # so cache keys differ per country (verified 2026-05-03: 0% hit rate
-        # on 29/30 country calls). It DOES help on retries: when a country
-        # fails and is retried within the 5-min TTL, the second call hits
-        # the cached prefix (verified: fi got 355k cache_read tokens across
-        # retries on the same run). Phase 4.5 template restructure
-        # (dev/backlog.md) is the structural fix for cross-country reuse.
+        # System prompt is country-agnostic, so the cached prefix is
+        # byte-identical across all 30 country calls in a weekly run.
+        # First call writes the cache (1.25x premium); the remaining 29
+        # calls within the 5-min TTL hit it as cache_read (0.1x).
+        # Country-specific context (name, language, dossier, ledger) is
+        # delivered via the user message instead.
         "system": [{
             "type": "text",
             "text": system_prompt,
@@ -1003,16 +998,26 @@ async def run_country_agent(
     if tools:
         api_kwargs["tools"] = tools
 
-    from ..timing import with_heartbeat
-    async with anthropic_limiter():
-        response = await with_heartbeat(
-            client.messages.create(**api_kwargs),
-            f"Country agent {config.code}: API call",
-        )
+    return CountryAgentBuilt(
+        config=config,
+        ledger=ledger,
+        end_date=end_date,
+        date_range=date_range,
+        custom_id=config.code,
+        params=api_kwargs,
+        system_prompt=system_prompt,
+        user_message=prompt,
+    )
 
-    # Extract text blocks, tool-use block (if MPM_USE_TOOL_SCHEMA), and log web searches
+
+def process_country_agent_response(
+    built: CountryAgentBuilt,
+    response: Any,
+) -> CountryAgentOutput:
+    """Extract the tool_use / text + web_search log out of a response, save
+    the trace, and hydrate the structured CountryAgentOutput."""
     block_types = [block.type for block in response.content]
-    text_parts = []
+    text_parts: list[str] = []
     record_tool_input: dict | None = None
     search_log: list[dict] = []
     current_query: str | None = None
@@ -1056,31 +1061,33 @@ async def run_country_agent(
     from ..trace import format_usage_short
     logger.info(
         "Country agent %s: API complete — %s stop=%s%s",
-        config.code, format_usage_short(response),
+        built.config.code, format_usage_short(response),
         response.stop_reason,
         " [tool_use]" if via_tool_use else "",
     )
     logger.debug(
         "Country agent %s: block_types=%s, text_length=%d",
-        config.code, block_types, len(response_text),
+        built.config.code, block_types, len(response_text),
     )
-    # Log each web search query and what it returned
     for i, sl in enumerate(search_log, 1):
         logger.info(
             "Country agent %s: search %d/%d — q=%r, %d results",
-            config.code, i, len(search_log), sl["query"], sl["results_count"],
+            built.config.code, i, len(search_log), sl["query"], sl["results_count"],
         )
         for r in sl["results"]:
             logger.debug(
                 "Country agent %s: search %d result — %s (%s)",
-                config.code, i, r["title"][:120], r["url"],
+                built.config.code, i, r["title"][:120], r["url"],
             )
     # "Response text very short" is only a warning signal in the free-form
     # JSON path. When tool_use delivered a structured response, empty text
     # is the expected shape — the model put its output in the tool_use
     # block, not the text block.
     if len(response_text) < 100 and not via_tool_use:
-        logger.warning("Country agent %s: response text very short: %r", config.code, response_text[:500])
+        logger.warning(
+            "Country agent %s: response text very short: %r",
+            built.config.code, response_text[:500],
+        )
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
 
@@ -1093,9 +1100,9 @@ async def run_country_agent(
         trace_response_text = response_text
 
     save_raw_response(
-        "country", config.code, end_date,
-        system_prompt=system_prompt,
-        user_message=prompt,
+        "country", built.config.code, built.end_date,
+        system_prompt=built.system_prompt,
+        user_message=built.user_message,
         response_text=trace_response_text,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
@@ -1105,24 +1112,67 @@ async def run_country_agent(
     if USE_TOOL_SCHEMA:
         if record_tool_input is None:
             raise ValueError(
-                f"Country agent {config.code}: no {RECORD_TOOL_NAME} tool_use "
+                f"Country agent {built.config.code}: no {RECORD_TOOL_NAME} tool_use "
                 f"block found in response (block types: {block_types})"
             )
-        result = hydrate_country_output(record_tool_input, end_date, date_range, ledger)
+        result = hydrate_country_output(
+            record_tool_input, built.end_date, built.date_range, built.ledger
+        )
     else:
-        result = parse_country_response(response_text, end_date, date_range, ledger)
+        result = parse_country_response(
+            response_text, built.end_date, built.date_range, built.ledger
+        )
     active_cats = [
         c.value for c, m in result.weekly_entry.category_movements.items()
         if m.movement != Movement.NONE
     ]
     logger.info(
         "Country agent %s: parsed — activity=%s, active_categories=%s, %d developments, %d claim_checks",
-        config.code,
+        built.config.code,
         result.weekly_entry.activity_level.get("rating", "?") if result.weekly_entry.activity_level else "?",
         active_cats or "none",
         sum(len(m.developments) for m in result.weekly_entry.category_movements.values()),
         len(result.weekly_entry.structural_claim_checks),
     )
-    update_trace_parsed("country", config.code, end_date, parsed_output=result)
-
+    update_trace_parsed("country", built.config.code, built.end_date, parsed_output=result)
     return result
+
+
+async def run_country_agent(
+    config: CountryConfig,
+    ledger: CountryLedger,
+    end_date: date | None = None,
+    allowed_domains: list[str] | None = None,
+    story_map: Optional["StoryMapOutput"] = None,
+    extracted_articles: Optional[list["ExtractionResult"]] = None,
+    gov_findings: str = "",
+) -> CountryAgentOutput:
+    """Run the country desk deep-dive analysis (sync path).
+
+    When story_map and extracted_articles are provided, the agent works from
+    pre-built content (no web_search). Otherwise falls back to web_search mode.
+    Composes build_country_agent_request and process_country_agent_response
+    with a sync API call; the orchestrator's batch path submits the same
+    `built.params` via the Batch API and feeds the response back into
+    process_country_agent_response unchanged.
+    """
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    built = build_country_agent_request(
+        config, ledger, end_date,
+        allowed_domains=allowed_domains,
+        story_map=story_map,
+        extracted_articles=extracted_articles,
+        gov_findings=gov_findings,
+    )
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    from ..timing import with_heartbeat
+    async with anthropic_limiter():
+        response = await with_heartbeat(
+            client.messages.create(**built.params),
+            f"Country agent {config.code}: API call",
+        )
+
+    return process_country_agent_response(built, response)

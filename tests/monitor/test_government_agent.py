@@ -278,13 +278,19 @@ class TestGovernmentAgentOutput:
 
 
 class TestRenderSystemPrompt:
-    def test_country_substitution(self):
-        rendered = _render_system_prompt("Mexico")
-        assert "content for Mexico" in rendered
-        assert "{{COUNTRY}}" not in rendered
+    def test_is_byte_identical_across_calls(self):
+        """The gov source system prompt must be country-agnostic so the cached
+        prefix is byte-identical across all parallel calls in a weekly run.
+        If this fails, someone reintroduced per-country interpolation."""
+        assert _render_system_prompt() == _render_system_prompt() == SYSTEM_PROMPT
+
+    def test_no_template_variables_remain(self):
+        rendered = _render_system_prompt()
+        assert "{{" not in rendered
+        assert "}}" not in rendered
 
     def test_retains_analytical_constraints(self):
-        rendered = _render_system_prompt("Mexico")
+        rendered = _render_system_prompt()
         assert "Do not assess posture change" in rendered
         assert "Do not search for additional context" in rendered
         assert "Do not compare to the ledger" in rendered
@@ -525,8 +531,13 @@ class TestRunGovernmentAgent:
         assert output.has_significant_findings is True
 
     @pytest.mark.asyncio
-    async def test_system_prompt_rendered_with_country(self, mx_config, sample_extracted_content):
-        """Verify the system prompt is rendered with the country name."""
+    async def test_system_block_is_cacheable_and_country_anchored_in_user_message(
+        self, mx_config, sample_extracted_content
+    ):
+        """Verify the system block is shaped for prompt caching (list form with
+        cache_control) and is country-agnostic — the country comes in via the
+        user message instead, so the cached system prefix can reuse across the
+        parallel x30 calls in a weekly run."""
         mock_response = MagicMock()
         mock_response.content = [
             MagicMock(type="text", text=SAMPLE_LLM_RESPONSE),
@@ -542,10 +553,16 @@ class TestRunGovernmentAgent:
                 processing_date=date(2026, 3, 14),
             )
 
-        # Check the system prompt was rendered with "Mexico"
         call_kwargs = mock_client.messages.create.call_args[1]
-        assert "Mexico" in call_kwargs["system"]
-        assert "{{COUNTRY}}" not in call_kwargs["system"]
+        system = call_kwargs["system"]
+        assert isinstance(system, list) and len(system) == 1
+        assert system[0]["type"] == "text"
+        assert system[0]["cache_control"] == {"type": "ephemeral"}
+        # The system block must be country-agnostic for cross-call cache reuse.
+        assert "{{" not in system[0]["text"]
+        # The country is delivered via the user message.
+        user_message = call_kwargs["messages"][0]["content"]
+        assert "Mexico" in user_message
 
     @pytest.mark.asyncio
     async def test_api_failure_returns_graceful_output(self, mx_config, sample_extracted_content):
@@ -664,4 +681,3 @@ class TestRunGovernmentAgent:
         assert "transparent" in SYSTEM_PROMPT
         assert "managed" in SYSTEM_PROMPT
         assert "controlled" in SYSTEM_PROMPT
-        assert "{{COUNTRY}}" in SYSTEM_PROMPT

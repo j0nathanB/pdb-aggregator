@@ -14,7 +14,7 @@ import logging
 import os
 from dataclasses import dataclass, field
 from datetime import date
-from typing import Optional
+from typing import Any, Optional, Union
 
 import anthropic
 
@@ -236,9 +236,14 @@ SYSTEM_PROMPT = load_prompt("agents/gov_source_agent")
 OUTPUT_SCHEMA = load_prompt("agents/gov_source_agent_output_schema")
 
 
-def _render_system_prompt(country_name: str) -> str:
-    """Render the system prompt with country-specific template variables."""
-    return load_prompt("agents/gov_source_agent", COUNTRY=country_name)
+def _render_system_prompt() -> str:
+    """Return the gov source agent system prompt.
+
+    Country-agnostic so the cached prefix is byte-identical across all 30
+    parallel calls in a weekly run. The country is delivered via the user
+    message (see _build_user_message — `## Country: ...` line).
+    """
+    return SYSTEM_PROMPT
 
 
 # =============================================================================
@@ -349,7 +354,28 @@ def _build_user_message(
     return "\n".join(parts)
 
 
-async def run_government_agent(
+@dataclass
+class GovernmentAgentBuilt:
+    """A built but not-yet-executed government agent request.
+
+    Returned by `build_government_agent_request`, consumed by
+    `process_government_agent_response`. Holds the API params plus the side
+    channels (system_prompt, user_message, processing_date,
+    information_culture, items_count) needed for trace writing and the
+    failure-fallback output after the response arrives.
+    """
+
+    country_config: CountryConfig
+    processing_date: date
+    information_culture: str
+    items_processed: int
+    custom_id: str
+    params: dict[str, Any]
+    system_prompt: str
+    user_message: str
+
+
+def build_government_agent_request(
     country_config: CountryConfig,
     extracted_content: list[dict],
     processing_date: date,
@@ -360,36 +386,25 @@ async def run_government_agent(
     discovery_gaps: list[dict] | None = None,
     extraction_failures: list[dict] | None = None,
     model: str | None = None,
-) -> GovernmentAgentOutput:
-    """Run the government source agent for a single country.
+) -> Union[GovernmentAgentBuilt, GovernmentAgentOutput]:
+    """Build the API params for one government agent call, or short-circuit
+    with an empty output if there's nothing to process.
 
-    Args:
-        country_config: The country's configuration.
-        extracted_content: Layer 2 extracted content (list of dicts with
-            url, domain, title, text, extraction_failed, snippet keys).
-        processing_date: The date of processing.
-        information_culture: The country's information culture tag
-            (transparent, managed, controlled).
-        dossier_excerpt: Optional excerpt from the country dossier for
-            structural context (relevant sections only).
-        source_intel_map: Optional source intelligence map (government section).
-        discovery_gaps: Optional list of domains with no search results.
-        extraction_failures: Optional list of extraction failures from Layer 2.
-        model: Override the default model.
-
-    Returns:
-        GovernmentAgentOutput with classified findings.
+    Returns GovernmentAgentBuilt if the caller should issue an API call;
+    returns GovernmentAgentOutput.empty(...) directly if there's no content,
+    no gaps, and no failures (no API call needed).
     """
     date_str = processing_date.isoformat()
 
-    # If no content, no gaps, and no failures, return empty output
     if not extracted_content and not discovery_gaps and not extraction_failures:
-        logger.debug("Gov agent %s: no content, gaps, or failures — returning empty", country_config.code)
+        logger.debug(
+            "Gov agent %s: no content, gaps, or failures — returning empty",
+            country_config.code,
+        )
         return GovernmentAgentOutput.empty(
             country_config.code, date_str, information_culture
         )
 
-    # Build the user message
     user_message = _build_user_message(
         country_config=country_config,
         extracted_content=extracted_content,
@@ -402,8 +417,7 @@ async def run_government_agent(
         extraction_failures=extraction_failures,
     )
 
-    # Render system prompt with country name
-    system_prompt = _render_system_prompt(country_config.country)
+    system_prompt = _render_system_prompt()
 
     logger.info(
         "Gov agent %s: %d items, %d gaps, %d extraction failures, culture=%s",
@@ -411,33 +425,68 @@ async def run_government_agent(
         len(discovery_gaps or []), len(extraction_failures or []),
         information_culture,
     )
-    logger.debug("Gov agent %s: user message length=%d chars", country_config.code, len(user_message))
+    logger.debug(
+        "Gov agent %s: user message length=%d chars",
+        country_config.code, len(user_message),
+    )
 
-    # Call the LLM
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    params: dict[str, Any] = dict(
+        model=model or MODEL,
+        max_tokens=THINKING_BUDGET_TOKENS + 4096,
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{
+            "type": "text",
+            "text": system_prompt,
+            "cache_control": {"type": "ephemeral"},
+        }],
+        messages=[{"role": "user", "content": user_message}],
+    )
+    if USE_TOOL_SCHEMA:
+        params["tools"] = [GOVERNMENT_AGENT_TOOL]
 
+    return GovernmentAgentBuilt(
+        country_config=country_config,
+        processing_date=processing_date,
+        information_culture=information_culture,
+        items_processed=len(extracted_content),
+        custom_id=country_config.code,
+        params=params,
+        system_prompt=system_prompt,
+        user_message=user_message,
+    )
+
+
+def _empty_with_failure(
+    country_code: str, date_str: str, information_culture: str, error: Exception
+) -> GovernmentAgentOutput:
+    """Build the empty-with-failure output that the agent returns on any
+    response-processing exception. Kept separate so both sync and batch
+    paths produce identical fallback shape."""
+    output = GovernmentAgentOutput.empty(country_code, date_str, information_culture)
+    output.extraction_failures.append(ExtractionFailure(
+        source_institution="government_agent",
+        url="",
+        error=str(error),
+        content_available="",
+        note="Agent call failed. Country agent proceeds with Layer 1 data only.",
+    ))
+    return output
+
+
+def process_government_agent_response(
+    built: GovernmentAgentBuilt,
+    response: Any,
+) -> GovernmentAgentOutput:
+    """Parse the response and hydrate the structured output.
+
+    On any exception, returns an empty output with the failure logged —
+    matches the non-blocking behavior of the original run_government_agent.
+    """
+    date_str = built.processing_date.isoformat()
     try:
-        from ..timing import with_heartbeat
-        create_kwargs: dict = dict(
-            model=model or MODEL,
-            max_tokens=THINKING_BUDGET_TOKENS + 4096,
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        if USE_TOOL_SCHEMA:
-            create_kwargs["tools"] = [GOVERNMENT_AGENT_TOOL]
-
-        async with anthropic_limiter():
-            response = await with_heartbeat(
-                client.messages.create(**create_kwargs),
-                f"Government agent {country_config.code}: API call",
-            )
-
-        # Extract text from response
         text_content = ""
         for block in response.content:
             if block.type == "text":
@@ -454,7 +503,8 @@ async def run_government_agent(
 
         logger.debug(
             "Gov agent %s: API response — input=%d, output=%d tokens%s",
-            country_config.code, response.usage.input_tokens, response.usage.output_tokens,
+            built.country_config.code,
+            response.usage.input_tokens, response.usage.output_tokens,
             " [tool_use]" if tool_input else "",
         )
 
@@ -463,9 +513,9 @@ async def run_government_agent(
         if tool_input is not None:
             import json as _json
             save_raw_response(
-                "government", country_config.code, processing_date,
-                system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
-                user_message=user_message,
+                "government", built.country_config.code, built.processing_date,
+                system_prompt=built.system_prompt,
+                user_message=built.user_message,
                 response_text=_json.dumps(tool_input, indent=2, ensure_ascii=False),
                 thinking_text=extract_thinking(response),
                 usage=extract_usage(response),
@@ -475,20 +525,19 @@ async def run_government_agent(
             if USE_TOOL_SCHEMA:
                 logger.warning(
                     "Gov agent %s: tool_use enabled but no valid block; falling back",
-                    country_config.code,
+                    built.country_config.code,
                 )
                 _record_fallback("government_tool_use_fallback")
             save_raw_response(
-                "government", country_config.code, processing_date,
-                system_prompt=system_prompt if isinstance(system_prompt, str) else str(system_prompt),
-                user_message=user_message,
+                "government", built.country_config.code, built.processing_date,
+                system_prompt=built.system_prompt,
+                user_message=built.user_message,
                 response_text=text_content,
                 thinking_text=extract_thinking(response),
                 usage=extract_usage(response),
             )
             parsed = _parse_response(text_content)
 
-        # Build findings
         findings = []
         for f in parsed.get("findings", []):
             findings.append(GovernmentFinding(
@@ -505,7 +554,6 @@ async def run_government_agent(
                 cross_reference=f.get("cross_reference", ""),
             ))
 
-        # Build discovery gaps from LLM response + any passed in
         gaps = []
         for g in parsed.get("discovery_gaps", []):
             gaps.append(DiscoveryGap(
@@ -515,7 +563,6 @@ async def run_government_agent(
                 assessment=g.get("assessment", ""),
             ))
 
-        # Build extraction failures from LLM response + any passed in
         failures = []
         for f in parsed.get("extraction_failures", []):
             failures.append(ExtractionFailure(
@@ -527,10 +574,10 @@ async def run_government_agent(
             ))
 
         output = GovernmentAgentOutput(
-            country=country_config.code,
+            country=built.country_config.code,
             processing_date=date_str,
-            information_culture=parsed.get("information_culture", information_culture),
-            items_processed=parsed.get("items_processed", len(extracted_content)),
+            information_culture=parsed.get("information_culture", built.information_culture),
+            items_processed=parsed.get("items_processed", built.items_processed),
             items_with_findings=parsed.get("items_with_findings", len(findings)),
             findings=findings,
             discovery_gaps=gaps,
@@ -538,31 +585,81 @@ async def run_government_agent(
         )
         logger.info(
             "Gov agent %s: %d findings (%d significant), %d gaps, %d failures",
-            country_config.code, len(findings), sum(1 for f in findings if f.content_type in ("ground_truth", "both")),
+            built.country_config.code, len(findings),
+            sum(1 for f in findings if f.content_type in ("ground_truth", "both")),
             len(gaps), len(failures),
         )
 
-        update_trace_parsed("government", country_config.code, processing_date, parsed_output=parsed)
-
+        update_trace_parsed(
+            "government", built.country_config.code, built.processing_date,
+            parsed_output=parsed,
+        )
         return output
 
     except Exception as e:
         logger.error(
             "Government source agent failed for %s: %s",
+            built.country_config.code, e,
+        )
+        return _empty_with_failure(
+            built.country_config.code, date_str, built.information_culture, e
+        )
+
+
+async def run_government_agent(
+    country_config: CountryConfig,
+    extracted_content: list[dict],
+    processing_date: date,
+    information_culture: str = "managed",
+    gov_domain_config: GovernmentDomainConfig | None = None,
+    dossier_excerpt: str = "",
+    source_intel_map: str = "",
+    discovery_gaps: list[dict] | None = None,
+    extraction_failures: list[dict] | None = None,
+    model: str | None = None,
+) -> GovernmentAgentOutput:
+    """Run the government source agent for a single country (sync path).
+
+    Composes build_government_agent_request and process_government_agent_response
+    with a sync API call. Non-blocking: returns an empty-with-failure output
+    on any error rather than raising. The orchestrator's batch path uses the
+    same two halves but submits `built.params` via the Batch API.
+    """
+    built = build_government_agent_request(
+        country_config=country_config,
+        extracted_content=extracted_content,
+        processing_date=processing_date,
+        information_culture=information_culture,
+        gov_domain_config=gov_domain_config,
+        dossier_excerpt=dossier_excerpt,
+        source_intel_map=source_intel_map,
+        discovery_gaps=discovery_gaps,
+        extraction_failures=extraction_failures,
+        model=model,
+    )
+    if isinstance(built, GovernmentAgentOutput):
+        return built  # short-circuited — no API call needed
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    try:
+        from ..timing import with_heartbeat
+        async with anthropic_limiter():
+            response = await with_heartbeat(
+                client.messages.create(**built.params),
+                f"Government agent {country_config.code}: API call",
+            )
+    except Exception as e:
+        # Match prior non-blocking behavior: transport / API failures return
+        # the empty-with-failure output instead of raising.
+        logger.error(
+            "Government source agent failed for %s: %s",
             country_config.code, e,
         )
-        # Non-blocking — return empty output with the failure logged
-        output = GovernmentAgentOutput.empty(
-            country_config.code, date_str, information_culture
+        return _empty_with_failure(
+            country_config.code, processing_date.isoformat(), information_culture, e
         )
-        output.extraction_failures.append(ExtractionFailure(
-            source_institution="government_agent",
-            url="",
-            error=str(e),
-            content_available="",
-            note="Agent call failed. Country agent proceeds with Layer 1 data only.",
-        ))
-        return output
+
+    return process_government_agent_response(built, response)
 
 
 def _parse_response(text: str) -> dict:

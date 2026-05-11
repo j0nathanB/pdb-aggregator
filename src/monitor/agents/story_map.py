@@ -14,6 +14,7 @@ import logging
 import os
 from dataclasses import dataclass, field
 from datetime import date
+from typing import Any, Awaitable, Callable
 
 import anthropic
 from json_repair import repair_json
@@ -535,168 +536,192 @@ def parse_story_map_response(response_text: str) -> StoryMapOutput:
 # Agent
 # =============================================================================
 
-async def run_story_map_agent(
+# max_tokens is the COMBINED ceiling (thinking + visible output). With 16k
+# thinking budget, leave 16k for visible output so the tool_use block has
+# room to serialize for large countries. Prior value (+8192) left only 8k,
+# which truncated mid-tool_use on clustering outputs > ~55k chars — same
+# failure mode as the fr/it truncation from 2026-04-12, and the reason LV
+# fell back to json_repair on the 2026-04-20 run despite MPM_USE_TOOL_SCHEMA=1.
+_STORY_MAP_MAX_TOKENS = THINKING_BUDGET_TOKENS + 16384
+
+
+@dataclass
+class StoryMapBuilt:
+    """A built but not-yet-executed story map request.
+
+    Returned by `build_story_map_request` and consumed by
+    `process_story_map_response`. Holds both the API params and the side
+    channels (system_prompt, user_message, prompt_dedup) needed for trace
+    writing and output accounting after the response arrives. This lets the
+    orchestrator submit a batch of these and then process responses without
+    re-deriving anything.
+    """
+
+    config: CountryConfig
+    analysis_date: date
+    custom_id: str
+    params: dict[str, Any]
+    system_prompt: str
+    user_message: str
+    prompt_dedup: dict[str, Any]
+
+
+def _empty_story_map(config: CountryConfig, analysis_date: date) -> StoryMapOutput:
+    """Short-circuit output when there are no search results — no API call needed."""
+    logger.info("Story map %s: no search results — returning empty", config.code)
+    return StoryMapOutput(
+        country=config.country,
+        code=config.code,
+        analysis_date=analysis_date.isoformat(),
+        search_results_total=0,
+        stories_identified=0,
+        off_topic_filtered=0,
+    )
+
+
+def build_story_map_request(
     config: CountryConfig,
     expansion: ExpansionResult,
     analysis_date: date,
+    *,
     model: str | None = None,
-) -> StoryMapOutput:
-    """Run the story map agent for a single country.
+    use_tool: bool = USE_TOOL_SCHEMA,
+) -> StoryMapBuilt:
+    """Build the API params for one story_map call. No I/O.
 
-    Args:
-        config: The country's configuration.
-        expansion: Combined triage + expansion search results.
-        analysis_date: The date of analysis (typically the pipeline end_date).
-        model: Override the default model.
-
-    Returns:
-        StoryMapOutput with clustered stories and representative URLs.
+    System prompt is country-agnostic so the cached prefix is byte-identical
+    across all 30 parallel story_map calls in a weekly run; country, code,
+    and analysis date are delivered via the user message.
     """
-    if not ANTHROPIC_API_KEY:
-        raise ValueError("ANTHROPIC_API_KEY not set")
-
-    total_results = expansion.total_count
-    if total_results == 0:
-        logger.info("Story map %s: no search results — returning empty", config.code)
-        return StoryMapOutput(
-            country=config.country,
-            code=config.code,
-            analysis_date=analysis_date.isoformat(),
-            search_results_total=0,
-            stories_identified=0,
-            off_topic_filtered=0,
-        )
-
-    system_prompt = load_prompt(
-        "agents/story_map_agent",
-        COUNTRY=config.country,
-        COUNTRY_CODE=config.code.upper(),
-        ANALYSIS_DATE=analysis_date.isoformat(),
-    )
-
+    system_prompt = load_prompt("agents/story_map_agent")
     user_message, prompt_dedup = build_story_map_prompt(config, expansion, analysis_date)
 
     logger.info(
         "Story map %s: %d total results (wire=%d, domestic=%d, actor=%d, vocab=%d), "
         "prompt length=%d chars, deduped_at_format=%d",
-        config.code, total_results, *expansion.source_counts.values(),
+        config.code, expansion.total_count, *expansion.source_counts.values(),
         len(user_message), prompt_dedup["deduped_at_format"],
     )
 
-    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    params: dict[str, Any] = dict(
+        model=model or MODEL,
+        max_tokens=_STORY_MAP_MAX_TOKENS,
+        temperature=1,  # required for extended thinking
+        thinking={
+            "type": "enabled",
+            "budget_tokens": THINKING_BUDGET_TOKENS,
+        },
+        system=[{
+            "type": "text",
+            "text": system_prompt,
+            "cache_control": {"type": "ephemeral"},
+        }],
+        messages=[{"role": "user", "content": user_message}],
+    )
+    if use_tool:
+        params["tools"] = [RECORD_STORY_MAP_TOOL]
 
-    # max_tokens is the COMBINED ceiling (thinking + visible output). With
-    # 16k thinking budget, leave 16k for visible output so the tool_use
-    # block has room to serialize for large countries. Prior value (+8192)
-    # left only 8k, which truncated mid-tool_use on clustering outputs >
-    # ~55k chars — the same failure mode as the fr/it truncation from
-    # 2026-04-12, and the reason LV fell back to json_repair on the
-    # 2026-04-20 run despite MPM_USE_TOOL_SCHEMA=1.
-    MAX_TOKENS = THINKING_BUDGET_TOKENS + 16384
+    return StoryMapBuilt(
+        config=config,
+        analysis_date=analysis_date,
+        custom_id=config.code,
+        params=params,
+        system_prompt=system_prompt,
+        user_message=user_message,
+        prompt_dedup=prompt_dedup,
+    )
 
-    from ..timing import with_heartbeat
 
-    async def _call(use_tool: bool) -> tuple[object, dict | None, str]:
-        """Make one story_map API call and collect text + tool_use blocks."""
-        stream_kwargs: dict = dict(
-            model=model or MODEL,
-            max_tokens=MAX_TOKENS,
-            temperature=1,  # required for extended thinking
-            thinking={
-                "type": "enabled",
-                "budget_tokens": THINKING_BUDGET_TOKENS,
-            },
-            system=[{"type": "text", "text": system_prompt}],
-            messages=[{"role": "user", "content": user_message}],
-        )
-        if use_tool:
-            stream_kwargs["tools"] = [RECORD_STORY_MAP_TOOL]
+def _extract_text_and_tool_use(response: Any) -> tuple[dict | None, str]:
+    """Pull tool_use input and the first text block out of a response message."""
+    tool_input: dict | None = None
+    text_content = ""
+    for block in response.content:
+        if block.type == "text" and not text_content:
+            text_content = block.text
+        elif (
+            block.type == "tool_use"
+            and getattr(block, "name", None) == RECORD_STORY_MAP_TOOL_NAME
+        ):
+            tool_input = getattr(block, "input", None)
+    return tool_input, text_content
 
-        async with anthropic_limiter():
-            async with client.messages.stream(**stream_kwargs) as stream:
-                resp = await with_heartbeat(
-                    stream.get_final_message(),
-                    f"Story map {config.code}: streaming API call"
-                    + (" [no-tool fallback]" if not use_tool else ""),
-                )
 
-        t_input: dict | None = None
-        t_text = ""
-        for block in resp.content:
-            if block.type == "text" and not t_text:
-                t_text = block.text
-            elif (
-                block.type == "tool_use"
-                and getattr(block, "name", None) == RECORD_STORY_MAP_TOOL_NAME
-            ):
-                t_input = getattr(block, "input", None)
-        return resp, t_input, t_text
+def _tool_input_complete(t: dict | None) -> bool:
+    """True iff tool_input has the required arrays populated.
 
-    response, tool_input, text_content = await _call(use_tool=USE_TOOL_SCHEMA)
-
-    def _tool_input_complete(t: dict | None) -> bool:
-        """True iff tool_input has the required arrays populated.
-
-        Anthropic streaming can emit a partial tool_use block if max_tokens
-        hits mid-serialization — the summary scalars arrive first and the
-        `stories` / `single_source_items` / `unassigned` arrays never
-        materialize. Required-field validation only runs at the END of the
-        tool_use, so a truncated call produces a `tool_input` dict that
-        looks valid shape-wise but is missing its content. Treat any
-        tool_input where the three arrays aren't all present as a miss
-        so the text-fallback path runs.
-        """
-        if not isinstance(t, dict):
+    Anthropic streaming can emit a partial tool_use block if max_tokens
+    hits mid-serialization — the summary scalars arrive first and the
+    `stories` / `single_source_items` / `unassigned` arrays never
+    materialize. Required-field validation only runs at the END of the
+    tool_use, so a truncated call produces a `tool_input` dict that
+    looks valid shape-wise but is missing its content. Treat any
+    tool_input where the three arrays aren't all present as a miss
+    so the text-fallback path runs.
+    """
+    if not isinstance(t, dict):
+        return False
+    for key in ("stories", "single_source_items", "unassigned"):
+        if key not in t or not isinstance(t[key], list):
             return False
-        for key in ("stories", "single_source_items", "unassigned"):
-            if key not in t or not isinstance(t[key], list):
-                return False
-        return True
+    return True
+
+
+async def process_story_map_response(
+    built: StoryMapBuilt,
+    response: Any,
+    *,
+    fallback_call: Callable[[dict[str, Any]], Awaitable[Any]] | None = None,
+) -> StoryMapOutput:
+    """Process one story_map response: extract tool_use/text, optionally retry
+    without the tool when tool_use comes back partial, save trace, hydrate.
+
+    `fallback_call` is invoked when USE_TOOL_SCHEMA is on AND the tool_use
+    block is missing or partial. It receives the params with `tools` stripped
+    and must return a non-streaming Message. Pass None to skip the fallback —
+    in that case a partial tool_use will fall through to text-based parsing
+    (which is what happens for runs that never had the tool enabled).
+    """
+    tool_input, text_content = _extract_text_and_tool_use(response)
 
     used_fallback = False
-    if USE_TOOL_SCHEMA and not _tool_input_complete(tool_input):
-        # Tool_use was enabled but either no tool_use block came back, or
-        # the block's `input` was partial (scalars only, missing arrays) —
-        # almost always because streaming hit max_tokens mid-serialization.
-        # Re-invoke WITHOUT the tool so the model can emit free-form JSON
-        # that json_repair can rescue. Fail loudly so the fallback rate
-        # is visible.
+    if (
+        USE_TOOL_SCHEMA
+        and not _tool_input_complete(tool_input)
+        and fallback_call is not None
+    ):
         reason = "no tool_use block" if tool_input is None else "partial tool_input"
         logger.warning(
             "Story map %s: %s (input=%d, output=%d tokens); retrying without "
             "tool as fallback",
-            config.code, reason,
+            built.config.code, reason,
             response.usage.input_tokens, response.usage.output_tokens,
         )
-        response, tool_input, text_content = await _call(use_tool=False)
+        fallback_params = {k: v for k, v in built.params.items() if k != "tools"}
+        response = await fallback_call(fallback_params)
+        tool_input, text_content = _extract_text_and_tool_use(response)
         used_fallback = True
-        # After the fallback, tool_input is expected to be None; text_content
-        # drives parsing via parse_story_map_response + json_repair.
-
-    input_tokens = response.usage.input_tokens
-    output_tokens = response.usage.output_tokens
 
     logger.info(
         "Story map %s: API response — input=%d, output=%d tokens%s",
-        config.code, input_tokens, output_tokens,
+        built.config.code, response.usage.input_tokens, response.usage.output_tokens,
         " [fallback]" if used_fallback else "",
     )
 
-    # Pick the source of truth for the trace: tool_input if present, else text
     if tool_input is not None:
         trace_response_text = json.dumps(tool_input, indent=2, ensure_ascii=False)
     else:
         trace_response_text = text_content
 
     if not trace_response_text and tool_input is None:
-        logger.error("Story map %s: no text or tool_use in LLM response", config.code)
-        raise ValueError(f"Story map agent returned no output for {config.code}")
+        logger.error("Story map %s: no text or tool_use in LLM response", built.config.code)
+        raise ValueError(f"Story map agent returned no output for {built.config.code}")
 
     from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
     save_raw_response(
-        "story_map", config.code, analysis_date,
-        system_prompt=system_prompt,
-        user_message=user_message,
+        "story_map", built.config.code, built.analysis_date,
+        system_prompt=built.system_prompt,
+        user_message=built.user_message,
         response_text=trace_response_text,
         thinking_text=extract_thinking(response),
         usage=extract_usage(response),
@@ -707,12 +732,11 @@ async def run_story_map_agent(
     else:
         output = parse_story_map_response(text_content)
 
-    output.prompt_dedup = prompt_dedup
+    output.prompt_dedup = built.prompt_dedup
 
-    # Accounting check
     story_sources = sum(s.source_count for s in output.stories)
     accounted = story_sources + len(output.single_source_items) + output.off_topic_filtered
-    unique_in_prompt = prompt_dedup.get("unique_in_prompt", output.search_results_total)
+    unique_in_prompt = built.prompt_dedup.get("unique_in_prompt", output.search_results_total)
     gap = unique_in_prompt - accounted
     gap_pct = (gap / unique_in_prompt * 100) if unique_in_prompt else 0
 
@@ -720,7 +744,7 @@ async def run_story_map_agent(
         "Story map %s: %d stories (model claimed %d), %d single-source items, "
         "%d off-topic filtered, %d unassigned, %d URLs for extraction, "
         "accounting=%d/%d (gap=%d, %.0f%%)",
-        config.code, len(output.stories), output.stories_identified,
+        built.config.code, len(output.stories), output.stories_identified,
         len(output.single_source_items), output.off_topic_filtered,
         len(output.unassigned), output.extraction_url_count,
         accounted, unique_in_prompt, gap, gap_pct,
@@ -729,9 +753,44 @@ async def run_story_map_agent(
         logger.warning(
             "Story map %s: model claimed %d stories but the array is empty — "
             "likely a truncated tool_use that slipped past the completeness check",
-            config.code, output.stories_identified,
+            built.config.code, output.stories_identified,
         )
 
-    update_trace_parsed("story_map", config.code, analysis_date, parsed_output=output)
-
+    update_trace_parsed("story_map", built.config.code, built.analysis_date, parsed_output=output)
     return output
+
+
+async def run_story_map_agent(
+    config: CountryConfig,
+    expansion: ExpansionResult,
+    analysis_date: date,
+    model: str | None = None,
+) -> StoryMapOutput:
+    """Run the story map agent for a single country (sync/streaming path).
+
+    Composes build_story_map_request and process_story_map_response with
+    the existing streaming client. The batch path in the orchestrator uses
+    the same two halves but submits the params via the Batch API instead.
+    """
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    if expansion.total_count == 0:
+        return _empty_story_map(config, analysis_date)
+
+    built = build_story_map_request(config, expansion, analysis_date, model=model)
+
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    from ..timing import with_heartbeat
+
+    async def _stream(params: dict[str, Any]) -> Any:
+        async with anthropic_limiter():
+            async with client.messages.stream(**params) as stream:
+                return await with_heartbeat(
+                    stream.get_final_message(),
+                    f"Story map {config.code}: streaming API call"
+                    + (" [no-tool fallback]" if "tools" not in params else ""),
+                )
+
+    response = await _stream(built.params)
+    return await process_story_map_response(built, response, fallback_call=_stream)

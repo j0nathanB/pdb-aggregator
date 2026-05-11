@@ -4,7 +4,7 @@ import json
 from datetime import date
 
 import pytest
-from src.monitor.config import load_country_config
+from src.monitor.config import load_country_config, load_prompt
 from src.monitor.agents.story_map import (
     PER_DOMAIN_CAP,
     RECORD_STORY_MAP_TOOL,
@@ -19,6 +19,26 @@ from src.monitor.agents.story_map import (
 )
 from src.monitor.agents.expansion import ExpansionResult
 from src.monitor.collection.brave import BraveNewsResult
+
+
+class TestSystemPromptCacheability:
+    """The story_map system prompt MUST be byte-identical across all parallel
+    country calls in a weekly run — that's what lets cache_control on the
+    system block reuse across the x30 calls (vs. only within retries).
+    If these fail, someone reintroduced per-country/per-call interpolation.
+
+    Note: the prompt deliberately uses Mexico as an illustrative example in
+    the output schema block, which is fine — static text is byte-stable. The
+    invariant we guard is the absence of template variables, not the absence
+    of country names."""
+
+    def test_no_template_variables_remain(self):
+        prompt = load_prompt("agents/story_map_agent")
+        assert "{{" not in prompt
+        assert "}}" not in prompt
+
+    def test_loaded_prompt_is_stable(self):
+        assert load_prompt("agents/story_map_agent") == load_prompt("agents/story_map_agent")
 
 
 # ---- Helpers ----

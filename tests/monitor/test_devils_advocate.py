@@ -226,13 +226,24 @@ class TestParseResponse:
 # ---- System Prompt ----
 
 class TestSystemPrompt:
-    def test_substitutes_country_name(self):
-        prompt = _build_system_prompt("Mexico")
-        assert "Mexico" in prompt
-        assert "{{COUNTRY}}" not in prompt
+    def test_is_country_agnostic_and_stable(self):
+        """The devil's advocate system prompt is country-agnostic so it
+        cache-hits across all parallel country reviews in a weekly run.
+        Calling _build_system_prompt() repeatedly must return the same
+        byte string; no template variables should remain."""
+        p1 = _build_system_prompt()
+        p2 = _build_system_prompt()
+        assert p1 == p2
+        assert "{{" not in p1
+        assert "}}" not in p1
+
+    def test_does_not_name_specific_countries(self):
+        prompt = _build_system_prompt()
+        for name in ("Mexico", "Japan", "Germany", "Brazil", "Indonesia"):
+            assert name not in prompt, f"system prompt leaks country name: {name}"
 
     def test_contains_review_criteria(self):
-        prompt = _build_system_prompt("Mexico")
+        prompt = _build_system_prompt()
         assert "Source Dependency" in prompt
         assert "Narrative Persistence" in prompt
         assert "Confidence Calibration" in prompt

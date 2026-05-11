@@ -51,12 +51,18 @@ DEVILS_ADVOCATE_TOOL = {
 # System prompt template
 # =============================================================================
 
-DEVILS_ADVOCATE_SYSTEM_PROMPT_TEMPLATE = load_prompt("agents/devils_advocate")
+DEVILS_ADVOCATE_SYSTEM_PROMPT = load_prompt("agents/devils_advocate")
 
 
-def _build_system_prompt(country: str) -> str:
-    """Fill template variables in the system prompt."""
-    return load_prompt("agents/devils_advocate", COUNTRY=country)
+def _build_system_prompt() -> str:
+    """Return the devil's advocate system prompt.
+
+    Country-agnostic so the prefix is byte-identical across all parallel
+    country calls in a weekly run — that's what lets cache_control on the
+    system block reuse across the x30 calls instead of just within retries.
+    The country is delivered via the user message.
+    """
+    return DEVILS_ADVOCATE_SYSTEM_PROMPT
 
 
 # =============================================================================
@@ -212,7 +218,7 @@ async def run_devils_advocate(
         raise ValueError("ANTHROPIC_API_KEY not set")
 
     prompt = _build_devils_advocate_prompt(entry, country, ledger)
-    system_prompt = _build_system_prompt(country)
+    system_prompt = _build_system_prompt()
 
     client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -232,7 +238,11 @@ async def run_devils_advocate(
             "type": "enabled",
             "budget_tokens": 8000,
         },
-        system=[{"type": "text", "text": system_prompt}],
+        system=[{
+            "type": "text",
+            "text": system_prompt,
+            "cache_control": {"type": "ephemeral"},
+        }],
         messages=[{"role": "user", "content": prompt}],
     )
     if USE_TOOL_SCHEMA:

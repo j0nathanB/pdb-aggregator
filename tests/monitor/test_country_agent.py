@@ -582,21 +582,33 @@ class TestHydrateCountryOutput:
 # ---- System Prompt ----
 
 class TestBuildSystemPrompt:
-    def test_substitutes_country_name(self):
-        config = load_country_config("mx")
-        prompt = _build_system_prompt(config)
-        assert "Mexico" in prompt
-        assert "{{COUNTRY}}" not in prompt
+    def test_is_byte_identical_across_countries(self):
+        """The country agent system prompt MUST be byte-identical across
+        countries — that's what lets cache_control on the system block reuse
+        across the parallel x30 calls in a weekly run. If this fails, someone
+        reintroduced per-country interpolation and cross-country cache reuse
+        will drop to 0% (see country.py:973 comment for context)."""
+        mx = _build_system_prompt(load_country_config("mx"))
+        jp = _build_system_prompt(load_country_config("jp"))
+        de = _build_system_prompt(load_country_config("de"))
+        assert mx == jp == de
 
-    def test_substitutes_source_language(self):
+    def test_no_template_variables_remain(self):
         config = load_country_config("mx")
         prompt = _build_system_prompt(config)
-        assert "Spanish" in prompt
-        assert "{{SOURCE_LANGUAGE}}" not in prompt
+        assert "{{" not in prompt
+        assert "}}" not in prompt
+
+    def test_does_not_name_specific_countries(self):
+        """The system prompt should not bake in any particular country name —
+        country identity is delivered via the user message."""
+        prompt = _build_system_prompt(load_country_config("mx"))
+        # These are countries we analyze; none should appear in the cached prefix.
+        for name in ("Mexico", "Japan", "Germany", "Brazil", "Indonesia"):
+            assert name not in prompt, f"system prompt leaks country name: {name}"
 
     def test_contains_analytical_phases(self):
-        config = load_country_config("mx")
-        prompt = _build_system_prompt(config)
+        prompt = _build_system_prompt(load_country_config("mx"))
         assert "Phase 1: Orient" in prompt
         assert "Phase 2: Read the Evidence" in prompt
         assert "Phase 3: Assess" in prompt
@@ -604,13 +616,11 @@ class TestBuildSystemPrompt:
         assert "Phase 5: Structural Claim Check" in prompt
 
     def test_contains_competing_interpretations(self):
-        config = load_country_config("mx")
-        prompt = _build_system_prompt(config)
+        prompt = _build_system_prompt(load_country_config("mx"))
         assert "Competing interpretations" in prompt
 
     def test_contains_output_schema_keys(self):
-        config = load_country_config("mx")
-        prompt = _build_system_prompt(config)
+        prompt = _build_system_prompt(load_country_config("mx"))
         assert "weekly_entry" in prompt
         assert "updated_signal_categories" in prompt
         assert "updated_posture_summary" in prompt

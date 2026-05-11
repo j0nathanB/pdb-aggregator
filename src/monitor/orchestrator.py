@@ -12,15 +12,25 @@ This module wires the full weekly desk pipeline (before regional synthesis):
 
 import asyncio
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 from typing import Optional
+
+import anthropic
 
 from .agents.country import CountryAgentOutput, run_country_agent
 from .agents.devils_advocate import run_devils_advocate
 from .agents.expansion import ExpansionResult, expand_all_countries
 from .agents.government import GovernmentAgentOutput, run_government_agent
-from .agents.story_map import StoryMapOutput, run_story_map_agent
+from .agents.story_map import (
+    StoryMapOutput,
+    _empty_story_map,
+    build_story_map_request,
+    process_story_map_response,
+    run_story_map_agent,
+)
+from .batch import BatchRequest, run_batch
 from .agents.triage import TriageOutput, run_triage, scan_all_countries, ScanResult
 from .collection.brave import BraveNewsClient
 from .collection.extract import ExtractionOrchestrator, ExtractionResult
@@ -61,6 +71,13 @@ from .models import (
 )
 
 logger = logging.getLogger(__name__)
+
+# Opt-in flag for Batch API mode. When set, story_map (and in future country
+# and government) submits as a batch — flat 50% off input + output for any
+# job ending within 24h. The pipeline is weekly so latency doesn't matter.
+# Off by default to preserve the existing async-parallel behavior for dev
+# runs and emergency rollback.
+USE_BATCH = os.getenv("MPM_USE_BATCH", "0") == "1"
 
 
 # =============================================================================
@@ -329,6 +346,133 @@ def _domain_from_url(url: str) -> str:
     if domain.startswith("www."):
         domain = domain[4:]
     return domain
+
+
+# =============================================================================
+# Story map orchestration (sync + batch paths)
+# =============================================================================
+
+async def _run_story_map_sync(
+    configs: dict[str, CountryConfig],
+    expansion_map: dict[str, ExpansionResult],
+    end_date: date,
+    max_concurrent: int,
+) -> dict[str, StoryMapOutput]:
+    """Original async-parallel story_map path: one API call per country,
+    bounded by a semaphore, with a single retry on transient failure."""
+    story_map_semaphore = TrackedSemaphore(max_concurrent, "story_map")
+    out: dict[str, StoryMapOutput] = {}
+
+    async def _run_one(code: str) -> tuple[str, StoryMapOutput | None]:
+        async with story_map_semaphore.acquire(code):
+            for attempt in range(2):
+                try:
+                    return code, await run_story_map_agent(
+                        configs[code], expansion_map[code], end_date,
+                    )
+                except Exception as e:
+                    if attempt == 0:
+                        logger.warning(
+                            "Story map failed for %s (attempt 1), retrying: %s", code, e,
+                        )
+                    else:
+                        logger.error(
+                            "Story map failed for %s after retry: %s", code, e, exc_info=True,
+                        )
+            return code, None
+
+    logger.info("Story map: running for %d deep-dive countries (sync)", len(expansion_map))
+    sm_tasks = [_run_one(code) for code in expansion_map]
+    for code, sm in await asyncio.gather(*sm_tasks):
+        if sm is not None:
+            out[code] = sm
+    return out
+
+
+async def _run_story_map_batched(
+    configs: dict[str, CountryConfig],
+    expansion_map: dict[str, ExpansionResult],
+    end_date: date,
+) -> dict[str, StoryMapOutput]:
+    """Batch API story_map path: 50% off input + output, single submission
+    for all countries with non-empty search results.
+
+    Countries with zero search results short-circuit to an empty output (no
+    API call needed — preserves the sync-path behavior). Countries whose
+    batch response succeeded are processed through process_story_map_response
+    with a sync fallback callable (covers partial tool_use the same way the
+    sync path does). Countries whose batch response failed fall back to a
+    full sync run_story_map_agent call.
+    """
+    from .config import ANTHROPIC_API_KEY
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("ANTHROPIC_API_KEY not set")
+
+    builts = {}
+    out: dict[str, StoryMapOutput] = {}
+    for code, expansion in expansion_map.items():
+        if expansion.total_count == 0:
+            out[code] = _empty_story_map(configs[code], end_date)
+            continue
+        builts[code] = build_story_map_request(configs[code], expansion, end_date)
+
+    if not builts:
+        return out
+
+    logger.info(
+        "Story map: submitting batch for %d countries (%d short-circuited as empty)",
+        len(builts), len(out),
+    )
+    client = anthropic.AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+    requests = [BatchRequest(b.custom_id, b.params) for b in builts.values()]
+    batch_results = await run_batch(client, requests, label="story_map")
+
+    async def _sync_fallback_call(params: dict) -> object:
+        """Per-request sync retry for partial tool_use: replays a single
+        non-streaming messages.create with the supplied (tools-stripped) params."""
+        return await client.messages.create(**params)
+
+    # Process responses; fall back to full sync for whole-request failures.
+    pending_fallback: list[str] = []
+    for code, built in builts.items():
+        br = batch_results.get(code)
+        if br is not None and br.succeeded:
+            try:
+                out[code] = await process_story_map_response(
+                    built, br.message, fallback_call=_sync_fallback_call,
+                )
+            except Exception as e:
+                logger.error(
+                    "Story map %s: post-response processing failed: %s",
+                    code, e, exc_info=True,
+                )
+                pending_fallback.append(code)
+        else:
+            logger.warning(
+                "Story map %s: batch result missing or failed (%s) — retrying sync",
+                code, br.error_type if br else "no_result",
+            )
+            pending_fallback.append(code)
+
+    if pending_fallback:
+        logger.info(
+            "Story map: %d countries failed in batch, retrying via sync path",
+            len(pending_fallback),
+        )
+        sync_tasks = [
+            run_story_map_agent(configs[code], expansion_map[code], end_date)
+            for code in pending_fallback
+        ]
+        sync_results = await asyncio.gather(*sync_tasks, return_exceptions=True)
+        for code, result in zip(pending_fallback, sync_results):
+            if isinstance(result, Exception):
+                logger.error(
+                    "Story map %s: sync fallback also failed: %s", code, result, exc_info=result,
+                )
+                continue
+            out[code] = result
+
+    return out
 
 
 # =============================================================================
@@ -804,43 +948,21 @@ async def run_desk_pipeline(
     story_maps: dict[str, StoryMapOutput] = {}
 
     if expansion_map:
-        story_map_semaphore = TrackedSemaphore(max_concurrent, "story_map")
-
-        async def _run_story_map(code: str) -> tuple[str, StoryMapOutput | None]:
-            async with story_map_semaphore.acquire(code):
-                for attempt in range(2):
-                    try:
-                        output = await run_story_map_agent(
-                            configs[code],
-                            expansion_map[code],
-                            end_date,
-                        )
-                        return code, output
-                    except Exception as e:
-                        if attempt == 0:
-                            logger.warning(
-                                "Story map failed for %s (attempt 1), retrying: %s",
-                                code, e,
-                            )
-                        else:
-                            logger.error(
-                                "Story map failed for %s after retry: %s",
-                                code, e, exc_info=True,
-                            )
-                return code, None
-
-        logger.info("Story map: running for %d deep-dive countries", len(expansion_map))
-        sm_tasks = [_run_story_map(code) for code in expansion_map]
-        sm_results = await asyncio.gather(*sm_tasks)
-        for code, sm_output in sm_results:
-            if sm_output is not None:
-                story_maps[code] = sm_output
-                logger.info(
-                    "Story map %s: %d stories, %d single-source, %d URLs for extraction",
-                    code, sm_output.stories_identified,
-                    len(sm_output.single_source_items),
-                    sm_output.extraction_url_count,
-                )
+        if USE_BATCH:
+            story_maps = await _run_story_map_batched(
+                configs, expansion_map, end_date,
+            )
+        else:
+            story_maps = await _run_story_map_sync(
+                configs, expansion_map, end_date, max_concurrent,
+            )
+        for code, sm in story_maps.items():
+            logger.info(
+                "Story map %s: %d stories, %d single-source, %d URLs for extraction",
+                code, sm.stories_identified,
+                len(sm.single_source_items),
+                sm.extraction_url_count,
+            )
         if recorder:
             for code, sm in story_maps.items():
                 recorder.write("05_story_map", sm, suffix=f"_{code}")
