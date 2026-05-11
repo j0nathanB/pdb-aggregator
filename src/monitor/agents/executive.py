@@ -598,18 +598,26 @@ def _build_and_append_weekly_entry(
     week: date,
 ) -> None:
     """Build a GlobalWeeklyEntry from parsed data and append to the ledger."""
-    briefing_items = [
-        ExecutiveBriefingItem(
-            title=b["title"],
+    briefing_items: list[ExecutiveBriefingItem] = []
+    for b in we_data.get("executive_briefing_items", []):
+        if not isinstance(b, dict) or not b.get("what") or not b.get("why_it_matters"):
+            # Item was truncated mid-output or JSON-repair couldn't reconstruct
+            # required fields. Skip it loudly so the whole brief still ships.
+            logger.warning(
+                "Executive: skipping malformed briefing item — title=%r, keys=%s",
+                (b.get("title") if isinstance(b, dict) else None),
+                sorted(b.keys()) if isinstance(b, dict) else type(b).__name__,
+            )
+            continue
+        briefing_items.append(ExecutiveBriefingItem(
+            title=b.get("title", ""),
             regions_involved=b.get("regions_involved", []),
             what=b["what"],
             why_it_matters=b["why_it_matters"],
             what_to_watch=b.get("what_to_watch", ""),
             confidence=b.get("confidence", 3),
             confidence_note=b.get("confidence_note", ""),
-        )
-        for b in we_data.get("executive_briefing_items", [])
-    ]
+        ))
 
     rejected = []
     for r in we_data.get("items_considered_rejected",
@@ -683,7 +691,7 @@ async def run_executive_agent(
     from ..rate_limit import anthropic_limiter
     create_kwargs: dict = dict(
         model=MODEL,
-        max_tokens=THINKING_BUDGET_TOKENS + 12288,
+        max_tokens=THINKING_BUDGET_TOKENS + 16384,
         temperature=1,
         thinking={
             "type": "enabled",
@@ -691,16 +699,19 @@ async def run_executive_agent(
         },
         system=[{"type": "text", "text": load_prompt("agents/executive")}],
         messages=[{"role": "user", "content": prompt}],
-        timeout=600.0,
     )
     if USE_TOOL_SCHEMA:
         create_kwargs["tools"] = [EXECUTIVE_SYNTHESIS_TOOL]
 
+    # Stream the response. With thinking enabled and large output budgets the
+    # request routinely exceeds Anthropic's 10-minute non-streaming timeout
+    # (the 2026-05-10 run hit this at 600s × 2 retries → APITimeoutError).
     async with anthropic_limiter():
-        response = await with_heartbeat(
-            client.messages.create(**create_kwargs),
-            "Executive synthesis: API call",
-        )
+        async with client.messages.stream(**create_kwargs) as stream:
+            response = await with_heartbeat(
+                stream.get_final_message(),
+                "Executive synthesis: streaming API call",
+            )
 
     text_parts = [
         block.text for block in response.content
