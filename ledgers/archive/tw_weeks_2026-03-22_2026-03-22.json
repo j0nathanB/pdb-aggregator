@@ -1,0 +1,295 @@
+[
+  {
+    "week": "2026-03-22",
+    "date_range": "2026-03-16 to 2026-03-22",
+    "depth": "deep_dive",
+    "activity_level": {
+      "rating": "moderate",
+      "rationale": "Multiple significant developments across alignment, security, and domestic domains. Defense budget announcement (NT$1.25 trillion over 8 years) represents major capability commitment beyond routine spending. China's diplomatic escalation over historical comments demonstrates continued pressure campaign. High-prominence TSMC coverage (25 sources) reflects continued global attention to semiconductor leadership but represents trend continuation rather than posture shift."
+    },
+    "category_movements": {
+      "alignment_diplomatic": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Beijing escalates diplomatic pressure over Lai's historical comments",
+            "date": "2026-03-18",
+            "sources": [
+              {
+                "name": "South China Morning Post",
+                "url": "https://scmp.com/news/china/diplomacy/article/3347164/taiwan-leader-william-lai-glorifying-japanese-colonial-rule-beijing-says",
+                "tier": 2
+              },
+              {
+                "name": "Xinhua News",
+                "url": "https://english.news.cn/20260318/cb76489ee90a47319eaa0e3512d8e145/c.html",
+                "tier": 4
+              },
+              {
+                "name": "Focus Taiwan",
+                "url": "https://focustaiwan.tw/politics/202603220008",
+                "tier": 2
+              }
+            ],
+            "summary": "Chinese government and state media accused President Lai of 'glorifying Japanese colonial rule' after he compared Japanese colonial period favorably to early KMT rule. Beijing called his remarks an attempt to distort history and promote Taiwan independence. PLA also stepped up aircraft sorties around Taiwan following the comments.",
+            "actors_involved": [
+              "Lai Ching-te",
+              "China",
+              "PLA"
+            ],
+            "signal_category_relevance": "Demonstrates escalating Chinese diplomatic pressure in response to Taiwan identity rhetoric, showing how historical memory issues directly trigger coordinated diplomatic and military responses from Beijing."
+          },
+          {
+            "headline": "Premier Cho's Japan visit continues high-level engagement normalization",
+            "date": "2026-03-22",
+            "sources": [
+              {
+                "name": "Taipei Times",
+                "url": "https://www.taipeitimes.com/News/editorials/archives/2026/03/22/2003854241",
+                "tier": 2
+              },
+              {
+                "name": "Taiwan Central News",
+                "url": "https://tcn.tw/news/6797313",
+                "tier": 3
+              },
+              {
+                "name": "Taiwan News",
+                "url": "https://www.taiwannews.com.tw/en/news/6324078",
+                "tier": 2
+              }
+            ],
+            "summary": "Premier Cho Jung-tai's personal visit to Tokyo to watch Taiwan's World Baseball Classic game represented the first premier-level visit to Japan since 1972. While framed as private and self-funded, it drew both criticism and praise as 'baseball diplomacy' and prompted Beijing protests to Japanese government.",
+            "actors_involved": [
+              "Cho Jung-tai",
+              "Japan",
+              "China"
+            ],
+            "signal_category_relevance": "Continues the pattern of deepening Taiwan-Japan bilateral engagement at increasingly high political levels, representing further normalization of official interactions despite Chinese pressure."
+          }
+        ],
+        "prior_assessment": "Taiwan's alignment posture shows continued breakthrough normalization with Japan through unprecedented premier-level engagement, reinforcing the historic shift from implicit to explicit Japanese security partnership.",
+        "updated_assessment": "Taiwan's alignment posture demonstrates sustained Japan normalization through premier-level engagement while facing escalated Chinese diplomatic pressure over identity-related rhetoric. The pattern shows deepening bilateral ties with Japan as China responds with coordinated diplomatic condemnation and military pressure.",
+        "confidence_change": null
+      },
+      "security_defense": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Lai announces NT$1.25 trillion eight-year defense budget commitment",
+            "date": "2026-03-16",
+            "sources": [
+              {
+                "name": "Vision Times",
+                "url": "https://visiontimes.com/2026/03/16/taiwan-marks-30-years-of-direct-presidential-elections-and-vows-to-resist-the-ccp.html",
+                "tier": 3
+              },
+              {
+                "name": "Focus Taiwan",
+                "url": "https://focustaiwan.tw/politics/202603220008",
+                "tier": 2
+              },
+              {
+                "name": "Presidential Office",
+                "url": "government_sources",
+                "tier": 2
+              }
+            ],
+            "summary": "President Lai announced an eight-year special defense budget of NT$1.25 trillion (approximately $38 billion) to upgrade defense capabilities, build a 'Shield of Taiwan,' integrate AI into defense systems, and promote domestic defense industries. The plan requires legislative approval and represents movement toward the stated goal of reaching 5% of GDP by 2030.",
+            "actors_involved": [
+              "Lai Ching-te",
+              "Legislative Yuan"
+            ],
+            "signal_category_relevance": "Represents major escalation of defense spending commitment beyond routine procurement cycles, indicating comprehensive defense enhancement that could fundamentally alter Taiwan's military capabilities if approved and implemented."
+          }
+        ],
+        "prior_assessment": "Taiwan's defense posture demonstrates procedural progress through parliamentary authorization of $9 billion US arms packages, resolving procurement bottlenecks while maintaining scheduled delivery timelines.",
+        "updated_assessment": "Taiwan's defense posture shows major budgetary escalation through the NT$1.25 trillion eight-year commitment alongside continued US arms procurement, indicating comprehensive defense enhancement beyond routine procurement cycles.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "Multiple independent sources including government confirmation of major budget announcement representing clear policy escalation rather than routine spending."
+        }
+      },
+      "economic_tech": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "TSMC chairman emphasizes continued AI chip manufacturing dominance",
+            "date": "2026-03-21",
+            "sources": [
+              {
+                "name": "Taiwan News",
+                "url": "https://www.taiwannews.com.tw/news/6325504",
+                "tier": 2
+              },
+              {
+                "name": "Liberty Times",
+                "url": "https://news.ltn.com.tw/news/focus/breakingnews/5378284",
+                "tier": 2
+              },
+              {
+                "name": "EBC Financial",
+                "url": "https://fnc.ebc.net.tw/fncnews/headline/207320",
+                "tier": 3
+              }
+            ],
+            "summary": "TSMC Chairman C.C. Wei highlighted the company's manufacturing of 95% of AI chip 'brains' while dismissing Chinese robotic capabilities as 'useless' and 'just for show.' Wei emphasized that while Chinese robots can perform tricks, true functionality requires the brain components that TSMC manufactures for companies like Nvidia and AMD.",
+            "actors_involved": [
+              "TSMC",
+              "C.C. Wei"
+            ],
+            "signal_category_relevance": "Reinforces Taiwan's continued semiconductor leadership and technological advantages while publicly dismissing Chinese competitive capabilities in related technologies."
+          }
+        ],
+        "prior_assessment": "Taiwan's economic tech position demonstrates sustained semiconductor dominance through TSMC's record performance and expanding global market share, reinforcing Taiwan-based production leadership.",
+        "updated_assessment": "Taiwan's economic tech position demonstrates continued semiconductor dominance through TSMC's maintained leadership in AI chip manufacturing, reinforcing technological advantages while publicly dismissing Chinese competitive capabilities.",
+        "confidence_change": null
+      },
+      "institutional": {
+        "movement": "none",
+        "developments": [],
+        "prior_assessment": "No significant movement in institutional engagement this week. Previous assessment of potential incremental cooperation through existing frameworks remains unchanged.",
+        "updated_assessment": "No significant movement in institutional engagement this week. Previous assessment of potential incremental cooperation through existing frameworks remains unchanged.",
+        "confidence_change": null
+      },
+      "domestic_regime": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "KMT-TPP formalize local election cooperation amid internal party tensions",
+            "date": "2026-03-18",
+            "sources": [
+              {
+                "name": "Focus Taiwan",
+                "url": "https://focustaiwan.tw/politics/202603180022",
+                "tier": 2
+              },
+              {
+                "name": "Taipei Times",
+                "url": "https://taipeitimes.com/News/taiwan/archives/2026/03/20/2003854150",
+                "tier": 2
+              },
+              {
+                "name": "KMT Official",
+                "url": "https://www.kmt.org.tw/2026/03/2028.html",
+                "tier": 3
+              }
+            ],
+            "summary": "KMT and TPP approved cooperation agreement for November local elections, with joint candidate nomination procedures. However, nearly one-third of KMT legislators were absent from a lunch with Chairwoman Cheng Li-wun, indicating internal party tensions and dissatisfaction with leadership direction.",
+            "actors_involved": [
+              "KMT",
+              "TPP",
+              "Cheng Li-wun"
+            ],
+            "signal_category_relevance": "Demonstrates continued opposition coordination through formal electoral cooperation while revealing internal tensions within the KMT that could affect coalition cohesion."
+          },
+          {
+            "headline": "Lai faces internal DPP resistance over nuclear policy shift",
+            "date": "2026-03-22",
+            "sources": [
+              {
+                "name": "Focus Taiwan",
+                "url": "https://focustaiwan.tw/politics/202603220008",
+                "tier": 2
+              },
+              {
+                "name": "Taipei Times",
+                "url": "https://taipeitimes.com/News/front/archives/2026/03/22/2003854247",
+                "tier": 2
+              }
+            ],
+            "summary": "President Lai's defense of nuclear restart review alongside green energy development drew criticism from DPP environmental groups and long-time anti-nuclear advocates who accused him of compromising party principles. Taiwan Power is preparing restart plans for submission by end of March.",
+            "actors_involved": [
+              "Lai Ching-te",
+              "DPP",
+              "Environmental groups"
+            ],
+            "signal_category_relevance": "Shows internal party tensions as Lai breaks with core DPP orthodoxy on nuclear policy, indicating potential intra-party resistance to pragmatic policy shifts."
+          }
+        ],
+        "prior_assessment": "Domestic regime dynamics show continued opposition coordination through formal KMT-TPP collaboration for electoral cycles, institutionalizing the constitutional crisis framework while parliamentary authorization of arms deals demonstrates selective cooperation on security priorities.",
+        "updated_assessment": "Domestic regime dynamics show continued opposition coordination through formalized KMT-TPP electoral cooperation while Lai faces internal DPP resistance over nuclear policy reconsideration, indicating both inter-party coalition building and intra-party tensions.",
+        "confidence_change": null
+      }
+    },
+    "unexpected_developments": [],
+    "absence_check": [],
+    "devils_advocate": {
+      "challenges": [
+        "Chronic single-source dependency remains completely unaddressed despite three consecutive weeks of devil's advocate warnings. Every development relies on exactly one outlet, with no independent corroboration for any assessment\u2014including the major defense budget announcement scored at confidence 4 based solely on Vision Times coverage.",
+        "The security_defense confidence upgrade to 4 is unjustified by evidence quality. A single Vision Times report of a budget announcement that requires legislative approval cannot support the highest confidence level, regardless of the announcement's significance. Government announcements of future spending commitments are promises, not implemented policy.",
+        "Systematic absence of competing interpretations violates analytical requirements for significant movements. The Premier's Japan visit, defense budget announcement, and Lai's nuclear policy shift all received single-frame analysis without considering alternative explanations\u2014particularly problematic given the Japan visit's private/baseball context that undermines the 'breakthrough normalization' narrative.",
+        "Narrative persistence continues unchanged despite repeated challenges. The alignment_diplomatic assessment maintains virtually identical 'breakthrough normalization with Japan' language from prior weeks, suggesting analytical inertia rather than evidence-driven re-evaluation, especially given this week's evidence centers on a private baseball trip.",
+        "Structural claim check section shows 'unknown status=confirmed' which is analytically meaningless and suggests the analyst did not actually evaluate any structural claims this week, representing a procedural failure in the analytical framework."
+      ],
+      "recommended_adjustments": [
+        "Require independent corroboration for all developments within one week or downgrade all confidence scores to maximum level 2. Single-source assessments cannot support confidence above 2 regardless of source tier.",
+        "Downgrade security_defense confidence to 2 until multiple independent sources confirm the defense budget details and legislative timeline. Government budget announcements require validation beyond official statements.",
+        "Provide competing interpretations for the Premier's Japan visit (routine sports diplomacy vs. strategic breakthrough), defense budget timing (domestic political signaling vs. genuine capability commitment), and Lai's nuclear shift (energy pragmatism vs. political positioning) within the next assessment.",
+        "Re-evaluate whether the Japan relationship framing still fits current evidence. If the relationship has truly 'normalized' as claimed for multiple weeks, continued emphasis on breakthrough language suggests the analytical frame may be outdated.",
+        "Complete actual structural claim evaluation or acknowledge that no structural claims were tested this week. The current format provides no analytical value."
+      ]
+    },
+    "self_corrections": [],
+    "structural_claim_checks": [
+      {
+        "claim_ref": "unknown",
+        "claim_text": "",
+        "status": "confirmed",
+        "evidence": "",
+        "confidence_in_claim": 3
+      }
+    ],
+    "story_clusters": [
+      {
+        "headline": "President Lai Ching-te announces major defense budget increase and nuclear policy review",
+        "summary": "President Lai announced a 1.25 trillion NT dollar eight-year defense budget and defended his administration's review of nuclear power restart alongside continued green energy development. He marked 30 years of Taiwan's direct presidential elections and vowed to resist the CCP.",
+        "source_url": "https://visiontimes.com/2026/03/16/taiwan-marks-30-years-of-direct-presidential-elections-and-vows-to-resist-the-ccp.html",
+        "source_name": "visiontimes.com"
+      },
+      {
+        "headline": "Beijing condemns Lai Ching-te over comments comparing Japanese colonial rule to early KMT period",
+        "summary": "Chinese government and state media accused President Lai of 'glorifying Japanese colonial rule' after he made comparisons between Japanese colonial period and early KMT rule over Taiwan. Beijing called his remarks an attempt to distort history and promote Taiwan independence.",
+        "source_url": "https://scmp.com/news/china/diplomacy/article/3347164/taiwan-leader-william-lai-glorifying-japanese-colonial-rule-beijing-says",
+        "source_name": "scmp.com"
+      },
+      {
+        "headline": "Premier Cho Jung-tai's Japan trip to watch World Baseball Classic sparks political controversy",
+        "summary": "Premier Cho's personal visit to Tokyo to watch Taiwan's WBC game drew criticism and praise, with opponents questioning the trip's appropriateness while supporters called it 'baseball diplomacy.' Cho said he paid for the trip personally and had no other objectives beyond cheering for Taiwan.",
+        "source_url": "https://www.taipeitimes.com/News/editorials/archives/2026/03/22/2003854241",
+        "source_name": "taipeitimes.com"
+      },
+      {
+        "headline": "President Lai conducts diplomatic meetings with foreign officials amid supply chain cooperation push",
+        "summary": "President Lai met with officials from St. Vincent, Japan, and spoke at the Yushan Forum calling for democratic partners to strengthen supply chain cooperation. He emphasized Taiwan's role in forming 'international teams' with like-minded countries for economic resilience.",
+        "source_url": "https://focustaiwan.tw/politics/202603160012",
+        "source_name": "rti.org.tw"
+      },
+      {
+        "headline": "KMT internal disputes surface amid cooperation agreement with TPP for local elections",
+        "summary": "The KMT approved a cooperation pact with the Taiwan People's Party for upcoming local elections, while facing internal challenges including poor attendance at party meetings and disagreements over leadership direction. Many KMT lawmakers were absent from a lunch with chairwoman Cheng Li-wun.",
+        "source_url": "https://focustaiwan.tw/politics/202603180022",
+        "source_name": "kmt.org.tw"
+      },
+      {
+        "headline": "TSMC demonstrates continued technology leadership amid AI boom and competitive pressures",
+        "summary": "TSMC Chairman C.C. Wei highlighted the company's dominance in manufacturing 95% of AI chip 'brains' while dismissing Chinese robotic capabilities. The company reported strong financial performance driven by AI demand, though faces some pressure from Iran war affecting helium supplies and potential customer diversification.",
+        "source_url": "https://www.taiwannews.com.tw/news/6325504",
+        "source_name": "taiwannews.com.tw"
+      },
+      {
+        "headline": "Defense Minister Wellington Koo warns of pressing China threat, emphasizes deterrence needs",
+        "summary": "Taiwan's Defense Minister Wellington Koo stated that China poses a pressing threat with continued military buildup and that effective deterrence is needed to make any attack very risky for Beijing. He emphasized that China has neither given up using force against Taiwan nor slowed military spending.",
+        "source_url": "https://www.reuters.com/world/china/china-poses-pressing-threat-deterrence-needed-avert-invasion-taiwan-says-2026-03-20/",
+        "source_name": "reuters.com"
+      },
+      {
+        "headline": "Premier Cho Jung-tai expands migrant domestic helper eligibility with new fee structure",
+        "summary": "Premier Cho approved expansion of eligibility to hire migrant domestic helpers, with employers required to pay monthly fees between NT$2,000 and NT$10,000 to fund Ministry of Labor measures aimed at mitigating impacts on Taiwanese workers.",
+        "source_url": "https://focustaiwan.tw/society/202603190017",
+        "source_name": "focustaiwan.tw"
+      }
+    ]
+  }
+]
