@@ -536,13 +536,15 @@ def parse_story_map_response(response_text: str) -> StoryMapOutput:
 # Agent
 # =============================================================================
 
-# max_tokens is the COMBINED ceiling (thinking + visible output). With 16k
-# thinking budget, leave 16k for visible output so the tool_use block has
-# room to serialize for large countries. Prior value (+8192) left only 8k,
-# which truncated mid-tool_use on clustering outputs > ~55k chars — same
-# failure mode as the fr/it truncation from 2026-04-12, and the reason LV
-# fell back to json_repair on the 2026-04-20 run despite MPM_USE_TOOL_SCHEMA=1.
-_STORY_MAP_MAX_TOKENS = THINKING_BUDGET_TOKENS + 16384
+# max_tokens is the COMBINED ceiling (thinking + visible output). Audit on
+# the 2026-05-17 run found 26 of 30 countries hit the prior +16384 ceiling
+# mid-tool_use (output_tokens=THINKING_BUDGET+16384 exactly) and triggered
+# the no-tool fallback — costing ~$21/run in untraced retries. The audit
+# also showed thinking self-regulates at ~5k mean / 8.4k max, well under the
+# 16k budget, so the truncation is in visible output, not thinking. Bumping
+# the headroom to 32768 gives ~24k of visible after typical thinking — enough
+# for the largest tool_use blocks observed (~30k visible chars).
+_STORY_MAP_MAX_TOKENS = THINKING_BUDGET_TOKENS + 32768
 
 
 @dataclass
@@ -682,9 +684,12 @@ async def process_story_map_response(
     in that case a partial tool_use will fall through to text-based parsing
     (which is what happens for runs that never had the tool enabled).
     """
+    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+
     tool_input, text_content = _extract_text_and_tool_use(response)
 
     used_fallback = False
+    first_call_usage: dict | None = None
     if (
         USE_TOOL_SCHEMA
         and not _tool_input_complete(tool_input)
@@ -697,6 +702,7 @@ async def process_story_map_response(
             built.config.code, reason,
             response.usage.input_tokens, response.usage.output_tokens,
         )
+        first_call_usage = extract_usage(response)
         fallback_params = {k: v for k, v in built.params.items() if k != "tools"}
         response = await fallback_call(fallback_params)
         tool_input, text_content = _extract_text_and_tool_use(response)
@@ -717,14 +723,33 @@ async def process_story_map_response(
         logger.error("Story map %s: no text or tool_use in LLM response", built.config.code)
         raise ValueError(f"Story map agent returned no output for {built.config.code}")
 
-    from ..trace import save_raw_response, update_trace_parsed, extract_thinking, extract_usage
+    # Combine usage across both calls when a fallback ran. Without this, the
+    # trace records only the retry's tokens and cost_by_stage.py undercounts
+    # by ~$0.80/affected country (2026-05-17 run: 26 fallbacks = ~$21/run
+    # untraced).
+    retry_usage = extract_usage(response)
+    if used_fallback and first_call_usage is not None:
+        combined_usage = {
+            k: first_call_usage.get(k, 0) + retry_usage.get(k, 0)
+            for k in retry_usage
+        }
+        save_extra = {
+            "fallback": True,
+            "first_call_usage": first_call_usage,
+            "retry_usage": retry_usage,
+        }
+    else:
+        combined_usage = retry_usage
+        save_extra = None
+
     save_raw_response(
         "story_map", built.config.code, built.analysis_date,
         system_prompt=built.system_prompt,
         user_message=built.user_message,
         response_text=trace_response_text,
         thinking_text=extract_thinking(response),
-        usage=extract_usage(response),
+        usage=combined_usage,
+        extra=save_extra,
     )
 
     if tool_input is not None:
