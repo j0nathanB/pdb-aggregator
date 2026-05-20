@@ -126,7 +126,7 @@ class TestBraveNewsResult:
         assert result.url == "https://example.com"
         assert result.description == ""
         assert result.age is None
-        assert result.source_domain is None
+        assert result.source_domain == "example.com"
         assert result.extra_snippets == []
 
     def test_from_api_no_meta_url(self):
@@ -135,6 +135,16 @@ class TestBraveNewsResult:
             "url": "https://example.com",
             "description": "Desc",
         }
+        result = BraveNewsResult.from_api(item)
+        assert result.source_domain == "example.com"
+
+    def test_from_api_url_fallback_strips_www(self):
+        item = {"title": "T", "url": "https://www.blikk.hu/politika/x"}
+        result = BraveNewsResult.from_api(item)
+        assert result.source_domain == "blikk.hu"
+
+    def test_from_api_url_fallback_no_url(self):
+        item = {"title": "T", "url": ""}
         result = BraveNewsResult.from_api(item)
         assert result.source_domain is None
 

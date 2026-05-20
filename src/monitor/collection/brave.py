@@ -61,13 +61,24 @@ class BraveNewsResult:
     @classmethod
     def from_api(cls, item: dict) -> BraveNewsResult:
         meta = item.get("meta_url", {})
+        url = item.get("url", "")
+        source_domain = meta.get("netloc") or meta.get("hostname")
+        if not source_domain and url:
+            # Brave occasionally returns results with an empty meta_url block.
+            # Fall back to the URL's hostname so discard / off-topic filters
+            # still have a domain to match. Matches netloc's lowercase, no-www
+            # convention (audit on 2026-05-20 surfaced 22 leaks/run in HU/PK
+            # that all had empty meta_url).
+            host = urlparse(url).hostname
+            if host:
+                source_domain = host.lower().removeprefix("www.")
         return cls(
             title=item.get("title", ""),
-            url=item.get("url", ""),
+            url=url,
             description=item.get("description", ""),
             age=item.get("age"),
             page_age=item.get("page_age"),
-            source_domain=meta.get("netloc") or meta.get("hostname"),
+            source_domain=source_domain,
             extra_snippets=item.get("extra_snippets", []),
         )
 

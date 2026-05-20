@@ -46,3 +46,38 @@ sagat.no
 starnewskorea.com
 goal.com
 dosisfutbolera.com
+# 2026-05-20 audit additions: high-volume sports domains hitting many countries
+sports.yahoo.com
+mundodeportivo.com
+cricbuzz.com
+si.com
+marca.com
+
+# --- Financial / press-release spam (off-topic per pipeline design) ---
+# 2026-05-20 audit: financial-news spam and PR distribution that
+# repeatedly surfaces on actor-name and economic-tech queries but is
+# almost never kept by story_map (drop rate 88-100% across ≥6 countries).
+prnewswire.com
+tickerreport.com
+fool.com
+stocktitan.net
+simplywall.st
+insidermonkey.com
+boerse-express.com
+# 2026-05-20 audit, prior-4-runs scan: more PR/aggregator/spam:
+globenewswire.com
+investing.com
+themarketsdaily.com
+
+# --- Portal / aggregator / non-original ---
+# 2026-05-20 audit: re-publishers and portals — rarely original reporting,
+# nearly always reproducing wire content that's already in the pool via
+# the original source. AOL is portal-style; namu.wiki is a Korean fan wiki.
+aol.com
+en.namu.wiki
+
+# --- Social platforms ---
+# 2026-05-20 audit: social-post URLs to Meta's Threads — 94% drop across
+# 18 countries. Social posts aren't story_map's job; politician quotes
+# come in via wire pickup of the same posts.
+threads.com
