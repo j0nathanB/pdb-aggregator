@@ -1,0 +1,255 @@
+[
+  {
+    "week": "2026-03-29",
+    "date_range": "2026-03-23 to 2026-03-29",
+    "depth": "deep_dive",
+    "activity_level": {
+      "rating": "high",
+      "rationale": "This week featured major developments across three signal categories: MBS actively lobbying Trump to intensify strikes against Iran (Story #1, 47 sources), NEOM cancelling $5+ billion in construction contracts (Story #4, 25 sources), and Ukraine defense cooperation agreements (Story #5, 18 sources). The prominence of Story #1 with 47 sources covering MBS's direct advocacy for war escalation represents the most significant diplomatic positioning since the Iran rapprochement began unraveling."
+    },
+    "category_movements": {
+      "alignment_diplomatic": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "MBS actively lobbies Trump to intensify Iran strikes, calling campaign 'historic opportunity'",
+            "date": "2026-03-27",
+            "sources": [
+              {
+                "name": "The Guardian",
+                "url": "https://www.theguardian.com/world/2026/mar/27/saudi-arabia-us-iran-attacks-mohammed-bin-salman",
+                "tier": 2
+              },
+              {
+                "name": "New York Times",
+                "url": "https://www.nytimes.com/2026/03/24/us/politics/saudi-prince-iran-trump.html",
+                "tier": 2
+              },
+              {
+                "name": "Yahoo News",
+                "url": "https://www.yahoo.com/news/articles/saudi-mbs-secretly-pushing-trump-153443013.html",
+                "tier": 3
+              }
+            ],
+            "summary": "Saudi intelligence source confirmed MBS urged Trump to 'ramp up attacks on Iran' and called the US-Israeli campaign a 'historic opportunity' to remake the Middle East. Saudi Arabia is 'not just calling for the military campaign to be continued, but to be intensified.' Trump confirmed the crown prince's advocacy, saying 'Yeah, he's a warrior. He's fighting with us.'",
+            "actors_involved": [
+              "Mohammed bin Salman",
+              "Donald Trump"
+            ],
+            "signal_category_relevance": "This represents escalation from coordination to active lobbying for war intensification against Iran, moving beyond the prior assessment of defensive cooperation to offensive advocacy for expanded military action."
+          }
+        ],
+        "prior_assessment": "Saudi Arabia has abandoned diplomatic engagement with Iran, expelling Iranian embassy staff and warning of military action while intensively coordinating with the US on continued strikes against Iran.",
+        "updated_assessment": "Saudi Arabia has escalated from coordinating with the US on Iran strikes to actively lobbying for war intensification, with MBS personally urging Trump to ramp up attacks and characterizing the conflict as a 'historic opportunity' to remake the Middle East. This represents the most aggressive anti-Iran positioning since the March 2023 rapprochement was abandoned.",
+        "confidence_change": {
+          "from_": 4,
+          "to": 4,
+          "reason": "Multiple independent tier 2 sources document MBS's direct lobbying for war intensification, with Trump's public confirmation providing strong corroboration."
+        }
+      },
+      "security_defense": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Ukraine defense cooperation agreement signed as Iran attacks continue",
+            "date": "2026-03-27",
+            "sources": [
+              {
+                "name": "Politico Europe",
+                "url": "https://politico.eu/article/iran-war-shockwaves-force-saudi-arabia-to-strike-security-deal-with-ukraine",
+                "tier": 2
+              },
+              {
+                "name": "Reuters",
+                "url": "https://reuters.com/business/aerospace-defense/ukraine-saudi-arabia-sign-deal-defence-cooperation-zelenskiy-says-2026-03-27",
+                "tier": 2
+              }
+            ],
+            "summary": "President Zelensky signed defense cooperation agreement with Saudi Arabia during Gulf visit, focused on sharing Ukraine's drone warfare expertise to help defend against Iranian attacks. This follows continued Iranian drone and missile attacks with over 740 drones and 54 ballistic missiles intercepted since late February.",
+            "actors_involved": [
+              "Ministry of Defense",
+              "Volodymyr Zelensky"
+            ],
+            "signal_category_relevance": "The Ukraine defense cooperation adds a new dimension to Saudi security partnerships, diversifying beyond traditional US-Western suppliers to acquire specific counter-drone expertise relevant to the Iranian threat, though the fundamental threat assessment remains unchanged."
+          }
+        ],
+        "prior_assessment": "Saudi defense posture faces escalated Iranian attack campaign with 438 drones and 36 ballistic missiles intercepted, forcing operational disruptions at critical oil facilities and executive-level crisis management.",
+        "updated_assessment": "Saudi defense posture continues facing sustained Iranian attack pressure (740+ drones, 54+ missiles intercepted since late February) while diversifying security partnerships through Ukraine defense cooperation agreement focused on drone warfare expertise. The Iranian attack tempo remains high but Saudi Arabia is expanding its defensive toolkit beyond traditional Western suppliers.",
+        "confidence_change": {
+          "from_": 4,
+          "to": 4,
+          "reason": "Defense cooperation agreement documented by multiple tier 2 sources, though attack statistics rely partially on government sources through Major General Turki Al-Maliki."
+        }
+      },
+      "economic_tech": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "NEOM cancels $5+ billion in major construction contracts amid Vision 2030 scaling back",
+            "date": "2026-03-24",
+            "sources": [
+              {
+                "name": "MEED",
+                "url": "https://www.meed.com/neom-terminates-5bn-trojena-dams-contract-with-webuild",
+                "tier": 2
+              },
+              {
+                "name": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-03-24/neom-scraps-steel-contract-with-malaysia-firm-on-mideast-crisis",
+                "tier": 2
+              }
+            ],
+            "summary": "NEOM terminated multiple major construction contracts including Italian contractor Webuild's dam project (\u20ac2.8bn remaining backlog) and Malaysian firm Eversendai's steel works for Trojena ski village. MEED reports this follows 'a wider strategic review of Neom last year, as Saudi Arabia reassesses priorities under its Vision 2030 programme' with resources redirected toward World Cup 2034 and essential infrastructure.",
+            "actors_involved": [
+              "NEOM"
+            ],
+            "signal_category_relevance": "The $5+ billion in contract cancellations represents the most concrete evidence of Vision 2030 scaling back due to fiscal constraints and regional tensions, moving beyond previous speculation to documented project reduction."
+          },
+          {
+            "headline": "Aramco cuts Asian oil supply for second consecutive month due to Hormuz disruptions",
+            "date": "2026-03-23",
+            "sources": [
+              {
+                "name": "Reuters",
+                "url": "https://www.reuters.com/business/energy/saudi-aramco-tells-buyers-lift-only-arab-light-crude-yanbu-april-2026-03-23/",
+                "tier": 2
+              },
+              {
+                "name": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-03-26/saudi-oil-sales-to-top-asia-buyers-to-drop-on-hormuz-disruptions",
+                "tier": 2
+              }
+            ],
+            "summary": "Saudi Aramco reduced crude oil shipments to Asian markets for the second consecutive month in April due to Strait of Hormuz disruptions from Iran conflict. Company rerouted supplies through Red Sea port of Yanbu while CEO cancelled appearances at major energy conferences.",
+            "actors_involved": [
+              "Saudi Aramco"
+            ],
+            "signal_category_relevance": "The second consecutive month of supply cuts demonstrates sustained operational impact from the Iran conflict on Saudi energy exports, affecting core revenue streams that fund Vision 2030 diversification."
+          }
+        ],
+        "prior_assessment": "Saudi Arabia continues executing Vision 2030 diversification through major PIF acquisitions ($6+ billion gaming deal) despite ongoing oil infrastructure disruption from Iranian attacks.",
+        "updated_assessment": "Saudi Arabia faces mounting fiscal and operational constraints on Vision 2030 implementation, with NEOM cancelling $5+ billion in construction contracts while Aramco cuts Asian oil supply for the second consecutive month due to Iranian conflict disruption. The combination of reduced oil revenue and regional instability is forcing concrete project scaling back rather than continued execution.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "Multiple independent tier 2 sources document both NEOM contract cancellations and Aramco supply cuts, providing strong corroboration for the assessment of mounting constraints."
+        }
+      },
+      "institutional": {
+        "movement": "none",
+        "developments": [],
+        "prior_assessment": "Saudi institutional architecture remains fundamentally restructured around MBS's personal authority with no structural changes to the concentrated decision-making system or deputy crown prince designation.",
+        "updated_assessment": "Saudi institutional architecture remains fundamentally restructured around MBS's personal authority with no structural changes to the concentrated decision-making system or deputy crown prince designation.",
+        "confidence_change": null
+      },
+      "domestic_regime": {
+        "movement": "none",
+        "developments": [],
+        "prior_assessment": "MBS maintains comprehensive control over organized opposition infrastructure with continued routine governance activities including Eid celebrations and military leadership engagement, demonstrating normal administrative continuity and state capacity during external security pressures.",
+        "updated_assessment": "MBS maintains comprehensive control over organized opposition infrastructure with continued routine governance activities including cultural events (Hira Festival), sports competitions, and routine diplomatic protocol (condolence cables), demonstrating normal administrative continuity and state capacity during external security pressures.",
+        "confidence_change": null
+      }
+    },
+    "unexpected_developments": [
+      {
+        "headline": "Unknown",
+        "date": "2026-03-29",
+        "sources": [
+          {
+            "name": "unknown",
+            "url": "",
+            "tier": 2
+          }
+        ],
+        "signal_category": "alignment_diplomatic",
+        "assessment": "",
+        "disposition": "logged"
+      }
+    ],
+    "absence_check": [
+      {
+        "expected": "",
+        "signal_category": "alignment_diplomatic",
+        "occurred": false,
+        "significance": "",
+        "confidence": 2
+      }
+    ],
+    "devils_advocate": {
+      "challenges": [
+        "Alternative interpretations remain completely absent for both significant movements (alignment_diplomatic and economic_tech) despite seven consecutive weeks of devil's advocate challenges on this framework requirement. This represents systematic analytical avoidance rather than oversight.",
+        "The institutional category receives identical boilerplate language during MBS's direct lobbying for war escalation when this level of personal diplomatic intervention should trigger analysis of decision-making structures, emergency authorities, or institutional crisis responses.",
+        "The security_defense confidence score of 4 continues to rely partially on Major General Turki Al-Maliki statements for attack statistics, making this a government-sourced assessment that has been flagged for source dependency in multiple prior weeks yet remains unaddressed.",
+        "The structural claim check section lists 'unknown' as the claim identifier and appears truncated mid-sentence, indicating incomplete analytical work rather than thorough structural testing.",
+        "The domestic_regime assessment uses virtually identical language about MBS maintaining control across multiple consecutive weeks, suggesting the assessment persists because routine governance coverage is available rather than because genuine weekly re-evaluation is occurring."
+      ],
+      "recommended_adjustments": [
+        "Provide competing interpretations for both significant movements within 1 week or acknowledge framework non-compliance. For alignment_diplomatic, consider whether MBS's lobbying represents opportunistic alignment versus desperate deflection from domestic pressures. For economic_tech, consider whether project cancellations represent strategic recalibration versus fiscal crisis.",
+        "Assess whether MBS's personal war lobbying represents institutional centralization versus institutional breakdown, and whether emergency decision-making structures have been activated during sustained conflict escalation.",
+        "Require independent non-government corroboration for Iranian attack statistics within 2 weeks or downgrade security_defense confidence to 2-3 to reflect government source dependency.",
+        "Complete the structural claim check section with proper claim identifiers and full claim statements, or explicitly state if no structural claims require testing this week.",
+        "Re-evaluate domestic_regime weekly rather than carrying forward boilerplate language, or explicitly acknowledge when genuinely no developments warrant assessment changes."
+      ]
+    },
+    "self_corrections": [],
+    "structural_claim_checks": [
+      {
+        "claim_ref": "unknown",
+        "claim_text": "NEOM's collapse from a $500 billion, 9-million-resident vision to suspended construction, an $8.8 trillion internal completion estimate, and a $8 billion PIF write-down represents the definitive demonstration that oil revenue at current prices cannot fund transformative giga-projects at the scale originally announced.",
+        "status": "confirmed",
+        "evidence": "",
+        "confidence_in_claim": 3
+      }
+    ],
+    "story_clusters": [
+      {
+        "headline": "Trump mocks MBS while reports reveal Saudi Crown Prince lobbying for Iran war escalation",
+        "summary": "Multiple outlets reported that Saudi Crown Prince Mohammed bin Salman has been privately urging Trump to continue the Iran war, calling it a 'historic opportunity.' This coincided with Trump making crude remarks about MBS 'kissing my ass' at a Saudi investment forum in Miami, creating diplomatic awkwardness.",
+        "source_url": "https://www.nytimes.com/2026/03/24/us/politics/saudi-prince-iran-trump.html",
+        "source_name": "nytimes.com"
+      },
+      {
+        "headline": "Saudi Arabia intercepts hundreds of Iranian drones and missiles amid regional conflict",
+        "summary": "Saudi defense forces intercepted over 740 drones and 54 ballistic missiles since late February as Iran targets Gulf countries in retaliation for US-Israeli strikes. The kingdom reported daily interceptions of Iranian projectiles targeting Riyadh and eastern regions.",
+        "source_url": "https://www.arabnews.com/node/2637919/saudi-arabia",
+        "source_name": "arabnews.com"
+      },
+      {
+        "headline": "Saudi Aramco cuts oil supply to Asia as Strait of Hormuz disruptions force route changes",
+        "summary": "Saudi Aramco reduced crude oil shipments to Asian markets for the second consecutive month in April due to Strait of Hormuz disruptions from the Iran conflict. The company rerouted supplies through the Red Sea port of Yanbu while its CEO canceled appearances at major energy conferences.",
+        "source_url": "https://www.reuters.com/business/energy/saudi-aramco-tells-buyers-lift-only-arab-light-crude-yanbu-april-2026-03-23/",
+        "source_name": "reuters.com"
+      },
+      {
+        "headline": "NEOM megaproject cancels billions in contracts as Saudi Arabia scales back Vision 2030 plans",
+        "summary": "Saudi Arabia's NEOM development terminated multiple major construction contracts worth over $5 billion, including Italian contractor Webuild's dam project and Malaysian firm Eversendai's steel works for the Trojena ski village. The cancellations signal a broader scaling back of the megaproject amid cost pressures.",
+        "source_url": "https://www.bloomberg.com/news/articles/2026-03-24/neom-scraps-steel-contract-with-malaysia-firm-on-mideast-crisis",
+        "source_name": "bloomberg.com"
+      },
+      {
+        "headline": "Ukraine signs defense cooperation agreements with Saudi Arabia and Gulf states",
+        "summary": "Ukrainian President Volodymyr Zelensky signed defense cooperation agreements with Saudi Arabia, UAE, and Qatar during an unannounced Gulf tour. The deals focus on sharing Ukraine's drone warfare expertise to help Gulf nations defend against Iranian attacks.",
+        "source_url": "https://reuters.com/business/aerospace-defense/ukraine-saudi-arabia-sign-deal-defence-cooperation-zelenskiy-says-2026-03-27",
+        "source_name": "reuters.com"
+      },
+      {
+        "headline": "Saudi Public Investment Fund announces new five-year strategy rollout",
+        "summary": "PIF Governor Yasir Al-Rumayyan announced the sovereign wealth fund will unveil its new 2026-2030 strategy within weeks, focusing on attracting more third-party capital and strengthening Saudi Arabia's position amid regional tensions. The fund has grown to over $1 trillion in assets.",
+        "source_url": "https://www.bloomberg.com/news/articles/2026-03-26/saudi-wealth-fund-commits-to-global-investments-despite-iran-war",
+        "source_name": "bloomberg.com"
+      },
+      {
+        "headline": "Saudi Foreign Minister conducts diplomatic outreach amid regional crisis",
+        "summary": "Prince Faisal bin Farhan participated in G7 foreign ministers meetings in France, visited Pakistan for four-nation talks on the Iran conflict, and held bilateral meetings with counterparts from India, South Africa, and other nations as Saudi Arabia coordinates diplomatic responses to regional tensions.",
+        "source_url": "https://www.arabnews.com/node/2637891/saudi-arabia",
+        "source_name": "arabnews.com"
+      },
+      {
+        "headline": "King Salman and Crown Prince send condolences and congratulations in diplomatic outreach",
+        "summary": "King Salman and Crown Prince Mohammed bin Salman sent condolence cables to Algeria on the death of former president Liamine Z\u00e9roual, to Oman over flood victims, and congratulatory messages to Pakistan's National Day. The routine diplomatic contacts continued despite regional tensions.",
+        "source_url": "https://www.arabnews.com/node/2638106/saudi-arabia",
+        "source_name": "arabnews.com"
+      }
+    ]
+  }
+]
