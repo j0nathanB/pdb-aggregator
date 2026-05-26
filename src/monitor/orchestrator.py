@@ -244,10 +244,13 @@ async def _collect_layer2_inputs(
         if not all_urls:
             logger.info(f"Layer 2: no URLs found for {code}")
 
-        # Extraction: fetch full text for discovered URLs
+        # Government domains publish 10–20 distinct items per week (press
+        # releases, MFA statements); the news default of 5 drops primary content.
         if all_urls:
             logger.info(f"Layer 2 extract: {code} ({len(all_urls)} URLs)")
-            result.extraction_results = await extractor.extract_batch(all_urls)
+            result.extraction_results = await extractor.extract_batch(
+                all_urls, max_per_domain=20
+            )
 
         # Build extracted_content for government agent
         url_to_snippet: dict[str, str] = {}

@@ -42,6 +42,7 @@ from src.monitor.orchestrator import (
     CountryResult,
     DeskPipelineResult,
     Layer2Result,
+    _collect_layer2_inputs,
     apply_to_ledger,
     assemble_country_domains,
 )
@@ -466,3 +467,53 @@ class TestAssembleCountryDomains:
         gov_config = _test_gov_config()
         result = assemble_country_domains(config, gov_config=gov_config)
         assert len(result["allowed_domains"]) == len(set(result["allowed_domains"]))
+
+
+class TestCollectLayer2Inputs:
+    @pytest.mark.asyncio
+    async def test_extract_batch_uses_gov_per_domain_limit(self):
+        """Gov Layer 2 must call extract_batch with max_per_domain=20 (not the
+        news default of 5). Without this, official press-release feeds get
+        silently truncated — see orchestrator.py:_collect_layer2_inputs."""
+        from unittest.mock import AsyncMock, MagicMock
+
+        from src.monitor.collection.searchapi import (
+            SearchAPIResponse,
+            SearchResult,
+        )
+
+        config = _test_country_config()
+        gov_config = _test_gov_config()
+
+        urls = [f"https://gob.mx/news/{i}" for i in range(10)]
+        search_resp = SearchAPIResponse(
+            query="site:gob.mx",
+            results=[
+                SearchResult(
+                    title=f"item {i}", url=u, snippet="", domain="gob.mx"
+                )
+                for i, u in enumerate(urls)
+            ],
+        )
+        searchapi_client = MagicMock()
+        searchapi_client.search_country_government = AsyncMock(
+            return_value=[search_resp]
+        )
+
+        extractor = MagicMock()
+        extractor.extract_batch = AsyncMock(return_value=[])
+
+        await _collect_layer2_inputs(
+            config=config,
+            gov_config=gov_config,
+            searchapi_client=searchapi_client,
+            extractor=extractor,
+            processing_date=date(2026, 5, 24),
+        )
+
+        extractor.extract_batch.assert_awaited_once()
+        _, kwargs = extractor.extract_batch.call_args
+        assert kwargs.get("max_per_domain") == 20, (
+            f"Gov Layer 2 should pass max_per_domain=20 to override the news "
+            f"default of 5; got {kwargs!r}"
+        )

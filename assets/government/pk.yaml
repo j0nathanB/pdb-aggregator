@@ -14,14 +14,6 @@ domains:
   institutions:
   - Press Information Department
   priority: P1
-- domain: ispr.gov.pk
-  institutions:
-  - Inter-Services Public Relations
-  priority: P1
-- domain: mod.gov.pk
-  institutions:
-  - Ministry of Defence
-  priority: P2
 - domain: modp.gov.pk
   institutions:
   - Ministry of Defence Production
@@ -54,4 +46,7 @@ domains:
   institutions:
   - Printing Corporation of Pakistan (Gazette)
   priority: P3
-query_terms: []
+query_terms:
+- press release
+- statement
+- announcement
