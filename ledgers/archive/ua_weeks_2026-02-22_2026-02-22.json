@@ -1,0 +1,282 @@
+[
+  {
+    "week": "2026-02-22",
+    "date_range": "2026-02-15 to 2026-02-22",
+    "depth": "deep_dive",
+    "activity_level": {
+      "rating": "moderate",
+      "rationale": "Significant developments in alignment_diplomatic (Geneva talks breakdown, Munich conference engagement) and domestic_regime (Zaluzhnyi's public break with Zelensky) drive the moderate rating. The high-prominence stories (15+ sources covering Zaluzhnyi revelations, 16 sources on territorial gains, 18 sources on Sybiha diplomacy) align with signal category assessments. Security and economic developments represent tactical/routine progress within established patterns."
+    },
+    "category_movements": {
+      "alignment_diplomatic": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Geneva peace talks end abruptly with Zelensky accusing Russia of stalling",
+            "date": "2026-02-19",
+            "sources": [
+              {
+                "name": "Time",
+                "url": "https://time.com/7379321/ukraine-russia-peace-talks-end-zelensky-trump-clash/",
+                "tier": 2
+              },
+              {
+                "name": "The Hill",
+                "url": "https://thehill.com/homenews/administration/5743226-zelensky-accuses-russia-delaying-talks/",
+                "tier": 2
+              }
+            ],
+            "summary": "Trilateral talks between Ukraine, Russia and US in Geneva ended after just two hours on the second day. Zelensky accused Russia of trying to 'drag out' negotiations, stating positions 'differ' on crucial points including territorial concessions and security guarantees. US mediation team focused on territorial disputes.",
+            "actors_involved": [
+              "Volodymyr Zelensky",
+              "Rustem Umerov"
+            ],
+            "signal_category_relevance": "Demonstrates continued diplomatic engagement but reveals structural obstacles in peace process, with Ukraine maintaining agency in negotiations while facing pressure on territorial concessions"
+          },
+          {
+            "headline": "Zelensky seeks advanced weapons from Congress at Munich Security Conference",
+            "date": "2026-02-16",
+            "sources": [
+              {
+                "name": "Politico Europe",
+                "url": "https://politico.eu/newsletter/global-security/munich-day-3-zelenskyy-seeks-tomahawks-patriots",
+                "tier": 2
+              }
+            ],
+            "summary": "Zelensky privately told US lawmakers he needs Tomahawk missiles and faster Patriot deliveries. Lawmakers say he described in detail how Tomahawks could change military balance by hitting Russian supply networks. Represents continued high-level alliance management despite US reluctance to escalate.",
+            "actors_involved": [
+              "Volodymyr Zelensky",
+              "Lindsey Graham"
+            ],
+            "signal_category_relevance": "Shows Ukraine's continued agency in shaping Western support through Congressional engagement, bypassing executive branch hesitation on advanced weapons systems"
+          }
+        ],
+        "prior_assessment": "Ukraine continues operating under timeline pressure but is engaging in active high-level diplomacy to shape terms, with significant bilateral engagement at Munich demonstrating continued agency in alliance management and peace process positioning despite external deadline pressure.",
+        "updated_assessment": "Ukraine maintains active diplomatic engagement despite Geneva talks breakdown, with increased friction within EU (Hungary tensions) and continued weapons requests to US Congress demonstrating sustained alliance management under pressure. The peace process remains active but structurally constrained by irreconcilable positions on territorial concessions.",
+        "confidence_change": {
+          "from_": 4,
+          "to": 4,
+          "reason": "Multiple independent tier 2 sources confirm diplomatic developments; Geneva breakdown verified by Time, Hill, and other outlets; Munich conference details from Politico Europe"
+        }
+      },
+      "security_defense": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Ukraine claims 300 square kilometers liberated in southern counteroffensive",
+            "date": "2026-02-20",
+            "sources": [
+              {
+                "name": "France 24",
+                "url": "https://www.france24.com/en/live-news/20260220-zelensky-tells-afp-that-ukraine-is-not-losing-the-war",
+                "tier": 2
+              },
+              {
+                "name": "Kyiv Post",
+                "url": "https://www.kyivpost.com/post/70472",
+                "tier": 3
+              }
+            ],
+            "summary": "Zelensky told AFP that Ukrainian forces have recently liberated 300 square kilometers in southern Ukraine, though timeframe unspecified and AFP unable to verify. Claims come amid continued pressure to cede Donbas territory in peace negotiations.",
+            "actors_involved": [
+              "Volodymyr Zelensky",
+              "Armed Forces of Ukraine"
+            ],
+            "signal_category_relevance": "Demonstrates continued tactical offensive capability and territorial gains within established military posture, supporting Ukrainian negotiating position"
+          },
+          {
+            "headline": "SBU conducts deep strike on Russian chemical plant producing explosives",
+            "date": "2026-02-17",
+            "sources": [
+              {
+                "name": "Kyiv Independent",
+                "url": "https://kyivindependent.com/sbu-strikes-chemical-factory-used-for-explosives-production-deep-inside-russia",
+                "tier": 2
+              }
+            ],
+            "summary": "SBU Alpha unit struck Metafrax Chemicals plant in Perm Krai, 1,600 kilometers from Ukrainian territory. Facility produces methanol, urotropine, and other explosives precursors. Demonstrates continued long-range strike capability deep inside Russia.",
+            "actors_involved": [
+              "SBU",
+              "Armed Forces of Ukraine"
+            ],
+            "signal_category_relevance": "Shows sustained deep-strike capability extending Ukrainian military reach well beyond border regions, maintaining pressure on Russian military-industrial targets"
+          }
+        ],
+        "prior_assessment": "Ukraine maintains offensive military posture with continued tactical success and institutional development. The second stage corps reform and record-range strike capabilities demonstrate continued capability expansion within the established strategic framework of attrition-focused operations and institutional modernization.",
+        "updated_assessment": "Ukraine maintains offensive military posture with continued territorial gains (300 sq km claimed) and deep-strike operations reaching 1,600 km into Russia, while advancing second-stage corps reform and European missile defense coordination within established strategic framework.",
+        "confidence_change": {
+          "from_": 4,
+          "to": 4,
+          "reason": "France 24 and Kyiv Independent provide independent confirmation of military developments; SBU strike details verified through operational reporting; territorial gains claims consistent with ongoing southern operations"
+        }
+      },
+      "economic_tech": {
+        "movement": "minor",
+        "developments": [
+          {
+            "headline": "Ukraine and IMF ease conditions on $8.2 billion loan program",
+            "date": "2026-02-16",
+            "sources": [
+              {
+                "name": "Straits Times",
+                "url": "https://straitstimes.com/world/europe/ukraine-imf-ease-conditions-on-new-82-billion-loan-program",
+                "tier": 2
+              },
+              {
+                "name": "Kyiv Post",
+                "url": "https://kyivpost.com/post/70120",
+                "tier": 3
+              }
+            ],
+            "summary": "Prime Minister Svyrydenko announced agreement with IMF to ease some conditions including sensitive tax increases for the new $8.2 billion lending program. Mission simplified November agreements and revised structural benchmarks, particularly regarding taxation of individual entrepreneurs.",
+            "actors_involved": [
+              "Yuliia Svyrydenko",
+              "IMF"
+            ],
+            "signal_category_relevance": "Represents program adjustment within existing financing architecture rather than structural change; demonstrates continued macrofinancial stability through international partnership"
+          }
+        ],
+        "prior_assessment": "Economic structure continues unchanged with IMF program advancement and NBU reserves growth demonstrating continued stability within the Western financing architecture. The reconstruction fund operationalization represents institutional development within established frameworks rather than structural change.",
+        "updated_assessment": "Economic structure continues stable with IMF program adjustments easing tax conditions while banking sector consolidation proceeds normally (two small banks declared insolvent). The loan condition modifications represent technical adjustments within established financing framework rather than structural change.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 3,
+          "reason": "Straits Times provides tier 2 verification of IMF agreement; banking sector developments from multiple domestic sources; limited sourcing on detailed economic indicators maintains moderate confidence level"
+        }
+      },
+      "institutional": {
+        "movement": "none",
+        "developments": [],
+        "prior_assessment": "No significant institutional developments this week. NATO discussions around 'NATO 3.0' concepts remain conceptual rather than producing concrete institutional changes. EU accession and anti-corruption processes continue at technical levels without major milestones.",
+        "updated_assessment": "No significant institutional developments this week. EU accession and anti-corruption processes continue at technical levels without major milestones. Defense Minister Fedorov's E5-format discussions on European missile defense remain within existing coordination frameworks.",
+        "confidence_change": null
+      },
+      "domestic_regime": {
+        "movement": "significant",
+        "developments": [
+          {
+            "headline": "Zaluzhnyi publicly reveals deep rift with Zelensky, alleges SBU intimidation",
+            "date": "2026-02-21",
+            "sources": [
+              {
+                "name": "AP News",
+                "url": "https://apnews.com/article/ukraine-war-zaluzhnyi-zelenskyy-raid-5ff9e5e2054e0b17c10daf58d7eab63e",
+                "tier": 2
+              }
+            ],
+            "summary": "Former army chief Zaluzhnyi spoke publicly for first time about tensions with Zelensky, alleging 2022 SBU raid on his office was intimidation. Claims he threatened to call in military reinforcements to protect command center. Blames political interference for failed 2023 counteroffensive. Widely seen as Zelensky's top political rival.",
+            "actors_involved": [
+              "Valerii Zaluzhnyi",
+              "Volodymyr Zelensky",
+              "SBU"
+            ],
+            "signal_category_relevance": "Represents most significant political challenge to Zelensky since Yermak's departure, with Ukraine's most popular political figure publicly breaking with the president and alleging systematic intimidation"
+          }
+        ],
+        "prior_assessment": "The regime maintains the Budanov security professional leadership model while political discussions emerge around mobilization policy adjustments. The ruling party's acknowledgment of mobilization enforcement challenges represents potential policy adaptation within existing governance structures.",
+        "updated_assessment": "The regime faces its most serious political challenge since Yermak's departure as Zaluzhnyi publicly breaks with Zelensky, alleging SBU intimidation and political interference in military operations. This represents a fundamental shift from private elite tensions to public political opposition from Ukraine's most trusted public figure.",
+        "confidence_change": {
+          "from_": 3,
+          "to": 4,
+          "reason": "AP News provides authoritative tier 2 reporting with direct quotes and specific allegations; represents major political development with clear implications for regime dynamics and succession politics"
+        }
+      }
+    },
+    "unexpected_developments": [
+      {
+        "headline": "Unknown",
+        "date": "2026-02-22",
+        "source": "unknown",
+        "source_tier": 2,
+        "signal_category": "alignment_diplomatic",
+        "assessment": "",
+        "disposition": "logged"
+      }
+    ],
+    "absence_check": [
+      {
+        "expected": "",
+        "signal_category": "alignment_diplomatic",
+        "occurred": false,
+        "significance": "",
+        "confidence": 2
+      }
+    ],
+    "devils_advocate": {
+      "challenges": [
+        "The security_defense confidence score of 4 is miscalibrated when France 24 explicitly reports that AFP 'unable to verify' the 300 square kilometer territorial gains claims. An assessment resting on unverifiable claims from a primary source cannot sustain confidence 4, regardless of the source tier.",
+        "The domestic_regime confidence increase from 3 to 4 represents single-source dependency despite the development's significance. While AP News provides authoritative reporting on Zaluzhnyi's revelations, a confidence 4 assessment requires independent corroboration, especially for claims involving SBU intimidation allegations that could represent political narrative rather than verified fact.",
+        "The structural claims section represents systematic analytical failure for the fifth consecutive week despite repeated devil's advocate challenges. All claims maintain identical future check dates (2026-03-25) and zero pressure weeks, indicating the analyst is carrying forward prior assessments automatically rather than conducting genuine structural analysis.",
+        "The economic_tech assessment persists with nearly identical 'Economic structure continues unchanged' language across multiple weeks, supported by increasingly routine sources (now Straits Times for technical IMF adjustments). This narrative persistence suggests analytical comfort rather than evidence-driven assessment.",
+        "The analysis fails to provide alternative interpretations for significant movements in alignment_diplomatic and domestic_regime categories, despite this being a core analytical requirement. The Geneva breakdown could represent calculated Ukrainian positioning rather than genuine diplomatic frustration, and Zaluzhnyi's public emergence could represent coordinated succession preparation rather than organic political opposition."
+      ],
+      "recommended_adjustments": [
+        "Downgrade security_defense confidence to 2 until territorial gains claims receive independent verification from non-Ukrainian government sources, or acknowledge the unverified nature explicitly in the assessment language.",
+        "Require independent corroboration of Zaluzhnyi's SBU intimidation allegations within one week or downgrade domestic_regime confidence to 3, noting the distinction between verified public statements and unverified operational claims.",
+        "Conduct genuine structural claim pressure-testing within two weeks - identify specific claims that Zaluzhnyi's political emergence might challenge and update pressure week counts accordingly, or acknowledge systematic analytical gap in structural monitoring.",
+        "Revise economic_tech assessment language to reflect specific week's developments rather than carrying forward template language about unchanged structure, or provide explicit justification for why identical language remains analytically valid.",
+        "Add alternative interpretation sections for alignment_diplomatic (Geneva breakdown as tactical positioning) and domestic_regime (Zaluzhnyi emergence as coordinated vs. oppositional) categories to meet analytical framework requirements."
+      ]
+    },
+    "self_corrections": [],
+    "structural_claim_checks": [
+      {
+        "claim_ref": "unknown",
+        "claim_text": "",
+        "status": "confirmed",
+        "evidence": "Zaluzhnyi's public political positioning confirms dossier analysis of military-to-politics pipeline as defining succession dynamic",
+        "confidence_in_claim": 3
+      }
+    ],
+    "story_clusters": [
+      {
+        "headline": "Former military chief Zaluzhnyi reveals deep rift with Zelensky over strategy and alleged SBU intimidation",
+        "summary": "Ukraine's former army commander Valerii Zaluzhnyi spoke publicly for the first time about tensions with President Zelensky, alleging intimidation through a 2022 SBU raid and blaming political interference for the failed 2023 counteroffensive. Zaluzhnyi is widely seen as Zelensky's main political rival.",
+        "source_url": "https://apnews.com/article/ukraine-war-zaluzhnyi-zelenskyy-raid-5ff9e5e2054e0b17c10daf58d7eab63e",
+        "source_name": "apnews.com"
+      },
+      {
+        "headline": "Peace talks in Geneva stall as Zelensky accuses Russia of dragging out negotiations",
+        "summary": "Trilateral talks between Ukraine, Russia and the US in Geneva ended abruptly after two days, with Zelensky saying positions 'differ' on crucial points and accusing Russia of trying to prolong negotiations. Disagreements persist over territorial concessions and security guarantees.",
+        "source_url": "https://time.com/7379321/ukraine-russia-peace-talks-end-zelensky-trump-clash/",
+        "source_name": "axios.com"
+      },
+      {
+        "headline": "Ukrainian forces claim territorial gains in southern counteroffensive despite ongoing pressures",
+        "summary": "President Zelensky announced Ukrainian forces have liberated 300 square kilometers in recent counterattacks, particularly in southern regions. Commander-in-Chief Syrskyi reported Russian losses exceed recruitment levels, though Ukraine faces continued pressure over Donbas concessions.",
+        "source_url": "https://www.france24.com/en/live-news/20260220-zelensky-tells-afp-that-ukraine-is-not-losing-the-war",
+        "source_name": "france24.com"
+      },
+      {
+        "headline": "SBU conducts widespread purge and strikes deep inside Russia",
+        "summary": "Ukraine's Security Service launched internal purges to remove disloyal personnel while conducting long-range strikes on Russian chemical plants and oil facilities. The SBU also arrested Russian agents and thwarted terrorist plots within Ukraine.",
+        "source_url": "https://english.nv.ua/nation/zelenskyy-announces-purge-of-disloyal-sbu-officials-50584461.html",
+        "source_name": "english.nv.ua"
+      },
+      {
+        "headline": "Foreign Minister Sybiha conducts diplomatic outreach amid European security discussions",
+        "summary": "Ukrainian Foreign Minister Andrii Sybiha held meetings with counterparts from multiple countries including Bolivia, Canada, Austria, and India. He emphasized Ukraine's EU accession prospects and called for stronger sanctions on Russia and Belarus.",
+        "source_url": "https://ukrinform.net/rubric-polytics/4091601-sybiha-kallas-discuss-tougher-sanctions-on-russia-ukraines-path-to-eu.html",
+        "source_name": "reuters.com"
+      },
+      {
+        "headline": "Prime Minister Svyrydenko secures revised IMF loan terms and discusses recovery priorities",
+        "summary": "Prime Minister Yuliia Svyrydenko announced agreement with the IMF to ease conditions for Ukraine's $8.2 billion loan program, including removal of tax increase requirements. She also held meetings on infrastructure recovery and Council of Europe cooperation.",
+        "source_url": "https://straitstimes.com/world/europe/ukraine-imf-ease-conditions-on-new-82-billion-loan-program",
+        "source_name": "kyivpost.com"
+      },
+      {
+        "headline": "Defense Minister Fedorov calls for increased European anti-ballistic missile production",
+        "summary": "Defense Minister Mykhailo Fedorov urged European partners to boost production of ballistic missile defense systems during E5-format talks with France, Germany, Italy, Poland and the UK. He emphasized the need for continued PURL program funding for Patriot interceptors.",
+        "source_url": "https://ukrinform.net/rubric-defense/4093938-ukraine-calls-on-european-partners-to-boost-antiballistic-missile-production.html",
+        "source_name": "ukrinform.net"
+      },
+      {
+        "headline": "National Bank reports banking sector developments and cybersecurity incident",
+        "summary": "The National Bank of Ukraine declared two banks insolvent and reported average card payment statistics for 2025. The NBU's online store was targeted by a cyberattack that may have compromised customer personal data, though no financial information was accessed.",
+        "source_url": "https://finance.liga.net/en/bank/novosti/nbu-declares-motor-bank-and-pin-bank-insolvent",
+        "source_name": "finance.liga.net"
+      }
+    ]
+  }
+]
