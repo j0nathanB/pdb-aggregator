@@ -1,0 +1,56 @@
+[
+  {
+    "label": "tw",
+    "scores": {
+      "config_a": {
+        "passive_voice": 1,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 27
+      },
+      "config_b": {
+        "passive_voice": 1,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 27
+      },
+      "notes": "Config_a's single passive is the participial 'driven by AI chip demand'; it retains 'Taiwan's economy continued its technology surge' as a paragraph bridge and expands AI on first use as 'AI chip demand' without a spelled-out gloss, but across all four dimensions scores identically to config_b. Config_b's single passive is the same 'driven by artificial intelligence (AI) chip demand' construction; it drops the 'technology surge' transitional sentence and spells out 'artificial intelligence (AI)' on first use, yet carries the same named persons (5), named institutions (7), distinct numeric claims (13), and direct quotations (2) as config_a."
+    }
+  },
+  {
+    "label": "ca",
+    "scores": {
+      "config_a": {
+        "passive_voice": 1,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 26
+      },
+      "config_b": {
+        "passive_voice": 1,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 26
+      },
+      "notes": "Config A: the single passive ('are expected to deliver') is shared with Config B; all seven named persons, eight named institutions (including Ipsos, Reform Act, Royal Bank of Canada, Anthropic), and eleven distinct numeric claims (171, 172, 53%, up to 40, 87%, 57.9%, October 2026, 2027 or 2028, January, March, $1 billion) are preserved with no clichés or throat-clearers introduced. Config B: identical passive count and identical specificity inventory — same seven persons, eight institutions, and eleven numeric claims — with no clichés or throat-clearers, making the two finals statistically indistinguishable on all four measured dimensions."
+    }
+  },
+  {
+    "label": "tr",
+    "scores": {
+      "config_a": {
+        "passive_voice": 1,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 13
+      },
+      "config_b": {
+        "passive_voice": 2,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 13
+      },
+      "notes": "Config A converted the editor's 'have been emptied' to an active construction ('The PKK has cleared') but introduced one passive in the Iran/Lebanon denial clause ('would be treated as an attack on Turkey'); Config B retained both the original 'have been emptied' passive and 'would be considered an attack on Turkey' from the editor output, while also preserving the editor's 'heterodox' terminology that Config A replaced."
+    }
+  }
+]

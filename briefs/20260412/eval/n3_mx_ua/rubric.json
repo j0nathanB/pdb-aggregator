@@ -1,0 +1,38 @@
+[
+  {
+    "label": "mx",
+    "scores": {
+      "config_a": {
+        "passive_voice": 3,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 34
+      },
+      "config_b": {
+        "passive_voice": 2,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 34
+      },
+      "notes": "Config A carries three noticeable passives — 'organised by Pedro Sánchez,' 'backed by $540m,' and 'is already committed' — while Config B has two ('organised by Pedro Sánchez' and 'is already 80% occupied'); both versions preserve the same 34 specificity tokens (6 named persons, 7 named institutions, 16 numeric claims, 5 quoted passages) and introduce no clichés or throat-clearers."
+    }
+  },
+  {
+    "label": "ua",
+    "scores": {
+      "config_a": {
+        "passive_voice": 1,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 32
+      },
+      "config_b": {
+        "passive_voice": 3,
+        "cliches": 0,
+        "throat_clearing": 0,
+        "specificity": 32
+      },
+      "notes": "Config A's single noticeable passive is the participial 'required by international lenders'; Config B adds two further passives — 'reserves could be depleted' and the infinitive 'the €90 billion loan to be released' — while otherwise matching Config A exactly on named persons (9), named institutions (4), distinct numeric claims (14), and direct quotations (5)."
+    }
+  }
+]

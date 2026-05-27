@@ -1,0 +1,636 @@
+{
+  "aggregated": {
+    "config_a": {
+      "totals": {
+        "bare_acronyms": 16,
+        "acronym_chain_breaks": 0,
+        "stale_titles": 0,
+        "foreign_quote_leakage": 0
+      },
+      "avg_per_run": {
+        "bare_acronyms": 1.778,
+        "acronym_chain_breaks": 0.0,
+        "stale_titles": 0.0,
+        "foreign_quote_leakage": 0.0
+      },
+      "n_runs": 9,
+      "json_integrity_violations": []
+    },
+    "config_b": {
+      "totals": {
+        "bare_acronyms": 13,
+        "acronym_chain_breaks": 0,
+        "stale_titles": 0,
+        "foreign_quote_leakage": 0
+      },
+      "avg_per_run": {
+        "bare_acronyms": 1.444,
+        "acronym_chain_breaks": 0.0,
+        "stale_titles": 0.0,
+        "foreign_quote_leakage": 0.0
+      },
+      "n_runs": 9,
+      "json_integrity_violations": []
+    },
+    "delta_b_minus_a": {
+      "bare_acronyms": -3,
+      "acronym_chain_breaks": 0,
+      "stale_titles": 0,
+      "foreign_quote_leakage": 0
+    }
+  },
+  "results": {
+    "run_date": "2026-04-12",
+    "eval_root": "/Users/zen/dev/src/pdb/briefs/20260412/eval/n3_headroom",
+    "n": 3,
+    "model": "claude-sonnet-4-6",
+    "thinking_budget": 16000,
+    "labels": [
+      "tw",
+      "ca",
+      "tr"
+    ],
+    "sections": {
+      "tw": {
+        "label": "tw",
+        "runs": [
+          {
+            "repeat": 1,
+            "elapsed_s": 230.9,
+            "config_a": {
+              "final": {
+                "narrative_body": "Cheng Li-wun became the first chairwoman of the Kuomintang (KMT) to meet Xi Jinping in a decade, prompting China to announce ten new measures and regular party-to-party channels, while Taiwan's president simultaneously hosted American lawmakers pressing for defence cooperation.\n\nMs Cheng called her Beijing trip a \"peace mission\" and told Mr Xi that if the KMT took power, she would invite him to visit Taiwan. She said the island should become \"a symbol of peace jointly safeguarded by Chinese people on both sides of the strait.\" China announced ten new measures targeting Taiwan after the meeting, including resumed flights and regular communication channels between the KMT and the Chinese Communist Party (CCP). Even as Ms Cheng courted Beijing, Lai Ching-te, the president, met three American congressional delegations, saying that Taiwan's defence spending now exceeds 3% of GDP and will reach 5% by 2030.\n\nMilitary pressure accompanied the diplomacy. Taiwan detected 17 Chinese aircraft and seven naval vessels on April 10th-11th, with 15 planes crossing the median line during the Cheng-Xi summit. The timing matched Beijing's habit of pairing talks with coercion.\n\nTaiwan's economy continued its technology surge. Taiwan Semiconductor Manufacturing Company (TSMC) reported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% jump driven by AI chip demand from Apple and Nvidia. Mr Lai also opened the National Center for AI Robotics in Tainan, part of a NT$20 billion government investment from 2026 to 2029 to develop smart robots for medicine, services and high-risk jobs.\n\nThe opposition Taiwan People's Party expelled Li Zhenxiu, an at-large legislator, this week, stripping her of her seat. The move followed disputes over claims about Ann Kao, the mayor of Hsinchu, and questions about Ms Li's nationality and eligibility to serve."
+              },
+              "char_count": 1868,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1316,
+                    "snippet": "eported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% ju",
+                    "acronym": "NT"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1485,
+                    "snippet": "er for AI Robotics in Tainan, part of a NT$20 billion government investment from 2",
+                    "acronym": "NT"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Cheng Li-wun became the first Kuomintang (KMT) chairwoman to meet Xi Jinping in a decade, prompting China to announce ten new measures and open regular communication channels, while Taiwan's president hosted American lawmakers pressing for defense cooperation.\n\nMs Cheng called her Beijing trip a \"peace mission\" and told Mr Xi that if the KMT took power, she would invite him to visit Taiwan. She said the island should become \"a symbol of peace jointly safeguarded by Chinese people on both sides of the strait.\" China announced ten measures targeting Taiwan after the meeting, including resumed flights and regular KMT–Chinese Communist Party communication channels. Even as Ms Cheng courted Beijing, President Lai Ching-te met three US congressional delegations, telling them Taiwan's defense spending now exceeds 3% of GDP and will reach 5% by 2030.\n\nMilitary pressure accompanied the diplomacy. Taiwan detected 17 Chinese aircraft and seven naval vessels on April 10-11; 15 planes crossed the median line during the Cheng-Xi summit. Beijing again paired political engagement with coercion.\n\nTaiwan Semiconductor Manufacturing Company (TSMC) reported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% jump driven by artificial intelligence (AI) chip demand from Apple and Nvidia. Mr Lai also opened the National Center for AI Robotics in Tainan, part of a NT$20 billion government investment from 2026-2029 to develop smart robots for medicine, services and high-risk jobs.\n\nThe opposition Taiwan People's Party expelled Li Zhenxiu, an at-large legislator, this week, stripping her of her seat. The move followed disputed claims about Ann Kao, the mayor of Hsinchu, and questions about Ms Li's nationality and eligibility to serve."
+              },
+              "char_count": 1758,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1188,
+                    "snippet": "eported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% ju",
+                    "acronym": "NT"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1383,
+                    "snippet": "er for AI Robotics in Tainan, part of a NT$20 billion government investment from 2",
+                    "acronym": "NT"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 2,
+            "elapsed_s": 292.0,
+            "config_a": {
+              "final": {
+                "narrative_body": "Cheng Li-wun became the first Kuomintang (KMT) chairwoman to meet Xi Jinping in a decade, prompting China to announce ten new measures and regular party channels while Taiwan's president simultaneously hosted American lawmakers pressing for defence cooperation.\n\nMs Cheng called her Beijing trip a \"peace mission\" and told Mr Xi that if her party took power, she would invite him to visit Taiwan. She declared the island should become \"a symbol of peace jointly safeguarded by Chinese people on both sides of the strait.\" China announced ten new measures targeting Taiwan after the meeting, including resumed flights and regular channels between the Kuomintang and China's ruling Communist Party. Even as Ms Cheng courted Beijing, Lai Ching-te, Taiwan's president, met three separate US congressional delegations, stressing that Taiwan's defence spending now exceeds 3% of GDP and will reach 5% by 2030.\n\nMilitary pressure accompanied the diplomacy. Taiwan detected 17 Chinese aircraft and seven naval vessels on April 10-11, with 15 planes crossing the median line during the Cheng-Xi summit. Beijing combined political overtures with military coercion, as it often does.\n\nTaiwan Semiconductor Manufacturing Company (TSMC) reported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% jump driven by AI chip demand from Apple and Nvidia. Mr Lai also opened the National Center for AI Robotics in Tainan, part of a NT$20 billion government investment from 2026 to 2029 to develop smart robots for medicine, services and high-risk jobs.\n\nThe opposition Taiwan People's Party expelled Li Zhenxiu, an at-large legislator, this week, effectively stripping her of her legislative seat. The move followed controversies including disputed claims about Ann Kao, the Hsinchu mayor, and questions about Ms Li's nationality and eligibility to serve."
+              },
+              "char_count": 1857,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1265,
+                    "snippet": "eported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% ju",
+                    "acronym": "NT"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1434,
+                    "snippet": "er for AI Robotics in Tainan, part of a NT$20 billion government investment from 2",
+                    "acronym": "NT"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Cheng Li-wun became the first Kuomintang (KMT) chairwoman to meet Xi Jinping in a decade, prompting China to announce ten new policy measures and open regular party channels, while Taiwan's president simultaneously hosted American lawmakers pressing for defense cooperation.\n\nMs Cheng called her Beijing trip a \"peace mission\" and told Mr Xi that if the party took power, she would invite him to visit Taiwan. She said the island should become \"a symbol of peace jointly safeguarded by Chinese people on both sides of the strait.\" The measures targeted Taiwan and included resumed flights and regular Kuomintang–Chinese Communist Party communication channels. Even as Ms Cheng courted Beijing, Lai Ching-te, the president, met three US congressional delegations, stressing that Taiwan's defense spending now exceeds 3% of GDP and will reach 5% by 2030.\n\nMilitary pressure accompanied the diplomacy. Taiwan detected 17 Chinese aircraft and seven naval vessels on April 10-11, with 15 planes crossing the median line during the Cheng-Xi summit. The timing fit Beijing's habit of pairing political engagement with coercion.\n\nTaiwan's economy continued its technology surge. Taiwan Semiconductor Manufacturing Company reported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% jump driven by AI chip demand from Apple and Nvidia. Mr Lai also opened the National Center for AI Robotics in Tainan, part of a NT$20 billion government investment from 2026 to 2029 to develop smart robots for medicine, services and high-risk jobs.\n\nThe opposition Taiwan People's Party expelled Li Zhenxiu, an at-large legislator, this week, effectively stripping her of her legislative seat. The expulsion followed disputes including contested claims about Ann Kao, the mayor of Hsinchu, and questions about Ms Li's nationality and eligibility to serve."
+              },
+              "char_count": 1851,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1255,
+                    "snippet": "eported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% ju",
+                    "acronym": "NT"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1424,
+                    "snippet": "er for AI Robotics in Tainan, part of a NT$20 billion government investment from 2",
+                    "acronym": "NT"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 3,
+            "elapsed_s": 286.4,
+            "config_a": {
+              "final": {
+                "narrative_body": "Cheng Li-wun became the first Kuomintang (KMT) chairwoman to meet Xi Jinping in a decade, prompting China to announce ten new policy measures and regular party-to-party communication channels, while Taiwan's president simultaneously hosted American lawmakers pressing for defence co-operation.\n\nMs Cheng called her Beijing trip a \"peace mission\" and told Mr Xi that if the KMT took power, she would invite him to visit Taiwan. She declared the island should become \"a symbol of peace jointly safeguarded by Chinese people on both sides of the strait.\" After the meeting, China announced ten new measures targeting Taiwan, including resumed flights and regular communication channels between the two parties. Even as Ms Cheng courted Beijing, Lai Ching-te, Taiwan's president, met three American congressional delegations, emphasising that Taiwan's defence spending now exceeds 3% of GDP and will reach 5% by 2030.\n\nTaiwan detected 17 Chinese aircraft and seven naval vessels on April 10th-11th; 15 planes crossed the median line during the summit. Beijing again paired political engagement with military coercion.\n\nTaiwan's economy continued its technology surge. Taiwan Semiconductor Manufacturing Company reported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% jump driven by AI chip demand from Apple and Nvidia. Mr Lai also opened the National Center for AI Robotics in Tainan, part of a NT$20 billion government investment from 2026 to 2029 to develop smart robots for medicine, services and high-risk jobs.\n\nThe opposition Taiwan People's Party expelled Li Zhenxiu, an at-large legislator, this week, costing her her seat. The expulsion came after controversies including disputed claims about Ann Kao, the mayor of Hsinchu, and questions about Ms Li's nationality and eligibility to serve."
+              },
+              "char_count": 1821,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1248,
+                    "snippet": "eported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% ju",
+                    "acronym": "NT"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1417,
+                    "snippet": "er for AI Robotics in Tainan, part of a NT$20 billion government investment from 2",
+                    "acronym": "NT"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Cheng Li-wun became the first Kuomintang (KMT) chairwoman to meet Xi Jinping in a decade, prompting China to announce ten new policy measures and open regular party-to-party channels, while Taiwan's president hosted American lawmakers pressing for defense cooperation.\n\nMs Cheng called her Beijing trip a \"peace mission\" and told Mr Xi that if the party took power, she would invite him to visit Taiwan. She said the island should become \"a symbol of peace jointly safeguarded by Chinese people on both sides of the strait.\" China announced ten new measures targeting Taiwan after the meeting, including resumed flights and regular communication channels between the party and China's ruling Communist Party. Even as Ms Cheng courted Beijing, President Lai Ching-te met three separate US congressional delegations, noting that Taiwan's defense spending now exceeds 3% of GDP and will reach 5% by 2030.\n\nMilitary pressure accompanied the visit. Taiwan detected 17 Chinese aircraft and seven naval vessels on April 10-11, with 15 planes crossing the median line during the summit. Beijing again paired political engagement with military coercion.\n\nTaiwan's economy continued its technology surge. Taiwan Semiconductor Manufacturing Company reported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% jump driven by AI chip demand from Apple and Nvidia. Mr Lai also opened the National Center for AI Robotics in Tainan, part of a NT$20 billion government investment from 2026 to 2029 to develop smart robots for medicine, services and high-risk jobs.\n\nThe opposition Taiwan People's Party expelled at-large legislator Li Zhenxiu this week, stripping her of her seat. The expulsion followed disputed claims about Ann Kao, the mayor of Hsinchu, and questions about Ms Li's nationality and eligibility to serve."
+              },
+              "char_count": 1826,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1279,
+                    "snippet": "eported record first-quarter revenue of NT$1.13 trillion ($35.6 billion), a 35% ju",
+                    "acronym": "NT"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1448,
+                    "snippet": "er for AI Robotics in Tainan, part of a NT$20 billion government investment from 2",
+                    "acronym": "NT"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          }
+        ]
+      },
+      "ca": {
+        "label": "ca",
+        "runs": [
+          {
+            "repeat": 1,
+            "elapsed_s": 274.6,
+            "config_a": {
+              "final": {
+                "narrative_body": "Mark Carney's Liberal government is set to win a parliamentary majority this week, ending two years of minority rule through floor-crossings and by-elections that will reshape Canadian politics.\n\nMarilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bringing the party to 171 seats — just one short of the 172 needed for a majority. Three by-elections on Monday are expected to deliver the rest. The shift would eliminate the Bloc Québécois's kingmaker role and give Mr Carney far more room to manoeuvre through his mandate, which runs to 2027 or 2028. An Ipsos poll shows 53% of Canadians want the Liberals to hold a majority.\n\nThe floor-crossings have triggered a crisis inside Pierre Poilievre's Conservative party. Up to 40 Conservative MPs reportedly fear losing their seats under his leadership, with some discussing invoking Reform Act provisions to force a leadership change. His communications director, Katy Merrifield, resigned this week. The turmoil sits uneasily alongside Mr Poilievre's 87% approval rating at the party's January convention, suggesting his MPs trust him far less than the party's members do.\n\nIn Quebec, members of the Coalition for Quebec's Future (CAQ) elected Christine Fréchette as their leader and the province's second female premier, replacing François Legault with 57.9% of the vote. She starts from behind: the Parti Québécois leads polls ahead of the October 2026 provincial election, which will complicate relations between Quebec City and Ottawa as the federal Liberals consolidate their majority.\n\nCanada also moved to broaden its trade and defence ties. Mr Carney will meet Alexander Stubb, Finland's president, this week to strengthen cooperation on critical minerals, AI and quantum industries. The summit follows Mr Carney's March meeting with Nordic leaders.\n\nThe Bank of Canada held an emergency meeting with major lenders to discuss cybersecurity threats from Anthropic's Claude Mythos AI model, which can reportedly find vulnerabilities in operating systems and web browsers. Separately, Royal Bank of Canada announced a $1 billion growth fund to help Canadian companies grow at home rather than seek foreign capital, addressing weak productivity and reducing the pull of foreign markets."
+              },
+              "char_count": 2267,
+              "counts": {
+                "bare_acronyms": 3,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 238,
+                    "snippet": "rilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bri",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 768,
+                    "snippet": "nservative party. Up to 40 Conservative MPs reportedly fear losing their seats unde",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1098,
+                    "snippet": "ty's January convention, suggesting his MPs trust him far less than the party's mem",
+                    "acronym": "MP"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Prime Minister Mark Carney's Liberal government is poised to win majority control of parliament this week, ending two years of minority rule through floor-crossings and Monday by-elections.\n\nMarilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bringing the party to 171 seats — one short of the 172 needed for a majority. Three by-elections on Monday are expected to deliver the rest. The shift would strip the Bloc Québécois of its kingmaker role and give Mr Carney far greater freedom to govern for the remainder of his mandate through 2027 or 2028. Ipsos polling shows 53% of Canadians want the Liberals to form a majority government.\n\nThe floor-crossings have triggered a crisis in Conservative leader Pierre Poilievre's opposition. Up to 40 Conservative MPs reportedly fear losing their seats under his leadership, with some discussing whether to invoke Reform Act provisions to force a leadership change. Katy Merrifield, his communications director, resigned this week. The turmoil comes despite Mr Poilievre's 87% approval rating at the party's January convention, suggesting a disconnect between grassroots support and parliamentary confidence.\n\nIn Quebec, Coalition for Quebec's Future members elected Christine Fréchette as the party's new leader and the province's second female premier, replacing François Legault with 57.9% of member votes. She enters office with the Parti Québécois leading polls ahead of the October 2026 provincial election — a complication for Ottawa just as the federal Liberals consolidate their majority.\n\nMr Carney will meet Finnish President Alexander Stubb this week to deepen trade and defence ties, including critical minerals, AI and quantum industries. The summit follows his March meeting with Nordic leaders as Canada works to broaden its economic partnerships.\n\nThe Bank of Canada called an emergency meeting with major lenders to discuss cybersecurity threats from Anthropic's Claude Mythos AI model, which can reportedly find vulnerabilities in operating systems and web browsers. Separately, the Royal Bank of Canada announced a $1 billion growth fund to help Canadian companies grow at home rather than seek foreign capital."
+              },
+              "char_count": 2204,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 233,
+                    "snippet": "rilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bri",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 787,
+                    "snippet": "vre's opposition. Up to 40 Conservative MPs reportedly fear losing their seats unde",
+                    "acronym": "MP"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 2,
+            "elapsed_s": 306.2,
+            "config_a": {
+              "final": {
+                "narrative_body": "Mark Carney's Liberal government looks set to win majority control of parliament this week, ending two years of minority rule through a combination of floor-crossings and Monday by-elections.\n\nMarilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bringing the party to 171 seats — just one short of the 172 needed for a majority. Three by-elections on Monday are expected to deliver the rest. The shift would eliminate the Bloc Québécois's kingmaker role and give Mr Carney far greater freedom to govern until 2027 or 2028. Ipsos polling shows 53% of Canadians want the Liberals to form a majority government.\n\nThe floor-crossings have triggered a crisis within Pierre Poilievre's Conservative opposition. Up to 40 Conservative MPs reportedly fear losing their seats under his leadership, with some discussing invoking Reform Act provisions to force a leadership change. His communications director, Katy Merrifield, resigned this week. The turmoil comes despite Mr Poilievre's 87% approval rating at the party's January convention, suggesting that support among rank-and-file members does not mean confidence among MPs.\n\nChristine Fréchette won the Coalition Avenir Québec (CAQ) leadership contest with 57.9% of member votes, replacing François Legault and becoming Quebec's second female premier. She faces a tough fight: the Parti Québécois leads polls ahead of the October 2026 provincial election, complicating relations between Quebec City and Ottawa as the Liberals consolidate majority control.\n\nOn trade and defence, Mr Carney will meet Alexander Stubb, Finland's president, this week to strengthen co-operation in critical minerals, artificial intelligence (AI) and quantum technology. The visit follows his meetings with Nordic leaders in March.\n\nThe Bank of Canada held an emergency meeting with major lenders to discuss cybersecurity threats from Anthropic's Claude Mythos AI model, which can reportedly find vulnerabilities in operating systems and web browsers. Separately, the Royal Bank of Canada (RBC) announced a $1 billion growth fund to help Canadian companies grow at home rather than seek foreign capital, addressing productivity problems and reducing the risk of firms moving abroad."
+              },
+              "char_count": 2234,
+              "counts": {
+                "bare_acronyms": 3,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 235,
+                    "snippet": "rilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bri",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 755,
+                    "snippet": "ative opposition. Up to 40 Conservative MPs reportedly fear losing their seats unde",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1143,
+                    "snippet": "members does not mean confidence among MPs.  Christine Fréchette won the Coalition",
+                    "acronym": "MP"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Prime Minister Mark Carney's Liberal government is on course to win a parliamentary majority this week, ending two years of minority rule through floor-crossings and Monday by-elections.\n\nMarilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bringing the party to 171 seats — one short of the 172 needed for a majority. Three by-elections on Monday are expected to deliver the additional seats. The shift would end the Bloc Québécois's kingmaker role and give Mr Carney far more room to govern through 2027 or 2028. Ipsos polling shows 53% of Canadians want the Liberals to win a majority.\n\nThe floor-crossings have triggered a crisis in Conservative leader Pierre Poilievre's party. Up to 40 Conservative MPs reportedly fear losing their seats under his leadership; some are discussing invoking Reform Act provisions to force a leadership change. Katy Merrifield, his communications director, resigned this week. The turmoil comes despite Mr Poilievre's 87% approval rating at the party's January convention — a gap between grassroots support and parliamentary confidence.\n\nIn Quebec, Premier Christine Fréchette was elected leader of the Coalition for Quebec's Future and becomes the province's second female premier, replacing François Legault with 57.9% of member votes. She faces a difficult position: the Parti Québécois leads polls ahead of the October 2026 provincial election, adding complexity for Ottawa as it secures its majority.\n\nBeyond the domestic turmoil, Canada continued to broaden its alliances. Mr Carney will meet Alexander Stubb, Finland's president, this week to deepen trade and defence ties, covering critical minerals, artificial intelligence (AI), and quantum industries. The meeting follows Mr Carney's talks with Nordic leaders in March.\n\nThe Bank of Canada held an emergency meeting with major lenders to discuss cybersecurity threats from Anthropic's Claude Mythos AI model, which can reportedly find vulnerabilities in operating systems and web browsers. Separately, the Royal Bank of Canada announced a $1 billion fund to help Canadian companies grow at home, avoid seeking foreign capital, and stay in Canada rather than move to foreign markets."
+              },
+              "char_count": 2207,
+              "counts": {
+                "bare_acronyms": 2,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 230,
+                    "snippet": "rilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bri",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 733,
+                    "snippet": "oilievre's party. Up to 40 Conservative MPs reportedly fear losing their seats unde",
+                    "acronym": "MP"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 3,
+            "elapsed_s": 338.3,
+            "config_a": {
+              "final": {
+                "narrative_body": "Mark Carney's Liberal government is poised to win a parliamentary majority this week, ending two years of minority rule through a combination of floor-crossings and Monday by-elections that will transform Canadian politics.\n\nMarilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bringing the party to 171 seats — just one short of the 172 needed for a majority. Three by-elections on Monday are expected to deliver the additional seats. The shift would end the Bloc Québécois's kingmaker role and give Mr Carney far more room to govern for the rest of his mandate, which runs to 2027 or 2028. An Ipsos poll found that 53% of Canadians want the Liberals to form a majority government.\n\nThe floor-crossings have triggered a crisis in Pierre Poilievre's Conservative party. Up to 40 Conservative MPs reportedly fear losing their seats under his leadership, with some looking to invoke the Reform Act to force a leadership change. Katy Merrifield, his communications director, resigned this week. The turmoil comes despite Mr Poilievre's 87% approval rating at the party's January convention, suggesting his MPs trust him less than the party's rank and file.\n\nIn Quebec, members of the Coalition Avenir Québec (CAQ) elected Christine Fréchette as their new leader and the province's second female premier, replacing François Legault. She won 57.9% of member votes. She faces a tough fight: the Parti Québécois leads polls ahead of the October 2026 provincial election, a result that would complicate federal-provincial relations as Ottawa cements its majority.\n\nMr Carney will meet Alexander Stubb, Finland's president, this week to deepen trade and defence ties, including critical minerals, artificial intelligence (AI), and quantum industries. The summit follows Mr Carney's meeting with Nordic leaders in March.\n\nThe Bank of Canada held an emergency meeting with major lenders to discuss cybersecurity threats from Anthropic's Claude Mythos AI model, which can reportedly find vulnerabilities in operating systems and web browsers. Separately, the Royal Bank of Canada announced a $1 billion fund to help Canadian companies grow at home, avoid foreign capital, and close a productivity gap."
+              },
+              "char_count": 2217,
+              "counts": {
+                "bare_acronyms": 3,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 267,
+                    "snippet": "rilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bri",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 820,
+                    "snippet": "nservative party. Up to 40 Conservative MPs reportedly fear losing their seats unde",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1131,
+                    "snippet": "ty's January convention, suggesting his MPs trust him less than the party's rank an",
+                    "acronym": "MP"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Prime Minister Mark Carney's Liberal government is on course to win a parliamentary majority this week, ending two years of minority rule through floor-crossings and Monday by-elections.\n\nMarilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bringing the party to 171 seats — one short of the 172 needed for a majority. Three by-elections on Monday are expected to close the gap. A majority would leave the Bloc Québécois unable to decide which government survives, and give Mr Carney more room to govern until 2027 or 2028. Ipsos polling shows 53% of Canadians want the Liberals to hold a majority.\n\nThe floor-crossings have triggered a crisis in Conservative Party leader Pierre Poilievre's Conservative opposition. Up to 40 Conservative MPs reportedly fear losing their seats under his leadership, and some are discussing whether to invoke the Reform Act to force a leadership change. His communications director, Katy Merrifield, resigned this week. The turmoil comes despite Mr Poilievre's 87% approval rating at the party's January convention — pointing to a gap between grassroots support and confidence among his MPs.\n\nIn Quebec, members of the Coalition for Quebec's Future elected Christine Fréchette as the party's new leader and the province's second female premier, replacing François Legault. She won 57.9% of the member vote. She faces a hard fight: the Parti Québécois leads polls ahead of the October 2026 provincial election, complicating the federal-provincial picture as Ottawa approaches a majority.\n\nCanada also pushed to broaden its trade and defence ties. Mr Carney will meet Alexander Stubb, Finland's president, this week to deepen links in critical minerals, AI, and quantum technology, building on a meeting with Nordic leaders in March.\n\nTwo further developments addressed risks to Canada's financial system. the Bank of Canada held an emergency meeting with major lenders to discuss cybersecurity threats from Anthropic's Claude Mythos AI model, which can reportedly find vulnerabilities in operating systems and web browsers. Separately, the Royal Bank of Canada announced a $1 billion fund to help Canadian companies grow at home and avoid seeking foreign capital — easing the productivity problem and keeping firms from going to foreign markets."
+              },
+              "char_count": 2305,
+              "counts": {
+                "bare_acronyms": 3,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 230,
+                    "snippet": "rilyn Gladu became the fifth opposition MP to cross the floor to the Liberals, bri",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 767,
+                    "snippet": "ative opposition. Up to 40 Conservative MPs reportedly fear losing their seats unde",
+                    "acronym": "MP"
+                  },
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 1148,
+                    "snippet": "sroots support and confidence among his MPs.  In Quebec, members of the Coalition f",
+                    "acronym": "MP"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          }
+        ]
+      },
+      "tr": {
+        "label": "tr",
+        "runs": [
+          {
+            "repeat": 1,
+            "elapsed_s": 213.0,
+            "config_a": {
+              "final": {
+                "narrative_body": "Turkey's Kurdish peace talks have stalled because the Kurdistan Workers' Party (PKK) has not disarmed, threatening Recep Tayyip Erdoğan's plan to change the constitution and extend his rule.\n\nThe PKK has cleared only seven of roughly 30 weapons caches along the Turkey-Iraq border, according to government sources. Turkey's intelligence service has not confirmed that the group has abandoned its arms despite formally announcing its dissolution. Without verified disarmament, the government cannot push through the constitutional changes it needs. Those changes require support from the pro-Kurdish Peoples' Equality and Democracy Party (DEM), which will not back them while the peace process remains incomplete. Abdullah Öcalan has sent new messages from prison urging the PKK to speed up, but the weapons remain.\n\nMr Erdoğan made clear this week that he will not call early elections, rejecting opposition calls for a snap poll. His government arrested Ümit Erkol, the Republican People's Party (CHP) chairman in Ankara, as part of a corruption investigation that the opposition called politically motivated. The party summoned all its provincial leaders to Ankara for an emergency meeting. The arrest fits a pattern of legal pressure on the opposition ahead of the 2028 election.\n\nTurkey's confrontation with Israel escalated when Benjamin Netanyahu and his defence minister called Mr Erdoğan a \"paper tiger\" and tagged Turkish opposition figures on social media. The attacks prompted rare unity across Turkey's political spectrum, with opposition mayors and party leaders rallying to defend Turkish sovereignty despite their hostility to the president. Turkey also denied social media claims that Mr Erdoğan had said any attack on Iran or Lebanon would be treated as an attack on Turkey.\n\nTurkey's central bank posted a record loss of 1.065 trillion lira for 2025. The loss reflects the cost of currency defence operations and the unorthodox monetary policies pursued between 2019 and 2023, when Mr Erdoğan fired multiple central bank governors for raising interest rates. The bank's current conventional approach remains unchanged."
+              },
+              "char_count": 2136,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Turkey's Kurdish peace talks have stalled because the Kurdistan Workers' Party (PKK) has not disarmed, threatening President Recep Tayyip Erdoğan's plan to change the constitution and extend his rule.\n\nOnly seven of roughly 30 PKK weapons caches along the Turkey-Iraq border have been emptied, according to government sources. Turkey's intelligence service has not confirmed that the group has abandoned its arms despite formal dissolution announcements. Without verified disarmament, the government cannot put in place the legal framework for constitutional changes. Those changes require support from the pro-Kurdish Peoples' Equality and Democracy Party (DEM Party), which will not back them while the peace process remains incomplete. Abdullah Öcalan has sent new messages from prison urging the PKK to speed up, but the weapons remain.\n\nMr Erdoğan made clear this week that he will not call early elections, rejecting opposition calls for a snap poll. His government arrested Ümit Erkol, the Republican People's Party (CHP)'s Ankara chairman, as part of a corruption investigation that the opposition called politically motivated. The party summoned all its provincial leaders to Ankara for an emergency meeting. The arrest fits a pattern of using the courts to weaken the opposition before the 2028 election.\n\nTurkey's confrontation with Israel escalated when Prime Minister Benjamin Netanyahu and his defence minister called Mr Erdoğan a \"paper tiger\" and tagged Turkish opposition figures on social media. The attacks prompted rare unity across Turkey's political spectrum, with opposition mayors and party leaders rallying to defend Turkish sovereignty despite their hostility to the president. Turkey also denied social media claims that Mr Erdoğan had said any attack on Iran or Lebanon would be considered an attack on Turkey.\n\nThe Central Bank posted a record loss of 1.065 trillion lira for 2025. The loss reflects the cost of currency defence operations and the heterodox monetary policies pursued between 2019 and 2023, when Mr Erdoğan fired multiple central bank governors for raising interest rates. The bank's current orthodox approach remains unchanged."
+              },
+              "char_count": 2173,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 2,
+            "elapsed_s": 199.2,
+            "config_a": {
+              "final": {
+                "narrative_body": "Turkey's Kurdish peace talks have stalled because the Kurdistan Workers' Party (PKK) has not disarmed, threatening Recep Tayyip Erdoğan's plan to change the constitution and extend his rule.\n\nThe PKK has emptied only seven of roughly 30 weapons caches along the Turkey-Iraq border, according to government sources. Turkey's intelligence service has not confirmed that the group has abandoned its arms despite formal dissolution announcements. Without verified disarmament, the government cannot advance the legal changes needed for a constitutional overhaul. Those changes require support from the Peoples' Equality and Democracy Party (DEM Party), the pro-Kurdish grouping, which will not back them while the peace process remains incomplete. Abdullah Öcalan has sent new messages from prison urging the PKK to speed up, but the weapons remain.\n\nMr Erdoğan made clear this week that he will not call early elections, rejecting opposition calls for a snap poll. His government arrested Ümit Erkol, the Ankara chairman of the Republican People's Party (CHP), as part of a corruption investigation that the opposition called politically motivated. The party summoned all its provincial leaders to Ankara for an emergency meeting. The arrest follows a pattern of judicial action aimed at weakening the opposition before the 2028 election.\n\nTurkey's confrontation with Israel escalated when Benjamin Netanyahu and his defence minister called Mr Erdoğan a \"paper tiger\" and tagged Turkish opposition figures on social media. The attacks prompted rare unity across Turkey's political spectrum, with opposition mayors and party leaders rallying to defend Turkish sovereignty despite their hostility to the president. Turkey also denied social media claims that Mr Erdoğan had said any attack on Iran or Lebanon would count as an attack on Turkey.\n\nThe Central Bank posted a record loss of 1.065 trillion lira for 2025. The loss reflects the cost of currency defence and the unorthodox monetary policies Mr Erdoğan pursued between 2019 and 2023, when he fired several central bank governors for raising interest rates. The bank's current orthodox approach remains unchanged."
+              },
+              "char_count": 2166,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Turkey's Kurdish peace talks have stalled because the Kurdistan Workers' Party (PKK) has not disarmed, threatening President Recep Tayyip Erdoğan's plan to change the constitution and extend his rule.\n\nOnly seven of roughly 30 PKK weapons caches along the Turkey-Iraq border have been emptied, according to government sources. Turkey's intelligence service has not confirmed the group has abandoned its arms despite formal dissolution announcements. Without verified disarmament, the government cannot make the legal changes constitutional reform requires. Those changes need support from the pro-Kurdish Peoples' Equality and Democracy Party (DEM Party), which will not back them while the peace process is unfinished. Abdullah Öcalan has sent new messages from prison urging the PKK to speed up, but the weapons remain.\n\nMr Erdoğan made clear this week that he will not call early elections, rejecting opposition calls for a snap poll. His government arrested Ümit Erkol, the Ankara chairman of the Republican People's Party (CHP), in a corruption investigation the opposition called politically motivated. The party summoned all its provincial leaders to Ankara for an emergency meeting. The arrest follows a pattern of judicial targeting aimed at weakening the opposition ahead of the 2028 election.\n\nTurkey's confrontation with Israel escalated when Prime Minister Benjamin Netanyahu and his defence minister called Mr Erdoğan a \"paper tiger\" and tagged Turkish opposition figures on social media. The attacks prompted rare unity across Turkey's political spectrum, with opposition mayors and party leaders rallying to defend Turkish sovereignty despite their hostility to the president. Turkey also denied claims on social media that Mr Erdoğan had said it would treat any attack on Iran or Lebanon as an attack on Turkey.\n\nThe Central Bank posted a record loss of 1.065 trillion lira for 2025, the highest in its history. The loss reflects the cost of currency defence and the unorthodox monetary policies pursued between 2019 and 2023, when Mr Erdoğan fired multiple central bank governors for raising interest rates. The bank's current approach remains unchanged."
+              },
+              "char_count": 2172,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 3,
+            "elapsed_s": 237.6,
+            "config_a": {
+              "final": {
+                "narrative_body": "Turkey's Kurdish peace talks have stalled because the Kurdistan Workers' Party (PKK) has not disarmed, threatening Recep Tayyip Erdoğan's plan to change the constitution and extend his rule.\n\nThe PKK has emptied only seven of roughly 30 weapons caches along the Turkey-Iraq border, according to government sources. Turkey's intelligence service has not confirmed the group has abandoned its arms, despite formal dissolution announcements. Without verified disarmament, the government cannot push through the constitutional changes. Those require support from the pro-Kurdish DEM Party, which will not back them while the peace process is unfinished. Abdullah Öcalan has sent new messages from prison urging the PKK to move faster, but the weapons remain.\n\nMr Erdoğan said this week he will not call early elections, rejecting calls for a snap poll. His government arrested Ümit Erkol, the Ankara chairman of the Republican People's Party (CHP), as part of a corruption investigation that the opposition called politically motivated. The party summoned all its provincial leaders to Ankara for an emergency meeting. The arrest fits a pattern of judicial pressure on the opposition ahead of the 2028 election.\n\nTurkey's confrontation with Israel escalated when Benjamin Netanyahu and his defence minister called Mr Erdoğan a \"paper tiger\" and tagged Turkish opposition figures on social media. The attacks prompted rare unity across Turkey's political spectrum, with opposition mayors and party leaders rallying to defend Turkish sovereignty despite their hostility to the president. Turkey also denied social media claims that Mr Erdoğan had said any attack on Iran or Lebanon would count as an attack on Turkey.\n\nTurkey's central bank posted a record loss of 1.065 trillion lira in 2025. The loss reflects the cost of currency defence operations and the unorthodox monetary policies Mr Erdoğan pursued between 2019 and 2023, when he fired multiple central bank governors for raising interest rates. The bank's orthodox approach is unchanged."
+              },
+              "char_count": 2041,
+              "counts": {
+                "bare_acronyms": 1,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [
+                  {
+                    "kind": "bare_acronym",
+                    "offset": 575,
+                    "snippet": "se require support from the pro-Kurdish DEM Party, which will not back them while t",
+                    "acronym": "DEM"
+                  }
+                ],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Turkey's Kurdish peace talks have stalled because the Kurdistan Workers' Party (PKK) has not disarmed, threatening President Recep Tayyip Erdoğan's plan to change the constitution and extend his rule.\n\nOnly seven of roughly 30 PKK weapons caches along the Turkey-Iraq border have been emptied, according to government sources. Turkey's intelligence service has not confirmed that the group has abandoned its arms despite formal dissolution announcements. Without verified disarmament, the government cannot pass the legislation needed for constitutional change. Those changes require support from the pro-Kurdish Peoples' Equality and Democracy Party (DEM Party), which will not back them while the peace process is unfinished. Abdullah Öcalan has sent new messages from prison urging the PKK to speed up, but the weapons remain.\n\nMr Erdoğan ruled out early elections this week, rejecting opposition calls for a snap poll. His government arrested Ümit Erkol, the Ankara chairman of the Republican People's Party (CHP), as part of a corruption investigation the opposition called politically motivated. The party summoned all its provincial leaders to Ankara for an emergency meeting. The arrest follows a pattern of using the courts to weaken the opposition before the 2028 election.\n\nTurkey's confrontation with Israel escalated when Prime Minister Benjamin Netanyahu and his defence minister called Mr Erdoğan a \"paper tiger\" and tagged Turkish opposition figures on social media. The attacks prompted rare unity across Turkey's political spectrum, with opposition mayors and party leaders rallying to defend Turkish sovereignty despite their hostility to the president. Turkey also denied social media claims that Mr Erdoğan had said any attack on Iran or Lebanon would be treated as an attack on Turkey.\n\nThe Central Bank posted a record loss of 1.065 trillion lira for 2025. The loss reflects the cost of currency defence operations and the unorthodox monetary policies it pursued between 2019 and 2023, when Mr Erdoğan fired multiple central bank governors for raising interest rates. The bank's current approach remains unchanged."
+              },
+              "char_count": 2137,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

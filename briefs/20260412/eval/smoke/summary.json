@@ -1,0 +1,98 @@
+{
+  "aggregated": {
+    "config_a": {
+      "totals": {
+        "bare_acronyms": 0,
+        "acronym_chain_breaks": 0,
+        "stale_titles": 0,
+        "foreign_quote_leakage": 0
+      },
+      "avg_per_run": {
+        "bare_acronyms": 0.0,
+        "acronym_chain_breaks": 0.0,
+        "stale_titles": 0.0,
+        "foreign_quote_leakage": 0.0
+      },
+      "n_runs": 1
+    },
+    "config_b": {
+      "totals": {
+        "bare_acronyms": 0,
+        "acronym_chain_breaks": 0,
+        "stale_titles": 0,
+        "foreign_quote_leakage": 0
+      },
+      "avg_per_run": {
+        "bare_acronyms": 0.0,
+        "acronym_chain_breaks": 0.0,
+        "stale_titles": 0.0,
+        "foreign_quote_leakage": 0.0
+      },
+      "n_runs": 1
+    },
+    "delta_b_minus_a": {
+      "bare_acronyms": 0,
+      "acronym_chain_breaks": 0,
+      "stale_titles": 0,
+      "foreign_quote_leakage": 0
+    }
+  },
+  "results": {
+    "run_date": "2026-04-12",
+    "eval_root": "/Users/zen/dev/src/pdb/briefs/20260412/eval/smoke",
+    "n": 1,
+    "model": "claude-sonnet-4-6",
+    "thinking_budget": 16000,
+    "labels": [
+      "de"
+    ],
+    "sections": {
+      "de": {
+        "label": "de",
+        "runs": [
+          {
+            "repeat": 1,
+            "elapsed_s": 315.5,
+            "config_a": {
+              "final": {
+                "narrative_body": "Germany's coalition government cracked this week when Katherina Reiche, the economics minister, attacked her Social Democratic Party (SPD) partners, calling their energy relief proposals \"expensive, ineffective and constitutionally questionable.\" Friedrich Merz, the chancellor, said he was surprised by the public dispute and told ministers to keep their disagreements private. The social wing of his Christian Democratic Union (CDU) called for Ms Reiche's dismissal.\n\nThe episode exposes the weakness of a government with a thin majority that cannot maintain basic discipline. Even as Mr Merz struggles to hold his coalition together, the far-right Alternative for Germany (AfD) is pressing harder against democratic norms. The party's Saxony-Anhalt branch approved a radical election programme with only one dissenting vote, targeting 45% support to govern the state alone after September's election. The programme includes deportation campaigns and restrictions on civil society funding; Ulrich Siegmund aims to become Germany's first AfD minister-president.\n\nAbroad, Germany deferred to institutions. Mr Merz and Johann Wadephul, the foreign minister, congratulated Peter Magyar on defeating Viktor Orbán in Hungary, expressing hope for \"cooperation for a strong, secure and above all united Europe.\" Following the ceasefire between Iran and America, Mr Merz offered German help securing the Strait of Hormuz — but only after a peace agreement, and subject to a UN mandate and approval by the Bundestag, Germany's parliament.\n\nEven routine policy generated confusion. Boris Pistorius, the defense minister, had to clarify that men aged 17 to 45 do not need permission from the Bundeswehr, Germany's armed forces, for foreign trips lasting more than three months, despite a provision in the new military service law. The requirement is suspended for now, though it remains in place for emergencies. The muddle was another sign of the gap between what the government intends and what it delivers."
+              },
+              "char_count": 1999,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              }
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Germany's coalition cracked this week when Economics Minister Katherina Reiche attacked her Social Democratic Party partners, calling their energy relief proposals \"expensive, ineffective and constitutionally questionable.\" Chancellor Friedrich Merz said he was taken aback by the dispute and demanded that ministers keep disagreements behind closed doors, but the Christian Democratic Union's social wing called for Ms Reiche's dismissal.\n\nThe row lays bare how little room Mr Merz has with a thin majority. Even as he struggles to hold the coalition together, the far-right Alternative for Germany (AfD) is pressing harder from outside. The AfD in Sachsen-Anhalt approved a radical election program with just one dissenting vote, aiming for 45% support to govern alone in September's state election. It calls for deportation campaigns and restrictions on civil society funding; Ulrich Siegmund wants to become Germany's first AfD minister-president.\n\nAbroad, Germany played it cautiously. Mr Merz and Foreign Minister Johann Wadephul congratulated Peter Magyar on defeating Viktor Orban in Hungary, expressing hope for",
+                "Europe.": "fter the Iran-USA ceasefire, Chancellor Friedrich Merz offered German help securing the Strait of Hormuz — but only after a peace agreement and only with a United Nations mandate and Bundestag approval.\n\nEven routine policy caused confusion. Defence Minister Boris Pistorius had to clarify that men aged 17 to 45 do not need Bundeswehr permission for foreign trips of more than three months, despite a provision in the new military service law. The requirement is suspended for now, though it survives for future emergencies. The muddle showed, again, how poorly the government explains its own laws."
+              },
+              "char_count": 1722,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

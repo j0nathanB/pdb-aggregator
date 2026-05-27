@@ -1,0 +1,317 @@
+{
+  "aggregated": {
+    "config_a": {
+      "totals": {
+        "bare_acronyms": 0,
+        "acronym_chain_breaks": 0,
+        "stale_titles": 0,
+        "foreign_quote_leakage": 0
+      },
+      "avg_per_run": {
+        "bare_acronyms": 0.0,
+        "acronym_chain_breaks": 0.0,
+        "stale_titles": 0.0,
+        "foreign_quote_leakage": 0.0
+      },
+      "n_runs": 6,
+      "json_integrity_violations": []
+    },
+    "config_b": {
+      "totals": {
+        "bare_acronyms": 0,
+        "acronym_chain_breaks": 0,
+        "stale_titles": 0,
+        "foreign_quote_leakage": 0
+      },
+      "avg_per_run": {
+        "bare_acronyms": 0.0,
+        "acronym_chain_breaks": 0.0,
+        "stale_titles": 0.0,
+        "foreign_quote_leakage": 0.0
+      },
+      "n_runs": 6,
+      "json_integrity_violations": []
+    },
+    "delta_b_minus_a": {
+      "bare_acronyms": 0,
+      "acronym_chain_breaks": 0,
+      "stale_titles": 0,
+      "foreign_quote_leakage": 0
+    }
+  },
+  "results": {
+    "run_date": "2026-04-12",
+    "eval_root": "/Users/zen/dev/src/pdb/briefs/20260412/eval/n3_mx_ua",
+    "n": 3,
+    "model": "claude-sonnet-4-6",
+    "thinking_budget": 16000,
+    "labels": [
+      "mx",
+      "ua"
+    ],
+    "sections": {
+      "mx": {
+        "label": "mx",
+        "runs": [
+          {
+            "repeat": 1,
+            "elapsed_s": 328.0,
+            "config_a": {
+              "final": {
+                "narrative_body": "Claudia Sheinbaum reversed Mexico's ban on fracking this week, dropping her predecessor's energy-sovereignty doctrine to cut the country's dependence on imported natural gas.\n\nShe announced that Mexico will consider \"non-traditional\" fracking techniques to boost natural gas production by 38%. She acknowledged that Pemex lacks the technology and may need to bring in private partners through mixed contracts. The shift breaks with Andrés Manuel López Obrador's purist approach to energy sovereignty, driven by Mexico's reliance on American pipeline imports for 77% of its natural gas.\n\nEven as energy policy shifts, the government is putting growth ahead of price stability. The central bank cut interest rates to 6.75% despite inflation reaching 4.59%, but the decision split the board 3-2. Some members warned about oil price volatility from Middle East conflict while the majority pushed for further cuts. The split reflects disagreement about how to handle those risks.\n\nMs Sheinbaum also opened the first Economic Development Pole in Tlaxcala, backed by $540m in investment and over 5,000 jobs. The site covers 53 hectares, expanding to 96, and 80% of its space is already committed. It is the first project under Plan México, the government's plan to spread manufacturing investment beyond the north and the Bajío region.\n\nThe Senate ratified Roberto Velasco as foreign minister with 81 votes. At 38, Mr Velasco has already served as undersecretary for North America, where he helped negotiate the United States-Mexico-Canada Agreement (USMCA) — useful experience as the trade pact comes up for review. Ms Sheinbaum also announced her first European trip, travelling to Barcelona for a progressive leaders' summit organised by Pedro Sánchez. The visit marks Mexico's first presidential trip to Spain in eight years.\n\nResidents of San José Chiapa, Puebla, disrupted Ms Sheinbaum's housing events to protest a recycling plant, chanting \"No to the recycler\" and \"Down with the dump.\" When officials tried to block them, tensions rose. Local opposition can disrupt even government-backed projects.\n\nMorena faces candidate-selection rows and a membership crisis after electoral authorities struck out 160,000 member registrations. Montserrat Caballero, a former mayor of Tijuana, resigned, accusing the party of \"lies and betrayals\" and saying it had lost its essence. The strains suggest the party will be harder to manage as success breeds internal competition.\n\nOmar García Harfuch, the security secretary, has become something of a folk hero. The Wall Street Journal reports he is Mexico's Batman: street vendors sell \"Harfuchas\" sweet bread, towels and blankets bearing his image. The trade follows his operations against organised crime, with vendors reporting strong sales especially among women aged 40-50. His popularity reinforces his position in the 2030 succession race."
+              },
+              "char_count": 2884,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "President Claudia Sheinbaum reversed Mexico's ban on fracking this week, abandoning her predecessor's energy sovereignty doctrine to cut the country's dependence on imported natural gas.\n\nMs Sheinbaum announced that Mexico will consider \"non-traditional\" fracking techniques to boost natural gas production by 38%. She acknowledged that Pemex lacks the technology and may need private partners through mixed contracts. The shift breaks from Andrés Manuel López Obrador's approach, driven by Mexico's reliance on American pipeline imports for 77% of its natural gas needs.\n\nMexico's economic policy continues to favour growth over price stability. The central bank cut interest rates to 6.75% despite inflation reaching 4.59%, but the decision split the board 3–2. Some members warned about oil price volatility from Middle East conflict while the majority pushed for further cuts. The split reflects disagreement over how to handle external risks.\n\nMs Sheinbaum also inaugurated the first Economic Development Pole in Tlaxcala, with $540 million in investment and over 5,000 jobs. The project covers 53 hectares, rising to 96, and is already 80% occupied. It is the first project under Plan México, the government's strategy to spread manufacturing investment beyond the northern states and the Bajío region.\n\nThe Senate confirmed Roberto Velasco as foreign minister with 81 votes. At 38, Mr Velasco negotiated the United States-Mexico-Canada Agreement as undersecretary for North America — useful experience as the trade agreement comes up for review. Ms Sheinbaum also announced her first European trip, travelling to Barcelona for a progressive leaders' summit organised by Pedro Sánchez. The visit is Mexico's first presidential trip to Spain in eight years.\n\nResidents of San José Chiapa, Puebla, disrupted Ms Sheinbaum's housing events to protest a recycling plant, chanting \"No to the recycler\" and \"Down with the dump.\" When officials tried to limit protesters' access, tensions rose. The confrontation shows that people can still organise effectively even in areas where the government is pushing development projects.\n\nMorena, the ruling party, faces candidate selection rows and membership problems after electoral authorities invalidated 160,000 member registrations. Former Tijuana mayor Montserrat Caballero resigned, accusing the party of \"lies and betrayals\" and saying it had lost its essence. The party will be harder to manage as success breeds internal competition.\n\nOne bright spot for the government is the popularity of Security Secretary Omar García Harfuch. The security secretary has become Mexico's Batman, according to the Wall Street Journal, with street vendors selling \"Harfuchas\" sweet bread, towels and blankets bearing his image. The merchandise follows his operations against organised crime; vendors report strong sales, especially among women aged 40–50. His popularity reinforces his position in the 2030 succession race."
+              },
+              "char_count": 2959,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 2,
+            "elapsed_s": 349.0,
+            "config_a": {
+              "final": {
+                "narrative_body": "Claudia Sheinbaum, Mexico's president, reversed the country's ban on fracking this week, abandoning her predecessor's push for energy self-sufficiency to cut dependence on imported natural gas.\n\nShe announced Mexico will consider \"non-traditional\" fracking techniques to boost natural gas production by 38%. She acknowledged that Pemex lacks the technology and may need private-sector partnerships through mixed contracts. The shift breaks from the energy-independence policy of her predecessor, Andrés Manuel López Obrador, and is driven by Mexico's reliance on American pipeline imports for 77% of its natural gas needs.\n\nEven as Mexico changes energy policy, it is still favouring growth over price stability: the central bank cut interest rates to 6.75% despite inflation reaching 4.59%. The decision split the board 3-2. Some members warned about oil price volatility from Middle Eastern conflict while the majority pushed for further cuts. The vote exposed disagreement about how to handle external risks.\n\nSheinbaum also inaugurated the first Economic Development Pole in Tlaxcala, with $540m in investment and over 5,000 jobs. The project covers 53 hectares, expanding to 96, and is already 80% occupied. It is the first project under Plan México, the government's plan to spread manufacturing investment beyond the northern states and the Bajío region.\n\nThe Senate ratified Roberto Velasco as foreign minister with 81 votes. At 38, Mr Velasco negotiated the United States-Mexico-Canada Agreement (USMCA) as undersecretary for North America — useful experience as the trade pact comes up for review. Sheinbaum also announced her first European trip, travelling to Barcelona for a progressive leaders' summit organised by Pedro Sánchez. The visit is Mexico's first presidential trip to Spain in eight years.\n\nResidents of San José Chiapa, Puebla disrupted Sheinbaum's housing events to protest a recycling plant, chanting \"No to the recycler\" and \"Down with the dump.\" When officials tried to limit protesters' access, tensions escalated. The confrontation shows that communities can still organise against government projects.\n\nMorena, meanwhile, faces candidate selection rows and member registration problems: electoral authorities invalidated 160,000 registrations. Montserrat Caballero, the former Tijuana mayor, resigned, accusing the party of \"lies and betrayals\" and saying it had lost its essence. The tensions suggest the party will need tighter management as internal competition grows with its success.\n\nOmar García Harfuch, the security secretary, has become Mexico's Batman — so says the Wall Street Journal — with street vendors selling \"Harfuchas\" sweet bread, towels and blankets bearing his image. The sales follow his operations against organised crime; vendors report strong demand, especially among women aged 40-50. His popularity strengthens his position for the 2030 succession race."
+              },
+              "char_count": 2914,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "President Claudia Sheinbaum reversed the country's ban on fracking this week, abandoning her predecessor's energy-sovereignty doctrine to reduce dependence on imported natural gas.\n\nMs Sheinbaum announced that Mexico will consider \"non-traditional\" fracking techniques to boost natural gas production by 38%. She acknowledged that Pemex, the state oil company, lacks the technology and may need private partners through mixed contracts. The shift breaks with Andrés Manuel López Obrador's approach to energy independence, driven by Mexico's reliance on American pipeline imports for 77% of its natural gas needs.\n\nEven as Mexico shifts its energy policy, its economic stance favours growth over price stability. The central bank cut interest rates to 6.75% despite inflation of 4.59%, but the board split 3-2. Some members warned of oil-price volatility from the Middle East conflict; the majority pushed for further cuts. The split reflects disagreement over how to handle external risks.\n\nMs Sheinbaum also inaugurated the first Economic Development Pole in Tlaxcala, drawing $540m in investment and creating more than 5,000 jobs. The project covers 53 hectares, expanding to 96, and is already 80% occupied. It is the first result of Plan México, the government's drive to spread manufacturing investment beyond the northern states and the Bajío region.\n\nThe Senate ratified Foreign Minister Roberto Velasco with 81 votes. At 38, Mr Velasco brings experience negotiating the United States-Mexico-Canada Agreement, gained in his previous role as undersecretary for North America — useful as the deal comes up for review. Ms Sheinbaum also announced her first European trip: Barcelona, for a progressive leaders summit organised by Prime Minister Pedro Sánchez of Spain. The visit is Mexico's first presidential trip to Spain in eight years.\n\nThe administration faces fresh political friction. Residents of San José Chiapa, Puebla, disrupted Ms Sheinbaum's housing events to protest a recycling plant, chanting \"No to the recycler\" and \"Down with the dump.\" When officials tried to block protesters, tensions rose. The confrontation shows that locals can still organise against government development projects.\n\nMorena, the ruling party, is also under internal strain. Electoral authorities invalidated 160,000 member registrations, exposing candidate-selection and registration problems. Montserrat Caballero, the former mayor of Tijuana, resigned, accusing the party of \"lies and betrayals\" and saying it had lost its essence. The party will be harder to manage as success fuels internal competition.\n\nOne bright spot: Security Secretary Omar García Harfuch has become Mexico's Batman, according to the Wall Street Journal. Street vendors sell \"Harfuchas\" sweet bread, towels and blankets bearing his image; sales are strong, especially among women aged 40 to 50. His popularity strengthens his position in the 2030 succession race."
+              },
+              "char_count": 2935,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 3,
+            "elapsed_s": 326.0,
+            "config_a": {
+              "final": {
+                "narrative_body": "Claudia Sheinbaum reversed Mexico's ban on fracking this week, abandoning her predecessor's energy sovereignty doctrine to address the country's dependence on imported natural gas.\n\nShe announced Mexico will consider \"non-traditional\" fracking techniques to boost natural gas production by 38%. She acknowledged that Pemex lacks the technology and may need private-sector partnerships through mixed contracts. The shift, driven by Mexico's reliance on American pipeline imports for 77% of its natural gas, breaks from her predecessor's purist approach to energy independence.\n\nMexico's broader economic policy also favours growth over price stability. The central bank cut interest rates to 6.75% despite inflation reaching 4.59%, but the decision split the board 3-2. Some members warned about oil-price volatility from Middle East conflict; the majority pushed for further cuts.\n\nMs Sheinbaum also inaugurated the first Economic Development Pole in Tlaxcala, with $540m in investment and over 5,000 jobs. The project covers 53 hectares, expanding to 96, and has confirmed 80% occupancy. It is the first project under Plan México, the government's strategy to spread manufacturing investment beyond the northern states and the Bajío region.\n\nThe Senate ratified Roberto Velasco as foreign minister with 81 votes. At 38, Mr Velasco brings experience negotiating the United States-Mexico-Canada Agreement (USMCA) from his previous role as undersecretary for North America — useful expertise as the trade agreement comes up for review. Ms Sheinbaum also announced her first trip to Europe, travelling to Barcelona for a progressive leaders' summit organised by Pedro Sánchez. The visit marks Mexico's first presidential trip to Spain in eight years.\n\nThe administration faces political challenges at the local level. Residents of San José Chiapa, Puebla, disrupted Ms Sheinbaum's housing events to protest a recycling plant, chanting \"No to the recycler\" and \"Down with the dump.\" When officials tried to keep protesters out, tensions rose. The confrontation shows that residents can organise against government projects even in areas the government is developing.\n\nMorena, the governing party, faces candidate selection controversies and problems with party membership after electoral authorities invalidated 160,000 registrations. Former Tijuana mayor Montserrat Caballero resigned, accusing the party of \"lies and betrayals\" and saying it had lost its essence. The tensions suggest the party will need more careful management as internal competition grows.\n\nOmar García Harfuch, the security secretary, has become Mexico's Batman, according to the Wall Street Journal. Street vendors sell \"Harfuchas\" sweet bread, towels and blankets bearing his image. The merchandise surge follows his operations against organised crime, with vendors reporting strong sales especially among women aged 40-50. His popularity strengthens his position in the 2030 succession race."
+              },
+              "char_count": 2963,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "President Claudia Sheinbaum reversed Mexico's ban on fracking this week, abandoning her predecessor's energy sovereignty doctrine to cut the country's dependence on imported natural gas.\n\nShe announced Mexico will consider \"non-traditional\" fracking techniques to boost natural gas production by 38%, and acknowledged that Pemex lacks the technology and may need private partners through mixed contracts. The shift breaks with Andrés Manuel López Obrador's energy nationalism, driven by Mexico's reliance on American pipeline imports for 77% of its natural gas.\n\nEven as it shifts energy policy, the central bank cut interest rates to 6.75% despite inflation reaching 4.59%, favouring growth over price stability. The board split 3-2: the minority warned about oil-price volatility from the Middle East conflict; the majority pushed for further cuts.\n\nMs Sheinbaum inaugurated the first Economic Development Pole in Tlaxcala with $540 million in investment and more than 5,000 jobs. The site covers 53 hectares, expanding to 96, and already has 80% occupancy confirmed. It is the first concrete step under Plan México, the government's effort to spread manufacturing investment beyond the northern states and the Bajío.\n\nThe Senate ratified Roberto Velasco as foreign minister with 81 votes. At 38, Mr Velasco brings United States-Mexico-Canada Agreement negotiating experience from his previous role as undersecretary for North America — a background that should serve him as the trade agreement comes up for review. Ms Sheinbaum also announced her first European trip, travelling to Barcelona for a summit of progressive leaders organised by Pedro Sánchez, the Spanish prime minister. It will be Mexico's first presidential visit to Spain in eight years.\n\nThe administration's development push met resistance on the ground. Residents of San José Chiapa, in Puebla, disrupted a housing event to protest a recycling plant, chanting \"No to the recycler\" and \"Down with the dump.\" When officials tried to limit their access, tensions rose. The episode shows that local opposition can disrupt government projects even in areas where Morena is strong.\n\nThe ruling party faces internal strains. Morena is dealing with candidate disputes and registration problems after electoral authorities struck 160,000 member registrations. Former Tijuana mayor Montserrat Caballero resigned, accusing the party of \"lies and betrayals\" and saying it had lost its essence. Internal competition is rising, and managing it will take more work.\n\nOne bright spot: Omar García Harfuch, the security secretary, has become a cultural phenomenon. The Wall Street Journal calls him Mexico's Batman; street vendors sell sweet bread, towels and blankets bearing his image — dubbed \"Harfuchas.\" The merchandise follows his operations against organised crime, with vendors reporting strong sales especially among women aged 40 to 50. His popularity strengthens his position heading into the 2030 succession race."
+              },
+              "char_count": 2980,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          }
+        ]
+      },
+      "ua": {
+        "label": "ua",
+        "runs": [
+          {
+            "repeat": 1,
+            "elapsed_s": 248.4,
+            "config_a": {
+              "final": {
+                "narrative_body": "Viktor Orbán lost power in Hungary this week after Peter Magyar's opposition party won a two-thirds parliamentary majority. The defeat removes Ukraine's main obstacle to EU integration — Mr Orbán had blocked both its accession negotiations and a €90 billion loan package.\n\nVolodymyr Zelensky immediately congratulated Mr Magyar and said Ukraine was ready to \"develop cooperation\" with Hungary. Andrii Sybiha, the foreign minister, echoed him, promising \"mutually beneficial cooperation\" and pledging to \"find solutions to old problems.\" The new Hungarian government has not yet taken office or announced policy, but the victory opens the way for faster progress on EU financing and accession.\n\nThe diplomatic opening comes as Ukraine reports progress in peace talks. Kyrylo Budanov, head of the presidential office, said negotiations were moving toward a settlement: \"I don't think it will be long.\" He said American envoys Steve Witkoff and Jared Kushner might visit Kyiv next week, and noted that \"they all understand the war needs to end.\"\n\nOn the battlefield, Ukraine kept advancing. General Oleksandr Syrskyi, the commander-in-chief, said Ukrainian forces had retaken 480 square kilometres and 12 settlements since late January. Ukrainian drones killed a record number of Russian soldiers in March, up 29% from February, while interceptor drones shot down more than 33,000 Russian drones.\n\nBut the economy is under strain. The National Bank of Ukraine sold nearly $4.8 billion in March — the highest intervention since December 2024 — bringing total sales since January to roughly $12 billion. Officials warned that reserves could run out within months at current rates; they have fallen from $57 billion to $51.9 billion.\n\nThe government is also struggling to pass legislation required by international lenders. Parliament approved only one of four IMF-required tax bills, failing to muster enough votes for the rest. The EU had already withheld about €1.5 billion from Ukraine's latest aid payment over unmet reform conditions. Yuliia Svyrydenko, the prime minister, met members of the Servant of the People parliamentary faction to win support for the remaining bills."
+              },
+              "char_count": 2176,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Prime Minister Viktor Orban lost power in Hungary this week after Peter Magyar's opposition party swept to a two-thirds parliamentary majority. The defeat removes the main obstacle to Ukraine's European Union membership — Mr Orban had blocked both Ukraine's accession negotiations and a €90 billion loan package.\n\nPresident Volodymyr Zelensky congratulated Mr Magyar and said Ukraine was ready to \"develop cooperation\" with Hungary. Andrii Sybiha, the foreign minister, echoed the sentiment, promising \"mutually beneficial cooperation\" and pledges to \"find solutions to old problems.\" The new Hungarian government has not yet taken office or announced policy changes, but its victory opens the way for Ukraine's accession talks to resume and the €90 billion loan to be released.\n\nThis comes as Ukraine signals progress in peace negotiations. Kyrylo Budanov, head of the Presidential Office, said talks were moving toward settlement: \"I don't think it will be long.\" He said senior American envoys Steve Witkoff and Jared Kushner might visit Kyiv next week and noted that \"they all understand the war needs to end.\"\n\nOn the battlefield, Ukraine continued making territorial gains. Oleksandr Syrskyi, the commander-in-chief, reported that Ukrainian forces had regained 480 square kilometres and 12 settlements since late January. Ukrainian drones achieved record kills against Russian personnel in March, up 29% from February, while interceptor drones shot down more than 33,000 Russian unmanned aerial vehicles during the month.\n\nBut economic pressures are mounting. The National Bank of Ukraine sold nearly $4.8 billion in March — the highest intervention since December 2024 — bringing total interventions since January to roughly $12 billion. Officials warned that foreign reserves could be depleted within months if interventions continue at this rate, with reserves falling from $57 billion to $51.9 billion.\n\nMeanwhile, the government struggled to pass legislation required by international lenders. Parliament passed only one of four IMF-required tax bills, failing to gather enough votes for the rest. The EU had already cut about €1.5 billion from Ukraine's latest aid tranche over unmet reform conditions. Yuliia Svyrydenko, the prime minister, met with Servant of the People faction members to secure support for the remaining bills."
+              },
+              "char_count": 2343,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 2,
+            "elapsed_s": 313.9,
+            "config_a": {
+              "final": {
+                "narrative_body": "Peter Magyar's opposition party swept Viktor Orban from power in Hungary this week, winning a two-thirds parliamentary majority. The defeat removes Ukraine's main obstacle to EU integration — Mr Orban had blocked both Ukraine's accession talks and a €90 billion loan package.\n\nVolodymyr Zelensky immediately congratulated Mr Magyar and said Ukraine was ready to \"develop cooperation\" with Hungary. Andrii Sybiha, the foreign minister, echoed this, promising \"mutually beneficial cooperation\" and pledging to \"find solutions to old problems.\" The new government has not yet taken office or announced policy changes, but its victory could accelerate EU financial support and accession talks.\n\nUkraine also signalled progress in peace negotiations. Kyrylo Budanov, head of the Office of the President, said talks were moving toward a settlement. \"I don't think it will be long,\" he said. He added that American envoys Steve Witkoff and Jared Kushner might visit Kyiv next week; \"they all understand the war needs to end.\"\n\nOn the battlefield, Ukraine continued making territorial gains. Oleksandr Syrskyi, the commander-in-chief, said Ukrainian forces had regained 480 square kilometres and 12 settlements since late January. Ukrainian drones killed record numbers of Russian troops in March, up 29% from February, while interceptor drones shot down more than 33,000 Russian drones that month.\n\nEconomic pressure is growing. The National Bank of Ukraine sold nearly $4.8 billion in March, its highest intervention since December 2024, bringing total interventions since January to roughly $12 billion. Officials warned that reserves could run out within months at current rates, with reserves falling from $57 billion to $51.9 billion.\n\nMeanwhile, the government struggled to pass legislation required by international lenders. Parliament passed only one of four IMF-required tax bills, failing to gather enough votes for the rest. The EU had already cut about €1.5 billion from Ukraine's latest aid tranche over missed reform conditions. Yuliia Svyrydenko, the prime minister, met members of the Servant of the People faction to secure support for the legislation."
+              },
+              "char_count": 2162,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Viktor Orban, the prime minister, lost power in Hungary this week when Peter Magyar's opposition party won a two-thirds parliamentary majority. The defeat removes Ukraine's main obstacle to European Union integration — Mr Orban had blocked both Ukraine's accession negotiations and a €90 billion loan package.\n\nVolodymyr Zelensky immediately congratulated Mr Magyar and said Ukraine was ready to \"develop cooperation\" with Hungary. Andrii Sybiha, the foreign minister, echoed him, promising \"mutually beneficial cooperation\" and pledging to \"find solutions to old problems.\" The new Hungarian government has not yet taken office or announced policy positions, but the victory could speed up EU loans and accession talks for Ukraine.\n\nUkraine also signalled progress in peace negotiations. Kyrylo Budanov, head of the Presidential Office, said talks were moving toward a settlement: \"I don't think it will be long.\" He said senior American envoys Steve Witkoff and Jared Kushner might visit Kyiv next week and noted that \"they all understand the war needs to end.\"\n\nOn the battlefield, Ukraine continued making territorial gains. Oleksandr Syrskyi, the commander-in-chief, reported that Ukrainian forces had regained 480 square kilometres and 12 settlements since late January. Ukrainian drones killed more Russian personnel in March than in any previous month, up 29% from February, while interceptor drones shot down more than 33,000 Russian unmanned aerial vehicles in the same period.\n\nEconomic pressures are mounting. The National Bank of Ukraine sold nearly $4.8 billion in March — the highest intervention since December 2024 — bringing total interventions since January to roughly $12 billion. Officials warned that foreign reserves could run dry within months at this rate; they have already fallen from $57 billion to $51.9 billion.\n\nParliament approved only one of four IMF-required tax bills, failing to muster enough votes for the rest. The EU had already cut about €1.5 billion from Ukraine's latest aid tranche over unmet reform conditions. Yuliia Svyrydenko, the prime minister, met Servant of the People faction members to round up votes for the remaining bills."
+              },
+              "char_count": 2178,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          },
+          {
+            "repeat": 3,
+            "elapsed_s": 297.9,
+            "config_a": {
+              "final": {
+                "narrative_body": "Viktor Orban lost power in Hungary this week after Peter Magyar's opposition party won a two-thirds parliamentary majority. The defeat removes Ukraine's primary obstacle to EU integration — Mr Orban had blocked both Ukraine's accession negotiations and a €90 billion loan package.\n\nVolodymyr Zelensky immediately congratulated Mr Magyar and said Ukraine was ready to \"develop cooperation\" with Hungary. Andrii Sybiha, the foreign minister, promised \"mutually beneficial cooperation\" and pledged to \"find solutions to old problems.\" The new Hungarian government has not yet taken office or announced policy changes, but its victory could speed both EU financing and accession talks.\n\nThe diplomatic opening comes as Ukraine signals progress in peace negotiations. Kyrylo Budanov, head of the Office of the President, said talks were moving toward a settlement: \"I don't think it will be long.\" He said American envoys Steve Witkoff and Jared Kushner might visit Kyiv next week and that \"they all understand the war needs to end.\"\n\nOn the battlefield, Ukraine continued making territorial gains. Oleksandr Syrskyi, the commander-in-chief, reported that Ukrainian forces had regained 480 square kilometres and 12 settlements since late January. Ukrainian drones killed a record number of Russian troops in March, up 29% from February, while interceptor drones shot down more than 33,000 Russian drones.\n\nBut economic pressure is mounting. The National Bank of Ukraine sold nearly $4.8 billion in March — the most since December 2024 — pushing total sales since January to roughly $12 billion. Officials warned that reserves could run out within months if sales continue at this pace; they have already fallen from $57 billion to $51.9 billion.\n\nMeanwhile, the government struggled to pass legislation required by international lenders. Parliament passed only one of four IMF-required tax bills, short of the votes needed for the rest. The EU had already cut about €1.5 billion from Ukraine's latest aid payment over conditions Ukraine had not met. Yuliia Svyrydenko, the prime minister, met with Servant of the People faction members to secure support for the remaining bills."
+              },
+              "char_count": 2173,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            },
+            "config_b": {
+              "final": {
+                "narrative_body": "Viktor Orban lost power in Hungary this week, swept aside when Peter Magyar's opposition party won a two-thirds parliamentary majority. Mr Orban had blocked both Ukraine's accession negotiations and a €90 billion loan package; his defeat removes Ukraine's main obstacle to EU integration.\n\nVolodymyr Zelensky immediately congratulated Mr Magyar and said Ukraine was ready to \"develop cooperation\" with Hungary. Andrii Sybiha, the foreign minister, echoed the sentiment, promising \"mutually beneficial cooperation\" and pledging to \"find solutions to old problems.\" The new Hungarian government has not yet taken office or announced policy changes, but its win could accelerate EU funding and Ukraine's accession talks.\n\nUkraine is also signalling progress in peace negotiations. Kyrylo Budanov, head of the Presidential Office, said talks were heading toward a settlement. \"I don't think it will be long,\" he said. He noted that senior American envoys Steve Witkoff and Jared Kushner might visit Kyiv next week and that \"they all understand the war needs to end.\"\n\nUkraine has also made battlefield gains. Oleksandr Syrskyi, the commander-in-chief, reported that Ukrainian forces had regained 480 square kilometres and 12 settlements since late January. Ukrainian drones killed a record number of Russian personnel in March, up 29% from February, while interceptor drones shot down more than 33,000 Russian unmanned aerial vehicles during the month.\n\nBut the economy is under pressure. The National Bank of Ukraine sold nearly $4.8 billion in March — the highest intervention since December 2024 — bringing total interventions since January to roughly $12 billion. Officials warned that reserves could run dry within months at the current rate; they have already fallen from $57 billion to $51.9 billion.\n\nParliament, meanwhile, struggled to pass legislation required by international lenders. It passed only one of four IMF-required tax bills, failing to muster enough votes for the rest. The EU had already cut about €1.5 billion from Ukraine's latest aid tranche because reform conditions had not been met. Yuliia Svyrydenko, the prime minister, met with Servant of the People faction members to secure support for the outstanding bills."
+              },
+              "char_count": 2239,
+              "counts": {
+                "bare_acronyms": 0,
+                "acronym_chain_breaks": 0,
+                "stale_titles": 0,
+                "foreign_quote_leakage": 0
+              },
+              "hits": {
+                "bare_acronyms": [],
+                "acronym_chain_breaks": [],
+                "stale_titles": [],
+                "foreign_quote_leakage": []
+              },
+              "unexpected_keys": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}
