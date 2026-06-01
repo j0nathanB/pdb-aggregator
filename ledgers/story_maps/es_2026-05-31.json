@@ -1,0 +1,2016 @@
+{
+  "country": "ES",
+  "code": "es",
+  "week": "2026-05-31",
+  "analysis_date": "2026-05-31",
+  "search_results_total": 362,
+  "stories_identified": 12,
+  "off_topic_filtered": 56,
+  "noise_summary": "56 off-topic results filtered. Breakdown: (1) Football/sports \u2014 5 items: Spain World Cup squad (Guardian), Goldman Sachs World Cup model (Reuters/sports), Goldman Sachs World Cup Felipe VI (Huffington Post viral), Balomp\u00e9dica Conquense match result (ABC), Champions League final rating mention embedded in RTVE item. (2) US/foreign CNI (non-Spain) \u2014 14 items: Multiple Capitol News Illinois articles about Chicago Bears stadium and Illinois budget (these matched 'CNI' as the news outlet acronym); Mexican CNI agent protection decree (sdpnoticias, jornada.com.mx, lajornadadeoriente); Bolivian CNI industrial jobs warning (larazon.bo x2); Mexican mayoral arrest with CNI involvement (diariodemorelos x2, wradio.com.mx); India CNI cybersecurity (akkaias.com); Bolivia chocolate/coffee CNI (larazon.bo). (3) Substack psychology/cult dynamics (samray.substack.com) \u2014 1 item, CNI acronym false match. (4) Entertainment/celebrity/lifestyle \u2014 8 items: El Hormiguero TV (Las Provincias), Clara S\u00e1nchez novel (El Correo), podcast boomers vs j\u00f3venes (Las Provincias), book about Grace Kelly/Felipe VI youth romance (Faro de Vigo), Grimaldi-Borb\u00f3n dynasties soft-royalty (El Mundo), Roca Rey bullfight at Las Ventas (hola.com, semana.es \u2014 bullfight celebrity coverage), Corrida de la Prensa (elespanol.com coraz\u00f3n section). (5) Human interest/local noise \u2014 8 items: Calafate ship repairman in Motril (Ideal), Google Maps Salamanca error (Salamancahoy), historical 1906 royal wedding (La Raz\u00f3n), young Ourense priests (Faro de Vigo), Los \u00c1ngeles market reform PSOE Almer\u00eda (Ideal), PSOE Garaf\u00eda road demand (Eldiario Canarias), Dani P\u00e9rez M\u00e1laga farewell (diariosur x2). (6) Personal finance/Banco de Espa\u00f1a general advice \u2014 9 items: Hipotecario market fall 15% (euribor.com.es), housing crisis youth (euribor.com.es), counterfeit money (Diario de Almer\u00eda), cash advice Banco de Espa\u00f1a (elblogsalmon, elcorreo, elnacional.cat), F\u00f3rum Filat\u00e9lico anniversary (El Norte de Castilla), summer extra pay (elblogsalmon), Zamora police HQ former BdE building (za49.es), banking history Almer\u00eda (Ideal), Catalu\u00f1a municipalities without banking (es.ara.cat). (7) Crypto/blockchain \u2014 1 item: ERC-7943 Ethereum standard (es.cryptonomist.ch \u2014 ERC false match). (8) China military ekranoplane tech (Xataka) \u2014 1 item. (9) Pentagon AI/US military (Infobae) \u2014 1 item. (10) Israel/Lebanon war news (P\u00fablico) \u2014 1 item. Note: Some items in categories 4\u20136 had marginal relevance via name-matching (e.g., 'S\u00e1nchez' or 'Abascal' as surnames unrelated to tracked actors) and were filtered accordingly.",
+  "stories": [
+    {
+      "story_id": 1,
+      "headline": "PSOE corruption crisis deepens as UCO raids Ferraz, Zapatero imputado, David S\u00e1nchez goes on trial, and S\u00e1nchez vows to govern until 2027",
+      "summary": "Spain's ruling Socialist Party faced simultaneous judicial blows in the last week of May: the Guardia Civil's UCO unit searched PSOE headquarters in Ferraz under orders from High Court judge Pedraz (the 'caso Leire D\u00edez' / 'cloacas' case); former PM Zapatero was formally implicated in the Plus Ultra airline rescue case; and PM Pedro S\u00e1nchez's brother David went on trial in Badajoz for influence-peddling and malfeasance. S\u00e1nchez appeared before the Youth Socialists congress to dismiss the crises as the work of a 'treacherous opposition' and vowed to govern 'until 2027 and beyond,' while requesting a parliamentary appearance; partners PNV and Junts publicly demanded early elections; and multiple polls showed PSOE support falling sharply.",
+      "actors_involved": [
+        "Pedro S\u00e1nchez",
+        "PSOE",
+        "Yolanda D\u00edaz",
+        "Santiago Abascal",
+        "Alberto N\u00fa\u00f1ez Feij\u00f3o"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 146,
+      "sources": [
+        "bbc.com",
+        "reuters.com",
+        "antena3.com",
+        "abc.es",
+        "efe.com",
+        "cope.es",
+        "elmundo.es",
+        "lavanguardia.com",
+        "rtve.es",
+        "eldiario.es",
+        "elconfidencial.com",
+        "elperiodico.com",
+        "20minutos.es",
+        "elespanol.com",
+        "publico.es",
+        "vozpopuli.com",
+        "larazon.es",
+        "libertaddigital.com",
+        "elplural.com",
+        "moncloa.com",
+        "esdiario.com",
+        "elnacional.cat",
+        "nuevatribuna.es",
+        "nuevarevolucion.es",
+        "lasprovincias.es",
+        "lasexta.com",
+        "diariodesevilla.es",
+        "diariodejerez.es",
+        "burgosconecta.es",
+        "segre.com",
+        "huffingtonpost.es",
+        "theobjective.com",
+        "infobae.com",
+        "europapress.es",
+        "newtral.es",
+        "epe.es",
+        "pp.es",
+        "almendron.com",
+        "elconstitucional.es",
+        "noticiasdegipuzkoa.eus",
+        "noticiasdenavarra.com",
+        "lne.es",
+        "elperiodico.cat",
+        "valenciplaza.com",
+        "naciodigital.cat",
+        "elcomercio.es",
+        "lavozdeasturias.es",
+        "economiadigital.es",
+        "esradio.libertaddigital.com",
+        "clm24.es",
+        "amp.antena3.com",
+        "diariovasco.com",
+        "laopiniondemurcia.es",
+        "catalunyapress.es",
+        "diariosigloxxi.com",
+        "democrata.es",
+        "europapress.es",
+        "catalunyapress.es",
+        "europasur.es"
+      ],
+      "date_range": "2026-05-26 to 2026-06-01",
+      "articles": [
+        {
+          "title": "Spain's S\u00e1nchez digs in after 8 years as PM, but can he survive wave of scandals?",
+          "source": "bbc.com",
+          "url": "https://www.bbc.com/news/articles/c1w21gn340xo",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Spain's Sanchez running out of road as corruption probes stack up",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/world/europe/spains-sanchez-running-out-road-corruption-probes-stack-up-2026-05-29/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "The court cases plaguing Spain's ruling Socialist Party",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/world/court-cases-plaguing-spains-ruling-socialist-party-2026-05-29/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Police at Spain's ruling Socialists HQ as part of probe into ex party official",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/world/spanish-police-search-socialist-partys-headquarters-el-pais-reports-2026-05-27/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "Alcaldes y presidentes auton\u00f3micos del PSOE temen que un 'superdomingo electoral' les perjudique",
+          "source": "antena3.com",
+          "url": "https://www.antena3.com/noticias/espana/ultima-hora-investigacion-juez-pedraz-psoe-directo_202605286a17cbde91bae05c35e01ac5.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Juicio al hermano de Pedro S\u00e1nchez e investigaciones por corrupci\u00f3n al PSOE, en directo",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/uco-ferraz-directo-ultima-hora-registro-psoe-20260527085901-di.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "S\u00e1nchez pide comparecer en el Congreso tras las \u00faltimas investigaciones judiciales",
+          "source": "efe.com",
+          "url": "https://efe.com/espana/2026-05-28/sanchez-comparecencia-congreso-investigaciones-judiciales/",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Alejandro Requeijo: caso del hermano de Pedro S\u00e1nchez carece de prueba directa",
+          "source": "cope.es",
+          "url": "https://www.cope.es/programas/la-linterna/el-tema-del-dia/audios/alejandro-requeijo-confidencial-caso-hermano-pedro-sanchez-auto-jueza-detalla-27-indicios-acusados-caso-carece-prueba-directa-20260528_3373889.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Seis de cada diez espa\u00f1oles exigen a S\u00e1nchez la convocatoria de elecciones anticipadas",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/seis-diez-espanoles-exigen-sanchez-convocatoria-elecciones-20260529014541-nt.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "La crisis de S\u00e1nchez hunde al PSOE en comunidades clave mientras \u00e9l se aferra 'hasta 2027 y m\u00e1s all\u00e1'",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/espana/2026/05/31/6a1c85c8fc6c834b388b4570.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La Fiscal\u00eda pide al tribunal que retire del juicio uno de los delitos atribuidos a David S\u00e1nchez",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/espana/extremadura/2026/05/28/6a17f73f21efa00d228b4580.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "La Audiencia de Badajoz decide hoy si el juicio contra David S\u00e1nchez sigue adelante",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260601/11552125/audiencia-badajoz-decide-hoy-juicio-david-sanchez-sigue-adelante.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "S\u00e1nchez solicita comparecer en el Congreso tras la imputaci\u00f3n de Zapatero y la investigaci\u00f3n del caso Leire D\u00edez",
+          "source": "rtve.es",
+          "url": "https://www.rtve.es/noticias/20260528/sanchez-solicita-comparecer-congreso-tras-imputacion-zapatero-investigacion-del-caso-leire-diez/17090573.shtml",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Pedro S\u00e1nchez comparecer\u00e1 en el Congreso a petici\u00f3n propia para hablar sobre las investigaciones al PSOE",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/politica/pedro-sanchez-pide-comparecer-congreso-peticion-propia-hablar-investigaciones-psoe_1_13258418.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Qui\u00e9n es qui\u00e9n en el Caso David S\u00e1nchez (II): \u00c1lvaro Ja\u00e9n, el diputado de Podemos",
+          "source": "esdiario.com",
+          "url": "https://www.esdiario.com/nacional/260528/189002/caso-david-sanchez-ii-alvaro-jaen-diputado-levanto-sospecha.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "El hermano de S\u00e1nchez se sienta en el banquillo y pide la nulidad del juicio",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/extremadura/defensa-hermano-sanchez-asegura-delito-prescrito-pide-20260528131035-nt.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Por muy podrido que est\u00e9 el sanchismo, Espa\u00f1a no se pudrir\u00e1",
+          "source": "elconfidencial.com",
+          "url": "https://elconfidencial.com/espana/cronicas-desde-el-frente-viral/2026-05-30/corrupcion-democracia-golpe-estado-sanchez-1hms_4364258",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Esa ola gigante que el Sanchismo ya no puede surfear",
+          "source": "elconfidencial.com",
+          "url": "https://elconfidencial.com/espana/al-grano/2026-05-30/corrupcion-psoe-gobierno-sanchez-justicia-1hms_4364376",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "S\u00e1nchez se atrinchera y pone al PSOE contra las cuerdas",
+          "source": "larazon.es",
+          "url": "https://www.larazon.es/espana/sanchez-atrinchera-pone-psoe-cuerdas_202605286a17939fcb17881aa25c0577.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Pedro S\u00e1nchez admite 'tropiezos' en el PSOE pero asegura que seguir\u00e1 en el Gobierno 'hasta 2027 y m\u00e1s all\u00e1'",
+          "source": "diariodejerez.es",
+          "url": "https://www.diariodejerez.es/espana/pedro-sanchez-admite-tropiezos-psoe_0_2006902354.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "PEDRO S\u00c1NCHEZ protagoniza el acto central del Congreso de Juventudes Socialistas en Madrid",
+          "source": "elperiodico.com",
+          "url": "https://elperiodico.com/es/politica/20260531/pedro-sanchez-ataque-batalla-tiempo-maniobren-derecha-2027-elecciones-130854956",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez promete al PSOE que seguir\u00e1 frente al intento de 'derribo' de la 'oposici\u00f3n marrullera'",
+          "source": "burgosconecta.es",
+          "url": "https://www.burgosconecta.es/nacional/sanchez-promete-psoe-seguira-frente-intento-derribo-20260531125924-ntrc.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez admite 'problemas y tropiezos' pero avisa: 'Vamos a seguir hasta 2027'",
+          "source": "lasprovincias.es",
+          "url": "https://www.lasprovincias.es/politica/snchez-admite-problemas-tropiezos-avisa-vamos-seguir-20260531121514-vi.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez acusa a la oposici\u00f3n 'marrullera' de querer derribar al Gobierno 'con malas artes'",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260531/11552177/sanchez-denuncia-oposicion-marrullera-pp-vox-intentar-derribarle-malas-artes.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El PNV exige a S\u00e1nchez elecciones inmediatas: 'La legislatura ha llegado a su fin'",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/espana/politica/el-pnv-le-exige-a-sanchez-elecciones-inmediatas-la-legislatura-ha-llegado-a-su-fin.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "La Justicia noquea al PSOE y delata por primera vez a S\u00e1nchez como v\u00e9rtice de toda la corrupci\u00f3n",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/espana/politica/la-justicia-noquea-al-psoe-y-delata-por-primera-vez-a-sanchez-como-vertice-de-toda-la-corrupcion.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "Hoy, 8 a\u00f1os de 'coalici\u00f3n progresista' en el gobierno",
+          "source": "larazon.es",
+          "url": "https://www.larazon.es/opinion/hoy-8-anos-coalicion-progresista-gobierno_202606016a1cb67f7d8b1d381263d998.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Es la factura de tanta mentira y corrupci\u00f3n",
+          "source": "larazon.es",
+          "url": "https://www.larazon.es/opinion/factura-tanta-mentira-corrupcion_202606016a1cb6837d8b1d381263d9ba.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Qui\u00e9n est\u00e1 y qui\u00e9n no: S\u00e1nchez abre un examen de lealtades en su n\u00facleo duro",
+          "source": "larazon.es",
+          "url": "https://larazon.es/espana/quien-esta-quien-sanchez-abre-examen-lealtades-nucleo-duro_202605306a1a36a0cb17881aa261f063.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Trece interrogantes sobre la situaci\u00f3n penal del presidente Rodr\u00edguez Zapatero",
+          "source": "nuevatribuna.es",
+          "url": "https://www.nuevatribuna.es/articulo/actualidad/psoe-zapatero-trece-interrogantes-situacion-penal-presidente-rodriguez-zapatero/20260531105223250888.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Seis de cada diez espa\u00f1oles exigen a S\u00e1nchez la convocatoria de elecciones anticipadas",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/seis-diez-espanoles-exigen-sanchez-convocatoria-elecciones-20260529014541-nt.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Paloma Esteban: Las verdaderas dudas del PP con la moci\u00f3n de censura",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/paloma-esteban-dudas-pp-mocion-censura-20260601014656-nt.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Ayuso, 'la baronesa de Madrid', entrevistada en Italia: 'S\u00e1nchez es una verg\u00fcenza y la suya, una mafia de Estado'",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/madrid/2026/06/01/6a1c9023fc6c8344258b4599.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Illa, el aval permanente de S\u00e1nchez y de Zapatero",
+          "source": "elnacional.cat",
+          "url": "https://www.elnacional.cat/es/editorial/illa-aval-permanente-sanchez-zapatero-jose-antich_1648147_102.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Las juventudes del PSOE apuestan por abandonar la OTAN mientras S\u00e1nchez dice que Espa\u00f1a es un 'socio leal'",
+          "source": "elnacional.cat",
+          "url": "https://www.elnacional.cat/es/politica/juventudes-psoe-apuestan-por-abandonar-otan-mientras-sanchez-defiende-espana-es-socio-leal_1648141_102.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Las Juventudes del PSOE aprueban una propuesta para salir de la OTAN",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/espana/2026-05-31/las-juventudes-del-psoe-aprueban-una-propuesta-para-salir-de-la-otan-7413031/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Las Juventudes del PSOE piden la salida de Espa\u00f1a de la OTAN",
+          "source": "estrelladigital.es",
+          "url": "https://www.estrelladigital.es/articulo/noticias-en-la-red/juventudes-psoe-piden-salida-espana-otan/20260531215543447026.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez acusa a la 'oposici\u00f3n marrullera' del PP y Vox de intentar derribarle 'con malas artes'",
+          "source": "elnacional.cat",
+          "url": "https://www.elnacional.cat/es/politica/sanchez-acusa-oposicion-marrullera-querer-derribar-gobierno-malas-artes-pide-tiempo_1648072_102.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "\u00bfCrees que S\u00e1nchez llegar\u00e1 a 2027 sin una moci\u00f3n de censura?",
+          "source": "elnacional.cat",
+          "url": "https://www.elnacional.cat/es/encuestas/crees-sanchez-llegara-2027-sin-mocion-censura_1648150_102.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Ocho a\u00f1os de la moci\u00f3n que llev\u00f3 a Pedro S\u00e1nchez a Moncloa",
+          "source": "segre.com",
+          "url": "https://www.segre.com/es/nacional-internacional/260531/ocho-anos-mocion-llevo-pedro-sanchez-moncloa_1225231.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "PEDRO S\u00c1NCHEZ protagoniza el acto central del Congreso de Juventudes Socialistas",
+          "source": "epe.es",
+          "url": "https://www.epe.es/es/madrid/20260531/pedro-sanchez-protagoniza-acto-central-congreso-juventudes-socialistas-130854944",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Contra S\u00e1nchez se vive muy bien",
+          "source": "nuevarevolucion.es",
+          "url": "https://nuevarevolucion.es/contra-sanchez-se-vive-muy-bien/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Jos\u00e9 Ram\u00f3n Iturriaga: El lastre de la pol\u00edtica",
+          "source": "abc.es",
+          "url": "https://www.abc.es/economia/daniel-caballero-lastre-politica-20260601014348-nt.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "S\u00e1nchez ignora la corrupci\u00f3n y azuza a las JJSS ante la derecha 'marrullera'",
+          "source": "elespanol.com",
+          "url": "https://www.elespanol.com/espana/politica/20260531/sanchez-ignora-corrupcion-azuza-jjss-derecha-marrullera-quiere-tumbar-gobierno/1003744267298_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El amargo octavo cumplea\u00f1os de Pedro S\u00e1nchez",
+          "source": "diariodesevilla.es",
+          "url": "https://www.diariodesevilla.es/espana/amargo-octavo-cumpleanos-pedro-sanchez_0_2006901763.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Pedro S\u00e1nchez: 'La oposici\u00f3n marrullera quiere frenar el avance de Espa\u00f1a y lo vamos a evitar'",
+          "source": "publico.es",
+          "url": "https://www.publico.es/politica/congreso/pedro-sanchez-oposicion-marrullera-quiere-frenar-avance-espana-evitar.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez desde\u00f1a a PP y Vox como oposici\u00f3n 'marrullera'",
+          "source": "laregion.es",
+          "url": "https://www.laregion.es/espana/sanchez-desdena-pp-vox-oposicion_1_20260531-4298328.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez admite 'problemas y tropiezos' internos y avisa a la oposici\u00f3n 'marrullera'",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/sanchez-admite-problemas-tropiezos-internos-avisa-oposicion-marrullera-seguir-2027-mas-alla_6977284_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La UCO entra en Ferraz: operativo por una trama del PSOE que financiaba ilegalmente sus cloacas",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/2026-05-27/uco-lanza-operativo-financiacion-ilegal-psoe-registra-ferraz_4362167/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "\u00daLTIMA HORA | La Guardia Civil registra la sede del PSOE en un operativo por la trama Sepi",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/espana/politica/2026-05-27/ultima-hora-registro-psoe-ferraz-financiacion-ilegal-en-directo-7410510/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "Casos de corrupci\u00f3n en el PSOE y juicio al hermano de Pedro S\u00e1nchez, en directo",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/2026-05-26/zapatero-imputado-plus-ultra-blanqueo-directo_4361506/",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "\u00bfRegistro o requerimiento de informaci\u00f3n? Las claves de la actuaci\u00f3n de la UCO en la sede del PSOE",
+          "source": "newtral.es",
+          "url": "https://www.newtral.es/registro-uco-psoe/20260528/",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Corrupci\u00f3n | Puente estalla ante la tormenta judicial contra el PSOE",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/politica/20260528/puente-estalla-tormenta-judicial-psoe-130753880",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "La \u00abKitchen del PSOE\u00bb y el papel de los confidentes",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/politica/2026-05-31/kitchen-psoe-papel-confidentes/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "F\u00fanez critica que Puente 'se\u00f1ale' a los jueces: 'El PSOE no es v\u00edctima de su corrupci\u00f3n, lo somos los espa\u00f1oles'",
+          "source": "pp.es",
+          "url": "https://www.pp.es/actualidad/articulos/funez-critica-que-puente-senale-a-los-jueces-el-psoe-no-es-victima-de-su-corrupcion-lo-somos-los-espanoles/",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Alcaldes y presidentes auton\u00f3micos del PSOE temen que un 'superdomingo electoral' les perjudique (AMP)",
+          "source": "amp.antena3.com",
+          "url": "https://amp.antena3.com/noticias/espana/ultima-hora-noticias-psoe-directo-sanchez-pide-comparecer-congreso-ultimas-investigaciones-judiciales_202605296a1926ec91bae05c35e39c52.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "\u00daltima hora pol\u00edtica, en directo | El juez Calama da al PP el tim\u00f3n de las acusaciones populares del 'caso Plus Ultra' contra Zapatero",
+          "source": "elespanol.com",
+          "url": "https://www.elespanol.com/espana/politica/20260529/ultima-hora-politica-directo-page-traslada-temor-no-llegado-peor-investigaciones-judiciales-psoe/1003744264915_10.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Trama de Leire D\u00edez y Santos Cerd\u00e1n, en directo",
+          "source": "lasexta.com",
+          "url": "https://www.lasexta.com/noticias/nacional/uco-registra-sede-psoe-directo-entrada-agentes-ferraz-sacude-sesion-control-congreso_202605276a1698497d8b1d3812572b9d.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Crece la presi\u00f3n en el PSOE y entre los socios para adelantar elecciones",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/espana/politica/crece-la-presion-en-el-psoe-y-entre-los-socios-para-adelantar-eleeciones.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "El CIS mantiene al PSOE m\u00e1s de 11 puntos por delante del PP en plena debacle socialista",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/cis-mantiene-psoe-mas-11-puntos-por-delante-pp-plena-debacle-socialista-andalucia-sin-contabilizar-corrupcion_6976767_0.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "El CIS mantiene al PSOE 11 puntos por encima del PP en una encuesta previa a los casos de Zapatero y Leire D\u00edez",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/politica/cis-mantiene-psoe-11-puntos-pp-encuesta-previa-estallido-casos-zapatero-leire-diez_1_13259836.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "CIS | Tezanos mantiene al PSOE 11,3 puntos sobre PP",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/2026-05-29/tezanos-psoe-puntos-pp-previo-imputacion-zapatero-uco-ferraz_4363904/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "El PSOE ganar\u00eda las elecciones generales con el PP a casi 14 puntos, seg\u00fan el CIS",
+          "source": "antena3.com",
+          "url": "https://www.antena3.com/noticias/espana/psoe-ganaria-elecciones-generales-casi-14-puntos-segun-cis_202605296a196d277d8b1d38125f20ba.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "La sombra de los casos de Zapatero y Andic sobrevuela las jornadas antiTrump del lobi empresarial",
+          "source": "cronicaglobal.elespanol.com",
+          "url": "https://cronicaglobal.elespanol.com/politica/20260601/sombra-zapatero-andic-sobrevuela-jornadas-antitrump-empresarial/1003742765822_0.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Bildu, el socio m\u00e1s fiel de S\u00e1nchez frente a los casos de corrupci\u00f3n",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/bildu-socio-mas-fiel-sanchez-frente-los-casos-corrupcion-es-unico-que-guarda-silencio-ni-siquiera-le-pide-explicaciones_6976651_0.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "El PP presiona al PNV para que pase de pedir urnas a provocarlas",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/pp-pide-pnv-que-retire-ya-su-respaldo-capo-sanchez-sostiene-mafia-apoya-un-cambio-gobierno_6977123_0.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Sumar presiona al PSOE por la corrupci\u00f3n mientras Podemos da por acabada la legislatura",
+          "source": "amp.antena3.com",
+          "url": "https://amp.antena3.com/noticias/espana/sumar-presiona-psoe-corrupcion-mientras-podemos-acabada-legislatura_202605316a1c76c5cb17881aa264ea89.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Abascal dice que S\u00e1nchez har\u00e1 lo ilegal para que los espa\u00f1oles no puedan votar en libertad",
+          "source": "infobae.com",
+          "url": "https://www.infobae.com/espana/agencias/2026/05/28/abascal-dice-que-sanchez-hara-lo-ilegal-para-que-los-espanoles-no-puedan-votar-en-libertad/",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Abascal carga brutalmente contra S\u00e1nchez y Zapatero tras los registros de la UCO: 'Hay que detenerlos y juzgarlos'",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/espana/politica/abascal-carga-brutalmente-contra-sanchez-y-zapatero-tras-los-registros-de-la-uco-hay-que-detenerlos-y-juzgarlos.html",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "Intercambio de informaci\u00f3n y reuniones de PP y Vox en la Embajada de EEUU",
+          "source": "huffingtonpost.es",
+          "url": "https://www.huffingtonpost.es/politica/intercambio-informacion-reuniones-pp-vox-embajada-eeuu-sospechas-iu-respecto-operacion-coordinada-gobierno-extranjero-f202605.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "Lapso, supuesta corrupci\u00f3n y justicia",
+          "source": "nuevatribuna.es",
+          "url": "https://www.nuevatribuna.es/articulo/actualidad/psoe-zapatero-abalos-cerdan-pp-feijoo-lapso-supuesta-corrupcion-justicia/20260531105241250880.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Ram\u00f3n Palomar: Hermanos de secta",
+          "source": "lasprovincias.es",
+          "url": "https://www.lasprovincias.es/opinion/ramon-palomar-hermanos-secta-20260601000907-nt.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "El exsecretario de Organizaci\u00f3n del PSOE coru\u00f1\u00e9s detenido en Portugal en una trama de corrupci\u00f3n del PS",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260529/11551253/exsecretario-organizacion-psoe-corunes-detenido-portugal-trama-corrupcion-ps.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "S\u00e1nchez cumple ocho a\u00f1os en Moncloa en uno de los momentos m\u00e1s delicados de su mandato",
+          "source": "noticiasdegipuzkoa.eus",
+          "url": "https://www.noticiasdegipuzkoa.eus/politica/2026/05/31/sanchez-cumple-ocho-presidente-mandato-moncloa-11138162.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Ocho a\u00f1os de Pedro S\u00e1nchez: en su momento m\u00e1s cr\u00edtico, PP y Vox exigen elecciones sin lograr la suma",
+          "source": "elconstitucional.es",
+          "url": "https://www.elconstitucional.es/es/nacional/cronicas/ocho-anos-pedro-sanchez-en-su-momento-mas-critico-pp-vox-exigen-sin-descanso-elecciones-sin-lograr-suma-cambiar-tablero_4808_102.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Pedro S\u00e1nchez, vuit anys i vuit fracassos a la Moncloa",
+          "source": "naciodigital.cat",
+          "url": "https://naciodigital.cat/politica/pedro-sanchez-vuit-fracassos.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez se vuelca con los Mossos mientras la Polic\u00eda en Extremadura agoniza contra el crimen",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/extremadura/sanchez-vuelca-mossos-policia-extremadura-agoniza-crimen-20260522014639-nt.html",
+          "date": "2026-05-22"
+        },
+        {
+          "title": "Belarra tira del 15-M y recupera el discurso del primer Podemos para rentabilizar la indignaci\u00f3n",
+          "source": "abc.es",
+          "url": "https://www.abc.es/espana/belarra-tira-15m-recupera-discurso-primer-podemos-20260601014629-nt.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "El Gobierno vasco lleva el debate identitario a la universidad con una ley que prioriza el euskera",
+          "source": "abc.es",
+          "url": "https://www.abc.es/sociedad/gobierno-vasco-lleva-debate-identitario-universidad-ley-20260601010808-nt.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "NUEVA INVESTIGACI\u00d3N AL PSOE | Impulso a la financiaci\u00f3n auton\u00f3mica y gestos con los socios",
+          "source": "laopiniondemurcia.es",
+          "url": "https://www.laopiniondemurcia.es/nacional/2026/05/31/financiacion-autonomica-gestos-socios-sanchez-130852202.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La ley de 'lobbies' y la del pueblo saharaui concentran las negociaciones en el Congreso antes del verano",
+          "source": "publico.es",
+          "url": "https://www.publico.es/politica/congreso/ley-lobbies-pueblo-saharaui-concentran-negociaciones-congreso-sprint-final-verano.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "S\u00e1nchez pervirtiendo a los j\u00f3venes, Page defendiendo a los servidores p\u00fablicos",
+          "source": "elespanol.com",
+          "url": "https://www.elespanol.com/opinion/editoriales/20260601/sanchez-pervirtiendo-jovenes-page-defendiendo-servidores-publicos/1003744267658_14.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "J\u00e9ssica Albiach: 'Hay lawfare contra el Gobierno, nosotras tambi\u00e9n lo hemos sufrido, pero no todo es lawfare'",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/catalunya/jessica-albiach-hay-lawfare-gobierno-hemos-sufrido-no-lawfare_1_13259950.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Conversaci\u00f3n con un par de sanchistas",
+          "source": "libertaddigital.com",
+          "url": "https://libertaddigital.com/espana/politica/2026-05-31/santiago-navajas-conversacion-con-un-par-de-sanchistas-7412980",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Conversaci\u00f3n con un par de sanchistas (duplicate URL variant)",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/espana/politica/2026-05-31/santiago-navajas-conversacion-con-un-par-de-sanchistas-7412980/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Alta traici\u00f3n",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/elsubjetivo/opinion/2026-05-31/alta-traicion-articulo-alvaro-del-castano/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Por qu\u00e9 el PSOE es tan cutre",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/espana/politica/2026-05-31/jose-garcia-dominguez-por-que-el-psoe-es-tan-cutre-7413030/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El vendaval judicial del PSOE quita presi\u00f3n al pacto de Moreno con Vox en Andaluc\u00eda",
+          "source": "diariovasco.com",
+          "url": "https://www.diariovasco.com/politica/vendaval-judicial-psoe-quita-presion-moreno-pacto-20260601001849-ntrc.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Page defiende a jueces, fiscales y miembros de las fuerzas de seguridad, que 'sufren ataques por hacer su trabajo'",
+          "source": "noticiasdenavarra.com",
+          "url": "https://www.noticiasdenavarra.com/politica/2026/05/31/page-defiende-jueces-fiscales-miembros-fuerzas-seguridad-ataques-trabajo-11139173.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "PASOE CASTILLA-LA MANCHA | Page defiende a jueces, fiscales y fuerzas de seguridad",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/politica/20260531/page-defiende-jueces-fiscales-fuerzas-seguridad-ataque-trabajo-130862908",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Illa ve en S\u00e1nchez a un 'referente moral' mientras Page defiende a jueces y fiscales 'por hacer su trabajo'",
+          "source": "publico.es",
+          "url": "https://www.publico.es/politica/illa-ve-sanchez-referente-moral-page-defiende-jueces-fiscales-trabajo.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Semana de encuestas con desgaste para el PSOE y estancamiento para el PP y Vox",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/politica/espana/semana-encuestas-desgaste-psoe-estancamiento-pp-vox_391550102",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La corrupci\u00f3n pasa factura al PSOE y sus socios: la oposici\u00f3n les saca 66 esca\u00f1os",
+          "source": "elespanol.com",
+          "url": "https://www.elespanol.com/espana/politica/20260531/corrupcion-pasa-factura-psoe-socios-oposicion-saca-escanos-sondeo-publicara-hoy-espanol/1003744267342_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Bar\u00f3metro laSexta | El PP ser\u00eda el partido con mayor intenci\u00f3n de voto: obtendr\u00eda el 33,1%",
+          "source": "lasexta.com",
+          "url": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-548-encuestados-prefiere-que-proximo-presidente-gobierno-sea-feijoo_202605316a1c255d7d8b1d3812630bbf.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Puente critica a los que 'se rasgan las vestiduras' pero 'silban' cuando Feij\u00f3o y Ayuso sugieren un 'pucherazo'",
+          "source": "lasexta.com",
+          "url": "https://www.lasexta.com/noticias/nacional/puente-critica-que-rasgan-vestiduras-que-salta-vista-pero-silban-cuando-feijoo-ayuso-sugieren-pucherazo_202605316a1c67627d8b1d3812636a24.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Leire D\u00edez 'se crey\u00f3 el personaje' y busc\u00f3 apoyos de guardias civiles y agentes del CNI para montar las cloacas",
+          "source": "infobae.com",
+          "url": "https://www.infobae.com/espana/2026/05/29/leire-diez-se-creyo-el-personaje-y-busco-apoyos-de-guardias-civiles-y-agentes-del-cni-para-montar-las-cloacas-que-ayudaron-al-psoe/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "\u00bfSab\u00eda el CNI qui\u00e9n era Julio Mart\u00ednez?",
+          "source": "elindependiente.com",
+          "url": "https://www.elindependiente.com/opinion/2026/05/30/sabia-el-cni-quien-era-julio-martinez/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "La UDEF encuentra una agenda en la casa de Julio Mart\u00ednez con informaci\u00f3n sobre el CNI, presos de Venezuela, oro y petr\u00f3leo",
+          "source": "elindependiente.com",
+          "url": "https://www.elindependiente.com/espana/2026/05/25/udef-encuentra-agenda-casa-julio-martinez-informacion-cni-presos-venezuela-oro-petroleo/",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "La trama Plus Ultra pudo hacer que el CNI interviniera para repatriar a Edmundo Gonz\u00e1lez",
+          "source": "efe.com",
+          "url": "https://efe.com/espana/2026-05-25/plus-ultra-repatriacion-cni-edmundo-gonzalez/",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "El juez del 'caso Plus Ultra' investiga si la trama liderada por Zapatero logr\u00f3 la intervenci\u00f3n del CNI en la salida de Edmundo Gonz\u00e1lez de Venezuela",
+          "source": "infobae.com",
+          "url": "https://www.infobae.com/espana/2026/05/27/el-juez-del-caso-plus-ultra-investiga-si-la-trama-liderada-por-zapatero-logro-la-intervencion-del-cni-en-la-salida-de-edmundo-gonzalez-de-venezuela/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "El amigo de Zapatero revela que los dos presos vascos detenidos por Maduro eran del CNI",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/tribunales/2026-05-26/amigo-zapatero-edmundo-gonzalez-venezuela",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "Todos le llamaban Julito y puede tumbar el sanchismo",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/opinion/todos-le-llamaban-julito-y-puede-tumbar-el-sanchismo.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Francisco Mart\u00ednez asegura que Villarejo se reuni\u00f3 con el CNI y le inform\u00f3 de la 'Kitchen'",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/tribunales/francisco-martinez-asegura-que-villarejo-se-reunio-con-el-cni-y-le-informo-de-la-kitchen.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "La comisi\u00f3n del Congreso sobre los atentados de 2017 empieza a preparar conclusiones sin citar a Puigdemont ni Rajoy",
+          "source": "europapress.es",
+          "url": "https://www.europapress.es/nacional/noticia-comision-congreso-atentados-2017-empieza-preparar-conclusiones-citar-puigdemont-rajoy-20260530105952.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "C\u00f3mo pillaron al agente del CNI que trabajaba para la CIA",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/2026-05-30/agente-cni-cia/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "El CIS desenmara\u00f1a la prioridad nacional de Vox: esto es lo que piensan m\u00e1s de la mitad de espa\u00f1oles",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/politica/espana/cis-desenmarana-prioridad-nacional-vox-piensan-mas-mitad-espanoles_391533102",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "An\u00e1lisis: Votar con Vox a la sombra de las siete estrellas verdes",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/canariasahora/politica/votar-vox-sombra-siete-estrellas-verdes_1_13264271.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Una moci\u00f3n para retratar a S\u00e1nchez, a Feij\u00f3o, al PNV y a Junts",
+          "source": "esdiario.com",
+          "url": "https://www.esdiario.com/opinion/260531/189209/mocion-retratar-sanchez-feijoo-pnv-junts.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El ensayo de censura a S\u00e1nchez en el Senado marca los l\u00edmites de Feij\u00f3o: presi\u00f3n, pero lejos de la mayor\u00eda",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/politica/espana/ensayo-censura-sanchez-senado-marca-limites-feijoo-presion-lejos-mayoria_391503102",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Encadenados al 'one'",
+          "source": "almendron.com",
+          "url": "https://www.almendron.com/tribuna/encadenados-al-one/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "\u00bfIndultar\u00eda Feij\u00f3o a Zapatero y a S\u00e1nchez?",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/opinion/indultaria-feijoo-a-zapatero-y-a-sanchez.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "La inquietante frase de Feij\u00f3o sobre lo que har\u00e1 para cambiar al Gobierno: 'Todo es todo'",
+          "source": "publico.es",
+          "url": "https://www.publico.es/tremending/inquietante-frase-feijoo-sobre-hara-cambiar-gobierno.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "La cara de Feij\u00f3o despu\u00e9s de esta frase de Carlos Cuerpo",
+          "source": "huffingtonpost.es",
+          "url": "https://www.huffingtonpost.es/virales/la-cara-feijoo-frase-carlos-cuerpo-salir-todos-telediarios-f202605.html",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "S\u00e1nchez cumple ocho a\u00f1os en Moncloa en uno de los momentos m\u00e1s delicados de su mandato",
+          "source": "noticiasdegipuzkoa.eus",
+          "url": "https://www.noticiasdegipuzkoa.eus/politica/2026/05/31/sanchez-cumple-ocho-presidente-mandato-moncloa-11138162.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El mensaje que el exconcejal del PP que denunci\u00f3 la G\u00fcrtel manda a Feij\u00f3o: 'Su sede est\u00e1 pagada con dinero negro'",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/extratele/mensaje-exconcejal-pp-denuncio-gurtel-manda-feijoo-sede-esta-pagada-dinero-negro_391602102",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La Xunta registr\u00f3 como contratos menores dos millones en adjudicaciones a empresas vinculadas al entorno familiar de Feij\u00f3o",
+          "source": "publico.es",
+          "url": "https://www.publico.es/politica/xunta-registro-contratos-menores-dos-millones-adjudicaciones-empresas-vinculadas-entorno-familiar-feijoo-superan-limite-legal.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Ayuso viajar\u00e1 al Vaticano para ser recibida por el Papa antes de su visita a Espa\u00f1a",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/autonomias/madrid/ayuso-viajara-vaticano-ser-recibida-papa-antes-visita-espana-dias-despues-audiencia-sanchez_391302102",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "El diablo viste a Abascal",
+          "source": "publico.es",
+          "url": "https://www.publico.es/opinion/columnas/diablo-viste-abascal.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Sumar da un 'paso al frente' en Barcelona tras el anuncio de Rufi\u00e1n",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/politica/espana/sumar-da-paso-frente-barcelona-anuncio-rufian-unidad-si-liderazgo-personalista-no_391472102",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Sumar escenifica su refundaci\u00f3n con un acto en Barcelona en pleno debate interno",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/sumar-escenifica-su-refundacion-con-un-acto-barcelona-pleno-debate-interno-sobre-su-posicion-ante-los-escandalos-psoe_6976749_0.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Sumar hace equilibrios para presionar a un PSOE en crisis sin plantearse romper el Gobierno",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/politica/sumar-equilibrios-presionar-psoe-crisis-plantearse-romper-gobierno_1_13259747.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Sectores de Sumar creen que su vac\u00edo de liderazgo complica la respuesta a la crisis por los casos que salpican al PSOE",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/sectores-sumar-creen-que-su-vacio-liderazgo-complica-respuesta-crisis-por-los-casos-que-salpican-psoe_6977252_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Sectores de Sumar creen que su vac\u00edo de liderazgo se nota al abordar la crisis por los casos que salpican al PSOE",
+          "source": "valenciaplaza.com",
+          "url": "https://valenciaplaza.com/valenciaplaza/nacional/sectores-de-sumar-creen-que-su-vacio-de-liderazgo-se-nota-al-abordar-la-crisis-por-los-casos-que-salpican-al-psoe",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El nuevo Sumar se presenta como la alternativa 'limpia' al PSOE",
+          "source": "es.ara.cat",
+          "url": "https://es.ara.cat/politica/nuevo-sumar-presenta-alternativa-limpia-psoe-debe-asumir-responsabilidades_1_5753118.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Yolanda D\u00edaz eleva el tono ante el PSOE: 'La pol\u00edtica no es la verg\u00fcenza que estamos viendo estos d\u00edas'",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/politica/ultima-hora-casos-leire-zapatero-kitchen-directo_6_13256059_1123176.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "D\u00edaz tacha de 'verg\u00fcenza' los casos de corrupci\u00f3n y elude decir si cree que S\u00e1nchez conoc\u00eda las presuntas cloacas del PSOE",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/diaz-tacha-vergueenza-los-casos-corrupcion-elude-decir-si-cree-que-sanchez-conocia-las-presuntas-cloacas-psoe_6976263_0.html",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "Yolanda D\u00edaz se desmarca del caso Zapatero en plena ofensiva del PP en el Congreso",
+          "source": "moncloa.com",
+          "url": "https://www.moncloa.com/2026/05/28/yolanda-diaz-caso-zapatero-congreso-3380226/",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Yolanda D\u00edaz pierde los nervios y acusa a Tellado de ser 'el Vito Quiles del Partido Popular'",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/espana/politica/2026-05-27/diaz-pierde-los-nervios-y-acusa-a-tellado-de-ser-el-vito-quiles-del-partido-popular-7410585/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "Yolanda D\u00edaz fulmina al director general del SEPE: 'Es una venganza'",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/politica/2026-05-30/yolanda-diaz-director-general-sepe-venganza/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "As\u00ed se cre\u00f3 Sumar, el proyecto de Yolanda D\u00edaz para mantener la unidad de la izquierda en Espa\u00f1a",
+          "source": "antena3.com",
+          "url": "https://www.antena3.com/noticias/espana/asi-creo-sumar-proyecto-yolanda-diaz-mantener-unidad-izquierda-espana_202605306a1a6ee291bae05c35e5f6d6.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "La realidad del mercado laboral: del maquillaje de D\u00edaz al 'r\u00e9cord' de afiliados de S\u00e1nchez",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/libremercado/2026-05-30/del-maquillaje-laboral-de-yolanda-diaz-a-la-verdad-tras-el-record-de-afiliados-de-sanchez-7411378/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Los informes por los que Zapatero cobr\u00f3 medio mill\u00f3n: 'El destino de Yolanda D\u00edaz puede ser definitivo para Espa\u00f1a'",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/espana/politica/2026-05-30/los-informes-por-los-que-zapatero-cobro-medio-millon-el-destino-de-yolanda-diaz-puede-ser-definitivo-para-espana-7412377/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "El S\u00e1nchez comenta en silencio un mel\u00f3n",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/opinion/columnistas/2026/05/28/6a18355ffdddff6e708b459e.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "S\u00e1nchez reivindica el papel de los militares en el D\u00eda de las Fuerzas Armadas",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/politica/20260530/sanchez-reivindica-papel-militares-dia-130828582",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "La red que impide a ERC y Junts dejar caer a S\u00e1nchez: gobiernan juntos unos 100 municipios y dos diputaciones",
+          "source": "eldebate.com",
+          "url": "https://www.eldebate.com/espana/cataluna/20260531/red-impide-erc-junts-dejar-caer-sanchez-gobiernan-juntos-100-municipios-dos-diputaciones_423087.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La red que impide a ERC y Junts dejar caer a S\u00e1nchez (duplicate)",
+          "source": "eldebate.com",
+          "url": "https://eldebate.com/espana/cataluna/20260531/red-impide-erc-junts-dejar-caer-sanchez-gobiernan-juntos-100-municipios-dos-diputaciones_423087.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Luces de Judas | El pacto inhumano de Extremadura adelanta la oferta Feij\u00f3o-Abascal para Espa\u00f1a",
+          "source": "nuevatribuna.es",
+          "url": "https://www.nuevatribuna.es/articulo/actualidad/maria-guardiola-extremadura-pp-corrupcion-luces-de-judas/20260529191421250774.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "El exl\u00edder de ERC en el Congreso Joan Tard\u00e0 anima a S\u00e1nchez a 'aguantar todo lo que pueda'",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260529/11550920/exlider-erc-congreso-joan-tarda-anima-sanchez-aguantar-pueda.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "ERC sostiene a Illa pese a la sombra de sospecha en la financiaci\u00f3n del PSC",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/espana/cataluna/erc-sostiene-a-illa-pese-a-la-sombra-de-sospecha-en-la-financiacion-del-psc-y-dara-luz-verde-a-los-presupuestos.html",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "\u00bfPor qu\u00e9 ERC sigue apoyando al PSOE?",
+          "source": "es.ara.cat",
+          "url": "https://es.ara.cat/politica/erc-sigue-apoyando-psoe_1_5753398.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Rufi\u00e1n avisa de que ERC pedir\u00e1 elecciones si se demuestra financiaci\u00f3n ilegal del PSOE",
+          "source": "europasur.es",
+          "url": "https://europasur.es/espana/rufian-avisa-erc-pedira-elecciones_0_2006866700.html",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "El frente de Rufi\u00e1n comienza a flaquear en su casa: ni ERC ni los Comunes se lo creen",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/cataluna/2026-05-28/frente-rufian-flaquea-casa-erc-comunes_4362713/",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "La Justicia investiga a un exconseller de ERC y a un exl\u00edder de ICV por adjudicar contratos a dedo",
+          "source": "publico.es",
+          "url": "https://www.publico.es/politica/tribunales/justicia-investiga-exconseller-erc-exlider-icv-adjudicar-contratos-dedo.html",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "El sector cr\u00edtico en ERC no logra avales para una consulta sobre los presupuestos de Illa",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/cataluna/2026-05-29/sector-critico-erc-no-logra-avales-presupuestos-illa",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Els cr\u00edtics d'ERC no reuneixen prou firmes per votar sobre pactes amb Illa",
+          "source": "elperiodico.cat",
+          "url": "https://elperiodico.cat/ca/politica/20260530/els-critics-d-erc-reuneixen-130822946",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "ERC reconoce en un correo interno que el traspaso del IRPF a Catalu\u00f1a necesita tres a\u00f1os y solo queda uno",
+          "source": "moncloa.com",
+          "url": "https://www.moncloa.com/2026/05/31/erc-irpf-traspaso-cataluna-dificultades-3381065/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Realismo en ERC y de c\u00f3mo Echevarr\u00eda encontr\u00f3 a Andic",
+          "source": "cronicaglobal.elespanol.com",
+          "url": "https://cronicaglobal.elespanol.com/primeras-planas/20260531/realismo-erc-echevarria-encontro-andic/1003742766150_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Las condiciones de Gabriel Rufi\u00e1n para seguir en ERC",
+          "source": "es.ara.cat",
+          "url": "https://es.ara.cat/politica/condiciones-rufian-seguir-erc_1_5753981.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Albiach exige claridad a Rufi\u00e1n sobre el frente de izquierdas y presiona a Illa para que 'deje de equivocarse'",
+          "source": "elnacional.cat",
+          "url": "https://www.elnacional.cat/es/politica/albiach-exige-claridad-rufian-sobre-frente-izquierdas-presiona-illa_1648099_102.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Junqueras reivindica que ERC ha 'puesto los recursos necesarios' para hacer posible el preacuerdo",
+          "source": "eltriangle.eu",
+          "url": "https://www.eltriangle.eu/es/2026/05/30/junqueras-reivindica-que-erc-ha-puesto-los-recursos-necesarios-para-hacer-posible-el-preacuerdo-entre-sindicatos-y-educacion/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "La \u00abKitchen del PSOE\u00bb y el papel de los confidentes",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/politica/2026-05-31/kitchen-psoe-papel-confidentes/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El exsecretario de Organizaci\u00f3n del PSOE coru\u00f1\u00e9s detenido en Portugal en una trama de corrupci\u00f3n del PS",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260529/11551253/exsecretario-organizacion-psoe-corunes-detenido-portugal-trama-corrupcion-ps.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Los expoliticos con actividad en el sector privado suben con fuerza en dos a\u00f1os",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/economia/20260531/11551800/expoliticos-actividad-sector-privado-suben-fuerza-dos-anos.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Sumar introduce en la ley de dependencia un t\u00edtulo para los hogares monoparentales",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/sumar-introduce-ley-dependencia-un-titulo-para-los-hogares-monoparentales-tras-bloqueo-psoe-ley-familias_6976716_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La presidenta de Cepyme sobre Yolanda D\u00edaz: 'no se escucha' a las peque\u00f1as empresas",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/economia/presidenta-cepyme-cuesta-llamar-empresario-corrupto-delincuente-sociedad_128_13259280.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Yolanda D\u00edaz reclama mayor participaci\u00f3n p\u00fablica en empresas 'estrat\u00e9gicas'",
+          "source": "lavozdeasturias.es",
+          "url": "https://www.lavozdeasturias.es/noticia/gijon/2026/05/30/yolanda-diaz-reclama-mayor-participacion-publica-empresas-estrategicas/00031780129000207117605.htm",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Yolanda D\u00edaz se\u00f1ala que 'empresas como Arcelor deben tener participaci\u00f3n p\u00fablica'",
+          "source": "elcomercio.es",
+          "url": "https://www.elcomercio.es/economia/yolanda-diaz-empresas-arcelor-participacion-publica-20260529212741-nt.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Yolanda D\u00edaz desaf\u00eda a Garamendi: dise\u00f1ar\u00e1 la reforma del despido pese al rechazo de la CEOE",
+          "source": "economiadigital.es",
+          "url": "https://www.economiadigital.es/economia/yolanda-diaz-desafia-garamendi-reforma-despido.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Yolanda D\u00edaz visita Gij\u00f3n",
+          "source": "lne.es",
+          "url": "https://www.lne.es/videos/gijon/2026/05/29/yolanda-diaz-visita-gijon-130814141.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Las cifras reales (sin maquillaje) del mercado laboral de S\u00e1nchez y D\u00edaz",
+          "source": "esradio.libertaddigital.com",
+          "url": "https://esradio.libertaddigital.com/economia-para-quedarte-sin-amigos/2026-05-30/las-cifras-reales-sin-maquillaje-del-mercado-laboral-de-sanchez-y-diaz-7412320/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "La patronal de Toledo estalla contra D\u00edaz y la corrupci\u00f3n pol\u00edtica",
+          "source": "clm24.es",
+          "url": "https://www.clm24.es/articulo/toledo/patronal-toledo-estalla-diaz-corrupcion-politica/20260530093104477500.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Un alto cargo de Albacete podr\u00eda ser cesado pr\u00f3ximamente por Yolanda D\u00edaz",
+          "source": "eldigitaldealbacete.com",
+          "url": "https://www.eldigitaldealbacete.com/2026/05/30/un-alto-cargo-de-albacete-podria-ser-cesado-proximamente-por-yolanda-diaz/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Josep S\u00e1nchez Llibre (Foment): 'Hoy con un salario de menos de 2.000 euros es dif\u00edcil llegar a final de mes'",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/economia/20260530/josep-sanchez-llibre-foment-del-treball-entrevista-salarios-llegar-a-final-de-mes-130725944",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "'Las urnas son ya una urgencia democr\u00e1tica'",
+          "source": "cope.es",
+          "url": "https://www.cope.es/programas/la-tarde/monologo-de-pilar-garcia-muniz/monologos/urnas-son-urgencia-democratica-legislatura-no-da-esperemos-lapsus-yolanda-diaz-meses-congreso-no-tenga-continuidad-20260528_3373728.html",
+          "date": "2026-05-28"
+        }
+      ],
+      "representative_urls": [
+        "https://www.reuters.com/world/europe/spains-sanchez-running-out-road-corruption-probes-stack-up-2026-05-29/",
+        "https://www.reuters.com/world/spanish-police-search-socialist-partys-headquarters-el-pais-reports-2026-05-27/"
+      ]
+    },
+    {
+      "story_id": 2,
+      "headline": "Armed Forces Day 2026 in Vigo marked by flag-falling incident and Princess Leonor's institutional debut",
+      "summary": "Spain's D\u00eda de las Fuerzas Armadas (DIFAS 2026) took place on May 29\u201330 in Vigo, with King Felipe VI presiding over a naval review and the main parade alongside Queen Letizia and Princess Leonor, the latter making her first appearance at the event near the end of her military training. Bad weather cancelled the aerial display, and a technical failure caused the national flag to fall from its mast during the flag-raising ceremony, prompting the King to order a replacement flag \u2014 an incident that generated extensive social media commentary and media analysis.",
+      "actors_involved": [
+        "King Felipe VI",
+        "Spanish Armed Forces"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 38,
+      "sources": [
+        "farodevigo.es",
+        "huffingtonpost.es",
+        "vanitatis.elconfidencial.com",
+        "larazon.es",
+        "lavozdegalicia.es",
+        "telemadrid.es",
+        "elespanol.com",
+        "infobae.com",
+        "europapress.es",
+        "elmundo.es",
+        "hola.com",
+        "ondacero.es",
+        "telecinco.es",
+        "elperiodico.com",
+        "20minutos.es",
+        "lasexta.com",
+        "laregion.es",
+        "rtve.es",
+        "elconfidencial.com",
+        "galiciapress.es",
+        "atlantico.net",
+        "cadenaser.com",
+        "clarin.com",
+        "eldebate.com",
+        "revistavanityfair.es",
+        "eldiario.es",
+        "estrelladigital.es",
+        "laopiniondezamora.es",
+        "diariodepontevedra.es"
+      ],
+      "date_range": "2026-05-28 to 2026-06-01",
+      "articles": [
+        {
+          "title": "La broma del rey Felipe VI a Leonor sobre su futuro durante el c\u00f3ctel institucional en Vigo: 'Ya veremos'",
+          "source": "farodevigo.es",
+          "url": "https://www.farodevigo.es/gran-vigo/2026/05/30/broma-rey-felipe-vi-leonor-dia-fuerzas-armadas-vigo-futuro-130836226.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Se cae la bandera de Espa\u00f1a y lo que hace Felipe VI minutos despu\u00e9s sorprende a diestro y siniestro",
+          "source": "huffingtonpost.es",
+          "url": "https://www.huffingtonpost.es/virales/se-cae-bandera-espana-felipe-vi-minutos-sorprende-diestro-siniestro-f202605.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Las mejores fotos del desfile de las Fuerzas Armadas en Vigo: de Felipe VI rompiendo un protocolo hist\u00f3rico a Leonor",
+          "source": "vanitatis.elconfidencial.com",
+          "url": "https://www.vanitatis.elconfidencial.com/casas-reales/2026-05-30/mejores-fotos-desfile-fuerzas-armadas-felipe-vi-leonor-letizia_4364489/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "As\u00ed ha sido la demostraci\u00f3n naval de las Fuerzas Armadas ante el Rey Felipe VI en Vigo",
+          "source": "larazon.es",
+          "url": "https://www.larazon.es/espana/defensa/asi-sido-demostracion-naval-fuerzas-armadas-rey-felipe-vigo_202605296a19cd2c7d8b1d38125ff94d.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Las Fuerzas Armadas conquistan la r\u00eda de Vigo",
+          "source": "lavozdegalicia.es",
+          "url": "https://www.lavozdegalicia.es/noticia/vigo/2026/05/29/rey-felipe-vi-preside-gran-revista-naval-ria-vigo-dia-fuerzas-armadas/00031780062540159447554.htm",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Felipe VI preside una revista naval en aguas de la R\u00eda de Vigo",
+          "source": "telemadrid.es",
+          "url": "https://www.telemadrid.es/noticias/nacional/Felipe-VI-preside-una-revista-naval-en-aguas-de-la-Ria-de-Vigo-0-2893210680--20260529082433.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "El gran orgullo de un padre: Felipe VI revela el 'secreto' militar de la princesa Leonor",
+          "source": "hola.com",
+          "url": "https://www.hola.com/actualidad/20260531904623/orgullo-padre-felipe-vi-secreto-militar-princesa-leonor/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Qu\u00e9 pas\u00f3 tras la ca\u00edda de la bandera en el Desfile de las Fuerzas Armadas: la reacci\u00f3n del Rey",
+          "source": "ondacero.es",
+          "url": "https://www.ondacero.es/noticias/sociedad/rotura-polea-mastil-fue-causa-caida-bandera-desfile-fuerzas-armadas_202605316a1c076c91bae05c35e8150d.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Por qu\u00e9 ha fallado el izado de bandera en el desfile de las Fuerzas Armadas en Vigo",
+          "source": "telecinco.es",
+          "url": "https://www.telecinco.es/noticias/espana/20260530/por-que-caida-izado-bandera-desfile-fuerzas-armadas_18_019308777.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "V\u00cdDEO: El gracioso momento del rey Felipe VI en el brindis de las Fuerzas Armadas",
+          "source": "antena3.com",
+          "url": "https://www.antena3.com/noticias/espana/videoel-gracioso-momento-rey-felipe-brindis-fuerzas-armadas_202605306a1b187a7d8b1d381261b2fd.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "El gesto de sorpresa de Felipe VI al ver caer la bandera de Espa\u00f1a en el desfile del D\u00eda de las Fuerzas Armadas en Vigo",
+          "source": "lasexta.com",
+          "url": "https://www.lasexta.com/noticias/nacional/gesto-sorpresa-felipe-ver-caer-bandera-espana-desfile-dia-fuerzas-armadas-vigo_202605306a1b320d91bae05c35e70725.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "RTVE capta la reacci\u00f3n del rey Felipe VI ante la ca\u00edda de la bandera de Espa\u00f1a",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/vertele/noticias/rtve-capta-reaccion-rey-felipe-vi-caida-bandera-espana-desfile-fuerzas-armadas_1_13262613.amp.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "V\u00eddeo | As\u00ed fue la reacci\u00f3n del rey Felipe VI tras el fallo en el izado de la bandera",
+          "source": "laregion.es",
+          "url": "https://www.laregion.es/espana/video-reaccion-rey-felipe-vi-bandera-fuerzas-armadas-vigo-viral_1_20260530-4297286.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Defensa explica la ca\u00edda de la bandera de Espa\u00f1a en el D\u00eda de las Fuerzas Armadas",
+          "source": "20minutos.es",
+          "url": "https://www.20minutos.es/nacional/defensa-explica-caida-bandera-espana-dia-las-fuerzas-armadas-que-ha-obligado-actuar-rey-felipe_6977176_0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El lado m\u00e1s distendido de Felipe VI en Vigo: orgullo de padre y bromas sobre la princesa Leonor",
+          "source": "atlantico.net",
+          "url": "https://www.atlantico.net/vigo/lado-distendido-felipe-vi-vigo_1_20260530-4297674.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "FELIPE VI BANDERA | La reacci\u00f3n del rey Felipe VI tras la ca\u00edda de la bandera",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/videos/politica/reaccion-rey-felipe-vi-caida/130833319.shtml",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "La meteorolog\u00eda 'recorta' el desfile del D\u00eda de las Fuerzas Armadas en Vigo",
+          "source": "galiciapress.es",
+          "url": "https://www.galiciapress.es/articulo/movimientos/2026-05-30/5901102-desfile-vigo-dia-fuerzas-armadas-presencia-felipe-vi-princesa-leonor",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Leonor acompa\u00f1a por primera vez a los Reyes en el D\u00eda de las Fuerzas Armadas",
+          "source": "revistavanityfair.es",
+          "url": "https://www.revistavanityfair.es/articulos/princesa-leonor-dia-fuerzas-armadas-reyes-felipe-letizia",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Leonor, cuenta atr\u00e1s para el final de su formaci\u00f3n castrense ante el orgullo de Felipe VI",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/espana/2026/05/31/6a1b3619e9cf4ac1398b45b0.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La ca\u00edda de la bandera en Vigo apunta a un fallo t\u00e9cnico durante el izado",
+          "source": "estrelladigital.es",
+          "url": "https://www.estrelladigital.es/articulo/espana/caida-bandera-vigo-apunta-fallo-tecnico-izado/20260531092643447013.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La broma del rey Felipe VI a Leonor sobre su futuro durante el c\u00f3ctel en Vigo: 'Ya veremos' (video)",
+          "source": "farodevigo.es",
+          "url": "https://www.farodevigo.es/videos/gran-vigo/2026/05/30/broma-rey-felipe-vi-leonor-vigo-130838796.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "DESFILE MILITAR | La broma del rey Felipe VI a Leonor sobre su futuro durante el c\u00f3ctel institucional en Vigo",
+          "source": "laopiniondezamora.es",
+          "url": "https://www.laopiniondezamora.es/sociedad/2026/05/30/broma-rey-felipe-vi-leonor-130836726.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Video: se cay\u00f3 la bandera de Espa\u00f1a en pleno desfile y as\u00ed reaccion\u00f3 el rey Felipe VI",
+          "source": "clarin.com",
+          "url": "https://www.clarin.com/internacional/video-cayo-bandera-espana-pleno-desfile-reacciono-rey-felipe-vi_0_JWg9veQjak.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Una experta en lenguaje no verbal hace este an\u00e1lisis de la reacci\u00f3n de Felipe VI al caerse la bandera de Espa\u00f1a",
+          "source": "huffingtonpost.es",
+          "url": "https://www.huffingtonpost.es/virales/una-experta-lenguaje-verbal-analisis-reaccion-felipe-vi-caerse-bandera-espanabr-f202605.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Fuerzas Armadas: La verdadera causa que provoc\u00f3 la ca\u00edda de la bandera nacional",
+          "source": "eldebate.com",
+          "url": "https://www.eldebate.com/espana/defensa/20260530/verdadera-causa-provoco-caida-bandera-nacional_423411.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Felipe VI y Letizia presiden el desfile del D\u00eda de las Fuerzas Armadas en Vigo",
+          "source": "europapress.es",
+          "url": "https://www.europapress.es/videos/video-felipe-vi-letizia-presiden-desfile-dia-fuerzas-armadas-vigo-20260530153411.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "El in\u00e9dito percance en el izado de la bandera y el primer desfile de Leonor",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/2026-05-30/un-inedito-percance-durante-el-izado-de-la-bandera-durante-el-desfile-del-dia-de-las-fuerzas-armadas_4364506/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Vigo vibra con el desfile de las Fuerzas Armadas",
+          "source": "lavozdegalicia.es",
+          "url": "https://www.lavozdegalicia.es/noticia/vigo/vigo/2026/05/30/vigo-vibra-desfile-fuerzas-armadas/0003_202605202605301780141568079.htm",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "El vestido de los desfiles: la reina Letizia en el desfile de las Fuerzas Armadas en Vigo",
+          "source": "vanitatis.elconfidencial.com",
+          "url": "https://www.vanitatis.elconfidencial.com/casas-reales/2026-05-30/reina-letizia-vestido-juan-vidal-customizado-vigo-fuerzas-armadas-2026_4364497/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "D\u00eda de las Fuerzas Armadas 2026: las im\u00e1genes del desfile militar en el que no se pudo izar la bandera",
+          "source": "rtve.es",
+          "url": "https://www.rtve.es/noticias/20260530/dia-fuerzas-armadas-2026-fotos-desfile-vigo/17091871.shtml",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Los reyes presiden en Vigo un desfile del D\u00eda de las Fuerzas Armadas sin aviones ni paraca\u00eddas",
+          "source": "rtve.es",
+          "url": "https://www.rtve.es/noticias/20260530/desfile-dia-fuerzas-armadas-2026-directo-vigo-video-cronica/17091512.shtml",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "D\u00eda de las Fuerzas Armadas 2026: hora, d\u00f3nde ver hoy el recorrido del desfile en Vigo",
+          "source": "rtve.es",
+          "url": "https://www.rtve.es/noticias/20260528/dia-fuerzas-armadas-2026-hora-donde-ver-recorrido-desfile-agenda-actos/17090054.shtml",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Leonor se estrena en el D\u00eda de las Fuerzas Armadas en un nuevo paso como futura jefa de los Ej\u00e9rcitos",
+          "source": "rtve.es",
+          "url": "https://www.rtve.es/noticias/20260530/leonor-primera-vez-desfile-fuerzas-armadas/17092982.shtml",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Se cae la bandera durante el izado en el desfile del D\u00eda de las Fuerzas Armadas y estalla el cachondeo en redes",
+          "source": "publico.es",
+          "url": "https://www.publico.es/tremending/cae-bandera-izado-desfile-dia-fuerzas-armadas-estalla-cachondeo-redes-bandera-dicho-aqui-me-bajo.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Mill\u00e1s comenta el incidente ocurrido en el D\u00eda de las Fuerzas Armadas",
+          "source": "cadenaser.com",
+          "url": "https://cadenaser.com/nacional/2026/05/31/millas-comenta-el-incidente-ocurrido-en-el-dia-de-las-fuerzas-armadas-es-como-si-al-papa-en-misa-se-le-cayera-la-hostia-cadena-ser/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La tensi\u00f3n pol\u00edtica marca la actualidad: de la presi\u00f3n al PNV a la crisis del PSOE y el debut de Leonor",
+          "source": "cope.es",
+          "url": "https://www.cope.es/programas/fin-de-semana/audios/tension-politica-marca-actualidad-presion-pnv-crisis-psoe-debut-leonor-20260531_3374959.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Felipe VI celebra que Leonor est\u00e9 a unos d\u00edas de completar su formaci\u00f3n militar: 'Mucho esfuerzo y brillantez'",
+          "source": "elespanol.com",
+          "url": "https://www.elespanol.com/treintayseis/vigo/20260530/felipe-vi-celebra-leonor-dias-completar-formacion-militar-esfuerzo-brillantez/1003744266997_0.html",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "DIRECTO | El D\u00eda de las Fuerzas Armadas en Vigo, minuto a minuto",
+          "source": "farodevigo.es",
+          "url": "https://www.farodevigo.es/gran-vigo/2026/05/29/dia-fuerzas-armadas-vigo-directo-130805907.html",
+          "date": "2026-05-29"
+        }
+      ],
+      "representative_urls": [
+        "https://www.rtve.es/noticias/20260530/desfile-dia-fuerzas-armadas-2026-directo-vigo-video-cronica/17091512.shtml",
+        "https://www.elconfidencial.com/espana/2026-05-30/un-inedito-percance-durante-el-izado-de-la-bandera-durante-el-desfile-del-dia-de-las-fuerzas-armadas_4364506/"
+      ]
+    },
+    {
+      "story_id": 3,
+      "headline": "Pope Le\u00f3n XIV prepares for historic June visit to Spain, invited by King Felipe VI",
+      "summary": "Pope Le\u00f3n XIV is scheduled to visit Spain from June 6\u201312 in a state visit formally invited by King Felipe VI, with stops in Madrid, Barcelona, and Gran Canaria. Media coverage this week focused on logistical preparations in Madrid (traffic disruptions, massive expected crowds), the Pope's agenda themes (poverty, immigration, youth), political dimensions (S\u00e1nchez's prior meeting with the Pope in the Vatican, Vox's decision to attend all papal events as a reconciliation gesture toward the Church), and Ayuso's audience with the Pope in Rome ahead of his arrival.",
+      "actors_involved": [
+        "King Felipe VI",
+        "Pedro S\u00e1nchez",
+        "Santiago Abascal"
+      ],
+      "signal_category_hint": "institutional",
+      "source_count": 9,
+      "sources": [
+        "elmundo.es",
+        "elperiodico.com",
+        "lavanguardia.com",
+        "elplural.com",
+        "antena3.com",
+        "elconfidencial.com",
+        "elnacional.cat"
+      ],
+      "date_range": "2026-05-27 to 2026-06-01",
+      "articles": [
+        {
+          "title": "Le\u00f3n XIV convertir\u00e1 Espa\u00f1a en un altavoz para el mundo durante su viaje: los j\u00f3venes, los migrantes y los pobres ser\u00e1n el centro",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/espana/2026/05/31/6a16d074e9cf4a644b8b4583.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El Papa lanzar\u00e1 un mensaje cara a cara para el poder y 'sin evitar temas pol\u00e9micos' en el acto del Congreso",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/espana/2026/06/01/6a196fadfdddffea748b456f.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "IGLESIA CASA REAL | La relaci\u00f3n de los Reyes y los Papas: de la alianza en la transici\u00f3n a visitar una Espa\u00f1a fragmentada",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/politica/20260531/visita-leon-xiv-relacion-reyes-vaticano-vox-canarias-inmigracion-130833271",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Madrid se prepara para la visita del Papa: cortes de tr\u00e1fico, teletrabajo y pantallas gigantes",
+          "source": "antena3.com",
+          "url": "https://www.antena3.com/noticias/sociedad/madrid-prepara-visita-papa-cortes-trafico-teletrabajo-pantallas-gigantes_202605316a1c1b1e91bae05c35e8323f.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Vox apacigua su relaci\u00f3n con los obispos ante la visita del papa Le\u00f3n XIV a Espa\u00f1a",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260529/11539988/vox-apacigua-relacion-obispos-visita-papa-leon-xiv-espana.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Vox corrige el choque con la Iglesia y acerca posturas ante el viaje del Papa a Espa\u00f1a",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/2026-05-31/vox-corrige-el-choque-con-la-iglesia-y-acerca-posturas-ante-la-visita-del-papa_4364267/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Vox busca darse la 'paz' con la Iglesia a las puertas de la visita del Papa a Espa\u00f1a",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/politica/espana/vox-busca-darse-paz-iglesia-puertas-visita-papa-espana_391460102",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Ayuso viajar\u00e1 al Vaticano para ser recibida por el Papa antes de su visita a Espa\u00f1a",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/autonomias/madrid/ayuso-viajara-vaticano-ser-recibida-papa-antes-visita-espana-dias-despues-audiencia-sanchez_391302102",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "El Cercle d'Economia recibe en su reuni\u00f3n anual al Rey, S\u00e1nchez, Illa y Feij\u00f3o",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/economia/20260531/cercle-economia-recibe-reunion-anual-rey-sanchez-illa-feijoo-130858229",
+          "date": "2026-05-31"
+        }
+      ],
+      "representative_urls": [
+        "https://www.elmundo.es/espana/2026/05/31/6a16d074e9cf4a644b8b4583.html",
+        "https://www.elperiodico.com/es/politica/20260531/visita-leon-xiv-relacion-reyes-vaticano-vox-canarias-inmigracion-130833271"
+      ]
+    },
+    {
+      "story_id": 4,
+      "headline": "PP leader Feij\u00f3o pursues Catalonia strategy and low-profile opposition stance amid PSOE crisis",
+      "summary": "Alberto N\u00fa\u00f1ez Feij\u00f3o chose a restrained opposition posture this week despite intensifying PSOE judicial troubles, resisting internal party pressure for a no-confidence motion (moci\u00f3n de censura) by noting insufficient support, while simultaneously accelerating a push into Catalonia with his participation in the Cercle d'Economia forum (June 2) and preparations for a PPC congress. Multiple polls showed PP leading in voting intention, and Feij\u00f3o made remarks that he would use 'every possible means' to change the government.",
+      "actors_involved": [
+        "Alberto N\u00fa\u00f1ez Feij\u00f3o",
+        "PSOE"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 14,
+      "sources": [
+        "elperiodico.com",
+        "lne.es",
+        "larazon.es",
+        "europapress.es",
+        "catalunyapress.es",
+        "diariosigloxxi.com",
+        "moncloa.com",
+        "elperiodico.cat",
+        "europapress.es",
+        "democrata.es"
+      ],
+      "date_range": "2026-05-28 to 2026-06-01",
+      "articles": [
+        {
+          "title": "Feij\u00f3o opta por una oposici\u00f3n de perfil bajo ante la crisis del PSOE pese a las presiones internas",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/politica/20260531/feijoo-opta-oposicion-perfil-crisis-130816097",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Corrupci\u00f3n PSOE | Feij\u00f3o opta por una oposici\u00f3n de perfil bajo ante la crisis del PSOE pese a las presiones internas",
+          "source": "lne.es",
+          "url": "https://www.lne.es/espana/2026/05/31/feijoo-opta-oposicion-perfil-crisis-130852274.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o se vuelca en Catalu\u00f1a en pleno viacrucis judicial de S\u00e1nchez",
+          "source": "larazon.es",
+          "url": "https://www.larazon.es/espana/feijoo-vuelca-cataluna-pleno-viacrucis-judicial-sanchez_202605316a1bfb5091bae05c35e803a2.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o se vuelca en Catalu\u00f1a para reforzar su partido y aprovechar los recelos que genera el 'viacrucis' de S\u00e1nchez",
+          "source": "europapress.es",
+          "url": "https://www.europapress.es/nacional/noticia-feijoo-vuelca-cataluna-reforzar-partido-aprovechar-recelos-genera-viacrucis-sanchez-20260531102956.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o acelera su estrategia en Catalu\u00f1a con el Cercle d'Econom\u00eda y el congreso del PPC",
+          "source": "moncloa.com",
+          "url": "https://www.moncloa.com/2026/05/31/feijoo-cataluna-estrategia-ppc-3381052/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o acelera su ofensiva en Catalunya y ve una oportunidad en la crisis que rodea al PSOE",
+          "source": "catalunyapress.es",
+          "url": "https://www.catalunyapress.es/articulo/politica-nacional/2026-05-31/5901667-feijoo-acelera-ofensiva-catalunya-ve-oportunidad-crisis-rodea-psoe",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o arranca su campa\u00f1a en Catalu\u00f1a y el Pa\u00eds Vasco a la caza del voto antisanchista de Junts y el PNV",
+          "source": "diariosigloxxi.com",
+          "url": "https://www.diariosigloxxi.com/texto-s/mostrar/658089/feijoo-arranca-campana-cataluna-pais-vasco-caza-voto-antisanchista-junts-pnv",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o vincula la 'carta a la ciudadan\u00eda' de S\u00e1nchez con el toque de corneta a la 'mafia socialista'",
+          "source": "moncloa.com",
+          "url": "https://www.moncloa.com/2026/05/31/feijoo-carta-sanchez-cloacas-pp-3380960/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Feij\u00f3o opta per una oposici\u00f3 de perfil baix davant la crisi del PSOE",
+          "source": "elperiodico.cat",
+          "url": "https://www.elperiodico.cat/ca/politica/20260531/feijoo-opta-per-oposicio-perfil-130849298",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Land\u00e1buru (NNGG): 'Estamos sumando el apoyo de j\u00f3venes de toda Espa\u00f1a para llevar al PP a la victoria con Feij\u00f3o'",
+          "source": "europapress.es",
+          "url": "https://www.europapress.es/murcia/noticia-landaburu-nngg-estamos-sumando-apoyo-jovenes-toda-espana-llevar-pp-victoria-feijoo-20260531111258.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Land\u00e1buru PP | 'Estamos sumando el apoyo de j\u00f3venes de toda Espa\u00f1a para llevar al PP a la victoria con Feij\u00f3o'",
+          "source": "laopiniondemurcia.es",
+          "url": "https://www.laopiniondemurcia.es/comunidad/2026/05/31/landaburu-sumando-apoyo-jovenes-espana-130858972.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Land\u00e1buru acusa a Juventudes Socialistas de ser propaganda",
+          "source": "democrata.es",
+          "url": "https://www.democrata.es/politica/landaburu-nngg-carga-contra-juventudes-socialistas-y-las-acusa-de-ser-propaganda-de-pedro-sanchez/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Imbroda aplaza cualquier decisi\u00f3n sobre 2027 y se pone a disposici\u00f3n de Feij\u00f3o para repetir como candidato en Melilla",
+          "source": "europapress.es",
+          "url": "https://www.europapress.es/ceuta-y-melilla/noticia-imbroda-aplaza-cualquier-decision-2027-pone-disposicion-feijoo-repetir-candidato-melilla-20260531180128.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El PP de Prohens rozar\u00eda la mayor\u00eda absoluta en Baleares mientras el PSOE de Armengol se desploma a m\u00ednimos hist\u00f3ricos",
+          "source": "elmundo.es",
+          "url": "https://www.elmundo.es/baleares/2026/06/01/6a1c56d321efa0c0288b459c.html",
+          "date": "2026-06-01"
+        }
+      ],
+      "representative_urls": [
+        "https://www.elperiodico.com/es/politica/20260531/feijoo-opta-oposicion-perfil-crisis-130816097",
+        "https://www.europapress.es/nacional/noticia-feijoo-vuelca-cataluna-reforzar-partido-aprovechar-recelos-genera-viacrucis-sanchez-20260531102956.html"
+      ]
+    },
+    {
+      "story_id": 5,
+      "headline": "US Ambassador warns Spain to be 'very careful' deepening ties with China",
+      "summary": "US Ambassador to Spain Benjamin Leon publicly warned Madrid on May 27 that it must exercise caution as it deepens its relationship with China, specifically calling out data, defence, and telecommunications sectors where Beijing seeks dominance. The warning came against a backdrop of strained US-Spain relations over Spain's refusal to meet NATO defence spending commitments and earlier Trump suggestions about possible sanctions.",
+      "actors_involved": [
+        "Pedro S\u00e1nchez"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 1,
+      "sources": [
+        "reuters.com"
+      ],
+      "date_range": "2026-05-27 to 2026-05-27",
+      "articles": [
+        {
+          "title": "US envoy warns Spain to be 'very careful' in deepening ties with China",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/aerospace-defense/us-envoy-warns-spain-be-very-careful-deepening-ties-with-china-2026-05-27/",
+          "date": "2026-05-27"
+        }
+      ],
+      "representative_urls": [
+        "https://www.reuters.com/business/aerospace-defense/us-envoy-warns-spain-be-very-careful-deepening-ties-with-china-2026-05-27/"
+      ]
+    },
+    {
+      "story_id": 6,
+      "headline": "Vox distances itself from far-right European extremists while seeking Church rapprochement",
+      "summary": "Vox this week sent a party spokesperson to the Remigration Summit 2026 in Portugal (a gathering of European white-nationalist ultra groups) while simultaneously pursuing a reconciliation with the Spanish Catholic Church ahead of the Pope's visit, with Abascal confirming attendance at all papal events after months of tension over immigration policy with the Bishops' Conference.",
+      "actors_involved": [
+        "Santiago Abascal"
+      ],
+      "signal_category_hint": "domestic_regime",
+      "source_count": 3,
+      "sources": [
+        "eldiario.es",
+        "lavanguardia.com",
+        "elconfidencial.com"
+      ],
+      "date_range": "2026-05-29 to 2026-05-31",
+      "articles": [
+        {
+          "title": "Vox abraza la xenofobia de los ultras supremacistas m\u00e1s radicales de Europa",
+          "source": "eldiario.es",
+          "url": "https://www.eldiario.es/internacional/vox-abraza-xenofobia-ultras-supremacistas-radicales-europa_1_13263018.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Vox apacigua su relaci\u00f3n con los obispos ante la visita del papa Le\u00f3n XIV a Espa\u00f1a",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/politica/20260529/11539988/vox-apacigua-relacion-obispos-visita-papa-leon-xiv-espana.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Vox corrige el choque con la Iglesia y acerca posturas ante el viaje del Papa a Espa\u00f1a",
+          "source": "elconfidencial.com",
+          "url": "https://www.elconfidencial.com/espana/2026-05-31/vox-corrige-el-choque-con-la-iglesia-y-acerca-posturas-ante-la-visita-del-papa_4364267/",
+          "date": "2026-05-31"
+        }
+      ],
+      "representative_urls": [
+        "https://www.eldiario.es/internacional/vox-abraza-xenofobia-ultras-supremacistas-radicales-europa_1_13263018.html",
+        "https://www.lavanguardia.com/politica/20260529/11539988/vox-apacigua-relacion-obispos-visita-papa-leon-xiv-espana.html"
+      ]
+    },
+    {
+      "story_id": 7,
+      "headline": "Banco de Espa\u00f1a issues warnings on housing market risk and mortgage delinquency amid IMF pressure",
+      "summary": "The Banco de Espa\u00f1a attracted attention this week with multiple financial stability warnings: the institution alerted about potential mortgage delinquency risks (reportedly up to 6% by 2027 for variable-rate mortgages), cautioned that restricting high-risk mortgages could worsen housing access and rental costs, and urged that irregular immigrants be allowed to open bank accounts. Separately, outgoing ECB Vice-President Luis de Guindos said Spain's seat on the ECB Executive Board was 'perfectly justified' and would be recovered in coming quarters.",
+      "actors_involved": [
+        "Banco de Espa\u00f1a"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 5,
+      "sources": [
+        "vozpopuli.com",
+        "andaluciainforma.eldiario.es",
+        "eldebate.com",
+        "euribor.com.es",
+        "expansion.com"
+      ],
+      "date_range": "2026-05-26 to 2026-05-31",
+      "articles": [
+        {
+          "title": "El FMI presiona al Banco de Espa\u00f1a para intervenir las hipotecas y frenar los precios r\u00e9cords de la vivienda",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/economia/banca/el-fmi-presiona-al-banco-de-espana-para-intervenir-las-hipotecas-y-frenar-los-precios-records-de-la-vivienda.html",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "El acceso a la vivienda se complica y el Banco de Espa\u00f1a lanza una dura advertencia",
+          "source": "andaluciainforma.eldiario.es",
+          "url": "https://andaluciainforma.eldiario.es/actualidad/el-acceso-a-la-vivienda-se-complica-y-el-banco-de-espana-lanza-una-dura-advertencia/",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "El Banco de Espa\u00f1a urge a que los inmigrantes irregulares puedan abrir una cuenta bancaria",
+          "source": "eldebate.com",
+          "url": "https://www.eldebate.com/economia/20260526/banco-espana-urge-inmigrantes-irregulares-puedan-abrir-cuenta-bancaria_421753.html",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "Hipotecas Variables: Riesgo del 6% de Morosidad Seg\u00fan el Banco de Espa\u00f1a",
+          "source": "euribor.com.es",
+          "url": "https://www.euribor.com.es/2026/05/30/el-banco-de-espana-advierte-hipotecas-variables-en-la-cuerda-floja-con-un-riesgo-de-morosidad-del-6-en-2027/",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "Luis de Guindos: 'Espa\u00f1a recuperar\u00e1 la silla en la Ejecutiva del BCE en los pr\u00f3ximos trimestres'",
+          "source": "expansion.com",
+          "url": "https://expansion.com/empresas/banca/2026/05/31/6a19ca77e5fdea1e588b45ac.html",
+          "date": "2026-05-31"
+        }
+      ],
+      "representative_urls": [
+        "https://www.vozpopuli.com/economia/banca/el-fmi-presiona-al-banco-de-espana-para-intervenir-las-hipotecas-y-frenar-los-precios-records-de-la-vivienda.html",
+        "https://expansion.com/empresas/banca/2026/05/31/6a19ca77e5fdea1e588b45ac.html"
+      ]
+    },
+    {
+      "story_id": 8,
+      "headline": "Spain blocks prediction markets Polymarket and Kalshi for operating without gambling licences",
+      "summary": "Spain's Consumer Rights Ministry temporarily banned prediction markets Polymarket and Kalshi from operating in the country, publishing the order in the official state gazette on May 26. Spanish authorities classify prediction markets as a form of gambling when bets are placed on uncertain outcomes, consistent with similar moves by other European jurisdictions.",
+      "actors_involved": [
+        "Pedro S\u00e1nchez"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 1,
+      "sources": [
+        "reuters.com"
+      ],
+      "date_range": "2026-05-26 to 2026-05-26",
+      "articles": [
+        {
+          "title": "Spain blocks prediction markets Polymarket, Kalshi over lack of gambling licences",
+          "source": "reuters.com",
+          "url": "https://www.reuters.com/business/spain-blocks-prediction-markets-polymarket-kalshi-over-lack-gambling-licences-2026-05-26/",
+          "date": "2026-05-26"
+        }
+      ],
+      "representative_urls": [
+        "https://www.reuters.com/business/spain-blocks-prediction-markets-polymarket-kalshi-over-lack-gambling-licences-2026-05-26/"
+      ]
+    },
+    {
+      "story_id": 9,
+      "headline": "Royal House: King Felipe VI and Queen Letizia host Monaco royals for 150th anniversary of bilateral relations",
+      "summary": "King Felipe VI and Queen Letizia were scheduled to receive Prince Albert II of Monaco and Princess Charl\u00e8ne for a two-day official visit commemorating the 150th anniversary of the Monaco embassy in Spain, including a joint visit to an exhibition at the Real Jard\u00edn Bot\u00e1nico. Coverage also noted Felipe VI's appearances at the Corrida de la Prensa at Las Ventas and his remarks to Mexican writer Zunzunegui regarding his earlier comments about colonial abuses.",
+      "actors_involved": [
+        "King Felipe VI"
+      ],
+      "signal_category_hint": "alignment_diplomatic",
+      "source_count": 4,
+      "sources": [
+        "infobae.com",
+        "lavanguardia.com",
+        "elespanol.com",
+        "libertaddigital.com"
+      ],
+      "date_range": "2026-05-29 to 2026-05-31",
+      "articles": [
+        {
+          "title": "Los Reyes visitar\u00e1n con Alberto de M\u00f3naco y la princesa Charl\u00e8ne una muestra conmemorativa de la relaci\u00f3n bilateral",
+          "source": "infobae.com",
+          "url": "https://www.infobae.com/america/agencias/2026/05/29/los-reyes-visitaran-con-alberto-de-monaco-y-la-princesa-charlene-una-muestra-conmemorativa-de-la-relacion-bilateral/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Charlene de M\u00f3naco posa con Jacques y Gabriella antes de su esperada visita oficial a Espa\u00f1a",
+          "source": "lavanguardia.com",
+          "url": "https://www.lavanguardia.com/gente/20260531/11552198/charlene-monaco-posa-jacques-gabriella-esperada-visita-oficial-espana.html",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "Zunzunegui, a Felipe VI: '\u00bfHubo abusos? S\u00ed. Luego vinieron las leyes y los castigaron porque ese no era el objetivo'",
+          "source": "libertaddigital.com",
+          "url": "https://www.libertaddigital.com/cultura/historia/2026-05-29/zunzunegui-a-felipe-vi-hubo-abusos-si-luego-vinieron-las-leyes-y-los-castigaron-porque-ese-no-era-el-objetivo-7412158/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "El regreso de Felipe VI a las Ventas en la Corrida de la Prensa: una gran ovaci\u00f3n y el encuentro con la infanta Elena",
+          "source": "elespanol.com",
+          "url": "https://www.elespanol.com/corazon/casas-reales/20260529/regreso-felipe-vi-ventas-corrida-prensa-gran-ovacion-encuentro-infanta-elena/1003744264930_0.html",
+          "date": "2026-05-29"
+        }
+      ],
+      "representative_urls": [
+        "https://www.infobae.com/america/agencias/2026/05/29/los-reyes-visitaran-con-alberto-de-monaco-y-la-princesa-charlene-una-muestra-conmemorativa-de-la-relacion-bilateral/",
+        "https://www.lavanguardia.com/gente/20260531/11552198/charlene-monaco-posa-jacques-gabriella-esperada-visita-oficial-espana.html"
+      ]
+    },
+    {
+      "story_id": 10,
+      "headline": "CNI implicated in Plus Ultra case: Zapatero associate's notebook links intelligence agents to Venezuela prisoner releases and Edmundo Gonz\u00e1lez repatriation",
+      "summary": "Documents seized from the home of Julio Mart\u00ednez (described as a Zapatero associate in the Plus Ultra case) contained handwritten references to CNI agents allegedly involved in negotiations for the release of Venezuelan prisoners and the repatriation of opposition leader Edmundo Gonz\u00e1lez. The High Court judge in the Plus Ultra case is investigating whether the Zapatero-linked network used CNI contacts for what could constitute improper interventions in state affairs. Separately, testimony in the 'Operaci\u00f3n Kitchen' trial linked Villarejo to the CNI.",
+      "actors_involved": [
+        "CNI",
+        "Pedro S\u00e1nchez",
+        "PSOE"
+      ],
+      "signal_category_hint": "security_defense",
+      "source_count": 5,
+      "sources": [
+        "elindependiente.com",
+        "theobjective.com",
+        "efe.com",
+        "infobae.com",
+        "vozpopuli.com"
+      ],
+      "date_range": "2026-05-25 to 2026-05-30",
+      "articles": [
+        {
+          "title": "La UDEF encuentra una agenda en la casa de Julio Mart\u00ednez con informaci\u00f3n sobre el CNI, presos de Venezuela, oro y petr\u00f3leo",
+          "source": "elindependiente.com",
+          "url": "https://www.elindependiente.com/espana/2026/05/25/udef-encuentra-agenda-casa-julio-martinez-informacion-cni-presos-venezuela-oro-petroleo/",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "La trama Plus Ultra pudo hacer que el CNI interviniera para repatriar a Edmundo Gonz\u00e1lez",
+          "source": "efe.com",
+          "url": "https://efe.com/espana/2026-05-25/plus-ultra-repatriacion-cni-edmundo-gonzalez/",
+          "date": "2026-05-25"
+        },
+        {
+          "title": "El juez del 'caso Plus Ultra' investiga si la trama liderada por Zapatero logr\u00f3 la intervenci\u00f3n del CNI en la salida de Edmundo Gonz\u00e1lez de Venezuela",
+          "source": "infobae.com",
+          "url": "https://www.infobae.com/espana/2026/05/27/el-juez-del-caso-plus-ultra-investiga-si-la-trama-liderada-por-zapatero-logro-la-intervencion-del-cni-en-la-salida-de-edmundo-gonzalez-de-venezuela/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "El amigo de Zapatero revela que los dos presos vascos detenidos por Maduro eran del CNI",
+          "source": "theobjective.com",
+          "url": "https://theobjective.com/espana/tribunales/2026-05-26/amigo-zapatero-edmundo-gonzalez-venezuela",
+          "date": "2026-05-26"
+        },
+        {
+          "title": "Francisco Mart\u00ednez asegura que Villarejo se reuni\u00f3 con el CNI y le inform\u00f3 de la 'Kitchen'",
+          "source": "vozpopuli.com",
+          "url": "https://www.vozpopuli.com/tribunales/francisco-martinez-asegura-que-villarejo-se-reunio-con-el-cni-y-le-informo-de-la-kitchen.html",
+          "date": "2026-05-27"
+        }
+      ],
+      "representative_urls": [
+        "https://www.elindependiente.com/espana/2026/05/25/udef-encuentra-agenda-casa-julio-martinez-informacion-cni-presos-venezuela-oro-petroleo/",
+        "https://efe.com/espana/2026-05-25/plus-ultra-repatriacion-cni-edmundo-gonzalez/"
+      ]
+    },
+    {
+      "story_id": 11,
+      "headline": "Cercle d'Economia Barcelona annual meeting brings together King, S\u00e1nchez, Illa, and Feij\u00f3o",
+      "summary": "The 41st Reuni\u00f3 del Cercle d'Economia was scheduled for June 1\u20133 in Barcelona, an influential annual business forum where King Felipe VI was to preside over an award ceremony, with President S\u00e1nchez, Catalan President Salvador Illa, and PP leader Feij\u00f3o all attending. The forum's theme was European strategic autonomy. The gathering acquired particular significance given Spain's political crisis and the presence of key figures across the political divide.",
+      "actors_involved": [
+        "King Felipe VI",
+        "Pedro S\u00e1nchez",
+        "Alberto N\u00fa\u00f1ez Feij\u00f3o"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
+      "sources": [
+        "elperiodico.com",
+        "cronicaglobal.elespanol.com"
+      ],
+      "date_range": "2026-05-31 to 2026-06-01",
+      "articles": [
+        {
+          "title": "El Cercle d'Economia recibe en su reuni\u00f3n anual al Rey, S\u00e1nchez, Illa y Feij\u00f3o",
+          "source": "elperiodico.com",
+          "url": "https://www.elperiodico.com/es/economia/20260531/cercle-economia-recibe-reunion-anual-rey-sanchez-illa-feijoo-130858229",
+          "date": "2026-05-31"
+        },
+        {
+          "title": "La sombra de los casos de Zapatero y Andic sobrevuela las jornadas antiTrump del lobi empresarial",
+          "source": "cronicaglobal.elespanol.com",
+          "url": "https://cronicaglobal.elespanol.com/politica/20260601/sombra-zapatero-andic-sobrevuela-jornadas-antitrump-empresarial/1003742765822_0.html",
+          "date": "2026-06-01"
+        }
+      ],
+      "representative_urls": [
+        "https://www.elperiodico.com/es/economia/20260531/cercle-economia-recibe-reunion-anual-rey-sanchez-illa-feijoo-130858229"
+      ]
+    },
+    {
+      "story_id": 12,
+      "headline": "Spain's economy stands out in Europe but structural challenges persist, per US financial press",
+      "summary": "US financial magazine Global Finance published analysis this week highlighting Spain as a standout European economy \u2014 citing record 96.8 million tourists in 2025, Banco de Espa\u00f1a upward GDP revision to 2.3% for 2026, and a strong banking sector \u2014 while also flagging structural risks including housing affordability, labour market duality, and youth unemployment.",
+      "actors_involved": [
+        "Banco de Espa\u00f1a"
+      ],
+      "signal_category_hint": "economic_tech",
+      "source_count": 2,
+      "sources": [
+        "huffingtonpost.es",
+        "elplural.com"
+      ],
+      "date_range": "2026-05-29 to 2026-05-30",
+      "articles": [
+        {
+          "title": "Una reconocida revista de EEUU habla con claridad de por qu\u00e9 la econom\u00eda de Espa\u00f1a es un 'caso at\u00edpico' en Europa",
+          "source": "huffingtonpost.es",
+          "url": "https://www.huffingtonpost.es/virales/una-reconocida-revista-eeuu-habla-claridad-que-economia-espana-caso-atipico-europa-f202605.html",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "Una prestigiosa revista estadounidense se\u00f1ala por qu\u00e9 Espa\u00f1a est\u00e1 sorprendiendo a toda Europa",
+          "source": "elplural.com",
+          "url": "https://www.elplural.com/politica/espana/prestigiosa-revista-estadounidense-senala-espana-esta-sorprendiendo-toda-europa_391587102",
+          "date": "2026-05-30"
+        }
+      ],
+      "representative_urls": [
+        "https://www.huffingtonpost.es/virales/una-reconocida-revista-eeuu-habla-claridad-que-economia-espana-caso-atipico-europa-f202605.html"
+      ]
+    }
+  ],
+  "single_source_items": [
+    {
+      "headline": "CNI seeks new hires including spies, translators, drivers, and doctors",
+      "source": "elnacional.cat",
+      "url": "https://www.elnacional.cat/oneconomia/es/economia/cni-busca-nuevos-trabajadores-espias-pero-tambien-traductores-conductores-medicos_1246257_102.html",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Interview with Jorge Dezcallar, Spain's first civilian CNI director, on his memoirs",
+      "source": "elperiodico.com",
+      "url": "https://www.elperiodico.com/es/ocio-y-cultura/libros/20260530/jorge-dezcallar-libro-pez-negro-130629999",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Atenci\u00f3n, curva peligrosa: former diplomat reflects on 2004 Russia policy discussion including CNI and military",
+      "source": "ultimahora.es",
+      "url": "https://www.ultimahora.es/opinion/tribuna/2026/05/30/2639951/atencion-curva-peligrosa.html",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Government to require banks to report customer debts above \u20ac1,000 to Banco de Espa\u00f1a CIRBE database",
+      "source": "finanzas.com",
+      "url": "https://www.finanzas.com/finanzas-personales/bancos-limite-deudas-1000-euros-cirbe.html",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Santander, BBVA and CaixaBank board members sit on around 150 companies \u2014 ECB, Banco de Espa\u00f1a and CNMV scrutiny cited",
+      "source": "expansion.com",
+      "url": "https://www.expansion.com/empresas/banca/2026/06/01/6a1c5cd2e5fdea40108b4582.html",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Vox against Alian\u00e7a Catalana: who copies whom on immigration policy",
+      "source": "elconfidencial.com",
+      "url": "https://www.elconfidencial.com/espana/cataluna/2026-05-31/inmigracion-seguridad-alianza-catalana-vox-1hms_4364595/",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Vox desata la pol\u00e9mica en ayuntamiento de M\u00e1laga al llamar 'matagatos' a inmigrantes regularizados",
+      "source": "elplural.com",
+      "url": "https://www.elplural.com/autonomias/andalucia/vox-desata-polemica-ayuntamiento-malaga-llamar-matagatos-inmigrantes-regularizados_391607102",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Partido Socialista website page for PSOE M\u00e1laga provincial group \u2014 institutional listing",
+      "source": "malaga.es",
+      "url": "https://www.malaga.es/grupospoliticos/342/partido-socialista-obrero-espanol-de-andalucia",
+      "signal_category_hint": "unclear"
+    },
+    {
+      "headline": "ERC critics fail to gather signatures needed to force internal vote on pacts with Illa government",
+      "source": "theobjective.com",
+      "url": "https://theobjective.com/espana/cataluna/2026-05-29/sector-critico-erc-no-logra-avales-presupuestos-illa",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Vox juez Serrano: trial of ex-Vox Andalusia leader delayed to March 2027",
+      "source": "publico.es",
+      "url": "https://www.publico.es/politica/juez-serrano-fichaje-estrella-abascal-vox-quiere-olvidar-ahora-sentar-banquillo.html",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Iberoam\u00e9rica como nueva alianza atl\u00e1ntica para la UE: IX Congreso Iberoamericano de CEAPI",
+      "source": "lavanguardia.com",
+      "url": "https://www.lavanguardia.com/dinero/20260531/11551037/iberoamerica-nueva-alianza-atlantica-union-europea.html",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "China se presenta como epicentro diplom\u00e1tico mientras Xi Jinping limita sus salidas al exterior (mentions Felipe VI's Beijing visit)",
+      "source": "larazon.es",
+      "url": "https://www.larazon.es/internacional/china-presenta-como-epicentro-diplomatico-mientras-jinping-limita-sus-salidas-exterior_202605316a1be852cb17881aa26421c1.html",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "La oportunidad hist\u00f3rica que ofrece ahora Iberoam\u00e9rica en la econom\u00eda mundial y que Espa\u00f1a puede desaprovechar",
+      "source": "elmundo.es",
+      "url": "https://www.elmundo.es/economia/macroeconomia/2026/05/31/6a19603ae85ece13518b45a7.html",
+      "signal_category_hint": "economic_tech"
+    },
+    {
+      "headline": "Banco de Espa\u00f1a opens heritage tour of historic headquarters to the public",
+      "source": "fundssociety.com",
+      "url": "https://www.fundssociety.com/es/estilo/el-banco-de-espana-abre-su-tesoro-de-cibeles-a-los-ciudadanos/",
+      "signal_category_hint": "institutional"
+    },
+    {
+      "headline": "Unas 10.000 personas vuelven a recorrer Madrid en defensa de la sanidad p\u00fablica",
+      "source": "20minutos.es",
+      "url": "https://www.20minutos.es/madrid/unas-10-000-personas-vuelven-recorrer-madrid-defensa-sanidad-publica_6977310_0.html",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Abascal congratulates Colombian presidential first-round winner Abelardo De la Espriella",
+      "source": "elconfidencial.com",
+      "url": "https://www.elconfidencial.com/mundo/2026-05-31/elecciones-colombia-2026-primera-vuelta-resultado-directo_4364728/",
+      "signal_category_hint": "alignment_diplomatic"
+    },
+    {
+      "headline": "La Xunta rechaza el traspaso de la AP-9 pactado por PSOE, BNG y Sumar",
+      "source": "elespanol.com",
+      "url": "https://www.elespanol.com/treintayseis/actualidad/galicia/20260531/xunta-rechaza-traspaso-ap-9-pactado-psoe-bng-sumar-no-queremos-condiciones/1003744267433_0.html",
+      "signal_category_hint": "institutional"
+    },
+    {
+      "headline": "Felipe VI preside la Corrida de la Prensa en el esperado regreso de Roca Rey a Madrid",
+      "source": "libertaddigital.com",
+      "url": "https://www.libertaddigital.com/cultura/toros/2026-05-28/felipe-vi-preside-la-corrida-de-la-prensa-en-el-esperado-regreso-de-roca-rey-a-madrid-7411914/",
+      "signal_category_hint": "unclear"
+    },
+    {
+      "headline": "Abascal no ha dicho que los jubilados no sirvan para nada \u2014 fact-check by Newtral",
+      "source": "newtral.es",
+      "url": "https://newtral.es/abascal-jubilados/20260528",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "Instituci\u00f3n ejemplar al servicio de Espa\u00f1a \u2014 opinion piece on the constitutional role of the Armed Forces under Felipe VI",
+      "source": "larazon.es",
+      "url": "https://www.larazon.es/opinion/institucion-ejemplar-servicio-espana_202605316a1b64f57d8b1d3812621ab7.html",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Last day of Armed Forces events in Vigo: static exhibition remains open",
+      "source": "elespanol.com",
+      "url": "https://www.elespanol.com/treintayseis/vigo/20260531/ultimo-dia-fuerzas-armadas-vigo-puede-visitar-exposicion-estatica-nautico/1003744267212_0.html",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "Ministerie de Defensa thanks Vigo for hosting DIFAS 2026",
+      "source": "lavozdegalicia.es",
+      "url": "https://www.lavozdegalicia.es/noticia/vigo/vigo/2026/05/31/gracias-corazon-vigo-acogida-carino/00031780244170998415714.htm",
+      "signal_category_hint": "security_defense"
+    },
+    {
+      "headline": "La 1 (RTVE) leads Saturday ratings with D\u00eda de las Fuerzas Armadas and Champions League final",
+      "source": "rtve.es",
+      "url": "https://www.rtve.es/rtve/20260531/la-1-16-4-164-lider-sabado-dia-fuerzas-armadas-final-champions-mas-visto-jornada/17093639.shtml",
+      "signal_category_hint": "unclear"
+    },
+    {
+      "headline": "Sumar introduces monoparental household title via dependency law amendment after PSOE blocked family law",
+      "source": "20minutos.es",
+      "url": "https://www.20minutos.es/nacional/sumar-introduce-ley-dependencia-un-titulo-para-los-hogares-monoparentales-tras-bloqueo-psoe-ley-familias_6976716_0.html",
+      "signal_category_hint": "domestic_regime"
+    },
+    {
+      "headline": "ENTREVISTA Jorge Dezcallar, primer director civil del CNI, sobre su libro de memorias",
+      "source": "elperiodico.com",
+      "url": "https://www.elperiodico.com/es/ocio-y-cultura/libros/20260530/jorge-dezcallar-libro-pez-negro-130629999",
+      "signal_category_hint": "security_defense"
+    }
+  ]
+}
